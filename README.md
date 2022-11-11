@@ -17,3 +17,4 @@
 - [Destiny Item Manager](https://dim.gg): The go-to Item Manager for Destiny
 - [Light.gg](https://light.gg): Destiny 2 Database explorer and extensive resource hub
 - [Crayon](https://mijago.github.io/Crayon): A Discord Bot by Mijago
+- [Felicity](https://tryfelicity.one): A Discord Bot by Leaf
