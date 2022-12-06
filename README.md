@@ -1,5 +1,5 @@
 # This is the live database for Clarity - A DIM Companion
-- Consider supporting our project through [Ko-Fi](https://ko-fi.com/d2clarity) to help us maintain Clarity as a free resource and cover our maintenance fees.
+- Consider supporting our project through [Ko-Fi](https://ko-fi.com/d2clarity) to help us maintain Clarity as a free resource.
 
 ## Usage of our data
 - You are allowed to use all the data in the database so long as you properly credit us in your project with the following:
@@ -16,5 +16,5 @@
 - [Clarity - A DIM Companion](https://www.d2clarity.com): Our First Party tool to enhance DIM
 - [Destiny Item Manager](https://dim.gg): The go-to Item Manager for Destiny
 - [Light.gg](https://light.gg): Destiny 2 Database explorer and extensive resource hub
-- [Crayon](https://mijago.github.io/Crayon): A Discord Bot by Mijago
+- [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible.
 - [Felicity](https://tryfelicity.one): A Discord Bot by Leaf
