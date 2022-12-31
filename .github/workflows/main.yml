@@ -1,17 +1,31 @@
+name: Build and Deploy descriptions
+
 on:
   push:
     branches:
-    - test
+    - converter
+
+permissions:
+  contents: write
 
 jobs:
   test_and_merge:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2.5.0
-    - uses: actions/setup-node@v3.5.1
-      with:
-        node-version: 18.x
-        cache: npm
-    - run: npm i
-    - run: npm run test
-    - run: npm run merge
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+      - run: npm i
+      - run: npm run build
+      - run: npm run convert
+
+      - name: Generate data 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: descriptions # Folder you wish to deploy
+          branch: live
+          target-folder: descriptions
