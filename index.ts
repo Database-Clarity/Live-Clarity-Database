@@ -7,7 +7,8 @@ import {
    getDataFromPerk,
    getSettings,
    Languages,
-   LivePerk
+   LivePerk,
+   DescriptionData
 } from '@icemourne/description-converter'
 import { cleanObject } from '@icemourne/tool-box'
 import { database, inventoryItems } from './externalData'
