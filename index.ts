@@ -11,7 +11,7 @@ import {
    DescriptionData
 } from '@icemourne/description-converter'
 import { cleanObject } from '@icemourne/tool-box'
-import { database, inventoryItems } from './externalData'
+import { database, inventoryItems } from './externalData.js'
 
 export const databaseConverter = (converterType: string) => {
    const settings = getSettings(converterType)
@@ -27,6 +27,7 @@ export const databaseConverter = (converterType: string) => {
       // remove optional perks
       if (!settings.optional && perk.optional) return
 
+      debugger
       // remove perks with bungie description
       if (!settings.optional && editorDescription === inventoryItems[hash]?.displayProperties?.description) return
 
