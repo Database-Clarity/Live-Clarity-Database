@@ -27,7 +27,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: database # Folder you wish to deploy
-          branch: test
+          branch: live # Branch you wish to deploy to
           clean: true
           clean-exclude: README.md
           # target-folder: descriptions

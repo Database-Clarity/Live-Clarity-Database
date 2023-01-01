@@ -71,7 +71,7 @@ for (const key in converterSettings) {
    writeFileSync(`./database/descriptions/${key}.json`, customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames']))
 }
 
-const version = await persistentFetch('https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/test/versions.json', 3)
+const version = await persistentFetch('https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/live/versions.json', 3)
 const newVersion = {
    ...version,
    descriptions: (Number(version.descriptions) + 0.0001).toFixed(4)
