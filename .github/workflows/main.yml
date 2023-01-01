@@ -28,4 +28,6 @@ jobs:
         with:
           folder: database # Folder you wish to deploy
           branch: test
+          clean: true
+          clean-exclude: README.md
           # target-folder: descriptions
