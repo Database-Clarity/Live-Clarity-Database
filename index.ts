@@ -10,8 +10,8 @@ import {
    LivePerk,
    DescriptionData
 } from '@icemourne/description-converter'
-import { cleanObject } from '@icemourne/tool-box'
-import { database, inventoryItems } from './externalData.js'
+import { cleanObject, customJsonStringify } from '@icemourne/tool-box'
+import { database, inventoryItem } from './externalData.js'
 
 export const databaseConverter = (converterType: string) => {
    const settings = getSettings(converterType)
@@ -29,7 +29,7 @@ export const databaseConverter = (converterType: string) => {
 
       debugger
       // remove perks with bungie description
-      if (!settings.optional && editorDescription === inventoryItems[hash]?.displayProperties?.description) return
+      if (!settings.optional && editorDescription === inventoryItem[hash]?.displayProperties?.description) return
 
       const cleanPerk = getDataFromPerk(perk, settings.getFromPerk)
 
@@ -65,7 +65,7 @@ if (!existsSync('./descriptions')) {
 }
 
 for (const key in converterSettings) {
-   writeFileSync(`./descriptions/${key}.json`, JSON.stringify(databaseConverter(key), undefined, 1))
+   writeFileSync(`./descriptions/${key}.json`, customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames']))
 }
 
 console.log('Completed')
