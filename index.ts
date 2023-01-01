@@ -27,7 +27,6 @@ export const databaseConverter = (converterType: string) => {
       // remove optional perks
       if (!settings.optional && perk.optional) return
 
-      debugger
       // remove perks with bungie description
       if (!settings.optional && editorDescription === inventoryItem[hash]?.displayProperties?.description) return
 
