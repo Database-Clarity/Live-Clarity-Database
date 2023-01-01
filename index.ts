@@ -10,7 +10,7 @@ import {
    LivePerk,
    DescriptionData
 } from '@icemourne/description-converter'
-import { cleanObject, customJsonStringify } from '@icemourne/tool-box'
+import { cleanObject, customJsonStringify, persistentFetch } from '@icemourne/tool-box'
 import { database, inventoryItem } from './externalData.js'
 
 export const databaseConverter = (converterType: string) => {
@@ -60,12 +60,22 @@ export const databaseConverter = (converterType: string) => {
    return cleanObject(newDatabase)
 }
 
-if (!existsSync('./descriptions')) {
-   mkdirSync('./descriptions')
+if (!existsSync('./database')) {
+   mkdirSync('./database')
+}
+if (!existsSync('./database/descriptions')) {
+   mkdirSync('./database/descriptions')
 }
 
 for (const key in converterSettings) {
-   writeFileSync(`./descriptions/${key}.json`, customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames']))
+   writeFileSync(`./database/descriptions/${key}.json`, customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames']))
 }
+
+const version = await persistentFetch('https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/test/versions.json', 3)
+const newVersion = {
+   ...version,
+   descriptions: (Number(version.descriptions) + 0.0001).toFixed(4)
+}
+writeFileSync('./database/versions.json', JSON.stringify(newVersion, null, 1))
 
 console.log('Completed')
