@@ -15,13 +15,21 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+
       - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      - run: npm i
-      - run: npm run build
-      - run: npm run convert
+
+      - name: Install 🔧
+        run: |
+          npm ci
+          npm i @icemourne/tool-box @icemourne/description-converter
+
+      - name: Build 🛠️
+        run: |
+          npm run build
+          npm run convert
 
       - name: Generate data 🚀
         uses: JamesIves/github-pages-deploy-action@v4
@@ -30,4 +38,3 @@ jobs:
           branch: live # Branch you wish to deploy to
           clean: true
           clean-exclude: README.md
-          # target-folder: descriptions
