@@ -3,15 +3,11 @@
   "hash": 0,
   "name": "Default perk",
   "type": "none",
-  "lastUpload": 1674077373238,
+  "lastUpload": 1674178842458,
   "uploadedBy": "Mistwalker",
   "editor": {
    "en": {
     "main": "Images you can use in descriptions\n<arc/> <void/> <solar/>\n<primary/> <special/> <heavy/>\n<warlock/> <hunter/> <titan/>\nText coloring\n<blue text /> <green text /> <purple text /> <yellow text />\n<pvp text /> <pve text />\n\nThe same can be done to lines of text <green/>\n\nYou probably noticed having multiple spaces in the editor\n              doesn't mean it will be the same in description\n              you can change that with <breakSpaces/>\n\n// This is comment content after // will not appear in the description\n\n// ----------------------------------------------------------\n// weapon type explanation\n// they work like if else in programming\n\n// if auto rifle\n< weapon type ( AR ) >\n    Apply this text\n// else if glaive\n< ( Glaive ) >\n    Apply this text\n// else\n< ( other ) >\n    Apply this text to all weapons not specified in this block\n<$$>\n// also, you can preview how it would look on x weapon by selecting the weapon in the weapon popup under the weapons name\n// ----------------------------------------------------------\nIf there is something you want just ask\nThis is not everything you can do btw\n\nTo see the full list press CTRL + SPACE\nAlso, CTRL + F is a thing and can be used to find and replace\nAlso also editor has other stuff to see them press F1",
-    "secondary": ""
-   },
-   "zh-chs": {
-    "main": "new text.",
     "secondary": ""
    }
   },
@@ -24,10 +20,6 @@
     "en": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "zh-chs": {
-     "lastUpdate": 1674076400040,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -12722,10 +12714,10 @@
   "hash": "1048183818",
   "name": "Adaptive Munitions",
   "type": "Weapon Perk",
-  "uploadedBy": "Stardust",
-  "lastUpload": 1673876118970,
+  "uploadedBy": "Mistwalker",
+  "lastUpload": 1674178842458,
   "inLiveDatabase": true,
-  "uploadToLive": true,
+  "uploadToLive": false,
   "optional": false,
   "hidden": false,
   "updateTracker": {
@@ -12743,7 +12735,7 @@
      "updatedBy": "miniatimat"
     },
     "zh-chs": {
-     "lastUpdate": 1670249976410,
+     "lastUpdate": 1674178825836,
      "updatedBy": "Mistwalker"
     }
    }
@@ -12759,7 +12751,7 @@
    },
    "zh-chs": {
     "main": "当命中与武器元素不匹配的护盾，或屏障勇士护盾时：\n每次命中都会逐渐提升对护盾的伤害。\n\n< weapon type ( Fusion ) >\n每次命中提升 #e${29 * #d}%，最高 #e${435 * #d}%\n< ( AR, LMG, Pulse, Trace ) >\n每次命中提升 #e${33.3 * #d}%，最高 #e${500 * #d}%\n< ( LFR ) >\n每次命中提升 #e${150 * #d}%，最高 #e${450 * #d}%\n< ( Bow, Glaive, HC, Scout ) >\n每次命中提升 #e${166.6 * #d}%，最高 #e${500 * #d}%\n< ( other ) >\n每次命中提升 [?]%，最高 [?]%\n<$$>\n\n当命中与武器元素匹配的元素护盾，或没有护盾的敌人时，移除伤害增益。\n\nenhanced (\nvar d = 1.2\n#e 伤害增益提升 20%。\n)\n\n<title 额外信息 [weapon list] />\n\ntitle weapon list (\n< table wide >\n|c 武器类型         |c   每次命中伤害提升 |c   伤害提升最高值 <bold/>\n|  融合步枪         |c   #e${29 * #d}%             |c   #e${435 * #d}%          <background/>\n|  线性融合步枪     |c   #e${150 * #d}%            |c   #e${450 * #d}%\n|  自动步枪         |-4c #e${33.3 * #d}%           |-4c #e${500 * #d}%          <background/>\n|  脉冲步枪                                                                     <background/>\n|  追踪步枪                                                                     <background/>\n|  机枪                                                                         <background/>\n|  弓箭                 |-4c #e${166.6 * #d}%          |-4c #e${500 * #d}%\n|  偃月\n|  手炮\n|  斥候步枪\n<$>\n)",
-    "secondary": "当命中与武器元素不匹配的护盾，或屏障勇士护盾时：\n每次命中都会逐渐提升对护盾的伤害。\n\n当命中与武器元素匹配的元素护盾，或没有护盾的敌人时，移除伤害增益。\n\nenhanced (\nvar d = 1.2\n#e 伤害增益提升 20%。\n)\n\n每次命中提升 #e${29 * #d}%，最高 #e${435 * #d}% ：融合步枪\n\n每次命中提升 #e${33.3 * #d}%，最高 #e${500 * #d}%：\n自动步枪、脉冲步枪、追踪步枪、机枪\n\n每次命中提升 #e${150 * #d}%，最高 #e${450 * #d}%：线性融合步枪\n\n每次命中提升 #e${166.6 * #d}%，最高 #e${500 * #d}%：\n弓箭、偃月、手炮、斥候步枪"
+    "secondary": "当命中与武器元素不匹配的护盾，或屏障勇士护盾时：\n每次命中都会逐渐提升对护盾的伤害。\n\n当命中与武器元素匹配的元素护盾，或没有护盾的敌人时，移除伤害增益。\n\nenhanced (\nvar d = 1.2\n#e 伤害增益提升 20%。\n)\n\n融合步枪：每次命中提升 #e${29 * #d}%，最高 #e${435 * #d}% \n\n自动步枪、脉冲步枪、追踪步枪、机枪：每次命中提升 #e${33.3 * #d}%，最高 #e${500 * #d}%\n\n线性融合步枪：每次命中提升 #e${150 * #d}%，最高 #e${450 * #d}%\n\n弓箭、偃月、手炮、斥候步枪：每次命中提升 #e${166.6 * #d}%，最高 #e${500 * #d}%"
    }
   },
   "linkedWith": {
