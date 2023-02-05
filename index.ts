@@ -1,16 +1,18 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs'
-import _ from 'lodash'
+
 import {
+   DescriptionData,
+   Languages,
+   LivePerk,
    converterSettings,
    descriptionConverter,
    descriptionFilter,
    getDataFromPerk,
-   getSettings,
-   Languages,
-   LivePerk,
-   DescriptionData
+   getSettings
 } from '@icemourne/description-converter'
 import { cleanObject, customJsonStringify, persistentFetch } from '@icemourne/tool-box'
+import _ from 'lodash'
+
 import { database, inventoryItem } from './externalData.js'
 
 export const databaseConverter = (converterType: string) => {
@@ -19,16 +21,11 @@ export const databaseConverter = (converterType: string) => {
       // first 50 are reserved for internal use only
       if (Number(hash) < 50) return
 
-      const editorDescription = perk.editor.en?.main.trim()
-
+      const editorDescription = perk.editor.en?.main.trim() || ''
       // remove perks with out description
       if (editorDescription === '') return
-
-      // remove optional perks
-      if (!settings.optional && perk.optional) return
-
       // remove perks with bungie description
-      if (!settings.optional && editorDescription === inventoryItem[hash]?.displayProperties?.description) return
+      if (!settings.optional && editorDescription === inventoryItem?.[hash]?.displayProperties?.description) return
 
       const cleanPerk = getDataFromPerk(perk, settings.getFromPerk)
 
@@ -67,10 +64,16 @@ if (!existsSync('./database/descriptions')) {
 }
 
 for (const key in converterSettings) {
-   writeFileSync(`./database/descriptions/${key}.json`, customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames']))
+   writeFileSync(
+      `./database/descriptions/${key}.json`,
+      customJsonStringify(databaseConverter(key), ['stat', 'multiplier', 'weaponTypes', 'classNames'])
+   )
 }
 
-const version = await persistentFetch('https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/live/versions.json', 3)
+const version = await persistentFetch(
+   'https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/live/versions.json',
+   3
+)
 const newVersion = {
    ...version,
    descriptions: (Number(version.descriptions) + 0.0001).toFixed(4)

@@ -1,7 +1,10 @@
 import { readFileSync } from 'fs'
-import { fetchBungieManifest, InventoryItems } from '@icemourne/tool-box'
-import { Database } from '@icemourne/description-converter'
 
-export const database = JSON.parse(readFileSync('./liveDescriptions.json', 'utf8')) as Database
-const { inventoryItem } = await fetchBungieManifest(['inventoryItem']) as { inventoryItem: InventoryItems }
+import { Database } from '@icemourne/description-converter'
+import { fetchBungieManifest } from '@icemourne/tool-box'
+
+export const { perks: database }: { perks: Database['perks'] } = JSON.parse(
+   readFileSync('./liveDescriptions.json', 'utf8')
+)
+const { inventoryItem } = await fetchBungieManifest(['inventoryItem'])
 export { inventoryItem }
