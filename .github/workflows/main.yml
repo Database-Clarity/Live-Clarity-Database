@@ -27,9 +27,10 @@ jobs:
           npm i @icemourne/tool-box @icemourne/description-converter
 
       - name: Build 🛠️
-        run: |
-          npm run build
-          npm run convert
+        run: npm run build
+
+      - name: Convert 🛠️
+        run: npm run convert
 
       - name: Generate data 🚀
         uses: JamesIves/github-pages-deploy-action@v4
