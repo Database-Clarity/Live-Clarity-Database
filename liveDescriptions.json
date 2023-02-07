@@ -5519,8 +5519,8 @@
    "hash": 454085387,
    "name": "Blunt Execution Rounds",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675796266649,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -5530,7 +5530,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670081888287,
+      "lastUpdate": 1675796253509,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -5557,7 +5557,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and +100 Handling for 10 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\nenhanced (\n#e Buff duration is increased to 11 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44155,12 +44155,12 @@
    "hash": 3751912585,
    "name": "Cascade Point",
    "type": "Weapon Trait",
-   "lastUpload": 1675611212788,
-   "uploadedBy": "Icemourne",
+   "lastUpload": 1675796266649,
+   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Reduces Firing Delay for #e${2.5+#d} seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon.\n\nTimer starts upon readying. Buff can be stowed for 5 seconds.\n\nFiring Delay is reduced by 40% on SMGs and Machine Guns and by 30% on other archetypes.\n\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles 17 5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%\n\nenhanced (\nvar d = 0.25\n#e Buff duration is increased by 0.25 seconds.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
@@ -44170,8 +44170,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1675796157822,
+      "updatedBy": "Stardust"
      }
     }
    },
