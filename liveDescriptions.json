@@ -12819,8 +12819,8 @@
    "hash": 1048183818,
    "name": "Adaptive Munitions",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675792136611,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -12830,7 +12830,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1673876078767,
+      "lastUpdate": 1675792083687,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -12845,8 +12845,8 @@
    },
    "editor": {
     "en": {
-     "main": "Upon hitting a Non-Matching Shield or a Barrier Champion Shield:\nHits deal increasingly higher damage against Combatant Shields.\n\n< weapon type ( Fusion ) >\nFusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n< ( AR, LMG, Pulse, Trace ) >\nMachine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n< ( LFR ) >\nLinear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n< ( Bow, Glaive, HC, Scout ) >\nBows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n< ( other ) >\n[?]% per hit, up to [?]%\n<$$>\n\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%.\n)\n\n<title Additional information. [weapon list] />\n\ntitle weapon list (\n< table wide >\n|c Weapon Type         |c   Damage Increase Increment |c   Maximum Damage Increase <bold/>\n|  Fusion Rifle        |c   #e${29 * #d}%             |c   #e${435 * #d}%          <background/>\n|  Linear Fusion Rifle |c   #e${150 * #d}%            |c   #e${450 * #d}%\n|  Auto Rifle          |-4c #e${33.3 * #d}%           |-4c #e${500 * #d}%          <background/>\n|  Machine Gun                                                                     <background/>\n|  Pulse Rifles                                                                    <background/>\n|  Trace Rifle                                                                     <background/>\n|  Bow                 |-4c #e${166.6 * #d}%          |-4c #e${500 * #d}%\n|  Glaive\n|  Hand Cannon\n|  Scout Rifle\n<$>\n)",
-     "secondary": "Upon hitting a Non-Matching Shield or a Barrier Champion Shield:\nHits deal increasingly higher damage against Combatant Shields.\n\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%:\n)\n\nFusion Rifles: ${29 * #d}% per hit, up to ${435 * #d}%\n\nMachine Guns, Auto/Pulse/Trace Rifles: ${33.3 * #d}% per hit, up to ${500 * #d}%\n\nLinear Fusion Rifles: ${150 * #d}% per hit, up to ${450 * #d}%\n\nBows, Glaives, Hand Cannons, Scout Rifles: ${166.6 * #d}% per hit, up to ${500 * #d}%"
+     "main": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n< weapon type ( Fusion ) >\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n< ( AR, LMG, Pulse, Trace ) >\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n< ( LFR ) >\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n< ( Bow, Glaive, HC, Scout ) >\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n< ( other ) >\n• [?]% per hit, up to [?]%\n<$$>\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%.\n)\n\nHover for a <title breakdown by weapon archetype. [weapon list] />\n\ntitle weapon list (\n< table wide >\n|c Weapon Type         |c   Damage Increase Per Hit |c   Maximum Damage Increase <bold/>\n|  Fusion Rifle        |c   #e${29 * #d}%             |c   #e${435 * #d}%          <background/>\n|  Linear Fusion Rifle |c   #e${150 * #d}%            |c   #e${450 * #d}%\n|  Auto Rifle          |-4c #e${33.3 * #d}%           |-4c #e${500 * #d}%          <background/>\n|  Machine Gun                                                                     <background/>\n|  Pulse Rifles                                                                    <background/>\n|  Trace Rifle                                                                     <background/>\n|  Bow                 |-4c #e${166.6 * #d}%          |-4c #e${500 * #d}%\n|  Glaive\n|  Hand Cannon\n|  Scout Rifle\n<$>\n)",
+     "secondary": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%.\n)"
     },
     "es": {
      "main": "var d = 1\nvar e = empty\nLuego de impactar con un Escudo de otro elemento al arma, o la Barrera de un Campeon:\nLos proximos impactos aumentan en daño contra el escudo del enemigo.\n\nEl bufo se termina si se impacta contra un escudo con mismo elemento, o contra un enemigo sin escudo.\n\n< weapon type ( fusion rifle ) >\n#e${29 * #d}% por bala, hasta #e${435 * #d}%\n<$$>\n< weapon type ( auto rifle, machine gun, pulse rifle, trace rifle ) >\n#e${33.3 * #d}% por bala, hasta #e${500 * #d}%\n<$$>\n< weapon type ( linear fusion rifle ) >\n#e${150 * #d}% por bala, hasta #e${450 * #d}%\n<$$>\n< weapon type ( combat bow, glaive, hand cannon, scout rifle ) >\n#e${166.6 * #d}% por bala, hasta #e${500 * #d}%\n<$$>\n\n<title Dependiendo del tipo de arma [weapon list] />\n\ntitle weapon list (\n< table wide >\n| Tipo de Arma          |   Por bala       |   hasta           <bold/>\n| Fusil de Fusion        |   #e${29 * #d}%   |   #e${435 * #d}%  <background/>\n| Fusil de Fusion Lineal  |   #e${150 * #d}%  |   #e${450 * #d}% \n| Fusil Automatico           |-4 #e${33.3 * #d}% |-4 #e${500 * #d}%  <background/>\n| Ametralladora                                                 <background/> \n| Fusil de Pulsos                                                <background/>    \n| Fusil de Rastreo                                                  <background/> \n| Arco                  |-4 #e${166.6 * #d}% |-4 #e${500 * #d}%\n| Gujas\n| Cañon de Mano\n| Fusil de Explorador\n<$>\n)",
@@ -43184,7 +43184,7 @@
    "name": "Adagio",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675791327965,
+   "lastUpload": 1675792136611,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
