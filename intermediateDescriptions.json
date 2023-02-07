@@ -4,7 +4,7 @@
    "hash": 0,
    "name": "Default perk",
    "type": "none",
-   "lastUpload": 1675794369310,
+   "lastUpload": 1675796269114,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
@@ -3688,12 +3688,12 @@
    "hash": 331667533,
    "name": "Cascade Point",
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675794369310,
+   "lastUpload": 1675796269114,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3751912585",
+     "secondary": "import secondary from 3751912585"
     }
    },
    "updateTracker": {
@@ -3703,8 +3703,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1675796174037,
+      "updatedBy": "Stardust"
      }
     }
    },
@@ -5520,7 +5520,7 @@
    "name": "Blunt Execution Rounds",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675794369310,
+   "lastUpload": 1675796269114,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -5530,7 +5530,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675793582705,
+      "lastUpdate": 1675796253509,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -5557,7 +5557,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and 100 Handling for 10 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\nenhanced (\n#e Buff duration is increased to 11 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44155,12 +44155,12 @@
    "hash": 3751912585,
    "name": "Cascade Point",
    "type": "Weapon Trait",
-   "lastUpload": 1675794369310,
+   "lastUpload": 1675796269114,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon after scoring multiple Precision Hits within [4?] seconds of each with a different weapon or a kill with a different weapon:\nGrants reduced Fire Recovery Delay, increasing overall Rounds-Per-Minute for 2.5 seconds.\nTimer starts upon readying. Buff can be stowed for 5 seconds.\n\nRounds-Per-Minute Increase:\n0.7x Fire Recovery Delay: Machine Guns and Submachine Guns.\n0.6x Fire Recovery Delay: Anything else.\n\nPrecision Hits work on a Counter System, preparing Cascade Point upon reaching 100%.\nCounter System is exclusively Weapon Archetype based, disregarding Weapon Frames.\n\n50% Counter per Precision Hit: Bows, Linear Fusion Rifles, Shotguns, and Sniper Rifles.\n17.5% Counter per Precision Hit: Hand Cannons, Sidearms, and Scout Rifles.\n8% Counter per Precision Hit: Auto Rifles, Trace Rifles, Pulse Rifles, Submachine Guns, and Machine Guns. \n\n🡅Buff duration increased to 2.75 seconds.",
-     "secondary": ""
+     "main": "Reduces Firing Delay for #e${2.5+#d} seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon.\n\nTimer starts upon readying. Buff can be stowed for 5 seconds.\n\nFiring Delay is reduced by 40% on SMGs and Machine Guns and by 30% on other archetypes.\n\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles 17 5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%\n\nenhanced (\nvar d = 0.25\n#e Buff duration is increased by 0.25 seconds.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
@@ -44170,7 +44170,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675794355622,
+      "lastUpdate": 1675796157822,
       "updatedBy": "Stardust"
      }
     }
