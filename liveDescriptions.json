@@ -43183,8 +43183,8 @@
    "hash": 3673922083,
    "name": "Adagio",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675791327965,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43194,7 +43194,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670091713918,
+      "lastUpdate": 1675790282848,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -43238,8 +43238,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill for 7 seconds:\n< weapon type ( Shotgun, Bow ) >\n+20% Damage\n< ( other ) >\n+30% Damage\n<$$>\n-20% Rate of Fire/Charge Rate\n< weapon type ( Bow, Heavy GL, GL ) >\n// just to remove rage stat from weapons without range\n< ( other ) >\n+10 Range\n<$$>\n\n<title Hover for additional information. [damage] />\ntitle damage (\nBows and Shotguns only receive +20% Damage.\nEverithing else receives +30% Damage.\n\nBows and Grenade Launchers do not receive the +10 Range increase due to not having a Range stat. \n)\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)\n\n<formula Effective Range: [range_0] />",
-     "secondary": "On Weapon Kill for 7 seconds:\n+30% Damage\n-20% Rate of Fire/Charge Rate\n+10 Range\n\nBows and Shotguns only receive a 20% damage increase.\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)"
+     "main": "On Weapon Kill for 7 seconds:\n< weapon type ( Shotgun, Bow ) >\n• 20% Increased Damage\n< ( other ) >\n• 30% Increased Damage\n<$$>\n// divider line\n< weapon type ( Bow, Fusion, LFR ) >\n• 20% Longer Charge/Draw Time\n< ( other ) >\n• 20% Longer Firing Delay\n<$$>\n// divider line\n< weapon type ( Bow, Heavy GL, GL ) >\n// removes the range stat bonus from weapons without it\n< ( other ) >\n• 10 Range\n<$$>\n\n<title Hover for additional information. [damage] />\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle damage (\nBows and Shotguns only receive +20% Damage.\nEverithing else receives +30% Damage.\n\nBows and Grenade Launchers do not receive the +10 Range increase due to not having a Range stat. \n)",
+     "secondary": "On Weapon Kill for 7 seconds:\n• 30% Increased Damage\n• 20% Longer Firing Delay/Charge Time/Draw Time\n• 10 Range\n\nBows and Shotguns only receive a 20% damage increase.\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)"
     },
     "es": {
      "main": "Durante #e${7 + #t} segundos luego de una baja con el arma: \n< weapon type ( combat bow ) >\n< weapon type ( other ) >\n    +10 Alcance\n<$$>\n// separator for readabilty\n< weapon type ( combat bow, shotgun ) >\n    +20% Daño\n< weapon type ( other ) >\n    +30% Daño\n<$$>\n// separator for readabilty\n< weapon type ( hand cannon, scout rifle ) >\n    -15% <title Cadencialde Tiro  [ROF] />\n< weapon type ( fusion rifle, linear fusion rifle ) >\n    -15% <title Tiempo de Carga [ROF] />\n< weapon type ( other ) >\n    -20% <title Cadencia de Tiro [ROF] />\n<$$>\n<formula Alcance: [range_0] />\n\n<title Efectos por Tipo de Arma [weapon list] />\n\ntitle weapon list (\n< table wide background_2 > \n| Tipo de Arma              | Daño        | Cadencia/Carga <bold/>\n| Cañon de Mano         | <green 30% />  | <green -15% />\n| Fusil Explorador         | <green 30% />  | <green -15% />\n| Fusil Automatico         | <purple 30% /> | <purple -20% />\n| Pistola            | <purple 30% /> | <purple -20% />\n| Lanza Granadas    | <purple 30% /> | <purple -20% />\n| Fusil de Fusion Lineal | 30%            | -15%          \n| Fusil de Fusion        | <yellow 27% /> | <yellow -15% />\n| Arco                | <blue 20% />   | <blue -20% /> \n| Escopeta             | <blue 20% />   | <blue -20% />\n<$>\n)\n\ntitle ROF (\nLa Cadencia de Tiro tiende a cambiar hacia el proximo armazon mas lento.\n\nPor Ejemplo: Fusil automatico de Precision => Fusil automatico de Alto Impacto \n)\nenhanced (\nvar t = 1\n)",
