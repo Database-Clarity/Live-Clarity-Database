@@ -3688,12 +3688,12 @@
    "hash": 331667533,
    "name": "Cascade Point",
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675796770191,
+   "lastUpload": 1675797985412,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3751912585",
+     "secondary": "import secondary from 3751912585"
     }
    },
    "updateTracker": {
@@ -3703,8 +3703,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1675796673653,
+      "updatedBy": "Stardust"
      }
     }
    },
@@ -5520,7 +5520,7 @@
    "name": "Blunt Execution Rounds",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675796770191,
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -8186,8 +8186,8 @@
    "hash": 671806388,
    "name": "Compulsive Reloader",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -8197,7 +8197,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670082344047,
+      "lastUpdate": 1675797852175,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -8208,7 +8208,7 @@
    },
    "editor": {
     "en": {
-     "main": "While above 50% Magazine:\n+50 Reload Speed with a 0.95x Duration Multiplier.\n\nenhanced (\n#e Reload Speed bonus is increased to +55(?).\n)\n\n<formula Reload Time: [reload_0] />",
+     "main": "While above 50% Magazine Capacity:\n#e${50+#d} Reload Speed with a 0.95x Reload Duration Multiplier.\n\nenhanced (\nvar d = 5\n#e Reload Speed bonus is increased by 5.\n)\n\n<formula Reload Time: [reload_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -22547,12 +22547,12 @@
    "hash": 1782407750,
    "name": "Close to Melee",
    "type": "Weapon Trait",
-   "lastUpload": 1675611212788,
-   "uploadedBy": "Icemourne",
+   "lastUpload": 1675797985412,
+   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "30% Increased Glaive Melee Damage for #e${10+#d} seconds upon scoring a Glaive Projectile Kill.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds.\n\nPersists through stow.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
@@ -22562,8 +22562,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1675797527032,
+      "updatedBy": "Stardust"
      }
     }
    },
@@ -27762,12 +27762,12 @@
    "hash": 2241043034,
    "name": "Close to Melee",
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675611212788,
-   "uploadedBy": "Icemourne",
+   "lastUpload": 1675797985412,
+   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1782407750",
+     "secondary": "import secondary from 1782407750"
     }
    },
    "updateTracker": {
@@ -27777,8 +27777,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1675797539973,
+      "updatedBy": "Stardust"
      }
     }
    },
@@ -28457,8 +28457,8 @@
    "hash": 2284787283,
    "name": "Clown Cartridge",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -28468,7 +28468,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668687505962,
+      "lastUpdate": 1675797605900,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -28479,7 +28479,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload:\nRandomly grants 10% to 50% Increased Magazine Capacity.\nAlways rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
+     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading.\nAlways rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -29419,8 +29419,8 @@
    "hash": 2396489472,
    "name": "Chain Reaction",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -29430,7 +29430,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670082267337,
+      "lastUpdate": 1675797771728,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -29441,7 +29441,7 @@
    },
    "editor": {
     "en": {
-     "main": "Weapon Kills create an Elemental Explosion.\n\nenhanced (\n#e Passively grants +20 Ammo Capacity Stat (Swords) and +20 Inventory Size (Identical to 1 Reserves Mod).\n)",
+     "main": "On Weapon Kill:\nTriggers an elemental explosion matching the weapon's element that deals 56 damage over a 3 meter radius.\n\nDamage against PvE Combatants is multiplied by 1.5 and by Combatant Rank Modifiers.\n\nenhanced (\n#e Passively grants 20 Ammo Capacity (Swords) and 20 Inventory Size. (Identical to a Reserves Mod)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -35497,8 +35497,8 @@
    "hash": 2978966579,
    "name": "Chill Clip",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -35508,8 +35508,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668799691680,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1675797318455,
+      "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670501322665,
@@ -35519,7 +35519,7 @@
    },
    "editor": {
     "en": {
-     "main": "While above 50% Magazine:\nDirect Hits create a Stasis burst which applies 50 Slow for <pve 4 /> <pvp [1.5] /> seconds to enemies within [?] meters.\n\nOnly activates once per shot.\n(Wolfpack Rounds can activate is a second time)\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 8 /> <pvp [2] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While above 50% Magazine:\nDirect Hits create a Stasis burst which applies 50 Slow for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot. (Wolfpack Rounds are considered separate shots.)\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [2] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -36483,8 +36483,8 @@
    "hash": 3047969693,
    "name": "Desperado",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -36494,7 +36494,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670082639404,
+      "lastUpdate": 1675797967705,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -36505,7 +36505,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 6 seconds of a Precision Kill:\nDelay after shooting is reduced by 30%, increasing Rate of Fire for 6 seconds.\nBuff can be refreshed.\n\nenhanced (\n#e Duration increased to 7 seconds.\n)",
+     "main": "Upon finishing a reload within 6 seconds of a Precision Kill:\nFiring Delay is reduced by 30%, increasing Rate of Fire for 6 seconds.\nBuff can be refreshed.\n\nenhanced (\n#e Duration increased to 7 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -42793,8 +42793,8 @@
    "hash": 3650930298,
    "name": "Cold Steel",
    "type": "Weapon Trait",
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1675611212788,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1675797985412,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -42804,7 +42804,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670082315198,
+      "lastUpdate": 1675797786260,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -42815,7 +42815,7 @@
    },
    "editor": {
     "en": {
-     "main": "Powered Sword Hits apply Slow for <pve 4.25 /> <pvp [1.5] /> seconds.\n\nLight Attacks apply 40 Slow.\nHeavy Attacks apply 60 Slow.\n\nenhanced (\n#e Passively grants +10 Ammo Capacity (Swords) and +10 Magazine Stat (Identical to Tactical Mag).\n)",
+     "main": "Powered Sword Hits apply Slow for <pve 4.25 /> <pvp [1.5] /> seconds.\n\nLight Attacks apply 40 Slow.\nHeavy Attacks apply 60 Slow.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity (Swords) and 10 Magazine Stat. (Identical to Tactical Mag)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44155,7 +44155,7 @@
    "hash": 3751912585,
    "name": "Cascade Point",
    "type": "Weapon Trait",
-   "lastUpload": 1675796770191,
+   "lastUpload": 1675797985412,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
