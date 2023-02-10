@@ -402,7 +402,7 @@
    "name": "Adrenaline Junkie",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -412,7 +412,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670080978513,
+      "lastUpdate": 1676055499086,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -443,8 +443,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Increase for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\n< table >\n|  Stacks          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Damage Increase | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
-     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)"
+     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Increase for #e${4.5+#d} seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant all 5 Stacks.\n\n< table >\n|  Stacks          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Damage Increase | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for #e${4.5+#d} seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant all 5 Stacks.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)"
     },
     "es": {
      "main": "Bajas con el arma o una granada otorgan:\n20 Manejo y Aumento de Daño acumulable, durante 4.5 segundos\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\n< table >\n|  Indicador          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Aumento de Daño | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\n<formula Velocidad de Desenfundado: [ready_0] />\n<formula Velocidad de Enfundado: [stow_0] />\n\nAumentado: La duracion del bufo aumenta a 5 segundos",
@@ -762,7 +762,7 @@
    "name": "Dual Loader",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -2565,7 +2565,7 @@
    "name": "Archer's Tempo",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -3294,7 +3294,7 @@
    "name": "Firmly Planted",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -3304,7 +3304,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668689327833,
+      "lastUpdate": 1676059822267,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -3343,7 +3343,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Crouched:\n30 Handling, 20 Stability, -40% Accuracy Cone Size, -17% <title Accuracy Cone Growth [G_conegrowth] />, -80% Recoil Yaw (Horizontal Recoil)\n\nEffects are halved on Fusion Rifles.\n\nenhanced (\n#e Grants an additional +5 Handling and +5 Stability. (Fusion Rifles only receive +3)\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "While Crouched:\n• #e${30+#d} Handling and #e${20+#d} Stability\n• -40% Accuracy Cone Size\n• -17% <title Accuracy Cone Growth [G_conegrowth] />\n• -80% Horizontal Recoil\n\nEffects are halved on Fusion Rifles.\n\nenhanced (\nvar d = 5\n#e Grants 5 more Handling and Stability.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -3826,7 +3826,7 @@
    "name": "Assassin's Blade",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -8528,7 +8528,7 @@
    "name": "Eye of the Storm",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -8538,7 +8538,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670083802757,
+      "lastUpdate": 1676055167624,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -8558,7 +8558,7 @@
    },
    "editor": {
     "en": {
-     "main": "While below 156 HP:\nUp to 30 Handling, -40% Accuracy Cone Size, and -17% <title Accuracy Cone Growth [G_conegrowth] />.\n\nEffect increases linearly as Health decreases. Maximized strength at Critical Health.\n\n<formula Ready Speed at Critical Health: [ready_0] />\n<formula Stow Speed at Critical Health: [stow_0] />\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Linearly grants up to 30 Handling, -40% Accuracy Cone Size, and -17% <title Accuracy Cone Growth [G_conegrowth] /> as health decreases below 156 HP.\n\nEffect reaches maximum strength at Critical Health.\n\n<formula Ready Speed at Critical Health: [ready_0] />\n<formula Stow Speed at Critical Health: [stow_0] />\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -12785,7 +12785,7 @@
    "name": "Full Choke",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -14405,7 +14405,7 @@
    "name": "Encore",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -16471,7 +16471,7 @@
    "name": "Fourth Time's the Charm",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -16481,7 +16481,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668689392005,
+      "lastUpdate": 1676060224066,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -16492,7 +16492,7 @@
    },
    "editor": {
     "en": {
-     "main": "Scoring 4 Precision Hits generates 2 Ammo to Magazine.\nPrecision Hit counter is reset if no precision hits are scored within 2 seconds.\n\nenhanced (\n#e Timer between Precision Hits increased to 3 seconds.\n)",
+     "main": "Scoring 4 Precision Hits refunds 2 Ammo to Magazine.\n\nPrecision Hit counter is reset if no precision hits are scored within #e${2+#d} seconds.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -16560,7 +16560,7 @@
    "name": "Dynamic Sway Reduction",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -21003,7 +21003,7 @@
    "name": "Disruption Break",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -21094,7 +21094,7 @@
    "name": "En Garde",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -22442,7 +22442,7 @@
    "name": "Firing Line",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -22452,7 +22452,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670084000086,
+      "lastUpdate": 1676059623952,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -22472,7 +22472,7 @@
    },
    "editor": {
     "en": {
-     "main": "While within X meters of 2+ Allies:\n20% Increased Precision Damage\n\nenhanced (\n#e Grants +10 Handling while the perk is active.\n)",
+     "main": "While within [?] meters of 2 Allies:\n20% Increased Precision Damage\n\nenhanced (\n#e Grants 10 Handling while the perk is active.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -24530,7 +24530,7 @@
    "name": "Armor-Piercing Rounds",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -25018,7 +25018,7 @@
    "name": "Ambitious Assassin",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -25225,7 +25225,7 @@
    "name": "Energy Transfer",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -25583,7 +25583,7 @@
    "name": "Eager Edge",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -27790,7 +27790,7 @@
    "name": "Flash Counter",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -27800,7 +27800,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670084093720,
+      "lastUpdate": 1676059874388,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -27811,7 +27811,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon Blocking a Melee Attack within 0.5 seconds of starting to Block:\nSuppresses and weakens the enemy, making the enemy receive 20% increased damage for 4 seconds.\n\nenhanced (\n#e Passively grants <title +10 Ammo Capacity [tac] />.\n)\n\ntitle tac (\nThe equivalent of Tactical Mag.\n)",
+     "main": "Upon Blocking a Melee Attack within 0.5 seconds of starting to Block:\nSuppresses and weakens the enemy, making them receive 20% increased damage for 4 seconds.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -29917,7 +29917,7 @@
    "name": "Fragile Focus",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -29927,7 +29927,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668689459076,
+      "lastUpdate": 1676060488157,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -29947,7 +29947,7 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants +20 Range.\nReceiving any incoming damage disables the perk for 5 seconds.\n\nenhanced (\n#e Timer after receiving damage is reduced to 4 seconds.\n)\n\n<formula Effective Range: [range_0] />",
+     "main": "Passively grants 20 Range.\n\nReceiving any incoming damage disables the perk for #e${5-#d} seconds.\n\nenhanced (\nvar d = 1\n#e Reactivates 1 second sooner after taking damage.\n)\n\n<formula Effective Range: [range_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -31451,7 +31451,7 @@
    "name": "Ensemble",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -33344,7 +33344,7 @@
    "name": "Feeding Frenzy",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -33354,7 +33354,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688956144,
+      "lastUpdate": 1676059565233,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -33375,8 +33375,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill: Increased Reload Speed.\n\n< table >\n| Stacks | Reload Stat | <title RDS [rds] /> | Reload Time <bold/>\n| 1x     | 10          | 1x                  | <formula [reload_0] /> <background/>\n| 2x     | 45          | 0.9x                | <formula [reload_1] />\n| 3x     | 55          | 0.875x              | <formula [reload_2] /> <background/>\n| 4x     | 70          | 0.85x               | <formula [reload_3] />\n| 5x     | 100         | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\nLasts 3.5 seconds. Max of 5 Stacks.\n\nenhanced (\n#e Stronger Effect.\n)\n\ntitle rds (\nReload Duration Scalar: Multiplies reload animation duration by that number.\n)",
-     "secondary": "On Weapon Kill:\nGrants Increased Reload Speed for 3.5 seconds, up to a maximum of 5 stacks.\n\n10 | 45 | 55 | 70 | 100 Reload Speed.\n- | 0.9x | 0.875x | 0.85x | 0.8x Reload Duration Multiplier.\n\nenhanced (\n#e Stronger Effect.\n)"
+     "main": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\n\n< table >\n| Stacks | Reload Stat | <title RDS [rds] /> | Reload Time <bold/>\n| 1x     | 10          | 1x                  | <formula [reload_0] /> <background/>\n| 2x     | 45          | 0.9x                | <formula [reload_1] />\n| 3x     | 55          | 0.875x              | <formula [reload_2] /> <background/>\n| 4x     | 70          | 0.85x               | <formula [reload_3] />\n| 5x     | 100         | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\nenhanced (\n#e Stronger Effect.\n)\n\ntitle rds (\nReload Duration Scalar: Multiplies reload animation duration by that number.\n)",
+     "secondary": "On Weapon Kill, for 3.5 seconds:\nGrants Increased Reload Speed per stack. Maximum of 5 stacks.\n\nBonuses at 1|2|3|4|5 Stacks:\n10 | 45 | 55 | 70 | 100 Reload Speed Stat.\n1x | 0.9x | 0.875x | 0.85x | 0.8x Reload Duration Multiplier.\n\nenhanced (\n#e Stronger Effect.\n)"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n提高装填速度。\n\n< table >\n| 叠加层数 | 装填速度增加 | 填装<title 动画系数 [G_as] /> | 装填时间 <bold/>\n| 1x     | 10          | 1x                  | <formula [reload_0] /> <background/>\n| 2x     | 45          | 0.9x                | <formula [reload_1] />\n| 3x     | 55          | 0.875x              | <formula [reload_2] /> <background/>\n| 4x     | 70          | 0.85x               | <formula [reload_3] />\n| 5x     | 100         | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\n持续 3.5 秒，最高叠加 5 层。\n\nenhanced (\n#e 更显著的效果。\n)\n",
@@ -34234,7 +34234,7 @@
    "name": "Dragonfly",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -34435,7 +34435,7 @@
    "name": "Field Prep",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -34445,7 +34445,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668689019646,
+      "lastUpdate": 1676059099366,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -34473,7 +34473,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Crouched:\n+50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier.\n\nPassively grants increased Ammo Reserves.\n\n<formula Reload Time: [reload_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />\n\nenhanced (\n#e Stronger effect. Greatly increased Ammo Reserves.\n)",
+     "main": "While Crouched:\n+50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier.\n\nPassively grants #e${30+#d} Inventory Size Stat.\n\nenhanced (\nvar d = 10\n#e Stronger effect. Grants 10 More Inventory Size Stat passively.\n)\n\n<formula Reload Time: [reload_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -34790,7 +34790,7 @@
    "name": "Focused Fury",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -34800,7 +34800,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670084151557,
+      "lastUpdate": 1676060148020,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -34820,7 +34820,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for 11 seconds.\n\nCan be refreshed by scoring enough precision hits.\n\nStowing or reloading will reset the precision counter. Buff persists through stow if active.\n\nenhanced (\n#e Buff Duration is increased to 12 seconds.\n)",
+     "main": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for #e${11+#d} seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or reloading resets the precision counter but the buff persists through stowing if active.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -36395,7 +36395,7 @@
    "name": "Explosive Payload",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -37995,7 +37995,7 @@
    "name": "Explosive Light",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -39184,7 +39184,7 @@
    "name": "Spike Grenades",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -39939,7 +39939,7 @@
    "name": "Explosive Head",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -41275,7 +41275,7 @@
    "name": "Elemental Capacitor",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43184,7 +43184,7 @@
    "name": "Adagio",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43578,7 +43578,7 @@
    "name": "Duelist's Trance",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43823,7 +43823,7 @@
    "name": "Air Assault",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -44155,7 +44155,7 @@
    "hash": 3751912585,
    "name": "Cascade Point",
    "type": "Weapon Trait",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
@@ -44879,7 +44879,7 @@
    "name": "Firefly",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -44889,7 +44889,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668697608635,
+      "lastUpdate": 1676059399795,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44909,7 +44909,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Precision Kill:\nTarget explodes, dealing 80 Solar Damage in a 3 meter radius, and grants +50 Reload Speed for 6 seconds.\n\nDamage against Combatants is multiplied by 1.3x, then multiplied again by Combatant Rank Modifiers.\n\nenhanced (\n#e Reload Speed buff is increased.\n)\n\n<formula Reload Time: [reload_0] />",
+     "main": "On Precision Kill:\n• Target explodes, dealing 80 Solar Damage in a 4 meter radius. \n• Grants 50 Reload Speed for 6 seconds.\n\nDamage against Combatants is multiplied by 1.3 and by Combatant Rank Modifiers.\n\nenhanced (\n#e Reload Speed buff is increased.\n)\n\n<formula Reload Time: [reload_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -49342,7 +49342,7 @@
    "name": "Bottomless Grief",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1676055058654,
+   "lastUpload": 1676060577669,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
