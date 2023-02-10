@@ -402,7 +402,7 @@
    "name": "Adrenaline Junkie",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -412,7 +412,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670080978513,
+      "lastUpdate": 1676049583283,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -443,8 +443,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Increase for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\n< table >\n|  Stacks          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Damage Increase | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
-     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)"
+     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Increase for #e${4.5+#d} seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\n< table >\n|  Stacks          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Damage Increase | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for #e${4.5+#d} seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)"
     },
     "es": {
      "main": "Bajas con el arma o una granada otorgan:\n20 Manejo y Aumento de Daño acumulable, durante 4.5 segundos\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\n< table >\n|  Indicador          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Aumento de Daño | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\n<formula Velocidad de Desenfundado: [ready_0] />\n<formula Velocidad de Enfundado: [stow_0] />\n\nAumentado: La duracion del bufo aumenta a 5 segundos",
@@ -2565,7 +2565,7 @@
    "name": "Archer's Tempo",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -2575,7 +2575,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670081457268,
+      "lastUpdate": 1676049641700,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -2590,7 +2590,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Precision Hit:\n0.75x Draw Time Multiplier for 3 seconds.\n\nenhanced (\n#e Buff duration is increased to 4 seconds.\n)",
+     "main": "On Precision Hit:\n0.75x Draw Time Multiplier for #e${3+#d} seconds.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -3826,7 +3826,7 @@
    "name": "Assassin's Blade",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -3836,7 +3836,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675793164853,
+      "lastUpdate": 1676049722999,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -3860,7 +3860,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds.\n\nKills refresh the timer. Remains active even if stowed.\n\nenhanced (\n#e Buff duration is increased.\n)",
+     "main": "On Weapon Kill:\n15% Increased damage and sets Forward Movement Speed to 9 metres per second for ${5+#d} seconds. //add #e once the duration increase is known\n\nKills refresh the timer. Remains active even if stowed.\n\nenhanced (\nvar d = 0 //enhanced benefit placeholder\n#e Buff duration is increased.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -5520,7 +5520,7 @@
    "name": "Blunt Execution Rounds",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -12785,7 +12785,7 @@
    "name": "Full Choke",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -12795,8 +12795,8 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1665008940316,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1676048826093,
+      "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670266719099,
@@ -12806,7 +12806,7 @@
    },
    "editor": {
     "en": {
-     "main": "While aiming-down-sights:\nDecreases Shotgun Pellet Spread by 3.75%\nReduces Precision Damage Multiplier by [?]%",
+     "main": "While aiming-down-sights:\n• Decreases Shotgun Pellet Spread by 3.75%\n• Reduces Precision Damage by 7.6%.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -15290,7 +15290,7 @@
    "name": "Celerity",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -24530,7 +24530,7 @@
    "name": "Armor-Piercing Rounds",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -24540,7 +24540,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668024748124,
+      "lastUpdate": 1676048742681,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -24564,7 +24564,7 @@
    },
    "editor": {
     "en": {
-     "main": "5% Increased damage against Combatant Shields.\n\nBullets are able to overpenetrate enemies once.",
+     "main": "5% Increased Damage against PvE Combatant Shields.\n\nBullets are able to overpenetrate enemies once.",
      "secondary": "import self"
     },
     "es": {
@@ -25018,7 +25018,7 @@
    "name": "Ambitious Assassin",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -25028,7 +25028,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675793092809,
+      "lastUpdate": 1676049618912,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -25043,7 +25043,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants +5 Reload Speed. Timer between kills is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Timer between kills is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -30699,7 +30699,7 @@
    "name": "Blunt Execution Rounds",
    "type": "Weapon Trait Enhanced",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -30808,7 +30808,7 @@
    "name": "Box Breathing",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -37995,7 +37995,7 @@
    "name": "Explosive Light",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -38005,7 +38005,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670083590282,
+      "lastUpdate": 1676048616952,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38016,7 +38016,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants 1 Stack of Explosive Light per Orb of Power Pickup, granting increased damage and +100 Blast Radius.\n\nMaximum of 6 Stacks. Consumes 1 Stack per Shot.\n\nGrenade Launchers: 65% to 84% Increased explosive damage. Increases overall damage by 52%.\n\nRocket Launchers: 25% Increased impact and explosive damage.\n\nenhanced (\n#e Passively grants +5 Velocity. Maximum Explosive Light Stacks is increased to 7.\n)",
+     "main": "Grants 1 Stack of Explosive Light per Orb of Power Pickup, granting increased damage and +100 Blast Radius.\n\nMaximum of 6 Stacks. Consumes 1 Stack per Shot.\n\nGrenade Launchers: 65% to 84% Increased explosive damage. Increases overall damage by 52%.\n\nRocket Launchers: 25% Increased impact and explosive damage.\n\nenhanced (\n#e Passively grants 5 Velocity. Maximum number Explosive Light Stacks is increased to 7.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -39184,7 +39184,7 @@
    "name": "Spike Grenades",
    "type": "Weapon Perk",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -39194,7 +39194,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670088869131,
+      "lastUpdate": 1676049031378,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -39205,8 +39205,8 @@
    },
    "editor": {
     "en": {
-     "main": "export definition (\nIncreases Grenade Impact Damage by 50%.\n\nDue to the ratio of Exlosive and Impact Damage being tied to the Blast Radius Stat on Grenade Launchers, a lower Blast Radius will provide a higher overall damage increase.\n)\n\n<title Hover for more details. [SpikeNades] />\n\ntitle SpikeNades (\nBreech-Loaded Grenade Launchers:\n • 0 Blast Radius: 50% Impact | 50% Explosive, overall 25% increased damage\n • 100 Blast Radius: 25% Impact | 75% Explosive, overall 12.5% increased damage.\n\nDrum-Loaded Grenade Launchers:\n • 0 Blast Radius: 30% Impact | 70% Explosive, overall 15% increased damage\n • 100 Blast Radius: 12.5% Impact | 87.5% Explosive, overall 6.25% increased damage.\n)",
-     "secondary": "import definition from 3301904089\n\nBreech-Loaded GLs:\n • 25%-12.5% overall damage increase\n\nDrum-Loaded GLs:\n • 15%-6.25% overall damage increase"
+     "main": "export definition (\nIncreases Grenade Impact Damage by 50%.\n\nDue to the ratio of Exlosive and Impact Damage being tied to the Blast Radius Stat on Grenade Launchers, a lower Blast Radius Stat will provide a higher overall damage increase.\n)\n\n<title Hover for more details. [SpikeNades] />\n\ntitle SpikeNades (\nBreech-Loaded Grenade Launchers:\n • 0 Blast Radius: 50% Impact | 50% Explosive, overall 25% increased damage\n • 100 Blast Radius: 25% Impact | 75% Explosive, overall 12.5% increased damage.\n\nDrum-Loaded Grenade Launchers:\n • 0 Blast Radius: 30% Impact | 70% Explosive, overall 15% increased damage\n • 100 Blast Radius: 15% Impact | 85% Explosive, overall 7.5% increased damage.\n)",
+     "secondary": "import definition from 3301904089\n\nBreech-Loaded GLs:\n • 25%-12.5% overall damage increase*\nDrum-Loaded GLs:\n • 15%-7.5% overall damage increase*\n\n *Depending on the Blast Radius Stat."
     },
     "zh-chs": {
      "main": "export definition (\n+50% 榴弹直击伤害。\n\n因爆炸伤害和直击伤害的比例和榴弹发射器“爆炸范围”属性相关，故尖刺榴弹起作用时，更低的爆炸范围可造成更高的总伤害。\n)\n\n<title 鼠标移动至此处查看细节 [SpikeNades] />\n\ntitle SpikeNades (\n单发榴弹发射器：\n • 0 爆炸范围： 50% 直击 | 50% 爆炸，换算后实际 +25% 总伤害\n • 100 爆炸范围： 25% 直击 | 75% 爆炸，换算后实际 +12.5% 总伤害\n\n重型榴弹发射器：\n • 0 爆炸范围： 30% 直击 | 70% 爆炸，换算后实际 +15% 总伤害\n • 100 爆炸范围： 12.5% 直击 | 87.5% 爆炸，换算后实际 +6.25% 总伤害\n)",
@@ -41275,7 +41275,7 @@
    "name": "Elemental Capacitor",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -41285,7 +41285,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670083022801,
+      "lastUpdate": 1676048465917,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41296,8 +41296,8 @@
    },
    "editor": {
     "en": {
-     "main": "Grants different Stat Bonuses based on your selected Subclass.\n\n<solar/> #e+${50 + #d} Reload Speed\n<arc/> #e+${50 + #d} Handling\n<void/> #e+${20 + #d} Stability\n<stasis/> #e+${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Adds an additional +5 to the corresponding Subclass Stat Bonus.\n)",
-     "secondary": "Grants Stat Bonuses depending on your selected Subclass.\n\nSolar: #e+${50 + #d} Reload Speed\nArc: #e+${50 + #d} Handling\nVoid: #e+${20 + #d} Stability\nStasis: #e+${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Adds an additional +5 to the corresponding Subclass Stat Bonus.\n)"
+     "main": "Grants different Stat Bonuses based on your selected Subclass.\n\n<solar/> #e${50 + #d} Reload Speed\n<arc/> #e${50 + #d} Handling\n<void/> #e${20 + #d} Stability\n<stasis/> #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Adds an additional 5 to the corresponding Subclass Stat Bonus.\n)",
+     "secondary": "Grants Stat Bonuses depending on your selected Subclass.\n\nSolar: #e${50 + #d} Reload Speed\nArc: #e${50 + #d} Handling\nVoid: #e${20 + #d} Stability\nStasis: #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Adds an additional 5 to the corresponding Subclass Stat Bonus.\n)"
     },
     "zh-chs": {
      "main": "根据当前的分支职业增加属性：\n\n<solar/> #e+${50 + #d} 填装速度\n<arc/> #e+${50 + #d} 操控性\n<void/> #e+${20 + #d} 稳定性\n<stasis/> #e+${20 + #d} 后座方向，降低 5% 瞄准时移动速度惩罚\n\nenhanced (\nvar d = 5\n#e 相应属性额外 +5。\n)",
@@ -43184,7 +43184,7 @@
    "name": "Adagio",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43194,7 +43194,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675790282848,
+      "lastUpdate": 1676049529257,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -43238,8 +43238,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill for 7 seconds:\n< weapon type ( Shotgun, Bow ) >\n• 20% Increased Damage\n< ( other ) >\n• 30% Increased Damage\n<$$>\n// divider line\n< weapon type ( Bow, Fusion, LFR ) >\n• 20% Longer Charge/Draw Time\n< ( other ) >\n• 20% Longer Firing Delay\n<$$>\n// divider line\n< weapon type ( Bow, Heavy GL, GL ) >\n// removes the range stat bonus from weapons without it\n< ( other ) >\n• 10 Range\n<$$>\n\n<title Hover for additional information. [damage] />\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle damage (\nBows and Shotguns only receive +20% Damage.\nEverithing else receives +30% Damage.\n\nBows and Grenade Launchers do not receive the +10 Range increase due to not having a Range stat. \n)",
-     "secondary": "On Weapon Kill for 7 seconds:\n• 30% Increased Damage\n• 20% Longer Firing Delay/Charge Time/Draw Time\n• 10 Range\n\nBows and Shotguns only receive a 20% damage increase.\n\nenhanced (\n#e Buff duration is increased to 8 seconds.\n)"
+     "main": "On Weapon Kill for #e${7+#d} seconds:\n< weapon type ( Shotgun, Bow ) >\n• 20% Increased Damage\n< ( other ) >\n• 30% Increased Damage\n<$$>\n< weapon type ( Bow, Fusion, LFR ) > // Differentiation between Draw/Charge Time and Firing Delay\n• 20% Longer Charge/Draw Time\n< ( other ) >\n• 20% Longer Firing Delay\n<$$>\n< weapon type ( Bow, Heavy GL, GL ) > // Removes the Range stat bonus from weapons without it\n< ( other ) >\n• 10 Range\n<$$>\n<title Hover for additional information. [damage] />\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle damage (\nBows and Shotguns only receive a 20% Damage Increase. Everything else receives the full 30%.\n\nBows and Grenade Launchers do not receive the 10 Range increase due to not having a Range stat. \n)",
+     "secondary": "On Weapon Kill for #e${7+#d} seconds:\n• 30% Increased Damage\n• 20% Longer Firing Delay/Charge Time/Draw Time\n• 10 Range\n\nBows and Shotguns only receive a 20% Damage Increase.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)"
     },
     "es": {
      "main": "Durante #e${7 + #t} segundos luego de una baja con el arma: \n< weapon type ( combat bow ) >\n< weapon type ( other ) >\n    +10 Alcance\n<$$>\n// separator for readabilty\n< weapon type ( combat bow, shotgun ) >\n    +20% Daño\n< weapon type ( other ) >\n    +30% Daño\n<$$>\n// separator for readabilty\n< weapon type ( hand cannon, scout rifle ) >\n    -15% <title Cadencialde Tiro  [ROF] />\n< weapon type ( fusion rifle, linear fusion rifle ) >\n    -15% <title Tiempo de Carga [ROF] />\n< weapon type ( other ) >\n    -20% <title Cadencia de Tiro [ROF] />\n<$$>\n<formula Alcance: [range_0] />\n\n<title Efectos por Tipo de Arma [weapon list] />\n\ntitle weapon list (\n< table wide background_2 > \n| Tipo de Arma              | Daño        | Cadencia/Carga <bold/>\n| Cañon de Mano         | <green 30% />  | <green -15% />\n| Fusil Explorador         | <green 30% />  | <green -15% />\n| Fusil Automatico         | <purple 30% /> | <purple -20% />\n| Pistola            | <purple 30% /> | <purple -20% />\n| Lanza Granadas    | <purple 30% /> | <purple -20% />\n| Fusil de Fusion Lineal | 30%            | -15%          \n| Fusil de Fusion        | <yellow 27% /> | <yellow -15% />\n| Arco                | <blue 20% />   | <blue -20% /> \n| Escopeta             | <blue 20% />   | <blue -20% />\n<$>\n)\n\ntitle ROF (\nLa Cadencia de Tiro tiende a cambiar hacia el proximo armazon mas lento.\n\nPor Ejemplo: Fusil automatico de Precision => Fusil automatico de Alto Impacto \n)\nenhanced (\nvar t = 1\n)",
@@ -43823,7 +43823,7 @@
    "name": "Air Assault",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43833,7 +43833,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675792609243,
+      "lastUpdate": 1676049602117,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -43848,7 +43848,7 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants #e${10+#d} Airborne Effectiveness.\n\nGrants #e${30+#f} Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks. \n\nGrounded Weapon Kills grant 1 Stack while airborne kills grant the full 2 sStacks.\n\nenhanced (\nvar d = 2\nvar f = 5\n#e Grants 2 more Airborne Effectiveness passively and 5(?) more per Stack.\n)",
+     "main": "Passively grants #e${10+#d} Airborne Effectiveness.\n\nGrants #e${30+#f} Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks. \n\nGrounded Weapon Kills grant 1 Stack while airborne kills grant the full 2 sStacks.\n\nenhanced (\nvar d = 2\nvar f = 5\n#e Grants 2 more Airborne Effectiveness passively and 5 more per Stack.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -44155,12 +44155,12 @@
    "hash": 3751912585,
    "name": "Cascade Point",
    "type": "Weapon Trait",
-   "lastUpload": 1675810042572,
+   "lastUpload": 1676049891605,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
      "main": "Reduces Firing Delay for #e${2.5+#d} seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon.\n\nTimer starts upon readying. Buff can be stowed for 5 seconds.\n\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\n\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles: 17.5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%\n\nenhanced (\nvar d = 0.25\n#e Buff duration is increased by 0.25 seconds.\n)",
-     "secondary": ""
+     "secondary": "import self"
     }
    },
    "updateTracker": {
@@ -44170,7 +44170,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675810024354,
+      "lastUpdate": 1676049220240,
       "updatedBy": "Stardust"
      }
     }
@@ -49342,7 +49342,7 @@
    "name": "Bottomless Grief",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676049891605,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -49352,7 +49352,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675793791647,
+      "lastUpdate": 1676049825480,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -49363,7 +49363,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Last Guardian Standing:\nKills <title refill [G_refill] /> the magazine.\n\nPassively grants <title 30 Magazine stat [equivalent] />.\n\ntitle equivalent (\nThe equivalent of Extended Mag.\n)",
+     "main": "While Last Guardian Standing:\nKills <title refill [G_refill] /> the magazine.\n\nPassively grants <title 30 Magazine stat [equivalent] />.\n\ntitle equivalent (\nIdentical to Extended Mag.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
