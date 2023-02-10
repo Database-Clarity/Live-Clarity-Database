@@ -762,7 +762,7 @@
    "name": "Dual Loader",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -772,7 +772,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688207069,
+      "lastUpdate": 1676051849842,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -783,7 +783,7 @@
    },
    "editor": {
     "en": {
-     "main": "Loads 2 Ammo at a time.\nReduces Reload Speed by 35.\n\nenhanced (\n#e Loads 3 Ammo instead of 2.\n)",
+     "main": "Loads #e${2+#d} Ammo at a time.\nReduces Reload Speed by 35.\n\nenhanced (\nvar d = 1\n#e Loads 1 more Ammo at a time.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -16560,7 +16560,7 @@
    "name": "Dynamic Sway Reduction",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -16570,7 +16570,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688258715,
+      "lastUpdate": 1676052645755,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -16590,7 +16590,7 @@
    },
    "editor": {
     "en": {
-     "main": "While holding down the trigger:\nEvery successive shot grants -10% Accuracy Cone Size and +1 Stability, up to -100% Accuracy Cone Size and +10 Stability after firing 10 shots.\n\nEffect at maximum strength removes all spread.\n\nenhanced (\n#e Effect reaches maximum strength after 8 shots.\n)",
+     "main": "Each shot grants #e${-5*#d}% Accuracy Cone Size, #e${-10*#d}% Accuracy Cone Growth, and #e${1*#d} Stability while holding down the trigger.\n\nReaches maximum strength after #e${10/#d} shots.\n\nenhanced (\nvar d = 1.25\n#e Effect reaches maximum strength 2 shots sooner.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21003,7 +21003,7 @@
    "name": "Disruption Break",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -21013,7 +21013,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688045202,
+      "lastUpdate": 1676051774532,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21024,7 +21024,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Elemental, Barrier or Guardian Shield Break:\nWeakens the enemy, increasing Kinetic Damage dealt by 50% for 5.5 seconds.\nDoes not affect Stasis Damage.\n\nStacks with other Debuffs, as it is a Weapon Perk.\n\nenhanced (\n#e Debuff Duration is increased.\n)",
+     "main": "On Elemental, Barrier or Guardian Shield Break:\nWeakens the enemy, increasing Kinetic Damage dealt by 50% for ${5.5+#d} seconds. //add #e when the increase is known\n\nStacks with all other Debuffs as it is a Weapon Perk.\n\nenhanced (\nvar d = 0 //placeholder\n#e Debuff Duration is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -25583,7 +25583,7 @@
    "name": "Eager Edge",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -25593,7 +25593,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688271878,
+      "lastUpdate": 1676052227290,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -25604,7 +25604,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon readying a Sword:\n100% Increased Lunge Range within 1 second. \n\nMoving too fast instantly ends the effect, even without swinging the sword.\n\n4 second cooldown.\n\nenhanced (\n#e Buff Duration is increased to 1.5 seconds.\n)",
+     "main": "Upon readying a sword, for #e${1+#d} second#c\n#e${80*#f}% Increased Lunge Distance and #e${64*#f}% Increased Airborne Lunge Distance.\n\nDeactivates after swinging once. 4 second cooldown.\n\nvar c = ‌: //this is a U+200C character (zero width non-joiner)\nenhanced (\nvar d = 0.5\nvar c = s:\nvar f = 1.25\n#e Buff Duration is increased by 0.5 seconds. Lunge Distance is increased by 25%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -34234,7 +34234,7 @@
    "name": "Dragonfly",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -34244,7 +34244,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688095725,
+      "lastUpdate": 1676051805071,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -34255,7 +34255,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Precision Kill:\nTarget explodes, dealing 65 damage that matches the Element of the weapon over a 3 meter radius.\n\nDamage against Combatants is multiplied by 1.3x, then multiplied again by Combatant Rank Modifiers.\n\nenhanced (\nPassively grants +5 Reload Speed.\n)",
+     "main": "On Precision Kill:\nTarget explodes, dealing 65 damage that matches the Element of the weapon over a 3 meter radius.\n\nDamage against Combatants is multiplied by 1.3 and by Combatant Rank Modifiers.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -43578,7 +43578,7 @@
    "name": "Duelist's Trance",
    "type": "Weapon Trait",
    "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
+   "lastUpload": 1676052683007,
    "inLiveDatabase": true,
    "uploadToLive": false,
    "updateTracker": {
@@ -43588,7 +43588,7 @@
     },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668688221444,
+      "lastUpdate": 1676052418011,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -43599,7 +43599,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Sword Kill:\nIncreased Charge Rate, Endurance, Efficiency, and Defense.\nLasts until stowed.\n\nenhanced (\n#e Stronger effect.\n)",
+     "main": "On Sword Kill, until stowed:\n • 60 Guard Efficiency\n • #e${60+#d} Guard Resistance\n • 60 Guard Endurance\n • #e${60+#d} Charge Rate\n\nenhanced (\nvar d = 5\n#e Grants 5 more Guard Resistance and Charge Rate.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
