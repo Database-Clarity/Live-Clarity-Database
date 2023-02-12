@@ -452,7 +452,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -788,7 +788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -949,7 +949,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -1622,7 +1622,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Precision Kill:\nSpawns a Large <stasis/>Stasis Crystal on Enemy Death Location. \n\nLow Tier (<link Tier 1 and 2 [https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=828270348] />) Minor Combatants only spawn a Medium <stasis/>Stasis Crystal.\n\n5 second cooldown if 5 Stasis Crystals are simultaneously active.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "On Precision Kill:\nSpawns a Large <stasis/>Stasis Crystal on Enemy Death Location. \n\nLow Tier (<link Tier 1 and 2 [https://d2clarity.page.link/combatant] />) Minor Combatants only spawn a Medium <stasis/>Stasis Crystal.\n\n5 second cooldown if 5 Stasis Crystals are simultaneously active.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -1633,7 +1633,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676210080308,
+      "lastUpdate": 1676221254210,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -1647,7 +1647,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -2608,7 +2608,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3137,29 +3137,9 @@
    }
   },
   "247725512": {
-   "hash": 247725512,
    "name": "Rapid Hit",
+   "hash": 247725512,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1660340225750,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668693776258,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670333472136,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
@@ -3179,14 +3159,34 @@
    },
    "editor": {
     "en": {
-     "main": "Gain 1 Rapid Hit Stack per Precision Hit, granting +Reload Speed and +Stability for 2 seconds.\n\nenhanced (\n#e Stronger Effect.\n)\n\n< table background_2 >\n|  Stack| Stability | Reload Stat | <title RDS [rds] /> | Reload Time <bold/>\n|b 1x   | 2         | 5           | 0.985x              | <formula [reload_0] />\n|b 2x   | 12        | 30          | 0.970x              | <formula [reload_1] />\n|b 3x   | 14        | 35          | 0.955x              | <formula [reload_2] />\n|b 4x   | 18        | 45          | 0.940x              | <formula [reload_3] />\n|b 5x   | 25        | 60          | 0.925x              | <formula [reload_4] />\n<$>\n\ntitle rds (\nReload Duration Scalar (Multiplies Reload Animation Duration by that number)\n)\n",
-     "secondary": "Gain 1 Rapid Hit Stack per Precision Hit, granting +Reload Speed and +Stability for 2 seconds.\n\n•  +2 | +12 | +14 | +18 | +25 Stability <breakSpaces/>\n•  +5 | +30 | +35 | +45 | +60 Reload Speed Stat <breakSpaces/>\n•  0.99x | 0.97x | 0.96x | 0.94x | 0.93x Reload Duration Multiplier <breakSpaces/>\n\nenhanced (\n#e Stronger Effect.\n)"
+     "main": "Gain 1 Rapid Hit Stack per Precision Hit, granting Improved Reload Speed and Stability for 2 seconds.\n\nenhanced (\n#e Stronger Effect.\n)\n\n< table background_2 >\n|  Stack | Stability | Reload | <title RDS [rds] /> | Reload Time            <bold/>\n|b 1x    | 2         | 5            | 0.985x              | <formula [reload_0] />\n|b 2x    | 12        | 30           | 0.970x              | <formula [reload_1] />\n|b 3x    | 14        | 35           | 0.955x              | <formula [reload_2] />\n|b 4x    | 18        | 45           | 0.940x              | <formula [reload_3] />\n|b 5x    | 25        | 60           | 0.925x              | <formula [reload_4] />\n<$>\n\ntitle rds (\nReload Duration Scalar (Multiplies Reload Animation Duration by that number)\n)\n",
+     "secondary": "Gain 1 Rapid Hit Stack per Precision Hit, granting Improved Reload Speed and Stability for 2 seconds.\n\n• 2 | 12 | 14 | 18 | 25 Stability <breakSpaces/>\n• 5 | 30 | 35 | 45 | 60 Reload Speed <breakSpaces/>\n• 0.99x | 0.97x | 0.96x | 0.94x | 0.93x Reload Duration Multiplier <breakSpaces/>\n\nenhanced (\n#e Stronger Effect.\n)"
     },
     "zh-chs": {
      "main": "每次精准命中获得 1 层增益，获得填装速度和稳定性提升，持续 2 秒。\n\nenhanced (\n#e 更显著的效果。\n)\n\n< table background_2 >\n|  层数| 稳定性 | 填装速度 | 填装<title 动画系数 [G_as] /> | 填装时间 <bold/>\n|b 1x   | 2         | 5           | 0.985x              | <formula [reload_0] />\n|b 2x   | 12        | 30          | 0.970x              | <formula [reload_1] />\n|b 3x   | 14        | 35          | 0.955x              | <formula [reload_2] />\n|b 4x   | 18        | 45          | 0.940x              | <formula [reload_3] />\n|b 5x   | 25        | 60          | 0.925x              | <formula [reload_4] />\n<$>\n\ntitle rds (\nReload Duration Scalar (Multiplies Reload Animation Duration by that number)\n)\n",
      "secondary": "每次精准命中获得 1 层增益，获得填装速度和稳定性提升，持续 2 秒。\n\n•  +2 | +12 | +14 | +18 | +25 稳定性 <breakSpaces/>\n•  +5 | +30 | +35 | +45 | +60 填装速度 <breakSpaces/>\n•  0.99x | 0.97x | 0.96x | 0.94x | 0.93x 填装动画系数 <breakSpaces/>\n\nenhanced (\n#e 更显著的效果。\n)"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676220177619,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670333472136,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1660340225750,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "254337357": {
    "hash": 254337357,
@@ -3357,7 +3357,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3414,7 +3414,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3879,7 +3879,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5339,7 +5339,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5579,7 +5579,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5744,36 +5744,37 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
   "461595545": {
-   "hash": 461595545,
    "name": "Reconstruction",
+   "hash": 461595545,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 1523832109,
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1523832109",
+     "secondary": "import secondary from 1523832109"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676221174318,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676221220735,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "466087222": {
    "hash": 466087222,
@@ -5921,39 +5922,55 @@
    "inLiveDatabase": true
   },
   "469285294": {
-   "hash": 469285294,
    "name": "Recombination",
+   "hash": 469285294,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1660340225750,
-     "updatedBy": "Fading-Shadow"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5 ]
+      }
+     }
+    ]
+   },
+   "editor": {
+    "en": {
+     "main": "Elemental Kill grant 1 Stack of Recombination.\nMaximum of #e${10/#d} stacks.\n\nEach Stack increases the damage of the next shot by <pve #e${10*#d}% /> <pvp [#e${5*#d}%] />.\n\nenhanced (\nvar d = 1.25\n#e Damage Buff ramps up 25% faster, reaching maximum strength 2 Stacks sooner.\n)",
+     "secondary": "import self"
     },
+    "zh-chs": {
+     "main": "元素最后一击时：\n获得 1 层增益，提升此武器的下一击伤害。\n\n最高叠加 10 层。\n\n伤害提升数值（%）\n< table >\n|b 层数 |b 1x |b 2x |b 3x |b 4x |b 5x |b 6x |b 7x |b 8x |b 9x |b 10x <center/>\n|b PVE    |  8  |  17 |  27 |  38 |  46 |  57 |  68 |  80 |  89 |  100 <center/> <background/>\n|b PVP    |  5  |  10 |  15 |  20 |  25 |  30 |  35 |  40 |  45 |  50  <center/>\n<$>",
+     "secondary": "元素最后一击时：\n获得 1 层增益，提升此武器的下一击伤害。\n\n最高叠加 10 层。\n\n伤害提升数值（%）：\n[PVE] 8 | 17 | 27 | 38 | 46 | 57 | 68 | 80 | 89 | 100\n[PVP] 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50"
+    }
+   },
+   "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1670087973395,
+      "lastUpdate": 1676220959069,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670333644999,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676220482055,
+     "updatedBy": "Stardust"
     }
    },
-   "editor": {
-    "en": {
-     "main": "Upon scoring an Elemental Kill:\nGrants 1 stack of Recombination, increasing the damage of the next shot of the weapon.\n\nMaximum of 10 stacks.\n\nPercentage Damage Increase for the next shot:\n< table >\n|b Stacks |b 1x |b 2x |b 3x |b 4x |b 5x |b 6x |b 7x |b 8x |b 9x |b 10x <center/>\n|b PVE    |  8  |  17 |  27 |  38 |  46 |  57 |  68 |  80 |  89 |  100 <center/> <background/>\n|b PVP    |  5  |  10 |  15 |  20 |  25 |  30 |  35 |  40 |  45 |  50  <center/>\n<$>",
-     "secondary": "Upon scoring an Elemental Kill:\nGrants 1 stack of Recombination, increasing the damage of the next shot of the weapon.\n\nMaximum of 10 stacks.\n\nPercentage Damage Increase for the next shot:\n[PVE] 8 | 17 | 27 | 38 | 46 | 57 | 68 | 80 | 89 | 100\n[PVP] 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50"
-    },
-    "zh-chs": {
-     "main": "元素最后一击时：\n获得 1 层增益，提升此武器的下一击伤害。\n\n最高叠加 10 层。\n\n伤害提升数值（%）\n< table >\n|b 层数 |b 1x |b 2x |b 3x |b 4x |b 5x |b 6x |b 7x |b 8x |b 9x |b 10x <center/>\n|b PVE    |  8  |  17 |  27 |  38 |  46 |  57 |  68 |  80 |  89 |  100 <center/> <background/>\n|b PVP    |  5  |  10 |  15 |  20 |  25 |  30 |  35 |  40 |  45 |  50  <center/>\n<$>",
-     "secondary": "元素最后一击时：\n获得 1 层增益，提升此武器的下一击伤害。\n\n最高叠加 10 层。\n\n伤害提升数值（%）：\n[PVE] 8 | 17 | 27 | 38 | 46 | 57 | 68 | 80 | 89 | 100\n[PVP] 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "474269988": {
    "hash": 474269988,
@@ -6425,10 +6442,10 @@
    }
   },
   "509594246": {
-   "hash": 509594246,
    "name": "Rangefinder",
+   "hash": 509594246,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 2846385770,
    "editor": {
     "en": {
      "main": "import main from 2846385770",
@@ -6436,18 +6453,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676219536672,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "515704826": {
    "hash": 515704826,
@@ -6672,7 +6691,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -6943,7 +6962,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -7187,7 +7206,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -7683,7 +7702,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8524,7 +8543,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8597,7 +8616,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8732,7 +8751,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8793,7 +8812,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -9615,7 +9634,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -9995,7 +10014,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -10057,7 +10076,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -10436,7 +10455,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -11768,7 +11787,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -11865,7 +11884,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -12055,7 +12074,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -12490,7 +12509,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14133,7 +14152,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14160,7 +14179,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14353,7 +14372,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14491,7 +14510,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -15376,7 +15395,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -15556,7 +15575,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16499,7 +16518,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16534,7 +16553,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16632,7 +16651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16886,7 +16905,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16955,7 +16974,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -17816,7 +17835,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -18900,39 +18919,39 @@
    "inLiveDatabase": true
   },
   "1523832109": {
-   "hash": 1523832109,
    "name": "Reconstruction",
+   "hash": 1523832109,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1660340225750,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670088021046,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670333776957,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "After not shooting for 4 seconds:\n<title Refills [G_refill] /> 10% of Magazine Capacity, up to a maximum of 200% Magazine Capacity.",
+     "main": "After not shooting for #e${3.6-#d} seconds:\n<title Refills [G_refill] /> 10% of Magazine Capacity from reserves every #e${4-#d} seconds up to double the capacity.\n\nenhanced (\nvar d = 0.3\n#e Delay before initial refill and between additional refills is decreased by 0.3 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "持续 4 秒没有射击：\n<title 重新填装 [G_refill] /> 10% 弹匣，直至两倍弹匣容量。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676221203474,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670333776957,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676221216587,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1525239159": {
    "hash": 1525239159,
@@ -19172,10 +19191,10 @@
    "importStatsFrom": 3350417888
   },
   "1545231802": {
-   "hash": 1545231802,
    "name": "Redirection",
+   "hash": 1545231802,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 3201496230,
    "editor": {
     "en": {
      "main": "import main from 3201496230",
@@ -19183,28 +19202,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1670088185438,
-     "updatedBy": "Stardust"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676223162336,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "stats": {
-    "Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.25, 1.5, 1.75, 2, 2.25 ]
-      }
-     }
-    ]
-   }
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1546637391": {
    "hash": 1546637391,
@@ -19382,7 +19393,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -19680,7 +19691,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -19995,7 +20006,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20165,7 +20176,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20334,7 +20345,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20461,7 +20472,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -21111,7 +21122,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -21211,7 +21222,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22466,7 +22477,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22573,7 +22584,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22635,7 +22646,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22955,7 +22966,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -23630,7 +23641,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -24536,7 +24547,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -24590,7 +24601,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25078,7 +25089,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25150,7 +25161,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25205,7 +25216,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25350,7 +25361,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25708,7 +25719,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -26137,7 +26148,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -27332,7 +27343,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -27930,7 +27941,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28194,7 +28205,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28572,7 +28583,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28607,7 +28618,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28831,7 +28842,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29625,7 +29636,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29832,7 +29843,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29914,7 +29925,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30047,7 +30058,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30091,7 +30102,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30142,7 +30153,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30864,7 +30875,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -31072,7 +31083,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -31512,7 +31523,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -31646,7 +31657,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -32414,7 +32425,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -32683,7 +32694,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -33344,7 +33355,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -33371,7 +33382,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -33552,7 +33563,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34358,29 +34369,9 @@
    "inLiveDatabase": true
   },
   "2846385770": {
-   "hash": 2846385770,
    "name": "Rangefinder",
+   "hash": 2846385770,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1660340225750,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670087286769,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670333198738,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Zoom": [
      {
@@ -34392,14 +34383,34 @@
    },
    "editor": {
     "en": {
-     "main": "While Aiming-Down-Sights:\n<title 10% Increased Effective Zoom [increased zoom] /> and 5% Faster Projectile Speed.\n\nenhanced (\n#e Passively grants +5 Handling\n)\n\ntitle increased zoom (\nZoom acts as a multiplier to the hip-fire range falloff start and end distances while ADS.\n\nIn this case, it pushes out the weapon's effective range by 10%. This includes both damage and aim assist falloff.\n\nThis is factored into the base weapon range calculations.\n)",
+     "main": "While Aiming Down Sights:\n10% Increased Effective Zoom and 5% Faster Projectile Speed.\n\nThe Effective Zoom increase pushes out the Damage and Aim Assist Falloff by 10% and narrows the Accuracy and Aim Assist Cones.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "瞄准时：\n<title +10% 有效焦距 [increased zoom] /> +5% 弹头速度。\n\nenhanced (\n#e 被动提升 +5 操控性。\n)\n\ntitle increased zoom (\n在这个特性中，其实际作用为增加 10% 有效射程和瞄准辅助距离。\n)",
      "secondary": "瞄准时：\n+10% 有效焦距（作用于有效射程、瞄准辅助距离），+5% 弹头速度。\n\nenhanced (\n#e 被动提升 +5 操控性。\n)"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676220031084,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670333198738,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1660340225750,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2848615171": {
    "name": "Dragonfly",
@@ -34432,7 +34443,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34598,7 +34609,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34657,7 +34668,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34885,7 +34896,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34921,7 +34932,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35001,7 +35012,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35028,7 +35039,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35091,7 +35102,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35287,7 +35298,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35700,7 +35711,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36285,7 +36296,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36366,7 +36377,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36410,7 +36421,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36598,7 +36609,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36696,7 +36707,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36751,7 +36762,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36805,7 +36816,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -37214,7 +37225,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -37468,7 +37479,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -38238,7 +38249,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -38270,31 +38281,18 @@
    "inLiveDatabase": true
   },
   "3201496230": {
-   "hash": 3201496230,
    "name": "Redirection",
+   "hash": 3201496230,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1660340225750,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670088156130,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670334223312,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
@@ -38304,14 +38302,34 @@
    },
    "editor": {
     "en": {
-     "main": "On hit against Rank-And-File Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\n\nOn hit against Elite, Miniboss, or Boss Combatants:\nGrants 20% increased damage per stack, up to 100% at 5 Stacks.\n\nConsumes 1 stack per hit if at or below 5 stacks.\nConsumes 5 stacks per hit if at or above 6 stacks.\n\nCheck out <link this sheet [https://d2clarity.page.link/combatant] /> for Combatant Classifications.\n\nenhanced (\n#e Grants 25(?)% increased damage per stack, up to 125(?)% at 5 Stacks.\n)",
-     "secondary": "On hit against Rank-And-File Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\n\nOn hit against Elite, Miniboss, or Boss Combatants:\nGrants 20% increased damage per stack, up to 100% at 5 Stacks.\n\nConsumes 1 stack per hit if at or below 5 stacks.\nConsumes 5 stacks per hit if at or above 6 stacks.\n\nenhanced (\n#e Grants 25(?)% increased damage per stack, up to 125(?)% at 5 Stacks.\n)"
+     "main": "On hit against Minor Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\n\nOn hit against Major or Boss Combatants:\nGrants 20% increased damage for 1 shot per stack, up to 100% at 5 Stacks.\n\nConsumes 1 stack per hit if at 1-5 stacks.\nConsumes #e${5-#d} stacks per hit if at 6-20 stacks.\n\nenhanced (\nvar d = 1\n#e Consumes 1 fewer stack per hit if at 6-20 stacks.\n)",
+     "secondary": "import self"
     },
     "zh-chs": {
      "main": "命中普通敌人时：\n获得 1 层转向增益，最高叠加 10 层。\n\n命中精英、次级首领、首领敌人时：\n每层增益 +20% 伤害，最高 100%。\n\n当增益层数不高于 5 层时，每次命中消耗 1 层增益。\n当增益层数高于 5 层时，每次命中消耗 5 层增益。\n\n查询 <link 该表格 [https://d2clarity.page.link/combatant] /> 获取敌人分级信息。\n\nenhanced (\n#e 每层增益 +25(?)% 伤害，最高 +125(?)% 伤害。\n)",
      "secondary": "命中普通敌人时：\n获得 1 层转向增益，最高叠加 10 层。\n\n命中精英、次级首领、首领敌人时：\n每层增益 +20% 伤害，最高 100%。\n\n当增益层数不高于 5 层时，每次命中消耗 1 层增益。\n当增益层数高于 5 层时，每次命中消耗 5 层增益。\n\nenhanced (\n#e 每层增益 +25(?)% 伤害，最高 +125(?)% 伤害。\n)"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676223149564,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670334223312,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676223171101,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3201675491": {
    "hash": 3201675491,
@@ -39383,7 +39401,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -39668,32 +39686,32 @@
    "itemName": "Deathbringer"
   },
   "3335686050": {
-   "hash": 3335686050,
    "name": "Recombination",
+   "hash": 3335686050,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 469285294,
    "editor": {
     "en": {
-     "main": "Elemental final blows increase the damage of this weapon's next shot. Increases range.",
-     "secondary": "Elemental final blows increase the damage of this weapon's next shot. Increases range."
+     "main": "import main from 469285294",
+     "secondary": "import secondary from 469285294"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676220645015,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1670087742785,
      "updatedBy": "Stardust"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "importStatsFrom": 469285294
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676223182075,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3336648220": {
    "hash": 3336648220,
@@ -40173,7 +40191,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -40369,7 +40387,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -40536,7 +40554,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n10% | 21% | 33.1% increased damage for 4.5 seconds.\nBuff Refreshed on Kill. \n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)",
+     "main": "Provides a stacking Damage Buff on Weapon Kills:\n10% | 21% | 33.1% increased damage for #e${4.5+#d} seconds.\nBuff Refreshed on Kill. \n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -40547,7 +40565,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1670087242882,
+      "lastUpdate": 1676219398213,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -40561,7 +40579,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41516,7 +41534,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41550,7 +41568,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41747,7 +41765,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41775,7 +41793,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -42963,7 +42981,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43027,7 +43045,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43474,7 +43492,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43529,7 +43547,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43861,7 +43879,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44020,7 +44038,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44123,7 +44141,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44350,7 +44368,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44980,7 +44998,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -45171,7 +45189,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -45585,7 +45603,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -46111,7 +46129,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -47259,7 +47277,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -47405,7 +47423,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -48189,7 +48207,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49170,7 +49188,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49251,7 +49269,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49645,7 +49663,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49847,7 +49865,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -50092,7 +50110,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -50127,7 +50145,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676219346089,
+   "lastUpload": 1676223182075,
    "inLiveDatabase": false,
    "uploadToLive": false
   }
