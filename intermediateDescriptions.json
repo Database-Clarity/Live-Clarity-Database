@@ -452,7 +452,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -758,29 +758,9 @@
    "inLiveDatabase": true
   },
   "25606670": {
-   "hash": 25606670,
    "name": "Dual Loader",
+   "hash": 25606670,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1676052683007,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1676051849842,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670253871923,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
      "main": "Loads #e${2+#d} Ammo at a time.\nReduces Reload Speed by 35.\n\nenhanced (\nvar d = 1\n#e Loads 1 more Ammo at a time.\n)",
@@ -790,7 +770,27 @@
      "main": "每次填装两发弹药。\n-35 填装速度。\n\nenhanced (\n#e 每次填装三发弹药。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676206058538,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670253871923,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "25692695": {
    "hash": 25692695,
@@ -2608,7 +2608,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3878,7 +3878,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5571,7 +5571,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -7638,10 +7638,10 @@
    }
   },
   "624891305": {
-   "hash": 624891305,
    "name": "Desperado",
+   "hash": 624891305,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 3047969693,
    "editor": {
     "en": {
      "main": "import main from 3047969693",
@@ -7649,18 +7649,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676205506440,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "630329983": {
    "hash": 630329983,
@@ -9968,7 +9970,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -11807,39 +11809,39 @@
    }
   },
   "960810156": {
-   "hash": 960810156,
    "name": "Danger Zone",
+   "hash": 960810156,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
+   "editor": {
+    "en": {
+     "main": "While within 15 meters of 3 enemies:\n[?]% Increased Blast Radius and 40% Reduced <title Self Damage [self damage] />.\n\nLingers for 4 seconds.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
+     "secondary": "import self"
     },
+    "zh-chs": {
+     "main": "15 米范围内有 3 个敌人时：\n增加 [?]% 爆炸范围，降低 40% <title 自身伤害 [self damage] />.\n\n线性持续 4(?) 秒。\n\nenhanced (\n#e 被动提升 +5 爆炸范围。\n)\n\ntitle self damage (\n自身伤害的伤害量通常会提升 25%。\n)",
+     "secondary": "15 米范围内有 3 个敌人时：\n增加 [?]% 爆炸范围，降低 40% 自身伤害。\n（自身伤害的伤害量通常会提升 25%。）\n\n线性持续 4(?) 秒。\n\nenhanced (\n#e 被动提升 +5 爆炸范围。\n)"
+    }
+   },
+   "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1668687762395,
+      "lastUpdate": 1676205191303,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670252383033,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
     }
    },
-   "editor": {
-    "en": {
-     "main": "While within 15 meters of 3 enemies:\n[?]% Increased Blast Radius and 40% Reduced <title Self Damage [self damage] />.\n\nLingers for 4(?) seconds.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)\n\ntitle self damage (\nSelf Damage normally deals 25% increased damage.\n)",
-     "secondary": "While within 15 meters of 3 enemies:\n[?]% Increased Blast Radius and 40% Reduced Self Damage.\n(Self Damage normally deals 25% increased damage)\n\nLingers for 4(?) seconds. \n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)"
-    },
-    "zh-chs": {
-     "main": "15 米范围内有 3 个敌人时：\n增加 [?]% 爆炸范围，降低 40% <title 自身伤害 [self damage] />.\n\n线性持续 4(?) 秒。\n\nenhanced (\n#e 被动提升 +5 爆炸范围。\n)\n\ntitle self damage (\n自身伤害的伤害量通常会提升 25%。\n)",
-     "secondary": "15 米范围内有 3 个敌人时：\n增加 [?]% 爆炸范围，降低 40% 自身伤害。\n（自身伤害的伤害量通常会提升 25%。）\n\n线性持续 4(?) 秒。\n\nenhanced (\n#e 被动提升 +5 爆炸范围。\n)"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "961505134": {
    "hash": 961505134,
@@ -15341,7 +15343,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -15491,39 +15493,39 @@
    "itemName": "Trespasser"
   },
   "1275731761": {
-   "hash": 1275731761,
    "name": "Cluster Bomb",
+   "hash": 1275731761,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668697725066,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668786619609,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Explosion releases 8 Cluster Bombs.\nEach Cluster Bomb deals an additional 3% damage.\n\nenhanced (\n#e Passively grants +5 Blast Radius.\n)",
+     "main": "Explosion releases 8 Cluster Bombs.\n\nEach Cluster Bomb deals 3% of the rocket's total damage.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "爆炸产生 8 枚集束炸弹。\n每枚炸弹造成额外 3% 的伤害。\n\nenhanced (\n#e +5 爆炸范围。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204999171,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668786619609,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1279446438": {
    "hash": 1279446438,
@@ -19946,7 +19948,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20361,10 +20363,39 @@
    }
   },
   "1646437399": {
-   "hash": 1646437399,
    "name": "Duelist's Trance",
+   "hash": 1646437399,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "stats": {
+    "Guard Efficiency": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
+     }
+    ],
+    "Guard Resistance": [
+     {
+      "active": {
+       "stat": [ 65 ]
+      }
+     }
+    ],
+    "Guard Endurance": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
+     }
+    ],
+    "Guard Charge Rate": [
+     {
+      "active": {
+       "stat": [ 65 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
      "main": "import main from 3705817207",
@@ -20372,18 +20403,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676206243936,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1650852150": {
    "hash": 1650852150,
@@ -21001,39 +21034,39 @@
    "inLiveDatabase": true
   },
   "1683379515": {
-   "hash": 1683379515,
    "name": "Disruption Break",
+   "hash": 1683379515,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1676052683007,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1676051774532,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670253274972,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Elemental, Barrier or Guardian Shield Break:\nWeakens the enemy, increasing Kinetic Damage dealt by 50% for ${5.5+#d} seconds. //add #e when the increase is known\n\nStacks with all other Debuffs as it is a Weapon Perk.\n\nenhanced (\nvar d = 0 //placeholder\n#e Debuff Duration is increased.\n)",
+     "main": "On Elemental, Barrier or Guardian Shield Break:\nWeakens the enemy, increasing Kinetic Damage dealt by 50% for ${5.5+#d} seconds. //add #e once known\n\nStacks with all other Debuffs as it is a Weapon Perk.\n\nenhanced (\nvar d = 0 //placeholder\n#e Debuff Duration is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用武器破坏敌人的护盾（元素护盾、屏障勇士护盾、守护者护盾）时：\n对他们施加负面状态，额外承受 50% 的动能伤害，持续 5.5 秒。\n不会作用于冰影伤害。\n\n因其为武器特性，故可以与其他负面状态叠加。\n\nenhanced (\n#e 负面状态持续时间增加。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205555399,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670253274972,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1684153732": {
    "hash": 1684153732,
@@ -22822,39 +22855,9 @@
    "itemName": "Divinity"
   },
   "1799762209": {
-   "hash": 1799762209,
    "name": "Cornered",
+   "hash": 1799762209,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1670082432543,
-     "updatedBy": "Stardust"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670084011464,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670251769995,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "While within 15[?] meters of 2 enemies:\n0.85x Charge/Draw Time Multiplier.\n\nLingers for 1.5 seconds.\n\nenhanced (\n#e Grants +10 Stability while the perk is active.\n)",
-     "secondary": "import self"
-    },
-    "zh-chs": {
-     "main": "当 15 米范围内有两个以上敌人时：\n-15% 充能/蓄力时间。\n\n增益持续 1.5 秒，效果线性减弱。\n\nenhanced (\n#e 在特性触发时 +10 稳定性\n)",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Charge Draw": [
      {
@@ -22863,7 +22866,37 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "While within 15 meters of 2 enemies:\n0.85x Charge/Draw Time Multiplier.\n\nLingers for 1.5 seconds.\n\nenhanced (\n#e Grants 10 Stability while the perk is active.\n)",
+     "secondary": "import self"
+    },
+    "zh-chs": {
+     "main": "当 15 米范围内有两个以上敌人时：\n-15% 充能/蓄力时间。\n\n增益持续 1.5 秒，效果线性减弱。\n\nenhanced (\n#e 在特性触发时 +10 稳定性\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205093306,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670251769995,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1670082432543,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1807758212": {
    "hash": 1807758212,
@@ -25054,7 +25087,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28456,39 +28489,39 @@
    "uploadedBy": "Stardust"
   },
   "2284787283": {
-   "hash": 2284787283,
    "name": "Clown Cartridge",
+   "hash": 2284787283,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675797605900,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668786594435,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading.\nAlways rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
+     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading.\n\nAlways rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "装填时：\n随机过量装填弹匣容量 10% ~ 50% 的弹药。\n数值向上取整。\n\nenhanced (\n#e 提高平均过量填装的弹药量。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204875102,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668786594435,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2287699930": {
    "hash": 2287699930,
@@ -29777,7 +29810,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30720,7 +30753,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34232,29 +34265,9 @@
    }
   },
   "2848615171": {
-   "hash": 2848615171,
    "name": "Dragonfly",
+   "hash": 2848615171,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1676052683007,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1676051805071,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270494489,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
      "main": "On Precision Kill:\nTarget explodes, dealing 65 damage that matches the Element of the weapon over a 3 meter radius.\n\nDamage against Combatants is multiplied by 1.3 and by Combatant Rank Modifiers.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
@@ -34264,7 +34277,27 @@
      "main": "造成精准击杀时：\n目标将爆炸，在 3 米范围内造成 65 点与武器元素类型相同的伤害。\n\n对战斗人员将乘以 1.3 倍的伤害系数，之后再计算战斗人员阶级相关的系数。\n\nenhanced (\n#e 被动提升 +5 填装速度。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205782087,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270494489,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2850583378": {
    "hash": 2850583378,
@@ -34753,7 +34786,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34916,7 +34949,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35495,39 +35528,39 @@
    "itemName": "The Prospector"
   },
   "2978966579": {
-   "hash": 2978966579,
    "name": "Chill Clip",
+   "hash": 2978966579,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675797318455,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670501322665,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While above 50% Magazine:\nDirect Hits create a Stasis burst which applies 50 Slow for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot. (Wolfpack Rounds are considered separate shots.)\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [2] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While above 50% Magazine:\nDirect Hits create a Stasis burst which applies 50 Slow for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. (Wolfpack Rounds are considered separate shots.)\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [2] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "前半弹匣直接命中敌人时：\n将产生一个冰影爆炸，附近 [?] 米内的敌人获得 50 层减速效果。持续 <pve 4 /> <pvp [1.5] /> 秒。\n\n每次射击仅触发一次效果。\n（狼群弹药可触发多次。）\n\n<title 耐久之吟 [Whisper of Durance] /> 可将持续时间增加到 <pve 8 /> <pvp [2] /> 秒。\n\nenhanced (\n#e 被动提升 +5 稳定性。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204840084,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670501322665,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2979486801": {
    "hash": 2979486801,
@@ -36195,29 +36228,9 @@
    "importStatsFrom": 4104185692
   },
   "3016987351": {
-   "hash": 3016987351,
    "name": "Counterattack",
+   "hash": 3016987351,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668687715395,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668786924070,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Damage": [
      {
@@ -36229,14 +36242,34 @@
    },
    "editor": {
     "en": {
-     "main": "Upon blocking an attack within 0.5 seconds of starting to Block:\n50% Increased damage for 2 seconds.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "Upon Blocking an attack within 0.5 seconds of starting to Block:\n50% Increased damage for ${2+#d} seconds. // add #e once known\n\nenhanced (\nvar d = 0 //placeholder\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "做出防御动作的 0.5 秒内成功格挡敌人伤害：\n+50% 伤害，持续 2 秒。\n\nenhanced (\n#e 增加增益持续时间。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205156103,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668786924070,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3018373291": {
    "hash": 3018373291,
@@ -36481,39 +36514,48 @@
    "inLiveDatabase": true
   },
   "3047969693": {
-   "hash": 3047969693,
    "name": "Desperado",
+   "hash": 3047969693,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675798084103,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670252890000,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "Firing Delay": [
+     {
+      "active": {
+       "multiplier": [ 0.7 ]
+      }
      }
-    }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 6 seconds of a Precision Kill:\nFiring Delay is reduced by 30% for #e${6+#d} seconds.\nBuff can be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
+     "main": "Finishing a reload within 6 seconds of a Precision Kill reduces Firing Delay by 30% for #e${6+#d} seconds.\n\nBuff can be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "在精准击杀后 6 秒内装填：\n提高射速（降低 30% 射击间隔），持续 6 秒。\n该增益可以被刷新。\n\nenhanced (\n#e 提高增益持续时间到 7 秒。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205433450,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670252890000,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676205500951,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3048420653": {
    "hash": 3048420653,
@@ -39176,7 +39218,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41503,39 +41545,39 @@
    "inLiveDatabase": true
   },
   "3523296417": {
-   "hash": 3523296417,
    "name": "Demolitionist",
+   "hash": 3523296417,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670082582959,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670252879197,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Kills with <primary/> Primary and <heavy/> Power Weapons grant #e${10 * #d}% Grenade Ability Energy.\nMOST <special/> Special Weapons grant #e${20 * #d}%.\n\nTrace Rifles and Grenade Launchers grant half of what other Special Weapons give.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%.\n)",
+     "main": "Weapon Kills grant Grenade Ability Energy:\n• <primary/> Primary and <heavy/> Power Weapons: #e${10 * #d}%\n• Most <special/> Special Weapons: #e${20 * #d}%\n\nTrace Rifles and Grenade Launchers grant half of what other Special Weapons give.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "<primary/> 主武器和 <heavy/> 重武器击杀可获取 #e${10 * #d}% 手雷技能能量。\n大多数 <special/> 特殊武器获取 #e${20 * #d}% 能量。\n\n追踪步枪和榴弹发射器相较其他特殊武器，仅获得一半能量。\n\n使用手雷技能将 <title 重新装填 [G_refill] /> 弹匣。\n重新装填效果有 3 秒冷却时间。\n\nenhanced (\nvar d = 1.1\n#e 能量获取量提升 10%。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205327740,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670252879197,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3523746922": {
    "name": "Archer's Tempo",
@@ -41561,7 +41603,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -42783,39 +42825,39 @@
    "itemName": "Two-Tailed Fox"
   },
   "3650930298": {
-   "hash": 3650930298,
    "name": "Cold Steel",
+   "hash": 3650930298,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675797786260,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670251703818,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Powered Sword Hits apply Slow for <pve 4.25 /> <pvp [1.5] /> seconds.\n\nLight Attacks apply 40 Slow.\nHeavy Attacks apply 60 Slow.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity (Swords) and 10 Magazine Stat. (Identical to Tactical Mag)\n)",
+     "main": "Powered Sword Hits apply Slow for <pve 4.25 /> <pvp [1.5] /> seconds.\n\nLight Attacks apply 40 Slow.\nHeavy Attacks apply 60 Slow.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity (Swords) and 10 Magazine Stat (Identical to Tactical Mag).\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "充能刀剑命中可让目标减速 <pve 4.25 /> <pvp [1.5] /> 秒。\n\n轻攻击施加 40 减速。\n重攻击施加 60 减速。\n\nenhanced (\n#e +10 弹药容量（等效于“战术弹匣”增加的容量）。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676205015630,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670251703818,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3651607301": {
    "hash": 3651607301,
@@ -43260,7 +43302,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43315,7 +43357,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43587,28 +43629,38 @@
    }
   },
   "3705817207": {
-   "hash": 3705817207,
    "name": "Duelist's Trance",
+   "hash": 3705817207,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1676052683007,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1676052418011,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670254007952,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "Guard Efficiency": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
      }
-    }
+    ],
+    "Guard Resistance": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
+     }
+    ],
+    "Guard Endurance": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
+     }
+    ],
+    "Guard Charge Rate": [
+     {
+      "active": {
+       "stat": [ 60 ]
+      }
+     }
+    ]
    },
    "editor": {
     "en": {
@@ -43619,7 +43671,27 @@
      "main": "刀剑击杀时：\n提升刀剑充能效率、防御持久、防御效率、防御抗性。\n直到收起刀剑。\n\nenhanced (\n#e 提升效果更更显著。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676206096866,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670254007952,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676206151711,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676206255920,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3708227201": {
    "hash": 3708227201,
@@ -43879,7 +43951,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44106,7 +44178,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49381,7 +49453,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676204807491,
+   "lastUpload": 1676206255920,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
