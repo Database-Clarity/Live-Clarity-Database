@@ -452,7 +452,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -788,7 +788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -903,29 +903,9 @@
    "inLiveDatabase": true
   },
   "47981717": {
-   "hash": 47981717,
    "name": "Opening Shot",
+   "hash": 47981717,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251710829,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670086507783,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670274412798,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Aim Assist": [
      {
@@ -944,14 +924,34 @@
    },
    "editor": {
     "en": {
-     "main": "For <title one bullet only [first bullet only] />:\n•  +20 Aim Assist <breakSpaces/>\n•  +25 Range <breakSpaces/>\n•  -5% Accuracy Cone Size <breakSpaces/>\n•  -10% <title Accuracy Cone Growth [G_conegrowth] /> <breakSpaces/>\n\nIncurs a 3.1 seconds cooldown after firing.\n\nenhanced (\n#e Grants an additional +5 Aim Assist and +5 Range.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle first bullet only (\nEven in the case of burst weapons. Only the first shot of the burst is affected.\n)",
+     "main": "For <title one bullet only [first bullet only] />:\n• #e${20+#d} Aim Assist\n• #e${25+#d} Range\n• -5% Accuracy Cone Size\n• -10% <title Accuracy Cone Growth [G_conegrowth] />\n\n3.1 seconds cooldown after firing.\n\nenhanced (\nvar d = 5\n#e Grants 5 more Aim Assist and Range.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle first bullet only (\nEven in the case of burst weapons. Only the first shot of the burst is affected.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "<title 第一发子弹 [first bullet only] />:\n•  +20 瞄准辅助 <breakSpaces/>\n•  +25 射程 <breakSpaces/>\n•  -5% 精度锥角尺寸 <breakSpaces/>\n•  -10% <title 精度锥角增长 [G_conegrowth] /> <breakSpaces/>\n\n开火后触发 3.1 秒冷却时间。\n\nenhanced (\n#e 额外 +5 瞄准辅助，+5 射程。\n)\n\n<formula 有效射程射程： [range_0] />\n\ntitle first bullet only (\n如果一次射击发射多发子弹，也仅有第一发子弹生效，如脉冲步枪。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216712852,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670274412798,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667251710829,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "52780822": {
    "hash": 52780822,
@@ -1647,7 +1647,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -2608,7 +2608,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3357,7 +3357,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -3391,11 +3391,10 @@
    "itemName": "Whisper of the Worm"
   },
   "288411554": {
-   "hash": 288411554,
    "name": "Rampage",
+   "hash": 288411554,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 3425386926,
    "editor": {
     "en": {
      "main": "import main from 3425386926",
@@ -3403,19 +3402,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0,
       "updatedBy": ""
      }
+    },
+    "stats": {
+     "lastUpdate": 1676218928092,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "290014589": {
    "hash": 290014589,
@@ -3878,7 +3879,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5338,7 +5339,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5578,7 +5579,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -5718,7 +5719,7 @@
    },
    "editor": {
     "en": {
-     "main": "After dealing Non-Precision Weapon Damage:\n• Increases Precision Multiplier by 0.1175\n• [?] Aim Assist Stat\n\nBuff lasts 0.55 seconds. Dealing additional Non-Precision Damage refreshes the timer.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "After dealing Non-Precision Weapon Damage:\n• Increases Precision Multiplier by 0.1175\n• [?] Aim Assist\n\nBuff lasts 0.55 seconds. Dealing additional Non-Precision Damage refreshes the timer.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -5729,7 +5730,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676210055092,
+      "lastUpdate": 1676216588380,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -5743,7 +5744,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -6648,11 +6649,10 @@
    "inLiveDatabase": true
   },
   "536173722": {
-   "hash": 536173722,
    "name": "Pugilist",
+   "hash": 536173722,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 691659142,
    "editor": {
     "en": {
      "main": "import main from 691659142",
@@ -6660,19 +6660,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0,
       "updatedBy": ""
      }
+    },
+    "stats": {
+     "lastUpdate": 1676218398482,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "536517534": {
    "hash": 536517534,
@@ -6895,48 +6897,55 @@
    "inLiveDatabase": true
   },
   "557221067": {
-   "hash": 557221067,
    "name": "Killing Tally",
+   "hash": 557221067,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665089974630,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668691173467,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270889822,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
      {
       "active": {
-       "multiplier": [ 1.1, 1.2, 1.3, 1.05, 1.1, 1.15 ]
+       "multiplier": [ 1.1, 1.2, 1.3 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.05, 1.1, 1.15 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\nIncreased damage until stow or reload.\n\n<pve [PVE] 10% | 20% | 30% increased damage />\n<pvp [PVP] 5% | 10% | 15% increased damage />\n\nenhanced (\n#e Passively grants 10 Magazine Stat (Identical to Tactical Mag).\n)",
+     "main": "Weapon Kills grant a stacking Damage Buff until stowing or reloading the weapon.\n\nMaximum of 3 stacks.\n\n<pve [PVE] 10% | 20% | 30% increased damage />\n<pvp [PVP] 5% | 10% | 15% increased damage />\n\nenhanced (\n#e Passively grants 10 Magazine Stat. (Identical to Tactical Mag)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n增加伤害，直到收枪或换弹。\n\n<pve [PVE] 10% | 20% | 30% 伤害 />\n<pvp [PVP] 5% | 10% | 15% 伤害 />\n\nenhanced (\n#e 被动提升 +10 弹匣容量（等效于一个战术弹匣）。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676214932135,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270889822,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676214963422,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "566815328": {
    "hash": 566815328,
@@ -7139,39 +7148,9 @@
    "inLiveDatabase": true
   },
   "588594999": {
-   "hash": 588594999,
    "name": "Moving Target",
+   "hash": 588594999,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251467555,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668691320560,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670271614789,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "While Aiming-Down-Sights:\n+10 Aim Assist, and 2.5% Reduced Aiming-Down-Sights Movement Speed Penalty.\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
-     "secondary": "import self"
-    },
-    "zh-chs": {
-     "main": "瞄准时：\n+10 瞄准辅助，-2.5% 瞄准移动速度惩罚。\n\nenhanced (\n#e 略微提升瞄准辅助。\n)",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Aim Assist": [
      {
@@ -7180,7 +7159,37 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "While Aiming-Down-Sights:\n10 Aim Assist, and 2.5% Reduced Aiming-Down-Sights Movement Speed Penalty.\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
+     "secondary": "import self"
+    },
+    "zh-chs": {
+     "main": "瞄准时：\n+10 瞄准辅助，-2.5% 瞄准移动速度惩罚。\n\nenhanced (\n#e 略微提升瞄准辅助。\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215394622,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670271614789,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667251467555,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "591790007": {
    "hash": 591790007,
@@ -7674,7 +7683,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8476,38 +8485,9 @@
    }
   },
   "691659142": {
-   "hash": 691659142,
    "name": "Pugilist",
+   "hash": 691659142,
    "type": "Weapon Trait",
-   "lastUpload": 1675798177540,
-   "editor": {
-    "en": {
-     "main": "Kills with <primary/> Primary and <heavy/> Power Weapons grant #e${10 * #d}% Melee Ability Energy.\nMost <special/> Special Weapons grant #e${20 * #d}%.\n\nGlaives, Grenade Launchers, and Trace Rifles share the ability gains of primary weapons.\n\nDealing Melee Damage grants +35 Handling for 3 seconds.\n\nenhanced (\nvar d = 1.1\n#e Melee Ability Energy gains are increased by 10%.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
-     "secondary": "import self"
-    },
-    "zh-chs": {
-     "main": "<primary/> 主武器和 <heavy/> 重武器击杀可获取 #e${10 * #d}% 近战技能能量。\n大多数 <special/> 特殊武器获取 #e${20 * #d}% 能量。\n\n偃月、追踪步枪、榴弹发射器相较其他特殊武器，仅获得一半能量。\n\n使用近战技能造成伤害获得 +35 操控性，持续 3 秒。将 <title 重新装填 [G_refill] /> 弹匣。\n\nenhanced (\nvar d = 1.1\n#e 能量获取量提升 10%。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
-     "secondary": "import self"
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665091266948,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668693283588,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670332328318,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "stats": {
     "Handling": [
      {
@@ -8517,7 +8497,36 @@
      }
     ]
    },
-   "uploadedBy": "Stardust"
+   "editor": {
+    "en": {
+     "main": "Weapon Kills grant Melee Ability Energy:\n<primary/> Primary and <heavy/> Power Weapons: #e${10*#d}%\nMost <special/> Special Weapons: #e${20*#d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide 10%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\nenhanced (\nvar d = 1.1\n#e Melee Ability Energy gains are increased by 10%.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "secondary": "import self"
+    },
+    "zh-chs": {
+     "main": "<primary/> 主武器和 <heavy/> 重武器击杀可获取 #e${10 * #d}% 近战技能能量。\n大多数 <special/> 特殊武器获取 #e${20 * #d}% 能量。\n\n偃月、追踪步枪、榴弹发射器相较其他特殊武器，仅获得一半能量。\n\n使用近战技能造成伤害获得 +35 操控性，持续 3 秒。将 <title 重新装填 [G_refill] /> 弹匣。\n\nenhanced (\nvar d = 1.1\n#e 能量获取量提升 10%。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676218544060,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670332328318,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1665091266948,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "692285813": {
    "hash": 692285813,
@@ -8588,7 +8597,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -8676,35 +8685,14 @@
    }
   },
   "706527188": {
-   "hash": 706527188,
    "name": "Quickdraw",
+   "hash": 706527188,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665091631156,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670087223270,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670332788014,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Stow": [
      {
       "active": {
-       "stat": [ 100 ],
-       "multiplier": [ 0.95 ]
+       "stat": [ 100 ]
       }
      }
     ],
@@ -8719,14 +8707,34 @@
    },
    "editor": {
     "en": {
-     "main": "Upon readying:\nGrants +100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier for 1 second, or until ADS.\n\nenhanced (\n#e Passively grants 5 Handling.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon readying:\nGrants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier for 1 second, or until ADS.\n\nenhanced (\n#e Passively grants 5 Handling.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "拔枪时：\n+100 拔枪/收枪操控性，0.95x 拔枪<title 动画系数 [as] />，持续 1 秒，或直到瞄准。\n\nenhanced (\n#e 被动提升 +5 操控性。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676218856386,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670332788014,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676218871700,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "711234314": {
    "hash": 711234314,
@@ -8762,31 +8770,32 @@
    "uploadedBy": "Stardust"
   },
   "711628886": {
-   "hash": 711628886,
    "name": "Perfect Float",
+   "hash": 711628886,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 2272927194,
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2272927194",
+     "secondary": "import secondary from 2272927194"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676218207833,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676218133902,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "712951940": {
    "hash": 712951940,
@@ -9584,10 +9593,10 @@
    }
   },
   "788178929": {
-   "hash": 788178929,
    "name": "One-Two Punch",
+   "hash": 788178929,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 2679249093,
    "editor": {
     "en": {
      "main": "import main from 2679249093",
@@ -9595,18 +9604,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676216522031,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "791862061": {
    "hash": 791862061,
@@ -9984,7 +9995,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -10024,10 +10035,10 @@
    }
   },
   "834262328": {
-   "hash": 834262328,
    "name": "Kickstart",
+   "hash": 834262328,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 1754714824,
    "editor": {
     "en": {
      "main": "import main from 1754714824",
@@ -10035,20 +10046,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251366010,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676214498530,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 1754714824
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "836583820": {
    "hash": 836583820,
@@ -10402,11 +10413,10 @@
    "uploadedBy": "Stardust"
   },
   "859780267": {
-   "hash": 859780267,
    "name": "One for All",
+   "hash": 859780267,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 4049631843,
    "editor": {
     "en": {
      "main": "import main from 4049631843",
@@ -10414,19 +10424,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0,
       "updatedBy": ""
      }
+    },
+    "stats": {
+     "lastUpdate": 1676216038195,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "861489047": {
    "hash": 861489047,
@@ -11716,29 +11728,9 @@
    "inLiveDatabase": true
   },
   "951095735": {
-   "hash": 951095735,
    "name": "Impulse Amplifier",
+   "hash": 951095735,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668690574319,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270180158,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
@@ -11751,14 +11743,34 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants:\n- 35% Faster Projectile Velocity \n- 10 Reload Speed with 0.8x Duration Multiplier\n\nenhanced (\n#e Increased Reload Speed bonus.\n)",
+     "main": "Passively grants:\n• 35% Faster Projectile Velocity \n• 10 Reload Speed\n• 0.8x Reload Duration Multiplier\n\nenhanced (\n#e Reload Speed Bonus is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "被动提升：\n • +35% 弹头速度 \n • +10 填装速度，0.8x 填装<title 动画系数 [as] />\n\nenhanced (\n#e 增加额外填装速度。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676214548468,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270180158,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "956390015": {
    "hash": 956390015,
@@ -11853,7 +11865,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -11997,29 +12009,9 @@
    "itemName": "Ager's Scepter"
   },
   "972757866": {
-   "hash": 972757866,
    "name": "Pulse Monitor",
+   "hash": 972757866,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668693512767,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670332713124,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Handling": [
      {
@@ -12038,14 +12030,34 @@
    },
    "editor": {
     "en": {
-     "main": "Upon being reduced to 110 HP or less:\nGrants +50 Handling, 0.95x Ready/Stow Duration Multiplier, and <title refreshes [G_refresh] /> your weapon.\n\nWorks while stowed.\n\nenhanced (\n#e Health Threshold Requirement is reduced.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "When at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Duration Multiplier\n• <title Refills [G_refill] /> magazine from reserves\n\nWorks while stowed.\n\nenhanced (\n#e Atviates with more health remaining.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "低于 110 生命值时：\n+50 操控性，0.9 拔枪/收枪<title 动画系数 [G_as] />，并且<title 重新填装 [G_refresh] />武器。\n\n武器收起时也有效。\n\nenhanced (\n#e 更宽松的生命值触发条件。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676218708991,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670332713124,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "975429949": {
    "hash": 975429949,
@@ -12432,32 +12444,28 @@
    "importStatsFrom": 3201675491
   },
   "1015611457": {
-   "hash": 1015611457,
    "name": "Kill Clip",
+   "hash": 1015611457,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1670085103461,
-     "updatedBy": "Stardust"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670085111934,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270806736,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.25 ]
+      }
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.25 ]
+      }
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:\n25% Increased damage for 5 seconds.\n\nBuff can be refreshed through additional reloads. Persists through stow.\n\nenhanced (\n#e Buff Duration is increased to 5.5 seconds.\n)",
+     "main": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:\n25% Increased damage for #e${5+#d} seconds.\n\nBuff can be refreshed through additional reloads. Persists through stow.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -12465,15 +12473,26 @@
      "secondary": "import self"
     }
    },
-   "stats": {
-    "Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.25 ]
-      }
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676214696449,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270806736,
+      "updatedBy": "Mistwalker"
      }
-    ]
-   }
+    },
+    "stats": {
+     "lastUpdate": 1676214658118,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1016030582": {
    "hash": 1016030582,
@@ -14074,29 +14093,9 @@
    "importStatsFrom": 3927722942
   },
   "1168162263": {
-   "hash": 1168162263,
    "name": "Outlaw",
+   "hash": 1168162263,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668692229415,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670274619107,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
@@ -14109,14 +14108,34 @@
    },
    "editor": {
     "en": {
-     "main": "On Precision Kill:\n70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds.\n\nenhanced (\n#e Duration increased to 7 seconds.\n)\n\n<formula Reload Time: [reload_0] />",
+     "main": "On Precision Kill:\n70 Reload Speed with a 0.9x Reload Duration Multiplier for #e${6+#d} seconds.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Reload Time: [reload_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "精准击杀后：\n+70 填装速度，0.9x 填装<title 动画系数 [as] />，持续 6 秒。\n\nenhanced (\n#e 增益持续时间提升为 7 秒。\n)\n\n<formula 填装时间： [reload_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216972537,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670274619107,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1171147302": {
    "name": "Feeding Frenzy",
@@ -14141,7 +14160,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14334,7 +14353,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -14472,7 +14491,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -15357,7 +15376,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -15537,7 +15556,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16458,10 +16477,10 @@
    "inLiveDatabase": true
   },
   "1347741687": {
-   "hash": 1347741687,
    "name": "Outlaw",
+   "hash": 1347741687,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 1168162263,
    "editor": {
     "en": {
      "main": "import main from 1168162263",
@@ -16469,20 +16488,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251748237,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676216978287,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 1168162263
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1354429876": {
    "name": "Fourth Time's the Charm",
@@ -16515,7 +16534,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16613,7 +16632,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16867,7 +16886,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -16899,30 +16918,9 @@
    "inLiveDatabase": true
   },
   "1370847713": {
-   "hash": 1370847713,
    "name": "Opening Shot",
+   "hash": 1370847713,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "editor": {
-    "en": {
-     "main": "import main from 47981717",
-     "secondary": "import secondary from 47981717"
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251713212,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust",
    "stats": {
     "Aim Assist": [
      {
@@ -16938,7 +16936,28 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "import main from 47981717",
+     "secondary": "import secondary from 47981717"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667251713212,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1371877916": {
    "hash": 1371877916,
@@ -17744,62 +17763,62 @@
    }
   },
   "1428297954": {
-   "hash": 1428297954,
    "name": "Perpetual Motion",
+   "hash": 1428297954,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670087138941,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670332106613,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
       "active": {
-       "stat": [ 5, 15 ]
+       "stat": [ 10, 20 ]
       }
      }
     ],
     "Handling": [
      {
       "active": {
-       "stat": [ 5, 15 ]
+       "stat": [ 10, 20 ]
       }
      }
     ],
     "Stability": [
      {
       "active": {
-       "stat": [ 5, 15 ]
+       "stat": [ 10, 20 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "While moving at a minimum of 2 meters per second:\nGain a Stack after 2 seconds and an additional Stack after 10 seconds.\n\nRemoves all stacks if movement speed is below 2 meters per second for 0.5 seconds.\n\nCan activate and remain active while stowed.\n\nenhanced (\nvar d = 1\n#e Grace period for not meeting the criteria is increased to 1 second. Perpetual Motion x2 is activated in 9 seconds.\n)\n\n< table >\n|     Time Spent Moving          |   Stability              | Reload                      | Handling <bold/>\n|     #e 2-${10-#d} seconds               |   +5                     | +5                           | +5       <background/>\n|2-2c In-game  values:           |-2 <formula [reload_0] /> | <formula Ready: [ready_0] />\n|     <formula Stow: [stow_0] />\n|     #e ${10-#d}+ seconds                |   +15                    | +15                          | +15      <background/>\n|2-2c In-game  values:           |-2 <formula [reload_1] /> | <formula Ready: [ready_1] />\n|     <formula Stow: [stow_1] />\n<$>",
-     "secondary": "While moving at a minimum of 2 meters per second:\nAfter 2 seconds: +5 Stability, +5 Handling, and +5 Reload Speed. Displays as x1 buff.\nAfter 10 seconds: +15 Stability, +15 Handling and +15 Reload Speed. Displays as x2 buff.\n\nRemoves all stacks if movement speed is below 2 meters per second for 0.5 seconds.\n\nAll stacks are removed if criteria is not met for 0.5 seconds. Can activate and persist while stowed.\n\nenhanced (\n#e Grace period for not meeting the criteria is increased to 1 second. Perpetual Motion x2 is activated in 9 seconds.\n)"
+     "main": "While moving at a minimum of 2 meters per second:\nGain a Stack after 2 and ${10-#d} seconds.\n\nAll stacks are removed if movement speed is below 2 meters per second for 0.5 seconds.\nCan activate and remain active while stowed.\n\nenhanced (\nvar d = 1\n#e Second Stack is gained 1 second sooner.\n)\n\n< table >\n|     Time Spent Moving          |   Stability              | Reload                      | Handling <bold/>\n|     2-#e${10-#d} seconds               |   10                     | 10                           | 10       <background/>\n|2-2c In-game  values:           |-2 <formula [reload_0] /> | <formula Ready: [ready_0] />\n|     <formula Stow: [stow_0] />\n|     #e${10-#d}+ seconds                |   20                    | 20                          | 20      <background/>\n|2-2c In-game  values:           |-2 <formula [reload_1] /> | <formula Ready: [ready_1] />\n|     <formula Stow: [stow_1] />\n<$>",
+     "secondary": "While moving at a minimum of 2 meters per second:\nGain a Stack after 2 and ${10-#d} seconds.\n\nEach stack provides 10 Stability, 10 Handling, and 10 Reload Speed.\n\nAll stacks are removed if movement speed is below 2 meters per second for 0.5 seconds.\nCan activate and remain active while stowed.\n\nenhanced (\nvar d = 1\n#e Second Stack is gained 1 second sooner.\n)"
     },
     "zh-chs": {
      "main": "保持移动时(每秒移动 2 米以上)时：\n2 秒后触发第一层增益，10秒后触发第二层增益。\n\n每 0.5 秒检测一次状态，若没有保持移动，则失去所有增益层数。\n\n武器收起时也可触发和保持该增益。\n\nenhanced (\nvar d = 1\n#e 触发第二层增益所需时间降低到 9 秒。持续检测移动状态的时长从 0.5 秒提升到 1 秒。\n)\n\n< table >\n|     保持移动的时长          |   稳定性              | 填装速度                      | 操控性 <bold/>\n|     #e 2-${10-#d} 秒               |   +5                     | +5                           | +5       <background/>\n|2-2c 游戏内数值：           |-2 <formula [reload_0] /> | <formula 拔枪： [ready_0] />\n|     <formula 收枪： [stow_0] />\n|     #e ${10-#d}+ 秒                |   +15                    | +15                          | +15      <background/>\n|2-2c 游戏内数值           |-2 <formula [reload_1] /> | <formula 拔枪： [ready_1] />\n|     <formula 收枪： [stow_1] />\n<$>\n",
      "secondary": "保持移动时(每秒移动 2 米以上)时：\n2 秒后触发第一层增益：+5 稳定性，+5 操控性，+5 填装速度。\n10秒后触发第二层增益：+15 稳定性，+15 操控性，+15 填装速度。\n\n每 0.5 秒检测一次状态，若没有保持移动，则失去所有增益层数。\n\n武器收起时也可触发和保持该增益。\n\nenhanced (\nvar d = 1\n#e 触发第二层增益所需时间降低到 9 秒。持续检测移动状态的时长从 0.5 秒提升到 1 秒。\n)"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676217861967,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670332106613,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676217307431,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1429600943": {
    "hash": 1429600943,
@@ -19333,39 +19352,39 @@
    "uploadedBy": "Stardust"
   },
   "1556840489": {
-   "hash": 1556840489,
    "name": "Lead from Gold",
+   "hash": 1556840489,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668691302066,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670271421356,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Power Ammo Pickup:\nGrants 25% of your maximum Special Ammo Reserves.\n\nEquipping two Special Weapons splits the amount of ammo granted between them.\n\nenhanced (\n#e Increases the amount of Special Ammo received to 35%.\n)",
+     "main": "On <heavy/> Heavy Ammo Pickup:\nGrants #e${25+#d}% of your maximum <special/> Special Ammo Reserves.\n\nEquipping two <special/> Special Weapons halves the amount of ammo granted.\n\nenhanced (\nvar d = 10\n#e Increases the amount of Special Ammo received by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "拾取重型弹药时：\n生成 25% 特殊弹药备弹容量。\n\n装备两把特殊武器时，生成的弹药将平分给两把武器。\n\nenhanced (\n#e 增加生成的弹药量至 35%。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215379929,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670271421356,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1557274655": {
    "hash": 1557274655,
@@ -19622,29 +19641,9 @@
    "inLiveDatabase": true
   },
   "1570042021": {
-   "hash": 1570042021,
    "name": "Heating Up",
+   "hash": 1570042021,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668690131499,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670269117249,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Stability": [
      {
@@ -19656,14 +19655,34 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n-15% <title Accuracy Cone Growth [G_conegrowth] />, 15 Stability, and ~20 Recoil Direction.\n\nStacks up to 2x.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "On Weapon Kill, for #e${5.5+#d} seconds:\n-15% <title Accuracy Cone Growth [G_conegrowth] />, 15 Stability, and 20 Recoil Direction per stack.\n\nMaximum of 2 Stacks. Duration is refreshed on kills.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n-15% <title 精度锥角增长 [G_conegrowth] />， +15 稳定性，+20 后座力方向。\n\n可叠加 2 层。\n\nenhanced (\n#e 提升增益持续时间。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676213426937,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670269117249,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1573888036": {
    "hash": 1573888036,
@@ -19976,7 +19995,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20146,7 +20165,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20315,7 +20334,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -20442,7 +20461,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -21092,7 +21111,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -21192,7 +21211,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22394,38 +22413,25 @@
    }
   },
   "1754714824": {
-   "hash": 1754714824,
    "name": "Kickstart",
+   "hash": 1754714824,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667217393497,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668690675290,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270687354,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
      {
       "active": {
        "multiplier": [ 1.2 ]
       }
      }
     ],
-    "RPM": [
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2 ]
+      }
+     }
+    ],
+    "Charge Draw": [
      {
       "active": {
        "multiplier": [ 0.8 ]
@@ -22442,7 +22448,27 @@
      "main": "冲刺 1.5 秒后滑行：\n+20% 伤害，0.8 倍充能时间，持续 [?] 秒。\n\nenhanced (\n#e 提升增益持续时间。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1668690675290,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270687354,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676214517020,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1758592809": {
    "hash": 1758592809,
@@ -22547,7 +22573,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -22579,39 +22605,39 @@
    "inLiveDatabase": true
   },
   "1774574192": {
-   "hash": 1774574192,
    "name": "Osmosis",
+   "hash": 1774574192,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668692188615,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670274624643,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Grenade Ability Usage:\nChanges your Weapon Element to match the selected Subclass until stowed. \n\nenhanced (\n#e Passively grants +5 Handling.\n)",
+     "main": "On Grenade Ability Usage:\nChanges your Weapon Element to match the selected Subclass until stowed. \n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用手雷技能后：\n将此武器的伤害类型切换至对应你的分支职业的属性，直到你收起此武器。\n\nenhanced (\n#e 被动提升 +5 操控性。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216736718,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670274624643,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676216917338,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1782407750": {
    "hash": 1782407750,
@@ -22929,7 +22955,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -23545,34 +23571,14 @@
    "itemName": "Hard Light"
   },
   "1866048759": {
-   "hash": 1866048759,
    "name": "Hip-Fire Grip",
+   "hash": 1866048759,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251103642,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670084952089,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670269820547,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Stability": [
      {
       "active": {
-       "stat": [ 30 ]
+       "stat": [ 25 ]
       }
      }
     ],
@@ -23599,14 +23605,34 @@
    },
    "editor": {
     "en": {
-     "main": "If hipfiring:\n• 20% Increased:\n    • Aim Assist Falloff Distance <breakSpaces/>\n    • Reticle Stickiness Falloff Distance <breakSpaces/>\n    • Damage Falloff Start and End Distance <breakSpaces/>\n• -15% Accuracy Cone Size\n• +15 Aim Assist\n• +2.7 degrees Precision Angle Threshold\n• +25 Stability\n\nDamage Falloff Multipliers do not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n\nenhanced (\n#e Stronger Effect.\n)",
+     "main": "If hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -15% Accuracy Cone Size\n• 20% Increased:\n    • Aim Assist Falloff Distance <breakSpaces/>\n    • Reticle Stickiness Falloff Distance <breakSpaces/>\n    • Damage Falloff Start and End Distance <breakSpaces/>\n\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n\nenhanced (\n#e Stronger Effect.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "腰射时：\n• +20%:\n    • 瞄准辅助有效距离 <breakSpaces/>\n    • 准星吸附有效距离 <breakSpaces/>\n    • 有效射程距离 <breakSpaces/>\n• -15% 精度锥角尺寸\n• +15 瞄准辅助\n• +2.7° 精准角度范畴\n• +25 稳定性\n\n有效射程距离系数不会作用于遗言、霰弹枪、狙击步枪、融合步枪。\n\nenhanced (\n#e 更显著的效果。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216583250,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670269820547,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676214085026,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1870851715": {
    "hash": 1870851715,
@@ -24510,7 +24536,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -24542,10 +24568,10 @@
    "inLiveDatabase": true
   },
   "1961144892": {
-   "hash": 1961144892,
    "name": "Quickdraw",
+   "hash": 1961144892,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 706527188,
    "editor": {
     "en": {
      "main": "import main from 706527188",
@@ -24553,20 +24579,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251972278,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676218849038,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 706527188
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1966150207": {
    "hash": 1966150207,
@@ -25030,10 +25056,10 @@
    "inLiveDatabase": true
   },
   "2002547233": {
-   "hash": 2002547233,
    "name": "High-Impact Reserves",
+   "hash": 2002547233,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 2213355989,
    "editor": {
     "en": {
      "main": "import main from 2213355989",
@@ -25041,18 +25067,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676213529475,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2003108620": {
    "hash": 2003108620,
@@ -25122,7 +25150,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25154,11 +25182,10 @@
    "inLiveDatabase": true
   },
   "2014892510": {
-   "hash": 2014892510,
    "name": "Perpetual Motion Enhanced",
+   "hash": 2014892510,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 1428297954,
    "editor": {
     "en": {
      "main": "import main from 1428297954",
@@ -25166,19 +25193,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0,
       "updatedBy": ""
      }
+    },
+    "stats": {
+     "lastUpdate": 1676217312914,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2019952880": {
    "hash": 2019952880,
@@ -25321,7 +25350,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -25654,7 +25683,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying a sword, for #e${1+#d} second#c\n#e${80*#f}% Increased Grounded and #e${64*#f}% Increased Airborne Lunge Distance.\n\nDeactivates after swinging once. 4 second cooldown.\n\nvar c = ‌: //this is a U+200C character (zero width non-joiner)\nenhanced (\nvar d = 0.5 //duration increase\nvar c = s: //plural for first line\nvar f = 1.25 //lunge distance increase\n#e Buff Duration is increased by 0.5 seconds. Lunge Distance bonus is increased by 25%.\n)",
+     "main": "Upon readying a sword, for #e${1+#d} #c\n#e${80*#f}% Increased Grounded and #e${64*#f}% Increased Airborne Lunge Distance.\n\nDeactivates after swinging once. 4 second cooldown.\n\nvar c = second:\nenhanced (\nvar d = 0.5 //duration increase\nvar c = seconds:\nvar f = 1.25 //lunge distance increase\n#e Buff Duration is increased by 0.5 seconds. Lunge Distance bonus is increased by 25%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -25665,7 +25694,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676206450981,
+      "lastUpdate": 1676213178488,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -25679,7 +25708,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -26108,7 +26137,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -27257,39 +27286,55 @@
    }
   },
   "2213355989": {
-   "hash": 2213355989,
    "name": "High-Impact Reserves",
+   "hash": 2213355989,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668690213189,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670269567762,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 12.1, 25.6 ]
+      }
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.03, 1.06 ]
+      }
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "As Magazine goes below 50%, until empty: \n<pve [PVE] 12.1% to 25.6% Increased damage. />\n<pvp [PVP] 3% to 6% Increased damage. />\n\nenhanced (\n#e Activates at the 75% Magazine Threshold.\n)",
+     "main": "As Magazine goes below #e${50+#d}%, until empty: \n<pve [PVE] 12.1% to 25.6% Increased damage. />\n<pvp [PVP] 3% to 6% Increased damage. />\n\nActivation is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 7.85\n#e Activates with 7.85% more of the Magazine Capacity remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "弹匣中最后 50% 的弹药：\n<pve [PVE] +12.1% ~ 25.6% 伤害。 />\n<pvp [PVP] +3% ~ 6% 伤害。 />\n\nenhanced (\n#e 75% 弹匣剩余量时即可触发。\n)",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676213866740,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670269567762,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676213521640,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2213377102": {
    "hash": 2213377102,
@@ -27885,7 +27930,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28118,31 +28163,40 @@
    "itemName": "Lumina"
   },
   "2272927194": {
-   "hash": 2272927194,
    "name": "Perfect Float",
+   "hash": 2272927194,
    "type": "Weapon Trait",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Airborne": [
+     {
+      "active": {
+       "stat": [ 30 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "After having dealt or received damage every 3 seconds for 6 seconds:\n30 Airborne Effectiveness and [?]% Flinch Resistance.\n\nDeactivates when no damage is dealt or received in the last ${3+#d} seconds. //add #e once known\n\nenhanced (\nvar d = 0 //placeholder\n#e Time until the perk deactivates is extended. \n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676218319508,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676218127544,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2272984656": {
    "hash": 2272984656,
@@ -28518,7 +28572,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28553,7 +28607,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -28777,7 +28831,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29571,7 +29625,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29740,31 +29794,47 @@
    "inLiveDatabase": true
   },
   "2416023159": {
-   "hash": 2416023159,
    "name": "Offhand Strike",
+   "hash": 2416023159,
    "type": "Weapon Trait",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Stability": [
+     {
+      "active": {
+       "stat": [ 30 ]
+      }
+     }
+    ],
+    "Range": [
+     {
+      "active": {
+       "multiplier": [ 1.45 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "On Weapon Kill, for 7 seconds:\n• 30 Stability\n• 1.45x Damage Falloff Start and End Distance\n• 3-3.5° Precision Aim Angle\n• -100% Accuracy Cone Size\n• -100% <title Accuracy Cone Growth [G_conegrowth] />.\n\nOnly applies to hipfiring.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676215952015,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676215922770,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2419864979": {
    "hash": 2419864979,
@@ -29844,7 +29914,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -29930,29 +30000,9 @@
    "inLiveDatabase": true
   },
   "2450788523": {
-   "hash": 2450788523,
    "name": "Killing Wind",
+   "hash": 2450788523,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668883204616,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670271053187,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Range": [
      {
@@ -29972,14 +30022,34 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n+20 Range, +50 Mobility, +40 Handling, and a 5% Increased Damage Falloff Distance\n\nLasts 5 seconds, additional kills add 5 seconds, maxing out at 8 seconds.\n\nenhanced (\n#e Initial Buff Duration is increased.\n)\n\n<formula Effective Range: [range_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "On Weapon Kill:\n• 50 Mobility\n• 40 Handling and 20 Range\n• 5% Increased Damage Falloff Distance\n\nLasts 5 seconds. Additional kills add 5 seconds to the timer, maxing out at 8 seconds.\n\nenhanced (\n#e Initial Buff Duration is increased.\n)\n\n<formula Effective Range: [range_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n+50 敏捷，+20 射程，+40 操控性，+5% 伤害衰减距离。\n\n持续 5 秒，额外击杀增加 5 秒，持续时间上限为 8 秒。\n\nenhanced (\n#e 提升初始增益持续时间。\n)\n\n<formula 有效射程： [range_0] />\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215091296,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670271053187,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2451262963": {
    "name": "Fragile Focus",
@@ -30021,36 +30091,23 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
   "2458213969": {
-   "hash": 2458213969,
    "name": "Multikill Clip",
+   "hash": 2458213969,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670085160423,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670271969268,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.17, 1.33, 1.5 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 1.17, 1.33, 1.5 ]
@@ -30060,14 +30117,34 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:\n17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within [?] seconds of each.\n\nBuff is overwritten every time you refresh it.\n\nenhanced (\n#e Buff Duration is increased to 5.5 seconds.\n)",
+     "main": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:\n17% | 33% | 50% Increased damage for #e${5+#d} seconds, depending on the amount of enemies killed within [?] seconds of each.\n\nEach kill within the time period contributes to 1 Stack of the buff. Maximum of 3 Stacks.\n\nBuff is overwritten every time it is refreshed.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "击杀后 3.8 秒内换弹：\n根据 [?] 秒内的击杀数量，增加 17% | 33% | 50% 伤害，持续 5 秒。\n\n增益可以被刷新。\n\nenhanced (\n#e 增益持续时间增加到 5.5 秒。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215616260,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670271969268,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676215521953,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2458294492": {
    "hash": 2458294492,
@@ -30787,7 +30864,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -30973,10 +31050,10 @@
    "itemName": "Arbalest"
   },
   "2570477205": {
-   "hash": 2570477205,
    "name": "Multikill Clip",
+   "hash": 2570477205,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 2458213969,
    "editor": {
     "en": {
      "main": "import main from 2458213969",
@@ -30984,20 +31061,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251501139,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676215524935,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 2458213969
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2571974065": {
    "hash": 2571974065,
@@ -31435,7 +31512,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -31569,7 +31646,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -32289,39 +32366,57 @@
    "inLiveDatabase": true
   },
   "2679249093": {
-   "hash": 2679249093,
    "name": "One-Two Punch",
+   "hash": 2679249093,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670086409684,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670273909089,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.4, 2 ]
+      },
+      "weaponTypes": [ "Melee" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.4, 2 ]
+      },
+      "weaponTypes": [ "Melee" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Upon scoring a hit with all 12 pellets from a shotgun:\nGrants increased Melee Damage for 1.22 seconds.\n\nUnpowered Melee Attacks: 100% Increased Melee Damage.\nPowered Melee Attacks: 40% Increased Melee Damage.\n\nBosses and Vehicles uniquely receive 25% increased melee damage. Bonus damage is multiplicative to the regular increase.\n\nenhanced (\n#e Activation requirement reduced from 12 pellets to 10.\n)",
+     "main": "Increases Melee Damage for 1.22 seconds after hiting a target with #d Shotgun Pellets.\n\nMelee Damage Increases:\n• 100% Increased Unpowered Melee Damage\n• 40% Increased Powered Melee Damage\n\nvar d = all 12\nenhanced (\nvar d = 10 of the 12\n#e Requires 2 fewer Shotgun Pellets to activate.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "当一发弹药的 12 枚弹片全部命中时：\n在 1.22 秒内增加近战伤害。\n\n未充能近战：+100% 伤害。\n充能近战：+40% 伤害。\n\n对首领和载具时，再增加 25% 伤害。和上述增伤乘法叠加。\n\nenhanced (\n#e 触发特性需要命中的弹片从 12 枚降低为 10 枚。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216472262,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670273909089,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676216514322,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2680121939": {
    "hash": 2680121939,
@@ -32565,11 +32660,10 @@
    "inLiveDatabase": true
   },
   "2717805783": {
-   "hash": 2717805783,
    "name": "Moving Target",
+   "hash": 2717805783,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 588594999,
    "editor": {
     "en": {
      "main": "import main from 588594999",
@@ -32577,19 +32671,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0,
       "updatedBy": ""
      }
+    },
+    "stats": {
+     "lastUpdate": 1676215409490,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2720533289": {
    "hash": 2720533289,
@@ -33226,10 +33322,10 @@
    "inLiveDatabase": true
   },
   "2748258257": {
-   "hash": 2748258257,
    "name": "Heating Up",
+   "hash": 2748258257,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 1570042021,
    "editor": {
     "en": {
      "main": "import main from 1570042021",
@@ -33237,20 +33333,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667250989215,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676213367417,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 1570042021
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2748801589": {
    "name": "Harmony",
@@ -33275,7 +33371,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -33456,7 +33552,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34336,7 +34432,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34472,39 +34568,39 @@
    "uploadedBy": "Stardust"
   },
   "2866798147": {
-   "hash": 2866798147,
    "name": "No Distractions",
+   "hash": 2866798147,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668887971250,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670272108628,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "After 1 second of aiming-down-sights (ADS) without firing:\n35% Flinch Reduction until no longer ADS.\n\nTimer starts as soon as the ADS input is pressed.\n\nenhanced (\n#e Aiming Down Sights timer is reduced.\n)",
+     "main": "Grants 35% Flinch Reduction after 1 second of Aiming Down Sights (ADS) without firing.\n\nTimer starts as soon as the ADS input is pressed. The perk remains active while ADS.\n\nenhanced (\n#e Aiming Down Sights timer is reduced.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "瞄准 1 秒后不射击：\n-35% 后仰抖动，直到取消瞄准。\n\n按下瞄准键即开始计时。\n\nenhanced (\n#e 减少触发所需时间。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215781112,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670272108628,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2869569095": {
    "name": "Field Prep",
@@ -34561,7 +34657,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34789,7 +34885,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34825,7 +34921,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -34905,15 +35001,15 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
   "2896748467": {
-   "hash": 2896748467,
    "name": "Killing Tally",
+   "hash": 2896748467,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 557221067,
    "editor": {
     "en": {
      "main": "import main from 557221067",
@@ -34921,20 +35017,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251389675,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676214966583,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 557221067
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2897981193": {
    "hash": 2897981193,
@@ -34995,7 +35091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -35169,10 +35265,10 @@
    "itemName": "Thorn"
   },
   "2923251173": {
-   "hash": 2923251173,
    "name": "Kill Clip",
+   "hash": 2923251173,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 1015611457,
    "editor": {
     "en": {
      "main": "import main from 1015611457",
@@ -35180,20 +35276,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251375705,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676214659624,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 1015611457
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2927971896": {
    "hash": 2927971896,
@@ -35604,7 +35700,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36166,31 +36262,32 @@
    "inLiveDatabase": true
   },
   "2997472817": {
-   "hash": 2997472817,
    "name": "Osmosis",
+   "hash": 2997472817,
    "type": "Weapon Trait",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 1774574192,
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1774574192",
+     "secondary": "import secondary from 1774574192"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676216896210,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676216923773,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2999890939": {
    "hash": 2999890939,
@@ -36269,7 +36366,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36313,7 +36410,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36501,7 +36598,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36599,7 +36696,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -36631,31 +36728,32 @@
    "inLiveDatabase": true
   },
   "3050799639": {
-   "hash": 3050799639,
    "name": "Offhand Strike",
+   "hash": 3050799639,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 2416023159,
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2416023159",
+     "secondary": "import secondary from 2416023159"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676215970404,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676215927382,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3054949324": {
    "hash": 3054949324,
@@ -36707,7 +36805,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -37116,7 +37214,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -37348,10 +37446,10 @@
    "itemName": "Cloudstrike"
   },
   "3118144663": {
-   "hash": 3118144663,
    "name": "Hip-Fire Grip",
+   "hash": 3118144663,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 1866048759,
    "editor": {
     "en": {
      "main": "import main from 1866048759",
@@ -37359,20 +37457,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251017719,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676214071248,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 1866048759
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3121039270": {
    "hash": 3121039270,
@@ -38140,7 +38238,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -39285,7 +39383,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -40075,7 +40173,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -40271,7 +40369,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -40417,31 +40515,18 @@
    "inLiveDatabase": true
   },
   "3425386926": {
-   "hash": 3425386926,
    "name": "Rampage",
+   "hash": 3425386926,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670087242882,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670332855981,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 10, 21, 33.1 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 10, 21, 33.1 ]
@@ -40458,7 +40543,27 @@
      "main": "完成武器击杀时:\n提高 10% | 21% | 33.1% 伤害，持续 4.5 秒。\n击杀可刷新 Buff 时间。\n\nenhanced (\n#e 增益持续时间提升到 5 秒。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1670087242882,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670332855981,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676218922899,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3429800428": {
    "hash": 3429800428,
@@ -41386,7 +41491,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grants Passive Stat Bonuses based on your selected Subclass.\n\n<solar/> #e${50 + #d} Reload Speed\n<arc/> #e${50 + #d} Handling\n<void/> #e${20 + #d} Stability\n<stasis/> #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e The Subclass Stat Bonuses are increased by 5.\n)",
+     "main": "Grants Passive Stat Bonuses based on your selected Subclass.\n\n<solar/> #e${50 + #d} Reload Speed\n<arc/> #e${50 + #d} Handling\n<void/> #e${20 + #d} Stability\n<stasis/> #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Subclass Stat Bonuses are increased by 5.\n)",
      "secondary": "Grants Passive Stat Bonuses depending on your selected Subclass.\n\nSolar: #e${50 + #d} Reload Speed\nArc: #e${50 + #d} Handling\nVoid: #e${20 + #d} Stability\nStasis: #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e The Subclass Stat Bonuses are increased by 5.\n)"
     },
     "zh-chs": {
@@ -41397,7 +41502,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676206682368,
+      "lastUpdate": 1676216604229,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41411,18 +41516,17 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
   "3513791699": {
-   "hash": 3513791699,
    "name": "Mulligan",
+   "hash": 3513791699,
    "type": "Weapon Trait",
-   "lastUpload": 1675798177540,
    "editor": {
     "en": {
-     "main": "On Miss:\nPrimary Weapons have a #e${35 + #d}% chance to refund ammo.\nSpecial and Power Weapons have a #e${20 + #d}% chance to refund ammo.\n\nenhanced (\nvar d = 5\n#e Ammo Refund chance is increased by 5(?)%.\n)",
+     "main": "On Miss:\nPrimary Weapons have a #e${35 + #d}% chance to refund ammo.\nSpecial and Power Weapons have a #e${20 + #d}% chance to refund ammo.\n\nenhanced (\nvar d = 5\n#e Ammo Refund chance is increased by an additive 5%(?).\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -41431,23 +41535,24 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668691486155,
+      "lastUpdate": 1676215434331,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670271773835,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3513901081": {
    "hash": 3513901081,
@@ -41617,7 +41722,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant Grenade Ability Energy:\n• <primary/> Primary and <heavy/> Power Weapons: #e${10 * #d}%\n• Most <special/> Special Weapons: #e${20 * #d}%\n\nTrace Rifles and Grenade Launchers grant half of what other Special Weapons give.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%.\n)",
+     "main": "Weapon Kills grant Grenade Ability Energy:\n• <primary/> Primary and <heavy/> Power Weapons: #e${10 * #d}%\n• Most <special/> Special Weapons: #e${20 * #d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide 10%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -41628,7 +41733,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676205327740,
+      "lastUpdate": 1676218571785,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41642,7 +41747,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -41670,7 +41775,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -42828,39 +42933,39 @@
    "inLiveDatabase": true
   },
   "3643424744": {
-   "hash": 3643424744,
    "name": "Overflow",
+   "hash": 3643424744,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670086587978,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670274808924,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Upon Picking Up <special/> Special or <heavy/> Power Ammo:\nMagazine gets overflowed to 200% of its regular capacity from reserves.\n\nActivates even if stowed.\n\nenhanced (\n#e Magazine gets overflowed to 205-222% of its regular capacity.\n)",
+     "main": "Upon Picking Up <special/> Special or <heavy/> Heavy Ammo:\nMagazine gets overflowed to #d of its regular capacity from reserves.\n\nActivates even if stowed.\n\nvar d = 200%\nenhanced (\nvar d = #e205-222%\n#e Overflow amount is increased by 5-22%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "拾取 <special/> 特殊或 <heavy/> 重型弹药：\n武器使用备弹过量装填至 200% 弹匣量。\n\n武器收起时也可触发。\n\nenhanced (\n#e 过量装填至 205-222% 弹匣量\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676217185997,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670274808924,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3649430342": {
    "hash": 3649430342,
@@ -42922,7 +43027,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43369,7 +43474,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43424,7 +43529,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43756,7 +43861,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -43915,7 +44020,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44018,7 +44123,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44245,7 +44350,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -44845,39 +44950,39 @@
    "inLiveDatabase": true
   },
   "3800201097": {
-   "hash": 3800201097,
    "name": "Immovable Object",
+   "hash": 3800201097,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668690543264,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670269999658,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While blocking and stationary:\n50%(?) Additional Weapon Energy on Hit.\n\nenhanced (\n#e Increases Energy Bonus on Hit.\n)",
+     "main": "While blocking and stationary:\n#e${35+#d}% Additional Weapon Energy on Hit.\n\nenhanced (\nvar d = 5\n#e Energy Bonus on Hit is increased by an additive 5%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "保持不动举起护盾时：\n远程命中可提供额外 50%(?) 武器能量。\n\nenhanced (\n#e 增加命中时获取的能量。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676214558460,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670269999658,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3808234135": {
    "hash": 3808234135,
@@ -45066,7 +45171,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -45458,10 +45563,10 @@
    "itemName": "Gjallarhorn"
   },
   "3878366039": {
-   "hash": 3878366039,
    "name": "Impulse Amplifier",
+   "hash": 3878366039,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 951095735,
    "editor": {
     "en": {
      "main": "import main from 951095735",
@@ -45469,20 +45574,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251174504,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676214206979,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 951095735
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3884127242": {
    "hash": 3884127242,
@@ -45960,31 +46065,18 @@
    "inLiveDatabase": true
   },
   "3927722942": {
-   "hash": 3927722942,
    "name": "Lasting Impression",
+   "hash": 3927722942,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668697473532,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670673268885,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "passive": {
+       "multiplier": [ 1.2 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "passive": {
        "multiplier": [ 1.2 ]
@@ -45994,14 +46086,34 @@
    },
    "editor": {
     "en": {
-     "main": "Rockets attach on impact and detonate after 3 seconds, dealing an additional 25% Explosive Damage.\n(Overall 20% increased total damage)\n\nPassively grants +50 Blast Radius.\n\nenhanced (\n#e Passively grants an additional +5 Blast Radius.\n)",
+     "main": "Passively grants #e${50+#d} Blast Radius.\n\nRockets attach on impact and detonate after 3 seconds, dealing an additional 25% Explosive Damage.\n(Overall 20% increased total damage)\n\nenhanced (\nvar d = 5\n#e Grants 5 more Blast Radius passively.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "火箭弹头粘附在目标上，延迟 3 秒后引爆，+25% 爆炸伤害。\n（总伤害提升约为 20%）\n\n被动提升 +50 爆炸范围。\n\nenhanced (\n#e  额外 +5 爆炸范围。\n)",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676215189069,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670673268885,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676215161205,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3927963100": {
    "hash": 3927963100,
@@ -47147,7 +47259,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -47247,31 +47359,18 @@
    "inLiveDatabase": true
   },
   "4049631843": {
-   "hash": 4049631843,
    "name": "One for All",
+   "hash": 4049631843,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668691582529,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670273703348,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.35 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 1.35 ]
@@ -47281,14 +47380,34 @@
    },
    "editor": {
     "en": {
-     "main": "After Damaging 3 Separate Enemies within 3 seconds of each:\n35% Increased Damage for 10 seconds.\nBuff can't be refreshed.\n\nenhanced (\n#e Buff Duration is increased to 11 seconds.\n)",
+     "main": "After Damaging 3 Separate Enemies within 3 seconds of each: 35% Increased Damage for #e${10+#d} seconds.\n\nBuff can't be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "3 秒内命中 3 个不同目标：\n+35% 伤害，持续 10 秒。\n\n该增益无法被刷新。\n\nenhanced (\n#e 增益持续时间提升为 11 秒。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676216090798,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670273703348,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676216033428,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "4058375008": {
    "hash": 4058375008,
@@ -48070,7 +48189,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49051,7 +49170,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49110,10 +49229,10 @@
    "inLiveDatabase": true
   },
   "4207509907": {
-   "hash": 4207509907,
    "name": "Killing Wind",
+   "hash": 4207509907,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1675798177540,
+   "importStatsFrom": 2450788523,
    "editor": {
     "en": {
      "main": "import main from 2450788523",
@@ -49121,20 +49240,20 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667251411904,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 0
      }
+    },
+    "stats": {
+     "lastUpdate": 1676215102895,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "uploadedBy": "Stardust",
-   "importStatsFrom": 2450788523
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "4208418110": {
    "hash": 4208418110,
@@ -49526,7 +49645,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49728,7 +49847,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
@@ -49973,44 +50092,44 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676210135599,
+   "lastUpload": 1676219346089,
    "inLiveDatabase": false,
    "uploadToLive": false
   },
   "4293542123": {
-   "hash": 4293542123,
    "name": "Incandescent",
+   "hash": 4293542123,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670085054929,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270569268,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\nApplies 30 Scorch to enemies within [?] meters.\nEmber of Ashes increases this to 40 Scorch.\n\nKilling Powerful Combatants and Players increases the range to 8 meters.\n\nDamage from Scorch can be increased through Weapon Damage Buffs, Debuffs, and Combatant Rank Modifiers.\n\nenhanced (\n#e Increases the amount of Scorch Stacks applied to 45 against PVE Combatants with Ember of Ashes equipped.\n)",
+     "main": "On Weapon Kill:\nApplies 30 Scorch to enemies within 4(?) meters.\n\nEmber of Ashes increases this to #d Scorch.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\nDamage from Scorch can be increased through Weapon Damage Buffs and Debuffs.\n\nvar d = 40\nenhanced (\nvar d = #e<pve 45 /> <pvp [40] />\n#e Applies to 5 more Scorch Stacks to PvE Combatants when Ember of Ashes is equipped.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n对 [?] 米范围内的敌人造成 30 层灼烧效果。\n骨灰余烬会将灼烧效果增加到 40 层。\n\n击杀强大的战斗人员或敌方守护者可将范围增加到 8 米。\n\n灼烧伤害可以因武器特性、敌人负面效果、战斗人员阶级而增加。\n\nenhanced (\n#e 增加 5 层灼烧效果。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676214872264,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670270569268,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659903012345,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676219346089,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   }
  },
  "databaseSettings": {
