@@ -398,21 +398,50 @@
    }
   },
   "11612903": {
-   "hash": 11612903,
    "name": "Adrenaline Junkie",
+   "hash": 11612903,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665004067118,
-     "updatedBy": "Fading Shadow"
+   "stats": {
+    "Handling": [
+     {
+      "active": {
+       "stat": [ 20 ]
+      }
+     }
+    ],
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
+      }
+     }
+    ]
+   },
+   "editor": {
+    "en": {
+     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Buff for #e${4.5+#d} seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\n< table >\n|  Stacks      | 1x   | 2x    | 3x  | 4x    | 5x    <bold/>\n|b Damage Buff | 6.7% | 13.3% | 20% | 26.6% | 33.3% <background/>\n<$>\n\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for #e${4.5+#d} seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)"
     },
+    "es": {
+     "main": "Bajas con el arma o una granada otorgan:\n20 Manejo y Aumento de Daño acumulable, durante 4.5 segundos\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\n< table >\n|  Indicador          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Aumento de Daño | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\n<formula Velocidad de Desenfundado: [ready_0] />\n<formula Velocidad de Enfundado: [stow_0] />\n\nAumentado: La duracion del bufo aumenta a 5 segundos",
+     "secondary": "Bajas con el Arma o Granadas otorgan:\nAumento de daño:\n6.7% | 13.3% | 20% | 26.6% | 33.3% \n+20 al manejo\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\nMejorado: La duracion del bufo aumenta a 5 segundos"
+    },
+    "zh-chs": {
+     "main": "当使用武器或手雷完成击杀时：\n+20 操控性，并且获得一个可叠加的伤害增益，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。\n\n< table >\n|  增益层数          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b 伤害提升          | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\n#e 增益持续时间增加到 5 秒。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
+     "secondary": "当使用武器或手雷完成击杀时：\n根据叠加层数获得 6.7% | 13.3% | 20% | 26.6% | 33.3% 伤害提升，并且 +20 操控性，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。\n\nenhanced (\n#e 增益持续时间增加到 5 秒。\n)"
+    }
+   },
+   "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1670080978513,
+      "lastUpdate": 1676203953423,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -423,38 +452,16 @@
       "lastUpdate": 1670250018937,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676243385951,
+     "updatedBy": "Stardust"
     }
    },
-   "stats": {
-    "Handling": [
-     {
-      "active": {
-       "stat": [ 20 ]
-      }
-     }
-    ],
-    "Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
-      }
-     }
-    ]
-   },
-   "editor": {
-    "en": {
-     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Increase for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\n< table >\n|  Stacks          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Damage Increase | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
-     "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\nenhanced (\n#e Buff Duration is increased to 5 seconds.\n)"
-    },
-    "es": {
-     "main": "Bajas con el arma o una granada otorgan:\n20 Manejo y Aumento de Daño acumulable, durante 4.5 segundos\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\n< table >\n|  Indicador          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b Aumento de Daño | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\n<formula Velocidad de Desenfundado: [ready_0] />\n<formula Velocidad de Enfundado: [stow_0] />\n\nAumentado: La duracion del bufo aumenta a 5 segundos",
-     "secondary": "Bajas con el Arma o Granadas otorgan:\nAumento de daño:\n6.7% | 13.3% | 20% | 26.6% | 33.3% \n+20 al manejo\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\nMejorado: La duracion del bufo aumenta a 5 segundos"
-    },
-    "zh-chs": {
-     "main": "当使用武器或手雷完成击杀时：\n+20 操控性，并且获得一个可叠加的伤害增益，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。\n\n< table >\n|  增益层数          | 1x    | 2x     | 3x   | 4x     | 5x    <bold/>\n|b 伤害提升          | 6.7%  | 13.3%  | 20%  | 26.6%  | 33.3% <background/>\n<$>\n\nenhanced (\n#e 增益持续时间增加到 5 秒。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
-     "secondary": "当使用武器或手雷完成击杀时：\n根据叠加层数获得 6.7% | 13.3% | 20% | 26.6% | 33.3% 伤害提升，并且 +20 操控性，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。\n\nenhanced (\n#e 增益持续时间增加到 5 秒。\n)"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "13792278": {
    "hash": 13792278,
@@ -536,6 +543,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "16700458": {
+   "name": "Recovery Armorer",
+   "hash": 16700458,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "20616656": {
    "hash": 20616656,
@@ -847,6 +881,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "36879820": {
+   "name": "Prosperity (Vanguard)",
+   "hash": 36879820,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "40492375": {
    "hash": 40492375,
@@ -3289,6 +3350,168 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "275904576": {
+   "name": "Ultimate Glimmer Booster",
+   "hash": 275904576,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "275904577": {
+   "name": "Supercharged Glimmer Booster",
+   "hash": 275904577,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "275904580": {
+   "name": "Standard Glimmer Booster",
+   "hash": 275904580,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "275904581": {
+   "name": "Meager Glimmer Booster",
+   "hash": 275904581,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "275904582": {
+   "name": "Prodigious Glimmer Booster",
+   "hash": 275904582,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "275904583": {
+   "name": "Considerable Glimmer Booster",
+   "hash": 275904583,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "280464955": {
    "hash": 280464955,
    "name": "Firmly Planted",
@@ -3822,35 +4045,18 @@
    "uploadedBy": "Stardust"
   },
   "354401740": {
-   "hash": 354401740,
    "name": "Assassin's Blade",
+   "hash": 354401740,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675793164853,
-      "updatedBy": "Stardust"
-     },
-     "es": {
-      "lastUpdate": 1665683206116,
-      "updatedBy": "miniatimat"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668784047367,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.15 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 1.15 ]
@@ -3860,7 +4066,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds.\n\nKills refresh the timer. Remains active even if stowed.\n\nenhanced (\n#e Buff duration is increased.\n)",
+     "main": "On Weapon Kill for ${5+#d} seconds: // add #e once known\n15% Increased damage and sets Forward Movement Speed to 9 meters per second.\n\nKills refresh the timer. Remains active even if stowed.\n\nenhanced (\nvar d = 0 //placeholder\n#e Buff duration is increased.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -3871,7 +4077,31 @@
      "main": "当刀剑击杀时：\n提高 15% 伤害，增加移动和冲刺速度，增加挥舞刀剑的前冲距离，持续 [?] 秒。\n\n武器收起时依然生效。\n\nenhanced (\n#e 增益持续时间增加。\n)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204440467,
+      "updatedBy": "Stardust"
+     },
+     "es": {
+      "lastUpdate": 1665683206116,
+      "updatedBy": "miniatimat"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668784047367,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676243374044,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "357349821": {
    "hash": 357349821,
@@ -5516,29 +5746,9 @@
    "inLiveDatabase": true
   },
   "454085387": {
-   "hash": 454085387,
    "name": "Blunt Execution Rounds",
+   "hash": 454085387,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675796725734,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670250875517,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Handling": [
      {
@@ -5547,24 +5757,51 @@
       }
      }
     ],
-    "Damage": [
+    "PVE Damage": [
      {
       "active": {
-       "multiplier": [ 5, 2 ]
+       "multiplier": [ 2 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 5 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> increased damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "对 15 米范围内的敌人造成近战伤害后：\n提升 <pve 500% /> <pvp [100%] /> 伤害，并 +100 操控性，持续 10 秒或直到下次射击。\n\n4 秒冷却时间。武器在收起时也可触发。\n\n需要冲刺或滑行的充能近战以及弹道猛击均不会触发该特性。\n\nenhanced (\n#e 增益持续时间增加到 11 秒。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204548742,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670250875517,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676243348785,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "456628588": {
    "hash": 456628588,
@@ -6679,6 +6916,60 @@
    "inLiveDatabase": true,
    "itemHash": 3460576091,
    "itemName": "Duality"
+  },
+  "537685236": {
+   "name": "Greater Core Harvest (Gambit)",
+   "hash": 537685236,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "537685237": {
+   "name": "Lesser Core Harvest (Gambit)",
+   "hash": 537685237,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "537774540": {
    "hash": 537774540,
@@ -9557,6 +9848,141 @@
      }
     ]
    }
+  },
+  "782611298": {
+   "name": "Perfected Resource Detector",
+   "hash": 782611298,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "782611300": {
+   "name": "Stable Resource Detector",
+   "hash": 782611300,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "782611301": {
+   "name": "Enhanced Resource Detector",
+   "hash": 782611301,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "782611302": {
+   "name": "Destabilized Resource Detector",
+   "hash": 782611302,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "782611303": {
+   "name": "Makeshift Resource Detector",
+   "hash": 782611303,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "788178929": {
    "hash": 788178929,
@@ -13625,6 +14051,60 @@
    "itemHash": 2535142413,
    "itemName": "Edge of Action"
   },
+  "1137204316": {
+   "name": "Greater Core Harvest (Crucible)",
+   "hash": 1137204316,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1137204317": {
+   "name": "Lesser Core Harvest (Crucible)",
+   "hash": 1137204317,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1139822081": {
    "hash": 1139822081,
    "name": "Snare Bomb",
@@ -15159,6 +15639,33 @@
      "secondary": "import self"
     }
    }
+  },
+  "1251927947": {
+   "name": "Modularity (Gambit)",
+   "hash": 1251927947,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1255073825": {
    "hash": 1255073825,
@@ -18794,6 +19301,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "1515139595": {
+   "name": "Bountiful Harvest",
+   "hash": 1515139595,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1515669996": {
    "hash": 1515669996,
    "name": "Elemental Armaments",
@@ -19891,30 +20425,17 @@
    "uploadedBy": "Stardust"
   },
   "1600092898": {
-   "hash": 1600092898,
    "name": "Backup Plan",
+   "hash": 1600092898,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1670081810698,
-     "updatedBy": "Stardust"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675793342149,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670501268546,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
+    "Charge Draw": [
+     {
+      "active": {
+       "multiplier": [ 0.7 ]
+      }
+     }
+    ],
     "Handling": [
      {
       "active": {
@@ -19922,31 +20443,51 @@
       }
      }
     ],
-    "Damage": [
+    "PVE Damage": [
      {
       "active": {
        "multiplier": [ 0.8 ]
       }
      }
     ],
-    "Charge Draw": [
+    "PVP Damage": [
      {
       "active": {
-       "multiplier": [ 0.7 ]
+       "multiplier": [ 0.8 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "Upon readying the weapon, for ${2+#d} seconds: //add #e once the enhanced duration is known\n• 0.7x Charge Time Multiplier\n• 20% Decreased Damage\n• 100 Handling\n\nenhanced (\nvar d = 0 //enhanced duration increase placeholder\n#e Buff duration is increased.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon readying the weapon, for ${2+#d} seconds: // add #e once the enhanced duration is known\n• 0.7x Charge Time Multiplier\n• 20% Decreased Damage\n• 100 Handling\n\nenhanced (\nvar d = 0 // placeholder\n#e Buff duration is increased.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "切换至此武器时：\n-30% 充能时间\n-20% 伤害\n+100 操控性\n\n持续 [?] 秒。\n\nenhanced (\n#e 增益持续时间增加。\n)\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676204495261,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670501268546,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676243369396,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1600896643": {
    "hash": 1600896643,
@@ -21722,6 +22263,141 @@
     }
    }
   },
+  "1718784632": {
+   "name": "Expert Tracker",
+   "hash": 1718784632,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1718784636": {
+   "name": "Loot Seeker",
+   "hash": 1718784636,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1718784637": {
+   "name": "Prize Pursuant",
+   "hash": 1718784637,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1718784638": {
+   "name": "Cache Finder",
+   "hash": 1718784638,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1718784639": {
+   "name": "Treasure Hunter",
+   "hash": 1718784639,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1719307618": {
    "hash": 1719307618,
    "name": "Delicate Tomb Catalyst",
@@ -22917,6 +23593,168 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "1820053064": {
+   "name": "Blinding Light",
+   "hash": 1820053064,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1820053065": {
+   "name": "Guiding Light",
+   "hash": 1820053065,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1820053068": {
+   "name": "Little Light",
+   "hash": 1820053068,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1820053069": {
+   "name": "Flickering Light",
+   "hash": 1820053069,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1820053070": {
+   "name": "Burning Light",
+   "hash": 1820053070,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "1820053071": {
+   "name": "Hopeful Light",
+   "hash": 1820053071,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1820235745": {
    "hash": 1820235745,
    "name": "Subsistence",
@@ -23359,6 +24197,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "1845407457": {
+   "name": "Intellect Armorer",
+   "hash": 1845407457,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1853177948": {
    "hash": 1853177948,
@@ -27098,6 +27963,60 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "2209107628": {
+   "name": "Greater Core Harvest (Vanguard)",
+   "hash": 2209107628,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2209107629": {
+   "name": "Lesser Core Harvest (Vanguard)",
+   "hash": 2209107629,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "2209280306": {
    "hash": 2209280306,
    "name": "IS 5 Circle",
@@ -27672,6 +28591,33 @@
    "inLiveDatabase": true,
    "itemHash": 4174431791,
    "itemName": "Hierarchy of Needs"
+  },
+  "2231409668": {
+   "name": "Mobility Armorer",
+   "hash": 2231409668,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2234507197": {
    "hash": 2234507197,
@@ -30804,48 +31750,39 @@
    "inLiveDatabase": true
   },
   "2551157718": {
-   "hash": 2551157718,
    "name": "Box Breathing",
+   "hash": 2551157718,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665005887597,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675794255591,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670251345076,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "stats": {
-    "Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.29, 1.3322, 1.6275, 1.66 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "After #e${1.5-#d} seconds of aiming-down-sights without firing:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 for one shot.\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.\n\nenhanced (\nvar d = 0.1\n#e Activation time is reduced by 0.1 seconds.\n)",
+     "main": "After #e${1.5-#d} seconds of aiming-down-sights without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.\n\nenhanced (\nvar d = 0.1\n#e Activation time is reduced by 0.1 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "未射击下瞄准 1.5 秒：\n+10% 瞄准辅助衰减距离，并提高下一发子弹精准命中伤害（伤害系数+1）。\n\n按下瞄准键即开始计时。\n\n< table >\n| 武器类型        | 实际伤害提升 <bold/>\n| 线性融合步枪    | <title 29% [mult1] />         <background/>\n| 狙击步枪        | <title 33.22% [mult0] />   \n| 斥候步枪        | <title 62.75% [mult2] />      <background/>\n<$>\n\nenhanced (\n#e 触发所需时间降低为 1.4 秒。\n)\n\n\ntitle mult0 (\n3x -> 4x\n)\n\ntitle mult1 (\n3.44x -> 4.44x\n)\n\ntitle mult2 (\n1.6x -> 2.6x\n)",
      "secondary": "未射击下瞄准 1.5 秒：\n+10% 瞄准辅助衰减距离，并提高下一发子弹精准命中伤害（伤害系数+1）。\n按下瞄准键即开始计时。\n\n伤害提升值：\n斥候步枪：+62.75% (1.6x -> 2.6x)\n狙击步枪：+33.22% (3x -> 4x)\n线性融合步枪：+29% (3.44x -> 4.44x)\n\nenhanced (\n#e 触发所需时间降低为 1.4 秒。\n)"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676243323281,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670251345076,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676243332744,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2563509458": {
    "hash": 2563509458,
@@ -31577,6 +32514,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "2630955836": {
+   "name": "Prosperity (Crucible)",
+   "hash": 2630955836,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2637025676": {
    "hash": 2637025676,
@@ -34563,6 +35527,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "2879513176": {
+   "name": "Strength Armorer",
+   "hash": 2879513176,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "2881057950": {
    "hash": 2881057950,
    "name": "Unflinching Sidearm Aim",
@@ -35278,6 +36269,33 @@
    "inLiveDatabase": true,
    "itemHash": 1763584999,
    "itemName": "Grand Overture"
+  },
+  "2943618220": {
+   "name": "Resilience Armorer",
+   "hash": 2943618220,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2946784966": {
    "hash": 2946784966,
@@ -36595,6 +37613,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "3055419104": {
+   "name": "Public Defender",
+   "hash": 3055419104,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3060983774": {
    "hash": 3060983774,
    "name": "Dynamic Sway Reduction",
@@ -36816,31 +37861,18 @@
    "inLiveDatabase": true
   },
   "3078487919": {
-   "hash": 3078487919,
    "name": "Bait and Switch",
+   "hash": 3078487919,
    "type": "Weapon Trait",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675793385885,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668784313440,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.35 ]
+      }
+     }
+    ],
+    "PVP Damage": [
      {
       "active": {
        "multiplier": [ 1.35 ]
@@ -36857,7 +37889,27 @@
      "main": "在 [?] 秒内使用所有武器造成伤害后：\n提高 35% 该武器伤害，持续 10 秒。\n\nenhanced (\n#e 增益持续时间提高到 11 秒。\n)\n",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1675793385885,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668784313440,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676243364677,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3081173348": {
    "hash": 3081173348,
@@ -41392,6 +42444,60 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "3520505384": {
+   "name": "Combo Detector",
+   "hash": 3520505384,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3520505385": {
+   "name": "Wombo Detector",
+   "hash": 3520505385,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3523075120": {
    "hash": 3523075120,
@@ -46054,6 +47160,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "3935709357": {
+   "name": "Discipline Armorer",
+   "hash": 3935709357,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3937312904": {
    "hash": 3937312904,
    "name": "On Black Wings",
@@ -46246,6 +47379,33 @@
    "inLiveDatabase": true,
    "uploadedBy": "Stardust"
   },
+  "3976349716": {
+   "name": "Prosperity (Gambit)",
+   "hash": 3976349716,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3977735242": {
    "hash": 3977735242,
    "name": "Tracking Module",
@@ -46416,6 +47576,33 @@
      "secondary": "import self"
     }
    }
+  },
+  "3989883859": {
+   "name": "Modularity (Vanguard)",
+   "hash": 3989883859,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3999527219": {
    "hash": 3999527219,
@@ -48441,6 +49628,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "4162373251": {
+   "name": "Modularity (Crucible)",
+   "hash": 4162373251,
+   "type": "Ghost Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676311299123,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "4172222323": {
    "hash": 4172222323,
