@@ -781,6 +781,21 @@
    ]
   }
  },
+ "136456835": {
+  "hash": 136456835,
+  "name": "Reversal of Fortune",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Missing 2 Shots within 6 seconds refunds 1 Ammo into the Magazine."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "147913470": {
   "hash": 147913470,
   "name": "Whirlwind Blade",
@@ -4361,7 +4376,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases charge time by 40ms, and damage by 2%"
+       "text": "Decreases charge time by 40ms and damage by 2%."
       }
      ]
     }
@@ -7180,7 +7195,7 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Precision Damage Multiplier by [?]%"
+       "text": "Reduces Precision Damage by 7.6%"
       }
      ]
     }
@@ -7629,7 +7644,7 @@
     {
      "linesContent": [
       {
-       "text": "Combines the penetration from Armor-Piercing Rounds, the guaranteed ricochets from Ricochet Rounds, and the flinch increase from High-Caliber Rounds."
+       "text": "Combines the overpenetration from Armor-Piercing Rounds, the guaranteed ricochets from Ricochet Rounds, and the flinch increase from High-Caliber Rounds."
       }
      ]
     }
@@ -9780,14 +9795,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon starting a reload with an empty magazine:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "0.85x Reload Duration Multiplier."
+       "text": "Grants a 0.85x Reload Duration Multiplier when the magazine is empty."
       }
      ]
     }
@@ -10922,7 +10930,7 @@
     {
      "linesContent": [
       {
-       "text": "Increased Flinch on Enemies."
+       "text": "Hits inflict increased Flinch on Enemies."
       }
      ]
     },
@@ -10932,7 +10940,7 @@
     {
      "linesContent": [
       {
-       "text": "[PVE] Allows Primary Weapons to affect higher ranked enemies and consistently stunlock Minors."
+       "text": "[PVE] Allows Primary Weapons to affect higher-ranked enemies and consistently stun lock low- and mid-tier Minors."
       }
      ]
     },
@@ -12213,7 +12221,7 @@
     {
      "linesContent": [
       {
-       "text": "Increases charge time by 40, and damage by 2%"
+       "text": "Increases charge time by 40 and damage by 2%."
       }
      ]
     }
@@ -13439,30 +13447,6 @@
    ]
   }
  },
- "1885400500": {
-  "hash": 1885400500,
-  "name": "Ricochet Rounds",
-  "descriptions": {
-   "en": [
-    {
-     "linesContent": [
-      {
-       "text": "Bullets are guaranteed to ricochet off of surfaces, and can ricochet from sharper angles."
-      }
-     ]
-    }
-   ],
-   "zh-chs": [
-    {
-     "linesContent": [
-      {
-       "text": "弹药会在硬质表面上反弹。"
-      }
-     ]
-    }
-   ]
-  }
- },
  "1890422124": {
   "hash": 1890422124,
   "name": "Tap the Trigger",
@@ -14255,7 +14239,7 @@
     {
      "linesContent": [
       {
-       "text": "5% Increased damage against Combatant Shields."
+       "text": "5% Increased Damage against PvE Combatant Shields."
       }
      ]
     },
@@ -20542,30 +20526,6 @@
    ]
   }
  },
- "3032599245": {
-  "hash": 3032599245,
-  "name": "Blinding Grenades",
-  "descriptions": {
-   "en": [
-    {
-     "linesContent": [
-      {
-       "text": "Grenade detonation has a brief blinding effect."
-      }
-     ]
-    }
-   ],
-   "zh-chs": [
-    {
-     "linesContent": [
-      {
-       "text": "榴弹爆炸可产生短暂失明效果。"
-      }
-     ]
-    }
-   ]
-  }
- },
  "3038247973": {
   "hash": 3038247973,
   "name": "Explosive Payload",
@@ -22029,7 +21989,7 @@
     {
      "linesContent": [
       {
-       "text": "Due to the ratio of Exlosive and Impact Damage being tied to the Blast Radius Stat on Grenade Launchers, a lower Blast Radius will provide a higher overall damage increase."
+       "text": "Due to the ratio of Exlosive and Impact Damage being tied to Blast Radius on Grenade Launchers, a lower Blast Radius Stat will provide a higher overall damage increase."
       }
      ]
     },
@@ -22039,31 +21999,21 @@
     {
      "linesContent": [
       {
-       "text": "Breech-Loaded GLs:"
+       "text": "Total Damage Increase depending on Blast Radius:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25%-12.5% overall damage increase"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Drum-Loaded GLs:"
+       "text": "• Special Grenade Launchers: 25-12.5%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 15%-6.25% overall damage increase"
+       "text": "• Heavy Grenade Launchers: 15-7.5%"
       }
      ]
     }
@@ -25257,7 +25207,7 @@
     {
      "linesContent": [
       {
-       "text": "Buffs the Impact Damage by 10% resulting in a 2.2% overall total damage increase at base."
+       "text": "Buffs the Impact Damage by 10% resulting in a 2.2% total damage increase before considering other damage-buffing perks."
       }
      ]
     }
@@ -26670,21 +26620,6 @@
      "linesContent": [
       {
        "text": "在 10 秒内提供强化雷达，并将你从敌方雷达上移除。"
-      }
-     ]
-    }
-   ]
-  }
- },
- "3999527219": {
-  "hash": 3999527219,
-  "name": "Remote Detonation",
-  "descriptions": {
-   "en": [
-    {
-     "linesContent": [
-      {
-       "text": "Fires a grenade projectile that bounces and detonates on trigger release."
       }
      ]
     }
