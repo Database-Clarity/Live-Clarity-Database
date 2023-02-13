@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
    "Handling": [
     {
@@ -211,7 +211,14 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
@@ -233,7 +240,7 @@
     {
      "linesContent": [
       {
-       "text": "20 Handling and a Stacking Damage Increase for 4.5 seconds."
+       "text": "20 Handling and a Stacking Damage Buff for 4.5 seconds."
       }
      ]
     },
@@ -243,7 +250,14 @@
     {
      "linesContent": [
       {
-       "text": "Buff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks."
+       "text": "Grenade Kills grant all 5 stacks."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is refreshed on Weapon or Grenade Kills."
       }
      ]
     },
@@ -306,7 +320,7 @@
          "classNames": [ "bold" ],
          "cellContent": [
           {
-           "text": "Damage Increase"
+           "text": "Damage Buff"
           }
          ]
         },
@@ -692,7 +706,7 @@
     {
      "linesContent": [
       {
-       "text": "After 🠅1.4 seconds of aiming-down-sights without firing:"
+       "text": "After 🠅1.4 seconds of aiming-down-sights without firing, for one shot:"
       }
      ]
     },
@@ -706,7 +720,7 @@
     {
      "linesContent": [
       {
-       "text": "• Increases Precision Multiplier by 1 for one shot."
+       "text": "• Increases Precision Multiplier by 1"
       }
      ]
     },
@@ -3352,9 +3366,16 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.15 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.15 ]
@@ -3369,14 +3390,14 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill for 5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds."
+       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
       }
      ]
     },
@@ -4067,7 +4088,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
    "Handling": [
     {
@@ -4076,10 +4097,17 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
     {
      "active": {
-      "multiplier": [ 5, 2 ]
+      "multiplier": [ 2 ]
+     }
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 5 ]
      }
     }
    ]
@@ -4129,7 +4157,7 @@
     {
      "linesContent": [
       {
-       "text": "Any Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds."
+       "text": "Any Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk."
       }
      ]
     },
@@ -19390,8 +19418,15 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
+   "Charge Draw": [
+    {
+     "active": {
+      "multiplier": [ 0.7 ]
+     }
+    }
+   ],
    "Handling": [
     {
      "active": {
@@ -19399,17 +19434,17 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
     {
      "active": {
       "multiplier": [ 0.8 ]
      }
     }
    ],
-   "Charge Draw": [
+   "PVP Damage": [
     {
      "active": {
-      "multiplier": [ 0.7 ]
+      "multiplier": [ 0.8 ]
      }
     }
    ]
@@ -27926,7 +27961,7 @@
     {
      "linesContent": [
       {
-       "text": "20 Handling and a Stacking Damage Increase for 4.5 seconds."
+       "text": "20 Handling and a Stacking Damage Buff for 🠅5 seconds."
       }
      ]
     },
@@ -27936,7 +27971,14 @@
     {
      "linesContent": [
       {
-       "text": "Buff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks."
+       "text": "Grenade Kills grant all 5 stacks."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is refreshed on Weapon or Grenade Kills."
       }
      ]
     },
@@ -27999,7 +28041,7 @@
          "classNames": [ "bold" ],
          "cellContent": [
           {
-           "text": "Damage Increase"
+           "text": "Damage Buff"
           }
          ]
         },
@@ -28048,7 +28090,7 @@
     {
      "linesContent": [
       {
-       "text": "🠅 Buff Duration is increased to 5 seconds."
+       "text": "🠅 Buff Duration is increased by 0.5 seconds."
       }
      ]
     },
@@ -28753,7 +28795,7 @@
     {
      "linesContent": [
       {
-       "text": "Any Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds."
+       "text": "Any Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk."
       }
      ]
     },
@@ -28862,16 +28904,7 @@
  "2551157718": {
   "hash": 2551157718,
   "name": "Box Breathing",
-  "lastUpload": 1675798177540,
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.29, 1.3322, 1.6275, 1.66 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1676311299123,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28879,7 +28912,7 @@
     {
      "linesContent": [
       {
-       "text": "After 1.5 seconds of aiming-down-sights without firing:"
+       "text": "After 1.5 seconds of aiming-down-sights without firing, for one shot:"
       }
      ]
     },
@@ -28893,7 +28926,7 @@
     {
      "linesContent": [
       {
-       "text": "• Increases Precision Multiplier by 1 for one shot."
+       "text": "• Increases Precision Multiplier by 1"
       }
      ]
     },
@@ -34630,9 +34663,16 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.35 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.35 ]
@@ -41001,14 +41041,14 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill for 5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds."
+       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
       }
      ]
     },

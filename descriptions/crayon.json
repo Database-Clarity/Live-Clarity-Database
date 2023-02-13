@@ -25,7 +25,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
    "Handling": [
     {
@@ -34,7 +34,14 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
@@ -45,7 +52,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.",
+   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for 4.5 seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.",
    "es": "Bajas con el Arma o Granadas otorgan:\nAumento de daño:\n6.7% | 13.3% | 20% | 26.6% | 33.3%\n+20 al manejo\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\nMejorado: La duracion del bufo aumenta a 5 segundos",
    "zh-chs": "当使用武器或手雷完成击杀时：\n根据叠加层数获得 6.7% | 13.3% | 20% | 26.6% | 33.3% 伤害提升，并且 +20 操控性，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。"
   }
@@ -57,7 +64,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After 🠅1.4 seconds of aiming-down-sights without firing:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 for one shot.\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.\n\n🠅 Activation time is reduced by 0.1 seconds."
+   "en": "After 🠅1.4 seconds of aiming-down-sights without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.\n\n🠅 Activation time is reduced by 0.1 seconds."
   }
  },
  "24925370": {
@@ -625,9 +632,16 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.15 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.15 ]
@@ -638,7 +652,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill:\n15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds.\n\nKills refresh the timer. Remains active even if stowed.",
+   "en": "On Weapon Kill for 5 seconds:\n15% Increased damage and sets Forward Movement Speed to 9 meters per second.\n\nKills refresh the timer. Remains active even if stowed.",
    "es": "En baja con Espada:\nAumento de 15% al Daño, y pone a la velocidad de movimiento hacia adelante a 9 metros por segundo durante [?] segundos\n\nSe mantiene activo al guardar la espada\n\nMejorado: Aumenta la duración del bufo a [?] segundos",
    "zh-chs": "当刀剑击杀时：\n提高 15% 伤害，增加移动和冲刺速度，增加挥舞刀剑的前冲距离，持续 [?] 秒。\n\n武器收起时依然生效。"
   }
@@ -858,7 +872,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
    "Handling": [
     {
@@ -867,10 +881,17 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
     {
      "active": {
-      "multiplier": [ 5, 2 ]
+      "multiplier": [ 2 ]
+     }
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 5 ]
      }
     }
    ]
@@ -878,7 +899,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<:pve:922884406073507930>500% <:pvp:922884468275019856>[100%] increased damage and 100 Handling for 10 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.",
+   "en": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<:pve:922884406073507930>500% <:pvp:922884468275019856>[100%] increased damage and 100 Handling for 10 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk.",
    "zh-chs": "对 15 米范围内的敌人造成近战伤害后：\n提升 <:pve:922884406073507930>500% <:pvp:922884468275019856>[100%] 伤害，并 +100 操控性，持续 10 秒或直到下次射击。\n\n4 秒冷却时间。武器在收起时也可触发。\n\n需要冲刺或滑行的充能近战以及弹道猛击均不会触发该特性。"
   }
  },
@@ -4142,8 +4163,15 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
+   "Charge Draw": [
+    {
+     "active": {
+      "multiplier": [ 0.7 ]
+     }
+    }
+   ],
    "Handling": [
     {
      "active": {
@@ -4151,17 +4179,17 @@
      }
     }
    ],
-   "Damage": [
+   "PVE Damage": [
     {
      "active": {
       "multiplier": [ 0.8 ]
      }
     }
    ],
-   "Charge Draw": [
+   "PVP Damage": [
     {
      "active": {
-      "multiplier": [ 0.7 ]
+      "multiplier": [ 0.8 ]
      }
     }
    ]
@@ -6109,7 +6137,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and +20 Handling for 4.5 seconds.\n\nBuff is refreshed on Weapon Kill or Grenade Kill. Grenade Kills grant 5 stacks.\n\n🠅 Buff Duration is increased to 5 seconds."
+   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for 🠅5 seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\n🠅 Buff Duration is increased by 0.5 seconds."
   }
  },
  "2444870733": {
@@ -6300,7 +6328,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<:pve:922884406073507930>500% <:pvp:922884468275019856>[100%] increased damage and 100 Handling for 🠅11 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate Blunt Execution Rounds.\n\n🠅 Buff duration is increased by 1 second."
+   "en": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<:pve:922884406073507930>500% <:pvp:922884468275019856>[100%] increased damage and 100 Handling for 🠅11 seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk.\n\n🠅 Buff duration is increased by 1 second."
   }
  },
  "2541826827": {
@@ -6316,20 +6344,11 @@
  "2551157718": {
   "hash": 2551157718,
   "name": "Box Breathing",
-  "lastUpload": 1675798177540,
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.29, 1.3322, 1.6275, 1.66 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1676311299123,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After 1.5 seconds of aiming-down-sights without firing:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 for one shot.\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.",
+   "en": "After 1.5 seconds of aiming-down-sights without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active.",
    "zh-chs": "未射击下瞄准 1.5 秒：\n+10% 瞄准辅助衰减距离，并提高下一发子弹精准命中伤害（伤害系数+1）。\n按下瞄准键即开始计时。\n\n伤害提升值：\n斥候步枪：+62.75% (1.6x -> 2.6x)\n狙击步枪：+33.22% (3x -> 4x)\n线性融合步枪：+29% (3.44x -> 4.44x)"
   }
  },
@@ -7444,9 +7463,16 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1676311299123,
   "stats": {
-   "Damage": [
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.35 ]
+     }
+    }
+   ],
+   "PVP Damage": [
     {
      "active": {
       "multiplier": [ 1.35 ]
@@ -8738,7 +8764,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill:\n15% Increased damage and sets Forward Movement Speed to 9 metres per second for 5 seconds.\n\nKills refresh the timer. Remains active even if stowed.\n\n🠅 Buff duration is increased."
+   "en": "On Weapon Kill for 5 seconds:\n15% Increased damage and sets Forward Movement Speed to 9 meters per second.\n\nKills refresh the timer. Remains active even if stowed.\n\n🠅 Buff duration is increased."
   }
  },
  "3683811620": {
