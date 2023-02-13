@@ -1,5 +1,5 @@
 # This is the live database for Clarity - A DIM Companion
-- Consider supporting our project through [Ko-Fi](https://ko-fi.com/d2clarity) to help us maintain Clarity as a free resource.
+- Consider [supporting our project](https://ko-fi.com/d2clarity) through Ko-Fi to help us maintain Clarity as a free resource.
 
 ## Usage of our data
 - You are allowed to use all the data in the database so long as you properly credit us in your project with the following:
