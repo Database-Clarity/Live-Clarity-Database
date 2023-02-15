@@ -54,13 +54,12 @@
    "uploadedBy": "Stardust"
   },
   "2": {
-   "hash": 2,
    "name": "Global variables",
+   "hash": 2,
    "type": "none",
-   "lastUpload": 1675798177540,
    "editor": {
     "en": {
-     "main": "// this variale only shows up on enhanced perks\nvar e = 🠅\n\nvar refill = Reload, but does not need animation and doesn't proc on-reload perks.",
+     "main": "// this variale only shows up on enhanced perks\n// don't change this arrow it is editors placeholder\nvar e = 🡅\n\nvar refill = Reload, but does not need animation and doesn't proc on-reload perks.\n\nvar CombatantRankModifiers = https://docs.google.com/spreadsheets/d/1b57Hb8m1L3daFfUckQQqvvN6VOpD03KEssvQLMFpC5I/edit#gid=933547097\n\nvar CombatantClassifications = https://d2clarity.page.link/combatant",
      "secondary": ""
     },
     "zh-chs": {
@@ -69,23 +68,24 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670255864845,
-      "updatedBy": "Mistwalker"
+      "lastUpdate": 1676495376143,
+      "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670255872621,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadToLive": false
   },
   "3": {
    "hash": 3,
@@ -459,7 +459,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676332022320,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -1067,13 +1067,12 @@
    "uploadedBy": "Stardust"
   },
   "79448657": {
-   "hash": 79448657,
    "name": "Psychohack",
+   "hash": 79448657,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
    "editor": {
     "en": {
-     "main": "Scoring multiple hits lowers the target's damage output by 10% for <pve 5 /> <pvp [3] /> seconds.",
+     "main": "Scoring multiple hits lowers the target's damage output by 10% for <pve 5 /> <pvp [3] /> seconds.\n\nDuration cannot be refreshed.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -1082,23 +1081,24 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670097850710,
+      "lastUpdate": 1676496066773,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670342912347,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadToLive": false
   },
   "82180537": {
    "hash": 82180537,
@@ -1644,13 +1644,12 @@
    "inLiveDatabase": true
   },
   "120721526": {
-   "hash": 120721526,
    "name": "Runneth Over",
+   "hash": 120721526,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
    "editor": {
     "en": {
-     "main": "Upon finishing a reload while within 15 metres of allies:\nOverflows Magazine by 10% for each ally, up to a 50% Magazine Increase.",
+     "main": "Finishing a reload Overflows the Magazine by 10% for each ally within 15 meters.\n\nMaxes out at 50% increased Magazine Capacity.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -1659,23 +1658,24 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670090922250,
+      "lastUpdate": 1676496359392,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670342981308,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadToLive": false
   },
   "124408337": {
    "name": "Headstone",
@@ -2485,31 +2485,68 @@
    "inLiveDatabase": true
   },
   "192157151": {
-   "hash": 192157151,
    "name": "Ambush",
+   "hash": 192157151,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Charge Draw": [
+     {
+      "active": {
+       "multiplier": [ 0.85 ]
+      }
+     }
+    ],
+    "Handling": [
+     {
+      "active": {
+       "stat": [ 20 ]
+      }
+     }
+    ],
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.0888 ]
+      },
+      "weaponTypes": [ "LFR" ]
+     },
+     {
+      "active": {
+       "multiplier": [ 1.1078 ]
+      },
+      "weaponTypes": [ "Bow", "Glaive", "LMG", "Pulse", "Trace" ]
+     }
+    ],
+    "Range": [
+     {
+      "active": {
+       "stat": [ 20 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "After not dealing or receiving damage for at least 5 seconds:\n• 20 Range and 20 Handling\n• 10.78% Increased Damage against PvE Combatants. Linear Fusion Rifles only receive an 8.88% Damage Increase.\n• 0.85x Draw Time Multiplier on Bows.\n\nBuff activates for 2 seconds after dealing or receiving damage.\n\n<formula Effective Range: [range_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676490307023,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676490057160,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "194952921": {
    "hash": 194952921,
@@ -4108,7 +4145,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676332022320,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5831,7 +5868,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676332022320,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6718,14 +6755,12 @@
    "uploadedBy": "Stardust"
   },
   "515704826": {
-   "hash": 515704826,
    "name": "Gun and Run",
+   "hash": 515704826,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Upon killing multiple enemies within [3?] seconds of each:\n[?]% Increased Sprinting Speed for 10 seconds.\n\nNot refreshable.\n\nMaximum Sprint Speed is capped at 112.5% of the normal speed.",
+     "main": "Upon killing multiple enemies within 3(?) seconds of each:\n6.25% Increased Sprinting Speed for 10 seconds.\n\nNot refreshable. Maximum Sprint Speed increase is capped at 12.5%.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -6734,23 +6769,25 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670090841830,
+      "lastUpdate": 1676496553374,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670342581674,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "518387148": {
    "hash": 518387148,
@@ -7269,31 +7306,31 @@
    "uploadToLive": false
   },
   "566815328": {
-   "hash": 566815328,
    "name": "Rasputin's Arsenal",
+   "hash": 566815328,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "<title Refills [G_refill] /> 50% of the Magazine on Elemental, Barrier, or Guardian Shield Breaks.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676496115831,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "567997816": {
    "hash": 567997816,
@@ -9732,31 +9769,31 @@
    "inLiveDatabase": true
   },
   "766321425": {
-   "hash": 766321425,
    "name": "Bray Inheritance",
+   "hash": 766321425,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Weapon Hits grant Grenade, Melee, and Class Ability Energy.\n\nIncandescent Scorch ticks, Chain Reaction and Dragonfly elemental explosions, and Voltshot jolt chains(?) count as hits.\n\nAbility Energy gains per weapon:\n• Posterity, Trustee: 0.3%\n• Heritage: 0.65%\n• Succession, Bequest, Commemoration: unknown",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676493914718,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "769440797": {
    "hash": 769440797,
@@ -12252,6 +12289,22 @@
    "name": "Snapshot Sights",
    "hash": 957782887,
    "type": "Weapon Trait",
+   "stats": {
+    "ADS": [
+     {
+      "active": {
+       "multiplier": [ 0.5 ]
+      },
+      "weaponTypes": [ "AR", "Bow", "HC", "Pulse", "Scout", "Sidearm", "SMG" ]
+     },
+     {
+      "active": {
+       "multiplier": [ 0.75 ]
+      },
+      "weaponTypes": [ "Fusion", "GL", "Glaive", "Sniper", "Trace", "Shotgun" ]
+     }
+    ]
+   },
    "editor": {
     "en": {
      "main": "Passively decreases the ADS Animation Duration:\n• 50% Decreased Duration on <primary/> Primary Weapons\n• 25% Decreased Duration on <special/> Special Weapons\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
@@ -12274,12 +12327,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676226895289,
+     "lastUpdate": 1676490447334,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14985,7 +15038,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill, for #e${7+#d} seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\n5 Range, 8 Stability, and -1.25% Accuracy Cone Size per stack.\n\n< table formula background_2 >\n|b Stacks |b Stability |b Range |b Effective Range       |b Acc. Cone Size\n|b 1x     |  8         |  5     |  <formula [range_0] /> | -1.25%\n|b 2x     |  16        |  10    |  <formula [range_1] /> | -2.5%\n|b 3x     |  24        |  15    |  <formula [range_2] /> | -3.75%\n|b 4x     |  32        |  20    |  <formula [range_3] /> | -5%\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "On Weapon Kill, for #e${7+#d} seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size.\n\n< table formula background_2 >\n|b Stacks |b Stability |b Range |b Effective Range       |b Acc. Cone Size\n|b 1x     |  8         |  5     |  <formula [range_0] /> | -1.25%\n|b 2x     |  16        |  10    |  <formula [range_1] /> | -2.5%\n|b 3x     |  24        |  15    |  <formula [range_2] /> | -3.75%\n|b 4x     |  32        |  20    |  <formula [range_3] /> | -5%\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -14996,7 +15049,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676207162061,
+      "lastUpdate": 1676489677159,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -15010,7 +15063,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15689,39 +15742,39 @@
    "itemName": "Coldheart"
   },
   "1250481499": {
-   "hash": 1250481499,
    "name": "Extrovert",
+   "hash": 1250481499,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670090414396,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1674077348122,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While surrounded by 3 enemies or if a Nightmare is within [15?] meters:\nKills restore 40 HP after a 0.25 second delay.\n\nIncurs a 3 second cooldown after activation.",
+     "main": "While within 15 meters of 3 enemies or a Nightmare:\nKills restore 40 HP after a 0.25 second delay.\n\nIncurs a 3 second cooldown after activation.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "当 [15?] 米内有 3 个战斗人员或梦魇时， 完成最后一击时：\n0.25 秒后恢复 40 生命值。\n\n触发间隔为 3 秒。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676495102798,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1674077348122,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1251927947": {
    "name": "Modularity (Gambit)",
@@ -15778,13 +15831,35 @@
    "inLiveDatabase": true
   },
   "1260401931": {
-   "hash": 1260401931,
    "name": "Hot Swap",
+   "hash": 1260401931,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
+   "stats": {
+    "Handling": [
+     {
+      "active": {
+       "stat": [ 30 ]
+      }
+     }
+    ],
+    "Guard Charge Rate": [
+     {
+      "active": {
+       "stat": [ 100 ]
+      }
+     }
+    ],
+    "Guard Resistance": [
+     {
+      "active": {
+       "stat": [ 100 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "Upon readying the gun after receiving damage within [?] seconds: +30 Handling for 4 seconds.\n\nSwords receive increased Charge Rate, Guard Resistance, and Guard Endurance.\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon readying the gun after receiving damage within [?] seconds:\nGrants 30 Handling for 4 seconds.\n\nSwords receive 100 Guard Resistance, [?] Guard Endurance, and 100 Charge Rate.\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -15793,33 +15868,25 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665261554842,
-     "updatedBy": "Fading Shadow"
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670090698735,
+      "lastUpdate": 1676495570251,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670342718594,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676495509793,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
-   "stats": {
-    "Handling": [
-     {
-      "active": {
-       "stat": [ 30 ]
-      }
-     }
-    ]
-   },
-   "uploadedBy": "Stardust"
+   "uploadToLive": false
   },
   "1261178282": {
    "hash": 1261178282,
@@ -16134,39 +16201,39 @@
    "inLiveDatabase": true
   },
   "1281216113": {
-   "hash": 1281216113,
    "name": "Stunning Recovery",
+   "hash": 1281216113,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667254274070,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668185846476,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Stunning a Champion <title refreshes [G_refresh] /> [25?%] of your Magazine, restores 60HP, and grants +40 Recovery for 3 seconds.",
-     "secondary": "Stunning a Champion refreshes [25?%] of your Magazine, restores 60 HP, and grants +40 Recovery for 3 seconds."
+     "main": "Stunning a Champion <title refill [G_refill] /> 25% of the Magazine, restores 60 HP, and grants 40 Recovery for 3 seconds.",
+     "secondary": "import self"
     },
     "zh-chs": {
      "main": "晕眩一个勇士可 <title 刷新 [G_refresh] /> [25?%] 弹夹，恢复 60 生命值，并在 3 秒内获得 40 恢复属性。\n",
      "secondary": "晕眩一个勇士可刷新 [25?%] 弹夹，恢复 60 生命值，并在 3 秒内获得 40 恢复属性。"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676496773271,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668185846476,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1281243303": {
    "hash": 1281243303,
@@ -17599,31 +17666,31 @@
    "itemName": "SUROS Regime"
   },
   "1380061575": {
-   "hash": 1380061575,
    "name": "Dream Work",
+   "hash": 1380061575,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Assists or Assisted Kills <title refill [G_refill] /> 66% of the Magazine.\nCan only activate once before needing a manual reload.\n\nMagazine can overflow, and is always rounded up.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676495019640,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1380253176": {
    "hash": 1380253176,
@@ -19690,39 +19757,39 @@
    "inLiveDatabase": true
   },
   "1536798515": {
-   "hash": 1536798515,
    "name": "Land Tank",
+   "hash": 1536798515,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1665261583257,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668184396656,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\n+10 Resilience and 5% Damage Resist against Combatants for 5 seconds.\nStacks up to 3 times.",
+     "main": "On Weapon Kill:\n10 Resilience and 5% Damage Resist against PvE Combatants for 5 seconds.\n\nMaximum of 3 Stacks.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击:\n在 5 秒内可提供 10 韧性以及 5% 对战斗人员的额外伤害抗性。\n可叠加 3 次。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676495653092,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668184396656,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1537607344": {
    "hash": 1537607344,
@@ -20582,7 +20649,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676332022320,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20695,39 +20762,39 @@
    "inLiveDatabase": true
   },
   "1607056502": {
-   "hash": 1607056502,
    "name": "Hakke Breach Armaments",
+   "hash": 1607056502,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
+   "editor": {
+    "en": {
+     "main": "Passively grants Increased Damage against...\n• <link Vehicles [#CombatantClassifications] />: 15%\n• Turrets, Barricades, Ward of Dawn, Well of Radiance: 30%\n• Stasis Crystals: 45%",
+     "secondary": "import self"
     },
+    "zh-chs": {
+     "main": "增加 15% 对载具和建筑物的伤害\n\n增加 30% 对炮台、屏障的伤害\n\n增加 45% 冰影水晶的伤害\n\n可在 <link Court's Spreadsheet [https://d2clarity.page.link/combatant] /> 查询敌人分类",
+     "secondary": "增加 15% 对载具和建筑物的伤害\n\n增加 30% 对炮台、屏障的伤害\n\n增加 45% 冰影水晶的伤害"
+    }
+   },
+   "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1670090541222,
+      "lastUpdate": 1676495429167,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670342636721,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
     }
    },
-   "editor": {
-    "en": {
-     "main": "15% Increased Damage against Vehicles\n\n30% Increased Damage against Turrets, Barricades, Ward of Dawn, and Well of Radiance\n\n45% Increased Damage against Stasis Crystals\n\nCheck out <link Court's Spreadsheet [https://d2clarity.page.link/combatant] /> for Combatant Classifications.",
-     "secondary": "15% Increased Damage against Vehicles\n\n30% Increased Damage against Turrets, Barricades, Ward of Dawn, and Well of Radiance\n\n45% Increased Damage against Stasis Crystals"
-    },
-    "zh-chs": {
-     "main": "增加 15% 对载具和建筑物的伤害\n\n增加 30% 对炮台、屏障的伤害\n\n增加 45% 冰影水晶的伤害\n\n可在 <link Court's Spreadsheet [https://d2clarity.page.link/combatant] /> 查询敌人分类",
-     "secondary": "增加 15% 对载具和建筑物的伤害\n\n增加 30% 对炮台、屏障的伤害\n\n增加 45% 冰影水晶的伤害"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1609056795": {
    "hash": 1609056795,
@@ -24876,39 +24943,39 @@
    "inLiveDatabase": true
   },
   "1905044254": {
-   "hash": 1905044254,
    "name": "To Excess",
+   "hash": 1905044254,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1665261943823,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668185906911,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Weapon kill while your Super Ability is charged:\n+20 Discipline and +20 Strength for 12 seconds.",
+     "main": "On Weapon kills while Super Ability is charged:\nGrants 20 Discipline and 20 Strength for 12 seconds.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "超能能量全满时使用此武器完成最后一击：\n在 12 秒内 +20 力量、+20 纪律。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676497011497,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668185906911,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1905598698": {
    "hash": 1905598698,
@@ -28913,14 +28980,21 @@
    "uploadToLive": false
   },
   "2250679103": {
-   "hash": 2250679103,
    "name": "Search Party",
+   "hash": 2250679103,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "ADS": [
+     {
+      "active": {
+       "multiplier": [ 0.85 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "If no allies are within 15 metres and you are aiming-down-sights: \n2.5% Reduced Aiming-Down-Sights Movement Penalty and [0.85x?] Aiming-Down-Sights Duration Multiplier.",
+     "main": "If no allies are within 15 meters: \n• 2.5% Reduced ADS Movement Speed Penalty\n• 0.85x ADS Animation Duration Multiplier",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -28929,23 +29003,25 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1667254180793,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1676496947011,
+      "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670343022506,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676496459473,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2261491232": {
    "hash": 2261491232,
@@ -30945,31 +31021,41 @@
    "inLiveDatabase": true
   },
   "2437618208": {
-   "hash": 2437618208,
    "name": "Tex Balanced Stock",
+   "hash": 2437618208,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 20 ],
+       "multiplier": [ 0.9 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Upon scoring 4 Hipfire Hits within 4(?) seconds of each, for 4 seconds:\n• [?] Handling\n• 20 Reload Speed\n• 0.9x Reload Duration Multiplier\n• 5% Reduced ADS Movement Speed Penalty\n\n<formula Reload Time: [reload_0] />",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1676496934606,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1676496928337,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2444870733": {
    "hash": 2444870733,
@@ -32172,13 +32258,13 @@
    "editor": {
     "en": {
      "main": "Weapon Kills grant 2 Stacks of Shot Swap, granting 100(?) Ready/Stow Handling.\n\nMaximum of 8 Stacks. Consumes 1 Stack when readying or stowing the weapon.\n\nenhanced (\n#e Stronger effect.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
-     "secondary": ""
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676225477175,
+      "lastUpdate": 1676489559405,
       "updatedBy": "Stardust"
      }
     },
@@ -32188,7 +32274,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35312,29 +35398,9 @@
    "itemName": "Eyes of Tomorrow"
   },
   "2839173408": {
-   "hash": 2839173408,
    "name": "Omolon Fluid Dynamics",
+   "hash": 2839173408,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667253980638,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670090669707,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670342833968,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
@@ -35353,14 +35419,34 @@
    },
    "editor": {
     "en": {
-     "main": "The upper 50% of the Magazine has up to +20 Stability and +30 Reload Speed.\n\n<formula Maximum Effect Reload Time: [reload_0] />\n<formula Half Effect Reload Time: [reload_1] />",
+     "main": "The upper 50% of the Magazine has up to 20 Stability and 30 Reload Speed.\n\nThe benefits decrease linearly as the Magazine approaches 50% capacity.\n\n<formula Maximum Effect Reload Time: [reload_0] />\n<formula Half Effect Reload Time: [reload_1] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "此武器的前半弹匣弹药获得 +20 稳定性，+30 填装速度。\n\n<formula 最大值增益效果时的填装速度： [reload_0] />\n<formula 一半增益效果时的填装速度： [reload_1] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676495720791,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670342833968,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667253980638,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2840833776": {
    "hash": 2840833776,
@@ -37257,30 +37343,17 @@
    "inLiveDatabase": true
   },
   "2988596335": {
-   "hash": 2988596335,
    "name": "Alacrity",
+   "hash": 2988596335,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659627305095,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670274648681,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670342366785,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
+    "Aim Assist": [
+     {
+      "active": {
+       "stat": [ 10 ]
+      }
+     }
+    ],
     "Range": [
      {
       "active": {
@@ -37291,7 +37364,7 @@
     "Reload": [
      {
       "active": {
-       "stat": [ 20 ]
+       "stat": [ 50 ]
       }
      }
     ],
@@ -37301,25 +37374,38 @@
        "stat": [ 20 ]
       }
      }
-    ],
-    "Aim Assist": [
-     {
-      "active": {
-       "stat": [ 10 ]
-      }
-     }
     ]
    },
    "editor": {
     "en": {
-     "main": "While Last Guardian Standing or Solo:\n\n20 Reload, 20 Stability, 10 Aim Assist, and 10 Range.\n\n<formula Reload Time: [reload_0] />\n<formula Effective Range: [range_0] />",
+     "main": "While Last Guardian Standing or Solo:\n20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist.\n\n<formula Reload Time: [reload_0] />\n<formula Effective Range: [range_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "当你成为火力战队最后存活的成员或单刷时：\n\n可提高 20 填装速度、 20 稳定性、 10 瞄准辅助和 10 射程。\n\n<formula 装填时间： [reload_0] />\n<formula 游戏内射程： [range_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676489862409,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670342366785,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676489875075,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2994412667": {
    "hash": 2994412667,
@@ -38169,7 +38255,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676332022320,
+   "lastUpload": 1676497926296,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46998,39 +47084,17 @@
    }
   },
   "3907865655": {
-   "hash": 3907865655,
    "name": "Right Hook",
+   "hash": 3907865655,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "editor": {
-    "en": {
-     "main": "Dealing Melee Damage grants +10 Aim Assistance and +10 Range for 10 seconds.\n\nDealing additional Melee Damage while the Buff is active extends the duration by 10 seconds, up to 20 seconds.\n\n<formula Effective Range: [range_0] />",
-     "secondary": "import self"
-    },
-    "zh-chs": {
-     "main": "造成近战伤害会使此武器在 10 秒内 +10 瞄准辅助、+10 射程。\n\n再次造成近战伤害可延长 10 秒持续时间，最高 20 秒。\n\n<formula 有效射程： [range_0] />",
-     "secondary": "import self"
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1665261719798,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670090749144,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670342949106,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": true,
    "stats": {
+    "Aim Assist": [
+     {
+      "active": {
+       "stat": [ 10 ]
+      }
+     }
+    ],
     "Range": [
      {
       "active": {
@@ -47039,7 +47103,36 @@
      }
     ]
    },
-   "uploadedBy": "Stardust"
+   "editor": {
+    "en": {
+     "main": "Dealing Melee Damage grants 10 Aim Assist and 10 Range for 10 seconds.\n\nDealing additional Melee Damage while the Buff is active extends the duration by 10 seconds, up to 20 seconds.\n\n<formula Effective Range: [range_0] />",
+     "secondary": "import self"
+    },
+    "zh-chs": {
+     "main": "造成近战伤害会使此武器在 10 秒内 +10 瞄准辅助、+10 射程。\n\n再次造成近战伤害可延长 10 秒持续时间，最高 20 秒。\n\n<formula 有效射程： [range_0] />",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676496164242,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670342949106,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1676496169076,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3913463509": {
    "hash": 3913463509,
@@ -47901,39 +47994,9 @@
    "inLiveDatabase": true
   },
   "3988215619": {
-   "hash": 3988215619,
    "name": "Veist Stinger",
+   "hash": 3988215619,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1670091024368,
-     "updatedBy": "Stardust"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670092010700,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670343537301,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "< weapon type ( AR, SMG ) >\nHits have a 2% chance to grant you Veist Stinger.\n< ( Sidearm ) >\nHits have a 4% chance to grant you Veist Stinger.\n< ( Bow, LFR ) >\nHits have a 10% chance to grant you Veist Stinger.\n< ( other ) >\nHits have a [?]% chance to grant you Veist Stinger.\n<$$>\n\nVeist Stinger:\n• <title Refills [G_refill] /> your magazine from reserves. 4 second cooldown between refills.\n• Bows are granted 15% Decreased Draw Time for 6 seconds.\n• Swords are granted 15(?)% Faster Charge Rate for 6 seconds.\n\nActivation Chances on other archetypes: <title Hover Here. [chances] />\n\ntitle chances (\nAuto Rifle, Submachine Gun: 2%\nSidearm: 4%\nBow, Linear Fusion Rifle: 10%\n)",
-     "secondary": "Veist Stinger:\n• Refills your magazine from reserves. 4 second cooldown between activations.\n• Bows are granted 15% Decreased Draw Time for 6 seconds.\n• Swords are granted 15(?)% Faster Charge Rate for 6 seconds.\n\nVeist Stinger Activation Chances:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%"
-    },
-    "zh-chs": {
-     "main": "< weapon type ( AR, SMG ) >\n命中时有 2% 概率刷新触发 VEIST 尖刺。\n< ( Sidearm ) >\n命中时有 4% 概率刷新触发 VEIST 尖刺。\n< ( Bow, LFR ) >\n命中时有 10% 概率刷新触发 VEIST 尖刺。\n< ( other ) >\n命中时有 [?]% 概率刷新触发 VEIST 尖刺。\n<$$>\n\nVEIST 尖刺：\n• 使用备弹 <title 重新填装 [G_refill] /> 弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n其他武器类型的触发概率 <title 查看 [chances] />\n\ntitle chances (\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%\n)",
-     "secondary": "VEIST 尖刺：\n• 使用备弹重新填装弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n触发概率：\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%"
-    }
-   },
    "stats": {
     "Charge Draw": [
      {
@@ -47943,42 +48006,72 @@
       "weaponTypes": [ "Bow" ]
      }
     ]
-   }
-  },
-  "3989629871": {
-   "hash": 3989629871,
-   "name": "Skulking Wolf",
-   "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1665261906723,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670343039372,
-      "updatedBy": "Mistwalker"
-     }
-    }
    },
    "editor": {
     "en": {
-     "main": "Upon getting a Guardian Kill while below 63 HP: \nGrants you Enhanced Radar and removes you from passively appearing in opposing radar for 10 seconds.",
+     "main": "< weapon type ( AR, SMG ) >\nHits with Auto Rifles and Submachine Guns have a 2% chance to activate Veist Stinger for 7 seconds.\n< ( Sidearm ) >\nHits with Sidearms have a 4% chance to activate Veist Stinger for 7 seconds.\n< ( Bow, LFR ) >\nHits with Bows and Linear Fusion Rifles have a 10% chance to activate Veist Stinger for 7 seconds.\n< ( other ) >\nHits have a [?]% chance to activate Veist Stinger for 7 seconds.\n<$$>\n\nVeist Stinger:\n• <title Refills [G_refill] /> Magazine from reserves on activation. //changes to 25% with Lightfall\n• Grants 15% Decreased Draw Time to Bows.\n• Grants [?] Faster Charge Rate to Swords.\n\n4 second cooldown between activations.\n\n<title Hover Here [chances] /> for the Activation Chances on other archetypes.\n\ntitle chances (\nAuto Rifle, Submachine Gun: 2%\nSidearm: 4%\nBow, Linear Fusion Rifle: 10%\n)",
+     "secondary": "Hits have a chance to activate Veist Stinger for 7 seconds, granting archetype-dependant bonuses:\n• Refills Magazine from reserves on activation. //changes to 25% with Lightfall\n• Grants 15% Decreased Draw Time to Bows.\n• Grants [?] Faster Charge Rate to Swords.\n\n4 second cooldown between activations.\n\nVeist Stinger Activation Chances:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%"
+    },
+    "zh-chs": {
+     "main": "< weapon type ( AR, SMG ) >\n命中时有 2% 概率刷新触发 VEIST 尖刺。\n< ( Sidearm ) >\n命中时有 4% 概率刷新触发 VEIST 尖刺。\n< ( Bow, LFR ) >\n命中时有 10% 概率刷新触发 VEIST 尖刺。\n< ( other ) >\n命中时有 [?]% 概率刷新触发 VEIST 尖刺。\n<$$>\n\nVEIST 尖刺：\n• 使用备弹 <title 重新填装 [G_refill] /> 弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n其他武器类型的触发概率 <title 查看 [chances] />\n\ntitle chances (\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%\n)",
+     "secondary": "VEIST 尖刺：\n• 使用备弹重新填装弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n触发概率：\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676497865334,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670343537301,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1670091024368,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "3989629871": {
+   "name": "Skulking Wolf",
+   "hash": 3989629871,
+   "type": "Weapon Trait Origin",
+   "editor": {
+    "en": {
+     "main": "On Guardian Kills while below 63 HP: \nGrants an Enhanced Radar and removes you from passively appearing on opposing radar for 10 seconds.\n\nShooting weapons still pings enemy radar once. ",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "低于 63 点生命值时，守护者使用此武器造成最后一击：\n在 10 秒内提供强化雷达，并将你从敌方雷达上移除。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676496700465,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670343039372,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3989883859": {
    "name": "Modularity (Vanguard)",
@@ -48147,29 +48240,9 @@
    "itemName": "Bad Juju"
   },
   "4008116374": {
-   "hash": 4008116374,
    "name": "Suros Synergy",
+   "hash": 4008116374,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670090973366,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670343136776,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Handling": [
      {
@@ -48181,14 +48254,34 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload:\n+40 Handling and 20% Flinch Resistance for 6 seconds.\n\nCannot be refreshed. Persists while stowed.\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon finishing a reload, for 6 seconds:\nGrants 40 Handling and 20% Flinch Resistance.\n\nCannot be refreshed. Persists while stowed.\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "完成填装时：\n在 6 秒内为此武器提供额外 40 操控性、 20% 后仰抖动抗性。\n\n持续时间无法被刷新。收起武器时仍然有效。\n\n<formula 拔枪速度： [ready_0] />\n<formula 收枪速度： [stow_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676497034671,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670343136776,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4008973208": {
    "hash": 4008973208,
@@ -49382,29 +49475,9 @@
    "itemName": "Thorn"
   },
   "4091460919": {
-   "hash": 4091460919,
    "name": "One Quiet Moment",
+   "hash": 4091460919,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659626837571,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1670090662984,
-      "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670342850195,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "stats": {
     "Reload": [
      {
@@ -49416,14 +49489,34 @@
    },
    "editor": {
     "en": {
-     "main": "40 Reload Stat while Out-of-Combat\r\n\r\n<formula Reload Time: [reload_0] />",
+     "main": "Grants 40 Reload Speed after not having dealt or received damage for 5(?) seconds.\n\nKills through any means reduce the required time to 1.5 seconds. Triggers even if stowed.\n\n<formula Reload Time: [reload_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "脱离战斗时获得 40 装填速度。\n\n<formula 填装时间： [reload_0] />",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676495985677,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670342850195,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659626837571,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4102900702": {
    "hash": 4102900702,
@@ -49992,39 +50085,39 @@
    "inLiveDatabase": true
   },
   "4154828211": {
-   "hash": 4154828211,
    "name": "Bitterspite",
+   "hash": 4154828211,
    "type": "Weapon Trait Origin",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1659627305095,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1665261602250,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668183886656,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Receiving [20?] damage grants a stack of Bitterspite, up to 5 stacks.\r\n\r\nBitterspite increases Reload Speed based on stacks, all of which expire upon reloading or stowing.",
+     "main": "Taking 20 Damage grants a Stack of Bitterspite. Maximum of 5 Stacks.\n\nEach Stack grants [?] Reload Speed. All Stacks are consumed on reload.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "受到 [20?] 伤害可获得一层苦涩怨恨，最多叠加 5 次。\n\n增加的装填速度与苦涩怨恨叠加的层数相关，当重新装填或收起武器后将失效。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676490747583,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1668183886656,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1659627305095,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4160547565": {
    "hash": 4160547565,
@@ -51150,31 +51243,31 @@
    "inLiveDatabase": true
   },
   "4264904777": {
-   "hash": 4264904777,
    "name": "Dawning Surprise",
+   "hash": 4264904777,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Multiple Weapon Kills within [?] seconds of each spawn a Dawning Gift that remais on the ground for 10 seconds.\n\nPicking up Dawning Gifts grants 10% Grenade, Melee, and Class Ability Energy, restores 20 HP, and starts Health Regeneration.\n\nActivation progress on Kills by Enemy Rank:\n• Minors and Guardians: 16.66%\n• Majors and Bosses: 50%",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1676494338367,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": true
+   "uploadedBy": "Stardust",
+   "lastUpload": 1676497926296,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4267945040": {
    "name": "Full Auto Trigger System",
