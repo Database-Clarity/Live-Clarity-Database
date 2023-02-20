@@ -70,13 +70,17 @@ for (const key in converterSettings) {
    )
 }
 
-const version = await persistentFetch(
+type Versions = {
+   descriptions: number
+}
+
+const version = await persistentFetch<Versions>(
    'https://raw.githubusercontent.com/Database-Clarity/Live-Clarity-Database/live/versions.json',
    3
 )
 const newVersion = {
    ...version,
-   descriptions: (Number(version.descriptions) + 0.0001).toFixed(4)
+   descriptions: Number((version.descriptions * 10000 + 1).toFixed(4)) / 10000
 }
 writeFileSync('./database/versions.json', JSON.stringify(newVersion, null, 1))
 
