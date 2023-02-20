@@ -459,7 +459,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4148,7 +4148,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4605,14 +4605,14 @@
    },
    "editor": {
     "en": {
-     "main": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the <link scaling is continuous [https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png] />.\nReaches maximum strength at 5 Stacks.\n\nDamage buff when reaching 1|2|3|4|5 Stacks:\n#e${16.73*#d}% | #e${23.47*#d}% | #e${29.28*#d}% | #e${34.73*#d}% | #e${40*#d}%\n\n% of the Magazine as Hits required for each Stack:\n12.5% | 35.5% | 54.5% | 74.5% | 110.5%\n\nAssuming no missed shots, it provides a #e~${25*#d}% Damage Buff on average after firing 100% of the Magazine.\n\nenhanced (\nvar d = 1.125\n#e Damage Buff is increased by 12.5%.\n)",
+     "main": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the <link scaling is continuous [https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png] />.\nReaches maximum strength at 5 Stacks.\n\nDamage buff when reaching 1|2|3|4|5 Stacks:\n#e${16.73*#d}% | #e${23.47*#d}% | #e${29.28*#d}% | #e${34.73*#d}% | #e${40*#d}%\n\n% of the Magazine as Hits required for each Stack:\n12.5% | 35.5% | 54.5% | 74.5% | 110.5%\n\nAssuming no missed shots, it provides a #e~${25*#d}% Damage Buff on average after firing 100% of the Magazine.\n\nenhanced (\nvar d = 1.125\n#e Damage Buff is increased by 12.5%. (e.g. 40% » 45%)\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676313402431,
+      "lastUpdate": 1676929989403,
       "updatedBy": "Stardust"
      }
     },
@@ -4622,7 +4622,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5871,7 +5871,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8872,7 +8872,7 @@
    },
    "editor": {
     "en": {
-     "main": "Weapon Kills grant Melee Ability Energy:\n<primary/> Primary and <heavy/> Power Weapons: #e${10*#d}%\nMost <special/> Special Weapons: #e${20*#d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide #e${10 * #d}%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\nenhanced (\nvar d = 1.1\n#e Melee Ability Energy gains are increased by 10%.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Weapon Kills grant Melee Ability Energy:\n<primary/> Primary and <heavy/> Power Weapons: #e${10*#d}%\nMost <special/> Special Weapons: #e${20*#d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide #e${10 * #d}%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\nenhanced (\nvar d = 1.1\n#e Melee Ability Energy gains are increased by 10%. (e.g. 10% » 11%)\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -8883,7 +8883,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676905231868,
+      "lastUpdate": 1676929405314,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -8897,7 +8897,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13410,8 +13410,8 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n< weapon type ( Fusion ) >\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n< ( AR, LMG, Pulse, Trace ) >\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n< ( LFR ) >\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n< ( Bow, Glaive, HC, Scout ) >\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n< ( other ) >\n• [?]% per hit, up to [?]%\n<$$>\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%.\n)\n\nHover for a <title breakdown by weapon archetype. [weapon list] />\n\ntitle weapon list (\n< table wide >\n|c Weapon Type         |c   Damage Increase Per Hit |c   Maximum Damage Increase <bold/>\n|  Fusion Rifle        |c   #e${29 * #d}%             |c   #e${435 * #d}%          <background/>\n|  Linear Fusion Rifle |c   #e${150 * #d}%            |c   #e${450 * #d}%\n|  Auto Rifle          |-4c #e${33.3 * #d}%           |-4c #e${500 * #d}%          <background/>\n|  Machine Gun                                                                     <background/>\n|  Pulse Rifles                                                                    <background/>\n|  Trace Rifle                                                                     <background/>\n|  Bow                 |-4c #e${166.6 * #d}%          |-4c #e${500 * #d}%\n|  Glaive\n|  Hand Cannon\n|  Scout Rifle\n<$>\n)",
-     "secondary": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%.\n)"
+     "main": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n< weapon type ( Fusion ) >\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n< ( AR, LMG, Pulse, Trace ) >\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n< ( LFR ) >\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n< ( Bow, Glaive, HC, Scout ) >\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n< ( other ) >\n• [?]% per hit, up to [?]%\n<$$>\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%. (e.g. 150% » 180%)\n)\n\nHover for a <title breakdown by weapon archetype. [weapon list] />\n\ntitle weapon list (\n< table wide >\n|c Weapon Type         |c   Damage Increase Per Hit |c   Maximum Damage Increase <bold/>\n|  Fusion Rifle        |c   #e${29 * #d}%             |c   #e${435 * #d}%          <background/>\n|  Linear Fusion Rifle |c   #e${150 * #d}%            |c   #e${450 * #d}%\n|  Auto Rifle          |-4c #e${33.3 * #d}%           |-4c #e${500 * #d}%          <background/>\n|  Machine Gun                                                                     <background/>\n|  Pulse Rifles                                                                    <background/>\n|  Trace Rifle                                                                     <background/>\n|  Bow                 |-4c #e${166.6 * #d}%          |-4c #e${500 * #d}%\n|  Glaive\n|  Hand Cannon\n|  Scout Rifle\n<$>\n)",
+     "secondary": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\n\nDamage Increase:\n• Fusion Rifles: #e${29 * #d}% per hit, up to #e${435 * #d}%\n• Machine Guns, Auto/Pulse/Trace Rifles: #e${33.3 * #d}% per hit, up to #e${500 * #d}%\n• Linear Fusion Rifles: #e${150 * #d}% per hit, up to #e${450 * #d}%\n• Bows, Glaives, Hand Cannons, Scout Rifles: #e${166.6 * #d}% per hit, up to #e${500 * #d}%\n\nenhanced (\nvar d = 1.2\n#e The damage buff is increased by 20%. (e.g. 150% » 180%)\n)"
     },
     "es": {
      "main": "var d = 1\nvar e = empty\nLuego de impactar con un Escudo de otro elemento al arma, o la Barrera de un Campeon:\nLos proximos impactos aumentan en daño contra el escudo del enemigo.\n\nEl bufo se termina si se impacta contra un escudo con mismo elemento, o contra un enemigo sin escudo.\n\n< weapon type ( fusion rifle ) >\n#e${29 * #d}% por bala, hasta #e${435 * #d}%\n<$$>\n< weapon type ( auto rifle, machine gun, pulse rifle, trace rifle ) >\n#e${33.3 * #d}% por bala, hasta #e${500 * #d}%\n<$$>\n< weapon type ( linear fusion rifle ) >\n#e${150 * #d}% por bala, hasta #e${450 * #d}%\n<$$>\n< weapon type ( combat bow, glaive, hand cannon, scout rifle ) >\n#e${166.6 * #d}% por bala, hasta #e${500 * #d}%\n<$$>\n\n<title Dependiendo del tipo de arma [weapon list] />\n\ntitle weapon list (\n< table wide >\n| Tipo de Arma          |   Por bala       |   hasta           <bold/>\n| Fusil de Fusion        |   #e${29 * #d}%   |   #e${435 * #d}%  <background/>\n| Fusil de Fusion Lineal  |   #e${150 * #d}%  |   #e${450 * #d}% \n| Fusil Automatico           |-4 #e${33.3 * #d}% |-4 #e${500 * #d}%  <background/>\n| Ametralladora                                                 <background/> \n| Fusil de Pulsos                                                <background/>    \n| Fusil de Rastreo                                                  <background/> \n| Arco                  |-4 #e${166.6 * #d}% |-4 #e${500 * #d}%\n| Gujas\n| Cañon de Mano\n| Fusil de Explorador\n<$>\n)",
@@ -13425,7 +13425,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1675792083687,
+      "lastUpdate": 1676929440131,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -13443,7 +13443,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17502,7 +17502,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}% Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%.\n)",
+     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}% Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%. (55% » 45%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -17513,7 +17513,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676226156033,
+      "lastUpdate": 1676929682718,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -17527,7 +17527,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20670,7 +20670,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24005,7 +24005,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> #e${10+#d}% of the Magazine on Weapon Kills.\n\n#f\n\nvar f = Refill amount is increased to 17% on Submachine Guns and Auto Rifles.\nenhanced (\nvar f = empty //removes note about SMGs and autos on the enhanced version\nvar d = 10\n#e Refill amount is increased by an additive 10%.\n)",
+     "main": "<title Refills [G_refill] /> #e${10+#d}% of the Magazine on Weapon Kills.\n\n#f\n\nvar f = Refill amount is increased to 17% on Submachine Guns and Auto Rifles.\nenhanced (\n//removes note about SMGs and autos on the enhanced version\nvar f = empty\nvar d = 10\n#e Refill amount is increased by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -24016,7 +24016,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676230408457,
+      "lastUpdate": 1676929916601,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -24030,7 +24030,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24056,7 +24056,7 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• #e${-80+#d}% Auto Aim Cone Size (No effect on Reticle Stickiness)\n\nenhanced (\nvar d = 5\n#e Auto Aim Penalty is decreased by an additive 5%.\n)",
+     "main": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• #e${-80+#d}% Auto Aim Cone Size (No effect on Reticle Stickiness)\n\nenhanced (\nvar d = 5\n#e Auto Aim Penalty is decreased by an additive 5%. \n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -24067,7 +24067,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676226139169,
+      "lastUpdate": 1676929875571,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -24081,7 +24081,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26137,7 +26137,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Timer between kills is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -26152,7 +26152,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676206917480,
+      "lastUpdate": 1676929273427,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -26170,7 +26170,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27126,7 +27126,8 @@
      {
       "active": {
        "multiplier": [ 0.9 ]
-      }
+      },
+      "weaponTypes": [ "Shotgun" ]
      }
     ]
    },
@@ -27152,12 +27153,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676209562444,
+     "lastUpdate": 1676929622975,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34141,7 +34142,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "\n<primary/> Primary and <heavy/> Power Weapon Kills grant an additional #e${1 * #d}% Super Energy.\n\n<special/> Special Weapon Kills grant an additional <pve #e${1.5 * #d}% /> <pvp [#e${1*#d}%] /> Super Energy.\n\nenhanced (\nvar d = 1.33333\n#e Bonus Super Gains are increased by 33.3%.\n)",
+     "main": "\n<primary/> Primary and <heavy/> Power Weapon Kills grant an additional #e${1 * #d}% Super Energy.\n\n<special/> Special Weapon Kills grant an additional <pve #e${1.5 * #d}% /> <pvp [#e${1*#d}%] /> Super Energy.\n\nenhanced (\nvar d = 1.33333\n#e Bonus Super Gains are increased by 33.3%. (e.g. 1.5% » 2%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -34152,7 +34153,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676234253664,
+      "lastUpdate": 1676930013334,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -34166,7 +34167,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38329,7 +38330,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43100,7 +43101,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant Grenade Ability Energy:\n• <primary/> Primary and <heavy/> Power Weapons: #e${10 * #d}%\n• Most <special/> Special Weapons: #e${20 * #d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide #e${10 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%.\n)",
+     "main": "Weapon Kills grant Grenade Ability Energy:\n• <primary/> Primary and <heavy/> Power Weapons: #e${10 * #d}%\n• Most <special/> Special Weapons: #e${20 * #d}%\n\nKills with Glaives, Grenade Launchers, and Trace Rifles only provide #e${10 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Magazine Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%. (e.g. 10% » 20%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -43111,7 +43112,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676905225676,
+      "lastUpdate": 1676929419171,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -43125,7 +43126,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676905245458,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43762,7 +43763,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\nGrants #e${8*#d}% Ability Energy split equally amongst all uncharged abilities.\n\nCurrently assumes all abilities are uncharged, granting #e${2.67*#d}% ability energy to each.\n\nenhanced (\nvar d = 1.125\n#e Total Ability Energy gain is increased by 12.5%.\n)",
+     "main": "On Weapon Kill:\nGrants #e${8*#d}% Ability Energy split equally amongst all uncharged abilities.\n\nCurrently assumes all abilities are uncharged, granting #e${2.67*#d}% ability energy to each.\n\nenhanced (\nvar d = 1.125\n#e Ability Energy Gain is increased by 12.5%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -43773,7 +43774,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676241552055,
+      "lastUpdate": 1676930149051,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -43787,7 +43788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44341,7 +44342,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45277,7 +45278,7 @@
    },
    "editor": {
     "en": {
-     "main": "While within 8 meters of 3+ Enemies:\n#e${40 * #d}% Increased Damage.\n\nSwords only receive a #e${35 * #d}% Damage Increase\n\nLingers for 1.5 seconds.\n\nenhanced (\nvar d = 1.05\n#e Damage Buff is increased by 5%.\n)",
+     "main": "While within 8 meters of 3+ Enemies:\n#e${40 * #d}% Increased Damage.\n\nSwords only receive a #e${35 * #d}% Damage Increase\n\nLingers for 1.5 seconds.\n\nenhanced (\nvar d = 1.05\n#e Damage Buff is increased by 5%. (e.g. 40% » 42%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -45288,7 +45289,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676229482467,
+      "lastUpdate": 1676929960566,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -45302,7 +45303,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1676930158477,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
