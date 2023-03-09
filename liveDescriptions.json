@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4638,7 +4638,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6685,7 +6685,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14144,14 +14144,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon within [?] seconds of scoring Kills with your other weapons:\nIncreases Magazine Capacity based on the amount of kills achieved within 12.5(?) seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 0 //placeholder???\n#e \"Rapid Kills\" requirement is removed. (???)\n)",
+     "main": "Upon readying the weapon within 10 seconds of scoring Kills with your other weapons:\nOverflows Magazine from reserves based on the amount of kills achieved within 10 seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increased per Kill:\n<primary/> Primary Weapons: 20%\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nKill counter is paused while the magazine is overflowed, preventing further activations.\n\nenhanced (\nvar d = 0 //placeholder\n#e Currently does nothing.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678051871896,
+      "lastUpdate": 1678374927099,
       "updatedBy": "Stardust"
      }
     },
@@ -14161,7 +14161,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23548,7 +23548,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29779,7 +29779,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\n<primary/> Primary Weapons: 20% Increased Magazine Capacity per Kill.\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increased per Kill:\n<primary/> Primary Weapons: 20%\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -29794,7 +29794,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676929273427,
+      "lastUpdate": 1678375093395,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -29812,7 +29812,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676932239634,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44167,7 +44167,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678375098864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
