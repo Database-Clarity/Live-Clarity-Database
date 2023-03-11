@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "stats": {
    "Handling": [
     {
@@ -3774,7 +3774,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "stats": {
    "PVE Damage": [
     {
@@ -4541,7 +4541,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 150% increased Magazine Capacity. Always rounds magazine up."
+       "text": "Overflow amount maxes out at 50% of the Magazine Capacity. Always rounds magazine up."
       }
      ]
     },
@@ -4551,7 +4551,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increased per Kill:"
+       "text": "Magazine Capacity Increase per Kill:"
       }
      ]
     },
@@ -4561,7 +4561,7 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons: 20%"
+       "text": " Primary Weapons: 10%"
       }
      ]
     },
@@ -4577,7 +4577,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Power Weapons: 10%."
+       "text": " Power Weapons: 20%"
       }
      ]
     },
@@ -4587,7 +4587,7 @@
     {
      "linesContent": [
       {
-       "text": "Kill counter is paused while the magazine is overflowed, preventing further activations."
+       "text": "Cannot be reactivated until all overflowed shots are fired."
       }
      ]
     },
@@ -4720,7 +4720,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "stats": {
    "Handling": [
     {
@@ -12536,7 +12536,7 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -12561,7 +12561,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 150% increased Magazine Capacity. Always rounds magazine up."
+       "text": "Overflow amount maxes out at 50% of the Magazine Capacity. Always rounds magazine up."
       }
      ]
     },
@@ -12571,7 +12571,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increased per Kill:"
+       "text": "Magazine Capacity Increase per Kill:"
       }
      ]
     },
@@ -12581,7 +12581,7 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons: 20%"
+       "text": " Primary Weapons: 10%"
       }
      ]
     },
@@ -12597,7 +12597,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Power Weapons: 10%."
+       "text": " Power Weapons: 20%"
       }
      ]
     },
@@ -12607,7 +12607,7 @@
     {
      "linesContent": [
       {
-       "text": "Kill counter is paused while the magazine is overflowed, preventing further activations."
+       "text": "Cannot be reactivated until all overflowed shots are fired."
       }
      ]
     }
@@ -15285,7 +15285,16 @@
  "1171147302": {
   "hash": 1171147302,
   "name": "Feeding Frenzy",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1678559292450,
+  "stats": {
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 5, 5, 5, 10 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15293,7 +15302,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks."
+       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed. Maximum of 5 Stacks."
       }
      ]
     },
@@ -15358,7 +15367,11 @@
         {
          "cellContent": [
           {
-           "text": "10"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "13"
           }
          ]
         },
@@ -15392,7 +15405,11 @@
         {
          "cellContent": [
           {
-           "text": "50"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "55"
           }
          ]
         },
@@ -15427,7 +15444,11 @@
         {
          "cellContent": [
           {
-           "text": "60"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "65"
           }
          ]
         },
@@ -15461,7 +15482,11 @@
         {
          "cellContent": [
           {
-           "text": "75"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "85"
           }
          ]
         },
@@ -15530,7 +15555,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger Effect."
+       "text": " Increases Reload Speed bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks."
       }
      ]
     }
@@ -20935,7 +20960,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "stats": {
    "Charge Draw": [
     {
@@ -25936,7 +25961,7 @@
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25971,7 +25996,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increased per Kill:"
+       "text": "Magazine Capacity Increase per Kill:"
       }
      ]
     },
@@ -34265,7 +34290,7 @@
  "2779035018": {
   "hash": 2779035018,
   "name": "Feeding Frenzy",
-  "lastUpload": 1678140517594,
+  "lastUpload": 1678559292450,
   "stats": {
    "Reload": [
     {
@@ -34283,7 +34308,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks."
+       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed. Maximum of 5 Stacks."
       }
      ]
     },
@@ -34348,7 +34373,7 @@
         {
          "cellContent": [
           {
-           "text": "10"
+           "text": "8"
           }
          ]
         },
@@ -37757,7 +37782,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678375098864,
+  "lastUpload": 1678559292450,
   "stats": {
    "PVE Damage": [
     {
@@ -45765,7 +45790,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increased per Kill:"
+       "text": "Magazine Capacity Increase per Kill:"
       }
      ]
     },
