@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2367,6 +2367,33 @@
    "lastUpload": 1678062993757,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "167794220": {
+   "hash": 167794220,
+   "name": "Aggressive Frame",
+   "type": "Weapon Frame Enhanced",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
   },
   "169755979": {
    "name": "Dragonfly",
@@ -4638,7 +4665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6685,7 +6712,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14144,14 +14171,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon within 10 seconds of scoring Kills with your other weapons:\nOverflows Magazine from reserves based on the amount of kills achieved within 10 seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increased per Kill:\n<primary/> Primary Weapons: 20%\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nKill counter is paused while the magazine is overflowed, preventing further activations.\n\nenhanced (\nvar d = 0 //placeholder\n#e Currently does nothing.\n)",
+     "main": "Upon readying the weapon within 10 seconds of scoring Kills with your other weapons:\nOverflows Magazine from reserves based on the amount of kills achieved within 10 seconds of each.\n\nOverflow amount maxes out at 50% of the Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n<primary/> Primary Weapons: 10%\n<special/> Special and <heavy/> Power Weapons: 20%\n\nCannot be reactivated until all overflowed shots are fired.\n\nenhanced (\nvar d = 0 //placeholder\n#e Currently does nothing.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678374927099,
+      "lastUpdate": 1678558795370,
       "updatedBy": "Stardust"
      }
     },
@@ -14161,7 +14188,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16910,6 +16937,15 @@
    "name": "Feeding Frenzy",
    "hash": 1171147302,
    "type": "Weapon Trait Enhanced",
+   "stats": {
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 5, 5, 5, 10 ]
+      }
+     }
+    ]
+   },
    "importStatsFrom": 2779035018,
    "editor": {
     "en": {
@@ -16924,12 +16960,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676208612965,
+     "lastUpdate": 1678559187721,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23548,7 +23584,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29779,7 +29815,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increased per Kill:\n<primary/> Primary Weapons: 20%\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within #e${7+#d} seconds of a Weapon Kill:\nIncreases Magazine Capacity based on the amount of kills within #e${7+#d} seconds of each.\n\nMaxes out at 150% increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n<primary/> Primary Weapons: 20%\n<special/> Special and <heavy/> Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -29794,7 +29830,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678375093395,
+      "lastUpdate": 1678558590880,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -29812,7 +29848,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30894,6 +30930,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "2105054824": {
+   "hash": 2105054824,
+   "name": "Lightweight Frame",
+   "type": "Weapon Frame Enhanced",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
+  },
   "2108556049": {
    "hash": 2108556049,
    "name": "Lightweight Frame",
@@ -31484,6 +31547,35 @@
    "uploadToLive": false,
    "inLiveDatabase": true,
    "uploadedBy": "Stardust"
+  },
+  "2171805903": {
+   "hash": 2171805903,
+   "name": "Perpetual Loophole",
+   "type": "Weapon Trait Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
   },
   "2172504645": {
    "name": "Sleight of Hand",
@@ -39764,6 +39856,35 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "2751656639": {
+   "hash": 2751656639,
+   "name": "M1R Distribution Matrix",
+   "type": "Weapon Frame Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
+  },
   "2754084930": {
    "hash": 2754084930,
    "name": "Sniper Rifle Ammo Finder",
@@ -39970,8 +40091,8 @@
    },
    "editor": {
     "en": {
-     "main": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\n\n< table >\n| Stacks | Reload Stat | <title RDS [rds] /> | Reload Time <bold/>\n| 1x     | 10          | 0.975x                  | <formula [reload_0] /> <background/>\n| 2x     | 50          | 0.9x                | <formula [reload_1] />\n| 3x     | 60          | 0.868x              | <formula [reload_2] /> <background/>\n| 4x     | 75          | 0.837x               | <formula [reload_3] />\n| 5x     | 100         | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\nenhanced (\n#e Stronger Effect.\n)\n\ntitle rds (\nReload Duration Scalar: Multiplies reload animation duration by that number.\n)",
-     "secondary": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\n\nBonuses at 1|2|3|4|5 Stacks:\n• 10 | 50 | 60 | 75 | 100 Reload Speed Stat\n• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier\n\nenhanced (\n#e Stronger Effect.\n)"
+     "main": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed. Maximum of 5 Stacks.\n\n< table >\n| Stacks | Reload Stat | <title RDS [rds] /> | Reload Time            <bold/>\n| 1x     | #e${8+#d}   | 0.975x              | <formula [reload_0] /> <background/>\n| 2x     | #e${50+#d}  | 0.9x                | <formula [reload_1] />\n| 3x     | #e${60+#d}  | 0.868x              | <formula [reload_2] /> <background/>\n| 4x     | #e${75+#f}  | 0.837x              | <formula [reload_3] />\n| 5x     | 100       | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\nenhanced (\nvar d = 5\nvar f = 10\n#e Increases Reload Speed bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks.\n)\n\ntitle rds (\nReload Duration Scalar: Multiplies reload animation duration by that number.\n)",
+     "secondary": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\n\nBonuses at 1|2|3|4|5 Stacks:\n• #e${8+#d} | #e${50+#d} | #e${60+#d} | #e${75+#f} | 100 Reload Speed Stat\n• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier\n\nenhanced (\nvar d = 5\nvar f = 10\n#e Increases Reload Speed bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks.\n)"
     },
     "zh-chs": {
      "main": "使用此武器造成最后一击时：\n提高装填速度。\n\n< table >\n| 叠加层数 | 装填速度增加 | 填装<title 动画系数 [G_as] /> | 装填时间 <bold/>\n| 1x     | 10          | 1x                  | <formula [reload_0] /> <background/>\n| 2x     | 45          | 0.9x                | <formula [reload_1] />\n| 3x     | 55          | 0.875x              | <formula [reload_2] /> <background/>\n| 4x     | 70          | 0.85x               | <formula [reload_3] />\n| 5x     | 100         | 0.8x                | <formula [reload_4] /> <background/>\n<$>\n\n持续 3.5 秒，最高叠加 5 层。\n\nenhanced (\n#e 更显著的效果。\n)\n",
@@ -39981,7 +40102,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678140176097,
+      "lastUpdate": 1678559135779,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -39995,7 +40116,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678140517594,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41892,6 +42013,93 @@
    "lastUpload": 1676844056332,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "2898674457": {
+   "hash": 2898674457,
+   "name": "M1R Distribution Matrix IV",
+   "type": "Weapon Frame Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
+  },
+  "2898674462": {
+   "hash": 2898674462,
+   "name": "M1R Distribution Matrix III",
+   "type": "Weapon Frame Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
+  },
+  "2898674463": {
+   "hash": 2898674463,
+   "name": "M1R Distribution Matrix II",
+   "type": "Weapon Frame Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
   },
   "2909403175": {
    "hash": 2909403175,
@@ -44167,7 +44375,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678375098864,
+   "lastUpload": 1678559292450,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44947,6 +45155,93 @@
    "lastUpload": 1676844056332,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "3146691100": {
+   "hash": 3146691100,
+   "name": "Robber Refit",
+   "type": "Weapon Catalyst Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
+  },
+  "3146691101": {
+   "hash": 3146691101,
+   "name": "Immovable Refit",
+   "type": "Weapon Catalyst Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
+  },
+  "3146691103": {
+   "hash": 3146691103,
+   "name": "Feedback Refit",
+   "type": "Weapon Catalyst Exotic",
+   "lastUpload": 1678559292450,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false,
+   "itemHash": 3118061005,
+   "itemName": "Vexcalibur"
   },
   "3149307605": {
    "hash": 3149307605,
@@ -60972,6 +61267,15 @@
      ]
     },
     {
+     "name": "The Manticore",
+     "has": [
+      228577175,
+      2656694271,
+      2797384170,
+      4259401308
+     ]
+    },
+    {
      "name": "The Prospector",
      "has": [
       2977709078,
@@ -61106,6 +61410,23 @@
       806917387,
       838219733,
       990298390
+     ]
+    },
+    {
+     "name": "Vexcalibur",
+     "has": [
+      2751656639,
+      990298390,
+      1067908860,
+      2171805903,
+      2898674457,
+      2898674462,
+      2898674463,
+      3146691100,
+      3146691101,
+      3146691103,
+      3465198467,
+      4259401308
      ]
     },
     {
@@ -61700,7 +62021,10 @@
     {
      "name": "Sword",
      "has": [
-      1793150018
+      40492375,
+      167794220,
+      1793150018,
+      2105054824
      ]
     },
     {
@@ -62003,6 +62327,10 @@
    "1077019636": {
     "name": "Danger Zone",
     "linkedWith": 960810156
+   },
+   "1145640183": {
+    "name": "Counterattack",
+    "linkedWith": 3016987351
    },
    "1161469972": {
     "name": "Swashbuckler",
@@ -62511,6 +62839,10 @@
    "3007133316": {
     "name": "Frenzy",
     "linkedWith": 4104185692
+   },
+   "3016987351": {
+    "name": "Counterattack",
+    "linkedWith": 1145640183
    },
    "3038247973": {
     "name": "Explosive Payload",
