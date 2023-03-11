@@ -3,7 +3,7 @@
 
 ## Usage of our data
 - You are allowed to use all the data in the database so long as you properly credit us in your project with the following:
-  - The name of our project: `Clarity - A DIM Companion` or `Clarity` for short
+  - The name of our project: `Clarity`
   - A link to our website: https://www.d2clarity.com
   - These credits should be clearly visible and easily accessible for users
 - If you wish to use our data in larger projects, please contact us through our [Discord Server](https://d2clarity.page.link/discord) so we can discuss the specifics of the cooperation.
