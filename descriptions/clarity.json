@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "Handling": [
     {
@@ -3774,7 +3774,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "PVE Damage": [
     {
@@ -4720,7 +4720,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "Handling": [
     {
@@ -5670,7 +5670,30 @@
  "494941759": {
   "hash": 494941759,
   "name": "Threat Detector",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1678561614230,
+  "stats": {
+   "Handling": [
+    {
+     "active": {
+      "multiplier": [ 0.75, 0.56 ]
+     }
+    }
+   ],
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 15, 60 ]
+     }
+    }
+   ],
+   "Stability": [
+    {
+     "active": {
+      "stat": [ 19, 44 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -5738,7 +5761,11 @@
          "classNames": [ "center" ],
          "cellContent": [
           {
-           "text": "15"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "19"
           }
          ]
         },
@@ -5824,7 +5851,11 @@
          "classNames": [ "center" ],
          "cellContent": [
           {
-           "text": "40"
+           "text": "🡅",
+           "classNames": [ "enhancedArrow" ]
+          },
+          {
+           "text": "44"
           }
          ]
         },
@@ -5907,7 +5938,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
+       "text": " Grants 4 more stability when active."
       }
      ]
     }
@@ -12536,7 +12567,7 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15285,12 +15316,13 @@
  "1171147302": {
   "hash": 1171147302,
   "name": "Feeding Frenzy",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "Reload": [
     {
      "active": {
-      "stat": [ 5, 5, 5, 10 ]
+      "stat": [ 13, 55, 65, 85, 100 ],
+      "multiplier": [ 0.975, 0.9, 0.868, 0.837, 0.8 ]
      }
     }
    ]
@@ -20960,7 +20992,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "Charge Draw": [
     {
@@ -23741,7 +23773,7 @@
  "1823011807": {
   "hash": 1823011807,
   "name": "Noble Deeds",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1678561614230,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -23749,7 +23781,7 @@
     {
      "linesContent": [
       {
-       "text": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants a Stack of Noble Deeds."
+       "text": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants [?] Stacks of Noble Deeds."
       }
      ]
     },
@@ -25961,7 +25993,7 @@
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27120,7 +27152,16 @@
  "2120661319": {
   "hash": 2120661319,
   "name": "Field-Tested",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1678561614230,
+  "stats": {
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 5, 10, 20, 35, 55 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27128,7 +27169,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a lot of Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks. Kills count as 6(?) Hits."
+       "text": "Scoring "
+      },
+      {
+       "text": "a lot of",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": " Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks. Kills count as 6(?) Hits."
       }
      ]
     },
@@ -27138,14 +27186,28 @@
     {
      "linesContent": [
       {
-       "text": "Each Stack of Field Test grants 10(?) Range, 10(?) Stability, 10(?) Handling, and 10(?) Reload Speed."
+       "text": "Stat Bonuses at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Swords receive [?] Charge Rate."
+       "text": "• [?] Range, Stability, and Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 5|10|20|35|55 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• [?] Charge Rate (Swords)"
       }
      ]
     },
@@ -27189,6 +27251,221 @@
        "text": "Power Weapons: unknown"
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "table": [
+      {
+       "rowContent": [
+        {
+         "classNames": [ "bold" ],
+         "cellContent": [
+          {
+           "text": "Stacks"
+          }
+         ]
+        },
+        {
+         "classNames": [ "bold" ],
+         "cellContent": [
+          {
+           "text": "Reload Time"
+          }
+         ]
+        },
+        {
+         "classNames": [ "bold" ],
+         "cellContent": [
+          {
+           "text": "Ready Speed"
+          }
+         ]
+        },
+        {
+         "classNames": [ "bold" ],
+         "cellContent": [
+          {
+           "text": "Stow Speed"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rowContent": [
+        {
+         "cellContent": [
+          {
+           "text": "1x"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "",
+           "classNames": [ "formula" ],
+           "formula": "reload_0"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rowContent": [
+        {
+         "cellContent": [
+          {
+           "text": "2x"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "",
+           "classNames": [ "formula" ],
+           "formula": "reload_1"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rowContent": [
+        {
+         "cellContent": [
+          {
+           "text": "3x"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "",
+           "classNames": [ "formula" ],
+           "formula": "reload_2"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rowContent": [
+        {
+         "cellContent": [
+          {
+           "text": "4x"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "",
+           "classNames": [ "formula" ],
+           "formula": "reload_3"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rowContent": [
+        {
+         "cellContent": [
+          {
+           "text": "5x"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "",
+           "classNames": [ "formula" ],
+           "formula": "reload_4"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        },
+        {
+         "cellContent": [
+          {
+           "text": "[?]"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "classNames": [ "formula", "background_2" ],
+     "isFormula": true
     }
    ]
   }
@@ -29680,7 +29957,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40 Inventory Size Stat."
+       "text": "40 Inventory Size Stat. (Equivalent of 3 Reserve Armor Mods)"
       }
      ]
     },
@@ -34290,7 +34567,7 @@
  "2779035018": {
   "hash": 2779035018,
   "name": "Feeding Frenzy",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "Reload": [
     {
@@ -35617,7 +35894,7 @@
  "2869569095": {
   "hash": 2869569095,
   "name": "Field Prep",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1678561614230,
   "stats": {
    "Reload": [
     {
@@ -35666,7 +35943,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Inventory Size Stat."
+       "text": "Passively grants 30 Inventory Size Stat. (5 less than 2 Reserve Armor Mods)"
       }
      ]
     },
@@ -37782,7 +38059,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678559292450,
+  "lastUpload": 1678561614230,
   "stats": {
    "PVE Damage": [
     {
@@ -46356,7 +46633,7 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1678110927479,
+  "lastUpload": 1678561614230,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -46388,7 +46665,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage over a 9(?) meter radius. Shockwaves inherit the weapon's "
+       "text": " damage over a [?] meter radius. Shockwaves inherit the weapon's "
       },
       {
        "text": "Combatant Damage Scaling",
@@ -48480,7 +48757,7 @@
  "4071163871": {
   "hash": 4071163871,
   "name": "Threat Detector",
-  "lastUpload": 1678140517594,
+  "lastUpload": 1678561614230,
   "stats": {
    "Handling": [
     {
