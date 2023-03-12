@@ -7072,7 +7072,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +30 Airborne Effectiveness to Lumina."
+       "text": "Passively grants 30 Airborne Effectiveness to Lumina."
       }
      ]
     },
@@ -7082,41 +7082,21 @@
     {
      "linesContent": [
       {
-       "text": "Standing in a Rift creates Matching Noble Seekers every 5 seconds that seek out allies within 35 metres and apply a buff depending on the type of Rift you stand on."
+       "text": "Standing in a Rift creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Amount of Noble Seekers spawned is equal to Fireteam Size-1, with a minimum of 1 Seeker."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Each time a Noble Seeker applies a buff, the Rift Duration gets extended by 5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Healing Rift Seekers heal allies for 75HP and begin Health Regeneration."
+       "text": "• Healing Rift Seeker: restores 75 HP and starts Health Regeneration"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Empowering Rift Noble Seekers grant a "
+       "text": "• Empowering Rift Seeker: "
       },
       {
        "text": "35%"
@@ -7128,7 +7108,27 @@
        "text": "[PVP: 15%]"
       },
       {
-       "text": " Damage Increase for 5 seconds."
+       "text": " Increased Damage for 5 seconds"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Amount of Noble Seekers spawned is equal to [Fireteam Size]-1, with a minimum of 1 Seeker."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each time a Noble Seeker applies a buff, the Rift Duration gets extended by 5 seconds."
       }
      ]
     }
@@ -17327,19 +17327,7 @@
     {
      "linesContent": [
       {
-       "text": "Enemy explodes in an elemental explosion that matches your currently selected Subclass, dealing up to "
-      },
-      {
-       "text": "210"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 200]"
-      },
-      {
-       "text": " damage."
+       "text": "Enemy explodes in an elemental explosion that matches your currently selected Subclass, dealing up to 208 damage."
       }
      ]
     },
@@ -19845,9 +19833,12 @@
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Ability Charges are capped at a maximum of 2."
+       "text": "Currently does not work with Strand."
       }
      ]
     }
@@ -20760,14 +20751,24 @@
     {
      "linesContent": [
       {
-       "text": "Heals 50 HP, and constantly regenerates 30 HP per second for 8 seconds."
+       "text": "• Restores 50 HP"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Can be Refreshed."
+       "text": "• Heals for 30 HP per second for 8 seconds"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration can be refreshed."
       }
      ]
     }
@@ -21122,14 +21123,14 @@
     {
      "linesContent": [
       {
-       "text": "Daybreak Projectiles apply 60 Scorch on hit."
+       "text": "Daybreak Projectiles apply 30 Scorch on hit. (40 with Ember of Ashes Equipped)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "This is increased to 90 Scorch with Ember of Ashes Equipped."
+       "text": "Daybreak Projectiles can occasionally hit twice - doubling the amount of Scorch applied."
       }
      ]
     },
@@ -21161,7 +21162,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants [?] Melee Ability Energy every time Scorch deals damage."
+       "text": "Scorch Damage ticks grant 6.25% Melee Ability Energy."
       }
      ]
     }
@@ -21907,6 +21908,76 @@
      "linesContent": [
       {
        "text": "🠅 增益持续时间增加到 8 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2894608781": {
+  "hash": 2894608781,
+  "name": "Hearts of Ice",
+  "itemHash": 3831935023,
+  "itemName": "Ballidorse Wrathweavers",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "During Winter's Wrath Super:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shockwave (Heavy Attack) deals 100% increased Shatter Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Allies within range of the Shockwave (30 meters) are granted the following for 15 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 100(?) HP Stasis Shard Overshield"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "15%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 5%]"
+      },
+      {
+       "text": " Increased Stasis Weapon Damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is non-refreshable and can proc on self once Super runs out. Damage Buff stacks with everything."
       }
      ]
     }
@@ -24327,7 +24398,28 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +30 Airborne Effectiveness."
+       "text": "Passively grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 25% increased Blink distance."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• [?]% Decreased Blink Cooldown"
       }
      ]
     },
@@ -24337,31 +24429,7 @@
     {
      "linesContent": [
       {
-       "text": "25% increased Blink distance."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Decreases Blink Cooldown by [?]%."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "On Blink:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "+100 Handling (Ready Speed), and Radar remains active."
+       "text": "On Blink: grants 100 Ready Handling and Radar remains active."
       }
      ]
     }
@@ -28254,7 +28322,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +30 Airborne Effectiveness to "
+       "text": "Passively grants 30 Airborne Effectiveness to "
       },
       {
        "text": "Weapons of Sorrow"
@@ -28275,28 +28343,60 @@
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Poison deals up to "
+       "text": "Necrotic Poison ticks every "
       },
       {
-       "text": "[?]"
+       "text": "0.5"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 30]"
+       "text": "[PVP: 0.7]"
       },
       {
-       "text": " damage over its duration."
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": " seconds for "
+      },
       {
-       "text": "Bosses take an additional 80% damage from Poison."
+       "text": "19"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]"
+      },
+      {
+       "text": " ticks over "
+      },
+      {
+       "text": "10"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]"
+      },
+      {
+       "text": " seconds. Total of "
+      },
+      {
+       "text": "1366"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]"
+      },
+      {
+       "text": " damage."
       }
      ]
     },
@@ -28306,7 +28406,19 @@
     {
      "linesContent": [
       {
-       "text": "Each successive Poison tick deals 9% more damage. Lasts 19 ticks."
+       "text": "Necrotic Poison deals "
+      },
+      {
+       "text": "34"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 5?]"
+      },
+      {
+       "text": " damage at base, with each tick dealing 7.7% more damage than the last one inside PvE."
       }
      ]
     },
@@ -28316,14 +28428,7 @@
     {
      "linesContent": [
       {
-       "text": "Poisoned enemies spread poison on death in a 3 metres radius."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "This applies even if the source of the poison wasn't a melee attack."
+       "text": "Poisoned enemies (from any poison source) spread poison on death in a 5 meter radius."
       }
      ]
     }
@@ -28821,7 +28926,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +15 Airborne Effectiveness."
+       "text": "Passively grants 15 Airborne Effectiveness."
       }
      ]
     },
@@ -28983,6 +29088,13 @@
     {
      "linesContent": [
       {
+       "text": "While on an Arc Subclass:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Arc Ability and Jolt Kills grant Conduction Tines for "
       },
       {
@@ -28995,7 +29107,7 @@
        "text": "[PVP: 4]"
       },
       {
-       "text": " seconds."
+       "text": " seconds. Maximum of 3 Stacks."
       }
      ]
     },
@@ -29005,58 +29117,21 @@
     {
      "linesContent": [
       {
-       "text": "At x1 Conduction Tines"
+       "text": "Conduction Tines 1|2|3 grant the following:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "175% Additional Base Grenade, Melee, and Super Regeneration Rate | 22% Slower Super Drain."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "At x2 Conduction Tines"
+       "text": "• 175%|350%|525% Additional Base Grenade, Melee, and Super Regeneration Rate"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "350% Additional Base Grenade, Melee, and Super Regeneration Rate | 44% Slower Super Drain."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "At x3 Conduction Tines"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "525% Additional Base Grenade, Melee, and Super Regeneration Rate | 66% Slower Super Drain."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Super Drain affects every Roaming Super BUT Chaos Reach."
+       "text": "• 22%|44%|66% slower Stormtrance Super Drain"
       }
      ]
     }
