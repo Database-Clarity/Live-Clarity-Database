@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678726148083,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2695,41 +2695,41 @@
    "itemName": "Vex Mythoclast"
   },
   "185514250": {
-   "hash": 185514250,
    "name": "Glacial Guard",
-   "itemHash": 1467044898,
    "itemName": "Icefall Mantle",
+   "hash": 185514250,
+   "itemHash": 1467044898,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667594815700,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665697288632,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Replaces Barricade with Glacial Guard.\n\nOn Glacial Guard Cast:\nGrants Shielded buff and applies 40 Slow Stacks to Combatants within 7 meters.\n\nShielded:\n • Lasts 20 seconds and grants a 100HP Overshield <pve with 62.5% Damage Resist. />\n • Shielded prevents sprinting, double jumping, and sliding.\n • Taking damage refreshes the timer.\n • While active, you cannot regain Class Ability Energy.\n\nActivating Barricade while Glacial Guard is active will remove the effect.",
-     "secondary": "Replaces Barricade with Glacial Guard. Overwrites Cooldown to Rally Barricade.\n\nOn Glacial Guard Cast:\nGrants Shielded buff and applies 40 Slow Stacks to Combatants within 7 metres.\n\nShielded:\n • Lasts 20 seconds and grants a 100HP Overshield with 62.5% Damage Resist in PVE.\n • Shielded prevents sprinting, double jumping, and sliding.\n • Taking damage refreshes the timer.\n • While active, you cannot regain Class Ability Energy.\n\nActivating your Class Ability while Glacial Guard is active will remove Shielded."
+     "main": "Replaces Barricade with Glacial Guard. Sets Class Ability Cooldown to Rally Barricade's.\n\nOn Glacial Guard Cast:\nGrants Shielded buff for 20 seconds and applies 40 Slow Stacks to PvE Combatants within 7 meters.\n\nShielded:\n• Grants a 100 HP Overshield <pve with 62.5% Damage Resistance in PvE. />\n• Prevents sprinting, double jumping, and sliding.\n• Cannot regain Class Ability Energy while active.\n• Taking damage refreshes buff duration.\n• Class Ability activation removes the buff.",
+     "secondary": "import self"
     },
     "ko": {
      "main": "방벽을 빙하의 방비로 변환합니다.\n\n빙하의 방비 시전 시:\n7미터 이내에 있는 적들에게 감속 스택 40개를 부여합니다.\n\n보호막은 20초 동안 지속되며 100HP의 체력을 가지고 있습니다. <pve 62.5% 피해 감소를 부여합니다. /> \n보호막의 지속 시간은 피해를 입으면 초기화되며 질주, 직업 점프, 그리고 슬라이딩을 봉인합니다.\n\n보호막이 지속되는 동안 직업 능력 에너지는 재생되지 않습니다.\n빙하의 방비가 활성화 된 상태에서 방벽을 사용하면 효과가 해제됩니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678724413762,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665697288632,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "187655372": {
    "hash": 187655372,
@@ -3573,38 +3573,14 @@
    "inLiveDatabase": true
   },
   "242794439": {
-   "hash": 242794439,
    "name": "Reflective Vents",
-   "itemHash": 2423243921,
    "itemName": "Antaeus Wards",
+   "hash": 242794439,
+   "itemHash": 2423243921,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667580649936,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665683374556,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670509222476,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "During a slide, after sprinting for at least 1.5 seconds: \nGenerate a 180° frontal shield that reflects damage and projectiles.\n\nIncreases Slide Distance by 33%.",
+     "main": "During a slide, after sprinting for at least 1.5 seconds: \nProjects a 180° frontal shield that reflects damage and projectiles for 0.45 seconds.\n\nPassively Increases Slide Distance by 33%.",
      "secondary": "import self"
     },
     "ko": {
@@ -3615,7 +3591,31 @@
      "main": "冲刺 1.5 秒后滑行：\n产生一个 180° 的正面护盾，可以反弹伤害和弹道。\n\n滑行距离增加33%。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678719288744,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683374556,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670509222476,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "247725512": {
    "name": "Rapid Hit",
@@ -4665,7 +4665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678726148083,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5528,38 +5528,14 @@
    "inLiveDatabase": true
   },
   "384759954": {
-   "hash": 384759954,
    "name": "Bring the Heat",
-   "itemHash": 1734844650,
    "itemName": "Ashen Wake",
+   "hash": 384759954,
+   "itemHash": 1734844650,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667580702947,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665683728331,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670509668286,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Fusion Grenades have Fastball intrinsically and detonate on impact.\n\nKills with Fusion Grenades grant Grenade Energy.\n25% for Rank-And-File\n50% for Elites \n100% for Guardians, Minibosses, and Bosses",
+     "main": "Fusion Grenades have Fastball intrinsically and detonate on impact.\n\nFusion Grenade Kills grant Grenade Energy based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• 25%: Minors\n• 50%: Elites \n• 100%: Enemy Players, Minibosses, Bosses",
      "secondary": "import self"
     },
     "ko": {
@@ -5570,7 +5546,31 @@
      "main": "让融合手雷自带快速投掷能力，并且在撞击物体时爆炸。\n\n使用融合手雷击杀敌人可以获得手雷能量。\n对于普通敌人，获得25%的能量；\n对于精英敌人，获得50%的能量；\n对于守护者、次级首领、首领，获得100%的能量。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678719463726,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683728331,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670509668286,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "384759955": {
    "hash": 384759955,
@@ -6712,7 +6712,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678726148083,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8365,33 +8365,11 @@
    "uploadedBy": "Stardust"
   },
   "569260333": {
-   "hash": 569260333,
    "name": "Force Multiplier",
-   "itemHash": 3267996858,
    "itemName": "No Backup Plans",
+   "hash": 569260333,
+   "itemHash": 3267996858,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667586006963,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667586027783,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Passively grants +30 Airborne Effectiveness to Shotguns.\n\nShotgun Kills restore Melee Ability Energy.\n10% Rank-And-File | 25% Anything Else\n\nIf your Void Melee Ability is Charged:\nShotgun Kills activate Void Overshield and consume all of your Melee Energy.",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Airborne": [
      {
@@ -8401,7 +8379,29 @@
       "weaponTypes": [ "Shotgun" ]
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Passively grants 30 Airborne Effectiveness to Shotguns.\n\nIf your Void Melee Ability is Charged:\nShotgun Kills consume your Melee Ability and grant a 45 HP Void Overshield.\n\nShotgun Kills restore Melee Ability Energy based on <link enemy rank [https://d2clarity.page.link/combatant] />.\n• 5%: Tier 1 Minors\n• 9%: Tier 2 Minors, Tier 1 Elites\n• 10%: Enemy Players\n• 13%: Tier 3 Minors, Tier 2 Elites\n• 25%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, Bosses",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678725720496,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667586006963,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "571267712": {
    "hash": 571267712,
@@ -11773,41 +11773,41 @@
    "uploadToLive": false
   },
   "824488952": {
-   "hash": 824488952,
    "name": "Seriously, Watch Out",
-   "itemHash": 136355432,
    "itemName": "Mk. 44 Stand Asides",
+   "hash": 824488952,
+   "itemHash": 136355432,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667585988470,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670511409117,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "If your Shoulder Charge Melee Ability is Charged:\n\nSlowly grants 75 HP Overshield over 3 seconds after sprinting for 0.5 seconds.\nOvershield disappears instantly if you stop sprinting. \n\nGrants 50% Melee Ability Energy upon hitting with a Shoulder Charge.\n\nIncludes Seismic Strike, Ballistic Slam, Hammer Strike, and Shield Bash.",
+     "main": "Upon sprinting for 0.5 seconds with a Shoulder Charge (or Ballistic Slam) Melee Ability charge:\nSlowly grants 75 HP Overshield over 3 seconds after sprinting for 0.5 seconds. Overshield is instantly removed if no longer sprinting. \n\nGrants 50% Melee Ability Energy upon dealing damage with the mentioned Melee Abilities.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "在满生命值的情况下装备肩撞类近战且充能完毕时：\n\n冲刺后 0.5 秒开始，在 3 秒内逐渐获得 75 生命值的覆盖护盾。\n停止冲刺时覆盖护盾立即消失。\n\n肩撞技能击中敌人后回复 50% 的近战充能。\n\n有效的近战技能包括地震打击、弹道猛击、战锤打击、圣盾强袭。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678725173283,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670511409117,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "825650462": {
    "hash": 825650462,
@@ -13120,39 +13120,15 @@
    "inLiveDatabase": true
   },
   "897181301": {
-   "hash": 897181301,
    "name": "Rapid Cooldown",
-   "itemHash": 609852545,
    "itemName": "Fr0st-EE5",
+   "hash": 897181301,
+   "itemHash": 609852545,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667590233758,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665695766273,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670677645155,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While Sprinting: \n • <pve Grenade and Melee Ability Regeneration Rate is doubled. />\n • <pvp 100% Additional Base Grenade/Melee Regeneration Rate. />\n • <pve 100% /> <pvp [200%] /> Additional Base Class Ability Regeneration Rate.\n\nOn Dodge:\n6.25% Faster Sprint Speed for 10 seconds. \nNot refreshable.",
-     "secondary": "While Sprinting: \n • [PVE] Grenade and Melee Ability Regeneration Rate is doubled.\n • [PVP] 100% Additional Base Grenade/Melee Regeneration Rate.\n • 100% [PVP: 200%] Additional Base Class Ability Regeneration Rate.\n\nOn Dodge:\n6.25% Faster Sprint Speed for 10 seconds. \nNot refreshable."
+     "main": "While Sprinting: \n• <pve 100% /> <pvp [200%] /> Additional Base Class Ability Regeneration Rate.\n• <pve [PvE] Grenade and Melee Ability Regeneration Rate is doubled. />\n• <pvp [PvP] 100% Additional Base Grenade and Melee Regeneration Rate. />\n\nOn Dodge:\nGrants 6.25% Faster Sprint Speed for 10 seconds. Duration is not refreshable.",
+     "secondary": "import self"
     },
     "ko": {
      "main": "질주하는 동안:\n<pve 수류탄과 근접 능력 재생 속도 100% 증가 />\n<pvp 수류탄과 근접 능력의 기본 재생 속도 100% 증가 />\n추가로 직업 능력의 기본 재생 속도가 <pve 100% /><pvp [200%] /> 만큼 증가합니다.\n\n회피 직후:\n10초 동안 질주 속도가 6.25% 증가합니다.\n초기화 불가능합니다.",
@@ -13162,7 +13138,31 @@
      "main": "冲刺时：\n• <pve 手雷和近战技能的充能速度翻倍。 />\n• <pvp 100% 额外的基础手雷/近战再生速度。 />\n• <pve 100% /> <pvp [200%] /> 额外的基础职业技能充能速度。\n\n闪身时：\n+6.25% 奔跑速度，持续10秒。\n持续时间无法被刷新。",
      "secondary": "冲刺时：\n• [PVE] 手雷和近战技能的充能速度翻倍。\n• [PVP] 100% 额外的基础手雷/近战再生速度。\n• 100% [PVP：200%] 额外的基础职业技能充能速度。\n\n闪身时：\n+6.25% 奔跑速度，持续10秒。\n持续时间无法被刷新。"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678722268608,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665695766273,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670677645155,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "897335593": {
    "hash": 897335593,
@@ -13308,33 +13308,33 @@
    "uploadToLive": false
   },
   "916484570": {
-   "hash": 916484570,
    "name": "Puppeteer's Control",
+   "itemName": "Abeyant Leap",
+   "hash": 916484570,
+   "itemHash": 3637722482,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1677677992214,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "On Barricade Cast:\nDrengr's Lash creates 2 additional Lashes with seeking capabilities that travel up to [?] metres.\n\nUpon applying Suspension:\nGrants Woven Mail for 10 seconds.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678719219590,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 3637722482,
-   "itemName": "Abeyant Leap"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "916649862": {
    "hash": 916649862,
@@ -19551,41 +19551,41 @@
    "inLiveDatabase": true
   },
   "1331592343": {
-   "hash": 1331592343,
    "name": "Starless Night",
-   "itemHash": 106575079,
    "itemName": "Helm of Saint-14",
+   "hash": 1331592343,
+   "itemHash": 106575079,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260071920,
-      "updatedBy": "Icemourne"
-     },
-     "ko": {
-      "lastUpdate": 1665696849915,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Guarding with Sentinel Shield blinds enemies within <pve 7 /> <pvp [3.5] /> metres for 5 seconds.\n\nYour Ward of Dawn grants Starless Night, granting all allies that enter a 65 HP Void Overshield for [?] seconds.\n\nEnemies that enter your Ward of Dawn are also blinded for 5 seconds.",
+     "main": "Guarding with Sentinel Shield blinds enemies within <pve 7 /> <pvp [3.5] /> meters for 5 seconds.\n\nAllies inside your Ward of Dawn receive Starless Night, granting them a 45 HP Void Overshield. Enemies that enter your Ward of Dawn are blinded for 5 seconds.\n\n",
      "secondary": "import self"
     },
     "ko": {
      "main": "깃발 방패로 막으면 7미터 이내에 있는 적들을 5초간 실명시킵니다.\n\n새벽의 수호물을 시전하면 별 없는 밤이 활성화되며 수호물에 들어온 아군에게 65HP 짜리 보호막을 부여합니다.\n\n수호물에 들어온 적들을 5초간 실명시킵니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678723090396,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665696849915,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1332244541": {
    "hash": 1332244541,
@@ -23619,7 +23619,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678726148083,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24044,33 +24044,33 @@
    "inLiveDatabase": true
   },
   "1640501529": {
-   "hash": 1640501529,
    "name": "Lancer's Vigil",
+   "itemName": "Cadmus Ridge Lancecap",
+   "hash": 1640501529,
+   "itemHash": 3574051505,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1677677992214,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Diamond Lance creates a <stasis/>Stasis Crystal on impact. Hitting Boss or Vehicles creates an additional [?] <stasis/>Stasis Crystals.\n\nWhile on a Stasis Subclass and behind a Rally Barricade:\nScoring a Kill or 3 Precision Hits within [?] seconds of each spawns a Diamond Lance next to you.\n\n<pve 5 /> <pvp [12] /> second cooldown between activations.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678719703603,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 3574051505,
-   "itemName": "Cadmus Ridge Lancecap"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1645158859": {
    "name": "Under Pressure",
@@ -27581,38 +27581,14 @@
    "inLiveDatabase": true
   },
   "1828251441": {
-   "hash": 1828251441,
    "name": "Assault Barricade",
-   "itemHash": 1190497097,
    "itemName": "Citan's Ramparts",
+   "hash": 1828251441,
+   "itemHash": 1190497097,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667580798380,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665686033030,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670528522023,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Modifies Towering Barricade into Assault Barricade\n\nAssault Barricade has 33% Decreased HP and 50% Decreased Duration but enables you and your allies to shoot through it.\n\nAssault Barricade Stats:\n600HP -> 350HP\n20 seconds -> 10 seconds ",
+     "main": "Replaces Towering Barricade with Assault Barricade:\n• 33% Decreased HP (600 >> 400)\n• Takes 25% Increased Damage from Enemy Players\n• 50% Decreased Duration (20 >> 10 seconds)\n• 70% Increased Cooldown Time\n• Allows caster and allies to shoot through it",
      "secondary": "import self"
     },
     "ko": {
@@ -27623,7 +27599,31 @@
      "main": "将巍峨屏障变为突击屏障。\n\n可以让你和你的盟友穿过它进行射击。\n\n突击屏障属性：\n600生命值 -> 350生命值\n20秒 -> 10秒",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678722508057,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665686033030,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670528522023,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678720149874,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1831499663": {
    "hash": 1831499663,
@@ -28629,38 +28629,44 @@
    "uploadToLive": false
   },
   "1919923227": {
-   "hash": 1919923227,
    "name": "Overflowing Light",
-   "itemHash": 1341951177,
    "itemName": "Heart of Inmost Light",
+   "hash": 1919923227,
+   "itemHash": 1341951177,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260059287,
-      "updatedBy": "Icemourne"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2, 1.35 ]
+      },
+      "weaponTypes": [ "Grenade" ]
      },
-     "ko": {
-      "lastUpdate": 1665696710361,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670511349614,
-      "updatedBy": "Mistwalker"
+     {
+      "active": {
+       "multiplier": [ 1.1, 1.2 ]
+      },
+      "weaponTypes": [ "Melee" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.1, 1.2 ]
+      },
+      "weaponTypes": [ "Grenade" ]
+     },
+     {
+      "active": {
+       "multiplier": [ 1.1, 1.2 ]
+      },
+      "weaponTypes": [ "Melee" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Ability use grants Empowered for other abilities for <pve 10 /> <pvp [5] /> seconds, depending on the Ability used. \ne.g.: Barricade -> Empowered Melee and Empowered Grenade.\n\nEmpowered Melee:\n10% | 20% Increased damage.\n<pve 400% /> <pvp [100%] /> || <pve 800% /> <pvp [200%] /> Additional Base Melee Regeneration Rate.\n\nEmpowered Grenade:\n<pve 20% /> <pvp [10%] /> | <pve 35% /> <pvp [20%] /> Increased damage.\n<pve 400% /> <pvp [100%] /> || <pve 800% /> <pvp [200%] /> Additional Base Grenade Regeneration Rate.\n\nEmpowered Barricade:\nX% | Y% Increased HP. Not granting any benefit.\n<pve 150% /> <pvp [37.5%] /> || <pve 300% /> <pvp [75%] /> Additional Base Barricade Regeneration Rate.",
+     "main": "Ability use grants Empowered for other abilities for 5 seconds, depending on the Ability used. \ne.g.: Barricade Usage >> Empowered Melee and Empowered Grenade.\n\nEmpowered Melee x1 || x2:\n• 10% || 20% Increased damage.\n• <pve 400% /> <pvp [100%] /> || <pve 800% /> <pvp [200%] /> Additional Base Melee Regeneration Rate.\n\nEmpowered Grenade x1 || x2:\n• <pve 20% /> <pvp [10%] /> || <pve 35% /> <pvp [20%] /> Increased damage.\n• <pve 400% /> <pvp [100%] /> || <pve 800% /> <pvp [200%] /> Additional Base Grenade Regeneration Rate.\n\nEmpowered Barricade:\n• 25% Additional Base Class Ability Regeneration Rate.",
      "secondary": "import self"
     },
     "ko": {
@@ -28671,7 +28677,31 @@
      "main": "使用一个技能（手雷、近战或屏障）可为另外两个技能赋能 <pve 10 /><pvp [5] /> 秒。\n例如：使用屏障，可赋能近战和手雷技能。\n\n强化近战：\n10% | 20% 额外伤害。\n<pve 400% /><pvp [100%] /> || <pve 800% /><pvp [200%] /> 额外近战回复效率。\n\n强化手雷： \n<pve 20% /><pvp [10%] /> | <pve 35% /><pvp [20%] /> 额外伤害。\n<pve 400% /><pvp [100%] /> || <pve 800% /><pvp [200%] /> 额外手雷回复效率。\n\n强化屏障： \nX% | Y% 额外生命值。\n<pve 150% /><pvp [37.5%] /> || <pve 300% /><pvp [75%] /> 额外屏障回复效率。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678722875257,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665696710361,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670511349614,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678722854193,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1920417385": {
    "hash": 1920417385,
@@ -36031,41 +36061,41 @@
    "inLiveDatabase": true
   },
   "2471523345": {
-   "hash": 2471523345,
    "name": "Glacial Fortification",
-   "itemHash": 1322544481,
    "itemName": "Hoarfrost-Z",
+   "hash": 2471523345,
+   "itemHash": 1322544481,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667581910084,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665697020787,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While on Stasis Subclass:\nBarricade is replaced by a Stasis Wall.\n\nThe Stasis Wall is 5 medium crystals wide. The middle crystal is a small crystal.\nStasis Wall lasts 14 seconds.\n\nInherits Rally Barricade Cooldown and Bonuses. Functions even if no crystals remain.",
+     "main": "While on <stasis/>Stasis Subclass:\nBarricade is replaced by a <stasis/>Stasis Wall that lasts 14 seconds. <stasis/>Stasis Wall is made of 4 Medium Crystals and a Small Crystal in the middle.\n\nInherits Rally Barricade Bonuses, even if no crystals remain. Overrides Barricade Cooldown with Towering Barricade's.",
      "secondary": "import self"
     },
     "ko": {
      "main": "시공 하위직업을 장착했을 때:\n방벽이 시공 수정으로 변환됩니다.\n\n시공 수정 방벽은 7개 중간 크기 수정으로 이루어져 있으며 중앙은 작은 수정입니다.\n\n시공 수정 방벽은 집결 방벽의 효과를 부여하지만 수정이 3개 이상 파괴되면 기능을 잃게 됩니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678723437037,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665697020787,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2473404935": {
    "hash": 2473404935,
@@ -36467,42 +36497,49 @@
    "inLiveDatabase": true
   },
   "2500502982": {
-   "hash": 2500502982,
    "name": "Firewalker",
-   "itemHash": 1453120846,
    "itemName": "The Path of Burning Steps",
+   "hash": 2500502982,
+   "itemHash": 1453120846,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667586612399,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667586440317,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "<solar/>Solar Kills have a chance of granting 1 stack of Firewalker. [1-3 Kills, average of 2]\nBecoming <stasis/>Frozen grants 1 stack of Firewalker.\nMax of 4 Stacks.\n\nFirewalker increases Weapon Damage depending on Stacks and lasts 10 seconds.\n<pve 1x = 20% | 2x = 25% | 3x = 35% | 4x = 40% />\n<pvp 1x = 15% | 2x = 25% | 3x = 20% | 4x = 35% />\n(Yes, 3x is 20% in PVP, it's not a typo)\n\nSlow Stacks and Duration are halved.\nReceive no damage from Stasis Breakout.\nStasis Breakout also creates a burst of Solar Energy with a 9m radius, dealing 105 damage.",
-     "secondary": "Solar Kills have a chance of granting 1 stack of Firewalker. [1-3 Kills, average of 2]\nBecoming Frozen grants 1 stack of Firewalker.\nMax of 4 Stacks.\n\nFirewalker increases Weapon Damage and lasts 10 seconds.\n[PVE] 1x = 20% | 2x = 25% | 3x = 35% | 4x = 40%\n[PVP] 1x = 15% | 2x = 25% | 3x = 20% | 4x = 35%\n(Yes, 3x is 20% in PVP, it's not a typo)\n\nSlow Stacks and Duration are halved.\nReceive no damage from Stasis Breakout.\nStasis Breakout creates a burst of Solar Energy, dealing 105 damage in a 9 metre radius."
-    }
-   },
    "stats": {
-    "Damage": [
+    "PVE Damage": [
      {
       "active": {
-       "multiplier": [ 1.2, 1.25, 1.35, 1.4, 1.15, 1.25, 1.2, 1.35 ]
+       "multiplier": [ 1.2, 1.25, 1.35, 1.4 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.15, 1.25, 1.2, 1.35 ]
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "<solar/>Solar Kills have a chance of granting 1 stack of Firewalker. (1-3 Kills, average of 2)\nGetting <stasis/>Frozen grants 1 stack of Firewalker.\n\nMaximum of 4 Stacks. Lasts 10 seconds.\n\nFirewalker increases Weapon Damage:\n• <pve [PVE] 1x = 20% | 2x = 25% | 3x = 35% | 4x = 40% />\n• <pvp [PVP] 1x = 15% | 2x = 25% | 3x = 20% | 4x = 35% />\n(Yes, 3x is 20% in PVP)\n\n<stasis/>Slow Stacks received and their Duration are halved.\n\nRemoves <stasis/>Stasis Breakout damage. Stasis Breakout deals 105 <solar/>Solar Damage in a 9 meter radius.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678726130516,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678726072779,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2505824339": {
    "hash": 2505824339,
@@ -44455,7 +44492,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678726148083,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46457,39 +46494,15 @@
    }
   },
   "3241194942": {
-   "hash": 3241194942,
    "name": "Linear Actuators",
-   "itemHash": 1160559849,
    "itemName": "Dunemarchers",
+   "hash": 3241194942,
+   "itemHash": 1160559849,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667581109195,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665694848573,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670529944501,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "After sprinting for 1.5 seconds, gain Linear Actuators for 7 seconds.\n\nOn Melee Hit:\nLinear Actuators applies Shocked for 2 seconds on enemy, which releases an Arc Static Charge that chains when another enemy is within 20 metres. Shocked is refreshed on chain.\n\n<pve [PVE] [?] Damage />\n<pvp [PVP] 85 Damage. Immune to additional chain damage for 2 seconds while Shocked. />\n\nIncreases Sprint Speed by 6.25%\nIncreases Slide Distance by 33%",
-     "secondary": "After sprinting for 1.5 seconds, gain Linear Actuators for 7 seconds.\n\nOn Melee Hit:\nLinear Actuators applies Shocked for 2 seconds on enemy, which releases an Arc Static Charge that chains when another enemy is within 20 metres. Shocked is refreshed on chain.\n\n[PVE] [?] Damage\n[PVP] 85 Damage. Immune to additional chain damage for 2 seconds while Shocked.\n\nIncreases Sprint Speed by 6.25%\nIncreases Slide Distance by 33%"
+     "main": "Passively Increases Sprint Speed by 6.25% and Slide Distance by 33%. Sprinting for 1.5 seconds grants Linear Actuators for 7 seconds.\n\nOn Melee Hit with Linear Actuators active:\nApplies Shocked debuff to the hit enemy for 2 seconds. Shocked targets chain Arc Damage to enemies within 20 meters. Shocked duration is refreshed on chain.\n\nDamage Chains deal <pve 220 /> <pvp [85] /> damage. Hit Enemy Players are immune to further chains for 2 seconds.",
+     "secondary": "import self"
     },
     "ko": {
      "main": "1.5초 간 질주 한 이루 7초 동안 선형 구동기가 활성화됩니다.\n\n근접 공격 적중 시:\n선형 구동기가 맞은 적에게 2초 동안 충격을 남깁니다. 만약에 다른 적이 20미터 이내에 있을 경우 연쇄 번개가 일어납니다. 충격은 연쇄 번개 발동 이후 초기화됩니다.\n\n<pve 약 300% 근접 공격 피해 />\n<pvp 85 피해. 맞은 이후 2초간 사막행군병의 효과에 면역. />\n\n질주 속도 6.25% 증가\n슬라이드 거리 33% 증가",
@@ -46499,7 +46512,31 @@
      "main": "冲刺 1.5 秒后，获得\"线性促动器\"，持续 7 秒。\n\n在近战命中时:\n\"线性促动器\"对敌人施加震荡 2 秒，释放一个连锁电弧，当另一个敌人在 20 米范围内时就会连锁。震荡会在连锁时被刷新。\n\n<pve [PVE] [?] 伤害 /> \n<pvp [PVP] 85 伤害。在震荡状态下对额外的连锁伤害免疫，持续 2 秒。 />\n\n+6.25% 冲刺速度\n+33% 滑行距离",
      "secondary": "冲刺 1.5 秒后，获得\"线性促动器\"，持续 7 秒。\n\n在近战命中时:\n\"线性促动器\"对敌人施加震荡 2 秒，释放一个连锁电弧，当另一个敌人在 20 米范围内时就会连锁。震荡会在连锁时被刷新。\n\n[PVE] [?] 伤害\n[PVP] 85 伤害。在震荡状态下对额外的连锁伤害免疫，持续 2 秒。\n\n+6.25% 冲刺速度\n+33% 滑行距离"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678722002891,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665694848573,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670529944501,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3242533954": {
    "hash": 3242533954,
@@ -52179,38 +52216,14 @@
    }
   },
   "3662465907": {
-   "hash": 3662465907,
    "name": "Transfusion Matrix",
-   "itemHash": 3216110440,
    "itemName": "An Insurmountable Skullfort",
+   "hash": 3662465907,
+   "itemHash": 3216110440,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668259797636,
-      "updatedBy": "Icemourne"
-     },
-     "ko": {
-      "lastUpdate": 1665683252223,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670509083945,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "<arc/>Powered Arc Melee Kills grant full Melee Ability Energy and begin Health Regeneration.",
+     "main": "Upon scoring a Powered <arc/>Arc Melee Kill:\nRefunds used Melee Ability Charge and starts Health Regeneration.",
      "secondary": "import self"
     },
     "ko": {
@@ -52221,7 +52234,31 @@
      "main": "<arc/>电弧近战技能击杀可恢复生命值并回复全部近战能量。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678724498899,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683252223,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670509083945,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678726148083,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3662638763": {
    "hash": 3662638763,
