@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678651499138,
+  "lastUpload": 1678667530486,
   "stats": {
    "Handling": [
     {
@@ -227,7 +227,7 @@
    ]
   },
   "type": "Weapon Trait",
-  "uploadedBy": "Icemourne",
+  "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
     {
@@ -3774,7 +3774,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678651499138,
+  "lastUpload": 1678667530486,
   "stats": {
    "PVE Damage": [
     {
@@ -3792,7 +3792,7 @@
    ]
   },
   "type": "Weapon Trait",
-  "uploadedBy": "Icemourne",
+  "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
     {
@@ -4720,7 +4720,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678651499138,
+  "lastUpload": 1678667530486,
   "stats": {
    "Handling": [
     {
@@ -4745,7 +4745,7 @@
    ]
   },
   "type": "Weapon Trait",
-  "uploadedBy": "Icemourne",
+  "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
     {
@@ -11970,7 +11970,7 @@
   "name": "Fervid Coldsnap",
   "itemHash": 3259193988,
   "itemName": "Osmiomancy Gloves",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11998,53 +11998,50 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Recharge:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "11%: Tier 1 Rank-and-File"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "22%: Tier 2 Rank-and-File / Tier 1 Elite / Guardians"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "33%: Tier 3 Rank-and-File / Tier 2 Elite"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "50%: Tier 3 Elite / Minibosses / Champions / Bosses"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "For Combatant Classifications "
+       "text": "Grenade Ability Energy gains based on "
       },
       {
-       "text": "click here",
+       "text": "enemy rank",
        "link": "https://d2clarity.page.link/combatant",
        "classNames": [ "link" ]
       },
       {
-       "text": "."
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 7%: Enemy Players"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10%: Tier 1 Minors"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 22%: Tier 2 Minors, Tier 1 Elites"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 34%: Tier 3 Minors, Tier 2 Elites"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, and Bosses"
       }
      ]
     }
@@ -12056,7 +12053,16 @@
   "name": "Tome of Dawn",
   "itemHash": 370930766,
   "itemName": "Wings of Sacred Dawn",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
+  "stats": {
+   "Airborne": [
+    {
+     "active": {
+      "stat": [ 50 ]
+     }
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -12064,7 +12070,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants +50 Airborne Effectiveness while Tome of Dawn is active."
+       "text": "Aiming Down Sights while Airborne grants Tome of Dawn while on a Solar Subclass."
       }
      ]
     },
@@ -12074,14 +12080,7 @@
     {
      "linesContent": [
       {
-       "text": "If on Solar Subclass:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Aiming Down Sights while Airborne grants Tome of Dawn."
+       "text": "Tome of Dawn lasts 2.8 seconds and holds you in place midair. Weapon hits add [?] seconds to its duration."
       }
      ]
     },
@@ -12091,39 +12090,28 @@
     {
      "linesContent": [
       {
-       "text": "Tome of Dawn:"
+       "text": "Tome of Dawn grants the following:"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": " • Holds you in place midair"
+       "text": "• 50 Airborn Effectiveness"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": " • 25% Reduced Flinch"
+       "text": "• 25% Flinch Resistance"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": " • Grants 15% Damage Resistance."
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": " • Lasts for 2.8 seconds. Hits refresh Y seconds."
+       "text": "• 15% Damage Resistance"
       }
      ]
     }
@@ -12135,7 +12123,7 @@
   "name": "Fusion Harness",
   "itemHash": 2082483156,
   "itemName": "Starfire Protocol",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -12143,7 +12131,7 @@
     {
      "linesContent": [
       {
-       "text": "Gain an extra Fusion Grenade Charge."
+       "text": "Grants an extra Fusion Grenade Charge."
       }
      ]
     },
@@ -12153,7 +12141,14 @@
     {
      "linesContent": [
       {
-       "text": "20% Grenade Energy per Weapon Hit while Empowered (0.4 second cooldown)"
+       "text": "Grants 20% Grenade Energy on Empowered Weapon Hits with a 0.4 second cooldown."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Damage is 'Empowered' while in a Well of Radiance or an Empowering Rift."
       }
      ]
     },
@@ -12163,17 +12158,7 @@
     {
      "linesContent": [
       {
-       "text": "100% Class Ability Energy on Grenade Kill"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Weapon Damage is Empowered while within a Well of Radiance or Empowering Rift."
+       "text": "Grants 100% Class Ability Energy on Grenade Kills."
       }
      ]
     }
@@ -14269,7 +14254,7 @@
   "name": "Embers of Light",
   "itemHash": 235591051,
   "itemName": "Promethium Spur",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -14277,7 +14262,7 @@
     {
      "linesContent": [
       {
-       "text": "Daybreak Kills spawn both an Empowering and Healing Rift on Enemy Death Location."
+       "text": "Daybreak Kills spawn a Healing and Empowering Rift on Enemy Death Location."
       }
      ]
     },
@@ -14287,14 +14272,7 @@
     {
      "linesContent": [
       {
-       "text": "While standing in a Rift:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Solar Weapon Kills grant [?]% Class Ability Energy."
+       "text": "Kills while your Class Ability Energy is full also spawn a Healing and Empowering Rift on Enemy Death Location. Consumes Class Ability Charge."
       }
      ]
     },
@@ -14304,14 +14282,64 @@
     {
      "linesContent": [
       {
-       "text": "While your Class Ability Energy is Full:"
+       "text": "Solar Weapon Kills while standing in a Rift grant Class Ability Energy based on "
+      },
+      {
+       "text": "enemy rank",
+       "link": "https://d2clarity.page.link/combatant",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ":"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Weapon Kills consume your Class Ability Energy and spawn a Empowering + Healing Rift at the Target's Location."
+       "text": "• 9%: Tier 1 Minors"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 13%: Tier 2 Minors, Tier 1 Elites(?)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15%: Enemy Players"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20%: Tier 3 Minors, Tier 2 Elites(?)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30%: Tier 4 Minors, Tier 3-4 Elites(?)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40%: Minibosses"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50%: Bosses"
       }
      ]
     }
@@ -14471,8 +14499,15 @@
   "name": "Cobra Totemic",
   "itemHash": 3627185503,
   "itemName": "Ophidian Aspect",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "stats": {
+   "Airborne": [
+    {
+     "passive": {
+      "stat": [ 10 ]
+     }
+    }
+   ],
    "Handling": [
     {
      "passive": {
@@ -14495,7 +14530,28 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +10 Airborne Effectiveness, +35 Reload and +35 Handling to all weapons, as well as increased Melee Lunge Distance to 6.5 metres."
+       "text": "Passively grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 35 Reload Speed and Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 2 meters longer Melee Lunge Distance (4.5 -> 6.5)"
       }
      ]
     }
@@ -17281,7 +17337,7 @@
   "name": "Devouring Rift",
   "itemHash": 511888814,
   "itemName": "Secant Filaments",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -17289,7 +17345,13 @@
     {
      "linesContent": [
       {
-       "text": "Empowering Rifts you create grant Overload Shot to you and allies inside it, granting weapons disruption on hit."
+       "text": "Empowering Rifts you cast grant "
+      },
+      {
+       "classNames": [ "overload" ]
+      },
+      {
+       "text": "Overload Shot to you and allies inside it, allowing all weapons to cause disruption on hit."
       }
      ]
     },
@@ -17299,17 +17361,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapons that have a Breaker Type, either by mods or intrinsically will not be overwritten."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Does not work with Well of Radiance."
+       "text": "Weapons that have a Breaker Type, either by mods or intrinsically will not be overwritten. Does not work with Well of Radiance."
       }
      ]
     },
@@ -20992,7 +21044,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678651499138,
+  "lastUpload": 1678667530486,
   "stats": {
    "Charge Draw": [
     {
@@ -21024,7 +21076,7 @@
    ]
   },
   "type": "Weapon Trait",
-  "uploadedBy": "Icemourne",
+  "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
     {
@@ -23773,7 +23825,7 @@
  "1823011807": {
   "hash": 1823011807,
   "name": "Noble Deeds",
-  "lastUpload": 1678582059138,
+  "lastUpload": 1678667530486,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -23781,7 +23833,7 @@
     {
      "linesContent": [
       {
-       "text": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants [?] Stacks of Noble Deeds."
+       "text": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds."
       }
      ]
     },
@@ -23791,7 +23843,21 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 10 Stacks. Kills remove 1 Stack of Noble Deeds."
+       "text": "Maximum of 10 Stacks. Kills remove "
+      },
+      {
+       "text": "1",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[2]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " Stacks of Noble Deeds."
       }
      ]
     },
@@ -25352,7 +25418,7 @@
     {
      "linesContent": [
       {
-       "text": "Enemies explode, applying Volatile in a [?] meter radius."
+       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
       }
      ]
     },
@@ -25647,7 +25713,7 @@
  "1966281507": {
   "hash": 1966281507,
   "name": "Replenishing Aegis",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1678667530486,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25655,14 +25721,7 @@
     {
      "linesContent": [
       {
-       "text": "While blocking:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Refills [?]% of Magazine after blocking damage."
+       "text": "Loads 1 round into the Magazine upon blocking damage."
       }
      ]
     },
@@ -25672,7 +25731,7 @@
     {
      "linesContent": [
       {
-       "text": "[?] second cooldown after activation."
+       "text": "1 second cooldown after activation."
       }
      ]
     }
@@ -25820,7 +25879,25 @@
   "name": "The Fourth Magic",
   "itemHash": 2428181146,
   "itemName": "Verity's Brow",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
+     },
+     "weaponTypes": [ "Grenade" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
+     },
+     "weaponTypes": [ "Grenade" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25828,7 +25905,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapons Kills with a Matching Subclass Element grant a stack of Death Throes for 11 seconds, up to 5 stacks. All stacks disappear upon buff expiration."
+       "text": "Weapons Kills with a Matching Subclass Element grant a Stack of Death Throes for 11 seconds. Maximum of 5 Stacks."
       }
      ]
     },
@@ -25838,7 +25915,7 @@
     {
      "linesContent": [
       {
-       "text": "Death Throes grants 50% additional Base Grenade Regeneration Rate and 20% Increased Grenade Damage per stack."
+       "text": "Death Throes grants 50% additional Base Grenade Recharge Rate and 20% Increased Grenade Damage per Stack."
       }
      ]
     },
@@ -25848,31 +25925,14 @@
     {
      "linesContent": [
       {
-       "text": "On Grenade Ability Use:"
+       "text": "On Grenade Ability Usage with active Death Throes Stacks, for 5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Allies within 18(?) metres receive Feel The Flame."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Feel the Flame grants [1000?]% additional Base Grenade Recharge Rate."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Duration is equal to the number of Death Throes stacks multiplied by 2 seconds."
+       "text": "Allies receive Feel The Flame while within 20 meters. Feel the Flame grants 1000% Additional Base Grenade Recharge Rate."
       }
      ]
     }
@@ -26613,7 +26673,7 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1678667530486,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -26628,7 +26688,7 @@
     {
      "linesContent": [
       {
-       "text": "Enemies explode, applying Volatile in a [?] meter radius."
+       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
       }
      ]
     },
@@ -27152,7 +27212,7 @@
  "2120661319": {
   "hash": 2120661319,
   "name": "Field-Tested",
-  "lastUpload": 1678650972521,
+  "lastUpload": 1678667530486,
   "stats": {
    "Reload": [
     {
@@ -27207,7 +27267,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Charge Rate (Swords)"
+       "text": "• [?] Charge Rate, Guard Resistance (Swords)"
       }
      ]
     },
@@ -27217,7 +27277,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff persists until death and doesn't expire."
+       "text": "Buff is only removed on death."
       }
      ]
     },
@@ -29057,7 +29117,7 @@
   "name": "Battle-Hearth",
   "itemHash": 4057299719,
   "itemName": "Phoenix Protocol",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -29065,14 +29125,7 @@
     {
      "linesContent": [
       {
-       "text": "While inside a Well of Radiance, under 50% Super Energy, and if your Super Ability is Well of Radiance:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 10% Super Energy per kill."
+       "text": "Grants Super Energy on kills while inside your Well of Radiance and below 50% Super Energy."
       }
      ]
     },
@@ -29082,12 +29135,9 @@
     {
      "linesContent": [
       {
-       "text": "Amount of Super Energy gained is reduced by 1.5% for each successive kill, down to a minimum of 4% Super Energy per kill."
+       "text": "Amount of Super Energy gained is reduced by 1.5% for each successive kill, down to a minimum of 4% Super Energy per kill:"
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
@@ -33995,7 +34045,25 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -34003,14 +34071,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Warlord's Sigil on Melee Kill"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Warlord's Sigil grants Increased Melee Damage for 5 seconds"
+       "text": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing Melee Damage."
       }
      ]
     },
@@ -34020,14 +34081,14 @@
     {
      "linesContent": [
       {
-       "text": "Bonus Melee Damage:"
+       "text": "(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "130% | 260% | 390% | 520% | 650%"
+       "text": "55% | 110% | 165% | 220% | 275%"
       }
      ]
     }
@@ -35237,6 +35298,64 @@
      "linesContent": [
       {
        "text": "当灼烧造成伤害时，会获得 [?] 近战能量。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2800865663": {
+  "hash": 2800865663,
+  "name": "Swarmers",
+  "itemHash": 2463947681,
+  "itemName": "Swarmers",
+  "lastUpload": 1678667530486,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Spawns 2 Threadlings upon destroying a Tangle."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Threadlings apply Unravel for "
+      },
+      {
+       "text": "[?]",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[5]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " seconds on hit. This is increased to "
+      },
+      {
+       "text": "[?]",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[7.5]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " seconds with Thread of Continuity equipped."
       }
      ]
     }
@@ -38133,7 +38252,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678651499138,
+  "lastUpload": 1678667530486,
   "stats": {
    "PVE Damage": [
     {
@@ -38151,7 +38270,7 @@
    ]
   },
   "type": "Weapon Trait",
-  "uploadedBy": "Icemourne",
+  "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
     {
@@ -45015,7 +45134,7 @@
  "3683811620": {
   "hash": 3683811620,
   "name": "Sect of Vigor",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -45030,7 +45149,7 @@
     {
      "linesContent": [
       {
-       "text": "Gain Full Class Ability Energy on Ally Revival."
+       "text": "Grants 100% Class Ability Energy on Ally Revival."
       }
      ]
     },
@@ -45050,7 +45169,7 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Allies receive a 110HP Overshield for 20 seconds that recharges after 3 seconds."
+       "text": "Aeon Allies receive a 110 HP Overshield for 20 seconds that recharges after 3 seconds."
       }
      ]
     }
@@ -47461,7 +47580,7 @@
   "name": "Actual Grandeur",
   "itemHash": 1030017949,
   "itemName": "Skull of Dire Ahamkara",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678667530486,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -47469,14 +47588,7 @@
     {
      "linesContent": [
       {
-       "text": "Massively Increases Damage Resist during Nova Bomb."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Begins at 99.5%, and sharply falls down to [?] near the end."
+       "text": "Massively Increases Damage Resist during Nova Bomb cast: Begins at 99.5% and drops down to 75% near the end."
       }
      ]
     },
@@ -51540,7 +51652,7 @@
     {
      "linesContent": [
       {
-       "text": "[?]% Increased Lunge Distance for 1(?) second."
+       "text": "[?]% Increased Lunge Distance for 1 second."
       }
      ]
     },
@@ -51564,7 +51676,7 @@
  "4274614370": {
   "hash": 4274614370,
   "name": "Valiant Charge",
-  "lastUpload": 1678110798082,
+  "lastUpload": 1678667530486,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51579,7 +51691,7 @@
     {
      "linesContent": [
       {
-       "text": "[?]% Increased Lunge Distance for 1(?) second."
+       "text": "[?]% Increased Lunge Distance for 1 second."
       }
      ]
     }
