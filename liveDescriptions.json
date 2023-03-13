@@ -485,8 +485,8 @@
      "updatedBy": "Stardust"
     }
    },
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1678651499138,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4664,8 +4664,8 @@
      "updatedBy": "Stardust"
     }
    },
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1678651499138,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6711,8 +6711,8 @@
      "updatedBy": "Stardust"
     }
    },
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1678651499138,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13420,33 +13420,33 @@
    "itemName": "Telesto"
   },
   "921817150": {
-   "hash": 921817150,
    "name": "Fervid Coldsnap",
-   "itemHash": 3259193988,
    "itemName": "Osmiomancy Gloves",
+   "hash": 921817150,
+   "itemHash": 3259193988,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Grants an extra Coldsnap Grenade Ability Charge.\n\nColdsnaps Grenades have better tracking, travel 35% further, and grant Grenade Ability upon hitting or freezing an enemy.\n\nGrenade Ability Energy gains based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• 7%: Enemy Players\n• 10%: Tier 1 Minors\n• 22%: Tier 2 Minors, Tier 1 Elites\n• 34%: Tier 3 Minors, Tier 2 Elites\n• 50%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, and Bosses",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678667072080,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881742,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260482676,
-      "updatedBy": "Icemourne"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Grants an extra Coldsnap Grenade Ability Charge.\n\nColdsnaps Grenades have better tracking, travel 35% further, and grant Grenade Ability upon hitting or freezing an enemy.\n\nGrenade Ability Recharge:\n11%: Tier 1 Rank-and-File\n22%: Tier 2 Rank-and-File / Tier 1 Elite / Guardians\n33%: Tier 3 Rank-and-File / Tier 2 Elite\n50%: Tier 3 Elite / Minibosses / Champions / Bosses\n\nFor Combatant Classifications <link click here [https://d2clarity.page.link/combatant] />.",
-     "secondary": "Grants an extra Coldsnap Grenade Ability Charge.\n\nColdsnaps Grenades have better tracking, travel 35% further, and grant Grenade Ability upon hitting or freezing an enemy.\n\nGrenade Ability Recharge:\n11%: Tier 1 Rank-and-File\n22%: Tier 2 Rank-and-File / Tier 1 Elite / Guardians\n33%: Tier 3 Rank-and-File / Tier 2 Elite\n50%: Tier 3 Elite / Minibosses / Champions / Bosses"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "924149234": {
    "hash": 924149234,
@@ -13507,62 +13507,71 @@
    "itemName": "The Prospector"
   },
   "926349160": {
-   "hash": 926349160,
    "name": "Tome of Dawn",
-   "itemHash": 370930766,
    "itemName": "Wings of Sacred Dawn",
+   "hash": 926349160,
+   "itemHash": 370930766,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667580268644,
-      "updatedBy": "Fading Shadow"
+   "stats": {
+    "Airborne": [
+     {
+      "active": {
+       "stat": [ 50 ]
+      }
      }
-    }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Grants +50 Airborne Effectiveness while Tome of Dawn is active.\n\nIf on Solar Subclass:\nAiming Down Sights while Airborne grants Tome of Dawn.\n\nTome of Dawn: \n • Holds you in place midair <breakSpaces/>\n • 25% Reduced Flinch <breakSpaces/>\n • Grants 15% Damage Resistance. <breakSpaces/>\n • Lasts for 2.8 seconds. Hits refresh Y seconds. <breakSpaces/>",
+     "main": "Aiming Down Sights while Airborne grants Tome of Dawn while on a Solar Subclass.\n\nTome of Dawn lasts 2.8 seconds and holds you in place midair. Weapon hits add [?] seconds to its duration.\n\nTome of Dawn grants the following:\n• 50 Airborn Effectiveness\n• 25% Flinch Resistance\n• 15% Damage Resistance",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678664071617,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678663544341,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "926349161": {
-   "hash": 926349161,
    "name": "Fusion Harness",
-   "itemHash": 2082483156,
    "itemName": "Starfire Protocol",
+   "hash": 926349161,
+   "itemHash": 2082483156,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Grants an extra Fusion Grenade Charge.\n\nGrants 20% Grenade Energy on Empowered Weapon Hits with a 0.4 second cooldown.\nWeapon Damage is 'Empowered' while in a Well of Radiance or an Empowering Rift.\n\nGrants 100% Class Ability Energy on Grenade Kills.",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678661041934,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881742,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257942291,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Gain an extra Fusion Grenade Charge.\n\n20% Grenade Energy per Weapon Hit while Empowered (0.4 second cooldown)\n\n100% Class Ability Energy on Grenade Kill\n\nWeapon Damage is Empowered while within a Well of Radiance or Empowering Rift.",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "926976844": {
    "hash": 926976844,
@@ -15835,33 +15844,33 @@
    "inLiveDatabase": true
   },
   "1095471953": {
-   "hash": 1095471953,
    "name": "Embers of Light",
-   "itemHash": 235591051,
    "itemName": "Promethium Spur",
+   "hash": 1095471953,
+   "itemHash": 235591051,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Daybreak Kills spawn a Healing and Empowering Rift on Enemy Death Location.\n\nKills while your Class Ability Energy is full also spawn a Healing and Empowering Rift on Enemy Death Location. Consumes Class Ability Charge.\n\nSolar Weapon Kills while standing in a Rift grant Class Ability Energy based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites(?)\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites(?)\n• 30%: Tier 4 Minors, Tier 3-4 Elites(?)\n• 40%: Minibosses \n• 50%: Bosses",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678667272217,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257697308,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Daybreak Kills spawn both an Empowering and Healing Rift on Enemy Death Location.\n\nWhile standing in a Rift:\nSolar Weapon Kills grant [?]% Class Ability Energy.\n\nWhile your Class Ability Energy is Full:\nWeapon Kills consume your Class Ability Energy and spawn a Empowering + Healing Rift at the Target's Location.\n",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1097608874": {
    "hash": 1097608874,
@@ -16580,28 +16589,19 @@
    "uploadedBy": "Stardust"
   },
   "1147638875": {
-   "hash": 1147638875,
    "name": "Cobra Totemic",
-   "itemHash": 3627185503,
    "itemName": "Ophidian Aspect",
+   "hash": 1147638875,
+   "itemHash": 3627185503,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667257190043,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257709805,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
    "stats": {
+    "Airborne": [
+     {
+      "passive": {
+       "stat": [ 10 ]
+      }
+     }
+    ],
     "Handling": [
      {
       "passive": {
@@ -16619,10 +16619,26 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants +10 Airborne Effectiveness, +35 Reload and +35 Handling to all weapons, as well as increased Melee Lunge Distance to 6.5 metres.",
+     "main": "Passively grants:\n• 10 Airborne Effectiveness\n• 35 Reload Speed and Handling\n• 2 meters longer Melee Lunge Distance (4.5 -> 6.5)",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678658313337,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678657541647,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1149703256": {
    "hash": 1149703256,
@@ -19669,33 +19685,33 @@
    "inLiveDatabase": true
   },
   "1341199512": {
-   "hash": 1341199512,
    "name": "Devouring Rift",
-   "itemHash": 511888814,
    "itemName": "Secant Filaments",
+   "hash": 1341199512,
+   "itemHash": 511888814,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Empowering Rifts you cast grant <overload/>Overload Shot to you and allies inside it, allowing all weapons to cause disruption on hit.\n\nWeapons that have a Breaker Type, either by mods or intrinsically will not be overwritten. Does not work with Well of Radiance.\n\nIf on Void Subclass:\nCasting Empowering Rift grants Devour for 11 seconds.",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678660766609,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257850880,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Empowering Rifts you create grant Overload Shot to you and allies inside it, granting weapons disruption on hit.\n\nWeapons that have a Breaker Type, either by mods or intrinsically will not be overwritten.\n\nDoes not work with Well of Radiance.\n\nIf on Void Subclass:\nCasting Empowering Rift grants Devour for 11 seconds.",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1341767667": {
    "hash": 1341767667,
@@ -23602,8 +23618,8 @@
      "updatedBy": "Stardust"
     }
    },
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1678651499138,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27431,14 +27447,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants [?] Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove 1 Stack of Noble Deeds.\n\nNoble Deeds grants [?] Handling and [?] Reload Speed. Swords receive [?] Charge Rate.",
+     "main": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove <pve 1 /> <pvp [2] /> Stacks of Noble Deeds.\n\nNoble Deeds grants [?] Handling and [?] Reload Speed. Swords receive [?] Charge Rate.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678561582124,
+      "lastUpdate": 1678657243069,
       "updatedBy": "Stardust"
      }
     },
@@ -27448,7 +27464,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29261,14 +29277,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While blocking:\nRefills [?]% of Magazine after blocking damage.\n\n[?] second cooldown after activation.\n\nenhanced (\nvar d = 0 //placeholder\n#e Shorter cooldown.\n)",
+     "main": "Loads 1 round into the Magazine upon blocking damage.\n\n1 second cooldown after activation.\n\nenhanced (\nvar d = 0 //placeholder\n#e Shorter cooldown.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678060726610,
+      "lastUpdate": 1678657059784,
       "updatedBy": "Stardust"
      }
     },
@@ -29278,7 +29294,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29418,33 +29434,51 @@
    "inLiveDatabase": false
   },
   "1971489086": {
-   "hash": 1971489086,
    "name": "The Fourth Magic",
-   "itemHash": 2428181146,
    "itemName": "Verity's Brow",
+   "hash": 1971489086,
+   "itemHash": 2428181146,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667258505083,
-      "updatedBy": "Fading Shadow"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
+      },
+      "weaponTypes": [ "Grenade" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
+      },
+      "weaponTypes": [ "Grenade" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Weapons Kills with a Matching Subclass Element grant a stack of Death Throes for 11 seconds, up to 5 stacks. All stacks disappear upon buff expiration.\n\nDeath Throes grants 50% additional Base Grenade Regeneration Rate and 20% Increased Grenade Damage per stack.\n\nOn Grenade Ability Use:\nAllies within 18(?) metres receive Feel The Flame.\n\nFeel the Flame grants [1000?]% additional Base Grenade Recharge Rate.\nDuration is equal to the number of Death Throes stacks multiplied by 2 seconds.",
+     "main": "Weapons Kills with a Matching Subclass Element grant a Stack of Death Throes for 11 seconds. Maximum of 5 Stacks.\n\nDeath Throes grants 50% additional Base Grenade Recharge Rate and 20% Increased Grenade Damage per Stack.\n\nOn Grenade Ability Usage with active Death Throes Stacks, for 5 seconds: \nAllies receive Feel The Flame while within 20 meters. Feel the Flame grants 1000% Additional Base Grenade Recharge Rate.",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678663347910,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678662346733,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1977242752": {
    "hash": 1977242752,
@@ -30319,14 +30353,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\nEnemies explode, applying Volatile in a [?] meter radius.\n\n[?] second cooldown after activation.\n\nenhanced (\nvar d = 0 //cooldown reduction placeholder\n#e Shorter cooldown.\n)",
+     "main": "On Weapon Kill:\nEnemy explodes, applying Volatile in a 6.5 meter radius.\n\n[?] second cooldown after activation.\n\nenhanced (\nvar d = 0 //cooldown reduction placeholder\n#e Shorter cooldown.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678049615231,
+      "lastUpdate": 1678656230981,
       "updatedBy": "Stardust"
      }
     },
@@ -30336,7 +30370,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31117,14 +31151,14 @@
    },
    "editor": {
     "en": {
-     "main": "Scoring <bold a lot of /> Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks. Kills count as 6(?) Hits.\n\nStat Bonuses at 1|2|3|4|5 Stacks:\n• [?] Range, Stability, and Handling\n• 5|10|20|35|55 Reload Speed\n• [?] Charge Rate (Swords) \n\nBuff persists until death and doesn't expire.\n\nHits required for 1|2|3|4|5 Stacks:\nPrimary Weapons: 51 | 151 | 351 | 651 | 1001\nSpecial Weapons: unknown\nPower Weapons: unknown\n\n< table formula background_2 >\n|b Stacks |b Reload Time |b Ready Speed |b Stow Speed\n|  1x     |  <formula [reload_0] />            |  [?]            |[?]\n|  2x     |  <formula [reload_1] />            |  [?]            |[?]\n|  3x     |  <formula [reload_2] />            |   [?]           |[?]\n|  4x     |  <formula [reload_3] />            |   [?]           |[?]\n|  5x     |  <formula [reload_4] />            |   [?]           |[?]\n<$>",
+     "main": "Scoring <bold a lot of /> Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks. Kills count as 6(?) Hits.\n\nStat Bonuses at 1|2|3|4|5 Stacks:\n• [?] Range, Stability, and Handling\n• 5|10|20|35|55 Reload Speed\n• [?] Charge Rate, Guard Resistance (Swords) \n\nBuff is only removed on death.\n\nHits required for 1|2|3|4|5 Stacks:\nPrimary Weapons: 51 | 151 | 351 | 651 | 1001\nSpecial Weapons: unknown\nPower Weapons: unknown\n\n< table formula background_2 >\n|b Stacks |b Reload Time |b Ready Speed |b Stow Speed\n|  1x     |  <formula [reload_0] />            |  [?]            |[?]\n|  2x     |  <formula [reload_1] />            |  [?]            |[?]\n|  3x     |  <formula [reload_2] />            |   [?]           |[?]\n|  4x     |  <formula [reload_3] />            |   [?]           |[?]\n|  5x     |  <formula [reload_4] />            |   [?]           |[?]\n<$>",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678641655805,
+      "lastUpdate": 1678657160782,
       "updatedBy": "Stardust"
      }
     },
@@ -31134,7 +31168,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678650972521,
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32165,33 +32199,33 @@
    "uploadToLive": false
   },
   "2204713149": {
-   "hash": 2204713149,
    "name": "Battle-Hearth",
-   "itemHash": 4057299719,
    "itemName": "Phoenix Protocol",
+   "hash": 2204713149,
+   "itemHash": 4057299719,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Grants Super Energy on kills while inside your Well of Radiance and below 50% Super Energy.\n\nAmount of Super Energy gained is reduced by 1.5% for each successive kill, down to a minimum of 4% Super Energy per kill:\n10% -> 8.5% -> 7% -> 5% -> 4.5% -> 4% -> 4%...",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678659828353,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257701617,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "While inside a Well of Radiance, under 50% Super Energy, and if your Super Ability is Well of Radiance: \nGrants 10% Super Energy per kill. \n\nAmount of Super Energy gained is reduced by 1.5% for each successive kill, down to a minimum of 4% Super Energy per kill.\n\n10% -> 8.5% -> 7% -> 5% -> 4.5% -> 4% -> 4%...",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2206869417": {
    "hash": 2206869417,
@@ -39450,41 +39484,59 @@
    "uploadToLive": false
   },
   "2731901709": {
-   "hash": 2731901709,
    "name": "Warlord's Sigil",
-   "itemHash": 3844826443,
    "itemName": "Winter's Guile",
+   "hash": 2731901709,
+   "itemHash": 3844826443,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667258676735,
-      "updatedBy": "Fading Shadow"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670530825062,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+      },
+      "weaponTypes": [ "Melee" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+      },
+      "weaponTypes": [ "Melee" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Grants Warlord's Sigil on Melee Kill\nWarlord's Sigil grants Increased Melee Damage for 5 seconds \n\nBonus Melee Damage:\n130% | 260% | 390% | 520% | 650%",
+     "main": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "近战击杀后获得“督军印记”：\n“督军印记”持续 5 秒，提供额外近战伤害，可叠加 5 层。\n\n额外近战伤害：\n55% | 110% | 165% | 220% | 275%",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678664304167,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670530825062,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678664295078,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2731901710": {
    "name": "Vampire's Caress",
@@ -40512,33 +40564,33 @@
    "uploadToLive": false
   },
   "2800865663": {
-   "hash": 2800865663,
    "name": "Swarmers",
+   "itemName": "Swarmers",
+   "hash": 2800865663,
+   "itemHash": 2463947681,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1677677992214,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Spawns 2 Threadlings upon destroying a Tangle.\n\nThreadlings apply Unravel for <pve [?] /> <pvp [5] /> seconds on hit. This is increased to <pve [?] /> <pvp [7.5] /> seconds with Thread of Continuity equipped.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678661232987,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 2463947681,
-   "itemName": "Swarmers"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2801223209": {
    "hash": 2801223209,
@@ -44402,8 +44454,8 @@
      "updatedBy": "Stardust"
     }
    },
-   "uploadedBy": "Icemourne",
-   "lastUpload": 1678651499138,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52584,36 +52636,12 @@
    "inLiveDatabase": true
   },
   "3683811620": {
-   "hash": 3683811620,
    "name": "Sect of Vigor",
+   "hash": 3683811620,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668259793702,
-      "updatedBy": "Icemourne"
-     },
-     "ko": {
-      "lastUpdate": 1665682825510,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670508844053,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Ally Deaths grant 25% Class Ability Energy.\nGain Full Class Ability Energy on Ally Revival.\n\nCasting Super fully heals allies within 30 meters.\n\nAeon Allies receive a 110HP Overshield for 20 seconds that recharges after 3 seconds.",
+     "main": "Ally Deaths grant 25% Class Ability Energy.\nGrants 100% Class Ability Energy on Ally Revival.\n\nCasting Super fully heals allies within 30 meters.\n\nAeon Allies receive a 110 HP Overshield for 20 seconds that recharges after 3 seconds.",
      "secondary": "import self"
     },
     "ko": {
@@ -52624,7 +52652,31 @@
      "main": "队友死亡时你可获得 25% 的职业技能能量。\n复活队友时获得完整的职业技能能量。\n\n施放超能能在 30 米范围内完全治愈队友。\n\n永劫教派队友获得 110 点覆盖护盾，持续 20 秒，3 秒后自动回复。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678664407290,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665682825510,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670508844053,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3683904166": {
    "hash": 3683904166,
@@ -55858,33 +55910,33 @@
    }
   },
   "3927963102": {
-   "hash": 3927963102,
    "name": "Actual Grandeur",
-   "itemHash": 1030017949,
    "itemName": "Skull of Dire Ahamkara",
+   "hash": 3927963102,
+   "itemHash": 1030017949,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Massively Increases Damage Resist during Nova Bomb cast: Begins at 99.5% and drops down to 75% near the end.\n\nNova Bomb returns Super Energy on Kills, up to 50% Super Energy.",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678660843812,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667257904522,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Massively Increases Damage Resist during Nova Bomb.\nBegins at 99.5%, and sharply falls down to [?] near the end.\n\nNova Bomb returns Super Energy on Kills, up to 50% Super Energy.",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678667530486,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3927963103": {
    "name": "Conduction Tines",
@@ -60332,14 +60384,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon blocking damage:\n[?]% Increased Lunge Distance for 1(?) second.\n\nenhanced (\nvar d = 0 //palceholder\n#e Buff Duration is increased.\n)",
+     "main": "Upon blocking damage:\n[?]% Increased Lunge Distance for ${1+#d} second. //add #e when known\n\nenhanced (\nvar d = 0 //palceholder\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678109500783,
+      "lastUpdate": 1678657111688,
       "updatedBy": "Stardust"
      }
     },
@@ -60349,7 +60401,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678110798082,
+   "lastUpload": 1678667530486,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
