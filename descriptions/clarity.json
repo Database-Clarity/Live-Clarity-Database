@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Handling": [
     {
@@ -3771,7 +3771,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "PVE Damage": [
     {
@@ -4725,7 +4725,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Handling": [
     {
@@ -14621,7 +14621,37 @@
   "name": "Biotic Enhancements",
   "itemHash": 241462142,
   "itemName": "Synthoceps",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     },
+     "weaponTypes": [ "Super" ]
+    },
+    {
+     "active": {
+      "multiplier": [ 3 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     },
+     "weaponTypes": [ "Super" ]
+    },
+    {
+     "active": {
+      "multiplier": [ 2 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -14629,7 +14659,14 @@
     {
      "linesContent": [
       {
-       "text": "While Surrounded by 3+ enemies: Activates Biotic Enhancements"
+       "text": "While Surrounded by 3+ enemies:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Biotic Enhancements for 8 seconds"
       }
      ]
     },
@@ -14639,33 +14676,35 @@
     {
      "linesContent": [
       {
-       "text": "Biotic Enhancements increases Melee and Super damage for 8 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "50% Super Damage Increase."
+       "text": "Biotic Enhancements:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "200% Increased Melee Damage.",
+       "text": "• 50% Increased Super Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "200%",
        "classNames": [ "pve" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
+      },
       {
-       "text": "100% Increased Melee Damage.",
+       "text": " "
+      },
+      {
+       "text": "100%",
        "classNames": [ "pvp" ]
+      },
+      {
+       "text": " Increased (Glaive) Melee Damage"
       }
      ]
     },
@@ -18902,7 +18941,7 @@
   "name": "Myrmidon's Reach",
   "itemHash": 1443166262,
   "itemName": "Second Chance",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -18910,7 +18949,7 @@
     {
      "linesContent": [
       {
-       "text": "Gain an additional Shield Throw charge."
+       "text": "Gain an additional Shield Throw Melee Ability Charge."
       }
      ]
     },
@@ -18920,7 +18959,26 @@
     {
      "linesContent": [
       {
-       "text": "Shield Throw grants Anti-Barrier capabilities."
+       "text": "Shield Throw gains "
+      },
+      {
+       "classNames": [ "barrier" ]
+      },
+      {
+       "text": "Shield-Piercing Breaker Type."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stuns "
+      },
+      {
+       "classNames": [ "barrier" ]
+      },
+      {
+       "text": "Barrier Champions with a single Shield Throw."
       }
      ]
     }
@@ -21092,7 +21150,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Charge Draw": [
     {
@@ -23256,7 +23314,33 @@
   "name": "Clenched Fist",
   "itemHash": 2240152949,
   "itemName": "Stronghold",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
+  "stats": {
+   "Guard Efficiency": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ],
+   "Guard Endurance": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ],
+   "Guard Resistance": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -23264,14 +23348,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out Sword's Guard Resistance, Efficiency, and Endurance."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Perfectly timed blocks heal for 80(?) HP."
+       "text": "Grants 100 Guard Resistance, Guard Efficiency, and Guard Endurance to Swords. Sword Energy does not decay from guarding or blocking damage."
       }
      ]
     },
@@ -23281,21 +23358,17 @@
     {
      "linesContent": [
       {
-       "text": "Blocking Specifics:"
+       "text": "Blocking a hit within 0.5 seconds of starting to guard restores 80(?) HP."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Swords grant 90% Damage Resistance."
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Sword Energy does not decay from blocking damage or holding guard."
+       "text": "Guarding grants 80% Damage Resistance. This in increased to 90% with Aggressive Frame Swords."
       }
      ]
     }
@@ -24166,7 +24239,7 @@
   "name": "Parting Gift",
   "itemHash": 1219761634,
   "itemName": "The Bombardiers",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -24195,7 +24268,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage over 7.5 metres. Detonates instantly on contact with surface or enemy."
+       "text": " damage over 7.5 meters. Detonates instantly on contact with surface or enemy."
       }
      ]
     },
@@ -24239,23 +24312,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": " 40"
-      },
-      {
-       "text": "+20",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Ember of Ashes adds 20 stacks of scorch"
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": " Scorch"
+       "text": " 40 Scorch (60 with Ember of Ashes)"
       }
      ]
     },
@@ -24289,7 +24346,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " seconds [Does not apply to Guardians in Super]"
+       "text": " seconds (Does not apply to Players in Super)"
       }
      ]
     },
@@ -24310,7 +24367,7 @@
       },
       {
        "text": "Court's Void Sandbox Guide",
-       "link": "https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#gid=1079577444",
+       "link": "https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=698164840",
        "classNames": [ "link" ]
       },
       {
@@ -25944,7 +26001,7 @@
   "name": "Hammer of the Gods",
   "itemHash": 1703598057,
   "itemName": "Point-Contact Cannon Brace",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25952,7 +26009,64 @@
     {
      "linesContent": [
       {
-       "text": "Thunderclap Kills grant [?]% Melee Energy."
+       "text": "Thunderclap Kills refund Melee Energy based on "
+      },
+      {
+       "text": "enemy rank",
+       "link": "https://d2clarity.page.link/combatant",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 9%: Tier 1 Minors"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 13%: Tier 2 Minors, Tier 1 Elites"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15%: Enemy Players"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20%: Tier 3 Minors, Tier 2 Elites"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30%: Tier 4 Minors, Tier 3 Elites"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40%: Tier 4 Elites, Minibosses"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50%: Bosses"
       }
      ]
     },
@@ -25962,24 +26076,14 @@
     {
      "linesContent": [
       {
-       "text": "Thunderclap causes enemies within [?] metres to get struck by lightning, dealing [?] damage."
+       "text": "Thunderclap strikes enemies within [?] meters with lightning, dealing 50 damage."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Range is increased to [?] metres if Amplified."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Very insightful, I know."
+       "text": "Range is increased to [?] meters when Amplified."
       }
      ]
     }
@@ -37540,7 +37644,7 @@
   "name": "Beacons of Empowerment",
   "itemHash": 1537074069,
   "itemName": "Phoenix Cradle",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -37548,7 +37652,7 @@
     {
      "linesContent": [
       {
-       "text": "Sun Invictus buff from Sunspots lasts twice as long (5 ->10 seconds)"
+       "text": "Sol Invictus buff from Sunspots lasts twice as long (5 >> 10 seconds)."
       }
      ]
     },
@@ -37558,7 +37662,38 @@
     {
      "linesContent": [
       {
-       "text": "Sunspots affect the entire team."
+       "text": "Sunspots you create now affect allies, granting them the Sol Invictus buff for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Sol Invictus on Allies:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 100% Additional Base Grenade and Melee Regeneration Rate"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% decreased Passive Super Drain"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Restoration x1"
       }
      ]
     }
@@ -38392,7 +38527,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "PVE Damage": [
     {
@@ -39570,28 +39705,36 @@
   "name": "Mecha Holster",
   "itemHash": 3539357319,
   "itemName": "Peacekeepers",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "stats": {
+   "Airborne": [
+    {
+     "passive": {
+      "stat": [ 40 ]
+     },
+     "weaponTypes": [ "SMG" ]
+    }
+   ],
    "Handling": [
     {
-     "active": {
+     "passive": {
       "stat": [ 100 ]
+     },
+     "weaponTypes": [ "SMG" ]
+    }
+   ],
+   "Ready": [
+    {
+     "passive": {
+      "multiplier": [ 0.6 ]
      },
      "weaponTypes": [ "SMG" ]
     }
    ],
    "Stow": [
     {
-     "active": {
-      "multiplier": [ 0.6 ]
-     },
-     "weaponTypes": [ "SMG" ]
-    }
-   ],
-   "Airborne": [
-    {
      "passive": {
-      "stat": [ 40 ]
+      "multiplier": [ 0.6 ]
      },
      "weaponTypes": [ "SMG" ]
     }
@@ -39604,7 +39747,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +40 Airborne Effectiveness to Submachine Guns."
+       "text": "Passively grants 40 Airborne Effectiveness, 100 Handling, and a 0.6x Ready/Stow Duration Multiplier to Submachine Guns."
       }
      ]
     },
@@ -39614,35 +39757,35 @@
     {
      "linesContent": [
       {
-       "text": "While you have a readied SMG:"
+       "text": "While holding an SMG:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "+50 Mobility, +100 Handling with a 0.6x Ready/Stow Duration Multiplier"
+       "text": "• Grants 50 Mobility"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Reduces the Submachine Gun Aiming-Down-Sights Movement Penalty to 9%."
+       "text": "• Reduces ADS Movement Penalty to 9% (from 25%)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Increases Sprint Speed by 6.25%"
+       "text": "• Increases Sprint Speed by 6.25%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Increases Slide Distance by 33%"
+       "text": "• Increases Slide Distance by 33%"
       }
      ]
     },
@@ -39652,7 +39795,20 @@
     {
      "linesContent": [
       {
-       "text": "Reloads stowed Submachine Guns in 1.3 seconds."
+       "text": "Refills",
+       "title": [
+        {
+         "linesContent": [
+          {
+           "text": "Reload, but does not need animation and doesn't proc on-reload perks."
+          }
+         ]
+        }
+       ],
+       "classNames": [ "title" ]
+      },
+      {
+       "text": " the magazine of Submachine Guns 1 second after stowing them."
       }
      ]
     }
@@ -43028,7 +43184,7 @@
   "name": "Spheromatik Trigger",
   "itemHash": 2326396534,
   "itemName": "Severance Enclosure",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -43036,14 +43192,7 @@
     {
      "linesContent": [
       {
-       "text": "Powered Melee and Finisher Kills unleash an explosion, centered on the enemy."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Explosion Damage and Radius depends on Enemy Rank."
+       "text": "Powered Melee and Finisher Kills unleash an explosion centered on the enemy."
       }
      ]
     },
@@ -43053,60 +43202,60 @@
     {
      "linesContent": [
       {
-       "text": "Explosion Damage:"
+       "text": "Explosion Damage and Radius depends on Enemy Rank. 4 second cooldown between Explosions."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "100% = Powered Melee on Minor"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "144% = Finisher on Minor"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "197% = Powered Melee on Miniboss"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "268% = Finisher on Miniboss"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "For Combatant Classifications, check out "
+       "text": "Explosion Damage based on "
       },
       {
-       "text": "this sheet",
+       "text": "enemy rank",
        "link": "https://d2clarity.page.link/combatant",
        "classNames": [ "link" ]
       },
       {
-       "text": "!"
+       "text": ":"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• Powered Melee on Minor: 250"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "4 second cooldown per Explosion."
+       "text": "• Finisher on Minor: 333"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Powered Melee on Miniboss: 416"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Finisher on Miniboss: 500"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Unknown for other Enemy Ranks."
       }
      ]
     }

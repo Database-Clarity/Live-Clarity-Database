@@ -25,7 +25,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Handling": [
     {
@@ -721,7 +721,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "PVE Damage": [
     {
@@ -994,7 +994,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Handling": [
     {
@@ -3097,11 +3097,41 @@
   "name": "Biotic Enhancements",
   "itemHash": 241462142,
   "itemName": "Synthoceps",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     },
+     "weaponTypes": [ "Super" ]
+    },
+    {
+     "active": {
+      "multiplier": [ 3 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     },
+     "weaponTypes": [ "Super" ]
+    },
+    {
+     "active": {
+      "multiplier": [ 2 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Surrounded by 3+ enemies: Activates Biotic Enhancements\n\nBiotic Enhancements increases Melee and Super damage for 8 seconds.\n\n50% Super Damage Increase.\nPVE: 200% Increased Melee Damage.\nPVP: 100% Increased Melee Damage.\n\nIncreases Melee Lunge Range to 7 meters.",
+   "en": "While Surrounded by 3+ enemies:\nGrants Biotic Enhancements for 8 seconds\n\nBiotic Enhancements:\n• 50% Increased Super Damage\n• <:pve:922884406073507930>200% <:pvp:922884468275019856>100% Increased (Glaive) Melee Damage\n\nIncreases Melee Lunge Range to 7 meters.",
    "zh-chs": "被 3 名以上敌人包围时：激活生物强化\n\n生物强化在 8 秒内提高近战和常能伤害。\n\n50% 超能伤害。\nPVE：提高 200% 近战伤害。\nPVP：提高 100% 近战伤害。\n\n扩大近战前冲范围到 7 米。"
   }
  },
@@ -4062,11 +4092,11 @@
   "name": "Myrmidon's Reach",
   "itemHash": 1443166262,
   "itemName": "Second Chance",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Gain an additional Shield Throw charge.\n\nShield Throw grants Anti-Barrier capabilities."
+   "en": "Gain an additional Shield Throw Melee Ability Charge.\n\nShield Throw gains Shield-Piercing Breaker Type.\nStuns Barrier Champions with a single Shield Throw."
   }
  },
  "1447716563": {
@@ -4514,7 +4544,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "Charge Draw": [
     {
@@ -5066,11 +5096,37 @@
   "name": "Clenched Fist",
   "itemHash": 2240152949,
   "itemName": "Stronghold",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
+  "stats": {
+   "Guard Efficiency": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ],
+   "Guard Endurance": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ],
+   "Guard Resistance": [
+    {
+     "passive": {
+      "stat": [ 100 ]
+     },
+     "weaponTypes": [ "Sword" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Maxes out Sword's Guard Resistance, Efficiency, and Endurance.\nPerfectly timed blocks heal for 80(?) HP.\n\nBlocking Specifics:\nSwords grant 90% Damage Resistance.\nSword Energy does not decay from blocking damage or holding guard."
+   "en": "Grants 100 Guard Resistance, Guard Efficiency, and Guard Endurance to Swords. Sword Energy does not decay from guarding or blocking damage.\n\nBlocking a hit within 0.5 seconds of starting to guard restores 80(?) HP.\n\nGuarding grants 80% Damage Resistance. This in increased to 90% with Aggressive Frame Swords."
   }
  },
  "1733620422": {
@@ -5391,11 +5447,11 @@
   "name": "Parting Gift",
   "itemHash": 1219761634,
   "itemName": "The Bombardiers",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Dodge:\nDrops a Parting Gift that explodes after 1.5 seconds, dealing 440 [PVP: 120] damage over 7.5 metres. Detonates instantly on contact with surface or enemy.\n\nParting Gift has an additional effect based on Subclass:\n• Arc: Blinds for 7 [PVP: 3] seconds\n• Solar: 40 Scorch (60 with Ember of Ashes)\n• Stasis: Slows for 2 seconds and refreshes Slow Stacks. Does not apply Slow Stacks by itself.\n• Void: \"Lite\" Suppress for 9 [PVP: 7] seconds [Does not apply to Guardians in Super]\n\n\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies.\n\"Lite\" Suppression is not a regular Suppression. Explanation can be found in 'Court's Void Sandbox Guide'."
+   "en": "On Dodge:\nDrops a Parting Gift that explodes after 1.5 seconds, dealing <:pve:922884406073507930>440 <:pvp:922884468275019856>[120] damage over 7.5 meters. Detonates instantly on contact with surface or enemy.\n\nParting Gift has an additional effect based on Subclass:\n<:arc:720178925317128243> Applies \"Lite\" Blind for <:pve:922884406073507930>7 <:pvp:922884468275019856>[3] seconds\n<:solar:720178909361995786> 40 Scorch (60 with Ember of Ashes)\n<:stasis:915198000727461909> Slows for 2 seconds and refreshes existing Slow Stacks. Does not apply Slow Stacks.\n<:void:720178940240461864> \"Lite\" Suppress for <:pve:922884406073507930>9 <:pvp:922884468275019856>[7] seconds (Does not apply to Players in Super)\n\n\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies.\n\"Lite\" Suppression is not a regular Suppression. Explanation in [Court's Void Sandbox Guide](https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=698164840)."
   }
  },
  "1853177948": {
@@ -5705,11 +5761,11 @@
   "name": "Hammer of the Gods",
   "itemHash": 1703598057,
   "itemName": "Point-Contact Cannon Brace",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Thunderclap Kills grant [?]% Melee Energy.\n\nThunderclap causes enemies within [?] metres to get struck by lightning, dealing [?] damage.\nRange is increased to [?] metres if Amplified.\n\nVery insightful, I know."
+   "en": "Thunderclap Kills refund Melee Energy based on [enemy rank](https://d2clarity.page.link/combatant):\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites\n• 30%: Tier 4 Minors, Tier 3 Elites\n• 40%: Tier 4 Elites, Minibosses\n• 50%: Bosses\n\nThunderclap strikes enemies within [?] meters with lightning, dealing 50 damage.\nRange is increased to [?] meters when Amplified."
   }
  },
  "1971489086": {
@@ -8035,11 +8091,11 @@
   "name": "Beacons of Empowerment",
   "itemHash": 1537074069,
   "itemName": "Phoenix Cradle",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Sun Invictus buff from Sunspots lasts twice as long (5 ->10 seconds)\n\nSunspots affect the entire team."
+   "en": "Sol Invictus buff from Sunspots lasts twice as long (5 >> 10 seconds).\n\nSunspots you create now affect allies, granting them the Sol Invictus buff for 10 seconds.\n\nSol Invictus on Allies:\n• 100% Additional Base Grenade and Melee Regeneration Rate\n• 20% decreased Passive Super Drain\n• Restoration x1"
   }
  },
  "2978966579": {
@@ -8272,7 +8328,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678745908076,
   "stats": {
    "PVE Damage": [
     {
@@ -8590,28 +8646,36 @@
   "name": "Mecha Holster",
   "itemHash": 3539357319,
   "itemName": "Peacekeepers",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "stats": {
+   "Airborne": [
+    {
+     "passive": {
+      "stat": [ 40 ]
+     },
+     "weaponTypes": [ "SMG" ]
+    }
+   ],
    "Handling": [
     {
-     "active": {
+     "passive": {
       "stat": [ 100 ]
+     },
+     "weaponTypes": [ "SMG" ]
+    }
+   ],
+   "Ready": [
+    {
+     "passive": {
+      "multiplier": [ 0.6 ]
      },
      "weaponTypes": [ "SMG" ]
     }
    ],
    "Stow": [
     {
-     "active": {
-      "multiplier": [ 0.6 ]
-     },
-     "weaponTypes": [ "SMG" ]
-    }
-   ],
-   "Airborne": [
-    {
      "passive": {
-      "stat": [ 40 ]
+      "multiplier": [ 0.6 ]
      },
      "weaponTypes": [ "SMG" ]
     }
@@ -8620,7 +8684,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants +40 Airborne Effectiveness to Submachine Guns.\n\nWhile you have a readied SMG:\n+50 Mobility, +100 Handling with a 0.6x Ready/Stow Duration Multiplier\nReduces the Submachine Gun Aiming-Down-Sights Movement Penalty to 9%.\nIncreases Sprint Speed by 6.25%\nIncreases Slide Distance by 33%\n\nReloads stowed Submachine Guns in 1.3 seconds."
+   "en": "Passively grants 40 Airborne Effectiveness, 100 Handling, and a 0.6x Ready/Stow Duration Multiplier to Submachine Guns.\n\nWhile holding an SMG:\n• Grants 50 Mobility\n• Reduces ADS Movement Penalty to 9% (from 25%)\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%\n\nRefills the magazine of Submachine Guns 1 second after stowing them."
   }
  },
  "3241194942": {
@@ -9194,11 +9258,11 @@
   "name": "Spheromatik Trigger",
   "itemHash": 2326396534,
   "itemName": "Severance Enclosure",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678745908076,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Powered Melee and Finisher Kills unleash an explosion, centered on the enemy.\nExplosion Damage and Radius depends on Enemy Rank.\n\nExplosion Damage:\n100% = Powered Melee on Minor\n144% = Finisher on Minor\n197% = Powered Melee on Miniboss\n268% = Finisher on Miniboss\n\n4 second cooldown per Explosion."
+   "en": "Powered Melee and Finisher Kills unleash an explosion centered on the enemy.\n\nExplosion Damage and Radius depends on Enemy Rank. 4 second cooldown between Explosions.\n\nExplosion Damage based on [enemy rank](https://d2clarity.page.link/combatant):\n• Powered Melee on Minor: 250\n• Finisher on Minor: 333\n• Powered Melee on Miniboss: 416\n• Finisher on Miniboss: 500\nUnknown for other Enemy Ranks."
   }
  },
  "3449390870": {
