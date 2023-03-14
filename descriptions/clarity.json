@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "Handling": [
     {
@@ -2365,7 +2365,7 @@
   "name": "Vanishing Execution",
   "itemHash": 2203146422,
   "itemName": "Assassin's Cowl",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -2373,20 +2373,20 @@
     {
      "linesContent": [
       {
-       "text": "Gain "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Invisibility on Powered Melee Kill. (Longer on Finishers)"
+       "text": "On Powered Melee Kills:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Heals for X on Powered Melee Kill. (Stronger on Finishers)"
+       "text": "Grants "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Invisibility and restores Health."
       }
      ]
     },
@@ -2396,35 +2396,53 @@
     {
      "linesContent": [
       {
-       "text": "Invisibility Duration (on Finishers):"
+       "text": "(Finishers) increase the duration of the Void Invisibility and restore additional health."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Invisibility Duration || Health based on "
+      },
+      {
+       "text": "enemy rank",
+       "link": "https://d2clarity.page.link/combatant",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ":"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Minor = 6.8 seconds (9.8)"
+       "text": "• Minors: 6.8 seconds (9.8s) || 100 HP (?)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Elite/Guardian = 9.8 seconds (12.7)"
+       "text": "• Elites, Enemy Players: 9.8s (12.7s) || ? HP (200 HP)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Miniboss = 12.8 seconds (15.8)"
+       "text": "• Minibosses = 12.8s (15.8s) || ? HP (200 HP)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Boss = 13.3 seconds"
+       "text": "• Bosses = 13.3s || 200 HP (Not Finishable)"
       }
      ]
     },
@@ -2441,16 +2459,6 @@
       },
       {
        "text": "Void Invisibility duration by 41.5%."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Bosses and Vehicles are not finishable."
       }
      ]
     }
@@ -3771,7 +3779,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "PVE Damage": [
     {
@@ -4188,7 +4196,25 @@
   "name": "Burning Fists",
   "itemHash": 1734844651,
   "itemName": "Wormgod Caress",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -4196,14 +4222,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Burning Fists on Melee Kill."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Burning Fists lasts 5 seconds and grants Bonus Melee Damage."
+       "text": "Grants Burning Fists on (Glaive) Melee Kill, granting Increased (Glaive) Melee Damage for 5 seconds."
       }
      ]
     },
@@ -4213,14 +4232,14 @@
     {
      "linesContent": [
       {
-       "text": "Bonus Melee Damage:"
+       "text": "(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "80% | 170% | 390% | 520% | 650%"
+       "text": "55% | 110% | 165% | 220% | 275%"
       }
      ]
     }
@@ -4725,7 +4744,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "Handling": [
     {
@@ -5446,7 +5465,7 @@
   "name": "Wish-Dragon Teeth",
   "itemHash": 475652357,
   "itemName": "Young Ahamkara's Spine",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -5454,7 +5473,7 @@
     {
      "linesContent": [
       {
-       "text": "Intrinsically grants Fastball, even on non-Tripmine Grenades"
+       "text": "Intrinsically grants Fastball to all grenades."
       }
      ]
     },
@@ -5464,35 +5483,42 @@
     {
      "linesContent": [
       {
-       "text": "Enhanced Tripmine Grenade:"
+       "text": "Enhances Tripmine Grenades:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 14% Increased Explosion Damage. Explosion Length and Width are increased to 14 metres."
+       "text": "• 14% Increased Explosion Damage"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Explosion no longer deals self-damage and has no damage falloff."
+       "text": "• Explosion Length and Width are increased to 14 meters"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Lasts 30 seconds. (10s -> 30s)"
+       "text": "• Explosion no longer deals self-damage and has no damage falloff"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Increases Tripmine Durability to 100 HP with 50% Damage Resist."
+       "text": "• Lasts 30 seconds (10s 🠚 30s)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increases Tripmine Durability to 100 HP with 50% Damage Resist"
       }
      ]
     },
@@ -5505,15 +5531,11 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Ability Damage recharges 33% of Tripmine Grenade Ability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "yellow" ],
-     "linesContent": [
+       "text": "Solar Ability Damage recharges 33% of Tripmine Grenade Ability. "
+      },
       {
-       "text": "Ember of Ashes allows each Tripmine to count as 2 instances of Solar Ability Damage."
+       "text": "Ember of Ashes allows each Tripmine to count as 2 instances of Solar Ability Damage.",
+       "classNames": [ "yellow" ]
       }
      ]
     }
@@ -6875,16 +6897,16 @@
   "name": "Wraithmetal Mail",
   "itemHash": 2766109874,
   "itemName": "The Dragon's Shadow",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
-   "Reload": [
+   "Handling": [
     {
      "active": {
       "stat": [ 100 ]
      }
     }
    ],
-   "Handling": [
+   "Reload": [
     {
      "active": {
       "stat": [ 100 ]
@@ -6894,14 +6916,14 @@
    "Ready": [
     {
      "active": {
-      "multiplier": [ 0.95 ]
+      "multiplier": [ 0.7 ]
      }
     }
    ],
    "Stow": [
     {
      "active": {
-      "multiplier": [ 0.95 ]
+      "multiplier": [ 0.7 ]
      }
     }
    ]
@@ -6913,14 +6935,7 @@
     {
      "linesContent": [
       {
-       "text": "On Dodge:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants Wraithmetal Mail for 9 seconds."
+       "text": "Class Ability Usage reloads all weapons and grants Wraithmetal Mail for 9 seconds."
       }
      ]
     },
@@ -6930,35 +6945,42 @@
     {
      "linesContent": [
       {
-       "text": "Wraithmetal Mail:"
+       "text": "Wraithmetal Mail grants:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reloads all weapons"
+       "text": "• 50 Mobility"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• +100 Handling, 0.95x Ready/Stow Duration Multiplier, +100 Reload, and +50 Mobility."
+       "text": "• 100 Reload Speed and Handling"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Increases Sprint Speed by 6.25%."
+       "text": "• 0.7x Ready/Stow Duration Multiplier"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Increases Slide Distance by 33%."
+       "text": "• Increases Sprint Speed by 6.25%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increases Slide Distance by 33%"
       }
      ]
     }
@@ -7118,7 +7140,7 @@
   "name": "Probability Matrix",
   "itemHash": 903984858,
   "itemName": "Lucky Raspberry",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -7136,7 +7158,7 @@
     {
      "linesContent": [
       {
-       "text": "Arcbolt Grenades chain up to 4 times (from 3)"
+       "text": "Arcbolt Grenades can chain up to 4 times (from 3)."
       }
      ]
     }
@@ -7232,7 +7254,7 @@
   "name": "Cross Counter",
   "itemHash": 4165919945,
   "itemName": "Liar's Handshake",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -7240,9 +7262,12 @@
     {
      "linesContent": [
       {
-       "text": "Arcstrider Subclass Only"
+       "text": "Arcstrider Subclass Only."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
@@ -7257,7 +7282,7 @@
     {
      "linesContent": [
       {
-       "text": "Cross Counter grants 200% increased Melee Damage and heals [?] HP on Melee Hit."
+       "text": "Cross Counter grants 200% Increased Melee Damage and restores ?HP on Melee Hits."
       }
      ]
     },
@@ -7267,7 +7292,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacking One-Two Punch with Cross Counter reduces your total damage output by 40%."
+       "text": "Cross Counter only grants 80% Increased Melee Damage when combined with One-Two Punch."
       }
      ]
     }
@@ -8504,7 +8529,7 @@
   "name": "Light Shift",
   "itemHash": 1619425569,
   "itemName": "Mask of Bakris",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -8515,14 +8540,17 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Subclass Only"
+       "text": "Stasis Subclass Only."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Replaces Dodge with Shift."
+       "text": "Replaces Dodge with Shift:"
       }
      ]
     },
@@ -8556,7 +8584,7 @@
     {
      "linesContent": [
       {
-       "text": "[PVE] Light Shift grants 10% increased damage to Slowed/Frozen Combatants, as well as granting 10% increased damage to Arc Weapons.",
+       "text": "[PVE] Light Shift grants 10% Increased Damage to Slowed/Frozen Combatants as well as 10% Increased Damage to Arc Weapons. These buffs stack with each other and with all other buffs.",
        "classNames": [ "pve" ]
       }
      ]
@@ -11320,6 +11348,112 @@
    ]
   }
  },
+ "858592012": {
+  "hash": 858592012,
+  "name": "Tight Fit",
+  "itemHash": 2390471904,
+  "itemName": "Speedloader Slacks",
+  "lastUpload": 1678826803027,
+  "stats": {
+   "Airborne": [
+    {
+     "active": {
+      "stat": [ 30, 35, 40, 45, 50 ]
+     }
+    }
+   ],
+   "Handling": [
+    {
+     "active": {
+      "stat": [ 40, 40, 45, 50, 55 ]
+     }
+    }
+   ],
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 40, 40, 45, 50, 55 ],
+      "multiplier": [ 1, 0.925, 0.915, 0.91, 0.89 ]
+     }
+    }
+   ]
+  },
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dodging Grants x1 Stat Boost to you and allies within 15 meters for 15 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "While Stat Boost is active:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Kills or Dodges grant an additional Stack (maximum of 5) and refresh the duration of the buff."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Allies within 10 meters receive the same stack amount of Stat Boost as the owner when the buff is refreshed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stat Boost Bonuses at 1|2|3|4|5 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 | 35 | 40 | 45 | 50 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40? | 40(?) | 45(?) | 50(?) | 55(?) Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40 | 40 | 45 | 50 | 55 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 1x | 0.925x | 0.915x | 0.91x | 0.89x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "859780267": {
   "hash": 859780267,
   "name": "One for All",
@@ -11416,7 +11550,7 @@
   "name": "And Another Thing",
   "itemHash": 3874247549,
   "itemName": "Armamentarium",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11425,13 +11559,6 @@
      "linesContent": [
       {
        "text": "Grants an extra Grenade Ability Charge."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ability Charges are capped at a maximum of 2."
       }
      ]
     }
@@ -11478,7 +11605,7 @@
   "name": "Rapid Cooldown",
   "itemHash": 609852545,
   "itemName": "Fr0st-EE5",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11517,7 +11644,7 @@
        "text": "• "
       },
       {
-       "text": "[PvE] Grenade and Melee Ability Regeneration Rate is doubled.",
+       "text": "[PVE] Grenade and Melee Ability Regeneration Rate is doubled.",
        "classNames": [ "pve" ]
       }
      ]
@@ -11528,7 +11655,7 @@
        "text": "• "
       },
       {
-       "text": "[PvP] 100% Additional Base Grenade and Melee Regeneration Rate.",
+       "text": "[PVP] 100% Additional Base Grenade and Melee Regeneration Rate.",
        "classNames": [ "pvp" ]
       }
      ]
@@ -11539,7 +11666,7 @@
     {
      "linesContent": [
       {
-       "text": "On Dodge:"
+       "text": "On Class Ability Usage:"
       }
      ]
     },
@@ -11547,6 +11674,16 @@
      "linesContent": [
       {
        "text": "Grants 6.25% Faster Sprint Speed for 10 seconds. Duration is not refreshable."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(Multiplicative Ability Regeneration Rate Increase in PVE is applied after all Aditive Ability Regeneration Rate Increases/Decreases)"
       }
      ]
     }
@@ -21150,7 +21287,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "Charge Draw": [
     {
@@ -22771,15 +22908,8 @@
   "name": "Illegally Modded Holster",
   "itemHash": 193869522,
   "itemName": "Lucky Pants",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.6, 2.2, 2.8, 3.4, 4, 4.6, 5.2, 5.8, 6.4, 7 ]
-     }
-    }
-   ],
    "Airborne": [
     {
      "passive": {
@@ -22788,11 +22918,19 @@
      "weaponTypes": [ "HC" ]
     }
    ],
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.6, 2.2, 2.8, 3.4, 4, 4.6, 5.2, 5.8, 6.4, 7 ]
+     },
+     "weaponTypes": [ "HC" ]
+    }
+   ],
    "Ready": [
     {
      "passive": {
-      "multiplier": [ 0.6 ],
-      "stat": [ 100 ]
+      "stat": [ 100 ],
+      "multiplier": [ 0.6 ]
      },
      "weaponTypes": [ "HC" ]
     }
@@ -22805,7 +22943,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +20 Airborne Effectiveness to Hand Cannons and has an intrinsic Hand Cannon Holster."
+       "text": "Comes with an intrinsic Hand Cannon Holster Mod."
       }
      ]
     },
@@ -22815,7 +22953,35 @@
     {
      "linesContent": [
       {
-       "text": "Grants +100 Handling to Ready Speed, 0.6x Ready Animation Duration Multiplier and -40% Accuracy Cone Size for 4 seconds upon Readying your Hand Cannon."
+       "text": "Grants the following benefits to Hand Cannons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 100 Handling for Ready Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.6x Ready Animation Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• -40% Accuracy Cone Size for 4 seconds upon Readying your Hand Cannon"
       }
      ]
     },
@@ -22825,40 +22991,21 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying a Kinetic or Matching Hand Cannon with a Full Magazine:"
+       "text": "Upon readying a Fully Loaded Kinetic or Matching Hand Cannon inside PVE:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "60% Increased damage per Hit for 5.5 seconds. Maxes out at 600% after 10 Hits.",
-       "classNames": [ "pve" ]
+       "text": "60% Increased Damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Only works against PVE Combatants."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "For Exotic Hand Cannon interactions, go to "
-      },
-      {
-       "text": "Court's Spreadsheet",
-       "link": "https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=1312688627",
-       "classNames": [ "link" ]
-      },
-      {
-       "text": "!"
+       "text": "(Some Exotic Hand Cannons don't follow these numbers or have special rules)"
       }
      ]
     },
@@ -22868,14 +23015,14 @@
     {
      "linesContent": [
       {
-       "text": "After the Buff runs out or you swap weapons:"
+       "text": "After the Buff runs out, or you swap weapons:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "You cannot gain stacks or reacquire the damage buff for 10 seconds."
+       "text": "Cannot gain stacks or reacquire the damage buff for 10 seconds."
       }
      ]
     }
@@ -23018,7 +23165,7 @@
   "name": "Hydraulic Boosters",
   "itemHash": 193869520,
   "itemName": "St0mp-EE5",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
    "Airborne": [
     {
@@ -23179,7 +23326,7 @@
         {
          "cellContent": [
           {
-           "text": "9m🠚 11m"
+           "text": "9m 🠚 11m"
           }
          ]
         },
@@ -24239,7 +24386,7 @@
   "name": "Parting Gift",
   "itemHash": 1219761634,
   "itemName": "The Bombardiers",
-  "lastUpload": 1678745908076,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -24247,7 +24394,7 @@
     {
      "linesContent": [
       {
-       "text": "On Dodge:"
+       "text": "On Class Ability Usage:"
       }
      ]
     },
@@ -24268,7 +24415,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage over 7.5 meters. Detonates instantly on contact with surface or enemy."
+       "text": " damage over a 7.5 meter radius. Detonates instantly on contact with surface or enemy."
       }
      ]
     },
@@ -24312,7 +24459,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": " 40 Scorch (60 with Ember of Ashes)"
+       "text": " Applies 40 Scorch (60 with Ember of Ashes)"
       }
      ]
     },
@@ -24322,7 +24469,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": " Slows for 2 seconds and refreshes existing Slow Stacks. Does not apply Slow Stacks."
+       "text": " Slows for 2 seconds and refreshes duration of existing Slow Stacks. Does not apply Slow Stacks."
       }
      ]
     },
@@ -24332,7 +24479,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": " \"Lite\" Suppress for "
+       "text": " Applies \"Lite\" Suppression for "
       },
       {
        "text": "9",
@@ -24346,7 +24493,14 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " seconds (Does not apply to Players in Super)"
+       "text": " seconds (Does not apply to Enemy Players in Super)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Strand: Applies Sever for ? seconds"
       }
      ]
     },
@@ -24356,14 +24510,7 @@
     {
      "linesContent": [
       {
-       "text": "\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "\"Lite\" Suppression is not a regular Suppression. Explanation in "
+       "text": "\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies. \"Lite\" Suppression is not a regular Suppression. (Explanation can be found in "
       },
       {
        "text": "Court's Void Sandbox Guide",
@@ -24371,7 +24518,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": "."
+       "text": ")"
       }
      ]
     }
@@ -25623,7 +25770,7 @@
   "name": "Close Enough",
   "itemHash": 121305948,
   "itemName": "Geomag Stabilizers",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25638,7 +25785,7 @@
     {
      "linesContent": [
       {
-       "text": "0.75 second cooldown per refund. Can increase Super Duration by up to 100%."
+       "text": "0.75 second cooldown between refunds. Can increase Super Duration by up to 100%."
       }
      ]
     }
@@ -28580,7 +28727,7 @@
   "name": "Roast 'Em",
   "itemHash": 3453042252,
   "itemName": "Caliban's Hand",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28588,14 +28735,14 @@
     {
      "linesContent": [
       {
-       "text": "Proximity Explosive Knife applies 60 Scorch on detonation."
+       "text": "Proximity Explosive Knife applies 60 Scorch on detonation. (Unaffected by Ember of Ashes)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Direct Hit Kills with Proximity Explosive Knife ignite."
+       "text": "Proximity Explosive Knife kills cause an ignition."
       }
      ]
     },
@@ -28605,7 +28752,7 @@
     {
      "linesContent": [
       {
-       "text": "500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded."
+       "text": "Grants 500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded."
       }
      ]
     }
@@ -28662,7 +28809,7 @@
   "name": "Roving Assassin",
   "itemHash": 1474735276,
   "itemName": "Gwisin Vest",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28670,14 +28817,14 @@
     {
      "linesContent": [
       {
-       "text": "While in Spectral Blade:"
+       "text": "While in Spectral Blades:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Restores Super Energy on Heavy Attack based on the amount of Spectral Blade Kills."
+       "text": "Refunds Super Energy on Heavy Attack based on the number of Spectral Blade Kills."
       }
      ]
     },
@@ -28687,155 +28834,23 @@
     {
      "linesContent": [
       {
-       "text": "Super Energy % gains based on kills"
+       "text": "Super Energy Refund after 1|2|3|4|5+ kills:"
       }
      ]
     },
     {
-     "table": [
+     "classNames": [ "pve" ],
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "11.1",
-           "classNames": [ "pve" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "14.3",
-           "classNames": [ "pve" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "16.5",
-           "classNames": [ "pve" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "16.9",
-           "classNames": [ "pve" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "17.1",
-           "classNames": [ "pve" ]
-          }
-         ]
-        }
-       ]
-      },
+       "text": "[PVE] 11.1% | 14.3% | 16.5% | 16.9% | 17.1%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pvp" ],
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "8.3",
-           "classNames": [ "pvp" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "12.5",
-           "classNames": [ "pvp" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "14.2",
-           "classNames": [ "pvp" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "15.8",
-           "classNames": [ "pvp" ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🠚"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "16.7",
-           "classNames": [ "pvp" ]
-          }
-         ]
-        }
-       ]
+       "text": "[PVP] 8.3% | 12.5% | 14.2% | 15.8% | 16.7%"
       }
      ]
     }
@@ -29195,7 +29210,7 @@
   "name": "Double Dodge",
   "itemHash": 1474735277,
   "itemName": "The Sixth Coyote",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -29204,13 +29219,6 @@
      "linesContent": [
       {
        "text": "Grants an extra Class Ability Charge."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ability Charges are capped at a maximum of 2."
       }
      ]
     }
@@ -32953,7 +32961,7 @@
   "name": "The Whispers",
   "itemHash": 3288917178,
   "itemName": "Claws of Ahamkara",
-  "lastUpload": 1678582059138,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -32962,16 +32970,6 @@
      "linesContent": [
       {
        "text": "Grants an extra Melee Ability Charge."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Currently does not work with Strand."
       }
      ]
     }
@@ -33440,7 +33438,7 @@
   "name": "Relentless Tracker",
   "itemHash": 896224899,
   "itemName": "Foetracer",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
    "Airborne": [
     {
@@ -33457,7 +33455,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +20 Airborne Effectiveness."
+       "text": "Passively grants 20 Airborne Effectiveness."
       }
      ]
     },
@@ -33467,14 +33465,7 @@
     {
      "linesContent": [
       {
-       "text": "Marks enemies for 5 seconds after hovering your reticle near them for 1 second."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Mark persists through walls."
+       "text": "Moving your reticle near enemies for 1 second marks them for 5 seconds. Mark is visible through walls."
       }
      ]
     },
@@ -33491,24 +33482,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1% increased damage for every percent below 30%"
+       "text": "Grants 1% increased Weapon and Ability Damage for every percentage point below 30%."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "(Eg: 10% HP left -> 20% Damage Increase)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Damage Increase applies to all damage dealt."
+       "text": "(10% HP left >> 20% Increased Damage)"
       }
      ]
     }
@@ -33640,7 +33621,25 @@
   "name": "Hawkeye Hack",
   "itemHash": 1321354573,
   "itemName": "Celestial Nighthawk",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 6 ]
+     },
+     "weaponTypes": [ "Super" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 6 ]
+     },
+     "weaponTypes": [ "Super" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33648,7 +33647,14 @@
     {
      "linesContent": [
       {
-       "text": "Golden Gun can only fire once per activation."
+       "text": "Modified Golden Gun deals 500% Increased Damage but can only fire once per activation."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(37% more Damage compared to 3 Precision Hits with Marksman Golden Gun)"
       }
      ]
     },
@@ -33658,24 +33664,7 @@
     {
      "linesContent": [
       {
-       "text": "Golden Gun deals 500% increased damage."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "(37% more damage compared to 3 Precision Hits with Marksman Golden Gun)."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Returns 33% of Super Energy on Kill."
+       "text": "Scoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode."
       }
      ]
     }
@@ -33759,7 +33748,7 @@
   "name": "Upgraded Sensor Pack",
   "itemHash": 1321354572,
   "itemName": "Knucklehead Radar",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33777,21 +33766,14 @@
     {
      "linesContent": [
       {
-       "text": "If crouched:"
+       "text": "Crouching Grants Enhanced Radar."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants Enhanced Radar."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "(Has 12 sectors instead of 6)"
+       "text": "(Has 12 sections instead of 6)"
       }
      ]
     }
@@ -34289,7 +34271,7 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "PVE Damage": [
     {
@@ -35611,7 +35593,7 @@
   "name": "Nightmare Fuel",
   "itemHash": 1688602431,
   "itemName": "Sealed Ahamkara Grasps",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
    "Airborne": [
     {
@@ -35631,7 +35613,7 @@
        "text": "Melee Hits "
       },
       {
-       "text": "refresh",
+       "text": "refill",
        "title": [
         {
          "linesContent": [
@@ -35644,7 +35626,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " magazine for your equipped weapon and grant +50 Airborne Effectiveness for 5 seconds."
+       "text": " the magazine of your equipped weapon from reserves and grant 50 Airborne Effectiveness for 5 seconds."
       }
      ]
     },
@@ -35654,7 +35636,7 @@
     {
      "linesContent": [
       {
-       "text": "7 second cooldown."
+       "text": "7 second cooldown between activations."
       }
      ]
     }
@@ -38527,7 +38509,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1678817848971,
+  "lastUpload": 1678826803027,
   "stats": {
    "PVE Damage": [
     {
@@ -39585,7 +39567,7 @@
   "name": "Jump Jets",
   "itemHash": 3539357318,
   "itemName": "Lion Rampant",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
    "Airborne": [
     {
@@ -39602,7 +39584,7 @@
     {
      "linesContent": [
       {
-       "text": "Enables hipfiring while in Lift, and passively grants +50 Airborne Effectiveness while hipfiring."
+       "text": "Enables hipfiring while in Lift, and passively grants 50 Airborne Effectiveness while hipfiring."
       }
      ]
     },
@@ -39612,38 +39594,28 @@
     {
      "linesContent": [
       {
-       "text": "Increases Lift Duration to 4 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Lift Duration in seconds:"
+       "text": "Increases Lift Duration to 4 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "High Lift: 2.6 -> 4 (54% increase)"
+       "text": "• High Lift: 2.6  🠚 4 (54% increase)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Stafe Lift: 2.2 -> 4 (82% increase)"
+       "text": "• Stafe Lift: 2.2  🠚 4 (82% increase)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Catapult Lift: 1 -> 4 (300% increase!)"
+       "text": "• Catapult Lift: 1  🠚 4 (300% increase)"
       }
      ]
     }
@@ -40003,13 +39975,13 @@
  "3268255645": {
   "hash": 3268255645,
   "name": "Sect of Force",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "stats": {
    "Reload": [
     {
      "active": {
-      "multiplier": [ 0.8 ],
-      "stat": [ 10 ]
+      "stat": [ 10 ],
+      "multiplier": [ 0.85 ]
      }
     }
    ],
@@ -40045,7 +40017,7 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Weapon Haste grants +10 Reload (w/ 0.8x Duration Multiplier), as well as +10 Handling to Ready and Stow Speed."
+       "text": "Aeon Weapon Haste grants 10 Reload Speed, a 0.85x Reload Duration Multiplier, and 10 Ready/Stow Handling."
       }
      ]
     },
@@ -40055,21 +40027,14 @@
     {
      "linesContent": [
       {
-       "text": "On Champion Stun, Mini-Boss, or Boss Kill:"
+       "text": "On Champion Stuns and Miniboss or Boss Kills:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Allies within 30 metres gain 50% Grenade and Melee Energy."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Aeon Allies additionally gain 10% Super Energy."
+       "text": "Allies within 30 meters gain 50% Grenade and Melee Energy. Aeon Allies not using Sect of Force additionally gain 10% Super Energy."
       }
      ]
     },
@@ -43760,7 +43725,7 @@
   "name": "Voltaic Mirror",
   "itemHash": 1703551922,
   "itemName": "Blight Ranger",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -43775,21 +43740,21 @@
     {
      "linesContent": [
       {
-       "text": "• Blocking doesn't consume any extra Super Energy."
+       "text": "• Blocking doesn't consume Super Energy"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Projectiles reflected deal 650% increased damage."
+       "text": "• Reflected projectiles deal 650% increased damage"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reflecting projectiles generates Orbs of Power for allies."
+       "text": "• Reflecting projectiles generates Orbs of Power for allies"
       }
      ]
     }
@@ -44202,7 +44167,7 @@
  "3651607301": {
   "hash": 3651607301,
   "name": "Sect of Insight",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44210,7 +44175,7 @@
     {
      "linesContent": [
       {
-       "text": "2 Precision Multikills drop an Orb of Power for allies."
+       "text": "Scoring 2 Precision Multikills creates an Orb of Power for allies."
       }
      ]
     },
@@ -44220,14 +44185,41 @@
     {
      "linesContent": [
       {
-       "text": "Finishing an Elite spawns a Special Ammo Brick for Allies"
+       "text": "Finishers spawn Ammo Bricks for allies based on "
+      },
+      {
+       "text": "enemy rank",
+       "link": "https://d2clarity.page.link/combatant",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ":"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Finishing a Mini-boss spawns a Power Ammo Brick for Allies."
+       "text": "• Elites: "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Ammo Brick"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Miniboss or Champion: "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Heavy Ammo Brick"
       }
      ]
     },
@@ -44237,7 +44229,17 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Allies additionally receive a 35% Damage Increase for 20 seconds."
+       "text": "Spawned Ammo Bricks grant 33% less ammo."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Aeon Allies not using Sect of Insight gain 35% Increased Damage on Finishers for 20 seconds."
       }
      ]
     }
@@ -44418,7 +44420,25 @@
   "name": "Skittering Stinger",
   "itemHash": 2415768376,
   "itemName": "Athrys's Embrace",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 3 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 2 ]
+     },
+     "weaponTypes": [ "Melee" ]
+    }
+   ]
+  },
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44426,7 +44446,7 @@
     {
      "linesContent": [
       {
-       "text": "Weighted Throwing Knives gain a second bounce with greatly increased tracking."
+       "text": "Weighted Throwing Knife gains a second bounce with greatly increased tracking."
       }
      ]
     },
@@ -44436,14 +44456,7 @@
     {
      "linesContent": [
       {
-       "text": "After Scoring 3 Precision Hits within 2.5 seconds of each: Gain Strengthened Throwing Knife."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Additional Precision Hits increase duration by 5 seconds each, up to 30 seconds."
+       "text": "Scoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds."
       }
      ]
     },
@@ -44453,7 +44466,17 @@
     {
      "linesContent": [
       {
-       "text": "Strengthened Throwing Knife deal "
+       "text": "Additional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Strengthened Throwing Knife deals "
       },
       {
        "text": "200%",
@@ -44467,23 +44490,13 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " increased damage and stagger "
+       "text": " increased damage and stuns "
       },
       {
        "classNames": [ "unstoppable" ]
       },
       {
-       "text": "Unstoppable Champions."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Landing a Knife Hit consumes Strengthened Throwing Knife."
+       "text": "Unstoppable Champions. Buff is consumed on Knife Hit."
       }
      ]
     }
@@ -45421,7 +45434,7 @@
  "3683811620": {
   "hash": 3683811620,
   "name": "Sect of Vigor",
-  "lastUpload": 1678668030826,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -45456,7 +45469,7 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Allies receive a 110 HP Overshield for 20 seconds that recharges after 3 seconds."
+       "text": "Aeon Allies not using Sect of Vigor additionally receive a 110 HP Overshield for 20 seconds that starts recharging after 3 seconds if not broken."
       }
      ]
     }
@@ -46644,10 +46657,95 @@
   "name": "See Me, Feel Me",
   "itemHash": 461841403,
   "itemName": "Gyrfalcon's Hauberk",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Upon Void Invisibility ending:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Volatile Rounds for "
+      },
+      {
+       "text": "10",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[3]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "On Finishers while affected by Void Invisibility:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 35% Increased Damage for 6 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants you and allies within 24 meters the Reserve Overshield buff"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Reserve Overshield:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 375% Additional Base Class Ability Regeneration Rate"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants the user a 40 HP Void Overshield for 10 seconds on Class Abiliy usage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Buff is removed on Class Ability usage"
+      }
+     ]
+    }
+   ],
    "zh-chs": [
     {
      "linesContent": [
@@ -48844,7 +48942,7 @@
   "name": "Misdirection",
   "itemHash": 1163283805,
   "itemName": "Gemini Jester",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -48852,14 +48950,14 @@
     {
      "linesContent": [
       {
-       "text": "On Dodge:"
+       "text": "On Class Ability Usage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Applies Misdirection to enemies within 22 metres."
+       "text": "Applies Misdirection to enemies within 22 meters."
       }
      ]
     },
@@ -48876,7 +48974,7 @@
     {
      "linesContent": [
       {
-       "text": "Disorients minors and elites for 5 seconds.",
+       "text": "[PVE] Disorients Minors and Elites for 5 seconds.",
        "classNames": [ "pve" ]
       }
      ]
@@ -48884,7 +48982,7 @@
     {
      "linesContent": [
       {
-       "text": "Warps audio and removes radar for 5 seconds, as well as briefly blinding.",
+       "text": "[PVP] Muffles audio, briefly disorients, and removes radar for 5 seconds.",
        "classNames": [ "pvp" ]
       }
      ]
@@ -48895,14 +48993,7 @@
     {
      "linesContent": [
       {
-       "text": "Misdirection doesn't actually deal damage."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "(Less than 0.001 at the very least)"
+       "text": "Misdirection deals ~0 Damage but counts as a Hit."
       }
      ]
     }
@@ -50166,7 +50257,7 @@
   "name": "Touch of Venom",
   "itemHash": 2757274117,
   "itemName": "Khepri's Sting",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -50174,21 +50265,7 @@
     {
      "linesContent": [
       {
-       "text": "Powered Melee Hits instantly cast Smoke Bomb."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Thrown Smoke Bombs deal 50% increased damage."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Quickfall does not receive increased damage."
+       "text": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds. Truseight allows you to see enemy outlines through walls from up to 64 meters away."
       }
      ]
     },
@@ -50198,7 +50275,17 @@
     {
      "linesContent": [
       {
-       "text": "Standing in the Smoke Bomb's Cloud grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 metres away."
+       "text": "Grants ?% Additional Base Melee Regeneration Rate while Smoke Bomb remains undetonated."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Providing Invisibility via the Smoke Bomb prevents the Ability Recharge Bonus from applying."
       }
      ]
     }
@@ -50460,6 +50547,26 @@
       },
       {
        "text": " Passively grants 5 Stability."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4120041779": {
+  "hash": 4120041779,
+  "name": "Acrobat's Focus",
+  "itemHash": 192896783,
+  "itemName": "Cyrtarachne's Facade",
+  "lastUpload": 1678826803027,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grappling grants Woven Mail and ?% Flinch Resistance for 10(?) seconds."
       }
      ]
     }
@@ -51188,7 +51295,7 @@
   "name": "Ursine Guard",
   "itemHash": 1848640623,
   "itemName": "Ursa Furiosa",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1678826803027,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51196,7 +51303,7 @@
     {
      "linesContent": [
       {
-       "text": "Move forward at 90% your speed while blocking with Sentinel Shield."
+       "text": "Sentinel Shield's Forward Movement Speed Penalty while Blocking is reduced to 10%."
       }
      ]
     },
@@ -51206,7 +51313,7 @@
     {
      "linesContent": [
       {
-       "text": "Converts incoming damage into Super Energy after Super ends, up to 50%."
+       "text": "Converts incoming damage into Super Energy after Super ends, up to 50% Super Energy."
       }
      ]
     },
@@ -51214,11 +51321,9 @@
      "classNames": [ "spacer" ]
     },
     {
-     "classNames": [ "center" ],
      "linesContent": [
       {
-       "text": "Overshields prevent damage into Super Energy conversion so don't stand in a Well of Radiance.",
-       "classNames": [ "yellow" ]
+       "text": "Blocking Damage with an active Overshield does not count towards the Super Energy Refund."
       }
      ]
     }
