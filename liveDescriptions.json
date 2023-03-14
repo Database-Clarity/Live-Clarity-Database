@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3509,41 +3509,41 @@
    "inLiveDatabase": true
   },
   "236605015": {
-   "hash": 236605015,
    "name": "Vanishing Execution",
-   "itemHash": 2203146422,
    "itemName": "Assassin's Cowl",
+   "hash": 236605015,
+   "itemHash": 2203146422,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260588695,
-      "updatedBy": "Icemourne"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670531224042,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Gain <void/>Void Invisibility on Powered Melee Kill. (Longer on Finishers)\nHeals for X on Powered Melee Kill. (Stronger on Finishers)\n\nInvisibility Duration (on Finishers):\nMinor = 6.8 seconds (9.8)\nElite/Guardian = 9.8 seconds (12.7)\nMiniboss = 12.8 seconds (15.8)\nBoss = 13.3 seconds\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.\n\nBosses and Vehicles are not finishable.",
+     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n(Finishers) increase the duration of the Void Invisibility and restore additional health.\n\nInvisibility Duration || Health based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• Minors: 6.8 seconds (9.8s) || 100 HP (?)\n• Elites, Enemy Players: 9.8s (12.7s) || ? HP (200 HP)\n• Minibosses = 12.8s (15.8s) || ? HP (200 HP)\n• Bosses = 13.3s || 200 HP (Not Finishable)\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "充能近战击杀获得<void/>虚空隐身，并恢复 [?] 生命值。\n（终结技的效果更显著）\n\n隐身持续时间（使用终结技的效果）：\n普通敌人 = 6.8 秒（9.8）\n精英敌人/守护者 = 9.8 秒 （12.7）\n次级首领 = 12.8 秒 （15.8）\n首领 = 13.3 秒\n\n坚韧回声可增加 41.5% <void/>虚空隐身的持续时间。\n\n首领和载具无法被终结。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678819719477,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670531224042,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "240958661": {
    "hash": 240958661,
@@ -4665,7 +4665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5573,41 +5573,59 @@
    "uploadToLive": false
   },
   "384759955": {
-   "hash": 384759955,
    "name": "Burning Fists",
-   "itemHash": 1734844651,
    "itemName": "Wormgod Caress",
+   "hash": 384759955,
+   "itemHash": 1734844651,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260597304,
-      "updatedBy": "Icemourne"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670530358086,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+      },
+      "weaponTypes": [ "Melee" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
+      },
+      "weaponTypes": [ "Melee" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Grants Burning Fists on Melee Kill.\r\nBurning Fists lasts 5 seconds and grants Bonus Melee Damage.\r\n\r\nBonus Melee Damage:\r\n80% | 170% | 390% | 520% | 650%",
+     "main": "Grants Burning Fists on (Glaive) Melee Kill, granting Increased (Glaive) Melee Damage for 5 seconds.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "近战击杀后获得“燃烧之拳”：\n“燃烧之拳”持续 5 秒，提供额外近战伤害，可叠加 5 层。\n\n额外近战伤害：\n55% | 110% | 165% | 220% | 275%",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678819045492,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670530358086,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678818996029,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "389268985": {
    "hash": 389268985,
@@ -6712,7 +6730,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7189,41 +7207,41 @@
    "itemName": "Lord of Wolves"
   },
   "481860150": {
-   "hash": 481860150,
    "name": "Wish-Dragon Teeth",
-   "itemHash": 475652357,
    "itemName": "Young Ahamkara's Spine",
+   "hash": 481860150,
+   "itemHash": 475652357,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260609545,
-      "updatedBy": "Icemourne"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670530685126,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Intrinsically grants Fastball, even on non-Tripmine Grenades\n\nEnhanced Tripmine Grenade:\n • 14% Increased Explosion Damage. Explosion Length and Width are increased to 14 metres.\n • Explosion no longer deals self-damage and has no damage falloff.\n • Lasts 30 seconds. (10s -> 30s)\n • Increases Tripmine Durability to 100 HP with 50% Damage Resist.\n\n<solar/>Solar Ability Damage recharges 33% of Tripmine Grenade Ability. \n<yellow/>Ember of Ashes allows each Tripmine to count as 2 instances of Solar Ability Damage. ",
+     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters\n• Explosion no longer deals self-damage and has no damage falloff\n• Lasts 30 seconds (10s 🠚 30s)\n• Increases Tripmine Durability to 100 HP with 50% Damage Resist\n\n<solar/>Solar Ability Damage recharges 33% of Tripmine Grenade Ability. <yellow Ember of Ashes allows each Tripmine to count as 2 instances of Solar Ability Damage. />",
      "secondary": "import self"
     },
     "zh-chs": {
      "main": "让手雷自带快速投掷能力。\n\n增强感应手雷：\n • 爆炸伤害增加 14%。爆炸的长度和宽度增加到 14 米。\n • 爆炸不再造成自我伤害，并且没有伤害衰减。\n • 持续 30 秒。(10s -> 30s)\n • 将感应手雷的耐久度提高到 100 生命值，并有 50% 的伤害抵抗。\n\n<solar/>烈日技能伤害可为感应手雷充能 33%。\n<yellow/>骨灰余烬可让感应手雷算作 2 次烈日技能伤害。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678826529056,
+      "updatedBy": "Stardust"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670530685126,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "481860151": {
    "hash": 481860151,
@@ -8648,36 +8666,20 @@
    "uploadToLive": false
   },
   "593361144": {
-   "hash": 593361144,
    "name": "Wraithmetal Mail",
-   "itemHash": 2766109874,
    "itemName": "The Dragon's Shadow",
+   "hash": 593361144,
+   "itemHash": 2766109874,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667589656214,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667589681470,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
    "stats": {
-    "Reload": [
+    "Handling": [
      {
       "active": {
        "stat": [ 100 ]
       }
      }
     ],
-    "Handling": [
+    "Reload": [
      {
       "active": {
        "stat": [ 100 ]
@@ -8687,24 +8689,40 @@
     "Ready": [
      {
       "active": {
-       "multiplier": [ 0.95 ]
+       "multiplier": [ 0.7 ]
       }
      }
     ],
     "Stow": [
      {
       "active": {
-       "multiplier": [ 0.95 ]
+       "multiplier": [ 0.7 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "On Dodge:\nGrants Wraithmetal Mail for 9 seconds.\n\nWraithmetal Mail:\n • Reloads all weapons\n • +100 Handling, 0.95x Ready/Stow Duration Multiplier, +100 Reload, and +50 Mobility.\n • Increases Sprint Speed by 6.25%.\n • Increases Slide Distance by 33%.",
+     "main": "Class Ability Usage reloads all weapons and grants Wraithmetal Mail for 9 seconds.\n\nWraithmetal Mail grants:\n• 50 Mobility\n• 100 Reload Speed and Handling\n• 0.7x Ready/Stow Duration Multiplier\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678821555611,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678821571287,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "593361146": {
    "hash": 593361146,
@@ -8736,41 +8754,41 @@
    }
   },
   "593361147": {
-   "hash": 593361147,
    "name": "Probability Matrix",
-   "itemHash": 903984858,
    "itemName": "Lucky Raspberry",
+   "hash": 593361147,
+   "itemHash": 903984858,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667592342300,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665698639393,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Arcbolt Grenades have an additive 25% Chance per Hit to recharge your Grenade Ability.\n\nArcbolt Grenades chain up to 4 times (from 3)",
+     "main": "Arcbolt Grenades have an additive 25% Chance per Hit to recharge your Grenade Ability.\n\nArcbolt Grenades can chain up to 4 times (from 3).",
      "secondary": "import self"
     },
     "ko": {
      "main": "전기화살 수류탄으로 적중한 적 당 25%의 수류탄 에너지가 반환됩니다.\n\n전기화살 수류탄이 4번 까지 이어집니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678824759410,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665698639393,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "594346985": {
    "hash": 594346985,
@@ -8836,41 +8854,41 @@
    "uploadToLive": false
   },
   "595829387": {
-   "hash": 595829387,
    "name": "Cross Counter",
-   "itemHash": 4165919945,
    "itemName": "Liar's Handshake",
+   "hash": 595829387,
+   "itemHash": 4165919945,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667591397487,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665697866189,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Arcstrider Subclass Only\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% increased Melee Damage and heals [?] HP on Melee Hit.\n\nStacking One-Two Punch with Cross Counter reduces your total damage output by 40%.",
+     "main": "Arcstrider Subclass Only.\n\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ?HP on Melee Hits.\n\nCross Counter only grants 80% Increased Melee Damage when combined with One-Two Punch.",
      "secondary": "import self"
     },
     "ko": {
      "main": "전기질주자 한정입니다.\n근접 피해를 입거나 입히면 3초간 크로스 카운터가 활성화되며 근접 피해를 입히면 해제됩니다.\n\n크로스 카운터는 근접 피해를 200% 증가시키며 근접 공격 적중 시 체력을 회복시킵니다.\n\n크로스 카운터가 활성화 된 동안 원투 펀치의 위력은 80%로 줄어듭니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678823784410,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665697866189,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "598607952": {
    "name": "Chain Reaction",
@@ -10119,33 +10137,33 @@
    "uploadToLive": false
   },
   "692285813": {
-   "hash": 692285813,
    "name": "Light Shift",
-   "itemHash": 1619425569,
    "itemName": "Mask of Bakris",
+   "hash": 692285813,
+   "itemHash": 1619425569,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "<stasis/>Stasis Subclass Only.\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres, and renders you completely invisible and invulnerable (except for a trail) for the duration of the shift.\n\nDodging grants Light Shift buff for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\n<pve [PVE] Light Shift grants 10% Increased Damage to Slowed/Frozen Combatants as well as 10% Increased Damage to Arc Weapons. These buffs stack with each other and with all other buffs. />",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678824954458,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881742,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667592523055,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "<stasis/>Stasis Subclass Only\nReplaces Dodge with Shift.\nShift has a travel distance of 10 metres, and renders you completely invisible and invulnerable (except for a trail) for the duration of the shift.\n\nDodging grants Light Shift buff for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\n<pve [PVE] Light Shift grants 10% increased damage to Slowed/Frozen Combatants, as well as granting 10% increased damage to Arc Weapons. />",
-     "secondary": "Stasis Subclass Only\nReplaces Dodge with Shift.\nShift has a travel distance of 10 metres, and renders you completely invisible and invulnerable (except for a trail) for the duration of the shift.\n\nDodging grants Light Shift buff for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\n[PVE] Light Shift grants 10% increased damage to Slowed/Frozen Combatants, as well as granting 10% increased damage to Arc Weapons."
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "699525795": {
    "name": "Eye of the Storm",
@@ -12386,33 +12404,57 @@
    "inLiveDatabase": false
   },
   "858592012": {
-   "hash": 858592012,
    "name": "Tight Fit",
+   "itemName": "Speedloader Slacks",
+   "hash": 858592012,
+   "itemHash": 2390471904,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1677677992214,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Airborne": [
+     {
+      "active": {
+       "stat": [ 30, 35, 40, 45, 50 ]
+      }
+     }
+    ],
+    "Handling": [
+     {
+      "active": {
+       "stat": [ 40, 40, 45, 50, 55 ]
+      }
+     }
+    ],
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 40, 40, 45, 50, 55 ],
+       "multiplier": [ 1, 0.925, 0.915, 0.91, 0.89 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Dodging Grants x1 Stat Boost to you and allies within 15 meters for 15 seconds.\n\nWhile Stat Boost is active:\n• Kills or Dodges grant an additional Stack (maximum of 5) and refresh the duration of the buff.\n• Allies within 10 meters receive the same stack amount of Stat Boost as the owner when the buff is refreshed.\n\nStat Boost Bonuses at 1|2|3|4|5 Stacks:\n• 30 | 35 | 40 | 45 | 50 Airborne Effectiveness\n• 40? | 40(?) | 45(?) | 50(?) | 55(?) Handling\n• 40 | 40 | 45 | 50 | 55 Reload Speed\n• 1x | 0.925x | 0.915x | 0.91x | 0.89x Reload Duration Multiplier",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1678825305582,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1678825385627,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 2390471904,
-   "itemName": "Speedloader Slacks"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "859780267": {
    "name": "One for All",
@@ -12718,38 +12760,14 @@
    "uploadedBy": "Stardust"
   },
   "883550427": {
-   "hash": 883550427,
    "name": "And Another Thing",
-   "itemHash": 3874247549,
    "itemName": "Armamentarium",
+   "hash": 883550427,
+   "itemHash": 3874247549,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667580682999,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665683542394,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670509462791,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Grants an extra Grenade Ability Charge.\nAbility Charges are capped at a maximum of 2.",
+     "main": "Grants an extra Grenade Ability Charge.",
      "secondary": "import self"
     },
     "ko": {
@@ -12760,7 +12778,31 @@
      "main": "获得额外一次手雷技能充能。\n手雷技能数量上限为 2。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678818552801,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683542394,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670509462791,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881742,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "885620491": {
    "hash": 885620491,
@@ -13127,7 +13169,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While Sprinting: \n• <pve 100% /> <pvp [200%] /> Additional Base Class Ability Regeneration Rate.\n• <pve [PvE] Grenade and Melee Ability Regeneration Rate is doubled. />\n• <pvp [PvP] 100% Additional Base Grenade and Melee Regeneration Rate. />\n\nOn Dodge:\nGrants 6.25% Faster Sprint Speed for 10 seconds. Duration is not refreshable.",
+     "main": "While Sprinting: \n• <pve 100% /> <pvp [200%] /> Additional Base Class Ability Regeneration Rate.\n• <pve [PVE] Grenade and Melee Ability Regeneration Rate is doubled. />\n• <pvp [PVP] 100% Additional Base Grenade and Melee Regeneration Rate. />\n\nOn Class Ability Usage:\nGrants 6.25% Faster Sprint Speed for 10 seconds. Duration is not refreshable.\n\n(Multiplicative Ability Regeneration Rate Increase in PVE is applied after all Aditive Ability Regeneration Rate Increases/Decreases)",
      "secondary": "import self"
     },
     "ko": {
@@ -13142,7 +13184,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678722268608,
+      "lastUpdate": 1678821900637,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -13160,7 +13202,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678726148083,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23649,7 +23691,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25157,39 +25199,12 @@
    "itemName": "Lorentz Driver"
   },
   "1694242448": {
-   "hash": 1694242448,
    "name": "Illegally Modded Holster",
-   "itemHash": 193869522,
    "itemName": "Lucky Pants",
+   "hash": 1694242448,
+   "itemHash": 193869522,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667592033262,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667592311868,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665698551542,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "stats": {
-    "Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.6, 2.2, 2.8, 3.4, 4, 4.6, 5.2, 5.8, 6.4, 7 ]
-      }
-     }
-    ],
     "Airborne": [
      {
       "passive": {
@@ -25198,11 +25213,19 @@
       "weaponTypes": [ "HC" ]
      }
     ],
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.6, 2.2, 2.8, 3.4, 4, 4.6, 5.2, 5.8, 6.4, 7 ]
+      },
+      "weaponTypes": [ "HC" ]
+     }
+    ],
     "Ready": [
      {
       "passive": {
-       "multiplier": [ 0.6 ],
-       "stat": [ 100 ]
+       "stat": [ 100 ],
+       "multiplier": [ 0.6 ]
       },
       "weaponTypes": [ "HC" ]
      }
@@ -25210,14 +25233,34 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants +20 Airborne Effectiveness to Hand Cannons and has an intrinsic Hand Cannon Holster.\n\nGrants +100 Handling to Ready Speed, 0.6x Ready Animation Duration Multiplier and -40% Accuracy Cone Size for 4 seconds upon Readying your Hand Cannon.\n\nUpon readying a Kinetic or Matching Hand Cannon with a Full Magazine:\n<pve 60% Increased damage per Hit for 5.5 seconds. Maxes out at 600% after 10 Hits. />\nOnly works against PVE Combatants.\n\nFor Exotic Hand Cannon interactions, go to <link Court's Spreadsheet [https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=1312688627] />!\n\nAfter the Buff runs out or you swap weapons:\nYou cannot gain stacks or reacquire the damage buff for 10 seconds.",
-     "secondary": "Passively grants +20 Airborne Effectiveness to Hand Cannons and has an intrinsic Hand Cannon Holster.\n\nGrants +100 Handling to Ready Speed, 0.6x Ready Animation Duration Multiplier and -40% Accuracy Cone Size for 4 seconds upon Readying your Hand Cannon.\n\nUpon readying a Kinetic or Matching Hand Cannon with a Full Magazine:\n60% increased damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits.\nOnly works against PVE Combatants.\n\nFor Exotic Hand Cannon interactions, go to Court's Spreadsheet.\n\nAfter the Buff runs out or you swap weapons:\nYou cannot gain stacks or reacquire the damage buff for 10 seconds."
+     "main": "Comes with an intrinsic Hand Cannon Holster Mod.\n\nGrants the following benefits to Hand Cannons:\n• 20 Airborne Effectiveness\n• 100 Handling for Ready Speed\n• 0.6x Ready Animation Duration Multiplier\n• -40% Accuracy Cone Size for 4 seconds upon Readying your Hand Cannon\n\nUpon readying a Fully Loaded Kinetic or Matching Hand Cannon inside PVE:\n60% Increased Damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits.\n(Some Exotic Hand Cannons don't follow these numbers or have special rules)\n\nAfter the Buff runs out, or you swap weapons:\nCannot gain stacks or reacquire the damage buff for 10 seconds.",
+     "secondary": "import self"
     },
     "ko": {
      "main": "핸드 캐논 총집이 기본으로 내장되어 있습니다.\n핸드 캐논을 꺼내는 순간 4초 동안 준비 속도가 100 증가하며 지속 시간 배율이 0.6으로 증가, 공중 효율 20 증가, 그리고 착탄 범위가 40% 좁아집니다.\n\n물리 속성이나 장착한 하위 속성과 일치하는 속성의 핸드 캐논을 준비할 시:\n<pve 5초 동안 한발 마다 피해가 60% 식 증가하며 10발에서 최대 600% 피해 증가가 부여됩니다./>\n수호자에겐 적용되지 않습니다.\n\n경이 핸드 캐논의 피해 배율을 보고 싶으시면 <link 이 차트를 확인하세요 [https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=1312688627] />\n\n버프의 지속 시간이 끝나거나, 무기를 바꾸거나, 5초 동안 사격했을 시:\n버프를 10초 동안 얻을 수 없습니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678824688338,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665698551542,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678824721811,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1694242449": {
    "hash": 1694242449,
@@ -25249,33 +25292,11 @@
    }
   },
   "1694242450": {
-   "hash": 1694242450,
    "name": "Hydraulic Boosters",
-   "itemHash": 193869520,
    "itemName": "St0mp-EE5",
+   "hash": 1694242450,
+   "itemHash": 193869520,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667594213132,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667594400123,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Passively grants -50 Airborne Effectiveness.\n\nIncreases Sprint Speed by 6.25%.\nIncreases Slide Distance by 33%.\n\n< table background_2 >\n|b Jump Ability         |b Jump Height |bc % Increase\n| High Jump                 | 9m 🠚 12m   |c 33%\n| Strafe Jump               | 8m 🠚 9m    |c 10%\n| Triple Jump (First Jump)  | 6m 🠚 7m    |c 16%\n| Triple Jump (Second Jump) | 9m🠚 11m    |c 22%\n<$>",
-     "secondary": "Passively grants -50 Airborne Effectiveness.\n\nIncreases Sprint Speed by 6.25%.\nIncreases Slide Distance by 33%.\n\nJump Height Increase:\n• High Jump: 9m -> 12m (33% higher)\n• Strafe Jump: 8m -> 9m (10% higher)\n• Triple Jump:\n    • 6m -> 7m for First Jump (16% higher)<breakSpaces/>\n    • 9m -> 11m for Second Jump (22% higher)<breakSpaces/>"
-    }
-   },
    "stats": {
     "Airborne": [
      {
@@ -25284,7 +25305,29 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Passively grants -50 Airborne Effectiveness.\n\nIncreases Sprint Speed by 6.25%.\nIncreases Slide Distance by 33%.\n\n< table background_2 >\n|b Jump Ability         |b Jump Height |bc % Increase\n| High Jump                 | 9m 🠚 12m   |c 33%\n| Strafe Jump               | 8m 🠚 9m    |c 10%\n| Triple Jump (First Jump)  | 6m 🠚 7m    |c 16%\n| Triple Jump (Second Jump) | 9m 🠚 11m    |c 22%\n<$>",
+     "secondary": "Passively grants -50 Airborne Effectiveness.\n\nIncreases Sprint Speed by 6.25%.\nIncreases Slide Distance by 33%.\n\nJump Height Increase:\n• High Jump: 9m 🠚 12m (+33%)\n• Strafe Jump: 8m 🠚 9m (+10%)\n• Triple Jump (First Jump): 6m 🠚 7m (+16%)\n• Triple Jump (Second Jump): 9m 🠚 11m (+22%)"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678825790168,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667594213132,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1698387812": {
    "hash": 1698387812,
@@ -27860,14 +27903,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Dodge:\nDrops a Parting Gift that explodes after 1.5 seconds, dealing <pve 440 /> <pvp [120] /> damage over 7.5 meters. Detonates instantly on contact with surface or enemy.\n\nParting Gift has an additional effect based on Subclass:\n<arc/> Applies \"Lite\" Blind for <pve 7 /> <pvp [3] /> seconds\n<solar/> 40 Scorch (60 with Ember of Ashes)\n<stasis/> Slows for 2 seconds and refreshes existing Slow Stacks. Does not apply Slow Stacks.\n<void/> \"Lite\" Suppress for <pve 9 /> <pvp [7] /> seconds (Does not apply to Players in Super)\n\n\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies.\n\"Lite\" Suppression is not a regular Suppression. Explanation in <link Court's Void Sandbox Guide [https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=698164840] />.",
-     "secondary": "import self"
+     "main": "On Class Ability Usage:\nDrops a Parting Gift that explodes after 1.5 seconds, dealing <pve 440 /> <pvp [120] /> damage over a 7.5 meter radius. Detonates instantly on contact with surface or enemy.\n\nParting Gift has an additional effect based on Subclass:\n<arc/> Applies \"Lite\" Blind for <pve 7 /> <pvp [3] /> seconds\n<solar/> Applies 40 Scorch (60 with Ember of Ashes)\n<stasis/> Slows for 2 seconds and refreshes duration of existing Slow Stacks. Does not apply Slow Stacks.\n<void/> Applies \"Lite\" Suppression for <pve 9 /> <pvp [7] /> seconds (Does not apply to Enemy Players in Super)\nStrand: Applies Sever for ? seconds\n\n\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies. \"Lite\" Suppression is not a regular Suppression. (Explanation can be found in <link Court's Void Sandbox Guide [https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit#rangeid=698164840] />)",
+     "secondary": "On Class Ability Usage:\nDrops a Parting Gift that explodes after 1.5 seconds, dealing <pve 440 /> <pvp [120] /> damage over a 7.5 meter radius. Detonates instantly on contact with surface or enemy.\n\nParting Gift has an additional effect based on Subclass:\n• Arc: Applies \"Lite\" Blind for 7 [PVP: 3] seconds\n• Solar: Applies 40 Scorch (60 with Ember of Ashes)\n• Stasis: Slows for 2 seconds and refreshes duration of existing Slow Stacks. Does not apply Slow Stacks.\n• Void: Applies \"Lite\" Suppression for 9 [PVP: 7] seconds (Does not apply to Enemy Players in Super)\n• Strand: Applies Sever for ? seconds\n\n\"Lite\" Blind does not count as an Arc Blind, and will not proc Arc Synergies. \"Lite\" Suppression is not a regular Suppression. (Explanation can be found in Court's 'Void Sandbox Guide')"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678745674364,
+      "lastUpdate": 1678820963208,
       "updatedBy": "Stardust"
      }
     },
@@ -27877,7 +27920,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678745908076,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29086,38 +29129,14 @@
    "inLiveDatabase": true
   },
   "1939153390": {
-   "hash": 1939153390,
    "name": "Close Enough",
-   "itemHash": 121305948,
    "itemName": "Geomag Stabilizers",
+   "hash": 1939153390,
+   "itemHash": 121305948,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667255854045,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665696000770,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670678108146,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Chaos Reach refunds 10% Super Ability Energy on hit. \n0.75 second cooldown per refund. Can increase Super Duration by up to 100%.",
+     "main": "Chaos Reach refunds 10% Super Ability Energy on hit. \n0.75 second cooldown between refunds. Can increase Super Duration by up to 100%.",
      "secondary": "import self"
     },
     "ko": {
@@ -29128,7 +29147,31 @@
      "main": "混沌之触每次命中回复 10% 的超能能量。\n每次回复有 0.75秒 冷却时间。可以增加最多 100% 的超能持续时间。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678822155919,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665696000770,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670678108146,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1941225610": {
    "hash": 1941225610,
@@ -31872,38 +31915,14 @@
    "inLiveDatabase": true
   },
   "2179827240": {
-   "hash": 2179827240,
    "name": "Roast 'Em",
-   "itemHash": 3453042252,
    "itemName": "Caliban's Hand",
+   "hash": 2179827240,
+   "itemHash": 3453042252,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667589584579,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665685480526,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670510892900,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Proximity Explosive Knife applies 60 Scorch on detonation. \nDirect Hit Kills with Proximity Explosive Knife ignite.\n\n500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded.",
+     "main": "Proximity Explosive Knife applies 60 Scorch on detonation. (Unaffected by Ember of Ashes)\nProximity Explosive Knife kills cause an ignition.\n\nGrants 500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded.",
      "secondary": "import self"
     },
     "ko": {
@@ -31914,7 +31933,31 @@
      "main": "感应飞刀在爆炸时施加 60 层灼烧。\n如果使用感应飞刀直接击中击杀敌人，则会触发点燃效果。\n\n感应飞刀未爆炸时，近战技能基础冷却速度增加 500%。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678821012054,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665685480526,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670510892900,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2179914730": {
    "hash": 2179914730,
@@ -32029,39 +32072,15 @@
    "inLiveDatabase": true
   },
   "2192678014": {
-   "hash": 2192678014,
    "name": "Roving Assassin",
-   "itemHash": 1474735276,
    "itemName": "Gwisin Vest",
+   "hash": 2192678014,
+   "itemHash": 1474735276,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667590485103,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665696387572,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670678750983,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While in Spectral Blade:\nRestores Super Energy on Heavy Attack based on the amount of Spectral Blade Kills.\n\nSuper Energy % gains based on kills\n< table >\n| <pve 11.1 /> | 🠚 | <pve 14.3 /> | 🠚 | <pve 16.5 /> | 🠚 | <pve 16.9 /> | 🠚 | <pve 17.1 />\n| <pvp 8.3 />  | 🠚 | <pvp 12.5 /> | 🠚 | <pvp 14.2 /> | 🠚 | <pvp 15.8 /> | 🠚 | <pvp 16.7 />\n<$>",
-     "secondary": "While in Spectral Blade:\nRestores Super Energy on Heavy Attack based on the amount of Spectral Blade Kills.\n\nSuper Energy % gains based on kills\nPVE: 11.1 🠚 14.3 🠚 16.5 🠚 16.9 🠚 17.1\nPVP: 8.3 🠚 12.5 🠚 14.2 🠚 15.8 🠚 16.7"
+     "main": "While in Spectral Blades:\nRefunds Super Energy on Heavy Attack based on the number of Spectral Blade Kills.\n\nSuper Energy Refund after 1|2|3|4|5+ kills:\n[PVE] 11.1% | 14.3% | 16.5% | 16.9% | 17.1% <pve/>\n[PVP] 8.3% | 12.5% | 14.2% | 15.8% | 16.7% <pvp/>",
+     "secondary": "import self"
     },
     "ko": {
      "main": "스팩트럼 칼날 시전 중:\n강공격을 하면 스팩트럼 칼날로 처치한 적의 수에 비례해 궁극기 에너지를 반환합니다.\n\n궁극기 반환률:\n< table >\n| <pve 11.1% /> | 🠚 | <pve 14.3% /> | 🠚 | <pve 16.5% /> | 🠚 | <pve 16.9% /> | 🠚 | <pve 17.1% />\n| <pvp 8.3% />  | 🠚 | <pvp 12.5% /> | 🠚 | <pvp 14.2% /> | 🠚 | <pvp 15.8% /> | 🠚 | <pvp 16.7% />\n<$>",
@@ -32071,36 +32090,60 @@
      "main": "在超能鬼灵利刃期间：\n根据重攻击的击杀数量，恢复超能能量。\n\n基于击杀数量的超能能量增长（%）\n< table >\n| <pve 11.1 /> | 🠚 | <pve 14.3 /> | 🠚 | <pve 16.5 /> | 🠚 | <pve 16.9 /> | 🠚 | <pve 17.1 />\n| <pvp 8.3 />  | 🠚 | <pvp 12.5 /> | 🠚 | <pvp 14.2 /> | 🠚 | <pvp 15.8 /> | 🠚 | <pvp 16.7 />\n<$>",
      "secondary": "在超能鬼灵利刃期间：\n根据重攻击的击杀数量，恢复超能能量。\n\n基于击杀数量的超能能量增长（%）\nPVE: 11.1 🠚 14.3 🠚 16.5 🠚 16.9 🠚 17.1\nPVP: 8.3 🠚 12.5 🠚 14.2 🠚 15.8 🠚 16.7"
     }
-   }
-  },
-  "2192678015": {
-   "hash": 2192678015,
-   "name": "Double Dodge",
-   "itemHash": 1474735277,
-   "itemName": "The Sixth Coyote",
-   "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678822411979,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665696387572,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670678750983,
+      "updatedBy": "Mistwalker"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667593945820,
-      "updatedBy": "Fading Shadow"
-     }
     }
    },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2192678015": {
+   "name": "Double Dodge",
+   "itemName": "The Sixth Coyote",
+   "hash": 2192678015,
+   "itemHash": 1474735277,
+   "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants an extra Class Ability Charge.\nAbility Charges are capped at a maximum of 2.",
+     "main": "Grants an extra Class Ability Charge.",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678825075392,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2192962617": {
    "hash": 2192962617,
@@ -38130,7 +38173,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants an extra Melee Ability Charge.\n\nCurrently does not work with Strand. ",
+     "main": "Grants an extra Melee Ability Charge.",
      "secondary": "import self"
     },
     "ko": {
@@ -38145,7 +38188,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678573761208,
+      "lastUpdate": 1678818537392,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -38163,7 +38206,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38594,38 +38637,23 @@
    "inLiveDatabase": true
   },
   "2663272109": {
-   "hash": 2663272109,
    "name": "Relentless Tracker",
-   "itemHash": 896224899,
    "itemName": "Foetracer",
+   "hash": 2663272109,
+   "itemHash": 896224899,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667589861373,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667589902528,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665695604529,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670677389837,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "Airborne": [
+     {
+      "passive": {
+       "stat": [ 20 ]
+      }
      }
-    }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Passively grants +20 Airborne Effectiveness.\n\nMarks enemies for 5 seconds after hovering your reticle near them for 1 second.\nMark persists through walls.\n\nIf Enemy is below 30% HP: \nGrants 1% increased damage for every percent below 30%\n(Eg: 10% HP left -> 20% Damage Increase)\n\nDamage Increase applies to all damage dealt.",
+     "main": "Passively grants 20 Airborne Effectiveness.\n\nMoving your reticle near enemies for 1 second marks them for 5 seconds. Mark is visible through walls.\n\nIf Enemy is below 30% HP: \nGrants 1% increased Weapon and Ability Damage for every percentage point below 30%.\n(10% HP left >> 20% Increased Damage)",
      "secondary": "import self"
     },
     "ko": {
@@ -38637,49 +38665,58 @@
      "secondary": "import self"
     }
    },
-   "stats": {
-    "Airborne": [
-     {
-      "passive": {
-       "stat": [ 20 ]
-      }
-     }
-    ]
-   }
-  },
-  "2663272110": {
-   "hash": 2663272110,
-   "name": "Hawkeye Hack",
-   "itemHash": 1321354573,
-   "itemName": "Celestial Nighthawk",
-   "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1667589608336,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1678821788266,
+      "updatedBy": "Stardust"
      },
      "ko": {
-      "lastUpdate": 1665685669234,
+      "lastUpdate": 1665695604529,
       "updatedBy": "tritonesub251"
      },
      "zh-chs": {
-      "lastUpdate": 1670511030527,
+      "lastUpdate": 1670677389837,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1667589861373,
+     "updatedBy": "Fading Shadow"
     }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2663272110": {
+   "name": "Hawkeye Hack",
+   "itemName": "Celestial Nighthawk",
+   "hash": 2663272110,
+   "itemHash": 1321354573,
+   "type": "Armor Trait Exotic",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 6 ]
+      },
+      "weaponTypes": [ "Super" ]
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 6 ]
+      },
+      "weaponTypes": [ "Super" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Golden Gun can only fire once per activation.\n\nGolden Gun deals 500% increased damage.\n(37% more damage compared to 3 Precision Hits with Marksman Golden Gun).\n\nReturns 33% of Super Energy on Kill.",
+     "main": "Modified Golden Gun deals 500% Increased Damage but can only fire once per activation.\n(37% more Damage compared to 3 Precision Hits with Marksman Golden Gun)\n\nScoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode.",
      "secondary": "import self"
     },
     "ko": {
@@ -38690,44 +38727,68 @@
      "main": "黄金枪每次激活只能开一枪。\n\n黄金枪造成 500% 额外伤害。\n（比使用射手黄金枪精确命中 3 次造成的伤害高 37%）。\n\n击杀敌人时返还 33% 的超能能量。",
      "secondary": "import self"
     }
-   }
-  },
-  "2663272111": {
-   "hash": 2663272111,
-   "name": "Upgraded Sensor Pack",
-   "itemHash": 1321354572,
-   "itemName": "Knucklehead Radar",
-   "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1668260099949,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1678821331121,
+      "updatedBy": "Stardust"
      },
      "ko": {
-      "lastUpdate": 1665697694734,
+      "lastUpdate": 1665685669234,
       "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670511030527,
+      "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 1678821251432,
+     "updatedBy": "Stardust"
     }
    },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2663272111": {
+   "name": "Upgraded Sensor Pack",
+   "itemName": "Knucklehead Radar",
+   "hash": 2663272111,
+   "itemHash": 1321354572,
+   "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Radar remains active while Aiming Down Sights.\n\nIf crouched:\nGrants Enhanced Radar.\n(Has 12 sectors instead of 6)",
+     "main": "Radar remains active while Aiming Down Sights.\n\nCrouching Grants Enhanced Radar.\n(Has 12 sections instead of 6)",
      "secondary": "import self"
     },
     "ko": {
      "main": "무기를 조준하는 동안에도 레이더가 활성화됩니다.\n\n웅크릴 때:\n레이더가 향상됩니다.\n(섹터가 6개에서 12개로 증가합니다.)",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678823276148,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665697694734,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2670025099": {
    "hash": 2670025099,
@@ -39627,7 +39688,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40767,33 +40828,11 @@
    "inLiveDatabase": true
   },
   "2805134531": {
-   "hash": 2805134531,
    "name": "Nightmare Fuel",
-   "itemHash": 1688602431,
    "itemName": "Sealed Ahamkara Grasps",
+   "hash": 2805134531,
+   "itemHash": 1688602431,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667593753415,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260534437,
-      "updatedBy": "Icemourne"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Melee Hits <title refresh [G_refresh] /> magazine for your equipped weapon and grant +50 Airborne Effectiveness for 5 seconds.\n\n7 second cooldown.",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Airborne": [
      {
@@ -40802,7 +40841,29 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Melee Hits <title refill [G_refill] /> the magazine of your equipped weapon from reserves and grant 50 Airborne Effectiveness for 5 seconds.\n\n7 second cooldown between activations.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678825039918,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667593753415,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2805854721": {
    "hash": 2805854721,
@@ -44548,7 +44609,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678817848971,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46449,41 +46510,11 @@
    "itemName": "Ticuu's Divination"
   },
   "3241194940": {
-   "hash": 3241194940,
    "name": "Jump Jets",
-   "itemHash": 3539357318,
    "itemName": "Lion Rampant",
+   "hash": 3241194940,
+   "itemHash": 3539357318,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667585812515,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667585819655,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665698023260,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Enables hipfiring while in Lift, and passively grants +50 Airborne Effectiveness while hipfiring.\n\nIncreases Lift Duration to 4 seconds.\n\nLift Duration in seconds:\nHigh Lift: 2.6 -> 4 (54% increase)\nStafe Lift: 2.2 -> 4 (82% increase)\nCatapult Lift: 1 -> 4 (300% increase!)",
-     "secondary": "import self"
-    },
-    "ko": {
-     "main": "부양 도중 비조준 사격을 할 수 있게 되며 비조준 사격 한정으로 상시 공중 효율을 50 만큼 증가시킵니다.\n\n부양의 지속 시간을 4초로 증가시킵니다.\n\n부양 지속 시간 증가:\n높은 부양: 2.6초 -> 4초 (54% 증가)\n제어 부양: 2.2초 -> 4초 (82% 증가)\n사출 부양: 1초 -> 4초 (300% 증가)",
-     "secondary": ""
-    }
-   },
    "stats": {
     "Airborne": [
      {
@@ -46492,7 +46523,37 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Enables hipfiring while in Lift, and passively grants 50 Airborne Effectiveness while hipfiring.\n\nIncreases Lift Duration to 4 seconds:\n• High Lift: 2.6  🠚 4 (54% increase)\n• Stafe Lift: 2.2  🠚 4 (82% increase)\n• Catapult Lift: 1  🠚 4 (300% increase)",
+     "secondary": "import self"
+    },
+    "ko": {
+     "main": "부양 도중 비조준 사격을 할 수 있게 되며 비조준 사격 한정으로 상시 공중 효율을 50 만큼 증가시킵니다.\n\n부양의 지속 시간을 4초로 증가시킵니다.\n\n부양 지속 시간 증가:\n높은 부양: 2.6초 -> 4초 (54% 증가)\n제어 부양: 2.2초 -> 4초 (82% 증가)\n사출 부양: 1초 -> 4초 (300% 증가)",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678823341931,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665698023260,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667585812515,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3241194941": {
    "name": "Mecha Holster",
@@ -46983,53 +47044,15 @@
    "inLiveDatabase": true
   },
   "3268255645": {
-   "hash": 3268255645,
    "name": "Sect of Force",
+   "hash": 3268255645,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667594660176,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667594692272,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665683175354,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670508903000,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Scoring 4 Precision Hits within 2.5 seconds of each grants Aeon Weapon Haste for 6 seconds.\n\nAeon Weapon Haste grants +10 Reload (w/ 0.8x Duration Multiplier), as well as +10 Handling to Ready and Stow Speed.\n\nOn Champion Stun, Mini-Boss, or Boss Kill:\n • Allies within 30 metres gain 50% Grenade and Melee Energy.\n • Aeon Allies additionally gain 10% Super Energy.\n\n4 second cooldown between activations.",
-     "secondary": "import self"
-    },
-    "ko": {
-     "main": "각 정밀타를 2.5초 이내에 4번 적중하면 6초 동안 영겁의 분노 효과를 얻게 됩니다.\n\n영겁의 분노는 재장전 수치를 10 올려주며 조작성 수치 또한 10을 올려줍니다.\n\n용사 기절, 미니보스 및 보스 처치 시:\n30미터 이내에 있는 아군들은 수류탄과 근접 능력 에너지 50%를 받습니다.\n\n 추가로 영겁 시리즈를 장착한 아군들은 궁극기 에너지 10%를 받습니다.\n\n 효과 발동 사이에 4초의 쿨다운이 있습니다.",
-     "secondary": ""
-    },
-    "zh-chs": {
-     "main": "在 2.5 秒内完成 4 次精准攻击会获得“永劫教派武器加速”增益，持续6秒。\n\n“永劫教派武器加速”提供 +10 填装速度（附带 0.8x 填装<title 动画系数 [G_as] />），对拔枪/收枪动作 +10 操控性。\n\n在击晕勇士、次级首领或者首领时：\n • 30 米范围内的队友获得 50% 的手雷和近战能量。\n • 永劫教派队友额外获得 10% 的超量能量。\n\n触发间隔 4 秒。",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Reload": [
      {
       "active": {
-       "multiplier": [ 0.8 ],
-       "stat": [ 10 ]
+       "stat": [ 10 ],
+       "multiplier": [ 0.85 ]
       }
      }
     ],
@@ -47047,7 +47070,45 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Scoring 4 Precision Hits within 2.5 seconds of each grants Aeon Weapon Haste for 6 seconds.\n\nAeon Weapon Haste grants 10 Reload Speed, a 0.85x Reload Duration Multiplier, and 10 Ready/Stow Handling.\n\nOn Champion Stuns and Miniboss or Boss Kills:\nAllies within 30 meters gain 50% Grenade and Melee Energy. Aeon Allies not using Sect of Force additionally gain 10% Super Energy.\n\n4 second cooldown between activations.",
+     "secondary": "import self"
+    },
+    "ko": {
+     "main": "각 정밀타를 2.5초 이내에 4번 적중하면 6초 동안 영겁의 분노 효과를 얻게 됩니다.\n\n영겁의 분노는 재장전 수치를 10 올려주며 조작성 수치 또한 10을 올려줍니다.\n\n용사 기절, 미니보스 및 보스 처치 시:\n30미터 이내에 있는 아군들은 수류탄과 근접 능력 에너지 50%를 받습니다.\n\n 추가로 영겁 시리즈를 장착한 아군들은 궁극기 에너지 10%를 받습니다.\n\n 효과 발동 사이에 4초의 쿨다운이 있습니다.",
+     "secondary": ""
+    },
+    "zh-chs": {
+     "main": "在 2.5 秒内完成 4 次精准攻击会获得“永劫教派武器加速”增益，持续6秒。\n\n“永劫教派武器加速”提供 +10 填装速度（附带 0.8x 填装<title 动画系数 [G_as] />），对拔枪/收枪动作 +10 操控性。\n\n在击晕勇士、次级首领或者首领时：\n • 30 米范围内的队友获得 50% 的手雷和近战能量。\n • 永劫教派队友额外获得 10% 的超量能量。\n\n触发间隔 4 秒。",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678826673719,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683175354,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670508903000,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678826577529,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3272152575": {
    "hash": 3272152575,
@@ -50923,38 +50984,14 @@
    "inLiveDatabase": false
   },
   "3556461530": {
-   "hash": 3556461530,
    "name": "Voltaic Mirror",
-   "itemHash": 1703551922,
    "itemName": "Blight Ranger",
+   "hash": 3556461530,
+   "itemHash": 1703551922,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667588714718,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665684183594,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670510292421,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "While in Arc Staff Super:\n • Blocking doesn't consume any extra Super Energy.\n • Projectiles reflected deal 650% increased damage.\n • Reflecting projectiles generates Orbs of Power for allies.",
+     "main": "While in Arc Staff Super:\n • Blocking doesn't consume Super Energy\n • Reflected projectiles deal 650% increased damage\n • Reflecting projectiles generates Orbs of Power for allies",
      "secondary": "import self"
     },
     "ko": {
@@ -50965,7 +51002,31 @@
      "main": "在电弧法杖超能状态下：\n• 格挡不消耗超能能量。\n• 反弹的弹道造成 650% 的额外伤害。\n• 反弹弹道可为队友产生能量球。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678820413704,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665684183594,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670510292421,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3556949035": {
    "hash": 3556949035,
@@ -52154,36 +52215,12 @@
    "uploadToLive": false
   },
   "3651607301": {
-   "hash": 3651607301,
    "name": "Sect of Insight",
+   "hash": 3651607301,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668259789534,
-      "updatedBy": "Icemourne"
-     },
-     "ko": {
-      "lastUpdate": 1665683187879,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670508854173,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "2 Precision Multikills drop an Orb of Power for allies.\n\nFinishing an Elite spawns a Special Ammo Brick for Allies\nFinishing a Mini-boss spawns a Power Ammo Brick for Allies.\n\nAeon Allies additionally receive a 35% Damage Increase for 20 seconds.",
+     "main": "Scoring 2 Precision Multikills creates an Orb of Power for allies.\n\nFinishers spawn Ammo Bricks for allies based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• Elites: <special/>Special Ammo Brick\n• Miniboss or Champion: <heavy/>Heavy Ammo Brick\n\nSpawned Ammo Bricks grant 33% less ammo.\n\nAeon Allies not using Sect of Insight gain 35% Increased Damage on Finishers for 20 seconds.",
      "secondary": "import self"
     },
     "ko": {
@@ -52194,7 +52231,31 @@
      "main": "2 次精准多杀会为队友掉落一个能量球。\n\n终结一个精英敌人会为队友生成一盒特殊弹药。\n终结一个次级首领会为队友生成一盒重弹药。\n\n永劫教派同伴额外获得 35% 的伤害增加，持续 20 秒。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678819438700,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665683187879,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670508854173,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3657186535": {
    "hash": 3657186535,
@@ -52352,38 +52413,32 @@
    "inLiveDatabase": true
   },
   "3663096260": {
-   "hash": 3663096260,
    "name": "Skittering Stinger",
-   "itemHash": 2415768376,
    "itemName": "Athrys's Embrace",
+   "hash": 3663096260,
+   "itemHash": 2415768376,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668259836118,
-      "updatedBy": "Icemourne"
-     },
-     "ko": {
-      "lastUpdate": 1665684125658,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670510130804,
-      "updatedBy": "Mistwalker"
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 3 ]
+      },
+      "weaponTypes": [ "Melee" ]
      }
-    }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 2 ]
+      },
+      "weaponTypes": [ "Melee" ]
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "Weighted Throwing Knives gain a second bounce with greatly increased tracking.\n\nAfter Scoring 3 Precision Hits within 2.5 seconds of each: Gain Strengthened Throwing Knife.\nAdditional Precision Hits increase duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife deal <pve 200% /> <pvp [100%] /> increased damage and stagger <unstoppable/>Unstoppable Champions.\n\nLanding a Knife Hit consumes Strengthened Throwing Knife.",
+     "main": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\n\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\n\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife deals <pve 200% /> <pvp [100%] /> increased damage and stuns <unstoppable/>Unstoppable Champions. Buff is consumed on Knife Hit.",
      "secondary": "import self"
     },
     "ko": {
@@ -52394,7 +52449,31 @@
      "main": "权衡飞刀可以弹跳两次，跟踪能力大大增强。\n\n在 2.5 秒内完成 3 次精确命中：获得强化权衡飞刀。\n每完成一次精确命中，持续时间增加 5 秒，最多可增加到 30 秒。\n\n强化权衡飞刀造成 <pve 200% /> <pvp [100%] /> 额外伤害，并可击晕势不可挡勇士。\n\n命中敌人将消耗强化权衡飞刀。",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678820318852,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665684125658,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670510130804,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1678820346693,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3665558569": {
    "hash": 3665558569,
@@ -52742,7 +52821,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Ally Deaths grant 25% Class Ability Energy.\nGrants 100% Class Ability Energy on Ally Revival.\n\nCasting Super fully heals allies within 30 meters.\n\nAeon Allies receive a 110 HP Overshield for 20 seconds that recharges after 3 seconds.",
+     "main": "Ally Deaths grant 25% Class Ability Energy.\nGrants 100% Class Ability Energy on Ally Revival.\n\nCasting Super fully heals allies within 30 meters.\n\nAeon Allies not using Sect of Vigor additionally receive a 110 HP Overshield for 20 seconds that starts recharging after 3 seconds if not broken.",
      "secondary": "import self"
     },
     "ko": {
@@ -52757,7 +52836,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678664407290,
+      "lastUpdate": 1678826798127,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -52775,7 +52854,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54486,14 +54565,14 @@
    "inLiveDatabase": true
   },
   "3809192347": {
-   "hash": 3809192347,
    "name": "See Me, Feel Me",
+   "itemName": "Gyrfalcon's Hauberk",
+   "hash": 3809192347,
+   "itemHash": 461841403,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1675798177540,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "/*\nGain <pve 35% /> <pvp [15%] /> Increased Weapon Damage for <pve 6 /> <pvp [3] /> seconds after Void Invisibility ends.\n\nFinishers while Invisible apply Volatile to enemies within [?] metres, and grant both you and allies within 24 metres a Reserve Overshield and 375% Additional Base Class Ability Regeneration Rate until either dying or using Class Ability.\n\nReserve Overshield is activated when you cast your Class Ability, granting you a 40 HP <void/>Void Overshield for 10 seconds.\n*/",
+     "main": "Upon Void Invisibility ending:\nGrants Volatile Rounds for <pve 10 /> <pvp [3] /> seconds.\n\nOn Finishers while affected by Void Invisibility:\n• Grants 35% Increased Damage for 6 seconds\n• Grants you and allies within 24 meters the Reserve Overshield buff\n\nReserve Overshield:\n• Grants 375% Additional Base Class Ability Regeneration Rate\n• Grants the user a 40 HP Void Overshield for 10 seconds on Class Abiliy usage\n• Buff is removed on Class Ability usage",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -54502,25 +54581,25 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1675610817056,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1678823108756,
+      "updatedBy": "Stardust"
      },
      "zh-chs": {
       "lastUpdate": 1670678941390,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
    "inLiveDatabase": true,
-   "itemName": "Gyrfalcon's Hauberk",
-   "itemHash": 461841403
+   "uploadToLive": false
   },
   "3809244044": {
    "hash": 3809244044,
@@ -57202,39 +57281,15 @@
    "inLiveDatabase": true
   },
   "4024170927": {
-   "hash": 4024170927,
    "name": "Misdirection",
-   "itemHash": 1163283805,
    "itemName": "Gemini Jester",
+   "hash": 4024170927,
+   "itemHash": 1163283805,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667590334960,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665695942877,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670677929937,
-      "updatedBy": "Mistwalker"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "On Dodge:\nApplies Misdirection to enemies within 22 metres.\n\nEffects of Misdirection:\n<pve Disorients minors and elites for 5 seconds. />\n<pvp Warps audio and removes radar for 5 seconds, as well as briefly blinding. />\n\nMisdirection doesn't actually deal damage.\n(Less than 0.001 at the very least)",
-     "secondary": "On Dodge:\nApplies Misdirection to enemies within 22 metres.\n\nEffects of Misdirection:\n• [PVE] Disorients minors and elites for 5 seconds.\n• [PVP] Warps audio and removes radar for 5 seconds, as well as briefly blinding.\n\nMisdirection doesn't actually do damage.\n(Less than 0.001 at the very least)"
+     "main": "On Class Ability Usage:\nApplies Misdirection to enemies within 22 meters.\n\nEffects of Misdirection:\n<pve [PVE] Disorients Minors and Elites for 5 seconds. />\n<pvp [PVP] Muffles audio, briefly disorients, and removes radar for 5 seconds. />\n\nMisdirection deals ~0 Damage but counts as a Hit.",
+     "secondary": "import self"
     },
     "ko": {
      "main": "회피 직후:\n22미터 이내에 있는 적에게 잘못된 방향을 부여합니다.\n\n<pve 잘못된 방향이 부하들과 리더들을 5초 간 혼란에 빠트립니다. />\n\n<pvp 잘못된 방향이 오디오를 일그러트리고, 레이더를 5초간 제거하며, 아주 잠깐 동안 실명에 빠트립니다. />\n\n잘못된 방향이 부여될 때 1 피해를 입힙니다.",
@@ -57244,7 +57299,31 @@
      "main": "躲闪时：\n向 22 米范围内的敌人施加迷惑。\n\n迷惑的效果：\n• <pve 使普通和精英敌人混乱5秒。 />\n• <pvp 扭曲声音并在 5 秒内移除雷达，并短暂致盲。 />\n\n迷惑不会造成伤害。",
      "secondary": "躲闪时：\n向 22 米范围内的敌人施加迷惑。\n\n迷惑的效果：\n• [PVE] 使普通和精英敌人混乱5秒。\n• [PVP] 扭曲声音并在 5 秒内移除雷达，并短暂致盲。\n\n迷惑不会造成伤害。"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678822140932,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665695942877,
+      "updatedBy": "tritonesub251"
+     },
+     "zh-chs": {
+      "lastUpdate": 1670677929937,
+      "updatedBy": "Mistwalker"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4036525828": {
    "hash": 4036525828,
@@ -58273,41 +58352,41 @@
    "inLiveDatabase": false
   },
   "4102900702": {
-   "hash": 4102900702,
    "name": "Touch of Venom",
-   "itemHash": 2757274117,
    "itemName": "Khepri's Sting",
+   "hash": 4102900702,
+   "itemHash": 2757274117,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667590739708,
-      "updatedBy": "Fading Shadow"
-     },
-     "ko": {
-      "lastUpdate": 1665697619293,
-      "updatedBy": "tritonesub251"
-     }
-    }
-   },
    "editor": {
     "en": {
-     "main": "Powered Melee Hits instantly cast Smoke Bomb.\nThrown Smoke Bombs deal 50% increased damage.\nQuickfall does not receive increased damage.\n\nStanding in the Smoke Bomb's Cloud grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 metres away.",
+     "main": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds. Truseight allows you to see enemy outlines through walls from up to 64 meters away.\n\nGrants ?% Additional Base Melee Regeneration Rate while Smoke Bomb remains undetonated. \n\nProviding Invisibility via the Smoke Bomb prevents the Ability Recharge Bonus from applying.",
      "secondary": "import self"
     },
     "ko": {
      "main": "근접 능력이 충전 된 상태에서 근접 공격을 하면 연막탄이 즉시 터집니다.\n연막탄의 피해가 150% 증가합니다.\n\n연막안에 들어가면 3초간 트루사이트를 부여하며 벽을 뚫고 64미터 이내의 적들의 위치를 알 수 있습니다.",
      "secondary": ""
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678823233660,
+      "updatedBy": "Stardust"
+     },
+     "ko": {
+      "lastUpdate": 1665697619293,
+      "updatedBy": "tritonesub251"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1658513881743,
+     "updatedBy": "Fading-Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4104185692": {
    "name": "Frenzy",
@@ -58459,33 +58538,33 @@
    "uploadToLive": false
   },
   "4120041779": {
-   "hash": 4120041779,
    "name": "Acrobat's Focus",
+   "itemName": "Cyrtarachne's Facade",
+   "hash": 4120041779,
+   "itemHash": 192896783,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1677677992214,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Grappling grants Woven Mail and ?% Flinch Resistance for 10(?) seconds.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678821398182,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 192896783,
-   "itemName": "Cyrtarachne's Facade"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4126105782": {
    "hash": 4126105782,
@@ -59283,33 +59362,33 @@
    "inLiveDatabase": true
   },
   "4190535237": {
-   "hash": 4190535237,
    "name": "Ursine Guard",
-   "itemHash": 1848640623,
    "itemName": "Ursa Furiosa",
+   "hash": 4190535237,
+   "itemHash": 1848640623,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Sentinel Shield's Forward Movement Speed Penalty while Blocking is reduced to 10%.\n\nConverts incoming damage into Super Energy after Super ends, up to 50% Super Energy.\n\nBlocking Damage with an active Overshield does not count towards the Super Energy Refund.",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1678818887031,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658513881743,
      "updatedBy": "Fading-Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1658513881743,
-      "updatedBy": "Fading-Shadow"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "Move forward at 90% your speed while blocking with Sentinel Shield.\n\nConverts incoming damage into Super Energy after Super ends, up to 50%.\n\n<center/><yellow Overshields prevent damage into Super Energy conversion so don't stand in a Well of Radiance. />",
-     "secondary": "Move forward at 90% your speed while blocking with Sentinel Shield.\r\n\r\nConverts incoming damage into Super Energy after Super ends, up to 50%.\r\n\r\nOvershields prevent damage into Super Energy conversion so don't stand in a Well of Radiance.\r\n"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1678826803027,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4190643473": {
    "hash": 4190643473,
