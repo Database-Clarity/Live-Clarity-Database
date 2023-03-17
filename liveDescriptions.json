@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2347,14 +2347,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Upon scoring multiple hits within [?] seconds of each:\nAutomatically shoots a Tracking Rocket that matches Weapon's Damage Type.\n\nRockets deal <pve 22.4 /> <pvp [14] /> impact and <pve 24 /> <pvp [15] /> explosive damage on hit and inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\n% of Magazine Capacity as hits required:\n• Pulse Rifle: 45%\n• Hand Cannon: (?)%",
+     "main": "Upon scoring multiple hits within [?] seconds of each:\nAutomatically shoots a Tracking Rocket that matches Weapon's Damage Type.\n\nRockets deal <pve 22.4 /> <pvp [14] /> impact and <pve 24 /> <pvp [15] /> explosive damage on hit and inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\n% of Magazine Capacity as hits required:\n• Pulse Rifles, Hand Cannons, Submachine Guns: 45%\n• Machine Guns: 25%\n• Fusion Rifles, Grenade Launchers: ?%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678062863661,
+      "lastUpdate": 1679071144552,
       "updatedBy": "Stardust"
      }
     },
@@ -2364,7 +2364,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4665,7 +4665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6730,7 +6730,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7613,7 +7613,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill, for all weapons, for 8.5 seconds:\n100 Handling and 0.825x Handling Animation Duration Multiplier.\n\nAdditional kills while the perk is active refresh the duration to 6.5 seconds.\n\nenhanced (\n#e Buff Duration is increased.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "On Weapon Kill, for #e${8.5+#d} seconds:\nGrants 100 Handling and a 0.825x Handling Animation Duration Multiplier to all weapons.\n\nAdditional kills while the perk is active refresh the duration to 6.5 seconds.\n\nenhanced (\nvar d = 1\n#e Initial Buff Duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -7624,7 +7624,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676227303607,
+      "lastUpdate": 1679071030129,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -7638,7 +7638,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16805,7 +16805,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Surrounded by 3+ enemies:\nGrants Biotic Enhancements for 8 seconds\n\nBiotic Enhancements:\n• 50% Increased Super Damage\n• <pve 200% /> <pvp 100% /> Increased (Glaive) Melee Damage\n\nIncreases Melee Lunge Range to 7 meters.\n",
+     "main": "While Surrounded by 3+ enemies:\nGrants Biotic Enhancements for 8 seconds\n\nBiotic Enhancements:\n• 50% Increased Super Damage\n• <pve 200% /> <pvp [100%] /> Increased Melee Damage\n• 50% Increased Glaive Melee Damage\n\nIncreases Melee Lunge Range to 7 meters.\n",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -16816,7 +16816,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678745274363,
+      "lastUpdate": 1679071301814,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -16830,7 +16830,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678745908076,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23720,7 +23720,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27573,26 +27573,35 @@
    "name": "Noble Deeds",
    "hash": 1823011807,
    "type": "Weapon Trait Origin",
+   "stats": {
+    "Guard Charge Rate": [
+     {
+      "active": {
+       "stat": [ 20 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove <pve 1 /> <pvp [2] /> Stacks of Noble Deeds.\n\nNoble Deeds grants [?] Handling and [?] Reload Speed. Swords receive [?] Charge Rate.",
+     "main": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove <pve 1 /> <pvp [2] /> Stacks of Noble Deeds.\n\nNoble Deeds grants (?) Handling and (?) Reload Speed. Swords receive 20 Charge Rate.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678657243069,
+      "lastUpdate": 1679071230913,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1679071203834,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44638,7 +44647,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54722,7 +54731,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While blocking and stationary:\nGlaive Projectiles Hits grant #e${60+#d}% Weapon Energy (up from 25%).\n\nenhanced (\nvar d = 5\n#e Energy Bonus on Hit is increased by an additive 5%.\n)",
+     "main": "While blocking and stationary:\nGlaive Projectiles Hits grant #e${35+#d}% Weapon Energy (up from the base amount of 25%).\n\nenhanced (\nvar d = 5\n#e Energy Bonus on Hit is increased by an additive 5%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -54733,7 +54742,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678889178289,
+      "lastUpdate": 1679070621745,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -54747,7 +54756,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678890274077,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -55553,14 +55562,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Dealing sustained damage to a target emits 3 damaging shockwaves from its location at the time of activation.\n\nEach shockwave deals <pve 91 /> <pvp [20.33] /> damage over a [?] meter radius. Shockwaves inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Activates more quickly.\n)",
+     "main": "Dealing sustained damage to a single target emits 3 damaging shockwaves from its location at the time of activation.\n\nEach shockwave deals <pve 91 /> <pvp [20.33] /> damage over a 5 meter radius. Shockwaves inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nHits Required for Activation:\n• Pulse Rifles 12\n• Scout Rifles: 6\n\nenhanced (\n#e Activates more quickly.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678559663130,
+      "lastUpdate": 1679070903437,
       "updatedBy": "Stardust"
      }
     },
@@ -55570,7 +55579,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -58573,7 +58582,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds. Truseight allows you to see enemy outlines through walls from up to 64 meters away.\n\nGrants ?% Additional Base Melee Regeneration Rate while Smoke Bomb remains undetonated. \n\nProviding Invisibility via the Smoke Bomb prevents the Ability Recharge Bonus from applying.",
+     "main": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds. Truseight allows you to see enemy outlines through walls from up to 64 meters away.\n\nGrants 500% Additional Base Melee Regeneration Rate while Smoke Bomb remains undetonated. \n\nProviding Invisibility via the Smoke Bomb prevents the Ability Recharge Bonus from applying.",
      "secondary": "import self"
     },
     "ko": {
@@ -58584,7 +58593,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678823233660,
+      "lastUpdate": 1679071341693,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -58598,7 +58607,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1679071363533,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
