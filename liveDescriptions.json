@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679498248086,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4665,7 +4665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679498248086,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6730,7 +6730,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679498248086,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7705,31 +7705,47 @@
    "uploadToLive": false
   },
   "518387148": {
-   "hash": 518387148,
    "name": "Sprint Grip",
+   "hash": 518387148,
    "type": "Weapon Mod",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1658141469485,
-     "updatedBy": "Icemourne"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667578882825,
-      "updatedBy": "Fading Shadow"
+   "stats": {
+    "Stow": [
+     {
+      "active": {
+       "stat": [ 30 ]
+      }
      }
-    }
+    ],
+    "ADS": [
+     {
+      "active": {
+       "stat": [ 30 ]
+      }
+     }
+    ]
    },
    "editor": {
     "en": {
-     "main": "X Handling for Y seconds after sprinting for Z seconds.",
+     "main": "Grants 30 Stow Handling while sprinting.\n\nCancelling spring by Aiming Down Sights provides the Handling benefit to ADS as well.",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1679597059172,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1679597096009,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1679597202350,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "518521232": {
    "hash": 518521232,
@@ -10596,31 +10612,9 @@
    "inLiveDatabase": true
   },
   "736000386": {
-   "hash": 736000386,
    "name": "Freehand Grip",
+   "hash": 736000386,
    "type": "Weapon Mod",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667578713294,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667741566603,
-      "updatedBy": "Icemourne"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "-30% Hipfire Accuracy Cone Size\n-[?]% Hipfire <title Accuracy Cone Growth [G_conegrowth] />\n-5% Ready Animation Duration",
-     "secondary": "import self"
-    }
-   },
    "stats": {
     "Ready": [
      {
@@ -10629,7 +10623,29 @@
       }
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Passively grants:\n• -15% Hipfire Accuracy Cone Size\n• 0.95x Ready Animation Duration Multiplier",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1679596901599,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667578713294,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1679597202350,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "738967614": {
    "hash": 738967614,
@@ -20226,7 +20242,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}% Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%. (55% » 45%)\n)",
+     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%. (55% » 45%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -20237,7 +20253,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676929682718,
+      "lastUpdate": 1679597177842,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -20251,7 +20267,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676932239634,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23720,7 +23736,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679498248086,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27540,7 +27556,7 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• #e${-80+#d}% Auto Aim Cone Size (No effect on Reticle Stickiness)\n\nenhanced (\nvar d = 5\n#e Auto Aim Penalty is decreased by an additive 5%. \n)",
+     "main": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• #e${-80+#d}%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)\n\nenhanced (\nvar d = 5\n#e Auto Aim Penalty is decreased by an additive 5%. \n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -27551,7 +27567,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676929875571,
+      "lastUpdate": 1679597187772,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -27565,7 +27581,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676932239634,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44647,7 +44663,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679498248086,
+   "lastUpload": 1679597202350,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48106,31 +48122,31 @@
    "uploadToLive": false
   },
   "3336648220": {
-   "hash": 3336648220,
    "name": "Backup Mag",
+   "hash": 3336648220,
    "type": "Weapon Mod",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
+   "editor": {
+    "en": {
+     "main": "Grants 30 Magazine Stat. Identical to Extended Mag.",
+     "secondary": "import self"
+    }
+   },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1679596841165,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 1658141469485,
      "updatedBy": "Icemourne"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1675611058141,
-      "updatedBy": "Icemourne"
-     }
     }
    },
-   "editor": {
-    "en": {
-     "main": "// Bungie stats are no longer allowed",
-     "secondary": "import self"
-    }
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1679597202350,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3337174653": {
    "hash": 3337174653,
