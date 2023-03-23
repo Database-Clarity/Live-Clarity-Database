@@ -2,7 +2,7 @@
 - Consider [supporting our project](https://ko-fi.com/d2clarity) through Ko-Fi to help us maintain Clarity as a free resource.
 
 ## Usage of our data
-- You are allowed to use all the data in the database so long as you properly credit us in your project with the following:
+- You are allowed to use all the data in the database for smaller private projects (like a private bot for your clan) so long as you properly credit us in your project with the following:
   - The name of our project: `Clarity`
   - A link to our website: https://www.d2clarity.com
   - These credits should be clearly visible and easily accessible for users
@@ -19,3 +19,4 @@
 - [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
 - [Felicity](https://tryfelicity.one): A Discord Bot by Leaf
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
+- [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
