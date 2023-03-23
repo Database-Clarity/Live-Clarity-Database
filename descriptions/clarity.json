@@ -202,7 +202,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1679498248086,
+  "lastUpload": 1679597202350,
   "stats": {
    "Handling": [
     {
@@ -3786,7 +3786,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1679498248086,
+  "lastUpload": 1679597202350,
   "stats": {
    "PVE Damage": [
     {
@@ -4751,7 +4751,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1679498248086,
+  "lastUpload": 1679597202350,
   "stats": {
    "Handling": [
     {
@@ -6261,7 +6261,23 @@
  "518387148": {
   "hash": 518387148,
   "name": "Sprint Grip",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1679597202350,
+  "stats": {
+   "Stow": [
+    {
+     "active": {
+      "stat": [ 30 ]
+     }
+    }
+   ],
+   "ADS": [
+    {
+     "active": {
+      "stat": [ 30 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Mod",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6269,7 +6285,17 @@
     {
      "linesContent": [
       {
-       "text": "X Handling for Y seconds after sprinting for Z seconds."
+       "text": "Grants 30 Stow Handling while sprinting."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Cancelling spring by Aiming Down Sights provides the Handling benefit to ADS as well."
       }
      ]
     }
@@ -9409,7 +9435,7 @@
  "736000386": {
   "hash": 736000386,
   "name": "Freehand Grip",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1679597202350,
   "stats": {
    "Ready": [
     {
@@ -9426,34 +9452,21 @@
     {
      "linesContent": [
       {
-       "text": "-30% Hipfire Accuracy Cone Size"
+       "text": "Passively grants:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "-[?]% Hipfire "
-      },
-      {
-       "text": "Accuracy Cone Growth",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "How Fast Your Accuracy Cone Expands as you fire your weapon. The less the better."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
+       "text": "• -15% Hipfire Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "-5% Ready Animation Duration"
+       "text": "• 0.95x Ready Animation Duration Multiplier"
       }
      ]
     }
@@ -17812,7 +17825,7 @@
  "1365187766": {
   "hash": 1365187766,
   "name": "Gutshot Straight",
-  "lastUpload": 1676932239634,
+  "lastUpload": 1679597202350,
   "stats": {
    "PVE Damage": [
     {
@@ -17864,7 +17877,7 @@
     {
      "linesContent": [
       {
-       "text": "• -55% Auto Aim Cone Size (No effect on reticle stickiness)"
+       "text": "• -55%(?) Auto Aim Cone Size (No effect on reticle stickiness)"
       }
      ]
     },
@@ -21330,7 +21343,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1679498248086,
+  "lastUpload": 1679597202350,
   "stats": {
    "Charge Draw": [
     {
@@ -24105,7 +24118,7 @@
  "1821614984": {
   "hash": 1821614984,
   "name": "Slickdraw",
-  "lastUpload": 1676932239634,
+  "lastUpload": 1679597202350,
   "stats": {
    "Handling": [
     {
@@ -24150,7 +24163,7 @@
     {
      "linesContent": [
       {
-       "text": "• -80% Auto Aim Cone Size (No effect on Reticle Stickiness)"
+       "text": "• -80%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)"
       }
      ]
     }
@@ -25922,7 +25935,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-75% Auto Aim Cone Size (No effect on Reticle Stickiness)"
+       "text": "-75%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)"
       }
      ]
     },
@@ -38585,7 +38598,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1679498248086,
+  "lastUpload": 1679597202350,
   "stats": {
    "PVE Damage": [
     {
@@ -41132,9 +41145,20 @@
  "3336648220": {
   "hash": 3336648220,
   "name": "Backup Mag",
-  "lastUpload": 1675798177540,
+  "lastUpload": 1679597202350,
   "type": "Weapon Mod",
-  "uploadedBy": "Stardust"
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants 30 Magazine Stat. Identical to Extended Mag."
+      }
+     ]
+    }
+   ]
+  }
  },
  "3337692349": {
   "hash": 3337692349,
@@ -51668,7 +51692,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-45% Auto Aim Cone Size (No effect on reticle stickiness)"
+       "text": "-45%(?) Auto Aim Cone Size (No effect on reticle stickiness)"
       }
      ]
     },
