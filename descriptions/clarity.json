@@ -10,7 +10,30 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+       "text": "Spawns a "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Heavy Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter Progress on Weapon Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1.1% to 1.33%. Average of 83.5 Kills."
       }
      ]
     },
@@ -33,20 +56,31 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.25x"
+       "text": "Primary Weapons: 4.25x"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Exotic "
+       "text": "• "
+      },
+      {
+       "text": "Exotic",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " "
       },
       {
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.67x"
+       "text": "Primary Weapons:",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " 5.05x"
       }
      ]
     },
@@ -59,7 +93,11 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Weapons: (?)x"
+       "text": "Special Weapons:",
+       "classNames": [ "green" ]
+      },
+      {
+       "text": " 1.05x"
       }
      ]
     },
@@ -69,7 +107,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Ammo Finder Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
       }
      ]
     }
@@ -279,7 +317,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1680094609371,
+  "lastUpload": 1680122100570,
   "stats": {
    "Handling": [
     {
@@ -1095,6 +1133,24 @@
    ]
   }
  },
+ "48578555": {
+  "hash": 48578555,
+  "name": "Shield Break Charge",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Breaking a Combatant Shield with the matching Elemental Damage Type grants 1 Stack of Armor Charge."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "64866129": {
   "hash": 64866129,
   "name": "Explosive Payload",
@@ -1253,6 +1309,44 @@
    ]
   }
  },
+ "95934356": {
+  "hash": 95934356,
+  "name": "Strand Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "96682422": {
   "hash": 96682422,
   "name": "Arc Targeting",
@@ -1264,7 +1358,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Arc Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons:"
       }
      ]
     },
@@ -2168,6 +2268,40 @@
        "text": "Stow Speed:",
        "formula": "stow_0",
        "classNames": [ "formula" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "193878019": {
+  "hash": 193878019,
+  "name": "Stasis Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -3608,7 +3742,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Solar Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons:"
       }
      ]
     },
@@ -3820,7 +3960,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1680094609371,
+  "lastUpload": 1680122100570,
   "stats": {
    "PVE Damage": [
     {
@@ -4087,6 +4227,63 @@
      "linesContent": [
       {
        "text": "Radar immediately returns when no longer Aiming Down Sights. (Normally takes 1.5 seconds)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "377010989": {
+  "hash": 377010989,
+  "name": "Impact Induction",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Grenade Ability Energy upon dealing Melee Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
       }
      ]
     }
@@ -5072,6 +5269,40 @@
      "linesContent": [
       {
        "text": "+7.5% 霰弹枪弹片散布。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "467550918": {
+  "hash": 467550918,
+  "name": "Void Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -6287,6 +6518,40 @@
    ]
   }
  },
+ "531665167": {
+  "hash": 531665167,
+  "name": "Solar Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "536173722": {
   "hash": 536173722,
   "name": "Pugilist",
@@ -6525,7 +6790,7 @@
  "554409585": {
   "hash": 554409585,
   "name": "Heavy Ammo Finder",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6533,7 +6798,30 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+       "text": "Spawns a "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Heavy Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter Progress on Weapon Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1.1% to 1.33%. Average of 83.5 Kills."
       }
      ]
     },
@@ -6556,20 +6844,31 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.25x"
+       "text": "Primary Weapons: 4.25x"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Exotic "
+       "text": "• "
+      },
+      {
+       "text": "Exotic",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " "
       },
       {
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.67x"
+       "text": "Primary Weapons:",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " 5.05x"
       }
      ]
     },
@@ -6582,7 +6881,11 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Weapons: (?)x"
+       "text": "Special Weapons:",
+       "classNames": [ "green" ]
+      },
+      {
+       "text": " 1.05x"
       }
      ]
     },
@@ -6592,7 +6895,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Ammo Finder Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
       }
      ]
     }
@@ -8107,6 +8410,44 @@
    ]
   }
  },
+ "634608391": {
+  "hash": 634608391,
+  "name": "Solar Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "634781242": {
   "hash": 634781242,
   "name": "Adept Reload",
@@ -8706,6 +9047,44 @@
    ]
   }
  },
+ "703902595": {
+  "hash": 703902595,
+  "name": "Stasis Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "706527188": {
   "hash": 706527188,
   "name": "Quickdraw",
@@ -9044,7 +9423,7 @@
  "721001747": {
   "hash": 721001747,
   "name": "Stasis Targeting",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -9052,7 +9431,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Stasis Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons:"
       }
      ]
     },
@@ -10275,7 +10660,7 @@
  "837201397": {
   "hash": 837201397,
   "name": "Stasis Siphon",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -10283,7 +10668,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a Stasis Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapon."
       }
      ]
     },
@@ -12224,10 +12615,10 @@
    ]
   }
  },
- "967052942": {
-  "hash": 967052942,
-  "name": "Arc Targeting",
-  "lastUpload": 1679865752213,
+ "965934024": {
+  "hash": 965934024,
+  "name": "Firepower",
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -12235,7 +12626,41 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Arc Weapons:"
+       "text": "Spawns an Orb of Power on Grenade Kills. 1 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spawned Orbs of Power Super grant (?)%|(?)%|(?)% Super Energy with 1|2|3 Mods."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "967052942": {
+  "hash": 967052942,
+  "name": "Arc Targeting",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons:"
       }
      ]
     },
@@ -12739,6 +13164,40 @@
      "linesContent": [
       {
        "text": "增益持续时间无法被再次换单而刷新。武器收起时保持生效。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1017385934": {
+  "hash": 1017385934,
+  "name": "Void Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -13783,6 +14242,44 @@
    ]
   }
  },
+ "1079896271": {
+  "hash": 1079896271,
+  "name": "Solar Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1086997255": {
   "hash": 1086997255,
   "name": "Solar Siphon",
@@ -13794,7 +14291,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a Solar Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapon."
       }
      ]
     },
@@ -13908,6 +14411,44 @@
    ]
   }
  },
+ "1125523126": {
+  "hash": 1125523126,
+  "name": "Arc Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1130820873": {
   "hash": 1130820873,
   "name": "Font of Wisdom",
@@ -13930,6 +14471,67 @@
      "linesContent": [
       {
        "text": "Armor Charge now decays over time at the rate of 1 every 10 seconds by default."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1139671158": {
+  "hash": 1139671158,
+  "name": "Melee Kickstart",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "When a Melee Ability Charge is consumed:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Melee Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack of Armor Charge is the equivalent of an additional Kickstart Mod."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ability Energy gains with 1|2|etc. Mods equipped:"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pve" ],
+     "linesContent": [
+      {
+       "text": "12.8% | 17.1% | 23.3% | 30.8% | 37.7% | 42.3% | 45.7% | 48.1% | 49.9%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pvp" ],
+     "linesContent": [
+      {
+       "text": "Ability Energy gains are halved in PVP."
       }
      ]
     }
@@ -14062,8 +14664,8 @@
  "1145640183": {
   "hash": 1145640183,
   "name": "Counterattack",
-  "lastUpload": 1675798177540,
-  "type": "weaponPerkEnhanced",
+  "lastUpload": 1680099036796,
+  "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
@@ -14078,6 +14680,20 @@
      "linesContent": [
       {
        "text": "50% Increased damage for 2 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff Duration is increased."
       }
      ]
     }
@@ -14142,6 +14758,63 @@
      "linesContent": [
       {
        "text": "• 2 meters longer Melee Lunge Distance (4.5 -> 6.5)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1153260021": {
+  "hash": 1153260021,
+  "name": "Impact Induction",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Grenade Ability Energy upon dealing Melee Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
       }
      ]
     }
@@ -16336,7 +17009,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a Void Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapon."
       }
      ]
     },
@@ -19740,6 +20419,34 @@
    ]
   }
  },
+ "1561736585": {
+  "hash": 1561736585,
+  "name": "Kinetic Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to Kinetic Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1561789734": {
   "hash": 1561789734,
   "name": "Firefly",
@@ -19821,8 +20528,8 @@
  "1563455254": {
   "hash": 1563455254,
   "name": "Rewind Rounds",
-  "lastUpload": 1675798177540,
-  "type": "weaponPerkEnhanced",
+  "lastUpload": 1680099036796,
+  "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
@@ -19902,6 +20609,20 @@
       },
       {
        "text": " Power Weapons"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Increases the refill amount per hit."
       }
      ]
     }
@@ -20242,7 +20963,7 @@
  "1589556860": {
   "hash": 1589556860,
   "name": "Void Targeting",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -20250,7 +20971,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Void Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons:"
       }
      ]
     },
@@ -20323,7 +21050,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1680094609371,
+  "lastUpload": 1680122100570,
   "stats": {
    "Charge Draw": [
     {
@@ -21572,6 +22299,50 @@
    ]
   }
  },
+ "1677180919": {
+  "hash": 1677180919,
+  "name": "Harmonic Dexterity",
+  "lastUpload": 1680122100570,
+  "stats": {
+   "Ready": [
+    {
+     "active": {
+      "multiplier": [ 0.8, 0.75, 0.7 ]
+     }
+    }
+   ],
+   "Stow": [
+    {
+     "active": {
+      "multiplier": [ 0.8, 0.75, 0.7 ]
+     }
+    }
+   ]
+  },
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to Weapons matching your Subclass Element with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1683379515": {
   "hash": 1683379515,
   "name": "Disruption Break",
@@ -22291,6 +23062,38 @@
    ]
   }
  },
+ "1702273159": {
+  "hash": 1702273159,
+  "name": "Harmonic Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to Weapons matching your Subclass Element:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1702976605": {
   "hash": 1702976605,
   "name": "Classy Contender",
@@ -22312,6 +23115,34 @@
      "linesContent": [
       {
        "text": "使用此武器完成最后一击可获得 5% 职业技能能量。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1709236482": {
+  "hash": 1709236482,
+  "name": "Heavy Handed",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Spawns an Orb of Power on Grenade Kills. 1(?) second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spawned Orbs of Power Super grant (?)%|(?)%|(?)% Super Energy with 1|2|3 Mods."
       }
      ]
     }
@@ -22717,6 +23548,67 @@
    ]
   }
  },
+ "1763780622": {
+  "hash": 1763780622,
+  "name": "Melee Kickstart",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "When a Melee Ability Charge is consumed:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Melee Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack of Armor Charge is the equivalent of an additional Kickstart Mod."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ability Energy gains with 1|2|etc. Mods equipped:"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pve" ],
+     "linesContent": [
+      {
+       "text": "12.8% | 17.1% | 23.3% | 30.8% | 37.7% | 42.3% | 45.7% | 48.1% | 49.9%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pvp" ],
+     "linesContent": [
+      {
+       "text": "Ability Energy gains are halved in PVP."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1771339417": {
   "hash": 1771339417,
   "name": "Firing Line",
@@ -22962,7 +23854,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Stasis Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons:"
       }
      ]
     },
@@ -24051,8 +24949,8 @@
  "1905598698": {
   "hash": 1905598698,
   "name": "Full Court",
-  "lastUpload": 1675798177540,
-  "type": "weaponPerkEnhanced",
+  "lastUpload": 1680099036796,
+  "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
@@ -24070,6 +24968,20 @@
      "linesContent": [
       {
        "text": "Reaches the maximum 25% Explosive Damage Increase after 1.1 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Passively grants 5 Blast Radius."
       }
      ]
     }
@@ -24777,6 +25689,67 @@
       },
       {
        "text": " 额外屏障回复效率。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1924584408": {
+  "hash": 1924584408,
+  "name": "Grenade Kickstart",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "When a Grenade Ability Charge is consumed:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Grenade Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack of Armor Charge is the equivalent of an additional Kickstart Mod."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ability Energy gains with 1|2|etc. Mods equipped:"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pve" ],
+     "linesContent": [
+      {
+       "text": "12.8% | 17.1% | 23.3% | 30.8% | 37.7% | 42.3% | 45.7% | 48.1% | 49.9%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pvp" ],
+     "linesContent": [
+      {
+       "text": "Ability Energy gains are halved in PVP."
       }
      ]
     }
@@ -25981,6 +26954,63 @@
    ]
   }
  },
+ "2031584061": {
+  "hash": 2031584061,
+  "name": "Momentum Transfer",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2039302152": {
   "hash": 2039302152,
   "name": "Slideways",
@@ -26132,6 +27162,68 @@
      "linesContent": [
       {
        "text": "[?] second cooldown after activation."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2059068466": {
+  "hash": 2059068466,
+  "name": "Arc Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2076329105": {
+  "hash": 2076329105,
+  "name": "Kinetic Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to Kinetic Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -28663,6 +29755,38 @@
    ]
   }
  },
+ "2237975061": {
+  "hash": 2237975061,
+  "name": "Kinetic Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to Kinetic Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2241043034": {
   "hash": 2241043034,
   "name": "Close to Melee",
@@ -28834,6 +29958,40 @@
         }
        ],
        "classNames": [ "title" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2267311547": {
+  "hash": 2267311547,
+  "name": "Stasis Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -30142,6 +31300,34 @@
    ]
   }
  },
+ "2447449706": {
+  "hash": 2447449706,
+  "name": "Heavy Handed",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Spawns an Orb of Power on Grenade Kills. 1(?) second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spawned Orbs of Power Super grant (?)%|(?)%|(?)% Super Energy with 1|2|3 Mods."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2450788523": {
   "hash": 2450788523,
   "name": "Killing Wind",
@@ -30589,6 +31775,62 @@
      "linesContent": [
       {
        "text": "시공 수정 방벽은 집결 방벽의 효과를 부여하지만 수정이 3개 이상 파괴되면 기능을 잃게 됩니다."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2479297167": {
+  "hash": 2479297167,
+  "name": "Harmonic Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to Weapons matching your Subclass Element with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2485657760": {
+  "hash": 2485657760,
+  "name": "Firepower",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Spawns an Orb of Power on Grenade Kills. 1 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spawned Orbs of Power Super grant (?)%|(?)%|(?)% Super Energy with 1|2|3 Mods."
       }
      ]
     }
@@ -31243,6 +32485,38 @@
    ]
   }
  },
+ "2586562813": {
+  "hash": 2586562813,
+  "name": "Kinetic Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to Kinetic Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2586829431": {
   "hash": 2586829431,
   "name": "Shot Swap",
@@ -31338,7 +32612,7 @@
  "2595839237": {
   "hash": 2595839237,
   "name": "Special Ammo Finder",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -31346,7 +32620,30 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+       "text": "Spawns a "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter Progress on Weapon Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1.66% to 1.8%. Average of 57.25 Kills."
       }
      ]
     },
@@ -31369,20 +32666,31 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.25x"
+       "text": "Primary Weapons: 3.25x"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Exotic "
+       "text": "• "
+      },
+      {
+       "text": "Exotic",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " "
       },
       {
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.67x"
+       "text": "Primary Weapons:",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " 4.75x"
       }
      ]
     },
@@ -31395,7 +32703,11 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Weapons: (?)x"
+       "text": "Special Weapons:",
+       "classNames": [ "green" ]
+      },
+      {
+       "text": " 1.1x"
       }
      ]
     },
@@ -31405,7 +32717,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Ammo Finder Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
       }
      ]
     }
@@ -31840,6 +33152,24 @@
    ]
   }
  },
+ "2649291407": {
+  "hash": 2649291407,
+  "name": "Fastball",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Thrown Grenades travel 25% faster."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2652708987": {
   "hash": 2652708987,
   "name": "Successful Warm-Up",
@@ -31904,6 +33234,48 @@
      "linesContent": [
       {
        "text": "增益触发时完成击杀，增加 4 秒持续时间，最高 20 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2657604783": {
+  "hash": 2657604783,
+  "name": "Harmonic Loader",
+  "lastUpload": 1680122100570,
+  "stats": {
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 10, 15, 18 ],
+      "multiplier": [ 0.85, 0.85, 0.85 ]
+     }
+    }
+   ]
+  },
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to Weapons matching your Subclass Element:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     }
@@ -33015,7 +34387,7 @@
  "2719698929": {
   "hash": 2719698929,
   "name": "Solar Targeting",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33023,7 +34395,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Solar Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons:"
       }
      ]
     },
@@ -33054,7 +34432,7 @@
  "2724068510": {
   "hash": 2724068510,
   "name": "Arc Siphon",
-  "lastUpload": 1679866440554,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33062,7 +34440,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with an Arc Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with an "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon."
       }
      ]
     },
@@ -33547,7 +34931,7 @@
  "2773358872": {
   "hash": 2773358872,
   "name": "Void Siphon",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33555,7 +34939,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a Void Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapon."
       }
      ]
     },
@@ -34105,6 +35495,78 @@
      "linesContent": [
       {
        "text": "提高 7.77% 对首领和载具的伤害。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2793548555": {
+  "hash": 2793548555,
+  "name": "Stasis Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2794359402": {
+  "hash": 2794359402,
+  "name": "Arc Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -35103,7 +36565,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Void Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons:"
       }
      ]
     },
@@ -36723,7 +38191,7 @@
  "3000428062": {
   "hash": 3000428062,
   "name": "Strand Targeting",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36731,7 +38199,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Strand Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons:"
       }
      ]
     },
@@ -36866,7 +38340,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Strand Weapons:"
+       "text": "Passively Grants the following to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons:"
       }
      ]
     },
@@ -37047,6 +38527,62 @@
       {
        "text": "[PVP] 总伤害量不变（即只有射程上的收益）。",
        "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3046678542": {
+  "hash": 3046678542,
+  "name": "Arc Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3047946307": {
+  "hash": 3047946307,
+  "name": "Shield Break Charge",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Breaking a Combatant Shield with the matching Elemental Damage Type grants 1 Stack of Armor Charge."
       }
      ]
     }
@@ -37276,6 +38812,40 @@
    ]
   }
  },
+ "3067648983": {
+  "hash": 3067648983,
+  "name": "Solar Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3075302157": {
   "hash": 3075302157,
   "name": "Font of Endurance",
@@ -37307,7 +38877,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1680094609371,
+  "lastUpload": 1680122100570,
   "stats": {
    "PVE Damage": [
     {
@@ -38020,7 +39590,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a Stasis Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapon."
       }
      ]
     },
@@ -38440,6 +40016,44 @@
       },
       {
        "text": "Stasis, Strand"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3224649746": {
+  "hash": 3224649746,
+  "name": "Void Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     }
@@ -38874,6 +40488,63 @@
    ]
   }
  },
+ "3245543337": {
+  "hash": 3245543337,
+  "name": "Bolstering Detonation",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3268255645": {
   "hash": 3268255645,
   "name": "Sect of Force",
@@ -39130,7 +40801,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a Strand Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapon."
       }
      ]
     },
@@ -39670,6 +41347,40 @@
         }
        ],
        "classNames": [ "title" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3323910164": {
+  "hash": 3323910164,
+  "name": "Strand Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
       }
      ]
     }
@@ -42624,6 +44335,63 @@
    ]
   }
  },
+ "3599522901": {
+  "hash": 3599522901,
+  "name": "Momentum Transfer",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3619207468": {
   "hash": 3619207468,
   "name": "Keep Away",
@@ -43008,6 +44776,63 @@
      "linesContent": [
       {
        "text": "永劫教派同伴额外获得 35% 的伤害增加，持续 20 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3657186535": {
+  "hash": 3657186535,
+  "name": "Focusing Strike",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Class Ability Energy upon dealing Melee Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
       }
      ]
     }
@@ -44247,6 +46072,63 @@
    ]
   }
  },
+ "3685945823": {
+  "hash": 3685945823,
+  "name": "Focusing Strike",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Class Ability Energy upon dealing Melee Damage. 7 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3700496672": {
   "hash": 3700496672,
   "name": "Shoot to Loot",
@@ -44887,6 +46769,63 @@
    ]
   }
  },
+ "3726719281": {
+  "hash": 3726719281,
+  "name": "Bolstering Detonation",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Energy Gain with 1|2+ Mods:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "20%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[10%]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "25%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[12.5%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3744057135": {
   "hash": 3744057135,
   "name": "Bait and Switch",
@@ -45136,7 +47075,30 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+       "text": "Spawns a "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter Progress on Weapon Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1.66% to 1.8%. Average of 57.25 Kills."
       }
      ]
     },
@@ -45159,20 +47121,31 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.25x"
+       "text": "Primary Weapons: 3.25x"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Exotic "
+       "text": "• "
+      },
+      {
+       "text": "Exotic",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " "
       },
       {
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 1.67x"
+       "text": "Primary Weapons:",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": " 4.75x"
       }
      ]
     },
@@ -45185,7 +47158,11 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Weapons: (?)x"
+       "text": "Special Weapons:",
+       "classNames": [ "green" ]
+      },
+      {
+       "text": " 1.1x"
       }
      ]
     },
@@ -45195,7 +47172,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Ammo Finder Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
       }
      ]
     }
@@ -45913,7 +47890,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with an Arc Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with an "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon."
       }
      ]
     },
@@ -46428,7 +48411,7 @@
  "3926119246": {
   "hash": 3926119246,
   "name": "Strand Siphon",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -46436,7 +48419,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a Strand Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with with a "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapon."
       }
      ]
     },
@@ -47097,6 +49086,78 @@
      "linesContent": [
       {
        "text": "取消瞄准时，追踪效果持续 1 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3979300428": {
+  "hash": 3979300428,
+  "name": "Strand Dexterity",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stow Duration cannot be reduced below the Duration at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3980769162": {
+  "hash": 3980769162,
+  "name": "Void Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     }
@@ -49602,6 +51663,67 @@
    ]
   }
  },
+ "4182064480": {
+  "hash": 4182064480,
+  "name": "Grenade Kickstart",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "When a Grenade Ability Charge is consumed:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Grenade Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack of Armor Charge is the equivalent of an additional Kickstart Mod."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ability Energy gains with 1|2|etc. Mods equipped:"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pve" ],
+     "linesContent": [
+      {
+       "text": "12.8% | 17.1% | 23.3% | 30.8% | 37.7% | 42.3% | 45.7% | 48.1% | 49.9%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "pvp" ],
+     "linesContent": [
+      {
+       "text": "Ability Energy gains are halved in PVP."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4183521337": {
   "hash": 4183521337,
   "name": "Tireless Blade",
@@ -50026,6 +52148,44 @@
    ]
   }
  },
+ "4244246940": {
+  "hash": 4244246940,
+  "name": "Strand Loader",
+  "lastUpload": 1680122100570,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10|15|18 Reload Speed with 1|2|3 Mods equipped"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4245865861": {
   "hash": 4245865861,
   "name": "Subsistence",
@@ -50241,7 +52401,7 @@
  "4255093903": {
   "hash": 4255093903,
   "name": "Solar Siphon",
-  "lastUpload": 1679865752213,
+  "lastUpload": 1680122100570,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -50249,7 +52409,13 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a Solar Weapon."
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within (?) seconds of each with a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapon."
       }
      ]
     },
