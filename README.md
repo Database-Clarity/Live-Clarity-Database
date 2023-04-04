@@ -11,7 +11,7 @@
   - Simply open a Partner Application support ticket in `#clarity-support`.
 - Do not modify the contents of our database on your end without clearly marking your changes. We are not responsible for any inaccuracies that this might cause.
   - If you wish implement long-term changes to the data or its structuring, please contact us through our [Discord Server](https://d2clarity.page.link/discord) before doing so.
-- Want to use our data but in a different format such as Markdown? As long as you can provide us with the code that converts it from our existing formats to yours, we can implement it into the database saving you runtime by omitting the conversion.
+- Want to use our data but in a different format such as Markdown or maybe convert the used icons to the internal IDs used by your app? Join our [Discord Server](https://d2clarity.page.link/discord) and we'll help you set up a converter to transform our data into a format you can directly use.
 - The contents of the database are subject to change at any moment be it due to spelling changes or new information. We strongly suggest implementing an automatic update checker so your website/app/resource always shows the latest information available.
 
 ## Projects currently using our data
