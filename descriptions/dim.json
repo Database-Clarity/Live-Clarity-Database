@@ -5604,24 +5604,14 @@
     {
      "linesContent": [
       {
-       "text": "Powered Melee Kills and Finishers apply weaken (increasing damage taken by 30%) and blind in a radius around the enemy."
+       "text": "On Powered Melee Kill or Finisher:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Duration and Range are dependent on Enemy Rank."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Bosses are not finishable. Guardians share the effects of Elites."
+       "text": "Disorients and weakens targets in a given radius around the Enemy Death Location, increasing incoming damage by 30%."
       }
      ]
     },
@@ -5631,28 +5621,45 @@
     {
      "linesContent": [
       {
-       "text": "Enemy Ranks are Minor/Elite/Miniboss/Boss."
+       "text": "Duration and Radius are dependent on Enemy Rank. Bosses are not finishable. Enemy Players share the values of Elites."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Duration and Radius are dependent on Enemy Rank:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Range: 10/15/20/25 metres, centered on enemy."
+       "text": "• Enemy Ranks are Minor|Elite|Miniboss|Boss"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Duration: 5/10/15/20 seconds."
+       "text": "• Radius: 10|15|20|25 meters"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Finisher Duration: 10/15/20/- seconds."
+       "text": "• Duration: 5|10|15|20 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Finisher Duration: 10|15|20 seconds"
       }
      ]
     }
@@ -6160,10 +6167,13 @@
     {
      "linesContent": [
       {
+       "text": "While on a "
+      },
+      {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Subclass Only."
+       "text": "Stasis Subclass:"
       }
      ]
     },
@@ -6180,7 +6190,7 @@
     {
      "linesContent": [
       {
-       "text": "Shift has a travel distance of 10 metres, and renders you completely invisible and invulnerable (except for a trail) for the duration of the shift."
+       "text": "Shift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift."
       }
      ]
     },
@@ -7357,7 +7367,7 @@
     {
      "linesContent": [
       {
-       "text": "Slowly grants 75 HP Overshield over 3 seconds after sprinting for 0.5 seconds. Overshield is instantly removed if no longer sprinting."
+       "text": "Charges up a 75 HP Overshield over 3 seconds."
       }
      ]
     },
@@ -7367,7 +7377,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants 50% Melee Ability Energy upon dealing damage with the mentioned Melee Abilities."
+       "text": "Overshield is instantly removed if no longer sprinting."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 50% Melee Ability Energy upon dealing damage with the mentioned Melee Abilities. Prevents Melee Kickstart from activating."
       }
      ]
     }
@@ -10834,7 +10854,7 @@
     {
      "linesContent": [
       {
-       "text": "Sentinel Shield's Shield Throw Hits regenerate 10% Super Energy."
+       "text": "Sentinel Shield's Shield Throw Hits refund 10% Super Energy."
       }
      ]
     }
@@ -13217,7 +13237,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +40 Airborne Effectiveness to Bows."
+       "text": "Passively grants 40 Airborne Effectiveness and 10 Draw Time Stat to Bows. (10 Draw Time Stat is the equivalent of a Draw Time Masterwork)"
       }
      ]
     },
@@ -13227,7 +13247,7 @@
     {
      "linesContent": [
       {
-       "text": "Bows can hold perfect draws indefinitely, and reach maximum draw 30 miliseconds faster."
+       "text": "Bows can hold perfect draws indefinitely."
       }
      ]
     }
@@ -23781,7 +23801,7 @@
     {
      "linesContent": [
       {
-       "text": "Moving your reticle near enemies for 1 second marks them for 5 seconds. Mark is visible through walls."
+       "text": "Hovering your reticle near enemies for 1 second marks them for 5 seconds. Markers stay visible even behind walls."
       }
      ]
     },
@@ -23805,7 +23825,17 @@
     {
      "linesContent": [
       {
-       "text": "(10% HP left >> 20% Increased Damage)"
+       "text": "(10% HP left 🠚 20% Increased Damage)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Combatant and Player Shields do not count as Health. (In other words, it only activates against Players once they are below 21 HP)"
       }
      ]
     }
