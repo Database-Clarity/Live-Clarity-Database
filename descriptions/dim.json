@@ -2605,7 +2605,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon."
+       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
       }
      ]
     },
@@ -2736,7 +2736,7 @@
     {
      "linesContent": [
       {
-       "text": "While above 50% Magazine:"
+       "text": "While above 50% Magazine Capacity:"
       }
      ]
     },
@@ -2787,7 +2787,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 2]"
+       "text": "[PVP: 0.5]"
       },
       {
        "text": " seconds"
@@ -6488,20 +6488,6 @@
     {
      "linesContent": [
       {
-       "text": "Stasis: "
-      },
-      {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "25 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Strand: "
       },
       {
@@ -6510,6 +6496,20 @@
       },
       {
        "text": "25 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stasis: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "25 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
       }
      ]
     },
@@ -6595,7 +6595,7 @@
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and [?]% Flinch Resistance."
+       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
       }
      ]
     },
@@ -7028,6 +7028,16 @@
      "linesContent": [
       {
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
       }
      ]
     },
@@ -9649,7 +9659,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increase:"
+       "text": "Damage Increase per Weapon Archetype:"
       }
      ]
     },
@@ -9663,7 +9673,7 @@
     {
      "linesContent": [
       {
-       "text": "• Machine Guns, Auto/Pulse/Trace Rifles: 33.3% per hit, up to 500%"
+       "text": "• Machine Guns, Auto/Pulse/Trace Rifles: 33.33% per hit, up to 500%"
       }
      ]
     },
@@ -9677,7 +9687,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, Glaives, Hand Cannons, Scout Rifles: 166.6% per hit, up to 500%"
+       "text": "• Bows, Glaives, Hand Cannons, Scout Rifles: 166.67% per hit, up to 500%"
       }
      ]
     }
@@ -12394,7 +12404,28 @@
     {
      "linesContent": [
       {
-       "text": "Each shot grants -5% Accuracy Cone Size, -10% Accuracy Cone Growth, and 1 Stability while holding down the trigger."
+       "text": "Each shot while holding down the trigger grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 1 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• -5% Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• -10% Accuracy Cone Growth"
       }
      ]
     },
@@ -14244,13 +14275,17 @@
     {
      "linesContent": [
       {
-       "text": "Partially "
+       "text": "Refills"
       },
       {
-       "text": "refills"
+       "text": " "
       },
       {
-       "text": " the Magazine from reserves based on the number of Hits scored."
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "70% of your Hits into the Magazine from reserves. Always rounds up."
       }
      ]
     },
@@ -14260,46 +14295,17 @@
     {
      "linesContent": [
       {
-       "text": "Hits to Returned Ammo Ratio:"
+       "text": "Requires firing 28.5?% of the Magazine Capacity for the refill to activate. Always rounds up."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• 50-60% on "
-      },
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": " Primary Weapons"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30-40% on "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": " Special Weapons"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• [?]%-[?]% on "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": " Power Weapons"
+       "text": "Hits after triggering a refill do not count until the buff text disappears."
       }
      ]
     },
@@ -14313,7 +14319,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increases the refill amount per hit."
+       "text": " Refill amount is increased by an additive 10?%."
       }
      ]
     }
@@ -16522,6 +16528,16 @@
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+      }
+     ]
     }
    ],
    "zh-chs": [
@@ -18104,14 +18120,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
+       "text": "Weapon Kills apply Volatile to other enemies in a 6.5 meter radius around the target."
       }
      ]
     },
@@ -18121,7 +18130,7 @@
     {
      "linesContent": [
       {
-       "text": "[?] second cooldown after activation."
+       "text": "(?) second cooldown after activation."
       }
      ]
     },
@@ -19112,14 +19121,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
+       "text": "Weapon Kills apply Volatile to other enemies in a 6.5 meter radius around the target."
       }
      ]
     },
@@ -19129,7 +19131,7 @@
     {
      "linesContent": [
       {
-       "text": "[?] second cooldown after activation."
+       "text": "(?) second cooldown after activation."
       }
      ]
     }
@@ -19529,14 +19531,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring "
-      },
-      {
-       "text": "a lot of",
-       "classNames": [ "bold" ]
-      },
-      {
-       "text": " Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks."
+       "text": "Scoring Kills and Weapon Hits progress a counter, granting Stacks of Field Test. Maximum of 5 stacks. Buff is only removed on death."
       }
      ]
     },
@@ -19574,14 +19569,14 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Charge Rate, Guard Resistance (Swords)"
+       "text": "• 5|10|20|35|55 Sword Charge Rate"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Buff is only removed on death."
+       "text": "• 5|10|20|30|40 Sword Guard Resistance"
       }
      ]
     },
@@ -19591,7 +19586,7 @@
     {
      "linesContent": [
       {
-       "text": "Total Hits required for 1|2|3|4|5 Stacks:"
+       "text": "Counter Progress required for 1|2|3|4|5 Stacks:"
       }
      ]
     },
@@ -19617,13 +19612,20 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special, "
+       "text": "Special Weapons: 26|76|176|326|501"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Power Weapons: unknown"
+       "text": "Power Weapons: 11|31|71|131|201"
       }
      ]
     },
@@ -19633,38 +19635,82 @@
     {
      "linesContent": [
       {
-       "classNames": [ "primary" ]
+       "text": "Each damage instance grants 1 Progress Point."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Points granted by Kills based on "
       },
       {
-       "text": "Primary Weapon Kills count as "
+       "text": "Enemy Rank",
+       "link": "https://d2clarity.page.link/combatant"
       },
       {
-       "text": "6(?)"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 51]"
-      },
-      {
-       "text": " Hits."
+       "text": ":"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "classNames": [ "special" ]
+       "text": "• Tier 1-2 Minors: 1 Point"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 Elites: 5 Points"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Enemy Players: 10 Points"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kill Point Multipliers based on Weapon Archetype:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "text": "Special and "
+       "classNames": [ "primary" ]
       },
       {
-       "classNames": [ "heavy" ]
-      },
+       "text": "Primary Weapons and Shotguns: 5x"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "Power Weapon Kills count as (?) Hits."
+       "text": "• Breech-Loaded Grenade Launchers: 2x"
       }
      ]
     }
@@ -20791,7 +20837,7 @@
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and [?]% Flinch Resistance."
+       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
       }
      ]
     },
@@ -26738,7 +26784,7 @@
     {
      "linesContent": [
       {
-       "text": "While above 50% Magazine:"
+       "text": "While above 50% Magazine Capacity:"
       }
      ]
     },
@@ -26789,7 +26835,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 2]"
+       "text": "[PVP: 0.5]"
       },
       {
        "text": " seconds"
@@ -26982,6 +27028,16 @@
      "linesContent": [
       {
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
       }
      ]
     }
@@ -27451,28 +27507,49 @@
     {
      "linesContent": [
       {
-       "text": "Each shot grants "
+       "text": "Each shot while holding down the trigger grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-6.25% Accuracy Cone Size, "
+       "text": "1.25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-12.5% Accuracy Cone Growth, and "
+       "text": "-6.25% Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.25 Stability while holding down the trigger."
+       "text": "-12.5% Accuracy Cone Growth"
       }
      ]
     },
@@ -27589,7 +27666,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your weapons within [?] seconds of each:"
+       "text": "Upon dealing damage with all your weapons within 3(?) seconds of each:"
       }
      ]
     },
@@ -28541,7 +28618,14 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "12 Range, 30 Reload Speed, and narrows the Accuracy Cone by "
+       "text": "12 Range, "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "32 Reload Speed, and narrows the Accuracy Cone by "
       },
       {
        "text": "",
@@ -28562,7 +28646,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 2 more Range, (?) more Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
+       "text": " Grants an additional 2? Range and Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
       }
      ]
     }
@@ -30417,13 +30501,10 @@
     {
      "linesContent": [
       {
-       "text": "Partially "
+       "text": "Refills"
       },
       {
-       "text": "refills"
-      },
-      {
-       "text": " the Magazine from reserves based on the number of Hits scored."
+       "text": " 60% of your Hits into the Magazine from reserves. Always rounds up."
       }
      ]
     },
@@ -30433,46 +30514,17 @@
     {
      "linesContent": [
       {
-       "text": "Hits to Returned Ammo Ratio:"
+       "text": "Requires firing 28.5?% of the Magazine Capacity for the refill to activate. Always rounds up."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• 50-60% on "
-      },
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": " Primary Weapons"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30-40% on "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": " Special Weapons"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• [?]%-[?]% on "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": " Power Weapons"
+       "text": "Hits after triggering a refill do not count until the buff text disappears."
       }
      ]
     }
@@ -30595,7 +30647,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increase:"
+       "text": "Damage Increase per Weapon Archetype:"
       }
      ]
     },
@@ -30630,7 +30682,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "39.96% per hit, up to "
+       "text": "40% per hit, up to "
       },
       {
        "text": "",
@@ -30672,7 +30724,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "199.92% per hit, up to "
+       "text": "200% per hit, up to "
       },
       {
        "text": "",
@@ -31148,14 +31200,14 @@
     {
      "linesContent": [
       {
-       "text": "Stasis: 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
+       "text": "Strand: 20 Airborne Effectiveness"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Strand: 20 Airborne Effectiveness"
+       "text": "Stasis: 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
       }
      ]
     }
@@ -32651,7 +32703,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40% Weapon Energy (up from the base amount of 25%)."
+       "text": "40(?)% Weapon Energy (up from the base amount of 25%)."
       }
      ]
     },
@@ -32665,7 +32717,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Energy Bonus on Hit is increased by an additive 5%."
+       "text": " Energy Bonus on Hit is increased by an additive 5(?)%."
       }
      ]
     }
@@ -33450,7 +33502,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your weapons within [?] seconds of each:"
+       "text": "Upon dealing damage with all your weapons within 3(?) seconds of each:"
       }
      ]
     },
@@ -33493,7 +33545,7 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon."
+       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
       }
      ]
     },
@@ -33850,7 +33902,7 @@
     {
      "linesContent": [
       {
-       "text": "Buffs the Impact Damage by 10% resulting in a 2.2% total damage increase before considering other damage-buffing perks."
+       "text": "Increases Impact Damage by 10%, resulting in a 2.2% total damage increase."
       }
      ]
     }
@@ -34028,7 +34080,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Projectiles Hits grant 35% Weapon Energy (up from the base amount of 25%)."
+       "text": "Glaive Projectiles Hits grant 35(?)% Weapon Energy (up from the base amount of 25%)."
       }
      ]
     }
@@ -36809,7 +36861,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Magazine Size Stat by 20."
+       "text": "Decreases Magazine Size Stat by 30. (Functional equivalent of an \"inverse of Extended Mag\")"
       }
      ]
     }

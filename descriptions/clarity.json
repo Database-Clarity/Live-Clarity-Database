@@ -317,7 +317,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "Handling": [
     {
@@ -4132,7 +4132,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon."
+       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
       }
      ]
     },
@@ -4279,7 +4279,7 @@
     {
      "linesContent": [
       {
-       "text": "While above 50% Magazine:"
+       "text": "While above 50% Magazine Capacity:"
       }
      ]
     },
@@ -4334,7 +4334,7 @@
        "text": " "
       },
       {
-       "text": "[2]",
+       "text": "[0.5]",
        "classNames": [ "pvp" ]
       },
       {
@@ -4362,7 +4362,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "PVE Damage": [
     {
@@ -9970,7 +9970,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses based on your selected Subclass."
+       "text": "Grants Passive Stat Bonuses depending on your selected Elemental Subclass."
       }
      ]
     },
@@ -10031,6 +10031,23 @@
     {
      "linesContent": [
       {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "25 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "classNames": [ "stasis" ]
       },
       {
@@ -10042,20 +10059,6 @@
       },
       {
        "text": "25 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Strand: "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "25 Airborne Effectiveness"
       }
      ]
     },
@@ -10156,7 +10159,7 @@
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and [?]% Flinch Resistance."
+       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
       }
      ]
     },
@@ -10904,6 +10907,16 @@
      "linesContent": [
       {
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
       }
      ]
     },
@@ -13640,7 +13653,7 @@
  "967052942": {
   "hash": 967052942,
   "name": "Arc Targeting",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "Aim Assist": [
     {
@@ -14429,7 +14442,7 @@
  "1048183818": {
   "hash": 1048183818,
   "name": "Adaptive Munitions",
-  "lastUpload": 1676932239634,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -14454,12 +14467,11 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increase:"
+       "text": "Damage Increase per Weapon Archetype:"
       }
      ]
     },
     {
-     "weaponTypes": [ "Fusion" ],
      "linesContent": [
       {
        "text": "• Fusion Rifles: 29% per hit, up to 435%"
@@ -14467,15 +14479,13 @@
      ]
     },
     {
-     "weaponTypes": [ "AR", "LMG", "Pulse", "Trace" ],
      "linesContent": [
       {
-       "text": "• Machine Guns, Auto/Pulse/Trace Rifles: 33.3% per hit, up to 500%"
+       "text": "• Machine Guns, Auto/Pulse/Trace Rifles: 33.33% per hit, up to 500%"
       }
      ]
     },
     {
-     "weaponTypes": [ "LFR" ],
      "linesContent": [
       {
        "text": "• Linear Fusion Rifles: 150% per hit, up to 450%"
@@ -14483,252 +14493,9 @@
      ]
     },
     {
-     "weaponTypes": [ "Bow", "Glaive", "HC", "Scout" ],
      "linesContent": [
       {
-       "text": "• Bows, Glaives, Hand Cannons, Scout Rifles: 166.6% per hit, up to 500%"
-      }
-     ]
-    },
-    {
-     "weaponTypes": [ "GL", "Heavy GL", "Rocket", "Shotgun", "Sidearm", "SMG", "Sniper", "Sword", "Grenade", "Melee", "Super" ],
-     "linesContent": [
-      {
-       "text": "• [?]% per hit, up to [?]%"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Hover for a "
-      },
-      {
-       "text": "breakdown by weapon archetype.",
-       "title": [
-        {
-         "table": [
-          {
-           "classNames": [ "bold" ],
-           "rowContent": [
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Weapon Type"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Damage Increase Per Hit"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Maximum Damage Increase"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Fusion Rifle"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "29%"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "435%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Linear Fusion Rifle"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "150%"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "450%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Auto Rifle"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "33.3%"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "500%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Machine Gun"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Pulse Rifles"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Trace Rifle"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Bow"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "166.6%"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "500%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Glaive"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Hand Cannon"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Scout Rifle"
-              }
-             ]
-            }
-           ]
-          }
-         ],
-         "classNames": [ "wide" ],
-         "isFormula": false
-        }
-       ],
-       "classNames": [ "title" ]
+       "text": "• Bows, Glaives, Hand Cannons, Scout Rifles: 166.67% per hit, up to 500%"
       }
      ]
     }
@@ -15654,7 +15421,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "Reload": [
     {
@@ -19391,7 +19158,7 @@
  "1359896290": {
   "hash": 1359896290,
   "name": "Dynamic Sway Reduction",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "stats": {
    "Stability": [
     {
@@ -19408,7 +19175,28 @@
     {
      "linesContent": [
       {
-       "text": "Each shot grants -5% Accuracy Cone Size, -10% Accuracy Cone Growth, and 1 Stability while holding down the trigger."
+       "text": "Each shot while holding down the trigger grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 1 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• -5% Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• -10% Accuracy Cone Growth"
       }
      ]
     },
@@ -22076,10 +21864,7 @@
     {
      "linesContent": [
       {
-       "text": "Partially "
-      },
-      {
-       "text": "refills",
+       "text": "Refills",
        "title": [
         {
          "linesContent": [
@@ -22092,7 +21877,14 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " the Magazine from reserves based on the number of Hits scored."
+       "text": " "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "70% of your Hits into the Magazine from reserves. Always rounds up."
       }
      ]
     },
@@ -22102,46 +21894,17 @@
     {
      "linesContent": [
       {
-       "text": "Hits to Returned Ammo Ratio:"
+       "text": "Requires firing 28.5?% of the Magazine Capacity for the refill to activate. Always rounds up."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• 50-60% on "
-      },
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": " Primary Weapons"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30-40% on "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": " Special Weapons"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• [?]%-[?]% on "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": " Power Weapons"
+       "text": "Hits after triggering a refill do not count until the buff text disappears."
       }
      ]
     },
@@ -22155,7 +21918,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increases the refill amount per hit."
+       "text": " Refill amount is increased by an additive 10?%."
       }
      ]
     }
@@ -22583,7 +22346,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "Charge Draw": [
     {
@@ -25330,7 +25093,7 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25346,6 +25109,16 @@
      "linesContent": [
       {
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
       }
      ]
     }
@@ -25964,7 +25737,7 @@
  "1834163303": {
   "hash": 1834163303,
   "name": "Arc Weapon Surge",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "PVE Damage": [
     {
@@ -27540,14 +27313,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
+       "text": "Weapon Kills apply Volatile to other enemies in a 6.5 meter radius around the target."
       }
      ]
     },
@@ -27557,7 +27323,7 @@
     {
      "linesContent": [
       {
-       "text": "[?] second cooldown after activation."
+       "text": "(?) second cooldown after activation."
       }
      ]
     },
@@ -28947,7 +28713,7 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1678668030826,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28955,14 +28721,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Enemy explodes, applying Volatile in a 6.5 meter radius."
+       "text": "Weapon Kills apply Volatile to other enemies in a 6.5 meter radius around the target."
       }
      ]
     },
@@ -28972,7 +28731,7 @@
     {
      "linesContent": [
       {
-       "text": "[?] second cooldown after activation."
+       "text": "(?) second cooldown after activation."
       }
      ]
     }
@@ -28982,7 +28741,7 @@
  "2059068466": {
   "hash": 2059068466,
   "name": "Arc Dexterity",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "Ready": [
     {
@@ -29527,7 +29286,7 @@
  "2120661319": {
   "hash": 2120661319,
   "name": "Field-Tested",
-  "lastUpload": 1680697591769,
+  "lastUpload": 1681766499830,
   "stats": {
    "Range": [
     {
@@ -29542,6 +29301,20 @@
       "stat": [ 5, 10, 20, 35, 55 ]
      }
     }
+   ],
+   "Guard Charge Rate": [
+    {
+     "active": {
+      "stat": [ 5, 10, 20, 35, 55 ]
+     }
+    }
+   ],
+   "Guard Resistance": [
+    {
+     "active": {
+      "stat": [ 5, 10, 20, 30, 40 ]
+     }
+    }
    ]
   },
   "type": "Weapon Trait Origin",
@@ -29551,14 +29324,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring "
-      },
-      {
-       "text": "a lot of",
-       "classNames": [ "bold" ]
-      },
-      {
-       "text": " Weapon Hits grants a Stack of Field Test. Maximum of 5 stacks."
+       "text": "Scoring Kills and Weapon Hits progress a counter, granting Stacks of Field Test. Maximum of 5 stacks. Buff is only removed on death."
       }
      ]
     },
@@ -29596,14 +29362,14 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Charge Rate, Guard Resistance (Swords)"
+       "text": "• 5|10|20|35|55 Sword Charge Rate"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Buff is only removed on death."
+       "text": "• 5|10|20|30|40 Sword Guard Resistance"
       }
      ]
     },
@@ -29613,7 +29379,7 @@
     {
      "linesContent": [
       {
-       "text": "Total Hits required for 1|2|3|4|5 Stacks:"
+       "text": "Counter Progress required for 1|2|3|4|5 Stacks:"
       }
      ]
     },
@@ -29639,13 +29405,20 @@
        "classNames": [ "special" ]
       },
       {
-       "text": "Special, "
+       "text": "Special Weapons: 26|76|176|326|501"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Power Weapons: unknown"
+       "text": "Power Weapons: 11|31|71|131|201"
       }
      ]
     },
@@ -29655,40 +29428,83 @@
     {
      "linesContent": [
       {
-       "classNames": [ "primary" ]
+       "text": "Each damage instance grants 1 Progress Point."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Points granted by Kills based on "
       },
       {
-       "text": "Primary Weapon Kills count as "
+       "text": "Enemy Rank",
+       "link": "https://d2clarity.page.link/combatant",
+       "classNames": [ "link" ]
       },
       {
-       "text": "6(?)",
-       "classNames": [ "pve" ]
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[51]",
-       "classNames": [ "pvp" ]
-      },
-      {
-       "text": " Hits."
+       "text": ":"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "classNames": [ "special" ]
+       "text": "• Tier 1-2 Minors: 1 Point"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 Elites: 5 Points"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Enemy Players: 10 Points"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kill Point Multipliers based on Weapon Archetype:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "text": "Special and "
+       "classNames": [ "primary" ]
       },
       {
-       "classNames": [ "heavy" ]
-      },
+       "text": "Primary Weapons and Shotguns: 5x"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "Power Weapon Kills count as (?) Hits."
+       "text": "• Breech-Loaded Grenade Launchers: 2x"
       }
      ]
     },
@@ -32098,7 +31914,7 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "stats": {
    "Airborne": [
     {
@@ -32122,7 +31938,7 @@
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and [?]% Flinch Resistance."
+       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
       }
      ]
     },
@@ -40948,7 +40764,7 @@
  "2978966579": {
   "hash": 2978966579,
   "name": "Chill Clip",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -40956,7 +40772,7 @@
     {
      "linesContent": [
       {
-       "text": "While above 50% Magazine:"
+       "text": "While above 50% Magazine Capacity:"
       }
      ]
     },
@@ -41011,7 +40827,7 @@
        "text": " "
       },
       {
-       "text": "[2]",
+       "text": "[0.5]",
        "classNames": [ "pvp" ]
       },
       {
@@ -41294,6 +41110,16 @@
      "linesContent": [
       {
        "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
       }
      ]
     }
@@ -41865,28 +41691,49 @@
     {
      "linesContent": [
       {
-       "text": "Each shot grants "
+       "text": "Each shot while holding down the trigger grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-6.25% Accuracy Cone Size, "
+       "text": "1.25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-12.5% Accuracy Cone Growth, and "
+       "text": "-6.25% Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.25 Stability while holding down the trigger."
+       "text": "-12.5% Accuracy Cone Growth"
       }
      ]
     },
@@ -42007,7 +41854,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1681762652036,
+  "lastUpload": 1681766499830,
   "stats": {
    "PVE Damage": [
     {
@@ -42031,7 +41878,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your weapons within [?] seconds of each:"
+       "text": "Upon dealing damage with all your weapons within 3(?) seconds of each:"
       }
      ]
     },
@@ -43175,7 +43022,7 @@
  "3198323828": {
   "hash": 3198323828,
   "name": "Keep Away",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1681766499830,
   "stats": {
    "Range": [
     {
@@ -43187,7 +43034,7 @@
    "Reload": [
     {
      "active": {
-      "stat": [ 30 ]
+      "stat": [ 32 ]
      }
     }
    ]
@@ -43213,7 +43060,14 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "12 Range, 30 Reload Speed, and narrows the Accuracy Cone by "
+       "text": "12 Range, "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "32 Reload Speed, and narrows the Accuracy Cone by "
       },
       {
        "text": "🡅",
@@ -43234,7 +43088,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 2 more Range, (?) more Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
+       "text": " Grants an additional 2? Range and Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
       }
      ]
     },
@@ -45857,7 +45711,7 @@
  "3418782618": {
   "hash": 3418782618,
   "name": "Rewind Rounds",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -45872,10 +45726,7 @@
     {
      "linesContent": [
       {
-       "text": "Partially "
-      },
-      {
-       "text": "refills",
+       "text": "Refills",
        "title": [
         {
          "linesContent": [
@@ -45888,7 +45739,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " the Magazine from reserves based on the number of Hits scored."
+       "text": " 60% of your Hits into the Magazine from reserves. Always rounds up."
       }
      ]
     },
@@ -45898,46 +45749,17 @@
     {
      "linesContent": [
       {
-       "text": "Hits to Returned Ammo Ratio:"
+       "text": "Requires firing 28.5?% of the Magazine Capacity for the refill to activate. Always rounds up."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• 50-60% on "
-      },
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": " Primary Weapons"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30-40% on "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": " Special Weapons"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• [?]%-[?]% on "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": " Power Weapons"
+       "text": "Hits after triggering a refill do not count until the buff text disappears."
       }
      ]
     }
@@ -46092,12 +45914,11 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increase:"
+       "text": "Damage Increase per Weapon Archetype:"
       }
      ]
     },
     {
-     "weaponTypes": [ "Fusion" ],
      "linesContent": [
       {
        "text": "• Fusion Rifles: "
@@ -46119,7 +45940,6 @@
      ]
     },
     {
-     "weaponTypes": [ "AR", "LMG", "Pulse", "Trace" ],
      "linesContent": [
       {
        "text": "• Machine Guns, Auto/Pulse/Trace Rifles: "
@@ -46129,7 +45949,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "39.96% per hit, up to "
+       "text": "40% per hit, up to "
       },
       {
        "text": "🡅",
@@ -46141,7 +45961,6 @@
      ]
     },
     {
-     "weaponTypes": [ "LFR" ],
      "linesContent": [
       {
        "text": "• Linear Fusion Rifles: "
@@ -46163,7 +45982,6 @@
      ]
     },
     {
-     "weaponTypes": [ "Bow", "Glaive", "HC", "Scout" ],
      "linesContent": [
       {
        "text": "• Bows, Glaives, Hand Cannons, Scout Rifles: "
@@ -46173,7 +45991,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "199.92% per hit, up to "
+       "text": "200% per hit, up to "
       },
       {
        "text": "🡅",
@@ -46181,14 +45999,6 @@
       },
       {
        "text": "600%"
-      }
-     ]
-    },
-    {
-     "weaponTypes": [ "GL", "Heavy GL", "Rocket", "Shotgun", "Sidearm", "SMG", "Sniper", "Sword", "Grenade", "Melee", "Super" ],
-     "linesContent": [
-      {
-       "text": "• [?]% per hit, up to [?]%"
       }
      ]
     },
@@ -46203,272 +46013,6 @@
       },
       {
        "text": " The damage buff is increased by 20%. (e.g. 150% » 180%)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Hover for a "
-      },
-      {
-       "text": "breakdown by weapon archetype.",
-       "title": [
-        {
-         "table": [
-          {
-           "classNames": [ "bold" ],
-           "rowContent": [
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Weapon Type"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Damage Increase Per Hit"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "Maximum Damage Increase"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Fusion Rifle"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "34.8%"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "522%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Linear Fusion Rifle"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "180%"
-              }
-             ]
-            },
-            {
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "540%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Auto Rifle"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "39.96%"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "600%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Machine Gun"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Pulse Rifles"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "classNames": [ "background" ],
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Trace Rifle"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Bow"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "199.92%"
-              }
-             ]
-            },
-            {
-             "rowSpan": 4,
-             "classNames": [ "center" ],
-             "cellContent": [
-              {
-               "text": "🡅",
-               "classNames": [ "enhancedArrow" ]
-              },
-              {
-               "text": "600%"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Glaive"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Hand Cannon"
-              }
-             ]
-            }
-           ]
-          },
-          {
-           "rowContent": [
-            {
-             "cellContent": [
-              {
-               "text": "Scout Rifle"
-              }
-             ]
-            }
-           ]
-          }
-         ],
-         "classNames": [ "wide" ],
-         "isFormula": false
-        }
-       ],
-       "classNames": [ "title" ]
       }
      ]
     }
@@ -47439,7 +46983,7 @@
  "3511092054": {
   "hash": 3511092054,
   "name": "Elemental Capacitor",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -47447,7 +46991,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses based on your selected Subclass."
+       "text": "Grants Passive Stat Bonuses depending on your selected Elemental Subclass."
       }
      ]
     },
@@ -47487,17 +47031,20 @@
     {
      "linesContent": [
       {
-       "classNames": [ "stasis" ]
+       "classNames": [ "strand" ]
       },
       {
-       "text": " 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
+       "text": " 20 Airborne Effectiveness"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Strand: 20 Airborne Effectiveness"
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": " 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
       }
      ]
     }
@@ -48405,7 +47952,7 @@
  "3619207468": {
   "hash": 3619207468,
   "name": "Keep Away",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1681766499830,
   "stats": {
    "Range": [
     {
@@ -49895,7 +49442,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40% Weapon Energy (up from the base amount of 25%)."
+       "text": "40(?)% Weapon Energy (up from the base amount of 25%)."
       }
      ]
     },
@@ -49909,7 +49456,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Energy Bonus on Hit is increased by an additive 5%."
+       "text": " Energy Bonus on Hit is increased by an additive 5(?)%."
       }
      ]
     }
@@ -50939,7 +50486,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your weapons within [?] seconds of each:"
+       "text": "Upon dealing damage with all your weapons within 3(?) seconds of each:"
       }
      ]
     },
@@ -50977,7 +50524,7 @@
  "3751912585": {
   "hash": 3751912585,
   "name": "Cascade Point",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1681766499830,
   "stats": {
    "Firing Delay": [
     {
@@ -51000,7 +50547,7 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4 seconds of each with a different weapon."
+       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
       }
      ]
     },
@@ -51398,7 +50945,7 @@
  "3796465595": {
   "hash": 3796465595,
   "name": "Impact Casing",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "stats": {
    "Damage": [
     {
@@ -51415,7 +50962,7 @@
     {
      "linesContent": [
       {
-       "text": "Buffs the Impact Damage by 10% resulting in a 2.2% total damage increase before considering other damage-buffing perks."
+       "text": "Increases Impact Damage by 10%, resulting in a 2.2% total damage increase."
       }
      ]
     }
@@ -51597,7 +51144,7 @@
  "3800201097": {
   "hash": 3800201097,
   "name": "Immovable Object",
-  "lastUpload": 1679181195547,
+  "lastUpload": 1681766499830,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51612,7 +51159,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Projectiles Hits grant 35% Weapon Energy (up from the base amount of 25%)."
+       "text": "Glaive Projectiles Hits grant 35(?)% Weapon Energy (up from the base amount of 25%)."
       }
      ]
     }
@@ -56005,7 +55552,7 @@
  "4134353779": {
   "hash": 4134353779,
   "name": "Drop Mag",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1681766499830,
   "stats": {
    "Reload": [
     {
@@ -56032,7 +55579,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Magazine Size Stat by 20."
+       "text": "Decreases Magazine Size Stat by 30. (Functional equivalent of an \"inverse of Extended Mag\")"
       }
      ]
     }
