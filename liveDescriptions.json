@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3942,7 +3942,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8017,8 +8017,8 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Powered Melee Kills and Finishers apply weaken (increasing damage taken by 30%) and blind in a radius around the enemy.\nDuration and Range are dependent on Enemy Rank. \n\nBosses are not finishable. Guardians share the effects of Elites.\n\n< table background_2 >\n|b Enemy Rank        |b Minor |b Elite |b Miniboss |b Boss\n|b Range             | 10    | 15    | 20       | 25\n|b Duration          | 5     | 10    | 15       | 20\n|b Finisher Duration | 10    | 15    | 20       | -\n<$>",
-     "secondary": "Powered Melee Kills and Finishers apply weaken (increasing damage taken by 30%) and blind in a radius around the enemy.\nDuration and Range are dependent on Enemy Rank. \n\nBosses are not finishable. Guardians share the effects of Elites.\n\nEnemy Ranks are Minor/Elite/Miniboss/Boss.\nRange: 10/15/20/25 metres, centered on enemy.\nDuration: 5/10/15/20 seconds.\nFinisher Duration: 10/15/20/- seconds."
+     "main": "export start (\nOn Powered Melee Kill or Finisher:\nDisorients and weakens targets in a given radius around the Enemy Death Location, increasing incoming damage by 30%.\n\nDuration and Radius are dependent on Enemy Rank. Bosses are not finishable. Enemy Players share the values of Elites.\n)\n\n< table background_2 >\n|b Enemy Rank        |b Minor |b Elite |b Miniboss |b Boss\n|b Radius            |c 10m   |c 15m            |c 20m      |c 25m\n|b Duration          |c 5s    |c 10s            |c 15s      |c 20s\n|b Finisher Duration |c 10s   |c 15s        |c 20s      |c -\n<$>\n\n\n",
+     "secondary": "import start from 622433369\n\nDuration and Radius are dependent on Enemy Rank:\n• Enemy Ranks are Minor|Elite|Miniboss|Boss\n• Radius: 10|15|20|25 meters\n• Duration: 5|10|15|20 seconds\n• Finisher Duration: 10|15|20 seconds"
     },
     "ko": {
      "main": "근접 공격 처치와 필살기 처치가 적을 실명시키고 30%의 추가 피해를 받게하는 폭발을 일으킵니다.\n지속 시간과 폭발 반경은 적의 등급에 따라 결정됩니다.\n\n적 등급은 부하/리더/미니보스/보스입니다.\n필살기를 사용하면 지속 시간이 5초 추가됩니다. 수호자는 리더 취급입니다.\n\n전쟁군주의 최후\n폭발 범위: 폭심지로 부터 10/15/20/25 미터\n지속 시간: 5/10/15/20 초\n필살기를 사용했을 떄의 지속 시간: 10/15/20 초",
@@ -8032,8 +8032,8 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1667255827382,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1681767830774,
+      "updatedBy": "Stardust"
      },
      "ko": {
       "lastUpdate": 1665695389426,
@@ -8050,7 +8050,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8739,26 +8739,35 @@
    "hash": 692285813,
    "itemHash": 1619425569,
    "type": "Armor Trait Exotic",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.1, 1.21 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "<stasis/>Stasis Subclass Only.\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres, and renders you completely invisible and invulnerable (except for a trail) for the duration of the shift.\n\nDodging grants Light Shift buff for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\n<pve [PVE] Light Shift grants 10% Increased Damage to Slowed/Frozen Combatants as well as 10% Increased Damage to Arc Weapons. These buffs stack with each other and with all other buffs. />",
+     "main": "While on a <stasis/>Stasis Subclass:\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift.\n\nDodging grants Light Shift buff for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\n<pve [PVE] Light Shift grants 10% Increased Damage to Slowed/Frozen Combatants as well as 10% Increased Damage to Arc Weapons. These buffs stack with each other and with all other buffs. />",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678824954458,
+      "lastUpdate": 1681768310336,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "Fading-Shadow"
+     "lastUpdate": 1681768342302,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10120,7 +10129,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Upon sprinting for 0.5 seconds with a Shoulder Charge (or Ballistic Slam) Melee Ability charge:\nSlowly grants 75 HP Overshield over 3 seconds after sprinting for 0.5 seconds. Overshield is instantly removed if no longer sprinting. \n\nGrants 50% Melee Ability Energy upon dealing damage with the mentioned Melee Abilities.",
+     "main": "Upon sprinting for 0.5 seconds with a Shoulder Charge (or Ballistic Slam) Melee Ability charge:\nCharges up a 75 HP Overshield over 3 seconds.\n\nOvershield is instantly removed if no longer sprinting. \n\nGrants 50% Melee Ability Energy upon dealing damage with the mentioned Melee Abilities. Prevents Melee Kickstart from activating.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -10131,7 +10140,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678725173283,
+      "lastUpdate": 1681768042918,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -10145,7 +10154,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678726148083,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12493,7 +12502,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14400,7 +14409,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14968,7 +14977,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Powered Void Melee Kills grant <pve 20% /> <pvp [10%] /> Super Energy once per usage.\n\nSentinel Shield's Shield Throw Hits regenerate 10% Super Energy.",
+     "main": "Powered Void Melee Kills grant <pve 20% /> <pvp [10%] /> Super Energy once per usage.\n\nSentinel Shield's Shield Throw Hits refund 10% Super Energy.",
      "secondary": "import self"
     },
     "ko": {
@@ -14983,8 +14992,8 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1668259995761,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1681767897055,
+      "updatedBy": "Stardust"
      },
      "ko": {
       "lastUpdate": 1665694682007,
@@ -15001,7 +15010,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18790,42 +18799,12 @@
    "inLiveDatabase": true
   },
   "1449897496": {
-   "hash": 1449897496,
    "name": "Adamantine Brace",
-   "itemHash": 691578978,
    "itemName": "Oathkeeper",
+   "hash": 1449897496,
+   "itemHash": 691578978,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667592688133,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1667592698213,
-      "updatedBy": "Fading Shadow"
-     }
-    }
-   },
-   "editor": {
-    "en": {
-     "main": "Passively grants +40 Airborne Effectiveness to Bows.\n\nBows can hold perfect draws indefinitely, and reach maximum draw 30 miliseconds faster.",
-     "secondary": "import self"
-    }
-   },
    "stats": {
-    "Charge Draw": [
-     {
-      "active": {
-       "stat": [ -30 ]
-      },
-      "weaponTypes": [ "Bow" ]
-     }
-    ],
     "Airborne": [
      {
       "passive": {
@@ -18834,7 +18813,29 @@
       "weaponTypes": [ "Bow" ]
      }
     ]
-   }
+   },
+   "editor": {
+    "en": {
+     "main": "Passively grants 40 Airborne Effectiveness and 10 Draw Time Stat to Bows. (10 Draw Time Stat is the equivalent of a Draw Time Masterwork)\n\nBows can hold perfect draws indefinitely.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1681768439949,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1681768674625,
+     "updatedBy": "Stardust"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1681768816761,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1449897497": {
    "name": "Sharp Edges",
@@ -20609,7 +20610,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24424,7 +24425,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26778,7 +26779,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33240,7 +33241,7 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants 20 Airborne Effectiveness.\n\nMoving your reticle near enemies for 1 second marks them for 5 seconds. Mark is visible through walls.\n\nIf Enemy is below 30% HP: \nGrants 1% increased Weapon and Ability Damage for every percentage point below 30%.\n(10% HP left >> 20% Increased Damage)",
+     "main": "Passively grants 20 Airborne Effectiveness.\n\nHovering your reticle near enemies for 1 second marks them for 5 seconds. Markers stay visible even behind walls.\n\nIf Enemy is below 30% HP: \nGrants 1% increased Weapon and Ability Damage for every percentage point below 30%.\n(10% HP left 🠚 20% Increased Damage)\n\nCombatant and Player Shields do not count as Health. (In other words, it only activates against Players once they are below 21 HP)",
      "secondary": "import self"
     },
     "ko": {
@@ -33255,7 +33256,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678821788266,
+      "lastUpdate": 1681768253356,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -33273,7 +33274,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1681768816761,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
