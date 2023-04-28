@@ -453,7 +453,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Buff for #e${4.5+#d} seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\n< table >\n|  Stacks      | 1x   | 2x    | 3x  | 4x    | 5x    <bold/>\n|b Damage Buff | 6.7% | 13.3% | 20% | 26.6% | 33.3% <background/>\n<$>\n\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "On Weapon or Grenade Kill:\n20 Handling and a Stacking Damage Buff for #e${4.5+#d} seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\n< table >\n|  Stacks      | 1x   | 2x    | 3x  | 4x    | 5x    <bold/>\n|b Damage Buff | 6.7% | 13.3% | 20% | 26.6% | 33.3% <background/>\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
      "secondary": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for #e${4.5+#d} seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)"
     },
     "es": {
@@ -468,7 +468,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676203953423,
+      "lastUpdate": 1682717900056,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -486,7 +486,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682260643198,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3942,7 +3942,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682260643198,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10669,14 +10669,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "/*Increases Super Gains from Grenade Kills based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 Minors: \n• Tier 2 Minors, Tier 1 Elites: \n• Tier 3 Minors, Tier 2 Elites: \n• Tier 4 Minors, Tier 3-4 Elites, Minibosses: \n• Bosses:\n• Enemy Players:*/",
+     "main": "Increases Super Energy Gains from Grenade Kills based on <link Enemy Rank [#CombatantClassifications] /> with 1|2|3 Mods equipped:\n• Tier 1 (T1) Minors: 1% | ? | ?\n• T2 Minors, T1 Elites: ? | ? | ?\n• T3 Minors, T2 Elites: ? | ? | ?\n• T4 Minors, T3-T4 Elites, and higher: 5% | ? | ?\n• Enemy Players: ? | ? | ?",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679847542845,
+      "lastUpdate": 1682717158665,
       "updatedBy": "Stardust"
      }
     },
@@ -10686,7 +10686,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11644,14 +11644,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Barricade Cast:\nDrengr's Lash creates 2 additional Lashes with seeking capabilities that travel up to [?] metres.\n\nUpon applying Suspension:\nGrants Woven Mail for 10 seconds.",
+     "main": "Drengr's Lash creates 2 additional Lashes.\nLashes are granted stronger seeking capabilities and travel ?% farther.\n\nGrants Woven Mail for 10 seconds upon applying Suspension.\n\nDrengr's Lash no longer benefits from Thread of Continuity's 50% Increased Debuff Duration.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678719219590,
+      "lastUpdate": 1682716415923,
       "updatedBy": "Stardust"
      }
     },
@@ -11661,7 +11661,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678726148083,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12306,7 +12306,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While within 15 meters of 3 enemies:\n[?]% Increased Blast Radius and 40% Reduced <title Self Damage [self damage] />.\n\nLingers for 4 seconds.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
+     "main": "Grants (?)% Increased Blast Radius while within 15 meters of 3 enemies. Lingers for 4 seconds.\n\nReduces Grenade Launcher Self-Damage by 40%.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -12317,7 +12317,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676205191303,
+      "lastUpdate": 1682717955180,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -12331,7 +12331,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14418,7 +14418,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682260643198,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15058,7 +15058,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Upon reaching Critical Health if your Class Ability is charged, or upon casting Barricade:\nSpawns a Sunspot under you.\n\nOnly works with Sunbreaker Subclass.\nThe spawned Sunspot grants its benefits even without the Sol Invictus Aspect equipped.",
+     "main": "Spawns a Sunspot under you upon reaching Critical Health if your Class Ability is charged (consumes Class Ability Charge), or upon casting a Barricade.\n\nOnly works with a <solar/>Solar Subclass.\nThe spawned Sunspot grants the Sol Invictus buff even without having the Aspect equipped.",
      "secondary": "import self"
     },
     "ko": {
@@ -15073,8 +15073,8 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1667585849383,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1682716592202,
+      "updatedBy": "Stardust"
      },
      "ko": {
       "lastUpdate": 1665698136888,
@@ -15091,7 +15091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17569,14 +17569,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Empowering Rifts you cast grant <overload/>Overload Shot to you and allies inside it, allowing all weapons to cause disruption on hit.\n\nWeapons that have a Breaker Type, either by mods or intrinsically will not be overwritten. Does not work with Well of Radiance.\n\nIf on Void Subclass:\nCasting Empowering Rift grants Devour for 11 seconds.",
+     "main": "Empowering Rifts you cast grant <overload/>Overload Shot to you and allies inside it, allowing weapons to cause disruption on hit. Does not work with Well of Radiance.\n\nWeapons with a Breaker Type (either intrinsic or from Artifact Perks) will not be overwritten. \n\nCasting an Empowering Rift with a <void/>Void Subclass equipped grants Devour for 11 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678660766609,
+      "lastUpdate": 1682716066993,
       "updatedBy": "Stardust"
      }
     },
@@ -17586,7 +17586,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678668030826,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20619,7 +20619,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682260643198,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21000,14 +21000,14 @@
     "Stability": [
      {
       "active": {
-       "stat": [ 15, 30 ]
+       "stat": [ 30 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "As Magazine goes below 50% until empty:\n• Linearly grants 25-50% smaller Accuracy Cone Size\n• -[?]% <title Accuracy Cone Growth [G_conegrowth] />\n• 30(?) Stability.\n\nenhanced (\n#e Stronger effect.\n)",
+     "main": "Grants linearly increasing bonuses as Magazine drops from #e${50+#d}% capacity to empty:\n• 25% to 50% decreased Accuracy Cone Size\n• ?% decreased <title Accuracy Cone Growth [G_conegrowth] />\n• Up to(?) 30 Stability\n\nenhanced (\n#e Stronger effect.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21018,7 +21018,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676239556112,
+      "lastUpdate": 1682715243184,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21027,12 +21027,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
+     "lastUpdate": 1682715088025,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26788,7 +26788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682260643198,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27821,7 +27821,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 3.8 seconds of a Kill:\nThe next Weapon Hit within 7 seconds applies Jolt. \n\nDamage from Jolt inherits the weapon's <link Combatant Damage Scaling [#CombatantScaling] /> but is only applied to the Jolted target.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within 3.8 seconds of a Kill:\nThe next Weapon Hit within #e${7+#d} seconds applies Jolt. \n\nDamage from Jolt inherits the weapon's <link Combatant Damage Scaling [#CombatantScaling] /> (only applies to the Jolted target) and Weapon Damage Buffs.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -27832,7 +27832,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678060535569,
+      "lastUpdate": 1682715215875,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -27845,7 +27845,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28458,7 +28458,7 @@
    },
    "editor": {
     "en": {
-     "main": "As Magazine goes below #e${50+#d}%, until empty: \n<pve [PVE] 12.1% to 25.6% Increased damage. />\n<pvp [PVP] 3% to 6% Increased damage. />\n\nActivation is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 7.85\n#e Activates with 7.85% more of the Magazine Capacity remaining.\n)",
+     "main": "Linearly Increases Weapon Damage as Magazine drops from #e${50+#d}% capacity to empty.\n\nDamage Increase:  <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] />\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 7.85\n#e Activates with 7.85% more of the Magazine Capacity remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -28469,7 +28469,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676213866740,
+      "lastUpdate": 1682714498455,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -28483,7 +28483,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45110,8 +45110,8 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill for #e${7+#d} seconds:\n< weapon type ( Shotgun, Bow ) >\n• 20% Increased Damage\n< ( other ) >\n• 30% Increased Damage\n<$$>\n< weapon type ( Bow, Fusion, LFR ) > // Differentiation between Draw/Charge Time and Firing Delay\n• 20% Longer Charge/Draw Time\n< ( other ) >\n• 20% Longer Firing Delay\n<$$>\n< weapon type ( Bow, Heavy GL, GL ) > // Removes the Range stat bonus from weapons without it\n< ( other ) >\n• 10 Range\n<$$>\n<title Hover for additional information. [damage] />\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle damage (\nBows and Shotguns only receive a 20% Damage Increase. Everything else receives the full 30%.\n\nBows and Grenade Launchers do not receive the 10 Range increase due to not having a Range stat. \n)",
-     "secondary": "On Weapon Kill for #e${7+#d} seconds:\n• 30% Increased Damage\n• 20% Longer Firing Delay/Charge Time/Draw Time\n• 10 Range\n\nBows and Shotguns only receive a 20% Damage Increase.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)"
+     "main": "On Weapon Kill for #e${7+#d} seconds:\n• 30% Increased Damage\n• 20% Longer Firing Delay/Charge Time/Draw Time\n• 10 Range\n\nBows and Shotguns only receive a 20% Damage Increase.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
+     "secondary": "import self"
     },
     "es": {
      "main": "Durante #e${7 + #t} segundos luego de una baja con el arma: \n< weapon type ( combat bow ) >\n< weapon type ( other ) >\n    +10 Alcance\n<$$>\n// separator for readabilty\n< weapon type ( combat bow, shotgun ) >\n    +20% Daño\n< weapon type ( other ) >\n    +30% Daño\n<$$>\n// separator for readabilty\n< weapon type ( hand cannon, scout rifle ) >\n    -15% <title Cadencialde Tiro  [ROF] />\n< weapon type ( fusion rifle, linear fusion rifle ) >\n    -15% <title Tiempo de Carga [ROF] />\n< weapon type ( other ) >\n    -20% <title Cadencia de Tiro [ROF] />\n<$$>\n<formula Alcance: [range_0] />\n\n<title Efectos por Tipo de Arma [weapon list] />\n\ntitle weapon list (\n< table wide background_2 > \n| Tipo de Arma              | Daño        | Cadencia/Carga <bold/>\n| Cañon de Mano         | <green 30% />  | <green -15% />\n| Fusil Explorador         | <green 30% />  | <green -15% />\n| Fusil Automatico         | <purple 30% /> | <purple -20% />\n| Pistola            | <purple 30% /> | <purple -20% />\n| Lanza Granadas    | <purple 30% /> | <purple -20% />\n| Fusil de Fusion Lineal | 30%            | -15%          \n| Fusil de Fusion        | <yellow 27% /> | <yellow -15% />\n| Arco                | <blue 20% />   | <blue -20% /> \n| Escopeta             | <blue 20% />   | <blue -20% />\n<$>\n)\n\ntitle ROF (\nLa Cadencia de Tiro tiende a cambiar hacia el proximo armazon mas lento.\n\nPor Ejemplo: Fusil automatico de Precision => Fusil automatico de Alto Impacto \n)\nenhanced (\nvar t = 1\n)",
@@ -45125,7 +45125,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676049529257,
+      "lastUpdate": 1682717737159,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -45143,7 +45143,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46164,6 +46164,7 @@
    "name": "Under Pressure",
    "hash": 3755250867,
    "type": "Weapon Trait Enhanced",
+   "importStatsFrom": 1645158859,
    "editor": {
     "en": {
      "main": "import main from 1645158859",
@@ -46178,12 +46179,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1682715094584,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48154,14 +48155,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "/*Increases Super Gains from Melee Kills based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 Minors: \n• Tier 2 Minors, Tier 1 Elites: \n• Tier 3 Minors, Tier 2 Elites: \n• Tier 4 Minors, Tier 3-4 Elites, Minibosses: \n• Bosses:\n\nDoes not work in PVP.*/",
+     "main": "Increases Super Energy Gains from Melee Kills. Does not work in PVP.\n\n\n/*Increases Super Gains from Melee Kills based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: \n• T2 Minors, T1 Elites: \n• T3 Minors, T2 Elites: \n• T4 Minors, T3-T4 Elites, and higher:\n\nDoes not work in PVP.*/",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679849688020,
+      "lastUpdate": 1682717149540,
       "updatedBy": "Stardust"
      }
     },
@@ -48171,7 +48172,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48529,8 +48530,8 @@
    },
    "editor": {
     "en": {
-     "main": "< weapon type ( AR, SMG ) >\nHits with Auto Rifles and Submachine Guns have a 2% chance to activate Veist Stinger for 7 seconds.\n< ( Sidearm ) >\nHits with Sidearms have a 4% chance to activate Veist Stinger for 7 seconds.\n< ( Bow, LFR ) >\nHits with Bows and Linear Fusion Rifles have a 10% chance to activate Veist Stinger for 7 seconds.\n< ( other ) >\nHits have a [?]% chance to activate Veist Stinger for 7 seconds.\n<$$>\n\nVeist Stinger:\n• <title Refills [G_refill] /> 25% of Magazine from reserves on activation.\n• Reduces ADS Movement Speed Penalty by 5%.\n• Grants 15% Decreased Draw Time to Bows.\n• Grants [?] Faster Charge Rate to Swords.\n\n4 second cooldown between activations.\n\n<title Hover Here [chances] /> for the Activation Chances on other archetypes.\n\ntitle chances (\nAuto Rifle, Submachine Gun: 2%\nSidearm: 4%\nBow, Linear Fusion Rifle: 10%\n)",
-     "secondary": "Hits have a chance to activate Veist Stinger for 7 seconds, granting archetype-dependant bonuses:\n• Refills 25% of Magazine from reserves on activation.\n• Reduces ADS Movement Speed Penalty by 5%.\n• Grants 15% Decreased Draw Time to Bows.\n• Grants [?] Faster Charge Rate to Swords.\n\n4 second cooldown between activations.\n\nVeist Stinger Activation Chances:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%"
+     "main": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• <title Refills [G_refill] /> 25% of Magazine from reserves on activation\n• Reduces ADS Movement Speed Penalty by an additive 5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants (?) Charge Rate to Swords\n\n4 second cooldown between activations.\n\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%",
+     "secondary": "import self"
     },
     "zh-chs": {
      "main": "< weapon type ( AR, SMG ) >\n命中时有 2% 概率刷新触发 VEIST 尖刺。\n< ( Sidearm ) >\n命中时有 4% 概率刷新触发 VEIST 尖刺。\n< ( Bow, LFR ) >\n命中时有 10% 概率刷新触发 VEIST 尖刺。\n< ( other ) >\n命中时有 [?]% 概率刷新触发 VEIST 尖刺。\n<$$>\n\nVEIST 尖刺：\n• 使用备弹 <title 重新填装 [G_refill] /> 弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n其他武器类型的触发概率 <title 查看 [chances] />\n\ntitle chances (\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%\n)",
@@ -48540,7 +48541,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678062720465,
+      "lastUpdate": 1682715767947,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -48554,7 +48555,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1682718006443,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
