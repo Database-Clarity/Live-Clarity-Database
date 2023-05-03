@@ -3942,7 +3942,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969895292,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14418,7 +14418,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969895292,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17793,7 +17793,7 @@
       "active": {
        "multiplier": [ 1.2 ]
       },
-      "weaponTypes": [ "AR", "Bow", "HC" ]
+      "weaponTypes": [ "AR", "Bow", "HC", "Scout" ]
      }
     ],
     "PVP Damage": [
@@ -17807,13 +17807,13 @@
       "active": {
        "multiplier": [ 1.2 ]
       },
-      "weaponTypes": [ "AR", "Bow", "HC" ]
+      "weaponTypes": [ "AR", "Bow", "HC", "Scout" ]
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%. (55% » 45%)\n)",
+     "main": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• #e${-55+#d}%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n • Auto/Scout Rifle, Bow, Hand Cannon: 20%\n • Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 10\n#e Reduces Auto Aim penalty by ~18%. (55% » 45%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -17824,7 +17824,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679597177842,
+      "lastUpdate": 1683127101816,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -17833,12 +17833,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676209961526,
+     "lastUpdate": 1683127122007,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679597202350,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20619,7 +20619,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969895292,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26788,7 +26788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969895292,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41957,7 +41957,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of your Hits into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.5?% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count until the buff text disappears.\n\nenhanced (\nvar d = 10\n#e Refill amount is increased by an additive 10?%.\n)",
+     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed  into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.5% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count until the buff text disappears.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -41968,7 +41968,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1681764194539,
+      "lastUpdate": 1683127293517,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41982,7 +41982,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1683127303826,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
