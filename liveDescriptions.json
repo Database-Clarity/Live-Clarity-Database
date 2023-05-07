@@ -3942,7 +3942,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1683473876329,
+   "lastUpload": 1683480518721,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14418,7 +14418,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1683473876329,
+   "lastUpload": 1683480518721,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20619,7 +20619,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1683473876329,
+   "lastUpload": 1683480518721,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49549,6 +49549,7 @@
     "Handling": [
      {
       "active": {
+       "stat": [ 25, 100 ],
        "multiplier": [ 0.9, 0.81 ]
       }
      }
@@ -49570,8 +49571,8 @@
    },
    "editor": {
     "en": {
-     "main": "Grants Stability, Reload Speed, and Faster Handling Animations while within 15 meters of enemies.\n\n< table >\n|b    Enemy Count                |bc  Stability              |bc Reload Speed                 |bc Handling Animation Duration\n|b    1                          |c   #e${15+#d}             |c  #e${18+#f}                   |c  0.9x                        <background/>\n|2-2c In-Game Values:            |c-2 <formula [reload_0] /> |c  <formula Ready: [ready_0] />\n|c    <formula Stow: [stow_0] />\n|b    2+                         |c   #e${40+#d}             |c  #e${60+#g}                           |c  0.81x                       <background/>\n|2-2c In-Game Values:            |c-2 <formula [reload_1] /> |c  <formula Ready: [ready_1] />\n|c    <formula Stow: [stow_1] />\n<$>\n\nenhanced (\nvar d = 4\nvar f = 1\nvar g = 3\n#e Grants 4? more stability when active as well as 1|3 more Reload Speed at 1|2 Stacks.\n)",
-     "secondary": "While within 15 meters of 1 enemy:\n#e${15+#d} Stability, #e${18+#f} Reload Speed, and 0.9x Handling Animation Duration Multiplier\n\nWhile within 15 meters of 2+ enemies:\n#e${40+#d} Stability, #e${60+#g} Reload Speed, and 0.81x Handling Animation Duration Multiplier\n\nenhanced (\nvar d = 4\nvar f = 1\nvar g = 3\n#e Grants 4? more stability when active as well as 1|3 more Reload Speed at 1|2 Stacks.\n)"
+     "main": "Grants Stability, Reload Speed, and Faster Handling Animations while within 15 meters of enemies.\n\n< table >\n|b    Enemy Count                |bc  Stability         |bc Reload Speed                 |bc Handling |bc Handling Animation Duration\n|b    1                          |c   #e${15+#d}             |c  #e${18+#f}                   |c  25            |c  0.9x                        <background/>\n|2-2c In-Game Values:            |c-2 <formula [reload_0] /> |c2 <formula Ready Duration: [ready_0] />\n|c2   <formula Stow Duration: [stow_0] />\n|b    2+                         |c   #e${40+#d}             |c  #e${60+#g}                   |c  100           |c  0.81x                       <background/>\n|2-2c In-Game Values:            |c-2 <formula [reload_1] /> |c2 <formula Ready Duration: [ready_1] />\n|c2   <formula Stow Duration: [stow_1] />\n<$>\n\nenhanced (\nvar d = 4\nvar f = 1\nvar g = 3\n#e Grants 4? more stability when active as well as 1|3 more Reload Speed at 1|2 Stacks.\n)",
+     "secondary": "Grants 1|2 Stacks while within 15 meters of 1|2+ enemies. \n\nBonuses at 1|2 Stacks:\n• #e${15+#d}|#e${40+#d} Stability\n• #e${18+#f}|#e${60+#g} Reload Speed\n• 25|100 Handling\n• 0.9x|0.81x Handling Animation Duration Multiplier\n\nenhanced (\nvar d = 4\nvar f = 1\nvar g = 3\n#e Grants 4? more stability when active as well as 1|3 more Reload Speed at 1|2 Stacks.\n)"
     },
     "zh-chs": {
      "main": "15 米内有敌人时，获得以下提升：\n\n< table >\n|b 敌人数量    |b 稳定性     |b 装填速度               |b <title 动画系数 [G_as] />\n|b 1           |  ~15       |  15                     |  0.75x <background/>\n|  实际数值     |            |  <formula [reload_0] /> |  <formula 准备： [ready_0] />\n|              |            |                         |  <formula 收起： [stow_0] />\n|b 2+          |  ~40       |  55                     |  0.56x <background/>\n|  实际数值     |            |  <formula [reload_1] /> |  <formula 准备： [ready_1] />\n|              |            |                         |  <formula 收起： [stow_1] />\n<$>\n\nenhanced (\n#e 更显著的效果。\n)",
@@ -49581,7 +49582,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1682969470125,
+      "lastUpdate": 1683480097976,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -49590,12 +49591,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1682969294963,
+     "lastUpdate": 1683479720828,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969490192,
+   "lastUpload": 1683480518721,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
