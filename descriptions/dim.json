@@ -1057,7 +1057,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 metres of an enemy:"
+       "text": "While within 15 meters of an enemy:"
       }
      ]
     },
@@ -1074,7 +1074,7 @@
     {
      "linesContent": [
       {
-       "text": "After Dodging within 15 metres of an Enemy:"
+       "text": "After Dodging within 15 meters of an Enemy:"
       }
      ]
     },
@@ -1088,7 +1088,7 @@
     {
      "linesContent": [
       {
-       "text": "Can dodge up to 6 times per activation."
+       "text": "Kills extend the buff duration by ? seconds, up to ? seconds."
       }
      ]
     },
@@ -1098,17 +1098,7 @@
     {
      "linesContent": [
       {
-       "text": "Multi-Dodge Dodges don't activate Mods or Aspects that activate on Class Ability Usage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effect immediately ends if you are over 15 metres away from an Enemy while Multi-Dodge is active."
+       "text": "Multi-Dodge Dodges don't activate Aspects that activate on Class Ability Usage."
       }
      ]
     }
@@ -1634,6 +1624,57 @@
      "linesContent": [
       {
        "text": "• Class Ability activation removes the buff."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "187957397": {
+  "hash": 187957397,
+  "name": "Halberdier's Reach",
+  "itemHash": 3093309525,
+  "itemName": "Triton Vice",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Glaive Melee Kills overflow 1 Ammo to Magazine."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "While ? enemies are within ? metres:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants ? Reload Speed and ?% Increased Glaives Melee Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "On Projectile Kills with Glaives Matching your Subclass Element:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Enemies explode, dealing up to ? [?] damage in a ? meter radius."
       }
      ]
     }
@@ -5041,7 +5082,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Airborne Effectiveness to Shotguns."
+       "text": "Passively grants ? Reload Speed and 30 Airborne Effectiveness to Shotguns."
       }
      ]
     },
@@ -5051,14 +5092,33 @@
     {
      "linesContent": [
       {
-       "text": "If your Void Melee Ability is Charged:"
+       "text": "While Void Overshield is active:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Shotgun Kills consume your Melee Ability and grant a 45 HP Void Overshield."
+       "text": "• Shotgun deal "
+      },
+      {
+       "text": "35%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 10%]"
+      },
+      {
+       "text": " Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Shotgun Kills refresh Void Overshield duration to ? seconds"
       }
      ]
     },
@@ -5068,49 +5128,7 @@
     {
      "linesContent": [
       {
-       "text": "Shotgun Kills restore Melee Ability Energy based on "
-      },
-      {
-       "text": "enemy rank",
-       "link": "https://d2clarity.page.link/combatant"
-      },
-      {
-       "text": "."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 5%: Tier 1 Minors"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 9%: Tier 2 Minors, Tier 1 Elites"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 10%: Enemy Players"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 13%: Tier 3 Minors, Tier 2 Elites"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 25%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, Bosses"
+       "text": "While on a Void Subclass, rapid Shotgun Kills or Killing a Powerful Enemy (testing required) with a Shotgun grants a Void Overshield and starts Health Regeneration."
       }
      ]
     }
@@ -6213,7 +6231,7 @@
     {
      "linesContent": [
       {
-       "text": "Dodging grants Light Shift buff for 10 seconds."
+       "text": "Dodging grants Light Shift for 10 seconds."
       }
      ]
     },
@@ -6230,7 +6248,19 @@
     {
      "linesContent": [
       {
-       "text": "[PVE] Light Shift grants 10% Increased Damage to Slowed/Frozen Combatants as well as 10% Increased Damage to Arc Weapons. These buffs stack with each other and with all other buffs."
+       "text": "Light Shift grants 4 Stacks of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc and "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapon Surge for ? seconds."
       }
      ]
     }
@@ -6310,7 +6340,7 @@
     {
      "linesContent": [
       {
-       "text": "Receiving damage highlights the enemy that caused it for 8 seconds."
+       "text": "Receiving damage highlights the enemy that dealt it for 8 seconds."
       }
      ]
     },
@@ -8236,14 +8266,7 @@
     {
      "linesContent": [
       {
-       "text": "On Class Ability Usage:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 6.25% Faster Sprint Speed for 10 seconds. Duration is not refreshable."
+       "text": "Grants 6.25% Faster Sprint Speed for 10 seconds on Class Ability Usage. Duration is not refreshable."
       }
      ]
     },
@@ -8253,7 +8276,7 @@
     {
      "linesContent": [
       {
-       "text": "(Multiplicative Ability Regeneration Rate Increase in PVE is applied after all Aditive Ability Regeneration Rate Increases/Decreases)"
+       "text": "(Multiplicative Ability Regeneration Rate Increase in PVE is applied after all Aditive Ability Regeneration Rate Modifiers)"
       }
      ]
     }
@@ -8559,14 +8582,7 @@
     {
      "linesContent": [
       {
-       "text": "Drengr's Lash creates 2 additional Lashes."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Lashes are granted stronger seeking capabilities and travel ?% farther."
+       "text": "Drengr's Lash creates 2 additional Lashes on Barricade cast. Lashes are granted stronger seeking capabilities and travel ?% farther."
       }
      ]
     },
@@ -8576,17 +8592,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Woven Mail for 10 seconds upon applying Suspension."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Drengr's Lash no longer benefits from Thread of Continuity's 50% Increased Debuff Duration."
+       "text": "Grants Woven Mail for 10 seconds upon applying Suspension to enemies."
       }
      ]
     }
@@ -8766,19 +8772,26 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• 20% Grenade Ability Energy on Empowered Weapon Hits (0.4 second cooldown)"
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Weapon Damage is 'Empowered' while in a Well of Radiance or an Empowering Rift."
+       "text": "While in an Empowering Rift or Well of Radiance:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 20% Grenade Energy on Weapon Kills"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 2.5% Grenade Ability Energy on Weapon Hits with a 0.4 second cooldown"
       }
      ]
     }
@@ -8795,7 +8808,32 @@
     {
      "linesContent": [
       {
-       "text": "Casting Fists of Havoc grants Resolute."
+       "text": "Scoring ? "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Kills within ? seconds of each grants a Stack of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Surge for ? seconds."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Further kills grant additional Stacks of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Surge (up to 4 Stacks) and refresh the duration."
       }
      ]
     },
@@ -8805,7 +8843,23 @@
     {
      "linesContent": [
       {
-       "text": "Resolute is a 75 HP Overshield that negates Precision Damage."
+       "text": "Grants a 75 HP Overshield upon casting Fists of Havoc that negates Precision Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 4 Stacks of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Surge for ? seconds after Fists of Havoc ends."
       }
      ]
     }
@@ -9002,7 +9056,7 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons"
+       "text": "Primary Weapons"
       }
      ]
     },
@@ -9015,7 +9069,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons"
+       "text": "Special Weapons"
       }
      ]
     }
@@ -10115,7 +10169,7 @@
     {
      "linesContent": [
       {
-       "text": "Solar Weapon Kills while standing in a Rift grant Class Ability Energy based on "
+       "text": "Solar Weapon Kills grant Class Ability Energy based on "
       },
       {
        "text": "enemy rank",
@@ -10172,6 +10226,16 @@
      "linesContent": [
       {
        "text": "• 50%: Bosses"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Solar Weapon Kills while standing in a Rift increase the Class Ability Energy gained by ?%."
       }
      ]
     }
@@ -10471,28 +10535,28 @@
     {
      "linesContent": [
       {
-       "text": "3 Enemies = 250%"
+       "text": "• 3 Enemies: 250%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "4 Enemies = 666%"
+       "text": "• 4 Enemies: 666%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "5 Enemies = 1085%"
+       "text": "• 5 Enemies: 1085%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "6 Enemies = 1500%"
+       "text": "• 6+ Enemies: 1500%"
       }
      ]
     },
@@ -10521,7 +10585,39 @@
        "text": "[PVP: 100]"
       },
       {
-       "text": " damage and knocks back enemies in a 7.5 metres radius."
+       "text": " damage and knocks back enemies in a 7.5 meter radius."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rifts emit an Arc Shockwave every 5 second, dealing "
+      },
+      {
+       "text": "200"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 70]"
+      },
+      {
+       "text": " damage to enemies within ? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Enemies killed by Shockwaves explode, dealing 100 damage (and Blinding nearby targets if on an Arc Subclass)."
       }
      ]
     }
@@ -10574,28 +10670,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 10 Airborne Effectiveness"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 35 Reload Speed and Handling"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 2 meters longer Melee Lunge Distance (4.5 -> 6.5)"
+       "text": "Passively grants 10 Airborne Effectiveness, 35 Reload Speed, and 35 Handling to all weapons."
       }
      ]
     }
@@ -13044,14 +13119,21 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills while inside an Empowering or Healing Rift grant Blood Magic."
+       "text": "While staning in a Rift:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Blood Magic halts the duration of the Rift."
+       "text": "• Grants 2 Stacks of Subclass-Matching Weapon Surge"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Kills grant Blood Magic for 5 seconds, up to a maximum of 15 seconds"
       }
      ]
     },
@@ -13061,14 +13143,7 @@
     {
      "linesContent": [
       {
-       "text": "Blood Magic Duration:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "5 seconds per kill, up to a maximum of 15 seconds."
+       "text": "Blood Magic pauses the duration of the Rift for as long as it is active."
       }
      ]
     }
@@ -13306,7 +13381,7 @@
     {
      "linesContent": [
       {
-       "text": "Gain an additional Shield Throw Melee Ability Charge."
+       "text": "Grants an additional Shield Throw Melee Ability Charge."
       }
      ]
     },
@@ -13322,20 +13397,29 @@
        "classNames": [ "barrier" ]
       },
       {
-       "text": "Shield-Piercing Breaker Type."
+       "text": "Shield-Piercing Breaker Type and "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Weakens targets for ? seconds on hit."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Stuns "
+       "text": "Stunning a "
       },
       {
        "classNames": [ "barrier" ]
       },
       {
-       "text": "Barrier Champions with a single Shield Throw."
+       "text": "Barrier Champion with Shield Throw grants a Melee Ability Charge."
       }
      ]
     }
@@ -13350,7 +13434,7 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and Increases Total Reserve size by 75?%. Decreases Blast Radius by 30 and Reload Speed by 20."
+       "text": "Rockets deal 40% Decreased Damage."
       }
      ]
     },
@@ -13360,7 +13444,7 @@
     {
      "linesContent": [
       {
-       "text": "Rockets deal 40?% Decreased Damage."
+       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5 (needs verification). Decreases Blast Radius by 30 and Reload Speed by 20."
       }
      ]
     }
@@ -13377,7 +13461,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 40 Airborne Effectiveness and 10 Draw Time Stat to Bows. (10 Draw Time Stat is the equivalent of a Draw Time Masterwork)"
+       "text": "Passively grants 40 Airborne Effectiveness and 10 Draw Time (equivalent of a Draw Time Masterwork) to Bows."
       }
      ]
     },
@@ -13388,6 +13472,33 @@
      "linesContent": [
       {
        "text": "Bows can hold perfect draws indefinitely."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Gradually as perfect draws are held, over 3? seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants ?% to 150% increased damage against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage Buff disappears after holding the draw for longer than ? seconds."
       }
      ]
     }
@@ -15557,7 +15668,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +30 Airborne Effectiveness to Auto Rifles and Machine Guns."
+       "text": "Passively grants 30 Airborne Effectiveness to Auto Rifles and Machine Guns."
       }
      ]
     },
@@ -15567,7 +15678,10 @@
     {
      "linesContent": [
       {
-       "text": "Readied Auto Rifles and Machine Guns refresh 10% of their Magazine every 1.5 seconds."
+       "text": "Refills"
+      },
+      {
+       "text": " 10% of readied Auto Rifles' and Machine Guns' Magazines every 1.5 seconds."
       }
      ]
     }
@@ -16058,24 +16172,21 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants -50 Airborne Effectiveness."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Increases Sprint Speed by 6.25%."
+       "text": "While Class Ability Energy is full:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Increases Slide Distance by 33%."
+       "text": "• Increases Sprint Speed by 6.25%."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increases Slide Distance by 33%."
       }
      ]
     },
@@ -16290,7 +16401,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 100 Guard Resistance, Guard Efficiency, and Guard Endurance to Swords. Sword Energy does not decay from guarding or blocking damage."
+       "text": "Maxes out the Guard Resistance, Guard Efficiency, and Guard Endurance of Swords."
       }
      ]
     },
@@ -16300,7 +16411,19 @@
     {
      "linesContent": [
       {
-       "text": "Blocking a hit within 0.5 seconds of starting to guard restores 80(?) HP."
+       "text": "Grants "
+      },
+      {
+       "text": "50%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 10%]"
+      },
+      {
+       "text": " Damage Resistance while Blocking."
       }
      ]
     },
@@ -16310,7 +16433,61 @@
     {
      "linesContent": [
       {
-       "text": "Guarding grants 80% Damage Resistance. This in increased to 90% with Aggressive Frame Swords."
+       "text": "Blocking with Aggressive Frame Swords grants a total of "
+      },
+      {
+       "text": "95%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 91%]"
+      },
+      {
+       "text": " Damage Resistance. Blocking with other Sword Frames grants "
+      },
+      {
+       "text": "90%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 82%]"
+      },
+      {
+       "text": " Damage Resistance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Sword Energy does not decay from blocking damage or holding guard."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants Restoration x2 for 3 seconds on any Sword Hits (including unpowered). Duration cannot be refreshed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(Bugged? Should be granting Restoration after you stop Blocking with the duration depending on the number of Hits blocked - which is indicated by the Perfect Guard Stacks)"
       }
      ]
     }
@@ -18718,14 +18895,25 @@
     {
      "linesContent": [
       {
-       "text": "Thunderclap strikes enemies within [?] meters with lightning, dealing 50 damage."
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Thunderclap strikes enemies within [?] meters with lightning, dealing "
+      },
       {
-       "text": "Range is increased to [?] meters when Amplified."
+       "text": "200"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 50]"
+      },
+      {
+       "text": " damage. Lightning Damage is increased by 50% while "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified."
       }
      ]
     }
@@ -20426,14 +20614,33 @@
     {
      "linesContent": [
       {
-       "text": "On Kinetic Damage Precision Kill:"
+       "text": "On Kinetic Damage Precision Kills:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Enemy explodes in an elemental explosion that matches your currently selected Subclass, dealing up to 208 damage."
+       "text": "• Creates an Elemental Explosion matching your Subclass Element on enemy death location, dealing "
+      },
+      {
+       "text": "?"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]"
+      },
+      {
+       "text": " damage over a ? meter radius."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Applies a debuff based on your selected Subclass in a ? meter radius."
       }
      ]
     },
@@ -20443,7 +20650,42 @@
     {
      "linesContent": [
       {
-       "text": "Explosion Radius and Falloff Distance slightly scale with your Weapon's Range Stat."
+       "text": "Debuffs applied by Subclass:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Arc: Blinds for 7 [PVP: 3] seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Solar: Applies ? Scorch (?? with Ember of Ashes)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Stasis: Applies ? Slow Stacks"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Strand: Severs for ? [PVP: ?] seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Void: Weakens for ? [PVP: ?] seconds"
       }
      ]
     }
@@ -21340,7 +21582,17 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and Increases Total Reserve size by 75?%. Decreases Blast Radius by "
+       "text": "Rockets deal 40% Decreased Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5 (needs verification). Decreases Blast Radius by "
       },
       {
        "text": "",
@@ -21355,16 +21607,6 @@
       },
       {
        "text": "15."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Rockets deal 40?% Decreased Damage."
       }
      ]
     },
@@ -21621,6 +21863,65 @@
    ]
   }
  },
+ "2316126473": {
+  "hash": 2316126473,
+  "name": "High Priority",
+  "itemHash": 2374129871,
+  "itemName": "Cenotaph Mask",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Refills"
+      },
+      {
+       "text": " 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damaging a Miniboss, Champion, Boss, or Vehicle with a Trace Rifle marks them for 10 seconds."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(No, it does not require a matching element)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ally kills on Marked Enemies generates "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Heavy Ammo for Allies and "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Ammo for the Wearer. Spawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number)."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2318667184": {
   "hash": 2318667184,
   "name": "Kinetic Weapon Surge",
@@ -21780,7 +22081,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Wave that returns back to the Barricade after 18.5 metres."
+       "text": "Solar Wave that returns back to the Barricade after traveling 18.5 meters."
       }
      ]
     },
@@ -21805,7 +22106,7 @@
        "text": "[PVP: 100]"
       },
       {
-       "text": " damage."
+       "text": " damage and applies ? Scorch (?? with Ember of Ashes). Only applies Scorch to a target once per usage."
       }
      ]
     },
@@ -21818,7 +22119,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Kills refresh 25% of Class Ability Energy."
+       "text": "Solar Kills grant 25% Class Ability Energy."
       }
      ]
     }
@@ -22471,6 +22772,53 @@
    ]
   }
  },
+ "2445247031": {
+  "hash": 2445247031,
+  "name": "Barri-nade",
+  "itemHash": 90009855,
+  "itemName": "Arbor Warden",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Barri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Non-barricade class abilities default to Towering Barricade. Barri-nade has no collision with enemies."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Enemies within 5? meters of the impact location are disoriented."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2447449706": {
   "hash": 2447449706,
   "name": "Heavy Handed",
@@ -22929,102 +23277,60 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Kills have a chance of granting 1 stack of Firewalker. (1-3 Kills, average of 2)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Getting "
-      },
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Frozen grants 1 stack of Firewalker."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Maximum of 4 Stacks. Lasts 10 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Firewalker increases Weapon Damage:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "text": "[PVE] 1x = 20% | 2x = 25% | 3x = 35% | 4x = 40%"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "text": "[PVP] 1x = 15% | 2x = 25% | 3x = 20% | 4x = 35%"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "(Yes, 3x is 20% in PVP)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Slow Stacks received and their Duration are halved."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Removes "
-      },
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Stasis Breakout damage. Stasis Breakout deals 105 "
+       "text": "Solar Kills have a chance of granting 1 stack of "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Damage in a 9 meter radius."
+       "text": "Solar Weapon Surge for ? seconds."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frozen grants the maximum of 4 Stacks of "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapon Surge for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Slow Stacks and Duration are halved. Damage from "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Breakout is removed."
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Breakout creates a burst of "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Energy, dealing 105 damage in a 9 meter radius."
       }
      ]
     }
@@ -23778,24 +24084,14 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills with a Matching Subclass Element grant a buff, depending on whether your Super Ability is charged or not."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "If Super is not Full:"
+       "text": "While Super is not charged:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Energy Siphon for 2 seconds. (Essentially a Cooldown)"
+       "text": "Kills with Weapons matching your Subclass Element grant Energy Siphon for 2 seconds. (Essentially a Cooldown)"
       }
      ]
     },
@@ -23811,7 +24107,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: +1.45%]"
+       "text": "[PVP: 1.45%]"
       },
       {
        "text": " Super Energy."
@@ -23824,38 +24120,33 @@
     {
      "linesContent": [
       {
-       "text": "If Super is Full:"
+       "text": "While Super is charged:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants Absorption Cells, granting "
+       "text": "Kills with Weapons matching your Subclass Element grants 4 Stacks of Subclass-Matching Weapon Surge for "
       },
       {
-       "text": "20%"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 15%]"
-      },
-      {
-       "text": " increased damage for Weapons Matching your Subclass Element for "
-      },
-      {
-       "text": "6"
+       "text": "10"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 3.5]"
+       "text": "[PVP: 5]"
       },
       {
-       "text": " seconds. Additional Kills increase duration by "
+       "text": " seconds."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional Kills increase duration by "
       },
       {
        "text": "4"
@@ -23868,35 +24159,6 @@
       },
       {
        "text": " seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Absorption Cells maxes out at a "
-      },
-      {
-       "text": "10"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 6]"
-      },
-      {
-       "text": " second duration."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Absorption Cells disappears on Weapon Swap."
       }
      ]
     }
@@ -24031,6 +24293,16 @@
      "linesContent": [
       {
        "text": "Grants an extra Melee Ability Charge."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Acts as a copy of the Heavy Handed armor mod."
       }
      ]
     }
@@ -25538,14 +25810,14 @@
     {
      "linesContent": [
       {
-       "text": "Daybreak Projectiles apply 30 Scorch on hit. (40 with Ember of Ashes Equipped)"
+       "text": "Daybreak Projectiles apply 30 Scorch on hit (40 with Ember of Ashes) and deal ?% Increased Damage."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Daybreak Projectiles can occasionally hit twice - doubling the amount of Scorch applied."
+       "text": "(Daybreak Projectiles can hit twice - doubling the damage and the amount of Scorch applied)"
       }
      ]
     },
@@ -25555,7 +25827,7 @@
     {
      "linesContent": [
       {
-       "text": "Scorch effects deal "
+       "text": "Scorch deals "
       },
       {
        "text": "200%"
@@ -25567,7 +25839,7 @@
        "text": "[PVP: 50%]"
       },
       {
-       "text": " increased damage."
+       "text": " Increased Damage."
       }
      ]
     },
@@ -25577,7 +25849,7 @@
     {
      "linesContent": [
       {
-       "text": "Scorch Damage ticks grant 6.25% Melee Ability Energy."
+       "text": "Scorch Damage Ticks grant 6.25% Melee Ability Energy."
       }
      ]
     }
@@ -25744,13 +26016,51 @@
     {
      "linesContent": [
       {
-       "text": "Melee Hits "
+       "text": "On Melee Hits, for 5 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 50 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants ? Mobility"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants ?% Increased Jump Height"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "+ "
       },
       {
-       "text": "refill"
+       "text": "Refills"
       },
       {
-       "text": " the magazine of your equipped weapon from reserves and grant 50 Airborne Effectiveness for 5 seconds."
+       "text": " the magazine of your held weapon from reserves"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Powered Melee Hits refill the magazines of all your equipped weapons."
       }
      ]
     },
@@ -25886,7 +26196,7 @@
     {
      "linesContent": [
       {
-       "text": "Sentient Arc Soul grants 4.5% Grenade Energy once per burst if it damages an enemy."
+       "text": "Sentient Arc Soul grants 5% Grenade Energy once per burst if it damages an enemy."
       }
      ]
     }
@@ -29586,7 +29896,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 85]"
+       "text": "[PVP: 50]"
       },
       {
        "text": " "
@@ -29595,7 +29905,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Damage to targets within 20 meters and spread the Shocked debuff."
+       "text": "Arc Damage to targets within 12 meters and spread the Shocked debuff."
       }
      ]
     },
@@ -32915,7 +33225,7 @@
     {
      "linesContent": [
       {
-       "text": "Heals you to 70 HP on Kill if Critical."
+       "text": "Weapon Kills at Critical Health heal you to 70 HP."
       }
      ]
     },
@@ -32925,17 +33235,7 @@
     {
      "linesContent": [
       {
-       "text": "Generates 5% Class, Grenade, and Melee Energy every time you take damage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "1 second cooldown between activations."
+       "text": "Grants 5% Class Ability, Grenade, and Melee Energy upon receiving damage. 1 second cooldown between activations."
       }
      ]
     }
@@ -33009,9 +33309,6 @@
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
        "text": "Additional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds."
@@ -33024,7 +33321,21 @@
     {
      "linesContent": [
       {
-       "text": "Strengthened Throwing Knife deals "
+       "text": "Strengthened Throwing Knife:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants ? Strength while the buff is active"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Deals "
       },
       {
        "text": "200%"
@@ -33036,13 +33347,27 @@
        "text": "[PVP: 100%]"
       },
       {
-       "text": " increased damage and stuns "
+       "text": " Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Stuns "
       },
       {
        "classNames": [ "unstoppable" ]
       },
       {
-       "text": "Unstoppable Champions. Buff is consumed on Knife Hit."
+       "text": "Unstoppable Champions"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Buff is consumed on Knife Hit"
       }
      ]
     }
@@ -35372,14 +35697,7 @@
     {
      "linesContent": [
       {
-       "text": "Skip Grenades spawn an additional drone (4🠚5)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Drones chase enemies much more aggressively."
+       "text": "Skip Grenade Drones chase enemies much more aggressively."
       }
      ]
     },
@@ -36156,6 +36474,52 @@
      "linesContent": [
       {
        "text": "取消瞄准时，追踪效果持续 1 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3978468247": {
+  "hash": 3978468247,
+  "name": "Discord",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following upon readying the weapon within ? seconds of scoring a kill with a different weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.75?x ADS Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff lasts 7 seconds. Kills while Discord is active refund ammo to the Magazine."
       }
      ]
     }
@@ -37474,7 +37838,7 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons"
+       "text": "Primary Weapons"
       }
      ]
     },
@@ -37487,7 +37851,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons"
+       "text": "Special Weapons"
       }
      ]
     },
@@ -37518,7 +37882,17 @@
     {
      "linesContent": [
       {
-       "text": "Grappling grants Woven Mail and ?% Flinch Resistance for 10(?) seconds."
+       "text": "Grappling grants Woven Mail."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants ?% Flinch Resistance while Woven Mail is active."
       }
      ]
     }
@@ -38462,21 +38836,7 @@
     {
      "linesContent": [
       {
-       "text": "While in Arc Staff:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Blocking with Whirlwind Guard doesn't consume extra Super Energy."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 50% reduced Super Drain"
+       "text": "Can deactivate Arc Staff at any time to preserve a portion of unspent Super Energy."
       }
      ]
     },
@@ -38486,14 +38846,34 @@
     {
      "linesContent": [
       {
-       "text": "Can deactivate Arc Staff at any time to preserve a portion of unspent Super Energy."
+       "text": "Reduces Arc Staff's Passive Super Drain by 30%."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Instantaneous Deactivation refunds ?% Super Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "On Arc Staff deactivation:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Instantaneous Deactivation refunds 62.5% Super Energy."
+       "text": "Blinds enemies within ? metres and grants x? Arc Weapon Surge for ? seconds."
       }
      ]
     }
