@@ -1,22 +1,24 @@
 {
-  "name": "@icemourne/tool-box",
+  "name": "live_database_converter",
   "author": "Icemourne",
   "license": "MIT",
-  "homepage": "https://github.com/Ice-mourne/Tool-box#readme",
+  "homepage": "",
   "version": "1.0.0",
-  "description": "Random TS functions",
+  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "convert": "node index.js"
   },
+  "dependencies": {
+    "@icemourne/description-converter": "^1.0.48",
+    "@icemourne/tool-box": "^1.0.40",
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
-    "@icemourne/description-converter": "^1.0.46",
-    "@icemourne/tool-box": "^1.0.38",
     "@types/lodash": "^4.14.195",
     "@types/node": "^20.2.5",
-    "lodash": "^4.17.21",
     "typescript": "^5.1.3"
   }
 }
