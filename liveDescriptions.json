@@ -1685,14 +1685,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While within 15 meters of an enemy:\nMulti-Dodge Ready appears on the Buff List.\n\nAfter Dodging within 15 meters of an Enemy:\nYou can dodge an unlimited amount of times for 6 seconds.\n\nKills extend the buff duration by 5 seconds, up to 12 seconds.\n\nMulti-Dodge Dodges don't activate:\n• Mods that activate on Class Ability Usage\n• The Winter's Shroud <stasis/>Stasis Aspect",
+     "main": "While within 15 meters of an enemy:\nMulti-Dodge Ready appears on the Buff List.\n\nAfter Dodging within 15 meters of an Enemy:\nYou can dodge an unlimited amount of times for 6 seconds.\n\nKills extend the buff duration by 5 seconds, up to 11 seconds.\n\nMulti-Dodge Dodges don't activate:\n• Mods that activate on Class Ability Usage\n• The Winter's Shroud <stasis/>Stasis Aspect",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685048898412,
+      "lastUpdate": 1685816334440,
       "updatedBy": "Stardust"
      }
     },
@@ -1702,7 +1702,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685048933439,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2450,14 +2450,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Glaive Melee Kills overflow 1 Ammo to Magazine.\n\nWhile ? enemies are within ? metres:\nGrants ? Reload Speed and ?% Increased Glaives Melee Damage.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to ? [?] damage in a ? meter radius.",
+     "main": "Glaive Melee Kills <title refill [G_refill] /> 1 Ammo into the Magazine from reserves, up to double the normal capacity.\n\nWhile 3 enemies are within 15 metres:\nGrants ? Reload Speed and <pve 30% /> <pvp [10%] /> Increased Glaives Melee Damage.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <pve ? /> <pvp [101] /> damage in a 4? meter radius.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684970530608,
+      "lastUpdate": 1685817139310,
       "updatedBy": "Stardust"
      }
     },
@@ -2467,7 +2467,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4191,7 +4191,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5216,7 +5216,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7731,7 +7731,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7787,7 +7787,7 @@
     "Reload": [
      {
       "active": {
-       "stat": [ 100 ]
+       "stat": [ 400 ]
       }
      }
     ],
@@ -7808,24 +7808,24 @@
    },
    "editor": {
     "en": {
-     "main": "Class Ability Usage reloads all weapons and grants Wraithmetal Mail for 9 seconds.\n\nWraithmetal Mail grants:\n• 50 Mobility\n• 100 Reload Speed and Handling\n• 0.7x Ready/Stow Duration Multiplier\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%",
+     "main": "Class Ability Usage reloads all weapons (counts as a manual reload) and grants Wraithmetal Mail for 9 seconds.\n\nWraithmetal Mail:\n• Grants 50 Mobility\n• Grants 100 Handling\n• Sets Reload Speed to 100\n• Grants a 0.7x Ready/Stow Duration Multiplier\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678821555611,
+      "lastUpdate": 1685814445059,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1678821571287,
+     "lastUpdate": 1685814418040,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8742,7 +8742,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8918,14 +8918,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While on a <stasis/>Stasis Subclass:\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift.\n\nDodging grants Light Shift for 10 seconds.\nClass Ability Energy does not recharge while Light Shift is active.\n\nLight Shift grants 4 Stacks of <arc/>Arc and <stasis/>Stasis Weapon Surge for ? seconds.",
+     "main": "While on a <stasis/>Stasis Subclass:\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift.\n\nDodging grants Light Shift for 10 seconds. Class Ability Energy is locked to 0% while Light Shift is active.\n\nLight Shift grants 4 Stacks of <arc/>Arc and <stasis/>Stasis Weapon Surge for ? seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684969293554,
+      "lastUpdate": 1685814551943,
       "updatedBy": "Stardust"
      }
     },
@@ -8935,7 +8935,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9864,7 +9864,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11028,14 +11028,14 @@
    },
    "editor": {
     "en": {
-     "main": "Dodging Grants x1 Stat Boost to you and allies within 15 meters for 15 seconds.\n\nWhile Stat Boost is active:\n• Kills or Dodges grant an additional Stack (maximum of 5) and refresh the duration of the buff.\n• Allies within 10 meters receive the same stack amount of Stat Boost as the owner when the buff is refreshed.\n\nStat Boost Bonuses at 1|2|3|4|5 Stacks:\n• 30 | 35 | 40 | 45 | 50 Airborne Effectiveness\n• 40(?) | 40(?) | 45(?) | 50(?) | 55(?) Handling\n• 40 | 40 | 45 | 50 | 55 Reload Speed\n• 1x | 0.925x | 0.915x | 0.91x | 0.89x Reload Duration Multiplier",
+     "main": "Dodging Grants 1 Stack of Tight Fit to the wearer and allies within 15 meters for 15 seconds.\n\nWhile Tight Fit is active:\n• Kills or Dodges grant an additional Stack up to a maximum of 5 and refresh the duration of the buff.\n• Allies within range receive the same Stack amount of Tight Fit as the owner when the buff is refreshed.\n\nStat Boost Bonuses at 1|2|3|4|5 Stacks:\n• 30 | 35 | 40 | 45 | 50 Airborne Effectiveness\n• 40? | 40? | 45? | 50? | 55? Handling\n• 40 | 40 | 45 | 50 | 55 Reload Speed\n• 1x | 0.925x | 0.915x | 0.91x | 0.89x Reload Duration Multiplier",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680368066734,
+      "lastUpdate": 1685817861426,
       "updatedBy": "Stardust"
      }
     },
@@ -11045,7 +11045,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680368983155,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11795,7 +11795,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11921,7 +11921,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12243,7 +12243,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Scoring ? <arc/>Arc Weapon Kills within ? seconds of each grants a Stack of <arc/>Arc Weapon Surge for ? seconds.\nFurther kills grant additional Stacks of <arc/>Arc Weapon Surge (up to 4 Stacks) and refresh the duration.\n\nGrants a 75 HP Overshield upon casting Fists of Havoc that negates Precision Damage.\n\nGrants 4 Stacks of <arc/>Arc Weapon Surge for ? seconds after Fists of Havoc ends.",
+     "main": "If selected Super Ability is <arc/>Fists of Havoc:\n<arc/>Arc Kills have a chance of granting a Stack of <arc/>Arc Weapon Surge for 11 seconds. Maximum of 4 Stacks. Grants all 4 Stacks after Fists of Havoc ends.\n\nRequires between 1 to 3 Arc Kills to grant a Stack. Average of 2 Kills of <arc/>Arc Weapon Surge.\n\n<arc/>Arc Kills at 4 Stacks refresh the buff's duration.\n\nGrants a 75 HP Overshield upon casting Fists of Havoc that negates Precision Damage.",
      "secondary": "import self"
     },
     "ko": {
@@ -12258,7 +12258,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684961711010,
+      "lastUpdate": 1685814019595,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -12276,7 +12276,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12532,7 +12532,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13234,7 +13234,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14440,14 +14440,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Daybreak Kills spawn a Healing and Empowering Rift on Enemy Death Location.\n\nKills inside a Rift while your Class Ability Energy is full also spawn a Healing and Empowering Rift on Enemy Death Location. Consumes Class Ability Charge.\n\nSolar Weapon Kills grant Class Ability Energy based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites(?)\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites(?)\n• 30%: Tier 4 Minors, Tier 3-4 Elites(?)\n• 40%: Minibosses \n• 50%: Bosses\n\nSolar Weapon Kills while standing in a Rift increase the Class Ability Energy gained by ?%.",
+     "main": "Daybreak Kills spawn a Healing and Empowering Rift at Enemy Death Location.\n\nKills while standing in a Rift with your Class Ability Energy full also spawn a Healing and Empowering Rift at Enemy Death Location. Consumes Class Ability Charge.\n\nSolar Weapon Kills grant Class Ability Energy based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites(?)\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites(?)\n• 30%: Tier 4 Minors, Tier 3-4 Elites(?)\n• 40%: Minibosses \n• 50%: Bosses\n\nKills inside the Healing and Empowering Rift do not grant Class Ability Energy currently. (Why?)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684958123651,
+      "lastUpdate": 1685811625593,
       "updatedBy": "Stardust"
      }
     },
@@ -14457,7 +14457,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14660,7 +14660,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16648,7 +16648,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18813,14 +18813,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While staning in a Rift:\n• Grants 2 Stacks of Subclass-Matching Weapon Surge\n• Kills grant Blood Magic for 5 seconds, up to a maximum of 15 seconds\n\nBlood Magic pauses the duration of the Rift for as long as it is active.",
+     "main": "While staning in a Rift or a Well of Radiance:\n• Grants 2 Stacks of Subclass-Matching Weapon Surge\n• Kills grant Blood Magic for 5 seconds, up to a maximum of 15 seconds\n\nBlood Magic pauses the duration of the Rift for as long as it is active. Doesn't apply to Well of Radiance.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684958226174,
+      "lastUpdate": 1685811952972,
       "updatedBy": "Stardust"
      }
     },
@@ -18830,7 +18830,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19065,7 +19065,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19141,31 +19141,31 @@
     "PVE Damage": [
      {
       "active": {
-       "multiplier": [ 1, 1.5, 2, 2.5 ]
+       "multiplier": [ 1.375, 1.75, 2.125, 2.5 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "Passively grants 40 Airborne Effectiveness and 10 Draw Time (equivalent of a Draw Time Masterwork) to Bows.\n\nBows can hold perfect draws indefinitely.\n\nGradually as perfect draws are held, over 3? seconds:\nGrants ?% to 150% increased damage against PVE Combatants.\n\nDamage Buff disappears after holding the draw for longer than ? seconds.",
+     "main": "Passively grants 40 Airborne Effectiveness and 10 Draw Time Stat (equivalent of a Draw Time Masterwork) to Bows.\n\nFull Draws grant Adamantine Brace:\n• Allows Perfect Draws to be held indefinitely.\n• <pve Grants 37.5% Increased Damage against PvE Combatants every 0.5 seconds, up to a 150% Increase. />\n\nPvE Damage buff only affects the initial Impact Damage (e.g. Wish Ender's overpenetration is unaffected) and expires after 4 Seconds of Adamantine Brace being active. Leviathan's Breath does not receive the Damage Increase.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684969448924,
+      "lastUpdate": 1685816290065,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1684969545425,
+     "lastUpdate": 1685816242638,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19233,14 +19233,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Duskfield Grenades have a [?]% larger radius and a 138% longer base cooldown.\n\nWhile inside a Duskfield Grenade's Slowing Field:\nEnemies deal <pve 50% /> <pvp [20%] /> reduced damage, and allies are granted <pve 25% /> <pvp [5%] /> Damage Resist.\n\nWhen combined with Touch of Winter:\n<stasis/>Crystal increases from Medium to Large, and radius is increased additively.",
+     "main": "<stasis/>Duskfield Grenades have a ?% larger radius and a 40% decreased recharge rate.\n\nWhile inside a Duskfield Grenade's Slowing Field:\n• Enemies deal <pve 50% /> <pvp [20%] /> Decreased Damage\n• Allies are granted <pve 25% /> <pvp [5%] /> Damage Resist\n\nWhen combined with Touch of Winter:\n<stasis/>Crystal increases from Medium to Large, and radius is increased additively.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1683540624801,
+      "lastUpdate": 1685816459522,
       "updatedBy": "Stardust"
      }
     },
@@ -19250,7 +19250,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1683541161414,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19633,7 +19633,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20890,7 +20890,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26874,7 +26874,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27085,7 +27085,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28565,8 +28565,8 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "export start (\nOn Kinetic Damage Precision Kills: \n• Creates an Elemental Explosion matching your Subclass Element on enemy death location, dealing <pve ? /> <pvp [?] /> damage over a ? meter radius.\n• Applies a debuff based on your selected Subclass in a ? meter radius.\n)\n\nDebuffs applied by Subclass:\n<arc/> Blinds for <pve 7 /> <pvp [3] /> seconds\n<solar/> Applies ? Scorch (?? with Ember of Ashes)\n<stasis/> Applies ? Slow Stacks\n<strand/> Severs for ? [?] seconds\n<void/> Weakens for ? [?] seconds",
-     "secondary": "import start from 2204713148\n\nDebuffs applied by Subclass:\n• Arc: Blinds for 7 [PVP: 3] seconds\n• Solar: Applies ? Scorch (?? with Ember of Ashes)\n• Stasis: Applies ? Slow Stacks\n• Strand: Severs for ? [PVP: ?] seconds\n• Void: Weakens for ? [PVP: ?] seconds"
+     "main": "export start (\nOn Kinetic Damage Precision Kills: \n• Creates an Elemental Explosion matching your Subclass Element on enemy death location, dealing up to <pve 280 /> <pvp [100] /> damage over a ? meter radius.\n• Applies a debuff based on your selected Subclass in a ? meter radius.\n)\n\nDebuffs applied by Subclass:\n• <arc/>Arc: Blinds for <pve ? /> <pvp [?] /> seconds\n• <solar/>Solar: Applies 15 Scorch (20 with Ember of Ashes)\n• <stasis/>Stasis: Applies 30 Slow Stacks\n• <strand/>Strand: Severs for <pve ? /> <pvp [?] /> seconds\n• <void/>Void: Weakens for <pve ? /> <pvp [?] /> seconds",
+     "secondary": "import self"
     },
     "ko": {
      "main": "물리 피해 정밀타 처치 시:\n적이 현재 장착한 하위직업의 속성 폭발을 일으킵니다.\n폭발 반경과 피해 사거리는 무기의 사거리 수치에 기반합니다.\n\n<pvp 중심부에서 약 200의 피해를 일으킵니다. />",
@@ -28580,7 +28580,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684954808921,
+      "lastUpdate": 1685810890482,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -28598,7 +28598,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30706,7 +30706,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Barricade Placement:\nUnleashes a <solar/>Solar Wave that returns back to the Barricade after traveling 18.5 meters.\n\n<solar/>Solar Wave deals <pve 240 /> <pvp [100] /> damage and applies ? Scorch (?? with Ember of Ashes). Only applies Scorch to a target once per usage.\n\n<solar/>Solar Kills grant 25% Class Ability Energy.\n",
+     "main": "On Barricade Placement:\nUnleashes a <solar/>Solar Wave that returns back to the Barricade after traveling 18.5 meters.\n\n<solar/>Solar Wave deals <pve 240 /> <pvp [100] /> damage and applies <pve 60 /> <pvp [30] /> Scorch (unchanged with Ember of Ashes).\n\nEnemies that are hit by the Wave cannot be damaged by <solar/>Solar Wave for 2 seconds. Wave does not apply Scorch while returning.\n\n<solar/>Solar Kills grant 25% Class Ability Energy.\n",
      "secondary": "import self"
     },
     "ko": {
@@ -30717,7 +30717,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684961072113,
+      "lastUpdate": 1685813288040,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -30731,7 +30731,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31417,7 +31417,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31602,14 +31602,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash.\n\nNon-barricade class abilities default to Towering Barricade. Barri-nade has no collision with enemies.\n\nEnemies within 5? meters of the impact location are disoriented.",
+     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade.\n\nEnemies within 5? meters of the Barri-Nade's impact location are disoriented. Spawned Barricade deals no Contact Damage within 2 seconds of its creation.\n\nBarri-nade has no collision with enemies and objects that are not part of the map by default.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684960568036,
+      "lastUpdate": 1685812418577,
       "updatedBy": "Stardust"
      }
     },
@@ -31619,7 +31619,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31742,7 +31742,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32324,14 +32324,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<solar/>Solar Kills have a chance of granting 1 stack of <solar/>Solar Weapon Surge for ? seconds.\nBeing <stasis/>Frozen grants the maximum of 4 Stacks of <solar/>Solar Weapon Surge for ? seconds.\n\nSlow Stacks and Duration are halved. Damage from <stasis/>Stasis Breakout is removed.<stasis/>Stasis Breakout creates a burst of <solar/>Solar Energy, dealing 105 damage in a 9 meter radius.",
+     "main": "<solar/>Solar Kills have a chance of granting 1 stack of <solar/>Solar Weapon Surge for 11 seconds. Maximum of 4 Stacks. Being <stasis/>Frozen grants all 4 Stacks.\n\nRequires between 1 to 3 <solar/>Solar Kills to grant a Stack. Average of 2 kills.\n\n<solar/>Solar Kills at 4 Stacks refresh the buff's duration.\n\nSlow Stacks and Duration are halved. Damage from <stasis/>Stasis Breakout is removed.\n\n<stasis/>Stasis Breakout creates a burst of <solar/>Solar Energy, dealing up to 105 damage over a 9 meter radius.\n",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684961845905,
+      "lastUpdate": 1685814009908,
       "updatedBy": "Stardust"
      }
     },
@@ -32341,7 +32341,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33103,7 +33103,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35511,7 +35511,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38525,7 +38525,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39220,7 +39220,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40252,7 +40252,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40344,7 +40344,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41780,7 +41780,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45271,7 +45271,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45472,7 +45472,7 @@
    },
    "editor": {
     "en": {
-     "main": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\n\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife:\n• Grants ? Strength while the buff is active\n• Deals <pve 200% /> <pvp [100%] /> Increased Damage\n• Stuns <unstoppable/>Unstoppable Champions\n• Buff is consumed on Knife Hit",
+     "main": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\n\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife:\n• Grants 30? Strength while the buff is active\n• Deals <pve 200% /> <pvp [100%] /> Increased Damage\n• Stuns <unstoppable/>Unstoppable Champions\n• Buff is consumed on Knife Hit",
      "secondary": "import self"
     },
     "ko": {
@@ -45487,7 +45487,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684968698832,
+      "lastUpdate": 1685814281831,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -45505,7 +45505,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46198,7 +46198,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47906,7 +47906,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47989,7 +47989,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49063,7 +49063,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50784,7 +50784,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685810341292,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52212,15 +52212,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Airborne Effectiveness to Fusion Rifles and Linear Fusion Rifles.\r\n\r\nFusion Rifle and Linear Fusion Rifle kills grant Radiant for 7.5 seconds.\r\n\r\nIcarus Dash <title refreshes [refreshes] /> all your weapons.\r\n\r\ntitle refreshes (\r\nReload, but does not need animation and doesn't proc on-reload perks.\r\n)",
+     "main": "Passively grants 30 Airborne Effectiveness to Fusion Rifles and Linear Fusion Rifles.\n\nFusion Rifle and Linear Fusion Rifle kills grant Radiant for 7.5 seconds.\n\nIcarus Dash <title refills [G_refill] /> all weapons from reserves.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1668260501767,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1685814217734,
+      "updatedBy": "Stardust"
      }
     },
     "stats": {
@@ -52229,7 +52229,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680051046812,
+   "lastUpload": 1685817873807,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
