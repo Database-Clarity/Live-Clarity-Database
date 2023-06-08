@@ -419,31 +419,31 @@
    "uploadToLive": false
   },
   "11126525": {
-   "hash": 11126525,
    "name": "Powerful Attraction",
+   "hash": 11126525,
    "type": "Armor Mod General",
-   "lastUpload": 1684953045107,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "On Class Ability Usage with 1|2|3 Mods equipped:\nCollects Orbs of Power within ?|?|? meters.\n\nAlso works on Motes in Gambit.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1686224368393,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1686224473621,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "11551321": {
    "name": "Iron Grip",
@@ -3068,7 +3068,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n(Finishers) increase the duration of the Void Invisibility and restore additional health.\n\nInvisibility Duration || Health based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• Minors: 6.8 seconds (9.8s) || 100 HP (?)\n• Elites, Enemy Players: 9.8s (12.7s) || ? HP (200 HP)\n• Minibosses = 12.8s (15.8s) || ? HP (200 HP)\n• Bosses = 13.3s || 200 HP (Not Finishable)\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
+     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n{Finishers} increase the duration of <void/>Void Invisibility and restore additional health.\n\nInvisibility Duration | Health based on <link enemy rank [https://d2clarity.page.link/combatant] />:\n• Minors: 6.8 seconds [9.8s} | 100 HP {?)\n• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}\n• Minibosses = 12.8s {15.8s} | ? HP {200 HP}\n• Bosses = 13.3s | 200 HP {Not Finishable}\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -3079,7 +3079,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678819719477,
+      "lastUpdate": 1686223246105,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -3093,7 +3093,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -4191,7 +4191,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7505,14 +7505,14 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants ? Reload Speed and 30 Airborne Effectiveness to Shotguns.\n\nWhile Void Overshield is active:\n• Shotgun deal <pve 35% /> <pvp [10%] /> Increased Damage\n• Shotgun Kills refresh Void Overshield duration to ? seconds\n\nWhile on a Void Subclass, rapid Shotgun Kills or Killing a Powerful Enemy (testing required) with a Shotgun grants a Void Overshield and starts Health Regeneration.",
+     "main": "Passively grants ? Reload Speed and 30 Airborne Effectiveness to Shotguns.\n\nWhile <void/>Void Overshield is active:\n• Shotgun deal <pve 35% /> <pvp [10%] /> Increased Damage\n• Shotgun Kills refresh <void/>Void Overshield duration\n\nWhile on a <void/>Void Subclass:\nScoring 2 Shotgun Kills on Minor Combatants or 1 Shotgun Kill on other targets grants a <void/>Void Overshield and starts health regeneration.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684961559489,
+      "lastUpdate": 1686222940619,
       "updatedBy": "Stardust"
      }
     },
@@ -7522,7 +7522,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7731,7 +7731,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7825,7 +7825,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8918,14 +8918,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While on a <stasis/>Stasis Subclass:\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift.\n\nDodging grants Light Shift for 10 seconds. Class Ability Energy is locked to 0% while Light Shift is active.\n\nLight Shift grants 4 Stacks of <arc/>Arc and <stasis/>Stasis Weapon Surge for ? seconds.",
+     "main": "While on a <stasis/>Stasis Subclass:\n\nReplaces Dodge with Shift:\nShift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift.\n\nShift usage grants 4 Stacks of <arc/>Arc and <stasis/>Stasis Weapon Surge for 11 seconds. Class Ability Energy is locked to 0% while the Weapon Surge buff is active.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685814551943,
+      "lastUpdate": 1686223369370,
       "updatedBy": "Stardust"
      }
     },
@@ -8935,7 +8935,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685821016168,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9864,7 +9864,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10334,7 +10334,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681768816761,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11045,7 +11045,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12243,7 +12243,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "If selected Super Ability is <arc/>Fists of Havoc:\n<arc/>Arc Kills have a chance of granting a Stack of <arc/>Arc Weapon Surge for 11 seconds. Maximum of 4 Stacks. Grants all 4 Stacks after Fists of Havoc ends.\n\nRequires between 1 to 3 Arc Kills to grant a Stack. Average of 2 Kills of <arc/>Arc Weapon Surge.\n\n<arc/>Arc Kills at 4 Stacks refresh the buff's duration.\n\nGrants a 75 HP Overshield upon casting Fists of Havoc that negates Precision Damage.",
+     "main": "If selected Super Ability is <arc/>Fists of Havoc:\n<arc/>Arc Kills have a chance of granting a Stack of <arc/>Arc Weapon Surge for <pve 11 /> <pvp [6] /> seconds. Maximum of 4 Stacks.\n\nGrants all 4 Stacks after <arc/>Fists of Havoc ends.\n\nRequires between 1 to 3 Arc Kills to grant a Stack of <arc/>Arc Weapon Surge. Average of 2 Kills. <arc/>Arc Kills at 4 Stacks refresh the buff's duration.\n\nGrants a 75 HP Overshield upon casting Fists of Havoc that negates Precision Damage.",
      "secondary": "import self"
     },
     "ko": {
@@ -12258,7 +12258,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685814019595,
+      "lastUpdate": 1686222614923,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -12276,7 +12276,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685821016168,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12532,7 +12532,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13234,7 +13234,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13523,14 +13523,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "/*\"Upon reaching Critical Health while at 3x or more Armor Charges:\n\nGrants [?]% Damage Resist. \nDuration depends on the amount of Armor Charges consumed.\n\nBuff Duration at 3, 4, and 5 Charges.\n? | ? | ? | ? seconds.\"*/",
+     "main": "Grants 10% Damage Resist upon reaching Critical Health while at 3 or more Stacks Armor Charge and consumes all Armor Charges.\n\nBuff lasts 6|9|12|15 seconds with 3|4|5|6 Stack of Armor Charge consumed.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680345800494,
+      "lastUpdate": 1686223768203,
       "updatedBy": "Stardust"
      }
     },
@@ -13540,7 +13540,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680349104559,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14660,7 +14660,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16648,7 +16648,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19065,7 +19065,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19165,7 +19165,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20890,7 +20890,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27085,7 +27085,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31417,7 +31417,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31742,7 +31742,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32324,14 +32324,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<solar/>Solar Kills have a chance of granting 1 stack of <solar/>Solar Weapon Surge for 11 seconds. Maximum of 4 Stacks. Being <stasis/>Frozen grants all 4 Stacks.\n\nRequires between 1 to 3 <solar/>Solar Kills to grant a Stack. Average of 2 kills.\n\n<solar/>Solar Kills at 4 Stacks refresh the buff's duration.\n\nSlow Stacks and Duration are halved. Damage from <stasis/>Stasis Breakout is removed.\n\n<stasis/>Stasis Breakout creates a burst of <solar/>Solar Energy, dealing up to 105 damage over a 9 meter radius.\n",
+     "main": "<solar/>Solar Kills have a chance of granting 1 stack of <solar/>Solar Weapon Surge for <pve 11 /> <pvp [6] /> seconds. Maximum of 4 Stacks. \n\nRequires between 1 to 3 <solar/>Solar Kills to grant a Stack. Average of 2 kills. Being <stasis/>Frozen grants all 4 Stacks.\n\n<solar/>Solar Kills at 4 Stacks refresh the buff's duration.\n\nSlow Stacks and Duration are halved. Damage from <stasis/>Stasis Breakout is removed.\n\n<stasis/>Stasis Breakout creates a burst of <solar/>Solar Energy, dealing up to 105 damage over a 9 meter radius.\n",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685814009908,
+      "lastUpdate": 1686223027887,
       "updatedBy": "Stardust"
      }
     },
@@ -32341,7 +32341,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685821016168,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33069,6 +33069,13 @@
    "hash": 2594592626,
    "type": "Weapon Trait",
    "stats": {
+    "Charge Draw": [
+     {
+      "active": {
+       "multiplier": [ 0.9 ]
+      }
+     }
+    ],
     "PVE Damage": [
      {
       "active": {
@@ -33086,24 +33093,24 @@
    },
    "editor": {
     "en": {
-     "main": "Upon scoring a hit with every bolt in the burst:\nGrants 20% increased damage and a ?% Decreased Charge Time for 2 seconds.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "Upon scoring a hit with every bolt in the burst:\nGrants 20% increased damage and 10% Decreased Charge Time for 2 seconds.\n\nenhanced (\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685804937582,
+      "lastUpdate": 1686221905622,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1685804969326,
+     "lastUpdate": 1686221929872,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33249,14 +33256,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While Super is not charged:\nKills with Weapons matching your Subclass Element grant Energy Siphon for 2 seconds. (Essentially a Cooldown)\nEnergy Siphon grants <pve 3% /> <pvp [1.45%] /> Super Energy.\n\nWhile Super is charged:\nKills with Weapons matching your Subclass Element grants 4 Stacks of Subclass-Matching Weapon Surge for <pve 10 /> <pvp [5] /> seconds. \nAdditional Kills increase duration by <pve 4 /> <pvp [2] /> seconds.",
+     "main": "While Super is not charged:\nKills with Weapons matching your Subclass Element grant Energy Siphon for 2 seconds. (Essentially a Cooldown)\nEnergy Siphon grants <pve 3% /> <pvp [1.45%] /> Super Energy.\n\nWhile Super is charged:\nKills with Weapons matching your Subclass Element grant 4 Stacks of Subclass-Matching Weapon Surge for <pve 11 /> <pvp [6] /> seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684957919524,
+      "lastUpdate": 1686222415908,
       "updatedBy": "Stardust"
      }
     },
@@ -33266,7 +33273,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35735,7 +35742,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Daybreak Projectiles apply 30 Scorch on hit (40 with Ember of Ashes) and deal ?% Increased Damage. \n(Daybreak Projectiles can hit twice - doubling the damage and the amount of Scorch applied)\n\nScorch deals <pve 200% /> <pvp [50%] /> Increased Damage.\n\nScorch Damage Ticks grant 6.25% Melee Ability Energy.",
+     "main": "<solar/>Daybreak Projectiles apply 30 <solar/>Scorch on hit (40 with Ember of Ashes) and deal 90% Increased Damage. \n\n(Daybreak Projectiles can hit twice - doubling the damage and the amount of Scorch applied)\n\n<solar/>Scorch deals <pve 200% /> <pvp [50%] /> Increased Damage.\n\n<solar/>Scorch Damage Ticks grant 6.25% Melee Ability Energy.",
      "secondary": "import self"
     },
     "ko": {
@@ -35750,7 +35757,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684955112807,
+      "lastUpdate": 1686222222909,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -35768,7 +35775,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35928,14 +35935,14 @@
    },
    "editor": {
     "en": {
-     "main": "On Melee Hits, for 5 seconds:\n• Grants 50 Airborne Effectiveness\n• Grants ? Mobility\n• Grants ?% Increased Jump Height\n+ <title Refills [G_refill] /> the magazine of your held weapon from reserves\n\nPowered Melee Hits refill the magazines of all your equipped weapons.\n\n7 second cooldown between activations.",
+     "main": "On Melee Hits, for 5.5 seconds:\n• Grants 50 Airborne Effectiveness\n• Grants ? Mobility\n• Grants ?% Increased Jump Height\n+ <title Refills [G_refill] /> the magazine of your held weapon from reserves\n\nPowered Melee Hits refill the magazines of all your equipped weapons.\n\n7 second cooldown between activations.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684970247062,
+      "lastUpdate": 1686223543607,
       "updatedBy": "Stardust"
      }
     },
@@ -35945,7 +35952,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38525,7 +38532,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39220,7 +39227,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40252,7 +40259,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40344,7 +40351,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41780,7 +41787,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45472,7 +45479,7 @@
    },
    "editor": {
     "en": {
-     "main": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\n\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife:\n• Grants 30? Strength while the buff is active\n• Deals <pve 200% /> <pvp [100%] /> Increased Damage\n• Stuns <unstoppable/>Unstoppable Champions\n• Buff is consumed on Knife Hit",
+     "main": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\n\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\n\nStrengthened Throwing Knife:\n• Grants 50 Strength while the buff is active\n• Deals <pve 200% /> <pvp [100%] /> Increased Damage\n• Stuns <unstoppable/>Unstoppable Champions\n• Buff is consumed on Knife Hit",
      "secondary": "import self"
     },
     "ko": {
@@ -45487,7 +45494,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685814281831,
+      "lastUpdate": 1686223272600,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -45505,7 +45512,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46198,7 +46205,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46232,31 +46239,31 @@
    "itemName": "Ace of Spades"
   },
   "3712696020": {
-   "hash": 3712696020,
    "name": "Elemental Charge",
+   "hash": 3712696020,
    "type": "Armor Mod General",
-   "lastUpload": 1684953045107,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Interacting with Elemental Pickups progresses a counter. Reaching 100% Counter Progress grants 1 Stack of Armor Charge.\n\nCounter Progress with 1|2|3 Mods equipped:\n• <solar/>Firesprites: 50%|50%|100%\n• <void/>Void Breaches: 50%|50%|100%\n• <strand/>Strand Tangles: 50%|50%|100%\n• <arc/>Ionic Traces: 34%|50%|50%\n• <stasis/>Stasis Shards: 25%|34%|50%",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1686224146361,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1686224473621,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3717985200": {
    "name": "Psychohack",
@@ -47906,7 +47913,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48651,7 +48658,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While on an Arc Subclass:\nArc Ability and Jolt Kills grant Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 175%|350%|525% Additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% slower Stormtrance Super Drain",
+     "main": "While on an <arc/>Arc Subclass:\n<arc/>Arc Ability and <arc/>Jolt Kills grant Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% Decreased Passive Super Drain while <arc/>Stormtrance is active",
      "secondary": "import self"
     },
     "ko": {
@@ -48666,7 +48673,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678575198457,
+      "lastUpdate": 1686222296822,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -48679,12 +48686,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
+     "lastUpdate": 1686222033000,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49063,7 +49070,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52629,14 +52636,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Can deactivate Arc Staff at any time to preserve a portion of unspent Super Energy.\n\nReduces Arc Staff's Passive Super Drain by 30%.\n\nInstantaneous Deactivation refunds ?% Super Energy.\n\nOn Arc Staff deactivation:\nBlinds enemies within ? metres and grants 4 Stacks of Arc Weapon Surge for ? seconds.",
+     "main": "Reduces <arc/>Arc Staff's Passive Super Drain by 30%.\n\nCan deactivate <arc/>Arc Staff at any time to preserve ?% of unused Super Energy.\n\nOn Arc Staff deactivation:\nBlinds enemies within ? meters and grants 4 Stacks of <arc/>Arc Weapon Surge for <pve 21 /> <pvp [16] /> seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686005598963,
+      "lastUpdate": 1686223531842,
       "updatedBy": "Stardust"
      }
     },
@@ -52646,7 +52653,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686005621653,
+   "lastUpload": 1686224473621,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
