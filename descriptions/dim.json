@@ -226,6 +226,38 @@
    ]
   }
  },
+ "11126525": {
+  "hash": 11126525,
+  "name": "Powerful Attraction",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "On Class Ability Usage with 1|2|3 Mods equipped:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Collects Orbs of Power within ?|?|? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Also works on Motes in Gambit."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "11551321": {
   "hash": 11551321,
   "name": "Iron Grip",
@@ -2073,7 +2105,13 @@
     {
      "linesContent": [
       {
-       "text": "(Finishers) increase the duration of the Void Invisibility and restore additional health."
+       "text": "{Finishers} increase the duration of "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Invisibility and restore additional health."
       }
      ]
     },
@@ -2083,7 +2121,7 @@
     {
      "linesContent": [
       {
-       "text": "Invisibility Duration || Health based on "
+       "text": "Invisibility Duration | Health based on "
       },
       {
        "text": "enemy rank",
@@ -2097,28 +2135,28 @@
     {
      "linesContent": [
       {
-       "text": "• Minors: 6.8 seconds (9.8s) || 100 HP (?)"
+       "text": "• Minors: 6.8 seconds [9.8s} | 100 HP {?)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Elites, Enemy Players: 9.8s (12.7s) || ? HP (200 HP)"
+       "text": "• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Minibosses = 12.8s (15.8s) || ? HP (200 HP)"
+       "text": "• Minibosses = 12.8s {15.8s} | ? HP {200 HP}"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Bosses = 13.3s || 200 HP (Not Finishable)"
+       "text": "• Bosses = 13.3s | 200 HP {Not Finishable}"
       }
      ]
     },
@@ -3591,7 +3629,28 @@
  },
  "422994787": {
   "hash": 422994787,
-  "name": "Emergency Reinforcement"
+  "name": "Emergency Reinforcement",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants 10% Damage Resist upon reaching Critical Health while at 3 or more Stacks Armor Charge and consumes all Armor Charges."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff lasts 6|9|12|15 seconds with 3|4|5|6 Stack of Armor Charge consumed."
+      }
+     ]
+    }
+   ]
+  }
  },
  "424370782": {
   "hash": 424370782,
@@ -5128,7 +5187,13 @@
     {
      "linesContent": [
       {
-       "text": "While Void Overshield is active:"
+       "text": "While "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield is active:"
       }
      ]
     },
@@ -5154,7 +5219,13 @@
     {
      "linesContent": [
       {
-       "text": "• Shotgun Kills refresh Void Overshield duration to ? seconds"
+       "text": "• Shotgun Kills refresh "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield duration"
       }
      ]
     },
@@ -5164,7 +5235,26 @@
     {
      "linesContent": [
       {
-       "text": "While on a Void Subclass, rapid Shotgun Kills or Killing a Powerful Enemy (testing required) with a Shotgun grants a Void Overshield and starts Health Regeneration."
+       "text": "While on a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Subclass:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 2 Shotgun Kills on Minor Combatants or 1 Shotgun Kill on other targets grants a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield and starts health regeneration."
       }
      ]
     }
@@ -6273,17 +6363,7 @@
     {
      "linesContent": [
       {
-       "text": "Dodging grants Light Shift for 10 seconds. Class Ability Energy is locked to 0% while Light Shift is active."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Light Shift grants 4 Stacks of "
+       "text": "Shift usage grants 4 Stacks of "
       },
       {
        "classNames": [ "arc" ]
@@ -6295,7 +6375,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Weapon Surge for ? seconds."
+       "text": "Stasis Weapon Surge for 11 seconds. Class Ability Energy is locked to 0% while the Weapon Surge buff is active."
       }
      ]
     }
@@ -8960,7 +9040,19 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Weapon Surge for 11 seconds. Maximum of 4 Stacks. Grants all 4 Stacks after Fists of Havoc ends."
+       "text": "Arc Weapon Surge for "
+      },
+      {
+       "text": "11"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 6]"
+      },
+      {
+       "text": " seconds. Maximum of 4 Stacks."
       }
      ]
     },
@@ -8970,13 +9062,13 @@
     {
      "linesContent": [
       {
-       "text": "Requires between 1 to 3 Arc Kills to grant a Stack. Average of 2 Kills of "
+       "text": "Grants all 4 Stacks after "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Weapon Surge."
+       "text": "Fists of Havoc ends."
       }
      ]
     },
@@ -8985,6 +9077,15 @@
     },
     {
      "linesContent": [
+      {
+       "text": "Requires between 1 to 3 Arc Kills to grant a Stack of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Surge. Average of 2 Kills. "
+      },
       {
        "classNames": [ "arc" ]
       },
@@ -9829,7 +9930,28 @@
  },
  "1024379611": {
   "hash": 1024379611,
-  "name": "Emergency Reinforcement"
+  "name": "Emergency Reinforcement",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants 10% Damage Resist upon reaching Critical Health while at 3 or more Stacks Armor Charge and consumes all Armor Charges."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff lasts 6|9|12|15 seconds with 3|4|5|6 Stack of Armor Charge consumed."
+      }
+     ]
+    }
+   ]
+  }
  },
  "1036557198": {
   "hash": 1036557198,
@@ -19753,7 +19875,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20% increased damage and a ?% Decreased Charge Time for 2 seconds."
+       "text": "Grants 20% increased damage and 10% Decreased Charge Time for 2 seconds."
       }
      ]
     },
@@ -23701,13 +23823,19 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Weapon Surge for 11 seconds. Maximum of 4 Stacks. Being "
+       "text": "Solar Weapon Surge for "
       },
       {
-       "classNames": [ "stasis" ]
+       "text": "11"
       },
       {
-       "text": "Frozen grants all 4 Stacks."
+       "text": " "
+      },
+      {
+       "text": "[PVP: 6]"
+      },
+      {
+       "text": " seconds. Maximum of 4 Stacks."
       }
      ]
     },
@@ -23723,7 +23851,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Kills to grant a Stack. Average of 2 kills."
+       "text": "Solar Kills to grant a Stack. Average of 2 kills. Being "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frozen grants all 4 Stacks."
       }
      ]
     },
@@ -24377,7 +24511,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20% increased damage and a ?% Decreased Charge Time for 2 seconds."
+       "text": "Grants 20% increased damage and 10% Decreased Charge Time for 2 seconds."
       }
      ]
     }
@@ -24614,35 +24748,16 @@
     {
      "linesContent": [
       {
-       "text": "Kills with Weapons matching your Subclass Element grants 4 Stacks of Subclass-Matching Weapon Surge for "
+       "text": "Kills with Weapons matching your Subclass Element grant 4 Stacks of Subclass-Matching Weapon Surge for "
       },
       {
-       "text": "10"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 5]"
-      },
-      {
-       "text": " seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Additional Kills increase duration by "
-      },
-      {
-       "text": "4"
+       "text": "11"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 2]"
+       "text": "[PVP: 6]"
       },
       {
        "text": " seconds."
@@ -26348,9 +26463,21 @@
     {
      "linesContent": [
       {
-       "text": "Daybreak Projectiles apply 30 Scorch on hit (40 with Ember of Ashes) and deal ?% Increased Damage."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Daybreak Projectiles apply 30 "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch on hit (40 with Ember of Ashes) and deal 90% Increased Damage."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
@@ -26364,6 +26491,9 @@
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
       {
        "text": "Scorch deals "
       },
@@ -26386,6 +26516,9 @@
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
       {
        "text": "Scorch Damage Ticks grant 6.25% Melee Ability Energy."
       }
@@ -26554,7 +26687,7 @@
     {
      "linesContent": [
       {
-       "text": "On Melee Hits, for 5 seconds:"
+       "text": "On Melee Hits, for 5.5 seconds:"
       }
      ]
     },
@@ -33933,7 +34066,7 @@
     {
      "linesContent": [
       {
-       "text": "• Grants 30? Strength while the buff is active"
+       "text": "• Grants 50 Strength while the buff is active"
       }
      ]
     },
@@ -34704,6 +34837,96 @@
      "linesContent": [
       {
        "text": "线性持续 1.5 秒。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3712696020": {
+  "hash": 3712696020,
+  "name": "Elemental Charge",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Interacting with Elemental Pickups progresses a counter. Reaching 100% Counter Progress grants 1 Stack of Armor Charge."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter Progress with 1|2|3 Mods equipped:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites: 50%|50%|100%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches: 50%|50%|100%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand Tangles: 50%|50%|100%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces: 34%|50%|50%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards: 25%|34%|50%"
       }
      ]
     }
@@ -36807,14 +37030,29 @@
     {
      "linesContent": [
       {
-       "text": "While on an Arc Subclass:"
+       "text": "While on an "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Subclass:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Arc Ability and Jolt Kills grant Conduction Tines for "
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Ability and "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt Kills grant Conduction Tines for "
       },
       {
        "text": "7"
@@ -36843,14 +37081,20 @@
     {
      "linesContent": [
       {
-       "text": "• 175%|350%|525% Additional Base Grenade, Melee, and Super Regeneration Rate"
+       "text": "• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 22%|44%|66% slower Stormtrance Super Drain"
+       "text": "• 22%|44%|66% Decreased Passive Super Drain while "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Stormtrance is active"
       }
      ]
     }
@@ -39479,7 +39723,13 @@
     {
      "linesContent": [
       {
-       "text": "Can deactivate Arc Staff at any time to preserve a portion of unspent Super Energy."
+       "text": "Reduces "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Staff's Passive Super Drain by 30%."
       }
      ]
     },
@@ -39489,17 +39739,13 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Arc Staff's Passive Super Drain by 30%."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "Can deactivate "
+      },
       {
-       "text": "Instantaneous Deactivation refunds ?% Super Energy."
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Staff at any time to preserve ?% of unused Super Energy."
       }
      ]
     },
@@ -39516,7 +39762,25 @@
     {
      "linesContent": [
       {
-       "text": "Blinds enemies within ? metres and grants 4 Stacks of Arc Weapon Surge for ? seconds."
+       "text": "Blinds enemies within ? meters and grants 4 Stacks of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Weapon Surge for "
+      },
+      {
+       "text": "21"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 16]"
+      },
+      {
+       "text": " seconds."
       }
      ]
     }
