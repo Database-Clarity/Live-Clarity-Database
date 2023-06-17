@@ -4191,7 +4191,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7141,14 +7141,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "On Ammo Finder/Normal Ammo Brick Pickup:\nGrants an additional 3-5% of your Maximum Reserves to #element.\n\nGuarantees at least 1 more Ammo on Pickups.\n\nBy default, normal Ammo Bricks grant 25-33% of your Maximum Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type",
+     "main": "On Ammo Brick Pickups:\nGrants an additional 3-5% of your Total Reserves to #element.\n\nGuarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476978546,
+      "lastUpdate": 1687004836722,
       "updatedBy": "Stardust"
      }
     },
@@ -7158,7 +7158,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681924642604,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7731,7 +7731,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7825,7 +7825,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11023,7 +11023,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12510,7 +12510,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13212,7 +13212,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14638,7 +14638,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16626,7 +16626,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19150,7 +19150,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20875,7 +20875,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25006,7 +25006,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Increases Damage against shielded targets:\n• 10%: PvE Combatants with Elemental Shields\n• 20%: Targets with Overshields\n• 150%: Lucent Moth Shields and Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Shields\n\nenhanced (\n#e Damage dealt to Overshields is increased.\n)",
+     "main": "Increases Damage against shielded targets:\n• 10%: Elemental and Barrier Champion Shields\n• 34%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Shields)\n• 20%: Enemy Player Overshields\n\nDamage Increases stack multiplicatively if the conditions are met for both of them.\n\nenhanced (\n#e Damage dealt to Overshields is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -25017,7 +25017,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686821173566,
+      "lastUpdate": 1687004523926,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -25030,7 +25030,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27062,7 +27062,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28802,7 +28802,7 @@
    },
    "editor": {
     "en": {
-     "main": "Increases Weapon Damage as Magazine drops from #e${50+#d}% capacity to empty.\n\nDamage Increase:  <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] />\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
+     "main": "Increases Weapon Damage by <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] /> as Magazine drops from #e${50+#d}% capacity to empty.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -28813,7 +28813,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686823526485,
+      "lastUpdate": 1687001761103,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -28827,7 +28827,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30424,7 +30424,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684979885576,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31394,7 +31394,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31719,7 +31719,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38510,7 +38510,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39205,7 +39205,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40237,7 +40237,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40329,7 +40329,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47851,7 +47851,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47917,14 +47917,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple hits against a single target emits 3 damaging shockwaves from its location at the time of activation. \n\nShockwaves have a 1 second delay between them. (?) second cooldown between activations.\n\nEach shockwave deals up to <pve (?) /> <pvp [20.33] /> damage over a 5 meter radius. Shockwaves inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nHits Required for Activation:\n• Pulse Rifles and Sidearms: #e${12-#d}\n• Hand Cannons and Scout Rifles: #e${6-#f}\n• Sniper Rifles: #e${3-#g}\n\nenhanced (\nvar d = 3\nvar f = 2\nvar g = 1\n#e Hit Requirement is reduced: 12🠚9, 6🠚4?, 3🠚2\n)",
+     "main": "Scoring multiple hits against a single target emits 3 damaging shockwaves from its current location. \n\nShockwaves appear after 0.285 seconds and have a 1 second delay between them.\n\nEach shockwave deals up to 20 damage over a 5 meter radius. Bosses receive 5x Damage and other tiers of PvE Combatants receive 9x Damage.\n\n\nShockwaves inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nHits Required for Activation:\n• Pulse Rifles and Sidearms: #e${12-#d*3}\n• Hand Cannons and Scout Rifles: #e${6-#d*2}\n• Sniper Rifles: #e${3-#d*1}\n\n2? second cooldown after an activation before hits are counted again.\n\nenhanced (\nvar d = 1\n#e Hit Requirement is reduced: 12🠚9, 6🠚4?, 3🠚2\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686762627969,
+      "lastUpdate": 1687004158430,
       "updatedBy": "Stardust"
      }
     },
@@ -47934,7 +47934,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686763477787,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49008,7 +49008,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686823821085,
+   "lastUpload": 1687004979653,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
