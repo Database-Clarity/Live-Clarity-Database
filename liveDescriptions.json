@@ -59,7 +59,7 @@
    "type": "none",
    "editor": {
     "en": {
-     "main": "// this variale only shows up on enhanced perks\n// don't change this arrow it is editors placeholder\nvar e = 🡅\n\nvar refill = Reload, but does not need animation and doesn't proc on-reload perks.\n\nvar CombatantScaling = https://docs.google.com/spreadsheets/d/1b57Hb8m1L3daFfUckQQqvvN6VOpD03KEssvQLMFpC5I/edit#gid=933547097\n\nvar CombatantClassifications = https://d2clarity.page.link/combatant",
+     "main": "// This variale only shows up on enhanced perks.\n// DO NOT CHANGE this arrow as it's the editor's placeholder.\nvar e = 🡅\n\nvar CombatantScaling = https://d2clarity.page.link/combatant-scaling\n\nvar CombatantClassifications = https://d2clarity.page.link/combatant",
      "secondary": ""
     },
     "zh-chs": {
@@ -70,7 +70,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678060172352,
+      "lastUpdate": 1687085791246,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -83,18 +83,17 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678062993757,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
   "3": {
-   "hash": 3,
    "name": "Global titles",
+   "hash": 3,
    "type": "none",
-   "lastUpload": 1675798177540,
    "editor": {
     "en": {
-     "main": "title G_refresh (\n#refill\n)\ntitle G_refill (\n#refill\n)\n\ntitle G_conegrowth (\nHow Fast Your Accuracy Cone Expands as you fire your weapon. The less the better.\n)\n\ntitle Whisper of Durance (\nimport main from 3469412969\n)",
+     "main": "title G_refill (\nReload, but does not need animation and doesn't proc on-reload perks.\n)\n\ntitle G_conegrowth (\nHow Fast Your Accuracy Cone Expands as you fire your weapon. The less the better.\n)",
      "secondary": ""
     },
     "de": {
@@ -147,12 +146,9 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1670082119732,
+      "lastUpdate": 1687085720676,
       "updatedBy": "Stardust"
      },
      "de": {
@@ -203,11 +199,15 @@
       "lastUpdate": 1670345731647,
       "updatedBy": "Mistwalker"
      }
+    },
+    "stats": {
+     "lastUpdate": 0
     }
    },
-   "uploadToLive": false,
+   "uploadedBy": "Stardust",
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
-   "uploadedBy": "Stardust"
+   "uploadToLive": false
   },
   "644105": {
    "name": "Heavy Ammo Finder",
@@ -4201,7 +4201,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7741,7 +7741,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11033,7 +11033,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12520,7 +12520,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13222,7 +13222,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14648,7 +14648,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16636,7 +16636,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19160,7 +19160,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20356,7 +20356,7 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Hits inflict increased Flinch on Enemies.\n\n<pve/> [PVE] <link Tier 1-2 Minors [https://d2clarity.page.link/combatant] /> can be repeatedly staggered. Higher Tier Combatants stagger quicker.\n\n<pvp [PVP] Flinch against Guardians varies based on Damage and Weapon Archetype. Flinch Increase ranges between 5-10%. />",
+     "main": "Hits inflict increased Flinch on Enemies.\n\n<pve/> [PVE] <link Tier 1-2 Minors [#CombatantClassifications] /> can be repeatedly staggered. Higher Tier Combatants stagger quicker.\n\n<pvp [PVP] Flinch against Guardians varies based on Damage and Weapon Archetype. Flinch Increase ranges between 5-10%. />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -20367,7 +20367,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678828442149,
+      "lastUpdate": 1687085127093,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -20381,7 +20381,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20885,7 +20885,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27072,7 +27072,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28175,7 +28175,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for #e${7+#d} seconds.\n\nWhile Voltshot is active, your next Weapon Hit applies <arc/>Jolt and consumes the buff. \n\n//Applied Jolt inherits the weapon's <link Combatant Damage Scaling [#CombatantScaling] /> (only applies to the Jolted target) and Weapon Damage Buffs\n//TODO: Commenting these out until I look into it more\n\nenhanced (\nvar d = 1\n#e Buff can be held 1 second longer.\n)",
+     "main": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for #e${7+#d} seconds.\n\nWhile Voltshot is active, your next Weapon Hit applies <arc/>Jolt and consumes the buff.\n\nenhanced (\nvar d = 1\n#e Buff can be held 1 second longer.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -28186,7 +28186,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685837594160,
+      "lastUpdate": 1687084962513,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -28199,7 +28199,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685837597704,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31404,7 +31404,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31729,7 +31729,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38520,7 +38520,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39215,7 +39215,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40247,7 +40247,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40339,7 +40339,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47861,7 +47861,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47944,7 +47944,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49018,7 +49018,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687084859492,
+   "lastUpload": 1687085817058,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
