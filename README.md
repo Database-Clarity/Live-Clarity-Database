@@ -19,6 +19,5 @@
 - [Destiny Item Manager](https://dim.gg): The go-to Item Manager for Destiny
 - [Light.gg](https://light.gg): Destiny 2 Database explorer and extensive resource hub
 - [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
-- [Felicity](https://tryfelicity.one): A Discord Bot by Leaf
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
 - [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
