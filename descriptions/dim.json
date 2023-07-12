@@ -1014,14 +1014,24 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill or upon scoring [?] kills within [?] seconds of each with a weapon that cannot deal precision damage:"
+       "text": "Spawns a Threadling on Enemy Death Location on Precision Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For weapons that cannot deal Precision Damage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Spawns a Threadling on Enemy Death Location."
+       "text": "Scoring 3? kills within 3? seconds of each spawns a Threadling."
       }
      ]
     },
@@ -1163,7 +1173,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload Overflows the Magazine by 10% for each ally within 15 meters."
+       "text": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters."
       }
      ]
     },
@@ -1173,7 +1183,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 50% increased Magazine Capacity."
+       "text": "Maxes out at 50% Increased Magazine Capacity."
       }
      ]
     }
@@ -1227,14 +1237,11 @@
     {
      "linesContent": [
       {
-       "text": "Low Tier ("
+       "text": "Tier 1-2 Minor",
+       "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": "Tier 1 and 2",
-       "link": "https://d2clarity.page.link/combatant"
-      },
-      {
-       "text": ") Minor Combatants only spawn a Medium "
+       "text": " Combatants only spawn a Medium "
       },
       {
        "classNames": [ "stasis" ]
@@ -1304,7 +1311,14 @@
     {
      "linesContent": [
       {
-       "text": "Powered Hits grant a 3% Damage Buff for 3.5 seconds. Stacks 10 times for a 30% Damage Buff."
+       "text": "Powered Hits grant a 3% Damage Buff for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "4 seconds. Stacks 10 times for a 30% Damage Buff."
       }
      ]
     },
@@ -1314,7 +1328,7 @@
     {
      "linesContent": [
       {
-       "text": "Additional Powered Hits refresh the duration. Blocking removes all stacks."
+       "text": "Blocking removes all stacks."
       }
      ]
     },
@@ -1328,7 +1342,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -1343,35 +1357,53 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a "
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40% chance to refund ammo."
+       "text": "40%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a "
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "25% chance to refund ammo."
+       "text": "25%"
       }
      ]
     },
@@ -1385,7 +1417,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Ammo Refund chance is increased by an additive 5%(?)."
+       "text": " Ammo Refund chance is increased by an additive 5%."
       }
      ]
     }
@@ -1400,14 +1432,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring multiple hits within (?) seconds of each:"
+       "text": "Upon scoring multiple hits within ? seconds of each:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Automatically shoots a Tracking Rocket that matches Weapon's Elemental Damage Type."
+       "text": "Shoots a Tracking Rocket that matches Weapon's Elemental Damage Type."
       }
      ]
     },
@@ -1465,7 +1497,21 @@
     {
      "linesContent": [
       {
+       "text": "• Sniper Rifles: 50%?"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Pulse Rifles, Hand Cannons, Submachine Guns: 45%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grenade Launchers: 30%"
       }
      ]
     },
@@ -1479,7 +1525,17 @@
     {
      "linesContent": [
       {
-       "text": "• Fusion Rifles, Grenade Launchers: unknown"
+       "text": "• Fusion Rifles: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Further hits do not provide activation progress for 1 second after activation."
       }
      ]
     }
@@ -1513,7 +1569,7 @@
        "text": "[PVP: 95.3]"
       },
       {
-       "text": " damage that matches the Element of the weapon over a 3 meter radius."
+       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
       }
      ]
     },
@@ -1809,7 +1865,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Range and 30 Stability for 3 seconds or until firing"
+       "text": "• Grants 20 Range and 30 Stability for 3 seconds OR until firing"
       }
      ]
     },
@@ -1829,7 +1885,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by shooting quickly."
+       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing shots loaded by the perk."
       }
      ]
     },
@@ -2765,14 +2821,14 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for "
-      },
+       "text": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
+       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
       }
      ]
     },
@@ -2782,7 +2838,14 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts upon readying. Buff can be stowed for 5 seconds."
+       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "2.75 seconds."
       }
      ]
     },
@@ -2993,7 +3056,14 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
+       "text": "• 15% Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sets Forward Movement Speed to 9 m/s"
       }
      ]
     },
@@ -3134,14 +3204,7 @@
        "link": "https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png"
       },
       {
-       "text": "."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reaches maximum strength at 5 Stacks."
+       "text": ". Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -3503,7 +3566,7 @@
     {
      "linesContent": [
       {
-       "text": "Prepares an Emergency Reload on Ally Revival or Finisher."
+       "text": "Reviving Allies or performing Finishers prepares an Emergency Reload."
       }
      ]
     },
@@ -3513,7 +3576,13 @@
     {
      "linesContent": [
       {
-       "text": "Emergency Reload refills ?% of Magazine the next time it is emptied. Rounds up to the nearest whole number."
+       "text": "Emergency Reload "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " the Magazine the next time it is emptied."
       }
      ]
     }
@@ -3778,7 +3847,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Currently does nothing?"
+       "text": " Does not provide a benefit currently."
       }
      ]
     }
@@ -3891,7 +3960,7 @@
        "text": "[PVP: 100%]"
       },
       {
-       "text": " increased damage and 100 Handling for 10 seconds or until firing a full burst."
+       "text": " Increased Damage and 100 Handling for 10 seconds or until firing a full burst."
       }
      ]
     },
@@ -3988,7 +4057,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Aim Assist"
+       "text": "• (?) Aim Assist"
       }
      ]
     },
@@ -4036,13 +4105,6 @@
     {
      "linesContent": [
       {
-       "text": "While not firing the weapon:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Refills"
       },
       {
@@ -4053,7 +4115,17 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3.5 seconds up to double the normal capacity. Refill amount is rounded up to the nearest whole number."
+       "text": "3.5 seconds while not firing the weapon."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
       }
      ]
     },
@@ -5332,24 +5404,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 3 Precision Hits refunds 1 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Counter is reset if no Precision Hits are scored within "
+       "text": "Scoring 3 Precision Hits within "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds."
+       "text": "3 seconds of each refunds 1 Ammo to the Magazine."
       }
      ]
     },
@@ -5420,7 +5482,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Aim Assist and reduces ADS Movement Speed Penalty by 2.5% while Aiming Down Sights."
+       "text": "Grants 10 Aim Assist while Aiming Down Sights and reduces the ADS Movement Speed Penalty by an additive 2.5%."
       }
      ]
     }
@@ -5796,7 +5858,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5 seconds to the duration up to 20 seconds."
+       "text": "5 seconds to the duration up to a maximum of 20 seconds."
       }
      ]
     },
@@ -5954,7 +6016,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 6 seconds of a Precision Kill reduces Firing Delay by 30% for "
+       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for "
       },
       {
        "text": "",
@@ -5962,16 +6024,6 @@
       },
       {
        "text": "7 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Buff can be refreshed."
       }
      ]
     },
@@ -6676,6 +6728,9 @@
     {
      "linesContent": [
       {
+       "classNames": [ "solar" ]
+      },
+      {
        "text": "Solar: "
       },
       {
@@ -6689,6 +6744,9 @@
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "arc" ]
+      },
       {
        "text": "Arc: "
       },
@@ -6704,6 +6762,9 @@
     {
      "linesContent": [
       {
+       "classNames": [ "void" ]
+      },
+      {
        "text": "Void: "
       },
       {
@@ -6718,6 +6779,9 @@
     {
      "linesContent": [
       {
+       "classNames": [ "strand" ]
+      },
+      {
        "text": "Strand: "
       },
       {
@@ -6731,6 +6795,9 @@
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "stasis" ]
+      },
       {
        "text": "Stasis: "
       },
@@ -6753,7 +6820,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " The Subclass Stat Bonuses are increased by 5."
+       "text": " Stat Bonuses are increased by 5."
       }
      ]
     }
@@ -6818,14 +6885,14 @@
     {
      "linesContent": [
       {
-       "text": "After having dealt or received damage every 3 seconds for 6 seconds:"
+       "text": "After being in Combat for 6 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
       }
      ]
     },
@@ -6835,7 +6902,24 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates when no damage is dealt or received in the last 3 seconds."
+       "text": "Can activate while stowed. Dealing and receiving damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3.5 seconds."
       }
      ]
     },
@@ -6849,7 +6933,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Time until the perk deactivates is extended."
+       "text": " Allowed time between damage exchanges is extended by 0.5 seconds."
       }
      ]
     }
@@ -7143,7 +7227,7 @@
     {
      "linesContent": [
       {
-       "text": "Ability Energy gains per weapon:"
+       "text": "Ability Energy gains on hits by weapon:"
       }
      ]
     },
@@ -7187,16 +7271,6 @@
      "linesContent": [
       {
        "text": "Grants a 45 HP Void Overshield for 8 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Weaken effects other than the one provided by Divinity can also activate it."
       }
      ]
     }
@@ -7250,7 +7324,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -7260,7 +7334,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     },
@@ -7362,7 +7436,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Damage is increased by a further 5%. (e.g. 40% 🠚 47%)"
+       "text": " Damage is increased by a further 5%. (40%🠚47%, 35%🠚41.75%)"
       }
      ]
     }
@@ -7377,7 +7451,14 @@
     {
      "linesContent": [
       {
-       "text": "Increases Melee Damage for 1.22 seconds after hiting a target with 10 of the 12 Shotgun Pellets."
+       "text": "Increases Melee Damage for 1.22 seconds after hiting a target with "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "10 of the 12 Shotgun Pellets."
       }
      ]
     },
@@ -7402,6 +7483,16 @@
      "linesContent": [
       {
        "text": "• 40% Increased Powered Melee Damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increases Melee Damage against Bosses and Vehicles by a further 25% (100%🠚150%, 40%🠚75%)."
       }
      ]
     },
@@ -7561,7 +7652,7 @@
     {
      "linesContent": [
       {
-       "text": "67% Increased damage for Grounded Heavy Attack."
+       "text": "67% Increased Damage for Grounded Heavy Attack."
       }
      ]
     }
@@ -7791,14 +7882,24 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill or upon scoring [?] kills within [?] seconds of each with a weapon that cannot deal precision damage:"
+       "text": "Spawns a Threadling on Enemy Death Location on Precision Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For weapons that cannot deal Precision Damage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Spawns a Threadling on Enemy Death Location."
+       "text": "Scoring 3? kills within 3? seconds of each spawns a Threadling."
       }
      ]
     }
@@ -7820,7 +7921,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased damage and 0.8x Charge Time for [?] seconds."
+       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
       }
      ]
     },
@@ -7999,24 +8100,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits refunds 2 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Precision Hit counter is reset if no Precision Hits are scored within "
+       "text": "Scoring 4 Precision Hits within "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds."
+       "text": "3 seconds of each refunds 2 Ammo to the Magazine."
       }
      ]
     },
@@ -8275,7 +8366,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     },
@@ -8776,7 +8867,7 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following benefits while Crouched:"
       }
      ]
     },
@@ -9341,7 +9432,7 @@
     {
      "linesContent": [
       {
-       "text": "• 50% Decreased Duration on "
+       "text": "• 50% Decrease on "
       },
       {
        "classNames": [ "primary" ]
@@ -9354,7 +9445,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Decreased Duration on "
+       "text": "• 20% Decrease on "
       },
       {
        "classNames": [ "special" ]
@@ -9659,7 +9750,7 @@
     {
      "linesContent": [
       {
-       "text": "Works while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     }
@@ -9743,24 +9834,28 @@
     {
      "linesContent": [
       {
-       "text": "Upon Reload within 6 seconds of a Weapon Kill:"
+       "text": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "20 Aim Assist, -20% Accuracy Cone Size, and [?] ADS Handling for 5 seconds."
+       "text": "• 20 Aim Assist"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• -20% Accuracy Cone Size"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Can be refreshed."
+       "text": "• ? ADS Handling for 5 seconds."
       }
      ]
     },
@@ -9814,14 +9909,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 meters of 2 enemies:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "0.85x Charge/Draw Time Multiplier."
+       "text": "Grants a 0.85x Charge/Draw Time Multiplier while within 15 meters of 2+ enemies."
       }
      ]
     },
@@ -9860,14 +9948,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "25% Increased damage for 5 seconds."
+       "text": "25% Increased Damage for 5 seconds."
       }
      ]
     },
@@ -9877,7 +9965,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can be refreshed through additional reloads. Persists while stowed."
+       "text": "Buff stays active while stowed."
       }
      ]
     }
@@ -10985,7 +11073,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage for 2 seconds."
+       "text": "Grats 50% Increased Damage for 2 seconds."
       }
      ]
     },
@@ -11763,14 +11851,11 @@
     {
      "linesContent": [
       {
-       "text": "Low Tier ("
+       "text": "Tier 1-2 Minor",
+       "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": "Tier 1 and 2",
-       "link": "https://d2clarity.page.link/combatant"
-      },
-      {
-       "text": ") Minor Combatants only spawn a Medium "
+       "text": " Combatants only spawn a Medium "
       },
       {
        "classNames": [ "stasis" ]
@@ -11822,7 +11907,7 @@
     {
      "linesContent": [
       {
-       "text": "10 Handling, 10 Reload Speed, and 10 Stability per stack for "
+       "text": "Grants 10 Handling, 10 Reload Speed, and 10 Stability per Stack for "
       },
       {
        "text": "",
@@ -11937,17 +12022,24 @@
        "text": " "
       },
       {
-       "text": "80"
+       "text": "[PVP: 80]"
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "55 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -11978,7 +12070,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reload Speed buff is increased."
+       "text": " Grants 5? more Reload Speed."
       }
      ]
     }
@@ -12880,17 +12972,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits refunds 2 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Precision Hit counter is reset if no Precision Hits are scored within 2 seconds."
+       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
       }
      ]
     }
@@ -12952,7 +13034,7 @@
     {
      "linesContent": [
       {
-       "text": "Reaches maximum strength after 10 shots."
+       "text": "Reaches maximum strength after 10 shots, granting 10 Stability, -50% Accuracy Cone Size, and -100% Accuracy Cone Growth."
       }
      ]
     }
@@ -13378,7 +13460,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff cannot be refreshed."
       }
      ]
     },
@@ -13571,7 +13653,7 @@
     {
      "linesContent": [
       {
-       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed."
+       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed. All stacks are removed if movement speed is below 2 m/s for 0.5 seconds."
       }
      ]
     },
@@ -13581,14 +13663,7 @@
     {
      "linesContent": [
       {
-       "text": "All stacks are removed if movement speed is below 2 meters per second for 0.5 seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Can activate and remain active while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     }
@@ -13741,7 +13816,7 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5. Decreases firing delay by 25%."
+       "text": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%."
       }
      ]
     },
@@ -14162,17 +14237,20 @@
     {
      "linesContent": [
       {
-       "text": "While not firing the weapon:"
+       "text": "Refills"
+      },
+      {
+       "text": " 10% of Magazine Capacity from reserves every 4 seconds while not firing the weapon."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Refills"
-      },
-      {
-       "text": " 10% of Magazine Capacity from reserves every 4 seconds up to double the normal capacity. Refill amount is rounded up to the nearest whole number."
+       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
       }
      ]
     }
@@ -14264,14 +14342,7 @@
        "text": "Refills"
       },
       {
-       "text": " stowed weapons from reserves upon finishing a reload within "
-      },
-      {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "7 seconds of a Weapon Kill."
+       "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
       }
      ]
     },
@@ -14295,7 +14366,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reload Timer is increased to 7 seconds."
+       "text": " Allowed time before reloading is increased."
       }
      ]
     }
@@ -14327,7 +14398,14 @@
     {
      "linesContent": [
       {
-       "text": "On hit against Major or Boss Combatants:"
+       "text": "On hit against "
+      },
+      {
+       "text": "Major, Boss, or Vehicle",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": " Combatants:"
       }
      ]
     },
@@ -14358,7 +14436,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "4 stacks per hit if at 6-20 stacks."
+       "text": "4 Stacks per hit if at 6-20 stacks."
       }
      ]
     },
@@ -14372,7 +14450,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Consumes 1 fewer stack per hit if at 6-20 stacks."
+       "text": " Consumes 1 fewer Stack per hit if at 6-20 stacks."
       }
      ]
     }
@@ -14554,7 +14632,17 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target emits 3 damaging shockwaves from its location at the time of activation. Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
+       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
       }
      ]
     },
@@ -14573,7 +14661,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 20.01]"
+       "text": "[PVP: 20]"
       },
       {
        "text": " damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on "
@@ -14800,7 +14888,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Ammo Pickup:"
+       "text": "Heavy Ammo Pickup:"
       }
      ]
     },
@@ -14813,7 +14901,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Ammo Reserves."
+       "text": "Special Ammo Reserves."
       }
      ]
     },
@@ -14829,7 +14917,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons halves the amount of ammo granted."
+       "text": "Special Weapons halves the amount of ammo granted."
       }
      ]
     }
@@ -14995,17 +15083,17 @@
        "text": " "
       },
       {
-       "text": "80"
+       "text": "[PVP: 80]"
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants 50 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -15074,7 +15162,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count until the buff text disappears."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
       }
      ]
     },
@@ -15126,7 +15214,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Persists while stowed."
+       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed."
       }
      ]
     }
@@ -15225,7 +15313,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff cannot be refreshed."
       }
      ]
     }
@@ -15534,7 +15622,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active (above 70 HP). Having your shields broken disables the buff until your shields fully recharge."
+       "text": "Grants 20 Range while your shields are active (above 70 HP)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Getting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge."
       }
      ]
     },
@@ -15548,7 +15646,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " ?????"
+       "text": " Reactivation delay is decreased."
       }
      ]
     }
@@ -15823,7 +15921,14 @@
     {
      "linesContent": [
       {
-       "text": "• 60 Guard Efficiency"
+       "text": "• "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "65 Guard Efficiency"
       }
      ]
     },
@@ -15872,7 +15977,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 5 more Guard Resistance and Charge Rate."
+       "text": " Grants 5 more Guard Efficiency, Resistance, and Charge Rate."
       }
      ]
     }
@@ -15929,7 +16034,7 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following benefits while Crouched:"
       }
      ]
     },
@@ -16408,7 +16513,7 @@
     {
      "linesContent": [
       {
-       "text": "Works while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     },
@@ -16811,7 +16916,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for "
+       "text": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for "
       },
       {
        "text": "",
@@ -16973,7 +17078,17 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Glaive Block's Movement Speed Penalty to 20(?)% for [?] seconds, or until you stop blocking."
+       "text": "Decreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)"
       }
      ]
     },
@@ -17156,7 +17271,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased damage and 0.8x Charge Time for [?] seconds."
+       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
       }
      ]
     }
@@ -17338,7 +17453,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -17348,7 +17463,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     }
@@ -17464,14 +17579,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 meters of 2 enemies:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "0.85x Charge/Draw Time Multiplier."
+       "text": "Grants a 0.85x Charge/Draw Time Multiplier while within 15 meters of 2+ enemies."
       }
      ]
     },
@@ -18029,7 +18137,7 @@
     {
      "linesContent": [
       {
-       "text": "If hipfiring:"
+       "text": "While  hipfiring:"
       }
      ]
     },
@@ -18064,31 +18172,14 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Increased:"
+       "text": "• 20% Increased Aim Assist Falloff Distance"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": "    • Aim Assist Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Reticle Stickiness Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Damage Falloff Start and End Distance"
+       "text": "• 20% Increased Damage Falloff Distance"
       }
      ]
     },
@@ -18991,7 +19082,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Shorter cooldown."
+       "text": " Cooldown is reduced."
       }
      ]
     }
@@ -19625,7 +19716,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 7 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -19801,7 +19892,14 @@
     {
      "linesContent": [
       {
-       "text": "Gain a Stack after 2 and 9 seconds."
+       "text": "Gain a Stack after 2 and "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "9 seconds."
       }
      ]
     },
@@ -19811,7 +19909,7 @@
     {
      "linesContent": [
       {
-       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed."
+       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed. All stacks are removed if movement speed is below 2 m/s for 0.5 seconds."
       }
      ]
     },
@@ -19821,14 +19919,7 @@
     {
      "linesContent": [
       {
-       "text": "All stacks are removed if movement speed is below 2 meters per second for 0.5 seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Can activate and remain active while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     },
@@ -19857,24 +19948,28 @@
     {
      "linesContent": [
       {
-       "text": "While Guarding with a Sword:"
+       "text": "Taking Damage while Guarding with a Sword grants Class Ability Energy:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 1% Class Ability Energy for every point of damage blocked."
+       "text": "• 1.5% for every point of Melee Damage Blocked"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• 1% for every point of \"other\" Damage Blocked"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Blocking Melee Damage grants 50% more Class Ability Energy."
+       "text": "• 0.5% for every point of Non-Blocked Damage (getting hit from behind)"
       }
      ]
     }
@@ -19986,7 +20081,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased."
+       "text": " Currently not granting any benefits."
       }
      ]
     }
@@ -20021,7 +20116,17 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Stability and 20 Handling for 3 seconds"
+       "text": "• Grants 20 Stability and 20 Handling for 3 seconds"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -20760,12 +20865,30 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Range, 10 Stability, and 10 Handling per stack for 15 seconds. Maximum of 2 Stacks."
+       "text": "Grants "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Range, "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Stability, and "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Handling per stack for 15 seconds. Maximum of 2 Stacks."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
     },
     {
      "classNames": [ "spacer" ]
@@ -20777,7 +20900,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
+       "text": " Stat bonuses are increased by 2?."
       }
      ]
     }
@@ -20836,7 +20959,7 @@
     {
      "linesContent": [
       {
-       "text": "10 Handling, 10 Reload Speed, and 10 Stability per stack for 7.5 seconds."
+       "text": "Grants 10 Handling, 10 Reload Speed, and 10 Stability per Stack for 7.5 seconds."
       }
      ]
     },
@@ -20887,7 +21010,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for 7 seconds."
+       "text": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for 7 seconds."
       }
      ]
     },
@@ -21702,7 +21825,14 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds."
+       "text": "Dealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11 seconds."
       }
      ]
     },
@@ -22004,14 +22134,14 @@
     {
      "linesContent": [
       {
-       "text": "After having dealt or received damage every 3 seconds for 6 seconds:"
+       "text": "After being in Combat for 6 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
       }
      ]
     },
@@ -22021,7 +22151,17 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates when no damage is dealt or received in the last 3 seconds."
+       "text": "Can activate while stowed. Dealing and receiving damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds."
       }
      ]
     }
@@ -22102,7 +22242,7 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5. Decreases firing delay by 25%."
+       "text": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%."
       }
      ]
     },
@@ -22334,14 +22474,35 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following while Crouched:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier."
+       "text": "• "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "55 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Ready/Stow Duration Multiplier"
       }
      ]
     },
@@ -22372,7 +22533,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect. Grants 10 More Inventory Size Stat passively."
+       "text": " Grants 5 more Reload Speed and 10 more Inventory Size Stat."
       }
      ]
     }
@@ -22698,7 +22859,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage, [+?] Reload Speed, and +30 Handling for 5 seconds OR 3 shots."
+       "text": "50% Increased Damage, 30 Reload Speed, and 30 Handling for 5 seconds OR until firing 3 shots."
       }
      ]
     }
@@ -22853,7 +23014,7 @@
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Grants "
       },
       {
        "text": "",
@@ -22877,11 +23038,21 @@
     {
      "linesContent": [
       {
+       "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 5 more Stability and Handling."
+       "text": " Stat bonuses are increased by 5."
       }
      ]
     }
@@ -23148,14 +23319,14 @@
     {
      "linesContent": [
       {
-       "text": "• -95%(?) Accuracy Cone Size"
+       "text": "• -95%? Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -95%(?) "
+       "text": "• -95%? "
       },
       {
        "text": "Accuracy Cone Growth"
@@ -23294,14 +23465,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring 4 Hipfire Hits within 4(?) seconds of each, for 4 seconds:"
+       "text": "Upon scoring 4 Hipfire Hits within 4? seconds of each, for 4 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• [?] Handling"
+       "text": "• 20 Handling"
       }
      ]
     },
@@ -23322,7 +23493,7 @@
     {
      "linesContent": [
       {
-       "text": "• 5% Reduced ADS Movement Speed Penalty"
+       "text": "• Additive 5% Reduced ADS Movement Speed Penalty"
       }
      ]
     }
@@ -23409,7 +23580,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill, for 5 seconds:"
       }
      ]
     },
@@ -23440,7 +23611,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 5 seconds. Additional kills add 5 seconds to the timer, maxing out at 8 seconds."
+       "text": "Additional Kills extend the duration by 5 seconds, up to 8 seconds."
       }
      ]
     }
@@ -23481,7 +23652,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active (above 70 HP). Having your shields broken disables the buff until your shields fully recharge."
+       "text": "Grants 20 Range while your shields are active (above 70 HP)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Getting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge."
       }
      ]
     }
@@ -23563,14 +23744,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within [?] seconds of each."
+       "text": "17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within 3.5 seconds of each."
       }
      ]
     },
@@ -23638,7 +23819,21 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage, [+?] Reload Speed, and +30 Handling for 5 seconds OR 3 shots."
+       "text": "50% Increased Damage, "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35 Reload Speed, and "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35 Handling for 5 seconds OR until firing 3 shots."
       }
      ]
     },
@@ -23652,7 +23847,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
+       "text": " Stat bonuses are increased by 5?."
       }
      ]
     }
@@ -23843,9 +24038,6 @@
        "text": "Lingers for 1.5 seconds."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
     },
     {
      "classNames": [ "spacer" ]
@@ -24092,7 +24284,7 @@
        "text": "[PVP: 100%]"
       },
       {
-       "text": " increased damage and 100 Handling for "
+       "text": " Increased Damage and 100 Handling for "
       },
       {
        "text": "",
@@ -24163,16 +24355,6 @@
       },
       {
        "text": "10 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Weaken effects other than the one provided by Divinity can also activate it."
       }
      ]
     },
@@ -24420,7 +24602,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -24434,7 +24616,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5.5 seconds, depending on the amount of enemies killed within [?] seconds of each."
+       "text": "5.5 seconds, depending on the amount of enemies killed within 3.5 seconds of each."
       }
      ]
     },
@@ -24717,7 +24899,7 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade and Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% Increased Damage for 10 seconds."
       }
      ]
     },
@@ -24727,7 +24909,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% Damage Buff can only be refreshed by getting another Matching Ability Kill."
+       "text": "The 50% Damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
       }
      ]
     }
@@ -25039,7 +25221,7 @@
     {
      "linesContent": [
       {
-       "text": "Kills while the perk active add 4 seconds to the duration up to 20 seconds."
+       "text": "Kills while the perk active add 4 seconds to the duration up to a maximum of 20 seconds."
       }
      ]
     }
@@ -25126,14 +25308,14 @@
     {
      "linesContent": [
       {
-       "text": "• 5  | 15 | 25 Stability"
+       "text": "• 5 | 15 | 25 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10  | 25 | 60 Reload Speed"
+       "text": "• 10 | 25 | 60 Reload Speed"
       }
      ]
     },
@@ -25394,14 +25576,13 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Applies 30 "
+      },
       {
-       "text": "Applies 30 Scorch to enemies within 4(?) meters."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
       }
      ]
     },
@@ -25427,7 +25608,7 @@
        "text": "[PVP: 40]"
       },
       {
-       "text": " Scorch."
+       "text": " Stacks."
       }
      ]
     },
@@ -25447,7 +25628,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage from Scorch can be increased through Weapon Damage Buffs and Debuffs."
+       "text": "Damage from Scorch can be increased through Weapon Damage Buffs."
       }
      ]
     },
@@ -25461,7 +25642,13 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Applies to 5 more Scorch Stacks to PvE Combatants when Ember of Ashes is equipped."
+       "text": " Applies to 5 more "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to PvE Combatants when Ember of Ashes is equipped."
       }
      ]
     }
@@ -25554,6 +25741,16 @@
      "linesContent": [
       {
        "text": "• 40% Increased Powered Melee Damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increases Melee Damage against Bosses and Vehicles by a further 25% (100%🠚150%, 40%🠚75%)."
       }
      ]
     }
@@ -25653,7 +25850,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "105-122% Increased Magazine Capacity. Activates even if stowed."
+       "text": "120% Increased Magazine Capacity. Activates even if stowed."
       }
      ]
     },
@@ -25667,7 +25864,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Overflow amount is increased by 5-22%."
+       "text": " Maximum overflow amount is increased by 20%."
       }
      ]
     }
@@ -25682,7 +25879,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Aim Assist and reduces ADS Movement Speed Penalty by 2.5% while Aiming Down Sights."
+       "text": "Grants 10 Aim Assist while Aiming Down Sights and reduces the ADS Movement Speed Penalty by an additive 2.5%."
       }
      ]
     },
@@ -26067,7 +26264,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Persists while stowed."
+       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed."
       }
      ]
     },
@@ -26304,7 +26501,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased. Stronger effect when "
+       "text": " Buff duration is increased. Even stronger effect while "
       },
       {
        "classNames": [ "arc" ]
@@ -26997,27 +27194,30 @@
     {
      "linesContent": [
       {
-       "text": "After dealing Weapon Damage to an Ammo Brick:"
+       "text": "On Weapon Hits against an Ammo Brick:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Picks up Ammo and "
+       "text": "Picks up Ammo, "
       },
       {
-       "text": "refills"
+       "text": "Refills"
       },
       {
-       "text": " all Weapons from reserves."
+       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Triggers Ammo Pickup Effects if pickup is possible."
+       "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
       }
      ]
     },
@@ -27123,7 +27323,7 @@
        "text": "[PVP: 95.3]"
       },
       {
-       "text": " damage that matches the Element of the weapon over a 3 meter radius."
+       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
       }
      ]
     },
@@ -27181,24 +27381,49 @@
     {
      "linesContent": [
       {
-       "text": "While Guarding with a Sword:"
+       "text": "Taking Damage while Guarding with a Sword grants Class Ability Energy:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 1% Class Ability Energy for every point of damage blocked."
+       "text": "• "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "1.56% for every point of Melee Damage Blocked"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "1.5% for every point of \"other\" Damage Blocked"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Blocking Melee Damage grants 50% more Class Ability Energy."
+       "text": "• "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "0.63% for every point of Non-Blocked Damage (getting hit from behind)"
       }
      ]
     },
@@ -27212,7 +27437,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increased Class Ability Energy Gain."
+       "text": " Increases Class Ability Energy gains by an additive 0.055%, 0.5%, and 0.125% in that order."
       }
      ]
     }
@@ -27314,14 +27539,28 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following while Crouched:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier."
+       "text": "• 50 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Ready/Stow Duration Multiplier"
       }
      ]
     },
@@ -27331,7 +27570,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Inventory Size Stat. (10 less than 2 Reserve Armor Mods)"
+       "text": "Passively grants 30 Inventory Size Stat. (50% more than 1 Reserve Armor Mod)"
       }
      ]
     }
@@ -27916,14 +28155,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "25% Increased damage for "
+       "text": "25% Increased Damage for "
       },
       {
        "text": "",
@@ -27940,7 +28179,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can be refreshed through additional reloads. Persists while stowed."
+       "text": "Buff stays active while stowed."
       }
      ]
     },
@@ -28046,14 +28285,7 @@
        "link": "https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png"
       },
       {
-       "text": "."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reaches maximum strength at 5 Stacks."
+       "text": ". Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -28150,7 +28382,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Damage Buff is increased by 12.5%. (e.g. 40% » 45%)"
+       "text": " Damage Buff is increased by 12.5%. (e.g. 40%🠚45%)"
       }
      ]
     }
@@ -28165,24 +28397,28 @@
     {
      "linesContent": [
       {
-       "text": "Upon Reload within 6 seconds of a Weapon Kill:"
+       "text": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "20 Aim Assist, -20% Accuracy Cone Size, and [?] ADS Handling for 5 seconds."
+       "text": "• 20 Aim Assist"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• -20% Accuracy Cone Size"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Can be refreshed."
+       "text": "• ? ADS Handling for 5 seconds."
       }
      ]
     }
@@ -28582,7 +28818,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -28592,7 +28828,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     }
@@ -28656,7 +28892,7 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased Damage, 100 Handling, and 100 Reload Speed."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -28666,7 +28902,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts until you're out of combat and works while stowed."
+       "text": "Works and can activate while stowed. Dealing and receiving damage refreshes the buff duration."
       }
      ]
     },
@@ -28676,14 +28912,14 @@
     {
      "linesContent": [
       {
-       "text": "Being in Combat is defined as having either dealt or received damage within the last "
+       "text": "For Frenzy, being in Combat is defined as having either dealt or received damage within the last "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5.5 seconds."
+       "text": "5 seconds."
       }
      ]
     },
@@ -28697,7 +28933,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " In Combat Timer is extended by 0.5 seconds"
+       "text": " Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
       }
      ]
     }
@@ -28761,7 +28997,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage for 2 seconds."
+       "text": "Grats 50% Increased Damage for 2 seconds."
       }
      ]
     }
@@ -28792,7 +29028,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon missing 4? times within 2.5? seconds of each:"
+       "text": "Upon missing multiple times within 2.5 seconds of each without scoring a hit:"
       }
      ]
     },
@@ -28809,7 +29045,38 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed 1? after second of scoring a hit. Missing again refreshes the duration."
+       "text": "Misses in a row required:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifle: 10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: 4"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Linear Fusion Rifle, Pulse Rifle: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is removed 1? second after scoring a hit."
       }
      ]
     }
@@ -28957,17 +29224,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 6 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Buff can be refreshed."
+       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
       }
      ]
     }
@@ -29040,14 +29297,14 @@
     {
      "linesContent": [
       {
-       "text": "• -95%(?) Accuracy Cone Size"
+       "text": "• -95%? Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -95%(?) "
+       "text": "• -95%? "
       },
       {
        "text": "Accuracy Cone Growth"
@@ -29151,7 +29408,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "8 shots."
+       "text": "8 shots, granting 10 Stability, -50% Accuracy Cone Size, and -100% Accuracy Cone Growth."
       }
      ]
     },
@@ -29599,7 +29856,7 @@
     {
      "linesContent": [
       {
-       "text": "If hipfiring:"
+       "text": "While  hipfiring:"
       }
      ]
     },
@@ -29634,31 +29891,14 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Increased:"
+       "text": "• 20% Increased Aim Assist Falloff Distance"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": "    • Aim Assist Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Reticle Stickiness Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Damage Falloff Start and End Distance"
+       "text": "• 20% Increased Damage Falloff Distance"
       }
      ]
     },
@@ -29851,7 +30091,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Range and 30 Stability for 3 seconds or until firing"
+       "text": "• Grants 20 Range and 30 Stability for 3 seconds OR until firing"
       }
      ]
     },
@@ -29871,7 +30111,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by shooting quickly."
+       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing shots loaded by the perk."
       }
      ]
     }
@@ -30314,7 +30554,14 @@
     {
      "linesContent": [
       {
-       "text": "On hit against Major or Boss Combatants:"
+       "text": "On hit against "
+      },
+      {
+       "text": "Major, Boss, or Vehicle",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": " Combatants:"
       }
      ]
     },
@@ -30338,7 +30585,7 @@
     {
      "linesContent": [
       {
-       "text": "Consumes 5 stacks per hit if at 6-20 stacks."
+       "text": "Consumes 5 Stacks per hit if at 6-20 stacks."
       }
      ]
     }
@@ -31169,7 +31416,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20% Increased Damage for 6 seconds."
+       "text": "Grants 20% Increased Damage for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "7 seconds."
       }
      ]
     },
@@ -31240,7 +31494,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased by 1(?) second."
+       "text": " Buff duration is increased by 1 second."
       }
      ]
     }
@@ -31625,21 +31879,39 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a 35% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: 35%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a 20% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: 20%"
       }
      ]
     }
@@ -31801,7 +32073,7 @@
        "text": "Refills"
       },
       {
-       "text": " stowed weapons from reserves upon finishing a reload within 6 seconds of a Weapon Kill."
+       "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
       }
      ]
     },
@@ -31988,17 +32260,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 3 Precision Hits refunds 1 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Counter is reset if no Precision Hits are scored within 2 seconds."
+       "text": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo to the Magazine."
       }
      ]
     }
@@ -32043,7 +32305,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.5 seconds."
+       "text": "2 seconds."
       }
      ]
     },
@@ -32057,7 +32319,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5? seconds."
       }
      ]
     }
@@ -32229,7 +32491,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count until the buff text disappears."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
       }
      ]
     }
@@ -32485,14 +32747,14 @@
     {
      "linesContent": [
       {
-       "text": "• 5  | 15 | 25 Stability"
+       "text": "• 5 | 15 | 25 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10  | 25 | 60 Reload Speed"
+       "text": "• 10 | 25 | 60 Reload Speed"
       }
      ]
     },
@@ -32601,7 +32863,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Ammo Pickup:"
+       "text": "Heavy Ammo Pickup:"
       }
      ]
     },
@@ -32621,7 +32883,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Ammo Reserves."
+       "text": "Special Ammo Reserves."
       }
      ]
     },
@@ -32637,7 +32899,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons halves the amount of ammo granted."
+       "text": "Special Weapons halves the amount of ammo granted."
       }
      ]
     },
@@ -32907,12 +33169,18 @@
     {
      "linesContent": [
       {
+       "classNames": [ "solar" ]
+      },
+      {
        "text": "Solar: 50 Reload Speed"
       }
      ]
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "arc" ]
+      },
       {
        "text": "Arc: 50 Handling"
       }
@@ -32921,6 +33189,9 @@
     {
      "linesContent": [
       {
+       "classNames": [ "void" ]
+      },
+      {
        "text": "Void: 20 Stability"
       }
      ]
@@ -32928,12 +33199,18 @@
     {
      "linesContent": [
       {
+       "classNames": [ "strand" ]
+      },
+      {
        "text": "Strand: 20 Airborne Effectiveness"
       }
      ]
     },
     {
      "linesContent": [
+      {
+       "classNames": [ "stasis" ]
+      },
       {
        "text": "Stasis: 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
       }
@@ -32990,21 +33267,39 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a 35% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: 35%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a 20% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: 20%"
       }
      ]
     }
@@ -33181,7 +33476,17 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Glaive Block's Movement Speed Penalty to 20(?)% for [?] seconds, or until you stop blocking."
+       "text": "Decreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)"
       }
      ]
     }
@@ -33756,7 +34061,13 @@
     {
      "linesContent": [
       {
-       "text": "Powered Sword Hits apply Slow for "
+       "text": "Powered Sword Hits apply "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks for "
       },
       {
        "text": "4.25"
@@ -34413,7 +34724,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40(?)% Weapon Energy (up from the base amount of 25%)."
+       "text": "100% Increased Weapon Energy."
       }
      ]
     },
@@ -34427,7 +34738,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Energy Bonus on Hit is increased by an additive 5(?)%."
+       "text": " Energy Bonus on Hit is increased by an additive 10%."
       }
      ]
     }
@@ -34493,14 +34804,28 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill for 5 seconds:"
+       "text": "On Weapon Kill for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5.5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
+       "text": "• 15% Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sets Forward Movement Speed to 9 m/s"
       }
      ]
     },
@@ -34524,7 +34849,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -34667,27 +34992,30 @@
     {
      "linesContent": [
       {
-       "text": "After dealing Weapon Damage to an Ammo Brick:"
+       "text": "On Weapon Hits against an Ammo Brick:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Picks up Ammo and "
+       "text": "Picks up Ammo, "
       },
       {
-       "text": "refills"
+       "text": "Refills"
       },
       {
-       "text": " all Weapons from reserves."
+       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Triggers Ammo Pickup Effects if pickup is possible."
+       "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
       }
      ]
     },
@@ -35352,7 +35680,14 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
+       "text": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
       }
      ]
     },
@@ -35362,7 +35697,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts upon readying. Buff can be stowed for 5 seconds."
+       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds."
       }
      ]
     },
@@ -35735,14 +36070,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within "
-      },
-      {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -35889,7 +36217,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Projectiles Hits grant 35(?)% Weapon Energy (up from the base amount of 25%)."
+       "text": "Glaive Projectiles Hits grant 90% Increased Weapon Energy."
       }
      ]
     }
@@ -36084,17 +36412,17 @@
        "text": " "
       },
       {
-       "text": "80"
+       "text": "[PVP: 80]"
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants 50 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -36464,7 +36792,17 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target emits 3 damaging shockwaves from its location at the time of activation. Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
+       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
       }
      ]
     },
@@ -36483,7 +36821,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 20.01]"
+       "text": "[PVP: 20]"
       },
       {
        "text": " damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on "
@@ -36681,7 +37019,7 @@
     {
      "linesContent": [
       {
-       "text": "Additional Powered Hits refresh the duration. Blocking removes all stacks."
+       "text": "Blocking removes all stacks."
       }
      ]
     }
@@ -37292,7 +37630,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 35% Flinch Reduction after 1 second of Aiming Down Sights (ADS) without firing."
+       "text": "Grants 35% Flinch Reduction after "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "0.9 seconds of Aiming Down Sights (ADS) without firing."
       }
      ]
     },
@@ -37316,7 +37661,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Aiming Down Sights timer is reduced."
+       "text": " Activation time is reduced by 10%."
       }
      ]
     }
@@ -38115,7 +38460,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Aim Assist"
+       "text": "• (?) Aim Assist"
       }
      ]
     },
@@ -38261,7 +38606,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -38546,7 +38891,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 40 Reload Speed and a 0.95x Reload Duration Multiplier after not having dealt or received damage in the last 5(?) seconds."
+       "text": "Grants 40 Reload Speed and a 0.95x Reload Duration Multiplier while out of Combat."
       }
      ]
     },
@@ -38556,7 +38901,17 @@
     {
      "linesContent": [
       {
-       "text": "Any kills reduce the required time to 1.5 seconds. Triggers even if stowed."
+       "text": "For One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Can activate even if stowed."
       }
      ]
     }
@@ -38580,7 +38935,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon missing 4? times within 2.5? seconds of each:"
+       "text": "Upon missing multiple times within 2.5 seconds of each without scoring a hit:"
       }
      ]
     },
@@ -38597,7 +38952,38 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed 1? after second of scoring a hit. Missing again refreshes the duration."
+       "text": "Misses in a row required:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifle: 10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: 4"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Linear Fusion Rifle, Pulse Rifle: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is removed 1? second after scoring a hit."
       }
      ]
     },
@@ -38611,7 +38997,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Duration after scoring a hit is increased."
+       "text": " Deactivation time after scoring a hit is increased."
       }
      ]
     }
@@ -38690,7 +39076,7 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased Damage, 100 Handling, and 100 Reload Speed."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -38700,7 +39086,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts until you're out of combat and works while stowed."
+       "text": "Works and can activate while stowed. Dealing and receiving damage refreshes the buff duration."
       }
      ]
     },
@@ -38710,7 +39096,7 @@
     {
      "linesContent": [
       {
-       "text": "Being in Combat is defined as having either dealt or received damage within the last 5 seconds."
+       "text": "For Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
       }
      ]
     }
@@ -38774,7 +39160,7 @@
     {
      "linesContent": [
       {
-       "text": "• 50% Decreased Duration on "
+       "text": "• 50% Decrease on "
       },
       {
        "classNames": [ "primary" ]
@@ -38787,7 +39173,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Decreased Duration on "
+       "text": "• 20% Decrease on "
       },
       {
        "classNames": [ "special" ]
@@ -39265,7 +39651,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " [?]% Chance to be refunded 1 more Ammo."
+       "text": " ?% Chance to be refunded 1 more Ammo."
       }
      ]
     }
@@ -39518,7 +39904,14 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill, for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5.5 seconds:"
       }
      ]
     },
@@ -39549,14 +39942,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts "
-      },
-      {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "5.5 seconds. Additional kills add 5 seconds to the timer, maxing out at 8 seconds."
+       "text": "Additional Kills extend the duration by 5 seconds, up to 8 seconds."
       }
      ]
     },
@@ -40307,7 +40693,7 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade and Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% Increased Damage for 10 seconds."
       }
      ]
     },
@@ -40317,7 +40703,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% Damage Buff can only be refreshed by getting another Matching Ability Kill."
+       "text": "The 50% Damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
       }
      ]
     },
@@ -40331,7 +40717,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " The 15% Damage Buff Duration is refreshed to 8 seconds if a weapon kill is made while it is active."
+       "text": " The 15% Damage Buff is refreshed to 8 seconds if a weapon kill is made while it is active."
       }
      ]
     }
@@ -40346,14 +40732,13 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Applies 30 "
+      },
       {
-       "text": "Applies 30 Scorch to enemies within 4(?) meters."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
       }
      ]
     },
@@ -40363,7 +40748,7 @@
     {
      "linesContent": [
       {
-       "text": "Ember of Ashes increases this to 40 Scorch."
+       "text": "Ember of Ashes increases this to 40 Stacks."
       }
      ]
     },
@@ -40383,7 +40768,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage from Scorch can be increased through Weapon Damage Buffs and Debuffs."
+       "text": "Damage from Scorch can be increased through Weapon Damage Buffs."
       }
      ]
     }

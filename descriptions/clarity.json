@@ -1606,14 +1606,24 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill or upon scoring [?] kills within [?] seconds of each with a weapon that cannot deal precision damage:"
+       "text": "Spawns a Threadling on Enemy Death Location on Precision Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For weapons that cannot deal Precision Damage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Spawns a Threadling on Enemy Death Location."
+       "text": "Scoring 3? kills within 3? seconds of each spawns a Threadling."
       }
      ]
     },
@@ -1756,7 +1766,7 @@
  "120721526": {
   "hash": 120721526,
   "name": "Runneth Over",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -1764,7 +1774,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload Overflows the Magazine by 10% for each ally within 15 meters."
+       "text": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters."
       }
      ]
     },
@@ -1774,7 +1784,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 50% increased Magazine Capacity."
+       "text": "Maxes out at 50% Increased Magazine Capacity."
       }
      ]
     }
@@ -1800,7 +1810,7 @@
  "124408337": {
   "hash": 124408337,
   "name": "Headstone",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -1831,15 +1841,12 @@
     {
      "linesContent": [
       {
-       "text": "Low Tier ("
-      },
-      {
-       "text": "Tier 1 and 2",
-       "link": "https://d2clarity.page.link/combatant",
+       "text": "Tier 1-2 Minor",
+       "link": "https://url.d2clarity.com/combatants",
        "classNames": [ "link" ]
       },
       {
-       "text": ") Minor Combatants only spawn a Medium "
+       "text": " Combatants only spawn a Medium "
       },
       {
        "classNames": [ "stasis" ]
@@ -1912,7 +1919,14 @@
     {
      "linesContent": [
       {
-       "text": "Powered Hits grant a 3% Damage Buff for 3.5 seconds. Stacks 10 times for a 30% Damage Buff."
+       "text": "Powered Hits grant a 3% Damage Buff for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "4 seconds. Stacks 10 times for a 30% Damage Buff."
       }
      ]
     },
@@ -1922,7 +1936,7 @@
     {
      "linesContent": [
       {
-       "text": "Additional Powered Hits refresh the duration. Blocking removes all stacks."
+       "text": "Blocking removes all stacks."
       }
      ]
     },
@@ -1936,7 +1950,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -1954,35 +1968,53 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a "
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40% chance to refund ammo."
+       "text": "40%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a "
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "25% chance to refund ammo."
+       "text": "25%"
       }
      ]
     },
@@ -1996,7 +2028,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Ammo Refund chance is increased by an additive 5%(?)."
+       "text": " Ammo Refund chance is increased by an additive 5%."
       }
      ]
     }
@@ -2006,7 +2038,7 @@
  "164468655": {
   "hash": 164468655,
   "name": "Nanotech Tracer Rockets",
-  "lastUpload": 1680050976212,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -2014,14 +2046,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring multiple hits within (?) seconds of each:"
+       "text": "Upon scoring multiple hits within ? seconds of each:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Automatically shoots a Tracking Rocket that matches Weapon's Elemental Damage Type."
+       "text": "Shoots a Tracking Rocket that matches Weapon's Elemental Damage Type."
       }
      ]
     },
@@ -2084,7 +2116,21 @@
     {
      "linesContent": [
       {
+       "text": "• Sniper Rifles: 50%?"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Pulse Rifles, Hand Cannons, Submachine Guns: 45%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grenade Launchers: 30%"
       }
      ]
     },
@@ -2098,7 +2144,17 @@
     {
      "linesContent": [
       {
-       "text": "• Fusion Rifles, Grenade Launchers: unknown"
+       "text": "• Fusion Rifles: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Further hits do not provide activation progress for 1 second after activation."
       }
      ]
     }
@@ -2137,7 +2193,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage that matches the Element of the weapon over a 3 meter radius."
+       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
       }
      ]
     },
@@ -2546,7 +2602,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Range and 30 Stability for 3 seconds or until firing"
+       "text": "• Grants 20 Range and 30 Stability for 3 seconds OR until firing"
       }
      ]
     },
@@ -2566,7 +2622,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by shooting quickly."
+       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing shots loaded by the perk."
       }
      ]
     },
@@ -2583,18 +2639,6 @@
        "text": " Stronger Effect."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -2602,7 +2646,7 @@
  "192157151": {
   "hash": 192157151,
   "name": "Ambush",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "stats": {
    "Charge Draw": [
     {
@@ -2679,36 +2723,6 @@
      "linesContent": [
       {
        "text": "Buff activates for 2 seconds after dealing or receiving damage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -3276,7 +3290,7 @@
  "247725512": {
   "hash": 247725512,
   "name": "Rapid Hit",
-  "lastUpload": 1687024789016,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -3309,270 +3323,32 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stack"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "RDS",
-           "classNames": [ "title" ],
-           "title": [
-            {
-             "linesContent": [
-              {
-               "text": "Reload Duration Scalar (Multiplies Reload Animation Duration by that number)"
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.990x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "12"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "30"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.960x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "14"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "35"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.950x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "18"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "42"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.945x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_3"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.920x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_4"
-          }
-         ]
-        }
-       ]
+       "text": "Benefits at 1|2|3|4|5 Stacks:"
       }
-     ],
-     "classNames": [ "background_2" ],
-     "isFormula": false
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 2|12|14|18|25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 5|30|35|42|60 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.99x|0.96x|0.95x|0.945x|0.92x Reload Duration Multiplier"
+      }
+     ]
     }
    ],
    "zh-chs": [
@@ -3924,7 +3700,7 @@
  "280464955": {
   "hash": 280464955,
   "name": "Firmly Planted",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -4012,27 +3788,6 @@
      "linesContent": [
       {
        "text": "Effects are halved on Fusion Rifles."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -4310,14 +4065,14 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for "
-      },
+       "text": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "2.75 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
+       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
       }
      ]
     },
@@ -4327,7 +4082,14 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts upon readying. Buff can be stowed for 5 seconds."
+       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "2.75 seconds."
       }
      ]
     },
@@ -4547,7 +4309,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -4578,7 +4340,14 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
+       "text": "• 15% Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sets Forward Movement Speed to 9 m/s"
       }
      ]
     },
@@ -4702,7 +4471,7 @@
  "365154968": {
   "hash": 365154968,
   "name": "Target Lock",
-  "lastUpload": 1676932239634,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -4744,14 +4513,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": "."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reaches maximum strength at 5 Stacks."
+       "text": ". Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -5208,7 +4970,7 @@
  "398661035": {
   "hash": 398661035,
   "name": "Restoration Ritual",
-  "lastUpload": 1685817873807,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -5216,7 +4978,7 @@
     {
      "linesContent": [
       {
-       "text": "Prepares an Emergency Reload on Ally Revival or Finisher."
+       "text": "Reviving Allies or performing Finishers prepares an Emergency Reload."
       }
      ]
     },
@@ -5226,7 +4988,23 @@
     {
      "linesContent": [
       {
-       "text": "Emergency Reload refills ?% of Magazine the next time it is emptied. Rounds up to the nearest whole number."
+       "text": "Emergency Reload "
+      },
+      {
+       "text": "refills",
+       "title": [
+        {
+         "linesContent": [
+          {
+           "text": "Reload, but does not need animation and doesn't proc on-reload perks."
+          }
+         ]
+        }
+       ],
+       "classNames": [ "title" ]
+      },
+      {
+       "text": " the Magazine the next time it is emptied."
       }
      ]
     }
@@ -5527,7 +5305,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Currently does nothing?"
+       "text": " Does not provide a benefit currently."
       }
      ]
     }
@@ -5537,7 +5315,7 @@
  "438098033": {
   "hash": 438098033,
   "name": "Harmony",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -5576,27 +5354,6 @@
      "linesContent": [
       {
        "text": "20% Increased Damage and 15 Handling for 7 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -5699,7 +5456,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1680694380788,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -5748,7 +5505,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " increased damage and 100 Handling for 10 seconds or until firing a full burst."
+       "text": " Increased Damage and 100 Handling for 10 seconds or until firing a full burst."
       }
      ]
     },
@@ -5870,7 +5627,7 @@
  "460017080": {
   "hash": 460017080,
   "name": "Headseeker",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -5908,7 +5665,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Aim Assist"
+       "text": "• (?) Aim Assist"
       }
      ]
     },
@@ -5951,18 +5708,11 @@
  "461595545": {
   "hash": 461595545,
   "name": "Reconstruction",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
-    {
-     "linesContent": [
-      {
-       "text": "While not firing the weapon:"
-      }
-     ]
-    },
     {
      "linesContent": [
       {
@@ -5986,7 +5736,17 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3.5 seconds up to double the normal capacity. Refill amount is rounded up to the nearest whole number."
+       "text": "3.5 seconds while not firing the weapon."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
       }
      ]
     },
@@ -6717,7 +6477,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Stability, Reload Speed, and Faster Handling Animations while within 15 meters of enemies."
+       "text": "Grants 1|2 Stacks while within 15 meters of 1|2+ enemies."
       }
      ]
     },
@@ -6725,258 +6485,65 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Enemy Count"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Reload Speed"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Handling Animation Duration"
-          }
-         ]
-        }
-       ]
+       "text": "Bonuses at 1|2 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "19"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "19"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.9x"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Ready Duration:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
+       "text": "19|"
       },
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Stow Duration:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2+"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "44"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "63"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "100"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.81x"
-          }
-         ]
-        }
-       ]
+       "text": "44 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Ready Duration:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Stow Duration:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
+       "text": "19|"
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "63 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 25|100 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.9x|0.81x Handling Animation Duration Multiplier"
       }
      ]
     },
@@ -7515,27 +7082,6 @@
        "text": " Melee Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)"
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -8010,24 +7556,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 3 Precision Hits refunds 1 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Counter is reset if no Precision Hits are scored within "
+       "text": "Scoring 3 Precision Hits within "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds."
+       "text": "3 seconds of each refunds 1 Ammo to the Magazine."
       }
      ]
     },
@@ -8096,7 +7632,7 @@
  "588594999": {
   "hash": 588594999,
   "name": "Moving Target",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Aim Assist": [
     {
@@ -8113,7 +7649,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Aim Assist and reduces ADS Movement Speed Penalty by 2.5% while Aiming Down Sights."
+       "text": "Grants 10 Aim Assist while Aiming Down Sights and reduces the ADS Movement Speed Penalty by an additive 2.5%."
       }
      ]
     }
@@ -8731,7 +8267,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5 seconds to the duration up to 20 seconds."
+       "text": "5 seconds to the duration up to a maximum of 20 seconds."
       }
      ]
     },
@@ -9248,7 +8784,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 6 seconds of a Precision Kill reduces Firing Delay by 30% for "
+       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for "
       },
       {
        "text": "🡅",
@@ -9256,16 +8792,6 @@
       },
       {
        "text": "7 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Buff can be refreshed."
       }
      ]
     },
@@ -9492,7 +9018,7 @@
  "684456054": {
   "hash": 684456054,
   "name": "Eddy Current",
-  "lastUpload": 1685817873807,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -9671,7 +9197,7 @@
  "691659142": {
   "hash": 691659142,
   "name": "Pugilist",
-  "lastUpload": 1687176854200,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -9709,27 +9235,6 @@
      "linesContent": [
       {
        "text": "Dealing Melee Damage grants 35 Handling for 3 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -9892,7 +9397,7 @@
  "699525795": {
   "hash": 699525795,
   "name": "Eye of the Storm",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -9936,27 +9441,6 @@
      "linesContent": [
       {
        "text": "Effect reaches maximum strength at Critical Health."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed at Critical Health:",
-       "formula": "ready_1",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed at Critical Health:",
-       "formula": "stow_1",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -10107,7 +9591,7 @@
  "706527188": {
   "hash": 706527188,
   "name": "Quickdraw",
-  "lastUpload": 1681924642604,
+  "lastUpload": 1689198390082,
   "stats": {
    "Ready": [
     {
@@ -10150,27 +9634,6 @@
      "linesContent": [
       {
        "text": "Buff goes away as soon as ADS input is pressed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -10260,7 +9723,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses depending on your selected Elemental Subclass."
+       "text": "Grants Passive Stat Bonuses depending on your selected Subclass."
       }
      ]
     },
@@ -10273,7 +9736,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": " "
+       "text": "Solar: "
       },
       {
        "text": "🡅",
@@ -10290,7 +9753,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": " "
+       "text": "Arc: "
       },
       {
        "text": "🡅",
@@ -10307,7 +9770,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": " "
+       "text": "Void: "
       },
       {
        "text": "🡅",
@@ -10324,7 +9787,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": " "
+       "text": "Strand: "
       },
       {
        "text": "🡅",
@@ -10341,7 +9804,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": " "
+       "text": "Stasis: "
       },
       {
        "text": "🡅",
@@ -10362,7 +9825,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Subclass Stat Bonuses are increased by 5."
+       "text": " Stat Bonuses are increased by 5."
       }
      ]
     }
@@ -10442,14 +9905,14 @@
     {
      "linesContent": [
       {
-       "text": "After having dealt or received damage every 3 seconds for 6 seconds:"
+       "text": "After being in Combat for 6 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
       }
      ]
     },
@@ -10459,7 +9922,24 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates when no damage is dealt or received in the last 3 seconds."
+       "text": "Can activate while stowed. Dealing and receiving damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3.5 seconds."
       }
      ]
     },
@@ -10473,7 +9953,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Time until the perk deactivates is extended."
+       "text": " Allowed time between damage exchanges is extended by 0.5 seconds."
       }
      ]
     }
@@ -10678,7 +10158,7 @@
  "744594675": {
   "hash": 744594675,
   "name": "Well-Rounded",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -10722,126 +10202,6 @@
        "text": "Grants 10 Range, 10 Stability, and 10 Handling per stack for 15 seconds. Maximum of 2 Stacks."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Effective Range"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready Speed"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stow Speed"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     }
    ],
    "zh-chs": [
@@ -11045,7 +10405,7 @@
  "766321425": {
   "hash": 766321425,
   "name": "Bray Inheritance",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11073,7 +10433,7 @@
     {
      "linesContent": [
       {
-       "text": "Ability Energy gains per weapon:"
+       "text": "Ability Energy gains on hits by weapon:"
       }
      ]
     },
@@ -11104,7 +10464,7 @@
  "776531651": {
   "hash": 776531651,
   "name": "Repulsor Brace",
-  "lastUpload": 1679685429411,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11120,16 +10480,6 @@
      "linesContent": [
       {
        "text": "Grants a 45 HP Void Overshield for 8 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Weaken effects other than the one provided by Divinity can also activate it."
       }
      ]
     }
@@ -11196,7 +10546,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -11206,7 +10556,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     },
@@ -11311,7 +10661,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Damage is increased by a further 5%. (e.g. 40% 🠚 47%)"
+       "text": " Damage is increased by a further 5%. (40%🠚47%, 35%🠚41.75%)"
       }
      ]
     }
@@ -11329,7 +10679,14 @@
     {
      "linesContent": [
       {
-       "text": "Increases Melee Damage for 1.22 seconds after hiting a target with 10 of the 12 Shotgun Pellets."
+       "text": "Increases Melee Damage for 1.22 seconds after hiting a target with "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "10 of the 12 Shotgun Pellets."
       }
      ]
     },
@@ -11354,6 +10711,16 @@
      "linesContent": [
       {
        "text": "• 40% Increased Powered Melee Damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increases Melee Damage against Bosses and Vehicles by a further 25% (100%🠚150%, 40%🠚75%)."
       }
      ]
     },
@@ -11510,7 +10877,7 @@
  "818211479": {
   "hash": 818211479,
   "name": "Shattering Blade",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -11541,7 +10908,7 @@
     {
      "linesContent": [
       {
-       "text": "67% Increased damage for Grounded Heavy Attack."
+       "text": "67% Increased Damage for Grounded Heavy Attack."
       }
      ]
     }
@@ -11799,7 +11166,7 @@
  "831391274": {
   "hash": 831391274,
   "name": "Hatchling",
-  "lastUpload": 1678650972521,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11807,14 +11174,24 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill or upon scoring [?] kills within [?] seconds of each with a weapon that cannot deal precision damage:"
+       "text": "Spawns a Threadling on Enemy Death Location on Precision Kills."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For weapons that cannot deal Precision Damage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Spawns a Threadling on Enemy Death Location."
+       "text": "Scoring 3? kills within 3? seconds of each spawns a Threadling."
       }
      ]
     }
@@ -11839,7 +11216,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased damage and 0.8x Charge Time for [?] seconds."
+       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
       }
      ]
     },
@@ -12269,24 +11646,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits refunds 2 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Precision Hit counter is reset if no Precision Hits are scored within "
+       "text": "Scoring 4 Precision Hits within "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds."
+       "text": "3 seconds of each refunds 2 Ammo to the Magazine."
       }
      ]
     },
@@ -12453,7 +11820,7 @@
   "name": "Tight Fit",
   "itemHash": 2390471904,
   "itemName": "Speedloader Slacks",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Airborne": [
     {
@@ -12582,7 +11949,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     },
@@ -13261,7 +12628,7 @@
  "908147344": {
   "hash": 908147344,
   "name": "Sneak Bow",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -13278,7 +12645,7 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following benefits while Crouched:"
       }
      ]
     },
@@ -13803,7 +13170,7 @@
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -13928,7 +13295,7 @@
  "957782887": {
   "hash": 957782887,
   "name": "Snapshot Sights",
-  "lastUpload": 1684973582811,
+  "lastUpload": 1689198390082,
   "stats": {
    "ADS": [
     {
@@ -13959,7 +13326,7 @@
     {
      "linesContent": [
       {
-       "text": "• 50% Decreased Duration on "
+       "text": "• 50% Decrease on "
       },
       {
        "classNames": [ "primary" ]
@@ -13972,7 +13339,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Decreased Duration on "
+       "text": "• 20% Decrease on "
       },
       {
        "classNames": [ "special" ]
@@ -14195,7 +13562,7 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1687692796310,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -14302,7 +13669,7 @@
  "972757866": {
   "hash": 972757866,
   "name": "Pulse Monitor",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -14373,28 +13740,7 @@
     {
      "linesContent": [
       {
-       "text": "Works while stowed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "Works and can activate while stowed."
       }
      ]
     }
@@ -14535,24 +13881,28 @@
     {
      "linesContent": [
       {
-       "text": "Upon Reload within 6 seconds of a Weapon Kill:"
+       "text": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "20 Aim Assist, -20% Accuracy Cone Size, and [?] ADS Handling for 5 seconds."
+       "text": "• 20 Aim Assist"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• -20% Accuracy Cone Size"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Can be refreshed."
+       "text": "• ? ADS Handling for 5 seconds."
       }
      ]
     },
@@ -14576,7 +13926,7 @@
  "1004814308": {
   "hash": 1004814308,
   "name": "Disaster Plan",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Guard Charge Rate": [
     {
@@ -14630,14 +13980,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 meters of 2 enemies:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "0.85x Charge/Draw Time Multiplier."
+       "text": "Grants a 0.85x Charge/Draw Time Multiplier while within 15 meters of 2+ enemies."
       }
      ]
     },
@@ -14671,7 +14014,7 @@
  "1015611457": {
   "hash": 1015611457,
   "name": "Kill Clip",
-  "lastUpload": 1683404922219,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -14695,14 +14038,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "25% Increased damage for 5 seconds."
+       "text": "25% Increased Damage for 5 seconds."
       }
      ]
     },
@@ -14712,7 +14055,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can be refreshed through additional reloads. Persists while stowed."
+       "text": "Buff stays active while stowed."
       }
      ]
     }
@@ -16022,7 +15365,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -16338,7 +15681,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage for 2 seconds."
+       "text": "Grats 50% Increased Damage for 2 seconds."
       }
      ]
     },
@@ -16957,103 +16300,18 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Damage Increase"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "6.7%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "13.3%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "26.6%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "33.3%"
-          }
-         ]
-        }
-       ]
+       "text": "Damage Increase at 1|2|3|4|5 Stacks:"
       }
-     ],
-     "classNames": [ "wide", "background_2" ],
-     "isFormula": false
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "6.7% | 13.3% | 20% | 26.6% | 33.3%"
+      }
+     ]
     },
     {
      "classNames": [ "spacer" ]
@@ -17226,7 +16484,7 @@
  "1168162263": {
   "hash": 1168162263,
   "name": "Outlaw",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -17252,18 +16510,6 @@
      "linesContent": [
       {
        "text": "70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -17344,7 +16590,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed. Maximum of 5 Stacks."
+       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks."
       }
      ]
     },
@@ -17352,238 +16598,51 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Stat"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "RDS",
-           "classNames": [ "title" ],
-           "title": [
-            {
-             "linesContent": [
-              {
-               "text": "Reload Duration Scalar: Multiplies reload animation duration by that number."
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        }
-       ]
+       "text": "Bonuses at 1|2|3|4|5 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "13"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.975x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "55"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.9x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        }
-       ]
+       "text": "13 | "
       },
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "65"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.868x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "85"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.837x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_3"
-          }
-         ]
-        }
-       ]
+       "text": "55 | "
       },
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "100"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.8x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_4"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "65 | "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "85 | 100 Reload Speed Stat"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier"
       }
      ]
     },
@@ -17638,15 +16697,12 @@
     {
      "linesContent": [
       {
-       "text": "Low Tier ("
-      },
-      {
-       "text": "Tier 1 and 2",
-       "link": "https://d2clarity.page.link/combatant",
+       "text": "Tier 1-2 Minor",
+       "link": "https://url.d2clarity.com/combatants",
        "classNames": [ "link" ]
       },
       {
-       "text": ") Minor Combatants only spawn a Medium "
+       "text": " Combatants only spawn a Medium "
       },
       {
        "classNames": [ "stasis" ]
@@ -17701,7 +16757,7 @@
     {
      "linesContent": [
       {
-       "text": "10 Handling, 10 Reload Speed, and 10 Stability per stack for "
+       "text": "Grants 10 Handling, 10 Reload Speed, and 10 Stability per Stack for "
       },
       {
        "text": "🡅",
@@ -17735,168 +16791,6 @@
        "text": " Buff Duration is increased by 1 second."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Ready Speed"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stow Speed"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_2"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     }
    ]
   }
@@ -17960,7 +16854,16 @@
  "1183436451": {
   "hash": 1183436451,
   "name": "Firefly",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1689198390082,
+  "stats": {
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 55 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -17985,18 +16888,25 @@
        "text": " "
       },
       {
-       "text": "80",
+       "text": "[80]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "55 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -18028,19 +16938,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reload Speed buff is increased."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
+       "text": " Grants 5? more Reload Speed."
       }
      ]
     }
@@ -18098,7 +16996,7 @@
  "1195158366": {
   "hash": 1195158366,
   "name": "Encore",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -18979,7 +17877,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -19673,18 +18571,6 @@
        "text": " Buff duration is increased by 1 second."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -19692,7 +18578,7 @@
  "1354429876": {
   "hash": 1354429876,
   "name": "Fourth Time's the Charm",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -19700,17 +18586,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits refunds 2 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Precision Hit counter is reset if no Precision Hits are scored within 2 seconds."
+       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
       }
      ]
     }
@@ -19736,7 +18612,7 @@
  "1359896290": {
   "hash": 1359896290,
   "name": "Dynamic Sway Reduction",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "stats": {
    "Stability": [
     {
@@ -19784,7 +18660,7 @@
     {
      "linesContent": [
       {
-       "text": "Reaches maximum strength after 10 shots."
+       "text": "Reaches maximum strength after 10 shots, granting 10 Stability, -50% Accuracy Cone Size, and -100% Accuracy Cone Growth."
       }
      ]
     }
@@ -20316,7 +19192,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff cannot be refreshed."
       }
      ]
     },
@@ -20555,7 +19431,7 @@
  "1428297954": {
   "hash": 1428297954,
   "name": "Perpetual Motion",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -20603,14 +19479,7 @@
     {
      "linesContent": [
       {
-       "text": "All stacks are removed if movement speed is below 2 meters per second for 0.5 seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Can activate and remain active while stowed."
+       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed. All stacks are removed if movement speed is below 2 m/s for 0.5 seconds."
       }
      ]
     },
@@ -20618,197 +19487,9 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Time Spent Moving"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "2-10 seconds"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-game  values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "10+ seconds"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-game  values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
+       "text": "Works and can activate while stowed."
       }
      ]
     }
@@ -21205,7 +19886,7 @@
  "1439600632": {
   "hash": 1439600632,
   "name": "Bipod",
-  "lastUpload": 1686679019520,
+  "lastUpload": 1689198390082,
   "stats": {
    "Firing Delay": [
     {
@@ -21238,7 +19919,7 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5. Decreases firing delay by 25%."
+       "text": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%."
       }
      ]
     },
@@ -21260,7 +19941,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Airborne": [
     {
@@ -21724,18 +20405,11 @@
  "1523832109": {
   "hash": 1523832109,
   "name": "Reconstruction",
-  "lastUpload": 1684973582811,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
-    {
-     "linesContent": [
-      {
-       "text": "While not firing the weapon:"
-      }
-     ]
-    },
     {
      "linesContent": [
       {
@@ -21752,7 +20426,17 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 10% of Magazine Capacity from reserves every 4 seconds up to double the normal capacity. Refill amount is rounded up to the nearest whole number."
+       "text": " 10% of Magazine Capacity from reserves every 4 seconds while not firing the weapon."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
       }
      ]
     }
@@ -21870,14 +20554,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " stowed weapons from reserves upon finishing a reload within "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "7 seconds of a Weapon Kill."
+       "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
       }
      ]
     },
@@ -21901,19 +20578,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reload Timer is increased to 7 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
+       "text": " Allowed time before reloading is increased."
       }
      ]
     }
@@ -21948,7 +20613,15 @@
     {
      "linesContent": [
       {
-       "text": "On hit against Major or Boss Combatants:"
+       "text": "On hit against "
+      },
+      {
+       "text": "Major, Boss, or Vehicle",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": " Combatants:"
       }
      ]
     },
@@ -21979,7 +20652,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "4 stacks per hit if at 6-20 stacks."
+       "text": "4 Stacks per hit if at 6-20 stacks."
       }
      ]
     },
@@ -21993,7 +20666,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Consumes 1 fewer stack per hit if at 6-20 stacks."
+       "text": " Consumes 1 fewer Stack per hit if at 6-20 stacks."
       }
      ]
     }
@@ -22195,7 +20868,17 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target emits 3 damaging shockwaves from its location at the time of activation. Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
+       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
       }
      ]
     },
@@ -22215,7 +20898,7 @@
        "text": " "
       },
       {
-       "text": "[20.01]",
+       "text": "[20]",
        "classNames": [ "pvp" ]
       },
       {
@@ -22442,7 +21125,7 @@
  "1556840489": {
   "hash": 1556840489,
   "name": "Lead from Gold",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22456,7 +21139,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Ammo Pickup:"
+       "text": "Heavy Ammo Pickup:"
       }
      ]
     },
@@ -22469,7 +21152,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Ammo Reserves."
+       "text": "Special Ammo Reserves."
       }
      ]
     },
@@ -22485,7 +21168,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons halves the amount of ammo granted."
+       "text": "Special Weapons halves the amount of ammo granted."
       }
      ]
     }
@@ -22666,18 +21349,18 @@
        "text": " "
       },
       {
-       "text": "80",
+       "text": "[80]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants 50 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -22696,18 +21379,6 @@
       },
       {
        "text": "."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -22772,7 +21443,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count until the buff text disappears."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
       }
      ]
     },
@@ -22796,7 +21467,7 @@
  "1570042021": {
   "hash": 1570042021,
   "name": "Heating Up",
-  "lastUpload": 1683404922219,
+  "lastUpload": 1689198390082,
   "stats": {
    "Stability": [
     {
@@ -22846,7 +21517,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Persists while stowed."
+       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed."
       }
      ]
     }
@@ -22898,7 +21569,7 @@
  "1583705720": {
   "hash": 1583705720,
   "name": "Stats for All",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -22990,7 +21661,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff cannot be refreshed."
       }
      ]
     },
@@ -23498,7 +22169,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active (above 70 HP). Having your shields broken disables the buff until your shields fully recharge."
+       "text": "Grants 20 Range while your shields are active (above 70 HP)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Getting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge."
       }
      ]
     },
@@ -23512,19 +22193,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " ?????"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
+       "text": " Reactivation delay is decreased."
       }
      ]
     }
@@ -23861,7 +22530,7 @@
  "1646437399": {
   "hash": 1646437399,
   "name": "Duelist's Trance",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1689198390082,
   "stats": {
    "Guard Charge Rate": [
     {
@@ -23873,7 +22542,7 @@
    "Guard Efficiency": [
     {
      "active": {
-      "stat": [ 60 ]
+      "stat": [ 65 ]
      }
     }
    ],
@@ -23906,7 +22575,14 @@
     {
      "linesContent": [
       {
-       "text": "• 60 Guard Efficiency"
+       "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "65 Guard Efficiency"
       }
      ]
     },
@@ -23955,7 +22631,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 5 more Guard Resistance and Charge Rate."
+       "text": " Grants 5 more Guard Efficiency, Resistance, and Charge Rate."
       }
      ]
     }
@@ -24028,7 +22704,7 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following benefits while Crouched:"
       }
      ]
     },
@@ -24678,7 +23354,7 @@
     {
      "linesContent": [
       {
-       "text": "Works while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     },
@@ -24695,27 +23371,6 @@
        "text": " Atviates with more health remaining."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -24723,7 +23378,7 @@
  "1685431615": {
   "hash": 1685431615,
   "name": "En Garde",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -25375,7 +24030,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for "
+       "text": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for "
       },
       {
        "text": "🡅",
@@ -25575,7 +24230,17 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Glaive Block's Movement Speed Penalty to 20(?)% for [?] seconds, or until you stop blocking."
+       "text": "Decreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)"
       }
      ]
     },
@@ -25765,7 +24430,7 @@
  "1754714824": {
   "hash": 1754714824,
   "name": "Kickstart",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Charge Draw": [
     {
@@ -25803,7 +24468,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased damage and 0.8x Charge Time for [?] seconds."
+       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
       }
      ]
     }
@@ -26003,7 +24668,7 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -26018,7 +24683,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -26028,7 +24693,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     }
@@ -26082,7 +24747,7 @@
  "1782407750": {
   "hash": 1782407750,
   "name": "Close to Melee",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -26148,7 +24813,7 @@
  "1799762209": {
   "hash": 1799762209,
   "name": "Cornered",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Charge Draw": [
     {
@@ -26165,14 +24830,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 meters of 2 enemies:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "0.85x Charge/Draw Time Multiplier."
+       "text": "Grants a 0.85x Charge/Draw Time Multiplier while within 15 meters of 2+ enemies."
       }
      ]
     },
@@ -26895,7 +25553,7 @@
  "1866048759": {
   "hash": 1866048759,
   "name": "Hip-Fire Grip",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Aim Assist": [
     {
@@ -26932,7 +25590,7 @@
     {
      "linesContent": [
       {
-       "text": "If hipfiring:"
+       "text": "While  hipfiring:"
       }
      ]
     },
@@ -26967,31 +25625,14 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Increased:"
+       "text": "• 20% Increased Aim Assist Falloff Distance"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": "    • Aim Assist Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Reticle Stickiness Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Damage Falloff Start and End Distance"
+       "text": "• 20% Increased Damage Falloff Distance"
       }
      ]
     },
@@ -28235,7 +26876,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Shorter cooldown."
+       "text": " Cooldown is reduced."
       }
      ]
     }
@@ -28488,27 +27129,6 @@
        "text": " Passively grants 5 Reload Speed."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -28516,7 +27136,7 @@
  "1966281507": {
   "hash": 1966281507,
   "name": "Replenishing Aegis",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28986,7 +27606,7 @@
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
-  "lastUpload": 1687692796310,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -28994,7 +27614,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 7 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -29173,7 +27793,14 @@
     {
      "linesContent": [
       {
-       "text": "Gain a Stack after 2 and 9 seconds."
+       "text": "Gain a Stack after 2 and "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "9 seconds."
       }
      ]
     },
@@ -29183,14 +27810,17 @@
     {
      "linesContent": [
       {
-       "text": "All stacks are removed if movement speed is below 2 meters per second for 0.5 seconds."
+       "text": "Each stack provides 10 Stability, 10 Handling, and 10 Reload Speed. All stacks are removed if movement speed is below 2 m/s for 0.5 seconds."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Can activate and remain active while stowed."
+       "text": "Works and can activate while stowed."
       }
      ]
     },
@@ -29207,215 +27837,6 @@
        "text": " Second Stack is gained 1 second sooner."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Time Spent Moving"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "2-"
-          },
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "9 seconds"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-game  values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "🡅",
-           "classNames": [ "enhancedArrow" ]
-          },
-          {
-           "text": "9+ seconds"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-game  values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      }
-     ]
     }
    ]
   }
@@ -29423,7 +27844,7 @@
  "2030760728": {
   "hash": 2030760728,
   "name": "Energy Transfer",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -29431,24 +27852,28 @@
     {
      "linesContent": [
       {
-       "text": "While Guarding with a Sword:"
+       "text": "Taking Damage while Guarding with a Sword grants Class Ability Energy:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 1% Class Ability Energy for every point of damage blocked."
+       "text": "• 1.5% for every point of Melee Damage Blocked"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• 1% for every point of \"other\" Damage Blocked"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Blocking Melee Damage grants 50% more Class Ability Energy."
+       "text": "• 0.5% for every point of Non-Blocked Damage (getting hit from behind)"
       }
      ]
     }
@@ -29570,7 +27995,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased."
+       "text": " Currently not granting any benefits."
       }
      ]
     }
@@ -29580,7 +28005,7 @@
  "2039302152": {
   "hash": 2039302152,
   "name": "Slideways",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -29634,7 +28059,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Stability and 20 Handling for 3 seconds"
+       "text": "• Grants 20 Stability and 20 Handling for 3 seconds"
       }
      ]
     },
@@ -29644,18 +28069,7 @@
     {
      "linesContent": [
       {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -29702,7 +28116,7 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -29881,7 +28295,7 @@
  "2077819806": {
   "hash": 2077819806,
   "name": "Eager Edge",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -30923,129 +29337,30 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Range, 10 Stability, and 10 Handling per stack for 15 seconds. Maximum of 2 Stacks."
+       "text": "Grants "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Range, "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Stability, and "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 Handling per stack for 15 seconds. Maximum of 2 Stacks."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Effective Range"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready Speed"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stow Speed"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     },
     {
      "classNames": [ "spacer" ]
@@ -31057,7 +29372,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
+       "text": " Stat bonuses are increased by 2?."
       }
      ]
     }
@@ -31109,7 +29424,7 @@
  "2172504645": {
   "hash": 2172504645,
   "name": "Sleight of Hand",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -31147,7 +29462,7 @@
     {
      "linesContent": [
       {
-       "text": "10 Handling, 10 Reload Speed, and 10 Stability per stack for 7.5 seconds."
+       "text": "Grants 10 Handling, 10 Reload Speed, and 10 Stability per Stack for 7.5 seconds."
       }
      ]
     },
@@ -31160,168 +29475,6 @@
        "text": "Maximum of 3 Stacks. Buff is removed on stow."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Ready Speed"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stow Speed"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "ready_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "stow_2"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     }
    ],
    "zh-chs": [
@@ -31517,7 +29670,7 @@
  "2173046394": {
   "hash": 2173046394,
   "name": "Voltshot",
-  "lastUpload": 1687095789709,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -31525,7 +29678,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 3.8 seconds of a Weapon Kill grants Voltshot for 7 seconds."
+       "text": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for 7 seconds."
       }
      ]
     },
@@ -32681,27 +30834,6 @@
        "text": " Stronger effect."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -32836,7 +30968,14 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds."
+       "text": "Dealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11 seconds."
       }
      ]
     },
@@ -33172,7 +31311,7 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "stats": {
    "Airborne": [
     {
@@ -33189,14 +31328,14 @@
     {
      "linesContent": [
       {
-       "text": "After having dealt or received damage every 3 seconds for 6 seconds:"
+       "text": "After being in Combat for 6 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "30 Airborne Effectiveness and 35% Flinch Resistance."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
       }
      ]
     },
@@ -33206,7 +31345,17 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates when no damage is dealt or received in the last 3 seconds."
+       "text": "Can activate while stowed. Dealing and receiving damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds."
       }
      ]
     }
@@ -33293,7 +31442,7 @@
     {
      "linesContent": [
       {
-       "text": "Doubles Magazine Capacity and increases Total Reserve size by 5. Decreases firing delay by 25%."
+       "text": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%."
       }
      ]
     },
@@ -33542,14 +31691,35 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following while Crouched:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier."
+       "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "55 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Ready/Stow Duration Multiplier"
       }
      ]
     },
@@ -33580,37 +31750,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect. Grants 10 More Inventory Size Stat passively."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": " Grants 5 more Reload Speed and 10 more Inventory Size Stat."
       }
      ]
     }
@@ -33991,7 +32131,7 @@
  "2360754333": {
   "hash": 2360754333,
   "name": "Trench Barrel",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -34013,6 +32153,13 @@
       "multiplier": [ 1.5 ]
      }
     }
+   ],
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 30 ]
+     }
+    }
    ]
   },
   "type": "Weapon Trait",
@@ -34029,28 +32176,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage, [+?] Reload Speed, and +30 Handling for 5 seconds OR 3 shots."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "50% Increased Damage, 30 Reload Speed, and 30 Handling for 5 seconds OR until firing 3 shots."
       }
      ]
     }
@@ -34247,7 +32373,7 @@
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Grants "
       },
       {
        "text": "🡅",
@@ -34271,11 +32397,7 @@
     {
      "linesContent": [
       {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": " Grants 5 more Stability and Handling."
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     },
@@ -34285,18 +32407,11 @@
     {
      "linesContent": [
       {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
       {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": " Stat bonuses are increased by 5."
       }
      ]
     }
@@ -34548,7 +32663,7 @@
  "2416023159": {
   "hash": 2416023159,
   "name": "Offhand Strike",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -34600,14 +32715,14 @@
     {
      "linesContent": [
       {
-       "text": "• -95%(?) Accuracy Cone Size"
+       "text": "• -95%? Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -95%(?) "
+       "text": "• -95%? "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -34880,8 +32995,15 @@
  "2437618208": {
   "hash": 2437618208,
   "name": "Tex Balanced Stock",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "stats": {
+   "Handling": [
+    {
+     "active": {
+      "stat": [ 20 ]
+     }
+    }
+   ],
    "Reload": [
     {
      "active": {
@@ -34898,14 +33020,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring 4 Hipfire Hits within 4(?) seconds of each, for 4 seconds:"
+       "text": "Upon scoring 4 Hipfire Hits within 4? seconds of each, for 4 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• [?] Handling"
+       "text": "• 20 Handling"
       }
      ]
     },
@@ -34926,19 +33048,7 @@
     {
      "linesContent": [
       {
-       "text": "• 5% Reduced ADS Movement Speed Penalty"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
+       "text": "• Additive 5% Reduced ADS Movement Speed Penalty"
       }
      ]
     }
@@ -35026,7 +33136,7 @@
  "2450788523": {
   "hash": 2450788523,
   "name": "Killing Wind",
-  "lastUpload": 1679685429411,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -35051,7 +33161,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill, for 5 seconds:"
       }
      ]
     },
@@ -35082,37 +33192,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 5 seconds. Additional kills add 5 seconds to the timer, maxing out at 8 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "Additional Kills extend the duration by 5 seconds, up to 8 seconds."
       }
      ]
     }
@@ -35178,7 +33258,7 @@
  "2451262963": {
   "hash": 2451262963,
   "name": "Fragile Focus",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -35195,7 +33275,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active (above 70 HP). Having your shields broken disables the buff until your shields fully recharge."
+       "text": "Grants 20 Range while your shields are active (above 70 HP)."
       }
      ]
     },
@@ -35205,9 +33285,7 @@
     {
      "linesContent": [
       {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
+       "text": "Getting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge."
       }
      ]
     }
@@ -35309,7 +33387,7 @@
  "2458213969": {
   "hash": 2458213969,
   "name": "Multikill Clip",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -35333,14 +33411,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within [?] seconds of each."
+       "text": "17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within 3.5 seconds of each."
       }
      ]
     },
@@ -35396,7 +33474,37 @@
  "2459015849": {
   "hash": 2459015849,
   "name": "Trench Barrel",
-  "lastUpload": 1686679019520,
+  "lastUpload": 1689198390082,
+  "stats": {
+   "Handling": [
+    {
+     "active": {
+      "stat": [ 35 ]
+     }
+    }
+   ],
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     }
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.5 ]
+     }
+    }
+   ],
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 35 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -35411,7 +33519,21 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage, [+?] Reload Speed, and +30 Handling for 5 seconds OR 3 shots."
+       "text": "50% Increased Damage, "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35 Reload Speed, and "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35 Handling for 5 seconds OR until firing 3 shots."
       }
      ]
     },
@@ -35425,28 +33547,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": " Stat bonuses are increased by 5?."
       }
      ]
     }
@@ -35702,36 +33803,6 @@
      "linesContent": [
       {
        "text": "Lingers for 1.5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     },
@@ -35998,7 +34069,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " increased damage and 100 Handling for "
+       "text": " Increased Damage and 100 Handling for "
       },
       {
        "text": "🡅",
@@ -36093,16 +34164,6 @@
       },
       {
        "text": "10 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Weaken effects other than the one provided by Divinity can also activate it."
       }
      ]
     },
@@ -36448,7 +34509,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -36462,7 +34523,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5.5 seconds, depending on the amount of enemies killed within [?] seconds of each."
+       "text": "5.5 seconds, depending on the amount of enemies killed within 3.5 seconds of each."
       }
      ]
     },
@@ -36556,7 +34617,7 @@
  "2586829431": {
   "hash": 2586829431,
   "name": "Shot Swap",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1689198390082,
   "stats": {
    "Ready": [
     {
@@ -36593,27 +34654,6 @@
        "text": "Maximum of 8 Stacks. Consumes 1 Stack when readying or stowing the weapon."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -36621,7 +34661,7 @@
  "2590710093": {
   "hash": 2590710093,
   "name": "Tireless Blade",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36648,7 +34688,7 @@
  "2594592626": {
   "hash": 2594592626,
   "name": "Controlled Burst",
-  "lastUpload": 1686224473621,
+  "lastUpload": 1689198390082,
   "stats": {
    "Charge Draw": [
     {
@@ -36811,7 +34851,7 @@
  "2610012052": {
   "hash": 2610012052,
   "name": "Golden Tricorn",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -36845,7 +34885,7 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade and Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% Increased Damage for 10 seconds."
       }
      ]
     },
@@ -36855,7 +34895,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% Damage Buff can only be refreshed by getting another Matching Ability Kill."
+       "text": "The 50% Damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
       }
      ]
     }
@@ -36995,7 +35035,7 @@
  "2621346526": {
   "hash": 2621346526,
   "name": "Ensemble",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -37030,36 +35070,6 @@
      "linesContent": [
       {
        "text": "Lingers for 1.5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -37262,7 +35272,7 @@
  "2652708987": {
   "hash": 2652708987,
   "name": "Successful Warm-Up",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Charge Draw": [
     {
@@ -37296,7 +35306,7 @@
     {
      "linesContent": [
       {
-       "text": "Kills while the perk active add 4 seconds to the duration up to 20 seconds."
+       "text": "Kills while the perk active add 4 seconds to the duration up to a maximum of 20 seconds."
       }
      ]
     }
@@ -37380,279 +35390,30 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Charged Abilities"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "Stat Bonuses with 1|2|3+ Charged Abilities:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 5 | 15 | 25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 10 | 25 | 60 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "15"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "50"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_2"
-          }
-         ]
-        }
-       ]
+       "text": "• 10 | 25 | 50 Handling"
       }
      ]
     },
@@ -38074,14 +35835,13 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Applies 30 "
+      },
       {
-       "text": "Applies 30 Scorch to enemies within 4(?) meters."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
       }
      ]
     },
@@ -38109,7 +35869,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Scorch."
+       "text": " Stacks."
       }
      ]
     },
@@ -38129,7 +35889,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage from Scorch can be increased through Weapon Damage Buffs and Debuffs."
+       "text": "Damage from Scorch can be increased through Weapon Damage Buffs."
       }
      ]
     },
@@ -38143,7 +35903,13 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Applies to 5 more Scorch Stacks to PvE Combatants when Ember of Ashes is equipped."
+       "text": " Applies to 5 more "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to PvE Combatants when Ember of Ashes is equipped."
       }
      ]
     }
@@ -38209,7 +35975,7 @@
  "2679249093": {
   "hash": 2679249093,
   "name": "One-Two Punch",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -38260,6 +36026,16 @@
      "linesContent": [
       {
        "text": "• 40% Increased Powered Melee Damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increases Melee Damage against Bosses and Vehicles by a further 25% (100%🠚150%, 40%🠚75%)."
       }
      ]
     }
@@ -38372,7 +36148,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "105-122% Increased Magazine Capacity. Activates even if stowed."
+       "text": "120% Increased Magazine Capacity. Activates even if stowed."
       }
      ]
     },
@@ -38386,7 +36162,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Overflow amount is increased by 5-22%."
+       "text": " Maximum overflow amount is increased by 20%."
       }
      ]
     }
@@ -38404,7 +36180,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 10 Aim Assist and reduces ADS Movement Speed Penalty by 2.5% while Aiming Down Sights."
+       "text": "Grants 10 Aim Assist while Aiming Down Sights and reduces the ADS Movement Speed Penalty by an additive 2.5%."
       }
      ]
     },
@@ -38875,7 +36651,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Persists while stowed."
+       "text": "Maximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed."
       }
      ]
     },
@@ -38936,27 +36712,6 @@
       },
       {
        "text": " Buff Duration is increased by 1 second."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -39028,7 +36783,7 @@
  "2779035018": {
   "hash": 2779035018,
   "name": "Feeding Frenzy",
-  "lastUpload": 1678582059138,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -39046,7 +36801,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed. Maximum of 5 Stacks."
+       "text": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks."
       }
      ]
     },
@@ -39054,222 +36809,23 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Stat"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "RDS",
-           "classNames": [ "title" ],
-           "title": [
-            {
-             "linesContent": [
-              {
-               "text": "Reload Duration Scalar: Multiplies reload animation duration by that number."
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "Bonuses at 1|2|3|4|5 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "8"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.975x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 8 | 50 | 60 | 75 | 100 Reload Speed Stat"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "50"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.9x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.868x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "75"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.837x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_3"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "100"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.8x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_4"
-          }
-         ]
-        }
-       ]
+       "text": "• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier"
       }
      ]
     }
@@ -39576,7 +37132,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased. Stronger effect when "
+       "text": " Buff duration is increased. Even stronger effect while "
       },
       {
        "classNames": [ "arc" ]
@@ -40505,17 +38061,17 @@
     {
      "linesContent": [
       {
-       "text": "After dealing Weapon Damage to an Ammo Brick:"
+       "text": "On Weapon Hits against an Ammo Brick:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Picks up Ammo and "
+       "text": "Picks up Ammo, "
       },
       {
-       "text": "refills",
+       "text": "Refills",
        "title": [
         {
          "linesContent": [
@@ -40528,14 +38084,17 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " all Weapons from reserves."
+       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Triggers Ammo Pickup Effects if pickup is possible."
+       "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
       }
      ]
     },
@@ -40642,7 +38201,7 @@
  "2848615171": {
   "hash": 2848615171,
   "name": "Dragonfly",
-  "lastUpload": 1680131093232,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -40671,7 +38230,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage that matches the Element of the weapon over a 3 meter radius."
+       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
       }
      ]
     },
@@ -40733,24 +38292,49 @@
     {
      "linesContent": [
       {
-       "text": "While Guarding with a Sword:"
+       "text": "Taking Damage while Guarding with a Sword grants Class Ability Energy:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 1% Class Ability Energy for every point of damage blocked."
+       "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "1.56% for every point of Melee Damage Blocked"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "1.5% for every point of \"other\" Damage Blocked"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Blocking Melee Damage grants 50% more Class Ability Energy."
+       "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "0.63% for every point of Non-Blocked Damage (getting hit from behind)"
       }
      ]
     },
@@ -40764,7 +38348,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increased Class Ability Energy Gain."
+       "text": " Increases Class Ability Energy gains by an additive 0.055%, 0.5%, and 0.125% in that order."
       }
      ]
     }
@@ -40813,7 +38397,7 @@
  "2866798147": {
   "hash": 2866798147,
   "name": "No Distractions",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -40867,7 +38451,7 @@
  "2869569095": {
   "hash": 2869569095,
   "name": "Field Prep",
-  "lastUpload": 1683994281968,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -40899,14 +38483,28 @@
     {
      "linesContent": [
       {
-       "text": "While Crouched:"
+       "text": "Grants the following while Crouched:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "50 Reload Speed, 0.8x Reload Duration Multiplier, and 0.8x Ready/Stow Duration Multiplier."
+       "text": "• 50 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.8x Ready/Stow Duration Multiplier"
       }
      ]
     },
@@ -40916,37 +38514,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Inventory Size Stat. (10 less than 2 Reserve Armor Mods)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "Passively grants 30 Inventory Size Stat. (50% more than 1 Reserve Armor Mod)"
       }
      ]
     }
@@ -41696,14 +39264,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "25% Increased damage for "
+       "text": "25% Increased Damage for "
       },
       {
        "text": "🡅",
@@ -41720,7 +39288,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can be refreshed through additional reloads. Persists while stowed."
+       "text": "Buff stays active while stowed."
       }
      ]
     },
@@ -41762,11 +39330,28 @@
     {
      "linesContent": [
       {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
+       "text": "Benefits at 1|2|3|4|5 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": " Stronger Effect."
+       "text": "• 2|12|14|18|25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 5|30|35|42|60 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.99x|0.96x|0.95x|0.945x|0.92x Reload Duration Multiplier"
       }
      ]
     },
@@ -41774,270 +39359,15 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stack"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "RDS",
-           "classNames": [ "title" ],
-           "title": [
-            {
-             "linesContent": [
-              {
-               "text": "Reload Duration Scalar (Multiplies Reload Animation Duration by that number)"
-              }
-             ]
-            }
-           ]
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        }
-       ]
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.990x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "12"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "30"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.960x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "14"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "35"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.950x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "18"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "42"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.945x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_3"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "0.920x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_4"
-          }
-         ]
-        }
-       ]
+       "text": " Stronger Effect."
       }
-     ],
-     "classNames": [ "background_2" ],
-     "isFormula": false
+     ]
     }
    ]
   }
@@ -42087,14 +39417,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": "."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reaches maximum strength at 5 Stacks."
+       "text": ". Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -42191,7 +39514,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Damage Buff is increased by 12.5%. (e.g. 40% » 45%)"
+       "text": " Damage Buff is increased by 12.5%. (e.g. 40%🠚45%)"
       }
      ]
     }
@@ -42201,7 +39524,7 @@
  "2946784966": {
   "hash": 2946784966,
   "name": "Tunnel Vision",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Aim Assist": [
     {
@@ -42218,24 +39541,28 @@
     {
      "linesContent": [
       {
-       "text": "Upon Reload within 6 seconds of a Weapon Kill:"
+       "text": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "20 Aim Assist, -20% Accuracy Cone Size, and [?] ADS Handling for 5 seconds."
+       "text": "• 20 Aim Assist"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
+     "linesContent": [
+      {
+       "text": "• -20% Accuracy Cone Size"
+      }
+     ]
     },
     {
      "linesContent": [
       {
-       "text": "Can be refreshed."
+       "text": "• ? ADS Handling for 5 seconds."
       }
      ]
     }
@@ -42607,7 +39934,7 @@
  "2988596335": {
   "hash": 2988596335,
   "name": "Alacrity",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1689198390082,
   "stats": {
    "Aim Assist": [
     {
@@ -42653,27 +39980,6 @@
      "linesContent": [
       {
        "text": "20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -42738,7 +40044,7 @@
     {
      "linesContent": [
       {
-       "text": "Changes your Weapon Element to match the selected Subclass until stowed."
+       "text": "Changes Weapon Element to match your Subclass until stowed."
       }
      ]
     },
@@ -42748,7 +40054,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their damage bonus against Unshielded PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
       }
      ]
     }
@@ -42818,7 +40124,7 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased Damage, 100 Handling, and 100 Reload Speed."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -42828,7 +40134,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts until you're out of combat and works while stowed."
+       "text": "Works and can activate while stowed. Dealing and receiving damage refreshes the buff duration."
       }
      ]
     },
@@ -42838,14 +40144,14 @@
     {
      "linesContent": [
       {
-       "text": "Being in Combat is defined as having either dealt or received damage within the last "
+       "text": "For Frenzy, being in Combat is defined as having either dealt or received damage within the last "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5.5 seconds."
+       "text": "5 seconds."
       }
      ]
     },
@@ -42859,37 +40165,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " In Combat Timer is extended by 0.5 seconds"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": " Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
       }
      ]
     }
@@ -42944,7 +40220,7 @@
  "3016987351": {
   "hash": 3016987351,
   "name": "Counterattack",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -42975,7 +40251,7 @@
     {
      "linesContent": [
       {
-       "text": "50% Increased damage for 2 seconds."
+       "text": "Grats 50% Increased Damage for 2 seconds."
       }
      ]
     }
@@ -43001,7 +40277,7 @@
  "3018146897": {
   "hash": 3018146897,
   "name": "Invisible Hand",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Stability": [
     {
@@ -43018,7 +40294,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon missing 4? times within 2.5? seconds of each:"
+       "text": "Upon missing multiple times within 2.5 seconds of each without scoring a hit:"
       }
      ]
     },
@@ -43035,7 +40311,38 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed 1? after second of scoring a hit. Missing again refreshes the duration."
+       "text": "Misses in a row required:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifle: 10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: 4"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Linear Fusion Rifle, Pulse Rifle: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is removed 1? second after scoring a hit."
       }
      ]
     }
@@ -43211,7 +40518,7 @@
  "3047969693": {
   "hash": 3047969693,
   "name": "Desperado",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Firing Delay": [
     {
@@ -43228,17 +40535,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 6 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Buff can be refreshed."
+       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
       }
      ]
     }
@@ -43314,14 +40611,14 @@
     {
      "linesContent": [
       {
-       "text": "• -95%(?) Accuracy Cone Size"
+       "text": "• -95%? Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -95%(?) "
+       "text": "• -95%? "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -43438,7 +40735,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "8 shots."
+       "text": "8 shots, granting 10 Stability, -50% Accuracy Cone Size, and -100% Accuracy Cone Growth."
       }
      ]
     },
@@ -43553,7 +40850,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -43972,7 +41269,7 @@
     {
      "linesContent": [
       {
-       "text": "If hipfiring:"
+       "text": "While  hipfiring:"
       }
      ]
     },
@@ -44007,31 +41304,14 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Increased:"
+       "text": "• 20% Increased Aim Assist Falloff Distance"
       }
      ]
     },
     {
-     "classNames": [ "breakSpaces" ],
      "linesContent": [
       {
-       "text": "    • Aim Assist Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Reticle Stickiness Falloff Distance"
-      }
-     ]
-    },
-    {
-     "classNames": [ "breakSpaces" ],
-     "linesContent": [
-      {
-       "text": "    • Damage Falloff Start and End Distance"
+       "text": "• 20% Increased Damage Falloff Distance"
       }
      ]
     },
@@ -44210,7 +41490,7 @@
  "3161816588": {
   "hash": 3161816588,
   "name": "Slideshot",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -44264,7 +41544,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20 Range and 30 Stability for 3 seconds or until firing"
+       "text": "• Grants 20 Range and 30 Stability for 3 seconds OR until firing"
       }
      ]
     },
@@ -44284,19 +41564,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by shooting quickly."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
+       "text": "0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing shots loaded by the perk."
       }
      ]
     }
@@ -44458,7 +41726,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -44825,27 +42093,6 @@
        "text": " Grants an additional 2? Range and Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -44853,7 +42100,7 @@
  "3201496230": {
   "hash": 3201496230,
   "name": "Redirection",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -44894,7 +42141,15 @@
     {
      "linesContent": [
       {
-       "text": "On hit against Major or Boss Combatants:"
+       "text": "On hit against "
+      },
+      {
+       "text": "Major, Boss, or Vehicle",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": " Combatants:"
       }
      ]
     },
@@ -44918,7 +42173,7 @@
     {
      "linesContent": [
       {
-       "text": "Consumes 5 stacks per hit if at 6-20 stacks."
+       "text": "Consumes 5 Stacks per hit if at 6-20 stacks."
       }
      ]
     }
@@ -44996,7 +42251,7 @@
  "3215448563": {
   "hash": 3215448563,
   "name": "Paracausal Affinity",
-  "lastUpload": 1680349104559,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -46178,7 +43433,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20% Increased Damage for 6 seconds."
+       "text": "Grants 20% Increased Damage for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "7 seconds."
       }
      ]
     },
@@ -46249,7 +43511,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased by 1(?) second."
+       "text": " Buff duration is increased by 1 second."
       }
      ]
     }
@@ -46576,7 +43838,7 @@
  "3324494224": {
   "hash": 3324494224,
   "name": "Collective Action",
-  "lastUpload": 1686679019520,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -46790,21 +44052,39 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a 35% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: 35%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a 20% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: 20%"
       }
      ]
     }
@@ -47035,7 +44315,7 @@
  "3350417888": {
   "hash": 3350417888,
   "name": "Sympathetic Arsenal",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -47065,7 +44345,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " stowed weapons from reserves upon finishing a reload within 6 seconds of a Weapon Kill."
+       "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
       }
      ]
     },
@@ -47076,18 +44356,6 @@
      "linesContent": [
       {
        "text": "Passively grants 20 Reload Speed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -47291,7 +44559,7 @@
  "3400784728": {
   "hash": 3400784728,
   "name": "Triple Tap",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -47299,17 +44567,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 3 Precision Hits refunds 1 Ammo to Magazine."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Counter is reset if no Precision Hits are scored within 2 seconds."
+       "text": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo to the Magazine."
       }
      ]
     }
@@ -47357,7 +44615,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.5 seconds."
+       "text": "2 seconds."
       }
      ]
     },
@@ -47371,7 +44629,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5? seconds."
       }
      ]
     }
@@ -47520,7 +44778,7 @@
  "3418782618": {
   "hash": 3418782618,
   "name": "Rewind Rounds",
-  "lastUpload": 1683127303826,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -47568,7 +44826,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count until the buff text disappears."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
       }
      ]
     }
@@ -47834,7 +45092,7 @@
  "3436462433": {
   "hash": 3436462433,
   "name": "Surplus",
-  "lastUpload": 1686823821085,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -47873,279 +45131,30 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Charged Abilities"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Reload"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "Stat Bonuses with 1|2|3+ Charged Abilities:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 5 | 15 | 25 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 10 | 25 | 60 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "15"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "50"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "Ready:",
-           "classNames": [ "formula" ],
-           "formula": "ready_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stow:",
-           "classNames": [ "formula" ],
-           "formula": "stow_2"
-          }
-         ]
-        }
-       ]
+       "text": "• 10 | 25 | 50 Handling"
       }
      ]
     }
@@ -48506,7 +45515,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Ammo Pickup:"
+       "text": "Heavy Ammo Pickup:"
       }
      ]
     },
@@ -48526,7 +45535,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Ammo Reserves."
+       "text": "Special Ammo Reserves."
       }
      ]
     },
@@ -48542,7 +45551,7 @@
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons halves the amount of ammo granted."
+       "text": "Special Weapons halves the amount of ammo granted."
       }
      ]
     },
@@ -48815,7 +45824,7 @@
  "3511092054": {
   "hash": 3511092054,
   "name": "Elemental Capacitor",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -48823,7 +45832,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses depending on your selected Elemental Subclass."
+       "text": "Grants Passive Stat Bonuses depending on your selected Subclass."
       }
      ]
     },
@@ -48836,7 +45845,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": " 50 Reload Speed"
+       "text": "Solar: 50 Reload Speed"
       }
      ]
     },
@@ -48846,7 +45855,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": " 50 Handling"
+       "text": "Arc: 50 Handling"
       }
      ]
     },
@@ -48856,7 +45865,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": " 20 Stability"
+       "text": "Void: 20 Stability"
       }
      ]
     },
@@ -48866,7 +45875,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": " 20 Airborne Effectiveness"
+       "text": "Strand: 20 Airborne Effectiveness"
       }
      ]
     },
@@ -48876,7 +45885,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": " 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
+       "text": "Stasis: 20 Recoil Direction & 5% reduced ADS Movement Speed Penalty"
       }
      ]
     }
@@ -48938,7 +45947,7 @@
  "3513791699": {
   "hash": 3513791699,
   "name": "Mulligan",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -48946,21 +45955,39 @@
     {
      "linesContent": [
       {
-       "text": "On Miss:"
+       "text": "Missing has a chance to refund ammo:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Primary Weapons have a 35% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons: 35%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Special and Power Weapons have a 20% chance to refund ammo."
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: 20%"
       }
      ]
     }
@@ -49186,7 +46213,7 @@
  "3526486541": {
   "hash": 3526486541,
   "name": "Tilting at Windmills",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49201,7 +46228,17 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Glaive Block's Movement Speed Penalty to 20(?)% for [?] seconds, or until you stop blocking."
+       "text": "Decreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)"
       }
      ]
     }
@@ -49752,7 +46789,7 @@
  "3619207468": {
   "hash": 3619207468,
   "name": "Keep Away",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -49786,27 +46823,6 @@
        "text": "Grants 10 Range, 30 Reload Speed, and narrows the Accuracy Cone by 5%."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -49814,7 +46830,7 @@
  "3643424744": {
   "hash": 3643424744,
   "name": "Overflow",
-  "lastUpload": 1687692796310,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49915,7 +46931,7 @@
  "3650930298": {
   "hash": 3650930298,
   "name": "Cold Steel",
-  "lastUpload": 1685817873807,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49923,7 +46939,13 @@
     {
      "linesContent": [
       {
-       "text": "Powered Sword Hits apply Slow for "
+       "text": "Powered Sword Hits apply "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks for "
       },
       {
        "text": "4.25",
@@ -51218,7 +48240,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "40(?)% Weapon Energy (up from the base amount of 25%)."
+       "text": "100% Increased Weapon Energy."
       }
      ]
     },
@@ -51232,7 +48254,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Energy Bonus on Hit is increased by an additive 5(?)%."
+       "text": " Energy Bonus on Hit is increased by an additive 10%."
       }
      ]
     }
@@ -51314,14 +48336,28 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill for 5 seconds:"
+       "text": "On Weapon Kill for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5.5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "15% Increased damage and sets Forward Movement Speed to 9 meters per second."
+       "text": "• 15% Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sets Forward Movement Speed to 9 m/s"
       }
      ]
     },
@@ -51345,7 +48381,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -51529,7 +48565,7 @@
  "3700496672": {
   "hash": 3700496672,
   "name": "Shoot to Loot",
-  "lastUpload": 1684973582811,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51537,17 +48573,17 @@
     {
      "linesContent": [
       {
-       "text": "After dealing Weapon Damage to an Ammo Brick:"
+       "text": "On Weapon Hits against an Ammo Brick:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Picks up Ammo and "
+       "text": "Picks up Ammo, "
       },
       {
-       "text": "refills",
+       "text": "Refills",
        "title": [
         {
          "linesContent": [
@@ -51560,14 +48596,17 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " all Weapons from reserves."
+       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Triggers Ammo Pickup Effects if pickup is possible."
+       "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
       }
      ]
     },
@@ -51629,7 +48668,7 @@
  "3705817207": {
   "hash": 3705817207,
   "name": "Duelist's Trance",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "Guard Charge Rate": [
     {
@@ -51728,7 +48767,7 @@
  "3708227201": {
   "hash": 3708227201,
   "name": "Surrounded",
-  "lastUpload": 1687978677106,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51990,27 +49029,6 @@
       },
       {
        "text": " Passively grants 5 Stability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed at Critical Health:",
-       "formula": "ready_1",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed at Critical Health:",
-       "formula": "stow_1",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -52372,7 +49390,7 @@
  "3751912585": {
   "hash": 3751912585,
   "name": "Cascade Point",
-  "lastUpload": 1683323623433,
+  "lastUpload": 1689198390082,
   "stats": {
    "Firing Delay": [
     {
@@ -52395,7 +49413,14 @@
     {
      "linesContent": [
       {
-       "text": "Reduces Firing Delay for 2.5 seconds upon readying the weapon after scoring a kill or multiple Precision Hits within 4(?) seconds of each with a different weapon."
+       "text": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
       }
      ]
     },
@@ -52405,7 +49430,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts upon readying. Buff can be stowed for 5 seconds."
+       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds."
       }
      ]
     },
@@ -52839,14 +49864,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "8 seconds of a Weapon Kill:"
+       "text": "Upon finishing a reload within 6 seconds of a Weapon Kill:"
       }
      ]
     },
@@ -52994,7 +50012,7 @@
  "3800201097": {
   "hash": 3800201097,
   "name": "Immovable Object",
-  "lastUpload": 1681766701558,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -53009,7 +50027,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Projectiles Hits grant 35(?)% Weapon Energy (up from the base amount of 25%)."
+       "text": "Glaive Projectiles Hits grant 90% Increased Weapon Energy."
       }
      ]
     }
@@ -53192,7 +50210,7 @@
  "3824105627": {
   "hash": 3824105627,
   "name": "Firefly",
-  "lastUpload": 1678062993757,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -53226,18 +50244,18 @@
        "text": " "
       },
       {
-       "text": "80",
+       "text": "[80]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Solar Damage in a 4 meter radius."
+       "text": " Solar Damage in a 4 meter radius"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 50 Reload Speed for 6 seconds."
+       "text": "• Grants 50 Reload Speed for 6 seconds"
       }
      ]
     },
@@ -53256,18 +50274,6 @@
       },
       {
        "text": "."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -53588,7 +50594,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Range": [
     {
@@ -53714,7 +50720,7 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1687095789709,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -53722,7 +50728,17 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target emits 3 damaging shockwaves from its location at the time of activation. Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
+       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse."
       }
      ]
     },
@@ -53742,7 +50758,7 @@
        "text": " "
       },
       {
-       "text": "[20.01]",
+       "text": "[20]",
        "classNames": [ "pvp" ]
       },
       {
@@ -53976,7 +50992,7 @@
  "3913600130": {
   "hash": 3913600130,
   "name": "Whirlwind Blade",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -54010,7 +51026,7 @@
     {
      "linesContent": [
       {
-       "text": "Additional Powered Hits refresh the duration. Blocking removes all stacks."
+       "text": "Blocking removes all stacks."
       }
      ]
     }
@@ -54103,7 +51119,7 @@
  "3920370755": {
   "hash": 3920370755,
   "name": "Firmly Planted",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1689198390082,
   "stats": {
    "Stability": [
     {
@@ -54219,27 +51235,6 @@
       },
       {
        "text": " Grants 5 more Handling and Stability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -54906,7 +51901,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 35% Flinch Reduction after 1 second of Aiming Down Sights (ADS) without firing."
+       "text": "Grants 35% Flinch Reduction after "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "0.9 seconds of Aiming Down Sights (ADS) without firing."
       }
      ]
     },
@@ -54930,7 +51932,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Aiming Down Sights timer is reduced."
+       "text": " Activation time is reduced by 10%."
       }
      ]
     }
@@ -55016,7 +52018,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1688573248519,
+  "lastUpload": 1689198390082,
   "stats": {
    "Airborne": [
     {
@@ -55997,7 +52999,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Aim Assist"
+       "text": "• (?) Aim Assist"
       }
      ]
     },
@@ -56144,7 +53146,7 @@
  "4049631843": {
   "hash": 4049631843,
   "name": "One for All",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -56178,7 +53180,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff can't be refreshed."
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -56214,7 +53216,7 @@
  "4071163871": {
   "hash": 4071163871,
   "name": "Threat Detector",
-  "lastUpload": 1683481728337,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -56246,7 +53248,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Stability, Reload Speed, and Faster Handling Animations while within 15 meters of enemies."
+       "text": "Grants 1|2 Stacks while within 15 meters of 1|2+ enemies."
       }
      ]
     },
@@ -56254,242 +53256,37 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Enemy Count"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Reload Speed"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Handling"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold", "center" ],
-         "cellContent": [
-          {
-           "text": "Handling Animation Duration"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "Bonuses at 1|2 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "15"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "18"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "25"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.9x"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 15|40 Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        },
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Ready Duration:",
-           "classNames": [ "formula" ],
-           "formula": "ready_0"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 18|60 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Stow Duration:",
-           "classNames": [ "formula" ],
-           "formula": "stow_0"
-          }
-         ]
-        }
-       ]
-      },
+       "text": "• 25|100 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "background" ],
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2+"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "40"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "60"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "100"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.81x"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "In-Game Values:"
-          }
-         ]
-        },
-        {
-         "rowSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        },
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Ready Duration:",
-           "classNames": [ "formula" ],
-           "formula": "ready_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "colSpan": 2,
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Stow Duration:",
-           "classNames": [ "formula" ],
-           "formula": "stow_1"
-          }
-         ]
-        }
-       ]
+       "text": "• 0.9x|0.81x Handling Animation Duration Multiplier"
       }
      ]
     }
@@ -56741,7 +53538,7 @@
  "4082225868": {
   "hash": 4082225868,
   "name": "Swashbuckler",
-  "lastUpload": 1687024789016,
+  "lastUpload": 1689198390082,
   "stats": {
    "PVE Damage": [
     {
@@ -56773,103 +53570,18 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Damage Increase"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "6.7%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "13.3%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "26.6%"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "33.3%"
-          }
-         ]
-        }
-       ]
+       "text": "Damage Increase at 1|2|3|4|5 Stacks:"
       }
-     ],
-     "classNames": [ "wide", "background_2" ],
-     "isFormula": false
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "6.7% | 13.3% | 20% | 26.6% | 33.3%"
+      }
+     ]
     }
    ],
    "zh-chs": [
@@ -57099,7 +53811,7 @@
  "4091460919": {
   "hash": 4091460919,
   "name": "One Quiet Moment",
-  "lastUpload": 1679181195547,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -57117,7 +53829,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 40 Reload Speed and a 0.95x Reload Duration Multiplier after not having dealt or received damage in the last 5(?) seconds."
+       "text": "Grants 40 Reload Speed and a 0.95x Reload Duration Multiplier while out of Combat."
       }
      ]
     },
@@ -57127,7 +53839,7 @@
     {
      "linesContent": [
       {
-       "text": "Any kills reduce the required time to 1.5 seconds. Triggers even if stowed."
+       "text": "For One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received."
       }
      ]
     },
@@ -57137,9 +53849,7 @@
     {
      "linesContent": [
       {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
+       "text": "Can activate even if stowed."
       }
      ]
     }
@@ -57178,7 +53888,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon missing 4? times within 2.5? seconds of each:"
+       "text": "Upon missing multiple times within 2.5 seconds of each without scoring a hit:"
       }
      ]
     },
@@ -57195,7 +53905,38 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed 1? after second of scoring a hit. Missing again refreshes the duration."
+       "text": "Misses in a row required:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifle: 10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: 4"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Linear Fusion Rifle, Pulse Rifle: unknown"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff is removed 1? second after scoring a hit."
       }
      ]
     },
@@ -57209,7 +53950,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Duration after scoring a hit is increased."
+       "text": " Deactivation time after scoring a hit is increased."
       }
      ]
     }
@@ -57323,7 +54064,7 @@
  "4104185692": {
   "hash": 4104185692,
   "name": "Frenzy",
-  "lastUpload": 1678140517594,
+  "lastUpload": 1689198390082,
   "stats": {
    "Handling": [
     {
@@ -57368,7 +54109,7 @@
     {
      "linesContent": [
       {
-       "text": "15% Increased Damage, 100 Handling, and 100 Reload Speed."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -57378,7 +54119,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts until you're out of combat and works while stowed."
+       "text": "Works and can activate while stowed. Dealing and receiving damage refreshes the buff duration."
       }
      ]
     },
@@ -57388,37 +54129,7 @@
     {
      "linesContent": [
       {
-       "text": "Being in Combat is defined as having either dealt or received damage within the last 5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
+       "text": "For Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
       }
      ]
     }
@@ -57515,7 +54226,7 @@
     {
      "linesContent": [
       {
-       "text": "• 50% Decreased Duration on "
+       "text": "• 50% Decrease on "
       },
       {
        "classNames": [ "primary" ]
@@ -57528,7 +54239,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20% Decreased Duration on "
+       "text": "• 20% Decrease on "
       },
       {
        "classNames": [ "special" ]
@@ -57707,7 +54418,7 @@
  "4154828211": {
   "hash": 4154828211,
   "name": "Bitterspite",
-  "lastUpload": 1678140517594,
+  "lastUpload": 1689198390082,
   "stats": {
    "Reload": [
     {
@@ -57733,236 +54444,25 @@
      "classNames": [ "spacer" ]
     },
     {
-     "table": [
+     "linesContent": [
       {
-       "classNames": [ "bold" ],
-       "rowContent": [
-        {
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Reload Stat"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Reload Duration Multiplier"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "Reload Time"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.97x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_0"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.96x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_1"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "30"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.95x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_2"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "40"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.92x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_3"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "5x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "50"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "0.90x"
-          }
-         ]
-        },
-        {
-         "classNames": [ "center" ],
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "reload_4"
-          }
-         ]
-        }
-       ]
+       "text": "Reload Buff at 1|2|3|4|5 Stacks:"
       }
-     ],
-     "classNames": [ "background_2" ],
-     "isFormula": false
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10 | 20 | 30 | 40 | 50 Reload Speed Stat"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.97x | 0.96x | 0.95x | 0.92x | 0.9x Reload Duration Multiplier"
+      }
+     ]
     }
    ],
    "zh-chs": [
@@ -58303,7 +54803,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " [?]% Chance to be refunded 1 more Ammo."
+       "text": " ?% Chance to be refunded 1 more Ammo."
       }
      ]
     }
@@ -58580,7 +55080,14 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
+       "text": "On Weapon Kill, for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5.5 seconds:"
       }
      ]
     },
@@ -58611,14 +55118,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "5.5 seconds. Additional kills add 5 seconds to the timer, maxing out at 8 seconds."
+       "text": "Additional Kills extend the duration by 5 seconds, up to 8 seconds."
       }
      ]
     },
@@ -58633,36 +55133,6 @@
       },
       {
        "text": " Initial Buff Duration is increased by 0.5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -59550,7 +56020,7 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade and Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% Increased Damage for 10 seconds."
       }
      ]
     },
@@ -59560,7 +56030,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% Damage Buff can only be refreshed by getting another Matching Ability Kill."
+       "text": "The 50% Damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
       }
      ]
     },
@@ -59574,7 +56044,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " The 15% Damage Buff Duration is refreshed to 8 seconds if a weapon kill is made while it is active."
+       "text": " The 15% Damage Buff is refreshed to 8 seconds if a weapon kill is made while it is active."
       }
      ]
     }
@@ -59584,7 +56054,7 @@
  "4293542123": {
   "hash": 4293542123,
   "name": "Incandescent",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1689198390082,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -59592,14 +56062,13 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Applies 30 "
+      },
       {
-       "text": "Applies 30 Scorch to enemies within 4(?) meters."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
       }
      ]
     },
@@ -59609,7 +56078,7 @@
     {
      "linesContent": [
       {
-       "text": "Ember of Ashes increases this to 40 Scorch."
+       "text": "Ember of Ashes increases this to 40 Stacks."
       }
      ]
     },
@@ -59629,7 +56098,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage from Scorch can be increased through Weapon Damage Buffs and Debuffs."
+       "text": "Damage from Scorch can be increased through Weapon Damage Buffs."
       }
      ]
     }
