@@ -6495,27 +6495,11 @@
    "uploadToLive": false
   },
   "481860151": {
-   "hash": 481860151,
    "name": "Spring-Loaded Mounting",
-   "itemHash": 1734144409,
    "itemName": "Mechaneer's Tricksleeves",
+   "hash": 481860151,
+   "itemHash": 1734144409,
    "type": "Armor Trait Exotic",
-   "uploadedBy": "Stardust",
-   "lastUpload": 1675798177540,
-   "inLiveDatabase": true,
-   "uploadToLive": false,
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 1667592634224,
-     "updatedBy": "Fading Shadow"
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1668260428121,
-      "updatedBy": "Icemourne"
-     }
-    }
-   },
    "stats": {
     "Handling": [
      {
@@ -6544,10 +6528,26 @@
    },
    "editor": {
     "en": {
-     "main": "Passively grants +50 Airborne Effectiveness, +100 Handling and +100 Reload Speed to Sidearms.\n\nUpon readying a sidearm while at Critical Health:\n • <pve 100% /> <pvp [35%] /> increased damage until no longer at Critical Health.\n • Refreshes sidearm magazine.",
+     "main": "Passively grants 50 Airborne Effectiveness, 100 Handling and 100 Reload Speed to Sidearms.\n\nUpon readying a Sidearm while at Critical Health:\n• Grants <pve 100% /> <pvp [35%] /> Increased Damage until no longer at Critical Health\n• <title Refills [G_refill] /> the Magazine of the Sidearm",
      "secondary": "import self"
     }
-   }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1689233727483,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 1667592634224,
+     "updatedBy": "Fading Shadow"
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1689234319053,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "482158780": {
    "hash": 482158780,
@@ -11033,7 +11033,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12520,7 +12520,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13222,7 +13222,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14648,7 +14648,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15288,7 +15288,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Spawns a Sunspot under you upon reaching Critical Health if your Class Ability is charged (consumes Class Ability Charge), or upon casting a Barricade.\n\nOnly works with a <solar/>Solar Subclass.\nThe spawned Sunspot grants the Sol Invictus buff even without having the Aspect equipped.",
+     "main": "Only works with a <solar/>Solar Subclass.\n\nSpawns a <solar/>Sunspot under you upon reaching Critical Health (if your Class Ability is charged as it consumes a Class Ability Charge) or upon casting a Barricade.\n\nThe spawned <solar/>Sunspot grants the Sol Invictus buff even without having the Aspect equipped. (The Aspect is still required to extend the sunspot's duration)",
      "secondary": "import self"
     },
     "ko": {
@@ -15303,7 +15303,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1682716592202,
+      "lastUpdate": 1689233490551,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -15321,7 +15321,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682718006443,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16644,7 +16644,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19168,7 +19168,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22393,15 +22393,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Deadfall returns Ability Energy per Enemy Tethered. \r\nX% Super Energy. Max of 50% Super Energy.\r\n10% Grenade\r\n10% Melee\r\n10% Class Ability Energy.\r\n\r\nMoebius Quiver can fire an additional volley per Super Activation.",
+     "main": "Deadfall returns Ability Energy per Enemy Tethered:\n• X% Super Energy up to the maximum of 50%\n• 10% Grenade, Melee, and Class Ability Energy\n\nMoebius Quiver can fire an additional volley per Super Activation.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1667592924761,
-      "updatedBy": "Fading Shadow"
+      "lastUpdate": 1689233854566,
+      "updatedBy": "Stardust"
      }
     },
     "stats": {
@@ -22410,7 +22410,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23345,14 +23345,14 @@
    },
    "editor": {
     "en": {
-     "main": "Maxes out the Guard Resistance, Guard Efficiency, and Guard Endurance of Swords.\n\nGrants <pve 50% /> <pvp [10%] /> Damage Resistance while Blocking.\n\nBlocking with Aggressive Frame Swords grants a total of <pve 95% /> <pvp [91%] /> Damage Resistance. Blocking with other Sword Frames grants <pve 90% /> <pvp [82%] /> Damage Resistance.\n\nSword Energy does not decay from blocking damage or holding guard.\n\n//Grants Restoration x2 after you stop Blocking for ? to ? seconds depending on the number of Shots Blocked.\nGrants Restoration x2 for 3 seconds on any Sword Hits (including unpowered). Duration cannot be refreshed.\n\n(Bugged? Should be granting Restoration after you stop Blocking with the duration depending on the number of Hits blocked - which is indicated by the Perfect Guard Stacks)",
+     "main": "Maxes out the Guard Resistance, Guard Efficiency, and Guard Endurance of Swords.\n\nGrants <pve 50% /> <pvp [10%] /> Damage Resistance while Blocking.\n\nBlocking with Aggressive Frame Swords grants a total of <pve 95% /> <pvp [91%] /> Damage Resistance against blocked attacks. These numbers drop to <pve 90% /> <pvp [82%] /> on other Sword Frames.\n\nSword Energy does not decay from blocking damage or holding guard.\n\n//Grants Restoration x2 after you stop Blocking for ? to ? seconds depending on the number of Shots Blocked.\nGrants <solar/>Restoration x2 for 3 seconds on any Sword Hits including unpowered. Duration cannot be refreshed. (Assumed to be bugged)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684968477325,
+      "lastUpdate": 1689234270442,
       "updatedBy": "Stardust"
      }
     },
@@ -23362,7 +23362,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30425,14 +30425,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nDamaging a Miniboss, Champion, Boss, or Vehicle with a Trace Rifle marks them for 10 seconds. (No, it does not require a matching element)\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out. Additional hits to the target refresh the mark duration.\n\nAlly kills on Marked Enemies generate <heavy/>Heavy Ammo for Allies and <special/>Special Ammo for the Wearer.\n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number).",
+     "main": "<title Refills [G_refill] /> 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nRapidly scoring 5 Trace Rifle hits on a <link Miniboss, Champion, Boss, or Vehicle [#CombatantClassifications] /> marks them for 10 seconds. Additional hits refresh the mark duration.\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated. Multiple people can mark the same target.\n\nAlly kills on Marked Enemies generate <heavy/>Heavy Ammo for Allies and <special/>Special Ammo for the Wearer.\n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684979196076,
+      "lastUpdate": 1689233073438,
       "updatedBy": "Stardust"
      }
     },
@@ -30442,7 +30442,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687004979653,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30701,7 +30701,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Barricade Placement:\nUnleashes a <solar/>Solar Wave that returns back to the Barricade after traveling 18.5 meters.\n\n<solar/>Solar Wave deals <pve 240 /> <pvp [100] /> damage and applies <pve 60 /> <pvp [30] /> Scorch (unchanged with Ember of Ashes).\n\nEnemies that are hit by the Wave cannot be damaged by <solar/>Solar Wave for 2 seconds. Wave does not apply Scorch while returning.\n\n<solar/>Solar Kills grant 25% Class Ability Energy.\n",
+     "main": "On Barricade Placement:\nUnleashes a <solar/>Solar Wave that returns back to the Barricade after traveling 18.5 meters.\n\nThe Wave deals <pve 240 /> <pvp [100] /> damage and applies <pve 60 /> <pvp [30] /> <solar/>Scorch when returning (unaffected by Ember of Ashes).\n\n<solar/>Solar Kills grant 25% Class Ability Energy.\n",
      "secondary": "import self"
     },
     "ko": {
@@ -30712,7 +30712,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685813288040,
+      "lastUpdate": 1689233296522,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -30726,7 +30726,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685821016168,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39266,7 +39266,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40298,7 +40298,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47907,7 +47907,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47973,14 +47973,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit the weapon's passive Kinetic Damage Bonus (10% on <primary/>Primary, 15% on <special/>Special) and its <link Combatant Damage Scaling [#CombatantScaling] />.\n\nHits Required for Activation:\n• Pulse Rifles and Sidearms: #e${12-#d*3}\n• Hand Cannons and Scout Rifles: #e${6-#d*2}\n• Sniper Rifles: #e${3-#d*1}\n\nFurther hits do not provide activation progress for 2? seconds after perk activation.\n\nenhanced (\nvar d = 1\n#e Hit Requirement is reduced: 12🠚9, 6🠚4?, 3🠚2\n)",
+     "main": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit the weapon's passive Kinetic Damage Bonus (10% on <primary/>Primary, 15% on <special/>Special) and its <link Combatant Damage Scaling [#CombatantScaling] />.\n\nHits Required for Activation:\n• Pulse Rifles and Sidearms: #e${12-#d*3}\n• Hand Cannons and Scout Rifles: #e${6-#d*2}\n• Sniper Rifles: #e${3-#d*1}\n\nFurther hits do not provide activation progress for 2? seconds after perk activation.\n\nenhanced (\nvar d = 1\n#e Hit Requirement is reduced: 12🠚9, 6🠚4?, 3🠚2\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689191772098,
+      "lastUpdate": 1689232625467,
       "updatedBy": "Stardust"
      }
     },
@@ -47990,7 +47990,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49064,7 +49064,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50815,7 +50815,7 @@
    },
    "editor": {
     "en": {
-     "main": "Powered Melee Hits instantly cast Smoke Bomb.\n\nSmoke Bombs deal 50% increased damage. Quickfall does not receive increased damage.\n\nDealing damage with Smoke Bomb grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 metres away.\n\nGrants 500% Additional Base Melee Recharge Rate while Smoke Bomb remains undetonated.\n\nProviding Invisibility via Smoke Bomb prevents the Ability Recharge Bonus from applying.",
+     "main": "Powered Melee Hits instantly cast Smoke Bomb.\n\nSmoke Bombs deal 50% Increased Damage. Quickfall does not receive this Damage Increase.\n\nDealing damage with Smoke Bomb grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 meters away.\n\nGrants 500% Additional Base Melee Recharge Rate while a Smoke Bomb is active.\n\nVoid Invisiblity prevents the Ability Recharge bonus from applying.",
      "secondary": "import self"
     },
     "ko": {
@@ -50826,7 +50826,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680345583783,
+      "lastUpdate": 1689233652298,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -50840,7 +50840,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680349104559,
+   "lastUpload": 1689234319053,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
