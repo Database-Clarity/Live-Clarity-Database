@@ -4458,7 +4458,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants +50 Airborne Effectiveness, +100 Handling and +100 Reload Speed to Sidearms."
+       "text": "Passively grants 50 Airborne Effectiveness, 100 Handling and 100 Reload Speed to Sidearms."
       }
      ]
     },
@@ -4468,14 +4468,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying a sidearm while at Critical Health:"
+       "text": "Upon readying a Sidearm while at Critical Health:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Grants "
       },
       {
        "text": "100%"
@@ -4487,14 +4487,20 @@
        "text": "[PVP: 35%]"
       },
       {
-       "text": " increased damage until no longer at Critical Health."
+       "text": " Increased Damage until no longer at Critical Health"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Refreshes sidearm magazine."
+       "text": "• "
+      },
+      {
+       "text": "Refills"
+      },
+      {
+       "text": " the Magazine of the Sidearm"
       }
      ]
     }
@@ -11564,16 +11570,6 @@
     {
      "linesContent": [
       {
-       "text": "Spawns a Sunspot under you upon reaching Critical Health if your Class Ability is charged (consumes Class Ability Charge), or upon casting a Barricade."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Only works with a "
       },
       {
@@ -11585,9 +11581,34 @@
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "The spawned Sunspot grants the Sol Invictus buff even without having the Aspect equipped."
+       "text": "Spawns a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Sunspot under you upon reaching Critical Health (if your Class Ability is charged as it consumes a Class Ability Charge) or upon casting a Barricade."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The spawned "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Sunspot grants the Sol Invictus buff even without having the Aspect equipped. (The Aspect is still required to extend the sunspot's duration)"
       }
      ]
     }
@@ -14632,7 +14653,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+       "text": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation."
       }
      ]
     },
@@ -16716,35 +16737,21 @@
     {
      "linesContent": [
       {
-       "text": "Deadfall returns Ability Energy per Enemy Tethered."
+       "text": "Deadfall returns Ability Energy per Enemy Tethered:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "X% Super Energy. Max of 50% Super Energy."
+       "text": "• X% Super Energy up to the maximum of 50%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "10% Grenade"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "10% Melee"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "10% Class Ability Energy."
+       "text": "• 10% Grenade, Melee, and Class Ability Energy"
       }
      ]
     },
@@ -17014,7 +17021,7 @@
        "text": "[PVP: 91%]"
       },
       {
-       "text": " Damage Resistance. Blocking with other Sword Frames grants "
+       "text": " Damage Resistance against blocked attacks. These numbers drop to "
       },
       {
        "text": "90%"
@@ -17026,7 +17033,7 @@
        "text": "[PVP: 82%]"
       },
       {
-       "text": " Damage Resistance."
+       "text": " on other Sword Frames."
       }
      ]
     },
@@ -17046,17 +17053,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants Restoration x2 for 3 seconds on any Sword Hits (including unpowered). Duration cannot be refreshed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "Grants "
+      },
       {
-       "text": "(Bugged? Should be granting Restoration after you stop Blocking with the duration depending on the number of Hits blocked - which is indicated by the Perfect Guard Stacks)"
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration x2 for 3 seconds on any Sword Hits including unpowered. Duration cannot be refreshed. (Assumed to be bugged)"
       }
      ]
     }
@@ -22563,7 +22566,14 @@
     {
      "linesContent": [
       {
-       "text": "Damaging a Miniboss, Champion, Boss, or Vehicle with a Trace Rifle marks them for 10 seconds. (No, it does not require a matching element)"
+       "text": "Rapidly scoring 5 Trace Rifle hits on a "
+      },
+      {
+       "text": "Miniboss, Champion, Boss, or Vehicle",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": " marks them for 10 seconds. Additional hits refresh the mark duration."
       }
      ]
     },
@@ -22573,7 +22583,7 @@
     {
      "linesContent": [
       {
-       "text": "Only one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out. Additional hits to the target refresh the mark duration."
+       "text": "Only one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated. Multiple people can mark the same target."
       }
      ]
     },
@@ -22781,10 +22791,7 @@
     {
      "linesContent": [
       {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Solar Wave deals "
+       "text": "The Wave deals "
       },
       {
        "text": "240"
@@ -22808,23 +22815,13 @@
        "text": "[PVP: 30]"
       },
       {
-       "text": " Scorch (unchanged with Ember of Ashes)."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Enemies that are hit by the Wave cannot be damaged by "
+       "text": " "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Wave for 2 seconds. Wave does not apply Scorch while returning."
+       "text": "Scorch when returning (unaffected by Ember of Ashes)."
       }
      ]
     },
@@ -36792,7 +36789,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple hits against a target withing 3 second of each emits 3 damaging shockwaves from its location at the time of activation."
+       "text": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation."
       }
      ]
     },
@@ -39024,7 +39021,7 @@
     {
      "linesContent": [
       {
-       "text": "Smoke Bombs deal 50% increased damage. Quickfall does not receive increased damage."
+       "text": "Smoke Bombs deal 50% Increased Damage. Quickfall does not receive this Damage Increase."
       }
      ]
     },
@@ -39034,7 +39031,7 @@
     {
      "linesContent": [
       {
-       "text": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 metres away."
+       "text": "Dealing damage with Smoke Bomb grants Truesight for 3 seconds, allowing you to see enemy outlines through walls from up to 64 meters away."
       }
      ]
     },
@@ -39044,7 +39041,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 500% Additional Base Melee Recharge Rate while Smoke Bomb remains undetonated."
+       "text": "Grants 500% Additional Base Melee Recharge Rate while a Smoke Bomb is active."
       }
      ]
     },
@@ -39054,7 +39051,7 @@
     {
      "linesContent": [
       {
-       "text": "Providing Invisibility via Smoke Bomb prevents the Ability Recharge Bonus from applying."
+       "text": "Void Invisiblity prevents the Ability Recharge bonus from applying."
       }
      ]
     }
