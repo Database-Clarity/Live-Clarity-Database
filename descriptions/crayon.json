@@ -45,7 +45,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1682718006443,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -72,7 +72,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for 4.5 seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.",
+   "en": "Grants a Stacking Damage Buff and 20 Handling for 4.5 seconds on Weapon or Grenade Kills. Grenade Kills grant all 5 stacks.\n\nDamage Buff Stacks: 6.7%|13.3%|20%|26.6%|33.3%\n\nBuff duration is refreshed on Weapon or Grenade Kills.",
    "es": "Bajas con el Arma o Granadas otorgan:\nAumento de daño:\n6.7% | 13.3% | 20% | 26.6% | 33.3%\n+20 al manejo\n\nEl bufo se renueva con cada baja. Baja con granada otorga la maxima cantidad de Daño\n\nMejorado: La duracion del bufo aumenta a 5 segundos",
    "zh-chs": "当使用武器或手雷完成击杀时：\n根据叠加层数获得 6.7% | 13.3% | 20% | 26.6% | 33.3% 伤害提升，并且 +20 操控性，持续 4.5 秒。\n\n增益持续时间可在击杀时刷新。手雷击杀直接获得 5 层增益。"
   }
@@ -897,19 +897,19 @@
  "365154968": {
   "hash": 365154968,
   "name": "Target Lock",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1690320394706,
   "stats": {
    "PVE Damage": [
     {
      "active": {
-      "multiplier": [ 1.1673, 1.2347, 1.2928, 1.3473, 1.4 ]
+      "multiplier": [ 1.1673, 1.4 ]
      }
     }
    ],
    "PVP Damage": [
     {
      "active": {
-      "multiplier": [ 1.1673, 1.2347, 1.2928, 1.3473, 1.4 ]
+      "multiplier": [ 1.1046, 1.25 ]
      }
     }
    ]
@@ -917,7 +917,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the [scaling is continuous](https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png). Reaches maximum strength at 5 Stacks.\n\nDamage buff when reaching 1|2|3|4|5 Stacks:\n16.73% | 23.47% | 29.28% | 34.73% | 40%\n\n% of the Magazine as Hits required for each Stack:\n12.5% | 35.5% | 54.5% | 74.5% | 110.5%\n\nAssuming no missed shots, it provides a ~25% Damage Buff on average after firing 100% of the Magazine."
+   "en": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the [scaling is continuous](https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png). Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\nDamage Buff ramps up from <:pve:922884406073507930>16.73% <:pvp:922884468275019856>[10.46%] to <:pve:922884406073507930>40% <:pvp:922884468275019856>[25%] upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a <:pve:922884406073507930>25% <:pvp:922884468275019856>[15.85%] Damage Buff on average after firing 100% of the Magazine."
   }
  },
  "371216963": {
@@ -2704,7 +2704,7 @@
   "name": "Tight Fit",
   "itemHash": 2390471904,
   "itemName": "Speedloader Slacks",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Airborne": [
     {
@@ -3051,7 +3051,7 @@
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Reload": [
     {
@@ -3253,8 +3253,15 @@
  "1004814308": {
   "hash": 1004814308,
   "name": "Disaster Plan",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
+   "Range": [
+    {
+     "active": {
+      "stat": [ 15 ]
+     }
+    }
+   ],
    "Guard Charge Rate": [
     {
      "active": {
@@ -3266,7 +3273,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Ammo Pickups grant ? Range and ?% Flinch Resistance. Swords receive 100 Charge Rate instead.\n\nBuff disappears 1.5 seconds after firing (or swinging the sword)."
+   "en": "Ammo Pickups grant 15 Range and 15% Flinch Resistance. Swords receive 100 Charge Rate instead.\n\nBuff disappears 1.5 seconds after firing (or swinging the sword)."
   }
  },
  "1008128453": {
@@ -3562,7 +3569,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Reload": [
     {
@@ -4144,7 +4151,7 @@
  "1260401931": {
   "hash": 1260401931,
   "name": "Hot Swap",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -4171,7 +4178,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon readying the gun after receiving damage within [?] seconds:\nGrants 30 Handling for 4 seconds.\n\nSwords receive 100 Guard Resistance, [?] Guard Endurance, and 100 Charge Rate.",
+   "en": "Upon readying the gun after receiving damage within [?] seconds:\nGrants 30 Handling for 4 seconds.\n\nSwords receive 100 Guard Resistance, 100? Guard Endurance, and 100 Charge Rate.",
    "zh-chs": "在受到伤害 [?] 秒内拔出此武器：\n+30 操控性，持续 4 秒。\n\n刀剑获取更高的充能效率、防御抗性、防御耐性。\n\n\n刀剑获得更高的充能效率、防御效率、防御抗性。"
   }
  },
@@ -4188,7 +4195,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -4519,7 +4526,7 @@
  "1365187766": {
   "hash": 1365187766,
   "name": "Gutshot Straight",
-  "lastUpload": 1683127303826,
+  "lastUpload": 1690320394706,
   "stats": {
    "PVE Damage": [
     {
@@ -4553,7 +4560,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• -55%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%",
+   "en": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• -35%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%",
    "zh-chs": "瞄准时：\n增加身体伤害，-55% 瞄准辅助锥角尺寸。\n\n身体伤害提升：\n• 自动步枪、弓箭、手炮： 20%\n• 脉冲步枪、手枪、冲锋枪： 10%"
   }
  },
@@ -4611,11 +4618,11 @@
  "1380061575": {
   "hash": 1380061575,
   "name": "Dream Work",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1690320394706,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Assists or Assisted Kills refill 66% of the Magazine.\nCan only activate once before needing a manual reload.\n\nMagazine can overflow, and is always rounded up."
+   "en": "Assists on targets previously hit by the Weapon or Assisted Kills with the Weapon refill 66% of the Magazine from reserves.\n\nThe refill can overflow the magazine and the refill amount is always rounded up to a whole number.\n\nCan only activate once before needing a manual reload."
   }
  },
  "1380383475": {
@@ -4852,7 +4859,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Airborne": [
     {
@@ -4923,11 +4930,21 @@
  "1489048135": {
   "hash": 1489048135,
   "name": "Explosive Pact",
-  "lastUpload": 1685817873807,
+  "lastUpload": 1690320394706,
+  "stats": {
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 8, 16, 20, 24, 44 ],
+      "multiplier": [ 0.98, 0.98, 0.975, 0.96, 0.945 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Grenade Ability Usage:\nGrants ? Stability and ? Reload Speed for 7.5 seconds. Stacks ? times.\n\nHealing Grenades and Grenade Kills grant ? stacks."
+   "en": "Grenade Ability Usage grants 1 Stack of Explosive Pack. Maximum of 5 Stacks.\n\nGrenade Kills and Healing Grenade orb pickups (by anyone) grant 1 Stack each.\n\nBenefits at 1|2|3|4|5 Stacks of Explosive Pact:\n• ? Stability\n• 8|16|20|24|44 Reload Speed\n• 0.98x|0.98x|0.975x|0.96x|0.945x Reload Duration Multiplier"
   }
  },
  "1496699324": {
@@ -6152,7 +6169,7 @@
  "1820235745": {
   "hash": 1820235745,
   "name": "Subsistence",
-  "lastUpload": 1683720610363,
+  "lastUpload": 1690320394706,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6163,7 +6180,7 @@
  "1821614984": {
   "hash": 1821614984,
   "name": "Slickdraw",
-  "lastUpload": 1679597202350,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -6183,7 +6200,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• -80%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)",
+   "en": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• -55%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)",
    "zh-chs": "被动提升 +100 操控性，0.95x 拔枪动画系数，-80% 瞄准辅助锥角尺寸。"
   }
  },
@@ -6558,7 +6575,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• 🡅-75%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)\n\n🡅 Auto Aim Penalty is decreased by an additive 5%."
+   "en": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• 🡅-50%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)\n\n🡅 Auto Aim Penalty is decreased by an additive 5%(?)."
   }
  },
  "1954620775": {
@@ -6700,11 +6717,11 @@
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1690320394706,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 7 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n<:primary:968793055677251604>Primary Weapons: 20%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.",
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 7 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.",
    "es": "Luego de recargar despues de  [?] segundos despues de una Baja con el arma:\nAumenta la capacidad del Cargador por baja dentro de [?] segundos\n\nPuede llegar a ser un 150% la cantidad del cargador original. Redondea hacia arriba.\n\nArmas Primarias reciben un 20% a la capacidad aumentada por baja. Armas Especiales y Pesadas reciben un 10%\n\nAumentado: Otorga +5 a la velocidad de recarga de forma pasiva",
    "zh-chs": "该武器击杀后 7 秒内换弹：\n7 秒内的每个击杀都可过量填加弹匣，\n\n最高过量填加 50%，计算结果向上取整。\n\n<:primary:968793055677251604> 主武器：每个击杀过量填加 20%。\n<:special:968793055631114330> 特殊武器和 <:heavy:968793055652106320> 重武器：每个击杀过量填加 10%。"
   }
@@ -6812,8 +6829,22 @@
  "2053642371": {
   "hash": 2053642371,
   "name": "Unsated Hunger",
-  "lastUpload": 1687206953930,
+  "lastUpload": 1690320394706,
   "stats": {
+   "Handling": [
+    {
+     "active": {
+      "stat": [ 60 ]
+     }
+    }
+   ],
+   "Reload": [
+    {
+     "active": {
+      "stat": [ 60 ]
+     }
+    }
+   ],
    "Stability": [
     {
      "active": {
@@ -6839,7 +6870,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20? Stability, ? Handling, and ? Reload Speed while Grenade, Melee, and Class Abilities are all uncharged.\n\nSwords receive 50 Charge Rate and 40 Guard Endurance instead."
+   "en": "Grants 20 Stability, 60 Handling, and 60 Reload Speed while Grenade, Melee, and Class Abilities are all uncharged.\n\nSwords receive 50 Charge Rate and 40 Guard Endurance instead."
   }
  },
  "2057203855": {
@@ -7013,7 +7044,7 @@
  "2120661319": {
   "hash": 2120661319,
   "name": "Field-Tested",
-  "lastUpload": 1681847306051,
+  "lastUpload": 1690320394706,
   "stats": {
    "Range": [
     {
@@ -7047,7 +7078,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\n\nMaximum of 5 Stacks. Buff is only removed on death.\n\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|55 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\n\nPoints required for 1|2|3|4|5 Stacks:\n• <:primary:968793055677251604>Primary Weapons: 51|151|351|651|1001\n• <:special:968793055631114330>Special Weapons: 26|76|176|326|501\n• <:heavy:968793055652106320>Power Weapons: 11|31|71|131|201\n\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\n\nPoints granted by Kills are based on [Enemy Rank](https://d2clarity.page.link/combatant):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\n\nKill Point Multipliers by Weapon Archetype:\n• <:primary:968793055677251604>Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
+   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\n\nMaximum of 5 Stacks. Buff is only removed on death.\n\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|55 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\n\nPoints required for 1|2|3|4|5 Stacks:\n• <:primary:968793055677251604>Primary Weapons: 51|151|351|651|1001\n• <:special:968793055631114330>Special Weapons: 26|76|176|326|501\n• <:heavy:968793055652106320>Power Weapons: 11|31|71|131|201\n\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\n\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\n\nKill Point Multipliers by Weapon Archetype:\n• <:primary:968793055677251604>Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
   }
  },
  "2130042297": {
@@ -7907,7 +7938,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon or Grenade Kill:\n6.7% | 13.3% | 20% | 26.6% | 33.3% Increased Damage and 20 Handling for 🡅5 seconds.\n\nGrenade Kills grant all 5 stacks.\nBuff is refreshed on Weapon or Grenade Kills.\n\n🡅 Buff Duration is increased by 0.5 seconds."
+   "en": "Grants a Stacking Damage Buff and 20 Handling for 🡅5 seconds on Weapon or Grenade Kills. Grenade Kills grant all 5 stacks.\n\nDamage Buff Stacks: 6.7%|13.3%|20%|26.6%|33.3%\n\nBuff duration is refreshed on Weapon or Grenade Kills.\n\n🡅 Buff Duration is increased by 0.5 seconds."
   }
  },
  "2436471653": {
@@ -9133,7 +9164,7 @@
  "2839173408": {
   "hash": 2839173408,
   "name": "Omolon Fluid Dynamics",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1690320394706,
   "stats": {
    "Reload": [
     {
@@ -9382,12 +9413,12 @@
  "2898218424": {
   "hash": 2898218424,
   "name": "Air Assault",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1690320394706,
   "stats": {
    "Airborne": [
     {
      "active": {
-      "stat": [ 35, 70 ]
+      "stat": [ 32, 64 ]
      }
     }
    ]
@@ -9395,7 +9426,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants 🡅12 Airborne Effectiveness.\n\nGrants 🡅35 Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks.\n\nGrounded Weapon Kills grant 1 Stack while airborne kills grant 2 Stacks.\n\n🡅 Grants 2 more Airborne Effectiveness passively and 5 more per Stack."
+   "en": "Passively grants 🡅12 Airborne Effectiveness.\n\nGrants 🡅32 Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks.\n\nGrounded Weapon Kills grant 1 Stack while airborne kills grant 2 Stacks.\n\n🡅 Grants 2 more Airborne Effectiveness passively and per Stack."
   }
  },
  "2911329003": {
@@ -9455,19 +9486,19 @@
  "2939589096": {
   "hash": 2939589096,
   "name": "Target Lock",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1690320394706,
   "stats": {
    "PVE Damage": [
     {
      "active": {
-      "multiplier": [ 1.1882, 1.264, 1.3294, 1.3907, 1.45 ]
+      "multiplier": [ 1.1882, 1.45 ]
      }
     }
    ],
    "PVP Damage": [
     {
      "active": {
-      "multiplier": [ 1.1882, 1.264, 1.3294, 1.3907, 1.45 ]
+      "multiplier": [ 1.1255, 1.3 ]
      }
     }
    ]
@@ -9475,7 +9506,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the [scaling is continuous](https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png). Reaches maximum strength at 5 Stacks.\n\nDamage buff when reaching 1|2|3|4|5 Stacks:\n🡅18.82% | 🡅26.4% | 🡅32.94% | 🡅39.07% | 🡅45%\n\n% of the Magazine as Hits required for each Stack:\n12.5% | 35.5% | 54.5% | 74.5% | 110.5%\n\nAssuming no missed shots, it provides a 🡅~28.13% Damage Buff on average after firing 100% of the Magazine.\n\n🡅 Damage Buff is increased by 12.5%. (e.g. 40%🠚45%)"
+   "en": "Hits within 0.2 seconds of each grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits.\n\nStacks displayed on-screen are only visual aides, the [scaling is continuous](https://i.ibb.co/KbxNKvj/Target-Lock-Explanation.png). Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\nDamage Buff ramps up from <:pve:922884406073507930>🡅18.82% <:pvp:922884468275019856>🡅[12.55%] to <:pve:922884406073507930>🡅45% <:pvp:922884468275019856>🡅[30%] upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a <:pve:922884406073507930>🡅28.13% <:pvp:922884468275019856>🡅[19.02%] Damage Buff on average after firing 100% of the Magazine.\n\n🡅 Damage Buff is increased by <:pve:922884406073507930>12.5% <:pvp:922884468275019856>[20%]."
   }
  },
  "2946784966": {
@@ -9633,7 +9664,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds.\n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 🡅5 seconds.\n\n🡅 Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
+   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 400 Reload Speed for 7 seconds.\n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 🡅5 seconds.\n\n🡅 Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
   }
  },
  "3013778406": {
@@ -9838,7 +9869,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "PVE Damage": [
     {
@@ -10072,7 +10103,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -11716,7 +11747,7 @@
  "3722653512": {
   "hash": 3722653512,
   "name": "Air Assault",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1690320394706,
   "stats": {
    "Airborne": [
     {
@@ -11918,7 +11949,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 🡅8 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n<:primary:968793055677251604>Primary Weapons: 20%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.\n\n🡅 Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 🡅8 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.\n\n🡅 Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
   }
  },
  "3798468567": {
@@ -12044,7 +12075,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Range": [
     {
@@ -12388,7 +12419,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1689498746240,
+  "lastUpload": 1690320394706,
   "stats": {
    "Airborne": [
     {
@@ -12921,7 +12952,7 @@
  "4104185692": {
   "hash": 4104185692,
   "name": "Frenzy",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1690320394706,
   "stats": {
    "Handling": [
     {
@@ -12947,7 +12978,7 @@
    "Reload": [
     {
      "active": {
-      "stat": [ 100 ]
+      "stat": [ 400 ]
      }
     }
    ]
@@ -12955,7 +12986,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds.\n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds.",
+   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 400 Reload Speed for 7 seconds.\n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds.",
    "zh-chs": "持续处于 战斗状态 12 秒后：\n+15% 伤害， +50 操控性，+50 填装速度。\n\n持续到脱离战斗，收枪状态也会触发。\n\n战斗状态的定义为：造成或受到伤害 5 秒内。"
   }
  },
@@ -13170,7 +13201,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Aiming-Down-Sights:\n• Increased Bodyshot Damage\n• 🡅-45%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBodyshot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n\n🡅 Reduces Auto Aim penalty by ~18%. (55% » 45%)"
+   "en": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• 🡅-30%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n\n🡅 Reduces Auto Aim penalty by an additive 5%(?)."
   }
  },
  "4207509907": {
@@ -13255,7 +13286,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Refills 🡅20% of the Magazine from reserves on Weapon Kills.\n\n🡅 Refill amount is increased by an additive 10%. (3% increase on SMGs and Auto Rifles)"
+   "en": "Refills 🡅20% of the Magazine from reserves on Weapon Kills.\n\n🡅 Refill amount is increased by an additive 10%. (3% on SMGs and Auto Rifles)"
   }
  },
  "4251375227": {
