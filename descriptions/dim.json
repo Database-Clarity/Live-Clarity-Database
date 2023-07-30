@@ -8296,7 +8296,7 @@
     {
      "linesContent": [
       {
-       "text": "Dodging Grants 1 Stack of Tight Fit to the wearer and allies within 15 meters for 15 seconds."
+       "text": "Class Ability Usage grants 1 Stack of Tight Fit to the wearer and allies within 15 meters for 15 seconds."
       }
      ]
     },
@@ -8320,7 +8320,7 @@
     {
      "linesContent": [
       {
-       "text": "• Allies within range receive the same Stack amount of Tight Fit as the owner when the buff is refreshed."
+       "text": "• Allies within range receive the same number of Stacks as the wearer when the buff is refreshed."
       }
      ]
     },
@@ -8330,35 +8330,28 @@
     {
      "linesContent": [
       {
-       "text": "Stat Boost Bonuses at 1|2|3|4|5 Stacks:"
+       "text": "Stat Bonuses at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30 | 35 | 40 | 45 | 50 Airborne Effectiveness"
+       "text": "• 30|35|40|45|50 Airborne Effectiveness"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 40? | 40? | 45? | 50? | 55? Handling"
+       "text": "• 40|40|45|50|55 Handling and Reload Speed"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 40 | 40 | 45 | 50 | 55 Reload Speed"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 1x | 0.925x | 0.915x | 0.91x | 0.89x Reload Duration Multiplier"
+       "text": "• 1x|0.925x|0.915x|0.91x|0.89x Reload Duration Multiplier"
       }
      ]
     }
@@ -8965,7 +8958,10 @@
     {
      "linesContent": [
       {
-       "text": "Drengr's Lash creates 2 additional Lashes on Barricade cast. Lashes are granted stronger seeking capabilities and travel ?% farther."
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Drengr's Lash creates 2 additional Lashes. Lashes are granted stronger seeking capabilities and travel ?% farther."
       }
      ]
     },
@@ -8975,7 +8971,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants Woven Mail for 10 seconds upon applying Suspension to enemies."
+       "text": "Grants Woven Mail for 10 seconds upon applying "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspension to enemies."
       }
      ]
     }
@@ -13354,7 +13356,7 @@
     {
      "linesContent": [
       {
-       "text": "Allies within [?] metres receive 10% Grenade, Melee, and Class Ability Energy when you pick up an Ionic Trace."
+       "text": "Allies within ? meters receive 10% Grenade, Melee, and Class Ability Energy when you pick up an Ionic Trace."
       }
      ]
     }
@@ -16303,24 +16305,14 @@
     {
      "linesContent": [
       {
-       "text": "On Barricade Placement:"
+       "text": "Casting your Barricade emits a Healing Pulse:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Generates a Healing Pulse, instantly healing the user and allies within 12 metres. (Requires Line-of-Sight)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Healing Pulse heals for either 58HP or TO 130HP, whichever value restores the most HP."
+       "text": "Heals the wearer and allies within 12 meters if they have line of sight to the wearer."
       }
      ]
     },
@@ -16330,7 +16322,41 @@
     {
      "linesContent": [
       {
-       "text": "Super Abilities generate an extra Orb of Power."
+       "text": "Healing Pulse heals either FOR 58 HP or TO 130 HP, whichever option restores the more health."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Super Abilities generate an extra Orb of Power that grants 7.14% Super Energy (regular Super Orb)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Specific Interactions:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Roaming Supers start generating Orbs after just 1 Kill instead of needing at least 2"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Ward of Dawn generates 4 Orbs with each granting 3.57% Super Energy (up from 3 Orbs granting 2.3% each for a ~2x increase)"
       }
      ]
     }
@@ -17110,7 +17136,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants "
+       "text": "While Guarding:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants "
       },
       {
        "text": "50%"
@@ -17122,7 +17155,27 @@
        "text": "[PVP: 10%]"
       },
       {
-       "text": " Damage Resistance while Blocking."
+       "text": " Damage Resistance."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration effect is active)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sword Energy does not decay from blocking damage or holding guard."
       }
      ]
     },
@@ -17132,7 +17185,61 @@
     {
      "linesContent": [
       {
-       "text": "Blocking with Aggressive Frame Swords grants a total of "
+       "text": "All Stacks are removed if no hits have been blocked in the last 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Dealing Sword Damage with active Perfect Guard Stacks grants "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration x2:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "4"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 3]"
+      },
+      {
+       "text": " second duration at 1 Stack, scaling up to "
+      },
+      {
+       "text": "16"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 6]"
+      },
+      {
+       "text": " seconds at 100 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Guarding with Aggressive Frame Swords grants a total of "
       },
       {
        "text": "95%"
@@ -17144,7 +17251,7 @@
        "text": "[PVP: 91%]"
       },
       {
-       "text": " Damage Resistance against blocked attacks. These numbers drop to "
+       "text": " Damage Resistance against blocked hits. These numbers drop to "
       },
       {
        "text": "90%"
@@ -17157,32 +17264,6 @@
       },
       {
        "text": " on other Sword Frames."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Sword Energy does not decay from blocking damage or holding guard."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Restoration x2 for 3 seconds on any Sword Hits including unpowered. Duration cannot be refreshed. (Assumed to be bugged)"
       }
      ]
     }
@@ -19225,14 +19306,27 @@
     {
      "linesContent": [
       {
-       "text": "Chaos Reach refunds 10% Super Ability Energy on hit."
+       "text": "Chaos Reach refunds 10% Super Energy on hit."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "0.75 second cooldown between refunds. Can increase Super Duration by up to 100%."
+       "text": "0.75 second cooldown between refunds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Can increase Super Duration by up to 100%."
       }
      ]
     }
@@ -25487,21 +25581,21 @@
     {
      "linesContent": [
       {
-       "text": "• 5 | 15 | 25 Stability"
+       "text": "• 5|15|25 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10 | 25 | 60 Reload Speed"
+       "text": "• 5|25|60 Handling"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10 | 25 | 50 Handling"
+       "text": "• 5|25|60 Reload Speed"
       }
      ]
     },
@@ -32202,10 +32296,10 @@
     {
      "linesContent": [
       {
-       "text": "Refreshes"
+       "text": "Refills"
       },
       {
-       "text": " held weapon after sprinting for 1.5 seconds."
+       "text": " held weapon from reserves after sprinting for 1.5 seconds."
       }
      ]
     },
@@ -32215,21 +32309,17 @@
     {
      "linesContent": [
       {
-       "text": "Increases Sprint Speed by 6.25%"
+       "text": "Increases Sprint Speed by 6.25% and Slide Distance by 33%."
       }
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Increases Slide Distance by 33%"
-      }
-     ]
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Crouch Speed is set to 4 metres per second and cannot be decreased through slows debuffs."
+       "text": "Crouch Speed is set to 4 meters per second and bypasses slowing effects."
       }
      ]
     }
@@ -32931,21 +33021,21 @@
     {
      "linesContent": [
       {
-       "text": "• 5 | 15 | 25 Stability"
+       "text": "• 5|15|25 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10 | 25 | 60 Reload Speed"
+       "text": "• 5|25|60 Handling"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10 | 25 | 50 Handling"
+       "text": "• 5|25|60 Reload Speed"
       }
      ]
     }
@@ -33780,21 +33870,21 @@
     {
      "linesContent": [
       {
-       "text": "• Blocking doesn't consume Super Energy"
+       "text": "• Blocking doesn't consume Super Energy."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reflected projectiles deal 650% increased damage"
+       "text": "• Reflected projectiles deal 650% Increased Damage."
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reflecting projectiles generates Orbs of Power for allies"
+       "text": "• Reflecting projectiles generates Orbs of Power for allies, each granting 7.14% Super Energy."
       }
      ]
     }
@@ -38830,21 +38920,7 @@
     {
      "linesContent": [
       {
-       "text": "Increased Super Energy from Orbs of Power:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 7.1% >> 10% for Super Orbs"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 2.5% >> 4.17% for Small Orbs"
+       "text": "Orbs of Power grant an additional 2% Super Energy."
       }
      ]
     },
@@ -38854,7 +38930,7 @@
     {
      "linesContent": [
       {
-       "text": "Picking up an Orb of Power with a charged Super Ability grants an Overcharge stack. Maximum of 4 Stacks, consumed on Super cast."
+       "text": "Picking up an Orb of Power with a charged Super Ability grants an Overcharge Stack. Maximum of 4 Stacks, consumed on Super cast."
       }
      ]
     },
@@ -38864,7 +38940,7 @@
     {
      "linesContent": [
       {
-       "text": "On Super Cast while at 1|2|3|4 Overcharge Stacks:"
+       "text": "Casting your Super while at 1|2|3|4 Stacks grants the following benefits:"
       }
      ]
     },
@@ -38885,7 +38961,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants a 100 HP Overshield for 16 seconds if at 4 Overcharge Stacks."
+       "text": "• 100 HP Overshield for 16 seconds if Cast at 4 Stacks"
       }
      ]
     }
