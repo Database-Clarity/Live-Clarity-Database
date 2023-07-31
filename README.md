@@ -20,3 +20,4 @@
 - [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
 - [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
+- [Destiny Perks](https://destinyperks.com): A quick way to search for weapons by perks and their utility
