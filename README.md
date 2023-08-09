@@ -17,7 +17,8 @@
 ## Projects currently using our data
 - [Destiny Item Manager](https://dim.gg): The go-to Item Manager for Destiny
 - [Light.gg](https://light.gg): Destiny 2 Database explorer and extensive resource hub
-- [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
+- [Little Light](https://littlelight.club): An intuitive inventory manager on mobile devices
 - [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
+- [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
 - [Destiny Perks](https://destinyperks.com): A quick way to search for weapons by perks and their utility
