@@ -12655,7 +12655,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13014,14 +13014,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon within 10 seconds of scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved within 10 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine*. Always rounds up.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: 10%\n<special/>Special and <heavy/>Power Weapons: 20%\n\nCannot be reactivated until all shots loaded by the perk are fired.\n\n*Does not <title refill [G_refill] /> the Magazine before the overflow effect takes place. (With maximum buff and an empty Magazine, 100% from the 150% would go to refilling the Magazine - leaving you with only a 50% Magazine Capacity Increase)\n\nenhanced (\nvar d = 0 //placeholder\n#e Does not provide a benefit currently.\n)",
+     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine*. Always rounds up.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: 10%\n<special/>Special and <heavy/>Power Weapons: 20%\n\n*!!NEEDS RETESTING!! Does not <title refill [G_refill] /> the Magazine before the overflow effect takes place. (With maximum buff and an empty Magazine, 100% from the 150% would go to refilling the Magazine - leaving you with only a 50% Magazine Capacity Increase)\n\nenhanced (\nvar d = 0 //placeholder\n#e Kills provide a slightly larger Magazine Capacity Increase.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689186401917,
+      "lastUpdate": 1692714151864,
       "updatedBy": "Stardust"
      }
     },
@@ -13031,7 +13031,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14846,7 +14846,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16842,7 +16842,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18281,7 +18281,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• #e${-35+#d}%(?) Auto Aim Cone Size (No effect on reticle stickiness)\n\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 5\n#e Reduces Auto Aim penalty by an additive 5%(?).\n)",
+     "main": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• #e${-20+#d}%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\n\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n\nenhanced (\nvar d = 5\n#e Reduces Auto Aim penalty by an additive 5%?.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -18292,7 +18292,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690295903151,
+      "lastUpdate": 1692714245553,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -18306,7 +18306,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690320394706,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19265,7 +19265,7 @@
     "PVE Damage": [
      {
       "passive": {
-       "multiplier": [ 0.6 ]
+       "multiplier": [ 0.75 ]
       },
       "weaponTypes": [ "Rocket" ]
      }
@@ -19273,7 +19273,7 @@
     "PVP Damage": [
      {
       "passive": {
-       "multiplier": [ 0.6 ]
+       "multiplier": [ 0.75 ]
       },
       "weaponTypes": [ "Rocket" ]
      }
@@ -19281,24 +19281,24 @@
    },
    "editor": {
     "en": {
-     "main": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%.\n\nDecreases Blast Radius by #e${30-#d}, Reload Speed by #e${20-#d}, and Damage by 40%. \n\nenhanced (\nvar d = 5\n#e Stat penalties are reduced by 5.\n)",
+     "main": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%.\n\nDecreases Blast Radius by #e${30-#d}, Reload Speed by #e${20-#d}, and Damage by 25%. \n\nenhanced (\nvar d = 5\n#e Stat penalties are reduced by 5.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689182978674,
+      "lastUpdate": 1692713728103,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1686662701278,
+     "lastUpdate": 1692713744679,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19398,7 +19398,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20283,7 +20283,22 @@
    "name": "Redirection",
    "hash": 1545231802,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 3201496230,
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.25, 1.5, 1.75, 2 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.25, 1.5, 1.75, 2 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
      "main": "import main from 3201496230",
@@ -20297,12 +20312,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676223162336,
+     "lastUpdate": 1692719625872,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21521,7 +21536,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants linearly increasing bonuses as Magazine drops from #e${50+#d}% capacity to empty:\n• 25% to 50% decreased Accuracy Cone Size\n• ?% decreased <title Accuracy Cone Growth [G_conegrowth] />\n• Up to(?) 30 Stability\n\nenhanced (\n#e Stronger effect.\n)",
+     "main": "As Magazine drops from 50% capacity to empty:\n• #e${25+#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nenhanced (\nvar d = 5\n#e Accuracy Cone Size is decreased by a further additive 5%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21532,7 +21547,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1682715243184,
+      "lastUpdate": 1692730051303,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21546,7 +21561,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682718006443,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25372,7 +25387,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Increases Damage against shielded targets:\n• 10%: Elemental and Barrier Champion Shields\n• 34%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Shields)\n• 20%: Enemy Player Overshields\n\nDamage Increases stack multiplicatively if multiple conditions are met.\n\nenhanced (\n#e Damage dealt to Overshields is increased.\n)",
+     "main": "Increases Damage against shielded targets:\n• ?%: Elemental and Barrier Champion Shields\n• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Shields)\n• 20%: Player Overshields; for Bodyshots against Players with <strand/>Woven Mail\n\nDamage Increases stack multiplicatively if multiple conditions are met.\n\nenhanced (\n#e Damage dealt to Overshields is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -25383,7 +25398,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687978664971,
+      "lastUpdate": 1692730194900,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -25396,7 +25411,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687978677106,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34288,6 +34303,7 @@
    "name": "Surplus",
    "hash": 2658083589,
    "type": "Weapon Trait Enhanced",
+   "importStatsFrom": 3436462433,
    "editor": {
     "en": {
      "main": "import main from 3436462433",
@@ -34302,12 +34318,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1692719432653,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38369,7 +38385,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While at or above 50% Magazine Capacity:\nDirect Hits create a Stasis burst which applies 50 Slow for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. (Wolfpack Rounds are considered separate shots.)\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [0.5] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst.\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [0.5] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -38380,7 +38396,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687176257923,
+      "lastUpdate": 1692713857207,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38394,7 +38410,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687176854200,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39817,7 +39833,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40876,7 +40892,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41086,7 +41102,7 @@
    },
    "editor": {
     "en": {
-     "main": "On hit against Minor Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\n\nOn hit against <link Major, Boss, or Vehicle [#CombatantClassifications] /> Combatants:\nGrants 20% increased damage for 1 shot per stack, up to 100% at 5 Stacks.\n\nConsumes 1 stack per hit if at 1-5 stacks.\nConsumes #e${5-#d} Stacks per hit if at 6-20 stacks.\n\nenhanced (\nvar d = 1\n#e Consumes 1 fewer Stack per hit if at 6-20 stacks.\n)",
+     "main": "On hit against Minor Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\n\nOn hit against <link Major, Boss, or Vehicle [#CombatantClassifications] /> Combatants, for one shot:\nConsumes up to #e${5-#d} Stacks granting #e${20+#f}% Increased Damage per Stack consumed.\n\nenhanced (\nvar d = 1\nvar f = 5\n#e Damage Increase per Stack is increased by an additive 5% and the maximum buff requires 1 less Stack.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -41097,7 +41113,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689195134756,
+      "lastUpdate": 1692715086436,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41111,7 +41127,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43562,7 +43578,7 @@
     "Reload": [
      {
       "active": {
-       "stat": [ 5, 25, 60 ]
+       "stat": [ 10, 25, 60 ]
       }
      }
     ],
@@ -43576,7 +43592,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants Stat Bonuses depending on the number of Charged Abilities.\n\nStat Bonuses with 1|2|3+ Charged Abilities:\n• 5|15|25 Stability\n• 5|25|60 Handling\n• 5|25|60 Reload Speed\n\nenhanced (\n#e Stronger Effect.\n)",
+     "main": "Grants Stat Bonuses depending on the number of Charged Abilities.\n\nStat Bonuses with 1|2|3+ Charged Abilities:\n• 5|15|25 Stability\n• 5|25|60 Handling\n• 10|25|60 Reload Speed\n\nenhanced (\n#e Stronger Effect.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -43587,7 +43603,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690724878823,
+      "lastUpdate": 1692719396051,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -43596,12 +43612,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1690724899299,
+     "lastUpdate": 1692719427177,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690730562123,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46706,7 +46722,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, <title Refills [G_refill] /> all Weapons from reserves, and triggers Ammo Pickup Effects.\n\nOnly activates if picking up ammo is possible (i.e. reserves are not full).\n\nDirect Weapon Hits collect Orbs of Power. \n\nenhanced (\n#e Passively grants 5 Range.\n)",
+     "main": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, <title Refills [G_refill] /> all Weapons from reserves, and triggers Ammo Pickup Effects.\nOnly activates if picking up ammo is possible (i.e. reserves are not full).\n\nWeapon Hits against Orbs of Power collect them. \n\nenhanced (\n#e Passively grants 5 Range.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -46717,7 +46733,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689195715644,
+      "lastUpdate": 1692719372289,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -46731,7 +46747,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48568,7 +48584,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49725,7 +49741,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690993892734,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51542,14 +51558,14 @@
     "Reload": [
      {
       "active": {
-       "stat": [ 400 ]
+       "stat": [ 100 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 400 Reload Speed for 7 seconds. \n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last #e${5+#d} seconds.\n\nenhanced (\nvar d = 0.0\n#e Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit.\n)",
+     "main": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds. \n\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last #e${5+#d} seconds.\n\nenhanced (\nvar d = 0.0\n#e Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -51560,7 +51576,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690295782399,
+      "lastUpdate": 1692714169379,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -51569,12 +51585,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1690295786848,
+     "lastUpdate": 1692719558506,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690320394706,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52143,7 +52159,7 @@
    },
    "editor": {
     "en": {
-     "main": "Taking 20(?) Damage grants a Stack of Bitterspite. Maximum of 5 Stacks.\n\nReload Buff at 1|2|3|4|5 Stacks:\n• 10 | 20 | 30 | 40 | 50 Reload Speed Stat\n• 0.97x | 0.96x | 0.95x | 0.92x | 0.9x Reload Duration Multiplier",
+     "main": "Taking 20 Damage grants a Stack of Bitterspite. Maximum of 5 Stacks.\n\nReload Buff at 1|2|3|4|5 Stacks:\n• 10 | 20 | 30 | 40 | 50 Reload Speed Stat\n• 0.97x | 0.96x | 0.95x | 0.92x | 0.9x Reload Duration Multiplier",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -52154,7 +52170,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689197708619,
+      "lastUpdate": 1692730318930,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -52168,7 +52184,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53700,14 +53716,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Taking any Damage while Guarding increases Lunge Distance by 80% for ${1+#d} second. //add #e when known\n\nGuarding while being shot at by or receiving Healing Effects (inlcuding the Restoration Buff) from allies also activates the perk currently.\n\nenhanced (\nvar d = 0 //palceholder\n#e Buff Duration is increased.\n)",
+     "main": "Taking any Damage while Guarding increases Lunge Distance by 80% for ${1+#d} second. //add #e when known\nDeactivates after 1 swing.\n\nGuarding while being shot at by or receiving Healing Effects (inlcuding the Restoration Buff) from allies also activates the perk currently.\n\nenhanced (\nvar d = 0 //palceholder\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680344732575,
+      "lastUpdate": 1692730292688,
       "updatedBy": "Stardust"
      }
     },
@@ -53717,7 +53733,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680349104559,
+   "lastUpload": 1692730396702,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
