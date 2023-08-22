@@ -1629,14 +1629,14 @@
     {
      "linesContent": [
       {
-       "text": "• 10%: Elemental and Barrier Champion Shields"
+       "text": "• ?%: Elemental and Barrier Champion Shields"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 34%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
+       "text": "• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
       },
       {
        "text": "Tech Pack",
@@ -1650,7 +1650,13 @@
     {
      "linesContent": [
       {
-       "text": "• 20%: Enemy Player Overshields"
+       "text": "• 20%: Player Overshields; for Bodyshots against Players with "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Woven Mail"
       }
      ]
     },
@@ -2969,7 +2975,13 @@
     {
      "linesContent": [
       {
-       "text": "Direct Hits create a Stasis burst which applies 50 Slow for "
+       "text": "Direct Hits apply 40 "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks for "
       },
       {
        "text": "4"
@@ -2991,7 +3003,7 @@
     {
      "linesContent": [
       {
-       "text": "Only activates once per shot/burst. (Wolfpack Rounds are considered separate shots.)"
+       "text": "Only activates once per shot/burst."
       }
      ]
     },
@@ -3772,14 +3784,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the weapon within 10 seconds of scoring Kills with your other Weapons:"
+       "text": "Upon readying the weapon after scoring Kills with your other Weapons:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved within 10 seconds of each."
+       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved."
       }
      ]
     },
@@ -3835,17 +3847,7 @@
     {
      "linesContent": [
       {
-       "text": "Cannot be reactivated until all shots loaded by the perk are fired."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "*Does not "
+       "text": "*!!NEEDS RETESTING!! Does not "
       },
       {
        "text": "refill"
@@ -3865,7 +3867,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Does not provide a benefit currently."
+       "text": " Kills provide a slightly larger Magazine Capacity Increase."
       }
      ]
     }
@@ -9636,14 +9638,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the weapon within 10 seconds of scoring Kills with your other Weapons:"
+       "text": "Upon readying the weapon after scoring Kills with your other Weapons:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved within 10 seconds of each."
+       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved."
       }
      ]
     },
@@ -9699,17 +9701,7 @@
     {
      "linesContent": [
       {
-       "text": "Cannot be reactivated until all shots loaded by the perk are fired."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "*Does not "
+       "text": "*!!NEEDS RETESTING!! Does not "
       },
       {
        "text": "refill"
@@ -12632,31 +12624,21 @@
     {
      "linesContent": [
       {
-       "text": "Grants linearly increasing bonuses as Magazine drops from 50% capacity to empty:"
+       "text": "As Magazine drops from 50% capacity to empty:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25% to 50% decreased Accuracy Cone Size"
+       "text": "• 25% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?% decreased "
-      },
-      {
-       "text": "Accuracy Cone Growth"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to(?) 30 Stability"
+       "text": "• Linearly grants up to 30? Stability"
       }
      ]
     }
@@ -13292,7 +13274,7 @@
     {
      "linesContent": [
       {
-       "text": "• -35%(?) Auto Aim Cone Size (No effect on reticle stickiness)"
+       "text": "• -20%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
       }
      ]
     },
@@ -14032,7 +14014,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Blast Radius by 30, Reload Speed by 20, and Damage by 40%."
+       "text": "Decreases Blast Radius by 30, Reload Speed by 20, and Damage by 25%."
       }
      ]
     }
@@ -14635,38 +14617,28 @@
        "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": " Combatants:"
+       "text": " Combatants, for one shot:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 20% increased damage for 1 shot per stack, up to 100% at 5 Stacks."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Consumes 1 stack per hit if at 1-5 stacks."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Consumes "
+       "text": "Consumes up to "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "4 Stacks per hit if at 6-20 stacks."
+       "text": "4 Stacks granting "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "25% Increased Damage per Stack consumed."
       }
      ]
     },
@@ -14680,7 +14652,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Consumes 1 fewer Stack per hit if at 6-20 stacks."
+       "text": " Damage Increase per Stack is increased by an additive 5% and the maximum buff requires 1 less Stack."
       }
      ]
     }
@@ -16115,31 +16087,21 @@
     {
      "linesContent": [
       {
-       "text": "Grants linearly increasing bonuses as Magazine drops from 50% capacity to empty:"
+       "text": "As Magazine drops from 50% capacity to empty:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25% to 50% decreased Accuracy Cone Size"
+       "text": "• 25% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?% decreased "
-      },
-      {
-       "text": "Accuracy Cone Growth"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to(?) 30 Stability"
+       "text": "• Linearly grants up to 30? Stability"
       }
      ]
     }
@@ -18598,14 +18560,14 @@
     {
      "linesContent": [
       {
-       "text": "• 10%: Elemental and Barrier Champion Shields"
+       "text": "• ?%: Elemental and Barrier Champion Shields"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 34%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
+       "text": "• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
       },
       {
        "text": "Tech Pack",
@@ -18619,7 +18581,13 @@
     {
      "linesContent": [
       {
-       "text": "• 20%: Enemy Player Overshields"
+       "text": "• 20%: Player Overshields; for Bodyshots against Players with "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Woven Mail"
       }
      ]
     },
@@ -22574,7 +22542,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "15, and Damage by 40%."
+       "text": "15, and Damage by 25%."
       }
      ]
     },
@@ -25666,7 +25634,7 @@
     {
      "linesContent": [
       {
-       "text": "• 5|25|60 Reload Speed"
+       "text": "• 10|25|60 Reload Speed"
       }
      ]
     },
@@ -27545,9 +27513,6 @@
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
        "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
@@ -27560,7 +27525,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Weapon Hits collect Orbs of Power."
+       "text": "Weapon Hits against Orbs of Power collect them."
       }
      ]
     },
@@ -28890,7 +28855,13 @@
     {
      "linesContent": [
       {
-       "text": "Direct Hits create a Stasis burst which applies 50 Slow for "
+       "text": "Direct Hits apply 40 "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks for "
       },
       {
        "text": "4"
@@ -28912,7 +28883,7 @@
     {
      "linesContent": [
       {
-       "text": "Only activates once per shot/burst. (Wolfpack Rounds are considered separate shots.)"
+       "text": "Only activates once per shot/burst."
       }
      ]
     },
@@ -29220,7 +29191,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 15% Increased Damage, 100 Handling, and 400 Reload Speed for 7 seconds."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -30945,31 +30916,14 @@
        "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": " Combatants:"
+       "text": " Combatants, for one shot:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 20% increased damage for 1 shot per stack, up to 100% at 5 Stacks."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Consumes 1 stack per hit if at 1-5 stacks."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Consumes 5 Stacks per hit if at 6-20 stacks."
+       "text": "Consumes up to 5 Stacks granting 20% Increased Damage per Stack consumed."
       }
      ]
     }
@@ -33130,7 +33084,7 @@
     {
      "linesContent": [
       {
-       "text": "• 5|25|60 Reload Speed"
+       "text": "• 10|25|60 Reload Speed"
       }
      ]
     }
@@ -35379,9 +35333,6 @@
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
        "text": "Only activates if picking up ammo is possible (i.e. reserves are not full)."
@@ -35394,7 +35345,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Weapon Hits collect Orbs of Power."
+       "text": "Weapon Hits against Orbs of Power collect them."
       }
      ]
     }
@@ -36159,38 +36110,28 @@
     {
      "linesContent": [
       {
-       "text": "Grants linearly increasing bonuses as Magazine drops from "
+       "text": "As Magazine drops from 50% capacity to empty:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "50% capacity to empty:"
+       "text": "30% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25% to 50% decreased Accuracy Cone Size"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• ?% decreased "
-      },
-      {
-       "text": "Accuracy Cone Growth"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to(?) 30 Stability"
+       "text": "• Linearly grants up to 30? Stability"
       }
      ]
     },
@@ -36204,7 +36145,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger effect."
+       "text": " Accuracy Cone Size is decreased by a further additive 5%."
       }
      ]
     }
@@ -39550,7 +39491,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 15% Increased Damage, 100 Handling, and 400 Reload Speed for 7 seconds."
+       "text": "Grants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -39800,7 +39741,7 @@
     {
      "linesContent": [
       {
-       "text": "Taking 20(?) Damage grants a Stack of Bitterspite. Maximum of 5 Stacks."
+       "text": "Taking 20 Damage grants a Stack of Bitterspite. Maximum of 5 Stacks."
       }
      ]
     },
@@ -40225,7 +40166,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-30%(?) Auto Aim Cone Size (No effect on reticle stickiness)"
+       "text": "-15%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
       }
      ]
     },
@@ -40263,7 +40204,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reduces Auto Aim penalty by an additive 5%(?)."
+       "text": " Reduces Auto Aim penalty by an additive 5%?."
       }
      ]
     }
@@ -40965,6 +40906,13 @@
      ]
     },
     {
+     "linesContent": [
+      {
+       "text": "Deactivates after 1 swing."
+      }
+     ]
+    },
+    {
      "classNames": [ "spacer" ]
     },
     {
@@ -41000,6 +40948,13 @@
      "linesContent": [
       {
        "text": "Taking any Damage while Guarding increases Lunge Distance by 80% for 1 second."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Deactivates after 1 swing."
       }
      ]
     },
