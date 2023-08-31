@@ -4094,7 +4094,6 @@
    "name": "Precision Instrument",
    "hash": 332733060,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 555281244,
    "editor": {
     "en": {
      "main": "import main from 555281244",
@@ -4109,12 +4108,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1692902417949,
+     "lastUpdate": 1693496770448,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692986505150,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7424,14 +7423,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "On Ammo Brick Pickups in PVE game modes:\nGrants an additional 3-5% of your Total Reserves to #element.\n\nGuarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type",
+     "main": "On Ammo Brick Pickups in PVE game modes:\nGrants an additional 1% of your Total Reserves to #element. This is increased to 10% with #exceptions.\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles, Swords, and Grand Overture",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690739860501,
+      "lastUpdate": 1693504059792,
       "updatedBy": "Stardust"
      }
     },
@@ -7441,7 +7440,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7645,14 +7644,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Spawns a <heavy/>Heavy Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nCounter Progress on Weapon Kills:\n1.1% to 1.33%. Average of 83.5 Kills.\n\nProgress Multiplier on Kills by Weapon Type:\n• <primary/>Primary Weapons: 4.25x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> 5.05x \n• <special/><green Special Weapons: /> 1.05x\n\nAmmo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.",
+     "main": "Spawns a <heavy/>Heavy Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nCounter Progress on Weapon Kills:\n1.1% to 1.33%. Average of 83.5 Kills.\n\nProgress Multiplier on Kills by Weapon Type:\n• <primary/>Primary Weapons: 4.25x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> 5.05x \n• <special/><green Special Weapons: /> 1.05x\n\nAmmo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.\n\nAmmo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680121831060,
+      "lastUpdate": 1693503078432,
       "updatedBy": "Stardust"
      }
     },
@@ -7662,7 +7661,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680122100570,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7670,26 +7669,42 @@
    "name": "Precision Instrument",
    "hash": 555281244,
    "type": "Weapon Trait",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.0417, 1.0833, 1.125, 1.1667, 1.2083, 1.25 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.0417, 1.0833, 1.125, 1.1667, 1.2083, 1.25 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds. Maximum of 6 Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n4.2% | 8.34% | 12.5% | 16.7% | 20.8% | 25%\n\nenhanced (\n#e Stronger Effect.\n)",
+     "main": "Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds. Maximum of 6 Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%\n(More precisely: 25% / 6 × [Stacks])\n\nenhanced (\n#e Precision Damage Buff is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692902386027,
+      "lastUpdate": 1693496832136,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1692902413748,
+     "lastUpdate": 1693496791810,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692986505150,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7745,31 +7760,32 @@
    "uploadToLive": false
   },
   "561986700": {
-   "hash": 561986700,
    "name": "Loose Change",
+   "hash": 561986700,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
+   "importStatsFrom": 1119449540,
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1119449540",
+     "secondary": "import secondary from 1119449540"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1693496503201,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1693496494245,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "566815328": {
    "name": "Rasputin's Arsenal",
@@ -8321,7 +8337,7 @@
    },
    "editor": {
     "en": {
-     "main": "While on an <arc/>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ?HP on Melee Hits.\n\nProvides diminishing returns when combined with the One-Two Punch perk, granting a total Melee Damage Increase of 320%.",
+     "main": "While on an <arc/>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits.\n\nProvides diminishing returns when combined with the One-Two Punch perk, granting a total Melee Damage Increase of 320%.",
      "secondary": "import self"
     },
     "ko": {
@@ -8332,7 +8348,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686316272299,
+      "lastUpdate": 1693502507136,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -8346,7 +8362,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686316328113,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9161,14 +9177,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type",
+     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477025158,
+      "lastUpdate": 1693504115824,
       "updatedBy": "Stardust"
      }
     },
@@ -9178,7 +9194,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10785,14 +10801,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type",
+     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477038927,
+      "lastUpdate": 1693504137985,
       "updatedBy": "Stardust"
      }
     },
@@ -10802,7 +10818,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13171,7 +13187,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13530,14 +13546,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine*. Always rounds up.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: 10%\n<special/>Special and <heavy/>Power Weapons: 20%\n\n*!!NEEDS RETESTING!! Does not <title refill [G_refill] /> the Magazine before the overflow effect takes place. (With maximum buff and an empty Magazine, 100% from the 150% would go to refilling the Magazine - leaving you with only a 50% Magazine Capacity Increase)\n\nenhanced (\nvar d = 0 //placeholder\n#e Kills provide a slightly larger Magazine Capacity Increase.\n)",
+     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: 10%\n<special/>Special and <heavy/>Power Weapons: 20%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not <title refill [G_refill] /> the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\nenhanced (\nvar d = 0 //placeholder\n#e Kills provide a slightly larger Magazine Capacity Increase.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692714151864,
+      "lastUpdate": 1693495751990,
       "updatedBy": "Stardust"
      }
     },
@@ -13547,7 +13563,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692730396702,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13592,6 +13608,13 @@
       }
      }
     ],
+    "Ready": [
+     {
+      "active": {
+       "multiplier": [ 0.95 ]
+      }
+     }
+    ],
     "Stow": [
      {
       "active": {
@@ -13602,7 +13625,7 @@
    },
    "editor": {
     "en": {
-     "main": "When at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Duration Multiplier\n• <title Refills [G_refill] /> magazine from reserves\n\nWorks and can activate while stowed.\n\nenhanced (\n#e Activates with more health remaining.\n)",
+     "main": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• <title Refills [G_refill] /> magazine from reserves\n\nWorks and can activate while stowed.\n\nenhanced (\n#e Activates with more health remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -13613,7 +13636,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690634521988,
+      "lastUpdate": 1693496870002,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -13622,12 +13645,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1659903012345,
-     "updatedBy": "Fading-Shadow"
+     "lastUpdate": 1693496900041,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690635217382,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14642,31 +14665,31 @@
    "uploadToLive": false
   },
   "1050127423": {
-   "hash": 1050127423,
    "name": "Wild Card",
+   "hash": 1050127423,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Kills have a chance to release a varying amount of explosive submunitons on top of where the enemy died. \n\nSubmunitions deal up to <pve 39.5? /> <pvp [?] /> damage and inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1693501285209,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1051276348": {
    "hash": 1051276348,
@@ -15283,14 +15306,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type",
+     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477017242,
+      "lastUpdate": 1693504109563,
       "updatedBy": "Stardust"
      }
     },
@@ -15300,7 +15323,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15444,31 +15467,40 @@
    "uploadToLive": false
   },
   "1119449540": {
-   "hash": 1119449540,
    "name": "Loose Change",
+   "hash": 1119449540,
    "type": "Weapon Trait",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 50 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Applying an Elemental Debuff grants 50? Reload Speed for #e${4.5+#d} seconds.\n\nenhanced (\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1693496478780,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1693496487480,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1125523126": {
    "name": "Arc Loader",
@@ -15503,7 +15535,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17499,7 +17531,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17686,14 +17718,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "#type Ammo Finder Bricks you create also spawn a copy for your allies.\n\nAmmo Bricks spawned this way grant ?%|?% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped.\n\nvar type = Heavy",
+     "main": "#type Ammo Finder Bricks you create also spawn a copy for your allies.\n\nAmmo Bricks spawned this way grant 27.5%|60% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped.\n\nvar type = Heavy",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690738228948,
+      "lastUpdate": 1693503093248,
       "updatedBy": "Stardust"
      }
     },
@@ -17703,7 +17735,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18248,14 +18280,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type ",
+     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477008290,
+      "lastUpdate": 1693504104017,
       "updatedBy": "Stardust"
      }
     },
@@ -18265,7 +18297,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20055,7 +20087,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22279,33 +22311,33 @@
    "inLiveDatabase": true
   },
   "1630940558": {
-   "hash": 1630940558,
    "name": "Percussive Flames",
+   "itemName": "Pyrogale Gauntlets",
+   "hash": 1630940558,
+   "itemHash": 2066430310,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "<solar/>Burning Maul becomes a single high-damage slam that creates five Cyclones of flame.\n\n<solar/>Consecration's second slam creates a Cyclone of Flame.\n\nCyclones of Flame last ? seconds, deal continuous damage, and seek out targets.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1693502487800,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 2066430310,
-   "itemName": "Pyrogale Gauntlets"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1631667848": {
    "name": "Grave Robber",
@@ -26283,9 +26315,25 @@
    "name": "Under-Over",
    "hash": 1870851715,
    "type": "Weapon Trait",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 2.25 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.2 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "Increases Damage against shielded targets:\n• ?%: Elemental and Barrier Champion Shields\n• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Shields)\n• 20%: Player Overshields; for Bodyshots against Players with <strand/>Woven Mail\n\nDamage Increases stack multiplicatively if multiple conditions are met.\n\nenhanced (\n#e Damage dealt to Overshields is increased.\n)",
+     "main": "Increases Damage against shielded targets:\n• 125% Increase against PVE Combatant Shields\n• 20% Increase against Player Overshields and for bodyshots against Players with <strand/>Woven Mail\n\nCombatant Shields include <barrier/>Barrier Champion Shields, Elemental Shields, and Lucent Moth/Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Overshields.\n\nenhanced (\n#e Damage Buff is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -26296,7 +26344,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692730194900,
+      "lastUpdate": 1693501880076,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -26305,11 +26353,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 0
+     "lastUpdate": 1693501667562,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692730396702,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30918,14 +30967,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type",
+     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477035107,
+      "lastUpdate": 1693504130609,
       "updatedBy": "Stardust"
      }
     },
@@ -30935,7 +30984,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32591,7 +32640,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Kill:\nTriggers an explosion matching the weapon's element that deals <pve 84 /> <pvp [56] /> damage over a 3 meter radius.\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 20 Inventory Size to non-sword weapons. (Identical to a Reserves Mod)\nSwords receive 20 Guard Endurance instead.\n)",
+     "main": "On Weapon Kill:\nTriggers an explosion matching the weapon's element that deals <pve 84 /> <pvp [56] /> damage over a 3 meter radius.\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -32602,7 +32651,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687807788502,
+      "lastUpdate": 1693492198189,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -32616,7 +32665,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687807942152,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33152,14 +33201,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade.\n\nEnemies within 5? meters of the Barri-Nade's impact location are disoriented. Spawned Barricade deals no Contact Damage within 2 seconds of its creation.\n\nBarri-nade has no collision with enemies/* and objects that are not part of the map by default*/.",
+     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade and match its cooldown.\n\nEnemies within 5? meters of the Barri-Nade's impact location are disoriented. Spawned Barricade deals no Contact Damage within 2 seconds of its creation.\n\nBarri-nade has no collision with enemies/* and objects that are not part of the map by default*/.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686676264530,
+      "lastUpdate": 1693501984036,
       "updatedBy": "Stardust"
      }
     },
@@ -33169,7 +33218,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686679019520,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34458,40 +34507,40 @@
    "itemName": "Arbalest"
   },
   "2565067140": {
-   "hash": 2565067140,
    "name": "Head Rush",
+   "hash": 2565067140,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 10 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "After crouching for 2+ seconds before standing up:\nGrants 15? Handling and ? Reload Speed for ? seconds.",
+     "main": "After crouching for 2+ seconds before standing up:\nGrants ? Handling and 10 Reload Speed for 5 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 1692902585809,
-     "updatedBy": "Stardust"
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 1692902507228,
+      "lastUpdate": 1693500351639,
       "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1693500371685,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false,
-   "stats": {
-    "Handling": [
-     {
-      "active": {
-       "stat": [ 15 ]
-      }
-     }
-    ]
-   }
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2570477205": {
    "name": "Multikill Clip",
@@ -34819,14 +34868,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Spawns a <special/>Special Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nCounter Progress on Weapon Kills:\n1.66% to 1.8%. Average of 57.25 Kills.\n\nProgress Multiplier on Kills by Weapon Type:\n• <primary/>Primary Weapons: 3.25x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> 4.75x \n• <special/><green Special Weapons: /> 1.1x\n\nAmmo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.",
+     "main": "Spawns a <special/>Special Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nCounter Progress on Weapon Kills:\n1.66% to 1.8%. Average of 57.25 Kills.\n\nProgress Multiplier on Kills by Weapon Type:\n• <primary/>Primary Weapons: 3.25x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> 4.75x \n• <special/><green Special Weapons: /> 1.1x\n\nAmmo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.\n\nAmmo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680121776429,
+      "lastUpdate": 1693503061242,
       "updatedBy": "Stardust"
      }
     },
@@ -34836,7 +34885,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680122100570,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35627,7 +35676,7 @@
    },
    "editor": {
     "en": {
-     "main": "Dealing Ability Damage to a <link Major, Boss, or Player [#CombatantClassifications] /> target grants 4 Stacks of Subclass-Matching Weapon Surge and highlights the target for 10 seconds each. Weapon Surge duration is not refreshable.\n\nKilling highlighted targets spawns a Subclass-Matching Elemental Pickup.\n\nElementa Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Strand Tangles, and <void/>Void Breaches.",
+     "main": "Dealing Ability Damage to a <link Major, Boss, or Player [#CombatantClassifications] /> target grants 4 Stacks of Subclass-Matching Weapon Surge and highlights the target for 10 seconds each. Weapon Surge duration is not refreshable.\n\nKilling highlighted targets spawns a Subclass-Matching Elemental Pickup.\n\nElemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Strand Tangles, and <void/>Void Breaches.",
      "secondary": "import self"
     },
     "ko": {
@@ -35642,7 +35691,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692910280141,
+      "lastUpdate": 1693504652306,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -35660,7 +35709,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692913470476,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36530,7 +36579,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nEnemies hit by <stasis/>Penumbral Blast automatically shatter after ? seconds.",
+     "main": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <stasis/>Penumbral Blast automatically shatter after ? seconds.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -36541,7 +36590,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692731721278,
+      "lastUpdate": 1693501854006,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -36555,7 +36604,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692734897836,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36745,14 +36794,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type",
+     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477030921,
+      "lastUpdate": 1693504123147,
       "updatedBy": "Stardust"
      }
     },
@@ -36762,7 +36811,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40286,31 +40335,31 @@
    "uploadToLive": false
   },
   "3017780555": {
-   "hash": 3017780555,
    "name": "Heal Clip",
+   "hash": 3017780555,
    "type": "Weapon Trait",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Finishing a reload within 5.3? seconds of a Kill grants <solar/>Cure x1 for you and allies within ? meters.\n\nenhanced (\n#e Allowed time before reloading is increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1693496402104,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3018146897": {
    "name": "Invisible Hand",
@@ -42154,7 +42203,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44800,7 +44849,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
+     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44811,7 +44860,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690827332029,
+      "lastUpdate": 1693496924901,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44825,7 +44874,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690827358433,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49674,31 +49723,47 @@
    "inLiveDatabase": true
   },
   "3828510309": {
-   "hash": 3828510309,
    "name": "Enlightened Action",
+   "hash": 3828510309,
    "type": "Weapon Trait",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
+   "stats": {
+    "Handling": [
+     {
+      "active": {
+       "stat": [ 10, 20, 30, 40, 50 ]
+      }
+     }
+    ],
+    "Reload": [
+     {
+      "active": {
+       "stat": [ 10, 20, 30, 40, 50 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Dealing damage grants 10? Handling and 10? Reload Speed per Stack for 2 seconds. Maximum of 5 Stacks.\n\nenhanced (\n\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
+      "lastUpdate": 1693492335595,
+      "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 1693492324687,
+     "updatedBy": "Stardust"
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3829100654": {
    "hash": 3829100654,
@@ -50043,7 +50108,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51227,7 +51292,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693246610617,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52739,14 +52804,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Restores 70 HP on Orb of Power Pickups.",
+     "main": "Restores 70 HP on Orb of Power Pickups.\n\nEquipping multiple copies provides no benefit.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680469910155,
+      "lastUpdate": 1693503187699,
       "updatedBy": "Stardust"
      }
     },
@@ -52756,7 +52821,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52940,14 +53005,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces Grenade Ability with 'Cage of Loyal Moths', grants an extra Grenade Ability Charge. Overrides Base (T3) Grenade Ability cooldown to 73 seconds.\n\nMoth Cage explodes on impact, releasing 2 loyal moths that fly to their nearest target.\n\nLoyal Moths variants:\n• <arc/>Arc Moths: slower-flying, offensive role. They seek out targets and detonate on contact, dealing up to <pve 526 /> <pvp [31] /> damage. Counts as <arc/>Arc Grenade Damage.\n• <void/>Void Moths: faster-flying, support role. They seek out allies and grant them a 22.5 HP <void/>Void Overshield on contact.\n\nWhen no enemies are around, it spawns 2 Void Moths. When enemies are around and you (and allies?) are at or near full HP, it spawns 2 Arc Moths.\nWhen enemies are around and you (and allies?) are low HP, it spawns 1 Arc Moth and 1 Void Moth (maybe??). Needs more testing.",
+     "main": "Replaces Grenade Ability with 'Cage of Loyal Moths', grants an extra Grenade Ability Charge. Overrides Base (T3) Grenade Ability cooldown to 73 seconds.\n\nMoth Cage explodes on impact, releasing 2 loyal moths that fly to their nearest target.\n\nLoyal Moths variants:\n• <arc/>Arc Moths: slower-flying, offensive role. They seek out targets and detonate on contact, dealing up to <pve 526 /> <pvp [31] /> damage over a 4 meter radius and <arc/>Blinding targets. Counts as <arc/>Arc? Grenade Damage.\n• <void/>Void Moths: faster-flying, support role. They seek out allies and grant them a 22.5 HP <void/>Void Overshield on contact.\n\nWhen no enemies are within ? meters of the detonation area, it spawns 2 Void Moths. When only enemies are around, it spawns 2 Arc Moths.\n\nWhen both allies and enemies are around, it spawns 1 Arc Moth and 1 Void Moth.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692913232166,
+      "lastUpdate": 1693502745689,
       "updatedBy": "Stardust"
      }
     },
@@ -52957,7 +53022,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692986505150,
+   "lastUpload": 1693504657319,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54522,31 +54587,31 @@
    "uploadToLive": false
   },
   "4223976499": {
-   "hash": 4223976499,
    "name": "Heal Clip",
+   "hash": 4223976499,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1692913470476,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3017780555",
+     "secondary": "import secondary from 3017780555"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1693496387394,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1693504657319,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4228170798": {
    "hash": 4228170798,
