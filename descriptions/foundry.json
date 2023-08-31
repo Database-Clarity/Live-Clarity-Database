@@ -112,7 +112,17 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ammo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)"
       }
      ]
     }
@@ -628,7 +638,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Bricks spawned this way grant ?%|?% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped."
+       "text": "Ammo Bricks spawned this way grant 27.5%|60% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped."
       }
      ]
     }
@@ -917,13 +927,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Weapons matching the Ammo Type."
+       "text": "Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -933,7 +943,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -1982,27 +1992,14 @@
     {
      "linesContent": [
       {
-       "text": "• ?%: Elemental and Barrier Champion Shields"
+       "text": "• 125% Increase against PVE Combatant Shields"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
-      },
-      {
-       "text": "Tech Pack"
-      },
-      {
-       "text": " Shields)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 20%: Player Overshields; for Bodyshots against Players with "
+       "text": "• 20% Increase against Player Overshields and for bodyshots against Players with "
       },
       {
        "classNames": [ "strand" ]
@@ -2018,7 +2015,19 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increases stack multiplicatively if multiple conditions are met."
+       "text": "Combatant Shields include "
+      },
+      {
+       "classNames": [ "barrier" ]
+      },
+      {
+       "text": "Barrier Champion Shields, Elemental Shields, and Lucent Moth/Shadow Legion "
+      },
+      {
+       "text": "Tech Pack"
+      },
+      {
+       "text": " Overshields."
       }
      ]
     },
@@ -2032,7 +2041,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Damage dealt to Overshields is increased."
+       "text": " Damage Buff is increased."
       }
      ]
     }
@@ -3570,7 +3579,7 @@
  "332733060": {
   "hash": 332733060,
   "name": "Precision Instrument",
-  "lastUpload": 1692986505150,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -3603,7 +3612,14 @@
     {
      "linesContent": [
       {
-       "text": "4.2% | 8.34% | 12.5% | 16.7% | 20.8% | 25%"
+       "text": "4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(More precisely: 25% / 6 × [Stacks])"
       }
      ]
     },
@@ -3617,7 +3633,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stronger Effect."
+       "text": " Precision Damage Buff is increased."
       }
      ]
     }
@@ -4718,16 +4734,6 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 150% Increased Magazine Capacity if activated with a full Magazine*. Always rounds up."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Magazine Capacity Increase per Weapon Kill:"
       }
      ]
@@ -4764,13 +4770,33 @@
     {
      "linesContent": [
       {
-       "text": "*!!NEEDS RETESTING!! Does not "
+       "text": "Maxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not "
       },
       {
        "text": "refill"
       },
       {
-       "text": " the Magazine before the overflow effect takes place. (With maximum buff and an empty Magazine, 100% from the 150% would go to refilling the Magazine - leaving you with only a 50% Magazine Capacity Increase)"
+       "text": " the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
       }
      ]
     },
@@ -6043,13 +6069,13 @@
  "534479613": {
   "hash": 534479613,
   "name": "Arc Scavenger",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1690739860501,
+     "lastUpdate": 1693504059792,
      "updatedBy": "Stardust"
     }
    }
@@ -6066,13 +6092,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Weapons matching the Ammo Type."
+       "text": "Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
       }
      ]
     },
@@ -6082,7 +6108,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -6246,13 +6272,13 @@
  "554409585": {
   "hash": 554409585,
   "name": "Heavy Ammo Finder",
-  "lastUpload": 1680122100570,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680121831060,
+     "lastUpdate": 1693503078432,
      "updatedBy": "Stardust"
     }
    }
@@ -6356,7 +6382,17 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ammo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)"
       }
      ]
     }
@@ -6366,13 +6402,13 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1692986505150,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692902386027,
+     "lastUpdate": 1693496832136,
      "updatedBy": "Stardust"
     }
    }
@@ -6399,7 +6435,14 @@
     {
      "linesContent": [
       {
-       "text": "4.2% | 8.34% | 12.5% | 16.7% | 20.8% | 25%"
+       "text": "4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(More precisely: 25% / 6 × [Stacks])"
       }
      ]
     }
@@ -6490,6 +6533,53 @@
      "linesContent": [
       {
        "text": "[PVP] 5% | 10% | 15% 伤害"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "561986700": {
+  "hash": 561986700,
+  "name": "Loose Change",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693496503201,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Applying an Elemental Debuff grants 50? Reload Speed for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "4.5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff Duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -6750,7 +6840,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to Kinetic Weapons matching the Ammo Type."
+       "text": "Grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -6760,7 +6850,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -7117,13 +7207,13 @@
   "name": "Cross Counter",
   "itemHash": 4165919945,
   "itemName": "Liar's Handshake",
-  "lastUpload": 1686316328113,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1686316272299,
+     "lastUpdate": 1693502507136,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -7160,7 +7250,7 @@
     {
      "linesContent": [
       {
-       "text": "Cross Counter grants 200% Increased Melee Damage and restores ?HP on Melee Hits."
+       "text": "Cross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits."
       }
      ]
     },
@@ -7244,14 +7334,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Passively grants 20 Inventory Size to non-sword weapons. (Identical to a Reserves Mod)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Swords receive 20 Guard Endurance instead."
+       "text": " Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead."
       }
      ]
     }
@@ -7816,13 +7899,13 @@
  "688956976": {
   "hash": 688956976,
   "name": "Solar Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477025158,
+     "lastUpdate": 1693504115824,
      "updatedBy": "Stardust"
     }
    }
@@ -7839,13 +7922,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Weapons matching the Ammo Type."
+       "text": "Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -7855,7 +7938,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -9444,13 +9527,13 @@
  "802695661": {
   "hash": 802695661,
   "name": "Void Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477038927,
+     "lastUpdate": 1693504137985,
      "updatedBy": "Stardust"
     }
    }
@@ -9467,13 +9550,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Weapons matching the Ammo Type."
+       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -9483,7 +9566,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -10453,7 +10536,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type."
+       "text": "Grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -10463,7 +10546,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -11562,7 +11645,7 @@
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -11934,13 +12017,13 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1692730396702,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692714151864,
+     "lastUpdate": 1693495751990,
      "updatedBy": "Stardust"
     }
    }
@@ -11958,16 +12041,6 @@
      "linesContent": [
       {
        "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Maxes out at 150% Increased Magazine Capacity if activated with a full Magazine*. Always rounds up."
       }
      ]
     },
@@ -12013,13 +12086,33 @@
     {
      "linesContent": [
       {
-       "text": "*!!NEEDS RETESTING!! Does not "
+       "text": "Maxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not "
       },
       {
        "text": "refill"
       },
       {
-       "text": " the Magazine before the overflow effect takes place. (With maximum buff and an empty Magazine, 100% from the 150% would go to refilling the Magazine - leaving you with only a 50% Magazine Capacity Increase)"
+       "text": " the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
       }
      ]
     }
@@ -12029,13 +12122,13 @@
  "972757866": {
   "hash": 972757866,
   "name": "Pulse Monitor",
-  "lastUpload": 1690635217382,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1690634521988,
+     "lastUpdate": 1693496870002,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -12049,7 +12142,7 @@
     {
      "linesContent": [
       {
-       "text": "When at or below 110 HP:"
+       "text": "Grants the following while at or below 110 HP:"
       }
      ]
     },
@@ -12063,7 +12156,7 @@
     {
      "linesContent": [
       {
-       "text": "• 0.95x Ready/Stow Duration Multiplier"
+       "text": "• 0.95x Ready/Stow Animation Duration Multiplier"
       }
      ]
     },
@@ -12975,6 +13068,60 @@
    ]
   }
  },
+ "1050127423": {
+  "hash": 1050127423,
+  "name": "Wild Card",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693501285209,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Kills have a chance to release a varying amount of explosive submunitons on top of where the enemy died."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Submunitions deal up to "
+      },
+      {
+       "text": "39.5?"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]"
+      },
+      {
+       "text": " damage and inherit the weapon's "
+      },
+      {
+       "text": "Combatant Damage Scaling"
+      },
+      {
+       "text": "."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1077019636": {
   "hash": 1077019636,
   "name": "Danger Zone",
@@ -13229,13 +13376,13 @@
  "1097608874": {
   "hash": 1097608874,
   "name": "Kinetic Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477017242,
+     "lastUpdate": 1693504109563,
      "updatedBy": "Stardust"
     }
    }
@@ -13252,7 +13399,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to Kinetic Weapons matching the Ammo Type."
+       "text": "Grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -13262,7 +13409,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -13374,10 +13521,36 @@
    ]
   }
  },
+ "1119449540": {
+  "hash": 1119449540,
+  "name": "Loose Change",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693496478780,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Applying an Elemental Debuff grants 50? Reload Speed for 4.5 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -15520,7 +15693,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -15802,13 +15975,13 @@
  "1274140735": {
   "hash": 1274140735,
   "name": "Heavy Ammo Scout",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1690738228948,
+     "lastUpdate": 1693503093248,
      "updatedBy": "Stardust"
     }
    }
@@ -15828,7 +16001,7 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Bricks spawned this way grant ?%|?% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped."
+       "text": "Ammo Bricks spawned this way grant 27.5%|60% of a Regular Ammo Brick's Pickup Amount with 1|2 Mods equipped."
       }
      ]
     }
@@ -16015,13 +16188,13 @@
  "1301391064": {
   "hash": 1301391064,
   "name": "Harmonic Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477008290,
+     "lastUpdate": 1693504104017,
      "updatedBy": "Stardust"
     }
    }
@@ -16038,7 +16211,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type."
+       "text": "Grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -16048,7 +16221,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -16138,13 +16311,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand Weapons matching the Ammo Type."
+       "text": "Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -16154,7 +16327,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -17437,7 +17610,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -19130,7 +19303,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
       }
      ]
     },
@@ -19875,6 +20048,60 @@
      "linesContent": [
       {
        "text": "All Armor Charge sources grant an additional Stack."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1630940558": {
+  "hash": 1630940558,
+  "name": "Percussive Flames",
+  "itemHash": 2066430310,
+  "itemName": "Pyrogale Gauntlets",
+  "lastUpload": 1693504657319,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693502487800,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Burning Maul becomes a single high-damage slam that creates five Cyclones of flame."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Consecration's second slam creates a Cyclone of Flame."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Cyclones of Flame last ? seconds, deal continuous damage, and seek out targets."
       }
      ]
     }
@@ -20792,7 +21019,7 @@
     {
      "linesContent": [
       {
-       "text": "When at or below 110 HP:"
+       "text": "Grants the following while at or below 110 HP:"
       }
      ]
     },
@@ -20806,7 +21033,7 @@
     {
      "linesContent": [
       {
-       "text": "• 0.95x Ready/Stow Duration Multiplier"
+       "text": "• 0.95x Ready/Stow Animation Duration Multiplier"
       }
      ]
     },
@@ -23048,13 +23275,13 @@
  "1870851715": {
   "hash": 1870851715,
   "name": "Under-Over",
-  "lastUpload": 1692730396702,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692730194900,
+     "lastUpdate": 1693501880076,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -23075,27 +23302,14 @@
     {
      "linesContent": [
       {
-       "text": "• ?%: Elemental and Barrier Champion Shields"
+       "text": "• 125% Increase against PVE Combatant Shields"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?%: PvE Combatant Overshields (e.g. Lucent Moth and Shadow Legion "
-      },
-      {
-       "text": "Tech Pack"
-      },
-      {
-       "text": " Shields)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 20%: Player Overshields; for Bodyshots against Players with "
+       "text": "• 20% Increase against Player Overshields and for bodyshots against Players with "
       },
       {
        "classNames": [ "strand" ]
@@ -23111,7 +23325,19 @@
     {
      "linesContent": [
       {
-       "text": "Damage Increases stack multiplicatively if multiple conditions are met."
+       "text": "Combatant Shields include "
+      },
+      {
+       "classNames": [ "barrier" ]
+      },
+      {
+       "text": "Barrier Champion Shields, Elemental Shields, and Lucent Moth/Shadow Legion "
+      },
+      {
+       "text": "Tech Pack"
+      },
+      {
+       "text": " Overshields."
       }
      ]
     }
@@ -27660,13 +27886,13 @@
  "2257238439": {
   "hash": 2257238439,
   "name": "Strand Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477035107,
+     "lastUpdate": 1693504130609,
      "updatedBy": "Stardust"
     }
    }
@@ -27683,13 +27909,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand Weapons matching the Ammo Type."
+       "text": "Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -27699,7 +27925,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -28915,13 +29141,13 @@
  "2396489472": {
   "hash": 2396489472,
   "name": "Chain Reaction",
-  "lastUpload": 1687807942152,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1687807788502,
+     "lastUpdate": 1693492198189,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -29420,13 +29646,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Weapons matching the Ammo Type."
+       "text": "Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
       }
      ]
     },
@@ -29436,7 +29662,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -29512,13 +29738,13 @@
   "name": "Barri-nade",
   "itemHash": 90009855,
   "itemName": "Arbor Warden",
-  "lastUpload": 1686679019520,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1686676264530,
+     "lastUpdate": 1693501984036,
      "updatedBy": "Stardust"
     }
    }
@@ -29538,7 +29764,7 @@
     {
      "linesContent": [
       {
-       "text": "Barri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade."
+       "text": "Barri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade and match its cooldown."
       }
      ]
     },
@@ -30806,13 +31032,13 @@
  "2565067140": {
   "hash": 2565067140,
   "name": "Head Rush",
-  "lastUpload": 1692913470476,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692902507228,
+     "lastUpdate": 1693500351639,
      "updatedBy": "Stardust"
     }
    }
@@ -30829,7 +31055,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 15? Handling and ? Reload Speed for ? seconds."
+       "text": "Grants ? Handling and 10 Reload Speed for 5 seconds."
       }
      ]
     }
@@ -31086,13 +31312,13 @@
  "2595839237": {
   "hash": 2595839237,
   "name": "Special Ammo Finder",
-  "lastUpload": 1680122100570,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680121776429,
+     "lastUpdate": 1693503061242,
      "updatedBy": "Stardust"
     }
    }
@@ -31196,7 +31422,17 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ammo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)"
       }
      ]
     }
@@ -31800,13 +32036,13 @@
   "name": "Relentless Tracker",
   "itemHash": 896224899,
   "itemName": "Foetracer",
-  "lastUpload": 1692913470476,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692910280141,
+     "lastUpdate": 1693504652306,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -31850,7 +32086,7 @@
     {
      "linesContent": [
       {
-       "text": "Elementa Pickups include "
+       "text": "Elemental Pickups include "
       },
       {
        "classNames": [ "solar" ]
@@ -32689,13 +32925,13 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "lastUpload": 1692734897836,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692731721278,
+     "lastUpdate": 1693501854006,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -32736,7 +32972,7 @@
     {
      "linesContent": [
       {
-       "text": "Enemies hit by "
+       "text": "PVE Combatants hit by "
       },
       {
        "classNames": [ "stasis" ]
@@ -32886,13 +33122,13 @@
  "2734674728": {
   "hash": 2734674728,
   "name": "Stasis Scavenger",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680477030921,
+     "lastUpdate": 1693504123147,
      "updatedBy": "Stardust"
     }
    }
@@ -32909,13 +33145,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Weapons matching the Ammo Type."
+       "text": "Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -32925,7 +33161,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -33941,13 +34177,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Weapons matching the Ammo Type."
+       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -33957,7 +34193,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -36334,6 +36570,38 @@
    ]
   }
  },
+ "3017780555": {
+  "hash": 3017780555,
+  "name": "Heal Clip",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693496402104,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within 5.3? seconds of a Kill grants "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Cure x1 for you and allies within ? meters."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3018146897": {
   "hash": 3018146897,
   "name": "Invisible Hand",
@@ -37914,13 +38182,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an additional 3-5% of your Total Reserves to "
+       "text": "Grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Weapons matching the Ammo Type."
+       "text": "Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
       }
      ]
     },
@@ -37930,7 +38198,7 @@
     {
      "linesContent": [
       {
-       "text": "Guarantees at least 1 more Ammo on Pickups compared to without the mod. Functions the same way regardless of what spawned the Ammo Brick."
+       "text": "Always rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick."
       }
      ]
     },
@@ -38009,7 +38277,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -40692,13 +40960,13 @@
  "3418782618": {
   "hash": 3418782618,
   "name": "Rewind Rounds",
-  "lastUpload": 1690827358433,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1690827332029,
+     "lastUpdate": 1693496924901,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -40742,7 +41010,7 @@
     {
      "linesContent": [
       {
-       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (0.5? seconds)."
+       "text": "Hits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
       }
      ]
     }
@@ -44919,7 +45187,17 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Finder Bricks grant 33%|66%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+       "text": "Ammo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Ammo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)"
       }
      ]
     }
@@ -45684,6 +45962,32 @@
    ]
   }
  },
+ "3828510309": {
+  "hash": 3828510309,
+  "name": "Enlightened Action",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693492335595,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage grants 10? Handling and 10? Reload Speed per Stack for 2 seconds. Maximum of 5 Stacks."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3832366019": {
   "hash": 3832366019,
   "name": "Harmonic Siphon",
@@ -45807,7 +46111,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -47099,7 +47403,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1693246610617,
+  "lastUpload": 1693504657319,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -48580,13 +48884,13 @@
  "4087056174": {
   "hash": 4087056174,
   "name": "Recuperation",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1693504657319,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680469910155,
+     "lastUpdate": 1693503187699,
      "updatedBy": "Stardust"
     }
    }
@@ -48597,6 +48901,16 @@
      "linesContent": [
       {
        "text": "Restores 70 HP on Orb of Power Pickups."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Equipping multiple copies provides no benefit."
       }
      ]
     }
@@ -48712,13 +49026,13 @@
   "name": "Winged Eclipse",
   "itemHash": 3534173884,
   "itemName": "Mothkeeper's Wraps",
-  "lastUpload": 1692986505150,
+  "lastUpload": 1693504657319,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692913232166,
+     "lastUpdate": 1693502745689,
      "updatedBy": "Stardust"
     }
    }
@@ -48773,13 +49087,19 @@
        "text": "[PVP: 31]"
       },
       {
-       "text": " damage. Counts as "
+       "text": " damage over a 4 meter radius and "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Grenade Damage."
+       "text": "Blinding targets. Counts as "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc? Grenade Damage."
       }
      ]
     },
@@ -48808,14 +49128,17 @@
     {
      "linesContent": [
       {
-       "text": "When no enemies are around, it spawns 2 Void Moths. When enemies are around and you (and allies?) are at or near full HP, it spawns 2 Arc Moths."
+       "text": "When no enemies are within ? meters of the detonation area, it spawns 2 Void Moths. When only enemies are around, it spawns 2 Arc Moths."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "When enemies are around and you (and allies?) are low HP, it spawns 1 Arc Moth and 1 Void Moth (maybe??). Needs more testing."
+       "text": "When both allies and enemies are around, it spawns 1 Arc Moth and 1 Void Moth."
       }
      ]
     }
@@ -50025,6 +50348,52 @@
       },
       {
        "text": "Weavewalk."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4223976499": {
+  "hash": 4223976499,
+  "name": "Heal Clip",
+  "lastUpload": 1693504657319,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1693496387394,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within 5.3? seconds of a Kill grants "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Cure x1 for you and allies within ? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Allowed time before reloading is increased."
       }
      ]
     }
