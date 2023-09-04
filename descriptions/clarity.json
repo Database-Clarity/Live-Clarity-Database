@@ -4107,7 +4107,23 @@
  "332733060": {
   "hash": 332733060,
   "name": "Precision Instrument",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1693853576899,
+  "stats": {
+   "PVE Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.0434, 1.0866, 1.13, 1.1734, 1.2166, 1.26 ]
+     }
+    }
+   ],
+   "PVP Damage": [
+    {
+     "active": {
+      "multiplier": [ 1.0434, 1.0866, 1.13, 1.1734, 1.2166, 1.26 ]
+     }
+    }
+   ]
+  },
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -4132,14 +4148,25 @@
     {
      "linesContent": [
       {
-       "text": "4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "4.34% | 8.66% | 13% | 17.34% | 21.66% | 26%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "(More precisely: 25% / 6 × [Stacks])"
+       "text": "(More precisely: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "26% / 6 × [Stacks])"
       }
      ]
     },
@@ -4153,7 +4180,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Precision Damage Buff is increased."
+       "text": " Precision Damage Buff is increased by 4%."
       }
      ]
     }
@@ -7312,7 +7339,7 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1693853576899,
   "stats": {
    "PVE Damage": [
     {
@@ -13329,7 +13356,7 @@
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Reload": [
     {
@@ -15614,7 +15641,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Reload": [
     {
@@ -18195,7 +18222,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Handling": [
     {
@@ -20408,7 +20435,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Airborne": [
     {
@@ -22919,7 +22946,7 @@
   "name": "Percussive Flames",
   "itemHash": 2066430310,
   "itemName": "Pyrogale Gauntlets",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1693853576899,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22930,7 +22957,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Burning Maul becomes a single high-damage slam that creates five Cyclones of flame."
+       "text": "Burning Maul's Heavy Attack Slam deals 650% increased damage and releases 3 Waves, each of which creates a Cyclone on impact. Burning Maul ends after a single Slam."
       }
      ]
     },
@@ -22943,7 +22970,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Consecration's second slam creates a Cyclone of Flame."
+       "text": "Consecration's second slam creates a Cyclone."
       }
      ]
     },
@@ -22953,7 +22980,43 @@
     {
      "linesContent": [
       {
-       "text": "Cyclones of Flame last ? seconds, deal continuous damage, and seek out targets."
+       "text": "Cyclones track enemies (Burning Maul Cyclones move faster). Damage from multiple Cyclones stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Waves apply 20 (60 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes equipped) "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch on impact. The released Cyclones deal "
+      },
+      {
+       "text": "20",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[?]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " damage every ? seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds."
       }
      ]
     }
@@ -27592,7 +27655,7 @@
   "name": "Close Enough",
   "itemHash": 121305948,
   "itemName": "Geomag Stabilizers",
-  "lastUpload": 1692913470476,
+  "lastUpload": 1693853576899,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27628,9 +27691,12 @@
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Can increase Super Duration by up to 100%."
+       "text": "This can increase Chaos Reach Duration by ~120%."
       }
      ]
     }
@@ -42386,7 +42452,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Handling": [
     {
@@ -50711,7 +50777,7 @@
   "name": "See Me, Feel Me",
   "itemHash": 461841403,
   "itemName": "Gyrfalcon's Hauberk",
-  "lastUpload": 1682969895292,
+  "lastUpload": 1693853576899,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -50786,7 +50852,7 @@
     {
      "linesContent": [
       {
-       "text": "• Grants 375% Additional Base Class Ability Regeneration Rate"
+       "text": "• Grants 500% Additional Base Class Ability Regeneration Rate"
       }
      ]
     },
@@ -51284,7 +51350,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Range": [
     {
@@ -52718,7 +52784,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1693563000200,
+  "lastUpload": 1693853576899,
   "stats": {
    "Airborne": [
     {
