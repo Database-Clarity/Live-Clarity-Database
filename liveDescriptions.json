@@ -4094,6 +4094,22 @@
    "name": "Precision Instrument",
    "hash": 332733060,
    "type": "Weapon Trait Enhanced",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.0434, 1.0866, 1.13, 1.1734, 1.2166, 1.26 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.0434, 1.0866, 1.13, 1.1734, 1.2166, 1.26 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
      "main": "import main from 555281244",
@@ -4108,12 +4124,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1693496770448,
+     "lastUpdate": 1693851865044,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7687,14 +7703,14 @@
    },
    "editor": {
     "en": {
-     "main": "Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds. Maximum of 6 Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%\n(More precisely: 25% / 6 × [Stacks])\n\nenhanced (\n#e Precision Damage Buff is increased.\n)",
+     "main": "Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds. Maximum of 6 Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n(More precisely: #e${25*#d}% / 6 × [Stacks])\n\nenhanced (\nvar d = 1.04\n#e Precision Damage Buff is increased by 4%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693496832136,
+      "lastUpdate": 1693851788561,
       "updatedBy": "Stardust"
      }
     },
@@ -7704,7 +7720,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13187,7 +13203,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15535,7 +15551,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17531,7 +17547,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20087,7 +20103,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22318,14 +22334,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<solar/>Burning Maul becomes a single high-damage slam that creates five Cyclones of flame.\n\n<solar/>Consecration's second slam creates a Cyclone of Flame.\n\nCyclones of Flame last ? seconds, deal continuous damage, and seek out targets.",
+     "main": "<solar/>Burning Maul's Heavy Attack Slam deals 650% increased damage and releases 3 Waves, each of which creates a Cyclone on impact. Burning Maul ends after a single Slam.\n\n<solar/>Consecration's second slam creates a Cyclone.\n\nCyclones track enemies (Burning Maul Cyclones move faster). Damage from multiple Cyclones stacks.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on impact. The released Cyclones deal <pve 20 /> <pvp [?] /> damage every ? seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693502487800,
+      "lastUpdate": 1693853500174,
       "updatedBy": "Stardust"
      }
     },
@@ -22335,7 +22351,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27219,7 +27235,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Collecting <arc/>Ionic Traces grants 2% Super Energy with Chaos Reach selected.\n\nChaos Reach refunds 10% Super Energy on hit. \n0.75 second cooldown between refunds.\nCan increase Super Duration by up to 100%.",
+     "main": "Collecting <arc/>Ionic Traces grants 2% Super Energy with Chaos Reach selected.\n\nChaos Reach refunds 10% Super Energy on hit. \n0.75 second cooldown between refunds.\n\nThis can increase Chaos Reach Duration by ~120%.",
      "secondary": "import self"
     },
     "ko": {
@@ -27234,7 +27250,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692903161547,
+      "lastUpdate": 1693852552374,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -27247,12 +27263,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1658513881743,
-     "updatedBy": "Fading-Shadow"
+     "lastUpdate": 1693852262946,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692913470476,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42203,7 +42219,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49537,7 +49553,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants Volatile Rounds for <pve 10 /> <pvp [3] /> seconds upon exiting <void/>Void Invisibility. (Letting the timer run out with Echo of Persistence equipped will not grant you Volatile Rounds)\n\nOn Finishers while affected by <void/>Void Invisibility:\n• Grants a 35% Weapon Damage Buff for 6 seconds\n• Grants you and allies within 24 meters the Reserve Overshield buff\n\nReserve Overshield:\n• Grants 375% Additional Base Class Ability Regeneration Rate\n• Consumed on Class Abiliy usage, granting the user a 40 HP <void/>Void Overshield for 10 seconds",
+     "main": "Grants Volatile Rounds for <pve 10 /> <pvp [3] /> seconds upon exiting <void/>Void Invisibility. (Letting the timer run out with Echo of Persistence equipped will not grant you Volatile Rounds)\n\nOn Finishers while affected by <void/>Void Invisibility:\n• Grants a 35% Weapon Damage Buff for 6 seconds\n• Grants you and allies within 24 meters the Reserve Overshield buff\n\nReserve Overshield:\n• Grants 500% Additional Base Class Ability Regeneration Rate\n• Consumed on Class Abiliy usage, granting the user a 40 HP <void/>Void Overshield for 10 seconds",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -49548,7 +49564,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1682969808692,
+      "lastUpdate": 1693853546263,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -49562,7 +49578,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682969895292,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50108,7 +50124,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51292,7 +51308,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693563000200,
+   "lastUpload": 1693853576899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
