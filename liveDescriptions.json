@@ -970,26 +970,42 @@
    "name": "Sword Logic",
    "hash": 31345821,
    "type": "Weapon Trait",
+   "stats": {
+    "PVE Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.15, 1.25, 1.35, 1.5 ]
+      }
+     }
+    ],
+    "PVP Damage": [
+     {
+      "active": {
+       "multiplier": [ 1.15, 1.2, 1.35, 1.5 ]
+      }
+     }
+    ]
+   },
    "editor": {
     "en": {
-     "main": "Weapon Kills grant Stacks of Sword Logic.\n\nThe number of Stacks and the buff duration are tied to the highest <link Enemy Rank [#CombatantClassifications] /> killed since activation:\n• Minors: 1 Stack for 5.5 seconds\n• Elites, Players: 2 Stacks for 7.5 seconds\n• Minibosses and Players in their Super: 3 Stacks for 10.5 seconds\n• Bosses: 4 Stacks for 15.5 seconds\n\nDamage Increase at 1|2|3|4 Stacks: 15%|25%|35%|50%\n\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n\nRemains active while stowed.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "Weapon Kills grant Stacks of Sword Logic.\n\nThe number of Stacks and the buff duration are tied to the highest <link Enemy Rank [#CombatantClassifications] /> killed since activation:\n• Minors: 1 Stack for 5.5 seconds\n• Elites, Players: 2 Stacks for 7.5 seconds\n• Minibosses and Players in their Super: 3 Stacks for 10.5 seconds\n• Bosses: 4 Stacks for 15.5 seconds\n\nDamage Increase at 1|2|3|4 Stacks:\n15% | <pve 25% /> <pvp [20%] /> | 35% | 50%\n\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n\nRemains active while stowed.\n\nenhanced (\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1694607190392,
+      "lastUpdate": 1694646662640,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1694646696096,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694607219206,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8816,6 +8832,7 @@
    "name": "Sword Logic",
    "hash": 639190697,
    "type": "Weapon Trait Enhanced",
+   "importStatsFrom": 31345821,
    "editor": {
     "en": {
      "main": "import main from 31345821",
@@ -8830,12 +8847,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1694646689624,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694112756847,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15634,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17657,7 +17674,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20213,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42385,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50290,7 +50307,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51474,7 +51491,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694611743320,
+   "lastUpload": 1694646700864,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
