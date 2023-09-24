@@ -1321,14 +1321,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "solar" ]
@@ -2741,7 +2744,7 @@
  "192157151": {
   "hash": 192157151,
   "name": "Ambush",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1695589383294,
   "stats": {
    "Charge Draw": [
     {
@@ -2786,7 +2789,7 @@
     {
      "linesContent": [
       {
-       "text": "After not dealing or receiving damage for at least 5 seconds:"
+       "text": "Grants the following benefits if you have not dealt or received damage in the last 5 seconds:"
       }
      ]
     },
@@ -2800,14 +2803,14 @@
     {
      "linesContent": [
       {
-       "text": "• 10.78% Increased Damage against PvE Combatants. Linear Fusion Rifles only receive an 8.88% Damage Increase."
+       "text": "• 15% Decreased Draw Time on Bows"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 0.85x Draw Time Multiplier on Bows."
+       "text": "• 10.78% Increased Damage against PvE Combatants. Linear Fusion Rifles only receive an 8.88% Damage Increase."
       }
      ]
     },
@@ -2817,7 +2820,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff activates for 2 seconds after dealing or receiving damage."
+       "text": "Deactivates 2 seconds after exhanging damage."
       }
      ]
     }
@@ -3090,7 +3093,7 @@
   "name": "Vanishing Execution",
   "itemHash": 2203146422,
   "itemName": "Assassin's Cowl",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -3152,7 +3155,7 @@
     {
      "linesContent": [
       {
-       "text": "• Minors: 6.8 seconds [9.8s} | 100 HP {?)"
+       "text": "• Minors: 6.8 seconds {9.8s} | 100 HP {?}"
       }
      ]
     },
@@ -3173,7 +3176,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bosses = 13.3s | 200 HP {Not Finishable}"
+       "text": "• Bosses = 13.3s | 200 HP {?}"
       }
      ]
     },
@@ -3374,7 +3377,7 @@
  "247725512": {
   "hash": 247725512,
   "name": "Rapid Hit",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1695589383294,
   "stats": {
    "Reload": [
     {
@@ -3399,7 +3402,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds."
+       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration."
       }
      ]
     },
@@ -6039,7 +6042,7 @@
  "465808236": {
   "hash": 465808236,
   "name": "Overload Machine Guns",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6053,7 +6056,7 @@
        "classNames": [ "overload" ]
       },
       {
-       "text": "Overload Shot buff for 6 seconds. Reloading removes the buff and resets the Hit Counter."
+       "text": "Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter."
       }
      ]
     },
@@ -6122,7 +6125,7 @@
  "465808238": {
   "hash": 465808238,
   "name": "Communal Pickups",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6143,20 +6146,20 @@
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Reduces "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Tangle Cooldown is decreased by 5 seconds"
+       "text": "Tangle Cooldown by 5 seconds"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 3 Stacks of Pickup-Matching Weapon Surge for "
+       "text": "• Grants 3 Stacks of Subclass-Matching Weapon Surge for "
       },
       {
        "text": "11",
@@ -6635,7 +6638,7 @@
   "name": "Wish-Dragon Teeth",
   "itemHash": 475652357,
   "itemName": "Young Ahamkara's Spine",
-  "lastUpload": 1685474821788,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6701,7 +6704,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Ability Damage recharges 33% of Tripmine Grenade Ability. Tripmine and Knife Trick hits count as 2 instances of Solar Ability Damage if the target survives."
+       "text": "Solar Ability Damage recharges 33% of Tripmine Grenade Ability. The initial "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch tick from Abilities will also count as Ability Damage for this."
       }
      ]
     }
@@ -7020,7 +7029,7 @@
  "509074078": {
   "hash": 509074078,
   "name": "Steady Hands",
-  "lastUpload": 1679071363533,
+  "lastUpload": 1695589383294,
   "stats": {
    "Handling": [
     {
@@ -7056,27 +7065,6 @@
      "linesContent": [
       {
        "text": "Additional kills while the perk is active refresh the duration to 6.5 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -7174,7 +7162,7 @@
     {
      "linesContent": [
       {
-       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10% and narrows the Accuracy and Aim Assist Cones."
+       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%. It also reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount."
       }
      ]
     },
@@ -7391,7 +7379,7 @@
  "534479613": {
   "hash": 534479613,
   "name": "Arc Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -7399,14 +7387,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "arc" ]
@@ -8121,14 +8112,24 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 2.5% with "
+      },
+      {
+       "text": "Forerunner",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -9763,7 +9764,7 @@
  "688956976": {
   "hash": 688956976,
   "name": "Solar Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -9771,14 +9772,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "solar" ]
@@ -10870,7 +10874,7 @@
  "724043347": {
   "hash": 724043347,
   "name": "Elemental Orbs: Void",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -10911,7 +10915,7 @@
        "text": " "
       },
       {
-       "text": "[100]",
+       "text": "[101]",
        "classNames": [ "pvp" ]
       },
       {
@@ -10941,7 +10945,7 @@
  "724043348": {
   "hash": 724043348,
   "name": "Elemental Orbs: Arc",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -10982,7 +10986,7 @@
        "text": " "
       },
       {
-       "text": "[100]",
+       "text": "[101]",
        "classNames": [ "pvp" ]
       },
       {
@@ -11012,7 +11016,7 @@
  "724043349": {
   "hash": 724043349,
   "name": "Elemental Orbs: Solar",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11053,7 +11057,7 @@
        "text": " "
       },
       {
-       "text": "[100]",
+       "text": "[101]",
        "classNames": [ "pvp" ]
       },
       {
@@ -12200,7 +12204,7 @@
  "802695661": {
   "hash": 802695661,
   "name": "Void Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -12208,14 +12212,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "void" ]
@@ -12963,27 +12970,6 @@
        "text": " Initial Buff Duration is increased by 1 second."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -13340,14 +13326,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
       }
      ]
     },
@@ -16721,7 +16710,7 @@
  "1097608874": {
   "hash": 1097608874,
   "name": "Kinetic Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -16729,14 +16718,24 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Kinetic Weapons matching the Ammo Type. This is increased to 2.5% with "
+      },
+      {
+       "text": "Forerunner",
+       "classNames": [ "yellow" ]
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -16872,7 +16871,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Reload": [
     {
@@ -17083,7 +17082,7 @@
   "name": "Planetary Torrent",
   "itemHash": 1725917554,
   "itemName": "Vesper of Radius",
-  "lastUpload": 1685474821788,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -17177,7 +17176,7 @@
     {
      "linesContent": [
       {
-       "text": "Rifts emit an Arc Shockwave every 5 second, dealing "
+       "text": "Rifts emit an Arc Shockwave every 5 seconds, dealing "
       },
       {
        "text": "200",
@@ -19520,7 +19519,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Handling": [
     {
@@ -20027,7 +20026,7 @@
  "1301391064": {
   "hash": 1301391064,
   "name": "Harmonic Scavenger",
-  "lastUpload": 1693507665852,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -20035,14 +20034,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture."
       }
      ]
     },
@@ -20119,14 +20121,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "strand" ]
@@ -21001,45 +21006,6 @@
        "text": " Buff Duration is increased by 1 second."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -21733,7 +21699,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Airborne": [
     {
@@ -21861,7 +21827,7 @@
  "1456244346": {
   "hash": 1456244346,
   "name": "Overload Hand Cannon",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -21875,7 +21841,7 @@
        "classNames": [ "overload" ]
       },
       {
-       "text": "Overload Shot buff for 6 seconds. Reloading removes the buff and resets the Hit Counter."
+       "text": "Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter."
       }
      ]
     },
@@ -21944,7 +21910,7 @@
  "1456244347": {
   "hash": 1456244347,
   "name": "Unstoppable Fusion",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -21958,7 +21924,7 @@
        "classNames": [ "unstoppable" ]
       },
       {
-       "text": "Unstoppable Shot buff."
+       "text": "Unstoppable Shot buff to your next shot."
       }
      ]
     },
@@ -22080,7 +22046,7 @@
  "1456244349": {
   "hash": 1456244349,
   "name": "Unstoppable Scout Rifle",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22094,7 +22060,7 @@
        "classNames": [ "unstoppable" ]
       },
       {
-       "text": "Unstoppable Shot buff."
+       "text": "Unstoppable Shot buff to your next shot."
       }
      ]
     },
@@ -22474,7 +22440,7 @@
   "name": "One with the Void",
   "itemHash": 3234692237,
   "itemName": "Briarbinds",
-  "lastUpload": 1692986505150,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22485,7 +22451,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Souls last 5 seconds longer and can be retrieved by interacting with them, granting "
+       "text": "Void Souls last 5 seconds longer and can be retrieved by interacting with them. Retrieving them grants "
       },
       {
        "classNames": [ "void" ]
@@ -22501,33 +22467,21 @@
     {
      "linesContent": [
       {
-       "text": "Void Soul Kills increase their Damage and Health:"
+       "text": "Void Soul Kills increase their Damage and Damage Resistance, maxing out after 6 Kills:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 16.3%|34.5%|50%|83.75%|100% Increased "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Soul Damage with 1|2|3|4|5 Kills"
+       "text": "• 16.6%|33.3%|50%|66.67%|83.3%|100% Increased Void Soul Damage with 1|2|...|6 Kills"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 13.3%|26.6%|40%|53%|66.7% Increased "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Soul Health"
+       "text": "• 8.3%|16.7%|25%|33.3%|41.7%|50 Increased Void Soul Damage Resistance"
       }
      ]
     },
@@ -22537,7 +22491,7 @@
     {
      "linesContent": [
       {
-       "text": "If multiple Void Souls tether the same enemy, they will each deal the damage of the first soul to do so."
+       "text": "If multiple Void Souls tether the same enemy, they will each deal the damage of the first Soul to do so."
       }
      ]
     }
@@ -22946,7 +22900,7 @@
  "1546637391": {
   "hash": 1546637391,
   "name": "Vorpal Weapon",
-  "lastUpload": 1686511972745,
+  "lastUpload": 1695589383294,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22954,7 +22908,15 @@
     {
      "linesContent": [
       {
-       "text": "Deals increased damage against Minibosses, Bosses, and Vehicles, as well as Players in their Super Ability."
+       "text": "Deals increased damage against "
+      },
+      {
+       "text": "Minibosses, Bosses, and Vehicles",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ", as well as Players in their Super Ability."
       }
      ]
     },
@@ -22971,10 +22933,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons: "
+       "text": "Primary Weapons: "
       },
       {
        "text": "20%",
@@ -22992,10 +22957,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons: "
+       "text": "Special Weapons: "
       },
       {
        "text": "15%",
@@ -23013,10 +22981,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Weapons: "
+       "text": "Heavy Weapons: "
       },
       {
        "text": "10%",
@@ -23828,7 +23799,7 @@
  "1583705720": {
   "hash": 1583705720,
   "name": "Stats for All",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1695589383294,
   "stats": {
    "Range": [
     {
@@ -23921,45 +23892,6 @@
      "linesContent": [
       {
        "text": "Buff cannot be refreshed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -24589,7 +24521,7 @@
   "name": "Percussive Flames",
   "itemHash": 2066430310,
   "itemName": "Pyrogale Gauntlets",
-  "lastUpload": 1693853576899,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -24597,10 +24529,13 @@
     {
      "linesContent": [
       {
+       "text": "Modifies "
+      },
+      {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Burning Maul's Heavy Attack Slam deals 650% increased damage and releases 3 Waves, each of which creates a Cyclone on impact. Burning Maul ends after a single Slam."
+       "text": "Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies."
       }
      ]
     },
@@ -24610,20 +24545,7 @@
     {
      "linesContent": [
       {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Consecration's second slam creates a Cyclone."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Cyclones track enemies (Burning Maul Cyclones move faster). Damage from multiple Cyclones stacks."
+       "text": "Damage from multiple Cyclones can overlap."
       }
      ]
     },
@@ -24645,7 +24567,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch on impact. The released Cyclones deal "
+       "text": "Scorch on Impact. The released Cyclones deal "
       },
       {
        "text": "20",
@@ -24655,11 +24577,38 @@
        "text": " "
       },
       {
-       "text": "[?]",
+       "text": "[16]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage every ? seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds."
+       "text": " damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Consecration's slam creates a Cyclone that deals "
+      },
+      {
+       "text": "?",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[3]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " damage and does not have tracking."
       }
      ]
     }
@@ -27342,7 +27291,7 @@
  "1820235745": {
   "hash": 1820235745,
   "name": "Subsistence",
-  "lastUpload": 1690320394706,
+  "lastUpload": 1695589383294,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27373,7 +27322,7 @@
     {
      "linesContent": [
       {
-       "text": "SMG and Auto Rifle Kills refill 17% of the magazine."
+       "text": "Submachine Gun and Auto Rifle Kills refill 17% of the magazine."
       }
      ]
     }
@@ -29732,7 +29681,7 @@
   "name": "Hammer of the Gods",
   "itemHash": 1703598057,
   "itemName": "Point-Contact Cannon Brace",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33451,7 +33400,7 @@
  "2257238439": {
   "hash": 2257238439,
   "name": "Strand Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33459,14 +33408,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "strand" ]
@@ -35154,14 +35106,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "arc" ]
@@ -37856,7 +37811,7 @@
   "name": "Hawkeye Hack",
   "itemHash": 1321354573,
   "itemName": "Celestial Nighthawk",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1695589383294,
   "stats": {
    "PVE Damage": [
     {
@@ -37899,7 +37854,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode."
+       "text": "Scoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode, dealing up to 400 damage to enemies within ? meters."
       }
      ]
     }
@@ -38829,7 +38784,7 @@
  "2734674728": {
   "hash": 2734674728,
   "name": "Stasis Scavenger",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1695589383294,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -38837,14 +38792,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "stasis" ]
@@ -39602,7 +39560,7 @@
   "name": "Rites of Ember",
   "itemHash": 2316914168,
   "itemName": "Dawn Chorus",
-  "lastUpload": 1694977380228,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -39635,7 +39593,7 @@
     {
      "linesContent": [
       {
-       "text": "(Daybreak Projectiles can hit twice - doubling the damage and the amount of Scorch applied)"
+       "text": "(Daybreak Projectiles can often hit twice for double Damage and double Scorch)"
       }
      ]
     },
@@ -40079,14 +40037,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "void" ]
@@ -40403,7 +40364,7 @@
  "2846385770": {
   "hash": 2846385770,
   "name": "Rangefinder",
-  "lastUpload": 1692738940999,
+  "lastUpload": 1695589383294,
   "stats": {
    "Zoom": [
     {
@@ -40437,7 +40398,7 @@
     {
      "linesContent": [
       {
-       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10% and narrows the Accuracy and Aim Assist Cones."
+       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%. It also reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount."
       }
      ]
     }
@@ -41595,7 +41556,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds."
+       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration."
       }
      ]
     },
@@ -44106,14 +44067,17 @@
     {
      "linesContent": [
       {
-       "text": "On Ammo Brick Pickups in PVE game modes:"
+       "text": "Only works in PvE game modes."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants an additional 1% of your Total Reserves to "
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to "
       },
       {
        "classNames": [ "stasis" ]
@@ -44192,7 +44156,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Handling": [
     {
@@ -47332,7 +47296,15 @@
     {
      "linesContent": [
       {
-       "text": "Deals increased damage against Minibosses, Bosses, and Vehicles, as well as Players in their Super Ability."
+       "text": "Deals increased damage against "
+      },
+      {
+       "text": "Minibosses, Bosses, and Vehicles",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": ", as well as Players in their Super Ability."
       }
      ]
     },
@@ -47349,10 +47321,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "primary" ]
       },
       {
-       "text": " Primary Weapons: "
+       "text": "Primary Weapons: "
       },
       {
        "text": "20%",
@@ -47370,10 +47345,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "special" ]
       },
       {
-       "text": " Special Weapons: "
+       "text": "Special Weapons: "
       },
       {
        "text": "15%",
@@ -47391,10 +47369,13 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "heavy" ]
       },
       {
-       "text": " Heavy Weapons: "
+       "text": "Heavy Weapons: "
       },
       {
        "text": "10%",
@@ -49670,7 +49651,7 @@
  "3651607301": {
   "hash": 3651607301,
   "name": "Sect of Insight",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49678,7 +49659,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 2 Precision Multikills generates an Orb of Power for allies that grants 3.57% Super Energy."
+       "text": "Scoring 2 Precision Multikills generates an Orb of Power at the target's location for allies that grants 3.57% Super Energy."
       }
      ]
     },
@@ -49716,7 +49697,7 @@
     {
      "linesContent": [
       {
-       "text": "• Miniboss or Champion: "
+       "text": "• Miniboss or Boss: "
       },
       {
        "classNames": [ "heavy" ]
@@ -49732,7 +49713,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawned Ammo Bricks grant 33% less ammo."
+       "text": "Spawned Ammo Bricks grant 60% of a Regular Ammo Brick's pickup amount but retain full variability."
       }
      ]
     },
@@ -49742,7 +49723,7 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Allies not using Sect of Insight gain 35% Increased Damage on Finishers for 20 seconds."
+       "text": "Finishing a Miniboss or Boss grants 35% Increased Damage to Aeon Allies not using Sect of Insight for 20 seconds."
       }
      ]
     }
@@ -51048,7 +51029,7 @@
  "3683811620": {
   "hash": 3683811620,
   "name": "Sect of Vigor",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51063,7 +51044,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 100% Class Ability Energy on Ally Revival."
+       "text": "Reviving Allies grants 100% Class Ability Energy."
       }
      ]
     },
@@ -51073,7 +51054,7 @@
     {
      "linesContent": [
       {
-       "text": "Casting Super fully heals allies within 30 meters."
+       "text": "Casting Super fully heals Aeon Allies within 30 meters. Aeon Allies not using Sect of Vigor also gain a 110 HP Overshield for 20 seconds."
       }
      ]
     },
@@ -51083,7 +51064,7 @@
     {
      "linesContent": [
       {
-       "text": "Aeon Allies not using Sect of Vigor additionally receive a 110 HP Overshield for 20 seconds that starts recharging after 3 seconds if not broken."
+       "text": "The Overshield will start regenerating after 3 seconds if it isn't fully broken."
       }
      ]
     }
@@ -52959,7 +52940,7 @@
   "name": "Grasp of the Devourer",
   "itemHash": 2780717641,
   "itemName": "Necrotic Grip",
-  "lastUpload": 1678582059138,
+  "lastUpload": 1695589383294,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -53037,7 +53018,7 @@
        "text": "Necrotic Poison ticks every "
       },
       {
-       "text": "0.5",
+       "text": "0.52",
        "classNames": [ "pve" ]
       },
       {
@@ -53100,7 +53081,7 @@
     {
      "linesContent": [
       {
-       "text": "Necrotic Poison deals "
+       "text": "Necrotic Poison's first tick deals "
       },
       {
        "text": "34",
@@ -53114,7 +53095,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage at base, with each tick dealing 7.7% more damage than the last one inside PvE."
+       "text": " damage. Inside PvE, the first 14 ticks deal 11% more damage than the last one and the last 5 ticks deal ~41% more damage than the last."
       }
      ]
     },
@@ -53124,7 +53105,7 @@
     {
      "linesContent": [
       {
-       "text": "Poisoned enemies (from any poison source) spread poison on death in a 5 meter radius."
+       "text": "Poisoned enemies spread Necrotic Poison on death in a 5 meter radius."
       }
      ]
     }
@@ -53264,7 +53245,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Range": [
     {
@@ -54708,7 +54689,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1695589383294,
   "stats": {
    "Airborne": [
     {
@@ -58286,7 +58267,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Refill amount is increased by an additive 10%. (3% on SMGs and Auto Rifles)"
+       "text": " Refill amount is increased by an additive 10%. (3% on Submachine Guns and Auto Rifles)"
       }
      ]
     }
