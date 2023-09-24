@@ -2622,14 +2622,14 @@
    },
    "editor": {
     "en": {
-     "main": "After not dealing or receiving damage for at least 5 seconds:\n• 20 Range and 20 Handling\n• 10.78% Increased Damage against PvE Combatants. Linear Fusion Rifles only receive an 8.88% Damage Increase.\n• 0.85x Draw Time Multiplier on Bows.\n\nBuff activates for 2 seconds after dealing or receiving damage.",
+     "main": "Grants the following benefits if you have not dealt or received damage in the last 5 seconds:\n• 20 Range and 20 Handling\n• 15% Decreased Draw Time on Bows\n• 10.78% Increased Damage against PvE Combatants. Linear Fusion Rifles only receive an 8.88% Damage Increase.\n\nDeactivates 2 seconds after exhanging damage.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689197715597,
+      "lastUpdate": 1695583013272,
       "updatedBy": "Stardust"
      }
     },
@@ -2639,7 +2639,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3175,7 +3175,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n{Finishers} increase the duration of <void/>Void Invisibility and restore additional health.\n\nInvisibility Duration | Health based on <link enemy rank [#CombatantClassifications] />:\n• Minors: 6.8 seconds [9.8s} | 100 HP {?)\n• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}\n• Minibosses = 12.8s {15.8s} | ? HP {200 HP}\n• Bosses = 13.3s | 200 HP {Not Finishable}\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
+     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n{Finishers} increase the duration of <void/>Void Invisibility and restore additional health.\n\nInvisibility Duration | Health based on <link enemy rank [#CombatantClassifications] />:\n• Minors: 6.8 seconds {9.8s} | 100 HP {?}\n• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}\n• Minibosses = 12.8s {15.8s} | ? HP {200 HP}\n• Bosses = 13.3s | 200 HP {?}\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -3186,7 +3186,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690731117657,
+      "lastUpdate": 1695587391670,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -3200,7 +3200,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3272,7 +3272,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds.\n\nBenefits at 1|2|3|4|5 Stacks:\n• 2|12|14|18|25 Stability\n• 5|30|35|42|60 Reload Speed\n• 0.99x|0.96x|0.95x|0.945x|0.92x Reload Duration Multiplier\n\nenhanced (\n#e Stronger Effect.\n)",
+     "main": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration.\n\nBenefits at 1|2|3|4|5 Stacks:\n• 2|12|14|18|25 Stability\n• 5|30|35|42|60 Reload Speed\n• 0.99x|0.96x|0.95x|0.945x|0.92x Reload Duration Multiplier\n\nenhanced (\n#e Stronger Effect.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -3283,7 +3283,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689194530560,
+      "lastUpdate": 1695582627378,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -3297,7 +3297,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6404,14 +6404,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Sustained fire for 0.6? seconds with a Machine Gun grants the <overload/>Overload Shot buff for 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns are always Overcharged when the modifier is active. (This is currently not functioning properly)\n\nimport overload from global",
+     "main": "Sustained fire for 0.6? seconds with a Machine Gun grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns are always Overcharged when the modifier is active. (This is currently not functioning properly)\n\nimport overload from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695500536883,
+      "lastUpdate": 1695582327152,
       "updatedBy": "Stardust"
      }
     },
@@ -6421,7 +6421,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6431,14 +6431,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Grants the following benefits on Ally Interaction with a <strand/>Tangle or an Elemental Orb:\n• <strand/>Tangle Cooldown is decreased by 5 seconds\n• Grants 3 Stacks of Pickup-Matching Weapon Surge for <pve 11 /> <pvp [6] /> seconds",
+     "main": "Grants the following benefits on Ally Interaction with a <strand/>Tangle or an Elemental Orb:\n• Reduces <strand/>Tangle Cooldown by 5 seconds\n• Grants 3 Stacks of Subclass-Matching Weapon Surge for <pve 11 /> <pvp [6] /> seconds",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695500883538,
+      "lastUpdate": 1695582470537,
       "updatedBy": "Stardust"
      }
     },
@@ -6448,7 +6448,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6767,7 +6767,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters\n• Explosion no longer deals self-damage and has no damage falloff\n• Lasts 30 seconds (10s 🠚 30s)\n• Increases Tripmine Durability to 100 HP with 50% Damage Resist\n\n<solar/>Solar Ability Damage recharges 33% of Tripmine Grenade Ability. Tripmine and Knife Trick hits count as 2 instances of Solar Ability Damage if the target survives.\n\n",
+     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters\n• Explosion no longer deals self-damage and has no damage falloff\n• Lasts 30 seconds (10s 🠚 30s)\n• Increases Tripmine Durability to 100 HP with 50% Damage Resist\n\n<solar/>Solar Ability Damage recharges 33% of Tripmine Grenade Ability. The initial <solar/>Scorch tick from Abilities will also count as Ability Damage for this.\n",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -6778,7 +6778,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685474749689,
+      "lastUpdate": 1695587802760,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -6787,12 +6787,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1658513881742,
-     "updatedBy": "[Redacted]"
+     "lastUpdate": 1685474824079,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685474821788,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7168,7 +7168,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill, for #e${8.5+#d} seconds:\nGrants 100 Handling and a 0.825x Handling Animation Duration Multiplier to all weapons.\n\nAdditional kills while the perk is active refresh the duration to 6.5 seconds.\n\nenhanced (\nvar d = 1\n#e Initial Buff Duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "On Weapon Kill, for #e${8.5+#d} seconds:\nGrants 100 Handling and a 0.825x Handling Animation Duration Multiplier to all weapons.\n\nAdditional kills while the perk is active refresh the duration to 6.5 seconds.\n\nenhanced (\nvar d = 1\n#e Initial Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -7179,7 +7179,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679071030129,
+      "lastUpdate": 1695582661964,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -7193,7 +7193,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679071363533,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7511,14 +7511,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "On Ammo Brick Pickups in PVE game modes:\nGrants an additional 1% of your Total Reserves to #element. This is increased to 10% with #exceptions.\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles, Swords, and Grand Overture",
+     "main": "Only works in PvE game modes.\n\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to #element. #exceptions\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504059792,
+      "lastUpdate": 1695588362742,
       "updatedBy": "Stardust"
      }
     },
@@ -7528,7 +7528,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9293,14 +9293,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
+     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504115824,
+      "lastUpdate": 1695588246305,
       "updatedBy": "Stardust"
      }
     },
@@ -9310,7 +9310,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9838,14 +9838,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "While on a <void/>Void Subclass:\nVoid Weapon Kills progress a counter, spawning a Void Elemental Orb upon reaching 100%.\n\nVoid Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [100] /> damage and applying <void/>Volatile in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
+     "main": "While on a <void/>Void Subclass:\nVoid Weapon Kills progress a counter, spawning a Void Elemental Orb upon reaching 100%.\n\nVoid Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [101] /> damage and applying <void/>Volatile in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695500171526,
+      "lastUpdate": 1695582489952,
       "updatedBy": "Stardust"
      }
     },
@@ -9855,7 +9855,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9865,14 +9865,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "While on an <arc/>Arc Subclass:\nArd Weapon Kills progress a counter, spawning an Arc Elemental Orb upon reaching 100%.\n\nArc Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [100] /> damage and applying <arc/>Jolt in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
+     "main": "While on an <arc/>Arc Subclass:\nArd Weapon Kills progress a counter, spawning an Arc Elemental Orb upon reaching 100%.\n\nArc Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [101] /> damage and applying <arc/>Jolt in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695500252202,
+      "lastUpdate": 1695582485273,
       "updatedBy": "Stardust"
      }
     },
@@ -9882,7 +9882,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9892,14 +9892,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "While on a <solar/>Solar Subclass:\nArd Weapon Kills progress a counter, spawning a Solar Elemental Orb upon reaching 100%.\n\nArc Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [100] /> damage and applying 40 <solar/>Scorch (60 with <solar/>Ember of Ashes) in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
+     "main": "While on a <solar/>Solar Subclass:\nArd Weapon Kills progress a counter, spawning a Solar Elemental Orb upon reaching 100%.\n\nArc Elemental Orbs can be picked up and thrown. They explode on impact dealing <pve 450 /> <pvp [101] /> damage and applying 40 <solar/>Scorch (60 with <solar/>Ember of Ashes) in a 5? meter radius.\n\nElemental Orbs count as \"weapons\" and thus contribute to the activation progress of mods/fragments/etc. that rely on weapon kills such as Ammo Finder and Siphon mods.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695500381931,
+      "lastUpdate": 1695582487715,
       "updatedBy": "Stardust"
      }
     },
@@ -9909,7 +9909,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10917,14 +10917,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
+     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504137985,
+      "lastUpdate": 1695588293504,
       "updatedBy": "Stardust"
      }
     },
@@ -10934,7 +10934,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15422,14 +15422,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
+     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 2.5% with <yellow Forerunner />.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504109563,
+      "lastUpdate": 1695588193229,
       "updatedBy": "Stardust"
      }
     },
@@ -15439,7 +15439,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15943,14 +15943,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While surrounded by at least 3 enemies within 15 metres:\nGain Additional Base Class Ability Regeneration Rate.\n\nAdditional Base Class Ability Regeneration Rate with:\n• 3 Enemies: 250%\n• 4 Enemies: 666%\n• 5 Enemies: 1085%\n• 6+ Enemies: 1500%\n\n1 second after casting Rift:\nAn Arc Shockwave is cast that deals <pve 300 /> <pvp [100] /> damage and knocks back enemies in a 7.5 meter radius.\n\nRifts emit an Arc Shockwave every 5 second, dealing <pve 200 /> <pvp [70] /> damage to enemies within ? meters.\n\nEnemies killed by Shockwaves explode, dealing 100 damage (and Blinding nearby targets if on an Arc Subclass).",
+     "main": "While surrounded by at least 3 enemies within 15 metres:\nGain Additional Base Class Ability Regeneration Rate.\n\nAdditional Base Class Ability Regeneration Rate with:\n• 3 Enemies: 250%\n• 4 Enemies: 666%\n• 5 Enemies: 1085%\n• 6+ Enemies: 1500%\n\n1 second after casting Rift:\nAn Arc Shockwave is cast that deals <pve 300 /> <pvp [100] /> damage and knocks back enemies in a 7.5 meter radius.\n\nRifts emit an Arc Shockwave every 5 seconds, dealing <pve 200 /> <pvp [70] /> damage to enemies within ? meters.\n\nEnemies killed by Shockwaves explode, dealing 100 damage (and Blinding nearby targets if on an Arc Subclass).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685474726344,
+      "lastUpdate": 1695583921282,
       "updatedBy": "Stardust"
      }
     },
@@ -15960,7 +15960,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1685474821788,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17674,7 +17674,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18423,14 +18423,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = Trace Rifles, Swords, and Grand Overture",
+     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693507659219,
+      "lastUpdate": 1695588319258,
       "updatedBy": "Stardust"
      }
     },
@@ -18440,7 +18440,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693507665852,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20323,14 +20323,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the <overload/>Overload Shot buff for 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons are always Overcharged when the modifier is active. (This is currently not functioning properly)\n\nimport overload from global",
+     "main": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons are always Overcharged when the modifier is active. (This is currently not functioning properly)\n\nimport overload from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695495650818,
+      "lastUpdate": 1695582343208,
       "updatedBy": "Stardust"
      }
     },
@@ -20340,7 +20340,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20350,14 +20350,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff.\n\nFusion Rifles are always Overcharged when the modifier is active.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nimport unstoppable from global",
+     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nFusion Rifles are always Overcharged when the modifier is active.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nimport unstoppable from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695495875045,
+      "lastUpdate": 1695582262214,
       "updatedBy": "Stardust"
      }
     },
@@ -20367,7 +20367,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20404,14 +20404,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the <unstoppable/>Unstoppable Shot buff.\n\nScout Rifles are always Overcharged when the modifier is active.\n\nimport unstoppable from global",
+     "main": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nScout Rifles are always Overcharged when the modifier is active.\n\nimport unstoppable from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695495743598,
+      "lastUpdate": 1695582218359,
       "updatedBy": "Stardust"
      }
     },
@@ -20421,7 +20421,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20966,14 +20966,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<void/>Void Souls last 5 seconds longer and can be retrieved by interacting with them, granting <void/>Void Soul Ready for 25 seconds, allowing it to be redeployed while keeping its Kill Bonuses.\n\nVoid Soul Kills increase their Damage and Health:\n• 16.3%|34.5%|50%|83.75%|100% Increased <void/>Void Soul Damage with 1|2|3|4|5 Kills\n• 13.3%|26.6%|40%|53%|66.7% Increased <void/>Void Soul Health\n\nIf multiple Void Souls tether the same enemy, they will each deal the damage of the first soul to do so.",
+     "main": "<void/>Void Souls last 5 seconds longer and can be retrieved by interacting with them. Retrieving them grants <void/>Void Soul Ready for 25 seconds, allowing it to be redeployed while keeping its Kill Bonuses.\n\nVoid Soul Kills increase their Damage and Damage Resistance, maxing out after 6 Kills:\n• 16.6%|33.3%|50%|66.67%|83.3%|100% Increased Void Soul Damage with 1|2|...|6 Kills\n• 8.3%|16.7%|25%|33.3%|41.7%|50 Increased Void Soul Damage Resistance\n\nIf multiple Void Souls tether the same enemy, they will each deal the damage of the first Soul to do so.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692907079853,
+      "lastUpdate": 1695583227185,
       "updatedBy": "Stardust"
      }
     },
@@ -20983,7 +20983,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692986505150,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21350,7 +21350,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Deals increased damage against Minibosses, Bosses, and Vehicles, as well as Players in their Super Ability.\n\nDamage Increase by Ammo Type:\n<primary/> Primary Weapons: <pve 20% /> <pvp [40-50%] />\n<special/> Special Weapons: <pve 15% /> <pvp [10-20%] />\n<heavy/> Heavy Weapons: <pve 10% /> <pvp [5-10%] />\n\nenhanced (\n#e Passively grants 5 Stability and Guard Resistance (Swords).\n)",
+     "main": "Deals increased damage against <link Minibosses, Bosses, and Vehicles [#CombatantClassifications] />, as well as Players in their Super Ability.\n\nDamage Increase by Ammo Type:\n• <primary/>Primary Weapons: <pve 20% /> <pvp [40-50%] />\n• <special/>Special Weapons: <pve 15% /> <pvp [10-20%] />\n• <heavy/>Heavy Weapons: <pve 10% /> <pvp [5-10%] />\n\nenhanced (\n#e Passively grants 5 Stability and Guard Resistance (Swords).\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21361,7 +21361,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686511839268,
+      "lastUpdate": 1695582779748,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21375,7 +21375,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686511972745,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22000,7 +22000,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon damaging 3 Separate Enemies within 3 seconds of each, for #e${10+#d} seconds:\n• 10 Stability\n• 35 Handling\n• 10 Range\n• 5% Increased Damage Falloff Distance\n• 35 Reload Speed\n• 0.95x Reload Duration Multiplier\n\nBuff cannot be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)\n\n<formula Effective Range: [range_0] />\n<formula Reload Time: [reload_0] />\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon damaging 3 Separate Enemies within 3 seconds of each, for #e${10+#d} seconds:\n• 10 Stability\n• 35 Handling\n• 10 Range\n• 5% Increased Damage Falloff Distance\n• 35 Reload Speed\n• 0.95x Reload Duration Multiplier\n\nBuff cannot be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -22011,7 +22011,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689196299192,
+      "lastUpdate": 1695582665590,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -22025,7 +22025,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22461,14 +22461,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<solar/>Burning Maul's Heavy Attack Slam deals 650% increased damage and releases 3 Waves, each of which creates a Cyclone on impact. Burning Maul ends after a single Slam.\n\n<solar/>Consecration's second slam creates a Cyclone.\n\nCyclones track enemies (Burning Maul Cyclones move faster). Damage from multiple Cyclones stacks.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on impact. The released Cyclones deal <pve 20 /> <pvp [?] /> damage every ? seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds.",
+     "main": "Modifies <solar/>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nDamage from multiple Cyclones can overlap.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on Impact. The released Cyclones deal <pve 20 /> <pvp [16] /> damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds.\n\n<solar/>Consecration's slam creates a Cyclone that deals <pve ? /> <pvp [3] /> damage and does not have tracking.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693853500174,
+      "lastUpdate": 1695587676985,
       "updatedBy": "Stardust"
      }
     },
@@ -22478,7 +22478,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693853576899,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25821,7 +25821,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> #e${10+#d}% of the Magazine from reserves on Weapon Kills.\n\n#f\n\nvar f = SMG and Auto Rifle Kills refill 17% of the magazine.\nenhanced (\n//removes note about SMGs and autos on the enhanced version\nvar f = empty\nvar d = 10\n#e Refill amount is increased by an additive 10%. (3% on SMGs and Auto Rifles)\n)",
+     "main": "<title Refills [G_refill] /> #e${10+#d}% of the Magazine from reserves on Weapon Kills.\n\n#f\nvar f = Submachine Gun and Auto Rifle Kills refill 17% of the magazine.\n\nenhanced (\n//removes note about SMGs and autos on the enhanced version\nvar f = empty\nvar d = 10\n#e Refill amount is increased by an additive 10%. (3% on Submachine Guns and Auto Rifles)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -25832,7 +25832,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690296030492,
+      "lastUpdate": 1695582702026,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -25846,7 +25846,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690320394706,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27769,14 +27769,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Thunderclap Kills refund Melee Energy based on <link enemy rank [#CombatantClassifications] />:\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites\n• 30%: Tier 4 Minors, Tier 3 Elites\n• 40%: Tier 4 Elites, Minibosses\n• 50%: Bosses\n\nThunderclap strikes enemies within ? meters with lightning, dealing <pve 200 /> <pvp [50] /> damage. Lightning Damage is increased by 50% while <arc/>Amplified.\n\n",
+     "main": "Thunderclap Kills refund Melee Energy based on <link enemy rank [#CombatantClassifications] />:\n• 9%: Tier 1 Minors\n• 13%: Tier 2 Minors, Tier 1 Elites\n• 15%: Enemy Players\n• 20%: Tier 3 Minors, Tier 2 Elites\n• 30%: Tier 4 Minors, Tier 3 Elites\n• 40%: Tier 4 Elites, Minibosses\n• 50%: Bosses\n\nThunderclap strikes enemies within ? meters with lightning, dealing <pve 200 /> <pvp [50] /> damage. Lightning Damage is increased by 50% while <arc/>Amplified.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690731186055,
+      "lastUpdate": 1695588459031,
       "updatedBy": "Stardust"
      }
     },
@@ -27786,7 +27786,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31166,14 +31166,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
+     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504130609,
+      "lastUpdate": 1695588279055,
       "updatedBy": "Stardust"
      }
     },
@@ -31183,7 +31183,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35938,7 +35938,7 @@
    },
    "editor": {
     "en": {
-     "main": "Modified Golden Gun deals 500% Increased Damage but can only fire once per activation.\n(37% more Damage compared to 3 Precision Hits with Marksman Golden Gun)\n\nScoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode.",
+     "main": "Modified Golden Gun deals 500% Increased Damage but can only fire once per activation.\n(37% more Damage compared to 3 Precision Hits with Marksman Golden Gun)\n\nScoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode, dealing up to 400 damage to enemies within ? meters.",
      "secondary": "import self"
     },
     "ko": {
@@ -35953,7 +35953,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678821331121,
+      "lastUpdate": 1695587444198,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -35971,7 +35971,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36993,14 +36993,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles and Swords",
+     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693504123147,
+      "lastUpdate": 1695588261037,
       "updatedBy": "Stardust"
      }
     },
@@ -37010,7 +37010,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37719,7 +37719,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<solar/>Daybreak Projectiles apply 30 <solar/>Scorch on hit (40 with <solar/>Ember of Ashes) and deal 90% Increased Damage. \n\n(Daybreak Projectiles can hit twice - doubling the damage and the amount of Scorch applied)\n\n<solar/>Scorch deals <pve 200% /> <pvp [50%] /> Increased Damage and each Damage Tick grants 5% Melee Ability Energy.",
+     "main": "<solar/>Daybreak Projectiles apply 30 <solar/>Scorch on hit (40 with <solar/>Ember of Ashes) and deal 90% Increased Damage. \n\n(Daybreak Projectiles can often hit twice for double Damage and double Scorch)\n\n<solar/>Scorch deals <pve 200% /> <pvp [50%] /> Increased Damage and each Damage Tick grants 5% Melee Ability Energy.\n\n",
      "secondary": "import self"
     },
     "ko": {
@@ -37734,7 +37734,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1694977374575,
+      "lastUpdate": 1695583335778,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -37752,7 +37752,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694977380228,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38430,7 +38430,7 @@
    },
    "editor": {
     "en": {
-     "main": "While Aiming Down Sights:\n10% Increased Effective Zoom and 5% Faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10% and narrows the Accuracy and Aim Assist Cones.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "While Aiming Down Sights:\n10% Increased Effective Zoom and 5% Faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%. It also reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -38441,7 +38441,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692738936133,
+      "lastUpdate": 1695582576057,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38455,7 +38455,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692738940999,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47644,7 +47644,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Scoring 2 Precision Multikills generates an Orb of Power for allies that grants 3.57% Super Energy.\n\nFinishers spawn Ammo Bricks for allies based on <link enemy rank [#CombatantClassifications] />:\n• Elites: <special/>Special Ammo Brick\n• Miniboss or Champion: <heavy/>Heavy Ammo Brick\n\nSpawned Ammo Bricks grant 33% less ammo.\n\nAeon Allies not using Sect of Insight gain 35% Increased Damage on Finishers for 20 seconds.",
+     "main": "Scoring 2 Precision Multikills generates an Orb of Power at the target's location for allies that grants 3.57% Super Energy.\n\nFinishers spawn Ammo Bricks for allies based on <link enemy rank [#CombatantClassifications] />:\n• Elites: <special/>Special Ammo Brick\n• Miniboss or Boss: <heavy/>Heavy Ammo Brick\n\nSpawned Ammo Bricks grant 60% of a Regular Ammo Brick's pickup amount but retain full variability.\n\nFinishing a Miniboss or Boss grants 35% Increased Damage to Aeon Allies not using Sect of Insight for 20 seconds.",
      "secondary": "import self"
     },
     "ko": {
@@ -47659,7 +47659,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690733005133,
+      "lastUpdate": 1695587150923,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -47677,7 +47677,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48197,7 +48197,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Ally Deaths grant 25% Class Ability Energy.\nGrants 100% Class Ability Energy on Ally Revival.\n\nCasting Super fully heals allies within 30 meters.\n\nAeon Allies not using Sect of Vigor additionally receive a 110 HP Overshield for 20 seconds that starts recharging after 3 seconds if not broken.",
+     "main": "Ally Deaths grant 25% Class Ability Energy.\nReviving Allies grants 100% Class Ability Energy.\n\nCasting Super fully heals Aeon Allies within 30 meters. Aeon Allies not using Sect of Vigor also gain a 110 HP Overshield for 20 seconds.\n\nThe Overshield will start regenerating after 3 seconds if it isn't fully broken.",
      "secondary": "import self"
     },
     "ko": {
@@ -48212,7 +48212,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678826798127,
+      "lastUpdate": 1695584468468,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -48230,7 +48230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49873,14 +49873,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Airborne Effectiveness to <title Weapons of Sorrow [WoS] />.\n\nMelee Hits apply Poison.\n\nNecrotic Poison ticks every <pve 0.5 /> <pvp [0.7] /> seconds for <pve 19 /> <pvp [?] /> ticks over <pve 10 /> <pvp [?] /> seconds. Total of <pve 1366 /> <pvp [?] /> damage.\n\nNecrotic Poison deals <pve 34 /> <pvp [5?] /> damage at base, with each tick dealing 7.7% more damage than the last one inside PvE.\n\nPoisoned enemies (from any poison source) spread poison on death in a 5 meter radius.\n\ntitle WoS (\nThe currently available Weapons of Sorrow are Thorn, Osteo Striga, and Touch of Malice.\n\nKills with the following also spread poison:\n• Thorn's Bullets\n• Osteo Striga's Poison Effect\n• Touch of Malice's Blight's Poison Effect\n)",
+     "main": "Passively grants 30 Airborne Effectiveness to <title Weapons of Sorrow [WoS] />.\n\nMelee Hits apply Poison.\n\nNecrotic Poison ticks every <pve 0.52 /> <pvp [0.7] /> seconds for <pve 19 /> <pvp [?] /> ticks over <pve 10 /> <pvp [?] /> seconds. Total of <pve 1366 /> <pvp [?] /> damage.\n\nNecrotic Poison's first tick deals <pve 34 /> <pvp [5?] /> damage. Inside PvE, the first 14 ticks deal 11% more damage than the last one and the last 5 ticks deal ~41% more damage than the last.\n\nPoisoned enemies spread Necrotic Poison on death in a 5 meter radius.\n\ntitle WoS (\nThe currently available Weapons of Sorrow are Thorn, Osteo Striga, and Touch of Malice.\n\nKills with the following also spread poison:\n• Thorn's Bullets\n• Osteo Striga's Poison Effect\n• Touch of Malice's Blight's Poison Effect\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678581755714,
+      "lastUpdate": 1695583730650,
       "updatedBy": "Stardust"
      }
     },
@@ -49890,7 +49890,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50307,7 +50307,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51491,7 +51491,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695589383294,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
