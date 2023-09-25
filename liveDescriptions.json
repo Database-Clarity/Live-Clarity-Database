@@ -14786,14 +14786,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Kills have a chance to release a varying number of Submunitions on top of where the enemy died.\n6 second cooldown after activation.\n\nNumber of Submunitions is tied to <link Enemy Rank [#CombatantClassifications] />:\nMinors: 1|Elites, Players: 3|Minibosses: ?|Bosses: 7\n\nSubmunitions:\n• Identical to Telesto Bolts in behavior, exploding on proximity or contact and last up to 10.5 seconds after attaching to a surface.\n• Deal up to <pve 39.5? /> <pvp [?] /> damage and inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.",
+     "main": "Kills have a chance to release a varying number of Submunitions on top of where the enemy died.\n6? second cooldown after activation.\n\nThe number of Submunitions spawned and the Spawn Chance are tied to <link Enemy Rank [#CombatantClassifications] />:\nMinors: 1|Elites, Players: 3|Minibosses: ?|Bosses: 7\n\nSubmunitions:\n• Identical to Telesto Bolts in behavior, exploding on proximity or contact and last up to 10.5 seconds after attaching to a surface.\n• Deal up to <pve 39.5? /> <pvp [?] /> damage and inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695507055379,
+      "lastUpdate": 1695665707773,
       "updatedBy": "Stardust"
      }
     },
@@ -14803,7 +14803,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17674,7 +17674,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43961,40 +43961,10 @@
    "name": "Spike Grenades",
    "hash": 3301904089,
    "type": "Weapon Perk",
-   "stats": {
-    "PVE Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.125, 1.25 ]
-      },
-      "weaponTypes": [ "GL" ]
-     },
-     {
-      "active": {
-       "multiplier": [ 1.075, 1.15 ]
-      },
-      "weaponTypes": [ "Heavy GL" ]
-     }
-    ],
-    "PVP Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.125, 1.25 ]
-      },
-      "weaponTypes": [ "GL" ]
-     },
-     {
-      "active": {
-       "multiplier": [ 1.075, 1.15 ]
-      },
-      "weaponTypes": [ "Heavy GL" ]
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "export definition (\nIncreases Grenade Impact Damage by 50%.\n\nDue to the ratio of Explosive and Impact Damage being tied to Blast Radius on Grenade Launchers, a lower Blast Radius Stat will provide a higher overall damage increase.\n)\n\n<title Hover for more details. [SpikeNades] />\n\ntitle SpikeNades (\nSpecial Grenade Launchers:\n• 0 Blast Radius: 50% Impact | 50% Explosive, overall 25% increased damage\n• 100 Blast Radius: 25% Impact | 75% Explosive, overall 12.5% increased damage.\n\nHeavy Grenade Launchers:\n• 0 Blast Radius: 30% Impact | 70% Explosive, overall 15% increased damage\n• 100 Blast Radius: 15% Impact | 85% Explosive, overall 7.5% increased damage.\n)",
-     "secondary": "import definition from 3301904089\n\nTotal Damage Increase depending on Blast Radius:\n• Special Grenade Launchers: 25-12.5%\n• Heavy Grenade Launchers: 15-7.5%"
+     "main": "Increases Grenade Impact Damage by 50%.\n\nDue to the ratio of Explosive and Impact Damage being tied to the Blast Radius (BR) stat on Grenade Launchers (GLs), a lower stat will provide a higher overall damage increase.\n\nTotal Damage Increases:\n• Lightweight <special/>Special GLs at 95-100 BR: 10.8-10.1%\n• Double Fire <special/>Special GLs at 55-85 BR: 17.9-13.2%\n• Adaptive <heavy/>Heavy GLs at 45-100 BR: 11.2-6.3%\n• Rapid-Fire <heavy/>Heavy GLs at 15-100 BR: 13.9%-6.3%\n\nNote that these values won't necessarily be accurate if other damage perks that only affect Impact or Explosive Damage (like Explosive Light) are active.",
+     "secondary": "import self"
     },
     "zh-chs": {
      "main": "export definition (\n+50% 榴弹直击伤害。\n\n因爆炸伤害和直击伤害的比例和榴弹发射器“爆炸范围”属性相关，故尖刺榴弹起作用时，更低的爆炸范围可造成更高的总伤害。\n)\n\n<title 鼠标移动至此处查看细节 [SpikeNades] />\n\ntitle SpikeNades (\n单发榴弹发射器：\n • 0 爆炸范围： 50% 直击 | 50% 爆炸，换算后实际 +25% 总伤害\n • 100 爆炸范围： 25% 直击 | 75% 爆炸，换算后实际 +12.5% 总伤害\n\n重型榴弹发射器：\n • 0 爆炸范围： 30% 直击 | 70% 爆炸，换算后实际 +15% 总伤害\n • 100 爆炸范围： 12.5% 直击 | 87.5% 爆炸，换算后实际 +6.25% 总伤害\n)",
@@ -44004,7 +43974,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1677677970766,
+      "lastUpdate": 1695665574359,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44013,12 +43983,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676224597108,
+     "lastUpdate": 1695661011365,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1677677992214,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50307,7 +50277,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51491,7 +51461,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1695666045278,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
