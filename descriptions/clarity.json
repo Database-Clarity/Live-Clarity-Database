@@ -16847,7 +16847,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Reload": [
     {
@@ -19495,7 +19495,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Handling": [
     {
@@ -21675,7 +21675,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Airborne": [
     {
@@ -25163,7 +25163,7 @@
   "name": "Survival Well",
   "itemHash": 1591207519,
   "itemName": "Crest of Alpha Lupi",
-  "lastUpload": 1690730562123,
+  "lastUpload": 1696455453595,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25188,7 +25188,7 @@
     {
      "linesContent": [
       {
-       "text": "Healing Pulse heals either FOR 58 HP or TO 130 HP, whichever option restores the more health."
+       "text": "Healing Pulse heals either FOR 58 HP or TO 130 HP, whichever option restores more health."
       }
      ]
     },
@@ -25222,7 +25222,13 @@
     {
      "linesContent": [
       {
-       "text": "• Ward of Dawn generates 4 Orbs with each granting 3.57% Super Energy (up from 3 Orbs granting 2.3% each for a ~2x increase)"
+       "text": "• "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Ward of Dawn generates 4 Orbs with each granting 3.57% Super Energy (up from 3 Orbs granting 2.3% each for a ~2x increase)"
       }
      ]
     }
@@ -42130,7 +42136,7 @@
   "name": "Kintsugi",
   "itemHash": 3974038291,
   "itemName": "Precious Scars",
-  "lastUpload": 1680050976212,
+  "lastUpload": 1696455453595,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -42138,21 +42144,7 @@
     {
      "linesContent": [
       {
-       "text": "Reviving or being revived grants you and allies within 15 metres a 100HP Overshield for 10 seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Leaving the 15 metres radius removes Overshield"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "If the wearer loses Overshield, so too does everyone else."
+       "text": "Reviving allies or being revived grants you and allies within 15 meters a 100 HP Overshield for 10 seconds."
       }
      ]
     },
@@ -42162,7 +42154,17 @@
     {
      "linesContent": [
       {
-       "text": "Heals you and allies within 15 metres for 60(?)HP after getting a Weapon Kill with a Matching Subclass Element with a 3 second cooldown."
+       "text": "Leaving the 15 meter radius or breaking the Overshield of the wearer removes the Overshields."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kills with a Weapon matching your Subclass Element restore 60 HP to you and allies within 15 meters. 3 second cooldown between heals."
       }
      ]
     }
@@ -44167,7 +44169,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Handling": [
     {
@@ -52950,7 +52952,7 @@
   "name": "Grasp of the Devourer",
   "itemHash": 2780717641,
   "itemName": "Necrotic Grip",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696455453595,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -52958,54 +52960,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Airborne Effectiveness to "
-      },
-      {
-       "text": "Weapons of Sorrow",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "The currently available Weapons of Sorrow are Thorn, Osteo Striga, and Touch of Malice."
-          }
-         ]
-        },
-        {
-         "classNames": [ "spacer" ]
-        },
-        {
-         "linesContent": [
-          {
-           "text": "Kills with the following also spread poison:"
-          }
-         ]
-        },
-        {
-         "linesContent": [
-          {
-           "text": "• Thorn's Bullets"
-          }
-         ]
-        },
-        {
-         "linesContent": [
-          {
-           "text": "• Osteo Striga's Poison Effect"
-          }
-         ]
-        },
-        {
-         "linesContent": [
-          {
-           "text": "• Touch of Malice's Blight's Poison Effect"
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": "."
+       "text": "Passively grants 30 Airborne Effectiveness to Weapons of Sorrow: Thorn, Osteo Striga, Touch of Malice, and Necrochasm."
       }
      ]
     },
@@ -53015,7 +52970,7 @@
     {
      "linesContent": [
       {
-       "text": "Melee Hits apply Poison."
+       "text": "Melee Hits apply Necrotic Poison ('Poison' for short). Poisoned enemies spread Poison on death in a 5 meter radius."
       }
      ]
     },
@@ -53025,7 +52980,7 @@
     {
      "linesContent": [
       {
-       "text": "Necrotic Poison ticks every "
+       "text": "Poison ticks every "
       },
       {
        "text": "0.52",
@@ -53039,7 +52994,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " seconds for "
+       "text": " seconds for a total of "
       },
       {
        "text": "19",
@@ -53067,10 +53022,10 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " seconds. Total of "
+       "text": " seconds. Deals a total of "
       },
       {
-       "text": "1366",
+       "text": "1361",
        "classNames": [ "pve" ]
       },
       {
@@ -53078,6 +53033,30 @@
       },
       {
        "text": "[?]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " damage over the entire duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Poison's first tick deals "
+      },
+      {
+       "text": "32.35",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[5?]",
        "classNames": [ "pvp" ]
       },
       {
@@ -53091,21 +53070,28 @@
     {
      "linesContent": [
       {
-       "text": "Necrotic Poison's first tick deals "
-      },
+       "text": "In PvE, the damage of Poison ramps up every tick with the damage increases compounding together:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "34",
-       "classNames": [ "pve" ]
-      },
+       "text": "• 2nd-14th ticks each deal 3.5585 more damage compared to the one before"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": " "
-      },
+       "text": "• 15th tick deals 9.705 more damage than the 14th"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "[5?]",
-       "classNames": [ "pvp" ]
-      },
-      {
-       "text": " damage. Inside PvE, the first 14 ticks deal 11% more damage than the last one and the last 5 ticks deal ~41% more damage than the last."
+       "text": "• 16th-19th ticks each deal 14.234 more damage"
       }
      ]
     },
@@ -53115,7 +53101,35 @@
     {
      "linesContent": [
       {
-       "text": "Poisoned enemies spread Necrotic Poison on death in a 5 meter radius."
+       "text": "Kills with the following also spread Necrotic Poison:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Thorn's Bullets"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Osteo Striga's Poison Effect"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Touch of Malice's Blight's Poison Effect"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Necrochasm's (???)"
       }
      ]
     }
@@ -53255,7 +53269,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Range": [
     {
@@ -54706,7 +54720,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1696455453595,
   "stats": {
    "Airborne": [
     {
