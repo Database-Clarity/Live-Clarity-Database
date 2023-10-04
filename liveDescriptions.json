@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17674,7 +17674,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23140,7 +23140,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Casting your Barricade emits a Healing Pulse:\nHeals the wearer and allies within 12 meters if they have line of sight to the wearer.\n\nHealing Pulse heals either FOR 58 HP or TO 130 HP, whichever option restores the more health.\n\nSuper Abilities generate an extra Orb of Power that grants 7.14% Super Energy (regular Super Orb).\n\nSpecific Interactions:\n• Roaming Supers start generating Orbs after just 1 Kill instead of needing at least 2\n• Ward of Dawn generates 4 Orbs with each granting 3.57% Super Energy (up from 3 Orbs granting 2.3% each for a ~2x increase)",
+     "main": "Casting your Barricade emits a Healing Pulse:\nHeals the wearer and allies within 12 meters if they have line of sight to the wearer.\n\nHealing Pulse heals either FOR 58 HP or TO 130 HP, whichever option restores more health.\n\nSuper Abilities generate an extra Orb of Power that grants 7.14% Super Energy (regular Super Orb).\n\nSpecific Interactions:\n• Roaming Supers start generating Orbs after just 1 Kill instead of needing at least 2\n• <void/>Ward of Dawn generates 4 Orbs with each granting 3.57% Super Energy (up from 3 Orbs granting 2.3% each for a ~2x increase)",
      "secondary": "import self"
     },
     "ko": {
@@ -23155,7 +23155,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690730506335,
+      "lastUpdate": 1696451801975,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -23173,7 +23173,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690730562123,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39957,15 +39957,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Reviving or being revived grants you and allies within 15 metres a 100HP Overshield for 10 seconds.\nLeaving the 15 metres radius removes Overshield\nIf the wearer loses Overshield, so too does everyone else.\n\nHeals you and allies within 15 metres for 60(?)HP after getting a Weapon Kill with a Matching Subclass Element with a 3 second cooldown.",
+     "main": "Reviving allies or being revived grants you and allies within 15 meters a 100 HP Overshield for 10 seconds.\n\nLeaving the 15 meter radius or breaking the Overshield of the wearer removes the Overshields.\n\nKills with a Weapon matching your Subclass Element restore 60 HP to you and allies within 15 meters. 3 second cooldown between heals.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1668260492895,
-      "updatedBy": "Icemourne"
+      "lastUpdate": 1696452026650,
+      "updatedBy": "Stardust"
      }
     },
     "stats": {
@@ -39974,7 +39974,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49843,14 +49843,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Airborne Effectiveness to <title Weapons of Sorrow [WoS] />.\n\nMelee Hits apply Poison.\n\nNecrotic Poison ticks every <pve 0.52 /> <pvp [0.7] /> seconds for <pve 19 /> <pvp [?] /> ticks over <pve 10 /> <pvp [?] /> seconds. Total of <pve 1366 /> <pvp [?] /> damage.\n\nNecrotic Poison's first tick deals <pve 34 /> <pvp [5?] /> damage. Inside PvE, the first 14 ticks deal 11% more damage than the last one and the last 5 ticks deal ~41% more damage than the last.\n\nPoisoned enemies spread Necrotic Poison on death in a 5 meter radius.\n\ntitle WoS (\nThe currently available Weapons of Sorrow are Thorn, Osteo Striga, and Touch of Malice.\n\nKills with the following also spread poison:\n• Thorn's Bullets\n• Osteo Striga's Poison Effect\n• Touch of Malice's Blight's Poison Effect\n)",
+     "main": "Passively grants 30 Airborne Effectiveness to Weapons of Sorrow: Thorn, Osteo Striga, Touch of Malice, and Necrochasm.\n\nMelee Hits apply Necrotic Poison ('Poison' for short). Poisoned enemies spread Poison on death in a 5 meter radius.\n\nPoison ticks every <pve 0.52 /> <pvp [0.7] /> seconds for a total of <pve 19 /> <pvp [?] /> ticks over <pve 10 /> <pvp [?] /> seconds. Deals a total of <pve 1361 /> <pvp [?] /> damage over the entire duration.\n\nPoison's first tick deals <pve 32.35 /> <pvp [5?] /> damage.\n\nIn PvE, the damage of Poison ramps up every tick with the damage increases compounding together:\n• 2nd-14th ticks each deal 3.5585 more damage compared to the one before\n• 15th tick deals 9.705 more damage than the 14th\n• 16th-19th ticks each deal 14.234 more damage\n\nKills with the following also spread Necrotic Poison:\n• Thorn's Bullets\n• Osteo Striga's Poison Effect\n• Touch of Malice's Blight's Poison Effect\n• Necrochasm's (???)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695583730650,
+      "lastUpdate": 1696455351188,
       "updatedBy": "Stardust"
      }
     },
@@ -49860,7 +49860,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50277,7 +50277,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51461,7 +51461,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1696455453595,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
