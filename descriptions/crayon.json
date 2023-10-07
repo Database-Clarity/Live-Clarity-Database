@@ -2300,11 +2300,11 @@
   "name": "Vengeance",
   "itemHash": 2578771006,
   "itemName": "One-Eyed Mask",
-  "lastUpload": 1696544136683,
+  "lastUpload": 1696718862343,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Receiving damage highlights the enemy that dealt it for 8 seconds. Highlighting cannot be transfered to a different target before it expires.\n\nKilling the highlighted enemy grants the Vengeance buff and a 95 HP Overshield for 6 seconds.\n\nHighlighting is disabled while Vengeance is active."
+   "en": "Receiving damage highlights the enemy that dealt it for 8 seconds. Highlighting cannot be transfered to a different target before it expires.\n\nKilling the highlighted enemy grants the Vengeance buff for 6 seconds, providing a 95 HP Overshield.\n\nHighlighting is disabled while Vengeance is active."
   }
  },
  "703902595": {
@@ -2511,7 +2511,7 @@
  "736000386": {
   "hash": 736000386,
   "name": "Freehand Grip",
-  "lastUpload": 1679761830986,
+  "lastUpload": 1696718862343,
   "stats": {
    "Ready": [
     {
@@ -2524,7 +2524,7 @@
   "type": "Weapon Mod",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Decreases Hipfire Accuracy Cone Size by 15% and grants a 0.95x Ready Animation Duration Multiplier."
+   "en": "Decreases Hipfire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier."
   }
  },
  "743139589": {
@@ -3655,9 +3655,12 @@
  "1039115606": {
   "hash": 1039115606,
   "name": "Orbs of Restoration",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1696718862343,
   "type": "Armor Mod General",
-  "uploadedBy": "Stardust"
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups."
+  }
  },
  "1044888195": {
   "hash": 1044888195,
@@ -3856,7 +3859,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1696594834065,
+  "lastUpload": 1696718862343,
   "stats": {
    "Reload": [
     {
@@ -5207,7 +5210,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1696594834065,
+  "lastUpload": 1696718862343,
   "stats": {
    "Airborne": [
     {
@@ -5633,7 +5636,7 @@
  "1570042021": {
   "hash": 1570042021,
   "name": "Heating Up",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696718862343,
   "stats": {
    "Stability": [
     {
@@ -5646,7 +5649,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill, for 5.5 seconds:\n-15% Accuracy Cone Growth, 15 Stability, and 20 Recoil Direction per stack.\n\nMaximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed.",
+   "en": "On Weapon Kill, for 5.5 seconds:\n• 15 Stability\n• 20 Recoil Direction\n• -15% Accuracy Cone Size\n• -15% Accuracy Cone Growth\n\nStacks 2 times. Cone scalars stack multiplicatively.\n\nDuration is refreshed on kills. Stays active while stowed.",
    "zh-chs": "使用此武器造成最后一击时：\n-15% 精度锥角增长， +15 稳定性，+20 后座力方向。\n\n可叠加 2 层。"
   }
  },
@@ -6795,7 +6798,7 @@
  "1866048759": {
   "hash": 1866048759,
   "name": "Hip-Fire Grip",
-  "lastUpload": 1689352462478,
+  "lastUpload": 1696718862343,
   "stats": {
    "Aim Assist": [
     {
@@ -6828,7 +6831,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -15% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\n\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.",
+   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -30% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\n\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.",
    "zh-chs": "腰射时：\n• +20%:\n    • 瞄准辅助有效距离\n    • 准星吸附有效距离\n    • 有效射程距离\n• -15% 精度锥角尺寸\n• +15 瞄准辅助\n• +2.7° 精准角度范畴\n• +25 稳定性\n\n有效射程距离系数不会作用于遗言、霰弹枪、狙击步枪、融合步枪。"
   }
  },
@@ -7586,7 +7589,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] Increased Damage to targets at a lower height than you. Does not work while airborne.\n\n🡅 Passively grants 5 Reload Speed."
+   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] Increased Damage to targets standing on 1? meter lower ground than you.\n\nDoes not work while airborne.\n\n🡅 Passively grants 5 Reload Speed."
   }
  },
  "2145198832": {
@@ -8120,7 +8123,7 @@
  "2319119708": {
   "hash": 2319119708,
   "name": "High Ground",
-  "lastUpload": 1692913470476,
+  "lastUpload": 1696718862343,
   "stats": {
    "PVE Damage": [
     {
@@ -8140,7 +8143,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] Increased Damage to targets at a lower height than you. Does not work while airborne."
+   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] Increased Damage to targets standing on 1? meter lower ground than you.\n\nDoes not work while airborne."
   }
  },
  "2319885414": {
@@ -9403,7 +9406,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill, for 🡅6.5 seconds:\n-15% Accuracy Cone Growth, 15 Stability, and 20 Recoil Direction per stack.\n\nMaximum of 2 Stacks. Duration is refreshed on kills. Stays active while stowed.\n\n🡅 Buff Duration is increased by 1 second."
+   "en": "On Weapon Kill, for 🡅6.5 seconds:\n• 15 Stability\n• 20 Recoil Direction\n• -15% Accuracy Cone Size\n• -15% Accuracy Cone Growth\n\nStacks 2 times. Cone scalars stack multiplicatively.\n\nDuration is refreshed on kills. Stays active while stowed.\n\n🡅 Buff Duration is increased by 1 second."
   }
  },
  "2748801589": {
@@ -10538,7 +10541,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -15% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\n\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n\n🡅 Stronger Effect."
+   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -30% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\n\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n\n🡅 Stronger Effect."
   }
  },
  "3131590896": {
@@ -10691,7 +10694,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1696594834065,
+  "lastUpload": 1696718862343,
   "stats": {
    "Handling": [
     {
@@ -10821,7 +10824,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "If no enemies are within 15 meters:\nGrants 🡅12 Range, 🡅32 Reload Speed, and narrows the Accuracy Cone by 🡅7.5%.\n\n🡅 Grants an additional 2? Range and Reload Speed, and narrows the Accuracy Cone by a further 2.5%."
+   "en": "If no enemies are within 15 meters:\nGrants 🡅12 Range, 🡅32 Reload Speed, and decreases Accuracy Cone Growth by 🡅7.5?%.\n\n🡅 Grants an additional 2? Range and Reload Speed, and decreases Accuracy Cone Growth further by an additive 2.5?%."
   }
  },
  "3201496230": {
@@ -11924,7 +11927,7 @@
  "3619207468": {
   "hash": 3619207468,
   "name": "Keep Away",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696718862343,
   "stats": {
    "Range": [
     {
@@ -11944,7 +11947,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "If no enemies are within 15 meters:\nGrants 10 Range, 30 Reload Speed, and narrows the Accuracy Cone by 5%."
+   "en": "If no enemies are within 15 meters:\nGrants 10 Range, 30 Reload Speed, and decreases Accuracy Cone Growth by 5?%."
   }
  },
  "3643424744": {
@@ -12494,7 +12497,10 @@
   "name": "Orbs of Restoration",
   "lastUpload": 1680554889429,
   "type": "Armor Mod General",
-  "uploadedBy": "Stardust"
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups."
+  }
  },
  "3794558792": {
   "hash": 3794558792,
@@ -12685,7 +12691,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1696594834065,
+  "lastUpload": 1696718862343,
   "stats": {
    "Range": [
     {
@@ -13029,7 +13035,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1696594834065,
+  "lastUpload": 1696718862343,
   "stats": {
    "Airborne": [
     {
@@ -13107,7 +13113,7 @@
  "3988215619": {
   "hash": 3988215619,
   "name": "Veist Stinger",
-  "lastUpload": 1682718006443,
+  "lastUpload": 1696718862343,
   "stats": {
    "Charge Draw": [
     {
@@ -13121,7 +13127,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• Refills 25% of Magazine from reserves on activation\n• Reduces ADS Movement Speed Penalty by an additive 5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants (?) Charge Rate to Swords\n\n4 second cooldown between activations.\n\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%",
+   "en": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• Refills 25% of Magazine from reserves on activation\n• Reduces ADS Movement Speed Penalty by an additive 5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants ? Charge Rate to Swords\n\n4 second cooldown between activations.\n\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle: 10%",
    "zh-chs": "VEIST 尖刺：\n• 使用备弹重新填装弹匣，4 秒冷却时间。\n• 弓箭 -15% 蓄力时间，持续 6 秒。\n• 刀剑加快 [15?]% 充能效率，持续 6 秒。\n\n触发概率：\n自动步枪、冲锋枪： 2%\n收枪： 4%\n弓箭、线性融合步枪： 10%"
   }
  },
