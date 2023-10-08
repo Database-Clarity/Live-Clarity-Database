@@ -1112,7 +1112,7 @@
    },
    "editor": {
     "en": {
-     "main": "For <title one bullet only [first bullet only] />:\n• #e${20+#d} Aim Assist\n• #e${25+#d} Range\n• -5% Accuracy Cone Size\n• -10% <title Accuracy Cone Growth [G_conegrowth] />\n\n3.1 seconds cooldown after firing.\n\nenhanced (\nvar d = 5\n#e Grants 5 more Aim Assist and Range.\n)\n\n<formula Effective Range: [range_0] />\n\ntitle first bullet only (\nEven in the case of burst weapons. Only the first shot of the burst is affected.\n)",
+     "main": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:\n• #e${20+#d} Aim Assist\n• #e${25+#d} Range\n• -5% Accuracy Cone Size\n• -10% <title Accuracy Cone Growth [G_conegrowth] />\n\nenhanced (\nvar d = 5\n#e Grants 5 more Aim Assist and Range.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -1123,7 +1123,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676216712852,
+      "lastUpdate": 1696776139617,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -1137,7 +1137,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2876,7 +2876,7 @@
    },
    "editor": {
     "en": {
-     "main": "While below 113 HP:\nLinearly grants up to 100 Reload Speed, and a 0.9x Reload Duration Multiplier.\n\n<formula Half Strength Reload Time: [reload_0] />\n<formula Maximum Strength Reload Time: [reload_1] />",
+     "main": "While below 113 HP:\nLinearly grants up to 100 Reload Speed, and a 0.9x Reload Duration Multiplier.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -2887,7 +2887,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676239804802,
+      "lastUpdate": 1696776174869,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -2901,7 +2901,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3175,7 +3175,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Powered Melee Kills:\nGrants <void/>Void Invisibility and restores Health.\n\n{Finishers} increase the duration of <void/>Void Invisibility and restore additional health.\n\nInvisibility Duration | Health based on <link enemy rank [#CombatantClassifications] />:\n• Minors: 6.8 seconds {9.8s} | 100 HP {?}\n• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}\n• Minibosses = 12.8s {15.8s} | ? HP {200 HP}\n• Bosses = 13.3s | 200 HP {?}\n\nEcho of Persistence increases the <void/>Void Invisibility duration by 41.5%.",
+     "main": "On Powered Melee or Finisher Kills:\nGrants <void/>Void Invisibility and restores Health, with Finishers providing a greater benefit to both.\n\nInvisibility Duration and restored Health are based on the <link rank [#CombatantClassifications] /> of the defeated target. <void/>Echo of Persistence increases Invisibility duration by 41.5%.\n\nInvisibility|Health granted on Powered Melee Kills:\n• Minors: 6.8 seconds | 100 HP\n• Elites, Enemy Players: 9.8s | ? HP\n• Minibosses: 12.8s | ? HP\n• Bosses: 13.3s | 200 HP\n\nInvisibility|Health granted on Finisher Kills:\n• Minors: 9.8 seconds | ? HP\n• Elites: 12.7 seconds | 200 HP\n• Minibosses: 15.8 seconds | 200 HP\n• Bosses: ? seconds | ? HP",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -3186,7 +3186,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695587391670,
+      "lastUpdate": 1696776974185,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -3200,7 +3200,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6149,7 +6149,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> Increased Damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n<pve 500% /> <pvp [100%] /> Increased Damage and 100 Handling for #e${10+#d} seconds or until firing a full burst.\n\n4 second cooldown after buff expires. Can be activated while stowed.\n\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -6160,7 +6160,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689183007380,
+      "lastUpdate": 1696775961347,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -6174,7 +6174,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6404,14 +6404,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Sustained fire for 0.6? seconds with a Machine Gun grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns are always Overcharged when the modifier is active.\n\nimport overload from global",
+     "main": "Sustained fire for 0.6? seconds with a Machine Gun grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport overload from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696098253239,
+      "lastUpdate": 1696778802575,
       "updatedBy": "Stardust"
      }
     },
@@ -6421,7 +6421,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696098272186,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9067,7 +9067,7 @@
    },
    "editor": {
     "en": {
-     "main": "While above 50% Magazine Capacity:\n#e${50+#d} Reload Speed with a 0.95x Reload Duration Multiplier.\n\nenhanced (\nvar d = 5\n#e Reload Speed bonus is increased by 5.\n)\n\n<formula Reload Time: [reload_0] />",
+     "main": "While above 50% Magazine Capacity:\n#e${50+#d} Reload Speed with a 0.95x Reload Duration Multiplier.\n\nenhanced (\nvar d = 5\n#e Reload Speed bonus is increased by 5.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -9078,7 +9078,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1675797852175,
+      "lastUpdate": 1696775968205,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -9092,7 +9092,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9946,14 +9946,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Scoring multiple Precision Hits against enemies 25+ meters away applies <void/>Weaken to them.\n\nActivation Progress per Crit by Weapon Type:\n• Sniper Rifle, Linear Fusion Rifle: 50%?\n• Scout Rifle: 25%?\n• Other Weapons: unknown",
+     "main": "Scoring multiple Precision Hits against enemies 25?+ meters away applies <void/>Weaken to them.\n\nActivation Progress per Crit by Weapon Type:\n• Bows: 50%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Trace Rifles, Submachine Guns: 12.5%\n• Machine Guns, Pulse Rifles: 11.2%\n• Other Weapons: currently unknown",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695503430173,
+      "lastUpdate": 1696778995882,
       "updatedBy": "Stardust"
      }
     },
@@ -9963,7 +9963,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10027,14 +10027,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "PvE Combatant Kills with Tangles or Elemental Orbs have a chance to spawn Ammo Bricks:\n• 20% chance to spawn a <special/>Special Ammo Brick\n• 33% chance to spawn a <heavy/>Heavy Ammo Brick\n\nBoth bricks can spawn at once.",
+     "main": "PvE Combatant Kills with Tangles or Elemental Orbs have a chance to spawn Ammo Bricks:\n• 20% chance to spawn a <special/>Special Ammo Brick\n• 33% chance to spawn a <heavy/>Heavy Ammo Brick\n\nBoth bricks can spawn at once. <strand/>Whirling Maelstrom kills cannot activate the perk.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695504072967,
+      "lastUpdate": 1696779067300,
       "updatedBy": "Stardust"
      }
     },
@@ -10044,7 +10044,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696720723699,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16829,7 +16829,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Weapon Kill, for #e${7+#d} seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size.\n\n< table formula background_2 >\n|b Stacks |b Stability |b Range |b Effective Range       |b Acc. Cone Size\n|b 1x     |  8         |  5     |  <formula [range_0] /> | -1.25%\n|b 2x     |  16        |  10    |  <formula [range_1] /> | -2.5%\n|b 3x     |  24        |  15    |  <formula [range_2] /> | -3.75%\n|b 4x     |  32        |  20    |  <formula [range_3] /> | -5%\n<$>\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "On Weapon Kill, for #e${7+#d} seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -16840,7 +16840,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676489677159,
+      "lastUpdate": 1696776011547,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -16854,7 +16854,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696720723699,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20323,14 +20323,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons are always Overcharged when the modifier is active.\n\nimport overload from global",
+     "main": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the <overload/>Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport overload from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696098248057,
+      "lastUpdate": 1696778758398,
       "updatedBy": "Stardust"
      }
     },
@@ -20340,7 +20340,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696098272186,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20350,14 +20350,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nFusion Rifles are always Overcharged when the modifier is active.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nimport unstoppable from global",
+     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nFusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nimport unstoppable from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695582262214,
+      "lastUpdate": 1696778776000,
       "updatedBy": "Stardust"
      }
     },
@@ -20367,7 +20367,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20377,14 +20377,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Bows without an intrinsic Breaker-Type are granted <barrier/>Shield-Piercing Rounds.\n\nBows are always Overcharged when the modifier is active.\n\nimport anti_barrier from global",
+     "main": "Bows without an intrinsic Breaker-Type are granted <barrier/>Shield-Piercing Rounds.\n\nBows (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport anti_barrier from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695495202179,
+      "lastUpdate": 1696778710540,
       "updatedBy": "Stardust"
      }
     },
@@ -20394,7 +20394,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20404,14 +20404,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nScout Rifles are always Overcharged when the modifier is active.\n\nimport unstoppable from global",
+     "main": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nScout Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport unstoppable from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695582218359,
+      "lastUpdate": 1696778699245,
       "updatedBy": "Stardust"
      }
     },
@@ -20421,7 +20421,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20431,14 +20431,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Auto Rifles without an intrinsic Breaker-Type are granted <barrier/>Shield-Piercing Rounds.\n\nAuto Rifles are always Overcharged when the modifier is active.\n\nimport anti_barrier from global",
+     "main": "Auto Rifles without an intrinsic Breaker-Type are granted <barrier/>Shield-Piercing Rounds.\n\nAuto Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport anti_barrier from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695495104132,
+      "lastUpdate": 1696778724118,
       "updatedBy": "Stardust"
      }
     },
@@ -20448,7 +20448,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695507595940,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32733,7 +32733,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Hits, for 1 second:\n• Reduces Weapon Recoil by ?%\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake\n• Removes <title Reticle Bounce [ReticleBounce] /> \n\nStacks 5 times. Additional hits refresh the duration.\n\nStacks gained per Weapon Hit:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5 (rounds down)\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)\n\ntitle ReticleBounce (\nMainly present on controller inputs but Machine Guns on MNK input also exhibit this behavior.\n)",
+     "main": "On Weapon Hits, for 1 second:\n• Reduces Weapon Recoil by ?%\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake\n• Removes Reticle Bounce \n\nStacks 5 times. Additional hits refresh the duration.\n\nStacks gained per Weapon Hit:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5 (rounds down)\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -32744,7 +32744,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678928156033,
+      "lastUpdate": 1696776198046,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -32758,7 +32758,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678928179597,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696720723699,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50277,7 +50277,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696720723699,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50552,7 +50552,7 @@
    },
    "editor": {
     "en": {
-     "main": "Dealing Melee Damage grants 10 Aim Assist and 10 Range for 10 seconds.\n\nDealing additional Melee Damage while the Buff is active extends the duration by 10 seconds, up to 20 seconds.\n\n<formula Effective Range: [range_0] />",
+     "main": "Dealing Melee Damage grants 10 Aim Assist and 10 Range for 10 seconds.\n\nDealing additional Melee Damage while the Buff is active extends the duration by 10 seconds, up to 20 seconds.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -50563,7 +50563,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676496164242,
+      "lastUpdate": 1696776255879,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -50577,7 +50577,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676498011930,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51461,7 +51461,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696720723699,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52054,7 +52054,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon finishing a reload, for 6 seconds:\nGrants 40 Handling and 20% Flinch Resistance.\n\nCannot be refreshed. Persists while stowed.\n\n<formula Ready Speed: [ready_0] />\n<formula Stow Speed: [stow_0] />",
+     "main": "Upon finishing a reload, for 6 seconds:\nGrants 40 Handling and 20% Flinch Resistance.\n\nCannot be refreshed. Persists while stowed.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -52065,7 +52065,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676497034671,
+      "lastUpdate": 1696776260846,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -52079,7 +52079,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676498011930,
+   "lastUpload": 1696779082385,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
