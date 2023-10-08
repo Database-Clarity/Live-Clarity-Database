@@ -10,7 +10,7 @@
 - If you wish to use our data in larger projects, please contact us through our [Discord Server](https://url.d2clarity.com/discord) so we can discuss the specifics of the cooperation.
   - Simply open a Partner Application support ticket in `#clarity-support`.
 - Do not modify the contents of our database on your end without clearly marking your changes. We are not responsible for any inaccuracies that this might cause.
-  - If you wish implement long-term changes to the data or its structuring, please contact us through our [Discord Server](https://url.d2clarity.com/discord) before doing so.
+  - If you wish to implement long-term changes to the data or its structuring, please contact us through our [Discord Server](https://url.d2clarity.com/discord) before doing so.
 - Want to use our data but in a different format such as Markdown or maybe convert the used icons to the internal IDs used by your app? Join our [Discord Server](https://url.d2clarity.com/discord) and we'll help you set up a converter to transform our data into a format you can directly use.
 - The contents of the database are subject to change at any moment be it due to spelling changes or new information. We strongly suggest implementing an automatic update checker so your website/app/resource always shows the latest information available.
 
@@ -20,5 +20,6 @@
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
 - [Little Light](https://littlelight.club): An intuitive inventory manager on mobile devices
 - [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
-- [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
+- [Deepsight.gg](https://deepsight.gg): A simplistic item manager focused mainly on armor management
 - [Destiny Perks](https://destinyperks.com): A quick way to search for weapons by perks and their utility
+- [Crayon](https://mijago.github.io/Crayon): A user-friendly Discord bot to make information conveniently accessible
