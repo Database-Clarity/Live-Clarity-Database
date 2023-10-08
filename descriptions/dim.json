@@ -725,13 +725,7 @@
     {
      "linesContent": [
       {
-       "text": "For "
-      },
-      {
-       "text": "one bullet only"
-      },
-      {
-       "text": ":"
+       "text": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:"
       }
      ]
     },
@@ -763,16 +757,6 @@
       },
       {
        "text": "Accuracy Cone Growth"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "3.1 seconds cooldown after firing."
       }
      ]
     }
@@ -2346,7 +2330,7 @@
     {
      "linesContent": [
       {
-       "text": "On Powered Melee Kills:"
+       "text": "On Powered Melee or Finisher Kills:"
       }
      ]
     },
@@ -2359,7 +2343,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Invisibility and restores Health."
+       "text": "Void Invisibility and restores Health, with Finishers providing a greater benefit to both."
       }
      ]
     },
@@ -2369,58 +2353,20 @@
     {
      "linesContent": [
       {
-       "text": "{Finishers} increase the duration of "
+       "text": "Invisibility Duration and restored Health are based on the "
       },
       {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Invisibility and restore additional health."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Invisibility Duration | Health based on "
-      },
-      {
-       "text": "enemy rank",
+       "text": "rank",
        "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": ":"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": " of the defeated target. "
+      },
       {
-       "text": "• Minors: 6.8 seconds {9.8s} | 100 HP {?}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "classNames": [ "void" ]
+      },
       {
-       "text": "• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Minibosses = 12.8s {15.8s} | ? HP {200 HP}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Bosses = 13.3s | 200 HP {?}"
+       "text": "Echo of Persistence increases Invisibility duration by 41.5%."
       }
      ]
     },
@@ -2430,13 +2376,73 @@
     {
      "linesContent": [
       {
-       "text": "Echo of Persistence increases the "
-      },
+       "text": "Invisibility|Health granted on Powered Melee Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "void" ]
-      },
+       "text": "• Minors: 6.8 seconds | 100 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "Void Invisibility duration by 41.5%."
+       "text": "• Elites, Enemy Players: 9.8s | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 12.8s | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bosses: 13.3s | 200 HP"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Invisibility|Health granted on Finisher Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 9.8 seconds | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites: 12.7 seconds | 200 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 15.8 seconds | 200 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bosses: ? seconds | ? HP"
       }
      ]
     }
@@ -4509,7 +4515,7 @@
     {
      "linesContent": [
       {
-       "text": "Machine Guns are always Overcharged when the modifier is active."
+       "text": "Machine Guns (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -8069,7 +8075,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Precision Hits against enemies 25+ meters away applies "
+       "text": "Scoring multiple Precision Hits against enemies 25?+ meters away applies "
       },
       {
        "classNames": [ "void" ]
@@ -8092,21 +8098,49 @@
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifle, Linear Fusion Rifle: 50%?"
+       "text": "• Bows: 50%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Scout Rifle: 25%?"
+       "text": "• Hand Cannons, Scout Rifles: 25%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Other Weapons: unknown"
+       "text": "• Sidearms: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Trace Rifles, Submachine Guns: 12.5%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Machine Guns, Pulse Rifles: 11.2%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Other Weapons: currently unknown"
       }
      ]
     }
@@ -8315,7 +8349,13 @@
     {
      "linesContent": [
       {
-       "text": "Both bricks can spawn at once."
+       "text": "Both bricks can spawn at once. "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Whirling Maelstrom kills cannot activate the perk."
       }
      ]
     }
@@ -9371,9 +9411,6 @@
        "text": "Each stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
     },
     {
      "classNames": [ "spacer" ]
@@ -14966,13 +15003,7 @@
     {
      "linesContent": [
       {
-       "text": "For "
-      },
-      {
-       "text": "one bullet only"
-      },
-      {
-       "text": ":"
+       "text": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:"
       }
      ]
     },
@@ -15018,16 +15049,6 @@
       },
       {
        "text": "Accuracy Cone Growth"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "3.1 seconds cooldown after firing."
       }
      ]
     },
@@ -15761,7 +15782,7 @@
     {
      "linesContent": [
       {
-       "text": "Hand Cannons are always Overcharged when the modifier is active."
+       "text": "Hand Cannons (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -15839,7 +15860,7 @@
     {
      "linesContent": [
       {
-       "text": "Fusion Rifles are always Overcharged when the modifier is active."
+       "text": "Fusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -15899,7 +15920,7 @@
     {
      "linesContent": [
       {
-       "text": "Bows are always Overcharged when the modifier is active."
+       "text": "Bows (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -15969,7 +15990,7 @@
     {
      "linesContent": [
       {
-       "text": "Scout Rifles are always Overcharged when the modifier is active."
+       "text": "Scout Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -16019,7 +16040,7 @@
     {
      "linesContent": [
       {
-       "text": "Auto Rifles are always Overcharged when the modifier is active."
+       "text": "Auto Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -19559,10 +19580,7 @@
     {
      "linesContent": [
       {
-       "text": "• Removes "
-      },
-      {
-       "text": "Reticle Bounce"
+       "text": "• Removes Reticle Bounce"
       }
      ]
     },
@@ -25436,10 +25454,7 @@
     {
      "linesContent": [
       {
-       "text": "• Removes "
-      },
-      {
-       "text": "Reticle Bounce"
+       "text": "• Removes Reticle Bounce"
       }
      ]
     },

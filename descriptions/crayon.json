@@ -201,7 +201,7 @@
  "47981717": {
   "hash": 47981717,
   "name": "Opening Shot",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Aim Assist": [
     {
@@ -221,7 +221,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "For one bullet only:\n• 20 Aim Assist\n• 25 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n\n3.1 seconds cooldown after firing.",
+   "en": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:\n• 20 Aim Assist\n• 25 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth",
    "zh-chs": "第一发子弹:\n•  +20 瞄准辅助\n•  +25 射程\n•  -5% 精度锥角尺寸\n•  -10% 精度锥角增长\n\n开火后触发 3.1 秒冷却时间。"
   }
  },
@@ -605,7 +605,7 @@
  "205890336": {
   "hash": 205890336,
   "name": "Underdog",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -671,11 +671,11 @@
   "name": "Vanishing Execution",
   "itemHash": 2203146422,
   "itemName": "Assassin's Cowl",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Powered Melee Kills:\nGrants <:void:720178940240461864>Void Invisibility and restores Health.\n\n{Finishers} increase the duration of <:void:720178940240461864>Void Invisibility and restore additional health.\n\nInvisibility Duration | Health based on [enemy rank](https://url.d2clarity.com/combatants):\n• Minors: 6.8 seconds {9.8s} | 100 HP {?}\n• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}\n• Minibosses = 12.8s {15.8s} | ? HP {200 HP}\n• Bosses = 13.3s | 200 HP {?}\n\nEcho of Persistence increases the <:void:720178940240461864>Void Invisibility duration by 41.5%.",
+   "en": "On Powered Melee or Finisher Kills:\nGrants <:void:720178940240461864>Void Invisibility and restores Health, with Finishers providing a greater benefit to both.\n\nInvisibility Duration and restored Health are based on the [rank](https://url.d2clarity.com/combatants) of the defeated target. <:void:720178940240461864>Echo of Persistence increases Invisibility duration by 41.5%.\n\nInvisibility|Health granted on Powered Melee Kills:\n• Minors: 6.8 seconds | 100 HP\n• Elites, Enemy Players: 9.8s | ? HP\n• Minibosses: 12.8s | ? HP\n• Bosses: 13.3s | 200 HP\n\nInvisibility|Health granted on Finisher Kills:\n• Minors: 9.8 seconds | ? HP\n• Elites: 12.7 seconds | 200 HP\n• Minibosses: 15.8 seconds | 200 HP\n• Bosses: ? seconds | ? HP",
    "zh-chs": "充能近战击杀获得<:void:720178940240461864>虚空隐身，并恢复 [?] 生命值。\n（终结技的效果更显著）\n\n隐身持续时间（使用终结技的效果）：\n普通敌人 = 6.8 秒（9.8）\n精英敌人/守护者 = 9.8 秒 （12.7）\n次级首领 = 12.8 秒 （15.8）\n首领 = 13.3 秒\n\n坚韧回声可增加 41.5% <:void:720178940240461864>虚空隐身的持续时间。\n\n首领和载具无法被终结。"
   }
  },
@@ -1254,7 +1254,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {
@@ -1369,11 +1369,11 @@
  "465808236": {
   "hash": 465808236,
   "name": "Overload Machine Guns",
-  "lastUpload": 1696098272186,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Sustained fire for 0.6? seconds with a Machine Gun grants the Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns are always Overcharged when the modifier is active.\n\nOverload Shots/effects apply Disruption for <:pve:922884406073507930>6.5 <:pvp:922884468275019856>[5] seconds. Applying Disruption stuns Overload Champions and prevents them from regenerating health for the duration of the effect.\n\nDisruption decreases damage dealt by PvE Combatants by 25%. It also decreases Melee, Grenade, and Class Ability regeneration speeds by 40% in PvP."
+   "en": "Sustained fire for 0.6? seconds with a Machine Gun grants the Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nMachine Guns (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nOverload Shots/effects apply Disruption for <:pve:922884406073507930>6.5 <:pvp:922884468275019856>[5] seconds. Applying Disruption stuns Overload Champions and prevents them from regenerating health for the duration of the effect.\n\nDisruption decreases damage dealt by PvE Combatants by 25%. It also decreases Melee, Grenade, and Class Ability regeneration speeds by 40% in PvP."
   }
  },
  "465808238": {
@@ -2148,7 +2148,7 @@
  "671806388": {
   "hash": 671806388,
   "name": "Compulsive Reloader",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -2461,11 +2461,11 @@
  "733647368": {
   "hash": 733647368,
   "name": "Rapid-Fire Ranger",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple Precision Hits against enemies 25+ meters away applies <:void:720178940240461864>Weaken to them.\n\nActivation Progress per Crit by Weapon Type:\n• Sniper Rifle, Linear Fusion Rifle: 50%?\n• Scout Rifle: 25%?\n• Other Weapons: unknown"
+   "en": "Scoring multiple Precision Hits against enemies 25?+ meters away applies <:void:720178940240461864>Weaken to them.\n\nActivation Progress per Crit by Weapon Type:\n• Bows: 50%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Trace Rifles, Submachine Guns: 12.5%\n• Machine Guns, Pulse Rifles: 11.2%\n• Other Weapons: currently unknown"
   }
  },
  "733647369": {
@@ -2491,11 +2491,11 @@
  "733647374": {
   "hash": 733647374,
   "name": "Elemental Munitions",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "PvE Combatant Kills with Tangles or Elemental Orbs have a chance to spawn Ammo Bricks:\n• 20% chance to spawn a <:special:968793055631114330>Special Ammo Brick\n• 33% chance to spawn a <:heavy:968793055652106320>Heavy Ammo Brick\n\nBoth bricks can spawn at once."
+   "en": "PvE Combatant Kills with Tangles or Elemental Orbs have a chance to spawn Ammo Bricks:\n• 20% chance to spawn a <:special:968793055631114330>Special Ammo Brick\n• 33% chance to spawn a <:heavy:968793055652106320>Heavy Ammo Brick\n\nBoth bricks can spawn at once. Whirling Maelstrom kills cannot activate the perk."
   }
  },
  "733647375": {
@@ -2895,7 +2895,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill, for 🡅7.5 seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size.\n\n\n🡅 Buff Duration is increased by 0.5 seconds."
+   "en": "On Weapon Kill, for 🡅7.5 seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\n\nDuration is refreshed on Weapon Kills.\n\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size.\n\n🡅 Buff Duration is increased by 0.5 seconds."
   }
  },
  "843318450": {
@@ -3859,7 +3859,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -4269,7 +4269,7 @@
  "1195158366": {
   "hash": 1195158366,
   "name": "Encore",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696779082385,
   "stats": {
    "Range": [
     {
@@ -4938,7 +4938,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "For one bullet only:\n• 🡅25 Aim Assist\n• 🡅30 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n\n3.1 seconds cooldown after firing.\n\n🡅 Grants 5 more Aim Assist and Range."
+   "en": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:\n• 🡅25 Aim Assist\n• 🡅30 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n\n🡅 Grants 5 more Aim Assist and Range."
   }
  },
  "1376049785": {
@@ -5210,7 +5210,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Airborne": [
     {
@@ -5259,51 +5259,51 @@
  "1456244346": {
   "hash": 1456244346,
   "name": "Overload Hand Cannon",
-  "lastUpload": 1696098272186,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons are always Overcharged when the modifier is active.\n\nOverload Shots/effects apply Disruption for <:pve:922884406073507930>6.5 <:pvp:922884468275019856>[5] seconds. Applying Disruption stuns Overload Champions and prevents them from regenerating health for the duration of the effect.\n\nDisruption decreases damage dealt by PvE Combatants by 25%. It also decreases Melee, Grenade, and Class Ability regeneration speeds by 40% in PvP."
+   "en": "Scoring 2 Hits within 2 seconds of each with a Hand Cannon grants the Overload Shot buff to your next shot within the next 6 seconds. Reloading removes the buff and resets the Hit Counter.\n\nHand Cannons (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nOverload Shots/effects apply Disruption for <:pve:922884406073507930>6.5 <:pvp:922884468275019856>[5] seconds. Applying Disruption stuns Overload Champions and prevents them from regenerating health for the duration of the effect.\n\nDisruption decreases damage dealt by PvE Combatants by 25%. It also decreases Melee, Grenade, and Class Ability regeneration speeds by 40% in PvP."
   }
  },
  "1456244347": {
   "hash": 1456244347,
   "name": "Unstoppable Fusion",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Aiming Down Sights with a Fusion Rifle for 1 second grants the Unstoppable Shot buff to your next shot.\n\nFusion Rifles are always Overcharged when the modifier is active.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nUnstoppable Shots/effects are required to stun Unstoppable Champions – immobilizing them and negating the 70% Damage Resistance they have for the duration of the stun."
+   "en": "Aiming Down Sights with a Fusion Rifle for 1 second grants the Unstoppable Shot buff to your next shot.\n\nFusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nUnstoppable Shots/effects are required to stun Unstoppable Champions – immobilizing them and negating the 70% Damage Resistance they have for the duration of the stun."
   }
  },
  "1456244348": {
   "hash": 1456244348,
   "name": "Piercing Bowstring",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Bows without an intrinsic Breaker-Type are granted Shield-Piercing Rounds.\n\nBows are always Overcharged when the modifier is active.\n\nShield-Piercing weapons are required to break a Barrier Champion's immunity shield in order to stun them. Damaging their shields also halts their health regeneration for 1.6 seconds.\n\nAdditionally, Shield-Piercing weapons can overpenetrate an unlimited number of enemies. They also bypass Hydra Shields, Hobgoblin immunity, (Taken) Phalanx shields, and Scorn Buckler shields.\n\nTitan Barricades receive 30% Increased Damage from Shield-Piercing weapons."
+   "en": "Bows without an intrinsic Breaker-Type are granted Shield-Piercing Rounds.\n\nBows (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nShield-Piercing weapons are required to break a Barrier Champion's immunity shield in order to stun them. Damaging their shields also halts their health regeneration for 1.6 seconds.\n\nAdditionally, Shield-Piercing weapons can overpenetrate an unlimited number of enemies. They also bypass Hydra Shields, Hobgoblin immunity, (Taken) Phalanx shields, and Scorn Buckler shields.\n\nTitan Barricades receive 30% Increased Damage from Shield-Piercing weapons."
   }
  },
  "1456244349": {
   "hash": 1456244349,
   "name": "Unstoppable Scout Rifle",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the Unstoppable Shot buff to your next shot.\n\nScout Rifles are always Overcharged when the modifier is active.\n\nUnstoppable Shots/effects are required to stun Unstoppable Champions – immobilizing them and negating the 70% Damage Resistance they have for the duration of the stun."
+   "en": "Aiming-Down-Sights with a Scout Rifle without firing for 1 second grants the Unstoppable Shot buff to your next shot.\n\nScout Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nUnstoppable Shots/effects are required to stun Unstoppable Champions – immobilizing them and negating the 70% Damage Resistance they have for the duration of the stun."
   }
  },
  "1456244351": {
   "hash": 1456244351,
   "name": "Anti-Barrier Auto Rifle",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Auto Rifles without an intrinsic Breaker-Type are granted Shield-Piercing Rounds.\n\nAuto Rifles are always Overcharged when the modifier is active.\n\nShield-Piercing weapons are required to break a Barrier Champion's immunity shield in order to stun them. Damaging their shields also halts their health regeneration for 1.6 seconds.\n\nAdditionally, Shield-Piercing weapons can overpenetrate an unlimited number of enemies. They also bypass Hydra Shields, Hobgoblin immunity, (Taken) Phalanx shields, and Scorn Buckler shields.\n\nTitan Barricades receive 30% Increased Damage from Shield-Piercing weapons."
+   "en": "Auto Rifles without an intrinsic Breaker-Type are granted Shield-Piercing Rounds.\n\nAuto Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nShield-Piercing weapons are required to break a Barrier Champion's immunity shield in order to stun them. Damaging their shields also halts their health regeneration for 1.6 seconds.\n\nAdditionally, Shield-Piercing weapons can overpenetrate an unlimited number of enemies. They also bypass Hydra Shields, Hobgoblin immunity, (Taken) Phalanx shields, and Scorn Buckler shields.\n\nTitan Barricades receive 30% Increased Damage from Shield-Piercing weapons."
   }
  },
  "1457189155": {
@@ -8279,7 +8279,7 @@
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1678928179597,
+  "lastUpload": 1696779082385,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -10694,7 +10694,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {
@@ -12691,7 +12691,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Range": [
     {
@@ -12751,7 +12751,7 @@
  "3907865655": {
   "hash": 3907865655,
   "name": "Right Hook",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1696779082385,
   "stats": {
    "Aim Assist": [
     {
@@ -13035,7 +13035,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Airborne": [
     {
@@ -13237,7 +13237,7 @@
  "4008116374": {
   "hash": 4008116374,
   "name": "Suros Synergy",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {

@@ -1093,7 +1093,7 @@
  "47981717": {
   "hash": 47981717,
   "name": "Opening Shot",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Aim Assist": [
     {
@@ -1117,23 +1117,7 @@
     {
      "linesContent": [
       {
-       "text": "For "
-      },
-      {
-       "text": "one bullet only",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Even in the case of burst weapons. Only the first shot of the burst is affected."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ":"
+       "text": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:"
       }
      ]
     },
@@ -1175,28 +1159,6 @@
         }
        ],
        "classNames": [ "title" ]
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "3.1 seconds cooldown after firing."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -2940,7 +2902,7 @@
  "205890336": {
   "hash": 205890336,
   "name": "Underdog",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -2966,27 +2928,6 @@
      "linesContent": [
       {
        "text": "Linearly grants up to 100 Reload Speed, and a 0.9x Reload Duration Multiplier."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Half Strength Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Maximum Strength Reload Time:",
-       "formula": "reload_1",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -3093,7 +3034,7 @@
   "name": "Vanishing Execution",
   "itemHash": 2203146422,
   "itemName": "Assassin's Cowl",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -3101,7 +3042,7 @@
     {
      "linesContent": [
       {
-       "text": "On Powered Melee Kills:"
+       "text": "On Powered Melee or Finisher Kills:"
       }
      ]
     },
@@ -3114,7 +3055,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Invisibility and restores Health."
+       "text": "Void Invisibility and restores Health, with Finishers providing a greater benefit to both."
       }
      ]
     },
@@ -3124,59 +3065,21 @@
     {
      "linesContent": [
       {
-       "text": "{Finishers} increase the duration of "
+       "text": "Invisibility Duration and restored Health are based on the "
       },
       {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Invisibility and restore additional health."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Invisibility Duration | Health based on "
-      },
-      {
-       "text": "enemy rank",
+       "text": "rank",
        "link": "https://url.d2clarity.com/combatants",
        "classNames": [ "link" ]
       },
       {
-       "text": ":"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": " of the defeated target. "
+      },
       {
-       "text": "• Minors: 6.8 seconds {9.8s} | 100 HP {?}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "classNames": [ "void" ]
+      },
       {
-       "text": "• Elites, Enemy Players: 9.8s {12.7s} | ? HP {200 HP}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Minibosses = 12.8s {15.8s} | ? HP {200 HP}"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Bosses = 13.3s | 200 HP {?}"
+       "text": "Echo of Persistence increases Invisibility duration by 41.5%."
       }
      ]
     },
@@ -3186,13 +3089,73 @@
     {
      "linesContent": [
       {
-       "text": "Echo of Persistence increases the "
-      },
+       "text": "Invisibility|Health granted on Powered Melee Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "classNames": [ "void" ]
-      },
+       "text": "• Minors: 6.8 seconds | 100 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "Void Invisibility duration by 41.5%."
+       "text": "• Elites, Enemy Players: 9.8s | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 12.8s | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bosses: 13.3s | 200 HP"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Invisibility|Health granted on Finisher Kills:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 9.8 seconds | ? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites: 12.7 seconds | 200 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 15.8 seconds | 200 HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bosses: ? seconds | ? HP"
       }
      ]
     }
@@ -5668,7 +5631,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {
@@ -5738,27 +5701,6 @@
      "linesContent": [
       {
        "text": "Any Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -6042,7 +5984,7 @@
  "465808236": {
   "hash": 465808236,
   "name": "Overload Machine Guns",
-  "lastUpload": 1696098272186,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6066,7 +6008,7 @@
     {
      "linesContent": [
       {
-       "text": "Machine Guns are always Overcharged when the modifier is active."
+       "text": "Machine Guns (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -8586,18 +8528,6 @@
        "text": " Reload Speed bonus is increased by 5."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
-      }
-     ]
     }
    ]
   }
@@ -9620,7 +9550,7 @@
  "671806388": {
   "hash": 671806388,
   "name": "Compulsive Reloader",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -9646,18 +9576,6 @@
      "linesContent": [
       {
        "text": "50 Reload Speed with a 0.95x Reload Duration Multiplier."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reload Time:",
-       "formula": "reload_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -11081,7 +10999,7 @@
  "733647368": {
   "hash": 733647368,
   "name": "Rapid-Fire Ranger",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11089,7 +11007,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Precision Hits against enemies 25+ meters away applies "
+       "text": "Scoring multiple Precision Hits against enemies 25?+ meters away applies "
       },
       {
        "classNames": [ "void" ]
@@ -11112,21 +11030,49 @@
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifle, Linear Fusion Rifle: 50%?"
+       "text": "• Bows: 50%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Scout Rifle: 25%?"
+       "text": "• Hand Cannons, Scout Rifles: 25%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Other Weapons: unknown"
+       "text": "• Sidearms: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Trace Rifles, Submachine Guns: 12.5%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Machine Guns, Pulse Rifles: 11.2%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Other Weapons: currently unknown"
       }
      ]
     }
@@ -11300,7 +11246,7 @@
  "733647374": {
   "hash": 733647374,
   "name": "Elemental Munitions",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11344,7 +11290,13 @@
     {
      "linesContent": [
       {
-       "text": "Both bricks can spawn at once."
+       "text": "Both bricks can spawn at once. "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Whirling Maelstrom kills cannot activate the perk."
       }
      ]
     }
@@ -12655,227 +12607,6 @@
        "text": "Each stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Range"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Effective Range"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Acc. Cone Size"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "8"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-1.25%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "16"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-2.5%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "24"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "15"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-3.75%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "32"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_3"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-5%"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     },
     {
      "classNames": [ "spacer" ]
@@ -16880,7 +16611,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Reload": [
     {
@@ -18668,7 +18399,7 @@
  "1195158366": {
   "hash": 1195158366,
   "name": "Encore",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1696779082385,
   "stats": {
    "Range": [
     {
@@ -18722,227 +18453,6 @@
        "text": "Each stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size."
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "table": [
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stacks"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Stability"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Range"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Effective Range"
-          }
-         ]
-        },
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "Acc. Cone Size"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "1x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "8"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "5"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_0"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-1.25%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "2x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "16"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "10"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_1"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-2.5%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "3x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "24"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "15"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_2"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-3.75%"
-          }
-         ]
-        }
-       ]
-      },
-      {
-       "rowContent": [
-        {
-         "classNames": [ "bold" ],
-         "cellContent": [
-          {
-           "text": "4x"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "32"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "20"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "",
-           "classNames": [ "formula" ],
-           "formula": "range_3"
-          }
-         ]
-        },
-        {
-         "cellContent": [
-          {
-           "text": "-5%"
-          }
-         ]
-        }
-       ]
-      }
-     ],
-     "classNames": [ "formula", "background_2" ],
-     "isFormula": true
     }
    ],
    "zh-chs": [
@@ -20619,23 +20129,7 @@
     {
      "linesContent": [
       {
-       "text": "For "
-      },
-      {
-       "text": "one bullet only",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Even in the case of burst weapons. Only the first shot of the burst is affected."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ":"
+       "text": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:"
       }
      ]
     },
@@ -20700,33 +20194,11 @@
     {
      "linesContent": [
       {
-       "text": "3.1 seconds cooldown after firing."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
        "text": " Grants 5 more Aim Assist and Range."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -21678,7 +21150,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Airborne": [
     {
@@ -21806,7 +21278,7 @@
  "1456244346": {
   "hash": 1456244346,
   "name": "Overload Hand Cannon",
-  "lastUpload": 1696098272186,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -21830,7 +21302,7 @@
     {
      "linesContent": [
       {
-       "text": "Hand Cannons are always Overcharged when the modifier is active."
+       "text": "Hand Cannons (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -21889,7 +21361,7 @@
  "1456244347": {
   "hash": 1456244347,
   "name": "Unstoppable Fusion",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -21913,7 +21385,7 @@
     {
      "linesContent": [
       {
-       "text": "Fusion Rifles are always Overcharged when the modifier is active."
+       "text": "Fusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -21952,7 +21424,7 @@
  "1456244348": {
   "hash": 1456244348,
   "name": "Piercing Bowstring",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -21976,7 +21448,7 @@
     {
      "linesContent": [
       {
-       "text": "Bows are always Overcharged when the modifier is active."
+       "text": "Bows (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -22025,7 +21497,7 @@
  "1456244349": {
   "hash": 1456244349,
   "name": "Unstoppable Scout Rifle",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22049,7 +21521,7 @@
     {
      "linesContent": [
       {
-       "text": "Scout Rifles are always Overcharged when the modifier is active."
+       "text": "Scout Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -22078,7 +21550,7 @@
  "1456244351": {
   "hash": 1456244351,
   "name": "Anti-Barrier Auto Rifle",
-  "lastUpload": 1695507595940,
+  "lastUpload": 1696779082385,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22102,7 +21574,7 @@
     {
      "linesContent": [
       {
-       "text": "Auto Rifles are always Overcharged when the modifier is active."
+       "text": "Auto Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
       }
      ]
     },
@@ -26633,20 +26105,7 @@
     {
      "linesContent": [
       {
-       "text": "• Removes "
-      },
-      {
-       "text": "Reticle Bounce",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Mainly present on controller inputs but Machine Guns on MNK input also exhibit this behavior."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
+       "text": "• Removes Reticle Bounce"
       }
      ]
     },
@@ -34411,7 +33870,7 @@
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1678928179597,
+  "lastUpload": 1696779082385,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -34447,20 +33906,7 @@
     {
      "linesContent": [
       {
-       "text": "• Removes "
-      },
-      {
-       "text": "Reticle Bounce",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Mainly present on controller inputs but Machine Guns on MNK input also exhibit this behavior."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
+       "text": "• Removes Reticle Bounce"
       }
      ]
     },
@@ -36243,27 +35689,6 @@
       },
       {
        "text": " Buff duration is increased by 1 second."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -44206,7 +43631,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {
@@ -53356,7 +52781,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Range": [
     {
@@ -53684,7 +53109,7 @@
  "3907865655": {
   "hash": 3907865655,
   "name": "Right Hook",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1696779082385,
   "stats": {
    "Aim Assist": [
     {
@@ -53719,18 +53144,6 @@
      "linesContent": [
       {
        "text": "Dealing additional Melee Damage while the Buff is active extends the duration by 10 seconds, up to 20 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Effective Range:",
-       "formula": "range_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
@@ -54807,7 +54220,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1696720723699,
+  "lastUpload": 1696779082385,
   "stats": {
    "Airborne": [
     {
@@ -55472,7 +54885,7 @@
  "4008116374": {
   "hash": 4008116374,
   "name": "Suros Synergy",
-  "lastUpload": 1676498011930,
+  "lastUpload": 1696779082385,
   "stats": {
    "Handling": [
     {
@@ -55507,27 +54920,6 @@
      "linesContent": [
       {
        "text": "Cannot be refreshed. Persists while stowed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ready Speed:",
-       "formula": "ready_0",
-       "classNames": [ "formula" ]
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stow Speed:",
-       "formula": "stow_0",
-       "classNames": [ "formula" ]
       }
      ]
     }
