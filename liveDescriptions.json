@@ -3212,7 +3212,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "During a slide, after sprinting for at least 1.5 seconds: \nProjects a 180° frontal shield that reflects damage and projectiles for 0.45 seconds.\n\nPassively Increases Slide Distance by 33%.",
+     "main": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged: \nProjects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds.\n\nAfter shield deactivation, Class Ability energy is consumed proportionally to the damage reflected.",
      "secondary": "import self"
     },
     "ko": {
@@ -3227,7 +3227,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678719288744,
+      "lastUpdate": 1697576168019,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -3245,7 +3245,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678726148083,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6767,7 +6767,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters\n• Explosion no longer deals self-damage and has no damage falloff\n• Lasts 30 seconds (10s 🠚 30s)\n• Increases Tripmine Durability to 100 HP with 50% Damage Resist\n\n<solar/>Solar Ability Damage recharges 33% of Tripmine Grenade Ability. The initial <solar/>Scorch tick from Abilities will also count as Ability Damage for this.\n",
+     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances <solar/>Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters with no damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n• <solar/>Solar Ability Kills recharge 33?% Grenade Energy",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -6778,7 +6778,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695587802760,
+      "lastUpdate": 1697576361269,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -6792,7 +6792,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16137,7 +16137,7 @@
    },
    "editor": {
     "en": {
-     "main": "While within 15 meters of 3+ enemies:\nGrants Biotic Enhancements for 8 seconds\n\nBiotic Enhancements benefits:\n• 50% Increased Super and Glaive Melee Damage\n• <pve 200% /> <pvp [100%] /> Increased Melee Damage\n\nIncreases Melee Lunge distance to 7 meters.",
+     "main": "Being within 15 meters of 3+ enemies grants the Biotic Enhancements buff for 8 seconds.\n\nBiotic Enhancements benefits:\n• 50% Increased Super and Glaive Melee Damage\n• <pve 200% /> <pvp [100%] /> Increased Melee Damage\n• ? Handling and Reload Speed",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -16148,7 +16148,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692909425427,
+      "lastUpdate": 1697578353318,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -16162,7 +16162,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692913470476,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20350,14 +20350,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nFusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nLinear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle.\n\nimport unstoppable from global",
+     "main": "Aiming Down Sights with a Fusion Rifle for 1 second grants the <unstoppable/>Unstoppable Shot buff to your next shot.\n\nFusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier.\n\nimport unstoppable from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696778776000,
+      "lastUpdate": 1697578173175,
       "updatedBy": "Stardust"
      }
     },
@@ -20367,7 +20367,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696779082385,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24931,21 +24931,21 @@
     "PVE Damage": [
      {
       "active": {
-       "multiplier": [ 1.2 ]
+       "multiplier": [ 1.15 ]
       }
      }
     ],
     "PVP Damage": [
      {
       "active": {
-       "multiplier": [ 1.2 ]
+       "multiplier": [ 1.15 ]
       }
      }
     ]
    },
    "editor": {
     "en": {
-     "main": "Upon Sliding after Sprinting for 1.5 seconds:\n20% Increased Damage and 20% Decresed Charge Time for [?] seconds. \n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "Upon Sliding after Sprinting for 1.5 seconds:\n15% Increased Damage and 20% Decresed Charge Time for ? seconds. \n\nenhanced (\n#e Buff Duration is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -24956,7 +24956,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689190637918,
+      "lastUpdate": 1697578139678,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -24965,12 +24965,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676214517020,
+     "lastUpdate": 1697578135557,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31315,14 +31315,14 @@
    },
    "editor": {
     "en": {
-     "main": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last #e${3+#d} seconds.\n\nenhanced (\nvar d = 0.5 //placeholder\n#e Allowed time between damage exchanges is extended by 0.5 seconds.\n)",
+     "main": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for #e${10+#d} seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds.\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689193713519,
+      "lastUpdate": 1697577369325,
       "updatedBy": "Stardust"
      }
     },
@@ -31332,7 +31332,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50277,7 +50277,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51461,7 +51461,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697578360692,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
