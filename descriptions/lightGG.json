@@ -2861,11 +2861,11 @@
   "name": "Reflective Vents",
   "itemHash": 2423243921,
   "itemName": "Antaeus Wards",
-  "lastUpload": 1678726148083,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1678719288744,
+     "lastUpdate": 1697576168019,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -2883,14 +2883,14 @@
     {
      "linesContent": [
       {
-       "text": "During a slide, after sprinting for at least 1.5 seconds:"
+       "text": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Projects a 180° frontal shield that reflects damage and projectiles for 0.45 seconds."
+       "text": "Projects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds."
       }
      ]
     },
@@ -2900,7 +2900,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively Increases Slide Distance by 33%."
+       "text": "After shield deactivation, Class Ability energy is consumed proportionally to the damage reflected."
       }
      ]
     }
@@ -5485,11 +5485,11 @@
   "name": "Wish-Dragon Teeth",
   "itemHash": 475652357,
   "itemName": "Young Ahamkara's Spine",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1695587802760,
+     "lastUpdate": 1697576361269,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -5513,7 +5513,10 @@
     {
      "linesContent": [
       {
-       "text": "Enhances Tripmine Grenades:"
+       "text": "Enhances "
+      },
+      {
+       "text": "Tripmine Grenades:"
       }
      ]
     },
@@ -5527,41 +5530,38 @@
     {
      "linesContent": [
       {
-       "text": "• Explosion Length and Width are increased to 14 meters"
+       "text": "• Explosion Length and Width are increased to 14 meters with no damage falloff"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Explosion no longer deals self-damage and has no damage falloff"
+       "text": "• Explosion no longer deals self-damage"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Lasts 30 seconds (10s 🠚 30s)"
+       "text": "• Last 20 seconds longer (10s🠚30s)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Increases Tripmine Durability to 100 HP with 50% Damage Resist"
+       "text": "• Grants Tripmine Grenades 70 HP"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
-       "text": "Solar Ability Damage recharges 33% of Tripmine Grenade Ability. The initial "
+       "text": "• "
       },
       {
-       "text": "Scorch tick from Abilities will also count as Ability Damage for this."
+       "text": "Solar Ability Kills recharge 33?% Grenade Energy"
       }
      ]
     }
@@ -8728,7 +8728,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12 seconds."
       }
      ]
     },
@@ -8748,14 +8755,7 @@
     {
      "linesContent": [
       {
-       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "3.5 seconds."
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds."
       }
      ]
     },
@@ -8769,7 +8769,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Allowed time between damage exchanges is extended by 0.5 seconds."
+       "text": " Buff duration is increased by 2 seconds."
       }
      ]
     }
@@ -10638,7 +10638,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
+       "text": "15% Increased Damage and 20% Decresed Charge Time for ? seconds."
       }
      ]
     },
@@ -14151,7 +14151,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -14642,11 +14642,11 @@
   "name": "Biotic Enhancements",
   "itemHash": 241462142,
   "itemName": "Synthoceps",
-  "lastUpload": 1692913470476,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692909425427,
+     "lastUpdate": 1697578353318,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -14660,14 +14660,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 15 meters of 3+ enemies:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants Biotic Enhancements for 8 seconds"
+       "text": "Being within 15 meters of 3+ enemies grants the Biotic Enhancements buff for 8 seconds."
       }
      ]
     },
@@ -14708,12 +14701,9 @@
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
-       "text": "Increases Melee Lunge distance to 7 meters."
+       "text": "• ? Handling and Reload Speed"
       }
      ]
     }
@@ -18117,7 +18107,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -18320,11 +18310,11 @@
  "1456244347": {
   "hash": 1456244347,
   "name": "Unstoppable Fusion",
-  "lastUpload": 1696779082385,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696778776000,
+     "lastUpdate": 1697578173175,
      "updatedBy": "Stardust"
     }
    }
@@ -18348,16 +18338,6 @@
      "linesContent": [
       {
        "text": "Fusion Rifles (without an intrinsic Breaker Type) are always Overcharged in activities with the Overcharged Weapons modifier."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Linear Fusion Rifles inherit the benefits if equipped alongside a Fusion Rifle."
       }
      ]
     },
@@ -22689,11 +22669,11 @@
  "1754714824": {
   "hash": 1754714824,
   "name": "Kickstart",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689190637918,
+     "lastUpdate": 1697578139678,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -22714,7 +22694,7 @@
     {
      "linesContent": [
       {
-       "text": "20% Increased Damage and 20% Decresed Charge Time for [?] seconds."
+       "text": "15% Increased Damage and 20% Decresed Charge Time for ? seconds."
       }
      ]
     }
@@ -28459,11 +28439,11 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689193713519,
+     "lastUpdate": 1697577369325,
      "updatedBy": "Stardust"
     }
    }
@@ -28480,7 +28460,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 5 seconds."
+       "text": "Grants 30 Airborne Effectiveness and 35% Flinch Resistance for 10 seconds."
       }
      ]
     },
@@ -38338,7 +38318,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -46024,7 +46004,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -47272,7 +47252,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697578360692,
   "updateTracker": {
    "descriptions": {
     "en": {
