@@ -684,11 +684,11 @@
   "name": "Reflective Vents",
   "itemHash": 2423243921,
   "itemName": "Antaeus Wards",
-  "lastUpload": 1697666401323,
+  "lastUpload": 1697805373885,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged:\nProjects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds.\n\nReflected projectiles deal 50% increased damage.\n\nAfter shield deactivation, 2% Class Ability energy is drained for every point of damage reflected.",
+   "en": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged:\nProjects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds.\n\nReflected projectiles deal 50% increased damage.\n\nAfter shield deactivation, 2% Class Ability energy is drained for every point of damage reflected.\n\nCurrently partially bugged and does not drain Class Ability Energy for projectiles reflected at the end of your slide.",
    "zh-chs": "冲刺 1.5 秒后滑行：\n产生一个 180° 的正面护盾，可以反弹伤害和弹道。\n\n滑行距离增加33%。"
   }
  },
@@ -1471,11 +1471,11 @@
   "name": "Wish-Dragon Teeth",
   "itemHash": 475652357,
   "itemName": "Young Ahamkara's Spine",
-  "lastUpload": 1697579158994,
+  "lastUpload": 1697805373885,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Intrinsically grants Fastball to all grenades.\n\nEnhances <:solar:720178909361995786>Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters with no damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n• <:solar:720178909361995786>Solar Ability Kills recharge 33?% Grenade Energy",
+   "en": "Intrinsically grants Fastball to all grenades.\n\nEnhances <:solar:720178909361995786>Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters with no damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n• <:solar:720178909361995786>Solar Ability Kills recharge 33% Grenade Energy with a 0.3 second cooldown",
    "zh-chs": "让手雷自带快速投掷能力。\n\n增强感应手雷：\n• 爆炸伤害增加 14%。爆炸的长度和宽度增加到 14 米。\n• 爆炸不再造成自我伤害，并且没有伤害衰减。\n• 持续 30 秒。(10s -> 30s)\n• 将感应手雷的耐久度提高到 100 生命值，并有 50% 的伤害抵抗。\n\n<:solar:720178909361995786>烈日技能伤害可为感应手雷充能 33%。\n骨灰余烬可让感应手雷算作 2 次烈日技能伤害。"
   }
  },
@@ -2373,7 +2373,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for 🡅12 seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds.\n\n🡅 Buff duration is increased by 2 seconds."
+   "en": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for 🡅12 seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last 🡅3.5 seconds.\n\n🡅 Buff duration is increased by 2 seconds. Allowed time between damage exchanges is increased by 0.5 seconds."
   }
  },
  "715195141": {
@@ -3859,7 +3859,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "stats": {
    "Reload": [
     {
@@ -4603,7 +4603,7 @@
  "1281216113": {
   "hash": 1281216113,
   "name": "Stunning Recovery",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -5210,7 +5210,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "stats": {
    "Airborne": [
     {
@@ -5876,16 +5876,9 @@
  "1646437399": {
   "hash": 1646437399,
   "name": "Duelist's Trance",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697805373885,
   "stats": {
    "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 65 ]
-     }
-    }
-   ],
-   "Guard Efficiency": [
     {
      "active": {
       "stat": [ 65 ]
@@ -5895,7 +5888,7 @@
    "Guard Endurance": [
     {
      "active": {
-      "stat": [ 60 ]
+      "stat": [ 65 ]
      }
     }
    ],
@@ -5910,7 +5903,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Sword Kill, until stowed:\n• 🡅65 Guard Efficiency\n• 🡅65 Guard Resistance\n• 60 Guard Endurance\n• 🡅65 Charge Rate\n\n🡅 Grants 5 more Guard Efficiency, Resistance, and Charge Rate."
+   "en": "Grants 🡅65 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed.\n\n🡅 Grants 5 points of each Stat."
   }
  },
  "1650852150": {
@@ -6660,7 +6653,7 @@
  "1823011807": {
   "hash": 1823011807,
   "name": "Noble Deeds",
-  "lastUpload": 1679071363533,
+  "lastUpload": 1697805373885,
   "stats": {
    "Guard Charge Rate": [
     {
@@ -6673,7 +6666,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove <:pve:922884406073507930>1 <:pvp:922884468275019856>[2] Stacks of Noble Deeds.\n\nNoble Deeds grants (?) Handling and (?) Reload Speed. Swords receive 20 Charge Rate."
+   "en": "Assisting Allies by Reviving, Healing, or Empowering them, or granting Subclass Buffs to them grants 10 Stacks of Noble Deeds. Maximum of 10 Stacks.\n\nKills remove <:pve:922884406073507930>1 <:pvp:922884468275019856>[2] Stacks of Noble Deeds.\n\nGrants 30 Handling and 30 Reload Speed while you have active Stacks. Swords receive 20 Charge Rate."
   }
  },
  "1824496860": {
@@ -7255,7 +7248,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring a Kill or hit with every bolt in the burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds.\n\n🡅 Currently doesn't grant any measurable benefits."
+   "en": "Upon scoring a Kill or hitting every shot in a burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds.\n\n🡅 Currently doesn't grant any measurable benefits."
   }
  },
  "2039302152": {
@@ -7987,7 +7980,7 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "lastUpload": 1697579158994,
+  "lastUpload": 1697805373885,
   "stats": {
    "Airborne": [
     {
@@ -8904,7 +8897,7 @@
  "2594592626": {
   "hash": 2594592626,
   "name": "Controlled Burst",
-  "lastUpload": 1696803216819,
+  "lastUpload": 1697805373885,
   "stats": {
    "Charge Draw": [
     {
@@ -8931,7 +8924,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring a Kill or hit with every bolt in the burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds."
+   "en": "Upon scoring a Kill or hitting every shot in a burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds."
   }
  },
  "2595839237": {
@@ -9305,7 +9298,7 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1697805373885,
   "stats": {
    "PVE Damage": [
     {
@@ -9327,7 +9320,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <:stasis:915198000727461909>Penumbral Blast automatically shatter after ? seconds.",
+   "en": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <:stasis:915198000727461909>Penumbral Blast automatically shatter.",
    "zh-chs": "近战击杀后获得“督军印记”：\n“督军印记”持续 5 秒，提供额外近战伤害，可叠加 5 层。\n\n额外近战伤害：\n55% | 110% | 165% | 220% | 275%"
   }
  },
@@ -10694,7 +10687,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "stats": {
    "Handling": [
     {
@@ -11279,7 +11272,7 @@
   "name": "Alchemical Etchings",
   "itemHash": 4136768282,
   "itemName": "Lunafaction Boots",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697805373885,
   "stats": {
    "Range": [
     {
@@ -11300,7 +11293,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Rifts and <:solar:720178909361995786>Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside them.\n\n**Empowering** Rifts and <:solar:720178909361995786>Well of Radiances you cast also double the Damage Falloff Distance of weapons.",
+   "en": "Rifts and <:solar:720178909361995786>Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside.\n\n**Empowering** Rifts and <:solar:720178909361995786>Well of Radiances you cast also double the Damage Falloff Distance of weapons.",
    "zh-chs": "当站在裂隙或光焰之井内时：\n为所有在内的守护者提供 +100 装填速度，0.9 倍装填动画系数。\n\n当在**强能裂隙**或光焰之井内时：\n增加 100% 的伤害衰减距离。"
   }
  },
@@ -12203,16 +12196,9 @@
  "3705817207": {
   "hash": 3705817207,
   "name": "Duelist's Trance",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697805373885,
   "stats": {
    "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ],
-   "Guard Efficiency": [
     {
      "active": {
       "stat": [ 60 ]
@@ -12237,7 +12223,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Sword Kill, until stowed:\n• 60 Guard Efficiency\n• 60 Guard Resistance\n• 60 Guard Endurance\n• 60 Charge Rate",
+   "en": "Grants 60 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed.",
    "zh-chs": "刀剑击杀时：\n提升刀剑充能效率、防御持久、防御效率、防御抗性。\n直到收起刀剑。"
   }
  },
@@ -12691,7 +12677,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "stats": {
    "Range": [
     {
@@ -13035,7 +13021,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "stats": {
    "Airborne": [
     {

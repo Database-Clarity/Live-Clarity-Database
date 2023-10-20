@@ -2861,11 +2861,11 @@
   "name": "Reflective Vents",
   "itemHash": 2423243921,
   "itemName": "Antaeus Wards",
-  "lastUpload": 1697666401323,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697666397722,
+     "lastUpdate": 1697804989660,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -2911,6 +2911,16 @@
      "linesContent": [
       {
        "text": "After shield deactivation, 2% Class Ability energy is drained for every point of damage reflected."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Currently partially bugged and does not drain Class Ability Energy for projectiles reflected at the end of your slide."
       }
      ]
     }
@@ -5495,11 +5505,11 @@
   "name": "Wish-Dragon Teeth",
   "itemHash": 475652357,
   "itemName": "Young Ahamkara's Spine",
-  "lastUpload": 1697579158994,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697576361269,
+     "lastUpdate": 1697805019402,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -5571,7 +5581,7 @@
        "text": "• "
       },
       {
-       "text": "Solar Ability Kills recharge 33?% Grenade Energy"
+       "text": "Solar Ability Kills recharge 33% Grenade Energy with a 0.3 second cooldown"
       }
      ]
     }
@@ -8765,7 +8775,14 @@
     {
      "linesContent": [
       {
-       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds."
+       "text": "For Pefect Float, being in Combat is defined as having either dealt or received damage within the last "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3.5 seconds."
       }
      ]
     },
@@ -8779,7 +8796,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased by 2 seconds."
+       "text": " Buff duration is increased by 2 seconds. Allowed time between damage exchanges is increased by 0.5 seconds."
       }
      ]
     }
@@ -14161,7 +14178,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -16629,7 +16646,7 @@
  "1281216113": {
   "hash": 1281216113,
   "name": "Stunning Recovery",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -18141,7 +18158,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -21112,7 +21129,7 @@
  "1646437399": {
   "hash": 1646437399,
   "name": "Duelist's Trance",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -21125,56 +21142,14 @@
     {
      "linesContent": [
       {
-       "text": "On Sword Kill, until stowed:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
+       "text": "Grants "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "65 Guard Efficiency"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "65 Guard Resistance"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 60 Guard Endurance"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "65 Charge Rate"
+       "text": "65 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed."
       }
      ]
     },
@@ -21188,7 +21163,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 5 more Guard Efficiency, Resistance, and Charge Rate."
+       "text": " Grants 5 points of each Stat."
       }
      ]
     }
@@ -23395,11 +23370,11 @@
  "1823011807": {
   "hash": 1823011807,
   "name": "Noble Deeds",
-  "lastUpload": 1679071363533,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1679071230913,
+     "lastUpdate": 1697804697214,
      "updatedBy": "Stardust"
     }
    }
@@ -23409,7 +23384,7 @@
     {
      "linesContent": [
       {
-       "text": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds."
+       "text": "Assisting Allies by Reviving, Healing, or Empowering them, or granting Subclass Buffs to them grants 10 Stacks of Noble Deeds. Maximum of 10 Stacks."
       }
      ]
     },
@@ -23419,7 +23394,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 10 Stacks. Kills remove "
+       "text": "Kills remove "
       },
       {
        "text": "1"
@@ -23441,7 +23416,7 @@
     {
      "linesContent": [
       {
-       "text": "Noble Deeds grants (?) Handling and (?) Reload Speed. Swords receive 20 Charge Rate."
+       "text": "Grants 30 Handling and 30 Reload Speed while you have active Stacks. Swords receive 20 Charge Rate."
       }
      ]
     }
@@ -26019,7 +25994,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring a Kill or hit with every bolt in the burst:"
+       "text": "Upon scoring a Kill or hitting every shot in a burst:"
       }
      ]
     },
@@ -28473,11 +28448,11 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "lastUpload": 1697579158994,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697577369325,
+     "lastUpdate": 1697804429127,
      "updatedBy": "Stardust"
     }
    }
@@ -31592,11 +31567,11 @@
  "2594592626": {
   "hash": 2594592626,
   "name": "Controlled Burst",
-  "lastUpload": 1696803216819,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696803203850,
+     "lastUpdate": 1697803687075,
      "updatedBy": "Stardust"
     }
    }
@@ -31606,7 +31581,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring a Kill or hit with every bolt in the burst:"
+       "text": "Upon scoring a Kill or hitting every shot in a burst:"
       }
      ]
     },
@@ -33136,11 +33111,11 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1693501854006,
+     "lastUpdate": 1697804830993,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -33184,7 +33159,7 @@
        "text": "PVE Combatants hit by "
       },
       {
-       "text": "Penumbral Blast automatically shatter after ? seconds."
+       "text": "Penumbral Blast automatically shatter."
       }
      ]
     }
@@ -38352,7 +38327,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -40476,11 +40451,11 @@
   "name": "Alchemical Etchings",
   "itemHash": 4136768282,
   "itemName": "Lunafaction Boots",
-  "lastUpload": 1697494444149,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697494428441,
+     "lastUpdate": 1697804809428,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -40501,7 +40476,7 @@
        "text": "Rifts and "
       },
       {
-       "text": "Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside them."
+       "text": "Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside."
       }
      ]
     },
@@ -44097,11 +44072,11 @@
  "3705817207": {
   "hash": 3705817207,
   "name": "Duelist's Trance",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689184406072,
+     "lastUpdate": 1697804356953,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -44115,35 +44090,7 @@
     {
      "linesContent": [
       {
-       "text": "On Sword Kill, until stowed:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 60 Guard Efficiency"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 60 Guard Resistance"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 60 Guard Endurance"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 60 Charge Rate"
+       "text": "Grants 60 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed."
       }
      ]
     }
@@ -46038,7 +45985,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -47286,7 +47233,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1697803358045,
+  "lastUpload": 1697805373885,
   "updateTracker": {
    "descriptions": {
     "en": {
