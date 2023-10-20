@@ -3212,7 +3212,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged: \nProjects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds.\n\nReflected projectiles deal 50% increased damage.\n\nAfter shield deactivation, 2% Class Ability energy is drained for every point of damage reflected.",
+     "main": "Upon sliding after sprinting for at least 1.5 seconds with your Class Ability fully charged: \nProjects a 180° frontal shield that reflects all incoming projectiles for 0.45 seconds.\n\nReflected projectiles deal 50% increased damage.\n\nAfter shield deactivation, 2% Class Ability energy is drained for every point of damage reflected.\n\nCurrently partially bugged and does not drain Class Ability Energy for projectiles reflected at the end of your slide.",
      "secondary": "import self"
     },
     "ko": {
@@ -3227,7 +3227,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697666397722,
+      "lastUpdate": 1697804989660,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -3245,7 +3245,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697666401323,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6767,7 +6767,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances <solar/>Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters with no damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n• <solar/>Solar Ability Kills recharge 33?% Grenade Energy",
+     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances <solar/>Tripmine Grenades:\n• 14% Increased Explosion Damage\n• Explosion Length and Width are increased to 14 meters with no damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n• <solar/>Solar Ability Kills recharge 33% Grenade Energy with a 0.3 second cooldown",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -6778,7 +6778,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697576361269,
+      "lastUpdate": 1697805019402,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -6792,7 +6792,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697579158994,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15651,7 +15651,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17948,7 +17948,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20230,7 +20230,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22629,17 +22629,10 @@
       }
      }
     ],
-    "Guard Efficiency": [
-     {
-      "active": {
-       "stat": [ 65 ]
-      }
-     }
-    ],
     "Guard Endurance": [
      {
       "active": {
-       "stat": [ 60 ]
+       "stat": [ 65 ]
       }
      }
     ],
@@ -22664,12 +22657,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1689184383132,
+     "lastUpdate": 1697804363073,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25916,14 +25909,14 @@
    },
    "editor": {
     "en": {
-     "main": "Assisting Allies with Revives, Healing, Empowering, or Subclass Buffs grants 10 Stacks of Noble Deeds.\n\nMaximum of 10 Stacks. Kills remove <pve 1 /> <pvp [2] /> Stacks of Noble Deeds.\n\nNoble Deeds grants (?) Handling and (?) Reload Speed. Swords receive 20 Charge Rate.",
+     "main": "Assisting Allies by Reviving, Healing, or Empowering them, or granting Subclass Buffs to them grants 10 Stacks of Noble Deeds. Maximum of 10 Stacks.\n\nKills remove <pve 1 /> <pvp [2] /> Stacks of Noble Deeds.\n\nGrants 30 Handling and 30 Reload Speed while you have active Stacks. Swords receive 20 Charge Rate.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679071230913,
+      "lastUpdate": 1697804697214,
       "updatedBy": "Stardust"
      }
     },
@@ -25933,7 +25926,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679071363533,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31315,14 +31308,14 @@
    },
    "editor": {
     "en": {
-     "main": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for #e${10+#d} seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds.\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
+     "main": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for #e${10+#d} seconds.\n\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\n\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last #e${3+#f} seconds.\n\nenhanced (\nvar d = 2\nvar f = 0.5\n#e Buff duration is increased by 2 seconds. Allowed time between damage exchanges is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697577369325,
+      "lastUpdate": 1697804429127,
       "updatedBy": "Stardust"
      }
     },
@@ -31332,7 +31325,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697579158994,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35040,14 +35033,14 @@
    },
    "editor": {
     "en": {
-     "main": "Upon scoring a Kill or hit with every bolt in the burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds.\n\nenhanced (\n//#e Buff Duration is increased.\n#e Currently doesn't grant any measurable benefits.\n)",
+     "main": "Upon scoring a Kill or hitting every shot in a burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds.\n\nenhanced (\n//#e Buff Duration is increased.\n#e Currently doesn't grant any measurable benefits.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696803203850,
+      "lastUpdate": 1697803687075,
       "updatedBy": "Stardust"
      }
     },
@@ -35057,7 +35050,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696803216819,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36778,7 +36771,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <stasis/>Penumbral Blast automatically shatter after ? seconds.",
+     "main": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <stasis/>Penumbral Blast automatically shatter.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -36789,7 +36782,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693501854006,
+      "lastUpdate": 1697804830993,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -36803,7 +36796,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42402,7 +42395,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44363,7 +44356,7 @@
    },
    "editor": {
     "en": {
-     "main": "Rifts and <solar/>Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside them.\n\n<bold Empowering /> Rifts and <solar/>Well of Radiances you cast also double the Damage Falloff Distance of weapons.",
+     "main": "Rifts and <solar/>Well of Radiances you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside.\n\n<bold Empowering /> Rifts and <solar/>Well of Radiances you cast also double the Damage Falloff Distance of weapons.",
      "secondary": "import self"
     },
     "ko": {
@@ -44378,7 +44371,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697494428441,
+      "lastUpdate": 1697804809428,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -44396,7 +44389,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697494444149,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48413,13 +48406,6 @@
       }
      }
     ],
-    "Guard Efficiency": [
-     {
-      "active": {
-       "stat": [ 60 ]
-      }
-     }
-    ],
     "Guard Endurance": [
      {
       "active": {
@@ -48437,7 +48423,7 @@
    },
    "editor": {
     "en": {
-     "main": "On Sword Kill, until stowed:\n • #e${60+#d} Guard Efficiency\n • #e${60+#d} Guard Resistance\n • 60 Guard Endurance\n • #e${60+#d} Charge Rate\n\nenhanced (\nvar d = 5\n#e Grants 5 more Guard Efficiency, Resistance, and Charge Rate.\n)",
+     "main": "Grants #e${60+#d} Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed.\n\nenhanced (\nvar d = 5\n#e Grants 5 points of each Stat.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -48448,7 +48434,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689184406072,
+      "lastUpdate": 1697804356953,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -48457,12 +48443,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676206151711,
+     "lastUpdate": 1697804267019,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50277,7 +50263,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51461,7 +51447,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697803358045,
+   "lastUpload": 1697805373885,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
