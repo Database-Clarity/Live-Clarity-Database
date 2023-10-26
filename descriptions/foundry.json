@@ -1084,7 +1084,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits 50% of Damage into an Explosive Damage portion that has no damage falloff and deals 30% Increased Damage in PvE."
+       "text": "Splits off 50% of the Weapon's Bodyshot Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE and isn't affected by Damage Falloff."
       }
      ]
     },
@@ -1094,7 +1094,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. (For crits, the overall increase is equal to 15% divided by the Crit Multiplier)"
+       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
       }
      ]
     },
@@ -1104,7 +1104,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Total damage remains the same."
+       "text": "[PvP] Total damage remains roughly the same."
       }
      ]
     },
@@ -13557,34 +13557,6 @@
    ]
   }
  },
- "939227542": {
-  "hash": 939227542,
-  "name": "Target Acquired",
-  "itemHash": 3141979346,
-  "itemName": "D.A.R.C.I.",
-  "lastUpload": 1675798177540,
-  "type": "Weapon Trait Exotic",
-  "uploadedBy": "Stardust",
-  "updateTracker": {
-   "descriptions": {
-    "en": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   }
-  },
-  "descriptions": {
-   "en": [
-    {
-     "linesContent": [
-      {
-       "text": "When Personal Assistant is active, this weapon has better target acquisition and deals significantly more precision damage."
-      }
-     ]
-    }
-   ]
-  }
- },
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
@@ -15761,7 +15733,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -19943,7 +19915,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -21601,9 +21573,12 @@
     {
      "linesContent": [
       {
-       "text": "Splits 50% of Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE."
+       "text": "Splits off 50% of the Bow's Bodyshot Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
@@ -21618,7 +21593,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. (For crits, the overall increase is equal to 15% divided by the Crit Multiplier)"
+       "text": "[PvE] Total damage is increased by ~15% of the weapon's Bodyshot Damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
       }
      ]
     },
@@ -21628,7 +21603,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Total damage remains the same."
+       "text": "[PvP] Total damage remains roughly the same."
       }
      ]
     },
@@ -27630,13 +27605,13 @@
  "1954620775": {
   "hash": 1954620775,
   "name": "Timed Payload",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1698185317047,
+     "lastUpdate": 1698332408960,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -27650,7 +27625,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits 55% of Damage into an Explosive Damage portion that has no damage falloff and deals 30% Increased Damage in PVE."
+       "text": "Splits off 55% of the Weapon's Bodyshot Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE and isn't affected by Damage Falloff."
       }
      ]
     },
@@ -27660,7 +27635,7 @@
     {
      "linesContent": [
       {
-       "text": "Detonates after 0.6 seconds."
+       "text": "Payload detonates after a 0.6 second delay."
       }
      ]
     },
@@ -27670,7 +27645,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 16.5% of the weapon's Bodyshot Damage. (For crits, the overall increase is equal to 16.5% divided by the Crit Multiplier)"
+       "text": "[PvE] Total damage is increased by ~16.5% of the weapon's Bodyshot Damage. On Crits, the overall increase is 10.9% for Adaptive/Precision Hand Cannons and 10.17% for Aggressive Hand Cannons."
       }
      ]
     },
@@ -27680,7 +27655,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Total damage remains the same."
+       "text": "[PvP] Total damage remains roughly the same."
       }
      ]
     }
@@ -36350,17 +36325,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Ember of Ashes increases this to "
+       "text": "Scorch Stacks ("
       },
       {
        "text": "🡅",
@@ -36376,7 +36341,13 @@
        "text": "[PVP: 40]"
       },
       {
-       "text": " Stacks."
+       "text": " with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes) to enemies within 4? meters of the target on Weapon Kills."
       }
      ]
     },
@@ -40880,13 +40851,13 @@
  "3038247973": {
   "hash": 3038247973,
   "name": "Explosive Payload",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1698184898205,
+     "lastUpdate": 1698332496650,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -40900,7 +40871,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits 50% of Damage into an Explosive Damage portion that has no damage falloff and deals 30% Increased Damage in PvE."
+       "text": "Splits off 50% of the Weapon's Bodyshot Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE and isn't affected by Damage Falloff."
       }
      ]
     },
@@ -40910,7 +40881,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. (For crits, the overall increase is equal to 15% divided by the Crit Multiplier)"
+       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
       }
      ]
     },
@@ -40920,7 +40891,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Total damage remains the same."
+       "text": "[PvP] Total damage remains roughly the same."
       }
      ]
     }
@@ -42389,7 +42360,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -45127,13 +45098,13 @@
  "3365897133": {
   "hash": 3365897133,
   "name": "Explosive Head",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1698184955482,
+     "lastUpdate": 1698332218369,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -45147,9 +45118,12 @@
     {
      "linesContent": [
       {
-       "text": "Splits 50% of Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE."
+       "text": "Splits off 50% of the Bow's Bodyshot Damage into an Explosive Damage portion that deals 30% Increased Damage in PvE."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
@@ -45164,7 +45138,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot Damage. (For crits, the overall increase is equal to 15% divided by the Crit Multiplier)"
+       "text": "[PvE] Total damage is increased by ~15% of the weapon's Bodyshot Damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
       }
      ]
     },
@@ -45174,7 +45148,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Total damage remains the same."
+       "text": "[PvP] Total damage remains roughly the same."
       }
      ]
     }
@@ -50933,7 +50907,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -52242,7 +52216,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1698185556733,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -56329,13 +56303,13 @@
  "4293542123": {
   "hash": 4293542123,
   "name": "Incandescent",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1698332599118,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689190232549,
+     "lastUpdate": 1698330886926,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -56355,17 +56329,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch Stacks to enemies within 4(?) meters on Weapon Kills."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "Scorch Stacks (40 with "
+      },
       {
-       "text": "Ember of Ashes increases this to 40 Stacks."
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes) to enemies within 4? meters of the target on Weapon Kills."
       }
      ]
     },
