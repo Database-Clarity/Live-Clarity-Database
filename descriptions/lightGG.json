@@ -1741,11 +1741,11 @@
  "164468655": {
   "hash": 164468655,
   "name": "Nanotech Tracer Rockets",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689198031894,
+     "lastUpdate": 1699457366545,
      "updatedBy": "Stardust"
     }
    }
@@ -1755,14 +1755,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring multiple hits within ? seconds of each:"
+       "text": "Upon scoring a set percentage of the Magazine Capacity as hits within ? seconds of each:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Shoots a Tracking Rocket that matches Weapon's Elemental Damage Type."
+       "text": "Fires a Tracking Rocket that matches Weapon's Elemental Damage Type."
       }
      ]
     },
@@ -1803,7 +1803,7 @@
        "link": "https://url.d2clarity.com/combatant-scaling"
       },
       {
-       "text": "."
+       "text": ". On non-primary weapons, the rockets receive and additional Damage Increase."
       }
      ]
     },
@@ -1813,42 +1813,42 @@
     {
      "linesContent": [
       {
-       "text": "% of Magazine Capacity as hits required:"
+       "text": "% of Magazine Capacity as hits required and the Additional Damage Increase by weapon archetype:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifles: 50%?"
+       "text": "• Hand Cannons, Pulse Rifles, Submachine Guns: 45% Magazine Capacity, 0% Increased Damage (Baseline)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles, Hand Cannons, Submachine Guns: 45%"
+       "text": "• Sniper Rifles: 50%?, 100%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grenade Launchers: 30%"
+       "text": "• Grenade Launchers: 30%, 25%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Machine Guns: 25%"
+       "text": "• Machine Guns: 25%, 50%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Fusion Rifles: unknown"
+       "text": "• Fusion Rifles, Shotguns: ?%, 150%"
       }
      ]
     },
@@ -6407,11 +6407,11 @@
  "515704826": {
   "hash": 515704826,
   "name": "Gun and Run",
-  "lastUpload": 1696871827408,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696871816586,
+     "lastUpdate": 1699461603394,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -6426,6 +6426,30 @@
      "linesContent": [
       {
        "text": "Killing multiple enemies within 3? seconds of each grants 6.25% Increased Sprint Speed for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Activation progress by "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Minors: 34% | Players, Elites, and higher: 100%"
       }
      ]
     },
@@ -6713,6 +6737,170 @@
       },
       {
        "text": " Melee Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "537774540": {
+  "hash": 537774540,
+  "name": "Whisper of Chains",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699458346036,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants "
+      },
+      {
+       "text": "40%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 5%]"
+      },
+      {
+       "text": " Damage Resist while within 10 meters of a "
+      },
+      {
+       "text": "Frozen Enemy or a Friendly "
+      },
+      {
+       "text": "Crystal."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Lingers for 0.65 seconds once no longer in range."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "537774541": {
+  "hash": 537774541,
+  "name": "Whisper of Torment",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460342128,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Receiving damage from an enemy grants 5% Grenade Energy. While at Critical Health, the amount is increased to 10% Grenade Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1 second cooldown between activations."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "537774542": {
+  "hash": 537774542,
+  "name": "Whisper of Fractures",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699459061461,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants Melee Energy once per second while within 15 meters of 2+ Enemies:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 2 Enemies: 2.5% Melee Energy per second"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 3+ Enemies: 5% Melee Energy per second"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "537774543": {
+  "hash": 537774543,
+  "name": "Whisper of Impetus",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699459376585,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Powered Melee Hits grant 40 Handling for 5 seconds and "
+      },
+      {
+       "text": "refill"
+      },
+      {
+       "text": " all weapons from reserves."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -14864,7 +15052,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -18837,7 +19025,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -19282,11 +19470,11 @@
   "name": "Depths of Duskfield",
   "itemHash": 2169905051,
   "itemName": "Renewal Grasps",
-  "lastUpload": 1695666599876,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1695666589926,
+     "lastUpdate": 1699457647159,
      "updatedBy": "Stardust"
     }
    }
@@ -19335,7 +19523,7 @@
     {
      "linesContent": [
       {
-       "text": "• Allies are granted "
+       "text": "• Allies receive "
       },
       {
        "text": "25%"
@@ -19357,7 +19545,10 @@
     {
      "linesContent": [
       {
-       "text": "When combined with Touch of Winter:"
+       "text": "When combined with the "
+      },
+      {
+       "text": "Touch of Winter aspect:"
       }
      ]
     },
@@ -19374,7 +19565,7 @@
     {
      "linesContent": [
       {
-       "text": "• Increases Duskfield Radius by an additive 50% for a 75% total increase"
+       "text": "• Radius increase stacks additively for a total of 75%"
       }
      ]
     }
@@ -30007,11 +30198,11 @@
  "2272984670": {
   "hash": 2272984670,
   "name": "Echo of Leeching",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697892522359,
+     "lastUpdate": 1699458469047,
      "updatedBy": "Stardust"
     }
    }
@@ -30021,7 +30212,7 @@
     {
      "linesContent": [
       {
-       "text": "On Melee Kills start Health Regeneration for you and allies within ? meters."
+       "text": "Melee Kills start Health Regeneration for you and allies within ? meters."
       }
      ]
     }
@@ -32221,6 +32412,166 @@
    ]
   }
  },
+ "2483898428": {
+  "hash": 2483898428,
+  "name": "Whisper of Rending",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460124249,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Primary Ammo Weapons deal 100% Increased Damage against "
+      },
+      {
+       "text": "Stasis Crystals and 50% Increased Damage against "
+      },
+      {
+       "text": "Frozen Enemies."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Also applies to Fighting Lion, Revision Zero, Vex Mythoclast, and their alternate fire modes."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Frozen enemies normally receive "
+      },
+      {
+       "text": "5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 50%]"
+      },
+      {
+       "text": " decreased damage from "
+      },
+      {
+       "text": "Primary Weapons. Using the fragment results in a 42.5% overall Damage Increase in PVE and a 25% overall Decrease in PVP."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2483898429": {
+  "hash": 2483898429,
+  "name": "Whisper of Conduction",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699458408804,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Stasis Shards within 15 meters are slowly pulled to you after a 1 second delay."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2483898430": {
+  "hash": 2483898430,
+  "name": "Whisper of Rime",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460258743,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Small "
+      },
+      {
+       "text": "Stasis Shards restore 5 HP, "
+      },
+      {
+       "text": "Large Shards restore 35?. If at Full Health, it is instead added as a "
+      },
+      {
+       "text": "Stasis Overshield that can have up to 50 HP."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2483898431": {
+  "hash": 2483898431,
+  "name": "Whisper of Hunger",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699459244509,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Stasis Shards grant increased Melee Energy:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Small Shards: 10% 🠚 17.5%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Large Shards: 50% 🠚 75%"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2485657760": {
   "hash": 2485657760,
   "name": "Firepower",
@@ -32393,6 +32744,68 @@
      "linesContent": [
       {
        "text": "Stasis Breakout creates a burst of Solar Energy, dealing up to 105 damage over a 9 meter radius."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2509860981": {
+  "hash": 2509860981,
+  "name": "Nadir Focus",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699456759075,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Up to 10 Range"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Up to -?% Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Up to ?% Increased Lunge Distance (Swords)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Up to ?% Increased Projectile Velocity (Launchers)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Deactivates after not firing or swinging for 1 second."
       }
      ]
     }
@@ -40122,7 +40535,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -40445,6 +40858,193 @@
      "linesContent": [
       {
        "text": "Spawned Orbs of Power grant 2.5%|3.25%|4.4% Super Energy with 1|2|3 Mods equipped."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3192552688": {
+  "hash": 3192552688,
+  "name": "Thread of Binding",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460674109,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Super Kills cause enemies within ? meters of the target to be "
+      },
+      {
+       "text": "Suspended."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3192552689": {
+  "hash": 3192552689,
+  "name": "Thread of Isolation",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699461168915,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Precision Hits within 1? second of each applies "
+      },
+      {
+       "text": "Sever to enemies within ? meters of the target."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "? second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Activation Progress per Precision Hit:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bows: 34% Counter: Bows"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannons, Scout Rifles: 25%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Sidearms: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Machine Guns, Pulse Rifles: 12%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Submachine Guns, Trace Rifles: 10%"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3192552690": {
+  "hash": 3192552690,
+  "name": "Thread of Continuity",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460754930,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Strand Debuffs generally last 50% longer."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Specific increases from "
+      },
+      {
+       "text": "Thread of Continuity for debuff sources can be found in their descriptions."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3192552691": {
+  "hash": 3192552691,
+  "name": "Thread of Generation",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699461007122,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage grants Grenade Ability Energy for each damage instance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grenade Ability Energy Gains vary depending on the source. (Almost impossible to reliably test but the effects are quite significant if you're actively participating in combat)"
       }
      ]
     }
@@ -43810,6 +44410,345 @@
      "linesContent": [
       {
        "text": "Armor Charge now decays over time at the rate of 1 every 10 seconds by default."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412968": {
+  "hash": 3469412968,
+  "name": "Whisper of Refraction",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699461278742,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Killing "
+      },
+      {
+       "text": "Frozen or "
+      },
+      {
+       "text": "Slowed enemies grants Class Ability Energy based on "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 (T1) Minors: 9%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T2 Minors, T1 Elites: 13%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Enemy Players: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T3 Minors, T2 Elites: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T4 Minors, T3 Elites: 30%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T4 Elites, Minibosses: 40%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bosses: 50%"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412969": {
+  "hash": 3469412969,
+  "name": "Whisper of Durance",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699458629797,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Slow you apply to targets and certain lingering abilities last longer."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Specific increases provided by "
+      },
+      {
+       "text": "Whisper of Durance can be found in the descriptions of the affected abilities and/or perks."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412970": {
+  "hash": 3469412970,
+  "name": "Whisper of Hedrons",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699459193777,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Freezing targets grants the following benefits for 11 seconds under the Stat Boost buff:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 60 Mobility, Resilience, and Recovery"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30? Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15 Aim Assist"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20 Airborne Effectiveness"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412971": {
+  "hash": 3469412971,
+  "name": "Whisper of Fissures",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699458901031,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Shattering enemies or "
+      },
+      {
+       "text": "Crystals creates an additional damage instance, dealing up to "
+      },
+      {
+       "text": "25"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 9]"
+      },
+      {
+       "text": " damage in a "
+      },
+      {
+       "text": "10"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 8]"
+      },
+      {
+       "text": " meter radius. Falls off to "
+      },
+      {
+       "text": "17"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 4]"
+      },
+      {
+       "text": " Damage at the edge of the radius."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "This translates to a maximum of a "
+      },
+      {
+       "text": "12.5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 4.5%]"
+      },
+      {
+       "text": " total "
+      },
+      {
+       "text": "Shatter Damage Increase."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412974": {
+  "hash": 3469412974,
+  "name": "Whisper of Bonds",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699457777246,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Killing "
+      },
+      {
+       "text": "Frozen enemies spawns an Orb of Power that grants 2.5% Super Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "10 second cooldown between activations."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3469412975": {
+  "hash": 3469412975,
+  "name": "Whisper of Shards",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460289239,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Shattering a "
+      },
+      {
+       "text": "Stasis Crystal grants "
+      },
+      {
+       "text": "500%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 150%]"
+      },
+      {
+       "text": " Additional Base Grenade Regeneration Rate for 6 seconds, up to a maximum of 11 seconds."
       }
      ]
     }
@@ -48135,7 +49074,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -49383,7 +50322,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -52196,6 +53135,495 @@
       },
       {
        "text": " Initial Buff Duration is increased by 0.5 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512210": {
+  "hash": 4208512210,
+  "name": "Thread of Propagation",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462327243,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Powered Melee Kills Grant "
+      },
+      {
+       "text": "Unraveling Rounds to your "
+      },
+      {
+       "text": "Strand Weapons for "
+      },
+      {
+       "text": "8"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 5]"
+      },
+      {
+       "text": " seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512211": {
+  "hash": 4208512211,
+  "name": "Thread of Evolution",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460819037,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Threadlings travel 30?% faster and farther and deal "
+      },
+      {
+       "text": "33%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 10%]"
+      },
+      {
+       "text": " Increased Damage."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512216": {
+  "hash": 4208512216,
+  "name": "Thread of Ascent",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460505660,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Using your Grenade Ability "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " your readied weapon from reserves and grants the following stat bonuses for 15 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30? Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.925x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Airborne Effectiveness"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "4 second cooldown between Magazine Refills."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512217": {
+  "hash": 4208512217,
+  "name": "Thread of Finality",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699460852855,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a PVE Combatant spawns a "
+      },
+      {
+       "text": "Threadling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512218": {
+  "hash": 4208512218,
+  "name": "Thread of Mind",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462147325,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Killing "
+      },
+      {
+       "text": "Suspensded enemies grants Class Ability Energy based on "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 (T1) Minors: 10%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T2 Minors, T1 Elites: 12%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T3 Minors, T2 Elites, Players: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T4 Minors, T3 Elites, and higher: 30%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "1? second cooldown between activations."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512219": {
+  "hash": 4208512219,
+  "name": "Thread of Fury",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462078550,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage with "
+      },
+      {
+       "text": "Tangles grants Melee Energy per damage instance based on "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 (T1) Minors: 10%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T2 Minors, T1 Elites: 18%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T3 Minors, T2 Elites: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Players: 25%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T4 Minors, T3 Elites, and higher: 25%"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512220": {
+  "hash": 4208512220,
+  "name": "Thread of Rebirth",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462583856,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring "
+      },
+      {
+       "text": "Strand Weapon Kills spawns "
+      },
+      {
+       "text": "Threadlings upon reaching 100% Activation Progress."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Activation Progress gained and Threadling Count vary based on "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 34% Activation Progress | 1 Threadling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites: 67% | 2"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses and Bosses: 100% | 3"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512221": {
+  "hash": 4208512221,
+  "name": "Thread of Transmutation",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462900747,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills while you have "
+      },
+      {
+       "text": "Woven Mail spawn a "
+      },
+      {
+       "text": "Tangle at the target's location."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shares the 12 second global "
+      },
+      {
+       "text": "Tangle creation cooldown."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512222": {
+  "hash": 4208512222,
+  "name": "Thread of Warding",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462923892,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Orb of Power Pickups grant "
+      },
+      {
+       "text": "Woven Mail for 10 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4208512223": {
+  "hash": 4208512223,
+  "name": "Thread of Wisdom",
+  "lastUpload": 1699463015549,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1699462992655,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Killing "
+      },
+      {
+       "text": "Suspended enemies spawns an Orb of Power that grants 2.5% Super Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "10 second cooldown between activations."
       }
      ]
     }

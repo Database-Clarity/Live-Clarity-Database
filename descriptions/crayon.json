@@ -409,11 +409,11 @@
  "164468655": {
   "hash": 164468655,
   "name": "Nanotech Tracer Rockets",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1699463015549,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring multiple hits within ? seconds of each:\nShoots a Tracking Rocket that matches Weapon's Elemental Damage Type.\n\nRockets deal <:pve:922884406073507930>22.4 <:pvp:922884468275019856>[14] impact and <:pve:922884406073507930>24 <:pvp:922884468275019856>[15] explosive damage on hit and inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\n% of Magazine Capacity as hits required:\n• Sniper Rifles: 50%?\n• Pulse Rifles, Hand Cannons, Submachine Guns: 45%\n• Grenade Launchers: 30%\n• Machine Guns: 25%\n• Fusion Rifles: unknown\n\nFurther hits do not provide activation progress for 1 second after activation."
+   "en": "Upon scoring a set percentage of the Magazine Capacity as hits within ? seconds of each:\nFires a Tracking Rocket that matches Weapon's Elemental Damage Type.\n\nRockets deal <:pve:922884406073507930>22.4 <:pvp:922884468275019856>[14] impact and <:pve:922884406073507930>24 <:pvp:922884468275019856>[15] explosive damage on hit and inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). On non-primary weapons, the rockets receive and additional Damage Increase.\n\n% of Magazine Capacity as hits required and the Additional Damage Increase by weapon archetype:\n• Hand Cannons, Pulse Rifles, Submachine Guns: 45% Magazine Capacity, 0% Increased Damage (Baseline)\n• Sniper Rifles: 50%?, 100%\n• Grenade Launchers: 30%, 25%\n• Machine Guns: 25%, 50%\n• Fusion Rifles, Shotguns: ?%, 150%\n\nFurther hits do not provide activation progress for 1 second after activation."
   }
  },
  "169755979": {
@@ -1698,11 +1698,11 @@
  "515704826": {
   "hash": 515704826,
   "name": "Gun and Run",
-  "lastUpload": 1696871827408,
+  "lastUpload": 1699463015549,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Killing multiple enemies within 3? seconds of each grants 6.25% Increased Sprint Speed for 10 seconds.\n\nDuration is not refreshable. Stacks with other Sprint Speed buffs up to the cap of a 12.5% Increase.",
+   "en": "Killing multiple enemies within 3? seconds of each grants 6.25% Increased Sprint Speed for 10 seconds.\n\nActivation progress by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Players, Elites, and higher: 100%\n\nDuration is not refreshable. Stacks with other Sprint Speed buffs up to the cap of a 12.5% Increase.",
    "zh-chs": "使用此武器 3 秒内击败多个目标：\n提升冲刺速度，持续 10 秒。\n\n持续时间无法被刷新。\n\n最高冲刺速度为初始值的 112.5%。\n\n守护者、强力战斗人员、高价值目标会更快地触发此增益。"
   }
  },
@@ -1791,6 +1791,46 @@
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": "Weapon Kills grant 🡅11% Melee Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant 🡅22%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\n🡅 Melee Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)"
+  }
+ },
+ "537774540": {
+  "hash": 537774540,
+  "name": "Whisper of Chains",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Grants <:pve:922884406073507930>40% <:pvp:922884468275019856>[5%] Damage Resist while within 10 meters of a <:stasis:915198000727461909>Frozen Enemy or a Friendly <:stasis:915198000727461909>Crystal.\n\nLingers for 0.65 seconds once no longer in range."
+  }
+ },
+ "537774541": {
+  "hash": 537774541,
+  "name": "Whisper of Torment",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Receiving damage from an enemy grants 5% Grenade Energy. While at Critical Health, the amount is increased to 10% Grenade Energy.\n\n1 second cooldown between activations."
+  }
+ },
+ "537774542": {
+  "hash": 537774542,
+  "name": "Whisper of Fractures",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Grants Melee Energy once per second while within 15 meters of 2+ Enemies:\n• 2 Enemies: 2.5% Melee Energy per second\n• 3+ Enemies: 5% Melee Energy per second"
+  }
+ },
+ "537774543": {
+  "hash": 537774543,
+  "name": "Whisper of Impetus",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Powered Melee Hits grant 40 Handling for 5 seconds and refill all weapons from reserves.\n\nBuff duration cannot be refreshed."
   }
  },
  "553093017": {
@@ -3967,7 +4007,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "stats": {
    "Reload": [
     {
@@ -5318,7 +5358,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "stats": {
    "Airborne": [
     {
@@ -5419,11 +5459,11 @@
   "name": "Depths of Duskfield",
   "itemHash": 2169905051,
   "itemName": "Renewal Grasps",
-  "lastUpload": 1695666599876,
+  "lastUpload": 1699463015549,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Increases <:stasis:915198000727461909>Duskfield Grenade Radius by 25%.\n\nWhile inside a Duskfield Grenade's Slowing Field:\n• Enemies deal <:pve:922884406073507930>50% <:pvp:922884468275019856>[20%] Decreased Damage\n• Allies are granted <:pve:922884406073507930>25% <:pvp:922884468275019856>[5%] Damage Resist\n\nWhen combined with Touch of Winter:\n• Increases <:stasis:915198000727461909>Crystal size from Medium to Large\n• Increases Duskfield Radius by an additive 50% for a 75% total increase"
+   "en": "Increases <:stasis:915198000727461909>Duskfield Grenade Radius by 25%.\n\nWhile inside a Duskfield Grenade's Slowing Field:\n• Enemies deal <:pve:922884406073507930>50% <:pvp:922884468275019856>[20%] Decreased Damage\n• Allies receive <:pve:922884406073507930>25% <:pvp:922884468275019856>[5%] Damage Resist\n\nWhen combined with the <:stasis:915198000727461909>Touch of Winter aspect:\n• Increases <:stasis:915198000727461909>Crystal size from Medium to Large\n• Radius increase stacks additively for a total of 75%"
   }
  },
  "1458010786": {
@@ -8287,11 +8327,11 @@
  "2272984670": {
   "hash": 2272984670,
   "name": "Echo of Leeching",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1699463015549,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Melee Kills start Health Regeneration for you and allies within ? meters."
+   "en": "Melee Kills start Health Regeneration for you and allies within ? meters."
   }
  },
  "2272984671": {
@@ -8985,6 +9025,46 @@
    "en": "Periodically generates Ionic Traces while in its high-damage state."
   }
  },
+ "2483898428": {
+  "hash": 2483898428,
+  "name": "Whisper of Rending",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:primary:968793055677251604>Primary Ammo Weapons deal 100% Increased Damage against <:stasis:915198000727461909>Stasis Crystals and 50% Increased Damage against <:stasis:915198000727461909>Frozen Enemies.\n\nAlso applies to Fighting Lion, Revision Zero, Vex Mythoclast, and their alternate fire modes.\n\n<:stasis:915198000727461909>Frozen enemies normally receive <:pve:922884406073507930>5% <:pvp:922884468275019856>[50%] decreased damage from <:primary:968793055677251604>Primary Weapons. Using the fragment results in a 42.5% overall Damage Increase in PVE and a 25% overall Decrease in PVP."
+  }
+ },
+ "2483898429": {
+  "hash": 2483898429,
+  "name": "Whisper of Conduction",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:stasis:915198000727461909>Stasis Shards within 15 meters are slowly pulled to you after a 1 second delay."
+  }
+ },
+ "2483898430": {
+  "hash": 2483898430,
+  "name": "Whisper of Rime",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Small <:stasis:915198000727461909>Stasis Shards restore 5 HP, <:stasis:915198000727461909>Large Shards restore 35?. If at Full Health, it is instead added as a <:stasis:915198000727461909>Stasis Overshield that can have up to 50 HP."
+  }
+ },
+ "2483898431": {
+  "hash": 2483898431,
+  "name": "Whisper of Hunger",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:stasis:915198000727461909>Stasis Shards grant increased Melee Energy:\n• Small Shards: 10% 🠚 17.5%\n• Large Shards: 50% 🠚 75%"
+  }
+ },
  "2485657760": {
   "hash": 2485657760,
   "name": "Firepower",
@@ -9031,6 +9111,16 @@
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": "Scoring 2 to 3 <:solar:720178909361995786>Solar Kills within 10 seconds of each grants 1 Stack of <:solar:720178909361995786>Solar Weapon Surge for <:pve:922884406073507930>11 <:pvp:922884468275019856>[6] seconds. Further Solar Kills while at the maximum of 4 Stacks refresh the buff's duration.\n\nBeing <:stasis:915198000727461909>Frozen or scoring a Kill with any <:solar:720178909361995786>Solar Grenade grants all 4 Stacks. These do not (reliably) work in PvE for whatever reason.\n\nSlow Stacks and Duration are halved. Damage from <:stasis:915198000727461909>Stasis Breakout is removed.\n\nStasis Breakout creates a burst of Solar Energy, dealing up to 105 damage over a 9 meter radius."
+  }
+ },
+ "2509860981": {
+  "hash": 2509860981,
+  "name": "Nadir Focus",
+  "lastUpload": 1699463015549,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:\n• Up to 10 Range\n• Up to -?% Accuracy Cone Size\n• Up to ?% Increased Lunge Distance (Swords)\n• Up to ?% Increased Projectile Velocity (Launchers)\n\nDeactivates after not firing or swinging for 1 second."
   }
  },
  "2526773280": {
@@ -11017,7 +11107,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "stats": {
    "Handling": [
     {
@@ -11076,6 +11166,46 @@
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": "Spawns an Orb of Power upon scoring 2 Kills within ? seconds of each with a <:stasis:915198000727461909>Stasis Weapon.\n\nSpawned Orbs of Power grant 2.5%|3.25%|4.4% Super Energy with 1|2|3 Mods equipped."
+  }
+ },
+ "3192552688": {
+  "hash": 3192552688,
+  "name": "Thread of Binding",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Super Kills cause enemies within ? meters of the target to be Suspended."
+  }
+ },
+ "3192552689": {
+  "hash": 3192552689,
+  "name": "Thread of Isolation",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Scoring multiple Precision Hits within 1? second of each applies Sever to enemies within ? meters of the target.\n\n? second cooldown between activations.\n\nActivation Progress per Precision Hit:\n• Bows: 34% Counter: Bows\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Machine Guns, Pulse Rifles: 12%\n• Submachine Guns, Trace Rifles: 10%"
+  }
+ },
+ "3192552690": {
+  "hash": 3192552690,
+  "name": "Thread of Continuity",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Strand Debuffs generally last 50% longer.\n\nSpecific increases from Thread of Continuity for debuff sources can be found in their descriptions."
+  }
+ },
+ "3192552691": {
+  "hash": 3192552691,
+  "name": "Thread of Generation",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Dealing damage grants Grenade Ability Energy for each damage instance.\n\nGrenade Ability Energy Gains vary depending on the source. (Almost impossible to reliably test but the effects are quite significant if you're actively participating in combat)"
   }
  },
  "3194351027": {
@@ -12026,6 +12156,66 @@
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": "High damage, high recoil."
+  }
+ },
+ "3469412968": {
+  "hash": 3469412968,
+  "name": "Whisper of Refraction",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Killing <:stasis:915198000727461909>Frozen or <:stasis:915198000727461909>Slowed enemies grants Class Ability Energy based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1 (T1) Minors: 9%\n• T2 Minors, T1 Elites: 13%\n• Enemy Players: 15%\n• T3 Minors, T2 Elites: 20%\n• T4 Minors, T3 Elites: 30%\n• T4 Elites, Minibosses: 40%\n• Bosses: 50%"
+  }
+ },
+ "3469412969": {
+  "hash": 3469412969,
+  "name": "Whisper of Durance",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:stasis:915198000727461909>Slow you apply to targets and certain lingering abilities last longer.\n\nSpecific increases provided by <:stasis:915198000727461909>Whisper of Durance can be found in the descriptions of the affected abilities and/or perks."
+  }
+ },
+ "3469412970": {
+  "hash": 3469412970,
+  "name": "Whisper of Hedrons",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:stasis:915198000727461909>Freezing targets grants the following benefits for 11 seconds under the Stat Boost buff:\n• 60 Mobility, Resilience, and Recovery\n• 30? Stability\n• 15 Aim Assist\n• 20 Airborne Effectiveness"
+  }
+ },
+ "3469412971": {
+  "hash": 3469412971,
+  "name": "Whisper of Fissures",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "<:stasis:915198000727461909>Shattering enemies or <:stasis:915198000727461909>Crystals creates an additional damage instance, dealing up to <:pve:922884406073507930>25 <:pvp:922884468275019856>[9] damage in a <:pve:922884406073507930>10 <:pvp:922884468275019856>[8] meter radius. Falls off to <:pve:922884406073507930>17 <:pvp:922884468275019856>[4] Damage at the edge of the radius.\n\nThis translates to a maximum of a <:pve:922884406073507930>12.5% <:pvp:922884468275019856>[4.5%] total <:stasis:915198000727461909>Shatter Damage Increase."
+  }
+ },
+ "3469412974": {
+  "hash": 3469412974,
+  "name": "Whisper of Bonds",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Killing <:stasis:915198000727461909>Frozen enemies spawns an Orb of Power that grants 2.5% Super Energy.\n\n10 second cooldown between activations."
+  }
+ },
+ "3469412975": {
+  "hash": 3469412975,
+  "name": "Whisper of Shards",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Shattering a <:stasis:915198000727461909>Stasis Crystal grants <:pve:922884406073507930>500% <:pvp:922884468275019856>[150%] Additional Base Grenade Regeneration Rate for 6 seconds, up to a maximum of 11 seconds."
   }
  },
  "3470828242": {
@@ -13087,7 +13277,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "stats": {
    "Range": [
     {
@@ -13431,7 +13621,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1699400110189,
+  "lastUpload": 1699463015549,
   "stats": {
    "Airborne": [
     {
@@ -14264,6 +14454,106 @@
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": "On Weapon Kill, for 🡅5.5 seconds:\n• 50 Mobility\n• 40 Handling and 20 Range\n• 5% Increased Damage Falloff Distance\n\nAdditional Kills extend the duration by 5 seconds, up to 8 seconds.\n\n🡅 Initial Buff Duration is increased by 0.5 seconds."
+  }
+ },
+ "4208512210": {
+  "hash": 4208512210,
+  "name": "Thread of Propagation",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Powered Melee Kills Grant Unraveling Rounds to your Strand Weapons for <:pve:922884406073507930>8 <:pvp:922884468275019856>[5] seconds."
+  }
+ },
+ "4208512211": {
+  "hash": 4208512211,
+  "name": "Thread of Evolution",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Threadlings travel 30?% faster and farther and deal <:pve:922884406073507930>33% <:pvp:922884468275019856>[10%] Increased Damage."
+  }
+ },
+ "4208512216": {
+  "hash": 4208512216,
+  "name": "Thread of Ascent",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Using your Grenade Ability refills your readied weapon from reserves and grants the following stat bonuses for 15 seconds:\n• 30? Handling\n• 40 Reload Speed\n• 0.925x Reload Duration Multiplier\n• 30 Airborne Effectiveness\n\n4 second cooldown between Magazine Refills."
+  }
+ },
+ "4208512217": {
+  "hash": 4208512217,
+  "name": "Thread of Finality",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Finishing a PVE Combatant spawns a Threadling."
+  }
+ },
+ "4208512218": {
+  "hash": 4208512218,
+  "name": "Thread of Mind",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Killing Suspensded enemies grants Class Ability Energy based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1 (T1) Minors: 10%\n• T2 Minors, T1 Elites: 12%\n• T3 Minors, T2 Elites, Players: 15%\n• T4 Minors, T3 Elites, and higher: 30%\n\n1? second cooldown between activations."
+  }
+ },
+ "4208512219": {
+  "hash": 4208512219,
+  "name": "Thread of Fury",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Dealing damage with Tangles grants Melee Energy per damage instance based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1 (T1) Minors: 10%\n• T2 Minors, T1 Elites: 18%\n• T3 Minors, T2 Elites: 20%\n• Players: 25%\n• T4 Minors, T3 Elites, and higher: 25%"
+  }
+ },
+ "4208512220": {
+  "hash": 4208512220,
+  "name": "Thread of Rebirth",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Scoring Strand Weapon Kills spawns Threadlings upon reaching 100% Activation Progress.\n\nActivation Progress gained and Threadling Count vary based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 34% Activation Progress | 1 Threadling\n• Elites: 67% | 2\n• Minibosses and Bosses: 100% | 3"
+  }
+ },
+ "4208512221": {
+  "hash": 4208512221,
+  "name": "Thread of Transmutation",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Weapon Kills while you have Woven Mail spawn a Tangle at the target's location.\n\nShares the 12 second global Tangle creation cooldown."
+  }
+ },
+ "4208512222": {
+  "hash": 4208512222,
+  "name": "Thread of Warding",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Orb of Power Pickups grant Woven Mail for 10 seconds."
+  }
+ },
+ "4208512223": {
+  "hash": 4208512223,
+  "name": "Thread of Wisdom",
+  "lastUpload": 1699463015549,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Killing Suspended enemies spawns an Orb of Power that grants 2.5% Super Energy.\n\n10 second cooldown between activations."
   }
  },
  "4218954970": {
