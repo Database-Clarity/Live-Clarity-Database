@@ -10297,14 +10297,14 @@
    "type": "Armor Mod Seasonal",
    "editor": {
     "en": {
-     "main": "Scoring multiple Precision Hits against enemies 25?+ meters away applies <void/>Weaken to them.\n\nActivation Progress per Crit by Weapon Type:\n• Bows: 50%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Trace Rifles, Submachine Guns: 12.5%\n• Machine Guns, Pulse Rifles: 11.2%\n• Other Weapons: currently unknown",
+     "main": "Scoring multiple Precision Hits against enemies 25?+ meters away applies <void/>Weaken to them for <pve 24 /> <pvp [11] />.\n\nActivation Progress per Crit by Weapon Type:\n• Bows, Sniper Rifles: 50%\n• Hand Cannons, Scout Rifles: 25%\n• Everything Else: 15%\n\n\n\"Scoring multiple Precision Hits within 2 seconds of each against enemies >25? metres away applies Weaken for 24 [11] seconds.\n\nCounter System per Precision Hit:\n50% Counter: Bows and Sniper Rifles\n25% Counter: Hand Cannons and Scout Rifles\n15% Counter: Everything Else including Slug Shotguns\"\t",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696778995882,
+      "lastUpdate": 1699751820349,
       "updatedBy": "Stardust"
      }
     },
@@ -10314,7 +10314,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696779082385,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16137,7 +16137,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20959,7 +20959,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23398,7 +23398,7 @@
    },
    "editor": {
     "en": {
-     "main": "As Magazine drops from 50% capacity to empty:\n• #e${25+#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nenhanced (\nvar d = 5\n#e Accuracy Cone Size is decreased by a further additive 5%.\n)",
+     "main": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• #e${12.5*#d}% to #e${25*#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nenhanced (\nvar d = 1.2\n#e Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -23409,7 +23409,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692730051303,
+      "lastUpdate": 1699751271336,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -23423,7 +23423,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692730396702,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25344,14 +25344,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Arc Special Weapons Kills while <arc/>Amplified create an explosion, <arc/>Blinding enemies within ? meters.",
+     "main": "Arc <special/>Special Weapons Kills while <arc/>Amplified create an explosion, <arc/>Blinding enemies within ? meters.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697807382689,
+      "lastUpdate": 1699751911273,
       "updatedBy": "Stardust"
      }
     },
@@ -25361,7 +25361,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33725,7 +33725,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Hits, for 1 second:\n• Reduces Weapon Recoil by ?%\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake\n• Removes Reticle Bounce \n\nStacks 5 times. Additional hits refresh the duration.\n\nStacks gained per Weapon Hit:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5 (rounds down)\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 34%\n• Reduces Reticle Bounce by 34%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -33736,7 +33736,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696776198046,
+      "lastUpdate": 1699751579789,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -33750,7 +33750,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696779082385,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43727,7 +43727,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43955,14 +43955,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Scoring multiple Precision Hits within 1? second of each applies <strand/>Sever to enemies within ? meters of the target.\n\n? second cooldown between activations.\n\nActivation Progress per Precision Hit:\n• Bows: 34% Counter: Bows\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Machine Guns, Pulse Rifles: 12%\n• Submachine Guns, Trace Rifles: 10%",
+     "main": "Scoring multiple Precision Hits within 2 seconds of each applies <strand/>Sever to enemies within ? meters of the target.\n\n? second cooldown between activations.\n\nActivation Progress per Precision Hit:\n• Slug Shotguns: 50%\n• Bows, Sniper Rifles: 34%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Machine Guns, Pulse Rifles: 12%\n• Submachine Guns, Trace Rifles: 10%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699461168915,
+      "lastUpdate": 1699752011019,
       "updatedBy": "Stardust"
      }
     },
@@ -43972,7 +43972,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51919,7 +51919,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53103,7 +53103,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1699752056306,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
