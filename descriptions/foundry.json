@@ -10470,13 +10470,13 @@
  "733647368": {
   "hash": 733647368,
   "name": "Rapid-Fire Ranger",
-  "lastUpload": 1696779082385,
+  "lastUpload": 1699752056306,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696778995882,
+     "lastUpdate": 1699751820349,
      "updatedBy": "Stardust"
     }
    }
@@ -10492,7 +10492,19 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Weaken to them."
+       "text": "Weaken to them for "
+      },
+      {
+       "text": "24"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 11]"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -10509,7 +10521,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows: 50%"
+       "text": "• Bows, Sniper Rifles: 50%"
       }
      ]
     },
@@ -10523,35 +10535,48 @@
     {
      "linesContent": [
       {
-       "text": "• Sidearms: 20%"
+       "text": "• Everything Else: 15%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "\"Scoring multiple Precision Hits within 2 seconds of each against enemies >25? metres away applies Weaken for 24 [11] seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Counter System per Precision Hit:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Auto Rifles: 15%"
+       "text": "50% Counter: Bows and Sniper Rifles"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Trace Rifles, Submachine Guns: 12.5%"
+       "text": "25% Counter: Hand Cannons and Scout Rifles"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Machine Guns, Pulse Rifles: 11.2%"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Other Weapons: currently unknown"
+       "text": "15% Counter: Everything Else including Slug Shotguns\""
       }
      ]
     }
@@ -16064,7 +16089,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -18407,14 +18432,14 @@
     {
      "linesContent": [
       {
-       "text": "As Magazine drops from 50% capacity to empty:"
+       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25% Decreased Accuracy Cone Size"
+       "text": "• 12.5% to 25% Decreased Accuracy Cone Size"
       }
      ]
     },
@@ -20239,7 +20264,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -23350,13 +23375,13 @@
  "1645158859": {
   "hash": 1645158859,
   "name": "Under Pressure",
-  "lastUpload": 1692730396702,
+  "lastUpload": 1699752056306,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692730051303,
+     "lastUpdate": 1699751271336,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -23370,14 +23395,14 @@
     {
      "linesContent": [
       {
-       "text": "As Magazine drops from 50% capacity to empty:"
+       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 25% Decreased Accuracy Cone Size"
+       "text": "• 12.5% to 25% Decreased Accuracy Cone Size"
       }
      ]
     },
@@ -25020,13 +25045,13 @@
  "1727069367": {
   "hash": 1727069367,
   "name": "Spark of Beacons",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1699752056306,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697807382689,
+     "lastUpdate": 1699751911273,
      "updatedBy": "Stardust"
     }
    }
@@ -25036,7 +25061,13 @@
     {
      "linesContent": [
       {
-       "text": "Arc Special Weapons Kills while "
+       "text": "Arc "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Weapons Kills while "
       },
       {
        "classNames": [ "arc" ]
@@ -25361,14 +25392,17 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Hits, for 1 second:"
+       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "• Reduces Weapon Recoil by ?%"
+       "text": "Benefits granted per Stack:"
       }
      ]
     },
@@ -25382,24 +25416,14 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake"
+       "text": "• Reduces Visual Weapon Shake 34%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Removes Reticle Bounce"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stacks 5 times. Additional hits refresh the duration."
+       "text": "• Reduces Reticle Bounce by 34%"
       }
      ]
     },
@@ -25409,7 +25433,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks gained per Weapon Hit:"
+       "text": "Stacks gained per Weapon Hit by weapon type:"
       }
      ]
     },
@@ -25423,7 +25447,7 @@
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles, Sidearms: 1.5 (rounds down)"
+       "text": "• Pulse Rifles, Sidearms: 1.5"
       }
      ]
     },
@@ -33004,13 +33028,13 @@
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1696779082385,
+  "lastUpload": 1699752056306,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696776198046,
+     "lastUpdate": 1699751579789,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -33024,14 +33048,17 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Hits, for 1 second:"
+       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "• Reduces Weapon Recoil by ?%"
+       "text": "Benefits granted per Stack:"
       }
      ]
     },
@@ -33045,24 +33072,14 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake"
+       "text": "• Reduces Visual Weapon Shake 34%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Removes Reticle Bounce"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Stacks 5 times. Additional hits refresh the duration."
+       "text": "• Reduces Reticle Bounce by 34%"
       }
      ]
     },
@@ -33072,7 +33089,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks gained per Weapon Hit:"
+       "text": "Stacks gained per Weapon Hit by weapon type:"
       }
      ]
     },
@@ -33086,7 +33103,7 @@
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles, Sidearms: 1.5 (rounds down)"
+       "text": "• Pulse Rifles, Sidearms: 1.5"
       }
      ]
     },
@@ -43102,7 +43119,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -43477,13 +43494,13 @@
  "3192552689": {
   "hash": 3192552689,
   "name": "Thread of Isolation",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699461168915,
+     "lastUpdate": 1699752011019,
      "updatedBy": "Stardust"
     }
    }
@@ -43493,7 +43510,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Precision Hits within 1? second of each applies "
+       "text": "Scoring multiple Precision Hits within 2 seconds of each applies "
       },
       {
        "classNames": [ "strand" ]
@@ -43526,7 +43543,14 @@
     {
      "linesContent": [
       {
-       "text": "• Bows: 34% Counter: Bows"
+       "text": "• Slug Shotguns: 50%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bows, Sniper Rifles: 34%"
       }
      ]
     },
@@ -50936,7 +50960,7 @@
     {
      "linesContent": [
       {
-       "text": "As Magazine drops from 50% capacity to empty:"
+       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
       }
      ]
     },
@@ -50944,6 +50968,13 @@
      "linesContent": [
       {
        "text": "• "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "15% to "
       },
       {
        "text": "🡅",
@@ -50971,7 +51002,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Accuracy Cone Size is decreased by a further additive 5%."
+       "text": " Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)"
       }
      ]
     }
@@ -52243,7 +52274,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -53552,7 +53583,7 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1699752056306,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
