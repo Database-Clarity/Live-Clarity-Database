@@ -4960,14 +4960,14 @@
    },
    "editor": {
     "en": {
-     "main": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] />  once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
+     "main": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] />  once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696970026752,
+      "lastUpdate": 1700076263432,
       "updatedBy": "Stardust"
      }
     },
@@ -4977,7 +4977,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696970038621,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9443,7 +9443,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696779082385,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14092,7 +14092,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• <title Refills [G_refill] /> magazine from reserves\n\nWorks and can activate while stowed.\n\nenhanced (\n#e Activates with more health remaining.\n)",
+     "main": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• <title Refills [G_refill] /> Magazine from reserves\n\nWorks and can activate while stowed.\n\nenhanced (\n#e Activates with more health remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -14103,7 +14103,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693496870002,
+      "lastUpdate": 1700076215281,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -14117,7 +14117,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16137,7 +16137,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20959,7 +20959,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23398,7 +23398,7 @@
    },
    "editor": {
     "en": {
-     "main": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• #e${12.5*#d}% to #e${25*#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nenhanced (\nvar d = 1.2\n#e Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)\n)",
+     "main": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• #e${12.5*#d}% to #e${25*#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1.2\n#e Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -23409,7 +23409,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699751271336,
+      "lastUpdate": 1700076275811,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -23423,7 +23423,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31477,7 +31477,7 @@
    },
    "editor": {
     "en": {
-     "main": "Increases Weapon Damage by <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] /> as Magazine drops from #e${50+#d}% capacity to empty.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects. \n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
+     "main": "Increases Weapon Damage by <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] /> as Magazine drops from #e${50+#d}% capacity to empty.\n\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -31488,7 +31488,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687001761103,
+      "lastUpdate": 1700076112095,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -31502,7 +31502,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687004979653,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32714,7 +32714,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading.\n\nAlways rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
+     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading. Always rounds up.\n\nenhanced (\n#e Improves the average overflow amount.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -32725,7 +32725,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676204875102,
+      "lastUpdate": 1700076347518,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -32739,7 +32739,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40335,7 +40335,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for #e${11+#d} seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or reloading resets the precision counter but the buff persists through stowing if active.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for #e${11+#d} seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -40346,7 +40346,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676209044005,
+      "lastUpdate": 1700076160086,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -40360,7 +40360,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -41164,7 +41164,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst.\n\n<title Whisper of Durance [Whisper of Durance] /> increases slow duration by <pve 4 /> <pvp [0.5] /> seconds\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by <pve 4 /> <pvp [0.5] /> seconds.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -41175,7 +41175,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692713857207,
+      "lastUpdate": 1700076327055,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41189,7 +41189,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692730396702,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42759,7 +42759,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Energy Weapons are refunded 1 Ammo upon hitting Matching Elemental Shields.\n\n<title Refills [G_refill] /> magazine upon breaking a Combatant, Barrier, or Guardian Shield.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "Energy Weapons are refunded 1 Ammo upon hitting Matching Elemental Shields.\n\n<title Refills [G_refill] /> magazine upon breaking a PVP Combatant, Barrier Champion, or Guardian Shield.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -42770,7 +42770,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676209805523,
+      "lastUpdate": 1700076441103,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -42784,7 +42784,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43727,7 +43727,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47899,7 +47899,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant #e${10 * #d}% Grenade Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine.\n3 second cooldown between Refills.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)\n)",
+     "main": "Weapon Kills grant #e${10 * #d}% Grenade Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine with a 3 second cooldown.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -47910,7 +47910,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687176308845,
+      "lastUpdate": 1700076374923,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -47924,7 +47924,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687176854200,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51919,7 +51919,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53086,14 +53086,14 @@
    },
    "editor": {
     "en": {
-     "main": "Grants the following for #e${7+#d} seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\n\nWeapon Kills while Discord is active fully refill the Magazine of Primary Weapons, and refund 1 Ammo for Special Weapons.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1? second.\n)",
+     "main": "Grants the following for #e${7+#d} seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\n\nWeapon Kills while Discord is active fully refill the Magazine of <primary/>Primary Weapons, and refund 1 Ammo for <special/>Special Weapons.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1? second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1685805412170,
+      "lastUpdate": 1700076393414,
       "updatedBy": "Stardust"
      }
     },
@@ -53103,7 +53103,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1700076455476,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
