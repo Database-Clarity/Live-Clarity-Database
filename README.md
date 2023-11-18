@@ -18,6 +18,7 @@
 - [Destiny Item Manager](https://dim.gg): The go-to Item Manager for Destiny
 - [Light.gg](https://light.gg): Destiny 2 Database explorer and extensive resource hub
 - [D2Foundry](https://d2foundry.gg): "Your companion to Destiny 2 weapons and perks"
+- [Braytech](https://bray.tech): Multipurpose app with an extensive list of amazing features
 - [Little Light](https://littlelight.club): An intuitive inventory manager on mobile devices
 - [Blue Engram](https://engram.blue/crafting): The best way to keep track of your crafting progress
 - [Deepsight.gg](https://deepsight.gg): A simplistic item manager focused mainly on armor management
