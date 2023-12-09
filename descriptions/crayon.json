@@ -211,11 +211,11 @@
  "40751621": {
   "hash": 40751621,
   "name": "Reaper",
-  "lastUpload": 1690805485949,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After using your Class Ability:\nThe next Weapon Kill spawns an Orb of Power that grants 0.8% Super Energy.\n\nEquipping multiple copies of the mod provides no benefit."
+   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n\n10 second cooldown between activations.\n\nEquipping multiple copies of the mod provides no benefit."
   }
  },
  "43555494": {
@@ -231,7 +231,7 @@
  "47981717": {
   "hash": 47981717,
   "name": "Opening Shot",
-  "lastUpload": 1696779082385,
+  "lastUpload": 1702080947315,
   "stats": {
    "Aim Assist": [
     {
@@ -251,7 +251,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:\n• 20 Aim Assist\n• 25 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth",
+   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing:\n• 20 Aim Assist\n• 25 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth",
    "zh-chs": "第一发子弹:\n•  +20 瞄准辅助\n•  +25 射程\n•  -5% 精度锥角尺寸\n•  -10% 精度锥角增长\n\n开火后触发 3.1 秒冷却时间。"
   }
  },
@@ -338,6 +338,16 @@
    "en": "Finishers with no active Armor Charge Stacks grant 1 Stack of Armor Charge."
   }
  },
+ "95528736": {
+  "hash": 95528736,
+  "name": "Onslaught",
+  "lastUpload": 1702080947315,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Weapon Kills grant a Stack of Onslaught for 4.5 seconds. Maximum of 3 Stacks.\n\nBenefits at 1|2|3 Stacks of Onslaught:\n• 16% | 28% | 37% Decreased Firing Delay\n• 15 | 25 | 35 Reload Speed"
+  }
+ },
  "95934356": {
   "hash": 95934356,
   "name": "Strand Loader",
@@ -383,11 +393,11 @@
   "name": "The Dance",
   "itemHash": 1702288800,
   "itemName": "Radiant Dance Machines",
-  "lastUpload": 1692734897836,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "'Multi-Dodge Ready' appears on the Buff List while within 15 meters of an enemy.\n\nDodging while Multi-Dodge is ready allows you to chain dodges infinitely for 6 seconds. Kills extend the buff duration by 5 seconds, up to 11 seconds.\n\nMulti-Dodge Dodges don't activate:\n• <:stasis:915198000727461909>Winter's Shroud and Threaded Specter Aspects\n• Dynamo, Bomber, Outreach, and Distribution Armor Mods (Utility Kickstart TBD)\n\nEnsnaring Slam removes the buff after one usage."
+   "en": "'Multi-Dodge Ready' appears on the Buff List while within 15 meters of an enemy.\n\nDodging while Multi-Dodge is ready allows you to chain dodges infinitely for 6 seconds. Kills extend the buff duration by 5 seconds, up to 11 seconds.\n\nMulti-Dodge Dodges don't activate:\n• <:stasis:915198000727461909>Winter's Shroud and Threaded Specter Aspects\n• Dynamo, Bomber, Outreach, and Distribution Armor Mods\n\nEnsnaring Slam removes the buff after one usage."
   }
  },
  "120721526": {
@@ -459,11 +469,11 @@
  "164468655": {
   "hash": 164468655,
   "name": "Nanotech Tracer Rockets",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1702080947315,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring a set percentage of the Magazine Capacity as hits within ? seconds of each:\nFires a Tracking Rocket that matches Weapon's Elemental Damage Type.\n\nRockets deal <:pve:922884406073507930>22.4 <:pvp:922884468275019856>[14] impact and <:pve:922884406073507930>24 <:pvp:922884468275019856>[15] explosive damage on hit and inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). On non-primary weapons, the rockets receive and additional Damage Increase.\n\n% of Magazine Capacity as hits required and the Additional Damage Increase by weapon archetype:\n• Hand Cannons, Pulse Rifles, Submachine Guns: 45% Magazine Capacity, 0% Increased Damage (Baseline)\n• Sniper Rifles: 50%?, 100%\n• Grenade Launchers: 30%, 25%\n• Machine Guns: 25%, 50%\n• Fusion Rifles, Shotguns: ?%, 150%\n\nFurther hits do not provide activation progress for 1 second after activation."
+   "en": "Upon scoring a set percentage of the Magazine Capacity as hits within ? seconds of each:\nFires a Tracking Rocket that matches Weapon's Elemental Damage Type.\n\nRockets deal <:pve:922884406073507930>22.4 <:pvp:922884468275019856>[14] impact and <:pve:922884406073507930>24 <:pvp:922884468275019856>[15] explosive damage on hit and inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). On non-primary weapons, the rockets receive and additional Damage Increase.\n\n% of Magazine Capacity as hits required and the Additional Damage Increase by weapon archetype:\n• Hand Cannons, Pulse Rifles, Submachine Guns: 45% Magazine Capacity \\\\ 0% Increased Damage (Baseline)\n• Sniper Rifles: 50%? \\\\ 100%\n• Grenade Launchers: 30% \\\\ 25%\n• Machine Guns: 25% \\\\ 50%\n• Fusion Rifles, Shotguns: ?% \\\\ 150%\n\nFurther hits do not provide activation progress for 1 second after activation."
   }
  },
  "169755979": {
@@ -525,7 +535,7 @@
   "name": "Halberdier's Reach",
   "itemHash": 3093309525,
   "itemName": "Triton Vice",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Reload": [
     {
@@ -539,7 +549,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Glaive Melee Kills refill 1 Ammo into the Magazine from reserves, up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <:pve:922884406073507930>? <:pvp:922884468275019856>[101] damage in a 4? meter radius."
+   "en": "Glaive Melee Kills refill 1 Ammo into the Magazine from reserves. Can overflow the Magazine up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <:pve:922884406073507930>350 <:pvp:922884468275019856>[101] damage in a 4? meter radius."
   }
  },
  "191144788": {
@@ -735,11 +745,11 @@
  "243981275": {
   "hash": 243981275,
   "name": "Attrition Orbs",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dealing sustained damage (TBD) spawns an Orb of Power that grants 0.8% Super Energy."
+   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\n\nHit requirements by weapon type:\n• Bows: 5 Hits\n• Swords: 10? Hits\n• Shotguns: unknown\n• Other: 67% of Magazine rounded down + 2 Hits"
   }
  },
  "247725512": {
@@ -948,7 +958,7 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1702080947315,
   "stats": {
    "PVE Damage": [
     {
@@ -968,7 +978,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill for 5 seconds:\n• 15% Increased Damage\n• Sets Forward Movement Speed to 9 m/s\n\nKills refresh the timer. Remains active even if stowed.",
+   "en": "Grants the following on Weapon Kills for 5 seconds:\n• 15% Increased Damage\n• Maximized Movement Speed\n\nRemains active even if stowed.",
    "es": "En baja con Espada:\nAumento de 15% al Daño, y pone a la velocidad de movimiento hacia adelante a 9 metros por segundo durante [?] segundos\n\nSe mantiene activo al guardar la espada\n\nMejorado: Aumenta la duración del bufo a [?] segundos",
    "zh-chs": "当刀剑击杀时：\n提高 15% 伤害，增加移动和冲刺速度，增加挥舞刀剑的前冲距离，持续 [?] 秒。\n\n武器收起时依然生效。"
   }
@@ -1122,11 +1132,11 @@
  "377010989": {
   "hash": 377010989,
   "name": "Impact Induction",
-  "lastUpload": 1684501062297,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Grenade Ability Energy upon dealing Melee Damage. 7 second cooldown between activations.\n\nGrenade Ability Energy Gains with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Grenade Ability Energy upon dealing Powered Melee Damage. 7 second cooldown between activations.\n\nGrenade Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "378204240": {
@@ -1189,7 +1199,7 @@
   "name": "Burning Fists",
   "itemHash": 1734844651,
   "itemName": "Wormgod Caress",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "PVE Damage": [
     {
@@ -1211,7 +1221,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Finisher and (Glaive) Melee Kills grant a Stack of Burning Fists up to the maximum of 5 Stacks.\n\nAfter not having scored further Finisher or (Glaive) Melee Kills for 2 seconds, your Stacks start decaying one at a time over 9.5|10|4|4|3 seconds for the 1st|2nd|... Stacks.\n\nDamage Increases at 1|2|3|4|5 Stacks:\n• Melee: 55%|110%|165%|220%|275%\n• Glaive Melee: 40%|80%|120%|160%|200%\n• Weapon: 0%|20%|25%|30%|35% ([Empowering Buff](https://url.d2clarity.com/DamageBuffs))",
+   "en": "Finisher and (Glaive) Melee Kills grant a Stack of Burning Fists up to the maximum of 5 Stacks.\n\nAfter not having scored further Finisher or (Glaive) Melee Kills for 2 seconds, your Stacks start decaying one at a time over 9.5|10|4|4|3 seconds for the 1st|2nd|... Stacks.\n\nDamage Increases at 1|2|3|4|5 Stacks:\n• Melee: 55%|110%|165%|220%|275%\n• Glaive Melee: 40%|80%|120%|160%|200%\n• <:pve:922884406073507930>Weapon\\\\PVE: 0%|20%|25%|30%|35%\n• <:pvp:922884468275019856>Weapon\\\\PVP: 0%|0%|20%|25%|25%\n\nWeapon Damage Increases are [Empowering Buffs](https://url.d2clarity.com/DamageBuffs).",
    "zh-chs": "近战击杀后获得“燃烧之拳”：\n“燃烧之拳”持续 5 秒，提供额外近战伤害，可叠加 5 层。\n\n额外近战伤害：\n55% | 110% | 165% | 220% | 275%"
   }
  },
@@ -1305,7 +1315,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:solar:720178909361995786>Solar Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:solar:720178909361995786>Solar Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "422994787": {
@@ -1341,11 +1351,11 @@
  "426473317": {
   "hash": 426473317,
   "name": "Gambler's Dodge",
-  "lastUpload": 1700160880281,
+  "lastUpload": 1702080947315,
   "type": "Subclass Class",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nFully recharges your Melee Ability if used within 15 meters of an enemy."
+   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nGrants 130% Melee Ability Energy if used within 15 meters of an enemy."
   }
  },
  "431220296": {
@@ -1409,7 +1419,7 @@
  "450381139": {
   "hash": 450381139,
   "name": "Arc Reserves",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1702080947315,
   "stats": {
    "Guard Endurance": [
     {
@@ -1422,7 +1432,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:arc:720178925317128243>Arc Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:arc:720178925317128243>Arc Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "454085387": {
@@ -1608,37 +1618,11 @@
   "name": "Spring-Loaded Mounting",
   "itemHash": 1734144409,
   "itemName": "Mechaneer's Tricksleeves",
-  "lastUpload": 1701294220305,
-  "stats": {
-   "Handling": [
-    {
-     "passive": {
-      "stat": [ 100 ]
-     },
-     "weaponTypes": [ "Sidearm" ]
-    }
-   ],
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 50 ]
-     },
-     "weaponTypes": [ "Sidearm" ]
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     },
-     "weaponTypes": [ "Sidearm" ]
-    }
-   ]
-  },
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants 50 Airborne Effectiveness, 100 Handling and 100 Reload Speed to Sidearms.\n\nUpon readying a Sidearm while at Critical Health:\n• Refills the Magazine of the Sidearm\n• Grants <:pve:922884406073507930>100% <:pvp:922884468275019856>[10%] Increased Damage until no longer at Critical Health, after which it has a 5 second duration\n\nBuff duration can be extended by Sidearm Kills which each add 3 seconds up to the maximum of ? seconds. Sidearm kills while the buff is active refill your magazine."
+   "en": "Passively grants 50 Airborne Effectiveness, 100 Handling and 100 Reload Speed to Sidearms.\n\nUpon readying a Sidearm while at Critical Health:\n• Refills the Magazine of the Sidearm from reserves\n• Grants <:pve:922884406073507930>100% <:pvp:922884468275019856>[10%] Increased Damage until no longer at Critical Health, after which it has a 5 second duration\n\nSidearm Kills refresh the buff duration by 3 seconds (capped at 5 seconds) and refill your magazine from reserves."
   }
  },
  "484491717": {
@@ -3275,6 +3259,16 @@
    "en": "Grants an extra Coldsnap Grenade Ability Charge.\n\nColdsnaps Grenades have better tracking, travel 35% further, and grant Grenade Ability upon hitting or freezing an enemy.\n\nGrenade Ability Energy gains based on [enemy rank](https://url.d2clarity.com/combatants):\n• 7%: Enemy Players\n• 10%: Tier 1 Minors\n• 22%: Tier 2 Minors, Tier 1 Elites\n• 34%: Tier 3 Minors, Tier 2 Elites\n• 50%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, and Bosses"
   }
  },
+ "923806249": {
+  "hash": 923806249,
+  "name": "Slice",
+  "lastUpload": 1702080947315,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "The next 5 Hits within 8 seconds of using your Class Ability seconds apply Sever.\n\nApplying Sever refreshes the buff duration. Activates even while stowed."
+  }
+ },
  "924149234": {
   "hash": 924149234,
   "name": "Fighting Lion Catalyst",
@@ -3439,7 +3433,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Grenade Kills. 1? second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+   "en": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
   }
  },
  "967052942": {
@@ -3551,7 +3545,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dealing sustained damage (TBD) spawns an Orb of Power that grants 0.8% Super Energy.\n\n🡅 Spawned Orbs grant more Super Energy."
+   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\n\nHit requirements by weapon type:\n• Bows: 5 Hits\n• Swords: 10? Hits\n• Shotguns: unknown\n• Other: 67% of Magazine rounded down + 2 Hits\n\n🡅 Spawned Orbs grant more Super Energy."
   }
  },
  "987673306": {
@@ -3735,7 +3729,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Class Ability Charge is fully consumed:\nGrants Class Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Class Ability Energy refunds.\n\nClass Ability Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%"
+   "en": "When a Class Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Class Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Class Ability Energy refunds.\n\nClass Ability Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%"
   }
  },
  "1047830412": {
@@ -3930,7 +3924,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Weapons matching your Subclass Element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Weapons matching your Subclass Element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "1118428792": {
@@ -3965,7 +3959,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Reload": [
     {
@@ -4009,7 +4003,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Melee Ability Charge is fully consumed:\nGrants Melee Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Melee Energy refunds.\n\nMelee Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%\n\nBugged: Doesn't work if you have more recharged Melee Ability Energy than a single ability charge."
+   "en": "When a Melee Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Melee Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Melee Energy refunds.\n\nMelee Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%\n\nBug: Doesn't work if you have more recharged Melee Ability Energy than a single ability charge."
   }
  },
  "1140096971": {
@@ -4099,7 +4093,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Grenade Ability Energy upon dealing Melee Damage. 7 second cooldown between activations.\n\nGrenade Ability Energy Gains with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Grenade Ability Energy upon dealing Powered Melee Damage. 7 second cooldown between activations.\n\nGrenade Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "1155472384": {
@@ -4107,11 +4101,11 @@
   "name": "Biotic Enhancements",
   "itemHash": 241462142,
   "itemName": "Synthoceps",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Being within 15 meters of 3+ enemies grants the Biotic Enhancements buff for 8 seconds.\n\nBiotic Enhancements benefits:\n• ? Handling and Reload Speed\n• 50% Increased Super Damage\n• <:pve:922884406073507930>165% <:pvp:922884468275019856>[100%] Increased Melee Damage\n• 100% Increased Glaive Melee Damage",
+   "en": "Being within 15 meters of 3+ enemies grants the Biotic Enhancements buff for 8 seconds.\n\nBiotic Enhancements benefits:\n• ? Handling and 35 Reload Speed\n• 50% Increased Super Damage\n• <:pve:922884406073507930>165% <:pvp:922884468275019856>[100%] Increased Melee Damage\n• 100% Increased Glaive Melee Damage",
    "zh-chs": "被 3 名以上敌人包围时：激活生物强化\n\n生物强化在 8 秒内提高近战和常能伤害。\n\n50% 超能伤害。\nPVE：提高 200% 近战伤害。\nPVP：提高 100% 近战伤害。\n\n扩大近战前冲范围到 7 米。"
   }
  },
@@ -4179,7 +4173,10 @@
   "name": "Deconstruct",
   "lastUpload": 1701294220305,
   "type": "Weapon Trait",
-  "uploadedBy": "Stardust"
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds\n• Refills 10% of the Magazine from thin air\n\nHits against Constructs are not be able to trigger the perk but they contribute to its activation progress."
+  }
  },
  "1167468626": {
   "hash": 1167468626,
@@ -4713,7 +4710,7 @@
   "type": "Subclass Class",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nFully recharges your Melee Ability if used within 15 meters of an enemy."
+   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nGrants 130% Melee Ability Energy if used within 15 meters of an enemy."
   }
  },
  "1282157891": {
@@ -5041,7 +5038,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After 3.1 seconds of not firing, grants the following benefits for your first shot (of the burst) only:\n• 🡅25 Aim Assist\n• 🡅30 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n\n🡅 Grants 5 more Aim Assist and Range."
+   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing:\n• 🡅25 Aim Assist\n• 🡅30 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n\n🡅 Grants 5 more Aim Assist and Range."
   }
  },
  "1376049785": {
@@ -5313,7 +5310,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Airborne": [
     {
@@ -5438,11 +5435,11 @@
   "name": "One with the Void",
   "itemHash": 3234692237,
   "itemName": "Briarbinds",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "<:void:720178940240461864>Void Souls last 5 seconds longer and can be retrieved by interacting with them. Retrieving them grants <:void:720178940240461864>Void Soul Ready for 25 seconds, allowing it to be redeployed while keeping its Kill Bonuses.\n\nVoid Soul Kills increase their Damage and Damage Resistance, maxing out after 6 Kills:\n• 16.6%|33.3%|50%|66.67%|83.3%|100% Increased Void Soul Damage with 1|2|...|6 Kills\n• 8.3%|16.7%|25%|33.3%|41.7%|50 Increased Void Soul Damage Resistance\n\nIf multiple Void Souls tether the same enemy, they will each deal the damage of the first Soul to do so."
+   "en": "<:void:720178940240461864>Void Souls last 5 seconds longer and can be retrieved by interacting with them. Retrieving them grants <:void:720178940240461864>Void Soul Ready for 25 seconds, allowing it to be redeployed while keeping its Kill Bonuses.\n\nVoid Soul Kills increase their Damage and Damage Resistance, maxing out after 6 Kills:\n• 16.6%|33.3%|50%|66.67%|83.3%|100% Increased Void Soul Damage with 1|2|...|6 Kills\n• 8.3%|16.7%|25%|33.3%|41.7%|50% Increased Void Soul Damage Resistance\n\nIf multiple Void Souls tether the same enemy, they will each deal the damage of the first Soul to do so."
   }
  },
  "1513326571": {
@@ -5585,7 +5582,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <:pve:922884406073507930>120 <:pvp:922884468275019856>[20] damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <:primary:968793055677251604>Primary, 15% on <:special:968793055631114330>Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\nHits Required for Activation:\n• Auto Rifles: Unknown\n• Submachine Guns: 14\n• Pulse Rifles: 🡅10 (from 11)\n• Non-burst Sidearms: 🡅7 (from 11)\n• Hand Cannons, Scout Rifles: 🡅4 (from 6)\n• Sniper Rifles: 🡅2 (from 3)\n\nFurther hits do not provide activation progress for 2? seconds after perk activation. Only one player can activate Kinetic Tremors on a target at a time.\n\n🡅 Hit Requirements are reduced."
+   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <:pve:922884406073507930>120 <:pvp:922884468275019856>[20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <:primary:968793055677251604>Primary, 15% on <:special:968793055631114330>Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\n\nHits Required for Activation:\n• Auto Rifles: Unknown\n• Submachine Guns: 14\n• Pulse Rifles: 🡅10 (from 11)\n• Non-burst Sidearms: 🡅7 (from 11)\n• Hand Cannons, Scout Rifles: 🡅4? (from 6)\n• Sniper Rifles: 🡅2 (from 3)\n\n🡅 Hit Requirements are reduced."
   }
  },
  "1550063955": {
@@ -6067,7 +6064,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:void:720178940240461864>Void Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:void:720178940240461864>Void Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "1672155562": {
@@ -6311,7 +6308,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Powered Melee Kills. 1? second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
+   "en": "Spawns an Orb of Power on Powered Melee Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
   }
  },
  "1713206376": {
@@ -6628,11 +6625,11 @@
  "1763780622": {
   "hash": 1763780622,
   "name": "Melee Kickstart",
-  "lastUpload": 1694364940995,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Melee Ability Charge is fully consumed:\nGrants Melee Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Melee Energy refunds.\n\nMelee Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%\n\nBugged: Doesn't work if you have more recharged Melee Ability Energy than a single ability charge."
+   "en": "When a Melee Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Melee Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Melee Energy refunds.\n\nMelee Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%\n\nBug: Doesn't work if you have more recharged Melee Ability Energy than a single ability charge."
   }
  },
  "1771339417": {
@@ -7157,7 +7154,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Grenade Ability Charge is fully consumed:\nGrants Grenade Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Grenade Energy refunds.\n\nGrenade Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%"
+   "en": "When a Grenade Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Grenade Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Grenade Energy refunds.\n\nGrenade Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%"
   }
  },
  "1926441324": {
@@ -7264,7 +7261,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Weapons matching your Subclass Element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Weapons matching your Subclass Element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "1971489086": {
@@ -7391,7 +7388,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations.\n\nMelee Ability Energy Gains with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations.\n\nMelee Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "2037312142": {
@@ -8349,7 +8346,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Strand Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Strand Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "2305736470": {
@@ -8359,7 +8356,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Kinetic Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Kinetic Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "2306441428": {
@@ -8389,11 +8386,11 @@
   "name": "High Priority",
   "itemHash": 2374129871,
   "itemName": "Cenotaph Mask",
-  "lastUpload": 1689234319053,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Refills 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nRapidly scoring 5 Trace Rifle hits on a [Miniboss, Champion, Boss, or Vehicle](https://url.d2clarity.com/combatants) marks them for 10 seconds. Additional hits refresh the mark duration.\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated. Multiple people can mark the same target.\n\nAlly kills on Marked Enemies generate <:heavy:968793055652106320>Heavy Ammo for Allies and <:special:968793055631114330>Special Ammo for the Wearer.\n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number)."
+   "en": "Refills 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nRapidly scoring 5 Trace Rifle hits on a [Miniboss, Champion, Boss, or Vehicle](https://url.d2clarity.com/combatants) marks them for 10 seconds. Additional hits refresh the mark duration.\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated.\n\nAlly kills on Marked Enemies generate <:heavy:968793055652106320>Heavy Ammo for Allies and <:special:968793055631114330>Special Ammo for the Wearer.\n\nMultiple people can mark the same target resulting in each of them receiving the appropriate drops.\n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number)."
   }
  },
  "2318667184": {
@@ -8651,7 +8648,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Kinetic Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Kinetic Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "2409031770": {
@@ -8673,7 +8670,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:void:720178940240461864>Void Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:void:720178940240461864>Void Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "2414626352": {
@@ -8794,11 +8791,11 @@
  "2447449706": {
   "hash": 2447449706,
   "name": "Heavy Handed",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Powered Melee Kills. 1? second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
+   "en": "Spawns an Orb of Power on Powered Melee Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
   }
  },
  "2450788523": {
@@ -9023,11 +9020,11 @@
  "2485657760": {
   "hash": 2485657760,
   "name": "Firepower",
-  "lastUpload": 1690739974066,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Grenade Kills. 1? second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+   "en": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
   }
  },
  "2495011826": {
@@ -9091,11 +9088,11 @@
  "2509860981": {
   "hash": 2509860981,
   "name": "Nadir Focus",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1702080947315,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:\n• Up to 10 Range\n• Up to -?% Accuracy Cone Size\n• Up to ?% Increased Lunge Distance (Swords)\n• Up to ?% Increased Projectile Velocity (Launchers)\n\nDeactivates after not firing or swinging for 1 second."
+   "en": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:\n• Up to 10 Range\n• Up to -?% Accuracy Cone Size\n• Up to ?% Increased Lunge Distance (Swords)\n• Up to ?% Increased Projectile Velocity (Launchers)\n\nDeactivates after not firing or swinging for 2 seconds."
   }
  },
  "2526773280": {
@@ -9105,7 +9102,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:solar:720178909361995786>Solar Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:solar:720178909361995786>Solar Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "2526801077": {
@@ -10075,7 +10072,7 @@
   "type": "Subclass Class",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nFully recharges your Melee Ability if used within 15 meters of an enemy."
+   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nGrants 130% Melee Ability Energy if used within 15 meters of an enemy."
   }
  },
  "2818140350": {
@@ -10204,11 +10201,11 @@
  "2859149211": {
   "hash": 2859149211,
   "name": "Beacon Rounds",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Weapon Kills grants projectile tracking for ? seconds. Dealing damage extends the buff duration."
+   "en": "Weapon Kills grants improved projectile tracking for ? seconds. Stacks 4 times.\n\nDealing damage extends the buff duration."
   }
  },
  "2860991074": {
@@ -10569,11 +10566,11 @@
   "name": "Kintsugi",
   "itemHash": 3974038291,
   "itemName": "Precious Scars",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Reviving allies or being revived grants you and allies within 15 meters a 100 HP Overshield for 10 seconds.\n\nLeaving the 15 meter radius or breaking the Overshield of the wearer removes the Overshields.\n\nKills with a Weapon matching your Subclass Element restore 60 HP and grant <:solar:720178909361995786>Restoration x1 to you and allies within 15 meters on a 3 second cooldown."
+   "en": "Reviving allies or being revived grants you and allies within 15 meters a 100 HP Overshield for 10 seconds.\n\nLeaving the 15 meter radius or breaking the Overshield of the wearer removes the Overshields.\n\nKills with a Weapon matching your Subclass Element grant <:solar:720178909361995786>Restoration x1 to you and allies within 15 meters for 3 seconds. 3 second cooldown between activations."
   }
  },
  "2982306509": {
@@ -11095,11 +11092,11 @@
  "3160387771": {
   "hash": 3160387771,
   "name": "Utility Kickstart",
-  "lastUpload": 1694364940995,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Class Ability Charge is fully consumed:\nGrants Class Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Class Ability Energy refunds.\n\nClass Ability Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%"
+   "en": "When a Class Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Class Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Class Ability Energy refunds.\n\nClass Ability Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%"
   }
  },
  "3161816588": {
@@ -11162,7 +11159,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Handling": [
     {
@@ -11383,7 +11380,7 @@
   "name": "Jump Jets",
   "itemHash": 3539357318,
   "itemName": "Lion Rampant",
-  "lastUpload": 1678828748445,
+  "lastUpload": 1702080947315,
   "stats": {
    "Airborne": [
     {
@@ -11396,7 +11393,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Enables hipfiring while in Lift, and passively grants 50 Airborne Effectiveness while hipfiring.\n\nIncreases Lift Duration to 4 seconds:\n• High Lift: 2.6  🠚 4 (54% increase)\n• Stafe Lift: 2.2  🠚 4 (82% increase)\n• Catapult Lift: 1  🠚 4 (300% increase)"
+   "en": "Enables hipfiring while in Lift and passively grants 50 Airborne Effectiveness while hipfiring.\n\nIncreases Lift Duration to 4 seconds:\n• High Lift: 2.6🠚4 (54% Increase)\n• Strafe Lift: 2.2🠚4 (82% Increase)\n• Catapult Lift: 1🠚4 (300% Increase)"
   }
  },
  "3241194941": {
@@ -11477,7 +11474,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation.\n\nClass Ability Energy Gain with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation.\n\nClass Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "3252839262": {
@@ -11513,11 +11510,11 @@
  "3268255645": {
   "hash": 3268255645,
   "name": "Sect of Force",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring 4 Precision Hits within 2.5 seconds of each:\nGrants 10 Reload Speed, a 0.85x Reload Duration Multiplier, and 10 Ready/Stow Handling for 10 seconds.\n\nActivating the buff on an Elite or Miniboss or stunning a Champion marks them for ? seconds.\n\nMarked enemies take 20% Increased Damage from all sources. Debuff stacks with everything(?)\n\nUpon initially marking a target, Aeon Allies not using Sect of Force receive ?% Grenade and Melee Ability Energy.",
+   "en": "Upon scoring 4 Precision Hits within 3 seconds of each:\nGrants ? Reload Speed and ? Handling for 10 seconds.\n\nActivating the buff on an Elite or Miniboss or stunning a Champion marks them for 30 seconds. Mark duration cannot be refreshed.\n\nMarked enemies are highlighted for allies take 20% Increased Damage from them. Damage Increase stacks with everything.\n\nUpon marking a target for the first time, Aeon Allies not using Sect of Force receive 33.33% Grenade and Melee Ability Energy per second for 3 seconds.",
    "zh-chs": "在 2.5 秒内完成 4 次精准攻击会获得“永劫教派武器加速”增益，持续6秒。\n\n“永劫教派武器加速”提供 +10 填装速度（附带 0.8x 填装动画系数），对拔枪/收枪动作 +10 操控性。\n\n在击晕勇士、次级首领或者首领时：\n• 30 米范围内的队友获得 50% 的手雷和近战能量。\n• 永劫教派队友额外获得 10% 的超量能量。\n\n触发间隔 4 秒。"
   }
  },
@@ -11611,7 +11608,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:stasis:915198000727461909>Stasis Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:stasis:915198000727461909>Stasis Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "3295796664": {
@@ -11983,7 +11980,10 @@
   "name": "Slice",
   "lastUpload": 1701294220305,
   "type": "Weapon Trait Enhanced",
-  "uploadedBy": "Stardust"
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "The next 5 Hits within 🡅9 seconds of using your Class Ability seconds apply Sever.\n\nApplying Sever refreshes the buff duration. Activates even while stowed.\n\n🡅 Buff duration is increased by 1? second."
+  }
  },
  "3425386926": {
   "hash": 3425386926,
@@ -12161,7 +12161,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:stasis:915198000727461909>Stasis Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:stasis:915198000727461909>Stasis Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "3466057365": {
@@ -12538,11 +12538,11 @@
  "3599522901": {
   "hash": 3599522901,
   "name": "Momentum Transfer",
-  "lastUpload": 1684501062297,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations.\n\nMelee Ability Energy Gains with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Melee Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown between activations.\n\nMelee Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "3615521782": {
@@ -12608,7 +12608,7 @@
   "type": "Subclass Class",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nFully recharges your Melee Ability if used within 15 meters of an enemy."
+   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nGrants 130% Melee Ability Energy if used within 15 meters of an enemy."
   }
  },
  "3643424744": {
@@ -12651,7 +12651,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Class Ability Energy upon dealing Melee Damage. 7 second cooldown between activations.\n\nClass Ability Energy Gain with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Class Ability Energy upon dealing Powered Melee Damage. 7 second cooldown between activations.\n\nClass Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "3662465906": {
@@ -12771,28 +12771,28 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill for 🡅5.5 seconds:\n• 15% Increased Damage\n• Sets Forward Movement Speed to 9 m/s\n\nKills refresh the timer. Remains active even if stowed.\n\n🡅 Buff duration is increased by 0.5 seconds."
+   "en": "Grants the following on Weapon Kills for 🡅5.5 seconds:\n• 15% Increased Damage\n• Maximized Movement Speed\n\nRemains active even if stowed.\n\n🡅 Buff duration is increased by 0.5 seconds."
   }
  },
  "3683811620": {
   "hash": 3683811620,
   "name": "Sect of Vigor",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Ally Deaths grant 25% Class Ability Energy and ?% Damage Resistance for ? seconds in PVE.\n\nReviving Allies grants 100% Class Ability Energy and ?% Damage Resistance for ? seconds in PVE.\n\nAllies at Critical Health within ? meters receive ?% Damage Resistance in PVE.\n\nAeon Allies within ? meters that are not using Sect of Vigor receive ?% Additional Base Class Ability Regeneration Rate.",
+   "en": "Ally Deaths grant 25% Class Ability Energy and 40% Damage Resistance for 15 seconds in PVE.\n\nReviving Allies grants 100% Class Ability Energy and 40% Damage Resistance for 10 seconds in PVE.\n\nAllies at Critical Health within 10 meters receive 25% Damage Resistance in PVE. Aeon Allies who are not using Sect of Vigor additionally receive 15% Class Ability Energy per second. Buff lingers for 1 second once no longer at Critical Health.",
    "zh-chs": "队友死亡时你可获得 25% 的职业技能能量。\n复活队友时获得完整的职业技能能量。\n\n施放超能能在 30 米范围内完全治愈队友。\n\n永劫教派队友获得 110 点覆盖护盾，持续 20 秒，3 秒后自动回复。"
   }
  },
  "3685945823": {
   "hash": 3685945823,
   "name": "Focusing Strike",
-  "lastUpload": 1680122100570,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Class Ability Energy upon dealing Melee Damage. 7 second cooldown between activations.\n\nClass Ability Energy Gain with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Class Ability Energy upon dealing Powered Melee Damage. 7 second cooldown between activations.\n\nClass Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "3700496672": {
@@ -12866,11 +12866,11 @@
  "3712696020": {
   "hash": 3712696020,
   "name": "Elemental Charge",
-  "lastUpload": 1692734897836,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Interacting with Elemental Pickups progresses a counter. Reaching 100% Counter Progress grants 1 Stack of Armor Charge.\n\nCounter Progress with 1|2|3 Mods equipped:\n• <:solar:720178909361995786>Firesprites,<:void:720178940240461864>Breaches,Tangles: 50%|50%|100%\n• <:arc:720178925317128243>Ionic Traces: 34%|50%|50%\n• <:stasis:915198000727461909>Stasis Shards: 25%|34%|50%"
+   "en": "Collecting Elemental Pickups or destroying Tangles grants 1 Stack of Armor Charge upon reaching 100% Activation Progress.\n\nActivation Progress with 1|2|3 Mods equipped:\n• <:solar:720178909361995786>Firesprites,<:void:720178940240461864>Breaches,Tangles: 50%|50%|100%\n• <:arc:720178925317128243>Ionic Traces: 34%|50%|50%\n• <:stasis:915198000727461909>Stasis Shards: 25%|34%|50%"
   }
  },
  "3717985200": {
@@ -12967,11 +12967,11 @@
  "3726719281": {
   "hash": 3726719281,
   "name": "Bolstering Detonation",
-  "lastUpload": 1680122100570,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation.\n\nClass Ability Energy Gain with 1|2+ Mods:\n<:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] | <:pve:922884406073507930>25% <:pvp:922884468275019856>[12.5%]"
+   "en": "Grants Class Ability Energy upon dealing Grenade Ability Damage. 7 second cooldown after activation.\n\nClass Ability Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "3728676938": {
@@ -13310,7 +13310,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Range": [
     {
@@ -13348,11 +13348,11 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <:pve:922884406073507930>120 <:pvp:922884468275019856>[20] damage over a 5 meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <:primary:968793055677251604>Primary, 15% on <:special:968793055631114330>Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\nHits Required for Activation:\n• Auto Rifles: Unknown\n• Submachine Guns: 14\n• Pulse Rifles: 11\n• Non-burst Sidearms: 11\n• Hand Cannons, Scout Rifles: 6\n• Sniper Rifles: 3\n\nFurther hits do not provide activation progress for 2? seconds after perk activation. Only one player can activate Kinetic Tremors on a target at a time."
+   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <:pve:922884406073507930>120 <:pvp:922884468275019856>[20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <:primary:968793055677251604>Primary, 15% on <:special:968793055631114330>Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\n\nHits Required for Activation:\n• Auto Rifles: Unknown\n• Submachine Guns: 14\n• Pulse Rifles: 11\n• Non-burst Sidearms: 11\n• Hand Cannons, Scout Rifles: 6\n• Sniper Rifles: 3"
   }
  },
  "3907299874": {
@@ -13554,11 +13554,11 @@
   "name": "Actual Grandeur",
   "itemHash": 1030017949,
   "itemName": "Skull of Dire Ahamkara",
-  "lastUpload": 1678668030826,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Massively Increases Damage Resist during Nova Bomb cast: Begins at 99.5% and drops down to 75% near the end.\n\nNova Bomb returns Super Energy on Kills, up to 50% Super Energy."
+   "en": "Massively Increases Damage Resist during <:void:720178940240461864>Nova Bomb cast: starts at 99.5% and drops down to 75% near the end.\n\n<:void:720178940240461864>Nova Bomb returns ~5% Super Energy on Kills, up to 50% Super Energy."
   }
  },
  "3927963103": {
@@ -13591,7 +13591,7 @@
   "type": "Subclass Class",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nFully recharges your Melee Ability if used within 15 meters of an enemy."
+   "en": "Dodging removes tracking from projectiles fired by PVE combatants and disables the effects of Aim Assist on you for the duration of the animation.\n\nGrants 130% Melee Ability Energy if used within 15 meters of an enemy."
   }
  },
  "3937312904": {
@@ -13791,6 +13791,16 @@
    "zh-chs": "低于 63 点生命值时，守护者使用此武器造成最后一击：\n在 10 秒内提供强化雷达，并将你从敌方雷达上移除。"
   }
  },
+ "3993379141": {
+  "hash": 3993379141,
+  "name": "Deconstruct",
+  "lastUpload": 1702080947315,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds\n• Refills 10% of the Magazine from thin air\n\nHits against Constructs are not be able to trigger the perk but they contribute to its activation progress."
+  }
+ },
  "3994043492": {
   "hash": 3994043492,
   "name": "Stacks on Stacks",
@@ -13931,11 +13941,11 @@
  "4039026690": {
   "hash": 4039026690,
   "name": "Distribution",
-  "lastUpload": 1694013277068,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability Usage while within 15 meters of an enemy grants Grenade, Melee, Class Ability, and Super Energy.\n\nEnergy Gains with 1|2+ Mods Equipped:\n• Ability Energy: <:pve:922884406073507930>3.5% <:pvp:922884468275019856>[1.75%] | <:pve:922884406073507930>6% <:pvp:922884468275019856>[3.6%]\n• Super Energy: <:pve:922884406073507930>2% <:pvp:922884468275019856>[1%] | <:pve:922884406073507930>3% <:pvp:922884468275019856>[1.8%]\n\nEnergy Multipliers based on Class:\nHunters: x1 | Titans: x1.2 | Warlocks: x2"
+   "en": "Class Ability Usage while within 15 meters of an enemy grants Grenade, Melee, Class Ability, and Super Energy.\n\nEnergy Gains with 1|2|3 Mods Equipped:\n• Ability Energy: <:pve:922884406073507930>4% <:pvp:922884468275019856>[2%] | <:pve:922884406073507930>6% <:pvp:922884468275019856>[3%] | <:pve:922884406073507930>7% <:pvp:922884468275019856>[3.5%]\n• Super Energy: <:pve:922884406073507930>2% <:pvp:922884468275019856>[1%] | <:pve:922884406073507930>3% <:pvp:922884468275019856>[1.5%] | <:pve:922884406073507930>4% <:pvp:922884468275019856>[2%]"
   }
  },
  "4045335048": {
@@ -14164,7 +14174,7 @@
  "4091460919": {
   "hash": 4091460919,
   "name": "One Quiet Moment",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "stats": {
    "Reload": [
     {
@@ -14178,7 +14188,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 40 Reload Speed and a 0.95x Reload Duration Multiplier while out of Combat. Swords receive an increase to Movement Speed instead.\n\nFor One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received.\n\nCan activate even if stowed.",
+   "en": "Grants 20 Handling, 40 Reload Speed, and a 0.95x Reload Duration Multiplier while out of Combat. Swords receive up to a 25% Increase to Movement Speed instead.\n\nFor One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received.\n\nCan activate even if stowed.",
    "zh-chs": "脱离战斗时获得 40 装填速度。"
   }
  },
@@ -14187,11 +14197,11 @@
   "name": "Winged Eclipse",
   "itemHash": 3534173884,
   "itemName": "Mothkeeper's Wraps",
-  "lastUpload": 1695666599876,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Replaces Grenade Ability with 'Cage of Loyal Moths', grants an extra Grenade Ability Charge. Overrides Base (T3) Grenade Ability cooldown to 73 seconds.\n\nMoth Cage explodes on impact, releasing 2 loyal moths that fly to their nearest target.\n\nLoyal Moths variants:\n• <:arc:720178925317128243>Arc Moths: slower-flying, offensive role. They seek out targets and detonate on contact, dealing up to <:pve:922884406073507930>526 <:pvp:922884468275019856>[31 to Players, 201 to Objects] damage over a 4 meter radius and <:arc:720178925317128243>Blinding targets. Counts as <:arc:720178925317128243>Arc? Grenade Damage.\n• <:void:720178940240461864>Void Moths: faster-flying, support role. They seek out allies and grant them a 22.5 HP <:void:720178940240461864>Void Overshield on contact.\n\nWhen no enemies are within ? meters of the detonation area, it spawns 2 Void Moths. When only enemies are around, it spawns 2 Arc Moths.\n\nWhen both allies and enemies are around, it spawns 1 Arc Moth and 1 Void Moth."
+   "en": "Replaces Grenade Ability with 'Cage of Loyal Moths', grants an extra Grenade Ability Charge. Overrides Base (T3) Grenade Ability cooldown to 73 seconds.\n\nMoth Cage explodes on impact, releasing 2 loyal moths that fly to their nearest target.\n\nLoyal Moths variants:\n• <:arc:720178925317128243>Arc Moths: slower-flying, offensive role. They seek out targets and detonate on contact, dealing up to <:pve:922884406073507930>526 <:pvp:922884468275019856>[31 to Players, 201 to Objects] damage over a 4 meter radius and <:arc:720178925317128243>Blinding targets. Counts as <:arc:720178925317128243>Arc Grenade Damage.\n• <:void:720178940240461864>Void Moths: faster-flying, support role. They seek out allies and grant them a 22.5 HP <:void:720178940240461864>Void Overshield on contact.\n\nWhen no enemies are within ? meters of the detonation area, it spawns 2 Void Moths. When only enemies are around, it spawns 2 Arc Moths.\n\nWhen both allies and enemies are around, it spawns 1 Arc Moth and 1 Void Moth."
   }
  },
  "4100396181": {
@@ -14348,7 +14358,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After using your Class Ability:\nThe next Weapon Kill spawns an Orb of Power that grants 0.8% Super Energy.\n\nEquipping multiple copies of the mod provides no benefit."
+   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n\n10 second cooldown between activations.\n\nEquipping multiple copies of the mod provides no benefit."
   }
  },
  "4154828211": {
@@ -14375,11 +14385,11 @@
  "4160037471": {
   "hash": 4160037471,
   "name": "Outreach",
-  "lastUpload": 1689235825901,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability usage grants Melee Energy.\n\nMelee Energy Gains with 1|2+ Mods Equipped:\n<:pve:922884406073507930>10% <:pvp:922884468275019856>[5%] | <:pve:922884406073507930>12.5% <:pvp:922884468275019856>[7.5%]\n\nEnergy Multipliers based on Class:\nHunters: x1 | Titans: x1.2 | Warlocks: x2"
+   "en": "Class Ability usage grants Melee Energy.\n\nMelee Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]\n\nEnergy Multipliers based on Class:\nHunters: x1 | Titans: x1.2 | Warlocks: x2"
   }
  },
  "4172222323": {
@@ -14407,11 +14417,11 @@
   "name": "Insatiable",
   "itemHash": 1096253259,
   "itemName": "Apotheosis Veil",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1702080947315,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Super Ability Activation:\n• Fully restores Health, Grenade, Melee, and Class Ability Energy\n• Grants <:solar:720178909361995786>Cure x3 to Allies within ? meters\n\nGrants 8000% Additional Base Grenade and Melee Ability Regeneration Rate for 8 seconds once your Super ends.",
+   "en": "On Super Ability Activation:\n• Fully restores Health, Grenade, Melee, and Class Ability Energy\n• Grants <:solar:720178909361995786>Cure x3 to Allies within ? meters\n\nGrants 66% Grenade and Melee Ability Energy for 8 seconds once your Super ends.",
    "zh-chs": "24 米范围内的队友获得额外 25% 的基础职业技能恢复速度。\n\n在施放超能时：\n完全恢复生命值，以及手雷、近战、职业技能的能量。"
   }
  },
@@ -14448,11 +14458,11 @@
  "4182064480": {
   "hash": 4182064480,
   "name": "Grenade Kickstart",
-  "lastUpload": 1694364940995,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "When a Grenade Ability Charge is fully consumed:\nGrants Grenade Ability Energy based on the number of Mods equipped and consumes active Armor Charge Stacks.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Grenade Energy refunds.\n\nGrenade Energy gains with 1|2|etc. 'charges':\n<:pve:922884406073507930>[PVE] 12.9% | 17.15% | 23.4% | 31% | 37.8% | 42.5% | 45.8% | 48.2% | 50%\n<:pvp:922884468275019856>[PVP] 11.3% | 12.9% | 14.8% | 17.15% | 20% | 23.4% | 27.15% | 31% | 34.65%"
+   "en": "When a Grenade Ability Charge is fully consumed and you have active Armor Charges:\nConsumes active Armor Charges and grants Grenade Ability Energy.\n\nEach Mod and Stack of Armor Charge counts as one 'charge' for Grenade Energy refunds.\n\nGrenade Energy gains with 2|3|etc. 'charges':\n<:pve:922884406073507930>[PVE] 16.2% | 21.7% | 28.4% | 34.4% | 38.4% | 41.3% | 43.4% | 45%\n<:pvp:922884468275019856>[PVP] 12.5% | 14.2% | 16.2% | 18.7% | 21.7% | 25% | 28.4% | 31.6%"
   }
  },
  "4183521337": {
@@ -14468,11 +14478,11 @@
  "4188291233": {
   "hash": 4188291233,
   "name": "Bomber",
-  "lastUpload": 1689235825901,
+  "lastUpload": 1702080947315,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability usage grants Grenade Energy.\n\nGrenade Energy Gains with 1|2+ Mods Equipped:\n<:pve:922884406073507930>10% <:pvp:922884468275019856>[5%] | <:pve:922884406073507930>12.5% <:pvp:922884468275019856>[7.25%]\n\nEnergy Multipliers based on Class:\nHunters: x1 | Titans: x1.2 | Warlocks: x2"
+   "en": "Class Ability usage grants Grenade Energy.\n\nGrenade Energy Gains with 1|2|3 Mods:\n<:pve:922884406073507930>12% <:pvp:922884468275019856>[6%] | <:pve:922884406073507930>17% <:pvp:922884468275019856>[8.5%] | <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%]"
   }
  },
  "4190535237": {
@@ -14766,7 +14776,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability Usage while within 15 meters of an enemy grants Grenade, Melee, Class Ability, and Super Energy.\n\nEnergy Gains with 1|2+ Mods Equipped:\n• Ability Energy: <:pve:922884406073507930>3.5% <:pvp:922884468275019856>[1.75%] | <:pve:922884406073507930>6% <:pvp:922884468275019856>[3.6%]\n• Super Energy: <:pve:922884406073507930>2% <:pvp:922884468275019856>[1%] | <:pve:922884406073507930>3% <:pvp:922884468275019856>[1.8%]\n\nEnergy Multipliers based on Class:\nHunters: x1 | Titans: x1.2 | Warlocks: x2"
+   "en": "Class Ability Usage while within 15 meters of an enemy grants Grenade, Melee, Class Ability, and Super Energy.\n\nEnergy Gains with 1|2|3 Mods Equipped:\n• Ability Energy: <:pve:922884406073507930>4% <:pvp:922884468275019856>[2%] | <:pve:922884406073507930>6% <:pvp:922884468275019856>[3%] | <:pve:922884406073507930>7% <:pvp:922884468275019856>[3.5%]\n• Super Energy: <:pve:922884406073507930>2% <:pvp:922884468275019856>[1%] | <:pve:922884406073507930>3% <:pvp:922884468275019856>[1.5%] | <:pve:922884406073507930>4% <:pvp:922884468275019856>[2%]"
   }
  },
  "4267945040": {
@@ -14819,7 +14829,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to <:arc:720178925317128243>Arc Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to <:arc:720178925317128243>Arc Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "4287822553": {
@@ -14829,7 +14839,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to Strand Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by the Inventory Size and Magazine Stats.\n\nAlso grants the same stat bonuses to Guard Endurance for Swords of the same element."
+   "en": "Grants 20|40|50 Inventory Size Stat to Strand Weapons with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
   }
  },
  "4290541820": {
