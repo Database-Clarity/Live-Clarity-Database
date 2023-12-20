@@ -1664,7 +1664,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Strand Weapons:"
+       "text": "Strand Weapons 1 second after readying them:"
       }
      ]
     },
@@ -1702,10 +1702,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Arc Weapons:"
+       "text": "Arc Weapons 1 second after readying them:"
       }
      ]
     },
@@ -3888,10 +3888,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Solar Weapons:"
+       "text": "Solar Weapons 1 second after readying them:"
       }
      ]
     },
@@ -5800,7 +5800,14 @@
     {
      "linesContent": [
       {
-       "text": "Primary Weapons: 10%"
+       "text": "Primary Weapons: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "12.5%"
       }
      ]
     },
@@ -5810,7 +5817,14 @@
        "text": "Special and "
       },
       {
-       "text": "Power Weapons: 20%"
+       "text": "Power Weapons: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "22.5%"
       }
      ]
     },
@@ -5830,7 +5844,7 @@
     {
      "linesContent": [
       {
-       "text": "(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)"
+       "text": "(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)"
       }
      ]
     },
@@ -5860,7 +5874,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Kills provide a slightly larger Magazine Capacity Increase."
+       "text": " Kills provide an additional 2.5% Magazine Capacity Increase."
       }
      ]
     }
@@ -7272,6 +7286,46 @@
    ]
   }
  },
+ "521530777": {
+  "hash": 521530777,
+  "name": "Thermodynamic Siphon",
+  "lastUpload": 1703073411225,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1703073314455,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Spawns an Orb of Power upon scoring 2 Kills within ? seconds of each with a "
+      },
+      {
+       "text": "Solar or "
+      },
+      {
+       "text": "Stasis Weapon."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spawned Orbs of Power grant 2.5%|3.25%|4.4% Super Energy with 1|2|3 Mods equipped."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "531057500": {
   "hash": 531057500,
   "name": "Lucent Blades",
@@ -8560,11 +8614,11 @@
   "name": "Cross Counter",
   "itemHash": 4165919945,
   "itemName": "Liar's Handshake",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1693502507136,
+     "lastUpdate": 1703073075945,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -8608,7 +8662,7 @@
     {
      "linesContent": [
       {
-       "text": "Provides diminishing returns when combined with the One-Two Punch perk, granting a total Melee Damage Increase of 320%."
+       "text": "The Melee Damage Increase is decreased to 80% when combined with the One-Two Punch perk."
       }
      ]
     }
@@ -8999,7 +9053,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Solar Weapons:"
+       "text": "Solar Weapons 1 second after readying them:"
       }
      ]
     },
@@ -9759,7 +9813,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Stasis Weapons:"
+       "text": "Stasis Weapons 1 second after readying them:"
       }
      ]
     },
@@ -10141,10 +10195,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Stasis Weapons:"
+       "text": "Stasis Weapons 1 second after readying them:"
       }
      ]
     },
@@ -10177,11 +10231,11 @@
   "name": "Dearly Departed",
   "itemHash": 2177524718,
   "itemName": "The Stag",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696180953632,
+     "lastUpdate": 1703072757043,
      "updatedBy": "Stardust"
     }
    }
@@ -10203,10 +10257,10 @@
        "text": "[PVP: 5%]"
       },
       {
-       "text": " Damage Resistance to Players inside your Rift. (Works while inside a "
+       "text": " Damage Resistance to Players inside Rifts you create. ("
       },
       {
-       "text": "Well of Radiance if you cast a Rift inside it)"
+       "text": "Well of Radiance does not count but you can cast a Rift inside it for the benefits)"
       }
      ]
     },
@@ -10248,7 +10302,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawns a Healing Rift on Death at your location."
+       "text": "Dying spawns a Healing Rift at your location."
       }
      ]
     }
@@ -13056,6 +13110,47 @@
    ]
   }
  },
+ "930692523": {
+  "hash": 930692523,
+  "name": "Advanced Reflexes",
+  "lastUpload": 1703073411225,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1703072387199,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Upon Aiming Down Sights or Guarding within ? seconds of receiving damage:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants ? Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "930759851": {
   "hash": 930759851,
   "name": "Concussive Dampener",
@@ -13393,7 +13488,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations."
+       "text": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -13403,7 +13498,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+       "text": "10|5|1 second cooldown between activations."
       }
      ]
     }
@@ -13413,11 +13508,11 @@
  "967052942": {
   "hash": 967052942,
   "name": "Arc Targeting",
-  "lastUpload": 1698358155282,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1698358021678,
+     "lastUpdate": 1703073372511,
      "updatedBy": "Stardust"
     }
    }
@@ -13427,10 +13522,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Arc Weapons:"
+       "text": "Arc Weapons 1 second after readying them:"
       }
      ]
     },
@@ -13461,11 +13556,11 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1693495751990,
+     "lastUpdate": 1703072244893,
      "updatedBy": "Stardust"
     }
    }
@@ -13529,7 +13624,7 @@
     {
      "linesContent": [
       {
-       "text": "(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)"
+       "text": "(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)"
       }
      ]
     },
@@ -14906,7 +15001,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Solar Weapons:"
+       "text": "Solar Weapons 1 second after readying them:"
       }
      ]
     },
@@ -15244,11 +15339,11 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680476459454,
+     "lastUpdate": 1703073235612,
      "updatedBy": "Stardust"
     }
    }
@@ -15261,7 +15356,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Arc Weapons:"
+       "text": "Arc Weapons 1 second after readying them:"
       }
      ]
     },
@@ -18068,7 +18163,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Weapons matching your Subclass Element:"
+       "text": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:"
       }
      ]
     },
@@ -19391,7 +19486,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -21305,10 +21400,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Void Weapons:"
+       "text": "Void Weapons 1 second after readying them:"
       }
      ]
     },
@@ -21797,11 +21892,11 @@
   "name": "Percussive Flames",
   "itemHash": 2066430310,
   "itemName": "Pyrogale Gauntlets",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1695587676985,
+     "lastUpdate": 1703072969338,
      "updatedBy": "Stardust"
     }
    }
@@ -21815,16 +21910,6 @@
       },
       {
        "text": "Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Damage from multiple Cyclones can overlap."
       }
      ]
     },
@@ -21852,7 +21937,10 @@
        "text": "[PVP: 16]"
       },
       {
-       "text": " damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds."
+       "text": " damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) "
+      },
+      {
+       "text": "Scorch every 0.56 seconds."
       }
      ]
     },
@@ -21862,7 +21950,7 @@
     {
      "linesContent": [
       {
-       "text": "Consecration's slam creates a Cyclone that deals "
+       "text": "Consecration's center wave creates a Cyclone that deals "
       },
       {
        "text": "?"
@@ -21874,7 +21962,20 @@
        "text": "[PVP: 3]"
       },
       {
-       "text": " damage and does not have tracking."
+       "text": " damage and does not have tracking, however it retains the "
+      },
+      {
+       "text": "Scorhing capability."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage from multiple Cyclones can overlap."
       }
      ]
     }
@@ -23079,7 +23180,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following to Weapons matching your Subclass Element:"
+       "text": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:"
       }
      ]
     },
@@ -24525,10 +24626,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Stasis Weapons:"
+       "text": "Stasis Weapons 1 second after readying them:"
       }
      ]
     },
@@ -25489,7 +25590,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Weapons matching your Subclass Element:"
+       "text": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:"
       }
      ]
     },
@@ -29422,7 +29523,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Kinetic Weapons:"
+       "text": "Grants the following to Kinetic Weapons 1 second after readying them:"
       }
      ]
     },
@@ -29640,7 +29741,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following to Kinetic Weapons:"
+       "text": "Grants the following to Kinetic Weapons 1 second after readying them:"
       }
      ]
     },
@@ -32600,7 +32701,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to Kinetic Weapons:"
+       "text": "Grants the following to Kinetic Weapons 1 second after readying them:"
       }
      ]
     },
@@ -32881,11 +32982,11 @@
  "2485657760": {
   "hash": 2485657760,
   "name": "Firepower",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702079279059,
+     "lastUpdate": 1703073155966,
      "updatedBy": "Stardust"
     }
    }
@@ -32895,7 +32996,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations."
+       "text": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -32905,7 +33006,7 @@
     {
      "linesContent": [
       {
-       "text": "Spawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+       "text": "10|5|1 second cooldown between activations."
       }
      ]
     }
@@ -33195,11 +33296,11 @@
  "2509860981": {
   "hash": 2509860981,
   "name": "Nadir Focus",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702076643386,
+     "lastUpdate": 1703072566815,
      "updatedBy": "Stardust"
     }
    }
@@ -33209,35 +33310,7 @@
     {
      "linesContent": [
       {
-       "text": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to 10 Range"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to -?% Accuracy Cone Size"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to ?% Increased Lunge Distance (Swords)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Up to ?% Increased Projectile Velocity (Launchers)"
+       "text": "Firing or swinging the weapon grants a Stack of Nadir Focus for 2 seconds. Maximum of 5 Stacks."
       }
      ]
     },
@@ -33247,7 +33320,35 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates after not firing or swinging for 2 seconds."
+       "text": "Benefits at 1|2|3|4|5 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 2 | 4 | 6 | 8 | 10 Range"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 1.5% | 3% | 4.5% | 6% | 7.5% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Increased Lunge Distance (Swords)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Increased Projectile Velocity (Launchers)"
       }
      ]
     }
@@ -33876,7 +33977,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following to Kinetic Weapons:"
+       "text": "Grants the following to Kinetic Weapons 1 second after readying them:"
       }
      ]
     },
@@ -34594,7 +34695,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following to Weapons matching your Subclass Element:"
+       "text": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:"
       }
      ]
     },
@@ -35194,7 +35295,7 @@
        "text": " with "
       },
       {
-       "text": "Ember of Ashes) and deals up to ? damage to enemies within 4? meters of the target on Weapon Kills."
+       "text": "Ember of Ashes) and deals up to 30 damage to enemies within 4? meters of the target on Weapon Kills."
       }
      ]
     },
@@ -35654,10 +35755,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Solar Weapons:"
+       "text": "Solar Weapons 1 second after readying them:"
       }
      ]
     },
@@ -36687,7 +36788,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Stasis Weapons:"
+       "text": "Stasis Weapons 1 second after readying them:"
       }
      ]
     },
@@ -38007,10 +38108,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Void Weapons:"
+       "text": "Void Weapons 1 second after readying them:"
       }
      ]
     },
@@ -38240,11 +38341,11 @@
   "name": "Hearts of Ice",
   "itemHash": 3831935023,
   "itemName": "Ballidorse Wrathweavers",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1701282682479,
+     "lastUpdate": 1703072648932,
      "updatedBy": "Stardust"
     }
    }
@@ -38254,7 +38355,10 @@
     {
      "linesContent": [
       {
-       "text": "During Winter's Wrath Super:"
+       "text": "During "
+      },
+      {
+       "text": "Winter's Wrath Super:"
       }
      ]
     },
@@ -38271,7 +38375,19 @@
     {
      "linesContent": [
       {
-       "text": "Allies within range of the Shockwave (30 meters) receive the following for 15 seconds:"
+       "text": "Allies within range of the Shockwave (30 meters) receive the following for "
+      },
+      {
+       "text": "15"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 6]"
+      },
+      {
+       "text": " seconds:"
       }
      ]
     },
@@ -38317,13 +38433,13 @@
        "text": "Stasis Weapon Surge for "
       },
       {
-       "text": "10"
+       "text": "11"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 5]"
+       "text": "[PVP: 6]"
       },
       {
        "text": " seconds alongside a 50 HP "
@@ -39621,10 +39737,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Strand Weapons:"
+       "text": "Strand Weapons 1 second after readying them:"
       }
      ]
     },
@@ -39740,10 +39856,10 @@
     {
      "linesContent": [
       {
-       "text": "Passively Grants the following to "
+       "text": "Grants the following to "
       },
       {
-       "text": "Strand Weapons:"
+       "text": "Strand Weapons 1 second after readying them:"
       }
      ]
     },
@@ -39952,11 +40068,11 @@
  "3032599245": {
   "hash": 3032599245,
   "name": "Disorienting Grenades",
-  "lastUpload": 1692734897836,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1692731102998,
+     "lastUpdate": 1703072087658,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -39980,7 +40096,7 @@
     {
      "linesContent": [
       {
-       "text": "Rank-and-File and Elite Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of "
+       "text": "Non-Boss, Non-Champion Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of "
       },
       {
        "text": "Arc Blind without any of the elemental synergies)"
@@ -39993,7 +40109,7 @@
     {
      "linesContent": [
       {
-       "text": "Players near the explosion have their HUD removed, and screen whitened for up to ? seconds. Duration varies depending on the distance from the blast."
+       "text": "Players near the explosion briefly lose their HUD removed and have screen distorted for up to ? seconds. Duration varies depending on the distance from the blast."
       }
      ]
     }
@@ -40113,7 +40229,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Arc Weapons:"
+       "text": "Arc Weapons 1 second after readying them:"
       }
      ]
     },
@@ -41443,7 +41559,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -42175,7 +42291,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Void Weapons:"
+       "text": "Void Weapons 1 second after readying them:"
       }
      ]
     },
@@ -50269,7 +50385,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -51802,7 +51918,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Void Weapons:"
+       "text": "Void Weapons 1 second after readying them:"
       }
      ]
     },
@@ -55233,7 +55349,7 @@
        "text": "Grants the following to "
       },
       {
-       "text": "Strand Weapons:"
+       "text": "Strand Weapons 1 second after readying them:"
       }
      ]
     },
@@ -56007,11 +56123,11 @@
  "4293542123": {
   "hash": 4293542123,
   "name": "Incandescent",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1703073411225,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1701280005626,
+     "lastUpdate": 1703072269007,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -56031,7 +56147,7 @@
        "text": "Scorch Stacks (40 with "
       },
       {
-       "text": "Ember of Ashes) and deals up to ? damage to enemies within 4? meters of the target on Weapon Kills."
+       "text": "Ember of Ashes) and deals up to 30 damage to enemies within 4? meters of the target on Weapon Kills."
       }
      ]
     },

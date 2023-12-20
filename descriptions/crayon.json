@@ -355,7 +355,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Strand Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Strand Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "96682422": {
@@ -365,7 +365,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:arc:720178925317128243>Arc Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "102912326": {
@@ -912,7 +912,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:solar:720178909361995786>Solar Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "331667533": {
@@ -1335,7 +1335,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<:primary:968793055677251604>Primary Weapons: 10%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\n🡅 Kills provide a slightly larger Magazine Capacity Increase."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<:primary:968793055677251604>Primary Weapons: 🡅12.5%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 🡅22.5%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\n🡅 Kills provide an additional 2.5% Magazine Capacity Increase."
   }
  },
  "426473316": {
@@ -1780,6 +1780,16 @@
    "en": "After sprinting for 1.5 seconds:\nGrants 35 Ready/ADS Handling while sprinting."
   }
  },
+ "521530777": {
+  "hash": 521530777,
+  "name": "Thermodynamic Siphon",
+  "lastUpload": 1703073411225,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Spawns an Orb of Power upon scoring 2 Kills within ? seconds of each with a <:solar:720178909361995786>Solar or <:stasis:915198000727461909>Stasis Weapon.\n\nSpawned Orbs of Power grant 2.5%|3.25%|4.4% Super Energy with 1|2|3 Mods equipped."
+  }
+ },
  "529188544": {
   "hash": 529188544,
   "name": "Izanagi's Burden Catalyst",
@@ -2133,29 +2143,11 @@
   "name": "Cross Counter",
   "itemHash": 4165919945,
   "itemName": "Liar's Handshake",
-  "lastUpload": 1693504657319,
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 3 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 3 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ]
-  },
+  "lastUpload": 1703073411225,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While on an <:arc:720178925317128243>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits.\n\nProvides diminishing returns when combined with the One-Two Punch perk, granting a total Melee Damage Increase of 320%."
+   "en": "While on an <:arc:720178925317128243>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits.\n\nThe Melee Damage Increase is decreased to 80% when combined with the One-Two Punch perk."
   }
  },
  "598607952": {
@@ -2252,7 +2244,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "638704972": {
@@ -2466,7 +2458,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "706527188": {
@@ -2545,7 +2537,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:stasis:915198000727461909>Stasis Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "722862450": {
@@ -2553,11 +2545,11 @@
   "name": "Dearly Departed",
   "itemHash": 2177524718,
   "itemName": "The Stag",
-  "lastUpload": 1696180964082,
+  "lastUpload": 1703073411225,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants <:pve:922884406073507930>25% <:pvp:922884468275019856>[5%] Damage Resistance to Players inside your Rift. (Works while inside a <:solar:720178909361995786>Well of Radiance if you cast a Rift inside it)\n\nReaching Critical Health grants the Dearly Departed buff, granting <:pve:922884406073507930>50% <:pvp:922884468275019856>[25%] Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nSpawns a Healing Rift on Death at your location."
+   "en": "Grants <:pve:922884406073507930>25% <:pvp:922884468275019856>[5%] Damage Resistance to Players inside Rifts you create. (<:solar:720178909361995786>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <:pve:922884406073507930>50% <:pvp:922884468275019856>[25%] Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nDying spawns a Healing Rift at your location."
   }
  },
  "736000386": {
@@ -3339,6 +3331,16 @@
    "zh-chs": "施放浩劫之拳时获得一道力场护盾。\n\n力场护盾为一个 75 生命值，可以抵消精准伤害的覆盖护盾。"
   }
  },
+ "930692523": {
+  "hash": 930692523,
+  "name": "Advanced Reflexes",
+  "lastUpload": 1703073411225,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": "Upon Aiming Down Sights or Guarding within ? seconds of receiving damage:\nGrants ? Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds.\n\nBuff duration cannot be refreshed."
+  }
+ },
  "930759851": {
   "hash": 930759851,
   "name": "Concussive Dampener",
@@ -3433,13 +3435,13 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+   "en": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped.\n\n10|5|1 second cooldown between activations."
   }
  },
  "967052942": {
   "hash": 967052942,
   "name": "Arc Targeting",
-  "lastUpload": 1698358155282,
+  "lastUpload": 1703073411225,
   "stats": {
    "Aim Assist": [
     {
@@ -3459,17 +3461,17 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:arc:720178925317128243>Arc Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1703073411225,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<:primary:968793055677251604>Primary Weapons: 10%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<:primary:968793055677251604>Primary Weapons: 10%\n<:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
   }
  },
  "970163821": {
@@ -3882,7 +3884,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "1086997255": {
@@ -3959,7 +3961,7 @@
  "1125523126": {
   "hash": 1125523126,
   "name": "Arc Loader",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "stats": {
    "Reload": [
     {
@@ -3973,7 +3975,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "1125986156": {
@@ -4816,7 +4818,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Weapons matching your Subclass Element:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "1305848463": {
@@ -5310,7 +5312,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "stats": {
    "Airborne": [
     {
@@ -5753,7 +5755,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:void:720178940240461864>Void Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:void:720178940240461864>Void Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "1598147670": {
@@ -5863,11 +5865,11 @@
   "name": "Percussive Flames",
   "itemHash": 2066430310,
   "itemName": "Pyrogale Gauntlets",
-  "lastUpload": 1695589383294,
+  "lastUpload": 1703073411225,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Modifies <:solar:720178909361995786>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nDamage from multiple Cyclones can overlap.\n\nWaves apply 20 (60 with <:solar:720178909361995786>Ember of Ashes equipped) <:solar:720178909361995786>Scorch on Impact. The released Cyclones deal <:pve:922884406073507930>20 <:pvp:922884468275019856>[16] damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds.\n\n<:solar:720178909361995786>Consecration's slam creates a Cyclone that deals <:pve:922884406073507930>? <:pvp:922884468275019856>[3] damage and does not have tracking."
+   "en": "Modifies <:solar:720178909361995786>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nWaves apply 20 (60 with <:solar:720178909361995786>Ember of Ashes equipped) <:solar:720178909361995786>Scorch on Impact. The released Cyclones deal <:pve:922884406073507930>20 <:pvp:922884468275019856>[16] damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) <:solar:720178909361995786>Scorch every 0.56 seconds.\n\n<:solar:720178909361995786>Consecration's center wave creates a Cyclone that deals <:pve:922884406073507930>? <:pvp:922884468275019856>[3] damage and does not have tracking, however it retains the <:solar:720178909361995786>Scorhing capability.\n\nDamage from multiple Cyclones can overlap."
   }
  },
  "1631667848": {
@@ -6287,7 +6289,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Weapons matching your Subclass Element:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "1702976605": {
@@ -6749,7 +6751,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:stasis:915198000727461909>Stasis Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "1817649409": {
@@ -7050,7 +7052,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Weapons matching your Subclass Element:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "1891876363": {
@@ -8009,7 +8011,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Kinetic Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Kinetic Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "2216471363": {
@@ -8059,7 +8061,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Kinetic Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Kinetic Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "2238035098": {
@@ -8930,7 +8932,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Kinetic Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Kinetic Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "2470575005": {
@@ -9020,11 +9022,11 @@
  "2485657760": {
   "hash": 2485657760,
   "name": "Firepower",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1703073411225,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped."
+   "en": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped.\n\n10|5|1 second cooldown between activations."
   }
  },
  "2495011826": {
@@ -9088,11 +9090,11 @@
  "2509860981": {
   "hash": 2509860981,
   "name": "Nadir Focus",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1703073411225,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:\n• Up to 10 Range\n• Up to -?% Accuracy Cone Size\n• Up to ?% Increased Lunge Distance (Swords)\n• Up to ?% Increased Projectile Velocity (Launchers)\n\nDeactivates after not firing or swinging for 2 seconds."
+   "en": "Firing or swinging the weapon grants a Stack of Nadir Focus for 2 seconds. Maximum of 5 Stacks.\n\nBenefits at 1|2|3|4|5 Stacks:\n• 2 | 4 | 6 | 8 | 10 Range\n• 1.5% | 3% | 4.5% | 6% | 7.5% Decreased Accuracy Cone Size\n• ?% Increased Lunge Distance (Swords)\n• ?% Increased Projectile Velocity (Launchers)"
   }
  },
  "2526773280": {
@@ -9224,7 +9226,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Kinetic Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Kinetic Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "2586829431": {
@@ -9443,7 +9445,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Weapons matching your Subclass Element:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Weapons matching your Subclass Element 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "2658083589": {
@@ -9600,7 +9602,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Applies 30 <:solar:720178909361995786>Scorch Stacks (🡅<:pve:922884406073507930>45 <:pvp:922884468275019856>[40] with <:solar:720178909361995786>Ember of Ashes) and deals up to ? damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<:solar:720178909361995786>Scorch damage can be increased through [Weapon Damage Buffs](https://url.d2clarity.com/DamageBuffs).\n\n🡅 Applies to 5 more <:solar:720178909361995786>Scorch Stacks to PVE Combatants when Ember of Ashes is equipped."
+   "en": "Applies 30 <:solar:720178909361995786>Scorch Stacks (🡅<:pve:922884406073507930>45 <:pvp:922884468275019856>[40] with <:solar:720178909361995786>Ember of Ashes) and deals up to 30 damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<:solar:720178909361995786>Scorch damage can be increased through [Weapon Damage Buffs](https://url.d2clarity.com/DamageBuffs).\n\n🡅 Applies to 5 more <:solar:720178909361995786>Scorch Stacks to PVE Combatants when Ember of Ashes is equipped."
   }
  },
  "2675361166": {
@@ -9661,7 +9663,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:solar:720178909361995786>Solar Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:solar:720178909361995786>Solar Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "2722641740": {
@@ -9932,7 +9934,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:stasis:915198000727461909>Stasis Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "2794359402": {
@@ -10281,7 +10283,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to <:void:720178940240461864>Void Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to <:void:720178940240461864>Void Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "2888418988": {
@@ -10323,11 +10325,11 @@
   "name": "Hearts of Ice",
   "itemHash": 3831935023,
   "itemName": "Ballidorse Wrathweavers",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1703073411225,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "During Winter's Wrath Super:\nShockwave (Heavy Attack) deals 100% increased Shatter Damage.\n\nAllies within range of the Shockwave (30 meters) receive the following for 15 seconds:\n• 50 HP <:stasis:915198000727461909>Stasis Overshield\n• 4 Stacks of <:stasis:915198000727461909>Stasis Weapon Surge\n\nOn Rift Cast with the <:stasis:915198000727461909>Frostpulse Aspect equipped:\nYou and Allies within ? meters receive 2 Stacks of <:stasis:915198000727461909>Stasis Weapon Surge for <:pve:922884406073507930>10 <:pvp:922884468275019856>[5] seconds alongside a 50 HP <:stasis:915198000727461909>Stasis Overshield that lasts 15 seconds."
+   "en": "During <:stasis:915198000727461909>Winter's Wrath Super:\nShockwave (Heavy Attack) deals 100% increased Shatter Damage.\n\nAllies within range of the Shockwave (30 meters) receive the following for <:pve:922884406073507930>15 <:pvp:922884468275019856>[6] seconds:\n• 50 HP <:stasis:915198000727461909>Stasis Overshield\n• 4 Stacks of <:stasis:915198000727461909>Stasis Weapon Surge\n\nOn Rift Cast with the <:stasis:915198000727461909>Frostpulse Aspect equipped:\nYou and Allies within ? meters receive 2 Stacks of <:stasis:915198000727461909>Stasis Weapon Surge for <:pve:922884406073507930>11 <:pvp:922884468275019856>[6] seconds alongside a 50 HP <:stasis:915198000727461909>Stasis Overshield that lasts 15 seconds."
   }
  },
  "2895039606": {
@@ -10653,7 +10655,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Strand Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Strand Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "3007133316": {
@@ -10673,7 +10675,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively Grants the following to Strand Weapons:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+   "en": "Grants the following to Strand Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
  "3016987351": {
@@ -10755,11 +10757,11 @@
  "3032599245": {
   "hash": 3032599245,
   "name": "Disorienting Grenades",
-  "lastUpload": 1692734897836,
+  "lastUpload": 1703073411225,
   "type": "Weapon Perk",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Passively grants -200 Blast Radius.\n\nRank-and-File and Elite Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of <:arc:720178925317128243>Arc Blind without any of the elemental synergies)\n\nPlayers near the explosion have their HUD removed, and screen whitened for up to ? seconds. Duration varies depending on the distance from the blast.",
+   "en": "Passively grants -200 Blast Radius.\n\nNon-Boss, Non-Champion Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of <:arc:720178925317128243>Arc Blind without any of the elemental synergies)\n\nPlayers near the explosion briefly lose their HUD removed and have screen distorted for up to ? seconds. Duration varies depending on the distance from the blast.",
    "zh-chs": "榴弹爆炸可产生短暂失明效果。"
   }
  },
@@ -10781,7 +10783,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:arc:720178925317128243>Arc Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "3047946307": {
@@ -11159,7 +11161,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "stats": {
    "Handling": [
     {
@@ -11372,7 +11374,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:void:720178940240461864>Void Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:void:720178940240461864>Void Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "3241194940": {
@@ -13310,7 +13312,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1703065970050,
+  "lastUpload": 1703073411225,
   "stats": {
    "Range": [
     {
@@ -13746,7 +13748,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to <:void:720178940240461864>Void Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to <:void:720178940240461864>Void Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "3983457027": {
@@ -14701,7 +14703,7 @@
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following to Strand Weapons:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
+   "en": "Grants the following to Strand Weapons 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier"
   }
  },
  "4245865861": {
@@ -14855,11 +14857,11 @@
  "4293542123": {
   "hash": 4293542123,
   "name": "Incandescent",
-  "lastUpload": 1701294220305,
+  "lastUpload": 1703073411225,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Applies 30 <:solar:720178909361995786>Scorch Stacks (40 with <:solar:720178909361995786>Ember of Ashes) and deals up to ? damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<:solar:720178909361995786>Scorch damage can be increased through [Weapon Damage Buffs](https://url.d2clarity.com/DamageBuffs).",
+   "en": "Applies 30 <:solar:720178909361995786>Scorch Stacks (40 with <:solar:720178909361995786>Ember of Ashes) and deals up to 30 damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<:solar:720178909361995786>Scorch damage can be increased through [Weapon Damage Buffs](https://url.d2clarity.com/DamageBuffs).",
    "zh-chs": "使用此武器造成最后一击时：\n对 [?] 米范围内的敌人造成 30 层灼烧效果。\n骨灰余烬会将灼烧效果增加到 40 层。\n\n击杀强大的战斗人员或敌方守护者可将范围增加到 8 米。\n\n灼烧伤害可以因武器特性、敌人负面效果、战斗人员阶级而增加。"
   }
  },
