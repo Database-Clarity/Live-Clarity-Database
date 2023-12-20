@@ -7840,31 +7840,31 @@
    "inLiveDatabase": true
   },
   "521530777": {
-   "hash": 521530777,
    "name": "Thermodynamic Siphon",
+   "hash": 521530777,
    "type": "Armor Mod General",
-   "lastUpload": 1701212734041,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2724068510\n\nvar element = a <solar/>Solar or <stasis/>Stasis Weapon",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1703073314455,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1703073411225,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "525593296": {
    "hash": 525593296,
@@ -8955,27 +8955,9 @@
    "hash": 595829387,
    "itemHash": 4165919945,
    "type": "Armor Trait Exotic",
-   "stats": {
-    "PVE Damage": [
-     {
-      "active": {
-       "multiplier": [ 3 ]
-      },
-      "weaponTypes": [ "Melee" ]
-     }
-    ],
-    "PVP Damage": [
-     {
-      "active": {
-       "multiplier": [ 3 ]
-      },
-      "weaponTypes": [ "Melee" ]
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "While on an <arc/>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits.\n\nProvides diminishing returns when combined with the One-Two Punch perk, granting a total Melee Damage Increase of 320%.",
+     "main": "While on an <arc/>Arc Subclass:\nReceiving or Dealing Melee Damage grants Cross Counter for 3 seconds or until Melee Hit.\n\nCross Counter grants 200% Increased Melee Damage and restores ? HP on Melee Hits.\n\nThe Melee Damage Increase is decreased to 80% when combined with the One-Two Punch perk.",
      "secondary": "import self"
     },
     "ko": {
@@ -8986,7 +8968,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693502507136,
+      "lastUpdate": 1703073075945,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -8995,12 +8977,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1686316305343,
+     "lastUpdate": 1703073082429,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10361,14 +10343,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance to Players inside your Rift. (Works while inside a <solar/>Well of Radiance if you cast a Rift inside it)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nSpawns a Healing Rift on Death at your location.",
+     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance to Players inside Rifts you create. (<solar/>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nDying spawns a Healing Rift at your location.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696180953632,
+      "lastUpdate": 1703072757043,
       "updatedBy": "Stardust"
      }
     },
@@ -10378,7 +10360,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696180964082,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13310,14 +13292,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "",
+     "main": "Upon Aiming Down Sights or Guarding within ? seconds of receiving damage:\nGrants ? Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds.\n\nBuff duration cannot be refreshed.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701281145757,
+      "lastUpdate": 1703072387199,
       "updatedBy": "Stardust"
      }
     },
@@ -13327,7 +13309,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13888,14 +13870,14 @@
    },
    "editor": {
     "en": {
-     "main": "Passively Grants the following to #element:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
+     "main": "Grants the following to #element 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1698358021678,
+      "lastUpdate": 1703073372511,
       "updatedBy": "Stardust"
      }
     },
@@ -13905,7 +13887,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1698358155282,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13915,14 +13897,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: 10%\n<special/>Special and <heavy/>Power Weapons: 20%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by fully reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not <title refill [G_refill] /> the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\nenhanced (\nvar d = 0 //placeholder\n#e Kills provide a slightly larger Magazine Capacity Increase.\n)",
+     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Weapon Kill:\n<primary/>Primary Weapons: #e${10+#d}%\n<special/>Special and <heavy/>Power Weapons: #e${20+#d}%\n\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n\n(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)\n\nDoes not <title refill [G_refill] /> the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\nenhanced (\nvar d = 2.5\n#e Kills provide an additional 2.5% Magazine Capacity Increase.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693495751990,
+      "lastUpdate": 1703072244893,
       "updatedBy": "Stardust"
      }
     },
@@ -13932,7 +13914,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16049,14 +16031,14 @@
    },
    "editor": {
     "en": {
-     "main": "Grants the following to #element:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
+     "main": "Grants the following to #element 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476459454,
+      "lastUpdate": 1703073235612,
       "updatedBy": "Stardust"
      }
     },
@@ -16066,7 +16048,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703065970050,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20939,7 +20921,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703065970050,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23116,14 +23098,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Modifies <solar/>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nDamage from multiple Cyclones can overlap.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on Impact. The released Cyclones deal <pve 20 /> <pvp [16] /> damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) Scorch every 0.56 seconds.\n\n<solar/>Consecration's slam creates a Cyclone that deals <pve ? /> <pvp [3] /> damage and does not have tracking.",
+     "main": "Modifies <solar/>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on Impact. The released Cyclones deal <pve 20 /> <pvp [16] /> damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) <solar/>Scorch every 0.56 seconds.\n\n<solar/>Consecration's center wave creates a Cyclone that deals <pve ? /> <pvp [3] /> damage and does not have tracking, however it retains the <solar/>Scorhing capability.\n\nDamage from multiple Cyclones can overlap.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695587676985,
+      "lastUpdate": 1703072969338,
       "updatedBy": "Stardust"
      }
     },
@@ -23133,7 +23115,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34947,14 +34929,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Spawns an Orb of Power on Grenade Kills. 10 second cooldown between activations.\n\nSpawned Orbs of Power grant 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped.",
+     "main": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25% Super Energy with 1|2|3 Mods equipped.\n\n10|5|1 second cooldown between activations.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1702079279059,
+      "lastUpdate": 1703073155966,
       "updatedBy": "Stardust"
      }
     },
@@ -34964,7 +34946,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1702080947315,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35155,14 +35137,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Firing or swinging the weapon gradually grants increasing benefits to the weapon:\n• Up to 10 Range\n• Up to -?% Accuracy Cone Size\n• Up to ?% Increased Lunge Distance (Swords)\n• Up to ?% Increased Projectile Velocity (Launchers)\n \nDeactivates after not firing or swinging for 2 seconds.",
+     "main": "Firing or swinging the weapon grants a Stack of Nadir Focus for 2 seconds. Maximum of 5 Stacks.\n\nBenefits at 1|2|3|4|5 Stacks:\n• 2 | 4 | 6 | 8 | 10 Range\n• 1.5% | 3% | 4.5% | 6% | 7.5% Decreased Accuracy Cone Size\n• ?% Increased Lunge Distance (Swords)\n• ?% Increased Projectile Velocity (Launchers)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1702076643386,
+      "lastUpdate": 1703072566815,
       "updatedBy": "Stardust"
      }
     },
@@ -35172,7 +35154,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1702080947315,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40284,14 +40266,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "During Winter's Wrath Super:\nShockwave (Heavy Attack) deals 100% increased Shatter Damage.\n\nAllies within range of the Shockwave (30 meters) receive the following for 15 seconds:\n• 50 HP <stasis/>Stasis Overshield\n• 4 Stacks of <stasis/>Stasis Weapon Surge\n\nOn Rift Cast with the <stasis/>Frostpulse Aspect equipped:\nYou and Allies within ? meters receive 2 Stacks of <stasis/>Stasis Weapon Surge for <pve 10 /> <pvp [5] /> seconds alongside a 50 HP <stasis/>Stasis Overshield that lasts 15 seconds.",
+     "main": "During <stasis/>Winter's Wrath Super:\nShockwave (Heavy Attack) deals 100% increased Shatter Damage.\n\nAllies within range of the Shockwave (30 meters) receive the following for <pve 15 /> <pvp [6] /> seconds:\n• 50 HP <stasis/>Stasis Overshield\n• 4 Stacks of <stasis/>Stasis Weapon Surge\n\nOn Rift Cast with the <stasis/>Frostpulse Aspect equipped:\nYou and Allies within ? meters receive 2 Stacks of <stasis/>Stasis Weapon Surge for <pve 11 /> <pvp [6] /> seconds alongside a 50 HP <stasis/>Stasis Overshield that lasts 15 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701282682479,
+      "lastUpdate": 1703072648932,
       "updatedBy": "Stardust"
      }
     },
@@ -40301,7 +40283,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42095,7 +42077,7 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Passively grants -200 Blast Radius.\n\nRank-and-File and Elite Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of <arc/>Arc Blind without any of the elemental synergies)\n\nPlayers near the explosion have their HUD removed, and screen whitened for up to ? seconds. Duration varies depending on the distance from the blast.",
+     "main": "Passively grants -200 Blast Radius.\n\nNon-Boss, Non-Champion Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of <arc/>Arc Blind without any of the elemental synergies)\n\nPlayers near the explosion briefly lose their HUD removed and have screen distorted for up to ? seconds. Duration varies depending on the distance from the blast.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -42106,7 +42088,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1692731102998,
+      "lastUpdate": 1703072087658,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -42120,7 +42102,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1692734897836,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43885,7 +43867,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703065970050,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52025,7 +52007,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703065970050,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -58112,7 +58094,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Applies 30 <solar/>Scorch Stacks (#d with <solar/>Ember of Ashes) and deals up to ? damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<solar/>Scorch damage can be increased through <link Weapon Damage Buffs [#DamageBuffs] />.\n\nvar d = 40\nenhanced (\nvar d = #e<pve 45 /> <pvp [40] />\n#e Applies to 5 more <solar/>Scorch Stacks to PVE Combatants when Ember of Ashes is equipped.\n)",
+     "main": "Applies 30 <solar/>Scorch Stacks (#d with <solar/>Ember of Ashes) and deals up to 30 damage to enemies within 4? meters of the target on Weapon Kills.\n\nKilling Powerful Combatants and Players increases the radius to 8 meters.\n\n<solar/>Scorch damage can be increased through <link Weapon Damage Buffs [#DamageBuffs] />.\n\nvar d = 40\nenhanced (\nvar d = #e<pve 45 /> <pvp [40] />\n#e Applies to 5 more <solar/>Scorch Stacks to PVE Combatants when Ember of Ashes is equipped.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -58123,7 +58105,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701280005626,
+      "lastUpdate": 1703072269007,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -58137,7 +58119,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1703073411225,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
