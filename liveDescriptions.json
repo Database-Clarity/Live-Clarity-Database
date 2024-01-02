@@ -10163,7 +10163,7 @@
    },
    "editor": {
     "en": {
-     "main": "Upon readying the Weapon, for 1 second:\nGrants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier.\n\nBuff goes away as soon as ADS input is pressed.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
+     "main": "Upon readying the Weapon, for 1 second:\nGrants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier.\n\nBuff is removed as soon as ADS input is pressed.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -10174,7 +10174,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689194476100,
+      "lastUpdate": 1704195060504,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -10188,7 +10188,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12813,7 +12813,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Airborne Effectiveness to Lumina.\n\nStanding in a Rift creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff:\n• Healing Rift Seeker: restores 75 HP and starts Health Regeneration\n• Empowering Rift Seeker: <pve 35% /> <pvp [15%] /> Increased Damage for 5 seconds\n\nAmount of Noble Seekers spawned is equal to [Fireteam Size]-1, with a minimum of 1 Seeker.\n\nEach time a Noble Seeker applies a buff, the Rift Duration gets extended by 5 seconds.",
+     "main": "Passively grants 30 Airborne Effectiveness to <yellow Lumina />.\n\nStanding in a Rift creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff to them:\n• Healing Rift Seeker: restores 75 HP and starts Health Regeneration\n• Empowering Rift Seeker: Grants <pve 35% /> <pvp [15%] /> Increased Damage for 5 seconds (<link Empowering Buff [#DamageBuffs] />) — does not apply to the wearer unlike what the native tooltip says\n\nAmount of Noble Seekers spawned is equal to [Fireteam Size]-1, with a minimum of 1 Seeker.\n\nEach time a Noble Seeker applies a buff, the Rift Duration is paused for 5 seconds.",
      "secondary": "import self"
     },
     "ko": {
@@ -12828,7 +12828,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678573596464,
+      "lastUpdate": 1704195801835,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -12846,7 +12846,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678582059138,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15210,14 +15210,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<solar/>Ignitions deal damage in a ?% increased radius.",
+     "main": "<solar/>Ignitions have a 20?% increased blast radius.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697815675687,
+      "lastUpdate": 1704196469709,
       "updatedBy": "Stardust"
      }
     },
@@ -15227,7 +15227,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15237,14 +15237,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Increases the number of <solar/>Scorch Stacks you apply to targets by 50% in most cases. Rounds up (e.g. 3🠚5).\n\nSpecific increases from <solar/>Ember of Ashes for <solar/>Scorch sources can be found in their descriptions.",
+     "main": "Increases the number of <solar/>Scorch Stacks you apply to targets by 50% in most cases.\n\nAlways rounds up: 3 🠚 4.5 🠚 5\n\nSpecific increases from <solar/>Ember of Ashes for <solar/>Scorch sources can be found in their descriptions.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697813874938,
+      "lastUpdate": 1704196309858,
       "updatedBy": "Stardust"
      }
     },
@@ -15254,7 +15254,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20921,7 +20921,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703944105496,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30568,7 +30568,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Proximity Explosive Knife applies 60 Scorch on detonation. (Unaffected by Ember of Ashes)\nProximity Explosive Knife kills cause an ignition.\n\nGrants 500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded.",
+     "main": "<solar/>Proximity Explosive Knife applies 60 <solar/>Scorch on detonation. (Unaffected by <solar/>Ember of Ashes)\n\nProximity Explosive Knife kills cause an <solar/>Ignition.\n\nGrants 500% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded.",
      "secondary": "import self"
     },
     "ko": {
@@ -30583,7 +30583,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678821012054,
+      "lastUpdate": 1704196362077,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -30601,7 +30601,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678828748445,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32217,14 +32217,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<void/>Void Invisibility, <void/>Void Overshield, and Devour buffs applied to you generally last 40% longer.",
+     "main": "<void/>Void Invisibility, <void/>Void Overshield, and Devour buffs applied to you generally last ~50% longer.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697892597648,
+      "lastUpdate": 1704196506183,
       "updatedBy": "Stardust"
      }
     },
@@ -32234,7 +32234,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36801,14 +36801,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Grenade Kills grant <void/>Volatile Rounds for 10 seconds, making hits with Void Weapons apply <void/>Volatile.\n\n(<void/>Volatile explosions do not count as damage originating from your weapon)",
+     "main": "Grenade Kills grant <void/>Volatile Rounds for 11 seconds, making hits with Void Weapons apply <void/>Volatile.\n\n(<void/>Volatile explosions do not count as damage originating from your weapon)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697892475621,
+      "lastUpdate": 1704196490297,
       "updatedBy": "Stardust"
      }
     },
@@ -36818,7 +36818,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43867,7 +43867,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703944105496,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43933,14 +43933,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Super Kills cause enemies within ? meters of the target to be <strand/>Suspended.",
+     "main": "Super Kills cause targets to explode, dealing up to <pve 121 /> <pvp [?] /> damage and <strand/>Suspending other targets in a ? meter radius.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699460674109,
+      "lastUpdate": 1704196623269,
       "updatedBy": "Stardust"
      }
     },
@@ -43950,7 +43950,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43960,14 +43960,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Scoring multiple Precision Hits within 2 seconds of each applies <strand/>Sever to enemies within ? meters of the target.\n\n? second cooldown between activations.\n\nActivation Progress per Precision Hit:\n• Slug Shotguns: 50%\n• Bows, Sniper Rifles: 34%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Machine Guns, Pulse Rifles: 12%\n• Submachine Guns, Trace Rifles: 10%",
+     "main": "Scoring multiple Precision Hits within 2 seconds of each applies <strand/>Sever to enemies within ? meters of the target.\n\nFurther hits are not counted for 4 seconds after an activation.\n\nActivation Progress per Precision Hit:\n• Slug Shotguns: 50%\n• Bows, Sniper Rifles: 34%\n• Hand Cannons, Scout Rifles: 25%\n• Sidearms: 20%\n• Auto Rifles: 15%\n• Machine Guns, Pulse Rifles: 12%\n• Submachine Guns, Trace Rifles: 10%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699752011019,
+      "lastUpdate": 1704200689280,
       "updatedBy": "Stardust"
      }
     },
@@ -43977,7 +43977,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699752056306,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47427,14 +47427,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "While at Critical Health:\nBeing damaged releases a burst of <arc/>Arc Energy, dealing <pve 50 /> <pvp [?] /> damage and applying <arc/>Jolt to enemies within ? meters.\n\n<pvp/>[PVP] 15? second cooldown between activations.",
+     "main": "While at Critical Health:\nBeing damaged releases a burst of <arc/>Arc Energy, dealing <pve 50 /> <pvp [?] /> damage and applying <arc/>Jolt to enemies within ? meters.\n\n15? second cooldown between activations.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697808229977,
+      "lastUpdate": 1704196204765,
       "updatedBy": "Stardust"
      }
     },
@@ -47444,7 +47444,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52007,7 +52007,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703944105496,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56678,14 +56678,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<strand/>Threadlings travel 30?% faster and farther and deal <pve 33% /> <pvp [10%] /> Increased Damage.",
+     "main": "<strand/>Threadlings travel 30?% faster and farther and deal Increased Damage.\n\nDamage Increases by <link Enemy Rank [#CombatantClassifications] />:\n• Minors and Elites: 53% \n• Minibosses and Bosses: 33%\n• Players: 10%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699460819037,
+      "lastUpdate": 1704196758520,
       "updatedBy": "Stardust"
      }
     },
@@ -56695,7 +56695,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56705,14 +56705,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Using your Grenade Ability <title refills [G_refill] /> your readied weapon from reserves and grants the following stat bonuses for 15 seconds:\n• 30? Handling\n• 40 Reload Speed\n• 0.925x Reload Duration Multiplier\n• 30 Airborne Effectiveness\n\n4 second cooldown between Magazine Refills.\t\t\t",
+     "main": "Using your Grenade Ability <title refills [G_refill] /> your readied weapon from reserves and grants the following stat bonuses for 15 seconds:\n• 40? Handling\n• 40 Reload Speed\n• 0.925x Reload Duration Multiplier\n• 30 Airborne Effectiveness\n\n4 second cooldown between Magazine Refills.\t\t\t",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699460505660,
+      "lastUpdate": 1704196544348,
       "updatedBy": "Stardust"
      }
     },
@@ -56722,7 +56722,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699463015549,
+   "lastUpload": 1704200924259,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
