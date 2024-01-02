@@ -8675,7 +8675,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff goes away as soon as ADS input is pressed."
+       "text": "Buff is removed as soon as ADS input is pressed."
       }
      ]
     }
@@ -10919,7 +10919,13 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Airborne Effectiveness to Lumina."
+       "text": "Passively grants 30 Airborne Effectiveness to "
+      },
+      {
+       "text": "Lumina"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -10929,7 +10935,7 @@
     {
      "linesContent": [
       {
-       "text": "Standing in a Rift creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff:"
+       "text": "Standing in a Rift creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff to them:"
       }
      ]
     },
@@ -10943,7 +10949,7 @@
     {
      "linesContent": [
       {
-       "text": "• Empowering Rift Seeker: "
+       "text": "• Empowering Rift Seeker: Grants "
       },
       {
        "text": "35%"
@@ -10955,7 +10961,14 @@
        "text": "[PVP: 15%]"
       },
       {
-       "text": " Increased Damage for 5 seconds"
+       "text": " Increased Damage for 5 seconds ("
+      },
+      {
+       "text": "Empowering Buff",
+       "link": "https://url.d2clarity.com/DamageBuffs"
+      },
+      {
+       "text": ") — does not apply to the wearer unlike what the native tooltip says"
       }
      ]
     },
@@ -10975,7 +10988,7 @@
     {
      "linesContent": [
       {
-       "text": "Each time a Noble Seeker applies a buff, the Rift Duration gets extended by 5 seconds."
+       "text": "Each time a Noble Seeker applies a buff, the Rift Duration is paused for 5 seconds."
       }
      ]
     }
@@ -12994,7 +13007,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ignitions deal damage in a ?% increased radius."
+       "text": "Ignitions have a 20?% increased blast radius."
       }
      ]
     }
@@ -13015,7 +13028,17 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch Stacks you apply to targets by 50% in most cases. Rounds up (e.g. 3🠚5)."
+       "text": "Scorch Stacks you apply to targets by 50% in most cases."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Always rounds up: 3 🠚 4.5 🠚 5"
       }
      ]
     },
@@ -23213,7 +23236,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff goes away as soon as ADS input is pressed."
+       "text": "Buff is removed as soon as ADS input is pressed."
       }
      ]
     },
@@ -25169,14 +25192,38 @@
     {
      "linesContent": [
       {
-       "text": "Proximity Explosive Knife applies 60 Scorch on detonation. (Unaffected by Ember of Ashes)"
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Proximity Explosive Knife applies 60 "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch on detonation. (Unaffected by "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)"
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Proximity Explosive Knife kills cause an ignition."
+       "text": "Proximity Explosive Knife kills cause an "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ignition."
       }
      ]
     },
@@ -26730,7 +26777,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Overshield, and Devour buffs applied to you generally last 40% longer."
+       "text": "Void Overshield, and Devour buffs applied to you generally last ~50% longer."
       }
      ]
     }
@@ -30327,7 +30374,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Volatile Rounds for 10 seconds, making hits with Void Weapons apply "
+       "text": "Volatile Rounds for 11 seconds, making hits with Void Weapons apply "
       },
       {
        "classNames": [ "void" ]
@@ -36412,13 +36459,25 @@
     {
      "linesContent": [
       {
-       "text": "Super Kills cause enemies within ? meters of the target to be "
+       "text": "Super Kills cause targets to explode, dealing up to "
+      },
+      {
+       "text": "121"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " damage and "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Suspended."
+       "text": "Suspending other targets in a ? meter radius."
       }
      ]
     }
@@ -36449,7 +36508,7 @@
     {
      "linesContent": [
       {
-       "text": "? second cooldown between activations."
+       "text": "Further hits are not counted for 4 seconds after an activation."
       }
      ]
     },
@@ -40088,7 +40147,7 @@
     {
      "linesContent": [
       {
-       "text": "[PVP] 15? second cooldown between activations."
+       "text": "15? second cooldown between activations."
       }
      ]
     }
@@ -47832,19 +47891,45 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Threadlings travel 30?% faster and farther and deal "
+       "text": "Threadlings travel 30?% faster and farther and deal Increased Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage Increases by "
       },
       {
-       "text": "33%"
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": " "
-      },
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": "[PVP: 10%]"
-      },
+       "text": "• Minors and Elites: 53%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": " Increased Damage."
+       "text": "• Minibosses and Bosses: 33%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Players: 10%"
       }
      ]
     }
@@ -47872,7 +47957,7 @@
     {
      "linesContent": [
       {
-       "text": "• 30? Handling"
+       "text": "• 40? Handling"
       }
      ]
     },
