@@ -715,14 +715,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "While within 15 metres of an ally:\nGrants a Stack of Nano-Munitions every 3 seconds, up to the maximum of 7. Consuming a Stack restarts the timer.\n\nConsumes up to 4 Stacks upon emptying the magazine and <title refills [G_refill] /> 25% of it for each consumed Stack.",
+     "main": "While within 15 metres of an ally:\nGrants a Stack of Nano-Munitions every 3 seconds, up to the maximum of 7. Consuming a Stack restarts the timer.\n\nConsumes a Stack upon emptying the magazine to <title refill [G_refill] /> 25% of it.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701281677998,
+      "lastUpdate": 1704811288687,
       "updatedBy": "Stardust"
      }
     },
@@ -732,7 +732,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1704811338998,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20921,7 +20921,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704239206603,
+   "lastUpload": 1704811338998,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26980,25 +26980,9 @@
    "name": "Under-Over",
    "hash": 1870851715,
    "type": "Weapon Trait",
-   "stats": {
-    "PVE Damage": [
-     {
-      "active": {
-       "multiplier": [ 2.25 ]
-      }
-     }
-    ],
-    "PVP Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.2 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Increases Damage against shielded targets:\n• 125% Increase against PVE Combatant Shields\n• 20% Increase against Player Overshields and for bodyshots against Players with <strand/>Woven Mail\n\nCombatant Shields include <barrier/>Barrier Champion Shields, Elemental Shields, and Lucent Moth/Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Overshields.\n\nenhanced (\n#e Damage Buff is increased.\n)",
+     "main": "Increases Damage against shielded targets:\n• 125% Increase against PVE Combatant (Over)Shields\n• 50% Increase against <barrier/>Barrier Champion Shields\n• 20% Increase against Player Overshields and for bodyshots against Players with <strand/>Woven Mail\n\nCombatant Shields include Elemental Shields, and Lucent Moth/Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> Overshields.\n\nenhanced (\n#e Damage Buff is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -27009,7 +26993,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693501880076,
+      "lastUpdate": 1704811196301,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -27018,12 +27002,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1693501667562,
+     "lastUpdate": 1704811206973,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1704811338998,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43867,7 +43851,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704239206603,
+   "lastUpload": 1704811338998,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52007,7 +51991,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704239206603,
+   "lastUpload": 1704811338998,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
