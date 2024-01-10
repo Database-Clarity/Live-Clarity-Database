@@ -8688,7 +8688,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While Aiming Down Sights:\n• Grants 10 Aim Assist\n• Increases Movement Speed by 3%\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
+     "main": "Grants 10 Aim Assist while Aiming Down Sights (ADS) and decreases ADS Movement Speed Penalty by 9.5%.\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -8699,7 +8699,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1704892599165,
+      "lastUpdate": 1704902125557,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -8713,7 +8713,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20912,7 +20912,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31711,7 +31711,7 @@
    },
    "editor": {
     "en": {
-     "main": "If no allies are within 15 meters: \n• 2.5% Reduced ADS Movement Speed Penalty\n• 0.85x ADS Animation Duration Multiplier",
+     "main": "If no allies are within 15 meters:\n• 9.5% decreased ADS Movement Speed Penalty\n• 0.85x ADS Animation Duration Multiplier",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -31722,7 +31722,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676496947011,
+      "lastUpdate": 1704902425393,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -31736,7 +31736,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676498011930,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34148,43 +34148,26 @@
    "name": "Tex Balanced Stock",
    "hash": 2437618208,
    "type": "Weapon Trait Origin",
-   "stats": {
-    "Handling": [
-     {
-      "active": {
-       "stat": [ 20 ]
-      }
-     }
-    ],
-    "Reload": [
-     {
-      "active": {
-       "stat": [ 20 ],
-       "multiplier": [ 0.9 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Upon scoring 4 Hipfire Hits within 4? seconds of each, for 4 seconds:\n• 20 Handling\n• 20 Reload Speed\n• 0.9x Reload Duration Multiplier\n• Additive 5% Reduced ADS Movement Speed Penalty",
+     "main": "Grants the following benefits for 4 seconds upon scoring 4 Hipfire Hits within 4? seconds of each:\n• 20 Handling and Reload Speed\n• 0.9x Reload Duration Multiplier\n• Decreases ADS Movement Speed Penalty by 9.5%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689198333895,
+      "lastUpdate": 1704902356563,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1689198296925,
+     "lastUpdate": 1704902369356,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37495,7 +37478,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43841,7 +43824,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44570,14 +44553,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 40 Airborne Effectiveness, 50 Handling, and a 0.8x Ready/Stow Duration Multiplier to Submachine Guns (SMGs).\n\nWhile holding an SMG:\n• Grants 25 Mobility\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%\n• Increases ADS Movement Speed by 10% (Effectively reduces the 25% ADS movement penalty to 17.5%)\n\n<title Refills [G_refill] /> the magazine of SMGs 1 second after stowing them.",
+     "main": "Passively grants 40 Airborne Effectiveness, 50 Handling, and a 0.8x Ready/Stow Duration Multiplier to Submachine Guns (SMGs).\n\nWhile holding an SMG:\n• Grants 25 Mobility\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%\n• Decreases ADS Movement Speed Penalty 33% (25%🠚16.75%)\n\n<title Refills [G_refill] /> the magazine of SMGs 1 second after stowing them.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1704892898763,
+      "lastUpdate": 1704902079987,
       "updatedBy": "Stardust"
      }
     },
@@ -44587,7 +44570,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47616,7 +47599,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grants Passive Stat Bonuses depending on your selected Subclass.\n\n<solar/>Solar: #e${50 + #d} Reload Speed\n<arc/>Arc: #e${50 + #d} Handling\n<void/>Void: #e${20 + #d} Stability\n<strand/>Strand: #e${20 + #d} Airborne Effectiveness\n<stasis/>Stasis: #e${20 + #d} Recoil Direction & 5% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Stat Bonuses are increased by 5.\n)",
+     "main": "Grants Passive Stat Bonuses depending on your selected Subclass.\n\n<solar/>Solar: #e${50 + #d} Reload Speed\n<arc/>Arc: #e${50 + #d} Handling\n<void/>Void: #e${20 + #d} Stability\n<strand/>Strand: #e${20 + #d} Airborne Effectiveness\n<stasis/>Stasis: #e${20 + #d} Recoil Direction & 19% reduced ADS Movement Speed Penalty\n\nenhanced (\nvar d = 5\n#e Stat Bonuses are increased by 5.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -47627,7 +47610,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689184841885,
+      "lastUpdate": 1704902062724,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -47641,7 +47624,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51947,7 +51930,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704893162452,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53278,19 +53261,9 @@
    "name": "Veist Stinger",
    "hash": 3988215619,
    "type": "Weapon Trait Origin",
-   "stats": {
-    "Charge Draw": [
-     {
-      "active": {
-       "multiplier": [ 0.85 ]
-      },
-      "weaponTypes": [ "Bow" ]
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• <title Refills [G_refill] /> 25% of Magazine from reserves on activation\n• Reduces ADS Movement Speed Penalty by an additive 5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants ? Charge Rate to Swords\n\n4 second cooldown between activations.\n\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle, Sniper Rifle: 10%",
+     "main": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• <title Refills [G_refill] /> 25% of Magazine from reserves on activation\n• Decreases ADS Movement Speed Penalty by 9.5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants ? Charge Rate to Swords\n\n4 second cooldown between activations.\n\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle, Sniper Rifle: 10%",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -53301,7 +53274,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701281930209,
+      "lastUpdate": 1704902451041,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -53310,12 +53283,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1670091024368,
+     "lastUpdate": 1704902502299,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1704902826534,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
