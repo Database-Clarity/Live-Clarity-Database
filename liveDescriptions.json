@@ -8686,18 +8686,9 @@
    "name": "Moving Target",
    "hash": 588594999,
    "type": "Weapon Trait",
-   "stats": {
-    "Aim Assist": [
-     {
-      "active": {
-       "stat": [ 10 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Grants 10 Aim Assist while Aiming Down Sights and reduces the ADS Movement Speed Penalty by an additive 2.5%.\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
+     "main": "While Aiming Down Sights:\n• Grants 10 Aim Assist\n• Increases Movement Speed by 3%\n\nenhanced (\n#e Aim Assist bonus is slightly increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -8708,7 +8699,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689191987439,
+      "lastUpdate": 1704892599165,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -8717,12 +8708,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1667251467555,
-     "updatedBy": "[Redacted]"
+     "lastUpdate": 1704892606198,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20921,7 +20912,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704817870439,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37485,7 +37476,6 @@
    "name": "Moving Target",
    "hash": 2717805783,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 588594999,
    "editor": {
     "en": {
      "main": "import main from 588594999",
@@ -37500,12 +37490,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676215409490,
+     "lastUpdate": 1704892610525,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43851,7 +43841,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704817870439,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44578,60 +44568,26 @@
    "hash": 3241194941,
    "itemHash": 3539357319,
    "type": "Armor Trait Exotic",
-   "stats": {
-    "Airborne": [
-     {
-      "passive": {
-       "stat": [ 40 ]
-      },
-      "weaponTypes": [ "SMG" ]
-     }
-    ],
-    "Handling": [
-     {
-      "passive": {
-       "stat": [ 100 ]
-      },
-      "weaponTypes": [ "SMG" ]
-     }
-    ],
-    "Ready": [
-     {
-      "passive": {
-       "multiplier": [ 0.6 ]
-      },
-      "weaponTypes": [ "SMG" ]
-     }
-    ],
-    "Stow": [
-     {
-      "passive": {
-       "multiplier": [ 0.6 ]
-      },
-      "weaponTypes": [ "SMG" ]
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Passively grants 40 Airborne Effectiveness, 100 Handling, and a 0.6x Ready/Stow Duration Multiplier to Submachine Guns.\n\nWhile holding an SMG:\n• Grants 50 Mobility\n• Reduces ADS Movement Penalty to 9% (from 25%)\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%\n\n<title Refills [G_refill] /> the magazine of Submachine Guns 1 second after stowing them.",
+     "main": "Passively grants 40 Airborne Effectiveness, 50 Handling, and a 0.8x Ready/Stow Duration Multiplier to Submachine Guns (SMGs).\n\nWhile holding an SMG:\n• Grants 25 Mobility\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%\n• Increases ADS Movement Speed by 10% (Effectively reduces the 25% ADS movement penalty to 17.5%)\n\n<title Refills [G_refill] /> the magazine of SMGs 1 second after stowing them.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1678743670989,
+      "lastUpdate": 1704892898763,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1678743146592,
+     "lastUpdate": 1704892741894,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1678745908076,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51991,7 +51947,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704817870439,
+   "lastUpload": 1704893162452,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
