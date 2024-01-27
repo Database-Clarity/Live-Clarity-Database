@@ -13184,14 +13184,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants the following with Fusion Grenades equipped:\n• An extra Grenade Charge\n• 100% Class Ability Energy on Fusion Grenade Kills\n• Passive 20% Additional Base Grenade Ability Recharge Rate\n\nWhile in an Empowering Rift or Well of Radiance:\n• Grants 20% Grenade Energy on Weapon Kills\n• Grants 2.5% Grenade Ability Energy on Weapon Hits with a 0.4 second cooldown",
+     "main": "Grants the following with Fusion Grenades equipped:\n• An extra Grenade Charge\n• 100% Class Ability Energy on Fusion Grenade Kills\n• Passive 20% Additional Base Grenade Ability Recharge Rate\n\nWhile in an Empowering Rift or <solar/>Well of Radiance:\n• Grants 20% Grenade Energy on Weapon Kills\n• Grants 2.5% Grenade Ability Energy on Weapon Hits with a 0.4 second cooldown",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684958727872,
+      "lastUpdate": 1706394194717,
       "updatedBy": "Stardust"
      }
     },
@@ -13201,7 +13201,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13283,14 +13283,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Upon Aiming Down Sights or Guarding within ? seconds of receiving damage:\nGrants ? Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds.\n\nBuff duration cannot be refreshed.",
+     "main": "Upon Aiming Down Sights or Guarding within ? seconds of receiving damage:\nGrants 30 Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds.\n\nBuff duration cannot be refreshed.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1703072387199,
+      "lastUpdate": 1706394093306,
       "updatedBy": "Stardust"
      }
     },
@@ -13300,7 +13300,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703073411225,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20912,7 +20912,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1705767469188,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43824,7 +43824,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1705767469188,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44083,22 +44083,6 @@
    "name": "Keep Away",
    "hash": 3198323828,
    "type": "Weapon Trait Enhanced",
-   "stats": {
-    "Range": [
-     {
-      "active": {
-       "stat": [ 12 ]
-      }
-     }
-    ],
-    "Reload": [
-     {
-      "active": {
-       "stat": [ 32 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
      "main": "import main from 3619207468",
@@ -44113,12 +44097,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1681763591673,
+     "lastUpdate": 1706393784066,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1681766701558,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48911,42 +48895,26 @@
    "name": "Keep Away",
    "hash": 3619207468,
    "type": "Weapon Trait",
-   "stats": {
-    "Range": [
-     {
-      "active": {
-       "stat": [ 10 ]
-      }
-     }
-    ],
-    "Reload": [
-     {
-      "active": {
-       "stat": [ 30 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "If no enemies are within 15 meters:\nGrants #e${10+#d} Range, #e${30+#d} Reload Speed, and decreases <title Accuracy Cone Growth [G_conegrowth] /> by #e${5+#f}?%.\n\nenhanced (\nvar d = 2\nvar f = 2.5\n#e Grants an additional 2? Range and Reload Speed, and decreases Accuracy Cone Growth further by an additive 2.5?%.\n)",
+     "main": "If no enemies are within 15 meters:\nGrants 10 Range, #e${30+#d} Reload Speed, and decreases <title Accuracy Cone Growth [G_conegrowth] /> by #e${5+#f}?%.\n\nvar tempGrowth = 5%\nenhanced (\nvar d = 5\nvar f = 2.5\nvar tempGrowth = #e7.5?%\n#e Grants an additional #d Reload Speed and further decreases Accuracy Cone Growth by #f?% (5%🠚${5+#f}%).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696718447889,
+      "lastUpdate": 1706393983435,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1678052728925,
+     "lastUpdate": 1706393780655,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696718862343,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51930,7 +51898,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1705767469188,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53054,14 +53022,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Grants the following benefits for 11 seconds upon reaching Critical Health, or on Ally Death:\n• <title Refills [G_refill] /> magazine\n• ? Range and ? Handling\n• Decreases Charge Time by 5%",
+     "main": "Grants the following benefits for 11 seconds upon reaching Critical Health, or on Ally Death:\n• <title Refills [G_refill] /> magazine from reserves\n• 5 Range and 10 Handling\n• Decreases Charge Time by 2.5%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1701281441210,
+      "lastUpdate": 1706394145292,
       "updatedBy": "Stardust"
      }
     },
@@ -53071,7 +53039,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1701294220305,
+   "lastUpload": 1706394262849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
