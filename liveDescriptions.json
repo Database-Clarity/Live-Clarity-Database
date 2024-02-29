@@ -2177,7 +2177,7 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters.\n\nMaxes out at 50% Increased Magazine Capacity.",
+     "main": "Finishing a reload overfills the Magazine from reserves by 10% of the Magazine Capacity (rounded up) for each ally within 15 meters.\n\nOverfill amount maxes out at 50% of the Magazine Capacity.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -2188,7 +2188,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689198251073,
+      "lastUpdate": 1709248415744,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -2201,7 +2201,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2817,14 +2817,14 @@
    },
    "editor": {
     "en": {
-     "main": "Glaive Melee Kills <title refill [G_refill] /> 1 Ammo into the Magazine from reserves. Can overflow the Magazine up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <pve 350 /> <pvp [101] /> damage in a 4? meter radius.",
+     "main": "Glaive Melee Kills load 1 Ammo into the Magazine from reserves. Can overfill the Magazine up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <pve 350 /> <pvp [101] /> damage in a 4? meter radius.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1702078713584,
+      "lastUpdate": 1709248453266,
       "updatedBy": "Stardust"
      }
     },
@@ -2834,7 +2834,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1702080947315,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3674,7 +3674,6 @@
    "name": "Reservoir Burst",
    "hash": 254337357,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 1427256713,
    "editor": {
     "en": {
      "main": "import main from 1427256713",
@@ -3688,12 +3687,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676223612904,
+     "lastUpdate": 1709247527000,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10764,7 +10763,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Kill against an enemy affected by a Void Debuff:\nGrants a 45 HP Void Overshield for #e${8+#d} seconds.\n\nenhanced (\nvar d = 2\n#e Overshield Duration is increased by 2 seconds.\n)",
+     "main": "Kills against <void/><title Void Debuffed [debuffs] /> enemies grant a 45 HP <void/>Void Overshield for #e${8+#d} seconds.\n\ntitle debuffs (\nVoid Debuffs are Weaken, Suppression, and Volatile.\n)\n\nenhanced (\nvar d = 2\n#e Overshield Duration is increased by 2 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -10775,7 +10774,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689195245483,
+      "lastUpdate": 1709247463613,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -10789,7 +10788,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12809,7 +12808,7 @@
    },
    "editor": {
     "en": {
-     "main": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• [?] Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%",
+     "main": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -12820,7 +12819,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689196279861,
+      "lastUpdate": 1709247868827,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -12834,7 +12833,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13814,14 +13813,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Kill (rounds up):\n• <primary/>Primary Weapons: #e${10+#d}%\n• <special/>Special and <heavy/>Power Weapons: #e${20+#d}%\n\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\n\nDoes not <title refill [G_refill] /> the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\nenhanced (\nvar d = 2.5\n#e Kills provide an additional 2.5% Magazine Capacity Increase.\n)",
+     "main": "Upon readying the weapon after scoring Kills with your other Weapons:\n<title Refills [G_refill] /> and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored.\n\nLoaded ammo per Kill (rounds up) by ammo type:\n• <primary/>Primary Weapons: #e${10+#d}% of Magazine Capacity\n• <special/>Special and <heavy/>Power Weapons: #e${20+#d}%\n\nEach activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity.\n\nenhanced (\nvar d = 2.5\n#e Kills provide an additional 2.5% Magazine Capacity Increase.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709223895367,
+      "lastUpdate": 1709246471590,
       "updatedBy": "Stardust"
      }
     },
@@ -13831,7 +13830,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13868,32 +13867,9 @@
    "name": "Pulse Monitor",
    "hash": 972757866,
    "type": "Weapon Trait",
-   "stats": {
-    "Handling": [
-     {
-      "active": {
-       "stat": [ 50 ]
-      }
-     }
-    ],
-    "Ready": [
-     {
-      "active": {
-       "multiplier": [ 0.95 ]
-      }
-     }
-    ],
-    "Stow": [
-     {
-      "active": {
-       "multiplier": [ 0.95 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• <title Refills [G_refill] /> Magazine from reserves\n\nWorks and can activate while stowed.\n\nenhanced (\n#e Activates with more health remaining.\n)",
+     "main": "\n<title Refills [G_refill] /> Magazine from reserves upon dropping to ${110+#d} HP. Can activate while stowed. //add #e once known\n\nWhile at or below 110 HP:\nGrants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier.\n\nenhanced (\nvar d = 0\n#e Activates with more health remaining.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -13904,7 +13880,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1700076215281,
+      "lastUpdate": 1709247128445,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -13913,12 +13889,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1693496900041,
+     "lastUpdate": 1709247053073,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1700076455476,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19468,7 +19444,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring 4 Precision Hits within #e${2+#d} seconds of each refunds 2 Ammo to the Magazine.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
+     "main": "Scoring 4 Precision Hits within #e${2+#d} seconds of each refunds 2 Ammo into the Magazine.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -19479,7 +19455,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689188140027,
+      "lastUpdate": 1709246720718,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -19493,7 +19469,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20479,25 +20455,9 @@
    "name": "Reservoir Burst",
    "hash": 1427256713,
    "type": "Weapon Trait",
-   "stats": {
-    "PVE Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.25 ]
-      }
-     }
-    ],
-    "PVP Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.25 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "While Magazine is at or above maximum capacity:\n25% Increased damage and causes enemies to explode on death, dealing <pve 444 /> <pvp [162.5] /> damage in a [?] meter radius.\n\nPassively grants 30 Magazine Size. (Identical to Extended Mag)\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While Magazine is at or above maximum capacity:\nGrants 25% Increased Damage and causes enemies to explode on death, dealing <pve 444 /> <pvp [162.5] /> damage in a ? meter radius.\n\nPassively grants 30 Magazine Size stat. (Identical to Extended Mag)\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -20508,7 +20468,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687812104126,
+      "lastUpdate": 1709247515895,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -20517,12 +20477,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676223611316,
+     "lastUpdate": 1709247521255,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687814889112,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20804,7 +20764,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709241349954,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21557,7 +21517,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> 10% of Magazine Capacity from reserves every #e${4-#d} seconds while not firing the weapon.\n\nRefills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number.\n\nenhanced (\nvar d = 0.5\n#e Refill Delay is decreased by 0.5 seconds.\n)",
+     "main": "Every #e${4-#d} seconds while not firing the weapon:\nLoads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves.\n\nCan overfill the Magazine up to double the normal capacity.\n\nenhanced (\nvar d = 0.5\n#e Loading delay is decreased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21568,7 +21528,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689194666052,
+      "lastUpdate": 1709247232479,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21582,7 +21542,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23066,18 +23026,9 @@
    "name": "Under Pressure",
    "hash": 1645158859,
    "type": "Weapon Trait",
-   "stats": {
-    "Stability": [
-     {
-      "active": {
-       "stat": [ 30 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• #e${12.5*#d}% to #e${25*#d}% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1.2\n#e Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)\n)",
+     "main": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• #e${12.5*#d}% to #e${25*#d}% Decreased Accuracy Cone Size\n• 0 to 30? Stability\n\nenhanced (\nvar d = 1.2\n#e Accuracy benefit is increased by 20%. (25%⁠🠚⁠30%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -23088,7 +23039,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1700076275811,
+      "lastUpdate": 1709248120610,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -23097,12 +23048,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1682715088025,
+     "lastUpdate": 1709248098261,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1700076455476,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23947,7 +23898,6 @@
    "name": "Pulse Monitor",
    "hash": 1685378950,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 972757866,
    "editor": {
     "en": {
      "main": "import main from 972757866",
@@ -23961,12 +23911,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1667251944478,
-     "updatedBy": "[Redacted]"
+     "lastUpdate": 1709247056022,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25658,14 +25608,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "30% Increased Glaive Melee Damage for #e${10+#d} seconds upon scoring a Glaive Projectile Kill.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to #e${10+#d} seconds.\n\nPersists through stow.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for #e${10+#d} seconds.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to #e${10+#d} seconds.\n\nRemains active while stowed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689183420736,
+      "lastUpdate": 1709244194696,
       "updatedBy": "Stardust"
      }
     },
@@ -25675,7 +25625,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28495,7 +28445,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within #e${7+#d} seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n• <primary/>Primary Weapons: 20%\n• <special/>Special and <heavy/>Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
+     "main": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverfills Magazine from reserves based on the amount of kills scored within #e${7+#d} seconds of each.\n\nOverfill amount maxes out at 150% of the Magazine Capacity. Always rounds up.\n\nOverfill amount per Kill scored:\n• <primary/>Primary Weapons: 20%\n• <special/>Special and <heavy/>Power Weapons: 10%.\n\nenhanced (\nvar d = 1\n#e Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "es": {
@@ -28510,7 +28460,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690295735604,
+      "lastUpdate": 1709244810692,
       "updatedBy": "Stardust"
      },
      "es": {
@@ -28528,7 +28478,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690320394706,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32179,7 +32129,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of ${30*#d}%). Always rounds up.\n\nenhanced (\nvar d = 1.1\n#e Improves the average overflow amount by 10%. (30%🠚33%)\n)",
+     "main": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a ${30*#d}% overfill.\n\nenhanced (\nvar d = 1.1\n#e Improves the average overfill amount by 10%. (30%🠚33%)\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -32190,7 +32140,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709214567674,
+      "lastUpdate": 1709245229045,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -32204,7 +32154,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33493,7 +33443,6 @@
    "name": "Focused Fury",
    "hash": 2402480669,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 2896038713,
    "editor": {
     "en": {
      "main": "import main from 2896038713",
@@ -33507,12 +33456,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676209050549,
+     "lastUpdate": 1709245525751,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676844056332,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40091,25 +40040,9 @@
    "name": "Focused Fury",
    "hash": 2896038713,
    "type": "Weapon Trait",
-   "stats": {
-    "PVE Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.2 ]
-      }
-     }
-    ],
-    "PVP Damage": [
-     {
-      "active": {
-       "multiplier": [ 1.2 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
-     "main": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for #e${11+#d} seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for #e${11+#d} seconds.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -40120,7 +40053,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1700076160086,
+      "lastUpdate": 1709245503245,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -40129,12 +40062,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1676209048281,
+     "lastUpdate": 1709245523082,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1700076455476,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40978,7 +40911,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by <pve 4 /> <pvp [0.5] /> seconds.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds (<pve 8 /> <pvp [2] /> with <stasis/>Whisper of Durance) to enemies within 4 meters.\n\nOnly activates once per shot/burst.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -40989,7 +40922,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1700076327055,
+      "lastUpdate": 1709244427399,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -41003,7 +40936,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1700076455476,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43561,7 +43494,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709241349954,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45962,7 +45895,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring 3 Precision Hits within #e${2+#d} seconds of each refunds 1 Ammo to the Magazine.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
+     "main": "Scoring 3 Precision Hits within #e${2+#d} seconds of each refunds 1 Ammo into the Magazine.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -45973,7 +45906,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689197391824,
+      "lastUpdate": 1709246736468,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -45987,7 +45920,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46103,7 +46036,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
+     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -46114,7 +46047,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693496924901,
+      "lastUpdate": 1709247593464,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -46128,7 +46061,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47355,7 +47288,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Missing has a chance to refund ammo:\n• <primary/>Primary Weapons: #e${35 + #d}%\n• <special/>Special and <heavy/>Power Weapons: #e${20 + #d}%\n\nenhanced (\nvar d = 5\n#e Ammo Refund chance is increased by an additive 5%.\n)",
+     "main": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• <primary/>Primary Weapons: #e${35 + #d}%\n• <special/>Special and <heavy/>Power Weapons: #e${20 + #d}%\n\nenhanced (\nvar d = 5\n#e Ammo Refund chance is increased by an additive 5%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -47366,7 +47299,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689192547650,
+      "lastUpdate": 1709246863562,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -47379,7 +47312,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48908,7 +48841,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon picking up <special/>Special or <heavy/>Heavy Ammo:\nMagazine gets <title refilled [G_refill] /> and overflowed from reserves.\n\nMaxes out at #e${100+#d}% Increased Magazine Capacity. Activates even if stowed.\n\nenhanced (\nvar d = 20\n#e Maximum overflow amount is increased by 20%.\n)",
+     "main": "Upon picking up <special/>Special or <heavy/>Heavy Ammo:\n<title Refills [G_refill] /> and Overfills the Magazine from reserves.\n\nOverfill amount maxes out at #e${100+#d}% of the Magazine Capacity. Activates even while stowed.\n\nenhanced (\nvar d = 20\n#e Maximum overfill amount is increased by 20% (rounds up). \n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -48919,7 +48852,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689193246276,
+      "lastUpdate": 1709245565636,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -48933,7 +48866,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49710,7 +49643,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, <title Refills [G_refill] /> all Weapons from reserves, and triggers Ammo Pickup Effects.\n\nOnly activates if picking up ammo is possible. However, shooting a <special/>Special Ammo Brick (with at least one <special/>Special Weapon equipped) will bypass this restriction.\n\nWeapon Hits against Orbs of Power collect them. \n\nenhanced (\n#e Passively grants 5 Range.\n)",
+     "main": "Weapon Hits against Orbs of Power collect them. \n\nIf collecting ammo is possible:\nWeapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and <title refill [G_refill] /> all Weapons from reserves.\n\nenhanced (\n#e Passively grants 5 Range.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -49721,7 +49654,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696089921498,
+      "lastUpdate": 1709247843935,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -49735,7 +49668,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696090204649,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50425,7 +50358,6 @@
    "name": "Under Pressure",
    "hash": 3755250867,
    "type": "Weapon Trait Enhanced",
-   "importStatsFrom": 1645158859,
    "editor": {
     "en": {
      "main": "import main from 1645158859",
@@ -50440,12 +50372,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1682715094584,
+     "lastUpdate": 1709248102237,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1682718006443,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51634,7 +51566,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709241349954,
+   "lastUpload": 1709248561849,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
