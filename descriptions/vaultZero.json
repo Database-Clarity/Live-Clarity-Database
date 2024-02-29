@@ -28,29 +28,6 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants a Stacking Damage Buff and 20 Handling for 4.5 seconds on Weapon or Grenade Kills. Grenade Kills grant all 5 stacks.\nDamage Buff Stacks: 6.7%|13.3%|20%|26.6%|33.3%\nBuff duration is refreshed on Weapon or Grenade Kills."
@@ -77,7 +54,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After [enh]1.4 seconds of Aiming Down Sights without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n[enh] Activation time is reduced by 0.1 seconds."
+   "en": "After Aiming Down Sights for [enh]1.4 seconds without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n[enh] Activation time is reduced by 0.1 seconds."
   }
  },
  "24925370": {
@@ -177,7 +154,7 @@
   "name": "Reaper",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n10 second cooldown between activations.\nEquipping multiple copies of the mod provides no benefit."
+   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n10|5|1 second cooldown between activations with 1|2|3 Mods equipped."
   }
  },
  "43555494": {
@@ -185,31 +162,15 @@
   "name": "Field-Tested",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|55 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
+   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|50 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
   }
  },
  "47981717": {
   "hash": 47981717,
   "name": "Opening Shot",
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing:\n• 20 Aim Assist\n• 25 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth"
+   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing the weapon:\n• 20 Aim Assist and 25 Range\n• 5% Decreased Accuracy Cone Size\n• 10% Decreased Accuracy Cone Growth\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up."
   }
  },
  "48578555": {
@@ -289,7 +250,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "82180537": {
@@ -297,7 +258,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "82994288": {
@@ -347,7 +308,7 @@
   "name": "Hatchling",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Spawns a [Strand]Threadling on Enemy Death Location on Precision Kills.\nFor weapons that cannot deal Precision Damage:\nScoring 3? kills within 3? seconds of each spawns a Threadling.\n[enh] Passively grants 5 Handling."
+   "en": "Upon scoring a Precision Kill or 3 kills within 3 seconds of each:\nSpawns a [Strand]Threadling on Enemy Death Location.\n[enh] Passively grants 5 Handling."
   }
  },
  "110793779": {
@@ -497,7 +458,7 @@
   "name": "Slideshot",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Sliding refills 15% of the Magazine and grants 20 Range and 30 Stability for 3 seconds OR until firing.\nOnly active for the first shot (of the burst).\n0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing off shots loaded by the perk.\n[enh] Stronger Effect."
+   "en": "Sliding refills 15% of the Magazine (rounds up) and grants [enh]25 Range and Stability for your next shot within 2.5 seconds.\nOnly active for the first shot (of the burst).\n0.3 second cooldown after activation but can activate multiple times during a slide.\n[enh] Stat bonuses are increased by 5?."
   }
  },
  "192157151": {
@@ -606,6 +567,14 @@
    "en": "This weapon fires a small auto-tracking missile. Missiles lock onto targets when aimed."
   }
  },
+ "220689851": {
+  "hash": 220689851,
+  "name": "Sundering",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "Destroying a [Vehicle or a Construct](https://url.d2clarity.com/combatants) grants 40 Reload Speed and a 0.85x Draw Time Multiplier for 7 seconds."
+  }
+ },
  "229096166": {
   "hash": 229096166,
   "name": "Osteo Striga Catalyst",
@@ -660,7 +629,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements by weapon type:\n• Bows: 5 Hits\n• Swords: 10? Hits\n• Shotguns: unknown\n• Wave-frame Grenade Launchers: 12? hits\n• Others: 67% of Magazine rounded down + 2 Hits"
+   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Other: 67% of Magazine Size rounded down + 2"
   }
  },
  "247725512": {
@@ -863,7 +832,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "362132288": {
@@ -903,7 +872,7 @@
   "name": "Ember of Benevolence",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "Applying certain buffs to allies grants 400% Additional Base Grenade, Melee, and Class Ability Regeneration Rate for [pve]6 [pvp][3] seconds.\nActivation Triggers:\n• Granting the [Solar]Cure, [Solar]Radiant, or [Solar]Restoration [Solar]Solar subclass buffs to allies\n• Healing (from most sources), or reviving allies\nWill NOT trigger [Solar]Ember of Benevolence:\nEmpowering Rifts, Mods, Crest of Alpha Lupi's Healing Pulse, Precious Scars' Healing Burst, and Aeon Sect of Vigor's Healing"
+   "en": "Applying certain buffs to allies grants 400% Additional Base Grenade, Melee, and Class Ability Regeneration Rate for [pve]6 [pvp][3] seconds.\nActivation Triggers:\n• Granting the [Solar]Cure, [Solar]Radiant, or [Solar]Restoration [Solar]Solar subclass buffs to allies\n• Healing (from most sources), or reviving allies\nWill NOT trigger [Solar]Ember of Benevolence:\nEmpowering Rifts, Mods, Crest of Alpha Lupi's Healing Pulse, and Aeon Sect of Vigor's Healing"
   }
  },
  "362132293": {
@@ -919,7 +888,7 @@
   "name": "Ember of Empyrean",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "[Solar]Solar Kills extend the duration of [Solar]Restoration and [Solar]Radiant effects by 4 seconds up to the maximum of 12 seconds."
+   "en": "[Solar]Solar Kills extend the duration of [Solar]Restoration and [Solar]Radiant effects up to the maximum of 15 seconds.\nTime added based on [Enemy Rank](https://url.d2clarity.com/combatants): Unknown"
   }
  },
  "362132295": {
@@ -949,25 +918,9 @@
  "365154968": {
   "hash": 365154968,
   "name": "Target Lock",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1673, 1.4 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1046, 1.25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\nDamage Buff ramps up from [pve]16.73% [pvp][10.46%] to [pve]40% [pvp][25%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [pve]25% [pvp][15.85%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [pve]16.73% [pvp][10.46%] to [pve]40% [pvp][25%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [pve]25% [pvp][15.85%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
   }
  },
  "371216963": {
@@ -975,7 +928,7 @@
   "name": "Radar Tuner",
   "type": "Weapon Mod",
   "descriptions": {
-   "en": "Radar immediately returns when no longer Aiming Down Sights. (Normally takes 1.5 seconds)"
+   "en": "Radar immediately returns once no longer Aiming Down Sights. (Normally takes 1.5 seconds)"
   }
  },
  "377010989": {
@@ -1114,7 +1067,7 @@
   "name": "Tracking Module",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While aiming-down-sights at an Enemy:\nRockets track the targeted enemy.\n[pvp]Diminshed effectiveness in PVP.\nTracking persists for 1 second after not aiming at the enemy.\n[enh] Passively grants 5 Blast Radius."
+   "en": "While Aiming Down Sights and targeting an Enemy:\nFired Rockets track the targeted enemy. [pvp]Diminshed effectiveness in PVP.\nTracking persists for 1 second once no longer aiming at the enemy.\n[enh] Passively grants 5 Blast Radius."
   }
  },
  "407549716": {
@@ -1148,7 +1101,7 @@
   "name": "Envious Assassin",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Weapon Kill:\n[primary]Primary Weapons: [enh]12.5%\n[special]Special and [heavy]Power Weapons: [enh]22.5%\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n[enh] Kills provide an additional 2.5% Magazine Capacity Increase."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Kill (rounds up):\n• [primary]Primary Weapons: [enh]12.5%\n• [special]Special and [heavy]Power Weapons: [enh]22.5%\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n[enh] Kills provide an additional 2.5% Magazine Capacity Increase."
   }
  },
  "426473316": {
@@ -1502,31 +1455,15 @@
   "name": "Gun and Run",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Killing multiple enemies within 3? seconds of each grants 6.25% Increased Sprint Speed for 10 seconds.\nActivation progress by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Players, Elites, and higher: 100%\nDuration is not refreshable. Stacks with other Sprint Speed buffs up to the cap of a 12.5% Increase."
+   "en": "Killing multiple enemies within 3? seconds of each grants 6.25% Increased Sprint Speed for 10 seconds. Remains active while stowed.\nActivation progress by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Players, Elites, and higher: 100%\nDuration is not refreshable. Stacks with other Sprint Speed buffs up to the cap of a 12.5% Increase."
   }
  },
  "518387148": {
   "hash": 518387148,
   "name": "Sprint Grip",
-  "stats": {
-   "Ready": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ],
-   "ADS": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
-   "en": "After sprinting for 1.5 seconds:\nGrants 35 Ready/ADS Handling while sprinting."
+   "en": "After sprinting for 1.5 seconds:\nGrants 35 ADS and Ready Handling while sprinting."
   }
  },
  "521530777": {
@@ -1675,7 +1612,7 @@
   "name": "Loose Change",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Applying an Elemental Debuff (with the exception of [Void]Weaken) grants 50? Reload Speed for [enh]5 seconds.\n[enh] Buff Duration is increased by 0.5 seconds."
+   "en": "Applying an Elemental Debuff (with the exception of [Void]Weaken) grants the following benefits for [enh]5 seconds:\n• 50? Reload Speed and 20 Aim Assist\n• 20% Decreased ADS Movement Speed Penalty\n[enh] Buff Duration is increased by 0.5 seconds."
   }
  },
  "566815328": {
@@ -1683,7 +1620,7 @@
   "name": "Rasputin's Arsenal",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Refills 50% of the Magazine on Elemental, Barrier, or Guardian Shield Breaks."
+   "en": "Refills 50% of the Magazine from reserves upon breaking Elemental, Barrier Champion, or Player Shields."
   }
  },
  "567997816": {
@@ -1691,7 +1628,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "569260333": {
@@ -1743,7 +1680,7 @@
   "name": "Moving Target",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants 10 Aim Assist while Aiming Down Sights (ADS) and decreases ADS Movement Speed Penalty by 9.5%."
+   "en": "Grants 10 Aim Assist while Aiming Down Sights (ADS) and decreases ADS Movement Speed Penalty by 10%."
   }
  },
  "593361144": {
@@ -1885,7 +1822,7 @@
   "itemName": "Felwinter's Helm",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Powered Melee and Finisher Kills disorient and debuff enemies in a given radius around the target, increasing damage received by them by 30%.\nThe debuff Duration and application radius are dependent on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\nFinishers increase the debuff duration by 5 seconds, up to the maximum of 20 seconds. Applying [Void]Weaken to the target extends the debuff's duration.\n(Still requires retesting, will update once complete)"
+   "en": "Powered Melee and Finisher Kills disorient and debuff enemies in a given radius around the target, increasing damage received by them by 30%.\nScreen becomes fully blackened upon getting hit by the debuff before gradually going away over 7.5 seconds.\nThe debuff Duration and application radius are dependent on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\n(Still requires retesting, will update once complete)\nFinishers increase the debuff duration by 5 seconds, up to the maximum of 20 seconds. Applying [Void]Weaken to the target extends the debuff's duration."
   }
  },
  "624891305": {
@@ -1979,7 +1916,7 @@
   "name": "Eddy Current",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After sprinting for 3 seconds:\nIncreases Reload Speed for 3 seconds.\nDuration can be refreshed by tapping sprint. Being [Arc]Amplified increases the bonus."
+   "en": "After sprinting for 3 seconds:\nGrants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting.\nBeing [Arc]Amplified increases the bonus to 60 Reload Speed."
   }
  },
  "686455429": {
@@ -2129,7 +2066,7 @@
   "name": "Elemental Capacitor",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants Passive Stat Bonuses depending on your selected Subclass.\n[Solar]Solar: [enh]55 Reload Speed\n[Arc]Arc: [enh]55 Handling\n[Void]Void: [enh]25 Stability\n[Strand]Strand: [enh]25 Airborne Effectiveness\n[Stasis]Stasis: [enh]25 Recoil Direction & 19% reduced ADS Movement Speed Penalty\n[enh] Stat Bonuses are increased by 5."
+   "en": "Grants Passive Stat Bonuses depending on your selected Subclass.\n[Solar]Solar: [enh]55 Reload Speed\n[Arc]Arc: [enh]55 Handling\n[Void]Void: [enh]25 Stability\n[Strand]Strand: [enh]25 Airborne Effectiveness\n[Stasis]Stasis: [enh]25 Recoil Direction & 20% reduced ADS Movement Speed Penalty\n[enh] Stat Bonuses are increased by 5."
   }
  },
  "711628886": {
@@ -2198,7 +2135,7 @@
   "name": "Vanguard's Vindication",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Weapon Kills restore 7 HP."
+   "en": "Weapon Kills restore 10 HP."
   }
  },
  "744594675": {
@@ -2442,7 +2379,7 @@
   "name": "Hatchling",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Spawns a [Strand]Threadling on Enemy Death Location on Precision Kills.\nFor weapons that cannot deal Precision Damage:\nScoring 3? kills within 3? seconds of each spawns a Threadling."
+   "en": "Upon scoring a Precision Kill or 3 kills within 3 seconds of each:\nSpawns a [Strand]Threadling on Enemy Death Location."
   }
  },
  "834262328": {
@@ -2510,7 +2447,7 @@
   "name": "Unstoppable Hand Cannon",
   "type": "Armor Mod Seasonal",
   "descriptions": {
-   "en": "Aiming Down Sights for 1 second with Hand Cannons that don't have an intrinsic Breaker Type grants [unstoppable]Unstoppable Shots.\nHand Cannons without an intrinsic Breaker Type are always Overcharged in activities with the Overcharged Weapons modifier.\n[unstoppable]Unstoppable Shots/effects are required to stun [unstoppable]Unstoppable Champions – immobilizing them and removing their passive 70% Damage Resistance for the duration of the stun."
+   "en": "Aiming Down Sights without firing for 1 second with Hand Cannons that don't have an intrinsic Breaker Type grants [unstoppable]Unstoppable Shots.\nHand Cannons without an intrinsic Breaker Type are always Overcharged in activities with the Overcharged Weapons modifier.\n[unstoppable]Unstoppable Shots/effects are required to stun [unstoppable]Unstoppable Champions – immobilizing them and removing their passive 70% Damage Resistance for the duration of the stun."
   }
  },
  "848860060": {
@@ -2526,7 +2463,7 @@
   "name": "Unrelenting",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Starts Health Regeneration and restores [enh]85 HP upon reaching 100% Activation Progress with Weapon Kills.\nActivation Progress by Enemy Rank:\n• Minor Combatants: 33.3%\n• Players: 66.6%\n• Majors and Bosses: 100%\nWeapon Kills must be within 5 seconds of each.\n[enh] Heals for an additional 5 HP."
+   "en": "Starts Health Regeneration and restores [enh]70 HP upon reaching 100% Activation Progress with Weapon Kills.\nActivation Progress by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minor Combatants: 33.3%\n• Players: 66.6%\n• Majors and Bosses: 100%\nWeapon Kills must be within 5 seconds of each.\n[enh] Heals for an additional 5 HP."
   }
  },
  "856936828": {
@@ -2630,7 +2567,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "883550427": {
@@ -2684,7 +2621,7 @@
   "name": "Discord",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following for [enh]8 seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\nWeapon Kills while Discord is active fully refill the Magazine of [primary]Primary Weapons, and refund 1 Ammo for [special]Special Weapons.\n[enh] Buff Duration is increased by 1? second."
+   "en": "Grants the following for [enh]8 seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\nWeapon Kills while Discord is active fully refill the Magazine of [primary]Primary Weapons, and refund 1 Ammo for [special]Special Weapons. (Scoring multiple kills with a single shot/burst still only refunds 1 ammo.)\n[enh] Buff Duration is increased by 1? second."
   }
  },
  "908147344": {
@@ -2896,7 +2833,7 @@
   "name": "Danger Zone",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants ?% Increased Blast Radius while within 15 meters of 3 enemies. Lingers for 4 seconds.\nReduces Self-Damage by 40% on Grenade Launchers and by ?% on Rocket Launchers.\nRocket Launcher explosions now apply knockback to you to allow for rocket jumping."
+   "en": "Reduces Self-Damage by 40% on Grenade Launchers and by ?% on Rocket Launchers. Allows for rocket jumping.\nGrants ?% Increased Blast Radius while within 15 meters of 3 enemies. Lingers for 4 seconds."
   }
  },
  "965934024": {
@@ -2936,7 +2873,7 @@
   "name": "Envious Assassin",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Weapon Kill:\n[primary]Primary Weapons: 10%\n[special]Special and [heavy]Power Weapons: 20%\nMaxes out at 150% Increased Magazine Capacity if activated with a full Magazine. Always rounds up.\n(Currently, you can reach up to a 300% Increase by reactivating the perk while at or below 250% Magazine Capacity)\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Kill (rounds up):\n• [primary]Primary Weapons: 10%\n• [special]Special and [heavy]Power Weapons: 20%\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
   }
  },
  "970163821": {
@@ -3002,7 +2939,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements by weapon type:\n• Bows: 5 Hits\n• Swords: 10? Hits\n• Shotguns: unknown\n• Wave-frame Grenade Launchers: 12? hits\n• Others: 67% of Magazine rounded down + 2 Hits\n[enh] Spawned Orbs grant more Super Energy."
+   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Other: 67% of Magazine Size rounded down + 2\n[enh] Spawned Orbs grant more Super Energy."
   }
  },
  "987673306": {
@@ -3010,7 +2947,7 @@
   "name": "Tunnel Vision",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• -20% Accuracy Cone Size\n• ? ADS Handling for 5 seconds.\n[enh] Buff Duration is increased."
+   "en": "Grants the following for 5 seconds upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• ? ADS Handling\n• ?% Decreased Accuracy Cone Growth\n[enh] Buff Duration is increased."
   }
  },
  "996573084": {
@@ -3273,7 +3210,7 @@
   "name": "Danger Zone",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants ?% Increased Blast Radius while within 15 meters of 3 enemies. Lingers for 4 seconds.\nReduces Self-Damage by 40% on Grenade Launchers and by ?% on Rocket Launchers.\nRocket Launcher explosions now apply knockback to you to allow for rocket jumping.\n[enh] Passively grants 5 Blast Radius."
+   "en": "Reduces Self-Damage by 40% on Grenade Launchers and by ?% on Rocket Launchers. Allows for rocket jumping.\nGrants ?% Increased Blast Radius while within 15 meters of 3 enemies. Lingers for 4 seconds.\n[enh] Passively grants 5 Blast Radius."
   }
  },
  "1079896271": {
@@ -3329,18 +3266,9 @@
  "1119449540": {
   "hash": 1119449540,
   "name": "Loose Change",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Applying an Elemental Debuff (with the exception of [Void]Weaken) grants 50? Reload Speed for 4.5 seconds."
+   "en": "Applying an Elemental Debuff (with the exception of [Void]Weaken) grants the following benefits for 4.5 seconds:\n• 50? Reload Speed and 20 Aim Assist\n• 20% Decreased ADS Movement Speed Penalty"
   }
  },
  "1125523126": {
@@ -3523,7 +3451,7 @@
   "name": "Deconstruct",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds\n• Refills 10% of the Magazine from thin air\nHits against Constructs are not able to trigger the perk but they contribute to its activation progress.\nActivation progress on hit by weapon type:\n• Glaives: 25%\n• Others: unknown"
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds.\n• Refills 10% of the Magazine from thin air. Refill amount is rounded up.\nActivation Requirement: Scoring 50% of Magazine Size rounded down + 2 hits\nHits against Constructs and Vehicles provide 1.5x activation progress for [primary]Primary weapons and 2x progress for [special]Special weapons.\n[primary]Primary weapon hits provide 2x activation progress."
   }
  },
  "1167468626": {
@@ -3806,7 +3734,7 @@
   "name": "Extrovert",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Kills restore 40 HP after a 0.25 second delay while within 15 meters of 3 enemies or a Nightmare.\n3 second cooldown between activations."
+   "en": "Kills restore 60 HP after a 0.25 second delay while within 15 meters of 3 enemies or a Nightmare.\n3 second cooldown between activations."
   }
  },
  "1255614814": {
@@ -3951,7 +3879,7 @@
   "name": "Stunning Recovery",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Upon stunning a Champion:\n• Refills 25% of the Magazine (always rounds up)\n• Restores 60 HP\n• Grants 40 Recovery for 3 seconds"
+   "en": "Upon stunning a Champion:\n• Refills 25% of the Magazine from reserves (rounds up)\n• Restores 60 HP\n• Grants 40 Recovery for 3 seconds"
   }
  },
  "1281243303": {
@@ -4107,7 +4035,7 @@
   "name": "Horde Shuttle",
   "type": "Armor Mod Seasonal",
   "descriptions": {
-   "en": "Dealing sufficient Weapon Damage to an [Strand]Unraveled Target spawns a [Strand]Threadling depending on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 80 damage\n• Elite: 180 damage\n• Minibosses: 200 damage\n• Bosses: 420 damage\n• Players: 100 damage"
+   "en": "Dealing sufficient Weapon Damage to an [Strand]Unraveled Target spawns a [Strand]Threadling depending on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 80 damage\n• Elite: 180 damage\n• Minibosses: 200 damage\n• Bosses: 420 damage\n• Players: 100 damage\n[Strand]Unraveling Thread Kills sometimes spawn a [Strand]Threadling."
   }
  },
  "1328115226": {
@@ -4262,31 +4190,15 @@
   },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• -20%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%"
+   "en": "While Aiming Down Sights:\n• Increased Body Shot Damage\n• -20%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%"
   }
  },
  "1370847713": {
   "hash": 1370847713,
   "name": "Opening Shot",
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing:\n• [enh]25 Aim Assist\n• [enh]30 Range\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\n[enh] Grants 5 more Aim Assist and Range."
+   "en": "Grants the following benefits for your first shot (of the burst) after 3.1 seconds of not firing the weapon:\n• [enh]25 Aim Assist and [enh]30 Range\n• 5% Decreased Accuracy Cone Size\n• 10% Decreased Accuracy Cone Growth\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up.\n[enh] Grants 5 more Aim Assist and Range."
   }
  },
  "1376049785": {
@@ -4449,18 +4361,9 @@
  "1431678320": {
   "hash": 1431678320,
   "name": "Alloy Magazine",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "multiplier": [ 0.85 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Perk",
   "descriptions": {
-   "en": "Grants a 0.85x Reload Duration Multiplier when the magazine is empty."
+   "en": "Grants a 0.85x Reload Duration Multiplier to reloads started with an empty magazine."
   }
  },
  "1437147326": {
@@ -4556,7 +4459,7 @@
   "name": "Barrel Constrictor",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Reduces Pellet Spread by 20% on Weapon Kills for a single shot within the next 8 seconds."
+   "en": "Weapon Kills reduce Pellet Spread by 20% for 7.5 seconds."
   }
  },
  "1457189155": {
@@ -4582,7 +4485,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "1489048135": {
@@ -4727,7 +4630,7 @@
   "name": "Vorpal Weapon",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage Increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][40-50%]\n• [special]Special Weapons: [pve]15% [pvp][10-20%]\n• [heavy]Heavy Weapons: [pve]10% [pvp][5-10%]"
+   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage Increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Heavy Weapons: [pve]10% [pvp][20%]"
   }
  },
  "1549056416": {
@@ -4745,7 +4648,7 @@
   "name": "Kinetic Tremors",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\nEach shockwave deals up to [pve]120 [pvp][20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\nHits Required for Activation:\n• Auto Rifles: 12 (decrease unknown)\n• Submachine Guns: 14 (decrease unknown)\n• Pulse Rifles: [enh]10 (from 11)\n• Non-burst Sidearms: [enh]7 (from 11)\n• Hand Cannons, Scout Rifles: [enh]4? (from 6)\n• Sniper Rifles: [enh]2 (from 3)\n[enh] Hit Requirements are reduced."
+   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\nEach shockwave deals up to [pve]120 [pvp][20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\nHits Required for Activation:\n• Submachine Guns: 14 (enhanced unavailable)\n• Auto Rifles: 12 (enhanced unavailable)\n• Pulse Rifles: [enh]10 (from 11)\n• Non-burst Sidearms: [enh]7 (from 11)\n• Hand Cannons, Scout Rifles: [enh]5 (from 6)\n• Sniper Rifles: [enh]2 (from 3)\n[enh] Hit Requirements are reduced."
   }
  },
  "1550063955": {
@@ -4896,42 +4799,12 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.7 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon readying the weapon, for 2 seconds:\n• 30% Decreased Charge Time\n• 20% Decreased Damage\n• 100 Handling\nWeapon must be stowed for 3.5 seconds before readying for the perk to activate."
@@ -4958,7 +4831,7 @@
   "name": "Fragile Focus",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants 20 Range while your shields are active (above 70 HP).\nGetting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge.\n[enh] Reactivation delay is decreased."
+   "en": "Grants 20 Range while your shields are active.\nGetting your shields broken disables the buff. Reactivates 0.5 seconds after your shields fully recharge.\n[enh] Reactivation delay is decreased by 0.5 seconds."
   }
  },
  "1618208178": {
@@ -5359,7 +5232,7 @@
   "name": "Heavy Handed",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Powered Melee Kills. 10 second cooldown between activations.\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
+   "en": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)\n10|5|1 second cooldown between activations."
   }
  },
  "1713206376": {
@@ -5519,7 +5392,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon blocking damage with Glaive Shield:\nDecreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking.\n(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)\n[enh] Buff Duration is increased."
+   "en": "Upon blocking damage with Glaive Shield:\nDecreases Glaive Block's Movement Speed Penalty by ?% for ? seconds, or until you stop blocking.\n[enh] Buff Duration is increased."
   }
  },
  "1739861752": {
@@ -5656,7 +5529,7 @@
   "name": "Enlightened Action",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Hits grant 10? Handling and 10? Reload Speed for 2 seconds. Stacks 5 times.\n[enh] Stat bonuses are increased."
+   "en": "Weapon Hits grant stacks of Enlightened Action for 2 seconds. Stacks 12 times.\nStat bonuses at 1|2|…|12 Stacks:\n2|7|12|15|20|25|30|35|38|40|45|50 Handling and Reload Speed\nStacks granted per hit by Weapon Type:\n• Hand Cannons: 3 Stacks\n• Bows: ? Stacks\n• Automatic Weapons: 1 Stack\n[enh] Maximum Stat Bonus is increased by 5. (50🠚55, breakdown by Stacks currently unknown)"
   }
  },
  "1774574192": {
@@ -5886,38 +5759,9 @@
  "1866048759": {
   "hash": 1866048759,
   "name": "Hip-Fire Grip",
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 15 ]
-     }
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "multiplier": [ 1 ]
-     },
-     "weaponTypes": [ "Shotgun", "Sniper", "Fusion" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -30% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles."
+   "en": "Grants the following benefits while hipfiring:\n• 25 Stability and 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• 30% Decreased Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles."
   }
  },
  "1870851715": {
@@ -6110,18 +5954,9 @@
  "1968497646": {
   "hash": 1968497646,
   "name": "Armor-Piercing Rounds",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.05 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Perk",
   "descriptions": {
-   "en": "5% Increased Damage against PvE Combatant Shields.\nBullets are able to overpenetrate enemies once."
+   "en": "Grants 5% Increased Damage against PvE Combatant Shields. Bullets overpenetrate enemies once."
   }
  },
  "1969105489": {
@@ -6523,7 +6358,7 @@
   },
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|55 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
+   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Field Test Stacks:\n• 3|6|9|12|20 Range\n• 5|10|20|35|50 Reload Speed\n• (?) Stability and Handling\n• 5|10|20|35|55 Charge Rate (Swords)\n• 5|10|20|30|40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Damage Instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
   }
  },
  "2130042297": {
@@ -6591,7 +6426,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "2172504645": {
@@ -7023,7 +6858,7 @@
   "name": "Clown Cartridge",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading. Always rounds up."
+   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 30%). Always rounds up."
   }
  },
  "2287699930": {
@@ -7427,7 +7262,7 @@
   "name": "Tex Balanced Stock",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Grants the following benefits for 4 seconds upon scoring 4 Hipfire Hits within 4? seconds of each:\n• 20 Handling and Reload Speed\n• 0.9x Reload Duration Multiplier\n• Decreases ADS Movement Speed Penalty by 9.5%"
+   "en": "Grants the following benefits for 4 seconds upon scoring 4 Hipfire Hits within 4? seconds of each:\n• 20 Range, Handling, and Reload Speed\n• 0.9x Reload Duration Multiplier\n• 1.5° Larger Precision Aim Cone\n• Decreases ADS Movement Speed Penalty by 10%"
   }
  },
  "2445247031": {
@@ -7445,7 +7280,7 @@
   "name": "Heavy Handed",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Spawns an Orb of Power on Powered Melee Kills. 10 second cooldown between activations.\nSpawned Orbs of Power grant 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)"
+   "en": "Spawns an Orb of Power on Grenade Kills that grants 0.8%|1.1%|1.25%|1.5% Super Energy with 1|2|3|4 Mods equipped. (4 Mods is only achievable through Exotic Armor)\n10|5|1 second cooldown between activations."
   }
  },
  "2450788523": {
@@ -7476,18 +7311,9 @@
  "2451262963": {
   "hash": 2451262963,
   "name": "Fragile Focus",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants 20 Range while your shields are active (above 70 HP).\nGetting your shields broken disables the buff. Reactivates ? seconds after your shields fully recharge."
+   "en": "Grants 20 Range while your shields are active.\nGetting your shields broken disables the buff. Reactivates 1 second after your shields fully recharge."
   }
  },
  "2452545487": {
@@ -7749,7 +7575,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After 1.5 seconds of Aiming Down Sights without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
+   "en": "After Aiming Down Sights for 1.5 seconds without firing, for one shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
   }
  },
  "2562645296": {
@@ -8099,7 +7925,7 @@
   "itemName": "Knucklehead Radar",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Passively grants 20 Airborne Effectiveness and radar remains active while Aiming-Down-Sights.\nCrouching grants Enhanced Radar (6🠚12 sectors)\nHovering your reticle near enemies for 1 second marks them for 5 seconds. Markers stay visible even behind walls.\nIf Enemy is below 30% HP:\nGrants 1% increased Weapon and Ability Damage for every percentage point below 30%.\n(10% HP left 🠚 20% Increased Damage)\nCombatant and Player Shields do not count as Health. (In other words, it only activates against Players once they are below 21 HP)"
+   "en": "Passively grants 20 Airborne Effectiveness and radar remains active while Aiming Down Sights.\nCrouching grants Enhanced Radar (6⁠🠚⁠12 sectors)\nHovering your reticle near enemies for 1 second marks them for 5 seconds. Markers stay visible even behind walls.\nIf Enemy is below 30% HP:\nGrants 1% increased Weapon and Ability Damage for every percentage point below 30%.\n(10% HP left 🠚 20% Increased Damage)\nCombatant and Player Shields do not count as Health."
   }
  },
  "2670025099": {
@@ -8165,7 +7991,7 @@
   "name": "Moving Target",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants 10 Aim Assist while Aiming Down Sights (ADS) and decreases ADS Movement Speed Penalty by 9.5%.\n[enh] Aim Assist bonus is slightly increased."
+   "en": "Grants 10 Aim Assist while Aiming Down Sights (ADS) and decreases ADS Movement Speed Penalty by 10%.\n[enh] Aim Assist bonus is slightly increased."
   }
  },
  "2719698929": {
@@ -8355,7 +8181,7 @@
   "name": "Eddy Current",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After sprinting for 3 seconds:\nIncreases Reload Speed for 3 seconds.\nDuration can be refreshed by tapping sprint. Being [Arc]Amplified increases the bonus.\n[enh] Buff duration is increased. Even stronger effect while [Arc]Amplified."
+   "en": "After sprinting for 3 seconds:\nGrants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting.\nBeing [Arc]Amplified increases the bonus to 60 Reload Speed.\n[enh] Buff duration is increased. Even stronger effect while [Arc]Amplified."
   }
  },
  "2788909693": {
@@ -8636,7 +8462,7 @@
   "name": "No Distractions",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants 35% Flinch Reduction after 1 second of Aiming Down Sights (ADS) without firing.\nTimer starts as soon as the ADS input is pressed. The perk remains active while ADS."
+   "en": "Grants 35% Flinch Resistance after 1 second of Aiming Down Sights (ADS) without firing. Remains active until you're no longer ADS.\nTimer starts as soon as the ADS input is pressed."
   }
  },
  "2869569095": {
@@ -8829,25 +8655,9 @@
  "2939589096": {
   "hash": 2939589096,
   "name": "Target Lock",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1882, 1.45 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1255, 1.3 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\nDamage Buff ramps up from [enh][pve]18.82% [pvp][12.55%] to [enh][pve]45% [pvp][30%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [enh][pve]28.13% [pvp][19.02%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Damage Buff is increased by [pve]12.5% [pvp][20%]."
+   "en": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [enh][pve]18.82% [pvp][12.55%] to [enh][pve]45% [pvp][30%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [enh][pve]28.13% [pvp][19.02%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Damage Buff is increased by [pve]12.5% [pvp][20%]."
   }
  },
  "2946784966": {
@@ -8864,7 +8674,7 @@
   },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants the following upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• -20% Accuracy Cone Size\n• ? ADS Handling for 5 seconds."
+   "en": "Grants the following for 5 seconds upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• ? ADS Handling\n• ?% Decreased Accuracy Cone Growth"
   }
  },
  "2951499542": {
@@ -9004,7 +8814,7 @@
   "name": "Frenzy",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds.\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last [enh]5 seconds.\n[enh] Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
+   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7.2 seconds.\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last [enh]5 seconds.\n[enh] Allowed time between damage exchanges USED TO BE extended by 0.5 seconds. Currently provides no benefit."
   }
  },
  "3013778406": {
@@ -9044,7 +8854,7 @@
   "name": "Heal Clip",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Finishing a reload within 5.3? seconds of a Kill grants [Solar]Cure x1 for you and allies within ? meters."
+   "en": "Finishing a reload within 5.3? seconds of a Kill grants [Solar]Cure x2 to you and [Solar]Cure x1 to allies within ? meters."
   }
  },
  "3018146897": {
@@ -9187,25 +8997,9 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.35 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon dealing damage with all your weapons within 7 seconds of each:\n35% increased damage for 10 seconds."
+   "en": "Upon dealing damage with all your Weapons within 7 seconds of each:\nGrants 35% Increased Damage for 10 seconds."
   }
  },
  "3094620656": {
@@ -9247,7 +9041,7 @@
   "name": "Unrelenting",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Starts Health Regeneration and restores 80 HP upon reaching 100% Activation Progress with Weapon Kills.\nActivation Progress by Enemy Rank:\n• Minor Combatants: 33.3%\n• Players: 66.6%\n• Majors and Bosses: 100%\nWeapon Kills must be within 5 seconds of each."
+   "en": "Starts Health Regeneration and restores 65 HP upon reaching 100% Activation Progress with Weapon Kills.\nActivation Progress by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minor Combatants: 33.3%\n• Players: 66.6%\n• Majors and Bosses: 100%\nWeapon Kills must be within 5 seconds of each."
   }
  },
  "3112965625": {
@@ -9281,7 +9075,7 @@
   "name": "Hip-Fire Grip",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While hipfiring:\n• 25 Stability\n• 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• -30% Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n[enh] Stronger Effect."
+   "en": "Grants the following benefits while hipfiring:\n• 25 Stability and 15 Aim Assist\n• 2.7° Larger Precision Aim Angle\n• 30% Decreased Accuracy Cone Size\n• 20% Increased Aim Assist Falloff Distance\n• 20% Increased Damage Falloff Distance\nThe Damage Falloff Increase does not apply to The Last Word, Shotguns, Sniper Rifles, and Fusion Rifles.\n[enh] Stronger Effect."
   }
  },
  "3131590896": {
@@ -9361,25 +9155,9 @@
  "3161816588": {
   "hash": 3161816588,
   "name": "Slideshot",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Sliding refills 15% of the Magazine and grants 20 Range and 30 Stability for 3 seconds OR until firing.\nOnly active for the first shot (of the burst).\n0.3 second cooldown after activation but can be reactivated multiple times during a slide by firing off shots loaded by the perk."
+   "en": "Sliding refills 15% of the Magazine (rounds up) and grants 20 Range and Stability for your next shot within 2.5 seconds.\nOnly active for the first shot (of the burst).\n0.3 second cooldown after activation but can activate multiple times during a slide."
   }
  },
  "3174771856": {
@@ -9443,7 +9221,7 @@
   "name": "Thread of Binding",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "Super Kills cause targets to explode, dealing up to [pve]121 [pvp][?] damage and [Strand]Suspending other targets in a ? meter radius."
+   "en": "Super Kills cause targets to explode, dealing up to ? damage and [Strand]Suspending targets in a ? meter radius."
   }
  },
  "3192552689": {
@@ -9467,7 +9245,7 @@
   "name": "Thread of Generation",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "Dealing damage grants Grenade Ability Energy for each damage instance.\nGrenade Ability Energy Gains vary depending on the source. (Almost impossible to reliably test but the effects are quite significant if you're actively participating in combat)"
+   "en": "Dealing damage grants Grenade Ability Energy for each damage instance.\nGrenade Ability Energy Gains vary depending on the source and the amount of damage dealt. Generally, more damage means more energy."
   }
  },
  "3194351027": {
@@ -9516,7 +9294,7 @@
   "name": "Keep Away",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "If no enemies are within 15 meters:\nGrants 10 Range, [enh]35 Reload Speed, and decreases Accuracy Cone Growth by [enh]7.5?%.\n[enh] Grants an additional 5 Reload Speed and further decreases Accuracy Cone Growth by 2.5?% (5%🠚7.5%)."
+   "en": "If no enemies are within 15 meters:\nGrants 10 Range, [enh]35 Reload Speed, and decreases Accuracy Cone Growth by [enh]7.5?%.\n[enh] Grants an additional 5 Reload Speed and further decreases Accuracy Cone Growth by 2.5?%. (5?⁠%🠚7.5?⁠%)"
   }
  },
  "3201496230": {
@@ -9761,7 +9539,7 @@
   },
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Passive benefits:\n• 30 Airborne Effectiveness\n• 25% Increased Blink distance\n• ?% Decreased Blink Cooldown\n• [Void]Nova Warp's Dark Blink does not consume Super Energy\nBlinking grants 100 Ready Handling and the Radar remains active during the animation. Enemies within 10 meters become [Void]Volatile when initiating Blink (animation does not need to start)."
+   "en": "Passive grants the following benefits:\n• 30 Airborne Effectiveness\n• 25% Increased Blink Distance\n• 20% Decreased Blink Cooldown (3.55s⁠🠚⁠2.85s)\n• 30% Decreased Blink Activation Delay (1.65s⁠🠚⁠1.15s)\n• Removes Super Energy cost of [Void]Nova Warp's Dark Blink\nBlinking grants 100 Handling for 2 seconds and the Radar remains active during the animation.\nEnemies within 10? meters become [Void]Volatile when initiating Blink (animation does not need to start)."
   }
  },
  "3298446480": {
@@ -9969,7 +9747,7 @@
   "name": "Souldrinker",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Restores Health on reload based on the amount of hits before reload.\nHealth gain per hit varies between Weapon Types.\nRanges between 20 HP to 80 HP for a full magazine."
+   "en": "Finishing a Reload restores health based on the number of hits scored with the weapon before reloading.\nScoring 100% of the Magazine as hits restores 50 HP.\nGlaive Melee hits don't count. Grenade Launcher hits each count as 50% of the Magazine."
   }
  },
  "3364911712": {
@@ -10017,7 +9795,7 @@
   "name": "Vorpal Weapon",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage Increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][40-50%]\n• [special]Special Weapons: [pve]15% [pvp][10-20%]\n• [heavy]Heavy Weapons: [pve]10% [pvp][5-10%]\n[enh] Passively grants 5 Stability or Guard Resistance (Swords)."
+   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage Increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Heavy Weapons: [pve]10% [pvp][20%]\n[enh] Passively grants 5 Stability or Guard Resistance (Swords)."
   }
  },
  "3418782618": {
@@ -10073,7 +9851,7 @@
   "name": "Adaptive Munitions",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\nDamage Increase per Weapon Archetype:\n• Fusion Rifles: [enh]34.8% per hit, up to [enh]522%\n• Machine Guns, Auto/Pulse/Trace Rifles: [enh]40% per hit, up to [enh]600%\n• Linear Fusion Rifles: [enh]180% per hit, up to [enh]540%\n• Bows, Glaives, Hand Cannons, Scout Rifles: [enh]200% per hit, up to [enh]600%\n[enh] The damage buff is increased by 20%. (e.g. 150% » 180%)"
+   "en": "Hits against Non-Matching or Barrier Champion Shields deal increasingly higher damage.\nBuff is removed upon hitting a matching shield or an unshielded enemy.\nDamage Increase per Weapon Archetype:\n• Fusion Rifles: [enh]34.8% per hit, up to [enh]522%\n• Machine Guns, Auto/Pulse/Trace Rifles: [enh]40% per hit, up to [enh]600%\n• Linear Fusion Rifles: [enh]180% per hit, up to [enh]540%\n• Bows, Glaives, Hand Cannons, Scout Rifles: [enh]200% per hit, up to [enh]600%\n[enh] The damage buff is increased by 20%. (e.g. 150% 🠚 180%)"
   }
  },
  "3436462433": {
@@ -10344,7 +10122,7 @@
   "name": "Elemental Capacitor",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants Passive Stat Bonuses depending on your selected Subclass.\n[Solar]Solar: 50 Reload Speed\n[Arc]Arc: 50 Handling\n[Void]Void: 20 Stability\n[Strand]Strand: 20 Airborne Effectiveness\n[Stasis]Stasis: 20 Recoil Direction & 19% reduced ADS Movement Speed Penalty"
+   "en": "Grants Passive Stat Bonuses depending on your selected Subclass.\n[Solar]Solar: 50 Reload Speed\n[Arc]Arc: 50 Handling\n[Void]Void: 20 Stability\n[Strand]Strand: 20 Airborne Effectiveness\n[Stasis]Stasis: 20 Recoil Direction & 20% reduced ADS Movement Speed Penalty"
   }
  },
  "3513791699": {
@@ -10384,7 +10162,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon blocking damage with Glaive Shield:\nDecreases Glaive Block's Movement Speed Penalty to 20?% for [?] seconds, or until you stop blocking.\n(By default, the Movement Speed Penalty of Glaive Block is 45% with weapon energy and 25% without)"
+   "en": "Upon blocking damage with Glaive Shield:\nDecreases Glaive Block's Movement Speed Penalty by ?% for ? seconds, or until you stop blocking."
   }
  },
  "3528046508": {
@@ -10478,7 +10256,7 @@
   "name": "Clown Cartridge",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading. Always rounds up.\n[enh] Improves the average overflow amount."
+   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 33%). Always rounds up.\n[enh] Improves the average overflow amount by 10%. (30%🠚33%)"
   }
  },
  "3564974257": {
@@ -10795,7 +10573,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "3719974635": {
@@ -10886,7 +10664,7 @@
   "name": "Bait and Switch",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon dealing damage with all your weapons within 7 seconds of each:\n35% increased damage for [enh]11 seconds.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Upon dealing damage with all your Weapons within 7 seconds of each:\nGrants 35% Increased Damage for [enh]11 seconds.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "3751912585": {
@@ -10917,7 +10695,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed."
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for [pve]5 [pvp][3] seconds.\nDuration cannot be refreshed.\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "3755250867": {
@@ -11095,7 +10873,7 @@
   },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Hits grant 10? Handling and 10? Reload Speed for 2 seconds. Stacks 5 times."
+   "en": "Weapon Hits grant stacks of Enlightened Action for 2 seconds. Stacks 12 times.\nStat bonuses at 1|2|…|12 Stacks:\n2|7|12|15|20|25|30|35|38|40|45|50 Handling and Reload Speed\nStacks granted per hit by Weapon Type:\n• Hand Cannons: 3 Stacks\n• Bows: ? Stacks\n• Automatic Weapons: 1 Stack"
   }
  },
  "3832366019": {
@@ -11187,7 +10965,7 @@
   "name": "Kinetic Tremors",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\nEach shockwave deals up to [pve]120 [pvp][20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\nHits Required for Activation:\n• Auto Rifles: 12\n• Submachine Guns: 14\n• Pulse Rifles: 11\n• Non-burst Sidearms: 11\n• Hand Cannons, Scout Rifles: 6\n• Sniper Rifles: 3"
+   "en": "Scoring multiple hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\nShockwaves appear 0.285 seconds after scoring enough hits and have a 1 second delay between each pulse.\nEach shockwave deals up to [pve]120 [pvp][20] damage in a 5? meter radius. Shockwaves deal 25% less damage if activated on [Minor and Elite](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\nThe perk cannot be triggered on a target again until after 2? seconds of the last shockwave.\nHits Required for Activation:\n• Submachine Guns: 14\n• Auto Rifles: 12\n• Pulse Rifles: 11\n• Non-burst Sidearms: 11\n• Hand Cannons, Scout Rifles: 6\n• Sniper Rifles: 3"
   }
  },
  "3907299874": {
@@ -11448,7 +11226,7 @@
   "name": "No Distractions",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants 35% Flinch Reduction after [enh]0.9 seconds of Aiming Down Sights (ADS) without firing.\nTimer starts as soon as the ADS input is pressed. The perk remains active while ADS.\n[enh] Activation time is reduced by 10%."
+   "en": "Grants 35% Flinch Resistance after [enh]0.9 seconds of Aiming Down Sights (ADS) without firing. Remains active until you're no longer ADS.\nTimer starts as soon as the ADS input is pressed.\n[enh] Activation time is reduced by 10%."
   }
  },
  "3977735242": {
@@ -11456,7 +11234,7 @@
   "name": "Tracking Module",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While aiming-down-sights at an Enemy:\nRockets track the targeted enemy.\n[pvp]Diminshed effectiveness in PVP.\nTracking persists for 1 second after not aiming at the enemy."
+   "en": "While Aiming Down Sights and targeting an Enemy:\nFired Rockets track the targeted enemy. [pvp]Diminshed effectiveness in PVP.\nTracking persists for 1 second once no longer aiming at the enemy."
   }
  },
  "3978094547": {
@@ -11488,7 +11266,7 @@
   },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants the following for 7 seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\nWeapon Kills while Discord is active fully refill the Magazine of [primary]Primary Weapons, and refund 1 Ammo for [special]Special Weapons."
+   "en": "Grants the following for 7 seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\nWeapon Kills while Discord is active fully refill the Magazine of [primary]Primary Weapons, and refund 1 Ammo for [special]Special Weapons. (Scoring multiple kills with a single shot/burst still only refunds 1 ammo.)"
   }
  },
  "3978937353": {
@@ -11538,7 +11316,7 @@
   "name": "Veist Stinger",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• Refills 25% of Magazine from reserves on activation\n• Decreases ADS Movement Speed Penalty by 9.5%\n• Grants 15% Decreased Draw Time to Bows\n• Grants ? Charge Rate to Swords\n4 second cooldown between activations.\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle, Sniper Rifle: 10%"
+   "en": "Hits have a chance to activate Veist Stinger for 7 seconds, granting the following bonuses:\n• Refills 25% of Magazine from reserves on activation\n• Decreases ADS Movement Speed Penalty by 10%\n• Grants 15% Decreased Draw Time to Bows\n• Grants ? Charge Rate to Swords\n4 second cooldown between activations.\nActivation Chance on hits:\n• Auto Rifle, Submachine Gun: 2%\n• Sidearm: 4%\n• Bow, Linear Fusion Rifle, Sniper Rifle: 10%"
   }
  },
  "3989629871": {
@@ -11546,7 +11324,7 @@
   "name": "Skulking Wolf",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "On Guardian Kills while below 63 HP:\nGrants an Enhanced Radar and removes you from passively appearing on opposing radar for 10 seconds.\nFiring weapons still pings enemy radar once per shot."
+   "en": "On Guardian Kills while below 63 HP:\nGrants an Enhanced Radar and removes you from passively appearing on opposing radar for 10 seconds.\nFiring weapons still pings enemy radar."
   }
  },
  "3993379141": {
@@ -11554,7 +11332,7 @@
   "name": "Deconstruct",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds\n• Refills 10% of the Magazine from thin air\nHits against Constructs are not able to trigger the perk but they contribute to its activation progress.\nActivation progress on hit by weapon type:\n• Glaives: 25%\n• Others: unknown"
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Grants 40% Increased Damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds.\n• Refills 10% of the Magazine from thin air. Refill amount is rounded up.\nActivation Requirement: Scoring 50% of Magazine Size rounded down + 2 hits\nHits against Constructs and Vehicles provide 1.5x activation progress for [primary]Primary weapons and 2x progress for [special]Special weapons.\n[primary]Primary weapon hits provide 2x activation progress."
   }
  },
  "3994043492": {
@@ -11665,7 +11443,7 @@
   "itemName": "Gemini Jester",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Class Ability Usage applies Misdirection to enemies within 22 meters.\nMisdirection:\n• Deals ~0 Damage but counts as a Hit\n• [pve]PVE: Disorients Minors and Elites for 5 seconds\n• [pvp]PVP: Muffles audio, briefly disorients, and removes radar for 5 seconds"
+   "en": "Class Ability Usage applies Misdirection to enemies within 22 meters.\nMisdirection:\n• Deals ~0 Damage but counts as a Hit\n• [pve]PVE: Disorients Minors and Elites for 5 seconds\n• [pvp]PVP: Briefly distorts audio, disorients, and removes radar for 5 seconds"
   }
  },
  "4039026690": {
@@ -11872,19 +11650,9 @@
  "4091460919": {
   "hash": 4091460919,
   "name": "One Quiet Moment",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 40 ],
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Grants 20 Handling, 40 Reload Speed, and a 0.95x Reload Duration Multiplier while out of Combat. Swords receive up to a 25% Increase to Movement Speed instead.\nFor One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received.\nCan activate even if stowed."
+   "en": "Grants 20 Handling, 40 Reload Speed, and a 0.95x Reload Duration Multiplier while out of Combat. Can activate while stowed.\nSwords receive up to a 25% Increase to Movement Speed instead.\nFor One Quiet Moment, being in Combat is defined as having either dealt or received damage within the last 5 seconds. Kills reduce this to 1.5 seconds until damage is dealt or received."
   }
  },
  "4094452600": {
@@ -11936,39 +11704,9 @@
  "4104185692": {
   "hash": 4104185692,
   "name": "Frenzy",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7 seconds.\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
+   "en": "After being in Combat for 12 seconds:\nGrants 15% Increased Damage, 100 Handling, and 100 Reload Speed for 7.2 seconds.\nWorks and can activate while stowed. Dealing and receiving damage refreshes the buff duration.\nFor Frenzy, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
   }
  },
  "4115637021": {
@@ -12031,7 +11769,7 @@
   "name": "Reaper",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n10 second cooldown between activations.\nEquipping multiple copies of the mod provides no benefit."
+   "en": "The next Weapon Kill within 10 seconds of using your Class Ability spawns an Orb of Power that grants 0.8% Super Energy.\n10|5|1 second cooldown between activations with 1|2|3 Mods equipped."
   }
  },
  "4152932096": {
@@ -12071,7 +11809,7 @@
   "name": "Unstoppable Hand Cannon",
   "type": "Armor Mod Seasonal",
   "descriptions": {
-   "en": "Aiming Down Sights for 1 second with Hand Cannons that don't have an intrinsic Breaker Type grants [unstoppable]Unstoppable Shots.\nHand Cannons without an intrinsic Breaker Type are always Overcharged in activities with the Overcharged Weapons modifier.\n[unstoppable]Unstoppable Shots/effects are required to stun [unstoppable]Unstoppable Champions – immobilizing them and removing their passive 70% Damage Resistance for the duration of the stun."
+   "en": "Aiming Down Sights without firing for 1 second with Hand Cannons that don't have an intrinsic Breaker Type grants [unstoppable]Unstoppable Shots.\nHand Cannons without an intrinsic Breaker Type are always Overcharged in activities with the Overcharged Weapons modifier.\n[unstoppable]Unstoppable Shots/effects are required to stun [unstoppable]Unstoppable Champions – immobilizing them and removing their passive 70% Damage Resistance for the duration of the stun."
   }
  },
  "4154828211": {
@@ -12131,7 +11869,7 @@
   "name": "Barrel Constrictor",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Reduces Pellet Spread by [enh]25% on Weapon Kills for a single shot within the next 8 seconds.\n[enh] Further Reduces Pellet Spread."
+   "en": "Weapon Kills reduce Pellet Spread by [enh]25% for [enh]8.5 seconds.\n[enh] Pellet Spread is reduced by an additional 5% (⁠20%⁠🠚⁠25%⁠) and buff duration is increased by 1 second."
   }
  },
  "4180586736": {
@@ -12147,7 +11885,7 @@
   "name": "Ember of Mercy",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "[Solar]Firesprite pickups grant [Solar]Restoration x1 for 2 seconds. (Overrides the duration of any active [Solar]Restoration effects)\nReviving allies grants you and allies within ? meters [Solar]Restoration x1 for 5 seconds."
+   "en": "[Solar]Firesprite pickups grant [Solar]Restoration x1 for 2 seconds (3 with [Solar]Ember of Solace).\nReviving allies grants you and allies within ? meters [Solar]Restoration x1 for 5 seconds (7.5 with [Solar]Ember of Solace)."
   }
  },
  "4182064480": {
@@ -12199,7 +11937,7 @@
   "name": "Gutshot Straight",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While Aiming-Down-Sights:\n• Increased Body Shot Damage\n• [enh]-15%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n[enh] Reduces Auto Aim penalty by an additive 5%?."
+   "en": "While Aiming Down Sights:\n• Increased Body Shot Damage\n• [enh]-15%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n[enh] Reduces Auto Aim penalty by an additive 5%?."
   }
  },
  "4207509907": {
@@ -12223,7 +11961,7 @@
   "name": "Thread of Evolution",
   "type": "Subclass Fragment",
   "descriptions": {
-   "en": "[Strand]Threadlings travel 30?% faster and farther and deal Increased Damage.\nDamage Increases by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors and Elites: 53%\n• Minibosses and Bosses: 33%\n• Players: 10%"
+   "en": "[Strand]Threadlings travel 30?% faster and farther and deal Increased Damage.\nDamage Increases by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors and Elites: 53%\n• Minibosses and Bosses: 33%\n• Players: 12.5%"
   }
  },
  "4208512216": {
@@ -12315,7 +12053,7 @@
   "name": "Heal Clip",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Finishing a reload within 5.3? seconds of a Kill grants [Solar]Cure x1 for you and allies within ? meters.\n[enh] Allowed time before reloading is increased."
+   "en": "Finishing a reload within 5.3? seconds of a Kill grants [Solar]Cure x2 to you and [Solar]Cure x1 to allies within ? meters.\n[enh] Allowed time before reloading is increased."
   }
  },
  "4235122381": {
@@ -12403,7 +12141,7 @@
   "name": "Dawning Surprise",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Multiple Weapon Kills within ? seconds of each spawn a Dawning Gift that remais on the ground for 10 seconds.\nPicking up Dawning Gifts grants 10% Grenade, Melee, and Class Ability Energy, restores 20 HP, and starts Health Regeneration.\nActivation progress on Kills by Enemy Rank:\n• Minors and Guardians: 16.66%\n• Majors and Bosses: 50%"
+   "en": "Multiple Weapon Kills within ? seconds of each spawn a Dawning Gift that remais on the ground for 10 seconds.\nPicking up Dawning Gifts grants 10% Grenade, Melee, and Class Ability Energy, restores 22 HP, and starts Health Regeneration.\nActivation progress on Kills by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors and Guardians: 16.66%\n• Majors and Bosses: 50%"
   }
  },
  "4267244538": {
