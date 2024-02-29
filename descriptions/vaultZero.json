@@ -334,7 +334,7 @@
   "name": "Runneth Over",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters.\nMaxes out at 50% Increased Magazine Capacity."
+   "en": "Finishing a reload overfills the Magazine from reserves by 10% of the Magazine Capacity (rounded up) for each ally within 15 meters.\nOverfill amount maxes out at 50% of the Magazine Capacity."
   }
  },
  "124408337": {
@@ -378,7 +378,7 @@
   "name": "Mulligan",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• [primary]Primary Weapons: [enh]40%\n• [special]Special and [heavy]Power Weapons: [enh]25%\n[enh] Ammo Refund chance is increased by an additive 5%."
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• [primary]Primary Weapons: [enh]40%\n• [special]Special and [heavy]Power Weapons: [enh]25%\n[enh] Ammo Refund chance is increased by an additive 5%."
   }
  },
  "164468655": {
@@ -450,7 +450,7 @@
   },
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Glaive Melee Kills refill 1 Ammo into the Magazine from reserves. Can overflow the Magazine up to double the normal capacity.\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to [pve]350 [pvp][101] damage in a 4? meter radius."
+   "en": "Glaive Melee Kills load 1 Ammo into the Magazine from reserves. Can overfill the Magazine up to double the normal capacity.\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to [pve]350 [pvp][101] damage in a 4? meter radius."
   }
  },
  "191144788": {
@@ -662,7 +662,7 @@
   "name": "Reservoir Burst",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While Magazine is at or above maximum capacity:\n25% Increased damage and causes enemies to explode on death, dealing [pve]444 [pvp][162.5] damage in a [?] meter radius.\nPassively grants 30 Magazine Size. (Identical to Extended Mag)\n[enh] Passively grants 5 Stability."
+   "en": "While Magazine is at or above maximum capacity:\nGrants 25% Increased Damage and causes enemies to explode on death, dealing [pve]444 [pvp][162.5] damage in a ? meter radius.\nPassively grants 30 Magazine Size stat. (Identical to Extended Mag)\n[enh] Passively grants 5 Stability."
   }
  },
  "263649945": {
@@ -800,7 +800,7 @@
   "name": "Chill Clip",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds to enemies within 4 meters.\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by [pve]4 [pvp][0.5] seconds.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Passively grants 5 Stability."
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds ([pve]8 [pvp][2] with [Stasis]Whisper of Durance) to enemies within 4 meters.\nOnly activates once per shot/burst.\n[enh] Passively grants 5 Stability."
   }
  },
  "354401740": {
@@ -1101,7 +1101,7 @@
   "name": "Envious Assassin",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Kill (rounds up):\n• [primary]Primary Weapons: [enh]12.5%\n• [special]Special and [heavy]Power Weapons: [enh]22.5%\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n[enh] Kills provide an additional 2.5% Magazine Capacity Increase."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nRefills and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored.\nLoaded ammo per Kill (rounds up) by ammo type:\n• [primary]Primary Weapons: [enh]12.5% of Magazine Capacity\n• [special]Special and [heavy]Power Weapons: [enh]22.5%\nEach activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity.\n[enh] Kills provide an additional 2.5% Magazine Capacity Increase."
   }
  },
  "426473316": {
@@ -1268,7 +1268,7 @@
   "name": "Reconstruction",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Refills 10% of Magazine Capacity from reserves every [enh]3.5 seconds while not firing the weapon.\nRefills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number.\n[enh] Refill Delay is decreased by 0.5 seconds."
+   "en": "Every [enh]3.5 seconds while not firing the weapon:\nLoads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves.\nCan overfill the Magazine up to double the normal capacity.\n[enh] Loading delay is decreased by 0.5 seconds."
   }
  },
  "466087222": {
@@ -1656,7 +1656,7 @@
   "name": "Triple Tap",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within [enh]3 seconds of each refunds 1 Ammo to the Magazine.\n[enh] Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 3 Precision Hits within [enh]3 seconds of each refunds 1 Ammo into the Magazine.\n[enh] Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "579997810": {
@@ -2235,7 +2235,7 @@
   "name": "Repulsor Brace",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "On Weapon Kill against an enemy affected by a Void Debuff:\nGrants a 45 HP Void Overshield for 8 seconds."
+   "en": "Kills against [Void]Void Debuffed enemies grant a 45 HP [Void]Void Overshield for 8 seconds."
   }
  },
  "777637181": {
@@ -2455,7 +2455,7 @@
   "name": "Fourth Time's the Charm",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within [enh]3 seconds of each refunds 2 Ammo to the Magazine.\n[enh] Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 4 Precision Hits within [enh]3 seconds of each refunds 2 Ammo into the Magazine.\n[enh] Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "855168139": {
@@ -2638,7 +2638,7 @@
   },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• [?] Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
+   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
   }
  },
  "916484570": {
@@ -2873,7 +2873,7 @@
   "name": "Envious Assassin",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\nMagazine Capacity Increase per Kill (rounds up):\n• [primary]Primary Weapons: 10%\n• [special]Special and [heavy]Power Weapons: 20%\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nRefills and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored.\nLoaded ammo per Kill (rounds up) by ammo type:\n• [primary]Primary Weapons: 10% of Magazine Capacity\n• [special]Special and [heavy]Power Weapons: 20%\nEach activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
   }
  },
  "970163821": {
@@ -2889,32 +2889,9 @@
  "972757866": {
   "hash": 972757866,
   "name": "Pulse Monitor",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• Refills Magazine from reserves\nWorks and can activate while stowed."
+   "en": "Refills Magazine from reserves upon dropping to 110 HP. Can activate while stowed.\nWhile at or below 110 HP:\nGrants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier."
   }
  },
  "984527513": {
@@ -3815,7 +3792,7 @@
   "itemName": "Revision Zero",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• 0 to 30? Stability"
   }
  },
  "1266037485": {
@@ -3835,7 +3812,7 @@
   "itemName": "Revision Zero",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine."
   }
  },
  "1266037487": {
@@ -4135,7 +4112,7 @@
   "name": "Fourth Time's the Charm",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine."
   }
  },
  "1359896290": {
@@ -4306,25 +4283,9 @@
  "1427256713": {
   "hash": 1427256713,
   "name": "Reservoir Burst",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While Magazine is at or above maximum capacity:\n25% Increased damage and causes enemies to explode on death, dealing [pve]444 [pvp][162.5] damage in a [?] meter radius.\nPassively grants 30 Magazine Size. (Identical to Extended Mag)"
+   "en": "While Magazine is at or above maximum capacity:\nGrants 25% Increased Damage and causes enemies to explode on death, dealing [pve]444 [pvp][162.5] damage in a ? meter radius.\nPassively grants 30 Magazine Size stat. (Identical to Extended Mag)"
   }
  },
  "1428297954": {
@@ -4564,7 +4525,7 @@
   "name": "Reconstruction",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Refills 10% of Magazine Capacity from reserves every 4 seconds while not firing the weapon.\nRefills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
+   "en": "Every 4 seconds while not firing the weapon:\nLoads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves.\nCan overfill the Magazine up to double the normal capacity."
   }
  },
  "1525239159": {
@@ -4726,7 +4687,7 @@
   "name": "Rewind Rounds",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills [enh]70% of the number of Hits landed into the Magazine from reserves. Always rounds up.\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n[enh] Refill ratio is increased by an additive 10%."
+   "en": "Upon emptying the Magazine:\nRefills [enh]70% of the number of Hits landed (rounded up) into the Magazine from reserves.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n[enh] Refill ratio is increased by an additive 10%."
   }
  },
  "1570042021": {
@@ -4889,18 +4850,9 @@
  "1645158859": {
   "hash": 1645158859,
   "name": "Under Pressure",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• 0 to 30? Stability"
   }
  },
  "1646437399": {
@@ -4967,7 +4919,7 @@
   "name": "Sneak Bow",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• [?] Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
+   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
   }
  },
  "1667892708": {
@@ -5076,7 +5028,7 @@
   "name": "Pulse Monitor",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• Refills Magazine from reserves\nWorks and can activate while stowed.\n[enh] Activates with more health remaining."
+   "en": "Refills Magazine from reserves upon dropping to 110 HP. Can activate while stowed.\nWhile at or below 110 HP:\nGrants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier.\n[enh] Activates with more health remaining."
   }
  },
  "1685431615": {
@@ -5553,7 +5505,7 @@
   "name": "Close to Melee",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "30% Increased Glaive Melee Damage for 10 seconds upon scoring a Glaive Projectile Kill.\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds.\nPersists through stow."
+   "en": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for 10 seconds.\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds.\nRemains active while stowed."
   }
  },
  "1783582993": {
@@ -6036,7 +5988,7 @@
   "name": "Ambitious Assassin",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 7 seconds of each.\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\nMagazine Capacity Increase per Kill:\n• [primary]Primary Weapons: 20%\n• [special]Special and [heavy]Power Weapons: 10%."
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverfills Magazine from reserves based on the amount of kills scored within 7 seconds of each.\nOverfill amount maxes out at 150% of the Magazine Capacity. Always rounds up.\nOverfill amount per Kill scored:\n• [primary]Primary Weapons: 20%\n• [special]Special and [heavy]Power Weapons: 10%."
   }
  },
  "2012877834": {
@@ -6662,7 +6614,7 @@
   "name": "Close to Melee",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "30% Increased Glaive Melee Damage for [enh]11 seconds upon scoring a Glaive Projectile Kill.\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to [enh]11 seconds.\nPersists through stow.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for [enh]11 seconds.\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to [enh]11 seconds.\nRemains active while stowed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "2244851822": {
@@ -6858,7 +6810,7 @@
   "name": "Clown Cartridge",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 30%). Always rounds up."
+   "en": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 30% overfill."
   }
  },
  "2287699930": {
@@ -7164,7 +7116,7 @@
   "name": "Focused Fury",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for [enh]12 seconds.\nDuration can be refreshed by scoring enough precision hits.\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for [enh]12 seconds.\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "2407398462": {
@@ -7567,7 +7519,7 @@
   "name": "Repulsor Brace",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "On Weapon Kill against an enemy affected by a Void Debuff:\nGrants a 45 HP Void Overshield for [enh]10 seconds.\n[enh] Overshield Duration is increased by 2 seconds."
+   "en": "Kills against [Void]Void Debuffed enemies grant a 45 HP [Void]Void Overshield for [enh]10 seconds.\n[enh] Overshield Duration is increased by 2 seconds."
   }
  },
  "2551157718": {
@@ -7975,7 +7927,7 @@
   "name": "Overflow",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon picking up [special]Special or [heavy]Heavy Ammo:\nMagazine gets refilled and overflowed from reserves.\nMaxes out at [enh]120% Increased Magazine Capacity. Activates even if stowed.\n[enh] Maximum overflow amount is increased by 20%."
+   "en": "Upon picking up [special]Special or [heavy]Heavy Ammo:\nRefills and Overfills the Magazine from reserves.\nOverfill amount maxes out at [enh]120% of the Magazine Capacity. Activates even while stowed.\n[enh] Maximum overfill amount is increased by 20% (rounds up)."
   }
  },
  "2696719570": {
@@ -8405,7 +8357,7 @@
   "name": "Shoot to Loot",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, Refills all Weapons from reserves, and triggers Ammo Pickup Effects.\nOnly activates if picking up ammo is possible. However, shooting a [special]Special Ammo Brick (with at least one [special]Special Weapon equipped) will bypass this restriction.\nWeapon Hits against Orbs of Power collect them.\n[enh] Passively grants 5 Range."
+   "en": "Weapon Hits against Orbs of Power collect them.\nIf collecting ammo is possible:\nWeapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and refill all Weapons from reserves.\n[enh] Passively grants 5 Range."
   }
  },
  "2846385770": {
@@ -8562,25 +8514,9 @@
  "2896038713": {
   "hash": 2896038713,
   "name": "Focused Fury",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for 11 seconds.\nDuration can be refreshed by scoring enough precision hits.\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for 11 seconds.\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed."
   }
  },
  "2896748467": {
@@ -8700,7 +8636,7 @@
   "name": "Chill Clip",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds to enemies within 4 meters.\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by [pve]4 [pvp][0.5] seconds.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds ([pve]8 [pvp][2] with [Stasis]Whisper of Durance) to enemies within 4 meters.\nOnly activates once per shot/burst."
   }
  },
  "2979486801": {
@@ -9665,7 +9601,7 @@
   "itemName": "Whisper of the Worm",
   "type": "Weapon Trait Exotic",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• [primary]Primary Weapons: 35%\n• [special]Special and [heavy]Power Weapons: 20%"
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• [primary]Primary Weapons: 35%\n• [special]Special and [heavy]Power Weapons: 20%"
   }
  },
  "3347978672": {
@@ -9771,7 +9707,7 @@
   "name": "Triple Tap",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo to the Magazine."
+   "en": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo into the Magazine."
   }
  },
  "3406782879": {
@@ -9803,7 +9739,7 @@
   "name": "Rewind Rounds",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed into the Magazine from reserves. Always rounds up.\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
+   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed (rounded up) into the Magazine from reserves.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
   }
  },
  "3419274965": {
@@ -10130,7 +10066,7 @@
   "name": "Mulligan",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• [primary]Primary Weapons: 35%\n• [special]Special and [heavy]Power Weapons: 20%"
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• [primary]Primary Weapons: 35%\n• [special]Special and [heavy]Power Weapons: 20%"
   }
  },
  "3513901081": {
@@ -10256,7 +10192,7 @@
   "name": "Clown Cartridge",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 33%). Always rounds up.\n[enh] Improves the average overflow amount by 10%. (30%🠚33%)"
+   "en": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 33% overfill.\n[enh] Improves the average overfill amount by 10%. (30%🠚33%)"
   }
  },
  "3564974257": {
@@ -10362,7 +10298,7 @@
   "name": "Overflow",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon picking up [special]Special or [heavy]Heavy Ammo:\nMagazine gets refilled and overflowed from reserves.\nMaxes out at 100% Increased Magazine Capacity. Activates even if stowed."
+   "en": "Upon picking up [special]Special or [heavy]Heavy Ammo:\nRefills and Overfills the Magazine from reserves.\nOverfill amount maxes out at 100% of the Magazine Capacity. Activates even while stowed."
   }
  },
  "3650930298": {
@@ -10508,7 +10444,7 @@
   "name": "Shoot to Loot",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, Refills all Weapons from reserves, and triggers Ammo Pickup Effects.\nOnly activates if picking up ammo is possible. However, shooting a [special]Special Ammo Brick (with at least one [special]Special Weapon equipped) will bypass this restriction.\nWeapon Hits against Orbs of Power collect them."
+   "en": "Weapon Hits against Orbs of Power collect them.\nIf collecting ammo is possible:\nWeapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and refill all Weapons from reserves."
   }
  },
  "3705817207": {
@@ -10703,7 +10639,7 @@
   "name": "Under Pressure",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• [enh]15% to [enh]30% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)"
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• [enh]15% to [enh]30% Decreased Accuracy Cone Size\n• 0 to 30? Stability\n[enh] Accuracy benefit is increased by 20%. (25%⁠🠚⁠30%)"
   }
  },
  "3766386008": {
@@ -10786,7 +10722,7 @@
   "name": "Ambitious Assassin",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within [enh]8 seconds of each.\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\nMagazine Capacity Increase per Kill:\n• [primary]Primary Weapons: 20%\n• [special]Special and [heavy]Power Weapons: 10%.\n[enh] Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverfills Magazine from reserves based on the amount of kills scored within [enh]8 seconds of each.\nOverfill amount maxes out at 150% of the Magazine Capacity. Always rounds up.\nOverfill amount per Kill scored:\n• [primary]Primary Weapons: 20%\n• [special]Special and [heavy]Power Weapons: 10%.\n[enh] Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
   }
  },
  "3798468567": {

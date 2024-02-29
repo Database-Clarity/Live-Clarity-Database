@@ -1964,7 +1964,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters."
+       "text": "Finishing a reload overfills the Magazine from reserves by 10% of the Magazine Capacity (rounded up) for each ally within 15 meters."
       }
      ]
     },
@@ -1974,7 +1974,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 50% Increased Magazine Capacity."
+       "text": "Overfill amount maxes out at 50% of the Magazine Capacity."
       }
      ]
     }
@@ -2148,7 +2148,7 @@
     {
      "linesContent": [
       {
-       "text": "Missing has a chance to refund ammo:"
+       "text": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:"
       }
      ]
     },
@@ -2632,13 +2632,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Melee Kills "
-      },
-      {
-       "text": "refill"
-      },
-      {
-       "text": " 1 Ammo into the Magazine from reserves. Can overflow the Magazine up to double the normal capacity."
+       "text": "Glaive Melee Kills load 1 Ammo into the Magazine from reserves. Can overfill the Magazine up to double the normal capacity."
       }
      ]
     },
@@ -3475,7 +3469,7 @@
     {
      "linesContent": [
       {
-       "text": "25% Increased damage and causes enemies to explode on death, dealing "
+       "text": "Grants 25% Increased Damage and causes enemies to explode on death, dealing "
       },
       {
        "text": "444"
@@ -3487,7 +3481,7 @@
        "text": "[PVP: 162.5]"
       },
       {
-       "text": " damage in a [?] meter radius."
+       "text": " damage in a ? meter radius."
       }
      ]
     },
@@ -3497,7 +3491,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Magazine Size. (Identical to Extended Mag)"
+       "text": "Passively grants 30 Magazine Size stat. (Identical to Extended Mag)"
       }
      ]
     },
@@ -4005,7 +3999,7 @@
     {
      "linesContent": [
       {
-       "text": "While at or above 50% Magazine Capacity:"
+       "text": "While at/above 50% of the Base Magazine Capacity:"
       }
      ]
     },
@@ -4030,29 +4024,25 @@
        "text": "[PVP: 1.5]"
       },
       {
-       "text": " seconds to enemies within 4 meters."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Only activates once per shot/burst. Whisper of Durance increases slow duration by "
+       "text": " seconds ("
       },
       {
-       "text": "4"
+       "text": "8"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 0.5]"
+       "text": "[PVP: 2]"
       },
       {
-       "text": " seconds."
+       "text": " with "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Whisper of Durance) to enemies within 4 meters."
       }
      ]
     },
@@ -4062,7 +4052,7 @@
     {
      "linesContent": [
       {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+       "text": "Only activates once per shot/burst."
       }
      ]
     },
@@ -5509,7 +5499,10 @@
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved."
+       "text": "Refills"
+      },
+      {
+       "text": " and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored."
       }
      ]
     },
@@ -5519,7 +5512,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increase per Kill (rounds up):"
+       "text": "Loaded ammo per Kill (rounds up) by ammo type:"
       }
      ]
     },
@@ -5539,7 +5532,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "12.5%"
+       "text": "12.5% of Magazine Capacity"
       }
      ]
     },
@@ -5575,23 +5568,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Does not "
-      },
-      {
-       "text": "refill"
-      },
-      {
-       "text": " the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+       "text": "Each activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
       }
      ]
     },
@@ -5913,17 +5890,21 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
-      },
-      {
-       "text": " 10% of Magazine Capacity from reserves every "
+       "text": "Every "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3.5 seconds while not firing the weapon."
+       "text": "3.5 seconds while not firing the weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Loads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves."
       }
      ]
     },
@@ -5933,7 +5914,7 @@
     {
      "linesContent": [
       {
-       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
+       "text": "Can overfill the Magazine up to double the normal capacity."
       }
      ]
     },
@@ -5947,7 +5928,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Refill Delay is decreased by 0.5 seconds."
+       "text": " Loading delay is decreased by 0.5 seconds."
       }
      ]
     }
@@ -7685,7 +7666,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds of each refunds 1 Ammo to the Magazine."
+       "text": "3 seconds of each refunds 1 Ammo into the Magazine."
       }
      ]
     },
@@ -9726,14 +9707,22 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill against an enemy affected by a Void Debuff:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Kills against "
+      },
       {
-       "text": "Grants a 45 HP Void Overshield for 8 seconds."
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Debuffed"
+      },
+      {
+       "text": " enemies grant a 45 HP "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield for 8 seconds."
       }
      ]
     }
@@ -10796,7 +10785,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 seconds of each refunds 2 Ammo to the Magazine."
+       "text": "3 seconds of each refunds 2 Ammo into the Magazine."
       }
      ]
     },
@@ -11667,7 +11656,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Reload Speed"
+       "text": "• ? Reload Speed"
       }
      ]
     },
@@ -12482,7 +12471,10 @@
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of Weapon Kills achieved."
+       "text": "Refills"
+      },
+      {
+       "text": " and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored."
       }
      ]
     },
@@ -12492,7 +12484,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increase per Kill (rounds up):"
+       "text": "Loaded ammo per Kill (rounds up) by ammo type:"
       }
      ]
     },
@@ -12505,7 +12497,7 @@
        "classNames": [ "primary" ]
       },
       {
-       "text": "Primary Weapons: 10%"
+       "text": "Primary Weapons: 10% of Magazine Capacity"
       }
      ]
     },
@@ -12534,23 +12526,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Does not "
-      },
-      {
-       "text": "refill"
-      },
-      {
-       "text": " the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+       "text": "Each activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
       }
      ]
     }
@@ -12565,34 +12541,10 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following while at or below 110 HP:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 50 Handling"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 0.95x Ready/Stow Animation Duration Multiplier"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
        "text": "Refills"
       },
       {
-       "text": " Magazine from reserves"
+       "text": " Magazine from reserves upon dropping to 110 HP. Can activate while stowed."
       }
      ]
     },
@@ -12602,7 +12554,14 @@
     {
      "linesContent": [
       {
-       "text": "Works and can activate while stowed."
+       "text": "While at or below 110 HP:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier."
       }
      ]
     }
@@ -16040,7 +15999,7 @@
     {
      "linesContent": [
       {
-       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
+       "text": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:"
       }
      ]
     },
@@ -16054,17 +16013,7 @@
     {
      "linesContent": [
       {
-       "text": "• Linearly grants up to 30? Stability"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+       "text": "• 0 to 30? Stability"
       }
      ]
     }
@@ -16122,7 +16071,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
+       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine."
       }
      ]
     }
@@ -17003,7 +16952,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
+       "text": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine."
       }
      ]
     }
@@ -17578,7 +17527,7 @@
     {
      "linesContent": [
       {
-       "text": "25% Increased damage and causes enemies to explode on death, dealing "
+       "text": "Grants 25% Increased Damage and causes enemies to explode on death, dealing "
       },
       {
        "text": "444"
@@ -17590,7 +17539,7 @@
        "text": "[PVP: 162.5]"
       },
       {
-       "text": " damage in a [?] meter radius."
+       "text": " damage in a ? meter radius."
       }
      ]
     },
@@ -17600,7 +17549,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Magazine Size. (Identical to Extended Mag)"
+       "text": "Passively grants 30 Magazine Size stat. (Identical to Extended Mag)"
       }
      ]
     }
@@ -18419,10 +18368,14 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
-      },
+       "text": "Every 4 seconds while not firing the weapon:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
-       "text": " 10% of Magazine Capacity from reserves every 4 seconds while not firing the weapon."
+       "text": "Loads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves."
       }
      ]
     },
@@ -18432,7 +18385,7 @@
     {
      "linesContent": [
       {
-       "text": "Refills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number."
+       "text": "Can overfill the Magazine up to double the normal capacity."
       }
      ]
     }
@@ -19353,7 +19306,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "70% of the number of Hits landed into the Magazine from reserves. Always rounds up."
+       "text": "70% of the number of Hits landed (rounded up) into the Magazine from reserves."
       }
      ]
     },
@@ -19363,7 +19316,7 @@
     {
      "linesContent": [
       {
-       "text": "Requires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up."
+       "text": "Requires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate."
       }
      ]
     },
@@ -20273,7 +20226,7 @@
     {
      "linesContent": [
       {
-       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
+       "text": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:"
       }
      ]
     },
@@ -20287,17 +20240,7 @@
     {
      "linesContent": [
       {
-       "text": "• Linearly grants up to 30? Stability"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+       "text": "• 0 to 30? Stability"
       }
      ]
     }
@@ -20440,7 +20383,7 @@
     {
      "linesContent": [
       {
-       "text": "• [?] Reload Speed"
+       "text": "• ? Reload Speed"
       }
      ]
     },
@@ -20859,34 +20802,10 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following while at or below 110 HP:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 50 Handling"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 0.95x Ready/Stow Animation Duration Multiplier"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
        "text": "Refills"
       },
       {
-       "text": " Magazine from reserves"
+       "text": " Magazine from reserves upon dropping to 110 HP. Can activate while stowed."
       }
      ]
     },
@@ -20896,7 +20815,14 @@
     {
      "linesContent": [
       {
-       "text": "Works and can activate while stowed."
+       "text": "While at or below 110 HP:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier."
       }
      ]
     },
@@ -22300,7 +22226,7 @@
     {
      "linesContent": [
       {
-       "text": "30% Increased Glaive Melee Damage for 10 seconds upon scoring a Glaive Projectile Kill."
+       "text": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for 10 seconds."
       }
      ]
     },
@@ -22320,7 +22246,7 @@
     {
      "linesContent": [
       {
-       "text": "Persists through stow."
+       "text": "Remains active while stowed."
       }
      ]
     }
@@ -24564,7 +24490,7 @@
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of kills scored within 7 seconds of each."
+       "text": "Overfills Magazine from reserves based on the amount of kills scored within 7 seconds of each."
       }
      ]
     },
@@ -24574,7 +24500,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 150% Increased Magazine Capacity. Always rounds magazine up."
+       "text": "Overfill amount maxes out at 150% of the Magazine Capacity. Always rounds up."
       }
      ]
     },
@@ -24584,7 +24510,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increase per Kill:"
+       "text": "Overfill amount per Kill scored:"
       }
      ]
     },
@@ -26959,14 +26885,14 @@
     {
      "linesContent": [
       {
-       "text": "30% Increased Glaive Melee Damage for "
+       "text": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "11 seconds upon scoring a Glaive Projectile Kill."
+       "text": "11 seconds."
       }
      ]
     },
@@ -26993,7 +26919,7 @@
     {
      "linesContent": [
       {
-       "text": "Persists through stow."
+       "text": "Remains active while stowed."
       }
      ]
     },
@@ -27890,7 +27816,7 @@
     {
      "linesContent": [
       {
-       "text": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 30%). Always rounds up."
+       "text": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 30% overfill."
       }
      ]
     }
@@ -28954,14 +28880,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring 50% of Magazine as Precision Hits:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "20% increased damage for "
+       "text": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for "
       },
       {
        "text": "",
@@ -28978,27 +28897,7 @@
     {
      "linesContent": [
       {
-       "text": "Duration can be refreshed by scoring enough precision hits."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Stowing or Reloading resets the Precision Hit counter but the buff remains active while stowed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
       }
      ]
     },
@@ -30513,14 +30412,22 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill against an enemy affected by a Void Debuff:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Kills against "
+      },
       {
-       "text": "Grants a 45 HP Void Overshield for "
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Debuffed"
+      },
+      {
+       "text": " enemies grant a 45 HP "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield for "
       },
       {
        "text": "",
@@ -32438,13 +32345,10 @@
     {
      "linesContent": [
       {
-       "text": "Magazine gets "
+       "text": "Refills"
       },
       {
-       "text": "refilled"
-      },
-      {
-       "text": " and overflowed from reserves."
+       "text": " and Overfills the Magazine from reserves."
       }
      ]
     },
@@ -32454,14 +32358,14 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at "
+       "text": "Overfill amount maxes out at "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "120% Increased Magazine Capacity. Activates even if stowed."
+       "text": "120% of the Magazine Capacity. Activates even while stowed."
       }
      ]
     },
@@ -32475,7 +32379,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Maximum overflow amount is increased by 20%."
+       "text": " Maximum overfill amount is increased by 20% (rounds up)."
       }
      ]
     }
@@ -34102,52 +34006,30 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Hits against an Ammo Brick:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Picks up Ammo, "
-      },
-      {
-       "text": "Refills"
-      },
-      {
-       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Only activates if picking up ammo is possible. However, shooting a "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": "Special Ammo Brick (with at least one "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": "Special Weapon equipped) will bypass this restriction."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Weapon Hits against Orbs of Power collect them."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "If collecting ammo is possible:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and "
+      },
+      {
+       "text": "refill"
+      },
+      {
+       "text": " all Weapons from reserves."
       }
      ]
     },
@@ -34909,24 +34791,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring 50% of Magazine as Precision Hits:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "20% increased damage for 11 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Duration can be refreshed by scoring enough precision hits."
+       "text": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for 11 seconds."
       }
      ]
     },
@@ -34937,16 +34802,6 @@
      "linesContent": [
       {
        "text": "Stowing or Reloading resets the Precision Hit counter but the buff remains active while stowed."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
       }
      ]
     }
@@ -35595,7 +35450,7 @@
     {
      "linesContent": [
       {
-       "text": "While at or above 50% Magazine Capacity:"
+       "text": "While at/above 50% of the Base Magazine Capacity:"
       }
      ]
     },
@@ -35620,29 +35475,25 @@
        "text": "[PVP: 1.5]"
       },
       {
-       "text": " seconds to enemies within 4 meters."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Only activates once per shot/burst. Whisper of Durance increases slow duration by "
+       "text": " seconds ("
       },
       {
-       "text": "4"
+       "text": "8"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 0.5]"
+       "text": "[PVP: 2]"
       },
       {
-       "text": " seconds."
+       "text": " with "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Whisper of Durance) to enemies within 4 meters."
       }
      ]
     },
@@ -35652,7 +35503,7 @@
     {
      "linesContent": [
       {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+       "text": "Only activates once per shot/burst."
       }
      ]
     }
@@ -39657,7 +39508,7 @@
     {
      "linesContent": [
       {
-       "text": "Missing has a chance to refund ammo:"
+       "text": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:"
       }
      ]
     },
@@ -40032,7 +39883,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo to the Magazine."
+       "text": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo into the Magazine."
       }
      ]
     }
@@ -40259,7 +40110,7 @@
        "text": "Refills"
       },
       {
-       "text": " 60% of the number of Hits landed into the Magazine from reserves. Always rounds up."
+       "text": " 60% of the number of Hits landed (rounded up) into the Magazine from reserves."
       }
      ]
     },
@@ -40269,7 +40120,7 @@
     {
      "linesContent": [
       {
-       "text": "Requires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up."
+       "text": "Requires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate."
       }
      ]
     },
@@ -41581,7 +41432,7 @@
     {
      "linesContent": [
       {
-       "text": "Missing has a chance to refund ammo:"
+       "text": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:"
       }
      ]
     },
@@ -42270,7 +42121,7 @@
     {
      "linesContent": [
       {
-       "text": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 33%). Always rounds up."
+       "text": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 33% overfill."
       }
      ]
     },
@@ -42284,7 +42135,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Improves the average overflow amount by 10%. (30%🠚33%)"
+       "text": " Improves the average overfill amount by 10%. (30%🠚33%)"
       }
      ]
     }
@@ -42732,13 +42583,10 @@
     {
      "linesContent": [
       {
-       "text": "Magazine gets "
+       "text": "Refills"
       },
       {
-       "text": "refilled"
-      },
-      {
-       "text": " and overflowed from reserves."
+       "text": " and Overfills the Magazine from reserves."
       }
      ]
     },
@@ -42748,7 +42596,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 100% Increased Magazine Capacity. Activates even if stowed."
+       "text": "Overfill amount maxes out at 100% of the Magazine Capacity. Activates even while stowed."
       }
      ]
     }
@@ -43793,52 +43641,30 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Hits against an Ammo Brick:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Picks up Ammo, "
-      },
-      {
-       "text": "Refills"
-      },
-      {
-       "text": " all Weapons from reserves, and triggers Ammo Pickup Effects."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Only activates if picking up ammo is possible. However, shooting a "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": "Special Ammo Brick (with at least one "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": "Special Weapon equipped) will bypass this restriction."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Weapon Hits against Orbs of Power collect them."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "If collecting ammo is possible:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and "
+      },
+      {
+       "text": "refill"
+      },
+      {
+       "text": " all Weapons from reserves."
       }
      ]
     }
@@ -44653,7 +44479,7 @@
     {
      "linesContent": [
       {
-       "text": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:"
+       "text": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:"
       }
      ]
     },
@@ -44681,17 +44507,7 @@
     {
      "linesContent": [
       {
-       "text": "• Linearly grants up to 30? Stability"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Activation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+       "text": "• 0 to 30? Stability"
       }
      ]
     },
@@ -44705,7 +44521,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)"
+       "text": " Accuracy benefit is increased by 20%. (25%⁠🠚⁠30%)"
       }
      ]
     }
@@ -44951,7 +44767,7 @@
     {
      "linesContent": [
       {
-       "text": "Overflows Magazine from reserves based on the amount of kills scored within "
+       "text": "Overfills Magazine from reserves based on the amount of kills scored within "
       },
       {
        "text": "",
@@ -44968,7 +44784,7 @@
     {
      "linesContent": [
       {
-       "text": "Maxes out at 150% Increased Magazine Capacity. Always rounds magazine up."
+       "text": "Overfill amount maxes out at 150% of the Magazine Capacity. Always rounds up."
       }
      ]
     },
@@ -44978,7 +44794,7 @@
     {
      "linesContent": [
       {
-       "text": "Magazine Capacity Increase per Kill:"
+       "text": "Overfill amount per Kill scored:"
       }
      ]
     },

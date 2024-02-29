@@ -414,11 +414,11 @@
  "120721526": {
   "hash": 120721526,
   "name": "Runneth Over",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Finishing a reload Overflows the Magazine from reserves by 10% for each ally within 15 meters.\n\nMaxes out at 50% Increased Magazine Capacity.",
+   "en": "Finishing a reload overfills the Magazine from reserves by 10% of the Magazine Capacity (rounded up) for each ally within 15 meters.\n\nOverfill amount maxes out at 50% of the Magazine Capacity.",
    "zh-chs": "15 米范围内每有一名盟友：\n填装时会过量填充 10% 的弹匣，最高 50%。"
   }
  },
@@ -474,7 +474,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• <:primary:968793055677251604>Primary Weapons: 🡅40%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 🡅25%\n\n🡅 Ammo Refund chance is increased by an additive 5%."
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• <:primary:968793055677251604>Primary Weapons: 🡅40%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 🡅25%\n\n🡅 Ammo Refund chance is increased by an additive 5%."
   }
  },
  "164468655": {
@@ -546,7 +546,7 @@
   "name": "Halberdier's Reach",
   "itemHash": 3093309525,
   "itemName": "Triton Vice",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1709248561849,
   "stats": {
    "Reload": [
     {
@@ -560,7 +560,7 @@
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Glaive Melee Kills refill 1 Ammo into the Magazine from reserves. Can overflow the Magazine up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <:pve:922884406073507930>350 <:pvp:922884468275019856>[101] damage in a 4? meter radius."
+   "en": "Glaive Melee Kills load 1 Ammo into the Magazine from reserves. Can overfill the Magazine up to double the normal capacity.\n\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\n\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to <:pve:922884406073507930>350 <:pvp:922884468275019856>[101] damage in a 4? meter radius."
   }
  },
  "191144788": {
@@ -804,11 +804,11 @@
  "254337357": {
   "hash": 254337357,
   "name": "Reservoir Burst",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Magazine is at or above maximum capacity:\n25% Increased damage and causes enemies to explode on death, dealing <:pve:922884406073507930>444 <:pvp:922884468275019856>[162.5] damage in a [?] meter radius.\n\nPassively grants 30 Magazine Size. (Identical to Extended Mag)\n\n🡅 Passively grants 5 Stability."
+   "en": "While Magazine is at or above maximum capacity:\nGrants 25% Increased Damage and causes enemies to explode on death, dealing <:pve:922884406073507930>444 <:pvp:922884468275019856>[162.5] damage in a ? meter radius.\n\nPassively grants 30 Magazine Size stat. (Identical to Extended Mag)\n\n🡅 Passively grants 5 Stability."
   }
  },
  "263649945": {
@@ -973,7 +973,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by <:pve:922884406073507930>4 <:pvp:922884468275019856>[0.5] seconds.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\n🡅 Passively grants 5 Stability."
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nOnly activates once per shot/burst.\n\n🡅 Passively grants 5 Stability."
   }
  },
  "354401740": {
@@ -1340,7 +1340,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Kill (rounds up):\n• <:primary:968793055677251604>Primary Weapons: 🡅12.5%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 🡅22.5%\n\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level.\n\n🡅 Kills provide an additional 2.5% Magazine Capacity Increase."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nRefills and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored.\n\nLoaded ammo per Kill (rounds up) by ammo type:\n• <:primary:968793055677251604>Primary Weapons: 🡅12.5% of Magazine Capacity\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 🡅22.5%\n\nEach activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity.\n\n🡅 Kills provide an additional 2.5% Magazine Capacity Increase."
   }
  },
  "426473316": {
@@ -1532,7 +1532,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Refills 10% of Magazine Capacity from reserves every 🡅3.5 seconds while not firing the weapon.\n\nRefills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number.\n\n🡅 Refill Delay is decreased by 0.5 seconds."
+   "en": "Every 🡅3.5 seconds while not firing the weapon:\nLoads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves.\n\nCan overfill the Magazine up to double the normal capacity.\n\n🡅 Loading delay is decreased by 0.5 seconds."
   }
  },
  "466087222": {
@@ -1998,7 +1998,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within 🡅3 seconds of each refunds 1 Ammo to the Magazine.\n\n🡅 Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 3 Precision Hits within 🡅3 seconds of each refunds 1 Ammo into the Magazine.\n\n🡅 Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "579997810": {
@@ -2685,11 +2685,11 @@
  "776531651": {
   "hash": 776531651,
   "name": "Repulsor Brace",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill against an enemy affected by a Void Debuff:\nGrants a 45 HP Void Overshield for 8 seconds.",
+   "en": "Kills against <:void:720178940240461864>Void Debuffed enemies grant a 45 HP <:void:720178940240461864>Void Overshield for 8 seconds.",
    "zh-chs": "武器击杀受虚空负面效果影响的敌人时：\n获得一个 虚空覆盖护盾 ，持续 8 秒。\n\n大多数“虚弱”效果都可以触发该特性（神性除外）."
   }
  },
@@ -2961,7 +2961,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 🡅3 seconds of each refunds 2 Ammo to the Magazine.\n\n🡅 Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 4 Precision Hits within 🡅3 seconds of each refunds 2 Ammo into the Magazine.\n\n🡅 Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "855168139": {
@@ -3168,7 +3168,7 @@
  "908147344": {
   "hash": 908147344,
   "name": "Sneak Bow",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "stats": {
    "Reload": [
     {
@@ -3181,7 +3181,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• [?] Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%",
+   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%",
    "zh-chs": "蹲下时：\n防止蹲伏射击时产生雷达信号。\n[+?] 填装速度，0.8x 装填动画系数，提升保持拉弓最长时间 25%。"
   }
  },
@@ -3457,11 +3457,11 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nOverflows Magazine from reserves based on the amount of Weapon Kills achieved.\n\nMagazine Capacity Increase per Kill (rounds up):\n• <:primary:968793055677251604>Primary Weapons: 10%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%\n\nMaximum of a 100% Magazine Capacity Increase per activation. Maximum total overflow amount is a 200% Magazine Capacity Increase.\n\nDoes not refill the Magazine before the overflow effect takes place, the percentages are added to your current Magazine Fill Level."
+   "en": "Upon readying the weapon after scoring Kills with your other Weapons:\nRefills and/or overfills the Magazine from reserves based on the amount of Weapon Kills scored.\n\nLoaded ammo per Kill (rounds up) by ammo type:\n• <:primary:968793055677251604>Primary Weapons: 10% of Magazine Capacity\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%\n\nEach activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
   }
  },
  "970163821": {
@@ -3479,34 +3479,11 @@
  "972757866": {
   "hash": 972757866,
   "name": "Pulse Monitor",
-  "lastUpload": 1700076455476,
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• Refills Magazine from reserves\n\nWorks and can activate while stowed.",
+   "en": "Refills Magazine from reserves upon dropping to 110 HP. Can activate while stowed.\n\nWhile at or below 110 HP:\nGrants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier.",
    "zh-chs": "低于 110 生命值时：\n+50 操控性，0.9 拔枪/收枪动画系数，并且重新填装武器。\n\n武器收起时也有效。"
   }
  },
@@ -4591,7 +4568,7 @@
   "type": "Weapon Catalyst Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• 0 to 30? Stability"
   }
  },
  "1266037485": {
@@ -4615,7 +4592,7 @@
   "type": "Weapon Catalyst Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine."
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine."
   }
  },
  "1266037487": {
@@ -4979,11 +4956,11 @@
  "1354429876": {
   "hash": 1354429876,
   "name": "Fourth Time's the Charm",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo to the Magazine.",
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refunds 2 Ammo into the Magazine.",
    "zh-chs": "4 次快速精准命中目标会向弹匣里返还 2 枚弹药。\n如果 2 秒内没有精准命中，则计数器会被重置。"
   }
  },
@@ -5186,27 +5163,11 @@
  "1427256713": {
   "hash": 1427256713,
   "name": "Reservoir Burst",
-  "lastUpload": 1687814889112,
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Magazine is at or above maximum capacity:\n25% Increased damage and causes enemies to explode on death, dealing <:pve:922884406073507930>444 <:pvp:922884468275019856>[162.5] damage in a [?] meter radius.\n\nPassively grants 30 Magazine Size. (Identical to Extended Mag)",
+   "en": "While Magazine is at or above maximum capacity:\nGrants 25% Increased Damage and causes enemies to explode on death, dealing <:pve:922884406073507930>444 <:pvp:922884468275019856>[162.5] damage in a ? meter radius.\n\nPassively grants 30 Magazine Size stat. (Identical to Extended Mag)",
    "zh-chs": "满弹匣时：\n+25% 伤害并使敌人在死亡的爆炸，在 [?] 米范围内造成 <:pve:922884406073507930>444 <:pvp:922884468275019856>[163] 伤害。\n\n被动提升 +30 弹匣容量。\n（等效于一个加长弹匣）"
   }
  },
@@ -5318,7 +5279,7 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "lastUpload": 1709241349954,
+  "lastUpload": 1709248561849,
   "stats": {
    "Airborne": [
     {
@@ -5483,11 +5444,11 @@
  "1523832109": {
   "hash": 1523832109,
   "name": "Reconstruction",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Refills 10% of Magazine Capacity from reserves every 4 seconds while not firing the weapon.\n\nRefills can overflow the Magazine up to 100% Increased Magazine Capacity. Refill amount is rounded up to the nearest whole number.",
+   "en": "Every 4 seconds while not firing the weapon:\nLoads 10% of the Magazine Capacity (rounded up) into the Magazine from reserves.\n\nCan overfill the Magazine up to double the normal capacity.",
    "zh-chs": "持续 4 秒没有射击：\n重新填装 10% 弹匣，直至两倍弹匣容量。"
   }
  },
@@ -5688,7 +5649,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills 🡅70% of the number of Hits landed into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n🡅 Refill ratio is increased by an additive 10%."
+   "en": "Upon emptying the Magazine:\nRefills 🡅70% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n🡅 Refill ratio is increased by an additive 10%."
   }
  },
  "1570042021": {
@@ -5884,20 +5845,11 @@
  "1645158859": {
   "hash": 1645158859,
   "name": "Under Pressure",
-  "lastUpload": 1700076455476,
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.",
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• 12.5% to 25% Decreased Accuracy Cone Size\n• 0 to 30? Stability",
    "zh-chs": "弹匣容量低于 50 % 时：\n• 线性提供 -25% ~ -50% 精度锥角尺寸\n• -[?]% 精度锥角增长\n• +30(?) 稳定性"
   }
  },
@@ -5975,7 +5927,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• [?] Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
+   "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
   }
  },
  "1667892708": {
@@ -6103,11 +6055,11 @@
  "1685378950": {
   "hash": 1685378950,
   "name": "Pulse Monitor",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following while at or below 110 HP:\n• 50 Handling\n• 0.95x Ready/Stow Animation Duration Multiplier\n• Refills Magazine from reserves\n\nWorks and can activate while stowed.\n\n🡅 Activates with more health remaining."
+   "en": "Refills Magazine from reserves upon dropping to 110 HP. Can activate while stowed.\n\nWhile at or below 110 HP:\nGrants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier.\n\n🡅 Activates with more health remaining."
   }
  },
  "1685431615": {
@@ -6671,11 +6623,11 @@
  "1782407750": {
   "hash": 1782407750,
   "name": "Close to Melee",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "30% Increased Glaive Melee Damage for 10 seconds upon scoring a Glaive Projectile Kill.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds.\n\nPersists through stow."
+   "en": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for 10 seconds.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 10 seconds.\n\nRemains active while stowed."
   }
  },
  "1783582993": {
@@ -7253,11 +7205,11 @@
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
-  "lastUpload": 1690320394706,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 7 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.",
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverfills Magazine from reserves based on the amount of kills scored within 7 seconds of each.\n\nOverfill amount maxes out at 150% of the Magazine Capacity. Always rounds up.\n\nOverfill amount per Kill scored:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.",
    "es": "Luego de recargar despues de  [?] segundos despues de una Baja con el arma:\nAumenta la capacidad del Cargador por baja dentro de [?] segundos\n\nPuede llegar a ser un 150% la cantidad del cargador original. Redondea hacia arriba.\n\nArmas Primarias reciben un 20% a la capacidad aumentada por baja. Armas Especiales y Pesadas reciben un 10%\n\nAumentado: Otorga +5 a la velocidad de recarga de forma pasiva",
    "zh-chs": "该武器击杀后 7 秒内换弹：\n7 秒内的每个击杀都可过量填加弹匣，\n\n最高过量填加 50%，计算结果向上取整。\n\n<:primary:968793055677251604> 主武器：每个击杀过量填加 20%。\n<:special:968793055631114330> 特殊武器和 <:heavy:968793055652106320> 重武器：每个击杀过量填加 10%。"
   }
@@ -8005,7 +7957,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "30% Increased Glaive Melee Damage for 🡅11 seconds upon scoring a Glaive Projectile Kill.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 🡅11 seconds.\n\nPersists through stow.\n\n🡅 Buff Duration is increased by 1 second."
+   "en": "Glaive Projectile Kills grant 30% Increased Glaive Melee Damage for 🡅11 seconds.\n\nDealing Projectile or Melee Damage extends the buff duration by 5 seconds, up to 🡅11 seconds.\n\nRemains active while stowed.\n\n🡅 Buff Duration is increased by 1 second."
   }
  },
  "2244851822": {
@@ -8243,11 +8195,11 @@
  "2284787283": {
   "hash": 2284787283,
   "name": "Clown Cartridge",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 30%). Always rounds up.",
+   "en": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 30% overfill.",
    "zh-chs": "装填时：\n随机过量装填弹匣容量 10% ~ 50% 的弹药。\n数值向上取整。"
   }
  },
@@ -8608,11 +8560,11 @@
  "2402480669": {
   "hash": 2402480669,
   "name": "Focused Fury",
-  "lastUpload": 1676844056332,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for 🡅12 seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\n🡅 Buff Duration is increased by 1 second."
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for 🡅12 seconds.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\n🡅 Buff Duration is increased by 1 second."
   }
  },
  "2407398462": {
@@ -9092,7 +9044,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Kill against an enemy affected by a Void Debuff:\nGrants a 45 HP Void Overshield for 🡅10 seconds.\n\n🡅 Overshield Duration is increased by 2 seconds."
+   "en": "Kills against <:void:720178940240461864>Void Debuffed enemies grant a 45 HP <:void:720178940240461864>Void Overshield for 🡅10 seconds.\n\n🡅 Overshield Duration is increased by 2 seconds."
   }
  },
  "2551157718": {
@@ -9579,7 +9531,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon picking up <:special:968793055631114330>Special or <:heavy:968793055652106320>Heavy Ammo:\nMagazine gets refilled and overflowed from reserves.\n\nMaxes out at 🡅120% Increased Magazine Capacity. Activates even if stowed.\n\n🡅 Maximum overflow amount is increased by 20%."
+   "en": "Upon picking up <:special:968793055631114330>Special or <:heavy:968793055652106320>Heavy Ammo:\nRefills and Overfills the Magazine from reserves.\n\nOverfill amount maxes out at 🡅120% of the Magazine Capacity. Activates even while stowed.\n\n🡅 Maximum overfill amount is increased by 20% (rounds up)."
   }
  },
  "2696719570": {
@@ -10102,7 +10054,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, Refills all Weapons from reserves, and triggers Ammo Pickup Effects.\n\nOnly activates if picking up ammo is possible. However, shooting a <:special:968793055631114330>Special Ammo Brick (with at least one <:special:968793055631114330>Special Weapon equipped) will bypass this restriction.\n\nWeapon Hits against Orbs of Power collect them.\n\n🡅 Passively grants 5 Range."
+   "en": "Weapon Hits against Orbs of Power collect them.\n\nIf collecting ammo is possible:\nWeapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and refill all Weapons from reserves.\n\n🡅 Passively grants 5 Range."
   }
  },
  "2846385770": {
@@ -10293,27 +10245,11 @@
  "2896038713": {
   "hash": 2896038713,
   "name": "Focused Fury",
-  "lastUpload": 1700076455476,
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring 50% of Magazine as Precision Hits:\n20% increased damage for 11 seconds.\n\nDuration can be refreshed by scoring enough precision hits.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.",
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% Increased Damage for 11 seconds.\n\nStowing or Reloading resets the Precision Hit counter but the buff remains active while stowed.",
    "zh-chs": "弹匣的一半弹药造成精准伤害后：\n+20% 伤害，持续 11 秒。\n\n达到足够精确命中数后可刷新持续时间。\n\n收枪或装填将重置精确命中计数。该特性触发后，收枪也会维持武器的增益效果。"
   }
  },
@@ -10455,11 +10391,11 @@
  "2978966579": {
   "hash": 2978966579,
   "name": "Chill Clip",
-  "lastUpload": 1700076455476,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While at or above 50% Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds to enemies within 4 meters.\n\nOnly activates once per shot/burst. Whisper of Durance increases slow duration by <:pve:922884406073507930>4 <:pvp:922884468275019856>[0.5] seconds.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.",
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nOnly activates once per shot/burst.",
    "zh-chs": "前半弹匣直接命中敌人时：\n将产生一个冰影爆炸，附近 [?] 米内的敌人获得 50 层减速效果。持续 <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] 秒。\n\n每次射击仅触发一次效果。\n（狼群弹药可触发多次。）\n\n耐久之吟 可将持续时间增加到 <:pve:922884406073507930>8 <:pvp:922884468275019856>[2] 秒。"
   }
  },
@@ -11049,7 +10985,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1709241349954,
+  "lastUpload": 1709248561849,
   "stats": {
    "Handling": [
     {
@@ -11632,7 +11568,7 @@
   "type": "Weapon Trait Exotic",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• <:primary:968793055677251604>Primary Weapons: 35%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%"
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• <:primary:968793055677251604>Primary Weapons: 35%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%"
   }
  },
  "3347978672": {
@@ -11756,11 +11692,11 @@
  "3400784728": {
   "hash": 3400784728,
   "name": "Triple Tap",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo to the Magazine.",
+   "en": "Scoring 3 Precision Hits within 2 seconds of each refunds 1 Ammo into the Magazine.",
    "zh-chs": "3 次精准命中后，向弹夹内装填 1 枚弹药。\n两次精准命中时间间隔不得超过 2 秒。"
   }
  },
@@ -11797,11 +11733,11 @@
  "3418782618": {
   "hash": 3418782618,
   "name": "Rewind Rounds",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed into the Magazine from reserves. Always rounds up.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate. Always rounds up.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).",
+   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).",
    "zh-chs": "弹匣为空时：\n根据命中次数重新装填弹匣。\n\n回弹比例：\n主武器 50-60% | 特殊武器 30-40%"
   }
  },
@@ -12196,11 +12132,11 @@
  "3513791699": {
   "hash": 3513791699,
   "name": "Mulligan",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Missing has a chance to refund ammo:\n• <:primary:968793055677251604>Primary Weapons: 35%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%"
+   "en": "Missing has a chance to refund 1 ammo into the magazine based on the ammo type:\n• <:primary:968793055677251604>Primary Weapons: 35%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 20%"
   }
  },
  "3513901081": {
@@ -12359,7 +12295,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Randomly grants 10% to 50% Increased Magazine Capacity upon reloading (average of 33%). Always rounds up.\n\n🡅 Improves the average overflow amount by 10%. (30%🠚33%)"
+   "en": "Reloading randomly overfills the Magazine from reserves by 10% to 50% of the Magazine Capacity (rounded up). Average of a 33% overfill.\n\n🡅 Improves the average overfill amount by 10%. (30%🠚33%)"
   }
  },
  "3564974257": {
@@ -12488,11 +12424,11 @@
  "3643424744": {
   "hash": 3643424744,
   "name": "Overflow",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon picking up <:special:968793055631114330>Special or <:heavy:968793055652106320>Heavy Ammo:\nMagazine gets refilled and overflowed from reserves.\n\nMaxes out at 100% Increased Magazine Capacity. Activates even if stowed.",
+   "en": "Upon picking up <:special:968793055631114330>Special or <:heavy:968793055652106320>Heavy Ammo:\nRefills and Overfills the Magazine from reserves.\n\nOverfill amount maxes out at 100% of the Magazine Capacity. Activates even while stowed.",
    "zh-chs": "拾取 <:special:968793055631114330> 特殊或 <:heavy:968793055652106320> 重型弹药：\n武器使用备弹过量装填至 200% 弹匣量。\n\n武器收起时也可触发。"
   }
  },
@@ -12672,11 +12608,11 @@
  "3700496672": {
   "hash": 3700496672,
   "name": "Shoot to Loot",
-  "lastUpload": 1696090204649,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Weapon Hits against an Ammo Brick:\nPicks up Ammo, Refills all Weapons from reserves, and triggers Ammo Pickup Effects.\n\nOnly activates if picking up ammo is possible. However, shooting a <:special:968793055631114330>Special Ammo Brick (with at least one <:special:968793055631114330>Special Weapon equipped) will bypass this restriction.\n\nWeapon Hits against Orbs of Power collect them.",
+   "en": "Weapon Hits against Orbs of Power collect them.\n\nIf collecting ammo is possible:\nWeapon Hits against Ammo Bricks pick them up, trigger Ammo Pickup Effects, and refill all Weapons from reserves.",
    "zh-chs": "命中弹药盒时：\n拾取弹药盒并从备弹中 重新装填 所有武器。\n\n可触发弹药拾取相关特性。仅在可以拾取弹药时触发。"
   }
  },
@@ -12906,11 +12842,11 @@
  "3755250867": {
   "hash": 3755250867,
   "name": "Under Pressure",
-  "lastUpload": 1682718006443,
+  "lastUpload": 1709248561849,
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Linearly grants the following benefits as the Magazine drops from 50% capacity to empty:\n• 🡅15% to 🡅30% Decreased Accuracy Cone Size\n• Linearly grants up to 30? Stability\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\n🡅 Maximum Accuracy Cone Size benefit is increased by an additive 5%. (25%🠚30%)"
+   "en": "Grants the following benefits as the Magazine drops from 50% of its base capacity to empty:\n• 🡅15% to 🡅30% Decreased Accuracy Cone Size\n• 0 to 30? Stability\n\n🡅 Accuracy benefit is increased by 20%. (25%⁠🠚⁠30%)"
   }
  },
  "3766386008": {
@@ -13012,7 +12948,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverflows Magazine from reserves based on the amount of kills scored within 🡅8 seconds of each.\n\nMaxes out at 150% Increased Magazine Capacity. Always rounds magazine up.\n\nMagazine Capacity Increase per Kill:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.\n\n🡅 Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
+   "en": "Upon finishing a reload within 6 seconds of a Weapon Kill:\nOverfills Magazine from reserves based on the amount of kills scored within 🡅8 seconds of each.\n\nOverfill amount maxes out at 150% of the Magazine Capacity. Always rounds up.\n\nOverfill amount per Kill scored:\n• <:primary:968793055677251604>Primary Weapons: 20%\n• <:special:968793055631114330>Special and <:heavy:968793055652106320>Power Weapons: 10%.\n\n🡅 Passively grants 5 Reload Speed. Allowed time between kills is increased by 1 second."
   }
  },
  "3798468567": {
@@ -13184,7 +13120,7 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "lastUpload": 1709241349954,
+  "lastUpload": 1709248561849,
   "stats": {
    "Range": [
     {
