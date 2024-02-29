@@ -5216,14 +5216,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Successive Hits while firing full-auto grant a scaling Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] />  once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
+     "main": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] />  once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709218791635,
+      "lastUpdate": 1709238904588,
       "updatedBy": "Stardust"
      }
     },
@@ -5233,7 +5233,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1709238976056,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9076,7 +9076,7 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Powered Melee and Finisher Kills disorient and debuff enemies in a given radius around the target, increasing damage received by them by 30%.\n\nScreen becomes fully blackened upon getting hit by the debuff before gradually going away over 7.5 seconds.\n\nThe debuff Duration and application radius are dependent on <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\n(Still requires retesting, will update once complete)\n\nFinishers increase the debuff duration by 5 seconds, up to the maximum of 20 seconds. Applying <void/>Weaken to the target extends the debuff's duration.",
+     "main": "Powered Melee and Finisher Kills disorient and debuff enemies in a given radius around the target, increasing damage received by them by 30%.\n\nScreen becomes fully blackened for 7.5 seconds upon getting hit by the debuff before gradually fading away over the next 7.5 seconds.\n\nThe debuff Duration and application radius are dependent on <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\n(Still requires retesting, will update once complete)\n\nFinishers increase the debuff duration by 5 seconds, up to the maximum of 20 seconds. Applying <void/>Weaken to the target extends the debuff's duration.",
      "secondary": "import self"
     },
     "ko": {
@@ -9091,7 +9091,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709225100245,
+      "lastUpdate": 1709238850211,
       "updatedBy": "Stardust"
      },
      "ko": {
@@ -9109,7 +9109,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1709238976056,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20804,7 +20804,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709228421112,
+   "lastUpload": 1709238976056,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43561,7 +43561,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709228421112,
+   "lastUpload": 1709238976056,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51634,7 +51634,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709228421112,
+   "lastUpload": 1709238976056,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
