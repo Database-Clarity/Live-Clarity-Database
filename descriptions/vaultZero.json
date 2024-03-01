@@ -120,22 +120,6 @@
  "31345821": {
   "hash": 31345821,
   "name": "Sword Logic",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15, 1.25, 1.35, 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15, 1.2, 1.35, 1.5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant Stacks of Sword Logic.\nThe number of Stacks and the buff duration are tied to the highest [Enemy Rank](https://url.d2clarity.com/combatants) killed since activation:\n• Minors: 1 Stack for 5.5 seconds\n• Elites, Players: 2 Stacks for 7.5 seconds\n• Minibosses and Players in their Super: 3 Stacks for 10.5 seconds\n• Bosses: 4 Stacks for 15.5 seconds\nDamage Increase at 1|2|3|4 Stacks:\n15% | [pve]25% [pvp][20%] | 35% | 50%\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\nRemains active while stowed."
@@ -438,16 +422,6 @@
   "name": "Halberdier's Reach",
   "itemHash": 3093309525,
   "itemName": "Triton Vice",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     },
-     "weaponTypes": [ "Glaive" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Glaive Melee Kills load 1 Ammo into the Magazine from reserves. Can overfill the Magazine up to double the normal capacity.\nWhile within 15 meters of 3+ enemies:\nGrants 50 Reload Speed and 100% Increased Melee Damage to Glaives.\nOn Projectile Kills with Glaives Matching your Subclass Element:\nEnemies explode, dealing up to [pve]350 [pvp][101] damage in a 4? meter radius."
@@ -527,15 +501,6 @@
  "201365942": {
   "hash": 201365942,
   "name": "Archer's Tempo",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.75 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Precision Hits decrease Draw Time by 25% for 3 seconds."
@@ -544,19 +509,9 @@
  "205890336": {
   "hash": 205890336,
   "name": "Underdog",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50, 100 ],
-      "multiplier": [ 0.95, 0.9 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While below 113 HP:\nLinearly grants up to 100 Reload Speed, and a 0.9x Reload Duration Multiplier."
+   "en": "As you drop from 113 HP to critical health:\nLinearly grants up to 100 Reload Speed and a 0.9x Reload Duration Multiplier."
   }
  },
  "216781713": {
@@ -590,15 +545,6 @@
   "name": "Peregrine Strike",
   "itemHash": 2255796155,
   "itemName": "Peregrine Greaves",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 20 Airborne Effectiveness.\nGrants Peregrine Strike after sprinting for 2 seconds and being airborne for 0.5 seconds. Buff is removed upon touching the ground.\nPeregrine Strike increases the Impact Damage of Shoulder Charge Abilities by 225%.\nAgainst [Minibosses](https://url.d2clarity.com/combatants) (inlcuding Champions and Tormentors), the buff is increased to 1000% and refunds your Melee Ability charge on hit.\nProvides no benefits when hitting [Stasis]Frozen enemies."
@@ -635,23 +581,6 @@
  "247725512": {
   "hash": 247725512,
   "name": "Rapid Hit",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 5, 30, 35, 42, 60 ],
-      "multiplier": [ 0.99, 0.96, 0.95, 0.945, 0.92 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 2, 12, 14, 18, 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration.\nBenefits at 1|2|3|4|5 Stacks:\n• 2|12|14|18|25 Stability\n• 5|30|35|42|60 Reload Speed\n• 0.99x|0.96x|0.95x|0.945x|0.92x Reload Duration Multiplier"
@@ -676,34 +605,6 @@
  "280464955": {
   "hash": 280464955,
   "name": "Firmly Planted",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 15 ]
-     },
-     "weaponTypes": [ "Fusion" ]
-    },
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     },
-     "weaponTypes": [ "Fusion" ]
-    },
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While Crouched:\n• 30 Handling and 20 Stability\n• -40% Accuracy Cone Size\n• -17% Accuracy Cone Growth\n• -80% Horizontal Recoil\nEffects are halved on Fusion Rifles."
@@ -806,22 +707,6 @@
  "354401740": {
   "hash": 354401740,
   "name": "Assassin's Blade",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants the following on Weapon Kills for 5 seconds:\n• 15% Increased Damage\n• Maximized Movement Speed\nRemains active even if stowed."
@@ -920,7 +805,7 @@
   "name": "Target Lock",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [pve]16.73% [pvp][10.46%] to [pve]40% [pvp][25%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [pve]25% [pvp][15.85%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [pve]16.73% [pvp][10.46%] to [pve]40% [pvp][25%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [pve]25% [pvp][15.85%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine."
   }
  },
  "371216963": {
@@ -988,24 +873,6 @@
   "name": "Burning Fists",
   "itemHash": 1734844651,
   "itemName": "Wormgod Caress",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Finisher and (Glaive) Melee Kills grant a Stack of Burning Fists up to the maximum of 5 Stacks.\nAfter not having scored further Finisher or (Glaive) Melee Kills for 2 seconds, your Stacks start decaying one at a time over 9.5|10|4|4|3 seconds for the 1st|2nd|... Stacks.\nDamage Increases at 1|2|3|4|5 Stacks:\n• Melee: 55%|110%|165%|220%|275%\n• Glaive Melee: 40%|80%|120%|160%|200%\n• [pve]Weapon\\\\PVE: 0%|20%|25%|30%|35%\n• [pvp]Weapon\\\\PVP: 0%|0%|20%|25%|25%\nWeapon Damage Increases are [Empowering Buffs](https://url.d2clarity.com/DamageBuffs)."
@@ -1032,15 +899,6 @@
  "395388285": {
   "hash": 395388285,
   "name": "Firing Line",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "While within 15 meters of 2 Allies:\n20% Increased Precision Damage\n[enh] Grants 10 Handling while the perk is active."
@@ -1143,29 +1001,6 @@
  "438098033": {
   "hash": 438098033,
   "name": "Harmony",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 15 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon readying the weapon within 3 seconds of getting a Kill with a different weapon:\nGrants 20% Increased Damage and 15 Handling for 7 seconds."
@@ -1191,29 +1026,6 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon dealing Melee Damage while an Enemy is within 15 meters:\n[pve]500% [pvp][100%] Increased Damage and 100 Handling for 10 seconds or until firing a full burst.\n4 second cooldown after buff expires. Can be activated while stowed.\nAny Powered Melee which requires sprinting, sliding, or performs a slam will not activate the perk."
@@ -1242,22 +1054,6 @@
  "460017080": {
   "hash": 460017080,
   "name": "Headseeker",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.08 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.08 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "After dealing Non-Precision Weapon Damage:\n• Increases Precision Multiplier by 0.1175\n• (?) Aim Assist\nBuff lasts 0.55 seconds. Dealing additional Non-Precision Damage refreshes the timer."
@@ -1300,22 +1096,6 @@
  "469285294": {
   "hash": 469285294,
   "name": "Recombination",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Elemental Kills grant 1 Stack of Recombination. Maximum of 10 Stacks.\nEach Stack additively increases the damage of the next shot by [pve]10% [pvp][5%]."
@@ -1386,29 +1166,6 @@
  "494941759": {
   "hash": 494941759,
   "name": "Threat Detector",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "multiplier": [ 0.9, 0.81 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 19, 63 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 19, 44 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Grants 1|2 Stacks while within 15 meters of 1|2+ enemies.\nBonuses at 1|2 Stacks:\n• [enh]19|[enh]44 Stability\n• [enh]19|[enh]63 Reload Speed\n• 25|100 Handling\n• 0.9x|0.81x Handling Animation Duration Multiplier\n[enh] Grants 4? more stability when active as well as 1|3 more Reload Speed at 1|2 Stacks."
@@ -1427,16 +1184,6 @@
  "509074078": {
   "hash": 509074078,
   "name": "Steady Hands",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 100 ],
-      "multiplier": [ 0.825 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 8.5 seconds:\nGrants 100 Handling and a 0.825x Handling Animation Duration Multiplier to all weapons.\nAdditional kills while the perk is active refresh the duration to 6.5 seconds."
@@ -1586,22 +1333,6 @@
  "557221067": {
   "hash": 557221067,
   "name": "Killing Tally",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1, 1.2, 1.3 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.05, 1.1, 1.15 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant a stacking Damage Buff until stowing or reloading the weapon. Maximum of 3 stacks.\n[pve]PVE: 10% | 20% | 30% Increased Damage\n[pvp]PVP: 5% | 10% | 15% Increased Damage"
@@ -1636,16 +1367,6 @@
   "name": "Force Multiplier",
   "itemHash": 3267996858,
   "itemName": "No Backup Plans",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 30 ]
-     },
-     "weaponTypes": [ "Shotgun" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants ? Reload Speed and 30 Airborne Effectiveness to Shotguns.\nWhile [Void]Void Overshield is active:\n• Shotgun deal [pve]35% [pvp][10%] Increased Damage\n• Shotgun Kills refresh [Void]Void Overshield duration\nWhile on a [Void]Void Subclass:\nScoring 2 Shotgun Kills on Minor Combatants or 1 Shotgun Kill on other targets grants a [Void]Void Overshield and starts health regeneration."
@@ -1688,36 +1409,6 @@
   "name": "Wraithmetal Mail",
   "itemHash": 2766109874,
   "itemName": "The Dragon's Shadow",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 400 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 400 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "active": {
-      "multiplier": [ 0.7 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "multiplier": [ 0.7 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Class Ability Usage reloads all equipped weapons from reserves and grants the Wraithmetal Mail buff for 9 seconds at the end of the dodge animation.\nCounts as a manual reload and will activate reload-triggered perks such as Kill Clip.\nWraithmetal Mail:\n• Grants 50 Mobility\n• Sets Handling and Reload Speed to 100\n• Grants a 0.7x Ready/Stow Duration Multiplier\n• Increases Sprint Speed by 6.25%\n• Increases Slide Distance by 33%"
@@ -1730,7 +1421,7 @@
   "itemName": "Raiden Flux",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "While in Arc Staff:\nHits grant a stack of Synapse Junctions for 5 seconds, up to a maximum of 3 Stacks.\nSynapse Junctions:\nx1 = 13.5% Increased damage and [?]% Slower Passive Super Drain\nx2 = 28.8% Increased damage and [?]% Slower Passive Super Drain\nx3 = 46.2% Increased damage and [?]% Slower Passive Super Drain"
+   "en": "While in Arc Staff:\nHits grant a stack of Synapse Junctions for 5 seconds, up to a maximum of 3 Stacks.\nDamage Increase | Passive Super Drain Decrease:\n• Synapse Junctions x1: 13.5% | ?%\n• Synapse Junctions x1: 28.8% | ?%\n• Synapse Junctions x1: 46.2% | ?%"
   }
  },
  "593361147": {
@@ -1746,16 +1437,6 @@
  "595108252": {
   "hash": 595108252,
   "name": "Compulsive Reloader",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ],
-      "stat": [ 55 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "While above 50% Magazine Capacity:\n[enh]55 Reload Speed with a 0.95x Reload Duration Multiplier.\n[enh] Reload Speed bonus is increased by 5."
@@ -1886,16 +1567,6 @@
  "671806388": {
   "hash": 671806388,
   "name": "Compulsive Reloader",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "multiplier": [ 0.95 ],
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While above 50% Magazine Capacity:\n50 Reload Speed with a 0.95x Reload Duration Multiplier."
@@ -1969,15 +1640,6 @@
  "691659142": {
   "hash": 691659142,
   "name": "Pugilist",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant 10% Melee Ability Energy.\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant 20%.\nDealing Melee Damage grants 35 Handling for 3 seconds."
@@ -1996,15 +1658,6 @@
  "699525795": {
   "hash": 699525795,
   "name": "Eye of the Storm",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 15, 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Linearly grants up to 30 Handling, -40% Accuracy Cone Size, and -17% Accuracy Cone Growth as health decreases below 156 HP.\nEffect reaches maximum strength at Critical Health."
@@ -2031,23 +1684,6 @@
  "706527188": {
   "hash": 706527188,
   "name": "Quickdraw",
-  "stats": {
-   "Ready": [
-    {
-     "active": {
-      "stat": [ 100 ],
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon readying the Weapon, for 1 second:\nGrants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier.\nBuff is removed as soon as ADS input is pressed."
@@ -2106,15 +1742,6 @@
  "736000386": {
   "hash": 736000386,
   "name": "Freehand Grip",
-  "stats": {
-   "Ready": [
-    {
-     "passive": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
    "en": "Decreases Hipfire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier."
@@ -2141,29 +1768,6 @@
  "744594675": {
   "hash": 744594675,
   "name": "Well-Rounded",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grenade Ability usage and Powered Melee hits grant 1 Stack of Well-Rounded. Super Ability usage grants 2 Stacks.\nGrants 10 Range, 10 Stability, and 10 Handling per stack for 15 seconds. Maximum of 2 Stacks."
@@ -2172,15 +1776,6 @@
  "744770875": {
   "hash": 744770875,
   "name": "Adept Charge Time",
-  "stats": {
-   "Charge Draw": [
-    {
-     "passive": {
-      "stat": [ -40 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
    "en": "Decreases Charge Time by 40ms without affecting damage."
@@ -2269,7 +1864,7 @@
   "name": "One-Two Punch",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with [enh]10 of the 12 Shotgun Pellets in the spread.\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, [Arc]Combination Blow, [Arc]Disorienting Blow, [Arc]Chain Lightning, and [Strand]Grapple Melee\nThe following options do not benefit from the perk:\n• Hunters: [Solar]Proximity Explosive Knife's and [Void]Snare Bomb's detonations, [Arc]Tempest Strike, [Stasis]Withering Blade, [Strand]Threaded Spike\n• Titans: [Solar]Throwing Hammer, [Solar]Consecration, [Arc]Thunderclap, [Void]Shield Throw, [Strand]Flechette Storm\n• Warlocks: all abilities except [Arc]Chain Lightning\nThe buff does not stack with the passive Melee Damage Increase against [Stasis]Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\nThis means that with the exception of [Stasis]Shiver Strike and [Stasis]Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over the buff from [Stasis]Freeze against Bosses and Vehicles.\n[enh] Requires 2 fewer Shotgun Pellets to activate."
+   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with [enh]10 of the 12 Shotgun Pellets in the spread.\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, [Arc]Combination Blow, [Arc]Disorienting Blow, [Arc]Chain Lightning, and [Strand]Grapple Melee\nThe following options do not benefit from the perk:\n• Hunters: [Solar]Proximity Explosive Knife's and [Void]Snare Bomb's detonations, [Arc]Tempest Strike, [Stasis]Withering Blade, [Strand]Threaded Spike\n• Titans: [Solar]Throwing Hammer, [Solar]Consecration, [Arc]Thunderclap, [Void]Shield Throw, [Strand]Flechette Storm\n• Warlocks: all abilities except [Arc]Chain Lightning\nThe buff does not stack with the passive Melee Damage Increase against [Stasis]Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\nThis means that with the exception of [Stasis]Shiver Strike and [Stasis]Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over [Stasis]Freeze's buff when used against Bosses and Vehicles.\n[enh] Requires 2 fewer Shotgun Pellets to activate."
   }
  },
  "792400107": {
@@ -2319,25 +1914,9 @@
  "818211479": {
   "hash": 818211479,
   "name": "Shattering Blade",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.67 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.67 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "If Heavy Attack consumes all remaining Sword Ammo:\n67% Increased Damage for Grounded Heavy Attack."
+   "en": "Grants 67% Increased Damage for Grounded Heavy Attacks that consume all remaining ammo."
   }
  },
  "824488952": {
@@ -2479,30 +2058,6 @@
   "name": "Tight Fit",
   "itemHash": 2390471904,
   "itemName": "Speedloader Slacks",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 30, 35, 40, 45, 50 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 40, 40, 45, 50, 55 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 40, 40, 45, 50, 55 ],
-      "multiplier": [ 1, 0.925, 0.915, 0.91, 0.89 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Class Ability Usage grants 1 Stack of Tight Fit to the wearer and allies within 15 meters for 15 seconds.\nWhile Tight Fit is active:\n• Kills or Dodges grant an additional Stack up to a maximum of 5 and refresh the duration of the buff.\n• Allies within range receive the same number of Stacks as the wearer when the buff is refreshed.\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 30|35|40|45|50 Airborne Effectiveness\n• 40|40|45|50|55 Handling and Reload Speed\n• 1x|0.925x|0.915x|0.91x|0.89x Reload Duration Multiplier"
@@ -2627,15 +2182,6 @@
  "908147344": {
   "hash": 908147344,
   "name": "Sneak Bow",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants the following benefits while Crouched:\n• Prevents Radar Ping when shooting\n• ? Reload Speed\n• 0.8x Reload Duration Multiplier\n• Increases Arrow Hold Time by 25%"
@@ -2720,15 +2266,6 @@
   "name": "Tome of Dawn",
   "itemHash": 370930766,
   "itemName": "Wings of Sacred Dawn",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Aiming Down Sights while Airborne grants Tome of Dawn while on a Solar Subclass.\nTome of Dawn lasts 2.8 seconds and holds you in place midair. Weapon hits add ? seconds to its duration.\nTome of Dawn grants the following benefits:\n• 50 Airborne Effectiveness\n• 25% Flinch Resistance\n• 15% Damage Resistance\n• Weapon Kills refill the magazines of all equipped [Solar]Solar Weapons from reserves"
@@ -2773,24 +2310,6 @@
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
-  "stats": {
-   "Reload": [
-    {
-     "passive": {
-      "stat": [ 20 ],
-      "multiplier": [ 0.85 ]
-     },
-     "weaponTypes": [ "GL", "Glaive" ]
-    },
-    {
-     "passive": {
-      "stat": [ 20 ],
-      "multiplier": [ 0.8 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Passively grants:\n• 35% Increased Projectile Velocity\n• 20 Reload Speed\n• 0.8x Reload Duration Multiplier to Rocket Launchers\n• 0.85x Reload Duration Multiplier to Glaives and Grenade Launchers\n(Reload Duration Multiplier for Bows is unknown)"
@@ -2807,22 +2326,6 @@
  "957782887": {
   "hash": 957782887,
   "name": "Snapshot Sights",
-  "stats": {
-   "ADS": [
-    {
-     "active": {
-      "multiplier": [ 0.5 ]
-     },
-     "weaponTypes": [ "AR", "Bow", "HC", "Pulse", "Scout", "Sidearm", "SMG" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     },
-     "weaponTypes": [ "Fusion", "GL", "Glaive", "Sniper", "Trace", "Shotgun" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Passively decreases the ADS Animation Duration:\n• 50% Decrease on [primary]Primary Weapons\n• 20% Decrease on [special]Special Weapons"
@@ -2897,18 +2400,9 @@
  "984527513": {
   "hash": 984527513,
   "name": "Major Spec",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.0777 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
-   "en": "Grants 7.77% Increased Damage against [Elite and Miniboss Combatants](https://url.d2clarity.com/combatants)."
+   "en": "Grants 7.77% Increased Damage against [Elite Combatants](https://url.d2clarity.com/combatants)."
   }
  },
  "984655331": {
@@ -2962,15 +2456,6 @@
  "1008128453": {
   "hash": 1008128453,
   "name": "Cornered",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Grants 15% Decreased Charge/Draw Time while within 15 meters of 2+ enemies. The buff lingers for 1.5 seconds when no longer surrounded.\n[enh] Grants 10 Stability while the perk is active."
@@ -2979,22 +2464,6 @@
  "1015611457": {
   "hash": 1015611457,
   "name": "Kill Clip",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:\n25% Increased Damage for 5 seconds.\nBuff stays active while stowed."
@@ -3321,29 +2790,6 @@
   "name": "Cobra Totemic",
   "itemHash": 3627185503,
   "itemName": "Ophidian Aspect",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 10 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "passive": {
-      "stat": [ 35 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "passive": {
-      "stat": [ 35 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 10 Airborne Effectiveness, 35 Reload Speed, and 35 Handling to all weapons."
@@ -3384,7 +2830,7 @@
   "itemName": "ACD/0 Feedback Fence",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Melee Hits grant 1 Stack of Armor Charge. (Each damage instance is counted separately)\nHaving active Armor Charges grants Melee Damage Resistance. Receiving a Melee Attack consumes all Armor Charges and emits a [Arc]Jolting [Arc]Arc Burst in a ? meter radius.\nBenefits with 1|2|... Armor Charges:\n• [Arc]Arc Burst Damage: 90|130|170|200|225|245\n• Melee Damage Resistance: 23.3% | 46.7% | 70% | 73.3% | 76.7% | 80%"
+   "en": "Melee Hits grant 1 Stack of Armor Charge. (Each damage instance is counted separately)\nHaving active Armor Charges grants Melee Damage Resistance. Receiving a Melee Attack consumes all Armor Charges and emits a [Arc]Jolting [Arc]Arc Burst in a ? meter radius.\nBenefits with 1|2|…|6 Armor Charges:\n• [Arc]Arc Burst Damage: 90|130|170|200|225|245\n• Melee Damage Resistance: 23.3% | 46.7% | 70% | 73.3% | 76.7% | 80%"
   }
  },
  "1155472387": {
@@ -3436,22 +2882,12 @@
   "name": "Lasting Impression",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Passively grants [enh]55 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing an additional 25% Explosive Damage.\n(Overall 20% increased total damage)\n[enh] Grants 5 more Blast Radius passively."
+   "en": "Passively grants [enh]55 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 25% Increased Explosive Damage.\n[enh] Grants 5 more Blast Radius passively."
   }
  },
  "1168162263": {
   "hash": 1168162263,
   "name": "Outlaw",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 70 ],
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Precision Kill:\n70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
@@ -3468,16 +2904,6 @@
  "1171147302": {
   "hash": 1171147302,
   "name": "Feeding Frenzy",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 13, 55, 65, 85, 100 ],
-      "multiplier": [ 0.975, 0.9, 0.868, 0.837, 0.8 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\nBonuses at 1|2|3|4|5 Stacks:\n• [enh]13 | [enh]55 | [enh]65 | [enh]85 | 100 Reload Speed Stat\n• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier\n[enh] Increases Reload Speed bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks."
@@ -3530,15 +2956,6 @@
  "1183436451": {
   "hash": 1183436451,
   "name": "Firefly",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 55 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "On Precision Kill:\n• Target explodes, dealing [pve]104 [pvp][80] Solar Damage in a 4 meter radius\n• Grants [enh]55 Reload Speed for 6 seconds\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n[enh] Grants 5? more Reload Speed."
@@ -3575,22 +2992,6 @@
  "1195158366": {
   "hash": 1195158366,
   "name": "Encore",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 5, 10, 15, 20 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 8, 16, 24, 32 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 7 seconds:\nGrants 1 Stack on Bodyshot Kills and 2 Stacks on Precision Kills. Maximum of 4 Stacks.\nDuration is refreshed on Weapon Kills.\nEach stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size."
@@ -3764,22 +3165,6 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Passively grants 20 Handling and 20 Reload Speed.\nWhile Last Guardian Standing:\n• 100 Handling, 100 Reload Speed, [?] Aim Assist\n• Greatly decreased incoming flinch\n• Increased Accuracy\n• Stronger Sight Highlight\n• Enables Radar while ADS\nDoes not activate when playing solo."
@@ -4060,22 +3445,6 @@
  "1334978104": {
   "hash": 1334978104,
   "name": "Quick Access Sling",
-  "stats": {
-   "Ready": [
-    {
-     "passive": {
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "passive": {
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
    "en": "Decreases Ready/Stow Animation Duration by 10%."
@@ -4118,15 +3487,6 @@
  "1359896290": {
   "hash": 1359896290,
   "name": "Dynamic Sway Reduction",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Each shot while holding down the trigger grants:\n• 1 Stability\n• -5% Accuracy Cone Size\n• -10% Accuracy Cone Growth\nReaches maximum strength after 10 shots, granting 10 Stability, -50% Accuracy Cone Size, and -100% Accuracy Cone Growth."
@@ -4135,36 +3495,6 @@
  "1365187766": {
   "hash": 1365187766,
   "name": "Gutshot Straight",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1 ]
-     },
-     "weaponTypes": [ "Pulse", "Sidearm", "SMG" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     },
-     "weaponTypes": [ "AR", "Bow", "HC", "Scout" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1 ]
-     },
-     "weaponTypes": [ "Pulse", "Sidearm", "SMG" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     },
-     "weaponTypes": [ "AR", "Bow", "HC", "Scout" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While Aiming Down Sights:\n• Increased Body Shot Damage\n• -20%? Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot Damage Increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%"
@@ -4257,7 +3587,7 @@
   "name": "Stats for All",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon damaging 3 Separate Enemies within 3 seconds of each, for [enh]11 seconds:\n• 10 Stability\n• 35 Handling\n• 10 Range\n• 5% Increased Damage Falloff Distance\n• 35 Reload Speed\n• 0.95x Reload Duration Multiplier\nBuff cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Upon damaging 3 Separate Enemies within 3 seconds of each, for [enh]11 seconds:\n• 35 Handling and Reload Speed\n• 10 Stability and Range\n• 5% Increased Damage Falloff Distance\n• 0.95x Reload Duration Multiplier\nBuff cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "1419069769": {
@@ -4291,29 +3621,6 @@
  "1428297954": {
   "hash": 1428297954,
   "name": "Perpetual Motion",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While moving at a minimum of 2 meters per second:\nGain a Stack after 2 and 10 seconds.\nEach stack provides 10 Stability, 10 Handling, and 10 Reload Speed. All stacks are removed if movement speed is below 2 m/s for 0.5 seconds.\nWorks and can activate while stowed."
@@ -4340,31 +3647,6 @@
  "1439600632": {
   "hash": 1439600632,
   "name": "Bipod",
-  "stats": {
-   "Firing Delay": [
-    {
-     "passive": {
-      "multiplier": [ 0.75 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "passive": {
-      "multiplier": [ 0.75 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "passive": {
-      "multiplier": [ 0.75 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Increases Magazine Capacity by 1 and Total Reserve Size by 5. Decreases Firing Delay by 25%.\nDecreases Blast Radius by 30, Reload Speed by 20, and Damage by 25%."
@@ -4383,23 +3665,6 @@
   "name": "Adamantine Brace",
   "itemHash": 691578978,
   "itemName": "Oathkeeper",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 40 ]
-     },
-     "weaponTypes": [ "Bow" ]
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.375, 1.75, 2.125, 2.5 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 40 Airborne Effectiveness and 10 Draw Time Stat (equivalent of a Draw Time Masterwork) to Bows.\nFull Draws grant Adamantine Brace:\n• Allows Perfect Draws to be held indefinitely.\n• [pve]Grants 37.5% Increased Damage against PvE Combatants every 0.5 seconds, up to a 150% Increase.\nPvE Damage buff only affects the initial Impact Damage (e.g. Wish Ender's overpenetration is unaffected) and expires after 4 Seconds of Adamantine Brace being active. Leviathan's Breath does not receive the Damage Increase."
@@ -4498,15 +3763,6 @@
  "1513326571": {
   "hash": 1513326571,
   "name": "Taken Spec",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
    "en": "Grants 10% Increased Damage against Taken Combatants."
@@ -4565,22 +3821,6 @@
  "1545231802": {
   "hash": 1545231802,
   "name": "Redirection",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25, 1.5, 1.75, 2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25, 1.5, 1.75, 2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "On hit against Minor Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\nOn hit against [Major, Boss, or Vehicle](https://url.d2clarity.com/combatants) Combatants, for one shot:\nConsumes up to [enh]4 Stacks granting [enh]25% Increased Damage per Stack consumed.\n[enh] Damage Increase per Stack is increased by an additive 5% and the maximum buff requires 1 less Stack."
@@ -4693,15 +3933,6 @@
  "1570042021": {
   "hash": 1570042021,
   "name": "Heating Up",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 15, 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 5.5 seconds:\n• 15 Stability\n• 20 Recoil Direction\n• -15% Accuracy Cone Size\n• -15% Accuracy Cone Growth\nStacks 2 times. Cone scalars stack multiplicatively.\nDuration is refreshed on kills. Stays active while stowed."
@@ -4710,41 +3941,9 @@
  "1583705720": {
   "hash": 1583705720,
   "name": "Stats for All",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 10 ],
-      "multiplier": [ 1.05 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 35 ],
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon damaging 3 Separate Enemies within 3 seconds of each, for 10 seconds:\n• 10 Stability\n• 35 Handling\n• 10 Range\n• 5% Increased Damage Falloff Distance\n• 35 Reload Speed\n• 0.95x Reload Duration Multiplier\nBuff cannot be refreshed."
+   "en": "Upon damaging 3 Separate Enemies within 3 seconds of each, for 10 seconds:\n• 35 Handling and Reload Speed\n• 10 Stability and Range\n• 5% Increased Damage Falloff Distance\n• 0.95x Reload Duration Multiplier\nBuff cannot be refreshed."
   }
  },
  "1589556860": {
@@ -4858,29 +4057,6 @@
  "1646437399": {
   "hash": 1646437399,
   "name": "Duelist's Trance",
-  "stats": {
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 65 ]
-     }
-    }
-   ],
-   "Guard Endurance": [
-    {
-     "active": {
-      "stat": [ 65 ]
-     }
-    }
-   ],
-   "Guard Resistance": [
-    {
-     "active": {
-      "stat": [ 65 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Grants [enh]65 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed.\n[enh] Grants 5 points of each Stat."
@@ -4927,15 +4103,6 @@
   "name": "Sunfire Furnace",
   "itemHash": 1192890598,
   "itemName": "Hallowfire Heart",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 20 Airborne Effectiveness\nWhile standing in a [Solar]Sunspot:\nSolar Kills create [Solar]Sunspots at the target's location.\nGrants 350% Additional Base Grenade and Melee Regeneration Rate if your [Solar]Solar Super is Charged."
@@ -4956,16 +4123,6 @@
   "name": "Auto-Loading Link",
   "itemHash": 1591207518,
   "itemName": "Actium War Rig",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 30 ]
-     },
-     "weaponTypes": [ "AR", "LMG" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 30 Airborne Effectiveness to Auto Rifles and Machine Guns.\nRefills 10% of readied Auto Rifles' and Machine Guns' Magazines every 1.5 seconds."
@@ -5034,22 +4191,6 @@
  "1685431615": {
   "hash": 1685431615,
   "name": "En Garde",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.3 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.3 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon readying a Sword:\n30% Increased damage for 1.5 seconds."
@@ -5111,33 +4252,6 @@
   "name": "Illegally Modded Holster",
   "itemHash": 193869522,
   "itemName": "Lucky Pants",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 20 ]
-     },
-     "weaponTypes": [ "HC" ]
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.6, 2.2, 2.8, 3.4, 4, 4.6, 5.2, 5.8, 6.4, 7 ]
-     },
-     "weaponTypes": [ "HC" ]
-    }
-   ],
-   "Ready": [
-    {
-     "passive": {
-      "stat": [ 100 ],
-      "multiplier": [ 0.6 ]
-     },
-     "weaponTypes": [ "HC" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Grants the following benefits to Hand Cannons:\n• 20 Airborne Effectiveness\n• 100 Handling to Ready Speed\n• 0.6x Ready Animation Duration Multiplier\n• -40% Accuracy Cone Size for 4 seconds on Readying\nUpon readying a Fully Loaded Kinetic or Matching Element Hand Cannon in PVE:\n60% Increased Damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits.\nEriana's Vow only receives 30% Increased Damage per hit. Sturm's Overcharged Rounds, Malfeasance's Explosive Shadow, Hawkmoon's Paracausal Shot, and Payload Perks are unaffected by the buff.\nAfter the Buff runs out, or you swap weapons:\nCannot gain stacks or reacquire the damage buff for 10 seconds."
@@ -5306,24 +4420,6 @@
   "name": "Clenched Fist",
   "itemHash": 2240152949,
   "itemName": "Stronghold",
-  "stats": {
-   "Guard Endurance": [
-    {
-     "passive": {
-      "stat": [ 100 ]
-     },
-     "weaponTypes": [ "Sword" ]
-    }
-   ],
-   "Guard Resistance": [
-    {
-     "passive": {
-      "stat": [ 100 ]
-     },
-     "weaponTypes": [ "Sword" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 100 Guard Resistance and Guard Endurance to Swords.\nWhile Guarding:\n• Grants [pve]50% [pvp][10%] Damage Resistance (Stacks multiplicatively with the Damage Resistance provided by Sword Guard against blocked attacks)\n• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while a [Solar]Restoration effect is active)\n• Sword Energy does not decay from holding guard\nAll Stacks are removed if no hits have been blocked in the last 10 seconds.\nDealing Sword Damage with active Perfect Guard Stacks grants [Solar]Restoration x2:\n[pve]4 [pvp][3] second duration at 1 Stack, scaling up to [pve]16 [pvp][6] seconds at 100 Stacks."
@@ -5390,29 +4486,6 @@
  "1754714824": {
   "hash": 1754714824,
   "name": "Kickstart",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon Sliding after Sprinting for 1.5 seconds:\nGrants 15% Increased Damage and 20% Decreased Charge Time for ? seconds."
@@ -5455,22 +4528,6 @@
  "1771339417": {
   "hash": 1771339417,
   "name": "Firing Line",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While within 15 meters of 2 Allies:\n20% Increased Precision Damage"
@@ -5529,15 +4586,6 @@
  "1799762209": {
   "hash": 1799762209,
   "name": "Cornered",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.85 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants 15% Decreased Charge/Draw Time while within 15 meters of 2+ enemies. The buff lingers for 1.5 seconds when no longer surrounded."
@@ -5570,22 +4618,6 @@
  "1821614984": {
   "hash": 1821614984,
   "name": "Slickdraw",
-  "stats": {
-   "Handling": [
-    {
-     "passive": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "passive": {
-      "multiplier": [ 0.95 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Passively grants:\n• 100 Handling\n• 0.95x Ready Animation Duration Multiplier\n• -55%(?) Auto Aim Cone Size (No effect on Reticle Stickiness)"
@@ -5737,21 +4769,6 @@
  "1890422124": {
   "hash": 1890422124,
   "name": "Tap the Trigger",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     },
-     "weaponTypes": [ "Fusion" ]
-    },
-    {
-     "active": {
-      "stat": [ 40 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Immediately upon firing, for 0.6 seconds:\n40 Stability, -50% Recoil, and -10% Accuracy Cone Size.\nFusion Rifles Only Receive 25% of the benefits.\n[Controller-Only] Weapon fires the instant trigger pressure is applied."
@@ -5810,36 +4827,6 @@
   "name": "Overflowing Light",
   "itemHash": 1341951177,
   "itemName": "Heart of Inmost Light",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2, 1.35 ]
-     },
-     "weaponTypes": [ "Grenade" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.1, 1.2 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1, 1.2 ]
-     },
-     "weaponTypes": [ "Grenade" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.1, 1.2 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Ability use grants Empowered for other abilities for 5 seconds, depending on the Ability used.\ne.g.: Barricade Usage >> Empowered Melee and Empowered Grenade\nEmpowered Melee x1|x2:\n• 10% | 20% Increased damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Melee Regeneration Rate\nEmpowered Grenade x1|x2:\n• [pve]20% [pvp][10%] | [pve]35% [pvp][20%] Increased damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Grenade Regeneration Rate\nEmpowered Barricade x1|x2:\n• 25%|50% Additional Base Class Ability Regeneration Rate\n• Currently does not grant a benefit to Barricade HP despite stating it does"
@@ -5934,24 +4921,6 @@
   "name": "The Fourth Magic",
   "itemHash": 2428181146,
   "itemName": "Verity's Brow",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
-     },
-     "weaponTypes": [ "Grenade" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
-     },
-     "weaponTypes": [ "Grenade" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Weapons Kills with a Matching Subclass Element grant a Stack of Death Throes for 11 seconds. Maximum of 5 Stacks.\nDeath Throes grants 50% additional Base Grenade Recharge Rate and 20% Increased Grenade Damage per Stack.\nOn Grenade Ability Usage with active Death Throes Stacks, for 5 seconds:\nAllies receive 'Feel The Flames' while within 20 meters.\n'Feel the Flames' grants 10x Grenade Recharge Rate.\nGrenade Regeneration Rate Multiplier is applied after all Additive Grenade Regeneration Rate Modifiers."
@@ -5970,7 +4939,7 @@
   "name": "High-Impact Reserves",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Increases Weapon Damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as Magazine drops from [enh]55% capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Activates with 5% more of the Magazine Capacity remaining."
+   "en": "Increases Weapon Damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from [enh]55% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\n[enh] Activates with 5% more of the Magazine Capacity remaining."
   }
  },
  "2003108620": {
@@ -6044,22 +5013,6 @@
  "2039302152": {
   "hash": 2039302152,
   "name": "Slideways",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Sliding refills 15% of the Magazine and grants 20 Stability and 20 Handling for 3 seconds.\nBuff duration cannot be refreshed."
@@ -6241,16 +5194,6 @@
  "2117683199": {
   "hash": 2117683199,
   "name": "Full Auto Trigger System",
-  "stats": {
-   "Firing Delay": [
-    {
-     "active": {
-      "multiplier": [ 0.9 ]
-     },
-     "weaponTypes": [ "Shotgun" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon fires Full Auto. (Identical to the setting)\nGrants 10% Faster Rate of Fire on Shotguns."
@@ -6261,15 +5204,6 @@
   "name": "Vanishing Shadow",
   "itemHash": 2773056939,
   "itemName": "Graviton Forfeit",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Void Invisibility effects last 2 seconds longer.\nWhile Invisible:\n• Grants 100 Recovery and 100 Reload Speed\n• [pve]400% [pvp][100%] Additional Base Melee Regeneration Rate.\n• 1 to 2+ enemies within 15 meters will increase the bonus to a total of [pve]600% [pvp][200%] and [pve]800% [pvp][300%]"
@@ -6384,29 +5318,6 @@
  "2172504645": {
   "hash": 2172504645,
   "name": "Sleight of Hand",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon readying the weapon within 3.5 seconds of getting kills with other weapons while it was stowed:\nGrants 10 Handling, 10 Reload Speed, and 10 Stability per Stack for 7.5 seconds.\nMaximum of 3 Stacks. Buff is removed on stow."
@@ -6521,25 +5432,9 @@
  "2213355989": {
   "hash": 2213355989,
   "name": "High-Impact Reserves",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 12.1, 25.6 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.03, 1.06 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Increases Weapon Damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as Magazine drops from 50% capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects."
+   "en": "Increases Weapon Damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from 50% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles."
   }
  },
  "2213377102": {
@@ -6577,15 +5472,6 @@
  "2224838837": {
   "hash": 2224838837,
   "name": "Unstoppable Force",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon blocking damage with the Glaive Shield:\n20% increased Projectile Damage for 4 seconds or until no longer blocking.\nBlocking any hit refreshes the duration."
@@ -6687,15 +5573,6 @@
  "2272927194": {
   "hash": 2272927194,
   "name": "Perfect Float",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "After being in Combat for 6 seconds:\nGrants 30 Airborne Effectiveness and 35% Flinch Resistance for 10 seconds.\nCan activate while stowed. Dealing and receiving damage refreshes the buff duration.\nFor Pefect Float, being in Combat is defined as having either dealt or received damage within the last 3 seconds."
@@ -6918,22 +5795,6 @@
  "2319119708": {
   "hash": 2319119708,
   "name": "High Ground",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants [pve]20% [pvp][10%] Increased Damage to targets standing on 1? meter lower ground than you.\nDoes not work while airborne."
@@ -6986,39 +5847,9 @@
  "2360754333": {
   "hash": 2360754333,
   "name": "Trench Barrel",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "multiplier": [ 30 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After dealing non-projectile Melee Damage:\n50% Increased Damage, 30 Reload Speed, and 30 Handling for 5 seconds OR until firing 3 shots."
+   "en": "Dealing Melee Damage grants 50% Increased Damage, 30 Reload Speed, and 30 Handling for 5 seconds OR until firing 3 shots."
   }
  },
  "2362217257": {
@@ -7072,22 +5903,6 @@
  "2396422520": {
   "hash": 2396422520,
   "name": "Slideways",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Sliding refills 15% of the Magazine and grants [enh]25 Stability and [enh]25 Handling for 3 seconds.\nBuff duration cannot be refreshed.\n[enh] Stat bonuses are increased by 5."
@@ -7156,22 +5971,6 @@
  "2416023159": {
   "hash": 2416023159,
   "name": "Offhand Strike",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "multiplier": [ 1.45 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 7 seconds:\n• 30 Stability\n• 1.45x Damage Falloff Start and End Distance\n• 3-3.5° Precision Aim Angle\n• -95%? Accuracy Cone Size\n• -95%? Accuracy Cone Growth.\nOnly applies to hipfiring."
@@ -7238,23 +6037,6 @@
  "2450788523": {
   "hash": 2450788523,
   "name": "Killing Wind",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 20 ],
-      "multiplier": [ 1.05 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 40 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 5 seconds:\n• 50 Mobility\n• 40 Handling and 20 Range\n• 5% Increased Damage Falloff Distance\nAdditional Kills extend the duration by 5 seconds, up to 8 seconds."
@@ -7279,22 +6061,6 @@
  "2458213969": {
   "hash": 2458213969,
   "name": "Multikill Clip",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.17, 1.33, 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.17, 1.33, 1.5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:\n17% | 33% | 50% Increased damage for 5 seconds, depending on the amount of enemies killed within 3.5 seconds of each.\nEach kill within the time period contributes to 1 Stack of the buff. Maximum of 3 Stacks.\nBuff is overwritten every time it is refreshed."
@@ -7303,39 +6069,9 @@
  "2459015849": {
   "hash": 2459015849,
   "name": "Trench Barrel",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After dealing non-projectile Melee Damage:\n50% Increased Damage, [enh]35 Reload Speed, and [enh]35 Handling for 5 seconds OR until firing 3 shots.\n[enh] Stat bonuses are increased by 5?."
+   "en": "Dealing Melee Damage grants 50% Increased Damage, [enh]35 Reload Speed, and [enh]35 Handling for 5 seconds OR until firing 3 shots.\n[enh] Stat bonuses are increased by 5?."
   }
  },
  "2467203039": {
@@ -7425,22 +6161,6 @@
  "2495011826": {
   "hash": 2495011826,
   "name": "Ensemble",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 45 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Grants [enh]35 Handling and [enh]45 Reload Speed while within 15 meters of an ally.\nLingers for 1.5 seconds.\n[enh] Stat bonuses are increased by 5."
@@ -7590,22 +6310,6 @@
  "2586829431": {
   "hash": 2586829431,
   "name": "Shot Swap",
-  "stats": {
-   "Ready": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant 2 Stacks of Shot Swap, granting 100(?) Ready/Stow Handling.\nMaximum of 8 Stacks. Consumes 1 Stack when readying or stowing the weapon."
@@ -7622,29 +6326,6 @@
  "2594592626": {
   "hash": 2594592626,
   "name": "Controlled Burst",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon scoring a Kill or hitting every shot in a burst:\nGrants 20% Increased Damage and 10% Decreased Charge Time for 2 seconds."
@@ -7661,22 +6342,6 @@
  "2610012052": {
   "hash": 2610012052,
   "name": "Golden Tricorn",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15, 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.15, 1.5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Increases Damage by 15% for 7 seconds on Weapon Kills.\nMatching Grenade or Powered Melee Kills while the buff is active grant 50% Increased Damage for 10 seconds.\nThe 50% Damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
@@ -7703,22 +6368,6 @@
  "2621346526": {
   "hash": 2621346526,
   "name": "Ensemble",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 40 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants 30 Handling and 40 Reload Speed while within 15 meters of an ally.\nLingers for 1.5 seconds."
@@ -7753,15 +6402,6 @@
  "2652708987": {
   "hash": 2652708987,
   "name": "Successful Warm-Up",
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.625 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Weapon Kill, for 6 seconds:\n37.5% Decreased Charge/Draw Time.\nKills while the perk active add 4 seconds to the duration up to a maximum of 20 seconds."
@@ -7828,15 +6468,6 @@
   "name": "Relentless Tracker",
   "itemHash": 896224899,
   "itemName": "Foetracer",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Dealing Ability Damage to a [Major, Boss, or Player](https://url.d2clarity.com/combatants) target grants 4 Stacks of Subclass-Matching Weapon Surge and highlights the target for 10 seconds each. Weapon Surge duration is not refreshable.\nKilling highlighted targets spawns a Subclass-Matching Elemental Pickup.\nElemental Pickups include [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, [Strand]Strand Tangles, and [Void]Void Breaches."
@@ -7847,24 +6478,6 @@
   "name": "Hawkeye Hack",
   "itemHash": 1321354573,
   "itemName": "Celestial Nighthawk",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 6 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 6 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Modifies [Solar]Golden Gun to only fire a single shot that deals 650% Increased Damage. (~72.1% more Damage compared to 3 Precision Hits with Marksman Golden Gun. Also, please only use it with Marksman Golden Gun)\nScoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode, dealing up to [pve]400 [pvp][?] damage to enemies within ? meters.\nPrecision Kills grant 1.5-4.5% Super Energy depending on [Enemy Rank](https://url.d2clarity.com/combatants)."
@@ -7919,7 +6532,7 @@
   "name": "One-Two Punch",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with all 12 Shotgun Pellets in the spread.\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, [Arc]Combination Blow, [Arc]Disorienting Blow, [Arc]Chain Lightning, and [Strand]Grapple Melee\nThe following options do not benefit from the perk:\n• Hunters: [Solar]Proximity Explosive Knife's and [Void]Snare Bomb's detonations, [Arc]Tempest Strike, [Stasis]Withering Blade, [Strand]Threaded Spike\n• Titans: [Solar]Throwing Hammer, [Solar]Consecration, [Arc]Thunderclap, [Void]Shield Throw, [Strand]Flechette Storm\n• Warlocks: all abilities except [Arc]Chain Lightning\nThe buff does not stack with the passive Melee Damage Increase against [Stasis]Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\nThis means that with the exception of [Stasis]Shiver Strike and [Stasis]Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over the buff from [Stasis]Freeze against Bosses and Vehicles."
+   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with all 12 Shotgun Pellets in the spread.\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, [Arc]Combination Blow, [Arc]Disorienting Blow, [Arc]Chain Lightning, and [Strand]Grapple Melee\nThe following options do not benefit from the perk:\n• Hunters: [Solar]Proximity Explosive Knife's and [Void]Snare Bomb's detonations, [Arc]Tempest Strike, [Stasis]Withering Blade, [Strand]Threaded Spike\n• Titans: [Solar]Throwing Hammer, [Solar]Consecration, [Arc]Thunderclap, [Void]Shield Throw, [Strand]Flechette Storm\n• Warlocks: all abilities except [Arc]Chain Lightning\nThe buff does not stack with the passive Melee Damage Increase against [Stasis]Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\nThis means that with the exception of [Stasis]Shiver Strike and [Stasis]Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over [Stasis]Freeze's buff when used against Bosses and Vehicles."
   }
  },
  "2682205016": {
@@ -7991,24 +6604,6 @@
   "name": "Warlord's Sigil",
   "itemHash": 3844826443,
   "itemName": "Winter's Guile",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.55, 2.1, 2.65, 3.2, 3.75 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Grants a Stack of Warlord's Sigil on (Glaive) Melee Kills for 5 seconds, increasing (Glaive) Melee Damage.\n(Glaive) Melee Damage Increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\nPVE Combatants hit by [Stasis]Penumbral Blast automatically shatter."
@@ -8113,16 +6708,6 @@
  "2779035018": {
   "hash": 2779035018,
   "name": "Feeding Frenzy",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 50, 60, 75, 100 ],
-      "multiplier": [ 0.975, 0.9, 0.868, 0.837, 0.8 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant 1 Stack of Feeding Frenzy for 3.5 seconds, increasing the Reload Speed of the weapon. Maximum of 5 Stacks.\nBonuses at 1|2|3|4|5 Stacks:\n• 8 | 50 | 60 | 75 | 100 Reload Speed Stat\n• 0.975x | 0.9x | 0.868x | 0.837x | 0.8x Reload Duration Multiplier"
@@ -8139,18 +6724,9 @@
  "2788909693": {
   "hash": 2788909693,
   "name": "Boss Spec",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.0777 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
-   "en": "Grants 7.77% Increased Damage against [Boss and Vehicle Combatants](https://url.d2clarity.com/combatants)."
+   "en": "Grants 7.77% Increased Damage against [Miniboss, Boss, and Vehicle Combatants](https://url.d2clarity.com/combatants)."
   }
  },
  "2788997987": {
@@ -8228,15 +6804,6 @@
   "name": "Nightmare Fuel",
   "itemHash": 1688602431,
   "itemName": "Sealed Ahamkara Grasps",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "On Melee Hits, for 5.5 seconds:\n• Grants 50 Airborne Effectiveness\n• Grants ? Mobility\n• Grants ?% Increased Jump Height\n+ Refills the magazine of your held weapon from reserves\nPowered Melee Hits refill the magazines of all your equipped weapons.\n7 second cooldown between activations."
@@ -8363,15 +6930,6 @@
  "2846385770": {
   "hash": 2846385770,
   "name": "Rangefinder",
-  "stats": {
-   "Zoom": [
-    {
-     "passive": {
-      "multiplier": [ 1.1 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "While Aiming Down Sights:\n10% Increased Effective Zoom and 5% Faster Projectile Speed.\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%. It also reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount."
@@ -8420,30 +6978,6 @@
  "2869569095": {
   "hash": 2869569095,
   "name": "Field Prep",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50 ],
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ],
-   "Stow": [
-    {
-     "active": {
-      "multiplier": [ 0.8 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants the following while Crouched:\n• 50 Reload Speed\n• 0.8x Reload Duration Multiplier\n• 0.8x Ready/Stow Duration Multiplier\nPassively grants 30 Inventory Size Stat. (50% more than 1 Reserve Armor Mod)"
@@ -8530,15 +7064,6 @@
  "2898218424": {
   "hash": 2898218424,
   "name": "Air Assault",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 32, 64 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Passively grants [enh]12 Airborne Effectiveness.\nGrants [enh]32 Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks.\nGrounded Weapon Kills grant 1 Stack while airborne kills grant 2 Stacks.\n[enh] Grants 2 more Airborne Effectiveness passively and per Stack."
@@ -8593,21 +7118,12 @@
   "name": "Target Lock",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [enh][pve]18.82% [pvp][12.55%] to [enh][pve]45% [pvp][30%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [enh][pve]28.13% [pvp][19.02%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\nActivation Condition is based on the Base Magazine Capacity so it's unaffected by overflowing effects.\n[enh] Damage Buff is increased by [pve]12.5% [pvp][20%]."
+   "en": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\nStacks displayed on-screen are only visual aides, the buff [ramps up with each shot](https://url.d2clarity.com/PvETargetLock)  once active. Reaches maximum strength at 5 Stacks.\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%\n(SMGs require 20% for their first stack, need more testing to verify their new scaling)\nDamage Buff ramps up from [enh][pve]18.82% [pvp][12.55%] to [enh][pve]45% [pvp][30%] upon reaching maximum strength.\nAssuming no missed shots, it provides roughly a [enh][pve]28.13% [pvp][19.02%] [Damage Buff on average](https://url.d2clarity.com/PvETargetLock) after firing 100% of the Magazine.\n[enh] Damage Buff is increased by [pve]12.5% [pvp][20%]."
   }
  },
  "2946784966": {
   "hash": 2946784966,
   "name": "Tunnel Vision",
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants the following for 5 seconds upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• ? ADS Handling\n• ?% Decreased Accuracy Cone Growth"
@@ -8764,22 +7280,6 @@
  "3016987351": {
   "hash": 3016987351,
   "name": "Counterattack",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.5 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon Blocking an attack within 0.5 seconds of starting to Block:\nGrats 50% Increased Damage for 2 seconds."
@@ -8796,15 +7296,6 @@
  "3018146897": {
   "hash": 3018146897,
   "name": "Invisible Hand",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon missing multiple times within 2.5 seconds of each without scoring a hit:\nGrants +25? Stability for 2.5? seconds.\nMisses in a row required:\n• Auto Rifle: 10\n• Hand Cannon: 4\n• Linear Fusion Rifle, Pulse Rifle: unknown\nBuff is removed 1? second after scoring a hit."
@@ -8858,15 +7349,6 @@
  "3047969693": {
   "hash": 3047969693,
   "name": "Desperado",
-  "stats": {
-   "Firing Delay": [
-    {
-     "active": {
-      "multiplier": [ 0.7 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
@@ -9187,31 +7669,6 @@
  "3194351027": {
   "hash": 3194351027,
   "name": "Explosive Light",
-  "stats": {
-   "Blast Radius": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.25 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Orb of Power pickups grant 1 Stack of Explosive Light, granting 100 Blast Radius and Increased Damage.\nConsumes 1 Stack per Shot. Maximum of 6 Stacks.\nRocket Launchers: 25% Increased Impact and Explosive Damage. (No effect on Wolfpack Rounds)\nGrenade Launchers: Increases Explosive Damage damage by 60%."
@@ -9236,22 +7693,6 @@
  "3201496230": {
   "hash": 3201496230,
   "name": "Redirection",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2, 1.4, 1.6, 1.8, 2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On hit against Minor Combatants:\nGrants 1 Stack of Redirection, up to a maximum of 20 Stacks.\nOn hit against [Major, Boss, or Vehicle](https://url.d2clarity.com/combatants) Combatants, for one shot:\nConsumes up to 5 Stacks granting 20% Increased Damage per Stack consumed."
@@ -9260,22 +7701,6 @@
  "3215448563": {
   "hash": 3215448563,
   "name": "Paracausal Affinity",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Upon getting a Kill from any source matching the alignment (Light/Darkness) of the weapon:\nGrants 20% Increased Damage for 6 seconds.\nCan activate and stay active while stowed.\nLight Alignment: [Arc]Arc, [Solar]Solar, [Void]Void\nDarkness Alignment: [Stasis]Stasis, [Strand]Strand"
@@ -9294,15 +7719,6 @@
   "name": "Jump Jets",
   "itemHash": 3539357318,
   "itemName": "Lion Rampant",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Enables hipfiring while in Lift and passively grants 50 Airborne Effectiveness while hipfiring.\nIncreases Lift Duration to 4 seconds:\n• High Lift: 2.6🠚4 (54% Increase)\n• Strafe Lift: 2.2🠚4 (82% Increase)\n• Catapult Lift: 1🠚4 (300% Increase)"
@@ -9457,22 +7873,6 @@
   "name": "Move to Survive",
   "itemHash": 3948284065,
   "itemName": "Astrocyte Verse",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 30 ]
-     }
-    }
-   ],
-   "Ready": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passive grants the following benefits:\n• 30 Airborne Effectiveness\n• 25% Increased Blink Distance\n• 20% Decreased Blink Cooldown (3.55s⁠🠚⁠2.85s)\n• 30% Decreased Blink Activation Delay (1.65s⁠🠚⁠1.15s)\n• Removes Super Energy cost of [Void]Nova Warp's Dark Blink\nBlinking grants 100 Handling for 2 seconds and the Radar remains active during the animation.\nEnemies within 10? meters become [Void]Volatile when initiating Blink (animation does not need to start)."
@@ -9523,22 +7923,6 @@
  "3324494224": {
   "hash": 3324494224,
   "name": "Collective Action",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.1 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Elemental Pickup Interactions grant [pve]20% [pvp][10%] Increased Damage for 7 seconds.\nAdditional Pickup Interactions extend the duration by 7 seconds, up to 12 seconds.\nElemental Pickup Interactions:\n• Throwing [Strand]Strand Tangles or Elemental Orbs\n• Collecting [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, or [Void]Void Breaches"
@@ -9609,23 +7993,6 @@
   "name": "Alchemical Etchings",
   "itemHash": 4136768282,
   "itemName": "Lunafaction Boots",
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "multiplier": [ 2 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 100 ],
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Rifts and [Solar]Wells of Radiance you cast grant 100 Reload Speed and a 0.9x Reload Duration Multiplier to all weapons for Players inside.\n**Empowering** Rifts and [Solar]Wells of Radiance you cast also double the Damage Falloff Distance of weapons."
@@ -9644,15 +8011,6 @@
  "3350417888": {
   "hash": 3350417888,
   "name": "Sympathetic Arsenal",
-  "stats": {
-   "Reload": [
-    {
-     "passive": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Refills stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill.\nPassively grants 20 Reload Speed."
@@ -9761,22 +8119,6 @@
  "3425386926": {
   "hash": 3425386926,
   "name": "Rampage",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 10, 21, 33.1 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 10, 21, 33.1 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Provides a stacking Damage Buff on Weapon Kills:\n10% | 21% | 33.1% Increased Damage at 1|2|3 Stacks for 4.5 seconds.\nWeapon Kills refresh the buff's duration. Buff persists while stowed."
@@ -9793,29 +8135,6 @@
  "3436462433": {
   "hash": 3436462433,
   "name": "Surplus",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 5, 25, 60 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 25, 60 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 5, 15, 25 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants Stat Bonuses depending on the number of Charged Abilities.\nStat Bonuses with 1|2|3+ Charged Abilities:\n• 5|15|25 Stability\n• 5|25|60 Handling\n• 10|25|60 Reload Speed"
@@ -10350,24 +8669,6 @@
   "name": "Skittering Stinger",
   "itemHash": 2415768376,
   "itemName": "Athrys's Embrace",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 3 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 2 ]
-     },
-     "weaponTypes": [ "Melee" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Weighted Throwing Knife gains a second bounce with greatly increased tracking.\nScoring 3 Precision Hits within 2.5 seconds of each grants Strengthened Throwing Knife for 10 seconds.\nAdditional Precision Hits increase buff duration by 5 seconds each, up to 30 seconds.\nStrengthened Throwing Knife:\n• Grants 50 Strength while the buff is active\n• Deals [pve]200% [pvp][100%] Increased Damage\n• Stuns [unstoppable]Unstoppable Champions\n• Buff is consumed on Knife Hit"
@@ -10450,29 +8751,6 @@
  "3705817207": {
   "hash": 3705817207,
   "name": "Duelist's Trance",
-  "stats": {
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ],
-   "Guard Endurance": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ],
-   "Guard Resistance": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants 60 Guard Resistance, Guard Endurance, and (Guard) Charge Rate on Sword Kills until stowed."
@@ -10555,15 +8833,6 @@
  "3722653512": {
   "hash": 3722653512,
   "name": "Air Assault",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 30, 60 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Passively grants 10 Airborne Effectiveness.\nGrants 30 Airborne Effectiveness per stack for 5 seconds. Maximum of 2 Stacks.\nGrounded Weapon Kills grant 1 Stack while airborne kills grant 2 Stacks."
@@ -10606,21 +8875,6 @@
  "3751912585": {
   "hash": 3751912585,
   "name": "Cascade Point",
-  "stats": {
-   "Firing Delay": [
-    {
-     "active": {
-      "multiplier": [ 0.7 ]
-     },
-     "weaponTypes": [ "SMG", "LMG" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 0.6 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nGrants the 'Cascade Point Ready' buff for 5 seconds.\nReadying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles: 17.5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
@@ -10764,15 +9018,6 @@
  "3824105627": {
   "hash": 3824105627,
   "name": "Firefly",
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "On Precision Kill:\n• Target explodes, dealing [pve]104 [pvp][80] Solar Damage in a 4 meter radius\n• Grants 50 Reload Speed for 6 seconds\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling)."
@@ -10791,22 +9036,6 @@
  "3828510309": {
   "hash": 3828510309,
   "name": "Enlightened Action",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30, 40, 50 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30, 40, 50 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Hits grant stacks of Enlightened Action for 2 seconds. Stacks 12 times.\nStat bonuses at 1|2|…|12 Stacks:\n2|7|12|15|20|25|30|35|38|40|45|50 Handling and Reload Speed\nStacks granted per hit by Weapon Type:\n• Hand Cannons: 3 Stacks\n• Bows: ? Stacks\n• Automatic Weapons: 1 Stack"
@@ -10865,24 +9094,6 @@
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
-  "stats": {
-   "Range": [
-    {
-     "passive": {
-      "stat": [ 25 ],
-      "multiplier": [ 0.85 ]
-     },
-     "weaponTypes": [ "GL", "Glaive" ]
-    },
-    {
-     "passive": {
-      "stat": [ 25 ],
-      "multiplier": [ 0.8 ]
-     },
-     "weaponTypes": [ "Rocket" ]
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "Passively grants:\n• 35% Increased Projectile Velocity\n• [enh]25 Reload Speed\n• 0.8x Reload Duration Multiplier to Rocket Launchers\n• 0.85x Reload Duration Multiplier to Glaives and Grenade Launchers\n(Reload Duration Multiplier for Bows is unknown)\n[enh] Reload Speed Bonus is increased by 5."
@@ -10941,22 +9152,6 @@
  "3913600130": {
   "hash": 3913600130,
   "name": "Whirlwind Blade",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.03, 1.06, 1.09, 1.12, 1.15, 1.18, 1.21, 1.24, 1.27, 1.3 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.03, 1.06, 1.09, 1.12, 1.15, 1.18, 1.21, 1.24, 1.27, 1.3 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Powered Hits grant 3% Increased Damage for 3.5 seconds. Stacks 10 times for a 30% Buff.\nBlocking removes all stacks."
@@ -10973,34 +9168,6 @@
  "3920370755": {
   "hash": 3920370755,
   "name": "Firmly Planted",
-  "stats": {
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 13 ]
-     },
-     "weaponTypes": [ "Fusion" ]
-    },
-    {
-     "active": {
-      "stat": [ 25 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 18 ]
-     },
-     "weaponTypes": [ "Fusion" ]
-    },
-    {
-     "active": {
-      "stat": [ 35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait Enhanced",
   "descriptions": {
    "en": "While Crouched:\n• [enh]35 Handling and [enh]25 Stability\n• -40% Accuracy Cone Size\n• -17% Accuracy Cone Growth\n• -80% Horizontal Recoil\nEffects are halved on Fusion Rifles.\n[enh] Grants 5 more Handling and Stability."
@@ -11025,25 +9192,9 @@
  "3927722942": {
   "hash": 3927722942,
   "name": "Lasting Impression",
-  "stats": {
-   "PVE Damage": [
-    {
-     "passive": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "passive": {
-      "multiplier": [ 1.2 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Passively grants 50 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing an additional 25% Explosive Damage.\n(Overall 20% increased total damage)"
+   "en": "Passively grants 50 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 25% Increased Explosive Damage."
   }
  },
  "3927963100": {
@@ -11051,15 +9202,6 @@
   "name": "Cerebral Uplink",
   "itemHash": 3381022970,
   "itemName": "Eye of Another World",
-  "stats": {
-   "Airborne": [
-    {
-     "passive": {
-      "stat": [ 15 ]
-     }
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Passively grants 15 Airborne Effectiveness and 50% Additional Base Grenade, Melee, and Class Ability Regeneration Rate.\nHighlights enemies below 50% HP in a red outline, and Enemy Players with fully-charged Supers in a yellow outline. Highlighting bypasses invisibility."
@@ -11184,22 +9326,6 @@
  "3978468247": {
   "hash": 3978468247,
   "name": "Discord",
-  "stats": {
-   "Airborne": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ],
-   "ADS": [
-    {
-     "active": {
-      "multiplier": [ 0.75 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants the following for 7 seconds upon readying the weapon within 7? seconds of scoring a kill with a different weapon:\n• 0.75?x ADS Animation Duration Multiplier\n• 25% Decreased Accuracy Cone Size\n• 30 Airborne Effectiveness\nWeapon Kills while Discord is active fully refill the Magazine of [primary]Primary Weapons, and refund 1 Ammo for [special]Special Weapons. (Scoring multiple kills with a single shot/burst still only refunds 1 ammo.)"
@@ -11411,24 +9537,6 @@
   "name": "Feast of Light",
   "itemHash": 1001356380,
   "itemName": "Star-Eater Scales",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.273, 1.546, 1.623, 1.7 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.273, 1.546, 1.623, 1.7 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Orbs of Power grant an additional 2% Super Energy.\nPicking up an Orb of Power with a charged Super Ability grants an Overcharge Stack. Maximum of 4 Stacks, consumed on Super cast.\nCasting your Super while at 1|2|3|4 Stacks consumes all stack and grants the following benefits:\n• 27.3%|54.6%|62.3%|70% Increased Super Damage\n• Restores 125|170|190|200 HP\n• 100 HP Overshield for 16 seconds if Cast at 4 Stacks"
@@ -11437,22 +9545,6 @@
  "4049631843": {
   "hash": 4049631843,
   "name": "One for All",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.35 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.35 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "After Damaging 3 Separate Enemies within 3 seconds of each: 35% Increased Damage for 10 seconds.\nBuff duration cannot be refreshed."
@@ -11471,30 +9563,6 @@
  "4071163871": {
   "hash": 4071163871,
   "name": "Threat Detector",
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 25, 100 ],
-      "multiplier": [ 0.9, 0.81 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 18, 60 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 15, 40 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Grants 1|2 Stacks while within 15 meters of 1|2+ enemies.\nBonuses at 1|2 Stacks:\n• 15|40 Stability\n• 18|60 Reload Speed\n• 25|100 Handling\n• 0.9x|0.81x Handling Animation Duration Multiplier"
@@ -11519,22 +9587,6 @@
  "4082225868": {
   "hash": 4082225868,
   "name": "Swashbuckler",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.067, 1.133, 1.2, 1.266, 1.333 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Weapon Kills grant 1 Stack of Swashbuckler for 4.5 seconds. Melee kills grant all 5 stacks. Buff duration is refreshed on Weapon or Melee Kills.\nDamage Increase at 1|2|3|4|5 Stacks:\n6.7% | 13.3% | 20% | 26.6% | 33.3%"
@@ -11559,15 +9611,6 @@
  "4091000557": {
   "hash": 4091000557,
   "name": "Minor Spec",
-  "stats": {
-   "Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.0777 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Mod",
   "descriptions": {
    "en": "Grants 7.77% Increased Damage against [Minor Combatants](https://url.d2clarity.com/combatants)."
@@ -11997,24 +10040,6 @@
   "name": "Glorious Charge",
   "itemHash": 2321120637,
   "itemName": "Cuirass of the Falling Star",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 2 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 2 ]
-     },
-     "weaponTypes": [ "Super" ]
-    }
-   ]
-  },
   "type": "Armor Trait Exotic",
   "descriptions": {
    "en": "Thundercrash deals 100% increased damage.\nOn Thundercrash Deactivation:\nGrants a 100 HP Overshield for 7 seconds.\nOvershield duration scales with Thundercrash distance, up to 20 seconds."
