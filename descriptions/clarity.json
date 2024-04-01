@@ -344,7 +344,7 @@
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -352,7 +352,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants a Stacking Damage Buff and 20 Handling for 4.5 seconds on Weapon or Grenade Kills. Grenade Kills grant all 5 stacks."
+       "text": "Weapon or Grenade Kills grant a Stacking Damage Buff and 20 Handling for 4.5 seconds. Grenade Kills grant all 5 Stacks instantly."
       }
      ]
     },
@@ -362,17 +362,14 @@
     {
      "linesContent": [
       {
-       "text": "Damage Buff Stacks: 6.7%|13.3%|20%|26.6%|33.3%"
+       "text": "Damage Buff at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
-       "text": "Buff duration is refreshed on Weapon or Grenade Kills."
+       "text": "6.7% | 13.3% | 20% | 26.6% | 33.3%"
       }
      ]
     }
@@ -744,7 +741,7 @@
  "19542588": {
   "hash": 19542588,
   "name": "Nano-Munitions",
-  "lastUpload": 1704817870439,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -786,6 +783,16 @@
       },
       {
        "text": " 25% of it."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Readying a Power Weapon removes all Stacks."
       }
      ]
     }
@@ -984,7 +991,7 @@
  "25606670": {
   "hash": 25606670,
   "name": "Dual Loader",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -993,13 +1000,6 @@
      "linesContent": [
       {
        "text": "Loads 2 Ammo at a time."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Reduces Reload Speed by 35."
       }
      ]
     }
@@ -1196,42 +1196,49 @@
     {
      "linesContent": [
       {
-       "text": "Stat Bonuses at 1|2|3|4|5 Field Test Stacks:"
+       "text": "Stat Bonuses at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 3|6|9|12|20 Range"
+       "text": "• 3 | 6 | 9 | 12 | 20 Range"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|35|50 Reload Speed"
+       "text": "• 5 | 10 | 20 | 35 | 50 Reload Speed"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• (?) Stability and Handling"
+       "text": "• ? | ? | ? | ? | 30? Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|35|55 Charge Rate (Swords)"
+       "text": "• ? | ? | ? | ? | ? Handling"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|30|40 Guard Resistance (Swords)"
+       "text": "• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)"
       }
      ]
     },
@@ -2853,14 +2860,7 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Target explodes, dealing "
+       "text": "Precision Kills cause targets to explode, dealing up to "
       },
       {
        "text": "123.89",
@@ -2874,7 +2874,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
+       "text": " Elemental Damage in a 4.5 meter radius."
       }
      ]
     },
@@ -3357,44 +3357,7 @@
  "192157151": {
   "hash": 192157151,
   "name": "Ambush",
-  "lastUpload": 1695589383294,
-  "stats": {
-   "Charge Draw": [
-    {
-     "active": {
-      "multiplier": [ 0.85 ]
-     }
-    }
-   ],
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.0888 ]
-     },
-     "weaponTypes": [ "LFR" ]
-    },
-    {
-     "active": {
-      "multiplier": [ 1.1078 ]
-     },
-     "weaponTypes": [ "Bow", "Glaive", "LMG", "Pulse", "Trace" ]
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -3604,7 +3567,7 @@
  "220689851": {
   "hash": 220689851,
   "name": "Sundering",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -3612,15 +3575,29 @@
     {
      "linesContent": [
       {
-       "text": "Destroying a "
+       "text": "Grants the following for 7 seconds upon breaking an enemy's shield or destroying a "
       },
       {
-       "text": "Vehicle or a Construct",
+       "text": "Vehicle or Construct",
        "link": "https://url.d2clarity.com/combatants",
        "classNames": [ "link" ]
       },
       {
-       "text": " grants 40 Reload Speed and a 0.85x Draw Time Multiplier for 7 seconds."
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?x Draw Time Multiplier"
       }
      ]
     }
@@ -4088,7 +4065,7 @@
  "247725512": {
   "hash": 247725512,
   "name": "Rapid Hit",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -4096,7 +4073,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration."
+       "text": "Precision Hits grants 1 Stack of Rapid Hit for 2 seconds. Further Precision Hits refresh the duration."
       }
      ]
     },
@@ -4621,21 +4598,14 @@
     {
      "linesContent": [
       {
-       "text": "Provides a stacking Damage Buff on Weapon Kills:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "10% | 21% | 33.1% Increased Damage at 1|2|3 Stacks for "
+       "text": "Weapon Kills grant a Stack of Rampage for "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5 seconds."
+       "text": "5 seconds. Buff remains active while stowed."
       }
      ]
     },
@@ -4645,7 +4615,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills refresh the buff's duration. Buff persists while stowed."
+       "text": "Damage Increase at 1|2|3 Stacks: 10%|21%|33.1%"
       }
      ]
     },
@@ -5839,7 +5809,7 @@
  "365154968": {
   "hash": 365154968,
   "name": "Target Lock",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -5865,7 +5835,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": "  once active. Reaches maximum strength at 5 Stacks."
+       "text": " once active. Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -5875,7 +5845,7 @@
     {
      "linesContent": [
       {
-       "text": "% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%"
+       "text": "% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.33%"
       }
      ]
     },
@@ -5885,7 +5855,7 @@
     {
      "linesContent": [
       {
-       "text": "(SMGs require 20% for their first stack, need more testing to verify their new scaling)"
+       "text": "All thresholds are increased by 60% for Submachine Guns, initially triggering at 20% and maxing out at 176.53%."
       }
      ]
     },
@@ -6754,7 +6724,17 @@
     {
      "linesContent": [
       {
-       "text": "Loaded ammo per Kill (rounds up) by ammo type:"
+       "text": "Maximum total overfill amount is 200% of the Magazine Capacity. Each activation can only load up to 100% of the Magazine Capacity into the magazine."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Loaded ammo per Kill by ammo type (rounds up):"
       }
      ]
     },
@@ -6810,21 +6790,11 @@
     {
      "linesContent": [
       {
-       "text": "Each activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Kills provide an additional 2.5% Magazine Capacity Increase."
+       "text": " Laded ammo per Kill is increased by 2.5% of the Magazine Capacity (e.g. 10%⁠🠚⁠12.5%)."
       }
      ]
     }
@@ -7008,7 +6978,7 @@
  "454085387": {
   "hash": 454085387,
   "name": "Blunt Execution Rounds",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -7023,6 +6993,9 @@
     {
      "linesContent": [
       {
+       "text": "Grants "
+      },
+      {
        "text": "500%",
        "classNames": [ "pve" ]
       },
@@ -7034,7 +7007,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Increased Damage and 100 Handling for 10 seconds or until firing a full burst."
+       "text": " Increased Damage and 100 Handling for the next full burst within 10 seconds."
       }
      ]
     },
@@ -7135,7 +7108,7 @@
  "460017080": {
   "hash": 460017080,
   "name": "Headseeker",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -7157,7 +7130,7 @@
     {
      "linesContent": [
       {
-       "text": "• (?) Aim Assist"
+       "text": "• 10 Aim Assist"
       }
      ]
     },
@@ -9993,14 +9966,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Triggers an explosion matching the weapon's element that deals "
+       "text": "Weapon Kills trigger an elemental explosion that deals up to "
       },
       {
        "text": "84",
@@ -10014,7 +9980,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage over a 3 meter radius."
+       "text": " damage in a 3 meter radius."
       }
      ]
     },
@@ -11189,7 +11155,7 @@
  "699525795": {
   "hash": 699525795,
   "name": "Eye of the Storm",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11197,7 +11163,38 @@
     {
      "linesContent": [
       {
-       "text": "Linearly grants up to 30 Handling, -40% Accuracy Cone Size, and -17% "
+       "text": "Grants a scaling buff to Handling and Accuracy as your Shield Health drops below 40 and reaches maximum strength at 0 Shield HP."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff at maximum strength grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 17% Decreased "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -11211,9 +11208,6 @@
         }
        ],
        "classNames": [ "title" ]
-      },
-      {
-       "text": " as health decreases below 156 HP."
       }
      ]
     },
@@ -11223,7 +11217,17 @@
     {
      "linesContent": [
       {
-       "text": "Effect reaches maximum strength at Critical Health."
+       "text": "The buff linearly scales from 0% at 80 Shield HP to 100% at 0 Shield HP (Critical Health)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "It initially triggers as you drop to 40 Shield HP — giving you 50% of the maximum buff. However, as you regenerate your Shield Health, the buff will still remain until you reach 80 Shield HP where the benefits scale down to zero."
       }
      ]
     }
@@ -11374,7 +11378,7 @@
  "706527188": {
   "hash": 706527188,
   "name": "Quickdraw",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -11382,14 +11386,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the Weapon, for 1 second:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier."
+       "text": "Switching to the Weapon grants 100 Ready/Stow Handling and a 0.95x Ready Animation Duration Multiplier for 1 second."
       }
      ]
     },
@@ -11489,15 +11486,15 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses depending on your selected Subclass."
+       "text": "Grants Passive Bonuses based on your selected Subclass:"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "solar" ]
       },
@@ -11516,6 +11513,9 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "arc" ]
       },
       {
@@ -11532,6 +11532,9 @@
     },
     {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "void" ]
       },
@@ -11550,6 +11553,9 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "strand" ]
       },
       {
@@ -11566,6 +11572,9 @@
     },
     {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "stasis" ]
       },
@@ -12962,7 +12971,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the weapon, for 2 seconds:"
+       "text": "Grants the following for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "2.5 seconds upon readying:"
       }
      ]
     },
@@ -12993,7 +13009,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon must be stowed for 3.5 seconds before readying for the perk to activate."
+       "text": "Weapon must be stowed for 3 seconds before readying for the perk to activate."
       }
      ]
     },
@@ -13007,7 +13023,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 0.5 seconds."
       }
      ]
     }
@@ -15233,7 +15249,7 @@
  "960810156": {
   "hash": 960810156,
   "name": "Danger Zone",
-  "lastUpload": 1709423778791,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15241,7 +15257,7 @@
     {
      "linesContent": [
       {
-       "text": "Increases Blast Radius by ?% and reduces Self-Damage while within 15 meters of 3 enemies. Effect lingers for 4 seconds."
+       "text": "Increases Blast Radius by ?% and reduces Self-Damage while within 15 meters of 3 enemies. Effect lingers for 3.5 seconds."
       }
      ]
     },
@@ -15261,7 +15277,7 @@
     {
      "linesContent": [
       {
-       "text": "Rocket Launchers: ?% Reduced Self-Damage and allows for rocket jumping"
+       "text": "Rocket Launchers: 99.99% Reduced Self-Damage and allows for rocket jumping"
       }
      ]
     }
@@ -15402,7 +15418,7 @@
  "968510818": {
   "hash": 968510818,
   "name": "Envious Assassin",
-  "lastUpload": 1709248561849,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15440,7 +15456,17 @@
     {
      "linesContent": [
       {
-       "text": "Loaded ammo per Kill (rounds up) by ammo type:"
+       "text": "Maximum total overfill amount is 200% of the Magazine Capacity. Each activation can only load up to 100% of the Magazine Capacity into the magazine."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Loaded ammo per Kill by ammo type (rounds up):"
       }
      ]
     },
@@ -15475,16 +15501,6 @@
        "text": "Power Weapons: 20%"
       }
      ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Each activation can only load up to 100% of the Magazine Capacity into the magazine. Maximum total overfill amount is 200% of the Magazine Capacity."
-      }
-     ]
     }
    ]
   }
@@ -15492,7 +15508,7 @@
  "972757866": {
   "hash": 972757866,
   "name": "Pulse Monitor",
-  "lastUpload": 1709248561849,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15513,7 +15529,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " Magazine from reserves upon dropping to 110 HP. Can activate while stowed."
+       "text": " Magazine from reserves upon dropping to 30% Shield Health. Can activate while stowed."
       }
      ]
     },
@@ -15523,14 +15539,7 @@
     {
      "linesContent": [
       {
-       "text": "While at or below 110 HP:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier."
+       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier while at or below 30% Shield Health. Buff lingers for 1 second once the condition is no longer met."
       }
      ]
     }
@@ -15777,23 +15786,7 @@
  "1004814308": {
   "hash": 1004814308,
   "name": "Disaster Plan",
-  "lastUpload": 1690320394706,
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 15 ]
-     }
-    }
-   ],
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -17146,7 +17139,7 @@
     {
      "linesContent": [
       {
-       "text": "Increases Blast Radius by ?% and reduces Self-Damage while within 15 meters of 3 enemies. Effect lingers for 4 seconds."
+       "text": "Increases Blast Radius by ?% and reduces Self-Damage while within 15 meters of 3 enemies. Effect lingers for 3.5 seconds."
       }
      ]
     },
@@ -17166,7 +17159,7 @@
     {
      "linesContent": [
       {
-       "text": "Rocket Launchers: ?% Reduced Self-Damage and allows for rocket jumping"
+       "text": "Rocket Launchers: 99.99% Reduced Self-Damage and allows for rocket jumping"
       }
      ]
     },
@@ -17885,7 +17878,14 @@
     {
      "linesContent": [
       {
-       "text": "Grats 50% Increased Damage for 2 seconds."
+       "text": "Grats 50% Increased Damage for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3 seconds."
       }
      ]
     },
@@ -17899,7 +17899,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased."
+       "text": " Buff Duration is increased by 1 second."
       }
      ]
     }
@@ -18551,14 +18551,14 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Swashbuckler for "
+       "text": "Weapon or Melee Kills grant a Stacking Damage Buff for "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "6.5 seconds. Melee kills grant all 5 stacks. Buff duration is refreshed on Weapon or Melee Kills."
+       "text": "6.5 seconds. Melee Kills grant all 5 Stacks instantly."
       }
      ]
     },
@@ -18724,21 +18724,6 @@
     {
      "linesContent": [
       {
-       "text": "• Grants 40% Increased Damage against "
-      },
-      {
-       "text": "Constructs and Vehicles",
-       "link": "https://url.d2clarity.com/combatants",
-       "classNames": [ "link" ]
-      },
-      {
-       "text": " for 5 seconds."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "• "
       },
       {
@@ -18755,7 +18740,22 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 10% of the Magazine from thin air. Refill amount is rounded up."
+       "text": " 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 40% Increased Damage against "
+      },
+      {
+       "text": "Constructs and Vehicles",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": " for 5 seconds. Additional hits refresh the buff duration."
       }
      ]
     },
@@ -18765,7 +18765,20 @@
     {
      "linesContent": [
       {
-       "text": "Activation Requirement: Scoring 50% of Magazine Size rounded down + 2 hits"
+       "text": "Number of Hits Required: 50% of Base Magazine Capacity rounded down + 2."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary weapon hits provide 2x activation progress."
       }
      ]
     },
@@ -18788,19 +18801,6 @@
       },
       {
        "text": "Special weapons."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": "Primary weapon hits provide 2x activation progress."
       }
      ]
     }
@@ -19011,7 +19011,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increases Reload Speed bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks."
+       "text": " Increases Reload Speed Stat bonus by 5 at 1-3 Stacks and by 10 at 4 Stacks."
       }
      ]
     }
@@ -19820,30 +19820,7 @@
  "1260401931": {
   "hash": 1260401931,
   "name": "Hot Swap",
-  "lastUpload": 1690320394706,
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 30 ]
-     }
-    }
-   ],
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ],
-   "Guard Resistance": [
-    {
-     "active": {
-      "stat": [ 100 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -19970,7 +19947,7 @@
  "1264398905": {
   "hash": 1264398905,
   "name": "Celerity",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -19995,7 +19972,7 @@
     {
      "linesContent": [
       {
-       "text": "• 100 Handling, 100 Reload Speed, [?] Aim Assist"
+       "text": "• 100 Handling, 100 Reload Speed, ? Aim Assist"
       }
      ]
     },
@@ -22441,7 +22418,7 @@
  "1451849462": {
   "hash": 1451849462,
   "name": "Barrel Constrictor",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22450,6 +22427,16 @@
      "linesContent": [
       {
        "text": "Weapon Kills reduce Pellet Spread by 20% for 7.5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -22662,17 +22649,7 @@
  "1489048135": {
   "hash": 1489048135,
   "name": "Explosive Pact",
-  "lastUpload": 1690320394706,
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 8, 16, 20, 24, 44 ],
-      "multiplier": [ 0.98, 0.98, 0.975, 0.96, 0.945 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -23097,6 +23074,16 @@
     {
      "linesContent": [
       {
+       "text": "Passively grants 20 Reload Speed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Refills",
        "title": [
         {
@@ -23111,16 +23098,6 @@
       },
       {
        "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Passively grants 20 Reload Speed."
       }
      ]
     },
@@ -23544,56 +23521,56 @@
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles: "
+       "text": "• Pulse Rifles: (11🠚)"
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 (from 11)"
+       "text": "10"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Non-burst Sidearms: "
+       "text": "• Non-burst Sidearms: (8🠚)"
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "7 (from 11)"
+       "text": "7"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Scout Rifles: "
+       "text": "• Hand Cannons, Scout Rifles: (6🠚)"
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5 (from 6)"
+       "text": "5"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifles: "
+       "text": "• Sniper Rifles: (3🠚)"
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "2 (from 3)"
+       "text": "2"
       }
      ]
     },
@@ -24053,7 +24030,7 @@
  "1570042021": {
   "hash": 1570042021,
   "name": "Heating Up",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -24061,35 +24038,28 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill, for 5.5 seconds:"
+       "text": "Weapon Kills grant the following for 5.5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 15 Stability"
+       "text": "• 15 Stability and 20 Recoil Direction"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 20 Recoil Direction"
+       "text": "• 15% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -15% Accuracy Cone Size"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• -15% "
+       "text": "• 15% Decreased "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -24112,17 +24082,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks 2 times. Cone scalars stack multiplicatively."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Duration is refreshed on kills. Stays active while stowed."
+       "text": "Stacks 2 times. Cone scalars stack multiplicatively (15%⁠🠚⁠27.75%). Buff remains active while stowed."
       }
      ]
     }
@@ -24445,7 +24405,7 @@
  "1600092898": {
   "hash": 1600092898,
   "name": "Backup Plan",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -24453,7 +24413,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the weapon, for 2 seconds:"
+       "text": "Grants the following for 2 seconds upon readying:"
       }
      ]
     },
@@ -24484,7 +24444,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon must be stowed for 3.5 seconds before readying for the perk to activate."
+       "text": "Weapon must be stowed for 3 seconds before readying for the perk to activate."
       }
      ]
     }
@@ -24746,7 +24706,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active."
+       "text": "Passively grants 20 Range but deactivates if you drop to 0 Shield HP (Critical Health)."
       }
      ]
     },
@@ -24756,7 +24716,7 @@
     {
      "linesContent": [
       {
-       "text": "Getting your shields broken disables the buff. Reactivates 0.5 seconds after your shields fully recharge."
+       "text": "Buff reactivates 0.5 seconds after your Shields HP fully regenerates."
       }
      ]
     },
@@ -24770,7 +24730,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Reactivation delay is decreased by 0.5 seconds."
+       "text": " Reactivation delay is reduced by 0.5 seconds."
       }
      ]
     }
@@ -25787,7 +25747,7 @@
  "1683379515": {
   "hash": 1683379515,
   "name": "Disruption Break",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -25802,7 +25762,7 @@
     {
      "linesContent": [
       {
-       "text": "Weakens the enemy, increasing Kinetic Damage dealt by 50% for 5.5 seconds."
+       "text": "Applies Kinetic Damage Vulnerability to the enemy, increasing Kinetic Damage taken by 50% for 5.5 seconds."
       }
      ]
     },
@@ -25812,7 +25772,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks with all other Debuffs as it is a Weapon Perk."
+       "text": "Stacks with all other Buffs and Debuffs."
       }
      ]
     }
@@ -25876,7 +25836,14 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " Magazine from reserves upon dropping to 110 HP. Can activate while stowed."
+       "text": " Magazine from reserves upon dropping to "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35% Shield Health. Can activate while stowed."
       }
      ]
     },
@@ -25886,14 +25853,14 @@
     {
      "linesContent": [
       {
-       "text": "While at or below 110 HP:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
+       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier while at or below "
+      },
       {
-       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier."
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "35% Shield Health. Buff lingers for 1 second once the condition is no longer met."
       }
      ]
     },
@@ -25907,7 +25874,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Activates with more health remaining."
+       "text": " Activates with 5?% more Shield Health remaining."
       }
      ]
     }
@@ -27834,16 +27801,7 @@
  "1823011807": {
   "hash": 1823011807,
   "name": "Noble Deeds",
-  "lastUpload": 1697805373885,
-  "stats": {
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27885,7 +27843,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Handling and 30 Reload Speed while you have active Stacks. Swords receive 20 Charge Rate."
+       "text": "Grants 30 Handling and 30 Reload Speed while you have active Stacks. Swords receive 20 Charge Rate instead."
       }
      ]
     }
@@ -29835,14 +29793,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying the Weapon, for 1 second:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 100 Ready/Stow Handling, and 0.95x Ready Animation Duration Multiplier."
+       "text": "Switching to the Weapon grants 100 Ready/Stow Handling and a 0.95x Ready Animation Duration Multiplier for 1 second."
       }
      ]
     },
@@ -30718,7 +30669,7 @@
  "2039302152": {
   "hash": 2039302152,
   "name": "Slideways",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -30742,7 +30693,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 15% of the Magazine and grants 20 Stability and 20 Handling for 3 seconds."
+       "text": " 15% of the Magazine and grants 25? Stability and 20 Handling for 3 seconds."
       }
      ]
     },
@@ -30752,7 +30703,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff duration cannot be refreshed."
+       "text": "Buff duration cannot be refreshed. Buff duration also serves as a cooldown for Magazine Refills."
       }
      ]
     }
@@ -30833,44 +30784,7 @@
  "2053642371": {
   "hash": 2053642371,
   "name": "Unsated Hunger",
-  "lastUpload": 1690320394706,
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 60 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ],
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ],
-   "Guard Endurance": [
-    {
-     "active": {
-      "stat": [ 40 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -31505,37 +31419,7 @@
  "2120661319": {
   "hash": 2120661319,
   "name": "Field-Tested",
-  "lastUpload": 1709226265485,
-  "stats": {
-   "Range": [
-    {
-     "active": {
-      "stat": [ 3, 6, 9, 12, 20 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 5, 10, 20, 35, 55 ]
-     }
-    }
-   ],
-   "Guard Charge Rate": [
-    {
-     "active": {
-      "stat": [ 5, 10, 20, 35, 55 ]
-     }
-    }
-   ],
-   "Guard Resistance": [
-    {
-     "active": {
-      "stat": [ 5, 10, 20, 30, 40 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -31563,42 +31447,49 @@
     {
      "linesContent": [
       {
-       "text": "Stat Bonuses at 1|2|3|4|5 Field Test Stacks:"
+       "text": "Stat Bonuses at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 3|6|9|12|20 Range"
+       "text": "• 3 | 6 | 9 | 12 | 20 Range"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|35|50 Reload Speed"
+       "text": "• 5 | 10 | 20 | 35 | 50 Reload Speed"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• (?) Stability and Handling"
+       "text": "• ? | ? | ? | ? | 30? Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|35|55 Charge Rate (Swords)"
+       "text": "• ? | ? | ? | ? | ? Handling"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 5|10|20|30|40 Guard Resistance (Swords)"
+       "text": "• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)"
       }
      ]
     },
@@ -33442,7 +33333,7 @@
     {
      "linesContent": [
       {
-       "text": "Weakens the enemy, increasing Kinetic Damage dealt by 50% for 5.5 seconds."
+       "text": "Applies Kinetic Damage Vulnerability to the enemy, increasing Kinetic Damage taken by 50% for 5.5 seconds."
       }
      ]
     },
@@ -33452,7 +33343,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks with all other Debuffs as it is a Weapon Perk."
+       "text": "Stacks with all other Buffs and Debuffs."
       }
      ]
     },
@@ -33802,16 +33693,7 @@
  "2250679103": {
   "hash": 2250679103,
   "name": "Search Party",
-  "lastUpload": 1704902826534,
-  "stats": {
-   "ADS": [
-    {
-     "active": {
-      "multiplier": [ 0.85 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -33819,14 +33701,14 @@
     {
      "linesContent": [
       {
-       "text": "If no allies are within 15 meters:"
+       "text": "Grants the following if no allies are within 15 meters:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 9.5% decreased ADS Movement Speed Penalty"
+       "text": "• 10% decreased ADS Movement Speed Penalty"
       }
      ]
     },
@@ -34466,7 +34348,14 @@
     {
      "linesContent": [
       {
-       "text": "Orb of Power pickups grant 1 Stack of Explosive Light, granting 100 Blast Radius and Increased Damage."
+       "text": "Orb of Power pickups grant 1 Stack of Explosive Light. Maximum of "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "7 Stacks. Consumes 1 Stack per Shot, granting 100 Blast Radius and Increased Damage."
       }
      ]
     },
@@ -34476,14 +34365,7 @@
     {
      "linesContent": [
       {
-       "text": "Consumes 1 Stack per Shot. Maximum of "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "7 Stacks."
+       "text": "Grenade Launchers: 60% Increased Explosive Damage."
       }
      ]
     },
@@ -34494,16 +34376,6 @@
      "linesContent": [
       {
        "text": "Rocket Launchers: 25% Increased Impact and Explosive Damage. (No effect on Wolfpack Rounds)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grenade Launchers: Increases Explosive Damage damage by 60%."
       }
      ]
     },
@@ -35565,7 +35437,7 @@
  "2360754333": {
   "hash": 2360754333,
   "name": "Trench Barrel",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -35573,7 +35445,21 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Melee Damage grants 50% Increased Damage, 30 Reload Speed, and 30 Handling for 5 seconds OR until firing 3 shots."
+       "text": "Dealing Melee Damage grants the following for the next 3 shots within 5 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Reload Speed and 30 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50% Increased Damage"
       }
      ]
     }
@@ -35727,7 +35613,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "25 Stability and "
+       "text": "30? Stability and "
       },
       {
        "text": "🡅",
@@ -35744,7 +35630,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff duration cannot be refreshed."
+       "text": "Buff duration cannot be refreshed. Buff duration also serves as a cooldown for Magazine Refills."
       }
      ]
     },
@@ -35768,7 +35654,7 @@
  "2396489472": {
   "hash": 2396489472,
   "name": "Chain Reaction",
-  "lastUpload": 1693504657319,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -35776,14 +35662,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Triggers an explosion matching the weapon's element that deals "
+       "text": "Weapon Kills trigger an elemental explosion that deals up to "
       },
       {
        "text": "84",
@@ -35797,7 +35676,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage over a 3 meter radius."
+       "text": " damage in a 3 meter radius."
       }
      ]
     },
@@ -36121,14 +36000,14 @@
     {
      "linesContent": [
       {
-       "text": "Grants a Stacking Damage Buff and 20 Handling for "
+       "text": "Weapon or Grenade Kills grant a Stacking Damage Buff and 20 Handling for "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "5 seconds on Weapon or Grenade Kills. Grenade Kills grant all 5 stacks."
+       "text": "5 seconds. Grenade Kills grant all 5 Stacks instantly."
       }
      ]
     },
@@ -36138,17 +36017,14 @@
     {
      "linesContent": [
       {
-       "text": "Damage Buff Stacks: 6.7%|13.3%|20%|26.6%|33.3%"
+       "text": "Damage Buff at 1|2|3|4|5 Stacks:"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
       {
-       "text": "Buff duration is refreshed on Weapon or Grenade Kills."
+       "text": "6.7% | 13.3% | 20% | 26.6% | 33.3%"
       }
      ]
     },
@@ -36473,7 +36349,7 @@
  "2451262963": {
   "hash": 2451262963,
   "name": "Fragile Focus",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36481,7 +36357,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20 Range while your shields are active."
+       "text": "Passively grants 20 Range but deactivates if you drop to 0 Shield HP (Critical Health)."
       }
      ]
     },
@@ -36491,7 +36367,7 @@
     {
      "linesContent": [
       {
-       "text": "Getting your shields broken disables the buff. Reactivates 1 second after your shields fully recharge."
+       "text": "Buff reactivates 1 second after your Shields HP fully regenerates."
       }
      ]
     }
@@ -36672,21 +36548,35 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Melee Damage grants 50% Increased Damage, "
+       "text": "Dealing Melee Damage grants the following for the next 3 shots within 5 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "35 Reload Speed, and "
+       "text": "35 Reload Speed and "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "35 Handling for 5 seconds OR until firing 3 shots."
+       "text": "35 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50% Increased Damage"
       }
      ]
     },
@@ -37096,7 +36986,7 @@
     {
      "linesContent": [
       {
-       "text": "Lingers for 1.5 seconds."
+       "text": "Buff lingers for 1.5 seconds."
       }
      ]
     },
@@ -37110,7 +37000,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Stat bonuses are increased by 5."
+       "text": " Stat bonuses are increased by 5?."
       }
      ]
     }
@@ -37503,6 +37393,9 @@
     {
      "linesContent": [
       {
+       "text": "Grants "
+      },
+      {
        "text": "500%",
        "classNames": [ "pve" ]
       },
@@ -37514,14 +37407,14 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Increased Damage and 100 Handling for "
+       "text": " Increased Damage and 100 Handling for the next full burst within "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "11 seconds or until firing a full burst."
+       "text": "11 seconds."
       }
      ]
     },
@@ -37869,7 +37762,14 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " Increased Damage for 7 seconds."
+       "text": " Increased Damage for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "8 seconds."
       }
      ]
     },
@@ -37947,7 +37847,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased."
+       "text": " Initial buff Duration is increased by 1 second."
       }
      ]
     }
@@ -37957,16 +37857,7 @@
  "2565067140": {
   "hash": 2565067140,
   "name": "Head Rush",
-  "lastUpload": 1693504657319,
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -38480,7 +38371,7 @@
  "2621346526": {
   "hash": 2621346526,
   "name": "Ensemble",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -38498,7 +38389,7 @@
     {
      "linesContent": [
       {
-       "text": "Lingers for 1.5 seconds."
+       "text": "Buff lingers for 1.5 seconds."
       }
      ]
     }
@@ -40563,7 +40454,7 @@
     {
      "linesContent": [
       {
-       "text": "On Weapon Kill, for "
+       "text": "Weapon Kills grant the following for "
       },
       {
        "text": "🡅",
@@ -40577,28 +40468,21 @@
     {
      "linesContent": [
       {
-       "text": "• 15 Stability"
+       "text": "• 15 Stability and 20 Recoil Direction"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 20 Recoil Direction"
+       "text": "• 15% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• -15% Accuracy Cone Size"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• -15% "
+       "text": "• 15% Decreased "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -40621,17 +40505,7 @@
     {
      "linesContent": [
       {
-       "text": "Stacks 2 times. Cone scalars stack multiplicatively."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Duration is refreshed on kills. Stays active while stowed."
+       "text": "Stacks 2 times. Cone scalars stack multiplicatively (15%⁠🠚⁠27.75%). Buff remains active while stowed."
       }
      ]
     },
@@ -40763,7 +40637,7 @@
  "2779035018": {
   "hash": 2779035018,
   "name": "Feeding Frenzy",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -41118,7 +40992,7 @@
  "2788909693": {
   "hash": 2788909693,
   "name": "Boss Spec",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Mod",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -41129,7 +41003,7 @@
        "text": "Grants 7.77% Increased Damage against "
       },
       {
-       "text": "Miniboss, Boss, and Vehicle Combatants",
+       "text": "Minibosses, Bosses, and Vehicles",
        "link": "https://url.d2clarity.com/combatants",
        "classNames": [ "link" ]
       },
@@ -42007,23 +41881,7 @@
  "2839173408": {
   "hash": 2839173408,
   "name": "Omolon Fluid Dynamics",
-  "lastUpload": 1690320394706,
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 30, 15 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 20, 10 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -42210,7 +42068,7 @@
  "2848615171": {
   "hash": 2848615171,
   "name": "Dragonfly",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -42218,14 +42076,7 @@
     {
      "linesContent": [
       {
-       "text": "On Precision Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Target explodes, dealing "
+       "text": "Precision Kills cause targets to explode, dealing up to "
       },
       {
        "text": "123.89",
@@ -42239,7 +42090,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage that matches the element of the weapon over a 4.5 meter radius."
+       "text": " Elemental Damage in a 4.5 meter radius."
       }
      ]
     },
@@ -43344,7 +43195,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1 Stack of Rapid Hit per Precision Hit, improving Reload Speed and Stability for 2 seconds. Further Precision Hits refresh the duration."
+       "text": "Precision Hits grants 1 Stack of Rapid Hit for 2 seconds. Further Precision Hits refresh the duration."
       }
      ]
     },
@@ -43425,7 +43276,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": "  once active. Reaches maximum strength at 5 Stacks."
+       "text": " once active. Reaches maximum strength at 5 Stacks."
       }
      ]
     },
@@ -43435,7 +43286,7 @@
     {
      "linesContent": [
       {
-       "text": "% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.5%"
+       "text": "% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.33%"
       }
      ]
     },
@@ -43445,7 +43296,7 @@
     {
      "linesContent": [
       {
-       "text": "(SMGs require 20% for their first stack, need more testing to verify their new scaling)"
+       "text": "All thresholds are increased by 60% for Submachine Guns, initially triggering at 20% and maxing out at 176.53%."
       }
      ]
     },
@@ -44129,37 +43980,7 @@
  "2988596335": {
   "hash": 2988596335,
   "name": "Alacrity",
-  "lastUpload": 1689198390082,
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 50 ]
-     }
-    }
-   ],
-   "Stability": [
-    {
-     "active": {
-      "stat": [ 20 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44415,7 +44236,7 @@
  "3016987351": {
   "hash": 3016987351,
   "name": "Counterattack",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44456,7 +44277,7 @@
  "3017780555": {
   "hash": 3017780555,
   "name": "Heal Clip",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44476,7 +44297,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Cure x1 to allies within ? meters."
+       "text": "Cure x1 to allies within 15? meters."
       }
      ]
     }
@@ -44587,7 +44408,7 @@
  "3032599245": {
   "hash": 3032599245,
   "name": "Disorienting Grenades",
-  "lastUpload": 1703073411225,
+  "lastUpload": 1712008312346,
   "type": "Weapon Perk",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44595,7 +44416,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants -200 Blast Radius."
+       "text": "Passively grants -200 Blast Radius and 25% Decreased Damage."
       }
      ]
     },
@@ -44605,7 +44426,12 @@
     {
      "linesContent": [
       {
-       "text": "Non-Boss, Non-Champion Combatants within ? meters of the explosion are disoriented for ? seconds. (Effectively the equivalent of "
+       "text": "Non-Boss, Non-Champion Combatants",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": " within ? meters of the explosion are disoriented for 4.5 seconds. (Effectively the equivalent of "
       },
       {
        "classNames": [ "arc" ]
@@ -45086,7 +44912,7 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -45094,14 +44920,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your Weapons within 7 seconds of each:"
+       "text": "Upon dealing damage with all equipped Weapons within 7 seconds of each:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 35% Increased Damage for 10 seconds."
+       "text": "Grants 30% Increased Damage for 10 seconds."
       }
      ]
     }
@@ -45586,13 +45412,6 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Reduces Reload Speed by 35."
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
@@ -45995,31 +45814,7 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1709423778791,
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 10, 20 ]
-     }
-    }
-   ],
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 1.0333, 1.0998 ]
-     }
-    }
-   ],
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 20 ],
-      "multiplier": [ 0.95, 0.95 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -46329,7 +46124,7 @@
  "3194351027": {
   "hash": 3194351027,
   "name": "Explosive Light",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -46337,7 +46132,7 @@
     {
      "linesContent": [
       {
-       "text": "Orb of Power pickups grant 1 Stack of Explosive Light, granting 100 Blast Radius and Increased Damage."
+       "text": "Orb of Power pickups grant 1 Stack of Explosive Light. Maximum of 6 Stacks. Consumes 1 Stack per Shot, granting 100 Blast Radius and Increased Damage."
       }
      ]
     },
@@ -46347,7 +46142,7 @@
     {
      "linesContent": [
       {
-       "text": "Consumes 1 Stack per Shot. Maximum of 6 Stacks."
+       "text": "Grenade Launchers: 60% Increased Explosive Damage."
       }
      ]
     },
@@ -46358,16 +46153,6 @@
      "linesContent": [
       {
        "text": "Rocket Launchers: 25% Increased Impact and Explosive Damage. (No effect on Wolfpack Rounds)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grenade Launchers: Increases Explosive Damage damage by 60%."
       }
      ]
     }
@@ -48188,7 +47973,7 @@
  "3301904089": {
   "hash": 3301904089,
   "name": "Spike Grenades",
-  "lastUpload": 1695666599876,
+  "lastUpload": 1712008312346,
   "type": "Weapon Perk",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -48196,79 +47981,33 @@
     {
      "linesContent": [
       {
-       "text": "Increases Grenade Impact Damage by 50%."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Due to the ratio of Explosive and Impact Damage being tied to the Blast Radius (BR) stat on Grenade Launchers (GLs), a lower stat will provide a higher overall damage increase."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Total Damage Increases:"
+       "text": "Increases Grenade Impact Damage:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Lightweight "
+       "text": "• 12.12% Increase on "
       },
       {
        "classNames": [ "special" ]
       },
       {
-       "text": "Special GLs at 95-100 BR: 10.8-10.1%"
+       "text": "Special Grenade Launchers"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Double Fire "
-      },
-      {
-       "classNames": [ "special" ]
-      },
-      {
-       "text": "Special GLs at 55-85 BR: 17.9-13.2%"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Adaptive "
+       "text": "• 12.5% Increase on "
       },
       {
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Heavy GLs at 45-100 BR: 11.2-6.3%"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Rapid-Fire "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": "Heavy GLs at 15-100 BR: 13.9%-6.3%"
+       "text": "Heavy Grenade Launchers"
       }
      ]
     },
@@ -48278,7 +48017,7 @@
     {
      "linesContent": [
       {
-       "text": "Note that these values won't necessarily be accurate if other damage perks that only affect Impact or Explosive Damage (like Explosive Light) are active."
+       "text": "Due to the ratio of Detonation and Impact Damage being tied to the Blast Radius stat on Grenade Launchers, a lower stat will provide a slightly higher overall damage increase."
       }
      ]
     }
@@ -48399,7 +48138,7 @@
  "3324494224": {
   "hash": 3324494224,
   "name": "Collective Action",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -48834,11 +48573,21 @@
  "3350417888": {
   "hash": 3350417888,
   "name": "Sympathetic Arsenal",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Reload Speed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
     {
      "linesContent": [
       {
@@ -48856,16 +48605,6 @@
       },
       {
        "text": " stowed weapons from reserves upon finishing a reload within 3.6 seconds of a Weapon Kill."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Passively grants 20 Reload Speed."
       }
      ]
     }
@@ -48990,7 +48729,7 @@
  "3365897133": {
   "hash": 3365897133,
   "name": "Explosive Head",
-  "lastUpload": 1698333155833,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49482,7 +49221,7 @@
  "3425386926": {
   "hash": 3425386926,
   "name": "Rampage",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49490,14 +49229,7 @@
     {
      "linesContent": [
       {
-       "text": "Provides a stacking Damage Buff on Weapon Kills:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "10% | 21% | 33.1% Increased Damage at 1|2|3 Stacks for 4.5 seconds."
+       "text": "Weapon Kills grant a Stack of Rampage for 4.5 seconds. Buff remains active while stowed."
       }
      ]
     },
@@ -49507,7 +49239,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills refresh the buff's duration. Buff persists while stowed."
+       "text": "Damage Increase at 1|2|3 Stacks: 10%|21%|33.1%"
       }
      ]
     }
@@ -50896,7 +50628,7 @@
  "3511092054": {
   "hash": 3511092054,
   "name": "Elemental Capacitor",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -50904,15 +50636,15 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Stat Bonuses depending on your selected Subclass."
+       "text": "Grants Passive Bonuses based on your selected Subclass:"
       }
      ]
     },
     {
-     "classNames": [ "spacer" ]
-    },
-    {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "solar" ]
       },
@@ -50924,6 +50656,9 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "arc" ]
       },
       {
@@ -50933,6 +50668,9 @@
     },
     {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "void" ]
       },
@@ -50944,6 +50682,9 @@
     {
      "linesContent": [
       {
+       "text": "• "
+      },
+      {
        "classNames": [ "strand" ]
       },
       {
@@ -50953,6 +50694,9 @@
     },
     {
      "linesContent": [
+      {
+       "text": "• "
+      },
       {
        "classNames": [ "stasis" ]
       },
@@ -54474,7 +54218,38 @@
     {
      "linesContent": [
       {
-       "text": "Linearly grants up to 30 Handling, -40% Accuracy Cone Size, and -17% "
+       "text": "Grants a scaling buff to Handling and Accuracy as your Shield Health drops below 40 and reaches maximum strength at 0 Shield HP."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff at maximum strength grants:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 17% Decreased "
       },
       {
        "text": "Accuracy Cone Growth",
@@ -54488,9 +54263,6 @@
         }
        ],
        "classNames": [ "title" ]
-      },
-      {
-       "text": " as health decreases below 156 HP."
       }
      ]
     },
@@ -54500,7 +54272,17 @@
     {
      "linesContent": [
       {
-       "text": "Effect reaches maximum strength at Critical Health."
+       "text": "The buff linearly scales from 0% at 80 Shield HP to 100% at 0 Shield HP (Critical Health)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "It initially triggers as you drop to 40 Shield HP — giving you 50% of the maximum buff. However, as you regenerate your Shield Health, the buff will still remain until you reach 80 Shield HP where the benefits scale down to zero."
       }
      ]
     },
@@ -54843,14 +54625,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon dealing damage with all your Weapons within 7 seconds of each:"
+       "text": "Upon dealing damage with all equipped Weapons within 7 seconds of each:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 35% Increased Damage for "
+       "text": "Grants 30% Increased Damage for "
       },
       {
        "text": "🡅",
@@ -56418,7 +56200,7 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -56546,7 +56328,7 @@
     {
      "linesContent": [
       {
-       "text": "• Non-burst Sidearms: 11"
+       "text": "• Non-burst Sidearms: 8"
       }
      ]
     },
@@ -56624,23 +56406,7 @@
  "3907865655": {
   "hash": 3907865655,
   "name": "Right Hook",
-  "lastUpload": 1696779082385,
-  "stats": {
-   "Aim Assist": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ],
-   "Range": [
-    {
-     "active": {
-      "stat": [ 10 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -58157,7 +57923,7 @@
  "3989629871": {
   "hash": 3989629871,
   "name": "Skulking Wolf",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -58165,14 +57931,14 @@
     {
      "linesContent": [
       {
-       "text": "On Guardian Kills while below 63 HP:"
+       "text": "On Enemy Player Kills while at or below 90 HP:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants an Enhanced Radar and removes you from passively appearing on opposing radar for 10 seconds."
+       "text": "Grants an Enhanced Radar and removes you from passively pinging enemy radars for 10 seconds."
       }
      ]
     },
@@ -58182,7 +57948,7 @@
     {
      "linesContent": [
       {
-       "text": "Firing weapons still pings enemy radar."
+       "text": "Firing weapons will still ping enemy radars for 2 seconds."
       }
      ]
     }
@@ -58208,7 +57974,7 @@
  "3993379141": {
   "hash": 3993379141,
   "name": "Deconstruct",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -58217,21 +57983,6 @@
      "linesContent": [
       {
        "text": "Upon scoring multiple hits within 6 seconds of each:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Grants 40% Increased Damage against "
-      },
-      {
-       "text": "Constructs and Vehicles",
-       "link": "https://url.d2clarity.com/combatants",
-       "classNames": [ "link" ]
-      },
-      {
-       "text": " for 5 seconds."
       }
      ]
     },
@@ -58254,7 +58005,22 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 10% of the Magazine from thin air. Refill amount is rounded up."
+       "text": " 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 40% Increased Damage against "
+      },
+      {
+       "text": "Constructs and Vehicles",
+       "link": "https://url.d2clarity.com/combatants",
+       "classNames": [ "link" ]
+      },
+      {
+       "text": " for 5 seconds. Additional hits refresh the buff duration."
       }
      ]
     },
@@ -58264,7 +58030,20 @@
     {
      "linesContent": [
       {
-       "text": "Activation Requirement: Scoring 50% of Magazine Size rounded down + 2 hits"
+       "text": "Number of Hits Required: 50% of Base Magazine Capacity rounded down + 2."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary weapon hits provide 2x activation progress."
       }
      ]
     },
@@ -58287,19 +58066,6 @@
       },
       {
        "text": "Special weapons."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "classNames": [ "primary" ]
-      },
-      {
-       "text": "Primary weapon hits provide 2x activation progress."
       }
      ]
     }
@@ -58514,16 +58280,7 @@
  "4008116374": {
   "hash": 4008116374,
   "name": "Suros Synergy",
-  "lastUpload": 1696779082385,
-  "stats": {
-   "Handling": [
-    {
-     "active": {
-      "stat": [ 40 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -58912,7 +58669,7 @@
     {
      "linesContent": [
       {
-       "text": "• (?) Aim Assist"
+       "text": "• 10 Aim Assist"
       }
      ]
     },
@@ -59377,7 +59134,7 @@
  "4082225868": {
   "hash": 4082225868,
   "name": "Swashbuckler",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -59385,7 +59142,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 1 Stack of Swashbuckler for 4.5 seconds. Melee kills grant all 5 stacks. Buff duration is refreshed on Weapon or Melee Kills."
+       "text": "Weapon or Melee Kills grant a Stacking Damage Buff for 4.5 seconds. Melee Kills grant all 5 Stacks instantly."
       }
      ]
     },
@@ -60207,19 +59964,52 @@
    ]
   }
  },
+ "4129855581": {
+  "hash": 4129855581,
+  "name": "Crossing Over",
+  "lastUpload": 1712008312346,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "As the Magazine drops from full to 50% capacity:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Linearly scales down from granting 10 Range and ? Handling to 50% strength."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "As the Magazine drops from 50% capacity to empty:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Linearly grants 1.5% to 3% Increased Damage, reaching maximum strength with the second to last bullet."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4134353779": {
   "hash": 4134353779,
   "name": "Drop Mag",
-  "lastUpload": 1681766701558,
-  "stats": {
-   "Reload": [
-    {
-     "passive": {
-      "multiplier": [ 0.9 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Perk",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -60237,7 +60027,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Magazine Size Stat by 30. (Functional equivalent of an \"inverse of Extended Mag\")"
+       "text": "Decreases Magazine Size Stat by 30. (Equivalent to the \"inverse\" of Extended Mag)"
       }
      ]
     }
@@ -60639,17 +60429,7 @@
  "4154828211": {
   "hash": 4154828211,
   "name": "Bitterspite",
-  "lastUpload": 1692730396702,
-  "stats": {
-   "Reload": [
-    {
-     "active": {
-      "stat": [ 10, 20, 30, 40, 50 ],
-      "multiplier": [ 0.97, 0.96, 0.95, 0.92, 0.9 ]
-     }
-    }
-   ]
-  },
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -60923,14 +60703,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills reduce Pellet Spread by "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "25% for "
+       "text": "Weapon Kills reduce Pellet Spread by 20% for "
       },
       {
        "text": "🡅",
@@ -60947,11 +60720,21 @@
     {
      "linesContent": [
       {
+       "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Pellet Spread is reduced by an additional 5% (⁠20%⁠🠚⁠25%⁠) and buff duration is increased by 1 second."
+       "text": " Buff duration is increased by 1 second."
       }
      ]
     }
@@ -61973,7 +61756,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Cure x1 to allies within ? meters."
+       "text": "Cure x1 to allies within 15? meters."
       }
      ]
     },
@@ -62276,11 +62059,21 @@
  "4252909580": {
   "hash": 4252909580,
   "name": "Bottomless Grief",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 30 Magazine stat. (Identical to Extended Mag)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
     {
      "linesContent": [
       {
@@ -62300,24 +62093,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " the magazine while Last Guardian Standing."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Does not activate when playing solo."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Passively grants 30 Magazine stat. (Identical to Extended Mag)"
+       "text": " the magazine while Last Guardian Standing. Does not activate when playing solo."
       }
      ]
     }
@@ -62459,7 +62235,7 @@
  "4264904777": {
   "hash": 4264904777,
   "name": "Dawning Surprise",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1712008312346,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -62467,7 +62243,7 @@
     {
      "linesContent": [
       {
-       "text": "Multiple Weapon Kills within ? seconds of each spawn a Dawning Gift that remais on the ground for 10 seconds."
+       "text": "Multiple Weapon Kills within ? seconds of each spawn a Dawning Gift for you and allies, which remais on the ground for 10 seconds."
       }
      ]
     },
