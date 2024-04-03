@@ -50778,14 +50778,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon scoring multiple hits within 6 seconds of each:\n• <title Refills [G_refill] /> 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown.\n• Grants 40% Increased Damage against <link Constructs and Vehicles [#CombatantClassifications] /> for #e${5+#d} seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required: 2 + 50% (25% on <primary/>Primary Weapons) of Base Magazine Capacity rounded down.\n\nWave Frame Grenade Launchers (Wave GLs) require 3 Hits with Direct Impacts counting as 2 Hits.\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <primary/>Primary weapons and 2x progress for <special/>Special weapons. Wave GLs do not benefit from this.\n\nenhanced (\nvar d = 0\n#e Buff duration is increased by 1 second.\n)",
+     "main": "Upon scoring multiple hits within 6 seconds of each:\n• <title Refills [G_refill] /> 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown.\n• Grants 40% Increased Damage against <link Constructs and Vehicles [#CombatantClassifications] /> for #e${5+#d} seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required: 2 + 50% (25% on <primary/>Primary Weapons) of Base Magazine Capacity rounded down.\n\nWave Frame Grenade Launchers (Wave GLs) require 3 Hits with Direct Impacts counting as 2 Hits. While the buff is active, only Direct Impact Hits will reset the Hit counter for magazine refills.\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <primary/>Primary weapons and 2x progress for <special/>Special weapons. Wave GLs do not benefit from this.\n\nenhanced (\nvar d = 0\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712167624157,
+      "lastUpdate": 1712180608496,
       "updatedBy": "Stardust"
      }
     },
@@ -50795,7 +50795,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712174090388,
+   "lastUpload": 1712180612931,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
