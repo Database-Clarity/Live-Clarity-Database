@@ -5060,14 +5060,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits. Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] /> once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.33%\n\nAll thresholds are increased by 60% for Submachine Guns, initially triggering at 20% and maxing out at 176.53%.\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
+     "main": "Successive Hits within 0.2 seconds of each grant a ramping Damage Buff after scoring 12.5% of the Magazine Capacity as hits (20% on SMGs). Missing deactivates the buff.\n\nStacks displayed on-screen are only visual aides, the buff <link ramps up with each shot [https://url.d2clarity.com/PvETargetLock] /> once active. Reaches maximum strength at 5 Stacks.\n\n% of the Magazine Capacity as Hits required for each Visual Stack: 12.5%|35.5%|54.5%|74.5%|110.33%\n\nAll thresholds are increased by 60% for Submachine Guns, initially triggering at 20% and maxing out at 176.53%.\n\nDamage Buff ramps up from #e<pve ${16.73*#d}% /> <pvp [${10.46*#f}%] /> to #e<pve ${40*#d}% /> <pvp [${25*#f}%] /> upon reaching maximum strength.\n\nAssuming no missed shots, it provides roughly a #e<pve ${25*#d}% /> <pvp [${15.85*#f}%] /> <link Damage Buff on average [https://url.d2clarity.com/PvETargetLock] /> after firing 100% of the Magazine.\n\nenhanced (\nvar d = 1.125\nvar f = 1.2\n#e Damage Buff is increased by <pve 12.5% /> <pvp [20%] />.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712003705610,
+      "lastUpdate": 1712921999947,
       "updatedBy": "Stardust"
      }
     },
@@ -5077,7 +5077,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712008312346,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21314,7 +21314,7 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Hits inflict increased Flinch on Enemies.\n\n<pve/> [PVE] <link Tier 1-2 Minors [#CombatantClassifications] /> can be repeatedly staggered. Higher Tier Combatants stagger quicker.\n\n<pvp [PVP] Flinch against Guardians varies based on Damage and Weapon Archetype. Flinch Increase ranges between 5-10%. />",
+     "main": "Hits inflict increased Flinch on Enemies.\n\n<pve/> [PVE] <link Tier 1-2 Minors [#CombatantClassifications] /> can be repeatedly staggered. Higher Tier Combatants stagger quicker.\n\n<pvp [PVP] Flinch against Players varies based on damage and Weapon Archetype. Flinch increase ranges between 5-10%. />",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -21325,7 +21325,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687085127093,
+      "lastUpdate": 1712922122316,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -21339,7 +21339,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687095789709,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22971,7 +22971,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On Elemental, Barrier or Guardian Shield Break:\nApplies Kinetic Damage Vulnerability to the enemy, increasing Kinetic Damage taken by 50% for ${5.5+#d} seconds. //add #e once known\n\nStacks with all other Buffs and Debuffs.\n\nenhanced (\nvar d = 0 //placeholder\n#e Debuff Duration is increased.\n)",
+     "main": "On Elemental, Barrier or Guardian Shield Break:\nApplies Kinetic Damage Vulnerability to the enemy, increasing Kinetic damage taken by 50% for ${5.5+#d} seconds. //add #e once known\n\nStacks with all other Buffs and Debuffs.\n\nenhanced (\nvar d = 0 //placeholder\n#e Debuff Duration is increased.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -22982,7 +22982,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1711984339738,
+      "lastUpdate": 1712922058191,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -22996,7 +22996,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712008312346,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28445,11 +28445,9 @@
    "inLiveDatabase": true
   },
   "2109543898": {
-   "hash": 2109543898,
    "name": "Desperate Measures",
+   "hash": 2109543898,
    "type": "Weapon Trait",
-   "lastUpload": 1712883202187,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
      "main": "Weapon Kills grant 10% increased damage for 7 seconds.\n\nGrenade or Melee Kills grant 20%|30% increased damage for 7 seconds. Can activate while stowed.\n\nWeapon Kills refresh the buff duration.\n\n\nenhanced (\nvar d = 0\n)",
@@ -28457,19 +28455,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 1712878402349,
       "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1712922145112,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2117683199": {
    "name": "Full Auto Trigger System",
@@ -33318,11 +33318,9 @@
    "uploadToLive": false
   },
   "2489430594": {
-   "hash": 2489430594,
    "name": "Indomitability",
+   "hash": 2489430594,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1712883202187,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
      "main": "Weapon Kills grant ability energy based on your subclass' elemental alignment:\n• Light Subclass: 5% Grenade Ability Energy\n• Dark Subclass: 5% Melee Ability Energy",
@@ -33330,19 +33328,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 1712881684650,
       "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1712922145112,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2490530085": {
    "hash": 2490530085,
@@ -35898,11 +35898,9 @@
    "uploadToLive": false
   },
   "2720533289": {
-   "hash": 2720533289,
    "name": "Magnificent Howl",
+   "hash": 2720533289,
    "type": "Weapon Trait",
-   "lastUpload": 1712883202187,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
      "main": "Scoring a Precision Kill grants 1 Stack of Magnificent Howl. Maximum of ? Stacks.\n\nUpon finishing a reload with active Stacks:\nEach shot consumes 1 Stack of Magnificent Howl, granting <pve 50% /> <pvp [?%] /> increased damage and ? Range.\n\n(Needs verification:) Precision Kills with buffed shots don't consume Stacks.",
@@ -35910,19 +35908,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 1712881172863,
       "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1712922145112,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2722573681": {
    "hash": 2722573681,
@@ -37975,7 +37975,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Aiming Down Sightsgrants 10% increased Effective Zoom and 5% Faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "Aiming Down Sights grants 10% increased Effective Zoom and 5% Faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -37986,7 +37986,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712879557421,
+      "lastUpdate": 1712921872246,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38000,7 +38000,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38010,7 +38010,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Precision Kills cause targets to explode, dealing up to <pve 123.89 /> <pvp [95.3] /> Elemental Damage in a 4.5 meter radius.\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
+     "main": "Precision Kills cause targets to explode, dealing up to <pve 123.89 /> <pvp [95.3] /> elemental damage in a 4.5 meter radius.\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -38021,7 +38021,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1711984432203,
+      "lastUpdate": 1712921945641,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38035,7 +38035,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712008312346,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40870,11 +40870,9 @@
    "itemName": "Borealis"
   },
   "3081867624": {
-   "hash": 3081867624,
    "name": "Master of Arms",
+   "hash": 3081867624,
    "type": "Weapon Trait",
-   "lastUpload": 1712883202187,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
      "main": "Scoring a Kill with any Weapon grants 15% increased damage for ? seconds.",
@@ -40882,19 +40880,21 @@
     }
    },
    "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
     "descriptions": {
      "en": {
       "lastUpdate": 1712881223499,
       "updatedBy": "Stardust"
      }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1712922145112,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3094620656": {
    "name": "Unflinching Harmonic Aim",
@@ -44467,7 +44467,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant a Stack of Rampage for #e${4.5+#d} seconds. Buff remains active while stowed.\n\nDamage Increase at 1|2|3 Stacks: 10%|21%|33.1%\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "Weapon Kills grant a Stack of Rampage for #e${4.5+#d} seconds. Buff remains active while stowed.\n\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44478,7 +44478,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712002971302,
+      "lastUpdate": 1712921913172,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44492,7 +44492,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712008312346,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51203,14 +51203,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon scoring multiple hits within 6 seconds of each:\n• <title Refills [G_refill] /> 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown. Does nothing if the Magazine is full or Overfilled.\n• Grants 40% increased damage against <link Constructs and Vehicles [#CombatantClassifications] /> for #e${5+#d} seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required: \n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <primary/>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <primary/>Primary weapons and 2x progress for <special/>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n• While the buff is active, only Direct Impact Hits will start a new counter for ammo refills (i.e. Direct Impact resets the counter an contributes 2 Hits)\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on enemies\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but the perk can trigger with as few as 2 shots on more distant targets\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
+     "main": "Upon scoring multiple hits within 6 seconds of each:\n• <title Refills [G_refill] /> 10% of the Magazine from thin air. Refill amount is rounded up. Can be reactivated without a cooldown. Does nothing if the Magazine is full or Overfilled.\n• Grants 40% increased damage against <link Constructs and Vehicles [#CombatantClassifications] /> for #e${5+#d} seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required: \n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <primary/>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <primary/>Primary weapons and 2x progress for <special/>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n• While the buff is active, only Direct Impact Hits will start a new counter for ammo refills (i.e. Direct Impact resets the counter and contributes 2 Hits)\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on enemies\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but the perk can trigger with as few as 2 shots on more distant targets\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712878437000,
+      "lastUpdate": 1712921860297,
       "updatedBy": "Stardust"
      }
     },
@@ -51220,7 +51220,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1712922145112,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
