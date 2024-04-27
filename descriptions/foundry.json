@@ -144,13 +144,13 @@
   "name": "Chaotic Exchanger",
   "itemHash": 1906093346,
   "itemName": "Contraverse Hold",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712882131876,
+     "lastUpdate": 1714214011994,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -168,7 +168,19 @@
     {
      "linesContent": [
       {
-       "text": "Grants 20% Damage Resistance while Charging a Grenade."
+       "text": "Grants 20% Damage Resistance while overcharging a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Void Grenade with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Chaos Accelerant."
       }
      ]
     },
@@ -178,7 +190,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Hits proc Chaotic Exchange, granting "
+       "text": "Grenade Hits grant "
       },
       {
        "text": "2000%"
@@ -210,7 +222,13 @@
     {
      "linesContent": [
       {
-       "text": "Charged Vortex Grenade can proc twice if enemies get hit by the initial explosion and the last few ticks."
+       "text": "Charged "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Vortex Grenade can proc twice if enemies get hit by the initial explosion and the last few ticks."
       }
      ]
     }
@@ -5055,13 +5073,13 @@
  "362132288": {
   "hash": 362132288,
   "name": "Ember of Torches",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697815490922,
+     "lastUpdate": 1714217400765,
      "updatedBy": "Stardust"
     }
    }
@@ -5077,7 +5095,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Radiant for 8 seconds."
+       "text": "Radiant for 8 seconds (12 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Solace)."
       }
      ]
     }
@@ -5087,13 +5111,13 @@
  "362132289": {
   "hash": 362132289,
   "name": "Ember of Combustion",
-  "lastUpload": 1713288202328,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1713288195766,
+     "lastUpdate": 1714216878247,
      "updatedBy": "Stardust"
     }
    }
@@ -5141,7 +5165,25 @@
     {
      "linesContent": [
       {
-       "text": "Note: Well of Radiance makes all Weapon Damage count as Super Ability Damage for the Caster so Solar Weapons Kills will also count as Solar Super Kills."
+       "text": "Note: "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Well of Radiance makes all of the caster's Weapon Damage count as Super Ability Damage so "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Weapons Kills will also count as "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar Super Kills."
       }
      ]
     }
@@ -5151,13 +5193,13 @@
  "362132290": {
   "hash": 362132290,
   "name": "Ember of Tempering",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697815475737,
+     "lastUpdate": 1714217372563,
      "updatedBy": "Stardust"
     }
    }
@@ -5170,7 +5212,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Weapon Kills grant 10 Recovery to you and allies within 12.5 meters for 8 seconds. Stacks 3x."
+       "text": "Solar Weapon Kills grant a Stack of Ember of Tempering for 8 seconds to you and allies within 12.5 meters."
       }
      ]
     },
@@ -5180,20 +5222,24 @@
     {
      "linesContent": [
       {
-       "text": "While "
-      },
-      {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ember of Tempering is active:"
+       "text": "Ember of Tempering grants the following benefits:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Grants 20 Airborne Effectiveness"
+       "text": "• 10|20|30 Recovery at 1|2|3 Stacks"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20 Airborne Effectiveness"
       }
      ]
     },
@@ -5222,13 +5268,13 @@
  "362132291": {
   "hash": 362132291,
   "name": "Ember of Char",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697814780779,
+     "lastUpdate": 1714216795980,
      "updatedBy": "Stardust"
     }
    }
@@ -5247,7 +5293,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch (60 with "
+       "text": "Scorch Stacks (60 with "
       },
       {
        "classNames": [ "solar" ]
@@ -5569,13 +5615,13 @@
  "362132300": {
   "hash": 362132300,
   "name": "Ember of Solace",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697815354513,
+     "lastUpdate": 1714217422518,
      "updatedBy": "Stardust"
     }
    }
@@ -5595,6 +5641,34 @@
       },
       {
        "text": "Radiant effects applied to you last 50% longer."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Specific increases from "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Solace for "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration and "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Radiant sources can be found in their descriptions."
       }
      ]
     }
@@ -8461,13 +8535,13 @@
  "537774541": {
   "hash": 537774541,
   "name": "Whisper of Torment",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699460342128,
+     "lastUpdate": 1714219060351,
      "updatedBy": "Stardust"
     }
    }
@@ -8477,7 +8551,7 @@
     {
      "linesContent": [
       {
-       "text": "Receiving damage from an enemy grants 5% Grenade Energy. While at Critical Health, the amount is increased to 10% Grenade Energy."
+       "text": "Receiving damage from an enemy grants 5% Grenade Energy. Being at Critical Health increases this to 10%."
       }
      ]
     },
@@ -10708,13 +10782,13 @@
   "name": "Light Shift",
   "itemHash": 1619425569,
   "itemName": "Mask of Bakris",
-  "lastUpload": 1686224473621,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1686223369370,
+     "lastUpdate": 1714212249705,
      "updatedBy": "Stardust"
     }
    }
@@ -10724,13 +10798,13 @@
     {
      "linesContent": [
       {
-       "text": "While on a "
+       "text": "Only works while on a "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Subclass:"
+       "text": "Stasis Subclass."
       }
      ]
     },
@@ -10747,7 +10821,7 @@
     {
      "linesContent": [
       {
-       "text": "Shift has a travel distance of 10 metres and renders you completely invisible (except for a trail) and invulnerable for the duration of the shift."
+       "text": "Shift has a travel distance of 10 meters and renders you completely invisible (except for a trail) and invulnerable for the duration of the animation."
       }
      ]
     },
@@ -11416,13 +11490,13 @@
   "name": "Dearly Departed",
   "itemHash": 2177524718,
   "itemName": "The Stag",
-  "lastUpload": 1703073411225,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1703072757043,
+     "lastUpdate": 1714212423964,
      "updatedBy": "Stardust"
     }
    }
@@ -11444,7 +11518,7 @@
        "text": "[PVP: 5%]"
       },
       {
-       "text": " Damage Resistance to Players inside Rifts you create. ("
+       "text": " Damage Resistance to allies inside Rifts you create. ("
       },
       {
        "classNames": [ "solar" ]
@@ -16398,13 +16472,13 @@
  "1051276350": {
   "hash": 1051276350,
   "name": "Ember of Wonder",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697815551317,
+     "lastUpdate": 1714217481365,
      "updatedBy": "Stardust"
     }
    }
@@ -16430,7 +16504,7 @@
     {
      "linesContent": [
       {
-       "text": "[PVP] 10 second cooldown after activation."
+       "text": "10 second cooldown between activations."
       }
      ]
     }
@@ -20567,13 +20641,13 @@
   "name": "Devouring Rift",
   "itemHash": 511888814,
   "itemName": "Secant Filaments",
-  "lastUpload": 1696783321230,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1696782283999,
+     "lastUpdate": 1714214734656,
      "updatedBy": "Stardust"
     }
    }
@@ -20583,13 +20657,69 @@
     {
      "linesContent": [
       {
+       "text": "Stepping into an Empowering Rift cast by you with a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Void Subclass equipped grants "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Devour for 11 seconds (17 with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Echo of Persistence)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kills can refresh "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Devour's duration up to 11 seconds (22 with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "⁠Echo of Persistence)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Empowering Rifts you cast grant "
       },
       {
        "classNames": [ "overload" ]
       },
       {
-       "text": "Overload Shot to you and allies inside it, allowing weapons to cause Disruption on hit. (Does not work with Well of Radiance)"
+       "text": "⁠Overload Shot to you and allies inside it, allowing weapons to cause "
+      },
+      {
+       "classNames": [ "overload" ]
+      },
+      {
+       "text": "⁠Disruption on hit."
       }
      ]
     },
@@ -20599,23 +20729,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapons with a Breaker Type (either intrinsic or from Artifact Perks) will not be overwritten."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Casting an Empowering Rift with a "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Void Subclass equipped grants Devour for 11 seconds."
+       "text": "Weapons with a Breaker Type (either intrinsic or from Artifact Perks) will not benefit from this."
       }
      ]
     },
@@ -23023,7 +23137,7 @@
        "text": "Combatant Damage Scaling"
       },
       {
-       "text": ". They also count as Hits with the weapon for other interactions."
+       "text": ". They also count as non-direct Hits with the weapon for other interactions."
       }
      ]
     },
@@ -23033,7 +23147,7 @@
     {
      "linesContent": [
       {
-       "text": "The perk cannot be triggered on a target again until after 2? seconds of the last shockwave."
+       "text": "The perk cannot be retriggered by anyone on a target until 2? seconds after of the last shockwave."
       }
      ]
     },
@@ -24323,7 +24437,7 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates after swinging once. 3 second cooldown."
+       "text": "3 second cooldown between activations."
       }
      ]
     },
@@ -24337,7 +24451,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased by 0.5 seconds. Lunge Distance bonus is increased by 25%."
+       "text": " Buff Duration is increased by 0.5 seconds. Lunge Distance bonus is increased by 25% (80%⁠🠚⁠100%)."
       }
      ]
     }
@@ -25486,13 +25600,13 @@
   "name": "Illegally Modded Holster",
   "itemHash": 193869522,
   "itemName": "Lucky Pants",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680541299369,
+     "lastUpdate": 1714215310818,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -25544,14 +25658,14 @@
     {
      "linesContent": [
       {
-       "text": "Upon readying a Fully Loaded Kinetic or Matching Element Hand Cannon in PVE:"
+       "text": "In PVE, upon readying a fully loaded Kinetic Hand Cannon or one matching your Subclass Element:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "60% Increased Damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits."
+       "text": "Grants 60% increased Direct Hit damage per hit for 5.5 seconds. Maxes out at 600% after 10 Hits."
       }
      ]
     },
@@ -25564,7 +25678,7 @@
        "text": "Eriana's Vow"
       },
       {
-       "text": " only receives 30% Increased Damage per hit. "
+       "text": " only receives 30% increased damage per hit. "
       },
       {
        "text": "Sturm"
@@ -25576,13 +25690,13 @@
        "text": "Malfeasance"
       },
       {
-       "text": "'s Explosive Shadow, "
+       "text": "'s Explosive Shadow, and "
       },
       {
        "text": "Hawkmoon"
       },
       {
-       "text": "'s Paracausal Shot, and Payload Perks are unaffected by the buff."
+       "text": "'s Paracausal Shot are unaffected by the buff."
       }
      ]
     },
@@ -25592,7 +25706,7 @@
     {
      "linesContent": [
       {
-       "text": "After the Buff runs out, or you swap weapons:"
+       "text": "After the Buff runs out or you swap weapons:"
       }
      ]
     },
@@ -25877,13 +25991,13 @@
  "1727069360": {
   "hash": 1727069360,
   "name": "Spark of Focus",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697809002474,
+     "lastUpdate": 1714216169212,
      "updatedBy": "Stardust"
     }
    }
@@ -25893,7 +26007,7 @@
     {
      "linesContent": [
       {
-       "text": "After 1.25 seconds of sprinting, and while maintaining both sprint and a movement speed of at least 5 meters per second:"
+       "text": "After 1.25 seconds of sprinting and while maintaining both sprint and a movement speed of at least 5 meters per second:"
       }
      ]
     },
@@ -26030,13 +26144,13 @@
  "1727069363": {
   "hash": 1727069363,
   "name": "Spark of Ions",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697808317508,
+     "lastUpdate": 1714216222007,
      "updatedBy": "Stardust"
     }
    }
@@ -26068,7 +26182,7 @@
     {
      "linesContent": [
       {
-       "text": "[PVP] 10 second cooldown between activations."
+       "text": "10 second cooldown between activations."
       }
      ]
     }
@@ -26078,13 +26192,13 @@
  "1727069364": {
   "hash": 1727069364,
   "name": "Spark of Shock",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697810135183,
+     "lastUpdate": 1714216400893,
      "updatedBy": "Stardust"
     }
    }
@@ -26103,7 +26217,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Jolt upon dealing damage."
+       "text": "Jolt on Hit."
       }
      ]
     }
@@ -26212,13 +26326,13 @@
  "1727069367": {
   "hash": 1727069367,
   "name": "Spark of Beacons",
-  "lastUpload": 1699752056306,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699751911273,
+     "lastUpdate": 1714216087874,
      "updatedBy": "Stardust"
     }
    }
@@ -26228,13 +26342,16 @@
     {
      "linesContent": [
       {
+       "classNames": [ "arc" ]
+      },
+      {
        "text": "Arc "
       },
       {
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Weapons Kills while "
+       "text": "Special Weapon Kills while "
       },
       {
        "classNames": [ "arc" ]
@@ -26256,13 +26373,13 @@
  "1727069374": {
   "hash": 1727069374,
   "name": "Spark of Magnitude",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697808963440,
+     "lastUpdate": 1714216296015,
      "updatedBy": "Stardust"
     }
    }
@@ -26271,6 +26388,9 @@
    "en": [
     {
      "linesContent": [
+      {
+       "classNames": [ "arc" ]
+      },
       {
        "text": "Lightning Grenades release an additional lightning bolt. (4🠚5)"
       }
@@ -26282,7 +26402,10 @@
     {
      "linesContent": [
       {
-       "text": "Pulse Grenade release an additional 2 pulses. (6🠚8)"
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Pulse Grenades release an additional 2 pulses. (6🠚8)"
       }
      ]
     },
@@ -26292,7 +26415,10 @@
     {
      "linesContent": [
       {
-       "text": "Storm Grenade release a third volley, dealing the same damage as the second volley."
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Storm Grenades release a third volley, dealing the same damage as the second volley."
       }
      ]
     },
@@ -29010,7 +29136,7 @@
     {
      "linesContent": [
       {
-       "text": "? second cooldown after activation."
+       "text": "3 second cooldown after activation."
       }
      ]
     },
@@ -30322,13 +30448,13 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1694355839227,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1694355800454,
+     "lastUpdate": 1714212767422,
      "updatedBy": "Stardust"
     }
    }
@@ -30354,7 +30480,7 @@
     {
      "linesContent": [
       {
-       "text": "? second cooldown after activation."
+       "text": "3 second cooldown after activation."
       }
      ]
     }
@@ -30478,13 +30604,13 @@
  "2077819806": {
   "hash": 2077819806,
   "name": "Eager Edge",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712878929907,
+     "lastUpdate": 1714213031657,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -30508,7 +30634,7 @@
     {
      "linesContent": [
       {
-       "text": "Deactivates after swinging once. 3 second cooldown."
+       "text": "3 second cooldown between activations."
       }
      ]
     }
@@ -33217,13 +33343,13 @@
  "2272984657": {
   "hash": 2272984657,
   "name": "Echo of Domineering",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697891897560,
+     "lastUpdate": 1714217561389,
      "updatedBy": "Stardust"
     }
    }
@@ -33276,7 +33402,7 @@
     {
      "linesContent": [
       {
-       "text": "Cannot be reactivated while the buff is active."
+       "text": "10 second cooldown between activations."
       }
      ]
     },
@@ -33308,13 +33434,13 @@
  "2272984664": {
   "hash": 2272984664,
   "name": "Echo of Provision",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697893299954,
+     "lastUpdate": 1714218040774,
      "updatedBy": "Stardust"
     }
    }
@@ -33324,7 +33450,7 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Grenade Ability Damage grants Melee Energy once per Damage Instance."
+       "text": "Grenade Ability Damage grants Melee Energy once per Damage Instance."
       }
      ]
     },
@@ -33334,7 +33460,7 @@
     {
      "linesContent": [
       {
-       "text": "DoT (Damage Over Time) grenades only provide Melee Energy once per damage tick regardless of the number of enemies hit. Other grenades only grant Melee Energy once per submunition."
+       "text": "'Damage Over Time' grenades only provide Melee Energy once per damage tick regardless of the number of enemies damaged. Other grenades only grant Melee Energy once per submunition."
       }
      ]
     },
@@ -33415,13 +33541,13 @@
  "2272984666": {
   "hash": 2272984666,
   "name": "Echo of Remnants",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697893486391,
+     "lastUpdate": 1714218286455,
      "updatedBy": "Stardust"
     }
    }
@@ -33431,35 +33557,47 @@
     {
      "linesContent": [
       {
-       "text": "Extends the duration of lingering Grenade Abilities:"
+       "text": "Improves lingering "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Grenade Abilities:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Axion Bolt track enemies for ?% longer"
+       "text": "• Axion Bolt: tracks enemies for ?% longer"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Void Spike lasts 40% longer"
+       "text": "• Void Spike: lasts 40% longer and starts dealing damage 0.1 seconds earlier"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Void Wall lasts 60% longer"
+       "text": "• Void Wall: lasts 60% longer"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Vortex Grenade lasts 50% longer"
+       "text": "• Vortex Grenade: lasts 25% longer (55% longer when overcharged by "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Chaos Accelerant) and starts dealing damage 0.13 seconds earlier"
       }
      ]
     }
@@ -33469,13 +33607,13 @@
  "2272984667": {
   "hash": 2272984667,
   "name": "Echo of Exchange",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697892044667,
+     "lastUpdate": 1714217586102,
      "updatedBy": "Stardust"
     }
    }
@@ -33512,7 +33650,7 @@
     {
      "linesContent": [
       {
-       "text": "• T3 Minors, T2 Elites, Players: 16.25%"
+       "text": "• T3 Minors, T2 Elites, and Players: 16.25%"
       }
      ]
     },
@@ -33576,13 +33714,13 @@
  "2272984669": {
   "hash": 2272984669,
   "name": "Echo of Reprisal",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697893554619,
+     "lastUpdate": 1714218495549,
      "updatedBy": "Stardust"
     }
    }
@@ -33592,21 +33730,7 @@
     {
      "linesContent": [
       {
-       "text": "While 3+ enemies are within 8 meters:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Kills grant an additional ?% Super Energy."
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Each enemy after the 3rd, up to the 7th further grants an additional ?% Super Energy each."
+       "text": "Kills grant an additional ?% Super Energy while 3 enemies are within 8 meters."
       }
      ]
     },
@@ -33616,7 +33740,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second cooldown between activations."
+       "text": "1? second cooldown between activations."
       }
      ]
     }
@@ -33652,13 +33776,13 @@
  "2272984671": {
   "hash": 2272984671,
   "name": "Echo of Persistence",
-  "lastUpload": 1704200924259,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1704196506183,
+     "lastUpdate": 1714217890690,
      "updatedBy": "Stardust"
     }
    }
@@ -33671,13 +33795,46 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Invisibility, "
+       "text": "Void Buffs applied to you last longer."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Devour and Void Overshield: 50% increased duration"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Invisibility: 40% increased duration"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Specific increases from "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Overshield, and Devour buffs applied to you generally last ~50% longer."
+       "text": "Echo of Persistence for "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Buff sources can be found in their descriptions."
       }
      ]
     }
@@ -34101,13 +34258,13 @@
   "name": "High Priority",
   "itemHash": 2374129871,
   "itemName": "Cenotaph Mask",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702077337222,
+     "lastUpdate": 1714211924189,
      "updatedBy": "Stardust"
     }
    }
@@ -34162,13 +34319,13 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Heavy Ammo for Allies and "
+       "text": "Heavy Ammo for allies and "
       },
       {
        "classNames": [ "special" ]
       },
       {
-       "text": "Special Ammo for the Wearer."
+       "text": "Special Ammo for the wearer."
       }
      ]
     },
@@ -34442,13 +34599,13 @@
  "2317325398": {
   "hash": 2317325398,
   "name": "Kindling Trigger",
-  "lastUpload": 1704817870439,
+  "lastUpload": 1714219892088,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1704813240885,
+     "lastUpdate": 1714215858993,
      "updatedBy": "Stardust"
     }
    }
@@ -34464,7 +34621,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Radiant:"
+       "text": "⁠Radiant:"
       }
      ]
     },
@@ -34477,25 +34634,25 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Weapon Damage applies 30 "
+       "text": "⁠Solar Weapon Damage applies 30 "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch Stacks (45 with "
+       "text": "⁠Scorch Stacks (45 with "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ember of Ashes) to PVE Combatants that aren't already "
+       "text": "⁠Ember of Ashes) to PVE Combatants that aren't already "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorched."
+       "text": "⁠Scorched."
       }
      ]
     },
@@ -34511,13 +34668,29 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ignition where the initial "
+       "text": "⁠Ignition where the initial "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch was applied by Kindling Trigger) do not benefit from Weapon or Ability Damage increases."
+       "text": "⁠Scorch was applied by Kindling Trigger) do not benefit from Weapon or Ability Damage increases."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not work while standing in a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "⁠Well of Radiance."
       }
      ]
     }
@@ -36376,13 +36549,13 @@
  "2483898429": {
   "hash": 2483898429,
   "name": "Whisper of Conduction",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699458408804,
+     "lastUpdate": 1714218638139,
      "updatedBy": "Stardust"
     }
    }
@@ -36395,7 +36568,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Shards within 15 meters are slowly pulled to you after a 1 second delay."
+       "text": "Stasis Shards within 15 meters are pulled toward you after a 1 second delay."
       }
      ]
     }
@@ -36405,13 +36578,13 @@
  "2483898430": {
   "hash": 2483898430,
   "name": "Whisper of Rime",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699460258743,
+     "lastUpdate": 1714218926411,
      "updatedBy": "Stardust"
     }
    }
@@ -36421,19 +36594,29 @@
     {
      "linesContent": [
       {
-       "text": "Small "
+       "text": "Collecting small "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Shards restore 5 HP, "
+       "text": "Shards restores 5 HP, large "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Large Shards restore 35?. If at Full Health, it is instead added as a "
+       "text": "Shards restore 35? HP."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "If at Full Health, the restored HP is instead added as a "
       },
       {
        "classNames": [ "stasis" ]
@@ -38462,13 +38645,13 @@
  "2661180600": {
   "hash": 2661180600,
   "name": "Echo of Instability",
-  "lastUpload": 1704200924259,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1704196490297,
+     "lastUpdate": 1714217636179,
      "updatedBy": "Stardust"
     }
    }
@@ -38484,13 +38667,13 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Volatile Rounds for 11 seconds, making hits with Void Weapons apply "
+       "text": "Volatile Rounds for 11 seconds, making Void Weapons apply "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Volatile."
+       "text": "Volatile on Hit."
       }
      ]
     },
@@ -38564,13 +38747,13 @@
  "2661180602": {
   "hash": 2661180602,
   "name": "Echo of Obscurity",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697892532582,
+     "lastUpdate": 1714217674293,
      "updatedBy": "Stardust"
     }
    }
@@ -38586,7 +38769,13 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Invisibility for 4.8 seconds."
+       "text": "Void Invisibility for 5 seconds (7 with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Echo of Peristence)."
       }
      ]
     }
@@ -38596,13 +38785,13 @@
  "2661180603": {
   "hash": 2661180603,
   "name": "Echo of Starvation",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697893614673,
+     "lastUpdate": 1714218523778,
      "updatedBy": "Stardust"
     }
    }
@@ -38624,7 +38813,13 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Devour for 5 seconds."
+       "text": "Devour for 5 seconds (7.5 with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Echo of Persistence)."
       }
      ]
     }
@@ -38788,13 +38983,13 @@
   "name": "Hawkeye Hack",
   "itemHash": 1321354573,
   "itemName": "Celestial Nighthawk",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1701292907892,
+     "lastUpdate": 1714212173447,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -38818,7 +39013,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Golden Gun to only fire a single shot that deals 650% Increased Damage. (~72.1% more Damage compared to 3 Precision Hits with Marksman Golden Gun. Also, please only use it with Marksman Golden Gun)"
+       "text": "Golden Gun to only fire a single shot that deals 650% increased damage. (~72.1% more damage compared to 3 Precision Hits with Marksman Golden Gun. Also, please only use it with Marksman Golden Gun)"
       }
      ]
     },
@@ -38828,7 +39023,13 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode, dealing up to "
+       "text": "Scoring a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Golden Gun Kill refunds 33% Super Energy and causes the enemy to explode, dealing up to "
       },
       {
        "text": "400"
@@ -38840,7 +39041,7 @@
        "text": "[PVP: ?]"
       },
       {
-       "text": " damage to enemies within ? meters."
+       "text": " damage in a ? meter radius."
       }
      ]
     },
@@ -38904,13 +39105,13 @@
   "name": "Upgraded Sensor Pack",
   "itemHash": 1321354572,
   "itemName": "Knucklehead Radar",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1709225249938,
+     "lastUpdate": 1714212371601,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -38924,7 +39125,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Airborne Effectiveness and radar remains active while Aiming Down Sights."
+       "text": "Passively grants 20 Airborne Effectiveness and Radar remains active while Aiming Down Sights."
       }
      ]
     },
@@ -38944,7 +39145,7 @@
     {
      "linesContent": [
       {
-       "text": "Hovering your reticle near enemies for 1 second marks them for 5 seconds. Markers stay visible even behind walls."
+       "text": "Hovering your reticle near enemies for 1 second marks them for 5 seconds. Marks are visible through walls."
       }
      ]
     },
@@ -38961,7 +39162,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 1% increased Weapon and Ability Damage for every percentage point below 30%."
+       "text": "Increases all outgoing damage by 1% for every percentage point below 30%."
       }
      ]
     },
@@ -40827,13 +41028,13 @@
   "name": "Rites of Ember",
   "itemHash": 2316914168,
   "itemName": "Dawn Chorus",
-  "lastUpload": 1707228958641,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1707228810734,
+     "lastUpdate": 1714211990983,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -40854,7 +41055,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Daybreak Projectiles deal 90% Increased Damage and apply 30 "
+       "text": "Daybreak Projectiles deal 90% increased damage and apply 30 "
       },
       {
        "classNames": [ "solar" ]
@@ -40876,7 +41077,7 @@
     {
      "linesContent": [
       {
-       "text": "(Daybreak Projectiles can often hit twice for double Damage and double "
+       "text": "(Daybreak Projectiles can often hit twice for double damage and double "
       },
       {
        "classNames": [ "solar" ]
@@ -40907,7 +41108,7 @@
        "text": "[PVP: 50%]"
       },
       {
-       "text": " Increased Damage and each Damage Tick grants 5% Melee Ability Energy."
+       "text": " increased damage and each Damage Tick grants 5% Melee Ability Energy."
       }
      ]
     }
@@ -43601,13 +43802,13 @@
   "name": "Kintsugi",
   "itemHash": 3974038291,
   "itemName": "Precious Scars",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712882372699,
+     "lastUpdate": 1714212108675,
      "updatedBy": "Stardust"
     }
    }
@@ -43659,7 +43860,7 @@
     {
      "linesContent": [
       {
-       "text": "Shielded is removed if the Overshield is destroyed and you can't regain it by leaving and reentering the field. If the wearer's Overshield is destroyed, the field granting it to allies is removed as well."
+       "text": "Shielded is removed if the Overshield is destroyed and you canott regain it by leaving and reentering the field. If the wearer's Overshield is destroyed, the field granting it to allies is removed as well."
       }
      ]
     }
@@ -44158,13 +44359,13 @@
  "3018373291": {
   "hash": 3018373291,
   "name": "Adept Big Ones Spec",
-  "lastUpload": 1686255544746,
+  "lastUpload": 1714219892088,
   "type": "Weapon Mod",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1686255430096,
+     "lastUpdate": 1714213721154,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -44174,6 +44375,21 @@
    }
   },
   "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants 7.77% Increased Damage against "
+      },
+      {
+       "text": "Elite, Miniboss, Boss, and Vehicle Combatants"
+      },
+      {
+       "text": "."
+      }
+     ]
+    }
+   ],
    "zh-chs": [
     {
      "linesContent": [
@@ -44767,13 +44983,13 @@
  "3078487919": {
   "hash": 3078487919,
   "name": "Bait and Switch",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712878489135,
+     "lastUpdate": 1714212508598,
      "updatedBy": "Stardust"
     },
     "zh-chs": {
@@ -44795,6 +45011,16 @@
      "linesContent": [
       {
        "text": "Grants 30% increased damage for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff duration cannot be refreshed."
       }
      ]
     }
@@ -44820,13 +45046,13 @@
  "3081867624": {
   "hash": 3081867624,
   "name": "Master of Arms",
-  "lastUpload": 1712966884007,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712966761237,
+     "lastUpdate": 1714213220853,
      "updatedBy": "Stardust"
     }
    }
@@ -44836,7 +45062,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill with any Weapon grants 15% increased damage for 7? seconds."
+       "text": "Scoring a Kill with any Weapon grants 15% increased damage for 7 seconds."
       }
      ]
     }
@@ -46392,13 +46618,13 @@
  "3215448563": {
   "hash": 3215448563,
   "name": "Paracausal Affinity",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712879449899,
+     "lastUpdate": 1714213244264,
      "updatedBy": "Stardust"
     }
    }
@@ -46408,7 +46634,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill from any source matching the alignment of the weapon grants 20% increased damage for 6 seconds."
+       "text": "Scoring a Kill from any source matching the elemental alignment of the weapon grants 20% increased damage for 6 seconds."
       }
      ]
     },
@@ -47017,13 +47243,13 @@
  "3268255645": {
   "hash": 3268255645,
   "name": "Sect of Force",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702079183431,
+     "lastUpdate": 1714215606975,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -47041,14 +47267,28 @@
     {
      "linesContent": [
       {
-       "text": "Upon scoring 4 Precision Hits within 3 seconds of each:"
+       "text": "Scoring 4 Precision Hits within 3 seconds of each grants the following for 10 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants ? Reload Speed and ? Handling for 10 seconds."
+       "text": "• 40? Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     },
@@ -47058,7 +47298,13 @@
     {
      "linesContent": [
       {
-       "text": "Activating the buff on an Elite or Miniboss or stunning a Champion marks them for 30 seconds. Mark duration cannot be refreshed."
+       "text": "Activating the buff on an "
+      },
+      {
+       "text": "Elite or Miniboss"
+      },
+      {
+       "text": " or stunning a Champion marks them for 30 seconds. Mark duration cannot be refreshed."
       }
      ]
     },
@@ -47068,7 +47314,7 @@
     {
      "linesContent": [
       {
-       "text": "Marked enemies are highlighted for allies take 20% Increased Damage from them. Damage Increase stacks with everything."
+       "text": "Marked enemies are highlighted for allies and take 20% increased damage from them. Damage increase stacks with everything."
       }
      ]
     },
@@ -47288,13 +47534,13 @@
  "3277705905": {
   "hash": 3277705905,
   "name": "Spark of Brilliance",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697807601782,
+     "lastUpdate": 1714216077005,
      "updatedBy": "Stardust"
     }
    }
@@ -47310,7 +47556,13 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Blinded enemies create an explosion, "
+       "text": "Blinded enemies release a "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Blinding explosion, "
       },
       {
        "classNames": [ "arc" ]
@@ -47326,13 +47578,13 @@
  "3277705906": {
   "hash": 3277705906,
   "name": "Spark of Amplitude",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697807296431,
+     "lastUpdate": 1714215949056,
      "updatedBy": "Stardust"
     }
    }
@@ -47342,7 +47594,7 @@
     {
      "linesContent": [
       {
-       "text": "Killing 2 enemies within ? seconds of each while "
+       "text": "Scoring 2 kills within ? seconds of each while "
       },
       {
        "classNames": [ "arc" ]
@@ -47368,13 +47620,13 @@
  "3277705907": {
   "hash": 3277705907,
   "name": "Spark of Feedback",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697807739377,
+     "lastUpdate": 1714216134183,
      "updatedBy": "Stardust"
     }
    }
@@ -47384,14 +47636,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon being struck by a Melee Attack, for 5 seconds:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants "
+       "text": "Being struck by a Melee Attack grants "
       },
       {
        "text": "75%"
@@ -47403,7 +47648,7 @@
        "text": "[PVP: 50%]"
       },
       {
-       "text": " Increased Melee Damage for one Melee Attack."
+       "text": " increased Melee Damage for your next Melee Attack within 5 seconds."
       }
      ]
     },
@@ -47509,13 +47754,13 @@
   "name": "Move to Survive",
   "itemHash": 3948284065,
   "itemName": "Astrocyte Verse",
-  "lastUpload": 1709252348445,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1709224585163,
+     "lastUpdate": 1714212071893,
      "updatedBy": "Stardust"
     },
     "ko": {
@@ -47547,21 +47792,21 @@
     {
      "linesContent": [
       {
-       "text": "• 25% Increased Blink Distance"
+       "text": "• 25% increased Blink distance"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 20% Decreased Blink Cooldown (3.55s⁠🠚⁠2.85s)"
+       "text": "• 20% decreased Blink cooldown (3.55s⁠🠚⁠2.85s)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 30% Decreased Blink Activation Delay (1.65s⁠🠚⁠1.15s)"
+       "text": "• 30% decreased Blink activation delay (1.65s⁠🠚⁠1.15s)"
       }
      ]
     },
@@ -47669,7 +47914,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill from any source matching the alignment of the weapon grants 20% increased damage for "
+       "text": "Scoring a Kill from any source matching the elemental alignment of the weapon grants 20% increased damage for "
       },
       {
        "text": "🡅",
@@ -49972,13 +50217,13 @@
  "3469412970": {
   "hash": 3469412970,
   "name": "Whisper of Hedrons",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699459193777,
+     "lastUpdate": 1714218771435,
      "updatedBy": "Stardust"
     }
    }
@@ -49991,7 +50236,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Freezing targets grants the following benefits for 11 seconds under the Stat Boost buff:"
+       "text": "Freezing targets grants the following benefits for 11 seconds:"
       }
      ]
     },
@@ -50029,13 +50274,13 @@
  "3469412971": {
   "hash": 3469412971,
   "name": "Whisper of Fissures",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699458901031,
+     "lastUpdate": 1714218708870,
      "updatedBy": "Stardust"
     }
    }
@@ -50100,7 +50345,7 @@
     {
      "linesContent": [
       {
-       "text": "This translates to a maximum of a "
+       "text": "This translates to "
       },
       {
        "text": "12.5%"
@@ -50281,13 +50526,13 @@
  "3478354817": {
   "hash": 3478354817,
   "name": "Spark of Haste",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697809005031,
+     "lastUpdate": 1714218754243,
      "updatedBy": "Stardust"
     }
    }
@@ -50297,7 +50542,7 @@
     {
      "linesContent": [
       {
-       "text": "After 1.25 seconds of sprinting, and while maintaining both sprint and a movement speed of at least 5 meters per second:"
+       "text": "After 1.25 seconds of sprinting and while maintaining both sprint and a movement speed of at least 5 meters per second:"
       }
      ]
     },
@@ -50951,13 +51196,13 @@
  "3547711346": {
   "hash": 3547711346,
   "name": "Wished into Being",
-  "lastUpload": 1704817870439,
+  "lastUpload": 1714219892088,
   "type": "Armor Mod Seasonal",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1704817864792,
+     "lastUpdate": 1714219740851,
      "updatedBy": "Stardust"
     }
    }
@@ -50974,7 +51219,7 @@
     {
      "linesContent": [
       {
-       "text": "Ability Kills spawn 3 Orbs of Power that each grant ?% Super Energy."
+       "text": "Ability Kills spawn 3 Orbs of Power that each grant 7.14% Super Energy."
       }
      ]
     },
@@ -54143,6 +54388,16 @@
     {
      "linesContent": [
       {
+       "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -55819,13 +56074,13 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1713374008935,
+  "lastUpload": 1714219892088,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1713373922209,
+     "lastUpdate": 1714213209987,
      "updatedBy": "Stardust"
     }
    }
@@ -55901,7 +56156,7 @@
        "text": "Combatant Damage Scaling"
       },
       {
-       "text": ". They also count as Hits with the weapon for other interactions."
+       "text": ". They also count as non-direct Hits with the weapon for other interactions."
       }
      ]
     },
@@ -55911,7 +56166,7 @@
     {
      "linesContent": [
       {
-       "text": "The perk cannot be triggered on a target again until after 2? seconds of the last shockwave."
+       "text": "The perk cannot be retriggered by anyone on a target until 2? seconds after of the last shockwave."
       }
      ]
     },
@@ -56540,13 +56795,13 @@
   "name": "Actual Grandeur",
   "itemHash": 1030017949,
   "itemName": "Skull of Dire Ahamkara",
-  "lastUpload": 1702080947315,
+  "lastUpload": 1714219892088,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702077456896,
+     "lastUpdate": 1714212013014,
      "updatedBy": "Stardust"
     }
    }
@@ -56556,7 +56811,7 @@
     {
      "linesContent": [
       {
-       "text": "Massively Increases Damage Resist during "
+       "text": "Massively increases Damage Resist during "
       },
       {
        "classNames": [ "void" ]
@@ -60295,13 +60550,13 @@
  "4180586737": {
   "hash": 4180586737,
   "name": "Ember of Mercy",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1709226125846,
+     "lastUpdate": 1714216953226,
      "updatedBy": "Stardust"
     }
    }
@@ -60326,7 +60581,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ember of Solace)."
+       "text": "Ember of Solace). Extends "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration's duration by the same amount if it's already active."
       }
      ]
     },
@@ -60797,13 +61058,13 @@
  "4208512211": {
   "hash": 4208512211,
   "name": "Thread of Evolution",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1709226199469,
+     "lastUpdate": 1714219208875,
      "updatedBy": "Stardust"
     }
    }
@@ -60816,7 +61077,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Threadlings travel 30?% faster and farther and deal Increased Damage."
+       "text": "Threadlings deal increased damage, move 30?% faster, and travel farther."
       }
      ]
     },
@@ -60853,7 +61114,7 @@
     {
      "linesContent": [
       {
-       "text": "• Players: 12.5%"
+       "text": "• Enemy Players: 12.5%"
       }
      ]
     }
@@ -60933,13 +61194,13 @@
  "4208512217": {
   "hash": 4208512217,
   "name": "Thread of Finality",
-  "lastUpload": 1699463015549,
+  "lastUpload": 1714219892088,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1699460852855,
+     "lastUpdate": 1714219230617,
      "updatedBy": "Stardust"
     }
    }
@@ -60949,7 +61210,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a PVE Combatant spawns a "
+       "text": "Finishers spawn a "
       },
       {
        "classNames": [ "strand" ]
