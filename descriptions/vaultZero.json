@@ -146,7 +146,7 @@
   "name": "Field-Tested",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach damage instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
+   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Hit grants 1 Point regardless of Weapon Archetype and Enemy Rank. Does not require Direct Hits.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
   }
  },
  "47981717": {
@@ -210,7 +210,7 @@
   "name": "Solar Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Solar]Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Solar]Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles, Eyes of Tomorrow, and Two-Tailed Fox do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "64332393": {
@@ -538,7 +538,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2"
+   "en": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2"
   }
  },
  "247725512": {
@@ -648,7 +648,7 @@
   "name": "Precision Instrument",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\nPrecision Damage Increase at 1|2|... Stacks:\n[enh]5% | 10% | 15% | 20% | 25% | 30%\n(More precisely: [enh]30% / 6 × [Stacks])\n[enh] Precision Damage Buff is increased by 20%."
+   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\nPrecision Damage Increase at 1|2|... Stacks:\n[enh]5% | 10% | 15% | 20% | 25% | 30%\n[enh] Precision Damage Buff is increased by 20%."
   }
  },
  "335129856": {
@@ -1224,7 +1224,7 @@
   "name": "Arc Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Arc]Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Arc]Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAggressive Frame Linear Fusion Rifles and Wardcliff Coil do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "536173722": {
@@ -1290,7 +1290,7 @@
   "name": "Precision Instrument",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%\n(More precisely: 25% / 6 × [Stacks])"
+   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
   }
  },
  "557221067": {
@@ -1340,7 +1340,7 @@
   "name": "Triple Tap",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within [enh]3 seconds of each refills 1 Ammo into the Magazine.\nCannot load the Magazine beyond its base capacity.\n[enh] Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 3 Precision Hits within [enh]3 seconds of each refills 1 Ammo into the Magazine from thin air.\nCannot load the Magazine beyond its base capacity.\n[enh] Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "579997810": {
@@ -1566,7 +1566,7 @@
   "name": "Solar Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Solar]Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Solar]Solar Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles, Eyes of Tomorrow, and Two-Tailed Fox do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "689005463": {
@@ -1853,7 +1853,7 @@
   "name": "Void Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Void]Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Void]Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles and Two-Tailed Fox do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "806917387": {
@@ -1997,7 +1997,7 @@
   "name": "Fourth Time's the Charm",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within [enh]3 seconds of each refills 2 Ammo into the Magazine.\nCannot load the Magazine beyond its base capacity.\n[enh] Allowed time between Precision Hits is increased by 1 second."
+   "en": "Scoring 4 Precision Hits within [enh]3 seconds of each refills 2 Ammo into the Magazine from thin air.\nCannot load the Magazine beyond its base capacity.\n[enh] Allowed time between Precision Hits is increased by 1 second."
   }
  },
  "855168139": {
@@ -2031,7 +2031,7 @@
   "name": "One for All",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Damaging 3 Separate Enemies within 3 seconds of each grants 35% increased damage for [enh]11 seconds.\nBuff duration cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for [enh]11 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "861489047": {
@@ -2069,7 +2069,7 @@
   "name": "Harmonic Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAggressive Frame Linear Fusion Rifles, Eyes of Tomorrow, Two-Tailed Fox, and Wardcliff Coil do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "878286503": {
@@ -2373,7 +2373,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n[enh] Spawned Orbs grant more Super Energy."
+   "en": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n[enh] Spawned Orbs grant more Super Energy."
   }
  },
  "987673306": {
@@ -3121,7 +3121,7 @@
   "itemName": "Revision Zero",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refills 2 Ammo into the Magazine.\nCannot load the Magazine beyond its base capacity."
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refills 2 Ammo into the Magazine from thin air.\nCannot load the Magazine beyond its base capacity."
   }
  },
  "1266037487": {
@@ -3251,7 +3251,7 @@
   "name": "Harmonic Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Subclass Element and the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAggressive Frame Linear Fusion Rifles, Eyes of Tomorrow, Two-Tailed Fox, and Wardcliff Coil do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "1301843770": {
@@ -3277,7 +3277,7 @@
   "name": "Strand Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Strand]Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Strand]Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "1316753551": {
@@ -3405,7 +3405,7 @@
   "name": "Fourth Time's the Charm",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 4 Precision Hits within 2 seconds of each refills 2 Ammo into the Magazine.\nCannot load the Magazine beyond its base capacity."
+   "en": "Scoring 4 Precision Hits within 2 seconds of each refills 2 Ammo into the Magazine from thin air.\nCannot load the Magazine beyond its base capacity."
   }
  },
  "1359896290": {
@@ -3841,7 +3841,7 @@
   "name": "Rewind Rounds",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills [enh]70% of the number of Hits landed (rounded up) into the Magazine from reserves.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n[enh] Refill ratio is increased by an additive 10%."
+   "en": "Upon emptying the Magazine:\nRefills [enh]70% of the number of Hits landed (rounded up) into the Magazine from reserves.\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nCannot load the Magazine beyond its base capacity.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n[enh] Refill ratio is increased by an additive 10%."
   }
  },
  "1570042021": {
@@ -4336,7 +4336,7 @@
   "itemName": "Stronghold",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Passively grants 100 Guard Resistance and Guard Endurance to Swords.\nWhile Guarding:\n• Grants [pve]50% [pvp][10%] Damage Resistance (Stacks multiplicatively with the Damage Resistance provided by Sword Guard against blocked attacks)\n• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while you have the [Solar]Restoration buff)\n• Sword Energy does not decay from holding guard\nAll Stacks are removed if no hits have been blocked in the last 10 seconds.\nDealing Sword Damage with active Perfect Guard Stacks grants [Solar]Restoration x2:\n[pve]4 [pvp][3] second duration at 1 Stack, scaling up to [pve]16 [pvp][6] seconds at 100 Stacks."
+   "en": "Passively grants 100 Guard Resistance and Guard Endurance to Swords.\nWhile Guarding:\n• Grants [pve]50% [pvp][10%] Damage Resistance (Stacks multiplicatively with the Damage Resistance provided by Sword Guard against blocked attacks)\n• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while you have the [Solar]Restoration buff)\n• Sword Energy does not decay from holding guard\nAll Stacks are removed if no hits have been blocked in the last 10 seconds.\nDealing Sword Damage with active Perfect Guard Stacks grants [Solar]Restoration x2:\n[pve]4 [pvp][3] second duration at 1 Stack, scaling up to [pve]16 [pvp][6] seconds at 100 Stacks. ([Solar]Ember of Solace increases this by 50%, up to [pve]24 [pvp][9] seconds)"
   }
  },
  "1733620422": {
@@ -4716,7 +4716,7 @@
   "name": "Full Court",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Linearly increases Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%.\n[enh] Passively grants 5 Blast Radius."
+   "en": "Starts linearly increasing Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%.\n[enh] Passively grants 5 Blast Radius."
   }
  },
  "1906147653": {
@@ -5072,7 +5072,7 @@
   "name": "Full Auto Trigger System",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon fires Full Auto. (Identical to the setting)\nGrants 10% Faster Rate of Fire on Shotguns."
+   "en": "Weapon fires Full Auto. (Identical to the setting)\nDecreases Firing Delay by 10% on Shotguns."
   }
  },
  "2119325971": {
@@ -5090,7 +5090,7 @@
   "name": "Field-Tested",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach damage instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
+   "en": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\nMaximum of 5 Stacks. Buff is only removed on death.\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\nPoints required for 1|2|3|4|5 Stacks:\n• [primary]Primary Weapons: 51|151|351|651|1001\n• [special]Special Weapons: 26|76|176|326|501\n• [heavy]Power Weapons: 11|31|71|131|201\nEach Hit grants 1 Point regardless of Weapon Archetype and Enemy Rank. Does not require Direct Hits.\nPoints granted by Kills are based on [Enemy Rank](https://url.d2clarity.com/combatants):\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\nKill Point Multipliers by Weapon Archetype:\n• [primary]Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x"
   }
  },
  "2130042297": {
@@ -5386,7 +5386,7 @@
   "name": "Strand Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Strand]Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Strand]Strand Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "2267311547": {
@@ -5542,7 +5542,7 @@
   "name": "Strand Reserves",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to [Strand]Strand Weapons with 1|2|3 Mods equipped.\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
+   "en": "Grants 20|40|50 Inventory Size Stat to [Strand]Strand Weapons with 1|2|3 Mods equipped.\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\nCurrently bugged and does not work with Swords."
   }
  },
  "2305736470": {
@@ -5578,7 +5578,7 @@
   "itemName": "Cenotaph Mask",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Refills 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\nRapidly scoring 5 Trace Rifle hits on a [Miniboss, Champion, Boss, or Vehicle](https://url.d2clarity.com/combatants) marks them for 10 seconds. Additional hits refresh the mark duration.\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated.\nAlly kills on Marked Enemies generate [heavy]Heavy Ammo for allies and [special]Special Ammo for the wearer.\nMultiple people can mark the same target resulting in each of them receiving the appropriate drops.\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number)."
+   "en": "Refills 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\nRapidly scoring 5 Trace Rifle hits on a [Miniboss, Champion, Boss, or Vehicle](https://url.d2clarity.com/combatants) marks them for 10 seconds. Additional hits refresh the mark duration. Does not require Direct Hits.\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated.\nAlly kills on Marked Enemies generate [heavy]Heavy Ammo for allies and [special]Special Ammo for the wearer.\nMultiple people can mark the same target resulting in each of them receiving the appropriate drops.\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number)."
   }
  },
  "2317325392": {
@@ -5842,7 +5842,7 @@
   "name": "Arc Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Arc]Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Arc]Arc Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\nAggressive Frame Linear Fusion Rifles and Wardcliff Coil do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "2437618208": {
@@ -6506,7 +6506,7 @@
   "name": "Stasis Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Stasis]Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Stasis]Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "2748258257": {
@@ -6684,7 +6684,7 @@
   "name": "Void Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Void]Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Void]Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles and Two-Tailed Fox do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "2816982784": {
@@ -6842,7 +6842,7 @@
   "name": "Full Court",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Linearly increases Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%."
+   "en": "Starts linearly increasing Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%."
   }
  },
  "2889515627": {
@@ -6964,7 +6964,7 @@
   "itemName": "Phoenix Cradle",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Sol Invictus buff from Sunspots lasts twice as long (5 >> 10 seconds).\nSunspots you create now affect allies, granting them the Sol Invictus buff for 10 seconds.\nSol Invictus on Allies:\n• 100% Additional Base Grenade and Melee Regeneration Rate\n• 20-40% decreased Passive Super Drain\n• Restoration x1"
+   "en": "The [Solar]Sol Invictus buff your receive from [Solar]Sunspots lasts twice as long (5⁠🠚⁠10 seconds).\n[Solar]Sunspots you create now also benefit allies, granting them the [Solar]Sol Invictus buff for 10 seconds."
   }
  },
  "2959504464": {
@@ -7392,7 +7392,7 @@
   "name": "Stasis Scavenger",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Stasis]Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
+   "en": "Only works in PvE game modes.\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to [Stasis]Stasis Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords.\nAggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves."
   }
  },
  "3184690956": {
@@ -7850,7 +7850,7 @@
   "name": "Triple Tap",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 3 Precision Hits within 2 seconds of each refills 1 Ammo into the Magazine.\nCannot load the Magazine beyond its base capacity."
+   "en": "Scoring 3 Precision Hits within 2 seconds of each refills 1 Ammo into the Magazine from thin air.\nCannot load the Magazine beyond its base capacity."
   }
  },
  "3406782879": {
@@ -7882,7 +7882,7 @@
   "name": "Rewind Rounds",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed (rounded up) into the Magazine from reserves.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
+   "en": "Upon emptying the Magazine:\nRefills 60% of the number of Hits landed (rounded up) into the Magazine from reserves.\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\nCannot load the Magazine beyond its base capacity.\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second)."
   }
  },
  "3419274965": {
@@ -9307,7 +9307,7 @@
   "name": "One for All",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Damaging 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.\nBuff duration cannot be refreshed."
+   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed."
   }
  },
  "4067652714": {
@@ -9867,7 +9867,7 @@
   "name": "Full Auto Trigger System",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon fires Full Auto. (Identical to the setting)\nGrants 10% Faster Rate of Fire on Shotguns."
+   "en": "Weapon fires Full Auto. (Identical to the setting)\nDecreases Firing Delay by 10% on Shotguns."
   }
  },
  "4273298922": {
@@ -9909,7 +9909,7 @@
   "name": "Strand Reserves",
   "type": "Armor Mod General",
   "descriptions": {
-   "en": "Grants 20|40|50 Inventory Size Stat to [Strand]Strand Weapons with 1|2|3 Mods equipped.\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
+   "en": "Grants 20|40|50 Inventory Size Stat to [Strand]Strand Weapons with 1|2|3 Mods equipped.\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\nCurrently bugged and does not work with Swords."
   }
  },
  "4290541820": {
