@@ -3505,14 +3505,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple hits against enemies spawns an Orb of Power that grants 0.8% Super Energy.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n\nenhanced (\n#e Spawned Orbs grant more Super Energy.\n)",
+     "main": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n\nenhanced (\n#e Spawned Orbs grant more Super Energy.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709227806962,
+      "lastUpdate": 1714568357955,
       "updatedBy": "Stardust"
      }
     },
@@ -3522,7 +3522,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709227813431,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7626,14 +7626,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Only works in PvE game modes.\n\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to #element. #exceptions\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.",
+     "main": "Only works in PvE game modes.\n\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to #element. #exceptions\n\n#nonBenefit\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nBy default, normal Ammo Bricks grant 25-33% of your Total Reserves.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588362742,
+      "lastUpdate": 1714567316370,
       "updatedBy": "Stardust"
      }
     },
@@ -7643,7 +7643,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7927,14 +7927,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n(More precisely: #e${25*#d}% / 6 × [Stacks])\n\nenhanced (\nvar d = 1.2\n#e Precision Damage Buff is increased by 20%.\n)",
+     "main": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <Stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713373616538,
+      "lastUpdate": 1714566818608,
       "updatedBy": "Stardust"
      }
     },
@@ -7944,7 +7944,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713374008935,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9421,14 +9421,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
+     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles, <yellow Eyes of Tomorrow />, and <yellow Two-Tailed Fox /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588246305,
+      "lastUpdate": 1714567479683,
       "updatedBy": "Stardust"
      }
     },
@@ -9438,7 +9438,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10650,14 +10650,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
+     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles and <yellow Two-Tailed Fox /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588293504,
+      "lastUpdate": 1714567587431,
       "updatedBy": "Stardust"
      }
     },
@@ -10667,7 +10667,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15200,14 +15200,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 2% with <yellow Forerunner />.",
+     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 2% with <yellow Forerunner />.\n\nvar nonBenefit = empty",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712172586237,
+      "lastUpdate": 1714567458027,
       "updatedBy": "Stardust"
      }
     },
@@ -15217,7 +15217,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712174090388,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18159,14 +18159,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.",
+     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles, Swords, and Grand Overture.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles, <yellow Eyes of Tomorrow />, <yellow Two-Tailed Fox />, and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588319258,
+      "lastUpdate": 1714567500064,
       "updatedBy": "Stardust"
      }
     },
@@ -18176,7 +18176,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18804,7 +18804,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring 4 Precision Hits within #e${2+#d} seconds of each <title refills [G_refill] /> 2 Ammo into the Magazine.\n\nCannot load the Magazine beyond its base capacity.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
+     "main": "Scoring 4 Precision Hits within #e${2+#d} seconds of each <title refills [G_refill] /> 2 Ammo into the Magazine from thin air.\n\nCannot load the Magazine beyond its base capacity.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -18815,7 +18815,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713910122386,
+      "lastUpdate": 1714566560982,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -18829,7 +18829,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713910661434,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24042,14 +24042,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 100 Guard Resistance and Guard Endurance to Swords.\n\nWhile Guarding:\n• Grants <pve 50% /> <pvp [10%] /> Damage Resistance (Stacks multiplicatively with the Damage Resistance provided by Sword Guard against blocked attacks)\n• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while you have the <solar/>Restoration buff)\n• Sword Energy does not decay from holding guard\n\nAll Stacks are removed if no hits have been blocked in the last 10 seconds.\n\nDealing Sword Damage with active Perfect Guard Stacks grants <solar/>Restoration x2:\n<pve 4 /> <pvp [3] /> second duration at 1 Stack, scaling up to <pve 16 /> <pvp [6] /> seconds at 100 Stacks.\n\n// Guarding with Aggressive Frame Swords grants a total of <pve 95% /> <pvp [91%] /> Damage Resistance against blocked hits. These numbers drop to <pve 90% /> <pvp [82%] /> on other Sword Frames.",
+     "main": "Passively grants 100 Guard Resistance and Guard Endurance to Swords.\n\nWhile Guarding:\n• Grants <pve 50% /> <pvp [10%] /> Damage Resistance (Stacks multiplicatively with the Damage Resistance provided by Sword Guard against blocked attacks)\n• Blocking a hit grants 2 Stacks of Perfect Guard. Maximum of 100 Stacks. (Cannot gain stacks while you have the <solar/>Restoration buff)\n• Sword Energy does not decay from holding guard\n\nAll Stacks are removed if no hits have been blocked in the last 10 seconds.\n\nDealing Sword Damage with active Perfect Guard Stacks grants <solar/>Restoration x2:\n<pve 4 /> <pvp [3] /> second duration at 1 Stack, scaling up to <pve 16 /> <pvp [6] /> seconds at 100 Stacks. (<solar/>Ember of Solace increases this by 50%, up to <pve 24 /> <pvp [9] /> seconds)\n\n// Guarding with Aggressive Frame Swords grants a total of <pve 95% /> <pvp [91%] /> Damage Resistance against blocked hits. These numbers drop to <pve 90% /> <pvp [82%] /> on other Sword Frames.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712171591915,
+      "lastUpdate": 1714568900272,
       "updatedBy": "Stardust"
      }
     },
@@ -24059,7 +24059,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712174090388,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28477,7 +28477,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon fires Full Auto. (Identical to the setting)\n\nGrants 10% Faster Rate of Fire on Shotguns.",
+     "main": "Weapon fires Full Auto. (Identical to the setting)\n\nDecreases Firing Delay by 10% on Shotguns.",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -28488,7 +28488,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676209570707,
+      "lastUpdate": 1714565316315,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -28502,7 +28502,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709252348445,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28557,14 +28557,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\n\nMaximum of 5 Stacks. Buff is only removed on death.\n\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\n\nPoints required for 1|2|3|4|5 Stacks:\n• <primary/>Primary Weapons: 51|151|351|651|1001\n• <special/>Special Weapons: 26|76|176|326|501\n• <heavy/>Power Weapons: 11|31|71|131|201\n\nEach damage instance (Weapon Hit) grants 1 Point regardless of Weapon Archetype and Enemy Rank.\n\nPoints granted by Kills are based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\n\nKill Point Multipliers by Weapon Archetype:\n• <primary/>Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x ",
+     "main": "Hits and Kills with your Weapon grant you 'Points'. Hitting Point thresholds grants Stacks of Field Test.\n\nMaximum of 5 Stacks. Buff is only removed on death.\n\nStat Bonuses at 1|2|3|4|5 Stacks:\n• 3 | 6 | 9 | 12 | 20 Range\n• 5 | 10 | 20 | 35 | 50 Reload Speed\n• ? | ? | ? | ? | 30? Stability\n• ? | ? | ? | ? | ? Handling\n• 5 | 10 | 20 | 35 | 55 Charge Rate (Swords)\n• 5 | 10 | 20 | 30 | 40 Guard Resistance (Swords)\n\nPoints required for 1|2|3|4|5 Stacks:\n• <primary/>Primary Weapons: 51|151|351|651|1001\n• <special/>Special Weapons: 26|76|176|326|501\n• <heavy/>Power Weapons: 11|31|71|131|201\n\nEach Hit grants 1 Point regardless of Weapon Archetype and Enemy Rank. Does not require Direct Hits.\n\nPoints granted by Kills are based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1-2 Minors: 1 Point\n• Tier 3-4 Minors, Tier 2+ Elites, and higher: 4 Points\n• Tier 1 Elites: 5 Points\n• Enemy Players: 10 Points\n\nKill Point Multipliers by Weapon Archetype:\n• <primary/>Primary Weapons and Shotguns: 5x\n• Breech-Loaded Grenade Launchers: 2x ",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712881848767,
+      "lastUpdate": 1714568464048,
       "updatedBy": "Stardust"
      }
     },
@@ -28574,7 +28574,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30318,14 +30318,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
+     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588279055,
+      "lastUpdate": 1714567568835,
       "updatedBy": "Stardust"
      }
     },
@@ -30335,7 +30335,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31365,14 +31365,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nRapidly scoring 5 Trace Rifle hits on a <link Miniboss, Champion, Boss, or Vehicle [#CombatantClassifications] /> marks them for 10 seconds. Additional hits refresh the mark duration.\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated.\n\nAlly kills on Marked Enemies generate <heavy/>Heavy Ammo for allies and <special/>Special Ammo for the wearer.\n\nMultiple people can mark the same target resulting in each of them receiving the appropriate drops. \n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number).",
+     "main": "<title Refills [G_refill] /> 4% of the Magazine of Trace Rifles from reserves every 0.7 seconds. Works while stowed.\n\nRapidly scoring 5 Trace Rifle hits on a <link Miniboss, Champion, Boss, or Vehicle [#CombatantClassifications] /> marks them for 10 seconds. Additional hits refresh the mark duration. Does not require Direct Hits.\n\nOnly one target can be marked at a time and the mark cannot be transferred to a different target unless the duration runs out or the enemy is defeated.\n\nAlly kills on Marked Enemies generate <heavy/>Heavy Ammo for allies and <special/>Special Ammo for the wearer.\n\nMultiple people can mark the same target resulting in each of them receiving the appropriate drops. \n\nSpawned Ammo Bricks grant 10.33% of your total reserves (rounded up to the nearest whole number).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714211924189,
+      "lastUpdate": 1714568348424,
       "updatedBy": "Stardust"
      }
     },
@@ -31382,7 +31382,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36483,14 +36483,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.",
+     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = Aggressive Frame Linear Fusion Rifles do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1695588261037,
+      "lastUpdate": 1714567559710,
       "updatedBy": "Stardust"
      }
     },
@@ -36500,7 +36500,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1695589383294,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38467,7 +38467,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Linearly increases Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
+     "main": "Starts linearly increasing Explosive Damage 0.2 seconds after the projectile is fired. Reaches maximum strength after 1.1 seconds at 25%.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -38478,7 +38478,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712880783094,
+      "lastUpdate": 1714565471611,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -38492,7 +38492,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39276,14 +39276,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Sol Invictus buff from Sunspots lasts twice as long (5 >> 10 seconds).\n\nSunspots you create now affect allies, granting them the Sol Invictus buff for 10 seconds.\n\nSol Invictus on Allies:\n• 100% Additional Base Grenade and Melee Regeneration Rate\n• 20-40% decreased Passive Super Drain\n• Restoration x1",
+     "main": "The <solar/>Sol Invictus buff your receive from <solar/>Sunspots lasts twice as long (5⁠🠚⁠10 seconds).\n\n<solar/>Sunspots you create now also benefit allies, granting them the <solar/>Sol Invictus buff for 10 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680050854456,
+      "lastUpdate": 1714568741025,
       "updatedBy": "Stardust"
      }
     },
@@ -39293,7 +39293,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680050976212,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44238,7 +44238,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring 3 Precision Hits within #e${2+#d} seconds of each <title refills [G_refill] /> 1 Ammo into the Magazine.\n\nCannot load the Magazine beyond its base capacity.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
+     "main": "Scoring 3 Precision Hits within #e${2+#d} seconds of each <title refills [G_refill] /> 1 Ammo into the Magazine from thin air.\n\nCannot load the Magazine beyond its base capacity.\n\nenhanced (\nvar d = 1\n#e Allowed time between Precision Hits is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44249,7 +44249,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713910109268,
+      "lastUpdate": 1714566571895,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44263,7 +44263,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713910661434,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44378,7 +44378,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
+     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nCannot load the Magazine beyond its base capacity.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -44389,7 +44389,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709247593464,
+      "lastUpdate": 1714568384439,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -44403,7 +44403,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709248561849,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52023,7 +52023,7 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Damaging 3 Separate Enemies within 3 seconds of each grants 35% increased damage for #e${10+#d} seconds.\n\nBuff duration cannot be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for #e${10+#d} seconds.  Does not require Direct Hits.\n\nBuff duration cannot be refreshed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     },
     "zh-chs": {
@@ -52034,7 +52034,7 @@
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712879396368,
+      "lastUpdate": 1714568526826,
       "updatedBy": "Stardust"
      },
      "zh-chs": {
@@ -52048,7 +52048,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -55789,26 +55789,27 @@
    "name": "Strand Reserves",
    "hash": 4287822553,
    "type": "Armor Mod General",
+   "importStatsFrom": 450381139,
    "editor": {
     "en": {
-     "main": "import main from 450381139\n\nvar element = <strand/>Strand Weapons",
+     "main": "import main from 450381139\n\nCurrently bugged and does not work with Swords.\n\nvar element = <strand/>Strand Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476792291,
+      "lastUpdate": 1714568620220,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1682717384208,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1714568937735,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
