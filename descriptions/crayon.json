@@ -57,11 +57,11 @@
  "19542588": {
   "hash": 19542588,
   "name": "Nano-Munitions",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While within 15 metres of an ally:\nGrants a Stack of Nano-Munitions every 3 seconds, up to the maximum of 7. Consuming a Stack restarts the timer.\n\nConsumes a Stack upon emptying the magazine to refill 25% of it.\n\nReadying a Power Weapon removes all Stacks."
+   "en": "While within 15 metres of an ally:\nGrants a Stack of Nano-Munitions every 3 seconds, up to the maximum of 7. Consuming a Stack restarts the timer.\n\nConsumes a Stack upon emptying the Magazine to refill 25% of it.\n\nReadying a Power Weapon consumes all Stacks with each one refilling 25% of your Magazine."
   }
  },
  "23371658": {
@@ -277,7 +277,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability Usage changes Weapon Element to match your Subclass until stowed.\n\n🡅 Passively grants 5 Handling."
+   "en": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed.\n\n🡅 Passively grants 5 Handling."
   }
  },
  "64866129": {
@@ -293,11 +293,11 @@
  "79448657": {
   "hash": 79448657,
   "name": "Psychohack",
-  "lastUpload": 1716472078638,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13",
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13",
    "zh-chs": "此武器的持续伤害会在 <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] 秒内降低目标 10% 的伤害输出。"
   }
  },
@@ -308,7 +308,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "82994288": {
@@ -615,11 +615,11 @@
  "220689851": {
   "hash": 220689851,
   "name": "Sundering",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following for 7 seconds upon breaking an enemy's shield or destroying a [Vehicle or Construct](https://url.d2clarity.com/combatants):\n• 40 Reload Speed\n• ?x Draw Time Multiplier"
+   "en": "Grants the following for 7 seconds upon breaking an enemy's shield or destroying a [Vehicle or Construct](https://url.d2clarity.com/combatants):\n• 40 Reload Speed\n• 0.95x Reload Duration Multiplier\n• 0.9x Draw Time Multiplier"
   }
  },
  "229096166": {
@@ -675,11 +675,11 @@
  "243981275": {
   "hash": 243981275,
   "name": "Attrition Orbs",
-  "lastUpload": 1714568937735,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2"
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2"
   }
  },
  "247725512": {
@@ -817,7 +817,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n🡅5% | 10% | 15% | 20% | 25% | 30%\n\n🡅 Precision Damage Buff is increased by 20%."
+   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n🡅5% | 10% | 15% | 20% | 25% | 30%\n\n🡅 Precision Damage Buff is increased by 20%."
   }
  },
  "335129856": {
@@ -837,7 +837,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nOnly activates once per shot/burst.\n\n🡅 Passively grants 5 Stability."
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 50 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nRapid-Fire Fusion Rifles only apply 40 <:stasis:915198000727461909>Slow Stacks.\n\nOnly activates once per shot/burst.\n\n🡅 Passively grants 5 Stability."
   }
  },
  "354401740": {
@@ -859,7 +859,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "362132288": {
@@ -1615,11 +1615,11 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1714568937735,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
+   "en": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time). Maximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision Damage Increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
   }
  },
  "557221067": {
@@ -1660,7 +1660,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "569260333": {
@@ -1781,7 +1781,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Weapon Kills trigger an elemental explosion that deals up to <:pve:922884406073507930>84 <:pvp:922884468275019856>[56] damage in a 3 meter radius.\n\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\n🡅 Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead."
+   "en": "Weapon Kills trigger an elemental explosion.\n\nDamage and radius of the explosions varies based on the weapon's ammo type:\n• <:special:968793055631114330>Special Weapons: Up to <:pve:922884406073507930>67.2 <:pvp:922884468275019856>[44.8] damage in a 2.4 meter radius\n• <:heavy:968793055652106320>Power Weapons: Up to <:pve:922884406073507930>109.2 <:pvp:922884468275019856>[72.8] damage in a 3 meter radius\n\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).\n\n🡅 Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead."
   }
  },
  "615063266": {
@@ -1939,11 +1939,11 @@
  "684456054": {
   "hash": 684456054,
   "name": "Eddy Current",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After sprinting for 3 seconds:\nGrants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting.\n\nBeing <:arc:720178925317128243>Amplified increases the bonus to 60 Reload Speed."
+   "en": "Grants the following after sprinting for 1.5 seconds:\n• 20 Reload Speed\n• 0.95x Reload Duration Multiplier\n• ? Handling\n• 0.95x Handling Animation Duration Multiplier\n\nDuration can be refreshed by sprinting again.\n\nBeing <:arc:720178925317128243>Amplified removes the requirement to sprint and increases the Reload Speed benefit to 60."
   }
  },
  "686455429": {
@@ -2062,7 +2062,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Passive Bonuses based on your selected Subclass:\n• <:solar:720178909361995786>Solar: 🡅55 Reload Speed\n• <:arc:720178925317128243>Arc: 🡅55 Handling\n• <:void:720178940240461864>Void: 🡅25 Stability\n• Strand: 🡅25 Airborne Effectiveness\n• <:stasis:915198000727461909>Stasis: 🡅25 Recoil Direction & 20% reduced ADS Movement Speed Penalty\n\n🡅 Stat Bonuses are increased by 5.",
+   "en": "Grants Passive Bonuses based on the element of your selected Super ability:\n• <:solar:720178909361995786>Solar: 🡅55 Reload Speed\n• <:arc:720178925317128243>Arc: 🡅55 Handling\n• <:void:720178940240461864>Void: 🡅25 Stability\n• Strand: 🡅25 Airborne Effectiveness\n• <:stasis:915198000727461909>Stasis: 🡅25 Recoil Direction & 20% reduced ADS Movement Speed Penalty\n\n🡅 Stat Bonuses are increased by 5.",
    "zh-chs": "根据当前的分支职业增加属性：\n\n火： 🠅+55 填装速度\n电： 🠅+55 操控性\n虚空： 🠅+25 稳定性\n冰影： 🠅+25 后座方向，降低 5% 瞄准时移动速度惩罚\n\n🠅 相应属性额外 +5。"
   }
  },
@@ -2283,7 +2283,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Grenade Ability Usage:\nChanges Weapon Element to match your Subclass until stowed.\n\nKinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants.\n\n🡅 Passively grants 5 Handling."
+   "en": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants.\n\n🡅 Passively grants 5 Handling."
   }
  },
  "781192741": {
@@ -2293,7 +2293,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While within 8 meters of 3 Enemies:\n🡅47% increased damage that lingers for 1.5 seconds after the condition is no longer met.\n\nSwords only receive a 🡅41.75% damage increase.\n\nGrenade and Rocket Launchers receive a 🡅41.75% Explosive Damage increase and a 🡅47% Impact Damage increase. Wolfpack Rounds receive a 🡅41.75% Explosive Damage increase.\n\n🡅 Damage is increased by a further 5%. (40%🠚47%, 35%🠚41.75%)"
+   "en": "While within 15 meters of 3 Enemies:\n🡅47% increased damage that lingers for 1.5 seconds after the condition is no longer met.\n\nSwords only receive a 🡅41.75% damage increase.\n\nGrenade and Rocket Launchers receive a 🡅41.75% Explosive Damage increase and a 🡅47% Impact Damage increase. Wolfpack Rounds only receive the 🡅41.75% Explosive Damage increase.\n\n🡅 Damage is increased by a further 5%. (40%🠚47%, 35%🠚41.75%)"
   }
  },
  "788178929": {
@@ -2303,7 +2303,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with 🡅10 of the 12 Shotgun Pellets in the spread.\n\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, <:arc:720178925317128243>Combination Blow, <:arc:720178925317128243>Disorienting Blow, <:arc:720178925317128243>Chain Lightning, and Grapple Melee\n\nThe following options do not benefit from the perk:\n• Hunters: <:solar:720178909361995786>Proximity Explosive Knife's and <:void:720178940240461864>Snare Bomb's detonations, <:arc:720178925317128243>Tempest Strike, <:stasis:915198000727461909>Withering Blade, Threaded Spike\n• Titans: <:solar:720178909361995786>Throwing Hammer, <:solar:720178909361995786>Consecration, <:arc:720178925317128243>Thunderclap, <:void:720178940240461864>Shield Throw, Flechette Storm\n• Warlocks: all abilities except <:arc:720178925317128243>Chain Lightning\n\nThe buff does not stack with the passive Melee Damage Increase against <:stasis:915198000727461909>Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\n\nThis means that with the exception of <:stasis:915198000727461909>Shiver Strike and <:stasis:915198000727461909>Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over <:stasis:915198000727461909>Freeze's buff when used against Bosses and Vehicles.\n\n🡅 Requires 2 fewer Shotgun Pellets to activate."
+   "en": "Hitting a target with 🡅10 of the 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 1.22 seconds by 100%.\n\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, <:arc:720178925317128243>Combination Blow, <:arc:720178925317128243>Disorienting Blow, <:arc:720178925317128243>Chain Lightning, and Grapple Melee\n\nThe following options do not benefit from the perk:\n• Hunters: <:solar:720178909361995786>Proximity Explosive Knife's and <:void:720178940240461864>Snare Bomb's detonations, <:arc:720178925317128243>Tempest Strike, <:stasis:915198000727461909>Withering Blade, Threaded Spike\n• Titans: <:solar:720178909361995786>Throwing Hammer, <:solar:720178909361995786>Consecration, <:arc:720178925317128243>Thunderclap, <:void:720178940240461864>Shield Throw, Flechette Storm\n• Warlocks: all abilities except <:arc:720178925317128243>Chain Lightning\n\nThe buff does not stack with the passive Melee Damage Increase against <:stasis:915198000727461909>Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence. (Freeze being higher in every non-Boss case with the exception of <:stasis:915198000727461909>Shiver Strike and <:stasis:915198000727461909>Howl of the Storm in PVE)\n\n🡅 Requires 2 fewer Shotgun Pellets to activate."
   }
  },
  "792400107": {
@@ -2624,7 +2624,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "883550427": {
@@ -2984,7 +2984,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n\n🡅 Spawned Orbs grant more Super Energy."
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 12? Hits\n• Other: 67% of Magazine Size rounded down + 2\n\n🡅 Spawned Orbs grant more Super Energy."
   }
  },
  "987673306": {
@@ -3541,7 +3541,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Refills 10% of the Magazine (rounded up) from thin air. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity.\n• Grants 40% increased damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required:\n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <:primary:968793055677251604>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <:primary:968793055677251604>Primary weapons and 2x progress for <:special:968793055631114330>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 Hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on non-construct hits\n• Only needs one pellet to hit per shot, they aren't considered separate Hits for the purpose of the perk\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but as few as 2 shots can trigger the perk on more distant targets"
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Refills 10% of the Magazine (rounded up) from reserves. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity.\n• Grants 40% increased damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required:\n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <:primary:968793055677251604>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <:primary:968793055677251604>Primary weapons and 2x progress for <:special:968793055631114330>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 Hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on non-construct hits\n• Only needs one pellet to hit per shot, they aren't considered separate Hits for the purpose of the perk\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but as few as 2 shots can trigger the perk on more distant targets"
   }
  },
  "1167468626": {
@@ -4556,17 +4556,17 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "1489048135": {
   "hash": 1489048135,
   "name": "Explosive Pact",
-  "lastUpload": 1714220045354,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grenade Ability Usage grants 1 Stack of Explosive Pact. Maximum of 5 Stacks.\n\nGrenade Kills and Healing Grenade orb pickups (by anyone) grant 1 Stack each.\n\nBenefits at 1|2|3|4|5 Stacks of Explosive Pact:\n• ? Stability\n• 8|16|20|24|44 Reload Speed\n• 0.98x|0.98x|0.975x|0.96x|0.945x Reload Duration Multiplier"
+   "en": "Grenade Ability Usage grants 1 Stack of Explosive Pact for 7.5 seconds. Maximum of 5 Stacks.\n\nGrenade Kills and Healing Grenade orb pickups (by anyone) grant 1 Stack each.\n\nBenefits at 1|2|3|4|5 Stacks of Explosive Pact:\n• ? Stability\n• 8|16|20|24|44 Reload Speed\n• 0.98x|0.98x|0.975x|0.96x|0.945x Reload Duration Multiplier"
   }
  },
  "1496699324": {
@@ -4858,7 +4858,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "1600092898": {
@@ -5485,7 +5485,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 34%\n• Reduces Reticle Bounce by 34%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1\n\n🡅 Passively grants 5 Stability."
+   "en": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 15%\n• Reduces Reticle Bounce by 15%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2?\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1\n\n🡅 Passively grants 5 Stability."
   }
  },
  "1749209109": {
@@ -5586,11 +5586,11 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Grenade Ability Usage:\nChanges Weapon Element to match your Subclass until stowed.\n\nKinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants.",
+   "en": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants.",
    "zh-chs": "使用手雷技能后：\n将此武器的伤害类型切换至对应你的分支职业的属性，直到你收起此武器。"
   }
  },
@@ -5816,7 +5816,7 @@
  "1870851715": {
   "hash": 1870851715,
   "name": "Under-Over",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -6407,7 +6407,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage to targets standing on 1? meter lower ground than you.\n\nDoes not work while airborne.\n\n🡅 Passively grants 5 Reload Speed."
+   "en": "Scoring a Kill grants 1 Stack of High Ground for ? seconds. Maximum of ? Stacks.\n\nPassively grants the maximum? buff against targets standing on 1? meter lower ground than you. Does not work while airborne.\n\nDamage increases at ?|?|?|? Stacks:\n• <:pve:922884406073507930>PVE: ?|?|?|25%\n• <:pvp:922884468275019856>PVP: ?|?|?|15%\n\n🡅 Passively grants 5 Reload Speed."
   }
  },
  "2145198832": {
@@ -6449,7 +6449,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "2172504645": {
@@ -7045,11 +7045,11 @@
  "2319119708": {
   "hash": 2319119708,
   "name": "High Ground",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage to targets standing on 1? meter lower ground than you.\n\nDoes not work while airborne."
+   "en": "Scoring a Kill grants 1 Stack of High Ground for ? seconds. Maximum of ? Stacks.\n\nPassively grants the maximum? buff against targets standing on 1? meter lower ground than you. Does not work while airborne.\n\nDamage increases at ?|?|?|? Stacks:\n• <:pve:922884406073507930>PVE: ?|?|?|25%\n• <:pvp:922884468275019856>PVP: ?|?|?|15%"
   }
  },
  "2319885414": {
@@ -7155,11 +7155,11 @@
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1699752056306,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 34%\n• Reduces Reticle Bounce by 34%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1",
+   "en": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 15%\n• Reduces Reticle Bounce by 15%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2?\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1",
    "zh-chs": "连续命中时：\n降低最大后坐力角度、武器晃动。\n最高叠加 5 层，持续 1 秒。\n\n使用手柄时移除准星抖动。"
   }
  },
@@ -7188,11 +7188,11 @@
  "2396489472": {
   "hash": 2396489472,
   "name": "Chain Reaction",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Weapon Kills trigger an elemental explosion that deals up to <:pve:922884406073507930>84 <:pvp:922884468275019856>[56] damage in a 3 meter radius.\n\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).",
+   "en": "Weapon Kills trigger an elemental explosion.\n\nDamage and radius of the explosions varies based on the weapon's ammo type:\n• <:special:968793055631114330>Special Weapons: Up to <:pve:922884406073507930>67.2 <:pvp:922884468275019856>[44.8] damage in a 2.4 meter radius\n• <:heavy:968793055652106320>Power Weapons: Up to <:pve:922884406073507930>109.2 <:pvp:922884468275019856>[72.8] damage in a 3 meter radius\n\nExplosions inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling).",
    "zh-chs": "武器击杀会触发一次元素爆炸。"
   }
  },
@@ -7293,11 +7293,11 @@
  "2428997981": {
   "hash": 2428997981,
   "name": "Permeability",
-  "lastUpload": 1705058156053,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Class Ability Usage changes Weapon Element to match your Subclass until stowed."
+   "en": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed."
   }
  },
  "2436471653": {
@@ -7641,7 +7641,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Elemental Pickup Interactions grant <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage for 🡅8 seconds.\n\nAdditional Pickup Interactions extend the duration by 7 seconds, up to 12 seconds.\n\nElemental Pickup Interactions:\n• Throwing Strand Tangles or Elemental Orbs\n• Collecting <:solar:720178909361995786>Firesprites, <:arc:720178925317128243>Ionic Traces, <:stasis:915198000727461909>Stasis Shards, or <:void:720178940240461864>Void Breaches\n\n🡅 Initial buff duration is increased by 1 second."
+   "en": "Elemental Pickup Interactions grant <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage for 🡅8 seconds.\n\nAdditional Pickup Interactions extend the duration by 7 seconds, up to 12 seconds.\n\nElemental Pickup Interactions:\n• Throwing Tangles or Elemental Orbs\n• Collecting <:solar:720178909361995786>Firesprites, <:arc:720178925317128243>Ionic Traces, <:stasis:915198000727461909>Stasis Shards, or <:void:720178940240461864>Void Breaches\n\n🡅 Initial buff duration is increased by 1 second."
   }
  },
  "2565067140": {
@@ -8002,11 +8002,11 @@
  "2679249093": {
   "hash": 2679249093,
   "name": "One-Two Punch",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with all 12 Shotgun Pellets in the spread.\n\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, <:arc:720178925317128243>Combination Blow, <:arc:720178925317128243>Disorienting Blow, <:arc:720178925317128243>Chain Lightning, and Grapple Melee\n\nThe following options do not benefit from the perk:\n• Hunters: <:solar:720178909361995786>Proximity Explosive Knife's and <:void:720178940240461864>Snare Bomb's detonations, <:arc:720178925317128243>Tempest Strike, <:stasis:915198000727461909>Withering Blade, Threaded Spike\n• Titans: <:solar:720178909361995786>Throwing Hammer, <:solar:720178909361995786>Consecration, <:arc:720178925317128243>Thunderclap, <:void:720178940240461864>Shield Throw, Flechette Storm\n• Warlocks: all abilities except <:arc:720178925317128243>Chain Lightning\n\nThe buff does not stack with the passive Melee Damage Increase against <:stasis:915198000727461909>Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence.\n\nThis means that with the exception of <:stasis:915198000727461909>Shiver Strike and <:stasis:915198000727461909>Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over <:stasis:915198000727461909>Freeze's buff when used against Bosses and Vehicles.",
+   "en": "Hitting a target with all 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 1.22 seconds by 100%.\n\nAgainst [Bosses and Vehicles](https://url.d2clarity.com/combatants), this is increased to 150% for the following melee options:\nAll Unpowered Melees, <:arc:720178925317128243>Combination Blow, <:arc:720178925317128243>Disorienting Blow, <:arc:720178925317128243>Chain Lightning, and Grapple Melee\n\nThe following options do not benefit from the perk:\n• Hunters: <:solar:720178909361995786>Proximity Explosive Knife's and <:void:720178940240461864>Snare Bomb's detonations, <:arc:720178925317128243>Tempest Strike, <:stasis:915198000727461909>Withering Blade, Threaded Spike\n• Titans: <:solar:720178909361995786>Throwing Hammer, <:solar:720178909361995786>Consecration, <:arc:720178925317128243>Thunderclap, <:void:720178940240461864>Shield Throw, Flechette Storm\n• Warlocks: all abilities except <:arc:720178925317128243>Chain Lightning\n\nThe buff does not stack with the passive Melee Damage Increase against <:stasis:915198000727461909>Frozen non-Boss targets. The [higher buff of the two](https://docs.google.com/spreadsheets/d/1N_zEcw3-pGL2jGUCGaAHjoKEr_VIbDc7-UWel-DGmys/) takes precedence. (Freeze being higher in every non-Boss case with the exception of <:stasis:915198000727461909>Shiver Strike and <:stasis:915198000727461909>Howl of the Storm in PVE)",
    "zh-chs": "当一发弹药的 12 枚弹片全部命中时：\n在 1.22 秒内增加近战伤害。\n\n未充能近战：+100% 伤害。\n充能近战：+40% 伤害。\n\n对首领和载具时，再增加 25% 伤害。和上述增伤乘法叠加。"
   }
  },
@@ -8250,7 +8250,7 @@
   "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "After sprinting for 3 seconds:\nGrants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting.\n\nBeing <:arc:720178925317128243>Amplified increases the bonus to 60 Reload Speed.\n\n🡅 Buff duration is increased. Even stronger effect while <:arc:720178925317128243>Amplified."
+   "en": "Grants the following after sprinting for 1.5 seconds:\n• 20 Reload Speed\n• 0.95x Reload Duration Multiplier\n• ? Handling\n• 0.95x Handling Animation Duration Multiplier\n\nDuration can be refreshed by sprinting again.\n\nBeing <:arc:720178925317128243>Amplified removes the requirement to sprint and increases the Reload Speed benefit to 60.\n\n🡅 Buff duration is increased. Even stronger effect while <:arc:720178925317128243>Amplified."
   }
  },
  "2788909693": {
@@ -8774,11 +8774,11 @@
  "2978966579": {
   "hash": 2978966579,
   "name": "Chill Clip",
-  "lastUpload": 1709248561849,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 40 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nOnly activates once per shot/burst.",
+   "en": "While at/above 50% of the Base Magazine Capacity:\nDirect Hits apply 50 <:stasis:915198000727461909>Slow Stacks for <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] seconds (<:pve:922884406073507930>8 <:pvp:922884468275019856>[2] with <:stasis:915198000727461909>Whisper of Durance) to enemies within 4 meters.\n\nRapid-Fire Fusion Rifles only apply 40 <:stasis:915198000727461909>Slow Stacks.\n\nOnly activates once per shot/burst.",
    "zh-chs": "前半弹匣直接命中敌人时：\n将产生一个冰影爆炸，附近 [?] 米内的敌人获得 50 层减速效果。持续 <:pve:922884406073507930>4 <:pvp:922884468275019856>[1.5] 秒。\n\n每次射击仅触发一次效果。\n（狼群弹药可触发多次。）\n\n耐久之吟 可将持续时间增加到 <:pve:922884406073507930>8 <:pvp:922884468275019856>[2] 秒。"
   }
  },
@@ -8849,11 +8849,11 @@
  "2988596335": {
   "hash": 2988596335,
   "name": "Alacrity",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While Last Guardian Standing or Solo:\n20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist.",
+   "en": "Grants 20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist while Last Guardian Standing or Solo.\n\nDoes not work in Rumble.",
    "zh-chs": "当你成为火力战队最后存活的成员或单刷时：\n\n可提高 20 填装速度、 20 稳定性、 10 瞄准辅助和 10 射程。"
   }
  },
@@ -8864,7 +8864,7 @@
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "On Grenade Ability Usage:\nChanges Weapon Element to match your Subclass until stowed.\n\nKinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
+   "en": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
   }
  },
  "3000428062": {
@@ -9698,11 +9698,11 @@
  "3324494224": {
   "hash": 3324494224,
   "name": "Collective Action",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Elemental Pickup Interactions grant <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage for 7 seconds.\n\nAdditional Pickup Interactions extend the duration by 7 seconds, up to 12 seconds.\n\nElemental Pickup Interactions:\n• Throwing Strand Tangles or Elemental Orbs\n• Collecting <:solar:720178909361995786>Firesprites, <:arc:720178925317128243>Ionic Traces, <:stasis:915198000727461909>Stasis Shards, or <:void:720178940240461864>Void Breaches"
+   "en": "Elemental Pickup Interactions grant <:pve:922884406073507930>20% <:pvp:922884468275019856>[10%] increased damage for 7 seconds.\n\nAdditional Pickup Interactions extend the duration by 7 seconds, up to 12 seconds.\n\nElemental Pickup Interactions:\n• Throwing Tangles or Elemental Orbs\n• Collecting <:solar:720178909361995786>Firesprites, <:arc:720178925317128243>Ionic Traces, <:stasis:915198000727461909>Stasis Shards, or <:void:720178940240461864>Void Breaches"
   }
  },
  "3325390304": {
@@ -10264,11 +10264,11 @@
  "3511092054": {
   "hash": 3511092054,
   "name": "Elemental Capacitor",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants Passive Bonuses based on your selected Subclass:\n• <:solar:720178909361995786>Solar: 50 Reload Speed\n• <:arc:720178925317128243>Arc: 50 Handling\n• <:void:720178940240461864>Void: 20 Stability\n• Strand: 20 Airborne Effectiveness\n• <:stasis:915198000727461909>Stasis: 20 Recoil Direction & 20% reduced ADS Movement Speed Penalty",
+   "en": "Grants Passive Bonuses based on the element of your selected Super ability:\n• <:solar:720178909361995786>Solar: 50 Reload Speed\n• <:arc:720178925317128243>Arc: 50 Handling\n• <:void:720178940240461864>Void: 20 Stability\n• Strand: 20 Airborne Effectiveness\n• <:stasis:915198000727461909>Stasis: 20 Recoil Direction & 20% reduced ADS Movement Speed Penalty",
    "zh-chs": "根据当前的分支职业增加属性：\n\n火： +50 填装速度\n电： +50 操控性\n虚空： +20 稳定性\n冰影： +20 后座方向，降低 5% 瞄准时移动速度惩罚"
   }
  },
@@ -10755,11 +10755,11 @@
  "3708227201": {
   "hash": 3708227201,
   "name": "Surrounded",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "While within 8 meters of 3 Enemies:\n40% increased damage that lingers for 1.5 seconds after the condition is no longer met.\n\nSwords only receive a 35% damage increase.\n\nGrenade and Rocket Launchers receive a 35% Explosive Damage increase and a 40% Impact Damage increase. Wolfpack Rounds receive a 35% Explosive Damage increase.",
+   "en": "While within 15 meters of 3 Enemies:\n40% increased damage that lingers for 1.5 seconds after the condition is no longer met.\n\nSwords only receive a 35% damage increase.\n\nGrenade and Rocket Launchers receive a 35% Explosive Damage increase and a 40% Impact Damage increase. Wolfpack Rounds only receive the 35% Explosive Damage increase.",
    "zh-chs": "8 米范围内有 3 个以上敌人时：\n+40% 伤害。\n（刀剑 +35% 伤害）\n\n线性持续 1.5 秒。"
   }
  },
@@ -10792,7 +10792,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "3719974635": {
@@ -10914,7 +10914,7 @@
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives, Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
+   "en": "Scoring multiple hits lowers the target's damage output by 10% for <:pve:922884406073507930>5 <:pvp:922884468275019856>[3] seconds.\n\nDuration cannot be refreshed.\n\nHit Requirements by Weapon Type:\n• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3\n• Sidearms: 12\n• SMGs: 13"
   }
  },
  "3755250867": {
@@ -11434,11 +11434,11 @@
  "3978094547": {
   "hash": 3978094547,
   "name": "Dragon's Vengeance",
-  "lastUpload": 1706394262849,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Grants the following benefits for 11 seconds upon reaching Critical Health, or on Ally Death:\n• Refills magazine from reserves\n• 5 Range and 10 Handling\n• Decreases Charge Time by 2.5%"
+   "en": "Grants the following benefits for 11 seconds upon reaching Critical Health, or on Ally Death:\n• Refills magazine from reserves\n• 5 Range and 10 Handling\n• Decreases Charge/Draw Time by 2.5%"
   }
  },
  "3978468247": {
@@ -11528,11 +11528,11 @@
  "3993379141": {
   "hash": 3993379141,
   "name": "Deconstruct",
-  "lastUpload": 1713910661434,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
-   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Refills 10% of the Magazine (rounded up) from thin air. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity.\n• Grants 40% increased damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required:\n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <:primary:968793055677251604>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <:primary:968793055677251604>Primary weapons and 2x progress for <:special:968793055631114330>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 Hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on non-construct hits\n• Only needs one pellet to hit per shot, they aren't considered separate Hits for the purpose of the perk\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but as few as 2 shots can trigger the perk on more distant targets"
+   "en": "Upon scoring multiple hits within 6 seconds of each:\n• Refills 10% of the Magazine (rounded up) from reserves. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity.\n• Grants 40% increased damage against [Constructs and Vehicles](https://url.d2clarity.com/combatants) for 5 seconds. Additional hits refresh the buff duration.\n\nNumber of Hits Required:\n• If Magazine Size is 1: 3 Hits\n• Otherwise: 2 + 50% (25% on <:primary:968793055677251604>Primary Weapons) of Base Magazine Capacity rounded down\n\nHits against Constructs and Vehicles provide 1.5x activation progress for <:primary:968793055677251604>Primary weapons and 2x progress for <:special:968793055631114330>Special weapons.\n\nPellet Shotguns, Rocket-Assisted Sidearms, and non-Wave Frame Grenade Launchers can trigger the perk twice on initial activations (when the buff isn't active). Note: please don't ask about the specifics of this.\n\nWave Frame Grenade Launchers:\n• Direct Impacts count as 2 Hits\n• Doesn't receive bonus activation progress against Constructs and Vehicles\n\nPellet Shotguns:\n• Runs into network-related issues for triggering the perk and granting ammo on non-construct hits\n• Only needs one pellet to hit per shot, they aren't considered separate Hits for the purpose of the perk\n• Activation progress granted by each shot scales with distance: point-blank shots follow the standard formula but as few as 2 shots can trigger the perk on more distant targets"
   }
  },
  "3994043492": {

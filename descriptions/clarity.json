@@ -765,7 +765,7 @@
  "19542588": {
   "hash": 19542588,
   "name": "Nano-Munitions",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -790,7 +790,7 @@
     {
      "linesContent": [
       {
-       "text": "Consumes a Stack upon emptying the magazine to "
+       "text": "Consumes a Stack upon emptying the Magazine to "
       },
       {
        "text": "refill",
@@ -816,7 +816,23 @@
     {
      "linesContent": [
       {
-       "text": "Readying a Power Weapon removes all Stacks."
+       "text": "Readying a Power Weapon consumes all Stacks with each one "
+      },
+      {
+       "text": "refilling",
+       "title": [
+        {
+         "linesContent": [
+          {
+           "text": "Loads bullets into your magazine but does not need a reload animation and doesn't trigger on-reload perks."
+          }
+         ]
+        }
+       ],
+       "classNames": [ "title" ]
+      },
+      {
+       "text": " 25% of your Magazine."
       }
      ]
     }
@@ -1916,7 +1932,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage changes Weapon Element to match your Subclass until stowed."
+       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed."
       }
      ]
     },
@@ -1994,7 +2010,7 @@
  "79448657": {
   "hash": 79448657,
   "name": "Psychohack",
-  "lastUpload": 1716472078638,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -2043,23 +2059,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -2155,23 +2155,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -3615,7 +3599,7 @@
  "220689851": {
   "hash": 220689851,
   "name": "Sundering",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -3645,7 +3629,14 @@
     {
      "linesContent": [
       {
-       "text": "• ?x Draw Time Multiplier"
+       "text": "• 0.95x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.9x Draw Time Multiplier"
       }
      ]
     }
@@ -4057,7 +4048,7 @@
  "243981275": {
   "hash": 243981275,
   "name": "Attrition Orbs",
-  "lastUpload": 1714568937735,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -4065,7 +4056,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits."
+       "text": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits."
       }
      ]
     },
@@ -4933,7 +4924,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks."
+       "text": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time). Maximum of 6 Stacks. Missing removes all Stacks."
       }
      ]
     },
@@ -5057,7 +5048,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Hits apply 40 "
+       "text": "Direct Hits apply 50 "
       },
       {
        "classNames": [ "stasis" ]
@@ -5098,6 +5089,22 @@
       },
       {
        "text": "Whisper of Durance) to enemies within 4 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rapid-Fire Fusion Rifles only apply 40 "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks."
       }
      ]
     },
@@ -5284,23 +5291,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -9158,7 +9149,7 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1714568937735,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -9166,7 +9157,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on Bows). Maximum of 6 Stacks. Missing removes all Stacks."
+       "text": "Direct Weapon Hits grants a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time). Maximum of 6 Stacks. Missing removes all Stacks."
       }
      ]
     },
@@ -9404,23 +9395,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -10062,21 +10037,71 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills trigger an elemental explosion that deals up to "
+       "text": "Weapon Kills trigger an elemental explosion."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage and radius of the explosions varies based on the weapon's ammo type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "text": "84",
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Weapons: Up to "
+      },
+      {
+       "text": "67.2",
        "classNames": [ "pve" ]
       },
       {
        "text": " "
       },
       {
-       "text": "[56]",
+       "text": "[44.8]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage in a 3 meter radius."
+       "text": " damage in a 2.4 meter radius"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: Up to "
+      },
+      {
+       "text": "109.2",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[72.8]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " damage in a 3 meter radius"
       }
      ]
     },
@@ -10878,7 +10903,7 @@
  "684456054": {
   "hash": 684456054,
   "name": "Eddy Current",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -10886,14 +10911,45 @@
     {
      "linesContent": [
       {
-       "text": "After sprinting for 3 seconds:"
+       "text": "Grants the following after sprinting for 1.5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting."
+       "text": "• 20 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.95x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.95x Handling Animation Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Duration can be refreshed by sprinting again."
       }
      ]
     },
@@ -10909,7 +10965,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Amplified increases the bonus to 60 Reload Speed."
+       "text": "Amplified removes the requirement to sprint and increases the Reload Speed benefit to 60."
       }
      ]
     }
@@ -11583,7 +11639,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Bonuses based on your selected Subclass:"
+       "text": "Grants Passive Bonuses based on the element of your selected Super ability:"
       }
      ]
     },
@@ -12228,6 +12284,24 @@
    ]
   }
  },
+ "749936529": {
+  "hash": 749936529,
+  "name": "Aggressive Burst",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame Enhanced",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hard-hitting two-burst fire."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "766321425": {
   "hash": 766321425,
   "name": "Bray Inheritance",
@@ -12559,14 +12633,7 @@
     {
      "linesContent": [
       {
-       "text": "On Grenade Ability Usage:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Changes Weapon Element to match your Subclass until stowed."
+       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -12576,7 +12643,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
       }
      ]
     },
@@ -12608,7 +12675,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 8 meters of 3 Enemies:"
+       "text": "While within 15 meters of 3 Enemies:"
       }
      ]
     },
@@ -12660,7 +12727,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "47% Impact Damage increase. Wolfpack Rounds receive a "
+       "text": "47% Impact Damage increase. Wolfpack Rounds only receive the "
       },
       {
        "text": "🡅",
@@ -12699,14 +12766,14 @@
     {
      "linesContent": [
       {
-       "text": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with "
+       "text": "Hitting a target with "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 of the 12 Shotgun Pellets in the spread."
+       "text": "10 of the 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 1.22 seconds by 100%."
       }
      ]
     },
@@ -12894,17 +12961,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": " takes precedence."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "This means that with the exception of "
+       "text": " takes precedence. (Freeze being higher in every non-Boss case with the exception of "
       },
       {
        "classNames": [ "stasis" ]
@@ -12916,13 +12973,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over "
-      },
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Freeze's buff when used against Bosses and Vehicles."
+       "text": "Howl of the Storm in PVE)"
       }
      ]
     },
@@ -13574,6 +13625,26 @@
    ]
   }
  },
+ "844190854": {
+  "hash": 844190854,
+  "name": "Lightning Seeker",
+  "itemHash": 542203595,
+  "itemName": "Edge of Concurrence",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "[Alternate Weapon Action]  : When weapon energy is full, consume it before firing to make your next shot track targets across the ground and unleash chain lightning on impact."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "846698093": {
   "hash": 846698093,
   "name": "Unstoppable Hand Cannon",
@@ -14096,23 +14167,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -15991,7 +16046,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Hits against enemies spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits."
+       "text": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy. Does not require Direct Hits."
       }
      ]
     },
@@ -19073,7 +19128,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 10% of the Magazine (rounded up) from thin air. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity."
+       "text": " 10% of the Magazine (rounded up) from reserves. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity."
       }
      ]
     },
@@ -23156,23 +23211,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -23196,7 +23235,7 @@
  "1489048135": {
   "hash": 1489048135,
   "name": "Explosive Pact",
-  "lastUpload": 1714220045354,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -23204,7 +23243,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Usage grants 1 Stack of Explosive Pact. Maximum of 5 Stacks."
+       "text": "Grenade Ability Usage grants 1 Stack of Explosive Pact for 7.5 seconds. Maximum of 5 Stacks."
       }
      ]
     },
@@ -24929,23 +24968,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -27560,7 +27583,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks."
+       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks."
       }
      ]
     },
@@ -27584,14 +27607,14 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake 34%"
+       "text": "• Reduces Visual Weapon Shake 15%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reduces Reticle Bounce by 34%"
+       "text": "• Reduces Reticle Bounce by 15%"
       }
      ]
     },
@@ -27608,7 +27631,7 @@
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Scout Rifles: 2"
+       "text": "• Hand Cannons, Scout Rifles: 2?"
       }
      ]
     },
@@ -27980,7 +28003,7 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -27988,14 +28011,7 @@
     {
      "linesContent": [
       {
-       "text": "On Grenade Ability Usage:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Changes Weapon Element to match your Subclass until stowed."
+       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -28005,7 +28021,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
       }
      ]
     }
@@ -28205,6 +28221,24 @@
      "linesContent": [
       {
        "text": "• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1817649409": {
+  "hash": 1817649409,
+  "name": "Aggressive Burst",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame Enhanced",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hard-hitting two-burst fire."
       }
      ]
     }
@@ -28995,7 +29029,7 @@
  "1870851715": {
   "hash": 1870851715,
   "name": "Under-Over",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -32362,21 +32396,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants "
-      },
-      {
-       "text": "20%",
-       "classNames": [ "pve" ]
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[10%]",
-       "classNames": [ "pvp" ]
-      },
-      {
-       "text": " increased damage to targets standing on 1? meter lower ground than you."
+       "text": "Scoring a Kill grants 1 Stack of High Ground for ? seconds. Maximum of ? Stacks."
       }
      ]
     },
@@ -32386,7 +32406,39 @@
     {
      "linesContent": [
       {
-       "text": "Does not work while airborne."
+       "text": "Passively grants the maximum? buff against targets standing on 1? meter lower ground than you. Does not work while airborne."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage increases at ?|?|?|? Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "PVE: ?|?|?|25%",
+       "classNames": [ "pve" ]
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "PVP: ?|?|?|15%",
+       "classNames": [ "pvp" ]
       }
      ]
     },
@@ -32401,6 +32453,24 @@
       },
       {
        "text": " Passively grants 5 Reload Speed."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2170254329": {
+  "hash": 2170254329,
+  "name": "Aggressive Burst",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame Enhanced",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hard-hitting two-burst fire."
       }
      ]
     }
@@ -32459,23 +32529,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -35811,7 +35865,7 @@
  "2319119708": {
   "hash": 2319119708,
   "name": "High Ground",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -35819,21 +35873,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants "
-      },
-      {
-       "text": "20%",
-       "classNames": [ "pve" ]
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[10%]",
-       "classNames": [ "pvp" ]
-      },
-      {
-       "text": " increased damage to targets standing on 1? meter lower ground than you."
+       "text": "Scoring a Kill grants 1 Stack of High Ground for ? seconds. Maximum of ? Stacks."
       }
      ]
     },
@@ -35843,7 +35883,39 @@
     {
      "linesContent": [
       {
-       "text": "Does not work while airborne."
+       "text": "Passively grants the maximum? buff against targets standing on 1? meter lower ground than you. Does not work while airborne."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage increases at ?|?|?|? Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "PVE: ?|?|?|25%",
+       "classNames": [ "pve" ]
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "PVP: ?|?|?|15%",
+       "classNames": [ "pvp" ]
       }
      ]
     }
@@ -36101,10 +36173,30 @@
    ]
   }
  },
+ "2379536009": {
+  "hash": 2379536009,
+  "name": "Remote Shield",
+  "itemHash": 2535142413,
+  "itemName": "Edge of Action",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "[Alternate Weapon Action]  : When weapon energy is full, consume it before firing to make your next shot deploy a protective shield on impact."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1699752056306,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36112,7 +36204,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5 Stacks."
+       "text": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks."
       }
      ]
     },
@@ -36136,14 +36228,14 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake 34%"
+       "text": "• Reduces Visual Weapon Shake 15%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Reduces Reticle Bounce by 34%"
+       "text": "• Reduces Reticle Bounce by 15%"
       }
      ]
     },
@@ -36160,7 +36252,7 @@
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Scout Rifles: 2"
+       "text": "• Hand Cannons, Scout Rifles: 2?"
       }
      ]
     },
@@ -36289,7 +36381,7 @@
  "2396489472": {
   "hash": 2396489472,
   "name": "Chain Reaction",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36297,21 +36389,71 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills trigger an elemental explosion that deals up to "
+       "text": "Weapon Kills trigger an elemental explosion."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage and radius of the explosions varies based on the weapon's ammo type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
       },
       {
-       "text": "84",
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Weapons: Up to "
+      },
+      {
+       "text": "67.2",
        "classNames": [ "pve" ]
       },
       {
        "text": " "
       },
       {
-       "text": "[56]",
+       "text": "[44.8]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage in a 3 meter radius."
+       "text": " damage in a 2.4 meter radius"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons: Up to "
+      },
+      {
+       "text": "109.2",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[72.8]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " damage in a 3 meter radius"
       }
      ]
     },
@@ -36703,7 +36845,7 @@
  "2428997981": {
   "hash": 2428997981,
   "name": "Permeability",
-  "lastUpload": 1705058156053,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -36711,7 +36853,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage changes Weapon Element to match your Subclass until stowed."
+       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed."
       }
      ]
     }
@@ -38499,7 +38641,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand Tangles or Elemental Orbs"
+       "text": "Tangles or Elemental Orbs"
       }
      ]
     },
@@ -40391,7 +40533,7 @@
  "2679249093": {
   "hash": 2679249093,
   "name": "One-Two Punch",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -40399,7 +40541,7 @@
     {
      "linesContent": [
       {
-       "text": "Increases Melee Damage by 100% for 1.22 seconds after hitting a target with all 12 Shotgun Pellets in the spread."
+       "text": "Hitting a target with all 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 1.22 seconds by 100%."
       }
      ]
     },
@@ -40587,17 +40729,7 @@
        "classNames": [ "link" ]
       },
       {
-       "text": " takes precedence."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "This means that with the exception of "
+       "text": " takes precedence. (Freeze being higher in every non-Boss case with the exception of "
       },
       {
        "classNames": [ "stasis" ]
@@ -40609,13 +40741,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Howl of the Storm in PVE where the perk's buff is always higher, it will only provide a benefit over "
-      },
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Freeze's buff when used against Bosses and Vehicles."
+       "text": "Howl of the Storm in PVE)"
       }
      ]
     }
@@ -41359,6 +41485,24 @@
    ]
   }
  },
+ "2732540911": {
+  "hash": 2732540911,
+  "name": "Aggressive Burst",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame Enhanced",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hard-hitting two-burst fire."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2734674728": {
   "hash": 2734674728,
   "name": "Stasis Scavenger",
@@ -41919,14 +42063,45 @@
     {
      "linesContent": [
       {
-       "text": "After sprinting for 3 seconds:"
+       "text": "Grants the following after sprinting for 1.5 seconds:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Grants 20 Reload Speed for 3 seconds. Duration can be refreshed by sprinting."
+       "text": "• 20 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.95x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.95x Handling Animation Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Duration can be refreshed by sprinting again."
       }
      ]
     },
@@ -41942,7 +42117,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Amplified increases the bonus to 60 Reload Speed."
+       "text": "Amplified removes the requirement to sprint and increases the Reload Speed benefit to 60."
       }
      ]
     },
@@ -44559,7 +44734,7 @@
  "2978966579": {
   "hash": 2978966579,
   "name": "Chill Clip",
-  "lastUpload": 1709248561849,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44574,7 +44749,7 @@
     {
      "linesContent": [
       {
-       "text": "Direct Hits apply 40 "
+       "text": "Direct Hits apply 50 "
       },
       {
        "classNames": [ "stasis" ]
@@ -44615,6 +44790,22 @@
       },
       {
        "text": "Whisper of Durance) to enemies within 4 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rapid-Fire Fusion Rifles only apply 40 "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks."
       }
      ]
     },
@@ -44972,7 +45163,7 @@
  "2988596335": {
   "hash": 2988596335,
   "name": "Alacrity",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -44980,14 +45171,17 @@
     {
      "linesContent": [
       {
-       "text": "While Last Guardian Standing or Solo:"
+       "text": "Grants 20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist while Last Guardian Standing or Solo."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist."
+       "text": "Does not work in Rumble."
       }
      ]
     }
@@ -45045,14 +45239,7 @@
     {
      "linesContent": [
       {
-       "text": "On Grenade Ability Usage:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Changes Weapon Element to match your Subclass until stowed."
+       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -45062,7 +45249,7 @@
     {
      "linesContent": [
       {
-       "text": "Kinetic weapons lose their Passive Damage Bonus (10-15%) against PVE Combatants."
+       "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
       }
      ]
     }
@@ -49165,7 +49352,7 @@
  "3324494224": {
   "hash": 3324494224,
   "name": "Collective Action",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -49220,7 +49407,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand Tangles or Elemental Orbs"
+       "text": "Tangles or Elemental Orbs"
       }
      ]
     },
@@ -49270,6 +49457,24 @@
      "linesContent": [
       {
        "text": "Grants 4%|5%|6% Class Ability Energy on Orb of Power Pickups with 1|2|3 Mods equipped."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3330548924": {
+  "hash": 3330548924,
+  "name": "Aggressive Burst",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hard-hitting two-burst fire."
       }
      ]
     }
@@ -49761,6 +49966,24 @@
      "linesContent": [
       {
        "text": "可恢复生命值为 20 至 80 点。"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3364911712": {
+  "hash": 3364911712,
+  "name": "VEIST Rapid-Fire",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Frame",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Full Auto. Deeper ammo reserves. Slightly faster reload when magazine is empty."
       }
      ]
     }
@@ -51708,6 +51931,26 @@
    ]
   }
  },
+ "3492337375": {
+  "hash": 3492337375,
+  "name": "Restorative Turret",
+  "itemHash": 14194600,
+  "itemName": "Edge of Intent",
+  "lastUpload": 1675798177540,
+  "type": "Weapon Trait Exotic",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "[Alternate Weapon Action]  : When weapon energy is full, consume it before firing to make your next shot deploy a healing turret on impact."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3504197951": {
   "hash": 3504197951,
   "name": "Unforeseen Repercussions",
@@ -51731,7 +51974,7 @@
  "3511092054": {
   "hash": 3511092054,
   "name": "Elemental Capacitor",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -51739,7 +51982,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants Passive Bonuses based on your selected Subclass:"
+       "text": "Grants Passive Bonuses based on the element of your selected Super ability:"
       }
      ]
     },
@@ -55067,7 +55310,7 @@
  "3708227201": {
   "hash": 3708227201,
   "name": "Surrounded",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -55075,7 +55318,7 @@
     {
      "linesContent": [
       {
-       "text": "While within 8 meters of 3 Enemies:"
+       "text": "While within 15 meters of 3 Enemies:"
       }
      ]
     },
@@ -55102,7 +55345,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade and Rocket Launchers receive a 35% Explosive Damage increase and a 40% Impact Damage increase. Wolfpack Rounds receive a 35% Explosive Damage increase."
+       "text": "Grenade and Rocket Launchers receive a 35% Explosive Damage increase and a 40% Impact Damage increase. Wolfpack Rounds only receive the 35% Explosive Damage increase."
       }
      ]
     }
@@ -55279,23 +55522,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -55907,23 +56134,7 @@
     {
      "linesContent": [
       {
-       "text": "• Bows, "
-      },
-      {
-       "text": "Glaives",
-       "title": [
-        {
-         "linesContent": [
-          {
-           "text": "Includes both projectile hits and Glaive Melees."
-          }
-         ]
-        }
-       ],
-       "classNames": [ "title" ]
-      },
-      {
-       "text": ", Rocket Launchers, Sniper Rifles: 3"
+       "text": "• Bows, Glaives (both Projectile and Melee), Rocket Launchers, Sniper Rifles: 3"
       }
      ]
     },
@@ -58611,7 +58822,7 @@
  "3978094547": {
   "hash": 3978094547,
   "name": "Dragon's Vengeance",
-  "lastUpload": 1706394262849,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -58656,7 +58867,7 @@
     {
      "linesContent": [
       {
-       "text": "• Decreases Charge Time by 2.5%"
+       "text": "• Decreases Charge/Draw Time by 2.5%"
       }
      ]
     }
@@ -59112,7 +59323,7 @@
  "3993379141": {
   "hash": 3993379141,
   "name": "Deconstruct",
-  "lastUpload": 1713910661434,
+  "lastUpload": 1717527740924,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -59143,7 +59354,7 @@
        "classNames": [ "title" ]
       },
       {
-       "text": " 10% of the Magazine (rounded up) from thin air. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity."
+       "text": " 10% of the Magazine (rounded up) from reserves. Can be reactivated without a cooldown. Cannot load the Magazine beyond its base capacity."
       }
      ]
     },
