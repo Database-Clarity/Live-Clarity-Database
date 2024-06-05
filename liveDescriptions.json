@@ -6388,15 +6388,6 @@
    "name": "Arc Reserves",
    "hash": 450381139,
    "type": "Armor Mod General",
-   "stats": {
-    "Guard Endurance": [
-     {
-      "active": {
-       "stat": [ 20, 40, 50 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
      "main": "Grants 20|40|50 Inventory Size Stat to #element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\n\nvar element = <arc/>Arc Weapons",
@@ -6411,12 +6402,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1682013514320,
+     "lastUpdate": 1717548440069,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1702080947315,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13284,22 +13275,6 @@
    "name": "Arc Targeting",
    "hash": 967052942,
    "type": "Armor Mod General",
-   "stats": {
-    "Aim Assist": [
-     {
-      "active": {
-       "stat": [ 5, 8, 10 ]
-      }
-     }
-    ],
-    "ADS": [
-     {
-      "active": {
-       "multiplier": [ 0.75, 0.75, 0.75 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
      "main": "Grants the following to #element 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
@@ -13314,12 +13289,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1682173905215,
+     "lastUpdate": 1717548453198,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703073411225,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15368,16 +15343,6 @@
    "name": "Arc Loader",
    "hash": 1125523126,
    "type": "Armor Mod General",
-   "stats": {
-    "Reload": [
-     {
-      "active": {
-       "stat": [ 10, 15, 18 ],
-       "multiplier": [ 0.85, 0.85, 0.85 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
      "main": "Grants the following to #element 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
@@ -15392,12 +15357,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1680476480812,
+     "lastUpdate": 1717548435409,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703073411225,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18136,14 +18101,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Weapons matching your Subclass Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords and to 5% with Grand Overture and Xenophage.\n\nvar nonBenefit = Linear Fusion Rifles, <yellow Eyes of Tomorrow />, <yellow Two-Tailed Fox />, and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
+     "main": "import main from 534479613\n\nvar element = Weapons matching your Super Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords and to 5% with Grand Overture and Xenophage.\n\nvar nonBenefit = Linear Fusion Rifles, <yellow Eyes of Tomorrow />, <yellow Two-Tailed Fox />, and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717536168015,
+      "lastUpdate": 1717548486977,
       "updatedBy": "Stardust"
      }
     },
@@ -18153,7 +18118,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18222,14 +18187,14 @@
    "importStatsFrom": 967052942,
    "editor": {
     "en": {
-     "main": "import main from 967052942\n\nvar element = Weapons matching your Subclass Element",
+     "main": "import main from 967052942\n\nvar element = Weapons matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477226274,
+      "lastUpdate": 1717548506044,
       "updatedBy": "Stardust"
      }
     },
@@ -18239,7 +18204,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22862,27 +22827,26 @@
    "name": "Harmonic Dexterity",
    "hash": 1677180919,
    "type": "Armor Mod General",
-   "importStatsFrom": 2059068466,
    "editor": {
     "en": {
-     "main": "import main from 2059068466\n\nvar element = Weapons matching your Subclass Element",
+     "main": "import main from 2059068466\n\nvar element = Weapons matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476145431,
+      "lastUpdate": 1717548405425,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 1680476155255,
+     "lastUpdate": 1717548412729,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26979,26 +26943,27 @@
    "name": "Harmonic Reserves",
    "hash": 1971149752,
    "type": "Armor Mod General",
+   "importStatsFrom": 450381139,
    "editor": {
     "en": {
-     "main": "import main from 450381139\n\nvar element = Weapons matching your Subclass Element",
+     "main": "import main from 450381139\n\nvar element = Weapons matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476764320,
+      "lastUpdate": 1717548480947,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1682717423514,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27944,22 +27909,6 @@
    "name": "Arc Dexterity",
    "hash": 2059068466,
    "type": "Armor Mod General",
-   "stats": {
-    "Ready": [
-     {
-      "active": {
-       "multiplier": [ 0.8, 0.75, 0.7 ]
-      }
-     }
-    ],
-    "Stow": [
-     {
-      "active": {
-       "multiplier": [ 0.8, 0.75, 0.7 ]
-      }
-     }
-    ]
-   },
    "editor": {
     "en": {
      "main": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to #element with 1|2|3 Mods equipped.\n\nStow Animation Duration cannot be reduced below what it would be at 100 Handling.\n\nvar element = <arc/>Arc Weapons",
@@ -27974,12 +27923,12 @@
      }
     },
     "stats": {
-     "lastUpdate": 1680476119670,
+     "lastUpdate": 1717548427490,
      "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690739974066,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35080,14 +35029,14 @@
    "importStatsFrom": 1125523126,
    "editor": {
     "en": {
-     "main": "import main from 1125523126\n\nvar element = Weapons matching your Subclass Element",
+     "main": "import main from 1125523126\n\nvar element = Weapons matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476549039,
+      "lastUpdate": 1717548478616,
       "updatedBy": "Stardust"
      }
     },
@@ -35097,7 +35046,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49543,14 +49492,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 2724068510\n\nvar element = a Weapon matching your Subclass Element",
+     "main": "import main from 2724068510\n\nvar element = a Weapon matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680477085659,
+      "lastUpdate": 1717548503997,
       "updatedBy": "Stardust"
      }
     },
@@ -49560,7 +49509,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50785,14 +50734,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 4294909663\n\nvar element = a Weapon matching your Subclass Element",
+     "main": "import main from 4294909663\n\nvar element = a Weapon matching your Super Element",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476340928,
+      "lastUpdate": 1717548468613,
       "updatedBy": "Stardust"
      }
     },
@@ -50802,7 +50751,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1717548513901,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
