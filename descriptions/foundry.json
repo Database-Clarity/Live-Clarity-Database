@@ -285,6 +285,32 @@
    ]
   }
  },
+ "11551321": {
+  "hash": 11551321,
+  "name": "Iron Grip",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719483608396,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Stability and -30 Reload Speed."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "11612903": {
   "hash": 11612903,
   "name": "Adrenaline Junkie",
@@ -680,18 +706,14 @@
  "25606670": {
   "hash": 25606670,
   "name": "Dual Loader",
-  "lastUpload": 1712008312346,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1711984547814,
+     "lastUpdate": 1719481233940,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670253871923,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -700,7 +722,7 @@
     {
      "linesContent": [
       {
-       "text": "Loads 2 Ammo at a time."
+       "text": "Reloading loads 1 additional round at a time."
       }
      ]
     }
@@ -2000,6 +2022,38 @@
      "linesContent": [
       {
        "text": "5 second cooldown if 5 Stasis Crystals are simultaneously active."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "136456835": {
+  "hash": 136456835,
+  "name": "Reversal of Fortune",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719497115019,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Missing twice within 6 seconds "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " 1 round into Magazine from thin air."
       }
      ]
     }
@@ -3931,7 +3985,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "stasis" ]
@@ -3944,20 +3998,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -4595,13 +4642,13 @@
  "362132293": {
   "hash": 362132293,
   "name": "Ember of Singeing",
-  "lastUpload": 1697894818765,
+  "lastUpload": 1719592659816,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1697815313118,
+     "lastUpdate": 1719510300117,
      "updatedBy": "Stardust"
     }
    }
@@ -4611,13 +4658,19 @@
     {
      "linesContent": [
       {
-       "text": "Grants 300% Additional Base Class Ability Regeneration Rate for 3 seconds upon applying "
+       "text": "Grants 400% Additional Base Class Ability Regeneration Rate for 3 seconds upon applying "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch to enemies."
+       "text": "Scorch to enemies that are not currently "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorched."
       }
      ]
     },
@@ -4643,13 +4696,13 @@
  "362132294": {
   "hash": 362132294,
   "name": "Ember of Empyrean",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717536520773,
+     "lastUpdate": 1719510128276,
      "updatedBy": "Stardust"
     }
    }
@@ -4725,28 +4778,28 @@
     {
      "linesContent": [
       {
-       "text": "• Tier 1 (T1) Minors: 2"
+       "text": "• Tier 1 (T1) Minors: 1.5s"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• T2 Minors, T1 Elites: 3"
+       "text": "• T2 Minors, T1 Elites: 2.25s"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• T3 Minors, T2 Elites, Enemy Players: 4"
+       "text": "• T3 Minors, T2 Elites, Enemy Players: 3s"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• T4 Minors, T3 Elies, and higher: 8"
+       "text": "• T4 Minors, T3 Elies, and higher: 6s"
       }
      ]
     }
@@ -5606,6 +5659,74 @@
    ]
   }
  },
+ "405677814": {
+  "hash": 405677814,
+  "name": "Cold Steel",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518546702,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Powered Sword Hits apply "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks for "
+      },
+      {
+       "text": "4.25"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 1.5]"
+      },
+      {
+       "text": " seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Light Attacks apply 40 Slow Stacks, Heavy Attacks apply 60."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Passively grants 10 Ammo Capacity."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "406461158": {
   "hash": 406461158,
   "name": "Tracking Module",
@@ -5692,6 +5813,16 @@
       },
       {
        "text": "Solar Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -5982,13 +6113,13 @@
  "450381139": {
   "hash": 450381139,
   "name": "Arc Reserves",
-  "lastUpload": 1717548513901,
+  "lastUpload": 1719592659816,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702079872491,
+     "lastUpdate": 1719518040731,
      "updatedBy": "Stardust"
     }
    }
@@ -6005,6 +6136,16 @@
       },
       {
        "text": "Arc Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -7330,13 +7471,13 @@
  "537774540": {
   "hash": 537774540,
   "name": "Whisper of Chains",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717537491361,
+     "lastUpdate": 1719510617370,
      "updatedBy": "Stardust"
     }
    }
@@ -7346,13 +7487,13 @@
     {
      "linesContent": [
       {
-       "text": "Scoring ? "
+       "text": "Scoring multiple "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Weapon Kills within ? seconds of each with "
+       "text": "Stasis Weapon Kills with "
       },
       {
        "classNames": [ "stasis" ]
@@ -7365,6 +7506,36 @@
       },
       {
        "text": "Stasis Shard."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Activation progress on Kills by "
+      },
+      {
+       "text": "Enemy Rank"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 34?%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites, Minibosses, Bosses, and Enemy Players: ?%"
       }
      ]
     }
@@ -7759,18 +7930,14 @@
  "557221067": {
   "hash": 557221067,
   "name": "Killing Tally",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712879310465,
+     "lastUpdate": 1719485308864,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670270889822,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -7779,7 +7946,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant a stacking Damage Buff until stowing or reloading the weapon. Maximum of 3 stacks."
+       "text": "Weapon Kills grant a Stack of Killing Tally until stowing or reloading the weapon. Maximum of 3 Stacks."
       }
      ]
     },
@@ -7789,14 +7956,21 @@
     {
      "linesContent": [
       {
-       "text": "PVE: 10% | 20% | 30% increased damage"
+       "text": "Damage increase at 1|2|3 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "PVP: 5% | 10% | 15% increased damage"
+       "text": "• PVE: 10% | 20% | 30%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• PVP: 5% | 10% | 15%"
       }
      ]
     }
@@ -7868,6 +8042,21 @@
      ]
     }
    ]
+  }
+ },
+ "563069569": {
+  "hash": 563069569,
+  "name": "Reverberation",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719496290653,
+     "updatedBy": "Stardust"
+    }
+   }
   }
  },
  "566815328": {
@@ -8249,6 +8438,32 @@
    ]
   }
  },
+ "591790007": {
+  "hash": 591790007,
+  "name": "Iron Reach",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719483648099,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Range and -30 Stability."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "593361144": {
   "hash": 593361144,
   "name": "Wraithmetal Mail",
@@ -8522,18 +8737,14 @@
   "name": "Cross Counter",
   "itemHash": 4165919945,
   "itemName": "Liar's Handshake",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717533637943,
+     "lastUpdate": 1719591926211,
      "updatedBy": "Stardust"
-    },
-    "ko": {
-     "lastUpdate": 1665697866189,
-     "updatedBy": "tritonesub251"
     }
    }
   },
@@ -8542,20 +8753,20 @@
     {
      "linesContent": [
       {
-       "text": "While on an "
+       "text": "While you have an "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Subclass:"
+       "text": "Arc Melee Ability equipped:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Receiving or dealing Melee damage grants the 'Cross Counter' buff for your next Melee Attack within 3 seconds."
+       "text": "Receiving Melee damage or scoring a Powered Melee Hit grants the 'Cross Counter' buff for your next Melee Attack within 3 seconds."
       }
      ]
     },
@@ -8575,7 +8786,7 @@
     {
      "linesContent": [
       {
-       "text": "The Melee damage buff is decreased to 80% when combined with the One-Two Punch perk."
+       "text": "The 'One-Two Punch' perk's Melee damage buff is decreased to 40% when Cross Counter is active."
       }
      ]
     }
@@ -8600,7 +8811,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills trigger an elemental explosion."
+       "text": "Weapon Kills trigger an elemental explosion matching the weapon's element."
       }
      ]
     },
@@ -9236,6 +9447,58 @@
      "linesContent": [
       {
        "text": "50 Reload Speed with a 0.95x Reload Duration Multiplier."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "674546187": {
+  "hash": 674546187,
+  "name": "Circle of Life",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719480804016,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants "
+      },
+      {
+       "text": "25% "
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 12.5?%]"
+      },
+      {
+       "text": " increased damage for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff Duration is increased"
       }
      ]
     }
@@ -10128,13 +10391,13 @@
   "name": "Dearly Departed",
   "itemHash": 2177524718,
   "itemName": "The Stag",
-  "lastUpload": 1714219892088,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1714212423964,
+     "lastUpdate": 1719515549680,
      "updatedBy": "Stardust"
     }
    }
@@ -10156,7 +10419,7 @@
        "text": "[PVP: 5%]"
       },
       {
-       "text": " Damage Resistance to allies inside Rifts you create. ("
+       "text": " Damage Resistance to you and allies inside Rifts you create. ("
       },
       {
        "classNames": [ "solar" ]
@@ -10693,7 +10956,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability Usage refills 50% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -10704,6 +10967,22 @@
      "linesContent": [
       {
        "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Perks that replace your Grenade Ability with a custom throwable (such as "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Gunpowder Gamble) do not trigger Osmosis."
       }
      ]
     },
@@ -12281,6 +12560,52 @@
    ]
   }
  },
+ "880644845": {
+  "hash": 880644845,
+  "name": "Strategist",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719497018320,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant 10?% Class Ability Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant 20?%."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Usage grants ? Stability for ? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "883366072": {
   "hash": 883366072,
   "name": "Psychohack",
@@ -12836,13 +13161,13 @@
   "name": "Puppeteer's Control",
   "itemHash": 3637722482,
   "itemName": "Abeyant Leap",
-  "lastUpload": 1690730562123,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1690730544573,
+     "lastUpdate": 1719516005433,
      "updatedBy": "Stardust"
     }
    }
@@ -12852,10 +13177,25 @@
     {
      "linesContent": [
       {
+       "text": "Improves "
+      },
+      {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Drengr's Lash creates 2 additional Lashes. Lashes are granted stronger seeking capabilities and travel ?% farther."
+       "text": "Drengr's Lash and grants "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Woven Mail for 10 seconds upon "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspending enemies."
       }
      ]
     },
@@ -12865,13 +13205,46 @@
     {
      "linesContent": [
       {
-       "text": "Grants Woven Mail for 10 seconds upon applying "
+       "text": "When used with a Barricade:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Drengr's Lash creates 2 additional Lashes. Lashes are gain stronger seeking capabilities and travel ?% farther."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "When used with "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Thruster:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Created "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Suspension to enemies."
+       "text": "Strand Knot is launched towards nearby enemies with some tracking."
       }
      ]
     }
@@ -12883,13 +13256,13 @@
   "name": "Fervid Coldsnap",
   "itemHash": 3259193988,
   "itemName": "Osmiomancy Gloves",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717529882435,
+     "lastUpdate": 1719514388556,
      "updatedBy": "Stardust"
     }
    }
@@ -12899,7 +13272,13 @@
     {
      "linesContent": [
       {
-       "text": "Grants an extra Coldsnap Grenade Ability Charge."
+       "text": "Grants "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Coldsnap Grenades an extra Ability Charge, better tracking, and 35% longer tracking length."
       }
      ]
     },
@@ -12909,7 +13288,31 @@
     {
      "linesContent": [
       {
-       "text": "Coldsnap Grenades have better tracking, travel 35% farther, and grant Grenade Ability Energy upon hitting or freezing an enemy."
+       "text": "Damaging an enemy with "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Coldsnap, "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Storm, "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threadling, or "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Vortex Grenades grants Grenade Ability Energy."
       }
      ]
     },
@@ -12919,7 +13322,57 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Energy gains based on "
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Vortex Grenades have a 0.8 seconds cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Healing allies with a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Healing Grenade grants 12% Grenade Ability Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Coldsnap | {"
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Storm|"
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threadling|"
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Vortex} Grenade Energy gains based on "
       },
       {
        "text": "enemy rank"
@@ -12932,35 +13385,35 @@
     {
      "linesContent": [
       {
-       "text": "• 7%: Enemy Players"
+       "text": "• Enemy Players: 7% | 5%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 10%: Tier 1 Minors"
+       "text": "• Tier 1 (T1) Minors: 10% | 3%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 22%: Tier 2 Minors, Tier 1 Elites"
+       "text": "• T2 Minors, T1 Elites: 22% | 5.7%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 34%: Tier 3 Minors, Tier 2 Elites"
+       "text": "• T3 Minors, T2 Elites: 34% | 8.4%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 50%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, and Bosses"
+       "text": "• T4 Minors, T3 Elites, and higher: 50% | 12%"
       }
      ]
     }
@@ -12970,13 +13423,13 @@
  "923806249": {
   "hash": 923806249,
   "name": "Slice",
-  "lastUpload": 1703430278010,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1703430208353,
+     "lastUpdate": 1719496486540,
      "updatedBy": "Stardust"
     }
    }
@@ -12986,13 +13439,13 @@
     {
      "linesContent": [
       {
-       "text": "The next 5 Hits within 8 seconds of using your Class Ability apply "
+       "text": "Using your Class Ability makes your next 5 Hits within 8 seconds apply "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Sever to hit targets (even if they are currently immune to damage)."
+       "text": "Sever to targets (even if they are currently immune to damage)."
       }
      ]
     },
@@ -13002,13 +13455,13 @@
     {
      "linesContent": [
       {
-       "text": "Applying "
+       "text": "Hitting a non-"
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Sever refreshes the buff duration. Activates even while stowed."
+       "text": "Severed enemy refreshes the buff duration. Activates even while stowed."
       }
      ]
     }
@@ -13481,6 +13934,77 @@
      "linesContent": [
       {
        "text": "The effects of different Resistance Mods stack multiplicatively with each other."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "956288240": {
+  "hash": 956288240,
+  "name": "Onslaught",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518608339,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant a Stack of Onslaught for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "4.5 seconds. Maximum of 3 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Benefits at 1|2|3 Stacks of Onslaught:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 16% | 28% | 37% decreased Firing Delay"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15 | 25 | 35 Reload Speed"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff duration is increased by 0.5? seconds."
       }
      ]
     }
@@ -15166,6 +15690,16 @@
     {
      "linesContent": [
       {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Total Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
       }
      ]
@@ -15357,6 +15891,32 @@
    ]
   }
  },
+ "1126264488": {
+  "hash": 1126264488,
+  "name": "Threat Remover",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719497440316,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hitting a target with all 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for ? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1130820873": {
   "hash": 1130820873,
   "name": "Font of Wisdom",
@@ -15387,6 +15947,56 @@
      "linesContent": [
       {
        "text": "Armor Charge now decays over time at the rate of 1 every 10 seconds by default."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1135494563": {
+  "hash": 1135494563,
+  "name": "Beacon Rounds",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518522446,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grants strong projectile tracking for ? seconds. Stacks 4 times."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage extends the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff duration is increased."
       }
      ]
     }
@@ -15714,6 +16324,137 @@
      "linesContent": [
       {
        "text": "Passively grants 10 Airborne Effectiveness, 35 Reload Speed, and 35 Handling to all weapons."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1149655156": {
+  "hash": 1149655156,
+  "name": "Stylostixis",
+  "itemHash": 1955548646,
+  "itemName": "Mataiodoxía",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719512927823,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Arcane Needles "
+      },
+      {
+       "classNames": [ "barrier" ]
+      },
+      {
+       "text": "Shield-Piercing properties."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring an "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Arcane Needle hit on an enemy marks them with a vertical mark for 10 seconds. Marked Enemies cause nearby targets to become "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspended on death."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 2 Arcane Needle hits on a Marked Enemy triggers a Explosion, dealing up to ? damage and "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspending targets within ? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Arcane Needle Kills and Kills on "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspended targets grant Melee Energy based on "
+      },
+      {
+       "text": "Enemy Rank"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tier 1 (T1) Minors: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T2 Minors, T1 Elites: 22.2%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T3 Minors, T2 Elites, Enemy Players: 33%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• T4 Minors, T3 Elites, and higher: 100%"
       }
      ]
     }
@@ -16877,7 +17618,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Bonus Super Gains are increased by 33.3%. (e.g. 1.5% » 2%)"
+       "text": " Bonus Super Gains are increased by 33.3%. (e.g. 1.5%⁠🠚⁠2%)"
       }
      ]
     }
@@ -17225,6 +17966,42 @@
      "linesContent": [
       {
        "text": "Refunds up to 50% of Super Energy based on the number of enemies killed with your Super."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1225726778": {
+  "hash": 1225726778,
+  "name": "Adept Mag",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Mod",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719505515793,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag) and decreases Handling by 15."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "On Swords, it grants 40 Ammo Capacity Stat (5 more than having 2 Reserves Mods or Enduring Blade) and the Handling penalty has no effect."
       }
      ]
     }
@@ -18519,6 +19296,146 @@
    ]
   }
  },
+ "1358612221": {
+  "hash": 1358612221,
+  "name": "Wish-Dragon's Talons",
+  "itemHash": 3717431477,
+  "itemName": "Wishful Ignorance",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719591038458,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants an additional "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Frenzied Blade Ability Charge."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Frenzied Blade or "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Flechette Storm Hits grant a Stack of 'Wish-Dragon's Talons' for ? seconds. Maximum of 3? Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Can only grant 1 Stack per ability usage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "'Wish-Dragon's Talons' grants increased "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Frenzied Blade and "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Flechette Storm damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage increase at 1|2|3 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Frenzied Blade: 20% | 50% | 100%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Flechette Storm: 10% | 25% | 50%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Banner of War's Pulses grant 5% "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Frenzied Blade Ability Energy and an additional 5% for each ally within 10 meters."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1359896290": {
   "hash": 1359896290,
   "name": "Dynamic Sway Reduction",
@@ -19066,6 +19983,63 @@
    ]
   }
  },
+ "1421772400": {
+  "hash": 1421772400,
+  "name": "Air Trigger",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719478482227,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 30 Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being Airborne grants the following to all weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Decreased Auto Aim Cone Size"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1427256713": {
   "hash": 1427256713,
   "name": "Reservoir Burst",
@@ -19221,13 +20195,13 @@
   "name": "Myrmidon's Reach",
   "itemHash": 1443166262,
   "itemName": "Second Chance",
-  "lastUpload": 1684973582811,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1684962057105,
+     "lastUpdate": 1719512639695,
      "updatedBy": "Stardust"
     }
    }
@@ -19253,7 +20227,7 @@
        "classNames": [ "barrier" ]
       },
       {
-       "text": "Shield-Piercing Breaker Type and "
+       "text": "Shield-Piercing properties and "
       },
       {
        "classNames": [ "void" ]
@@ -20009,6 +20983,39 @@
    ]
   }
  },
+ "1528281896": {
+  "hash": 1528281896,
+  "name": "Outlaw",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719487652203,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "On Precision Kill:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1536798515": {
   "hash": 1536798515,
   "name": "Land Tank",
@@ -20443,21 +21450,35 @@
     {
      "linesContent": [
       {
-       "text": "• Submachine Guns: 14 (enhanced unavailable)"
+       "text": "• Submachine Guns: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "13"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Auto Rifles: 12 (enhanced unavailable)"
+       "text": "• Auto Rifles: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles: (11🠚)"
+       "text": "• Pulse Rifles: "
       },
       {
        "text": "🡅",
@@ -20471,7 +21492,7 @@
     {
      "linesContent": [
       {
-       "text": "• Non-burst Sidearms: (8🠚)"
+       "text": "• Non-burst Sidearms: "
       },
       {
        "text": "🡅",
@@ -20485,7 +21506,7 @@
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Scout Rifles: (6🠚)"
+       "text": "• Hand Cannons, Scout Rifles: "
       },
       {
        "text": "🡅",
@@ -20499,7 +21520,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifles: (3🠚)"
+       "text": "• Sniper Rifles: "
       },
       {
        "text": "🡅",
@@ -20520,7 +21541,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Hit Requirements are reduced."
+       "text": " Hit Requirements are reduced by 1."
       }
      ]
     }
@@ -20648,18 +21669,14 @@
  "1556840489": {
   "hash": 1556840489,
   "name": "Lead from Gold",
-  "lastUpload": 1689198390082,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1689191943392,
+     "lastUpdate": 1719486923742,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670271421356,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -20866,6 +21883,76 @@
       },
       {
        "text": "."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1562897767": {
+  "hash": 1562897767,
+  "name": "Timed Payload",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518669057,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Splits off 55% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by Damage Falloff."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Payload detonates after a 0.6 second delay."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "[PvE] Total damage is increased by ~16.5% of the weapon's Bodyshot damage. On Crits, the overall increase is 10.9% for Adaptive/Precision Hand Cannons and 10.17% for Aggressive Hand Cannons."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "[PvP] Don't want to talk about it."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Passively grants 5 Stability."
       }
      ]
     }
@@ -21147,6 +22234,49 @@
      "linesContent": [
       {
        "text": "• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1592669035": {
+  "hash": 1592669035,
+  "name": "Replenishing Aegis",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518640373,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Refills"
+      },
+      {
+       "text": " 1 round into the Magazine from reserves upon blocking damage. 1 second cooldown after activation."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Refill cooldown is reduced."
       }
      ]
     }
@@ -21594,13 +22724,13 @@
   "name": "Percussive Flames",
   "itemHash": 2066430310,
   "itemName": "Pyrogale Gauntlets",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717532442450,
+     "lastUpdate": 1719590591760,
      "updatedBy": "Stardust"
     }
    }
@@ -21616,7 +22746,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies."
+       "text": "Burning Maul into a single-use slam that deals 650% increased damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies."
       }
      ]
     },
@@ -21638,7 +22768,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch on Impact. The released Cyclones deal "
+       "text": "Scorch on Impact. The released Cyclones last 7.5 seconds, deal "
       },
       {
        "text": "20"
@@ -21669,7 +22799,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Consecration's center wave creates a Cyclone that deals "
+       "text": "Consecration's center wave creates a weaker Cyclone that deals "
       },
       {
        "text": "16"
@@ -21681,7 +22811,7 @@
        "text": "[PVP: 3]"
       },
       {
-       "text": " damage and does not have tracking, however it retains the "
+       "text": " damage and does not have tracking but it retains the "
       },
       {
        "classNames": [ "solar" ]
@@ -21742,13 +22872,13 @@
   "name": "Lancer's Vigil",
   "itemHash": 3574051505,
   "itemName": "Cadmus Ridge Lancecap",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717531061958,
+     "lastUpdate": 1719516052103,
      "updatedBy": "Stardust"
     }
    }
@@ -21793,7 +22923,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill or 3 Precision Hits within ? seconds of each spawns a "
+       "text": "Scoring a Precision Kill or 3 Precision Hits within ? seconds of each spawns a "
       },
       {
        "classNames": [ "stasis" ]
@@ -22241,6 +23371,16 @@
       },
       {
        "text": "Void Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -23614,7 +24754,7 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake 15%"
+       "text": "• Reduces Visual Weapon Shake by 15%"
       }
      ]
     },
@@ -24036,18 +25176,14 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717525108445,
+     "lastUpdate": 1719487360128,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670274624643,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -24056,7 +25192,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability Usage refills 50% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -24067,6 +25203,22 @@
      "linesContent": [
       {
        "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Perks that replace your Grenade Ability with a custom throwable (such as "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Gunpowder Gamble) do not trigger Osmosis."
       }
      ]
     }
@@ -24294,6 +25446,114 @@
      "linesContent": [
       {
        "text": "Hard-hitting two-burst fire."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1817983009": {
+  "hash": 1817983009,
+  "name": "Chaos Reshaped",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719479406221,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Being in Combat for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11.5 seconds grants a Stack of 'Chaos Reshaped' for 7 seconds. Maintaining the first Stack for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11.5 seconds grants a second Stack."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Exchanging damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Chaos Reshaped, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Benefits at Chaos Reshaped x1 and x2:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• x1: grants 20% increased damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• x2: grants 35% increased damage and grants a periodic burst of healing"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Healing burst builds up while the weapon is readied at a rate of 5? HP/s. The burst is released either every 7 seconds for a 35 HP heal or upon stowing the weapon, releasing the built-up health."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Each Stack is gained 0.5 seconds sooner."
       }
      ]
     }
@@ -25263,7 +26523,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grenade Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)"
+       "text": " Grenade Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)"
       }
      ]
     }
@@ -25275,22 +26535,14 @@
   "name": "Overflowing Light",
   "itemHash": 1341951177,
   "itemName": "Heart of Inmost Light",
-  "lastUpload": 1715800461024,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1715799168552,
+     "lastUpdate": 1719590359742,
      "updatedBy": "Stardust"
-    },
-    "ko": {
-     "lastUpdate": 1665696710361,
-     "updatedBy": "tritonesub251"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670511349614,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -25450,7 +26702,7 @@
     {
      "linesContent": [
       {
-       "text": "• Currently does not grant a benefit to Barricade HP despite stating it does"
+       "text": "• Does not grant a benefit to Barricade HP despite stating it does"
       }
      ]
     }
@@ -25543,7 +26795,13 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills apply "
+       "text": "Weapon Kills cause enemies to explode into a burst of "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void energy, dealing ? damage and applying "
       },
       {
        "classNames": [ "void" ]
@@ -25559,7 +26817,7 @@
     {
      "linesContent": [
       {
-       "text": "3 second cooldown after activation."
+       "text": "3 second cooldown between activations."
       }
      ]
     },
@@ -25643,6 +26901,70 @@
      "linesContent": [
       {
        "text": "This can increase Chaos Reach Duration by ~120%."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1941225610": {
+  "hash": 1941225610,
+  "name": "Meganeura",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719487124667,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Precision Hit grants a Stack of Meganeura for 3.5 seconds Maximum of 3 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Meganeura increases the damage of Dragonfly explosions by the following amount at 1|2|3 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "67% | "
+      },
+      {
+       "text": "134%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 80%]"
+      },
+      {
+       "text": " | "
+      },
+      {
+       "text": "180%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 80%]"
       }
      ]
     }
@@ -26029,6 +27351,16 @@
     {
      "linesContent": [
       {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Total Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
       }
      ]
@@ -26105,6 +27437,66 @@
      "linesContent": [
       {
        "text": "(Grenade Regeneration Rate Multiplier is applied after all Additive Grenade Regeneration Rate Modifiers.)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1988485648": {
+  "hash": 1988485648,
+  "name": "Dealer's Choice",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719499137831,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant additional Super Ability Energy. Equipping multiple Pale Heart Weapons increases the amount granted."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Extra Super Energy gains with 1|2|3 equipped Pale Heart Weapons: ?%|1?%|?%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Pale Heart Weapons include:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Weapons with the Dealer's Choice Origin Trait"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Ace of Spades, Euphony, Khvostov 7G-0X, Microcosm, Red Death Reformed?, Still Hunt, Tessellation?"
       }
      ]
     }
@@ -26631,13 +28023,13 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1714220482248,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1714220475865,
+     "lastUpdate": 1719480972830,
      "updatedBy": "Stardust"
     }
    }
@@ -26647,7 +28039,13 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills apply "
+       "text": "Weapon Kills cause enemies to explode into a burst of "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void energy, dealing ? damage and applying "
       },
       {
        "classNames": [ "void" ]
@@ -26663,7 +28061,7 @@
     {
      "linesContent": [
       {
-       "text": "3 second cooldown after activation."
+       "text": "3 second cooldown between activations."
       }
      ]
     }
@@ -26995,13 +28393,13 @@
  "2109543898": {
   "hash": 2109543898,
   "name": "Desperate Measures",
-  "lastUpload": 1712968015282,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712967990920,
+     "lastUpdate": 1719518325960,
      "updatedBy": "Stardust"
     }
    }
@@ -27608,7 +29006,7 @@
        "text": "• "
       },
       {
-       "text": "PVE: ?|?|25%"
+       "text": "PVE: 10% | 17.5% | 25%"
       }
      ]
     },
@@ -27618,7 +29016,7 @@
        "text": "• "
       },
       {
-       "text": "PVP: ?|?|15%"
+       "text": "PVP: ? | ? | 15%"
       }
      ]
     },
@@ -27637,6 +29035,21 @@
      ]
     }
    ]
+  }
+ },
+ "2167611941": {
+  "hash": 2167611941,
+  "name": "Reverberation",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719496299734,
+     "updatedBy": "Stardust"
+    }
+   }
   }
  },
  "2170254329": {
@@ -29945,6 +31358,44 @@
    ]
   }
  },
+ "2298656195": {
+  "hash": 2298656195,
+  "name": "Circle of Life",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719480795461,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants "
+      },
+      {
+       "text": "25% "
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 12.5?%]"
+      },
+      {
+       "text": " increased damage for 10 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2303417969": {
   "hash": 2303417969,
   "name": "Strand Reserves",
@@ -29971,6 +31422,16 @@
       },
       {
        "text": "Strand Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -30280,13 +31741,13 @@
  "2319119708": {
   "hash": 2319119708,
   "name": "High Ground",
-  "lastUpload": 1718830082613,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1718830050293,
+     "lastUpdate": 1719483298745,
      "updatedBy": "Stardust"
     }
    }
@@ -30326,7 +31787,7 @@
        "text": "• "
       },
       {
-       "text": "PVE: ?|?|25%"
+       "text": "PVE: 10% | 17.5% | 25%"
       }
      ]
     },
@@ -30336,7 +31797,7 @@
        "text": "• "
       },
       {
-       "text": "PVP: ?|?|15%"
+       "text": "PVP: ? | ? | 15%"
       }
      ]
     }
@@ -30622,6 +32083,123 @@
    ]
   }
  },
+ "2368990400": {
+  "hash": 2368990400,
+  "name": "Whisper of Reversal",
+  "lastUpload": 1719592659816,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719511251221,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing or receiving Physical (non-projectile) Melee Damage while you have "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frost Armor active applies 10? "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Slow Stacks to your enemy for ? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2368990401": {
+  "hash": 2368990401,
+  "name": "Whisper of Chill",
+  "lastUpload": 1719592659816,
+  "type": "Subclass Fragment",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719510891845,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Weapon Kills spawns a Small Stasis Shard."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Activation progress on Kills by "
+      },
+      {
+       "text": "Enemy Rank"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 34?%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites and Enemy Players: 67%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses and higher: 100%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Further Kills do not provide activation progress for 5? seconds after activation."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2379536009": {
   "hash": 2379536009,
   "name": "Remote Shield",
@@ -30653,18 +32231,14 @@
  "2387244414": {
   "hash": 2387244414,
   "name": "Zen Moment",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717527287558,
+     "lastUpdate": 1719495571058,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670342042734,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -30697,7 +32271,7 @@
     {
      "linesContent": [
       {
-       "text": "• Reduces Visual Weapon Shake 15%"
+       "text": "• Reduces Visual Weapon Shake by 15%"
       }
      ]
     },
@@ -30814,18 +32388,14 @@
  "2396489472": {
   "hash": 2396489472,
   "name": "Chain Reaction",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717522824178,
+     "lastUpdate": 1719479344744,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670251567702,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -30834,7 +32404,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills trigger an elemental explosion."
+       "text": "Weapon Kills trigger an elemental explosion matching the weapon's element."
       }
      ]
     },
@@ -31004,13 +32574,13 @@
  "2407398462": {
   "hash": 2407398462,
   "name": "Kinetic Reserves",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1719592659816,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680476773308,
+     "lastUpdate": 1719508000889,
      "updatedBy": "Stardust"
     }
    }
@@ -31063,6 +32633,16 @@
       },
       {
        "text": "Void Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -31685,7 +33265,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "void" ]
@@ -31698,20 +33278,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -31950,6 +33523,53 @@
       },
       {
        "text": "Crystal for the entire duration, even if destroyed. Overrides Class Ability Cooldown with Towering Barricade's."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2476672792": {
+  "hash": 2476672792,
+  "name": "Threat Remover",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719497447920,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hitting a target with "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "10 of the 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Requires 2 fewer Shotgun Pellets to activate."
       }
      ]
     }
@@ -32663,6 +34283,16 @@
       },
       {
        "text": "Solar Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -33718,18 +35348,14 @@
  "2610012052": {
   "hash": 2610012052,
   "name": "Golden Tricorn",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712879160940,
+     "lastUpdate": 1719483155231,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670267685405,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -33738,7 +35364,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills increase damage by 15% for 7 seconds."
+       "text": "While the perk's buff isn't active, Weapon Kills grant Golden Tricorn x1 for 7 seconds. Additional Kills refresh the buff duration."
       }
      ]
     },
@@ -33748,7 +35374,14 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "While your Weapon's element matches that of your Super and Golden Tricorn x1 or x2 is active:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grenade or Powered Melee Kills grant Golden Tricorn x2 for 10 seconds."
       }
      ]
     },
@@ -33758,7 +35391,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
+       "text": "Note: having to match the Super element is a known bug and will be changed soon. The element of the abilities procing the 2nd Stack will need to match the Weapon."
       }
      ]
     }
@@ -33913,7 +35546,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "void" ]
@@ -33926,20 +35559,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -34370,27 +35996,17 @@
    ]
   }
  },
- "2663272109": {
-  "hash": 2663272109,
-  "name": "Relentless Tracker",
-  "itemHash": 896224899,
-  "itemName": "Foetracer",
-  "lastUpload": 1717539628564,
-  "type": "Armor Trait Exotic",
+ "2662236651": {
+  "hash": 2662236651,
+  "name": "Archer's Gambit",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717533307944,
+     "lastUpdate": 1719479026635,
      "updatedBy": "Stardust"
-    },
-    "ko": {
-     "lastUpdate": 1665695604529,
-     "updatedBy": "tritonesub251"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670677389837,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -34399,13 +36015,86 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Ability Damage to a "
+       "text": "Hip-fire Precision Hits grant the following benefits for 4 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.4x Draw Time Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hip-fire Precision Hits extend the buff duration by 4 seconds up to the maximum of 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "Major, Boss, or Player"
+       "text": " Buff duration is increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2663272109": {
+  "hash": 2663272109,
+  "name": "Relentless Tracker",
+  "itemHash": 896224899,
+  "itemName": "Foetracer",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719591417261,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing Ability Damage to an "
       },
       {
-       "text": " target grants 4 Stacks of Weapon Surge matching the element of the used ability and highlights the target for 10 seconds."
+       "text": "Elite, Miniboss, Boss, or Player"
+      },
+      {
+       "text": " target highlights the target and grants 4 Stacks of Weapon Surge matching the element of the used ability for 10 seconds."
       }
      ]
     },
@@ -35124,6 +36813,127 @@
    ]
   }
  },
+ "2710254013": {
+  "hash": 2710254013,
+  "name": "The Lost Voice",
+  "itemHash": 50291571,
+  "itemName": "Speaker's Sight",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719515439180,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Healing Grenades' Restoration Orb is replaced with a Healing Turret. Consuming a "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Healing Grenade will spawn a Healing Turret in front of the user."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Healing Turret information:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Lasts 15 seconds and has 100? HP"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Releases Healing Seekers every 3 seconds towards the user and allies within 30 meters"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Healing Seekers apply "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Cure x1 and "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Restoration x1 for "
+      },
+      {
+       "text": "4"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 3]"
+      },
+      {
+       "text": " seconds in a 7.5 meter radius (strength of both buffs is increased to x2 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Touch of Flame equipped)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Some forms (genuinely no idea) of healing to allies spawns an Orb of Power that grants 2.5% Super Energy at their position. 10 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Note"
+      },
+      {
+       "text": ": Orb of Power Generation will soon be disabled in the Crucible."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2717805783": {
   "hash": 2717805783,
   "name": "Moving Target",
@@ -35468,18 +37278,14 @@
  "2726471870": {
   "hash": 2726471870,
   "name": "Thresh",
-  "lastUpload": 1687176854200,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1687176769402,
+     "lastUpdate": 1719497573640,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670340653934,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -36107,6 +37913,56 @@
    ]
   }
  },
+ "2782457288": {
+  "hash": 2782457288,
+  "name": "Killing Tally",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719485329600,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant a Stack of Killing Tally until stowing or reloading the weapon. Maximum of 3 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage increase at 1|2|3 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• PVE: 10% | 20% | 30%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• PVP: 5% | 10% | 15%"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2785334058": {
   "hash": 2785334058,
   "name": "Eddy Current",
@@ -36370,6 +38226,66 @@
    ]
   }
  },
+ "2799030358": {
+  "hash": 2799030358,
+  "name": "Desperate Measures",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518272754,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant 10% increased damage for 7 seconds (x1 Stack)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grenade or Melee Kills grant 20% increased damage for 7 seconds (x2). Scoring another Grenade or Melee Kill increases this to 30% (x3)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Can activate while stowed. Weapon Kills refresh the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " First Stack's duration is increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2799418574": {
   "hash": 2799418574,
   "name": "Rites of Ember",
@@ -36543,7 +38459,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "stasis" ]
@@ -36556,20 +38472,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -36687,7 +38596,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "strand" ]
@@ -36700,20 +38609,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -37076,6 +38978,32 @@
    ]
   }
  },
+ "2838996248": {
+  "hash": 2838996248,
+  "name": "Cast No Shadows",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719498134801,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing Melee Damage refills 20% of the Magazine and grants ? Handling for ? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2839173408": {
   "hash": 2839173408,
   "name": "Omolon Fluid Dynamics",
@@ -37361,13 +39289,13 @@
  "2859149211": {
   "hash": 2859149211,
   "name": "Beacon Rounds",
-  "lastUpload": 1709226265485,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1702418037153,
+     "lastUpdate": 1719518527669,
      "updatedBy": "Stardust"
     }
    }
@@ -37924,7 +39852,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant a stacking Damage Buff until stowing or reloading the weapon. Maximum of 3 stacks."
+       "text": "Weapon Kills grant a Stack of Killing Tally until stowing or reloading the weapon. Maximum of 3 Stacks."
       }
      ]
     },
@@ -37934,14 +39862,21 @@
     {
      "linesContent": [
       {
-       "text": "PVE: 10% | 20% | 30% increased damage"
+       "text": "Damage increase at 1|2|3 Stacks:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "PVP: 5% | 10% | 15% increased damage"
+       "text": "• PVE: 10% | 20% | 30%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• PVP: 5% | 10% | 15%"
       }
      ]
     },
@@ -38030,6 +39965,32 @@
       },
       {
        "text": " Grants 2 more Airborne Effectiveness passively and per Stack."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2899505723": {
+  "hash": 2899505723,
+  "name": "In-Flight Compensator",
+  "lastUpload": 1719592659816,
+  "type": "Armor Mod General",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719506220826,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants all weapons 15|25|30 Airborne Effectiveness with 1|2|3 Mods equipped."
       }
      ]
     }
@@ -38598,6 +40559,32 @@
    ]
   }
  },
+ "2963273944": {
+  "hash": 2963273944,
+  "name": "Master of Arms",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518592054,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Kill with any Weapon grants 15% increased damage for 7 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2978966579": {
   "hash": 2978966579,
   "name": "Chill Clip",
@@ -38950,6 +40937,42 @@
    ]
   }
  },
+ "2980589453": {
+  "hash": 2980589453,
+  "name": "Physic",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719489259458,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants Restoration x1 for 4?+2? seconds to the user and the targeted ally."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "↑Restoration strength is enhanced to x2.\""
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2982306509": {
   "hash": 2982306509,
   "name": "Power Preservation",
@@ -39132,13 +41155,13 @@
  "2997472817": {
   "hash": 2997472817,
   "name": "Osmosis",
-  "lastUpload": 1676311977242,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1676216896210,
+     "lastUpdate": 1719487470983,
      "updatedBy": "Stardust"
     }
    }
@@ -39148,7 +41171,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability Usage refills 50% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed."
       }
      ]
     },
@@ -39159,6 +41182,22 @@
      "linesContent": [
       {
        "text": "Kinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Perks that replace your Grenade Ability with a custom throwable (such as "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Gunpowder Gamble) do not trigger Osmosis."
       }
      ]
     }
@@ -39596,6 +41635,76 @@
      "linesContent": [
       {
        "text": "[PvP] Don't want to talk about it."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3042219245": {
+  "hash": 3042219245,
+  "name": "Magnificent Howl",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518580556,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Precision Kill grants 1 Stack of 'Precision Final Blows' up to the maximum of 10 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Reloading converts `Precision Final Blows` Stacks into `Magnificent Howl` Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each shot consumes 1 Stack of Magnificent Howl, granting 50% increased damage and ?% increased Damage Falloff Distance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Precision Kills with buffed shots don't consume Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Passively grants 5 Reload Speed."
       }
      ]
     }
@@ -40443,6 +42552,113 @@
    ]
   }
  },
+ "3120212825": {
+  "hash": 3120212825,
+  "name": "Strategist",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719496634405,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills grant "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "11?% Class Ability Energy."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "22?%."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Usage grants ? Stability for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Class Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3124871000": {
+  "hash": 3124871000,
+  "name": "Outlaw",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719487695119,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "On Precision Kill:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3143051906": {
   "hash": 3143051906,
   "name": "Dual Loader",
@@ -40461,14 +42677,14 @@
     {
      "linesContent": [
       {
-       "text": "Loads "
+       "text": "Reloading loads "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "3 Ammo at a time."
+       "text": "2 additional rounds at a time."
       }
      ]
     },
@@ -40482,7 +42698,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Loads 1 more Ammo at a time."
+       "text": " Loads in 1 more round at a time."
       }
      ]
     }
@@ -40863,13 +43079,13 @@
  "3186078099": {
   "hash": 3186078099,
   "name": "Harmonic Resonance",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait Origin",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712881875017,
+     "lastUpdate": 1719499548693,
      "updatedBy": "Stardust"
     }
    }
@@ -40879,27 +43095,7 @@
     {
      "linesContent": [
       {
-       "text": "Equipping multiple Root of Nightmares Weapons grants increased Handling, Reload Speed, as well as increased damage against Tormentors, Lucent Hive, and Enemy Players in their Super."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Nezarec counts as a Tormentor. Ghosts of the Deep bosses count as Lucent Hive."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Bonuses with 2|3 Root of Nightmares weapons:"
+       "text": "Equipping multiple 2|3 Root of Nightmares weapons grants the following benefits:"
       }
      ]
     },
@@ -40930,7 +43126,7 @@
        "text": "[PVP: ?%]"
       },
       {
-       "text": " increased damage"
+       "text": " increased damage against enemies wielding Light and Darkness"
       }
      ]
     },
@@ -40952,6 +43148,30 @@
      "linesContent": [
       {
        "text": "• 0.95x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Affected enemies:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Tormentors (The Dread in general?), Lucent Hive, and Nezarec"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Enemy Players with their Super or Transcendence active"
       }
      ]
     }
@@ -42155,27 +44375,20 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing Kinetic Weapons:"
+       "text": "After stowing Kinetic Weapons:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -42410,6 +44623,77 @@
    ]
   }
  },
+ "3291427296": {
+  "hash": 3291427296,
+  "name": "Air Trigger",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719477890888,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 30 Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being Airborne grants the following to all weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% Decreased Auto Aim Cone Size"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Inventory Size benefit is increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3294892432": {
   "hash": 3294892432,
   "name": "Stasis Reserves",
@@ -42436,6 +44720,16 @@
       },
       {
        "text": "Stasis Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -42762,6 +45056,53 @@
    ]
   }
  },
+ "3315935575": {
+  "hash": 3315935575,
+  "name": "Iron Reach",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719485182124,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Range and "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "-25 Stability."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Stability penalty is decreased by 5."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3323910164": {
   "hash": 3323910164,
   "name": "Strand Dexterity",
@@ -43042,13 +45383,13 @@
  "3336648220": {
   "hash": 3336648220,
   "name": "Backup Mag",
-  "lastUpload": 1679597202350,
+  "lastUpload": 1719592659816,
   "type": "Weapon Mod",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1679596841165,
+     "lastUpdate": 1719505419561,
      "updatedBy": "Stardust"
     }
    }
@@ -43058,7 +45399,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Magazine Stat. Identical to Extended Mag."
+       "text": "Grants 30 Magazine Stat (identical to Extended Mag)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "On Swords, it grants 30 Ammo Capacity Stat (identical to 2 Reserves Mods and 5 less than having Enduring Blade)."
       }
      ]
     }
@@ -43550,6 +45901,113 @@
    ]
   }
  },
+ "3414324643": {
+  "hash": 3414324643,
+  "name": "Archer's Gambit",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719479265874,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hip-fire Precision Hits grant the following benefits for 4 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.4x Draw Time Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hip-fire Precision Hits extend the buff duration by 4 seconds up to the maximum of 8 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3416609154": {
+  "hash": 3416609154,
+  "name": "To the Pain",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719518684063,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Every ? points of damage taken with the weapon readied grants a Stack of 'To the Pain'. Maximum of 10 Stacks. Stowing the weapon removes all Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack grants ? Handling and 2 Aim Assist, maxing out at ? Handling and 20 Aim Assist."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Stat bonuses are increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3418165135": {
   "hash": 3418165135,
   "name": "Vorpal Weapon",
@@ -43770,20 +46228,20 @@
     {
      "linesContent": [
       {
-       "text": "The next 5 Hits within "
+       "text": "Using your Class Ability makes your next 5 Hits within "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "9 seconds of using your Class Ability apply "
+       "text": "9 seconds apply "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Sever to hit targets (even if they are currently immune to damage)."
+       "text": "Sever to targets (even if they are currently immune to damage)."
       }
      ]
     },
@@ -43793,13 +46251,13 @@
     {
      "linesContent": [
       {
-       "text": "Applying "
+       "text": "Hitting a non-"
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Sever refreshes the buff duration. Activates even while stowed."
+       "text": "Severed enemy refreshes the buff duration. Activates even while stowed."
       }
      ]
     },
@@ -44188,7 +46646,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Increases the amount of Special Ammo received by an additive 10%."
+       "text": " Increases the amount of Special Ammo received by 40% (25%⁠🠚⁠35%)."
       }
      ]
     }
@@ -44406,6 +46864,16 @@
       },
       {
        "text": "Stasis Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -44686,13 +47154,13 @@
  "3469412971": {
   "hash": 3469412971,
   "name": "Whisper of Fissures",
-  "lastUpload": 1714219892088,
+  "lastUpload": 1719592659816,
   "type": "Subclass Fragment",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1714218708870,
+     "lastUpdate": 1719510972793,
      "updatedBy": "Stardust"
     }
    }
@@ -44735,7 +47203,17 @@
        "text": "[PVP: 8]"
       },
       {
-       "text": " meter radius. Falls off to "
+       "text": " meter radius."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage falls off to "
       },
       {
        "text": "17"
@@ -44748,34 +47226,6 @@
       },
       {
        "text": " Damage at the edge of the radius."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "This translates to "
-      },
-      {
-       "text": "12.5%"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 4.5%]"
-      },
-      {
-       "text": " total "
-      },
-      {
-       "classNames": [ "stasis" ]
-      },
-      {
-       "text": "Shatter Damage Increase."
       }
      ]
     }
@@ -44968,6 +47418,123 @@
    ]
   }
  },
+ "3481195123": {
+  "hash": 3481195123,
+  "name": "Double Down",
+  "itemHash": 3001449507,
+  "itemName": "Balance of Power",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719591313880,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following to "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threaded Specters:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "text": "?%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 10?%]"
+      },
+      {
+       "text": " Damage Resistance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% increased duration"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 2 Perched "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threadlings"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Perched "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threadlings are released when the "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Specter takes ? damage, with a ? second cooldown between each. Destroying the Specter releases both "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Threadlings."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being within 15? meters of your own "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Specter removes you from radar."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3492047640": {
   "hash": 3492047640,
   "name": "Empowering Rift",
@@ -45090,6 +47657,154 @@
      "linesContent": [
       {
        "text": "[Alternate Weapon Action]  : When weapon energy is full, consume it before firing to make your next shot deploy a healing turret on impact."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3495263107": {
+  "hash": 3495263107,
+  "name": "Danger Close",
+  "itemHash": 1909305643,
+  "itemName": "Hazardous Propulsion",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719517220626,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Precision Kill, 4 Weapon Kills, or scoring multiple Precision Hits grants a Stack of 'Exodus Rockets'. Maximum of 6 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Class Ability Usage consumes all Stacks, launching a homing rocket in exchange for each one. Rockets deal up to "
+      },
+      {
+       "text": "600"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 28]"
+      },
+      {
+       "text": " Kinetic Damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hits with each rocket grant a Stack of 'Enhanced Rockets' for 10 seconds, increasing \"rocket-type\" damage ("
+      },
+      {
+       "text": "Empowering Buff"
+      },
+      {
+       "text": ")."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Damage increase at 1|2|…|6 Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "10% | 17% | 24% | 30% | 33% | 35%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rocket-type damage includes: Rocket Launchers, Wolfpack Rounds (both Sword and Rocket versions), Rocket-Assisted Sidearms, Nanotech Tracer Rockets, Grand Overture's Missile Volley, Quicksilver Storm's Tracer Rocket's impact damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "'Exodus Rockets' Stack acquisition progress on Precision Hits by weapon type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Trace Rifles: 10%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles and Machine Gun: 15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Pulse Rifles, Sidearms, and Crimson: 20%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannons, Scout Rifles, and Shotguns: 40%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Bows, Linear Fusion Rifles, Rocket Sidearms, and Sniper Rifles: 67%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stack acquisition progress doesn't reset upon gaining a Stack, all progress is kept until reaching 600% (max Stacks)."
       }
      ]
     }
@@ -45284,18 +47999,14 @@
  "3523296417": {
   "hash": 3523296417,
   "name": "Demolitionist",
-  "lastUpload": 1700076455476,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1700076374923,
+     "lastUpdate": 1719496563669,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670252879197,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -45654,27 +48365,20 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing Kinetic Weapons:"
+       "text": "After stowing Kinetic Weapons:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -45710,7 +48414,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "strand" ]
@@ -45723,20 +48427,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -45916,6 +48613,53 @@
       },
       {
        "text": "[PVP: 10%]"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3609952942": {
+  "hash": 3609952942,
+  "name": "Iron Gaze",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719483410707,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Aim Assist and "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "-25 Range."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Range penalty is decreased by 5."
       }
      ]
     }
@@ -46105,6 +48849,86 @@
      "linesContent": [
       {
        "text": "Grants 130% Melee Ability Energy if used within 15 meters of an enemy."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3640170453": {
+  "hash": 3640170453,
+  "name": "Chaos Reshaped",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719590213711,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Being in Combat for 12 seconds grants a Stack of 'Chaos Reshaped' for 7 seconds. Maintaining the first Stack for 12 seconds grants a second Stack."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Exchanging damage refreshes the buff duration."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For Chaos Reshaped, being in Combat is defined as having either dealt or received damage within the last 5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Benefits at Chaos Reshaped x1 and x2:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• x1: grants 20% increased damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• x2: grants 35% increased damage and grants a periodic burst of healing"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Healing burst builds up while the weapon is readied at a rate of 5? HP/s. The burst is released either every 7 seconds for a 35 HP heal or upon stowing the weapon, releasing the built-up health."
       }
      ]
     }
@@ -46844,7 +49668,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "solar" ]
@@ -46857,20 +49681,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -48176,7 +50993,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "solar" ]
@@ -48189,20 +51006,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -48426,7 +51236,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "arc" ]
@@ -48439,20 +51249,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -49225,6 +52028,60 @@
    ]
   }
  },
+ "3865257976": {
+  "hash": 3865257976,
+  "name": "Dragonfly",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719481084371,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Precision Kills cause targets to explode, dealing up to "
+      },
+      {
+       "text": "123.89"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 95.3]"
+      },
+      {
+       "text": " elemental damage in a 4.5 meter radius."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Explosions inherit the weapon's "
+      },
+      {
+       "text": "Combatant Damage Scaling"
+      },
+      {
+       "text": "."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3878366039": {
   "hash": 3878366039,
   "name": "Impulse Amplifier",
@@ -49361,13 +52218,13 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1714291559296,
+  "lastUpload": 1719592659816,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1714291209889,
+     "lastUpdate": 1719504546402,
      "updatedBy": "Stardust"
     }
    }
@@ -50070,22 +52927,14 @@
   "name": "Conduction Tines",
   "itemHash": 3381022969,
   "itemName": "Crown of Tempests",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717539624498,
+     "lastUpdate": 1719512456514,
      "updatedBy": "Stardust"
-    },
-    "ko": {
-     "lastUpdate": 1665694418814,
-     "updatedBy": "tritonesub251"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670529369802,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -50152,7 +53001,13 @@
     {
      "linesContent": [
       {
-       "text": "• 22%|44%|66% Decreased Passive Super Drain"
+       "text": "• 22%|44%|66% Decreased Passive Super Drain (with the exception of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Chaos Reach)"
       }
      ]
     }
@@ -50267,6 +53122,42 @@
    ]
   }
  },
+ "3938834702": {
+  "hash": 3938834702,
+  "name": "To the Pain",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719590118953,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Every ? points of damage taken with the weapon readied grants a Stack of 'To the Pain'. Maximum of 10 Stacks. Stowing the weapon removes all Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack grants ? Handling and 2 Aim Assist, maxing out at ? Handling and 20 Aim Assist."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3969361392": {
   "hash": 3969361392,
   "name": "Harmonic Holster",
@@ -50286,27 +53177,20 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing a Weapon matching your Super Element:"
+       "text": "After stowing a Weapon matching your Super Element:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
@@ -51587,13 +54471,13 @@
   "name": "Feast of Light",
   "itemHash": 1001356380,
   "itemName": "Star-Eater Scales",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717534936128,
+     "lastUpdate": 1719592317727,
      "updatedBy": "Stardust"
     }
    }
@@ -51626,7 +54510,7 @@
     {
      "linesContent": [
       {
-       "text": "Picking up an Orb of Power with a charged Super Ability grants an Overcharge Stack. Maximum of 6 Stacks."
+       "text": "Picking up an Orb of Power with a charged Super Ability grants a Stack of 'Feast of Light'. Maximum of 6 Stacks."
       }
      ]
     },
@@ -51636,14 +54520,14 @@
     {
      "linesContent": [
       {
-       "text": "Casting your Super while at 1|2|3|4|5|6 Stacks consumes all stack and grants the following benefits:"
+       "text": "Casting your Super while at 1|2|3|4|5|6 Stacks consumes all Stacks and grants the following benefits:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?|?|?|?|?|70% Increased Super Damage"
+       "text": "• 18.2%|36.4%|54.6%|59.7%|64.8%|70% increased Super damage"
       }
      ]
     },
@@ -51657,7 +54541,7 @@
     {
      "linesContent": [
       {
-       "text": "• 100 HP Overshield for 16 seconds if Cast at 6 Stacks"
+       "text": "• 100 HP Overshield for 16 seconds if cast at 6 Stacks"
       }
      ]
     }
@@ -51698,6 +54582,42 @@
      "linesContent": [
       {
        "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4063561849": {
+  "hash": 4063561849,
+  "name": "Physic",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719489238904,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants Restoration x1 for 4?+2? seconds to the user and the targeted ally."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "↑Restoration strength is enhanced to x2.\""
       }
      ]
     }
@@ -52626,6 +55546,32 @@
    ]
   }
  },
+ "4152709778": {
+  "hash": 4152709778,
+  "name": "Iron Gaze",
+  "lastUpload": 1719592659816,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719483501341,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 20 Aim Assist and -30 Range."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4154828211": {
   "hash": 4154828211,
   "name": "Bitterspite",
@@ -53215,13 +56161,13 @@
   "name": "Ursine Guard",
   "itemHash": 1848640623,
   "itemName": "Ursa Furiosa",
-  "lastUpload": 1717539628564,
+  "lastUpload": 1719592659816,
   "type": "Armor Trait Exotic",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1717532959879,
+     "lastUpdate": 1719590712618,
      "updatedBy": "Stardust"
     }
    }
@@ -53267,7 +56213,31 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Unbreakable grants up to ?% Super Energy based on the amount of damage absorbed."
+       "text": "Unbreakable grants up to "
+      },
+      {
+       "text": "?%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 12.5%]"
+      },
+      {
+       "text": " Super Energy upon absorbing "
+      },
+      {
+       "text": "?"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 90]"
+      },
+      {
+       "text": " points of damage."
       }
      ]
     }
@@ -54099,6 +57069,92 @@
    ]
   }
  },
+ "4234468055": {
+  "hash": 4234468055,
+  "name": "The Gift of Certainty",
+  "itemHash": 1627691271,
+  "itemName": "Gifted Conviction",
+  "lastUpload": 1719592659816,
+  "type": "Armor Trait Exotic",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1719591670164,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Casting "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ascension or "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Tempest Strike releases 3 tracking projectiles that each deal up to "
+      },
+      {
+       "text": "200"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc damage and apply "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt on Hit."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Applying "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt to enemies within ? meters grants Damage Resist for 10 seconds. Damage Resist scales with the number of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt applications."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4235122381": {
   "hash": 4235122381,
   "name": "Glorious Charge",
@@ -54843,6 +57899,16 @@
     {
      "linesContent": [
       {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Total Ammo Reserves are determined by both the Inventory Size and Magazine Stats."
       }
      ]
@@ -54876,6 +57942,16 @@
       },
       {
        "text": "Strand Weapons with 1|2|3 Mods equipped."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively)."
       }
      ]
     },
@@ -54920,7 +57996,14 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills increase damage by 15% for 7 seconds."
+       "text": "While the perk's buff isn't active, Weapon Kills grant Golden Tricorn x1 for 7 seconds. Additional Kills refresh the buff duration to "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "8 seconds."
       }
      ]
     },
@@ -54930,7 +58013,14 @@
     {
      "linesContent": [
       {
-       "text": "Matching Grenade or Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds."
+       "text": "While your Weapon's element matches that of your Super and Golden Tricorn x1 or x2 is active:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grenade or Powered Melee Kills grant Golden Tricorn x2 for 10 seconds."
       }
      ]
     },
@@ -54940,7 +58030,7 @@
     {
      "linesContent": [
       {
-       "text": "The 50% damage Buff's duration can only be refreshed by getting another Matching Ability Kill."
+       "text": "Note: having to match the Super element is a known bug and will be changed soon. The element of the abilities procing the 2nd Stack will need to match the Weapon."
       }
      ]
     },
@@ -54954,7 +58044,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " The 15% Buff is refreshed to 8 seconds if a weapon kill is made while it is active."
+       "text": " Golden Tricorn x1's duration is refreshed to 8 seconds."
       }
      ]
     }
@@ -55035,13 +58125,13 @@
  "4294909663": {
   "hash": 4294909663,
   "name": "Arc Holster",
-  "lastUpload": 1680554889429,
+  "lastUpload": 1719592659816,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1680476330881,
+     "lastUpdate": 1719509934443,
      "updatedBy": "Stardust"
     }
    }
@@ -55051,7 +58141,7 @@
     {
      "linesContent": [
       {
-       "text": "1 second after stowing "
+       "text": "After stowing "
       },
       {
        "classNames": [ "arc" ]
@@ -55064,20 +58154,13 @@
     {
      "linesContent": [
       {
-       "text": "Refills"
+       "text": "Begins to "
       },
       {
-       "text": " 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
+       "text": "refill"
+      },
       {
-       "text": "2.5|2 second delay between further Refills with 1|2+ Mods equipped."
+       "text": " 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped."
       }
      ]
     },
