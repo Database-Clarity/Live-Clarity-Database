@@ -478,19 +478,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 20 Stability and #e${-30+#d} Reload Speed.\n\nenhanced (\nvar d = 5\n#e Reload Speed penalty is decreased by 5.\n)\n\n// Enhanced version currently doesn't show up and needs to be linked",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699106745064,
+      "lastUpdate": 1719483608396,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270611101,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -499,7 +495,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699112209836,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -981,19 +977,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Loads #e${2+#d} Ammo at a time.\n\nenhanced (\nvar d = 1\n#e Loads 1 more Ammo at a time.\n)",
+     "main": "Reloading loads #e${1+#d} additional #plural at a time.\n\nvar plural = round\nenhanced (\nvar plural = rounds\nvar d = 1\n#e Loads in 1 more round at a time.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1711984547814,
+      "lastUpdate": 1719481233940,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670253871923,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -1002,7 +994,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712008312346,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2280,31 +2272,31 @@
    "inLiveDatabase": true
   },
   "136456835": {
-   "hash": 136456835,
    "name": "Reversal of Fortune",
+   "hash": 136456835,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Missing twice within 6 seconds <title refills [G_refill] /> 1 round into Magazine from thin air.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719497115019,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "136852797": {
    "hash": 136852797,
@@ -5040,14 +5032,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Grants 300% Additional Base Class Ability Regeneration Rate for 3 seconds upon applying <solar/>Scorch to enemies.\n\nWill not activate if the enemy dies from the hit that would have applied <solar/>Scorch.",
+     "main": "Grants 400% Additional Base Class Ability Regeneration Rate for 3 seconds upon applying <solar/>Scorch to enemies that are not currently <solar/>Scorched.\n\nWill not activate if the enemy dies from the hit that would have applied <solar/>Scorch.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1697815313118,
+      "lastUpdate": 1719510300117,
       "updatedBy": "Stardust"
      }
     },
@@ -5057,7 +5049,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1697894818765,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5067,14 +5059,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<solar/>Solar Kills extend the duration of <solar/>Restoration and <solar/>Radiant effects up to the maximum of 15 seconds.\n\nScoring a <solar/>Solar Kill while <solar/>Restoration's or <solar/>Radiant's timer is above 15 seconds will lower it back down to 15 seconds.\n\nSeconds added based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 2\n• T2 Minors, T1 Elites: 3\n• T3 Minors, T2 Elites, Enemy Players: 4\n• T4 Minors, T3 Elies, and higher: 8",
+     "main": "<solar/>Solar Kills extend the duration of <solar/>Restoration and <solar/>Radiant effects up to the maximum of 15 seconds.\n\nScoring a <solar/>Solar Kill while <solar/>Restoration's or <solar/>Radiant's timer is above 15 seconds will lower it back down to 15 seconds.\n\nSeconds added based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 1.5s\n• T2 Minors, T1 Elites: 2.25s\n• T3 Minors, T2 Elites, Enemy Players: 3s\n• T4 Minors, T3 Elies, and higher: 6s",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717536520773,
+      "lastUpdate": 1719510128276,
       "updatedBy": "Stardust"
      }
     },
@@ -5084,7 +5076,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5984,31 +5976,31 @@
    "uploadToLive": false
   },
   "405677814": {
-   "hash": 405677814,
    "name": "Cold Steel",
+   "hash": 405677814,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3650930298",
+     "secondary": "import secondary from 3650930298"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518546702,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "406461158": {
    "name": "Tracking Module",
@@ -6651,14 +6643,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants 20|40|50 Inventory Size Stat to #element with 1|2|3 Mods equipped.\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\n\nvar element = <arc/>Arc Weapons",
+     "main": "Grants 20|40|50 Inventory Size Stat to #element with 1|2|3 Mods equipped.\n\n#swords\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\n\nvar element = <arc/>Arc Weapons\n\nvar swords = Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively). ",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1702079872491,
+      "lastUpdate": 1719518040731,
       "updatedBy": "Stardust"
      }
     },
@@ -6668,7 +6660,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717548513901,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7933,14 +7925,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Scoring ? <stasis/>Stasis Weapon Kills within ? seconds of each with <stasis/>Frost Armor active spawns a <stasis/>Stasis Shard.",
+     "main": "Scoring multiple <stasis/>Stasis Weapon Kills with <stasis/>Frost Armor active spawns a <stasis/>Stasis Shard.\n\nActivation progress on Kills by <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 34?%\n• Elites, Minibosses, Bosses, and Enemy Players: ?%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717537491361,
+      "lastUpdate": 1719510617370,
       "updatedBy": "Stardust"
      }
     },
@@ -7950,7 +7942,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8232,19 +8224,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant a stacking Damage Buff until stowing or reloading the weapon. Maximum of 3 stacks.\n\nPVE: 10% | 20% | 30% increased damage <pve/> \nPVP: 5% | 10% | 15% increased damage <pvp/> \n\nenhanced (\n#e Passively grants 10 Magazine Stat. (Identical to Tactical Mag)\n)",
+     "main": "Weapon Kills grant a Stack of Killing Tally until stowing or reloading the weapon. Maximum of 3 Stacks.\n\nDamage increase at 1|2|3 Stacks: \n• PVE: 10% | 20% | 30% <pve/> \n• PVP: 5% | 10% | 15% <pvp/> \n\nenhanced (\n#e Passively grants 10 Magazine Stat. (Identical to Tactical Mag)\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712879310465,
+      "lastUpdate": 1719485308864,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270889822,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -8253,7 +8241,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8285,31 +8273,31 @@
    "uploadToLive": false
   },
   "563069569": {
-   "hash": 563069569,
    "name": "Reverberation",
+   "hash": 563069569,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "//Nothing is really known yet",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719496290653,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "566815328": {
    "name": "Rasputin's Arsenal",
@@ -8651,19 +8639,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 20 Range and #e${-30+#d} Stability.\n\nenhanced (\nvar d = 5\n#e Stability penalty is decreased by 5.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699106755195,
+      "lastUpdate": 1719483648099,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270618544,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -8672,7 +8656,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699112209836,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8828,19 +8812,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While on an <arc/>Arc Subclass:\nReceiving or dealing Melee damage grants the 'Cross Counter' buff for your next Melee Attack within 3 seconds.\n\nCross Counter grants 200% increased Melee damage and restores ? HP on Melee Hits. Cross Counter's melee deals Arc Damage.\n\nThe Melee damage buff is decreased to 80% when combined with the One-Two Punch perk.",
+     "main": "While you have an <arc/>Arc Melee Ability equipped:\nReceiving Melee damage or scoring a Powered Melee Hit grants the 'Cross Counter' buff for your next Melee Attack within 3 seconds.\n\nCross Counter grants 200% increased Melee damage and restores ? HP on Melee Hits. Cross Counter's melee deals Arc Damage.\n\nThe 'One-Two Punch' perk's Melee damage buff is decreased to 40% when Cross Counter is active.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717533637943,
+      "lastUpdate": 1719591926211,
       "updatedBy": "Stardust"
-     },
-     "ko": {
-      "lastUpdate": 1665697866189,
-      "updatedBy": "tritonesub251"
      }
     },
     "stats": {
@@ -8849,7 +8829,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9581,31 +9561,31 @@
    "itemName": "Forerunner"
   },
   "674546187": {
-   "hash": 674546187,
    "name": "Circle of Life",
+   "hash": 674546187,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2298656195",
+     "secondary": "import secondary from 2298656195"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719480804016,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "679077872": {
    "hash": 679077872,
@@ -10210,14 +10190,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance to allies inside Rifts you create. (<solar/>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nDying spawns a Healing Rift at your location.",
+     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance to you and allies inside Rifts you create. (<solar/>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nDying spawns a Healing Rift at your location.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714212423964,
+      "lastUpdate": 1719515549680,
       "updatedBy": "Stardust"
      }
     },
@@ -10227,7 +10207,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12555,31 +12535,31 @@
    "inLiveDatabase": true
   },
   "880644845": {
-   "hash": 880644845,
    "name": "Strategist",
+   "hash": 880644845,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Weapon Kills grant #e${10*#d}?% Class Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20*#d}?%.\n\nClass Ability Usage grants ? Stability for ? seconds.\n\nenhanced (\nvar d = 1.1\n#e Class Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719497018320,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "883366072": {
    "name": "Psychohack",
@@ -13357,14 +13337,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<strand/>Drengr's Lash creates 2 additional Lashes. Lashes are granted stronger seeking capabilities and travel ?% farther.\n\nGrants Woven Mail for 10 seconds upon applying <strand/>Suspension to enemies.",
+     "main": "Improves <strand/>Drengr's Lash and grants <strand/>Woven Mail for 10 seconds upon <strand/>Suspending enemies.\n\nWhen used with a Barricade:\n<strand/>Drengr's Lash creates 2 additional Lashes. Lashes are gain stronger seeking capabilities and travel ?% farther.\n\nWhen used with <arc/>Thruster:\nCreated <strand/>Strand Knot is launched towards nearby enemies with some tracking.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690730544573,
+      "lastUpdate": 1719516005433,
       "updatedBy": "Stardust"
      }
     },
@@ -13374,7 +13354,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1690730562123,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13469,14 +13449,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants an extra Coldsnap Grenade Ability Charge.\n\nColdsnap Grenades have better tracking, travel 35% farther, and grant Grenade Ability Energy upon hitting or freezing an enemy.\n\nGrenade Ability Energy gains based on <link enemy rank [#CombatantClassifications] />:\n• 7%: Enemy Players\n• 10%: Tier 1 Minors\n• 22%: Tier 2 Minors, Tier 1 Elites\n• 34%: Tier 3 Minors, Tier 2 Elites\n• 50%: Tier 4 Minors, Tier 3-4 Elites, Minibosses, and Bosses",
+     "main": "Grants <stasis/>Coldsnap Grenades an extra Ability Charge, better tracking, and 35% longer tracking length. \n\nDamaging an enemy with <stasis/>Coldsnap, <arc/>Storm, <strand/>Threadling, or <void/>Vortex Grenades grants Grenade Ability Energy.\n\n<void/>Vortex Grenades have a 0.8 seconds cooldown between activations.\n\nHealing allies with a <solar/>Healing Grenade grants 12% Grenade Ability Energy.\n\n<stasis/>Coldsnap | {<arc/>Storm|<strand/>Threadling|<void/>Vortex} Grenade Energy gains based on <link enemy rank [#CombatantClassifications] />:\n• Enemy Players: 7% | 5%\n• Tier 1 (T1) Minors: 10% | 3%\n• T2 Minors, T1 Elites: 22% | 5.7%\n• T3 Minors, T2 Elites: 34% | 8.4%\n• T4 Minors, T3 Elites, and higher: 50% | 12%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717529882435,
+      "lastUpdate": 1719514388556,
       "updatedBy": "Stardust"
      }
     },
@@ -13486,7 +13466,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13496,14 +13476,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "The next 5 Hits within #e${8+#d} seconds of using your Class Ability apply <strand/>Sever to hit targets (even if they are currently immune to damage).\n\nApplying <strand/>Sever refreshes the buff duration. Activates even while stowed.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
+     "main": "Using your Class Ability makes your next 5 Hits within #e${8+#d} seconds apply <strand/>Sever to targets (even if they are currently immune to damage).\n\nHitting a non-<strand/>Severed enemy refreshes the buff duration. Activates even while stowed.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1703430208353,
+      "lastUpdate": 1719496486540,
       "updatedBy": "Stardust"
      }
     },
@@ -13513,7 +13493,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1703430278010,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14038,31 +14018,31 @@
    "uploadToLive": false
   },
   "956288240": {
-   "hash": 956288240,
    "name": "Onslaught",
+   "hash": 956288240,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 95528736",
+     "secondary": "import secondary from 95528736"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518608339,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "956390015": {
    "hash": 956390015,
@@ -16497,31 +16477,31 @@
    "uploadToLive": false
   },
   "1126264488": {
-   "hash": 1126264488,
    "name": "Threat Remover",
+   "hash": 1126264488,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Hitting a target with #d Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for ? seconds.\n\nvar d = all 12\nenhanced (\nvar d = #e10 of the 12\n#e Requires 2 fewer Shotgun Pellets to activate.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719497440316,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1128768652": {
    "hash": 1128768652,
@@ -16632,31 +16612,31 @@
    "uploadToLive": false
   },
   "1135494563": {
-   "hash": 1135494563,
    "name": "Beacon Rounds",
+   "hash": 1135494563,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2859149211",
+     "secondary": "import secondary from 2859149211"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518522446,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1139671158": {
    "name": "Melee Kickstart",
@@ -16828,33 +16808,33 @@
    "uploadToLive": false
   },
   "1149655156": {
-   "hash": 1149655156,
    "name": "Stylostixis",
+   "itemName": "Mataiodoxía",
+   "hash": 1149655156,
+   "itemHash": 1955548646,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Grants <strand/>Arcane Needles <barrier/>Shield-Piercing properties.\n\nScoring an <strand/>Arcane Needle hit on an enemy marks them with a vertical mark for 10 seconds. Marked Enemies cause nearby targets to become <strand/>Suspended on death.\n\nScoring 2 Arcane Needle hits on a Marked Enemy triggers a Explosion, dealing up to ? damage and <strand/>Suspending targets within ? meters.\n\n<strand/>Arcane Needle Kills and Kills on <strand/>Suspended targets grant Melee Energy based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 15%\n• T2 Minors, T1 Elites: 22.2%\n• T3 Minors, T2 Elites, Enemy Players: 33%\n• T4 Minors, T3 Elites, and higher: 100%",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719512927823,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 1955548646,
-   "itemName": "Mataiodoxía"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1149703256": {
    "hash": 1149703256,
@@ -17984,19 +17964,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag) and decreases Handling by 15.\n\nOn Swords, it grants 40 Ammo Capacity Stat (5 more than having 2 Reserves Mods or Enduring Blade) and the Handling penalty has no effect.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255514205,
+      "lastUpdate": 1719505515793,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419489011,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -18005,7 +17981,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20052,33 +20028,33 @@
    "uploadToLive": false
   },
   "1358612221": {
-   "hash": 1358612221,
    "name": "Wish-Dragon's Talons",
+   "itemName": "Wishful Ignorance",
+   "hash": 1358612221,
+   "itemHash": 3717431477,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Grants an additional <strand/>Frenzied Blade Ability Charge.\n\n<strand/>Frenzied Blade or <strand/>Flechette Storm Hits grant a Stack of 'Wish-Dragon's Talons' for ? seconds. Maximum of 3? Stacks.\n\nCan only grant 1 Stack per ability usage.\n\n'Wish-Dragon's Talons' grants increased <strand/>Frenzied Blade and <strand/>Flechette Storm damage.\n\nDamage increase at 1|2|3 Stacks:\n• <strand/>Frenzied Blade: 20% | 50% | 100%\n• <strand/>Flechette Storm: 10% | 25% | 50%\n\n<strand/>Banner of War's Pulses grant 5% <strand/>Frenzied Blade Ability Energy and an additional 5% for each ally within 10 meters.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719591038458,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 3717431477,
-   "itemName": "Wishful Ignorance"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1359896290": {
    "name": "Dynamic Sway Reduction",
@@ -21034,31 +21010,31 @@
    "uploadToLive": false
   },
   "1421772400": {
-   "hash": 1421772400,
    "name": "Air Trigger",
+   "hash": 1421772400,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 30 Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)  \n\nBeing Airborne grants the following to all weapons:\n• ? Reload Speed\n• ?% Decreased Accuracy Cone Size\n• ?% Decreased Auto Aim Cone Size\n\nenhanced (\n#e Inventory Size benefit is increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719478482227,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1427256713": {
    "name": "Reservoir Burst",
@@ -21192,14 +21168,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants an additional Shield Throw Melee Ability Charge.\n\nShield Throw gains <barrier/>Shield-Piercing Breaker Type and <void/>Weakens targets for ? seconds on hit.\n\nStunning a <barrier/>Barrier Champion with Shield Throw grants a Melee Ability Charge.",
+     "main": "Grants an additional Shield Throw Melee Ability Charge.\n\nShield Throw gains <barrier/>Shield-Piercing properties and <void/>Weakens targets for ? seconds on hit.\n\nStunning a <barrier/>Barrier Champion with Shield Throw grants a Melee Ability Charge.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1684962057105,
+      "lastUpdate": 1719512639695,
       "updatedBy": "Stardust"
      }
     },
@@ -21209,7 +21185,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1684973582811,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22291,31 +22267,31 @@
    "uploadToLive": false
   },
   "1528281896": {
-   "hash": 1528281896,
    "name": "Outlaw",
+   "hash": 1528281896,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1168162263\n\n// Old Rose exclusive perk",
+     "secondary": "import secondary from 1168162263"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719487652203,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1530804125": {
    "hash": 1530804125,
@@ -22877,19 +22853,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "On <heavy/>Heavy Ammo Pickup:\nGrants #e${25+#d}% of your maximum <special/>Special Ammo Reserves.\n\nEquipping two <special/>Special Weapons halves the amount of ammo granted.\n\nenhanced (\nvar d = 10\n#e Increases the amount of Special Ammo received by an additive 10%.\n)",
+     "main": "On <heavy/>Heavy Ammo Pickup:\nGrants #e${25+#d}% of your maximum <special/>Special Ammo Reserves.\n\nEquipping two <special/>Special Weapons halves the amount of ammo granted.\n\nenhanced (\nvar d = 10\n#e Increases the amount of Special Ammo received by 40% (25%⁠🠚⁠35%).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1689191943392,
+      "lastUpdate": 1719486923742,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670271421356,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -22898,7 +22870,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1689198390082,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23048,31 +23020,31 @@
    "itemName": "Ace of Spades"
   },
   "1562897767": {
-   "hash": 1562897767,
    "name": "Timed Payload",
+   "hash": 1562897767,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1954620775",
+     "secondary": "import secondary from 1954620775"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518669057,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1563455254": {
    "name": "Rewind Rounds",
@@ -23516,31 +23488,31 @@
    "uploadToLive": false
   },
   "1592669035": {
-   "hash": 1592669035,
    "name": "Replenishing Aegis",
+   "hash": 1592669035,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1718280383684,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1966281507",
+     "secondary": "import secondary from 1966281507"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518640373,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1598147670": {
    "name": "Psychohack",
@@ -23988,14 +23960,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Modifies <solar/>Burning Maul into a single-use slam that deals 650% Increased Damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on Impact. The released Cyclones deal <pve 20 /> <pvp [16] /> damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) <solar/>Scorch every 0.56 seconds.\n\n<solar/>Consecration's center wave creates a Cyclone that deals <pve 16 /> <pvp [3] /> damage and does not have tracking, however it retains the <solar/>Scorhing capability.\n\nDamage from multiple Cyclones can overlap.",
+     "main": "Modifies <solar/>Burning Maul into a single-use slam that deals 650% increased damage and releases 3 tracking Waves. Waves create Cyclones on impact which also track enemies.\n\nWaves apply 20 (60 with <solar/>Ember of Ashes equipped) <solar/>Scorch on Impact. The released Cyclones last 7.5 seconds, deal <pve 20 /> <pvp [16] /> damage every 0.2 seconds, and apply 3 (5 with Ember of Ashes) <solar/>Scorch every 0.56 seconds.\n\n<solar/>Consecration's center wave creates a weaker Cyclone that deals <pve 16 /> <pvp [3] /> damage and does not have tracking but it retains the <solar/>Scorhing capability.\n\nDamage from multiple Cyclones can overlap.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717532442450,
+      "lastUpdate": 1719590591760,
       "updatedBy": "Stardust"
      }
     },
@@ -24005,7 +23977,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24102,14 +24074,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Diamond Lance creates a <stasis/>Stasis Crystal on impact. Hitting Bosses or Vehicles creates ? additional <stasis/>Stasis Crystals.\n\nWith a <stasis/>Stasis Super Ability and while standing behind a Rally Barricade:\nScoring a Kill or 3 Precision Hits within ? seconds of each spawns a <stasis/>Diamond Lance next to you.\n\nShares a Cooldown with the <stasis/>Diamond Lance Aspect but using the Aspect is not required.",
+     "main": "Diamond Lance creates a <stasis/>Stasis Crystal on impact. Hitting Bosses or Vehicles creates ? additional <stasis/>Stasis Crystals.\n\nWith a <stasis/>Stasis Super Ability and while standing behind a Rally Barricade:\nScoring a Precision Kill or 3 Precision Hits within ? seconds of each spawns a <stasis/>Diamond Lance next to you.\n\nShares a Cooldown with the <stasis/>Diamond Lance Aspect but using the Aspect is not required.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717531061958,
+      "lastUpdate": 1719516052103,
       "updatedBy": "Stardust"
      }
     },
@@ -24119,7 +24091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26439,19 +26411,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grenade Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "Grenade Ability Usage refills 50% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Grenade Ability until stowed.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants.\n\nPerks that replace your Grenade Ability with a custom throwable (such as <solar/>Gunpowder Gamble) do not trigger Osmosis.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717525108445,
+      "lastUpdate": 1719487360128,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670274624643,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -26460,7 +26428,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -26854,31 +26822,31 @@
    "inLiveDatabase": true
   },
   "1817983009": {
-   "hash": 1817983009,
    "name": "Chaos Reshaped",
+   "hash": 1817983009,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1718280383684,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3640170453",
+     "secondary": "import secondary from 3640170453"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719479406221,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1820053064": {
    "name": "Blinding Light",
@@ -28188,23 +28156,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Ability usage grants 'Empowered' for other abilities for 5 seconds depending on the Ability used. \ne.g.: Barricade Usage 🠚 'Empowered Melee' and 'Empowered Grenade'\n\nEmpowered Melee x1|x2:\n• 10% | 20% increased damage\n• <pve 400% /> <pvp [100%] /> | <pve 800% /> <pvp [200%] /> Additional Base Melee Regeneration Rate\n\nEmpowered Grenade x1|x2:\n• <pve 20% /> <pvp [10%] /> | <pve 35% /> <pvp [20%] /> increased damage\n• <pve 400% /> <pvp [100%] /> | <pve 800% /> <pvp [200%] /> Additional Base Grenade Regeneration Rate\n\nEmpowered Barricade x1|x2:\n• 25%|50% Additional Base Class Ability Regeneration Rate\n• Currently does not grant a benefit to Barricade HP despite stating it does",
+     "main": "Ability usage grants 'Empowered' for other abilities for 5 seconds depending on the Ability used. \ne.g.: Barricade Usage 🠚 'Empowered Melee' and 'Empowered Grenade'\n\nEmpowered Melee x1|x2:\n• 10% | 20% increased damage\n• <pve 400% /> <pvp [100%] /> | <pve 800% /> <pvp [200%] /> Additional Base Melee Regeneration Rate\n\nEmpowered Grenade x1|x2:\n• <pve 20% /> <pvp [10%] /> | <pve 35% /> <pvp [20%] /> increased damage\n• <pve 400% /> <pvp [100%] /> | <pve 800% /> <pvp [200%] /> Additional Base Grenade Regeneration Rate\n\nEmpowered Barricade x1|x2:\n• 25%|50% Additional Base Class Ability Regeneration Rate\n• Does not grant a benefit to Barricade HP despite stating it does",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1715799168552,
+      "lastUpdate": 1719590359742,
       "updatedBy": "Stardust"
-     },
-     "ko": {
-      "lastUpdate": 1665696710361,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670511349614,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -28213,7 +28173,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1715800461024,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28583,31 +28543,31 @@
    "uploadToLive": false
   },
   "1941225610": {
-   "hash": 1941225610,
    "name": "Meganeura",
+   "hash": 1941225610,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Scoring a Precision Hit grants a Stack of Meganeura for 3.5 seconds Maximum of 3 Stacks.\n\nMeganeura increases the damage of Dragonfly explosions by the following amount at 1|2|3 Stacks:\n67% | <pve 134% /> <pvp [80%] /> | <pve 180% /> <pvp [80%] />",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719487124667,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1942880504": {
    "name": "Slickdraw",
@@ -29168,31 +29128,31 @@
    "inLiveDatabase": true
   },
   "1988485648": {
-   "hash": 1988485648,
    "name": "Dealer's Choice",
+   "hash": 1988485648,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Weapon Kills grant additional Super Ability Energy. Equipping multiple Pale Heart Weapons increases the amount granted. \n\nExtra Super Energy gains with 1|2|3 equipped Pale Heart Weapons: ?%|1?%|?%\n\nPale Heart Weapons include:\n• Weapons with the Dealer's Choice Origin Trait\n• Ace of Spades, Euphony, Khvostov 7G-0X, Microcosm, Red Death Reformed?, Still Hunt, Tessellation?",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719499137831,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1992361643": {
    "hash": 1992361643,
@@ -29983,14 +29943,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills apply <void/>Volatile to enemies in a 6.5 meter radius around the target.\n\n3 second cooldown after activation.\n\nenhanced (\nvar d = 0 //cooldown reduction placeholder\n#e Cooldown is reduced.\n)",
+     "main": "Weapon Kills cause enemies to explode into a burst of <void/>Void energy, dealing ? damage and applying <void/>Volatile to enemies in a 6.5 meter radius around the target.\n\n${3-#d} second cooldown between activations.\n\nenhanced (\nvar d = 0 //cooldown reduction placeholder\n#e Cooldown is reduced.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714220475865,
+      "lastUpdate": 1719480972830,
       "updatedBy": "Stardust"
      }
     },
@@ -30000,7 +29960,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714220482248,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30671,14 +30631,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant 10% increased damage for 7 seconds (x1 Stack).\n\nGrenade or Melee Kills grant 20% increased damage for 7 seconds (x2). Scoring another Grenade or Melee Kill increases this to 30% (x3).\n\nCan activate while stowed. Weapon Kills refresh the buff duration.\n\nenhanced (\nvar d = 0\n)",
+     "main": "Weapon Kills grant 10% increased damage for 7 seconds (x1 Stack).\n\nGrenade or Melee Kills grant 20% increased damage for 7 seconds (x2). Scoring another Grenade or Melee Kill increases this to 30% (x3).\n\nCan activate while stowed. Weapon Kills refresh the buff duration.\n\nenhanced (\nvar d = 0\n#e First Stack's duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712967990920,
+      "lastUpdate": 1719518325960,
       "updatedBy": "Stardust"
      }
     },
@@ -30688,7 +30648,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712968015282,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31176,31 +31136,31 @@
    "inLiveDatabase": true
   },
   "2167611941": {
-   "hash": 2167611941,
    "name": "Reverberation",
+   "hash": 2167611941,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 563069569",
+     "secondary": "import secondary from 563069569"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719496299734,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2170254329": {
    "hash": 2170254329,
@@ -33430,31 +33390,31 @@
    "itemName": "Microcosm"
   },
   "2298656195": {
-   "hash": 2298656195,
    "name": "Circle of Life",
+   "hash": 2298656195,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Scoring 6 Healing Hits on allies within ? seconds of each grants <pve 25%  /> <pvp [12.5?%] /> increased damage for 10 seconds.\n\nenhanced (\n#e Buff Duration is increased\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719480795461,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2299766748": {
    "name": "Adept Projectile Speed",
@@ -33901,14 +33861,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring a Kill grants 1 Stack of High Ground for 7 seconds. Maximum of 3 Stacks.\n\nPassively grants the maximum buff against targets that are 1? meter lower in elevation than the ground you stand on (reference point of enemies' elevation is generally their lowest point). This does not work while airborne.\n\nDamage increases at ?|?|? Stacks:\n• <pve PVE: ?|?|25% />\n• <pvp PVP: ?|?|15% />\n\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
+     "main": "Scoring a Kill grants 1 Stack of High Ground for 7 seconds. Maximum of 3 Stacks.\n\nPassively grants the maximum buff against targets that are 1? meter lower in elevation than the ground you stand on (reference point of enemies' elevation is generally their lowest point). This does not work while airborne.\n\nDamage increases at ?|?|? Stacks:\n• <pve PVE: 10% | 17.5% | 25% />\n• <pvp PVP: ? | ? | 15% />\n\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1718830050293,
+      "lastUpdate": 1719483298745,
       "updatedBy": "Stardust"
      }
     },
@@ -33918,7 +33878,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1718830082613,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34426,58 +34386,58 @@
    "inLiveDatabase": true
   },
   "2368990400": {
-   "hash": 2368990400,
    "name": "Whisper of Reversal",
+   "hash": 2368990400,
    "type": "Subclass Fragment",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Dealing or receiving Physical (non-projectile) Melee Damage while you have <stasis/>Frost Armor active applies 10? <stasis/>Slow Stacks to your enemy for ? seconds.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719511251221,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2368990401": {
-   "hash": 2368990401,
    "name": "Whisper of Chill",
+   "hash": 2368990401,
    "type": "Subclass Fragment",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Scoring multiple <stasis/>Stasis Weapon Kills spawns a Small Stasis Shard.\n\nActivation progress on Kills by <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 34?%\n• Elites and Enemy Players: 67%\n• Minibosses and higher: 100%\n\nFurther Kills do not provide activation progress for 5? seconds after activation.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719510891845,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2379536009": {
    "hash": 2379536009,
@@ -34543,19 +34503,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake 15%\n• Reduces Reticle Bounce by 15%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2?\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Weapon Hits grant 1 Stack of the perk for 1 second up to the maximum of 5? Stacks.\n\nBenefits granted per Stack:\n• Grants ?% Flinch Resistance\n• Reduces Visual Weapon Shake by 15%\n• Reduces Reticle Bounce by 15%\n\nStacks gained per Weapon Hit by weapon type:\n• Hand Cannons, Scout Rifles: 2?\n• Pulse Rifles, Sidearms: 1.5\n• Other Weapons: 1\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717527287558,
+      "lastUpdate": 1719495571058,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670342042734,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -34564,7 +34520,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34629,19 +34585,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills trigger an elemental explosion.\n\nDamage and radius of the explosions varies based on the weapon's ammo type:\n• <special/>Special Weapons: Up to <pve 67.2 /> <pvp [44.8] /> damage in a 2.4 meter radius\n• <heavy/>Power Weapons: Up to <pve 109.2 /> <pvp [72.8] /> damage in a 3 meter radius\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead.\n)",
+     "main": "Weapon Kills trigger an elemental explosion matching the weapon's element.\n\nDamage and radius of the explosions varies based on the weapon's ammo type:\n• <special/>Special Weapons: Up to <pve 67.2 /> <pvp [44.8] /> damage in a 2.4 meter radius\n• <heavy/>Power Weapons: Up to <pve 109.2 /> <pvp [72.8] /> damage in a 3 meter radius\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] />.\n\nenhanced (\n#e Passively grants 20 Inventory Size (identical to one Reserves Mod). Swords receive 20 Guard Endurance instead.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717522824178,
+      "lastUpdate": 1719479344744,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670251567702,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -34650,7 +34602,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34794,26 +34746,27 @@
    "name": "Kinetic Reserves",
    "hash": 2407398462,
    "type": "Armor Mod General",
+   "importStatsFrom": 450381139,
    "editor": {
     "en": {
-     "main": "import main from 450381139\n\nvar element = Kinetic Weapons",
+     "main": "import main from 450381139\n\nvar element = Kinetic Weapons\n\nvar swords = empty",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476773308,
+      "lastUpdate": 1719508000889,
       "updatedBy": "Stardust"
      }
     },
     "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
+     "lastUpdate": 1682717350217,
+     "updatedBy": "Stardust"
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35791,31 +35744,31 @@
    "itemName": "The Wardcliff Coil"
   },
   "2476672792": {
-   "hash": 2476672792,
    "name": "Threat Remover",
+   "hash": 2476672792,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1126264488",
+     "secondary": "import secondary from 1126264488"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719497447920,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2479297167": {
    "name": "Harmonic Dexterity",
@@ -37233,19 +37186,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills increase damage by 15% for 7 seconds.\n\nMatching Grenade or Powered Melee Kills while the buff is active grant 50% increased damage for 10 seconds.\n\nThe 50% damage Buff's duration can only be refreshed by getting another Matching Ability Kill.\n\nenhanced (\n#e The 15% Buff is refreshed to 8 seconds if a weapon kill is made while it is active.\n)",
+     "main": "While the perk's buff isn't active, Weapon Kills grant Golden Tricorn x1 for 7 seconds. Additional Kills #refresh\n\nWhile your Weapon's element matches that of your Super and Golden Tricorn x1 or x2 is active:\nGrenade or Powered Melee Kills grant Golden Tricorn x2 for 10 seconds.\n\nNote: having to match the Super element is a known bug and will be changed soon. The element of the abilities procing the 2nd Stack will need to match the Weapon.\n\nvar refresh = refresh the buff duration.\nenhanced (\nvar refresh = refresh the buff duration to #e8 seconds.\n#e Golden Tricorn x1's duration is refreshed to 8 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712879160940,
+      "lastUpdate": 1719483155231,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670267685405,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -37254,7 +37203,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38183,31 +38132,31 @@
    "uploadToLive": false
   },
   "2662236651": {
-   "hash": 2662236651,
    "name": "Archer's Gambit",
+   "hash": 2662236651,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3414324643",
+     "secondary": "import main from 3414324643"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719479026635,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2662827496": {
    "hash": 2662827496,
@@ -38244,23 +38193,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Dealing Ability Damage to a <link Major, Boss, or Player [#CombatantClassifications] /> target grants 4 Stacks of Weapon Surge matching the element of the used ability and highlights the target for 10 seconds.\n\nWeapon Surge duration is not refreshable.\n\nKilling highlighted targets spawns a Subclass-Matching Elemental Pickup.\n\nElemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Strand Tangles, and <void/>Void Breaches.",
+     "main": "Dealing Ability Damage to an <link Elite, Miniboss, Boss, or Player [#CombatantClassifications] /> target highlights the target and grants 4 Stacks of Weapon Surge matching the element of the used ability for 10 seconds.\n\nWeapon Surge duration is not refreshable.\n\nKilling highlighted targets spawns a Subclass-Matching Elemental Pickup.\n\nElemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Strand Tangles, and <void/>Void Breaches.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717533307944,
+      "lastUpdate": 1719591417261,
       "updatedBy": "Stardust"
-     },
-     "ko": {
-      "lastUpdate": 1665695604529,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670677389837,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -38269,7 +38210,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38672,33 +38613,33 @@
    "inLiveDatabase": true
   },
   "2710254013": {
-   "hash": 2710254013,
    "name": "The Lost Voice",
+   "itemName": "Speaker's Sight",
+   "hash": 2710254013,
+   "itemHash": 50291571,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "<solar/>Healing Grenades' Restoration Orb is replaced with a Healing Turret. Consuming a <solar/>Healing Grenade will spawn a Healing Turret in front of the user.\n\nHealing Turret information:\n• Lasts 15 seconds and has 100? HP\n• Releases Healing Seekers every 3 seconds towards the user and allies within 30 meters\n• Healing Seekers apply <solar/>Cure x1 and <solar/>Restoration x1 for <pve 4 /> <pvp [3] /> seconds in a 7.5 meter radius (strength of both buffs is increased to x2 with <solar/>Touch of Flame equipped)\n\nSome forms (genuinely no idea) of healing to allies spawns an Orb of Power that grants 2.5% Super Energy at their position. 10 second cooldown between activations.\n\n<link Note [https://www.bungie.net/7/en/News/article/twid_06_27_2024] />: Orb of Power Generation will soon be disabled in the Crucible.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719515439180,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 50291571,
-   "itemName": "Speaker's Sight"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2711519340": {
    "hash": 2711519340,
@@ -39222,19 +39163,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant an additional #e${1 * #d}% Super Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant an additional #e${1.5 * #d}% instead.\n\nenhanced (\nvar d = 1.33333\n#e Bonus Super Gains are increased by 33.3%. (e.g. 1.5% » 2%)\n)",
+     "main": "Weapon Kills grant an additional #e${1 * #d}% Super Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant an additional #e${1.5 * #d}% instead.\n\nenhanced (\nvar d = 1.33333\n#e Bonus Super Gains are increased by 33.3%. (e.g. 1.5%⁠🠚⁠2%)\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1687176769402,
+      "lastUpdate": 1719497573640,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670340653934,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -39243,7 +39180,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1687176854200,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -40092,31 +40029,31 @@
    "inLiveDatabase": true
   },
   "2782457288": {
-   "hash": 2782457288,
    "name": "Killing Tally",
+   "hash": 2782457288,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 557221067\n\n// 21% Delirium exclusive perk",
+     "secondary": "import secondary from 557221067"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719485329600,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2785334058": {
    "name": "Eddy Current",
@@ -40314,31 +40251,31 @@
    "itemName": "The Manticore"
   },
   "2799030358": {
-   "hash": 2799030358,
    "name": "Desperate Measures",
+   "hash": 2799030358,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2109543898",
+     "secondary": "import secondary from 2109543898"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518272754,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2799418574": {
    "name": "Rites of Ember",
@@ -41052,31 +40989,31 @@
    "itemName": "Eyes of Tomorrow"
   },
   "2838996248": {
-   "hash": 2838996248,
    "name": "Cast No Shadows",
+   "hash": 2838996248,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Dealing Melee Damage refills 20% of the Magazine and grants ? Handling for ? seconds.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719498134801,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2839173408": {
    "name": "Omolon Fluid Dynamics",
@@ -41283,14 +41220,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grants strong projectile tracking for ? seconds. Stacks 4 times.\n\nDealing damage extends the buff duration.\n\nenhanced (\n#e Buff duration is increased.\n// enhanced version not available yet, make sure to link it once we have a weapon with it\n)",
+     "main": "Weapon Kills grants strong projectile tracking for ? seconds. Stacks 4 times.\n\nDealing damage extends the buff duration.\n\nenhanced (\n#e Buff duration is increased.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1702418037153,
+      "lastUpdate": 1719518527669,
       "updatedBy": "Stardust"
      }
     },
@@ -41300,7 +41237,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42040,31 +41977,31 @@
    "itemName": "Vexcalibur"
   },
   "2899505723": {
-   "hash": 2899505723,
    "name": "In-Flight Compensator",
+   "hash": 2899505723,
    "type": "Armor Mod General",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants all weapons 15|25|30 Airborne Effectiveness with 1|2|3 Mods equipped.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719506220826,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2909403175": {
    "hash": 2909403175,
@@ -42678,31 +42615,31 @@
    "itemName": "Gjallarhorn"
   },
   "2963273944": {
-   "hash": 2963273944,
    "name": "Master of Arms",
+   "hash": 2963273944,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3081867624",
+     "secondary": "import secondary from 3081867624"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518592054,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2965975126": {
    "hash": 2965975126,
@@ -42931,31 +42868,31 @@
    "uploadToLive": false
   },
   "2980589453": {
-   "hash": 2980589453,
    "name": "Physic",
+   "hash": 2980589453,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Scoring 6 Healing Hits on allies within ? seconds of each grants Restoration x1 for 4?+2? seconds to the user and the targeted ally.\n\n↑Restoration strength is enhanced to x2.\"",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719489259458,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2982306509": {
    "name": "Power Preservation",
@@ -43352,14 +43289,14 @@
    "importStatsFrom": 1774574192,
    "editor": {
     "en": {
-     "main": "import main from 1774574192",
+     "main": "import main from 1774574192\n\n// Chain of Command exclusive perk (Stasis Heavy Machine Gun)",
      "secondary": "import secondary from 1774574192"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676216896210,
+      "lastUpdate": 1719487470983,
       "updatedBy": "Stardust"
      }
     },
@@ -43369,7 +43306,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43740,31 +43677,31 @@
    "inLiveDatabase": false
   },
   "3042219245": {
-   "hash": 3042219245,
    "name": "Magnificent Howl",
+   "hash": 3042219245,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2720533289",
+     "secondary": "import secondary from 2720533289"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518580556,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3046673757": {
    "hash": 3046673757,
@@ -44877,58 +44814,58 @@
    "uploadToLive": false
   },
   "3120212825": {
-   "hash": 3120212825,
    "name": "Strategist",
+   "hash": 3120212825,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 880644845",
+     "secondary": "import secondary from 880644845"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719496634405,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3124871000": {
-   "hash": 3124871000,
    "name": "Outlaw",
+   "hash": 3124871000,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1168162263\n\n// Redrix's Claymore exclusive perk",
+     "secondary": "import secondary from 1168162263"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719487695119,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3131590896": {
    "hash": 3131590896,
@@ -45685,14 +45622,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Equipping multiple Root of Nightmares Weapons grants increased Handling, Reload Speed, as well as increased damage against Tormentors, Lucent Hive, and Enemy Players in their Super.\n\nNezarec counts as a Tormentor. Ghosts of the Deep bosses count as Lucent Hive.\n\nBonuses with 2|3 Root of Nightmares weapons:\n• <pve 3.33% /> <pvp [?%] /> | <pve 9.98% /> <pvp [?%] /> increased damage\n• 10 | 20 Handling\n• 0 | 20 Reload Speed\n• 0.95x Reload Duration Multiplier",
+     "main": "Equipping multiple 2|3 Root of Nightmares weapons grants the following benefits:\n• <pve 3.33% /> <pvp [?%] /> | <pve 9.98% /> <pvp [?%] /> increased damage against enemies wielding Light and Darkness\n• 10 | 20 Handling\n• 0 | 20 Reload Speed\n• 0.95x Reload Duration Multiplier\n\nAffected enemies:\n• Tormentors (The Dread in general?), Lucent Hive, and Nezarec\n• Enemy Players with their Super or Transcendence active",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712881875017,
+      "lastUpdate": 1719499548693,
       "updatedBy": "Stardust"
      }
     },
@@ -45702,7 +45639,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46894,31 +46831,31 @@
    "uploadToLive": false
   },
   "3291427296": {
-   "hash": 3291427296,
    "name": "Air Trigger",
+   "hash": 3291427296,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 1421772400",
+     "secondary": "import secondary from 1421772400"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719477890888,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3291480605": {
    "hash": 3291480605,
@@ -47161,31 +47098,31 @@
    "inLiveDatabase": true
   },
   "3315935575": {
-   "hash": 3315935575,
    "name": "Iron Reach",
+   "hash": 3315935575,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 591790007",
+     "secondary": "import secondary from 591790007"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719485182124,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3320257055": {
    "hash": 3320257055,
@@ -47439,14 +47376,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Grants 30 Magazine Stat. Identical to Extended Mag.",
+     "main": "Grants 30 Magazine Stat (identical to Extended Mag).\n\nOn Swords, it grants 30 Ammo Capacity Stat (identical to 2 Reserves Mods and 5 less than having Enduring Blade).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679596841165,
+      "lastUpdate": 1719505419561,
       "updatedBy": "Stardust"
      }
     },
@@ -47456,7 +47393,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679597202350,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48061,31 +47998,31 @@
    "uploadToLive": false
   },
   "3414324643": {
-   "hash": 3414324643,
    "name": "Archer's Gambit",
+   "hash": 3414324643,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Hip-fire Precision Hits grant the following benefits for 4 seconds:\n• 0.4x Draw Time Multiplier\n• ? Reload Speed\n• ? Reload Duration Multiplier\n\nHip-fire Precision Hits extend the buff duration by 4 seconds up to the maximum of 8 seconds.\n\nenhanced (\n#e Buff duration is increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719479265874,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3415291596": {
    "hash": 3415291596,
@@ -48115,31 +48052,31 @@
    "inLiveDatabase": true
   },
   "3416609154": {
-   "hash": 3416609154,
    "name": "To the Pain",
+   "hash": 3416609154,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3938834702",
+     "secondary": "import secondary from 3938834702"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719518684063,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3418165135": {
    "name": "Vorpal Weapon",
@@ -49114,14 +49051,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<stasis/>Shattering enemies or <stasis/>Crystals creates an additional damage instance, dealing up to <pve 25 /> <pvp [9] /> damage in a <pve 10 /> <pvp [8] /> meter radius. Falls off to <pve 17 /> <pvp [4] /> Damage at the edge of the radius.\n\nThis translates to <pve 12.5% /> <pvp [4.5%] /> total <stasis/>Shatter Damage Increase.",
+     "main": "<stasis/>Shattering enemies or <stasis/>Crystals creates an additional damage instance, dealing up to <pve 25 /> <pvp [9] /> damage in a <pve 10 /> <pvp [8] /> meter radius.\n\nDamage falls off to <pve 17 /> <pvp [4] /> Damage at the edge of the radius.\n\n// This translates to <pve 12.5% /> <pvp [4.5%] /> total <stasis/>Shatter Damage Increase.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714218708870,
+      "lastUpdate": 1719510972793,
       "updatedBy": "Stardust"
      }
     },
@@ -49131,7 +49068,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -49327,33 +49264,33 @@
    "uploadToLive": false
   },
   "3481195123": {
-   "hash": 3481195123,
    "name": "Double Down",
+   "itemName": "Balance of Power",
+   "hash": 3481195123,
+   "itemHash": 3001449507,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Grants the following to <strand/>Threaded Specters:\n• <pve ?% /> <pvp [10?%] /> Damage Resistance\n• ?% increased duration\n• 2 Perched <strand/>Threadlings\n\nPerched <strand/>Threadlings are released when the <strand/>Specter takes ? damage, with a ? second cooldown between each. Destroying the Specter releases both <strand/>Threadlings.\n\nBeing within 15? meters of your own <strand/>Specter removes you from radar.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719591313880,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 3001449507,
-   "itemName": "Balance of Power"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3489809232": {
    "hash": 3489809232,
@@ -49522,33 +49459,33 @@
    "itemName": "Conditional Finality"
   },
   "3495263107": {
-   "hash": 3495263107,
    "name": "Danger Close",
+   "itemName": "Hazardous Propulsion",
+   "hash": 3495263107,
+   "itemHash": 1909305643,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Scoring a Precision Kill, 4 Weapon Kills, or scoring multiple Precision Hits grants a Stack of 'Exodus Rockets'. Maximum of 6 Stacks.\n\nClass Ability Usage consumes all Stacks, launching a homing rocket in exchange for each one. Rockets deal up to <pve 600 /> <pvp [28] /> Kinetic Damage.\n\nHits with each rocket grant a Stack of 'Enhanced Rockets' for 10 seconds, increasing \"rocket-type\" damage (<link Empowering Buff [#DamageBuffs] />).\n\nDamage increase at 1|2|…|6 Stacks:\n10% | 17% | 24% | 30% | 33% | 35%\n\nRocket-type damage includes: Rocket Launchers, Wolfpack Rounds (both Sword and Rocket versions), Rocket-Assisted Sidearms, Nanotech Tracer Rockets, Grand Overture's Missile Volley, Quicksilver Storm's Tracer Rocket's impact damage\n\n'Exodus Rockets' Stack acquisition progress on Precision Hits by weapon type:\n• Trace Rifles: 10%\n• Auto Rifles and Machine Gun: 15%\n• Pulse Rifles, Sidearms, and Crimson: 20%\n• Hand Cannons, Scout Rifles, and Shotguns: 40%\n• Bows, Linear Fusion Rifles, Rocket Sidearms, and Sniper Rifles: 67%\n\nStack acquisition progress doesn't reset upon gaining a Stack, all progress is kept until reaching 600% (max Stacks).\n",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719517220626,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 1909305643,
-   "itemName": "Hazardous Propulsion"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3504197951": {
    "hash": 3504197951,
@@ -49835,19 +49772,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant #e${10 * #d}% Grenade Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine with a 3 second cooldown.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%. (e.g. 10%🠚11%)\n)",
+     "main": "Weapon Kills grant #e${10 * #d}% Grenade Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20 * #d}%.\n\nUsing your Grenade Ability <title refills [G_refill] /> the Magazine with a 3 second cooldown.\n\nenhanced (\nvar d = 1.1\n#e Grenade Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1700076374923,
+      "lastUpdate": 1719496563669,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670252879197,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -49856,7 +49789,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1700076455476,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50670,31 +50603,31 @@
    "itemName": "Quicksilver Storm"
   },
   "3609952942": {
-   "hash": 3609952942,
    "name": "Iron Gaze",
+   "hash": 3609952942,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 4152709778",
+     "secondary": "import secondary from 4152709778"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719483410707,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3610750208": {
    "hash": 3610750208,
@@ -51118,31 +51051,31 @@
    "itemName": "Outbreak Perfected"
   },
   "3640170453": {
-   "hash": 3640170453,
    "name": "Chaos Reshaped",
+   "hash": 3640170453,
    "type": "Weapon Trait",
-   "lastUpload": 1718280383684,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Being in Combat for #e${12-#d} seconds grants a Stack of 'Chaos Reshaped' for 7 seconds. Maintaining the first Stack for #e${12-#d} seconds grants a second Stack.\n\nExchanging damage refreshes the buff duration.\n\nFor Chaos Reshaped, being in Combat is defined as having either dealt or received damage within the last 5 seconds.\n\nBenefits at Chaos Reshaped x1 and x2:\n• x1: grants 20% increased damage\n• x2: grants 35% increased damage and grants a periodic burst of healing\n\nHealing burst builds up while the weapon is readied at a rate of 5? HP/s. The burst is released either every 7 seconds for a 35 HP heal or upon stowing the weapon, releasing the built-up health.\n\nenhanced (\nvar d = 0.5\n#e Each Stack is gained 0.5 seconds sooner.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719590213711,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3641619157": {
    "hash": 3641619157,
@@ -53922,31 +53855,31 @@
    "uploadToLive": false
   },
   "3865257976": {
-   "hash": 3865257976,
    "name": "Dragonfly",
+   "hash": 3865257976,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2848615171\n\n// Oxygen Sr3 Dragonfly perk",
+     "secondary": "import secondary from 2848615171"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719481084371,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3866705246": {
    "hash": 3866705246,
@@ -54146,14 +54079,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough Hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 25% less damage when activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #r1\n• Auto Rifles: #r2\n• Pulse Rifles: #r3\n• Non-burst Sidearms: #r4\n• Hand Cannons, Scout Rifles: #r5\n• Sniper Rifles: #r6\n\nvar r1 = 14\nvar r2 = 12\nvar r3 = 11\nvar r4 = 8\nvar r5 = 6\nvar r6 = 3\n\nenhanced (\nvar r1 = 14 (enhanced unavailable)\nvar r2 = 12 (enhanced unavailable)\nvar r3 = (11🠚)#e10\nvar r4 = (8🠚)#e7\nvar r5 = (6🠚)#e5\nvar r6 = (3🠚)#e2\n#e Hit Requirements are reduced.\n)",
+     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation.\n\nShockwaves appear 0.285 seconds after scoring enough Hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 25% less damage when activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #r1\n• Auto Rifles: #r2\n• Pulse Rifles: #r3\n• Non-burst Sidearms: #r4\n• Hand Cannons, Scout Rifles: #r5\n• Sniper Rifles: #r6\n\nvar r1 = 14\nvar r2 = 12\nvar r3 = 11\nvar r4 = 8\nvar r5 = 6\nvar r6 = 3\n\nenhanced (\nvar r1 = #e13\nvar r2 = #e11\nvar r3 = #e10\nvar r4 = #e7\nvar r5 = #e5\nvar r6 = #e2\n#e Hit Requirements are reduced by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714291209889,
+      "lastUpdate": 1719504546402,
       "updatedBy": "Stardust"
      }
     },
@@ -54163,7 +54096,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714291559296,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54857,23 +54790,15 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While you have at least 1 <arc/>Arc Ability equipped:\n<arc/>Arc Ability and <arc/>Jolt Kills grant Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% Decreased Passive Super Drain",
+     "main": "While you have at least 1 <arc/>Arc Ability equipped:\n<arc/>Arc Ability and <arc/>Jolt Kills grant Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% Decreased Passive Super Drain (with the exception of <arc/>Chaos Reach)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717539624498,
+      "lastUpdate": 1719512456514,
       "updatedBy": "Stardust"
-     },
-     "ko": {
-      "lastUpdate": 1665694418814,
-      "updatedBy": "tritonesub251"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670529369802,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -54882,7 +54807,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -55024,31 +54949,31 @@
    "uploadToLive": false
   },
   "3938834702": {
-   "hash": 3938834702,
    "name": "To the Pain",
+   "hash": 3938834702,
    "type": "Weapon Trait",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Every ? points of damage taken with the weapon readied grants a Stack of 'To the Pain'. Maximum of 10 Stacks. Stowing the weapon removes all Stacks.\n\nEach Stack grants ? Handling and 2 Aim Assist, maxing out at ? Handling and 20 Aim Assist.\n\nenhanced (\n#e Stat bonuses are increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719590118953,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3967134106": {
    "hash": 3967134106,
@@ -56287,14 +56212,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Orbs of Power grant an additional 2% Super Energy.\nThis is reduced to 0.5% if <solar/>Golden Gun is the selected Super Ability.\n\nPicking up an Orb of Power with a charged Super Ability grants an Overcharge Stack. Maximum of 6 Stacks. \n\nCasting your Super while at 1|2|3|4|5|6 Stacks consumes all stack and grants the following benefits:\n• ?|?|?|?|?|70% Increased Super Damage\n• Restores ?|?|?|?|?|200 HP\n• 100 HP Overshield for 16 seconds if Cast at 6 Stacks",
+     "main": "Orbs of Power grant an additional 2% Super Energy.\nThis is reduced to 0.5% if <solar/>Golden Gun is the selected Super Ability.\n\nPicking up an Orb of Power with a charged Super Ability grants a Stack of 'Feast of Light'. Maximum of 6 Stacks. \n\nCasting your Super while at 1|2|3|4|5|6 Stacks consumes all Stacks and grants the following benefits:\n• 18.2%|36.4%|54.6%|59.7%|64.8%|70% increased Super damage\n• Restores ?|?|?|?|?|200 HP\n• 100 HP Overshield for 16 seconds if cast at 6 Stacks",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717534936128,
+      "lastUpdate": 1719592317727,
       "updatedBy": "Stardust"
      }
     },
@@ -56304,7 +56229,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56367,31 +56292,31 @@
    "inLiveDatabase": false
   },
   "4063561849": {
-   "hash": 4063561849,
    "name": "Physic",
+   "hash": 4063561849,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 2980589453",
+     "secondary": "import secondary from 2980589453"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719489238904,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4067652714": {
    "hash": 4067652714,
@@ -57612,19 +57537,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 20 Aim Assist and #e${-30+#d} Range.\n\nenhanced (\nvar d = 5\n#e Range penalty is decreased by 5.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699106750525,
+      "lastUpdate": 1719483501341,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670270589618,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -57633,7 +57554,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1699112209836,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -58174,14 +58095,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<void/>Sentinel Shield's Forward Movement Speed Penalty while Blocking is reduced by 50% (20%⁠🠚⁠10%).\n\nConverts incoming damage into Super Energy after Super ends, up to 50% Super Energy.\n\nBlocking Damage with an active Overshield does not count towards the Super Energy Refund.\n\n<void/>Unbreakable grants up to ?% Super Energy based on the amount of damage absorbed.",
+     "main": "<void/>Sentinel Shield's Forward Movement Speed Penalty while Blocking is reduced by 50% (20%⁠🠚⁠10%).\n\nConverts incoming damage into Super Energy after Super ends, up to 50% Super Energy.\n\nBlocking Damage with an active Overshield does not count towards the Super Energy Refund.\n\n<void/>Unbreakable grants up to <pve ?% /> <pvp [12.5%] /> Super Energy upon absorbing <pve ? /> <pvp [90] /> points of damage.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717532959879,
+      "lastUpdate": 1719590712618,
       "updatedBy": "Stardust"
      }
     },
@@ -58191,7 +58112,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -59148,33 +59069,33 @@
    "uploadToLive": false
   },
   "4234468055": {
-   "hash": 4234468055,
    "name": "The Gift of Certainty",
+   "itemName": "Gifted Conviction",
+   "hash": 4234468055,
+   "itemHash": 1627691271,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Casting <arc/>Ascension or <arc/>Tempest Strike releases 3 tracking projectiles that each deal up to <pve 200 /> <pvp [?] /> <arc/>Arc damage and apply <arc/>Jolt on Hit.\n\nApplying <arc/>Jolt to enemies within ? meters grants Damage Resist for 10 seconds. Damage Resist scales with the number of <arc/>Jolt applications.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1719591670164,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 1627691271,
-   "itemName": "Gifted Conviction"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1719592659816,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4235122381": {
    "name": "Glorious Charge",
@@ -60218,14 +60139,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "1 second after stowing #element:\n<title Refills [G_refill] /> 10%|10%|15% of the Stowed Weapon's Magazine with 1|2|3 Mods equipped.\n\n2.5|2 second delay between further Refills with 1|2+ Mods equipped.\n\nDoes not work with Breech-Loaded Grenades Launchers and Rocket Launchers.\n\nvar element = <arc/>Arc Weapons",
+     "main": "After stowing #element:\nBegins to <title refill [G_refill] /> 10%|10%|15% of the Stowed Weapon's Magazine from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped.\n\nDoes not work with Breech-Loaded Grenades Launchers and Rocket Launchers.\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1680476330881,
+      "lastUpdate": 1719509934443,
       "updatedBy": "Stardust"
      }
     },
@@ -60235,7 +60156,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1680554889429,
+   "lastUpload": 1719592659816,
    "inLiveDatabase": true,
    "uploadToLive": false
   }
