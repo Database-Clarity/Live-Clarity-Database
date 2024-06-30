@@ -48078,19 +48078,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nCannot load the Magazine beyond its base capacity.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill ratio is increased by an additive 10%.\n)",
+     "main": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60+#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\n\nRequires firing 28.75% of the Magazine Capacity (rounded up) for the refill to activate.\n\nCannot load the Magazine beyond its base capacity.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 10\n#e Refill amount is increased by 16.7% (60%⁠🠚⁠70%).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714568384439,
+      "lastUpdate": 1719745773745,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670336038312,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -48099,7 +48095,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714568937735,
+   "lastUpload": 1719745820839,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
