@@ -3472,14 +3472,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants #e${0.8+#d} Super Energy.\n\nDoes not require Direct Hits. Hit counter persists through stow.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Other: 67% of Magazine Size rounded down + 2\n\nenhanced (\nvar d = 0.3\n#e Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%).\n)",
+     "main": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants #e${0.8+#d}% Super Energy.\n\nDoes not require Direct Hits. Hit counter persists through stow.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Other: 67% of Magazine Size rounded down + 2\n\nenhanced (\nvar d = 0.3\n#e Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1721145305759,
+      "lastUpdate": 1723486685407,
       "updatedBy": "Stardust"
      }
     },
@@ -3489,7 +3489,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1723486934727,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7288,14 +7288,14 @@
    "type": "Subclass Class",
    "editor": {
     "en": {
-     "main": "Only usable while on the ground.\n\nPreforms a quick, first-person, 8 meter dash in your current input direction. Removes tracking from PVE Combatant projectiles (needs confirmation) and disables Aim Assist on you for the duration of the animation.\n\nNot inputting a movement direction results in a 4 meter backwards dash.",
+     "main": "Only usable while on the ground.\n\nPerforms a quick, first-person, 8 meter dash in your current input direction. Removes tracking from PVE Combatant projectiles (needs confirmation) and disables Aim Assist on you for the duration of the animation.\n\nNot inputting a movement direction results in a 4 meter backwards dash.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723400754544,
+      "lastUpdate": 1723486585322,
       "updatedBy": "Stardust"
      }
     },
@@ -7305,7 +7305,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1723486934727,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16393,14 +16393,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Hitting a target with #d Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for 7 seconds.\n\nvar d = all 12\nenhanced (\nvar d = #e10 of the 12\n#e Requires hitting with 2? fewer Shotgun Pellets to activate.\n)",
+     "main": "Hitting a target with #e${11-#d} of the 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for 7 seconds.\n\nenhanced (\nvar d = 1\n#e Requires hitting with 1? fewer Shotgun Pellet to activate.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723139089451,
+      "lastUpdate": 1723486912927,
       "updatedBy": "Stardust"
      }
     },
@@ -16410,7 +16410,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1723486934727,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -51397,7 +51397,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723486497343,
+   "lastUpload": 1723486934727,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
