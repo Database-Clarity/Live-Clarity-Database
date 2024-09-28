@@ -1097,7 +1097,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed."
+       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Super Ability until stowed."
       }
      ]
     },
@@ -1595,7 +1595,7 @@
     {
      "linesContent": [
       {
-       "text": "Dodging while Multi-Dodge is ready allows you to chain dodges infinitely for 6 seconds. Kills extend the buff duration by 5 seconds, up to 11 seconds."
+       "text": "Dodging while Multi-Dodge is ready allows you to chain dodges infinitely for 6 seconds. Additional kills extend the buff duration by 5 seconds, up to the maximum of 11 seconds."
       }
      ]
     },
@@ -2538,7 +2538,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier while at or below 30% Shield Health."
+       "text": "Grants 50 Handling and a 0.95x Ready/Stow Animation Duration Multiplier while at or below 30% Shield Health."
       }
      ]
     },
@@ -2989,28 +2989,27 @@
        "text": "[PVP: ?]"
       },
       {
-       "text": " damage every 0.65 seconds"
+       "text": " "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc damage every 0.65 seconds"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Last for ? seconds or 3? damage ticks"
+       "text": "• Lasts for ? seconds (3? damage ticks)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Their damage matches the weapon's element"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Inherit the weapon's "
+       "text": "• Inherits the weapon's "
       },
       {
        "text": "Combatant Damage Scaling",
@@ -5439,7 +5438,7 @@
     {
      "linesContent": [
       {
-       "text": "4 second cooldown after buff expires. Can be activated while stowed."
+       "text": "4 second cooldown after buff expires. Can be activated while stowed. Stowing the weapon removes the buff."
       }
      ]
     },
@@ -5478,7 +5477,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10 Aim Assist"
+       "text": "• 3% increased Aim Assist Cone size"
       }
      ]
     }
@@ -5828,7 +5827,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -5893,7 +5902,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -5920,7 +5929,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -5942,6 +5951,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -6511,14 +6527,28 @@
     {
      "linesContent": [
       {
-       "text": "• Minors: 34?%"
+       "text": "• Minors: 34%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Elites, Minibosses, Bosses, and Enemy Players: ?%"
+       "text": "• Elites: 67%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses and Bosses: 100%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Players: ?%"
       }
      ]
     }
@@ -6649,7 +6679,7 @@
        "text": "[PVP: 10%]"
       },
       {
-       "text": " Damage Resist."
+       "text": " Damage Resistance (Resist x4)."
       }
      ]
     },
@@ -8202,7 +8232,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 6 Healing Hits on allies within 1? seconds of each grants "
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
       },
       {
        "text": "25% "
@@ -8211,7 +8241,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 12.5?%]"
+       "text": "[PVP: 12.5%]"
       },
       {
        "text": " increased damage for "
@@ -8997,7 +9027,7 @@
        "text": "[PVP: 5%]"
       },
       {
-       "text": " Damage Resistance to you and allies inside Rifts you create. ("
+       "text": " Damage Resistance (Resist x2) to you and allies inside Rifts you create. ("
       },
       {
        "classNames": [ "solar" ]
@@ -9900,7 +9930,13 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
+       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords and to 2% with "
+      },
+      {
+       "text": "Choir of One"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -10706,7 +10742,25 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Super Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords and to 5% with Grand Overture and Xenophage."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Super Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords, to 5% with "
+      },
+      {
+       "text": "Grand Overture"
+      },
+      {
+       "text": " and "
+      },
+      {
+       "text": "Xenophage"
+      },
+      {
+       "text": ", and to 2% with "
+      },
+      {
+       "text": "Choir of One"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -11343,7 +11397,13 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand Knot is launched towards nearby enemies with some tracking."
+       "text": "Strand Knot is launched towards nearby enemies with some tracking. Detonates and "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspends nearby targets on contact."
       }
      ]
     }
@@ -11488,13 +11548,27 @@
     {
      "linesContent": [
       {
-       "text": "Aiming Down Sights while airborne grants 'Tome of Dawn' if you have a "
+       "text": "While a "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar Super Ability equipped."
+       "text": "Solar Super Ability is equipped:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grants 50 Airborne Effectiveness while airborne"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Aiming Down Sights while airborne grants 'Tome of Dawn'"
       }
      ]
     },
@@ -11515,13 +11589,6 @@
      "linesContent": [
       {
        "text": "Tome of Dawn grants the following benefits:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• 50 Airborne Effectiveness"
       }
      ]
     },
@@ -11830,14 +11897,17 @@
     {
      "linesContent": [
       {
-       "text": "• 0.8x Reload Duration Multiplier to Rocket Launchers"
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "• 0.85x Reload Duration Multiplier to all? other weapons"
+       "text": "Rocket Launchers uniquely receive a 0.8x Reload Duration Multiplier instead of the 0.85x of other weapons."
       }
      ]
     }
@@ -12186,7 +12256,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier while at or below 30% Shield Health."
+       "text": "Grants 50 Handling and a 0.95x Ready/Stow Animation Duration Multiplier while at or below 30% Shield Health."
       }
      ]
     },
@@ -13513,7 +13583,14 @@
     {
      "linesContent": [
       {
-       "text": "Kills with the weapon increase reload speed and grant strong projectile tracking for ? seconds. Stacks 4 times."
+       "text": "Kills with the weapon grant a Stack of Beacon Rounds for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "7 seconds. Maximum of 4 Stacks."
       }
      ]
     },
@@ -13523,7 +13600,48 @@
     {
      "linesContent": [
       {
-       "text": "Dealing damage extends the buff duration. Buff can be activated while stowed."
+       "text": "Scoring futher Hits with the weapon can extend the buff duration up to the maximum of 4 seconds. Buff can be activated while stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack grants increased projectile tracking. Projectile Tracking is only in effect while the Targeted Reticle is active."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following while you have active Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 45% Increased Auto Aim Cone size"
       }
      ]
     },
@@ -13537,7 +13655,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff duration is increased."
+       "text": " Buff duration is increased by 1? second."
       }
      ]
     }
@@ -15787,7 +15905,25 @@
     {
      "linesContent": [
       {
-       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Super Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords and to 5% with Grand Overture and Xenophage."
+       "text": "Ammo Brick Pickups grants an additional 1% of your Total Reserves to Weapons matching your Super Element and the Ammo Type. This is increased to 10% with Trace Rifles and Swords, to 5% with "
+      },
+      {
+       "text": "Grand Overture"
+      },
+      {
+       "text": " and "
+      },
+      {
+       "text": "Xenophage"
+      },
+      {
+       "text": ", and to 2% with "
+      },
+      {
+       "text": "Choir of One"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -16362,7 +16498,7 @@
     {
      "linesContent": [
       {
-       "text": "• ?% Decreased Accuracy Cone Size"
+       "text": "• ?% decreased Accuracy Cone Size"
       }
      ]
     },
@@ -16827,14 +16963,14 @@
     {
      "linesContent": [
       {
-       "text": "• 15?% Decreased Accuracy Cone Size"
+       "text": "• 15?% decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 20?% Decreased Auto Aim Cone Size"
+       "text": "• 20?% decreased Auto Aim Cone Size"
       }
      ]
     }
@@ -17020,7 +17156,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Blast Radius by 30, Reload Speed by 20, and damage by 25% (also applies to Wolfpack Rounds)."
+       "text": "Decreases Blast Radius by 30, Reload Speed by 20, and damage by 25% (also applies to Wolfpack Rounds and Cluster Bombs)."
       }
      ]
     }
@@ -19072,7 +19208,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage while within 15 metres of an enemy grants Super Ability Energy."
+       "text": "Class Ability Usage while within 15 meters of an enemy grants Super Ability Energy."
       }
      ]
     },
@@ -19396,7 +19532,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorhing capability."
+       "text": "Scorching capability."
       }
      ]
     },
@@ -19988,7 +20124,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 50 handling and a 0.95x Ready/Stow Animation Duration multiplier while at or below "
+       "text": "Grants 50 Handling and a 0.95x Ready/Stow Animation Duration Multiplier while at or below "
       },
       {
        "text": "",
@@ -23899,7 +24035,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -23926,7 +24062,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -23948,6 +24084,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -23992,7 +24135,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -26210,7 +26363,7 @@
        "text": "Weaken on hit for "
       },
       {
-       "text": "5"
+       "text": "6"
       },
       {
        "text": " "
@@ -26421,7 +26574,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "15, and damage by 25% (also applies to Wolfpack Rounds)."
+       "text": "15, and damage by 25% (also applies to Wolfpack Rounds and Cluster Bombs)."
       }
      ]
     },
@@ -26520,7 +26673,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 6 Healing Hits on allies within 1? seconds of each grants "
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
       },
       {
        "text": "25% "
@@ -26529,7 +26682,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 12.5?%]"
+       "text": "[PVP: 12.5%]"
       },
       {
        "text": " increased damage for 10 seconds."
@@ -27189,6 +27342,16 @@
        "text": "Slow Stacks to your enemy for ? seconds."
       }
      ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Glaive Melees do not benefit from this."
+      }
+     ]
     }
    ]
   }
@@ -27644,7 +27807,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage while within 15 metres of an enemy grants Super Ability Energy."
+       "text": "Class Ability Usage while within 15 meters of an enemy grants Super Ability Energy."
       }
      ]
     },
@@ -27852,7 +28015,7 @@
     {
      "linesContent": [
       {
-       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the Weapon's Element to match your Super Ability until stowed."
+       "text": "Class Ability Usage refills ?% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Super Ability until stowed."
       }
      ]
     },
@@ -27962,7 +28125,7 @@
     {
      "linesContent": [
       {
-       "text": "• 1.5° Larger Precision Aim Cone"
+       "text": "• 1.5° larger Precision Aim Cone"
       }
      ]
     },
@@ -28707,7 +28870,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -28772,7 +28945,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -28799,7 +28972,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -28821,6 +28994,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -28952,7 +29132,7 @@
     {
      "linesContent": [
       {
-       "text": "Firing or swinging the weapon grants a Stack of Nadir Focus for 2 seconds. Maximum of 5 Stacks."
+       "text": "Firing or swinging the weapon grants a Stack of Nadir Focus for 2 seconds. Stowing the weapon removes the buff."
       }
      ]
     },
@@ -28962,35 +29142,35 @@
     {
      "linesContent": [
       {
-       "text": "Benefits at 1|2|3|4|5 Stacks:"
+       "text": "Maximum number of Stacks by Weapon Type:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 2 | 4 | 6 | 8 | 10 Range"
+       "text": "• Auto Rifles, Submachine Guns?: 11 Stacks"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 1.5% | 3% | 4.5% | 6% | 7.5% decreased Accuracy Cone Size"
+       "text": "• Sidearms, Swords: 5 Stacks"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?|?|?|?|50?% increased Lunge Distance (Swords)"
+       "text": "• Hand Cannons, Scout Rifles: 4 Stacks"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?% increased Grenade/Rocket Launcher Projectile Velocity"
+       "text": "• Grenade Launchers: ? Stacks"
       }
      ]
     },
@@ -29000,7 +29180,45 @@
     {
      "linesContent": [
       {
-       "text": "Stowing the weapon removes the buff."
+       "text": "Benefits scale linearly with each Stack, equalizing between Weapon Types at max Stacks. (E.g.: you would gain 1/4 of the maximum benefit per Stack with Hand Cannons)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Benefits at max Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 10 Range"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 7.5%? decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 50%? increased Lunge Distance (Swords)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% increased Projectile Velocity (Grenade Launchers)"
       }
      ]
     }
@@ -29147,7 +29365,7 @@
     {
      "linesContent": [
       {
-       "text": "4 second cooldown after buff expires. Can be activated while stowed."
+       "text": "4 second cooldown after buff expires. Can be activated while stowed. Stowing the weapon removes the buff."
       }
      ]
     },
@@ -29404,6 +29622,22 @@
     {
      "linesContent": [
       {
+       "text": "Does not trigger with "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards generated from Facet of Awakening or Facet of Command."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
@@ -29623,7 +29857,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10 Aim Assist"
+       "text": "• 3% increased Aim Assist Cone size"
       }
      ]
     }
@@ -31558,7 +31792,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -31623,7 +31867,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -31650,7 +31894,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -31672,6 +31916,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -32602,7 +32853,13 @@
        "text": "[PVP: 50%]"
       },
       {
-       "text": " increased damage and each Damage Tick grants 5% Melee Ability Energy."
+       "text": " increased damage and each Damage Tick grants 5% Melee Ability Energy. (Damage increase does not apply to caused "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ignitions)"
       }
      ]
     }
@@ -32890,7 +33147,13 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords."
+       "text": "Void Weapons matching the Ammo Type. This is increased to 10% with Trace Rifles and Swords and to 2% with "
+      },
+      {
+       "text": "Choir of One"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -33384,7 +33647,7 @@
     {
      "linesContent": [
       {
-       "text": "Kills with the weapon increase reload speed and grant strong projectile tracking for ? seconds. Stacks 4 times."
+       "text": "Kills with the weapon grant a Stack of Beacon Rounds for 6 seconds. Maximum of 4 Stacks."
       }
      ]
     },
@@ -33394,7 +33657,48 @@
     {
      "linesContent": [
       {
-       "text": "Dealing damage extends the buff duration. Buff can be activated while stowed."
+       "text": "Scoring futher Hits with the weapon can extend the buff duration up to the maximum of 4 seconds. Buff can be activated while stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each Stack grants increased projectile tracking. Projectile Tracking is only in effect while the Targeted Reticle is active."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants the following while you have active Stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 15 Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 45% Increased Auto Aim Cone size"
       }
      ]
     }
@@ -33522,7 +33826,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -33549,7 +33853,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -33571,6 +33875,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -33615,7 +33926,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -34539,7 +34860,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Sol Invictus buff your receive from "
+       "text": "Sol Invictus buff you receive from "
       },
       {
        "classNames": [ "solar" ]
@@ -35000,7 +35321,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants "
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
       },
       {
        "classNames": [ "solar" ]
@@ -35834,7 +36155,7 @@
     {
      "linesContent": [
       {
-       "text": "• ?% Decreased Accuracy Cone Size"
+       "text": "• ?% decreased Accuracy Cone Size"
       }
      ]
     },
@@ -37383,7 +37704,7 @@
     {
      "linesContent": [
       {
-       "text": "• 33% increases Slide Distance"
+       "text": "• 33% increased Slide Distance"
       }
      ]
     },
@@ -37575,7 +37896,17 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 20% Splash Damage Resistance against PVE Combatants while standing behind the barricade."
       }
      ]
     },
@@ -37640,7 +37971,7 @@
     {
      "linesContent": [
       {
-       "text": "Lasts 20 seconds, has 500 HP, and has ?% Damage Resistance against PVE Combatants."
+       "text": "Lasts 20 seconds, has 500 HP, and has 80% Damage Resistance against PVE Combatants."
       }
      ]
     },
@@ -37667,7 +37998,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10% Increased Damage Falloff Distance"
+       "text": "• 10% increased Damage Falloff Distance"
       }
      ]
     },
@@ -37689,6 +38020,13 @@
      "linesContent": [
       {
        "text": "• 100 Reload Speed with a 0.9x Reload Duration Multiplier"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 20% Splash Damage Resistance against PVE Combatants"
       }
      ]
     }
@@ -38044,14 +38382,14 @@
     {
      "linesContent": [
       {
-       "text": "• 15?% Decreased Accuracy Cone Size"
+       "text": "• 15?% decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 20?% Decreased Auto Aim Cone Size"
+       "text": "• 20?% decreased Auto Aim Cone Size"
       }
      ]
     },
@@ -38511,6 +38849,22 @@
       },
       {
        "text": "Void Breaches"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not trigger with "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards generated from Facet of Awakening or Facet of Command."
       }
      ]
     }
@@ -40295,23 +40649,23 @@
        "text": "• "
       },
       {
-       "text": "?%"
+       "text": "50%"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 10?%]"
+       "text": "[PVP: 25%]"
       },
       {
-       "text": " Damage Resistance"
+       "text": " Damage Resistance (bypassed by damage from you)"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?% increased duration"
+       "text": "• 34% increased duration"
       }
      ]
     },
@@ -40346,7 +40700,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Specter takes ? damage, with a ? second cooldown between each. Destroying the Specter releases both "
+       "text": "Specter takes 40 damage. Destroying the Specter releases both "
       },
       {
        "classNames": [ "strand" ]
@@ -40362,13 +40716,13 @@
     {
      "linesContent": [
       {
-       "text": "Being within 15? meters of your own "
+       "text": "Being within 15 meters of your own "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Specter removes you from radar."
+       "text": "Specter grants the 'Hidden' buff which removes you from enemy radar."
       }
      ]
     }
@@ -40603,14 +40957,20 @@
     {
      "linesContent": [
       {
-       "text": "• Auto Rifles and Machine Gun: 15%"
+       "text": "• Auto Rifles and Machine Guns: 15%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifles, Sidearms, and Crimson: 20%"
+       "text": "• Pulse Rifles, Sidearms, and "
+      },
+      {
+       "text": "Crimson"
+      },
+      {
+       "text": ": 20%"
       }
      ]
     },
@@ -43562,7 +43922,7 @@
        "text": "Volatile Rounds for "
       },
       {
-       "text": "10"
+       "text": "9"
       },
       {
        "text": " "
@@ -44242,14 +44602,17 @@
     {
      "linesContent": [
       {
-       "text": "• 0.8x Reload Duration Multiplier to Rocket Launchers"
+       "text": "• 0.85x Reload Duration Multiplier"
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "• 0.85x Reload Duration Multiplier to all? other weapons"
+       "text": "Rocket Launchers uniquely receive a 0.8x Reload Duration Multiplier instead of the 0.85x of other weapons."
       }
      ]
     },
@@ -46049,7 +46412,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10 Aim Assist"
+       "text": "• 3% increased Aim Assist Cone size"
       }
      ]
     },
@@ -46199,7 +46562,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 6 Healing Hits on allies within ? seconds of each grants "
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
       },
       {
        "classNames": [ "solar" ]
@@ -47125,7 +47488,7 @@
     {
      "linesContent": [
       {
-       "text": "On Super Ability Activation:"
+       "text": "On Super Ability activation:"
       }
      ]
     },
@@ -47145,7 +47508,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Cure x3 to Allies within ? meters"
+       "text": "Cure x3 to allies within ? meters"
       }
      ]
     },
@@ -48292,7 +48655,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Jolt applications (displayed as 'Resist x2|3|4' buff):"
+       "text": "Jolt applications (Resist x2|x3|x4):"
       }
      ]
     },
@@ -48311,13 +48674,13 @@
        "text": " | "
       },
       {
-       "text": "?%"
+       "text": "40%"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: ?%]"
+       "text": "[PVP: 7.5%]"
       },
       {
        "text": " | "
@@ -48329,7 +48692,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: ?%]"
+       "text": "[PVP: 10%]"
       }
      ]
     },
