@@ -249,7 +249,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Stability and -30 Reload Speed."
+       "text": "Passively increases Stability by 20 but decreases Reload Speed by 20."
       }
      ]
     }
@@ -1019,6 +1019,62 @@
    ]
   }
  },
+ "52638289": {
+  "hash": 52638289,
+  "name": "CQC Optics: High",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 1 Zoom."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increasing Zoom has the following effects in ADS:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased Magnification"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased Aim Assist Falloff Distance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased "
+      },
+      {
+       "text": "Absolute Recoil"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Narrowed Accuracy and Aim Assist Cones (size stays the same on-screen)"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "56663992": {
   "hash": 56663992,
   "name": "Solar Scavenger",
@@ -1136,7 +1192,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 50% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by damage Falloff."
+       "text": "Splits off 50% of the weapon's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE and isn't affected by damage Falloff."
       }
      ]
     },
@@ -1146,7 +1202,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
+       "text": "[PvE] Total damage is increased by 15% of the weapon's bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
       }
      ]
     },
@@ -1156,7 +1212,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
       }
      ]
     },
@@ -1651,6 +1707,21 @@
    ]
   }
  },
+ "117884138": {
+  "hash": 117884138,
+  "name": "Adept Accuracy",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Accuracy."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "120721526": {
   "hash": 120721526,
   "name": "Runneth Over",
@@ -1727,6 +1798,23 @@
       },
       {
        "text": "Crystals within ? seconds prevents the perk from activating for 5 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "127335543": {
+  "hash": 127335543,
+  "name": "Dynamic Charge",
+  "itemHash": 4017959782,
+  "itemName": "Symmetry",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Precision hits build up Dynamic Charge. Swapping to Arc Seeker mode increases damage and partially reloads the magazine based on the number of charges."
       }
      ]
     }
@@ -2598,6 +2686,21 @@
    ]
   }
  },
+ "229003538": {
+  "hash": 229003538,
+  "name": "Adept Blast Radius",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Blast Radius."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "235075862": {
   "hash": 235075862,
   "name": "Peregrine Strike",
@@ -3238,6 +3341,21 @@
      "linesContent": [
       {
        "text": "Stacks multiplicatively with other Flinch Resistance sources."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "299264772": {
+  "hash": 299264772,
+  "name": "Adept Range",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Range."
       }
      ]
     }
@@ -6161,7 +6279,13 @@
     {
      "linesContent": [
       {
-       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)"
+       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces "
+      },
+      {
+       "text": "(Absolute) Recoil"
+      },
+      {
+       "text": " by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)"
       }
      ]
     },
@@ -6239,14 +6363,17 @@
     {
      "linesContent": [
       {
-       "text": "After sprinting for 1.5 seconds:"
+       "text": "Sprinting for 1.5 seconds while holding the weapon grants 35 ADS and Ready Handling."
       }
      ]
     },
     {
+     "classNames": [ "spacer" ]
+    },
+    {
      "linesContent": [
       {
-       "text": "Grants 35 ADS and Ready Handling while sprinting."
+       "text": "Buff is removed when you stop sprinting."
       }
      ]
     }
@@ -6941,13 +7068,7 @@
     {
      "linesContent": [
       {
-       "text": "Applying an Elemental Debuff (with the exception of "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Weaken) grants the following benefits for "
+       "text": "Applying an Elemental Debuff grants the following benefits for "
       },
       {
        "text": "",
@@ -7291,6 +7412,21 @@
    ]
   }
  },
+ "574010092": {
+  "hash": 574010092,
+  "name": "Edge",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 6 Charge Rate and 6 Guard Resistance."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "579997810": {
   "hash": 579997810,
   "name": "Kinetic Scavenger",
@@ -7371,7 +7507,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Range and -30 Stability."
+       "text": "Passively increases Range by 20 but decreases Stability by 20."
       }
      ]
     }
@@ -7999,6 +8135,21 @@
      "linesContent": [
       {
        "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "634781242": {
+  "hash": 634781242,
+  "name": "Adept Reload",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Reload Speed."
       }
      ]
     }
@@ -8963,6 +9114,159 @@
    ]
   }
  },
+ "717070634": {
+  "hash": 717070634,
+  "name": "Jolting Feedback",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Direct Hits with the Weapon within ? seconds of each applies "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt to the target."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified decreases the number of Hits required."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hits needed to activate normally | while "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "15 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "12"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Pulse Rifles: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "14 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "11"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Submachine Guns (theoretical): "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "18? | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "14?"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grenade Launchers: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "3"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Number of Hits required while not "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified is decreased by 1?."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "721001747": {
   "hash": 721001747,
   "name": "Stasis Targeting",
@@ -9090,7 +9394,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Hipfire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier."
+       "text": "Passively decreases Hip-Fire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier."
       }
      ]
     }
@@ -9145,7 +9449,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Charge Time by 40ms without affecting damage."
+       "text": "Passively decreases Charge Time by 40ms without affecting damage."
       }
      ]
     }
@@ -10504,14 +10808,14 @@
     {
      "linesContent": [
       {
-       "text": "• Minor Combatants: 33.3%"
+       "text": "• Minor Combatants: 34%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Players: 66.6%"
+       "text": "• Players: 67%"
       }
      ]
     },
@@ -10820,7 +11124,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills grant 10?% Class Ability Energy."
+       "text": "Weapon Kills grant 10% Class Ability Energy."
       }
      ]
     },
@@ -10830,7 +11134,7 @@
     {
      "linesContent": [
       {
-       "text": "Kills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant 20?%."
+       "text": "Kills with Fusion Rifles, Glaives, Shotguns, and Sniper Rifles grant 20%."
       }
      ]
     },
@@ -11868,6 +12172,21 @@
    ]
   }
  },
+ "941997506": {
+  "hash": 941997506,
+  "name": "Icarus Grip",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 15 Airborne Effectiveness."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "951095735": {
   "hash": 951095735,
   "name": "Impulse Amplifier",
@@ -12619,6 +12938,16 @@
      "linesContent": [
       {
        "text": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Abilities with multiple charges do not receive any energy if they already have a full charge."
       }
      ]
     }
@@ -13431,13 +13760,7 @@
     {
      "linesContent": [
       {
-       "text": "Applying an Elemental Debuff (with the exception of "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Weaken) grants the following benefits for 4.5 seconds:"
+       "text": "Applying an Elemental Debuff grants the following benefits for 4.5 seconds:"
       }
      ]
     },
@@ -13569,6 +13892,37 @@
      "linesContent": [
       {
        "text": "Armor Charge now decays over time at the rate of 1 every 10 seconds by default."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1134488199": {
+  "hash": 1134488199,
+  "name": "Withering Gaze",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Aiming Down Sights for 1.5 seconds without firing causes your next shot to apply "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Weaken."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Timer starts as soon as ADS input is pressed."
       }
      ]
     }
@@ -15180,6 +15534,35 @@
    ]
   }
  },
+ "1194056669": {
+  "hash": 1194056669,
+  "name": "Closing Time",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 6?% to 12?% decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? to ? Range and Handling"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1195158366": {
   "hash": 1195158366,
   "name": "Encore",
@@ -15206,6 +15589,27 @@
      "linesContent": [
       {
        "text": "Each stack grants 5 Range, 8 Stability, and -1.25% Accuracy Cone Size."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1197814525": {
+  "hash": 1197814525,
+  "name": "Heavy Ammo Finder Enhancement",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills provide 10% more activation progress to "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Heavy Ammo Finder mods."
       }
      ]
     }
@@ -15325,7 +15729,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag)."
+       "text": "Passively grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag)."
       }
      ]
     },
@@ -15731,34 +16135,13 @@
     {
      "linesContent": [
       {
-       "text": "Upon stunning a Champion:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
+       "text": "Stunning a Champion "
       },
       {
-       "text": "Refills"
+       "text": "refills"
       },
       {
-       "text": " 25% of the Magazine from reserves (rounded up)"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Restores 60 HP"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Grants 40 Recovery for 3 seconds"
+       "text": " the magazine from reserves, restores 60 HP, and grants 40 Recovery for 3 seconds."
       }
      ]
     }
@@ -16148,7 +16531,7 @@
     {
      "linesContent": [
       {
-       "text": "Decreases Ready/Stow Animation Duration by 10%."
+       "text": "Passively decreases Ready/Stow Animation Duration by 10%."
       }
      ]
     }
@@ -17076,7 +17459,17 @@
     {
      "linesContent": [
       {
-       "text": "Grants a 0.85x Reload Duration Multiplier to reloads started with an empty magazine."
+       "text": "Linearly grants a Reload Duration Multiplier as your magazine drops from 50% capacity to empty."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Reload Duration Multiplier scales from 0.9x at 50% capacity to 0.8x with an empty magazine."
       }
      ]
     }
@@ -17938,6 +18331,21 @@
    ]
   }
  },
+ "1525622117": {
+  "hash": 1525622117,
+  "name": "Adept Counterbalance",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 35 Recoil Direction."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1528281896": {
   "hash": 1528281896,
   "name": "Outlaw",
@@ -18405,7 +18813,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifles: "
+       "text": "• Bows, Sniper Rifles: "
       },
       {
        "text": "",
@@ -18441,7 +18849,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 50% of the Bow's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE."
+       "text": "Splits off 50% of the Bow's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE."
       }
      ]
     },
@@ -18461,7 +18869,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by ~15% of the weapon's Bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
+       "text": "[PvE] Total damage is increased by ~15% of the weapon's bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
       }
      ]
     },
@@ -18471,7 +18879,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
       }
      ]
     },
@@ -18711,7 +19119,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 55% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by Damage Falloff."
+       "text": "Splits off 55% of the Weapon's Bodyshot damage into a Delayed Explosive Payload that deals 30% increased damage in PvE and isn't affected by Damage Falloff."
       }
      ]
     },
@@ -18741,7 +19149,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
       }
      ]
     },
@@ -18975,6 +19383,21 @@
      "linesContent": [
       {
        "text": "Buff duration cannot be refreshed."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1588595445": {
+  "hash": 1588595445,
+  "name": "Counterbalance Stock",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 15 Recoil Direction."
       }
      ]
     }
@@ -19729,6 +20152,23 @@
    ]
   }
  },
+ "1658733671": {
+  "hash": 1658733671,
+  "name": "The Roadborn",
+  "itemHash": 3413860062,
+  "itemName": "The Chaperone",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Precision kills briefly grant bonus handling, range, and precision damage with this weapon."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1658784563": {
   "hash": 1658784563,
   "name": "Genesis",
@@ -20426,6 +20866,21 @@
      "linesContent": [
       {
        "text": "10|5|1|1? second cooldown between activations."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1710791394": {
+  "hash": 1710791394,
+  "name": "Adept Targeting",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 7 Aim Assist."
       }
      ]
     }
@@ -22179,6 +22634,62 @@
    ]
   }
  },
+ "1847129788": {
+  "hash": 1847129788,
+  "name": "Marksman Optics: High",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 2 Zoom."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Increasing Zoom has the following effects in ADS:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased Magnification"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased Aim Assist Falloff Distance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased "
+      },
+      {
+       "text": "Absolute Recoil"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Narrowed Accuracy and Aim Assist Cones (size stays the same on-screen)"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1848187513": {
   "hash": 1848187513,
   "name": "Invigoration",
@@ -22366,6 +22877,36 @@
      "linesContent": [
       {
        "text": "• 5|10|15|?|? Charge Time Stat (10 Charge Time Stat is the benefit of a Charge Time Masterwork)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1882549863": {
+  "hash": 1882549863,
+  "name": "Tension",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 6 Draw Time Stat and 6 Accuracy."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1885045197": {
+  "hash": 1885045197,
+  "name": "Adept Draw Time",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively decreases Draw Time by 40."
       }
      ]
     }
@@ -23071,7 +23612,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 55% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by Damage Falloff."
+       "text": "Splits off 55% of the Weapon's Bodyshot damage into a Delayed Explosive Payload that deals 30% increased damage in PvE and isn't affected by Damage Falloff."
       }
      ]
     },
@@ -23101,7 +23642,40 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1955165503": {
+  "hash": 1955165503,
+  "name": "Rimestealer",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Shattering a "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Crystal or "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frozen Enemy with the weapon grants a Stack of "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frost Armor."
       }
      ]
     }
@@ -23552,6 +24126,23 @@
    ]
   }
  },
+ "2003108620": {
+  "hash": 2003108620,
+  "name": "Thin the Herd",
+  "itemHash": 3549153978,
+  "itemName": "Fighting Lion",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Direct hits do more damage to combatant shields. Dealing damage increases reload speed. Rapid final blows against grenade-damaged combatants refill the magazine."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2010801679": {
   "hash": 2010801679,
   "name": "Ambitious Assassin",
@@ -23837,7 +24428,7 @@
        "text": "refills"
       },
       {
-       "text": " 15% of the Magazine and grants 15? Stability and 30 Handling for 3 seconds."
+       "text": " 15% of the magazine from reserves and grants 15? Stability and 30 Handling for 3 seconds."
       }
      ]
     },
@@ -23847,7 +24438,94 @@
     {
      "linesContent": [
       {
-       "text": "Cannot be triggered again while the buff is active. Buff is removed on stow."
+       "text": "0.5 second cooldown between activations. Buff is removed on stow."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2041432007": {
+  "hash": 2041432007,
+  "name": "Dark Ether Reaper",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Kills with the weapon spawns a Dark Ether Charge at the target's location. ? second cooldown between Charge spawns."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Charge spawning progress on Kill by "
+      },
+      {
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Minors: 25% | Elites: ?% | Minibosses and higher: 100% | Players: ?%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Dark Ether Charges last 5? seconds and can be detonated by shooting or coming into contact with them."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Detonations deal "
+      },
+      {
+       "text": "ALot™"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " elemental damage in a ? meter radius and match the weapon's element. Damage is always attributed to the Charge's creator regardless of who destroys them."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Detonating Charges "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " and overfills the magazines of all equipped Dark Eather Reaper weapons from reserves up to 140% capacity (rounded up)."
       }
      ]
     }
@@ -23941,6 +24619,45 @@
      "linesContent": [
       {
        "text": "Stow Animation Duration cannot be reduced below what it would be at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2073244114": {
+  "hash": 2073244114,
+  "name": "Lone Wolf",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants ? Aim Assist, 10 Airborne Effectiveness, and a ?x ADS Duration Multiplier."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Bonuses are doubled? while no allies are within 15 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Stronger effect."
       }
      ]
     }
@@ -25920,6 +26637,21 @@
    ]
   }
  },
+ "2254149382": {
+  "hash": 2254149382,
+  "name": "Aerodynamics",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 6 Blast Radius and Velocity."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2257238439": {
   "hash": 2257238439,
   "name": "Strand Scavenger",
@@ -26692,6 +27424,21 @@
    ]
   }
  },
+ "2299766748": {
+  "hash": 2299766748,
+  "name": "Adept Projectile Speed",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Velocity."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2303417969": {
   "hash": 2303417969,
   "name": "Strand Reserves",
@@ -27349,7 +28096,7 @@
     {
      "linesContent": [
       {
-       "text": "Glaive Melees do not benefit from this."
+       "text": "Glaive Melees also benefit from this."
       }
      ]
     }
@@ -27533,7 +28280,7 @@
        "text": "refills"
       },
       {
-       "text": " 15% of the Magazine and grants "
+       "text": " 15% of the magazine from reserves and grants "
       },
       {
        "text": "",
@@ -27557,7 +28304,7 @@
     {
      "linesContent": [
       {
-       "text": "Cannot be triggered again while the buff is active. Buff is removed on stow."
+       "text": "0.5 second cooldown between activations. Buff is removed on stow."
       }
      ]
     },
@@ -27681,6 +28428,21 @@
      "linesContent": [
       {
        "text": "When fully drawn, the bolt creates a large concussive blast that knocks combatants back."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2400144052": {
+  "hash": 2400144052,
+  "name": "Tactical",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 6 Handling and 6 Reload Speed."
       }
      ]
     }
@@ -27941,6 +28703,27 @@
      "linesContent": [
       {
        "text": "Buff is removed on stow."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2420924065": {
+  "hash": 2420924065,
+  "name": "Special Ammo Finder Enhancement",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills provide 10% more activation progress to "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special Ammo Finder mods."
       }
      ]
     }
@@ -29922,6 +30705,31 @@
    ]
   }
  },
+ "2579169598": {
+  "hash": 2579169598,
+  "name": "Lone Wolf",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants ? Aim Assist, 10 Airborne Effectiveness, and a ?x ADS Duration Multiplier."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Bonuses are doubled? while no allies are within 15 meters."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2586562813": {
   "hash": 2586562813,
   "name": "Kinetic Loader",
@@ -30181,6 +30989,66 @@
    ]
   }
  },
+ "2617553311": {
+  "hash": 2617553311,
+  "name": "Rimestealer",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Shattering a "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Crystal or "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frozen Enemy with the weapon grants "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "2 Stacks of "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frost Armor."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Grants an additional stack of "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Frost Armor."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2618534366": {
   "hash": 2618534366,
   "name": "Absorption Cells",
@@ -30339,6 +31207,62 @@
      "linesContent": [
       {
        "text": "Acts as a copy of the Heavy Handed armor mod."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2649250174": {
+  "hash": 2649250174,
+  "name": "Marksman Optics: Low",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively decreases Zoom by 2."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Decreasing Zoom has the following effects in ADS:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased Magnification"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased Aim Assist Falloff Distance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased "
+      },
+      {
+       "text": "Absolute Recoil"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Widened Accuracy and Aim Assist Cones (size stays the same on-screen)"
       }
      ]
     }
@@ -33273,6 +34197,41 @@
    ]
   }
  },
+ "2817499044": {
+  "hash": 2817499044,
+  "name": "Envious Arsenal",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing any damage with both of your other weapons "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " the magazine from reserves upon readying the weapon."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Passively grants 20 Inventory Size stat (equivalent of a Reserves armor mod)."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2818140350": {
   "hash": 2818140350,
   "name": "Dynamic Duo",
@@ -33517,7 +34476,13 @@
     {
      "linesContent": [
       {
-       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)"
+       "text": "The Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces "
+      },
+      {
+       "text": "(Absolute) Recoil"
+      },
+      {
+       "text": " by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)"
       }
      ]
     }
@@ -34477,6 +35442,58 @@
    ]
   }
  },
+ "2904194311": {
+  "hash": 2904194311,
+  "name": "Withering Gaze",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Aiming Down Sights for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "1.4 seconds without firing causes your next shot to apply "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Weaken."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Timer starts as soon as ADS input is pressed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Activation time is decreased by 0.1? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2921714558": {
   "hash": 2921714558,
   "name": "Stasis Weapon Surge",
@@ -34969,7 +35986,55 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill with any Weapon grants 15% increased damage for 7 seconds."
+       "text": "Scoring a Kill with any weapon grants Master of Arms x1, granting 15% increased damage for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Kill with any weapon with Master of Arms active grants Master of Arms x2, granting 25% increased damage for "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Master of Arms x2 expiring reverts the buff back to Master of Arms x1."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Buff duration is increased by 1 second."
       }
      ]
     }
@@ -35812,6 +36877,27 @@
    ]
   }
  },
+ "3024601835": {
+  "hash": 3024601835,
+  "name": "Stunloader",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Stunning a Champion "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " ?% of the Magazine from reserves."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3032599245": {
   "hash": 3032599245,
   "name": "Disorienting Grenades",
@@ -35878,7 +36964,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 50% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by damage Falloff."
+       "text": "Splits off 50% of the weapon's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE and isn't affected by damage Falloff."
       }
      ]
     },
@@ -35888,7 +36974,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by 15% of the weapon's Bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
+       "text": "[PvE] Total damage is increased by 15% of the weapon's bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier."
       }
      ]
     },
@@ -35898,7 +36984,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
       }
      ]
     }
@@ -36324,7 +37410,27 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Kill with any Weapon grants 15% increased damage for 7 seconds."
+       "text": "Scoring a Kill with any weapon grants Master of Arms x1, granting 15% increased damage for 7 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Kill with any weapon with Master of Arms active grants Master of Arms x2, granting 25% increased damage for 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Master of Arms x2 expiring reverts the buff back to Master of Arms x1."
       }
      ]
     }
@@ -36469,14 +37575,14 @@
     {
      "linesContent": [
       {
-       "text": "• Minor Combatants: 33.3%"
+       "text": "• Minor Combatants: 34%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Players: 66.6%"
+       "text": "• Players: 67%"
       }
      ]
     },
@@ -36634,7 +37740,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "11?% Class Ability Energy."
+       "text": "11% Class Ability Energy."
       }
      ]
     },
@@ -36644,14 +37750,14 @@
     {
      "linesContent": [
       {
-       "text": "Kills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant "
+       "text": "Kills with Fusion Rifles, Glaives, Shotguns, and Sniper Rifles grant "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "22?%."
+       "text": "22%."
       }
      ]
     },
@@ -36859,6 +37965,21 @@
      "linesContent": [
       {
        "text": "1.5? second cooldown between Orb spawns."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3159358855": {
+  "hash": 3159358855,
+  "name": "Anti-Flinch",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 15% Flinch Resistance."
       }
      ]
     }
@@ -37508,6 +38629,21 @@
    ]
   }
  },
+ "3208647503": {
+  "hash": 3208647503,
+  "name": "Adept Impact",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 5 Impact."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3215448563": {
   "hash": 3215448563,
   "name": "Paracausal Affinity",
@@ -37609,6 +38745,21 @@
      "linesContent": [
       {
        "text": "• 0.85x Reload Duration Multiplier"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3228611386": {
+  "hash": 3228611386,
+  "name": "Targeting Adjuster",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 5 Aim Assist."
       }
      ]
     }
@@ -38344,7 +39495,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "0 Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)"
+       "text": "40 Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)"
       }
      ]
     },
@@ -38403,7 +39554,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Inventory Size benefit is nullified (bugged) and Reload Speed bonus is increased by 5?."
+       "text": " Inventory Size bonus is increased by 10 and Reload Speed bonus is increased by 5?."
       }
      ]
     }
@@ -38639,7 +39790,7 @@
        "text": "Refills"
       },
       {
-       "text": " stowed weapon from reserves after 2.5 seconds of stowing it."
+       "text": " stowed weapon from reserves after 3.5 seconds of it being stowed."
       }
      ]
     }
@@ -38697,6 +39848,62 @@
    ]
   }
  },
+ "3310993845": {
+  "hash": 3310993845,
+  "name": "CQC Optics: Low",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively decreases Zoom by 1."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Decreasing Zoom has the following effects in ADS:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased Magnification"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Decreased Aim Assist Falloff Distance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increased "
+      },
+      {
+       "text": "Absolute Recoil"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Widened Accuracy and Aim Assist Cones (size stays the same on-screen)"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3315935575": {
   "hash": 3315935575,
   "name": "Iron Reach",
@@ -38705,14 +39912,14 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Range and "
+       "text": "Passively increases Range by 20 but decreases Stability by "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-25 Stability."
+       "text": "25."
       }
      ]
     },
@@ -38979,7 +40186,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Magazine Stat (identical to Extended Mag)."
+       "text": "Passively grants 30 Magazine Stat (identical to Extended Mag)."
       }
      ]
     },
@@ -39217,7 +40424,7 @@
     {
      "linesContent": [
       {
-       "text": "Splits off 50% of the Bow's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE."
+       "text": "Splits off 50% of the Bow's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE."
       }
      ]
     },
@@ -39237,7 +40444,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvE] Total damage is increased by ~15% of the weapon's Bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
+       "text": "[PvE] Total damage is increased by ~15% of the weapon's bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows."
       }
      ]
     },
@@ -39247,7 +40454,7 @@
     {
      "linesContent": [
       {
-       "text": "[PvP] Don't want to talk about it."
+       "text": "[PvP] Don't want to talk about it... yet."
       }
      ]
     }
@@ -39279,6 +40486,31 @@
      "linesContent": [
       {
        "text": "Cannot load the Magazine beyond its base capacity. Precision Hit counter persists through stow."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3404929162": {
+  "hash": 3404929162,
+  "name": "Splicer Surge",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload after having dealt damage with the weapon grants a Stack of Splicer Surge. Maximum of 3 Stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Splicer Surge grants ? Handling and Reload Speed per Stack."
       }
      ]
     }
@@ -39431,6 +40663,21 @@
       },
       {
        "text": " Stat bonuses are increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3417406043": {
+  "hash": 3417406043,
+  "name": "Ballistics",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 6 Range and 6 Stability."
       }
      ]
     }
@@ -41290,7 +42537,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "2.3 seconds of stowing it."
+       "text": "3.3 seconds of it being stowed."
       }
      ]
     },
@@ -41646,14 +42893,14 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Aim Assist and "
+       "text": "Passively increases Aim Assist by 20 but decreases Range by "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "-25 Range."
+       "text": "25."
       }
      ]
     },
@@ -43695,7 +44942,22 @@
     {
      "linesContent": [
       {
-       "text": "Maximum Radar Distance is increased by 8 meters."
+       "text": "Passively increases maximum Radar Range by 8 meters."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3789184904": {
+  "hash": 3789184904,
+  "name": "Adept Icarus Grip",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 15 Airborne Effectiveness and 5 Handling."
       }
      ]
     }
@@ -43711,6 +44973,16 @@
      "linesContent": [
       {
        "text": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Abilities with multiple charges do not receive any energy if they already have a full charge."
       }
      ]
     }
@@ -44026,6 +45298,112 @@
       },
       {
        "text": "Volatile explosions do not count as damage originating from your weapon.)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3820243349": {
+  "hash": 3820243349,
+  "name": "Synergy",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 12 Weapon Kills spawns an Elemental Pickup Matching the weapon's element. Kill counter persist through stow."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kinetic Weapons spawn an Orb of Power that grants ?% Super Energy instead."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Synergy ignores the global spawning cooldowns of the Elemental Pickups but each spawn will still start the global cooldown. A Kill can trigger Synergy's Pickup spawn and that of a different Pickup Spawner simultaneously."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Synergy has its own Pickup spawning cooldowns separately from the global ones:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces: 0 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites, "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches, "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards: 5 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangles: 12 seconds"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Kills during Synergy's Pickup spawning cooldown do not contribute any activation progress."
       }
      ]
     }
@@ -44809,7 +46187,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sniper Rifles: 3"
+       "text": "• Bows, Sniper Rifles: 3"
       }
      ]
     }
@@ -45441,6 +46819,154 @@
    ]
   }
  },
+ "3955464425": {
+  "hash": 3955464425,
+  "name": "Closing Time",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 6?% to 12?% decreased Accuracy Cone Size"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? to ? Range and Handling"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Stronger effect."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3966416502": {
+  "hash": 3966416502,
+  "name": "Jolting Feedback",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Direct Hits with the Weapon within ? seconds of each applies "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt to the target."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Being "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified decreases the number of Hits required."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hits needed to activate normally | while "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Auto Rifles: 16 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "12"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Pulse Rifles: 15 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "11"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Submachine Guns (theoretical): 19? | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "14?"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grenade Launchers: 4 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "3"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3969361392": {
   "hash": 3969361392,
   "name": "Harmonic Holster",
@@ -45764,6 +47290,27 @@
    ]
   }
  },
+ "3987942396": {
+  "hash": 3987942396,
+  "name": "Envious Arsenal",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing any damage with both of your other weapons "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " the magazine from reserves upon readying the weapon."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3988215619": {
   "hash": 3988215619,
   "name": "Veist Stinger",
@@ -46054,6 +47601,21 @@
      "linesContent": [
       {
        "text": "All Armor Charge sources grant an additional Stack."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4003264426": {
+  "hash": 4003264426,
+  "name": "Adept Stability",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Stability."
       }
      ]
     }
@@ -47327,6 +48889,21 @@
    ]
   }
  },
+ "4139916815": {
+  "hash": 4139916815,
+  "name": "Bray Legacy",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hits with the weapon grant ability energy to the least charged ability."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4149682173": {
   "hash": 4149682173,
   "name": "Reaper",
@@ -47360,7 +48937,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants 20 Aim Assist and -30 Range."
+       "text": "Passively increases Aim Assist by 20 but decreases Range by 20."
       }
      ]
     }
@@ -49027,7 +50604,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Weapon Kills within ? seconds of each spawns a Dawning Gift for you and allies. Dawning Gifts remain on the ground for 10 seconds."
+       "text": "Scoring multiple Kills with the weapon spawns a Dawning Gift for you and allies. Dawning Gifts remain on the ground for 10 seconds."
       }
      ]
     },
@@ -49275,6 +50852,21 @@
       },
       {
        "text": "Restoration) from allies also activates the perk."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4278960718": {
+  "hash": 4278960718,
+  "name": "Adept Handling",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Passively grants 10 Handling."
       }
      ]
     }
