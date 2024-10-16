@@ -470,14 +470,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants 20 Stability and #e${-30+#d} Reload Speed.\n\nenhanced (\nvar d = 5\n#e Reload Speed penalty is decreased by 5.\n)\n\n// Enhanced version currently doesn't show up and needs to be linked",
+     "main": "Passively increases Stability by 20 but decreases Reload Speed by #e${20+#d}.\n\nenhanced (\nvar d = 5\n#e Reload Speed penalty is decreased by 5.\n)\n\n// Enhanced version currently doesn't show up and needs to be linked",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719483608396,
+      "lastUpdate": 1728829337727,
       "updatedBy": "Stardust"
      }
     },
@@ -487,7 +487,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -1228,6 +1228,33 @@
    "lastUpload": 1680122100570,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "52638289": {
+   "name": "CQC Optics: High",
+   "hash": 52638289,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants #Zoom Zoom.\n\nIncreasing Zoom has the following effects in ADS:\n• Increased Magnification\n• Increased Aim Assist Falloff Distance\n• Decreased <title Absolute Recoil [absRecoil] />\n• Narrowed Accuracy and Aim Assist Cones (size stays the same on-screen)\n\ntitle absRecoil (\nAbsolute Recoil represents how closely grouped your shots will be in the physical environment to an observer. The recoil you experience on-screen remains identical but if you're more zoomed-in, your bullets will end up being grouped closer.\n)\n\n//Mod used for low Zoom weapon archetypes\nvar Zoom = 1",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728492127028,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "52780822": {
    "hash": 52780822,
@@ -1999,14 +2026,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Accuracy.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255427335,
+      "lastUpdate": 1728489096128,
       "updatedBy": "Stardust"
      }
     },
@@ -2016,7 +2043,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3292,14 +3319,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Blast Radius.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255434010,
+      "lastUpdate": 1728489094156,
       "updatedBy": "Stardust"
      }
     },
@@ -3309,7 +3336,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -3370,6 +3397,33 @@
    "inLiveDatabase": true,
    "itemHash": 4174431791,
    "itemName": "Hierarchy of Needs"
+  },
+  "231101171": {
+   "name": "Random Masterwork",
+   "hash": 231101171,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728488978296,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "235075862": {
    "name": "Peregrine Strike",
@@ -4252,6 +4306,35 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "289811733": {
+   "name": "Wave Sword Frame",
+   "itemName": "Ergo Sum",
+   "hash": 289811733,
+   "itemHash": 1681583613,
+   "type": "Weapon Perk Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "290014589": {
    "hash": 290014589,
    "name": "Revved Consumption",
@@ -4314,14 +4397,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Range.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255518061,
+      "lastUpdate": 1728489311143,
       "updatedBy": "Stardust"
      }
     },
@@ -4331,7 +4414,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -6803,6 +6886,35 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "461437088": {
+   "name": "Stormbringer",
+   "itemName": "Ergo Sum",
+   "hash": 461437088,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "461595545": {
    "name": "Reconstruction",
    "hash": 461595545,
@@ -7025,6 +7137,35 @@
    "uploadedBy": "Stardust",
    "lastUpload": 1723480728683,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "470163129": {
+   "name": "Harvester Spike",
+   "itemName": "Alethonym",
+   "hash": 470163129,
+   "itemHash": 2350354266,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "474269988": {
@@ -7476,6 +7617,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "511914882": {
+   "name": "Photoinhibition",
+   "hash": 511914882,
+   "type": "Weapon Trait Origin",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "515704826": {
    "name": "Gun and Run",
    "hash": 515704826,
@@ -7509,14 +7677,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "After sprinting for 1.5 seconds:\nGrants 35 ADS and Ready Handling while sprinting.",
+     "main": "Sprinting for 1.5 seconds while holding the weapon grants 35 ADS and Ready Handling.\n\nBuff is removed when you stop sprinting.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709224235207,
+      "lastUpdate": 1728492489107,
       "updatedBy": "Stardust"
      }
     },
@@ -7526,7 +7694,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7610,6 +7778,35 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "519046634": {
+   "name": "Caster Frame",
+   "itemName": "Ergo Sum",
+   "hash": 519046634,
+   "itemHash": 1681583613,
+   "type": "Weapon Perk Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "521530777": {
    "name": "Thermodynamic Siphon",
@@ -8416,6 +8613,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "574010092": {
+   "name": "Edge",
+   "hash": 574010092,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 6 Charge Rate and 6 Guard Resistance.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728491176277,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "579997810": {
    "name": "Kinetic Scavenger",
    "hash": 579997810,
@@ -8563,14 +8787,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants 20 Range and #e${-30+#d} Stability.\n\nenhanced (\nvar d = 5\n#e Stability penalty is decreased by 5.\n)",
+     "main": "Passively increases Range by 20 but decreases Stability by #e${20+#d}.\n\nenhanced (\nvar d = 5\n#e Stability penalty is decreased by 5.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719483648099,
+      "lastUpdate": 1728829354006,
       "updatedBy": "Stardust"
      }
     },
@@ -8580,7 +8804,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8808,6 +9032,141 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "611645144": {
+   "name": "Concussive Reload",
+   "hash": 611645144,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "611645145": {
+   "name": "Retinal Burn",
+   "hash": 611645145,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "611645149": {
+   "name": "Armor of Eramis",
+   "hash": 611645149,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "611645150": {
+   "name": "Hail The Storm",
+   "hash": 611645150,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "611645151": {
+   "name": "Debilitating Wave",
+   "hash": 611645151,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "615063266": {
    "hash": 615063266,
@@ -9102,14 +9461,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Reload Speed.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255523429,
+      "lastUpdate": 1728489316476,
       "updatedBy": "Stardust"
      }
     },
@@ -9119,7 +9478,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10107,6 +10466,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "717070634": {
+   "name": "Jolting Feedback",
+   "hash": 717070634,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 3966416502",
+     "secondary": "import secondary from 3966416502"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728829500214,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "721001747": {
    "name": "Stasis Targeting",
    "hash": 721001747,
@@ -10197,14 +10583,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Decreases Hipfire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier.",
+     "main": "Passively decreases Hip-Fire Accuracy Cone Size by 30% and grants a 0.95x Ready Animation Duration Multiplier.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696718506653,
+      "lastUpdate": 1728491206891,
       "updatedBy": "Stardust"
      }
     },
@@ -10214,7 +10600,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709252348445,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10386,25 +10772,50 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "744619683": {
+   "name": "No Backpack",
+   "itemName": "Ice Breaker",
+   "hash": 744619683,
+   "itemHash": 1111334348,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "744770875": {
    "name": "Adept Charge Time",
    "hash": 744770875,
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Decreases Charge Time by 40ms without affecting damage.",
+     "main": "Passively decreases Charge Time by 40ms without affecting damage.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1699108389901,
+      "lastUpdate": 1728492209510,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419201060,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -10413,7 +10824,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709252348445,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11140,195 +11551,6 @@
    "hash": 809345547,
    "name": "Dusk Scope D2",
    "type": "Weapon Perk",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675984": {
-   "hash": 810675984,
-   "name": "Overload Hand Cannon",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675985": {
-   "hash": 810675985,
-   "name": "Anti-barrier Submachine Gun",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675986": {
-   "name": "Anti-Barrier Sniper Rifle",
-   "hash": 810675986,
-   "type": "Armor Mod Seasonal",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
-   "inLiveDatabase": false,
-   "uploadToLive": false
-  },
-  "810675987": {
-   "hash": 810675987,
-   "name": "Overload Auto Rifle",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1725814661544,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675989": {
-   "hash": 810675989,
-   "name": "Anti-Barrier Pulse Rifle",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675990": {
-   "hash": 810675990,
-   "name": "Unstoppable Sidearm",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "810675991": {
-   "hash": 810675991,
-   "name": "Unstoppable Scout Rifle",
-   "type": "Armor Mod Seasonal",
    "lastUpload": 1717719212230,
    "uploadedBy": "Stardust",
    "editor": {
@@ -12543,14 +12765,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant #e${10*#d}?% Class Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant #e${20*#d}?%.\n\nClass Ability Usage grants ? Stability for ? seconds.\n\nenhanced (\nvar d = 1.1\n#e Class Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)\n)",
+     "main": "Weapon Kills grant #e${10*#d}% Class Ability Energy.\n\nKills with Fusion Rifles, Glaives, Shotguns, and Sniper Rifles grant #e${20*#d}%.\n\nClass Ability Usage grants ? Stability for ? seconds.\n\nenhanced (\nvar d = 1.1\n#e Class Ability Energy gains are increased by 10%. (e.g. 10%⁠🠚⁠11%)\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719497018320,
+      "lastUpdate": 1729012509667,
       "updatedBy": "Stardust"
      }
     },
@@ -12560,7 +12782,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13861,19 +14083,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 15 Airborne Effectiveness.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255532734,
+      "lastUpdate": 1728492265132,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419922504,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -13882,7 +14100,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15322,14 +15540,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups.",
+     "main": "Grants 10%|13%|15% Ability Energy to the least-charged Ability on Orb of Power pickups.\n\nAbilities with multiple charges do not receive any energy if they already have a full charge.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1696718781452,
+      "lastUpdate": 1729020888981,
       "updatedBy": "Stardust"
      }
     },
@@ -15339,7 +15557,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1696718862343,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16368,14 +16586,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Applying an Elemental Debuff (with the exception of <void/>Weaken) grants the following benefits for #e${4.5+#d} seconds:\n• 50 Reload Speed and 20 Aim Assist\n• 20% decreased ADS Movement Speed Penalty\n\nBuff can be activated while stowed.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "Applying an Elemental Debuff grants the following benefits for #e${4.5+#d} seconds:\n• 50 Reload Speed and 20 Aim Assist\n• 20% decreased ADS Movement Speed Penalty\n\nBuff can be activated while stowed.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722182567598,
+      "lastUpdate": 1728830522818,
       "updatedBy": "Stardust"
      }
     },
@@ -16385,7 +16603,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16577,6 +16795,33 @@
    "lastUpload": 1679867725995,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "1134488199": {
+   "name": "Withering Gaze",
+   "hash": 1134488199,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Aiming Down Sights for #e${1.5-#d} seconds without firing causes your next shot to apply <void/>Weaken.\n\nTimer starts as soon as ADS input is pressed.\n\nenhanced (\nvar d = 0.1\n#e Activation time is decreased by 0.1? seconds.\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729012915820,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "1135494563": {
    "name": "Beacon Rounds",
@@ -17544,6 +17789,33 @@
    "uploadToLive": true,
    "inLiveDatabase": false
   },
+  "1194056669": {
+   "name": "Closing Time",
+   "hash": 1194056669,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• ${6*#d}?% to ${12*#d}?% decreased Accuracy Cone Size\n//• ?% to ?% decreased <title Accuracy Cone Growth [G_conegrowth] />\n• ? to ? Range and Handling\n\nenhanced (\nvar d = 1 // add #e once we have more numbers\n#e Stronger effect.\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729010798028,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "1195158366": {
    "name": "Encore",
    "hash": 1195158366,
@@ -17597,6 +17869,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "1197814525": {
+   "name": "Heavy Ammo Finder Enhancement",
+   "hash": 1197814525,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Weapon Kills provide 10% more activation progress to <heavy/>Heavy Ammo Finder mods.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728491485385,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "1206010521": {
    "hash": 1206010521,
@@ -17915,14 +18214,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag).\n\nOn Swords, it grants 40 Ammo Capacity Stat (5 more than having 2 Reserves Mods or Enduring Blade) and the Handling penalty has no effect.",
+     "main": "Passively grants 40 Magazine Stat (identical to Backup Mag combined with Tactical Mag).\n\nOn Swords, it grants 40 Ammo Capacity Stat (5 more than having 2 Reserves Mods or Enduring Blade) and the Handling penalty has no effect.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723139167273,
+      "lastUpdate": 1728492238014,
       "updatedBy": "Stardust"
      }
     },
@@ -17932,7 +18231,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18750,14 +19049,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Upon stunning a Champion:\n• <title Refills [G_refill] /> 25% of the Magazine from reserves (rounded up)\n• Restores 60 HP\n• Grants 40 Recovery for 3 seconds",
+     "main": "Stunning a Champion <title refills [G_refill] /> the magazine from reserves, restores 60 HP, and grants 40 Recovery for 3 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722375593261,
+      "lastUpdate": 1729020367763,
       "updatedBy": "Stardust"
      }
     },
@@ -18767,7 +19066,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19735,6 +20034,35 @@
    "itemHash": 2084878005,
    "itemName": "Heir Apparent"
   },
+  "1327961177": {
+   "name": "Unplanned Reprieve",
+   "itemName": "Ergo Sum",
+   "hash": 1327961177,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1331592343": {
    "name": "Starless Night",
    "itemName": "Helm of Saint-14",
@@ -19801,14 +20129,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Decreases Ready/Stow Animation Duration by 10%.",
+     "main": "Passively decreases Ready/Stow Animation Duration by 10%.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679761739248,
+      "lastUpdate": 1728491811899,
       "updatedBy": "Stardust"
      }
     },
@@ -19818,7 +20146,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709252348445,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20938,14 +21266,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants #e${30+#d} Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)  \n\nBeing Airborne grants the following benefits:\n• #e${30+#f} Reload Speed\n• 0.8x Reload Duration Multiplier\n• 15?% decreased Accuracy Cone Size\n• 20?% decreased Auto Aim Cone Size\n\nenhanced (\nvar d = -30\nvar f = 5\n#e Inventory Size benefit is nullified (bugged) and Reload Speed bonus is increased by 5?.\n)",
+     "main": "Passively grants #e${30+#d} Inventory Size Stat. (For reference, running 1 or 2 Reserve mods grants 20 or 40 Inventory Size respectively)  \n\nBeing Airborne grants the following benefits:\n• #e${30+#f} Reload Speed\n• 0.8x Reload Duration Multiplier\n• 15?% decreased Accuracy Cone Size\n• 20?% decreased Auto Aim Cone Size\n\nenhanced (\nvar d = 10\nvar f = 5\n#e Inventory Size bonus is increased by 10 and Reload Speed bonus is increased by 5?.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727528502886,
+      "lastUpdate": 1729009321746,
       "updatedBy": "Stardust"
      }
     },
@@ -20955,7 +21283,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21019,23 +21347,15 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Grants a 0.85x Reload Duration Multiplier to reloads started with an empty magazine.",
+     "main": "Linearly grants a Reload Duration Multiplier as your magazine drops from 50% capacity to empty.\n\nReload Duration Multiplier scales from 0.9x at 50% capacity to 0.8x with an empty magazine.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709212909187,
+      "lastUpdate": 1729009524180,
       "updatedBy": "Stardust"
-     },
-     "es": {
-      "lastUpdate": 1665682570721,
-      "updatedBy": "miniatimat"
-     },
-     "zh-chs": {
-      "lastUpdate": 1668782581229,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -21044,7 +21364,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21900,6 +22220,35 @@
    "itemHash": 3844694310,
    "itemName": "The Jade Rabbit"
   },
+  "1497627200": {
+   "name": "Ergo Sum Catalyst",
+   "itemName": "Ergo Sum",
+   "hash": 1497627200,
+   "itemHash": 1681583613,
+   "type": "Weapon Catalyst Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1500996326": {
    "hash": 1500996326,
    "name": "Natural Fletching",
@@ -22065,6 +22414,35 @@
    "uploadToLive": false,
    "inLiveDatabase": false
   },
+  "1522566605": {
+   "name": "The Perfect Fifth",
+   "itemName": "Ergo Sum",
+   "hash": 1522566605,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1523649716": {
    "name": "Tap the Trigger",
    "hash": 1523649716,
@@ -22152,19 +22530,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 35 Recoil Direction.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255001647,
+      "lastUpdate": 1728489090393,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419275333,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -22173,7 +22547,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22261,195 +22635,6 @@
    "inLiveDatabase": true,
    "itemHash": 2044500762,
    "itemName": "The Queenbreaker"
-  },
-  "1533272841": {
-   "hash": 1533272841,
-   "name": "Prismatic Transfer",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "1533272842": {
-   "hash": 1533272842,
-   "name": "Argent Blade",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "1533272843": {
-   "hash": 1533272843,
-   "name": "Expanding Abyss",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "1533272844": {
-   "hash": 1533272844,
-   "name": "Shieldcrush",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "1533272845": {
-   "hash": 1533272845,
-   "name": "Transference",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "1533272846": {
-   "name": "Sniper's Meditation",
-   "hash": 1533272846,
-   "type": "Armor Mod Seasonal",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
-   "inLiveDatabase": false,
-   "uploadToLive": false
-  },
-  "1533272847": {
-   "hash": 1533272847,
-   "name": "Shock and Awe",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1725814661544,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
   },
   "1535085486": {
    "hash": 1535085486,
@@ -23287,14 +23472,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 15 Recoil Direction.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255529105,
+      "lastUpdate": 1728490327215,
       "updatedBy": "Stardust"
      }
     },
@@ -23304,7 +23489,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25298,19 +25483,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 7 Aim Assist.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255525458,
+      "lastUpdate": 1728490194965,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419534628,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -25319,7 +25500,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25489,6 +25670,35 @@
    "uploadedBy": "Stardust",
    "lastUpload": 1676844056332,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "1726251414": {
+   "name": "Aggressive Frame",
+   "itemName": "Ergo Sum",
+   "hash": 1726251414,
+   "itemHash": 1681583613,
+   "type": "Weapon Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "1727069360": {
@@ -27356,6 +27566,33 @@
    "inLiveDatabase": false,
    "uploadToLive": false
   },
+  "1847129788": {
+   "name": "Marksman Optics: High",
+   "hash": 1847129788,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "import main from 52638289\n\n//Mod used for high Zoom weapon archetypes\nvar Zoom = 2",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728491771065,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "1848187513": {
    "name": "Invigoration",
    "hash": 1848187513,
@@ -27411,6 +27648,35 @@
    "inLiveDatabase": true,
    "itemHash": 1345867570,
    "itemName": "Sweet Business"
+  },
+  "1860418166": {
+   "name": "Blastwave Striders",
+   "itemName": "Blastwave Striders",
+   "hash": 1860418166,
+   "itemHash": 1188437342,
+   "type": "Armor Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1863355414": {
    "hash": 1863355414,
@@ -27524,6 +27790,35 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "1871764335": {
+   "name": "Bleak Domain",
+   "itemName": "Rime-coat Raiment",
+   "hash": 1871764335,
+   "itemHash": 4060793397,
+   "type": "Armor Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "1875323682": {
    "hash": 1875323682,
    "name": "High-Impact Frame",
@@ -27607,20 +27902,47 @@
    "itemHash": 2130065553,
    "itemName": "Arbalest"
   },
+  "1882549863": {
+   "name": "Tension",
+   "hash": 1882549863,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 6 Draw Time Stat and 6 Accuracy.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728494568862,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "1885045197": {
    "name": "Adept Draw Time",
    "hash": 1885045197,
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively decreases Draw Time by 40.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255502802,
+      "lastUpdate": 1728492229991,
       "updatedBy": "Stardust"
      }
     },
@@ -27630,7 +27952,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28617,19 +28939,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Splits off 55% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by Damage Falloff.\n\nPayload detonates after a 0.6 second delay.\n\n<pve/> [PvE] Total damage is increased by ~16.5% of the weapon's Bodyshot damage. On Crits, the overall increase is 10.9% for Adaptive/Precision Hand Cannons and 10.17% for Aggressive Hand Cannons.\n\n<pvp/> [PvP] Don't want to talk about it.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Splits off 55% of the Weapon's Bodyshot damage into a Delayed Explosive Payload that deals 30% increased damage in PvE and isn't affected by Damage Falloff.\n\nPayload detonates after a 0.6 second delay.\n\n<pve/> [PvE] Total damage is increased by ~16.5% of the weapon's Bodyshot damage. On Crits, the overall increase is 10.9% for Adaptive/Precision Hand Cannons and 10.17% for Aggressive Hand Cannons.\n\n<pvp/> [PvP] Don't want to talk about it... yet.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713911561705,
+      "lastUpdate": 1729012603589,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670340712380,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -28638,9 +28956,36 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713911915663,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "1955165503": {
+   "name": "Rimestealer",
+   "hash": 1955165503,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Shattering a <stasis/>Stasis Crystal or <stasis/>Frozen Enemy with the weapon grants #d of <stasis/>Frost Armor.\n\nvar d = a Stack\nenhanced (\nvar d = #e2 Stacks\n#e Grants an additional stack of <stasis/>Frost Armor.\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729011531183,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "1956005708": {
    "hash": 1956005708,
@@ -28695,6 +29040,35 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "1959135343": {
+   "name": "Wolfpack Rounds",
+   "itemName": "Ergo Sum",
+   "hash": 1959135343,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1961144892": {
    "name": "Quickdraw",
@@ -29894,14 +30268,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Sliding <title refills [G_refill] /> 15% of the Magazine and grants #e${15+#d}? Stability and #e${30+#f} Handling for 3 seconds.\n\nCannot be triggered again while the buff is active. Buff is removed on stow.\n\nenhanced (\nvar d = 2\nvar f = 3\n#e Stat bonuses are increased by 10?%.\n)",
+     "main": "Sliding <title refills [G_refill] /> 15% of the magazine from reserves and grants #e${15+#d}? Stability and #e${30+#f} Handling for 3 seconds.\n\n0.5 second cooldown between activations. Buff is removed on stow.\n\nenhanced (\nvar d = 2\nvar f = 3\n#e Stat bonuses are increased by 10?%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722301051119,
+      "lastUpdate": 1729021018365,
       "updatedBy": "Stardust"
      }
     },
@@ -29911,7 +30285,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29941,6 +30315,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": false
+  },
+  "2041432007": {
+   "name": "Dark Ether Reaper",
+   "hash": 2041432007,
+   "type": "Weapon Trait Origin",
+   "editor": {
+    "en": {
+     "main": "Scoring multiple Kills with the weapon spawns a Dark Ether Charge at the target's location. ? second cooldown between Charge spawns.\n\nCharge spawning progress on Kill by <link Enemy Rank [#CombatantClassifications] />:\nMinors: 25% | Elites: ?% | Minibosses and higher: 100% | Players: ?%\n\nDark Ether Charges last 5? seconds and can be detonated by shooting or coming into contact with them.\n\nDetonations deal <pve ALot™ /> <pvp [?] /> elemental damage in a ? meter radius and match the weapon's element. Damage is always attributed to the Charge's creator regardless of who destroys them.\n\nDetonating Charges <title refills [G_refill] /> and overfills the magazines of all equipped Dark Eather Reaper weapons from reserves up to 140% capacity (rounded up).",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729020123150,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2045123179": {
    "hash": 2045123179,
@@ -30157,6 +30558,168 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "2071562746": {
+   "name": "Fell the Revenant",
+   "hash": 2071562746,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2071562747": {
+   "name": "Rapid Impacts",
+   "hash": 2071562747,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2071562748": {
+   "name": "Killing Breeze",
+   "hash": 2071562748,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2071562749": {
+   "name": "Enhanced Ether Generator",
+   "hash": 2071562749,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2071562751": {
+   "name": "One with Frost",
+   "hash": 2071562751,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "2073244114": {
+   "name": "Lone Wolf",
+   "hash": 2073244114,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 2579169598",
+     "secondary": "import secondary from 2579169598"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728830342719,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2074494595": {
    "hash": 2074494595,
@@ -30577,33 +31140,6 @@
    "name": "Lightweight Frame",
    "type": "Weapon Frame Enhanced",
    "lastUpload": 1678559292450,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2106726848": {
-   "hash": 2106726848,
-   "name": "Trait Locked",
-   "type": "Weapon Perk",
-   "lastUpload": 1681924252536,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
@@ -32543,6 +33079,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "2254149382": {
+   "name": "Aerodynamics",
+   "hash": 2254149382,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 6 Blast Radius and Velocity.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728490208788,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "2257238439": {
    "name": "Strand Scavenger",
    "hash": 2257238439,
@@ -32598,195 +33161,6 @@
    "inLiveDatabase": true,
    "itemHash": 1395261499,
    "itemName": "Xenophage"
-  },
-  "2263401920": {
-   "hash": 2263401920,
-   "name": "Winning Hand",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2263401921": {
-   "hash": 2263401921,
-   "name": "Saint's Inspiration",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2263401922": {
-   "hash": 2263401922,
-   "name": "Authorized Mod: Charged Up",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1725814661544,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2263401923": {
-   "name": "Authorized Mods: Scavenger",
-   "hash": 2263401923,
-   "type": "Armor Mod Seasonal",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
-   "inLiveDatabase": false,
-   "uploadToLive": false
-  },
-  "2263401924": {
-   "hash": 2263401924,
-   "name": "Logic Reductor",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2263401926": {
-   "hash": 2263401926,
-   "name": "Authorized Mod: Elemental Charge",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2263401927": {
-   "hash": 2263401927,
-   "name": "Overcharged Armory",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
   },
   "2264456959": {
    "hash": 2264456959,
@@ -33476,14 +33850,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Velocity.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255515913,
+      "lastUpdate": 1728489300307,
       "updatedBy": "Stardust"
      }
     },
@@ -33493,7 +33867,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34101,195 +34475,6 @@
    "itemHash": 4190156464,
    "itemName": "Merciless"
   },
-  "2344320968": {
-   "hash": 2344320968,
-   "name": "Void Hegemony",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2344320969": {
-   "hash": 2344320969,
-   "name": "Blade Stamina",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2344320970": {
-   "hash": 2344320970,
-   "name": "Counter Energy",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2344320972": {
-   "hash": 2344320972,
-   "name": "Targeting Autoloader",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1725814661544,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2344320973": {
-   "name": "Solar Fulmination",
-   "hash": 2344320973,
-   "type": "Armor Mod Seasonal",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
-   "inLiveDatabase": false,
-   "uploadToLive": false
-  },
-  "2344320974": {
-   "hash": 2344320974,
-   "name": "Galvanic Armor",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "2344320975": {
-   "hash": 2344320975,
-   "name": "Radiant Orbs",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
   "2349202967": {
    "hash": 2349202967,
    "name": "Heavy Guard",
@@ -34491,14 +34676,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Dealing or receiving Physical (non-projectile) Melee Damage while you have <stasis/>Frost Armor active applies 10? <stasis/>Slow Stacks to your enemy for ? seconds.\n\nGlaive Melees do not benefit from this.",
+     "main": "Dealing or receiving Physical (non-projectile) Melee Damage while you have <stasis/>Frost Armor active applies 10? <stasis/>Slow Stacks to your enemy for ? seconds.\n\nGlaive Melees also benefit from this.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727527505089,
+      "lastUpdate": 1729021097679,
       "updatedBy": "Stardust"
      }
     },
@@ -34508,7 +34693,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34735,6 +34920,33 @@
    "itemHash": 2591746970,
    "itemName": "Leviathan's Breath"
   },
+  "2400144052": {
+   "name": "Tactical",
+   "hash": 2400144052,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 6 Handling and 6 Reload Speed.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728494542131,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "2400634603": {
    "hash": 2400634603,
    "name": "Thermite Grenade",
@@ -34786,6 +34998,35 @@
    "uploadedBy": "Stardust",
    "lastUpload": 1709248561849,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2405598968": {
+   "name": "Vestigial Alchemy",
+   "itemName": "Alethonym",
+   "hash": 2405598968,
+   "itemHash": 2350354266,
+   "type": "Weapon Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "2405638014": {
@@ -35195,6 +35436,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "2420924065": {
+   "name": "Special Ammo Finder Enhancement",
+   "hash": 2420924065,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Weapon Kills provide 10% more activation progress to <special/>Special Ammo Finder mods.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728491502861,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2422968039": {
    "name": "Adrenaline Junkie",
@@ -36716,6 +36984,35 @@
    "uploadToLive": false,
    "inLiveDatabase": false
   },
+  "2557881346": {
+   "name": "Vortex Frame",
+   "itemName": "Ergo Sum",
+   "hash": 2557881346,
+   "itemHash": 1681583613,
+   "type": "Weapon Perk Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "2562645296": {
    "name": "Melee Damage Resistance",
    "hash": 2562645296,
@@ -36906,6 +37203,35 @@
    "uploadToLive": false,
    "inLiveDatabase": false
   },
+  "2576986935": {
+   "name": "Null Factor",
+   "itemName": "Mask of Fealty",
+   "hash": 2576986935,
+   "itemHash": 322173891,
+   "type": "Armor Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "2577472338": {
    "name": "Charged Up",
    "hash": 2577472338,
@@ -37019,6 +37345,33 @@
    "lastUpload": 1716477200291,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "2579169598": {
+   "name": "Lone Wolf",
+   "hash": 2579169598,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Passively grants ? Aim Assist, 10 Airborne Effectiveness, and a ?x ADS Duration Multiplier.\n\nBonuses are doubled? while no allies are within 15 meters.\n\nenhanced (\n#e Stronger effect.\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728830469680,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2581086849": {
    "hash": 2581086849,
@@ -37321,6 +37674,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "2617553311": {
+   "name": "Rimestealer",
+   "hash": 2617553311,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 1955165503",
+     "secondary": "import secondary from 1955165503"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729011403792,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2618534366": {
    "name": "Absorption Cells",
@@ -37715,6 +38095,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": false
+  },
+  "2649250174": {
+   "name": "Marksman Optics: Low",
+   "hash": 2649250174,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "import main from 3310993845\n\n//Mod used for high Zoom weapon archetypes\nvar Zoom = 2",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728491778709,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "2649291407": {
    "name": "Fastball",
@@ -39851,6 +40258,35 @@
    "itemHash": 3118061005,
    "itemName": "Vexcalibur"
   },
+  "2753228730": {
+   "name": "Lightweight Frame",
+   "itemName": "Ergo Sum",
+   "hash": 2753228730,
+   "itemHash": 1681583613,
+   "type": "Weapon Perk Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "2757685314": {
    "hash": 2757685314,
    "name": "Aggressive Frame",
@@ -40849,6 +41285,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "2817499044": {
+   "name": "Envious Arsenal",
+   "hash": 2817499044,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 3987942396",
+     "secondary": "import secondary from 3987942396"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728829007428,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "2818140350": {
    "name": "Dynamic Duo",
    "itemName": "Getaway Artist",
@@ -41162,19 +41625,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Aiming Down Sights grants 10% increased Effective Zoom and 5% faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces Recoil by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "Aiming Down Sights grants 10% increased Effective Zoom and 5% faster Projectile Speed.\n\nThe Effective Zoom increase pushes out Aim Assist Falloff by 10%, reduces <title (Absolute) Recoil [absRecoil] /> by 10% and narrows the Accuracy and Aim Assist Cones by the same amount. (This is the normal behavior of Zoom and isn't unique to Rangefinder)\n\nenhanced (\n#e Passively grants 5 Handling.\n)\n\ntitle absRecoil (\nAbsolute Recoil represents how closely grouped your shots will be in the physical environment to an observer. The recoil you experience on-screen will remain identical but due to being more zoomed-in, your bullets will end up being grouped closer.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1715424152914,
+      "lastUpdate": 1728490694896,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670333198738,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -41183,8 +41642,37 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1715424160885,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2848175214": {
+   "name": "Ice Breaker",
+   "itemName": "Ice Breaker",
+   "hash": 2848175214,
+   "itemHash": 1111334348,
+   "type": "Weapon Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "2848615171": {
@@ -42051,6 +42539,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "2904194311": {
+   "name": "Withering Gaze",
+   "hash": 2904194311,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 1134488199",
+     "secondary": "import secondary from 1134488199"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729012736044,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "2909403175": {
    "hash": 2909403175,
    "name": "Mortal Polarity",
@@ -42687,6 +43202,35 @@
    "uploadedBy": "Stardust",
    "lastUpload": 1719594243302,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "2963428707": {
+   "name": "Transcendent Duelist",
+   "itemName": "Ergo Sum",
+   "hash": 2963428707,
+   "itemHash": 1681583613,
+   "type": "Weapon Trait Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "2965975126": {
@@ -43569,6 +44113,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3024601835": {
+   "name": "Stunloader",
+   "hash": 3024601835,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Stunning a Champion <title refills [G_refill] /> ?% of the Magazine from reserves.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728492604033,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "3024740338": {
    "hash": 3024740338,
    "name": "Edge of Intent",
@@ -43652,6 +44223,35 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3034060702": {
+   "name": "Sacred Flame",
+   "itemName": "Ergo Sum",
+   "hash": 3034060702,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3035281791": {
    "hash": 3035281791,
    "name": "Caster Frame",
@@ -43685,19 +44285,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Splits off 50% of the Weapon's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE and isn't affected by damage Falloff.\n\n<pve/>[PvE] Total damage is increased by 15% of the weapon's Bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier.\n\n<pvp/>[PvP] Don't want to talk about it.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
+     "main": "Splits off 50% of the weapon's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE and isn't affected by damage Falloff.\n\n<pve/>[PvE] Total damage is increased by 15% of the weapon's bodyshot damage. For crits, the overall increase is roughly equal to 15% divided by the Crit Multiplier.\n\n<pvp/>[PvP] Don't want to talk about it... yet.\n\nenhanced (\n#e Passively grants 5 Reload Speed.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713911522919,
+      "lastUpdate": 1729012646362,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670263507164,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -43706,7 +44302,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713911915663,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44317,14 +44913,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring a Kill with any Weapon grants 15% increased damage for 7 seconds.",
+     "main": "Scoring a Kill with any weapon grants Master of Arms x1, granting 15% increased damage for #e${7+#d} seconds.\n\nScoring a Kill with any weapon with Master of Arms active grants Master of Arms x2, granting 25% increased damage for #e${4+#d} seconds.\n\nMaster of Arms x2 expiring reverts the buff back to Master of Arms x1.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714213220853,
+      "lastUpdate": 1729011301264,
       "updatedBy": "Stardust"
      }
     },
@@ -44334,7 +44930,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44534,14 +45130,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Starts Health Regeneration and restores #e${65+#d} HP upon reaching 100% Activation Progress with Weapon Kills within 5 seconds of each.\n\nActivation Progress by <link Enemy Rank [#CombatantClassifications] />:\n• Minor Combatants: 33.3%\n• Players: 66.6%\n• Elites, Minibosses, and Bosses: 100%\n\nenhanced (\nvar d = 5\n#e Restores an additional 5 HP.\n)",
+     "main": "Starts Health Regeneration and restores #e${65+#d} HP upon reaching 100% Activation Progress with Weapon Kills within 5 seconds of each.\n\nActivation Progress by <link Enemy Rank [#CombatantClassifications] />:\n• Minor Combatants: 34%\n• Players: 67%\n• Elites, Minibosses, and Bosses: 100%\n\nenhanced (\nvar d = 5\n#e Restores an additional 5 HP.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722359601018,
+      "lastUpdate": 1729018867445,
       "updatedBy": "Stardust"
      }
     },
@@ -44551,7 +45147,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44668,195 +45264,6 @@
    "itemHash": 1441805468,
    "itemName": "The Navigator"
   },
-  "3116632768": {
-   "hash": 3116632768,
-   "name": "Overload Sword",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "3116632769": {
-   "hash": 3116632769,
-   "name": "Creeping Chill",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "3116632771": {
-   "hash": 3116632771,
-   "name": "Elemental Siphon",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "3116632772": {
-   "name": "Incendiary Rifle Rounds",
-   "hash": 3116632772,
-   "type": "Armor Mod Seasonal",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
-   "inLiveDatabase": false,
-   "uploadToLive": false
-  },
-  "3116632773": {
-   "hash": 3116632773,
-   "name": "Sustained Fire",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1725814661544,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "3116632774": {
-   "hash": 3116632774,
-   "name": "Press The Advantage",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
-  "3116632775": {
-   "hash": 3116632775,
-   "name": "Threaded Blast",
-   "type": "Armor Mod Seasonal",
-   "lastUpload": 1717719212230,
-   "uploadedBy": "Stardust",
-   "editor": {
-    "en": {
-     "main": "",
-     "secondary": ""
-    }
-   },
-   "updateTracker": {
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
-    }
-   },
-   "uploadToLive": false,
-   "inLiveDatabase": false
-  },
   "3117514172": {
    "hash": 3117514172,
    "name": "Stormbringer",
@@ -44885,6 +45292,141 @@
    "inLiveDatabase": true,
    "itemHash": 2603483885,
    "itemName": "Cloudstrike"
+  },
+  "3117519994": {
+   "name": "Kinetic Impacts",
+   "hash": 3117519994,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3117519995": {
+   "name": "Served Cold",
+   "hash": 3117519995,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3117519996": {
+   "name": "Conductive Cosmic Crystal",
+   "hash": 3117519996,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3117519997": {
+   "name": "Supernova",
+   "hash": 3117519997,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3117519998": {
+   "name": "Brain Freeze",
+   "hash": 3117519998,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3118144663": {
    "name": "Hip-Fire Grip",
@@ -45378,6 +45920,33 @@
    "inLiveDatabase": true,
    "itemHash": 1852863732,
    "itemName": "Wavesplitter"
+  },
+  "3159358855": {
+   "name": "Anti-Flinch",
+   "hash": 3159358855,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 15% Flinch Resistance.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728490221161,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "3160387771": {
    "name": "Utility Kickstart",
@@ -46070,14 +46639,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 5 Impact.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255512508,
+      "lastUpdate": 1728489240331,
       "updatedBy": "Stardust"
      }
     },
@@ -46087,7 +46656,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46208,19 +46777,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 5 Aim Assist.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255538539,
+      "lastUpdate": 1728494552681,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419610848,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -46229,7 +46794,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47116,23 +47681,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "<title Refills [G_refill] /> stowed weapon from reserves after #e${2.5-#d} seconds of stowing it.\n\nenhanced (\nvar d = 0.2\n#e Activation time is reduced by 0.2 seconds.\n)",
+     "main": "<title Refills [G_refill] /> stowed weapon from reserves after #e${3.5-#d} seconds of it being stowed.\n\nenhanced (\nvar d = 0.2\n#e Activation time is reduced by 0.2 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1676204463583,
+      "lastUpdate": 1729009684196,
       "updatedBy": "Stardust"
-     },
-     "es": {
-      "lastUpdate": 1665683340998,
-      "updatedBy": "miniatimat"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670250784544,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -47141,7 +47698,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1676311977242,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47175,6 +47732,33 @@
    "lastUpload": 1712008312346,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "3310993845": {
+   "name": "CQC Optics: Low",
+   "hash": 3310993845,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively decreases Zoom by #Zoom.\n\nDecreasing Zoom has the following effects in ADS:\n• Decreased Magnification\n• Decreased Aim Assist Falloff Distance\n• Increased <title Absolute Recoil [absRecoil] />\n• Widened Accuracy and Aim Assist Cones (size stays the same on-screen)\n\ntitle absRecoil (\nAbsolute Recoil represents how closely grouped your shots will be in the physical environment to an observer. The recoil you experience on-screen remains identical but if you're less zoomed-in, your bullets will end up being grouped farther apart.\n)\n\n//Mod used for low Zoom weapon archetypes\nvar Zoom = 1",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728492121590,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "3311977193": {
    "hash": 3311977193,
@@ -47339,6 +47923,35 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3325420353": {
+   "name": "Insectoid Robot Grenades",
+   "itemName": "Ergo Sum",
+   "hash": 3325420353,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3326204863": {
    "hash": 3326204863,
    "name": "Smooth Grip",
@@ -47482,14 +48095,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Grants 30 Magazine Stat (identical to Extended Mag).\n\nOn Swords, it grants 30 Ammo Capacity Stat (identical to 2 Reserves Mods and 5 less than having Enduring Blade).",
+     "main": "Passively grants 30 Magazine Stat (identical to Extended Mag).\n\nOn Swords, it grants 30 Ammo Capacity Stat (identical to 2 Reserves Mods and 5 less than having Enduring Blade).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719505419561,
+      "lastUpdate": 1728492246950,
       "updatedBy": "Stardust"
      }
     },
@@ -47499,7 +48112,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47878,19 +48491,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Splits off 50% of the Bow's Bodyshot damage into an Explosive damage portion that deals 30% increased damage in PvE.\n\nDetonation time after hitting a target or surface varies on draw and distance.\n\n<pve/>[PvE] Total damage is increased by ~15% of the weapon's Bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows.\n\n<pvp/>[PvP] Don't want to talk about it.\n\nenhanced (\n#e Passively grants 5 Accuracy.\n)",
+     "main": "Splits off 50% of the Bow's bodyshot damage into an Explosive Payload that deals 30% increased damage in PvE.\n\nDetonation time after hitting a target or surface varies on draw and distance.\n\n<pve/>[PvE] Total damage is increased by ~15% of the weapon's bodyshot damage. On crits, the overall increase is 10.33% for Precision Bows and 9.69% for Lightweight Bows.\n\n<pvp/>[PvP] Don't want to talk about it... yet.\n\nenhanced (\n#e Passively grants 5 Accuracy.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1713911534664,
+      "lastUpdate": 1729012690231,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670263521927,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -47899,7 +48508,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1713911915663,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48038,6 +48647,33 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3404929162": {
+   "name": "Splicer Surge",
+   "hash": 3404929162,
+   "type": "Weapon Trait Origin",
+   "editor": {
+    "en": {
+     "main": "Finishing a reload after having dealt damage with the weapon grants a Stack of Splicer Surge. Maximum of 3 Stacks.\n\nSplicer Surge grants ? Handling and Reload Speed per Stack.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729020259353,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "3406782879": {
    "name": "En Garde",
    "hash": 3406782879,
@@ -48171,6 +48807,33 @@
    "lastUpload": 1719594243302,
    "inLiveDatabase": true,
    "uploadToLive": false
+  },
+  "3417406043": {
+   "name": "Ballistics",
+   "hash": 3417406043,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Passively grants 6 Range and 6 Stability.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728490281375,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "3418165135": {
    "name": "Vorpal Weapon",
@@ -50144,6 +50807,35 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "3551049142": {
+   "name": "Gathering Light",
+   "itemName": "Ergo Sum",
+   "hash": 3551049142,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3551326236": {
    "hash": 3551326236,
@@ -53132,14 +53824,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "Maximum Radar Distance is increased by 8 meters.",
+     "main": "Passively increases maximum Radar Range by 8 meters.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1694388007766,
+      "lastUpdate": 1728492313884,
       "updatedBy": "Stardust"
      }
     },
@@ -53149,7 +53841,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1694388010602,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53188,19 +53880,15 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 15 Airborne Effectiveness and 5 Handling.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255510165,
+      "lastUpdate": 1728489204655,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1664419446081,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -53209,7 +53897,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53402,6 +54090,141 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3803076560": {
+   "name": "Unstoppable Pulse Rifle",
+   "hash": 3803076560,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3803076561": {
+   "name": "Overload Submachine Gun",
+   "hash": 3803076561,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3803076562": {
+   "name": "Anti-Barrier Scout Rifle",
+   "hash": 3803076562,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3803076566": {
+   "name": "Overload Breechloaded Grenade Launcher",
+   "hash": 3803076566,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3803076567": {
+   "name": "Anti-Barrier Shotgun",
+   "hash": 3803076567,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "3808234135": {
    "hash": 3808234135,
    "name": "Shocked Glyphkeeper",
@@ -53513,6 +54336,33 @@
    "inLiveDatabase": true,
    "itemHash": 3766045777,
    "itemName": "Black Talon"
+  },
+  "3820243349": {
+   "name": "Synergy",
+   "hash": 3820243349,
+   "type": "Weapon Mod",
+   "editor": {
+    "en": {
+     "main": "Scoring 12 Weapon Kills spawns an Elemental Pickup Matching the weapon's element. Kill counter persist through stow.\n\nKinetic Weapons spawn an Orb of Power that grants ?% Super Energy instead.\n\nSynergy ignores the global spawning cooldowns of the Elemental Pickups but each spawn will still start the global cooldown. A Kill can trigger Synergy's Pickup spawn and that of a different Pickup Spawner simultaneously.\n\nSynergy has its own Pickup spawning cooldowns separately from the global ones:\n• <arc/>Ionic Traces: 0 seconds\n• <solar/>Firesprites, <void/>Void Breaches, <stasis/>Stasis Shards: 5 seconds\n• <strand/>Tangles: 12 seconds\n\nKills during Synergy's Pickup spawning cooldown do not contribute any activation progress.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728828497308,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
   },
   "3824105627": {
    "name": "Firefly",
@@ -54096,14 +54946,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.285 seconds after scoring enough Hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 25% less damage when activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #r1\n• Auto Rifles: #r2\n• Pulse Rifles: #r3\n• Non-burst Sidearms: #r4\n• Hand Cannons, Scout Rifles: #r5\n• Sniper Rifles: #r6\n\nvar r1 = 14\nvar r2 = 12\nvar r3 = 11\nvar r4 = 8\nvar r5 = 6\nvar r6 = 3\n\nenhanced (\nvar r1 = #e13\nvar r2 = #e11\nvar r3 = #e10\nvar r4 = #e7\nvar r5 = #e5\nvar r6 = #e2\n#e Hit Requirements are decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.285 seconds after scoring enough Hits and have a 1 second delay between each pulse.\n\nEach shockwave deals up to <pve 120 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 25% less damage when activated on <link Minor and Elite [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${6-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722181965940,
+      "lastUpdate": 1728830256301,
       "updatedBy": "Stardust"
      }
     },
@@ -54113,7 +54963,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54980,6 +55830,118 @@
    "inLiveDatabase": true,
    "uploadToLive": false
   },
+  "3941269100": {
+   "name": "Alethonym Catalyst",
+   "itemName": "Alethonym",
+   "hash": 3941269100,
+   "itemHash": 2350354266,
+   "type": "Weapon Catalyst Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3949068808": {
+   "name": "Arc Conductor",
+   "itemName": "Ergo Sum",
+   "hash": 3949068808,
+   "itemHash": 1681583613,
+   "type": "Weapon Frame Exotic",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "3955464425": {
+   "name": "Closing Time",
+   "hash": 3955464425,
+   "type": "Weapon Trait Enhanced",
+   "editor": {
+    "en": {
+     "main": "import main from 1194056669",
+     "secondary": "import secondary from 1194056669"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729010535656,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
+  "3966416502": {
+   "name": "Jolting Feedback",
+   "hash": 3966416502,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Scoring multiple Direct Hits with the Weapon within ? seconds of each applies <arc/>Jolt to the target.\n\nBeing <arc/>Amplified decreases the number of Hits required/* by 25?%*/.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Auto Rifles: #e${16-#d} | <arc/>12\n• Pulse Rifles: #e${15-#d} | <arc/>11\n• Submachine Guns (theoretical): #e${19-#d}? | <arc/>14?\n• Grenade Launchers: #e${4-#d} | <arc/>3\n\nenhanced (\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1?.\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728830095622,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "3967134106": {
    "hash": 3967134106,
    "name": "Traveler's Chosen Catalyst",
@@ -55341,6 +56303,33 @@
    "uploadToLive": false,
    "inLiveDatabase": true
   },
+  "3987942396": {
+   "name": "Envious Arsenal",
+   "hash": 3987942396,
+   "type": "Weapon Trait",
+   "editor": {
+    "en": {
+     "main": "Dealing any damage with both of your other weapons <title refills [G_refill] /> the magazine from reserves upon readying the weapon.\n\nenhanced (\n#e Passively grants 20 Inventory Size stat (equivalent of a Reserves armor mod).\n)",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1728829130189,
+      "updatedBy": "Stardust"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": true
+  },
   "3988215619": {
    "name": "Veist Stinger",
    "hash": 3988215619,
@@ -55569,14 +56558,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Stability.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255524616,
+      "lastUpdate": 1728489324758,
       "updatedBy": "Stardust"
      }
     },
@@ -55586,7 +56575,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56091,6 +57080,141 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "4037132128": {
+   "name": "Wind Chill",
+   "hash": 4037132128,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "4037132130": {
+   "name": "Total Carnage",
+   "hash": 4037132130,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "4037132131": {
+   "name": "Crystalline Converter",
+   "hash": 4037132131,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "4037132132": {
+   "name": "Trace Evidence",
+   "hash": 4037132132,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
+  "4037132133": {
+   "name": "Power from Pain",
+   "hash": 4037132133,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1729072787613,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "4039026690": {
    "name": "Distribution",
@@ -57267,6 +58391,33 @@
    "itemHash": 3824673936,
    "itemName": "Outbreak Perfected"
   },
+  "4139916815": {
+   "hash": 4139916815,
+   "name": "Bray Legacy",
+   "type": "Weapon Trait Origin",
+   "lastUpload": 1729072787613,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "Hits with the weapon grant ability energy to the least charged ability.",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1729013816523,
+      "updatedBy": "Stardust"
+     }
+    }
+   },
+   "uploadToLive": true,
+   "inLiveDatabase": false
+  },
   "4146729347": {
    "hash": 4146729347,
    "name": "Last Stand",
@@ -57522,14 +58673,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants 20 Aim Assist and #e${-30+#d} Range.\n\nenhanced (\nvar d = 5\n#e Range penalty is decreased by 5.\n)",
+     "main": "Passively increases Aim Assist by 20 but decreases Range by #e${20+#d}.\n\nenhanced (\nvar d = 5\n#e Range penalty is decreased by 5.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719483501341,
+      "lastUpdate": 1728829317131,
       "updatedBy": "Stardust"
      }
     },
@@ -57539,7 +58690,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -59664,14 +60815,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Scoring multiple Weapon Kills within ? seconds of each spawns a Dawning Gift for you and allies. Dawning Gifts remain on the ground for 10 seconds.\n\nPicking up Dawning Gifts grants 10% Grenade, Melee, and Class Ability Energy, restores 22 HP, and starts Health Regeneration.\n\nActivation progress on Kills by <link Enemy Rank [#CombatantClassifications] />:\n• Minors and Guardians: 16.66%\n• Elites, Minibosses, and Bosses: 50%",
+     "main": "Scoring multiple Kills with the weapon spawns a Dawning Gift for you and allies. Dawning Gifts remain on the ground for 10 seconds.\n\nPicking up Dawning Gifts grants 10% Grenade, Melee, and Class Ability Energy, restores 22 HP, and starts Health Regeneration.\n\nActivation progress on Kills by <link Enemy Rank [#CombatantClassifications] />:\n• Minors and Guardians: 16.66%\n• Elites, Minibosses, and Bosses: 50%",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722368005115,
+      "lastUpdate": 1729013968643,
       "updatedBy": "Stardust"
      }
     },
@@ -59681,7 +60832,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -59886,14 +61037,14 @@
    "type": "Weapon Mod",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively grants 10 Handling.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1686255505907,
+      "lastUpdate": 1728489191701,
       "updatedBy": "Stardust"
      }
     },
@@ -59903,7 +61054,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1686255544746,
+   "lastUpload": 1729072787613,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -60151,6 +61302,14 @@
       3164944314,
       970163821,
       1218765758
+     ]
+    },
+    {
+     "name": "Alethonym",
+     "has": [
+      470163129,
+      2405598968,
+      3941269100
      ]
     },
     {
@@ -60404,6 +61563,26 @@
      ]
     },
     {
+     "name": "Ergo Sum",
+     "has": [
+      461437088,
+      289811733,
+      519046634,
+      1327961177,
+      1497627200,
+      1522566605,
+      1726251414,
+      1959135343,
+      2557881346,
+      2753228730,
+      2963428707,
+      3034060702,
+      3325420353,
+      3551049142,
+      3949068808
+     ]
+    },
+    {
      "name": "Eriana's Vow",
      "has": [
       3174300811,
@@ -60521,6 +61700,13 @@
       2226793914,
       122307549,
       229534486
+     ]
+    },
+    {
+     "name": "Ice Breaker",
+     "has": [
+      744619683,
+      2848175214
      ]
     },
     {
@@ -61300,6 +62486,7 @@
       1636108362,
       3054949324,
       3468089894,
+      3923638944,
       3983457027
      ]
     },
@@ -61728,12 +62915,18 @@
     {
      "name": "Shotgun",
      "has": [
+      224485255,
       308595185,
+      364418505,
+      384272571,
+      453527127,
       539564471,
+      743857847,
       757651572,
       811588234,
       878620401,
       956390015,
+      1045795938,
       1052350088,
       1671927875,
       1765356367,
@@ -61744,8 +62937,11 @@
       2662827496,
       2897981193,
       2986029425,
+      3000852559,
+      3226552705,
       3272152575,
       3377988521,
+      3399947696,
       3419227006,
       3615521782,
       3725333007,
@@ -62121,6 +63317,10 @@
     "name": "Perfect Float",
     "linkedWith": 2272927194
    },
+   "717070634": {
+    "name": "Jolting Feedback",
+    "linkedWith": 3966416502
+   },
    "744594675": {
     "name": "Well-Rounded",
     "linkedWith": 2139363611
@@ -62241,6 +63441,10 @@
     "name": "Threat Remover",
     "linkedWith": 2476672792
    },
+   "1134488199": {
+    "name": "Withering Gaze",
+    "linkedWith": 2904194311
+   },
    "1135494563": {
     "name": "Beacon Rounds",
     "linkedWith": 2859149211
@@ -62280,6 +63484,10 @@
    "1183436451": {
     "name": "Firefly",
     "linkedWith": 3824105627
+   },
+   "1194056669": {
+    "name": "Closing Time",
+    "linkedWith": 3955464425
    },
    "1195158366": {
     "name": "Encore",
@@ -62513,6 +63721,10 @@
     "name": "Timed Payload",
     "linkedWith": 1562897767
    },
+   "1955165503": {
+    "name": "Rimestealer",
+    "linkedWith": 2617553311
+   },
    "1961144892": {
     "name": "Quickdraw",
     "linkedWith": 706527188
@@ -62552,6 +63764,10 @@
    "2048641572": {
     "name": "Destabilizing Rounds",
     "linkedWith": 1926441324
+   },
+   "2073244114": {
+    "name": "Lone Wolf",
+    "linkedWith": 2579169598
    },
    "2077819806": {
     "name": "Eager Edge",
@@ -62717,6 +63933,10 @@
     "name": "Multikill Clip",
     "linkedWith": 2458213969
    },
+   "2579169598": {
+    "name": "Lone Wolf",
+    "linkedWith": 2073244114
+   },
    "2586829431": {
     "name": "Shot Swap",
     "linkedWith": 2217963031
@@ -62732,6 +63952,10 @@
    "2610012052": {
     "name": "Golden Tricorn",
     "linkedWith": 4290541820
+   },
+   "2617553311": {
+    "name": "Rimestealer",
+    "linkedWith": 1955165503
    },
    "2621346526": {
     "name": "Ensemble",
@@ -62797,6 +64021,10 @@
     "name": "Desperate Measures",
     "linkedWith": 2109543898
    },
+   "2817499044": {
+    "name": "Envious Arsenal",
+    "linkedWith": 3987942396
+   },
    "2840833776": {
     "name": "Shoot to Loot",
     "linkedWith": 3700496672
@@ -62848,6 +64076,10 @@
    "2898218424": {
     "name": "Air Assault",
     "linkedWith": 3722653512
+   },
+   "2904194311": {
+    "name": "Withering Gaze",
+    "linkedWith": 1134488199
    },
    "2923251173": {
     "name": "Kill Clip",
@@ -63177,6 +64409,14 @@
     "name": "To the Pain",
     "linkedWith": 3416609154
    },
+   "3955464425": {
+    "name": "Closing Time",
+    "linkedWith": 1194056669
+   },
+   "3966416502": {
+    "name": "Jolting Feedback",
+    "linkedWith": 717070634
+   },
    "3974407819": {
     "name": "No Distractions",
     "linkedWith": 2866798147
@@ -63188,6 +64428,10 @@
    "3978468247": {
     "name": "Discord",
     "linkedWith": 906981559
+   },
+   "3987942396": {
+    "name": "Envious Arsenal",
+    "linkedWith": 2817499044
    },
    "4045335048": {
     "name": "Headseeker",
