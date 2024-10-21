@@ -7232,14 +7232,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances <solar/>Tripmine Grenades:\n• 14% increased Explosion damage\n• Explosion Length and Width are increased to 14 meters\n• Explosions don't have any damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n\n<solar/>Solar Ability Kills grant 33% Tripmine Grenade Energy. <solar/>Solar Ability Hits grant <pve 33% /> <pvp 8% /> Tripmine Grenade Energy. 0.3 second cooldown between energy gains.",
+     "main": "Intrinsically grants Fastball to all grenades.\n\nEnhances <solar/>Tripmine Grenades:\n• 14% increased Explosion damage\n• Explosion Length and Width are increased to 14 meters\n• Explosions don't have any damage falloff\n• Explosion no longer deals self-damage\n• Last 20 seconds longer (10s🠚30s)\n• Grants Tripmine Grenades 70 HP\n\n<solar/>Solar Ability Kills grant 33% Tripmine Grenade Energy. <solar/>Solar Ability Hits grant <pve 33% /> <pvp [8%] /> Tripmine Grenade Energy. 0.3 second cooldown between energy gains.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1729298987686,
+      "lastUpdate": 1729535768582,
       "updatedBy": "Stardust"
      }
     },
@@ -7249,7 +7249,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1729372904933,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10525,14 +10525,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance (Resist x2) to you and allies inside Rifts you create. (<solar/>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a Cooldown.\n\nDying spawns a Healing Rift at your location.",
+     "main": "Grants <pve 25% /> <pvp [5%] /> Damage Resistance (Resist x2) to you and allies inside Rifts you create. (<solar/>Well of Radiance does not count but you can cast a Rift inside it for the benefits)\n\nReaching Critical Health grants the Dearly Departed buff, granting <pve 50% /> <pvp [25%] /> Class Ability Energy.\n\nBuff lasts until you are no longer at Critical Health, essentially serving as a cooldown.\n\nDying spawns a Healing Rift at your location.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727526094033,
+      "lastUpdate": 1729535836772,
       "updatedBy": "Stardust"
      }
     },
@@ -10542,7 +10542,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17791,14 +17791,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• ? to ? Handling\n• ${5*#d}?% to ${10*#d}?% decreased Accuracy Cone Size\n//• ?% to ?% decreased <title Accuracy Cone Growth [G_conegrowth] />\n\nenhanced (\nvar d = 1 // add #e once we have more numbers\n#e Stronger effect.\n)\n\n\"As Magazine decreases below 50%, down to 0%:\n Grants +10 ↑+? Range, +? ↑+? Handling, and -5%? ↑-%? Accuracy Cone Size at 50% Magazine.\nDynamically scales up to +20 ↑+? Range, +? ↑+? Handling, and -10%? ↑-?% Accuracy Cone Size at 0% Magazine.\n\n↑ +10 Range, +? Handling, and -%? Accuracy Cone Size at 50% Magazine.\nUp to +? Range, +? Handling, and ↑-?% Accuracy Cone Size at 0% Magazine.\"",
+     "main": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• ? to ? Handling\n• ${5*#d}?% to ${10*#d}?% decreased Accuracy Cone Size\n//• ?% to ?% decreased <title Accuracy Cone Growth [G_conegrowth] />\n\nenhanced (\nvar d = 1 // add #e once we have more numbers\n#e Stronger effect.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1729347007409,
+      "lastUpdate": 1729535932988,
       "updatedBy": "Stardust"
      }
     },
@@ -17808,7 +17808,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1729372904933,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24204,14 +24204,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Diamond Lance creates a <stasis/>Stasis Crystal on impact. Hitting an <link Elite or higher tier Combatant [#CombatantClassifications] /> creates 2 additional <stasis/>Stasis Crystals.\n\nWith a <stasis/>Stasis Super Ability and while standing behind a Rally Barricade:\nScoring a Precision Kill or 3 Precision Hits within ? seconds of each spawns a <stasis/>Diamond Lance next to you.\n\nShares a Cooldown with the <stasis/>Diamond Lance Aspect but using the Aspect is not required.",
+     "main": "Diamond Lance creates a <stasis/>Stasis Crystal on impact. Hitting an <link Elite or higher tier Combatant [#CombatantClassifications] /> creates 2 additional <stasis/>Stasis Crystals.\n\nWith a <stasis/>Stasis Super Ability and while standing behind a Rally Barricade:\nScoring a Precision Kill or 3 Precision Hits within ? seconds of each spawns a <stasis/>Diamond Lance next to you.\n\nShares a cooldown with the <stasis/>Diamond Lance Aspect but using the Aspect is not required.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1729350674128,
+      "lastUpdate": 1729535789376,
       "updatedBy": "Stardust"
      }
     },
@@ -24221,7 +24221,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1729372904933,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27321,14 +27321,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces Towering Barricade with Assault Barricade:\n• Allows caster and allies to shoot through it\n• 33% decreased HP (500🠚375?)\n• Takes 25% increased damage from Enemy Players\n• 50% decreased duration (20🠚10 seconds)\n• 72.4% increased Cooldown Time",
+     "main": "Replaces Towering Barricade with Assault Barricade:\n• Allows caster and allies to shoot through it\n• 33% decreased HP (500🠚375?)\n• Takes 25% increased damage from Enemy Players\n• 50% decreased duration (20🠚10 seconds)\n• 72.4% increased cooldown time",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723224832405,
+      "lastUpdate": 1729535860219,
       "updatedBy": "Stardust"
      }
     },
@@ -27338,7 +27338,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35687,14 +35687,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability Usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade and match its cooldown.\n\nEnemies within 5? meters of the Barri-Nade's impact location are disoriented. Spawned Barricade deals no Contact Damage within 2 seconds of its creation.\n\nBarri-nade has no collision with enemies/* and objects that are not part of the map by default*/.",
+     "main": "Replaces Grenade Ability with Barri-Nade on Class Ability usage. Barri-Nade is lost if Class Ability fully recharges.\n\nBarri-Nade spawns your selected Barricade type on the impact location and inherits the benefits of Aspects such as Bastion and Drengr's Lash. Non-barricade class abilities default to Towering Barricade and match its cooldown.\n\nEnemies within 5? meters of the Barri-Nade's impact location are disoriented. Spawned Barricade deals no Contact damage within 2 seconds of its creation.\n\nBarri-Nade has no collision with enemies/* and objects that are not part of the map by default*/.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1693501984036,
+      "lastUpdate": 1729535906578,
       "updatedBy": "Stardust"
      }
     },
@@ -35704,7 +35704,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1693504657319,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -36045,14 +36045,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While a <stasis/>Stasis Super Ability is equipped:\nBarricade is replaced with a <stasis/>Stasis Crystal Wall.\n\nThe <stasis/>Wall is made of a Small <stasis/>Crystal in the middle and 2 Medium <stasis/>Crystals on either side of it.\n\nApplies Rally Barricade benefits to players standing behind the middle <stasis/>Crystal for 14 seconds, even if destroyed. Overrides Class Ability Cooldown with Towering Barricade's.",
+     "main": "While a <stasis/>Stasis Super Ability is equipped:\nBarricade is replaced with a <stasis/>Stasis Crystal Wall.\n\nThe <stasis/>Wall is made of a Small <stasis/>Crystal in the middle and 2 Medium <stasis/>Crystals on either side of it.\n\nApplies Rally Barricade benefits to players standing behind the middle <stasis/>Crystal for 14 seconds, even if destroyed. Overrides Class Ability cooldown with Towering Barricade's.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1729371633512,
+      "lastUpdate": 1729535847727,
       "updatedBy": "Stardust"
      }
     },
@@ -36062,7 +36062,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1729372904933,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -60482,14 +60482,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Upon casting <arc/>Gathering Storm:\n• Releases lightning at enemies within ? meters of you, dealing <pve ? /> <pvp [?] /> damage and applying <arc/>Jolt\n• You and allies within ? meters become <arc/>Amplified\n• Inconsistently refunds up to 50% super energy based on ??????\n\n<arc/>Arc-Debuffed Enemy Kills grant ?% additional <arc/>Gathering Storm Super Energy.\n\n",
+     "main": "Upon casting <arc/>Gathering Storm:\n• Releases lightning at enemies within ? meters of you, dealing <pve ? /> <pvp [?] /> damage and applying <arc/>Jolt\n• You and allies within ? meters become <arc/>Amplified\n• Inconsistently refunds up to 50% Super Energy based on ??????\n\n<arc/>Arc-Debuffed Enemy Kills grant ?% additional <arc/>Gathering Storm Super Energy.\n\n",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1729298641606,
+      "lastUpdate": 1729535749517,
       "updatedBy": "Stardust"
      }
     },
@@ -60499,7 +60499,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1729372904933,
+   "lastUpload": 1729535947177,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
