@@ -49,7 +49,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1705328404589,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -59,14 +59,14 @@
    "type": "none",
    "editor": {
     "en": {
-     "main": "// This variale only shows up on enhanced perks. DO NOT CHANGE IT\nvar e = 🡅\n\n// vvv User-defined variables vvv\nvar CombatantScaling = https://url.d2clarity.com/combatant-scaling\n\nvar CombatantClassifications = https://url.d2clarity.com/combatants\n\nvar DamageBuffs = https://url.d2clarity.com/DamageBuffs\n\nvar GlobalTangleCooldown = Shares the 12 second global <strand/>Tangle creation cooldown.\n\nvar Reload = Counts as a manual reload and will activate reload-triggered perks such as Kill Clip.\n\nvar elementalPickup = Elemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Tangles, and <void/>Void Breaches.\n\nvar ChunkEnergyScalars = Ability energy gained may be significantly decreased based on your selected ability's Chunk Energy Scalar. Learn more about this mechanic in <link our explainer blog post on the Clarity website [https://url.d2clarity.com/chunk-energy-scalars] />.\n\nvar ChunkEnergyUnaffected = Ability energy gained is NOT affected by Chunk Energy Scalars. Learn more about this mechanic in <link our explainer blog post on the Clarity website [https://url.d2clarity.com/chunk-energy-scalars] />.\n\nvar MeleeAbilityDisambiguation = Clarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future.",
+     "main": "// This variale only shows up on enhanced perks. DO NOT CHANGE IT\nvar e = 🡅\n\n// vvv User-defined variables vvv\nvar CombatantScaling = https://url.d2clarity.com/combatant-scaling\n\nvar CombatantClassifications = https://url.d2clarity.com/combatants\n\nvar DamageBuffs = https://url.d2clarity.com/DamageBuffs\n\nvar GlobalTangleCooldown = Shares the 12 second global <strand/>Tangle creation cooldown.\n\nvar Reload = Counts as a manual reload and will activate reload-triggered perks such as Kill Clip.\n\nvar elementalPickup = Elemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Tangles, and <void/>Void Breaches.\n\nvar ChunkEnergyScalars = Ability energy gained may be significantly decreased based on your selected ability's Chunk Energy Scalar. Learn more about this mechanic in <link our explainer blog post on the Clarity website [https://url.d2clarity.com/chunk-energy-scalars] />.\n\nvar ChunkEnergyUnaffected = Ability energy gained is NOT affected by Chunk Energy Scalars. Learn more about this mechanic in <link our explainer blog post on the Clarity website [https://url.d2clarity.com/chunk-energy-scalars] />.\n\nvar MeleeAbilityDisambiguation = Clarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future.\n\nvar ExplosiveBuffExclusion = Does not buff the Splash/Explosive damage elements of other perks.",
      "secondary": ""
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738942725746,
+      "lastUpdate": 1743178404385,
       "updatedBy": "Stardust"
      }
     },
@@ -75,7 +75,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -1040,14 +1040,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant Stacks of Sword Logic.\n\nThe number of Stacks and the buff duration are tied to the highest <link Enemy Rank [#CombatantClassifications] /> killed since activation:\n• Minors: 1 Stack for #e${5.5+#d} seconds\n• Elites, Players: 2 Stacks for #e${7.5+#d} seconds\n• Players in their Super and Minibosses: 3 Stacks for #e${10.5+#d} seconds\n• Bosses: 4 Stacks for #e${15.5+#d} seconds\n\nDamage increase at 1|2|3|4 Stacks:\n15% | <pve 25% /> <pvp [20%] /> | 35% | 50%\n\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Weapon Kills grant Stacks of Sword Logic.\n\nThe number of Stacks and the buff duration are tied to the highest <link Enemy Rank [#CombatantClassifications] /> killed since activation:\n• Minors: 1 Stack for #e${5.5+#d} seconds\n• Elites, Players: 2 Stacks for #e${7.5+#d} seconds\n• Players in their Super and Minibosses: 3 Stacks for #e${10.5+#d} seconds\n• Bosses: 4 Stacks for #e${15.5+#d} seconds\n\nDamage increase at 1|2|3|4 Stacks:\n15% | <pve 25% /> <pvp [15%] /> | 35% | 50%\n\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738608666559,
+      "lastUpdate": 1743182036576,
       "updatedBy": "Stardust"
      }
     },
@@ -1057,7 +1057,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -1304,6 +1304,33 @@
    "uploadedBy": "Stardust",
    "lastUpload": 1680554889429,
    "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "59871045": {
+   "name": "Gravity Well",
+   "hash": 59871045,
+   "type": "Weapon Trait Origin",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
    "uploadToLive": false
   },
   "64332393": {
@@ -3869,14 +3896,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants #e${0.8+#d}% Super Energy.\n\nDoes not require Direct Hits. Hit counter persists through stow.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Other: 67% of Magazine Size rounded down + 2\n\nenhanced (\nvar d = 0.3\n#e Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%).\n)",
+     "main": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants #e${0.8+#d}% Super Energy.\n\nDoes not require Direct Hits. Hit counter persists through stow.\n\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\n\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits.\n\nenhanced (\nvar d = 0.3\n#e Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1735910100900,
+      "lastUpdate": 1742588543630,
       "updatedBy": "Stardust"
      }
     },
@@ -3886,7 +3913,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1735912353479,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7196,14 +7223,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\n\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%\n\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\n\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\n\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\n\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738601610875,
+      "lastUpdate": 1743179173244,
       "updatedBy": "Stardust"
      }
     },
@@ -7213,7 +7240,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8162,6 +8189,33 @@
    "inLiveDatabase": false,
    "uploadToLive": false
   },
+  "521275121": {
+   "name": "Beam Medic",
+   "hash": 521275121,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
+   "uploadToLive": false
+  },
   "521275122": {
    "hash": 521275122,
    "name": "Unraveling Orbs",
@@ -8414,7 +8468,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1739485788981,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8807,14 +8861,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack.\n\nMaximum of 6 Stacks. Missing removes all Stacks.\n\nPrecision damage increase at 1|2|... Stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <Stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
+     "main": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 Stacks. Missing removes all Stacks.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... Stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <Stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1732217767320,
+      "lastUpdate": 1743181069632,
       "updatedBy": "Stardust"
      }
     },
@@ -8824,7 +8878,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1732219732702,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15512,14 +15566,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Upon finishing a reload within 3.6 seconds of a Weapon Kill: \n25% increased damage for #e${5+#d} seconds.\n\nBuff is removed on stow.\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "Finishing a reload within 3.6 seconds of a Weapon Kill grants 25% increased damage for #e${5+#d} seconds.\n\nStowing the weapon removes the buff.\n\n#ExplosiveBuffExclusion\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722181750761,
+      "lastUpdate": 1743180305361,
       "updatedBy": "Stardust"
      }
     },
@@ -15529,7 +15583,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17259,14 +17313,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Aiming Down Sights (ADS) for #e${1.5-#d} seconds without firing causes your next Direct Hit to apply <void/>Weaken.\n\nTimer starts as soon as ADS input is pressed.\n\nenhanced (\nvar d = 0.1\n#e Activation time is decreased by 0.1 seconds.\n)",
+     "main": "Aiming Down Sights (ADS) for #e${1.5-#d} seconds without firing and staying ADS causes your next shot to apply <void/>Weaken on a Direct Hit.\n\nTimer starts as soon as ADS input is pressed.\n\nenhanced (\nvar d = 0.1\n#e Activation time is decreased by 0.1 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738686562567,
+      "lastUpdate": 1743183277790,
       "updatedBy": "Stardust"
      }
     },
@@ -17276,7 +17330,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20399,6 +20453,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "1319563984": {
+   "name": "Limit Break",
+   "hash": 1319563984,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "1319563986": {
    "hash": 1319563986,
@@ -25893,19 +25974,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Readying the Sword grants 30% increased damage for #e${1.5+#d} seconds.\n\nenhanced (\nvar d = 0.5\n#e Buff duration is increased by 0.5? seconds.\n)",
+     "main": "Readying the Sword grants 30% increased damage for #e${1.5+#d} seconds.\n\n2? second cooldown after the buff expires.\n\nenhanced (\nvar d = 0.5\n#e Buff duration is increased by 0.5? seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712878943649,
+      "lastUpdate": 1742593655317,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670255651435,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -25914,7 +25991,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -27355,14 +27432,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed.\n\nMagazine Refill cannot be triggered again without stowing the weapon first.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on <primary/>Primary, 15% on <special/>Special).\n\nTranscendence Grenades count as the element of your equipped Grenade Ability.\n\nMost perks that replace your Grenade Ability with a custom throwable (such as <solar/>Gunpowder Gamble or <yellow The Rock />) do not trigger the perk.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
+     "main": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed.\n\nMagazine Refill cannot be triggered again without stowing the weapon first.\n\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on <primary/>Primary, 15% on <special/>Special).\n\nPerks that replace your Grenade Ability (such as <solar/>Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis.\n\nenhanced (\n#e Passively grants 5 Handling.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1739033348351,
+      "lastUpdate": 1743180874661,
       "updatedBy": "Stardust"
      }
     },
@@ -27372,7 +27449,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1739033358171,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28597,14 +28674,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Increases damage against shielded targets:\n• #e${125+#d}% increase against PVE Combatant Overshields\n• #e${50+#f}% increase against PVE Combatant Elemental Shields and <barrier/>Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with <strand/>Woven Mail\n\nNotable Combatant Overshields include Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one.\n\nenhanced (\nvar d = 15\nvar f = 5\n#e Damage Buff is increased: 125%⁠🠚⁠140%, 50%⁠🠚⁠55%, 20%⁠🠚⁠?⁠%.\n)",
+     "main": "Increases damage against shielded targets:\n• #e${125+#d}% increase against PVE Combatant Overshields\n• #e${50+#f}% increase against PVE Combatant Elemental Shields and <barrier/>Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with <strand/>Woven Mail\n\nNotable Combatant Overshields include Shadow Legion <link Tech Pack [https://www.destinypedia.com/Tech_Pack] /> and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one.\n\n#ExplosiveBuffExclusion\n\nenhanced (\nvar d = 15\nvar f = 5\n#e Damage Buff is increased: 125%⁠🠚⁠140%, 50%⁠🠚⁠55%, 20%⁠🠚⁠?⁠%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722359495597,
+      "lastUpdate": 1743182651663,
       "updatedBy": "Stardust"
      }
     },
@@ -28614,7 +28691,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -31468,14 +31545,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills cause enemies to explode, applying <void/>Volatile to enemies in a 6.5 meter radius around the target.\n\nIf the explosion applied <void/>Volatile to a nearby enemy, you gain <void/>Volatile Rounds for #e${4.5+#d} seconds.\n\n1.5 second cooldown between activations.\n\nenhanced (\nvar d = 0.75\n#e <void/>Volatile Rounds duration is increased by 0.75 seconds.\n)",
+     "main": "Weapon Kills apply <void/>Volatile to enemies in a 6.5 meter radius around the target.\n\n1.5 second cooldown between activations.\n\nApplying <void/>Volatile to enemies with the perk grants <void/>Volatile Rounds for #e${4.5+#d} seconds.\n\nenhanced (\nvar d = 0.75\n#e <void/>Volatile Rounds duration is increased by 0.75 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738955385840,
+      "lastUpdate": 1742593330622,
       "updatedBy": "Stardust"
      }
     },
@@ -31485,7 +31562,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32798,14 +32875,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for #e${7+#d} seconds.\n\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies <arc/>Jolt to the target.\n\nenhanced (\nvar d = 1\n#e Buff can be held 1 second longer.\n)",
+     "main": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for #e${7+#d} seconds.\n\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies <arc/>Jolt to the target.\n\nApplied <arc/>Jolt's damage (generally) does not count as Weapon Damage.\n\nenhanced (\nvar d = 1\n#e Buff can be held 1 second longer.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722360006599,
+      "lastUpdate": 1743182753159,
       "updatedBy": "Stardust"
      }
     },
@@ -32814,7 +32891,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -33587,19 +33664,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Increases damage by <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] /> as the Magazine drops from #e${50+#d}% of its base capacity to empty.\n\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
+     "main": "Increases damage by <pve 12.1% /> <pvp [3%] /> to <pve 25.6% /> <pvp [6%] /> as the Magazine drops from #e${50+#d}% of its base capacity to empty.\n\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\n\n#ExplosiveBuffExclusion\n\nenhanced (\nvar d = 5\n#e Activates with 5% more of the Magazine Capacity remaining.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712879255278,
+      "lastUpdate": 1743179374476,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670269567762,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -33608,7 +33681,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34114,14 +34187,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Taking damage while Guarding emits a blast in a wide, 8? meter long cone in front of you. The blast disorients enemies hit by it and deals up to <pve 110 /> <pvp [?] /> weapon-matching elemental damage.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity.\n)",
+     "main": "Taking damage while Guarding emits a blast in a wide, 8? meter long wide cone in front of you.\n\nThe blast disorients enemies hit by it for 5 seconds and deals weapon-matching elemental damage.\n\nThe damage scales up from <pve 75 /> <pvp [14] /> damage at point-blank range to the maximum of <pve 110 /> <pvp [45] /> damage after ? meters.\n\nThe strength of the disorientation against Players similarly also scales up with distance.\n\n2.25 second cooldown between activations.\n\nenhanced (\n#e Passively grants 10 Ammo Capacity.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738957154805,
+      "lastUpdate": 1742594695535,
       "updatedBy": "Stardust"
      }
     },
@@ -34131,7 +34204,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -35039,6 +35112,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": false
+  },
+  "2297703044": {
+   "name": "Overload Trace Rifles",
+   "hash": 2297703044,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2297703046": {
    "hash": 2297703046,
@@ -36666,14 +36766,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant the following benefits to hip-firing for #e${7+#d} seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• 3-3.5° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased <title Accuracy Cone Growth [G_conegrowth] />.\n\nBuff is removed on stow.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Weapon Kills grant the following benefits to hip-firing for #e${7+#d} seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• ~3° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased <title Accuracy Cone Growth [G_conegrowth] />.\n\nBuff is removed on stow.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722424538331,
+      "lastUpdate": 1743180741920,
       "updatedBy": "Stardust"
      }
     },
@@ -36683,7 +36783,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -38228,14 +38328,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "After Aiming Down Sights for #e${1.5-#d} seconds without firing, for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\n\nTimer starts as soon as the ADS input is pressed.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n\nenhanced (\nvar d = 0.1\n#e Activation time is reduced by 0.1 seconds.\n)",
+     "main": "Aiming Down Sights for #e${1.5-#d} seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\n\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\n\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n\nenhanced (\nvar d = 0.1\n#e Activation time is decreased by 0.1 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731002518141,
+      "lastUpdate": 1742593227359,
       "updatedBy": "Stardust"
      }
     },
@@ -38245,7 +38345,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39074,6 +39174,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": false
+  },
+  "2596646303": {
+   "name": "Harsh Refraction",
+   "hash": 2596646303,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2607392828": {
    "name": "Heart Piercer",
@@ -43160,31 +43287,31 @@
    "uploadToLive": true
   },
   "2817677128": {
-   "hash": 2817677128,
    "name": "Melee Momentum",
+   "hash": 2817677128,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1738951046405,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3773585912",
+     "secondary": "import secondary from 3773585912"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1743180377071,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2818140350": {
    "name": "Dynamic Duo",
@@ -44185,14 +44312,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Starts linearly increasing Detonation damage 0.2 seconds after the grenade projectile is fired.\n\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\n\nDamage increase also applies to Area Denial Frame Grenade Launcher lingering pools.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
+     "main": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\n\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\n\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further.\n\nenhanced (\n#e Passively grants 5 Blast Radius.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738957330690,
+      "lastUpdate": 1743179015815,
       "updatedBy": "Stardust"
      }
     },
@@ -44202,7 +44329,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44302,14 +44429,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for #e${11+#d} seconds.\n\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for #e${11+#d} seconds.\n\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\n\n#ExplosiveBuffExclusion\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738597653289,
+      "lastUpdate": 1743178390475,
       "updatedBy": "Stardust"
      }
     },
@@ -44319,7 +44446,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -48434,14 +48561,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of #e${6+#d} Stacks.\n\nFiring the weapon comsumes 1 Stack per Shot, granting 100 Blast Radius and increased damage.\n\nGrenade Launchers: 60% increased Explosive damage.\n\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)\n\nenhanced (\nvar d = 1\n#e Maximum number of Stacks is increased by 1.\n)",
+     "main": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of #e${6+#d} Stacks.\n\nFiring the weapon comsumes 1 Stack per Shot, granting increased damage and setting Blast Radius to 100.\n\nGrenade Launchers: 60% increased Explosive damage.\n\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)\n\nenhanced (\nvar d = 1\n#e Maximum number of Stacks is increased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722176270084,
+      "lastUpdate": 1743177977374,
       "updatedBy": "Stardust"
      }
     },
@@ -48451,7 +48578,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -50981,14 +51108,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant a Stack of Rampage for #e${4.5+#d} seconds. Maximum of 3 Stacks.\n\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
+     "main": "Weapon Kills grant a Stack of Rampage for #e${4.5+#d} seconds. Maximum of 3 Stacks.\n\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\n\n#ExplosiveBuffExclusion\n\nenhanced (\nvar d = 0.5\n#e Buff Duration is increased by 0.5 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722191327411,
+      "lastUpdate": 1743181130422,
       "updatedBy": "Stardust"
      }
     },
@@ -50998,7 +51125,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52663,14 +52790,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Blocking damage with Glaive Shield decreases Glaive Block's Movement Speed Penalty by ?% for ? seconds.\n\nBuff is removed if you stop blocking.\n\nenhanced (\n#e Buff Duration is increased.\n)",
+     "main": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for #e${4+#d} seconds.\n\nBuff is removed if you stop blocking or if Weapon Energy runs out.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1? second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722357763241,
+      "lastUpdate": 1743182548124,
       "updatedBy": "Stardust"
      }
     },
@@ -52680,7 +52807,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -52961,31 +53088,31 @@
    "itemName": "Edge of Concurrence"
   },
   "3555252274": {
-   "hash": 3555252274,
    "name": "Recycled Energy",
+   "hash": 3555252274,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1738951046405,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 3713215006",
+     "secondary": "import secondary from 3713215006"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1743181220672,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3556461530": {
    "name": "Voltaic Mirror",
@@ -53366,6 +53493,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": false
+  },
+  "3585856466": {
+   "name": "Elemental Siphon",
+   "hash": 3585856466,
+   "type": "Armor Mod Seasonal",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "3585856469": {
    "hash": 3585856469,
@@ -55123,31 +55277,31 @@
    "uploadToLive": false
   },
   "3713215006": {
-   "hash": 3713215006,
    "name": "Recycled Energy",
+   "hash": 3713215006,
    "type": "Weapon Trait",
-   "lastUpload": 1738951046405,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Finishing a reload within ? seconds of a Weapon Kill inconsistently grants ?% (basically zero) Ability Energy to the least-charged Ability.\n\nenhanced (\n#e No observable difference.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1743181350620,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3717985200": {
    "name": "Psychohack",
@@ -55931,31 +56085,31 @@
    "itemName": "Tommy's Matchbook"
   },
   "3773585912": {
-   "hash": 3773585912,
    "name": "Melee Momentum",
+   "hash": 3773585912,
    "type": "Weapon Trait",
-   "lastUpload": 1738951046405,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Glaive Melee Kills grant Weapon Energy and ?% increased movement speed while Blocking for 10 seconds.\n\nWeapon Energy granted by <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 16.7%\n• Elites, Players: ?%\n• Minibosses: 50%\n\nenhanced (\n#e Weapon Energy granted is increased.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1743182478867,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1743183422022,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "3774850330": {
    "hash": 3774850330,
@@ -57060,14 +57214,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs (certain weapon perks' damage buffs are not inherited), the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${6-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits Required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${6-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738605549780,
+      "lastUpdate": 1743181163609,
       "updatedBy": "Stardust"
      }
     },
@@ -57077,7 +57231,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -58035,14 +58189,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits with the weapon within 3? seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns: #e${18-#d} | <arc/>13\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>10\n• Grenade Launchers: #e${3-#d} | <arc/>2\n\nenhanced (\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1?.\n)",
+     "main": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns, Trace Rifles: #e${18-#d} | <arc/>13\n• Machine Guns: #e${16-#d} | <arc/>12\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>10\n• Glaives: #e${4-#d} | <arc/>3\n• Grenade Launchers: #e${3-#d} | <arc/>2\n\nenhanced (\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738605371877,
+      "lastUpdate": 1743180113458,
       "updatedBy": "Stardust"
      }
     },
@@ -58052,7 +58206,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -61753,14 +61907,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "",
+     "main": "Scoring #e${25-#d} Hits within ? seconds of each triggers an explosion around the target, dealing up to <pve 266 /> <pvp [?] /> weapon element-matching damage in a ? meter radius.\n\nenhanced (\nvar d = 5\n#e Number of Hits required is decreased by 5?.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738955596113,
+      "lastUpdate": 1742593576246,
       "updatedBy": "Stardust"
      }
     },
@@ -61770,7 +61924,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1743183422022,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
