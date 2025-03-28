@@ -552,14 +552,14 @@
     {
      "linesContent": [
       {
-       "text": "After Aiming Down Sights for "
+       "text": "Aiming Down Sights for "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.4 seconds without firing, for a single shot:"
+       "text": "1.4 seconds without firing grants the following for a single shot:"
       }
      ]
     },
@@ -583,7 +583,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts as soon as the ADS input is pressed."
+       "text": "Timer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff."
       }
      ]
     },
@@ -607,7 +607,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Activation time is reduced by 0.1 seconds."
+       "text": " Activation time is decreased by 0.1 seconds."
       }
      ]
     }
@@ -809,13 +809,13 @@
  "31345821": {
   "hash": 31345821,
   "name": "Sword Logic",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738608666559,
+     "lastUpdate": 1743182036576,
      "updatedBy": "Stardust"
     }
    }
@@ -895,7 +895,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 20%]"
+       "text": "[PVP: 15%]"
       },
       {
        "text": " | 35% | 50%"
@@ -3674,6 +3674,16 @@
     {
      "linesContent": [
       {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -4201,6 +4211,50 @@
      "updatedBy": "Stardust"
     }
    }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "20 Hits within ? seconds of each triggers an explosion around the target, dealing up to "
+      },
+      {
+       "text": "266"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " weapon element-matching damage in a ? meter radius."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Number of Hits required is decreased by 5?."
+      }
+     ]
+    }
+   ]
   }
  },
  "229003538": {
@@ -4529,13 +4583,13 @@
  "243981275": {
   "hash": 243981275,
   "name": "Attrition Orbs",
-  "lastUpload": 1735912353479,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1735910100900,
+     "lastUpdate": 1742588543630,
      "updatedBy": "Stardust"
     }
    }
@@ -4593,7 +4647,17 @@
     {
      "linesContent": [
       {
-       "text": "• Other: 67% of Magazine Size rounded down + 2"
+       "text": "• Others: 67% of Magazine Size rounded down + 2"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Support Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
       }
      ]
     }
@@ -4978,6 +5042,16 @@
     {
      "linesContent": [
       {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -5322,7 +5396,7 @@
     {
      "linesContent": [
       {
-       "text": "Adaptive Burst Linear Fusion Rifles require 2 Hits for each Stack."
+       "text": "Maximum of 6 Stacks. Missing removes all Stacks."
       }
      ]
     },
@@ -5332,7 +5406,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 6 Stacks. Missing removes all Stacks."
+       "text": "Adaptive Burst Linear Fusion Rifles require 2 Hits for each Stack (and missing sometimes does not remove your stacks on them)."
       }
      ]
     },
@@ -7826,13 +7900,13 @@
  "460017080": {
   "hash": 460017080,
   "name": "Headseeker",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738601610875,
+     "lastUpdate": 1743179173244,
      "updatedBy": "Stardust"
     }
    }
@@ -7880,7 +7954,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%"
+       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%"
       }
      ]
     },
@@ -9115,7 +9189,7 @@
  "531057500": {
   "hash": 531057500,
   "name": "Lucent Blades",
-  "lastUpload": 1739485788981,
+  "lastUpload": 1743183422022,
   "type": "Armor Mod General",
   "uploadedBy": "Stardust",
   "updateTracker": {
@@ -9870,13 +9944,13 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1732219732702,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1732217767320,
+     "lastUpdate": 1743181069632,
      "updatedBy": "Stardust"
     }
    }
@@ -9896,7 +9970,7 @@
     {
      "linesContent": [
       {
-       "text": "Adaptive Burst Linear Fusion Rifles require 2 Hits for each Stack."
+       "text": "Maximum of 6 Stacks. Missing removes all Stacks."
       }
      ]
     },
@@ -9906,7 +9980,7 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 6 Stacks. Missing removes all Stacks."
+       "text": "Adaptive Burst Linear Fusion Rifles require 2 Hits for each Stack (and missing sometimes does not remove your stacks on them)."
       }
      ]
     },
@@ -11518,7 +11592,7 @@
        "text": " "
       },
       {
-       "text": "[PVP: 20%]"
+       "text": "[PVP: 15%]"
       },
       {
        "text": " | 35% | 50%"
@@ -12604,7 +12678,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Direct Hits with the weapon within 3? seconds of each causes the next Direct Hit to apply "
+       "text": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply "
       },
       {
        "classNames": [ "arc" ]
@@ -12649,7 +12723,7 @@
     {
      "linesContent": [
       {
-       "text": "• Submachine Guns: "
+       "text": "• Submachine Guns, Trace Rifles: "
       },
       {
        "text": "🡅",
@@ -12663,6 +12737,26 @@
       },
       {
        "text": "13"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Machine Guns: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "15 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "12"
       }
      ]
     },
@@ -12709,6 +12803,26 @@
     {
      "linesContent": [
       {
+       "text": "• Glaives: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "3"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Grenade Launchers: "
       },
       {
@@ -12742,7 +12856,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Amplified is decreased by 1?."
+       "text": "Amplified is decreased by 1."
       }
      ]
     }
@@ -13390,7 +13504,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed."
       }
      ]
     },
@@ -13432,29 +13546,13 @@
     {
      "linesContent": [
       {
-       "text": "Transcendence Grenades count as the element of your equipped Grenade Ability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Most perks that replace your Grenade Ability with a custom throwable (such as "
+       "text": "Perks that replace your Grenade Ability (such as "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Gunpowder Gamble or "
-      },
-      {
-       "text": "The Rock"
-      },
-      {
-       "text": ") do not trigger the perk."
+       "text": "Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis."
       }
      ]
     },
@@ -17008,7 +17106,17 @@
     {
      "linesContent": [
       {
-       "text": "• Other: 67% of Magazine Size rounded down + 2"
+       "text": "• Others: 67% of Magazine Size rounded down + 2"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Support Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
       }
      ]
     },
@@ -17168,13 +17276,13 @@
  "1015611457": {
   "hash": 1015611457,
   "name": "Kill Clip",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722181750761,
+     "lastUpdate": 1743180305361,
      "updatedBy": "Stardust"
     }
    }
@@ -17184,14 +17292,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "25% increased damage for 5 seconds."
+       "text": "Finishing a reload within 3.6 seconds of a Weapon Kill grants 25% increased damage for 5 seconds."
       }
      ]
     },
@@ -17201,7 +17302,17 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed on stow."
+       "text": "Stowing the weapon removes the buff."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     }
@@ -18791,13 +18902,13 @@
  "1134488199": {
   "hash": 1134488199,
   "name": "Withering Gaze",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738686562567,
+     "lastUpdate": 1743183277790,
      "updatedBy": "Stardust"
     }
    }
@@ -18807,13 +18918,13 @@
     {
      "linesContent": [
       {
-       "text": "Aiming Down Sights (ADS) for 1.5 seconds without firing causes your next Direct Hit to apply "
+       "text": "Aiming Down Sights (ADS) for 1.5 seconds without firing and staying ADS causes your next shot to apply "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Weaken."
+       "text": "Weaken on a Direct Hit."
       }
      ]
     },
@@ -24846,7 +24957,7 @@
     {
      "linesContent": [
       {
-       "text": "Shockwaves inherit Weapon Damage Buffs (certain weapon perks' damage buffs are not inherited), the weapon's passive Kinetic Damage Bonus in PVE (10% on "
+       "text": "Shockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on "
       },
       {
        "classNames": [ "primary" ]
@@ -27281,18 +27392,14 @@
  "1685431615": {
   "hash": 1685431615,
   "name": "En Garde",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712878943649,
+     "lastUpdate": 1742593655317,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670255651435,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -27302,6 +27409,16 @@
      "linesContent": [
       {
        "text": "Readying the Sword grants 30% increased damage for 1.5 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "2? second cooldown after the buff expires."
       }
      ]
     }
@@ -27792,6 +27909,22 @@
       },
       {
        "text": "Jolt to the target."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Applied "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt's damage (generally) does not count as Weapon Damage."
       }
      ]
     },
@@ -28531,7 +28664,14 @@
     {
      "linesContent": [
       {
-       "text": "Blocking damage with Glaive Shield decreases Glaive Block's Movement Speed Penalty by ?% for ? seconds."
+       "text": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5 seconds."
       }
      ]
     },
@@ -28541,7 +28681,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed if you stop blocking."
+       "text": "Buff is removed if you stop blocking or if Weapon Energy runs out."
       }
      ]
     },
@@ -28555,7 +28695,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Buff Duration is increased."
+       "text": " Buff Duration is increased by 1? second."
       }
      ]
     }
@@ -29056,13 +29196,13 @@
  "1774574192": {
   "hash": 1774574192,
   "name": "Osmosis",
-  "lastUpload": 1739033358171,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1739033348351,
+     "lastUpdate": 1743180874661,
      "updatedBy": "Stardust"
     }
    }
@@ -29072,7 +29212,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed."
       }
      ]
     },
@@ -29114,29 +29254,13 @@
     {
      "linesContent": [
       {
-       "text": "Transcendence Grenades count as the element of your equipped Grenade Ability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Most perks that replace your Grenade Ability with a custom throwable (such as "
+       "text": "Perks that replace your Grenade Ability (such as "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Gunpowder Gamble or "
-      },
-      {
-       "text": "The Rock"
-      },
-      {
-       "text": ") do not trigger the perk."
+       "text": "Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis."
       }
      ]
     }
@@ -30291,13 +30415,13 @@
  "1870851715": {
   "hash": 1870851715,
   "name": "Under-Over",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722359495597,
+     "lastUpdate": 1743182651663,
      "updatedBy": "Stardust"
     }
    }
@@ -30357,6 +30481,16 @@
       },
       {
        "text": " and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     }
@@ -30838,7 +30972,7 @@
     {
      "linesContent": [
       {
-       "text": "Starts linearly increasing Detonation damage 0.2 seconds after the grenade projectile is fired."
+       "text": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired."
       }
      ]
     },
@@ -30858,7 +30992,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage increase also applies to Area Denial Frame Grenade Launcher lingering pools."
+       "text": "The damage increase is finalized at the point of detonation and any lingering effects left will not increase it further."
       }
      ]
     },
@@ -31278,7 +31412,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills cause enemies to explode, applying "
+       "text": "Weapon Kills apply "
       },
       {
        "classNames": [ "void" ]
@@ -31294,13 +31428,23 @@
     {
      "linesContent": [
       {
-       "text": "If the explosion applied "
+       "text": "1.5 second cooldown between activations."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Applying "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Volatile to a nearby enemy, you gain "
+       "text": "Volatile to enemies with the perk grants "
       },
       {
        "classNames": [ "void" ]
@@ -31314,16 +31458,6 @@
       },
       {
        "text": "5.25 seconds."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "1.5 second cooldown between activations."
       }
      ]
     },
@@ -32289,6 +32423,16 @@
     {
      "linesContent": [
       {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -32859,13 +33003,13 @@
  "2048641572": {
   "hash": 2048641572,
   "name": "Destabilizing Rounds",
-  "lastUpload": 1738975855601,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738955385840,
+     "lastUpdate": 1742593330622,
      "updatedBy": "Stardust"
     }
    }
@@ -32875,7 +33019,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon Kills cause enemies to explode, applying "
+       "text": "Weapon Kills apply "
       },
       {
        "classNames": [ "void" ]
@@ -32891,19 +33035,7 @@
     {
      "linesContent": [
       {
-       "text": "If the explosion applied "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Volatile to a nearby enemy, you gain "
-      },
-      {
-       "classNames": [ "void" ]
-      },
-      {
-       "text": "Volatile Rounds for 4.5 seconds."
+       "text": "1.5 second cooldown between activations."
       }
      ]
     },
@@ -32913,7 +33045,19 @@
     {
      "linesContent": [
       {
-       "text": "1.5 second cooldown between activations."
+       "text": "Applying "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Volatile to enemies with the perk grants "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Volatile Rounds for 4.5 seconds."
       }
      ]
     }
@@ -34351,13 +34495,13 @@
  "2173046394": {
   "hash": 2173046394,
   "name": "Voltshot",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722360006599,
+     "lastUpdate": 1743182753159,
      "updatedBy": "Stardust"
     }
    }
@@ -34384,6 +34528,22 @@
       },
       {
        "text": "Jolt to the target."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Applied "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Jolt's damage (generally) does not count as Weapon Damage."
       }
      ]
     }
@@ -35038,18 +35198,14 @@
  "2213355989": {
   "hash": 2213355989,
   "name": "High-Impact Reserves",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1712879255278,
+     "lastUpdate": 1743179374476,
      "updatedBy": "Stardust"
-    },
-    "zh-chs": {
-     "lastUpdate": 1670269567762,
-     "updatedBy": "Mistwalker"
     }
    }
   },
@@ -35093,6 +35249,16 @@
      "linesContent": [
       {
        "text": "The buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     }
@@ -35407,13 +35573,13 @@
  "2244851822": {
   "hash": 2244851822,
   "name": "Flash Counter",
-  "lastUpload": 1738975855601,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738957154805,
+     "lastUpdate": 1742594695535,
      "updatedBy": "Stardust"
     }
    }
@@ -35423,7 +35589,39 @@
     {
      "linesContent": [
       {
-       "text": "Taking damage while Guarding emits a blast in a wide, 8? meter long cone in front of you. The blast disorients enemies hit by it and deals up to "
+       "text": "Taking damage while Guarding emits a blast in a wide, 8? meter long wide cone in front of you."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The blast disorients enemies hit by it for 5 seconds and deals weapon-matching elemental damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The damage scales up from "
+      },
+      {
+       "text": "75"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 14]"
+      },
+      {
+       "text": " damage at point-blank range to the maximum of "
       },
       {
        "text": "110"
@@ -35432,10 +35630,30 @@
        "text": " "
       },
       {
-       "text": "[PVP: ?]"
+       "text": "[PVP: 45]"
       },
       {
-       "text": " weapon-matching elemental damage."
+       "text": " damage after ? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The strength of the disorientation against Players similarly also scales up with distance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "2.25 second cooldown between activations."
       }
      ]
     }
@@ -36369,7 +36587,7 @@
     {
      "linesContent": [
       {
-       "text": "Firing the weapon comsumes 1 Stack per Shot, granting 100 Blast Radius and increased damage."
+       "text": "Firing the weapon comsumes 1 Stack per Shot, granting increased damage and setting Blast Radius to 100."
       }
      ]
     },
@@ -37965,6 +38183,16 @@
     {
      "linesContent": [
       {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -38160,13 +38388,13 @@
  "2416023159": {
   "hash": 2416023159,
   "name": "Offhand Strike",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722424538331,
+     "lastUpdate": 1743180741920,
      "updatedBy": "Stardust"
     }
    }
@@ -38197,7 +38425,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3-3.5° larger Precision Aim Angle"
+       "text": "• ~3° larger Precision Aim Angle"
       }
      ]
     },
@@ -40243,13 +40471,13 @@
  "2551157718": {
   "hash": 2551157718,
   "name": "Box Breathing",
-  "lastUpload": 1731793916910,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1731002518141,
+     "lastUpdate": 1742593227359,
      "updatedBy": "Stardust"
     }
    }
@@ -40259,7 +40487,7 @@
     {
      "linesContent": [
       {
-       "text": "After Aiming Down Sights for 1.5 seconds without firing, for a single shot:"
+       "text": "Aiming Down Sights for 1.5 seconds without firing grants the following for a single shot:"
       }
      ]
     },
@@ -40283,7 +40511,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer starts as soon as the ADS input is pressed."
+       "text": "Timer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff."
       }
      ]
     },
@@ -40848,7 +41076,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%"
+       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%"
       }
      ]
     },
@@ -46368,6 +46596,83 @@
    ]
   }
  },
+ "2817677128": {
+  "hash": 2817677128,
+  "name": "Melee Momentum",
+  "lastUpload": 1743183422022,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1743180377071,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Glaive Melee Kills grant Weapon Energy and ?% increased movement speed while Blocking for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Energy granted by "
+      },
+      {
+       "text": "Enemy Rank"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 16.7%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites, Players: ?%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 50%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Weapon Energy granted is increased."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2818140350": {
   "hash": 2818140350,
   "name": "Dynamic Duo",
@@ -46957,7 +47262,39 @@
     {
      "linesContent": [
       {
-       "text": "Taking damage while Guarding emits a blast in a wide, 8? meter long cone in front of you. The blast disorients enemies hit by it and deals up to "
+       "text": "Taking damage while Guarding emits a blast in a wide, 8? meter long wide cone in front of you."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The blast disorients enemies hit by it for 5 seconds and deals weapon-matching elemental damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The damage scales up from "
+      },
+      {
+       "text": "75"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 14]"
+      },
+      {
+       "text": " damage at point-blank range to the maximum of "
       },
       {
        "text": "110"
@@ -46966,10 +47303,30 @@
        "text": " "
       },
       {
-       "text": "[PVP: ?]"
+       "text": "[PVP: 45]"
       },
       {
-       "text": " weapon-matching elemental damage."
+       "text": " damage after ? meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The strength of the disorientation against Players similarly also scales up with distance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "2.25 second cooldown between activations."
       }
      ]
     },
@@ -47402,13 +47759,13 @@
  "2888557110": {
   "hash": 2888557110,
   "name": "Full Court",
-  "lastUpload": 1738975855601,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738957330690,
+     "lastUpdate": 1743179015815,
      "updatedBy": "Stardust"
     }
    }
@@ -47418,7 +47775,7 @@
     {
      "linesContent": [
       {
-       "text": "Starts linearly increasing Detonation damage 0.2 seconds after the grenade projectile is fired."
+       "text": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired."
       }
      ]
     },
@@ -47438,7 +47795,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage increase also applies to Area Denial Frame Grenade Launcher lingering pools."
+       "text": "The damage increase is finalized at the point of detonation and any lingering effects left will not increase it further."
       }
      ]
     }
@@ -47706,13 +48063,13 @@
  "2896038713": {
   "hash": 2896038713,
   "name": "Focused Fury",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738597653289,
+     "lastUpdate": 1743178390475,
      "updatedBy": "Stardust"
     }
    }
@@ -47733,6 +48090,16 @@
      "linesContent": [
       {
        "text": "Stowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     }
@@ -47938,13 +48305,13 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.4 seconds without firing causes your next Direct Hit to apply "
+       "text": "1.4 seconds without firing and staying ADS causes your next shot to apply "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Weaken."
+       "text": "Weaken on a Direct Hit."
       }
      ]
     },
@@ -48059,14 +48426,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "25% increased damage for "
+       "text": "Finishing a reload within 3.6 seconds of a Weapon Kill grants 25% increased damage for "
       },
       {
        "text": "🡅",
@@ -48083,7 +48443,17 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed on stow."
+       "text": "Stowing the weapon removes the buff."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     },
@@ -49254,7 +49624,7 @@
     {
      "linesContent": [
       {
-       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed."
+       "text": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed."
       }
      ]
     },
@@ -49296,29 +49666,13 @@
     {
      "linesContent": [
       {
-       "text": "Transcendence Grenades count as the element of your equipped Grenade Ability."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Most perks that replace your Grenade Ability with a custom throwable (such as "
+       "text": "Perks that replace your Grenade Ability (such as "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Gunpowder Gamble or "
-      },
-      {
-       "text": "The Rock"
-      },
-      {
-       "text": ") do not trigger the perk."
+       "text": "Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis."
       }
      ]
     }
@@ -50043,7 +50397,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3-3.5° larger Precision Aim Angle"
+       "text": "• ~3° larger Precision Aim Angle"
       }
      ]
     },
@@ -51735,13 +52089,13 @@
  "3194351027": {
   "hash": 3194351027,
   "name": "Explosive Light",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722176270084,
+     "lastUpdate": 1743177977374,
      "updatedBy": "Stardust"
     }
    }
@@ -51761,7 +52115,7 @@
     {
      "linesContent": [
       {
-       "text": "Firing the weapon comsumes 1 Stack per Shot, granting 100 Blast Radius and increased damage."
+       "text": "Firing the weapon comsumes 1 Stack per Shot, granting increased damage and setting Blast Radius to 100."
       }
      ]
     },
@@ -54592,6 +54946,16 @@
     {
      "linesContent": [
       {
+       "text": "2? second cooldown after the buff expires."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
@@ -55071,13 +55435,13 @@
  "3425386926": {
   "hash": 3425386926,
   "name": "Rampage",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722191327411,
+     "lastUpdate": 1743181130422,
      "updatedBy": "Stardust"
     }
    }
@@ -55098,6 +55462,16 @@
      "linesContent": [
       {
        "text": "Damage increase at 1|2|3 Stacks: 10%|21%|33.1%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Does not buff the Splash/Explosive damage elements of other perks."
       }
      ]
     }
@@ -56982,13 +57356,13 @@
  "3526486541": {
   "hash": 3526486541,
   "name": "Tilting at Windmills",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1722357763241,
+     "lastUpdate": 1743182548124,
      "updatedBy": "Stardust"
     }
    }
@@ -56998,7 +57372,7 @@
     {
      "linesContent": [
       {
-       "text": "Blocking damage with Glaive Shield decreases Glaive Block's Movement Speed Penalty by ?% for ? seconds."
+       "text": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for 4 seconds."
       }
      ]
     },
@@ -57008,7 +57382,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed if you stop blocking."
+       "text": "Buff is removed if you stop blocking or if Weapon Energy runs out."
       }
      ]
     }
@@ -57101,6 +57475,46 @@
      "linesContent": [
       {
        "text": "The effects of different Resistance Mods stack multiplicatively with each other."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3555252274": {
+  "hash": 3555252274,
+  "name": "Recycled Energy",
+  "lastUpload": 1743183422022,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1743181220672,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within ? seconds of a Weapon Kill inconsistently grants ?% (basically zero) Ability Energy to the least-charged Ability."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " No observable difference."
       }
      ]
     }
@@ -59399,6 +59813,32 @@
    ]
   }
  },
+ "3713215006": {
+  "hash": 3713215006,
+  "name": "Recycled Energy",
+  "lastUpload": 1743183422022,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1743181350620,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within ? seconds of a Weapon Kill inconsistently grants ?% (basically zero) Ability Energy to the least-charged Ability."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3717985200": {
   "hash": 3717985200,
   "name": "Psychohack",
@@ -60110,6 +60550,69 @@
       },
       {
        "text": " Accuracy benefit is increased by 20%. (25%⁠🠚⁠30%)"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3773585912": {
+  "hash": 3773585912,
+  "name": "Melee Momentum",
+  "lastUpload": 1743183422022,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1743182478867,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Glaive Melee Kills grant Weapon Energy and ?% increased movement speed while Blocking for 10 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Energy granted by "
+      },
+      {
+       "text": "Enemy Rank"
+      },
+      {
+       "text": ":"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minors: 16.7%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Elites, Players: ?%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Minibosses: 50%"
       }
      ]
     }
@@ -61711,13 +62214,13 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738605549780,
+     "lastUpdate": 1743181163609,
      "updatedBy": "Stardust"
     }
    }
@@ -61775,7 +62278,7 @@
     {
      "linesContent": [
       {
-       "text": "Shockwaves inherit Weapon Damage Buffs (certain weapon perks' damage buffs are not inherited), the weapon's passive Kinetic Damage Bonus in PVE (10% on "
+       "text": "Shockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on "
       },
       {
        "classNames": [ "primary" ]
@@ -62868,13 +63371,13 @@
  "3966416502": {
   "hash": 3966416502,
   "name": "Jolting Feedback",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1743183422022,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738605371877,
+     "lastUpdate": 1743180113458,
      "updatedBy": "Stardust"
     }
    }
@@ -62884,7 +63387,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Direct Hits with the weapon within 3? seconds of each causes the next Direct Hit to apply "
+       "text": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply "
       },
       {
        "classNames": [ "arc" ]
@@ -62929,13 +63432,26 @@
     {
      "linesContent": [
       {
-       "text": "• Submachine Guns: 18 | "
+       "text": "• Submachine Guns, Trace Rifles: 18 | "
       },
       {
        "classNames": [ "arc" ]
       },
       {
        "text": "13"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Machine Guns: 16 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "12"
       }
      ]
     },
@@ -62962,6 +63478,19 @@
       },
       {
        "text": "10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Glaives: 4 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "3"
       }
      ]
     },
@@ -64332,7 +64861,7 @@
     {
      "linesContent": [
       {
-       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%"
+       "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%"
       }
      ]
     },
@@ -66406,6 +66935,44 @@
       },
       {
        "text": " damage."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "4198902903": {
+  "hash": 4198902903,
+  "name": "Detonator Beam",
+  "lastUpload": 1743183422022,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1742593576246,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 25 Hits within ? seconds of each triggers an explosion around the target, dealing up to "
+      },
+      {
+       "text": "266"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " weapon element-matching damage in a ? meter radius."
       }
      ]
     }

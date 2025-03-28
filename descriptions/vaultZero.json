@@ -62,7 +62,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After Aiming Down Sights for [enh]1.4 seconds without firing, for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n[enh] Activation time is reduced by 0.1 seconds."
+   "en": "Aiming Down Sights for [enh]1.4 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n[enh] Activation time is decreased by 0.1 seconds."
   }
  },
  "24925370": {
@@ -130,7 +130,7 @@
   "name": "Sword Logic",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Kills grant Stacks of Sword Logic.\nThe number of Stacks and the buff duration are tied to the highest [Enemy Rank](https://url.d2clarity.com/combatants) killed since activation:\n• Minors: 1 Stack for 5.5 seconds\n• Elites, Players: 2 Stacks for 7.5 seconds\n• Players in their Super and Minibosses: 3 Stacks for 10.5 seconds\n• Bosses: 4 Stacks for 15.5 seconds\nDamage increase at 1|2|3|4 Stacks:\n15% | [pve]25% [pvp][20%] | 35% | 50%\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed."
+   "en": "Weapon Kills grant Stacks of Sword Logic.\nThe number of Stacks and the buff duration are tied to the highest [Enemy Rank](https://url.d2clarity.com/combatants) killed since activation:\n• Minors: 1 Stack for 5.5 seconds\n• Elites, Players: 2 Stacks for 7.5 seconds\n• Players in their Super and Minibosses: 3 Stacks for 10.5 seconds\n• Bosses: 4 Stacks for 15.5 seconds\nDamage increase at 1|2|3|4 Stacks:\n15% | [pve]25% [pvp][15%] | 35% | 50%\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed."
   }
  },
  "40492375": {
@@ -484,7 +484,7 @@
   "name": "Under-Over",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Increases damage against shielded targets:\n• [enh]140% increase against PVE Combatant Overshields\n• [enh]55% increase against PVE Combatant Elemental Shields and [barrier]Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with [Strand]Woven Mail\nNotable Combatant Overshields include Shadow Legion [Tech Pack](https://www.destinypedia.com/Tech_Pack) and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one.\n[enh] Damage Buff is increased: 125%⁠🠚⁠140%, 50%⁠🠚⁠55%, 20%⁠🠚⁠?⁠%."
+   "en": "Increases damage against shielded targets:\n• [enh]140% increase against PVE Combatant Overshields\n• [enh]55% increase against PVE Combatant Elemental Shields and [barrier]Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with [Strand]Woven Mail\nNotable Combatant Overshields include Shadow Legion [Tech Pack](https://www.destinypedia.com/Tech_Pack) and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Damage Buff is increased: 125%⁠🠚⁠140%, 50%⁠🠚⁠55%, 20%⁠🠚⁠?⁠%."
   }
  },
  "185514250": {
@@ -576,7 +576,10 @@
  "222783511": {
   "hash": 222783511,
   "name": "Detonator Beam",
-  "type": "Weapon Trait Enhanced"
+  "type": "Weapon Trait Enhanced",
+  "descriptions": {
+   "en": "Scoring [enh]20 Hits within ? seconds of each triggers an explosion around the target, dealing up to [pve]266 [pvp][?] weapon element-matching damage in a ? meter radius.\n[enh] Number of Hits required is decreased by 5?."
+  }
  },
  "229003538": {
   "hash": 229003538,
@@ -631,7 +634,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Other: 67% of Magazine Size rounded down + 2"
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
   }
  },
  "247725512": {
@@ -679,7 +682,7 @@
   "name": "Rampage",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Kills grant a Stack of Rampage for [enh]5 seconds. Maximum of 3 Stacks.\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\n[enh] Buff Duration is increased by 0.5 seconds."
+   "en": "Weapon Kills grant a Stack of Rampage for [enh]5 seconds. Maximum of 3 Stacks.\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Buff Duration is increased by 0.5 seconds."
   }
  },
  "290014589": {
@@ -757,7 +760,7 @@
   "name": "Precision Instrument",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack.\nMaximum of 6 Stacks. Missing removes all Stacks.\nPrecision damage increase at 1|2|... Stacks:\n[enh]5% | 10% | 15% | 20% | 25% | 30%\n[enh] Precision Damage Buff is increased by 20%."
+   "en": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\nMaximum of 6 Stacks. Missing removes all Stacks.\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack (and missing sometimes does not remove your stacks on them).\nPrecision damage increase at 1|2|... Stacks:\n[enh]5% | 10% | 15% | 20% | 25% | 30%\n[enh] Precision Damage Buff is increased by 20%."
   }
  },
  "335129856": {
@@ -1127,7 +1130,7 @@
   "name": "Headseeker",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
   }
  },
  "461595545": {
@@ -1414,7 +1417,7 @@
   "name": "Precision Instrument",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack.\nMaximum of 6 Stacks. Missing removes all Stacks.\nPrecision damage increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
+   "en": "Direct Weapon Hits grant a Stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\nMaximum of 6 Stacks. Missing removes all Stacks.\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each Stack (and missing sometimes does not remove your stacks on them).\nPrecision damage increase at 1|2|... Stacks:\n4.17% | 8.33% | 12.5% | 16.67% | 20.83% | 25%"
   }
  },
  "557221067": {
@@ -1662,7 +1665,7 @@
   "name": "Sword Logic",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Kills grant Stacks of Sword Logic.\nThe number of Stacks and the buff duration are tied to the highest [Enemy Rank](https://url.d2clarity.com/combatants) killed since activation:\n• Minors: 1 Stack for [enh]6.5 seconds\n• Elites, Players: 2 Stacks for [enh]8.5 seconds\n• Players in their Super and Minibosses: 3 Stacks for [enh]11.5 seconds\n• Bosses: 4 Stacks for [enh]16.5 seconds\nDamage increase at 1|2|3|4 Stacks:\n15% | [pve]25% [pvp][20%] | 35% | 50%\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Weapon Kills grant Stacks of Sword Logic.\nThe number of Stacks and the buff duration are tied to the highest [Enemy Rank](https://url.d2clarity.com/combatants) killed since activation:\n• Minors: 1 Stack for [enh]6.5 seconds\n• Elites, Players: 2 Stacks for [enh]8.5 seconds\n• Players in their Super and Minibosses: 3 Stacks for [enh]11.5 seconds\n• Bosses: 4 Stacks for [enh]16.5 seconds\nDamage increase at 1|2|3|4 Stacks:\n15% | [pve]25% [pvp][15%] | 35% | 50%\nAdditional Kills refresh the buff duration to the duration tied to the highest Enemy Rank killed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "657773637": {
@@ -1838,7 +1841,7 @@
   "name": "Jolting Feedback",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits with the weapon within 3? seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns: [enh]17 | [Arc]13\n• Auto Rifles: [enh]14 | [Arc]11\n• Pulse Rifles: [enh]13 | [Arc]10\n• Grenade Launchers: [enh]2 | [Arc]2\n[enh] Number of Hits required while not [Arc]Amplified is decreased by 1?."
+   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: [enh]17 | [Arc]13\n• Machine Guns: [enh]15 | [Arc]12\n• Auto Rifles: [enh]14 | [Arc]11\n• Pulse Rifles: [enh]13 | [Arc]10\n• Glaives: [enh]3 | [Arc]3\n• Grenade Launchers: [enh]2 | [Arc]2\n[enh] Number of Hits required while not [Arc]Amplified is decreased by 1."
   }
  },
  "721001747": {
@@ -1998,7 +2001,7 @@
   "name": "Osmosis",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nTranscendence Grenades count as the element of your equipped Grenade Ability.\nMost perks that replace your Grenade Ability with a custom throwable (such as [Solar]Gunpowder Gamble or The Rock) do not trigger the perk.\n[enh] Passively grants 5 Handling."
+   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nPerks that replace your Grenade Ability (such as [Solar]Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis.\n[enh] Passively grants 5 Handling."
   }
  },
  "781192741": {
@@ -2560,7 +2563,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants [enh]1.1% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Other: 67% of Magazine Size rounded down + 2\n[enh] Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%)."
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants [enh]1.1% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits.\n[enh] Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%)."
   }
  },
  "987673306": {
@@ -2600,7 +2603,7 @@
   "name": "Kill Clip",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:\n25% increased damage for 5 seconds.\nBuff is removed on stow."
+   "en": "Finishing a reload within 3.6 seconds of a Weapon Kill grants 25% increased damage for 5 seconds.\nStowing the weapon removes the buff.\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "1017385934": {
@@ -2896,7 +2899,7 @@
   "name": "Withering Gaze",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Aiming Down Sights (ADS) for 1.5 seconds without firing causes your next Direct Hit to apply [Void]Weaken.\nTimer starts as soon as ADS input is pressed."
+   "en": "Aiming Down Sights (ADS) for 1.5 seconds without firing and staying ADS causes your next shot to apply [Void]Weaken on a Direct Hit.\nTimer starts as soon as ADS input is pressed."
   }
  },
  "1135494563": {
@@ -4014,7 +4017,7 @@
   "name": "Kinetic Tremors",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds.\nEach shockwave deals up to [pve]90 [pvp][20] damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on [Miniboss or higher tier](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs (certain weapon perks' damage buffs are not inherited), the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). They also count as non-direct Hits with the weapon for other interactions.\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\nHits Required for Activation:\n• Submachine Guns: [enh]13\n• Auto Rifles: [enh]11\n• Pulse Rifles: [enh]10\n• Non-burst Sidearms: [enh]7\n• Hand Cannons, Scout Rifles: [enh]5\n• Bows, Sniper Rifles: [enh]2\n[enh] Hit Requirements are decreased by 1."
+   "en": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds.\nEach shockwave deals up to [pve]90 [pvp][20] damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on [Miniboss or higher tier](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). They also count as non-direct Hits with the weapon for other interactions.\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\nHits Required for Activation:\n• Submachine Guns: [enh]13\n• Auto Rifles: [enh]11\n• Pulse Rifles: [enh]10\n• Non-burst Sidearms: [enh]7\n• Hand Cannons, Scout Rifles: [enh]5\n• Bows, Sniper Rifles: [enh]2\n[enh] Hit Requirements are decreased by 1."
   }
  },
  "1550063955": {
@@ -4390,7 +4393,7 @@
   "name": "En Garde",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Readying the Sword grants 30% increased damage for 1.5 seconds."
+   "en": "Readying the Sword grants 30% increased damage for 1.5 seconds.\n2? second cooldown after the buff expires."
   }
  },
  "1687327062": {
@@ -4514,7 +4517,7 @@
   "name": "Voltshot",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for [enh]8 seconds.\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies [Arc]Jolt to the target.\n[enh] Buff can be held 1 second longer."
+   "en": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for [enh]8 seconds.\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies [Arc]Jolt to the target.\nApplied [Arc]Jolt's damage (generally) does not count as Weapon Damage.\n[enh] Buff can be held 1 second longer."
   }
  },
  "1727069360": {
@@ -4622,7 +4625,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Blocking damage with Glaive Shield decreases Glaive Block's Movement Speed Penalty by ?% for ? seconds.\nBuff is removed if you stop blocking.\n[enh] Buff Duration is increased."
+   "en": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for [enh]5 seconds.\nBuff is removed if you stop blocking or if Weapon Energy runs out.\n[enh] Buff Duration is increased by 1? second."
   }
  },
  "1739861752": {
@@ -4728,7 +4731,7 @@
   "name": "Osmosis",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nTranscendence Grenades count as the element of your equipped Grenade Ability.\nMost perks that replace your Grenade Ability with a custom throwable (such as [Solar]Gunpowder Gamble or The Rock) do not trigger the perk."
+   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nPerks that replace your Grenade Ability (such as [Solar]Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis."
   }
  },
  "1781551382": {
@@ -4936,7 +4939,7 @@
   "name": "Under-Over",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Increases damage against shielded targets:\n• 125% increase against PVE Combatant Overshields\n• 50% increase against PVE Combatant Elemental Shields and [barrier]Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with [Strand]Woven Mail\nNotable Combatant Overshields include Shadow Legion [Tech Pack](https://www.destinypedia.com/Tech_Pack) and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one."
+   "en": "Increases damage against shielded targets:\n• 125% increase against PVE Combatant Overshields\n• 50% increase against PVE Combatant Elemental Shields and [barrier]Barrier Champion Shields\n• 20% increase against Player Overshields and for bodyshots against Players with [Strand]Woven Mail\nNotable Combatant Overshields include Shadow Legion [Tech Pack](https://www.destinypedia.com/Tech_Pack) and Lucent Moth Overshields. They are indicated with a glowing outline around the targets as well as a small blue health bar under the normal one.\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "1871764335": {
@@ -5028,7 +5031,7 @@
   "name": "Full Court",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Starts linearly increasing Detonation damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nDamage increase also applies to Area Denial Frame Grenade Launcher lingering pools.\n[enh] Passively grants 5 Blast Radius."
+   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further.\n[enh] Passively grants 5 Blast Radius."
   }
  },
  "1906147653": {
@@ -5062,7 +5065,7 @@
   "name": "Destabilizing Rounds",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Kills cause enemies to explode, applying [Void]Volatile to enemies in a 6.5 meter radius around the target.\nIf the explosion applied [Void]Volatile to a nearby enemy, you gain [Void]Volatile Rounds for [enh]5.25 seconds.\n1.5 second cooldown between activations.\n[enh] [Void]Volatile Rounds duration is increased by 0.75 seconds."
+   "en": "Weapon Kills apply [Void]Volatile to enemies in a 6.5 meter radius around the target.\n1.5 second cooldown between activations.\nApplying [Void]Volatile to enemies with the perk grants [Void]Volatile Rounds for [enh]5.25 seconds.\n[enh] [Void]Volatile Rounds duration is increased by 0.75 seconds."
   }
  },
  "1939153390": {
@@ -5180,7 +5183,7 @@
   "name": "High-Impact Reserves",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Increases damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from [enh]55% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\n[enh] Activates with 5% more of the Magazine Capacity remaining."
+   "en": "Increases damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from [enh]55% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Activates with 5% more of the Magazine Capacity remaining."
   }
  },
  "2003108620": {
@@ -5272,7 +5275,7 @@
   "name": "Destabilizing Rounds",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Kills cause enemies to explode, applying [Void]Volatile to enemies in a 6.5 meter radius around the target.\nIf the explosion applied [Void]Volatile to a nearby enemy, you gain [Void]Volatile Rounds for 4.5 seconds.\n1.5 second cooldown between activations."
+   "en": "Weapon Kills apply [Void]Volatile to enemies in a 6.5 meter radius around the target.\n1.5 second cooldown between activations.\nApplying [Void]Volatile to enemies with the perk grants [Void]Volatile Rounds for 4.5 seconds."
   }
  },
  "2053642371": {
@@ -5518,7 +5521,7 @@
   "name": "Voltshot",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for 7 seconds.\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies [Arc]Jolt to the target."
+   "en": "Finishing a reload within 5.3 seconds of a Weapon Kill grants Voltshot for 7 seconds.\nWhile Voltshot is active, your next Weapon Hit consumes the buff and applies [Arc]Jolt to the target.\nApplied [Arc]Jolt's damage (generally) does not count as Weapon Damage."
   }
  },
  "2175577211": {
@@ -5624,7 +5627,7 @@
   "name": "High-Impact Reserves",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Increases damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from 50% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles."
+   "en": "Increases damage by [pve]12.1% [pvp][3%] to [pve]25.6% [pvp][6%] as the Magazine drops from 50% of its base capacity to empty.\nThe buff in PVE ranges between 10.3% and 22.9% instead on Fusion Rifles and Aggressive Frame Linear Fusion Rifles.\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "2213377102": {
@@ -5698,7 +5701,7 @@
   "name": "Flash Counter",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Taking damage while Guarding emits a blast in a wide, 8? meter long cone in front of you. The blast disorients enemies hit by it and deals up to [pve]110 [pvp][?] weapon-matching elemental damage."
+   "en": "Taking damage while Guarding emits a blast in a wide, 8? meter long wide cone in front of you.\nThe blast disorients enemies hit by it for 5 seconds and deals weapon-matching elemental damage.\nThe damage scales up from [pve]75 [pvp][14] damage at point-blank range to the maximum of [pve]110 [pvp][45] damage after ? meters.\nThe strength of the disorientation against Players similarly also scales up with distance.\n2.25 second cooldown between activations."
   }
  },
  "2245839670": {
@@ -5852,7 +5855,7 @@
   "name": "Explosive Light",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of [enh]7 Stacks.\nFiring the weapon comsumes 1 Stack per Shot, granting 100 Blast Radius and increased damage.\nGrenade Launchers: 60% increased Explosive damage.\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)\n[enh] Maximum number of Stacks is increased by 1."
+   "en": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of [enh]7 Stacks.\nFiring the weapon comsumes 1 Stack per Shot, granting increased damage and setting Blast Radius to 100.\nGrenade Launchers: 60% increased Explosive damage.\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)\n[enh] Maximum number of Stacks is increased by 1."
   }
  },
  "2282937672": {
@@ -6120,7 +6123,7 @@
   "name": "Focused Fury",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for [enh]12 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for [enh]12 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "2407398462": {
@@ -6162,7 +6165,7 @@
   "name": "Offhand Strike",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Kills grant the following benefits to hip-firing for 7 seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• 3-3.5° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased Accuracy Cone Growth.\nBuff is removed on stow."
+   "en": "Weapon Kills grant the following benefits to hip-firing for 7 seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• ~3° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased Accuracy Cone Growth.\nBuff is removed on stow."
   }
  },
  "2419864979": {
@@ -6460,7 +6463,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After Aiming Down Sights for 1.5 seconds without firing, for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
+   "en": "Aiming Down Sights for 1.5 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• Increases Precision Multiplier by 1 (e.g. 1.5x🠚2.5x)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
   }
  },
  "2562645296": {
@@ -6530,7 +6533,7 @@
   "itemName": "Outbreak Perfected",
   "type": "Weapon Trait Exotic",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
   }
  },
  "2578928835": {
@@ -7297,6 +7300,14 @@
    "en": "Dealing any damage with both of your other weapons refills the magazine from reserves upon readying the weapon.\n[enh] Passively grants 20 Inventory Size stat (equivalent of a Reserves armor mod)."
   }
  },
+ "2817677128": {
+  "hash": 2817677128,
+  "name": "Melee Momentum",
+  "type": "Weapon Trait Enhanced",
+  "descriptions": {
+   "en": "Glaive Melee Kills grant Weapon Energy and ?% increased movement speed while Blocking for 10 seconds.\nWeapon Energy granted by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 16.7%\n• Elites, Players: ?%\n• Minibosses: 50%\n[enh] Weapon Energy granted is increased."
+  }
+ },
  "2818140350": {
   "hash": 2818140350,
   "name": "Dynamic Duo",
@@ -7394,7 +7405,7 @@
   "name": "Flash Counter",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Taking damage while Guarding emits a blast in a wide, 8? meter long cone in front of you. The blast disorients enemies hit by it and deals up to [pve]110 [pvp][?] weapon-matching elemental damage.\n[enh] Passively grants 10 Ammo Capacity."
+   "en": "Taking damage while Guarding emits a blast in a wide, 8? meter long wide cone in front of you.\nThe blast disorients enemies hit by it for 5 seconds and deals weapon-matching elemental damage.\nThe damage scales up from [pve]75 [pvp][14] damage at point-blank range to the maximum of [pve]110 [pvp][45] damage after ? meters.\nThe strength of the disorientation against Players similarly also scales up with distance.\n2.25 second cooldown between activations.\n[enh] Passively grants 10 Ammo Capacity."
   }
  },
  "2866798147": {
@@ -7468,7 +7479,7 @@
   "name": "Full Court",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Starts linearly increasing Detonation damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nDamage increase also applies to Area Denial Frame Grenade Launcher lingering pools."
+   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further."
   }
  },
  "2889515627": {
@@ -7504,7 +7515,7 @@
   "name": "Focused Fury",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for 11 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed."
+   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for 11 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "2896748467": {
@@ -7536,7 +7547,7 @@
   "name": "Withering Gaze",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Aiming Down Sights (ADS) for [enh]1.4 seconds without firing causes your next Direct Hit to apply [Void]Weaken.\nTimer starts as soon as ADS input is pressed.\n[enh] Activation time is decreased by 0.1 seconds."
+   "en": "Aiming Down Sights (ADS) for [enh]1.4 seconds without firing and staying ADS causes your next shot to apply [Void]Weaken on a Direct Hit.\nTimer starts as soon as ADS input is pressed.\n[enh] Activation time is decreased by 0.1 seconds."
   }
  },
  "2911329003": {
@@ -7572,7 +7583,7 @@
   "name": "Kill Clip",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Upon finishing a reload within 3.6 seconds of a Weapon Kill:\n25% increased damage for [enh]5.5 seconds.\nBuff is removed on stow.\n[enh] Buff Duration is increased by 0.5 seconds."
+   "en": "Finishing a reload within 3.6 seconds of a Weapon Kill grants 25% increased damage for [enh]5.5 seconds.\nStowing the weapon removes the buff.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Buff Duration is increased by 0.5 seconds."
   }
  },
  "2938480696": {
@@ -7722,7 +7733,7 @@
   "name": "Osmosis",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nTranscendence Grenades count as the element of your equipped Grenade Ability.\nMost perks that replace your Grenade Ability with a custom throwable (such as [Solar]Gunpowder Gamble or The Rock) do not trigger the perk."
+   "en": "Grenade Ability usage refills 50% of your Magazine (rounded up) from reserves and changes the weapon's element to match your equipped Grenade Ability until stowed.\nMagazine Refill cannot be triggered again without stowing the weapon first.\nKinetic weapons lose their Passive Damage Bonus against non-Boss PVE Combatants (10% on [primary]Primary, 15% on [special]Special).\nPerks that replace your Grenade Ability (such as [Solar]Gunpowder Gamble or Transcendence Grenades) will also trigger Osmosis."
   }
  },
  "3000428062": {
@@ -7850,7 +7861,7 @@
   "name": "Offhand Strike",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Kills grant the following benefits to hip-firing for [enh]8 seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• 3-3.5° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased Accuracy Cone Growth.\nBuff is removed on stow.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Weapon Kills grant the following benefits to hip-firing for [enh]8 seconds:\n• 30 Stability\n• 45% increased Damage Falloff Distance\n• ~3° larger Precision Aim Angle\n• 95%? decreased Accuracy Cone Size\n• 95%? decreased Accuracy Cone Growth.\nBuff is removed on stow.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "3060983774": {
@@ -8170,7 +8181,7 @@
   "name": "Explosive Light",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of 6 Stacks.\nFiring the weapon comsumes 1 Stack per Shot, granting 100 Blast Radius and increased damage.\nGrenade Launchers: 60% increased Explosive damage.\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)"
+   "en": "Orb of Power pickups (even while the weapon is stowed) grant 1 Stack of Explosive Light. Maximum of 6 Stacks.\nFiring the weapon comsumes 1 Stack per Shot, granting increased damage and setting Blast Radius to 100.\nGrenade Launchers: 60% increased Explosive damage.\nRocket Launchers: 25% increased Impact and Explosive damage. (No effect on Wolfpack Rounds)"
   }
  },
  "3194530172": {
@@ -8641,7 +8652,7 @@
   "name": "En Garde",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Readying the Sword grants 30% increased damage for [enh]2 seconds.\n[enh] Buff duration is increased by 0.5? seconds."
+   "en": "Readying the Sword grants 30% increased damage for [enh]2 seconds.\n2? second cooldown after the buff expires.\n[enh] Buff duration is increased by 0.5? seconds."
   }
  },
  "3410844187": {
@@ -8713,7 +8724,7 @@
   "name": "Rampage",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Kills grant a Stack of Rampage for 4.5 seconds. Maximum of 3 Stacks.\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%"
+   "en": "Weapon Kills grant a Stack of Rampage for 4.5 seconds. Maximum of 3 Stacks.\nDamage increase at 1|2|3 Stacks: 10%|21%|33.1%\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "3431277734": {
@@ -9037,7 +9048,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Blocking damage with Glaive Shield decreases Glaive Block's Movement Speed Penalty by ?% for ? seconds.\nBuff is removed if you stop blocking."
+   "en": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for 4 seconds.\nBuff is removed if you stop blocking or if Weapon Energy runs out."
   }
  },
  "3528046508": {
@@ -9064,6 +9075,14 @@
   "type": "Weapon Trait Exotic",
   "descriptions": {
    "en": "Kills with this weapon temporarily grant increased damage. Stacks 3x."
+  }
+ },
+ "3555252274": {
+  "hash": 3555252274,
+  "name": "Recycled Energy",
+  "type": "Weapon Trait Enhanced",
+  "descriptions": {
+   "en": "Finishing a reload within ? seconds of a Weapon Kill inconsistently grants ?% (basically zero) Ability Energy to the least-charged Ability.\n[enh] No observable difference."
   }
  },
  "3556461530": {
@@ -9378,6 +9397,14 @@
    "en": "Collecting Elemental Pickups or destroying [Strand]Tangles grants 1 Stack of Armor Charge upon reaching 100% Activation Progress.\nActivation Progress with 1|2|3 Mods equipped:\n• [Solar]Firesprites, [Void]Void Breaches, [Strand]Tangles: 50%|50%|100%\n• [Arc]Ionic Traces: 34%|50%|50%\n• [Stasis]Stasis Shards: 25%|34%|50%"
   }
  },
+ "3713215006": {
+  "hash": 3713215006,
+  "name": "Recycled Energy",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Finishing a reload within ? seconds of a Weapon Kill inconsistently grants ?% (basically zero) Ability Energy to the least-charged Ability."
+  }
+ },
  "3717985200": {
   "hash": 3717985200,
   "name": "Psychohack",
@@ -9508,6 +9535,14 @@
   "type": "Weapon Trait Exotic",
   "descriptions": {
    "en": "Overheat damage is reduced while not aiming down sights."
+  }
+ },
+ "3773585912": {
+  "hash": 3773585912,
+  "name": "Melee Momentum",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Glaive Melee Kills grant Weapon Energy and ?% increased movement speed while Blocking for 10 seconds.\nWeapon Energy granted by [Enemy Rank](https://url.d2clarity.com/combatants):\n• Minors: 16.7%\n• Elites, Players: ?%\n• Minibosses: 50%"
   }
  },
  "3775800797": {
@@ -9723,7 +9758,7 @@
   "name": "Kinetic Tremors",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds.\nEach shockwave deals up to [pve]90 [pvp][20] damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on [Miniboss or higher tier](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs (certain weapon perks' damage buffs are not inherited), the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). They also count as non-direct Hits with the weapon for other interactions.\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\nHits Required for Activation:\n• Submachine Guns: 14\n• Auto Rifles: 12\n• Pulse Rifles: 11\n• Non-burst Sidearms: 8\n• Hand Cannons, Scout Rifles: 6\n• Bows, Sniper Rifles: 3"
+   "en": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds.\nEach shockwave deals up to [pve]90 [pvp][20] damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on [Miniboss or higher tier](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). They also count as non-direct Hits with the weapon for other interactions.\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\nHits Required for Activation:\n• Submachine Guns: 14\n• Auto Rifles: 12\n• Pulse Rifles: 11\n• Non-burst Sidearms: 8\n• Hand Cannons, Scout Rifles: 6\n• Bows, Sniper Rifles: 3"
   }
  },
  "3907299874": {
@@ -9887,7 +9922,7 @@
   "name": "Jolting Feedback",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits with the weapon within 3? seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns: 18 | [Arc]13\n• Auto Rifles: 15 | [Arc]11\n• Pulse Rifles: 14 | [Arc]10\n• Grenade Launchers: 3 | [Arc]2"
+   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: 18 | [Arc]13\n• Machine Guns: 16 | [Arc]12\n• Auto Rifles: 15 | [Arc]11\n• Pulse Rifles: 14 | [Arc]10\n• Glaives: 4 | [Arc]3\n• Grenade Launchers: 3 | [Arc]2"
   }
  },
  "3967134106": {
@@ -10147,7 +10182,7 @@
   "name": "Headseeker",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: {We don't have a Death by Scorn}%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n[enh] Passively grants 5 Stability."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n[enh] Passively grants 5 Stability."
   }
  },
  "4046357305": {
@@ -10490,6 +10525,14 @@
   "type": "Weapon Trait Exotic",
   "descriptions": {
    "en": "This weapon fires [Stagger] staggering projectiles. Strong against Unstoppable Champions."
+  }
+ },
+ "4198902903": {
+  "hash": 4198902903,
+  "name": "Detonator Beam",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Scoring 25 Hits within ? seconds of each triggers an explosion around the target, dealing up to [pve]266 [pvp][?] weapon element-matching damage in a ? meter radius."
   }
  },
  "4200236906": {
