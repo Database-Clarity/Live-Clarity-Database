@@ -8189,6 +8189,33 @@
    "inLiveDatabase": false,
    "uploadToLive": false
   },
+  "521275120": {
+   "hash": 521275120,
+   "name": "Vile Weave",
+   "type": "Armor Mod Seasonal",
+   "lastUpload": 1745155723648,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
+  },
   "521275121": {
    "name": "Beam Medic",
    "hash": 521275121,
@@ -8468,7 +8495,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1743269865279,
+   "lastUpload": 1745155723648,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14154,14 +14181,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Using your Class Ability makes your next 5 Hits within #e${8+#d} seconds apply <strand/>Sever to targets. Activates even while stowed.\n\nHitting a non-<strand/>Severed enemy refreshes the buff duration. Works even if the target is immune to damage.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
+     "main": "Using your Class Ability (even while the weapon is stowed) grants you 'Slice' for #e${8+#d} seconds.\n\nWhile 'Slice' is active, damaging non-<strand/>Severed targets <strand/>Severs them, grants a stack of Slice, and refreshes the buff duration. (Hitting immune targets also triggers this.)\n\nReaching 5 stacks immediately removes the buff.\n\nIf the <strand/>Severing hit kills the target, the perk will not trigger and you will not gain a stack.\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722274336631,
+      "lastUpdate": 1745155554298,
       "updatedBy": "Stardust"
      }
     },
@@ -14171,7 +14198,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1745155723648,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -20480,6 +20507,33 @@
    "lastUpload": 1743183422022,
    "inLiveDatabase": false,
    "uploadToLive": false
+  },
+  "1319563985": {
+   "hash": 1319563985,
+   "name": "To Shreds",
+   "type": "Armor Mod Seasonal",
+   "lastUpload": 1745155723648,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
   },
   "1319563986": {
    "hash": 1319563986,
@@ -35140,6 +35194,33 @@
    "inLiveDatabase": false,
    "uploadToLive": false
   },
+  "2297703045": {
+   "hash": 2297703045,
+   "name": "Unstoppable Rocket Launcher",
+   "type": "Armor Mod Seasonal",
+   "lastUpload": 1745155723648,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
+  },
   "2297703046": {
    "hash": 2297703046,
    "name": "Anti-Barrier Sniper Rifle",
@@ -38773,14 +38854,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants #e${10+#d} Aim Assist, #e${10+#f} Airborne Effectiveness, and a #e${0.9-#g}x ADS Duration Multiplier.\n\nStat bonuses are doubled and the ADS Duration Multiplier is decreased to #e${0.8-#g}x while no allies are within 15 meters.\n\nenhanced (\nvar d = 1\nvar f = 2\nvar g = 0.05\n#e Aim Assist bonus is increased by 1 (2 with no nearby allies), Airborne Effectiveness bonus is increased by 2 (4 with no nearby allies), and the ADS Duration Multiplier in both cases is decreased by 0.05.\n)",
+     "main": "Passively grants #e${5+#d} Aim Assist, #e${15+#d} Airborne Effectiveness, and a #e${0.9-#g}x ADS Duration Multiplier.\n\nWhile no allies are within 15 meters:\nBonuses are increased to #e${10+#d} Aim Assist, #e${30+#f} Airborne Effectiveness, and a #e${0.8-#g}x ADS Duration Multiplier.\n\nenhanced (\nvar d = 1\nvar f = 2\nvar g = 0.05\n#e Aim Assist bonus is increased by 1, Airborne Effectiveness bonus is increased by 1 (2 with no nearby allies), and the ADS Duration Multiplier in both cases is decreased by 0.05.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1732802123995,
+      "lastUpdate": 1745147833558,
       "updatedBy": "Stardust"
      }
     },
@@ -38790,7 +38871,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1732802131794,
+   "lastUpload": 1745155723648,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -39153,6 +39234,33 @@
    "name": "Horde Shuttle",
    "type": "Armor Mod Seasonal",
    "lastUpload": 1738951046405,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
+  },
+  "2596646302": {
+   "hash": 2596646302,
+   "name": "Gold from Lead",
+   "type": "Armor Mod Seasonal",
+   "lastUpload": 1745155723648,
    "uploadedBy": "Stardust",
    "editor": {
     "en": {
@@ -53520,6 +53628,33 @@
    "lastUpload": 1743183422022,
    "inLiveDatabase": false,
    "uploadToLive": false
+  },
+  "3585856467": {
+   "hash": 3585856467,
+   "name": "Perpetual Destruction",
+   "type": "Armor Mod Seasonal",
+   "lastUpload": 1745155723648,
+   "uploadedBy": "Stardust",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    },
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    }
+   },
+   "uploadToLive": false,
+   "inLiveDatabase": false
   },
   "3585856469": {
    "hash": 3585856469,
