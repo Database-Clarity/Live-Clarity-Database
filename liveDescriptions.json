@@ -1775,14 +1775,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Weapon Kills grant a Stack of 'Onslaught' for #e${4.5+#d} seconds. Maximum of 3 Stacks.\n\nBenefits at 1|2|3 Stacks of Onslaught:\n• 16% | 28% | 37% decreased Firing Delay\n• 15 | 25 | 35 Reload Speed\n\nenhanced (\nvar d = 0.5\n#e Buff duration is increased by 0.5? seconds.\n)",
+     "main": "Weapon Kills grant a Stack of 'Onslaught' for #e${4.5+#d} seconds. Maximum of 3 Stacks.\n\nBenefits at 1|2|3 Stacks of Onslaught:\n• 16.7% | 28.6% | 37.5% decreased Firing Delay\n• 15 | 25 | 35 Reload Speed\n\nenhanced (\nvar d = 0.5\n#e Buff duration is increased by 0.5? seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722189470615,
+      "lastUpdate": 1748084982759,
       "updatedBy": "Stardust"
      }
     },
@@ -1792,7 +1792,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -8524,7 +8524,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1746913518852,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12252,14 +12252,14 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Sets the Submachine Gun's damage and Magazine profile to that of a Precision Frame.",
+     "main": "Sets the Submachine Gun's damage and magazine profile to that of a Precision Frame.\n\nDoes not grant Precision Frame intrinsic benefits.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738606632348,
+      "lastUpdate": 1748085917566,
       "updatedBy": "Stardust"
      }
     },
@@ -12269,7 +12269,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22124,14 +22124,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Magazine Size stat. (Identical to Extended Mag)\n\nWhile Magazine is at or above maximum capacity:\nGrants 25% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\n\nExplosions inherit the weapon's <link Combatant Damage Scaling [#CombatantScaling] /> and deal 30% increased damage if triggered with a Linear Fusion Rifle.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
+     "main": "Passively grants 30 Magazine Size stat. (Identical to a Backup Mag mod)\n\nWhile Magazine is at or above maximum capacity:\nGrants 25% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\n\nExplosions inherit the weapon's element and <link Combatant Damage Scaling [#CombatantScaling] />. Explosions triggered with Linear Fusion Rifle kills deal an additional 30% increased damage.\n\nenhanced (\n#e Passively grants 5 Stability.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722265002448,
+      "lastUpdate": 1748086091476,
       "updatedBy": "Stardust"
      }
     },
@@ -22141,7 +22141,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46207,14 +46207,14 @@
    "type": "Weapon Trait Origin",
    "editor": {
     "en": {
-     "main": "Grants 20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist while Last Guardian Standing or Solo.\n\nOnly activates when the weapon has been readied for 1 second.\n\nDoes not work in the Rumble Crucible Game Mode.",
+     "main": "While 1 teammate is currently dead:\nGrants ? Range, ? Stability, ? Reload Speed, and ? Aim Assist.\n\nWhile Solo or 2+ teammates are currently dead:\nGrants 20 Range, 20 Stability, 50 Reload Speed, and 10 Aim Assist.\n\nOnly activates when the weapon has been readied for 1 second.\n\nDoes not work in the Rumble Crucible Game Mode.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723138387072,
+      "lastUpdate": 1748096561338,
       "updatedBy": "Stardust"
      }
     },
@@ -46224,7 +46224,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46618,14 +46618,14 @@
    "type": "Weapon Perk",
    "editor": {
     "en": {
-     "main": "Passively grants -200 Blast Radius and 25% decreased damage.\n\nEnemies within ? meters of the explosion are disoriented for 4.5 seconds. <link Champions and Bosses [#CombatantClassifications] /> are unaffected.\n\n(Disorient is effectively the equivalent of <arc/>Arc Blind without any of the elemental synergies and anti-champion benefits)\n\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast.",
+     "main": "Passively grants -200 Blast Radius and 25% decreased damage.\n\nEnemies within ? meters of the explosion are disoriented for 4.5 seconds. Disorient radius cannot be increased using other perks.\n\n<link Champions and Bosses [#CombatantClassifications] /> are unaffected by Disorient.\n\n(Disorient is effectively the equivalent of <arc/>Arc Blind without any of the elemental synergies and anti-champion benefits)\n\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1721148747377,
+      "lastUpdate": 1748083163953,
       "updatedBy": "Stardust"
      }
     },
@@ -46635,7 +46635,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1748096928214,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
