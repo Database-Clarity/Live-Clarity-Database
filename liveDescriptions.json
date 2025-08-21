@@ -1381,7 +1381,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2091,7 +2091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9132,7 +9132,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9579,14 +9579,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Direct Weapon Hits grant a stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 stacks. Missing removes all stacks.\n\nHeavy Burst Frame weapons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
+     "main": "Direct Weapon Hits grant a stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 stacks. Reloading the weapon (except on Bows) or missing removes all stacks.\n\nHeavy Burst Frame weapons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755796281845,
+      "lastUpdate": 1755797680795,
       "updatedBy": "Stardust"
      }
     },
@@ -9596,7 +9596,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13114,7 +13114,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16839,7 +16839,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18586,7 +18586,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25388,7 +25388,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25415,7 +25415,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43962,7 +43962,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47105,7 +47105,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47771,7 +47771,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -62576,14 +62576,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${5-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nFrames-specific Hit requirements:\n• High-Impact Auto Rifles: #e${9-#d}\n• Precision (180 RPM) Hand Cannons and Rapid-Fire (180 RPM) Scout Rifles: #e${6-#d}\n• Aggressive (120 RPM) Hand Cannons: #e${4-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${5-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nFrames-specific Hit requirements:\n• High-Impact Auto Rifles: #e${9-#d}\n• Precision Hand Cannons and Precision Scout Rifles: #e${6-#d}\n• Aggressive (120 RPM) Hand Cannons: #e${4-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755795656582,
+      "lastUpdate": 1755797465040,
       "updatedBy": "Stardust"
      }
     },
@@ -62593,7 +62593,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -64997,31 +64997,31 @@
    "inLiveDatabase": false
   },
   "4042220767": {
-   "hash": 4042220767,
    "name": "Bolt Scavenger",
+   "hash": 4042220767,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Picking up a Crossbow Bolt grants ? Handling and ? Reload Speed for 15 seconds.",
+     "main": "Picking up a Crossbow Bolt grants ? Handling and ? Reload Speed for 4 seconds.\n\nPicking up additional Bolts adds 3? seconds to the buff duration up to the maximum of 15 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755798155768,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1753823264914,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755798192226,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4045335048": {
    "name": "Headseeker",
@@ -67309,7 +67309,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -67552,7 +67552,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755797380315,
+   "lastUpload": 1755798192226,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
