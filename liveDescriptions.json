@@ -1381,7 +1381,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -2091,7 +2091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7712,19 +7712,19 @@
    "inLiveDatabase": true
   },
   "450381139": {
-   "name": "Arc Reserves",
+   "name": "Arc Ammo Generation",
    "hash": 450381139,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants 20|40|50 Inventory Size Stat to #element with 1|2|3 Mods equipped.\n\n#swords\n\nTotal Ammo Reserves are determined by both the Inventory Size and Magazine Stats.\n\nvar element = <arc/>Arc Weapons\n\nvar swords = Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively). ",
+     "main": "Grants 20|40|50 Ammo Generation stat to #element with 1|2|3 Mods equipped.\n\n#swords\n\nvar element = <arc/>Arc Weapons\n\nvar swords = Swords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively). ",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1719518040731,
+      "lastUpdate": 1755805616971,
       "updatedBy": "Stardust"
      }
     },
@@ -7734,7 +7734,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1719594243302,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9132,7 +9132,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9552,14 +9552,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Spawns a <heavy/>Heavy Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nAmmo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.\n\nCounter Progress on Weapon Kills:\n1.1% to 1.33%. Average of 83.5 Kills.\n\nProgress Multipliers on Kills:\n• <primary/>Primary Weapons: 4.25x \n• <special/><green Special Weapons: /> 1.05x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> further 1.3?x on top of the Primary Multiplier (total of 5.525?⁠x)\n• Playing Solo: 1.2?⁠x\n\nGlaive Melee Kills count as <primary/>Primary Weapon Kills.\n\n<yellow Winterbite /> Melee Kills count as <heavy/>Power Weapon Kills.\n\n<yellow Eriana's Vow /> inherits the Exotic Primary Multiplier but is still treated as a <special/>Special Weapon.\n\nAmmo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)",
+     "main": "Grants a 1.33x|1.66x|2x multiplier to all Heavy Ammo Meter progress with 1|2|3 Mods equipped.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1734641645527,
+      "lastUpdate": 1755804663389,
       "updatedBy": "Stardust"
      }
     },
@@ -9569,7 +9569,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1735009175023,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9596,7 +9596,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -10648,19 +10648,19 @@
    "itemName": "The Huckleberry"
   },
   "633101315": {
-   "name": "Font of Vigor",
+   "name": "Melee Font",
    "hash": 633101315,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 1130820873\n\nvar charStat = Strength",
+     "main": "import main from 1130820873\n\nvar charStat = Melee stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679848274411,
+      "lastUpdate": 1755804916876,
       "updatedBy": "Stardust"
      }
     },
@@ -10670,7 +10670,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11309,19 +11309,19 @@
    "uploadToLive": false
   },
   "686455429": {
-   "name": "Font of Endurance",
+   "name": "Health Font",
    "hash": 686455429,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 1130820873\n\nvar charStat = Resilience",
+     "main": "import main from 1130820873\n\nvar charStat = Health stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679848157486,
+      "lastUpdate": 1755804895882,
       "updatedBy": "Stardust"
      }
     },
@@ -11331,7 +11331,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13114,7 +13114,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -16839,7 +16839,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18515,14 +18515,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants the following to #element 1 second after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
+     "main": "Grants the following to #element ~0.5 seconds after readying them:\n• 10|15|18 Reload Speed with 1|2|3 Mods equipped\n• 0.85x Reload Duration Multiplier\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1703073235612,
+      "lastUpdate": 1755805193611,
       "updatedBy": "Stardust"
      }
     },
@@ -18532,7 +18532,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717548513901,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18586,7 +18586,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18672,19 +18672,19 @@
    "inLiveDatabase": true
   },
   "1130820873": {
-   "name": "Font of Wisdom",
+   "name": "Super Font",
    "hash": 1130820873,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants 30|50|60 #charStat with 1|2|3 Mods equipped while you have active Armor Charges.\n\nArmor Charge now decays over time at the rate of 1 every 10 seconds by default.\n\nvar charStat = Intellect",
+     "main": "Grants 20|40|50 #charStat with 1|2|3 Mods equipped while you have active Armor Charges.\n\nArmor Charge now decays over time at the rate of 1 every 10 seconds by default.\n\nvar charStat = Super stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679867720448,
+      "lastUpdate": 1755804949561,
       "updatedBy": "Stardust"
      }
     },
@@ -18694,36 +18694,36 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679867725995,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
   "1133590731": {
-   "hash": 1133590731,
    "name": "Enhanced Athletics",
+   "hash": 1133590731,
    "type": "Armor Mod General",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Passively increases non-sprinting Movement Speed and non-ability Jump Height.\n\nNote: the below values represent the <link currently bugged [https://www.reddit.com/r/DestinyTheGame/comments/1mpwq30/update_the_mobility_stat_is_still_bugged_but_in_a/] /> state of these mods as of August 21.\n\n(Diagonally) Forward Walk Speed with 0|1|2|3 Mods equipped by class:\n• Warlocks and Titans: 5.6|6.0|6.2|6.4 m/s\n• Hunters: 5.8|6.2|6.4|6.6 m/s\n\nStrafing (side-to-side and backwards movement) decreases these speeds by 15%. Strafe speed is capped at 6 m/s.\n\nCrouching decreases these speeds by 45%. Crouch speed is capped at 4 m/s.\n\nSprint speed is set to 8 m/s by default and is capped at 9 m/s. This cap applies to regular Walk Speed as well.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755808583791,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755810746183,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1134488199": {
    "name": "Withering Gaze",
@@ -19769,31 +19769,31 @@
    "itemName": "Bastion"
   },
   "1193713026": {
+   "name": "Class Font",
    "hash": 1193713026,
-   "name": "Font of Restoration",
    "type": "Armor Mod General",
-   "lastUpload": 1679865752213,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "import main from 1130820873\n\nvar charStat = Recovery",
+     "main": "import main from 1130820873\n\nvar charStat = Class stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755804828063,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1679857046253,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755810746183,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1194056669": {
    "name": "Closing Time",
@@ -25388,7 +25388,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25398,14 +25398,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Deals increased damage against <link Minibosses, Bosses, and Vehicles [#CombatantClassifications] />, as well as Players in their Super Ability.\n\nDamage increase by Ammo Type:\n• <primary/>Primary Weapons: <pve 20% /> <pvp [60%] />\n• <special/>Special Weapons: <pve 15% /> <pvp [20%] />\n• <heavy/>Power Weapons: <pve 10% /> <pvp [20%] />\n• Heavy Bows: <pve 32% /> <pvp [92?%] />\n\nenhanced (\n#e Passively grants 5 Stability or Guard Resistance (Swords).\n)",
+     "main": "Deals increased damage against <link Minibosses, Bosses, and Vehicles [#CombatantClassifications] />, as well as Players in their Super Ability.\n\nDamage increase by Ammo Type:\n• <primary/>Primary Weapons: <pve 20% /> <pvp [60%] />\n• <special/>Special Weapons: <pve 15% /> <pvp [20%] />\n• <heavy/>Power Weapons: <pve 10% /> <pvp [20%] />\n• <heavy/>Crossbows: <pve 32% /> <pvp [92?%] />\n\nenhanced (\n#e Passively grants 5 Stability or Guard Resistance (Swords).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755797144404,
+      "lastUpdate": 1755808714660,
       "updatedBy": "Stardust"
      }
     },
@@ -25415,7 +25415,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -29512,19 +29512,19 @@
    "inLiveDatabase": false
   },
   "1781551382": {
-   "name": "Font of Focus",
+   "name": "Grenade Font",
    "hash": 1781551382,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 1130820873\n\nvar charStat = Discipline",
+     "main": "import main from 1130820873\n\nvar charStat = Grenade stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679848188096,
+      "lastUpdate": 1755804876918,
       "updatedBy": "Stardust"
      }
     },
@@ -29534,7 +29534,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -34247,14 +34247,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to #element with 1|2|3 Mods equipped.\n\nStow Animation Duration cannot be reduced below what it would be at 100 Handling.\n\nvar element = <arc/>Arc Weapons",
+     "main": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to #element with 1|2|3 Mods equipped.\n\nStow Animation Duration cannot be decreased below what it would be at 100 Handling.\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1690739164115,
+      "lastUpdate": 1755805022694,
       "updatedBy": "Stardust"
      }
     },
@@ -34264,7 +34264,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717548513901,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42074,14 +42074,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Spawns a <special/>Special Ammo Brick upon scoring a Weapon Kill after reaching 100% Counter Progress. Counter is only progressed by Weapon Kills.\n\nAmmo Finder Bricks grant 27.5%|60%|100% of a Regular Ammo Brick's Pickup Amount with 1|2|3 Mods equipped. Pickup Amount is determined on Brick Spawn.\n\nCounter Progress on Weapon Kills:\n1.66% to 1.8%. Average of 57.25 Kills.\n\nProgress Multiplier on Kills:\n• <primary/>Primary Weapons: 3.25x \n• <special/><green Special Weapons: /> 1.1x\n• <yellow Exotic /> <primary/><yellow Primary Weapons: /> further 1.3?x on top of the Primary Multiplier (total of 4.225?⁠x)\n• Playing Solo: 1.2?⁠x\n\nGlaive Melee Kills count as <primary/>Primary Weapon Kills.\n\n<yellow Winterbite /> Melee Kills count as <heavy/>Power Weapon Kills.\n\n<yellow Eriana's Vow /> inherits the Exotic Primary Multiplier but is still treated as a <special/>Special Weapon.\n\nAmmo Finder Bricks have less variablity compared to Regular Bricks. (i.e. they can't go as far above or under the average ammo amount granted)",
+     "main": "Grants a 1.25x|1.4x|1.5x multiplier to all Special Ammo Meter progress with 1|2|3 Mods equipped.\n\nThis works in the Crucible as well.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1734641675057,
+      "lastUpdate": 1755804747168,
       "updatedBy": "Stardust"
      }
     },
@@ -42091,7 +42091,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1735009175023,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43012,14 +43012,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Increases velocity of thrown grenade abilities by 25%.",
+     "main": "Increases velocity of thrown grenade abilities by ~25%.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723394893052,
+      "lastUpdate": 1755805056878,
       "updatedBy": "Stardust"
      }
     },
@@ -43029,7 +43029,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43962,7 +43962,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47105,7 +47105,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47771,7 +47771,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -62593,7 +62593,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -65019,7 +65019,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -65079,19 +65079,19 @@
    "itemName": "Sunshot"
   },
   "4046357305": {
-   "name": "Font of Agility",
+   "name": "Weapons Font",
    "hash": 4046357305,
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 1130820873\n\nvar charStat = Mobility",
+     "main": "import main from 1130820873\n\nvar charStat = Weapons stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1679848099698,
+      "lastUpdate": 1755804960544,
       "updatedBy": "Stardust"
      }
     },
@@ -65101,7 +65101,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1679865752213,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -65580,14 +65580,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Orb of Power Pickups immediately restore 70 HP.\n\nEquipping multiple copies provides no benefit.",
+     "main": "Orb of Power Pickups immediately restore 15|?|? HP with 1|2|3 Mods equipped.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1732213787458,
+      "lastUpdate": 1755810363344,
       "updatedBy": "Stardust"
      }
     },
@@ -65597,7 +65597,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1732219732702,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -67309,7 +67309,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -67552,7 +67552,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755798192226,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -69710,14 +69710,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "After stowing #element:\nBegins to <title refill [G_refill] /> 10%|10%|15% of the stowed weapon's magazine (rounded up) from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped.\n\nDoes not work with Breech-Loaded Grenades Launchers and Rocket Launchers.\n\nvar element = <arc/>Arc Weapons",
+     "main": "After stowing #element:\nBegins to <title refill [G_refill] /> 10%|10%|15% of the stowed weapon's magazine (rounded up) from reserves every 2.5|2|2 seconds with 1|2|3 Mods equipped.\n\nDoes not work with Breech-Loaded Grenades Launchers, Crossbows, and Rocket Launchers.\n\nvar element = <arc/>Arc Weapons",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731793761172,
+      "lastUpdate": 1755808688114,
       "updatedBy": "Stardust"
      }
     },
@@ -69727,7 +69727,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1755810746183,
    "inLiveDatabase": true,
    "uploadToLive": false
   }
