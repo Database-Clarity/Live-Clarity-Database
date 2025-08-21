@@ -1246,6 +1246,34 @@
    ]
   }
  },
+ "65797256": {
+  "hash": 65797256,
+  "name": "Fleet Footed",
+  "lastUpload": 1755797380315,
+  "type": "Weapon Trait Origin",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for ? seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "74393640": {
   "hash": 74393640,
   "name": "Facet of Defiance",
@@ -1770,7 +1798,7 @@
  "113508675": {
   "hash": 113508675,
   "name": "Reaper's Tithe",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -1778,7 +1806,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 3 stacks."
+       "text": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 4 stacks. (e.g. triple kill ⇒ 3 stacks)"
       }
      ]
     },
@@ -1788,7 +1816,7 @@
     {
      "linesContent": [
       {
-       "text": "'Reaper's Tithe' grants 20%|30%|40% increased damage for 15 seconds. Timer only start after firing."
+       "text": "'Reaper's Tithe' grants 20%|30%|40% increased damage for 15 seconds. Timer only starts after firing."
       }
      ]
     },
@@ -3099,7 +3127,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 3 stacks."
+       "text": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 4 stacks. (e.g. triple kill ⇒ 3 stacks)"
       }
      ]
     },
@@ -3116,7 +3144,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "17 seconds. Timer only start after firing."
+       "text": "17 seconds. Timer only starts after firing."
       }
      ]
     },
@@ -3757,7 +3785,7 @@
        "text": "20 Hits within ? seconds of each triggers an explosion around the target, dealing up to "
       },
       {
-       "text": "266",
+       "text": "250",
        "classNames": [ "pve" ]
       },
       {
@@ -3768,7 +3796,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " weapon element-matching damage in a ? meter radius."
+       "text": " weapon element-matching damage in a 8 meter radius."
       }
      ]
     },
@@ -3782,7 +3810,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Number of Hits required is decreased by 5?."
+       "text": " Number of Hits required is decreased by 5."
       }
      ]
     }
@@ -4826,7 +4854,7 @@
     {
      "linesContent": [
       {
-       "text": "Heavy Burst Hand Cannons can only gain 1 stack per burst."
+       "text": "Heavy Burst Frame weapons can only gain 1 stack per burst."
       }
      ]
     },
@@ -8388,7 +8416,7 @@
  "531057500": {
   "hash": 531057500,
   "name": "Lucent Blades",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "stats": {
    "Guard Charge Rate": [
     {
@@ -9098,7 +9126,7 @@
  "555281244": {
   "hash": 555281244,
   "name": "Precision Instrument",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -9126,7 +9154,7 @@
     {
      "linesContent": [
       {
-       "text": "Heavy Burst Hand Cannons can only gain 1 stack per burst."
+       "text": "Heavy Burst Frame weapons can only gain 1 stack per burst."
       }
      ]
     },
@@ -12459,21 +12487,55 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 of the 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 3 seconds by "
+       "text": "10 of the 12 Pellets in the spread increases the damage of your next Melee attack within 3 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Melee Damage increase by weapon type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Shotgun: 150% additional base melee damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: "
       },
       {
-       "text": "150%",
+       "text": "75%",
        "classNames": [ "pve" ]
       },
       {
        "text": " "
       },
       {
-       "text": "[100%]",
+       "text": "[100?%]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": ". Stowing the weapon removes the buff."
+       "text": " additional base melee damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stowing the weapon removes the buff."
       }
      ]
     },
@@ -12503,7 +12565,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Requires 2 fewer Shotgun Pellets to activate."
+       "text": " Requires 2 fewer Pellets to activate."
       }
      ]
     }
@@ -12679,6 +12741,55 @@
      "linesContent": [
       {
        "text": "Grants 67% increased damage for Grounded Heavy Attacks that consume all remaining ammo."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "820036316": {
+  "hash": 820036316,
+  "name": "Proximity Power",
+  "lastUpload": 1755797380315,
+  "type": "Weapon Trait Enhanced",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills while within 15 meters of enemies grant a stack of Proximity Power 10 seconds. Maximum of 3 stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each stack grants "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "18 Melee stat."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Grants 3 more Melee stat per stack."
       }
      ]
     }
@@ -15580,13 +15691,13 @@
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Kinetic, "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis and "
+       "text": "Stasis, and "
       },
       {
        "classNames": [ "strand" ]
@@ -15889,7 +16000,7 @@
  "1017229899": {
   "hash": 1017229899,
   "name": "Blast Distributor",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -15897,7 +16008,7 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5? seconds. Maximum of 5 stacks."
+       "text": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5 seconds. Maximum of 5 stacks."
       }
      ]
     },
@@ -17293,7 +17404,7 @@
  "1126264488": {
   "hash": 1126264488,
   "name": "Threat Remover",
-  "lastUpload": 1723486934727,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -17301,7 +17412,7 @@
     {
      "linesContent": [
       {
-       "text": "Hitting a target with 11 of the 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for 7 seconds."
+       "text": "Hitting a target with 11 of the 12 Pellets in the spread grants ? Stability, ? Handling, and 60 Reload Speed for 7 seconds."
       }
      ]
     }
@@ -17439,7 +17550,7 @@
     {
      "linesContent": [
       {
-       "text": "• 45% increased Auto Aim Cone size"
+       "text": "• 45% increased Projectile Tracking Cone size"
       }
      ]
     },
@@ -22800,7 +22911,7 @@
  "1546142478": {
   "hash": 1546142478,
   "name": "Binary Orbit",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22872,13 +22983,13 @@
     {
      "linesContent": [
       {
-       "text": "• "
+       "text": "• Kinetic, "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis and "
+       "text": "Stasis, and "
       },
       {
        "classNames": [ "strand" ]
@@ -22912,7 +23023,7 @@
  "1546637391": {
   "hash": 1546637391,
   "name": "Vorpal Weapon",
-  "lastUpload": 1712883202187,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -22999,7 +23110,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Heavy Weapons: "
+       "text": "Power Weapons: "
       },
       {
        "text": "10%",
@@ -23010,6 +23121,24 @@
       },
       {
        "text": "[20%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Heavy Bows: "
+      },
+      {
+       "text": "32%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[92?%]",
        "classNames": [ "pvp" ]
       }
      ]
@@ -23082,7 +23211,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on "
+       "text": " damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on "
       },
       {
        "text": "Miniboss or higher tier",
@@ -36246,7 +36375,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 of the 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for 7 seconds."
+       "text": "10 of the 12 Pellets in the spread grants ? Stability, ? Handling, and 60 Reload Speed for 7 seconds."
       }
      ]
     },
@@ -36260,7 +36389,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Requires hitting with 1? fewer Shotgun Pellet to activate."
+       "text": " Requires hitting with 1? fewer Pellet to activate."
       }
      ]
     }
@@ -40315,7 +40444,7 @@
  "2679249093": {
   "hash": 2679249093,
   "name": "One-Two Punch",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -40323,21 +40452,55 @@
     {
      "linesContent": [
       {
-       "text": "Hitting a target with all 12 Shotgun Pellets in the spread increases the damage of your next Melee attack within 3 seconds by "
+       "text": "Hitting a target with all 12 Pellets in the spread increases the damage of your next Melee attack within 3 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Melee Damage increase by weapon type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Shotgun: 150% additional base melee damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon: "
       },
       {
-       "text": "150%",
+       "text": "75%",
        "classNames": [ "pve" ]
       },
       {
        "text": " "
       },
       {
-       "text": "[100%]",
+       "text": "[100?%]",
        "classNames": [ "pvp" ]
       },
       {
-       "text": ". Stowing the weapon removes the buff."
+       "text": " additional base melee damage"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stowing the weapon removes the buff."
       }
      ]
     },
@@ -43419,7 +43582,7 @@
  "2859149211": {
   "hash": 2859149211,
   "name": "Beacon Rounds",
-  "lastUpload": 1731793916910,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -43478,7 +43641,7 @@
     {
      "linesContent": [
       {
-       "text": "• 45% increased Auto Aim Cone size"
+       "text": "• 45% increased Projectile Tracking Cone size"
       }
      ]
     }
@@ -44057,50 +44220,11 @@
  "2890807135": {
   "hash": 2890807135,
   "name": "Burning Ambition",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
    "en": [
-    {
-     "linesContent": [
-      {
-       "text": "Scoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch the target."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Hit counter persists through stow."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch applied by Burning Ambition counts as Weapon Damage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
     {
      "linesContent": [
       {
@@ -44116,7 +44240,120 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch on a 0.5 second cooldown. (note: this part needs more testing)"
+       "text": "Scorch on a 0.5 second cooldown:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons apply "
+      },
+      {
+       "text": "10",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[4]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " additional "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch per Direct Hit ("
+      },
+      {
+       "text": "15",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[9?]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons apply 20 additional "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch (20 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch the target. Hit counter persists through stow."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage."
       }
      ]
     },
@@ -44145,26 +44382,13 @@
     {
      "linesContent": [
       {
-       "text": "• Submachine Gun: ? Hits | ? "
+       "text": "• Auto Rifle: 29 Hits | 10 "
       },
       {
        "classNames": [ "solar" ]
       },
       {
        "text": "Scorch"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Auto Rifle: 29 Hits | "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "10"
       }
      ]
     },
@@ -44184,33 +44408,33 @@
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifle: ? Hits | "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "?"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "• Machine Gun: ? Hits | "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "?"
+       "text": "20"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannon: ? Hits | "
+       "text": "• Pulse Rifle: 18  Hits | "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon, Submachine Gun: 70% of Magazine size rounded up Hits | "
       },
       {
        "classNames": [ "solar" ]
@@ -50871,7 +51095,7 @@
        "classNames": [ "heavy" ]
       },
       {
-       "text": "Heavy Weapons: "
+       "text": "Power Weapons: "
       },
       {
        "text": "10%",
@@ -50882,6 +51106,24 @@
       },
       {
        "text": "[20%]",
+       "classNames": [ "pvp" ]
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Heavy Bows: "
+      },
+      {
+       "text": "32%",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[92?%]",
        "classNames": [ "pvp" ]
       }
      ]
@@ -53339,45 +53581,6 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch the target."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Hit counter persists through stow."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch applied by Burning Ambition counts as Weapon Damage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Direct Hits against "
       },
       {
@@ -53390,7 +53593,120 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch on a 0.5 second cooldown. (note: this part needs more testing)"
+       "text": "Scorch on a 0.5 second cooldown:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Primary Weapons apply "
+      },
+      {
+       "text": "10",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[4]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " additional "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch per Direct Hit ("
+      },
+      {
+       "text": "15",
+       "classNames": [ "pve" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[9?]",
+       "classNames": [ "pvp" ]
+      },
+      {
+       "text": " with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "special" ]
+      },
+      {
+       "text": "Special and "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "Power Weapons apply 20 additional "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch (20 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch the target. Hit counter persists through stow."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage."
       }
      ]
     },
@@ -53419,26 +53735,6 @@
     {
      "linesContent": [
       {
-       "text": "• Submachine Gun: "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "? Hits | ? "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "• Auto Rifle: "
       },
       {
@@ -53446,13 +53742,13 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "26 Hits | "
+       "text": "26 Hits | 10 "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "10"
+       "text": "Scorch"
       }
      ]
     },
@@ -53479,26 +53775,6 @@
     {
      "linesContent": [
       {
-       "text": "• Pulse Rifle: "
-      },
-      {
-       "text": "🡅",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "14 Hits | "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "?"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "• Machine Gun: "
       },
       {
@@ -53506,27 +53782,47 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "? Hits | "
+       "text": "16 Hits | "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "?"
+       "text": "20"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannon: "
+       "text": "• Pulse Rifle: "
       },
       {
        "text": "🡅",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 Hits | "
+       "text": "14  Hits | "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "10"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hand Cannon, Submachine Gun: "
+      },
+      {
+       "text": "🡅",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "50% of Magazine size rounded up Hits | "
       },
       {
        "classNames": [ "solar" ]
@@ -53546,7 +53842,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "? Hits | "
+       "text": "3 Hits | "
       },
       {
        "classNames": [ "solar" ]
@@ -53586,7 +53882,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1 Hits | "
+       "text": "1 Hit | "
       },
       {
        "classNames": [ "solar" ]
@@ -55253,7 +55549,7 @@
     {
      "linesContent": [
       {
-       "text": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5? seconds. Maximum of 5 stacks."
+       "text": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5 seconds. Maximum of 5 stacks."
       }
      ]
     },
@@ -55270,7 +55566,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "10 Grenade stat per stack."
+       "text": "13 Grenade stat per stack."
       }
      ]
     },
@@ -55284,7 +55580,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Grants 1? more Grenade stat per stack."
+       "text": " Grants 3 more Grenade stat per stack."
       }
      ]
     }
@@ -57720,7 +58016,7 @@
  "3891536761": {
   "hash": 3891536761,
   "name": "Kinetic Tremors",
-  "lastUpload": 1753831097929,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -57762,7 +58058,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on "
+       "text": " damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on "
       },
       {
        "text": "Miniboss or higher tier",
@@ -62138,10 +62434,38 @@
    ]
   }
  },
+ "4190679284": {
+  "hash": 4190679284,
+  "name": "Proximity Power",
+  "lastUpload": 1755797380315,
+  "type": "Weapon Trait",
+  "uploadedBy": "Stardust",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Weapon Kills while within 15 meters of enemies grant a stack of Proximity Power 10 seconds. Maximum of 3 stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each stack grants 15 Melee stat."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4198902903": {
   "hash": 4198902903,
   "name": "Detonator Beam",
-  "lastUpload": 1743183422022,
+  "lastUpload": 1755797380315,
   "type": "Weapon Trait",
   "uploadedBy": "Stardust",
   "descriptions": {
@@ -62152,7 +62476,7 @@
        "text": "Scoring 25 Hits within ? seconds of each triggers an explosion around the target, dealing up to "
       },
       {
-       "text": "266",
+       "text": "250",
        "classNames": [ "pve" ]
       },
       {
@@ -62163,7 +62487,7 @@
        "classNames": [ "pvp" ]
       },
       {
-       "text": " weapon element-matching damage in a ? meter radius."
+       "text": " weapon element-matching damage in a 8 meter radius."
       }
      ]
     }
