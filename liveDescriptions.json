@@ -1359,31 +1359,31 @@
    "uploadToLive": false
   },
   "65797256": {
-   "hash": 65797256,
    "name": "Fleet Footed",
+   "hash": 65797256,
    "type": "Weapon Trait Origin",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for ? seconds.\n\nScoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for ? seconds.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755796968578,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "74393640": {
    "name": "Facet of Defiance",
@@ -2069,31 +2069,31 @@
    "inLiveDatabase": false
   },
   "113508675": {
-   "hash": 113508675,
    "name": "Reaper's Tithe",
+   "hash": 113508675,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 3 stacks.\n\n'Reaper's Tithe' grants 20%|30%|40% increased damage for #e${15+#d} seconds. Timer only start after firing.\n\nAdditional Weapon Kills extend the buff duration by 6 seconds, but not beyond the initial #e${15+#d}-second duration.\n\nScoring a higher number of simultaneous Kills than the currently active stack count will not \"upgrade\" the buff.\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
+     "main": "Grants stacks of 'Reaper's Tithe' based on the number of simultaneously killed enemies. Maximum of 4 stacks. (e.g. triple kill ⇒ 3 stacks)\n\n'Reaper's Tithe' grants 20%|30%|40% increased damage for #e${15+#d} seconds. Timer only starts after firing.\n\nAdditional Weapon Kills extend the buff duration by 6 seconds, but not beyond the initial #e${15+#d}-second duration.\n\nScoring a higher number of simultaneous Kills than the currently active stack count will not \"upgrade\" the buff.\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755796777981,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1753826487728,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "117669763": {
    "name": "The Dance",
@@ -9132,7 +9132,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1753831097929,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9579,14 +9579,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Direct Weapon Hits grant a stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 stacks. Missing removes all stacks.\n\nHeavy Burst Hand Cannons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
+     "main": "Direct Weapon Hits grant a stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 stacks. Missing removes all stacks.\n\nHeavy Burst Frame weapons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... stacks:\n#e${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: #e${25*#d}% / 6 × <stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n#e Precision Damage Buff is increased by 20%.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1753470762663,
+      "lastUpdate": 1755796281845,
       "updatedBy": "Stardust"
      }
     },
@@ -9596,7 +9596,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1753831097929,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -13092,31 +13092,31 @@
    "itemName": "Red Death Reformed"
   },
   "820036316": {
-   "hash": 820036316,
    "name": "Proximity Power",
+   "hash": 820036316,
    "type": "Weapon Trait Enhanced",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "import main from 4190679284",
+     "secondary": "import secondary from 4190679284"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755796370291,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "824488952": {
    "name": "Seriously, Watch Out",
@@ -16817,31 +16817,31 @@
    "inLiveDatabase": false
   },
   "1017229899": {
-   "hash": 1017229899,
    "name": "Blast Distributor",
+   "hash": 1017229899,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5? seconds. Maximum of 5 stacks.\n\n'Blast Distributor' grants #e${10+#d} Grenade stat per stack.\n\nenhanced (\n#e Grants 1? more Grenade stat per stack.\n)",
+     "main": "Dealing Explosive damage grants a stack of 'Blast Distributor' for 5 seconds. Maximum of 5 stacks.\n\n'Blast Distributor' grants #e${10+#d} Grenade stat per stack.\n\nenhanced (\nvar d = 3\n#e Grants 3 more Grenade stat per stack.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755792800277,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1753823049433,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1017385934": {
    "name": "Void Dexterity",
@@ -18569,14 +18569,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Hitting a target with #e${11-#d} of the 12 Shotgun Pellets in the spread improves Stability, Handling, and Reload Speed for 7 seconds.\n\nenhanced (\nvar d = 1\n#e Requires hitting with 1? fewer Shotgun Pellet to activate.\n)",
+     "main": "Hitting a target with #e${11-#d} of the 12 Pellets in the spread grants ? Stability, ? Handling, and 60 Reload Speed for 7 seconds.\n\nenhanced (\nvar d = 1\n#e Requires hitting with 1? fewer Pellet to activate.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723486912927,
+      "lastUpdate": 1755796852630,
       "updatedBy": "Stardust"
      }
     },
@@ -18586,7 +18586,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723486934727,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -25366,31 +25366,31 @@
    "uploadToLive": false
   },
   "1546142478": {
-   "hash": 1546142478,
    "name": "Binary Orbit",
+   "hash": 1546142478,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Scoring opposing Elemental Alignment Kills grants 25% increased damage for #e${8.5+#d} seconds.\n\nBuff can be activated while stowed.\n\nElemental Alignment details:\n• <arc/>Arc, <solar/>Solar, <void/>Void Kills buff Kinetic, <stasis/>Stasis, and <strand/>Strand Weapons\n• <stasis/>Stasis and <strand/>Strand Kills buff <arc/>Arc, <solar/>Solar, and <void/>Void Weapons\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
+     "main": "Scoring opposing Elemental Alignment Kills grants 25% increased damage for #e${8.5+#d} seconds.\n\nBuff can be activated while stowed.\n\nElemental Alignment details:\n• <arc/>Arc, <solar/>Solar, <void/>Void Kills buff Kinetic, <stasis/>Stasis, and <strand/>Strand Weapons\n• Kinetic, <stasis/>Stasis, and <strand/>Strand Kills buff <arc/>Arc, <solar/>Solar, and <void/>Void Weapons\n\nenhanced (\nvar d = 2\n#e Buff duration is increased by 2 seconds.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755797280368,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1753822580763,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "1546637391": {
    "name": "Vorpal Weapon",
@@ -25398,19 +25398,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Deals increased damage against <link Minibosses, Bosses, and Vehicles [#CombatantClassifications] />, as well as Players in their Super Ability.\n\nDamage increase by Ammo Type:\n• <primary/>Primary Weapons: <pve 20% /> <pvp [60%] />\n• <special/>Special Weapons: <pve 15% /> <pvp [20%] />\n• <heavy/>Heavy Weapons: <pve 10% /> <pvp [20%] />\n\nenhanced (\n#e Passively grants 5 Stability or Guard Resistance (Swords).\n)",
+     "main": "Deals increased damage against <link Minibosses, Bosses, and Vehicles [#CombatantClassifications] />, as well as Players in their Super Ability.\n\nDamage increase by Ammo Type:\n• <primary/>Primary Weapons: <pve 20% /> <pvp [60%] />\n• <special/>Special Weapons: <pve 15% /> <pvp [20%] />\n• <heavy/>Power Weapons: <pve 10% /> <pvp [20%] />\n• Heavy Bows: <pve 32% /> <pvp [92?%] />\n\nenhanced (\n#e Passively grants 5 Stability or Guard Resistance (Swords).\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1712880180832,
+      "lastUpdate": 1755797144404,
       "updatedBy": "Stardust"
-     },
-     "zh-chs": {
-      "lastUpdate": 1670673983178,
-      "updatedBy": "Mistwalker"
      }
     },
     "stats": {
@@ -25419,7 +25415,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1712883202187,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -43949,14 +43945,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Hitting a target with #d Shotgun Pellets in the spread increases the damage of your next Melee attack within 3 seconds by <pve 150% /> <pvp [100%] />. Stowing the weapon removes the buff.\n\nThe buff does not stack with the passive Melee Damage increase against <stasis/>Frozen non-Boss targets. The higher buff of the two takes precedence.\n\nvar d = all 12\nenhanced (\nvar d = #e10 of the 12\n#e Requires 2 fewer Shotgun Pellets to activate.\n)",
+     "main": "Hitting a target with #d Pellets in the spread increases the damage of your next Melee attack within 3 seconds.\n\nMelee Damage increase by weapon type:\n• Shotgun: 150% additional base melee damage\n• Hand Cannon: <pve 75% /> <pvp [100?%] /> additional base melee damage\n\nStowing the weapon removes the buff.\n\nThe buff does not stack with the passive Melee Damage increase against <stasis/>Frozen non-Boss targets. The higher buff of the two takes precedence.\n\nvar d = all 12\nenhanced (\nvar d = #e10 of the 12\n#e Requires 2 fewer Pellets to activate.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1753470361928,
+      "lastUpdate": 1755796152353,
       "updatedBy": "Stardust"
      }
     },
@@ -43966,7 +43962,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1753831097929,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47092,14 +47088,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Kills with the weapon grant a Stack of Beacon Rounds for #e${6+#d} seconds. Maximum of 4 Stacks.\n\nScoring futher Hits with the weapon can extend the buff duration up to the maximum of 4 seconds. Buff can be activated while stowed.\n\nEach Stack grants increased projectile tracking. Projectile Tracking is only in effect while the Targeted Reticle is active.\n\nGrants the following while you have active Stacks:\n• 15 Reload Speed\n• 0.9x Reload Duration Multiplier\n• 45% increased Auto Aim Cone size\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
+     "main": "Kills with the weapon grant a Stack of Beacon Rounds for #e${6+#d} seconds. Maximum of 4 Stacks.\n\nScoring futher Hits with the weapon can extend the buff duration up to the maximum of 4 seconds. Buff can be activated while stowed.\n\nEach Stack grants increased projectile tracking. Projectile Tracking is only in effect while the Targeted Reticle is active.\n\nGrants the following while you have active Stacks:\n• 15 Reload Speed\n• 0.9x Reload Duration Multiplier\n• 45% increased Projectile Tracking Cone size\n\nenhanced (\nvar d = 1\n#e Buff duration is increased by 1? second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731002452042,
+      "lastUpdate": 1755792713826,
       "updatedBy": "Stardust"
      }
     },
@@ -47109,7 +47105,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -47753,31 +47749,31 @@
    "uploadToLive": false
   },
   "2890807135": {
-   "hash": 2890807135,
    "name": "Burning Ambition",
+   "hash": 2890807135,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target.\n\nHit counter persists through stow.\n\n<solar/>Scorch applied by Burning Ambition counts as Weapon Damage.\n\nDirect Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown. (note: this part needs more testing)\n\nHits needed to prepare a <solar/>Scorching Shot and the <solar/>Scorch applied by weapon type:\n• #1 Hits | ? <solar/>Scorch\n• #2 Hits | <solar/>10\n• #3 Hits | <solar/>?\n• #4 Hits | <solar/>?\n• #5 Hits | <solar/>?\n• #6 Hits | <solar/>10\n• #7 Hits | <solar/>20\n• #8 Hits | <solar/>?\n• #9 Hits | <solar/>10\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar 1 = Submachine Gun: ?\nvar 2 = Auto Rifle: 29\nvar 3 = Fusion Rifle: 24\nvar 4 = Pulse Rifle: ?\nvar 5 = Machine Gun: ?\nvar 6 = Hand Cannon: ?\nvar 7 = Rocket Sidearm, Grenade Launcher: 4\nvar 8 = Sword: ?\nvar 9 = Bow: 2\n\nenhanced (\nvar 1 = Submachine Gun: #e?\nvar 2 = Auto Rifle: #e26\nvar 3 = Fusion Rifle: #e?\nvar 4 = Pulse Rifle: #e14\nvar 5 = Machine Gun: #e?\nvar 6 = Hand Cannon: #e10\nvar 7 = Rocket Sidearm, Grenade Launcher: #e?\nvar 8 = Sword: #e?\nvar 9 = Bow: #e1\n#e Decreases the number of Direct Hits required by varying amounts.\n)",
+     "main": "Direct Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown: \n• <primary/>Primary Weapons apply <pve 10 /> <pvp [4] /> additional <solar/>Scorch per Direct Hit (<pve 15 /> <pvp [9?] /> with <solar/>Ember of Ashes)\n• <special/>Special and <heavy/>Power Weapons apply 20 additional <solar/>Scorch (20 with <solar/>Ember of Ashes)\n\n\nScoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target. Hit counter persists through stow.\n\n<solar/>Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage.\n\nHits needed to prepare a <solar/>Scorching Shot and the <solar/>Scorch applied by weapon type:\n• #1\n• #2\n• #3\n• #4\n• #5\n• #6\n• #7\n• #8\n//• #9\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar 1 = Auto Rifle: 29 Hits | 10 <solar/>Scorch\nvar 2 = Fusion Rifle: 24 Hits | <solar/>?\nvar 3 = Machine Gun: ? Hits | <solar/>20\nvar 4 = Pulse Rifle: 18  Hits | <solar/>10\nvar 5 = Hand Cannon, Submachine Gun: 70% of Magazine size rounded up Hits | <solar/>10\nvar 6 = Rocket Sidearm, Grenade Launcher: 4 Hits | <solar/>20\nvar 7 = Sword: ? Hits | <solar/>? \nvar 8 = Bow: 2 Hits | <solar/>10\n//var 9 = \n\nenhanced (\nvar 1 = Auto Rifle: #e26 Hits | 10 <solar/>Scorch\nvar 2 = Fusion Rifle: #e? Hits | <solar/>?\nvar 3 = Machine Gun: #e16 Hits | <solar/>20\nvar 4 = Pulse Rifle: #e14  Hits | <solar/>10\nvar 5 = Hand Cannon, Submachine Gun: #e50% of Magazine size rounded up Hits | <solar/>10\nvar 6 = Rocket Sidearm, Grenade Launcher: #e3 Hits | <solar/>20\nvar 7 = Sword: #e? Hits | <solar/>? \nvar 8 = Bow: #e1 Hit | <solar/>10\n#e Decreases the number of Direct Hits required by varying amounts.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755795365243,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1753825635622,
-      "updatedBy": "Stardust"
-     }
     }
    },
-   "uploadToLive": true,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2894608781": {
    "name": "Hearts of Ice",
@@ -62580,14 +62576,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 5? meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${5-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nFrames-specific Hit requirements:\n• High-Impact Auto Rifles: #e${9-#d}\n• Precision (180 RPM) Hand Cannons and Rapid-Fire (180 RPM) Scout Rifles: #e${6-#d}\n• Aggressive (120 RPM) Hand Cannons: #e${4-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\n\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds. \n\nEach shockwave deals up to <pve 90 /> <pvp [20] /> damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on <link Miniboss or higher tier [#CombatantClassifications] /> PvE Combatants.\n\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on <primary/>Primary, 15% on <special/>Special), and its <link Combatant Damage Scaling [#CombatantScaling] />. They also count as non-direct Hits with the weapon for other interactions.\n\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\n\nHits required for Activation:\n• Submachine Guns: #e${14-#d}\n• Auto Rifles: #e${12-#d}\n• Pulse Rifles: #e${11-#d}\n• Non-burst Sidearms: #e${8-#d}\n• Hand Cannons, Scout Rifles: #e${5-#d}\n• Bows, Sniper Rifles: #e${3-#d}\n\nFrames-specific Hit requirements:\n• High-Impact Auto Rifles: #e${9-#d}\n• Precision (180 RPM) Hand Cannons and Rapid-Fire (180 RPM) Scout Rifles: #e${6-#d}\n• Aggressive (120 RPM) Hand Cannons: #e${4-#d}\n\nenhanced (\nvar d = 1\n#e Hit Requirements are decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1753470237312,
+      "lastUpdate": 1755795656582,
       "updatedBy": "Stardust"
      }
     },
@@ -62597,7 +62593,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1753831097929,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -67291,31 +67287,31 @@
    "itemName": "Bastion"
   },
   "4190679284": {
-   "hash": 4190679284,
    "name": "Proximity Power",
+   "hash": 4190679284,
    "type": "Weapon Trait",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "Weapon Kills while within 15 meters of enemies grant a stack of Proximity Power 10 seconds. Maximum of 3 stacks.\n\nEach stack grants #e${15+#d} Melee stat.\n\nenhanced (\nvar d = 3\n#e Grants 3 more Melee stat per stack.\n)",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755796637818,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755797380315,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "4193902249": {
    "hash": 4193902249,
@@ -67539,14 +67535,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring #e${25-#d} Hits within ? seconds of each triggers an explosion around the target, dealing up to <pve 266 /> <pvp [?] /> weapon element-matching damage in a ? meter radius.\n\nenhanced (\nvar d = 5\n#e Number of Hits required is decreased by 5?.\n)",
+     "main": "Scoring #e${25-#d} Hits within ? seconds of each triggers an explosion around the target, dealing up to <pve 250 /> <pvp [?] /> weapon element-matching damage in a 8 meter radius.\n\nenhanced (\nvar d = 5\n#e Number of Hits required is decreased by 5.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1742593576246,
+      "lastUpdate": 1755795528985,
       "updatedBy": "Stardust"
      }
     },
@@ -67556,7 +67552,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1743183422022,
+   "lastUpload": 1755797380315,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
