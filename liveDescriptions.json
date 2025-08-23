@@ -2401,14 +2401,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<solar/>Ignitions have 20?% increased radius.\n\n<stasis/>Shattering enemies or destroying <stasis/>Crystals creates an additional damage instance, dealing up to <pve 25 /> <pvp [9] /> damage in a <pve 10 /> <pvp [8] /> meter radius.\n\nDamage falls off to <pve 17 /> <pvp [4] /> damage at the edge of the radius.",
+     "main": "<solar/>Ignitions have a 25% increased blast radius.\n\n<stasis/>Shattering enemies or destroying <stasis/>Crystals creates an additional damage instance, dealing up to <pve 25 /> <pvp [9] /> damage in a <pve 10 /> <pvp [8] /> meter radius.\n\nDamage falls off to <pve 17 /> <pvp [4] /> damage at the edge of the radius.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738947030846,
+      "lastUpdate": 1755983146275,
       "updatedBy": "Stardust"
      }
     },
@@ -2418,7 +2418,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5900,14 +5900,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<solar/>Solar Weapon Kills grant a Stack of Ember of Tempering for 8 seconds to you and allies within 12.5 meters.\n\n<solar/>Ember of Tempering grants the following benefits:\n• 10|20|30 Recovery at 1|2|3 Stacks\n• 20 Airborne Effectiveness\n• <solar/>Solar Weapon Kills spawn a <solar/>Firesprite ",
+     "main": "<solar/>Solar Weapon Kills grant a Stack of Ember of Tempering for 8 seconds to you and allies within 15 meters.\n\n<solar/>Ember of Tempering grants the following benefits:\n• 20|40|60 Health stat at 1|2|3 Stacks\n• 20 Airborne Effectiveness\n• <solar/>Solar Weapon Kills spawn a <solar/>Firesprite ",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714217372563,
+      "lastUpdate": 1755982733999,
       "updatedBy": "Stardust"
      }
     },
@@ -5917,7 +5917,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -5954,14 +5954,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Applying certain buffs to allies grants 400% Additional Base Grenade, Melee, and Class Ability Regeneration Rate for <pve 6 /> <pvp [3] /> seconds.\n\nActivation Triggers:\n• Granting the <solar/>Cure, <solar/>Radiant, or <solar/>Restoration <solar/>Solar subclass buffs to allies\n• Healing (from most sources), or reviving allies\n\nWill NOT trigger <solar/>Ember of Benevolence:\nEmpowering Rifts, Mods, <yellow Crest of Alpha Lupi />'s Healing Pulse, and <yellow Aeon Sect of Vigor />'s Healing",
+     "main": "Applying certain buffs to allies grants 300% Additional Base Grenade, Melee, and Class Ability Regeneration Rate for <pve 7 /> <pvp [3.5?] /> seconds.\n\nActivation Triggers:\n• Granting the <solar/>Cure, <solar/>Radiant, or <solar/>Restoration <solar/>Solar subclass buffs to allies\n• Healing (from most sources), or reviving allies\n\nWill NOT trigger <solar/>Ember of Benevolence:\nEmpowering Rifts, Mods, <yellow Crest of Alpha Lupi />'s Healing Pulse, Mothkeeper's Wraps Overshield Moth, Non-Solar Support Frame Auto Rifles",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1709225858580,
+      "lastUpdate": 1755982083253,
       "updatedBy": "Stardust"
      }
     },
@@ -5971,7 +5971,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1709226265485,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -7304,14 +7304,14 @@
    "type": "Subclass Class",
    "editor": {
     "en": {
-     "main": "Only usable while on the ground.\n\nPerforms an evasive maneuver in your movement input's direction.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\nInstantly reloads your held weapon upon dodging.\n\n#Reload",
+     "main": "Only usable while on the ground.\n\nPerforms an evasive maneuver in your movement input's direction that instantly reloads your held weapon.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\n#Reload",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1732215529710,
+      "lastUpdate": 1755981590951,
       "updatedBy": "Stardust"
      }
     },
@@ -7321,7 +7321,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1732219732702,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9132,7 +9132,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755815364903,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -9170,14 +9170,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Only works in PvE game modes.\n\nAmmo Brick Pickups grants an additional 1% of your Total Reserves to #element. #exceptions\n\n#nonBenefit\n\nAlways rounds up to the nearest whole number. Functions the same way regardless of what spawned the Ammo Brick.\n\nContext: normal Ammo Bricks grant 25-33% of your Total Reserves by default.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords and to 5% for Grand Overture. \n\nvar nonBenefit = <yellow Wardcliff Coil /> does not receive any extra ammo on pickups.",
+     "main": "Only works in PvE game modes.\n\nAmmo Brick pickups generally grant an 1 additional ammo to #element.\n\n#exceptions\n\n#nonBenefit\n\nFunctions the same way regardless of what spawned the Ammo Brick.\n\nContext: normal Ammo Bricks grant 25-33% of your Total Reserves by default.\n\nvar element = <arc/>Arc Weapons matching the Ammo Type\n\nvar exceptions = Machine Guns receive 7 additional ammo, Trace Rifles receive 10% of their Total Reserves (rounded up) as additional ammo. \n\nvar nonBenefit = empty\n// <yellow Wardcliff Coil /> does not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723395316696,
+      "lastUpdate": 1755981319561,
       "updatedBy": "Stardust"
      }
     },
@@ -9187,7 +9187,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1735009175023,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -11368,14 +11368,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords and to 5% with Xenophage.\n\nvar nonBenefit = <yellow Eyes of Tomorrow />, and <yellow Two-Tailed Fox /> do not receive any extra ammo on pickups.",
+     "main": "import main from 534479613\n\nvar element = <solar/>Solar Weapons matching the Ammo Type\n\n//var exceptions = This is increased to 10% with Trace Rifles and Swords and to 5% with Xenophage.\n\n//var nonBenefit = <yellow Eyes of Tomorrow />, and <yellow Two-Tailed Fox /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722695690986,
+      "lastUpdate": 1755981207309,
       "updatedBy": "Stardust"
      }
     },
@@ -11385,7 +11385,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -12790,14 +12790,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords and to 2% with <yellow Choir of One />.\n\nvar nonBenefit = <yellow Two-Tailed Fox /> does not receive any extra ammo on pickups.",
+     "main": "import main from 534479613\n\nvar element = <void/>Void Weapons matching the Ammo Type\n\n//var exceptions = This is increased to 10% with Trace Rifles and Swords and to 2% with <yellow Choir of One />.\n\n//var nonBenefit = <yellow Two-Tailed Fox /> does not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727527173877,
+      "lastUpdate": 1755981488461,
       "updatedBy": "Stardust"
      }
     },
@@ -12807,7 +12807,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -17497,14 +17497,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<solar/>Ignitions have a 20?% increased blast radius.",
+     "main": "<solar/>Ignitions have a 25% increased blast radius (8﻿🠚﻿10 meters).",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1704196469709,
+      "lastUpdate": 1755982753824,
       "updatedBy": "Stardust"
      }
     },
@@ -17514,7 +17514,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1704200924259,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -18268,14 +18268,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10?% with <yellow Microcosm /> and to 2% with <yellow Forerunner />.\n\nvar nonBenefit = empty",
+     "main": "import main from 534479613\n\nvar element = Kinetic Weapons matching the Ammo Type\n\nvar exceptions = Trace Rifles receive 10% of their Total Reserves (rounded up) as additional ammo.\n//This is increased to 10?% with <yellow Microcosm /> and to 2% with <yellow Forerunner />.\n\nvar nonBenefit = empty",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723395547747,
+      "lastUpdate": 1755981387196,
       "updatedBy": "Stardust"
      }
     },
@@ -18285,7 +18285,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -21900,14 +21900,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = Weapons matching your Super Element and the Ammo Type \n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords, to 5% with <yellow Grand Overture /> and <yellow Xenophage />, and to 2% with <yellow Choir of One />.\n\nvar nonBenefit = <yellow Eyes of Tomorrow />, <yellow Two-Tailed Fox />, and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
+     "main": "import main from 534479613\n\nvar element = Weapons matching your Super Element and the Ammo Type \n\n//var exceptions = This is increased to 10% with Trace Rifles and Swords, to 5% with <yellow Grand Overture /> and <yellow Xenophage />, and to 2% with <yellow Choir of One />.\n\n//var nonBenefit = <yellow Eyes of Tomorrow />, <yellow Two-Tailed Fox />, and <yellow Wardcliff Coil /> do not receive any extra ammo on pickups.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727527139310,
+      "lastUpdate": 1755981243969,
       "updatedBy": "Stardust"
      }
     },
@@ -21917,7 +21917,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28647,14 +28647,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Scoring a Melee Hit grants 15 Stability, 50 Reload Speed, and a 0.8x Reload Duration Multiplier for 5 seconds.\n\nWhile <arc/>Amplified:\n• Stronger effect\n• All sources of <arc/>Bolt Charge now grant an additional Stack",
+     "main": "Scoring a Melee Hit grants 15 Stability, 50 Reload Speed, and a 0.8x Reload Duration Multiplier for 5.25 seconds.\n\nWhile <arc/>Amplified:\n• Stronger? effect (no increase to the Reload Speed bonuses)\n• (Almost) all sources of <arc/>Bolt Charge now grant an additional stack",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738952069131,
+      "lastUpdate": 1755983479853,
       "updatedBy": "Stardust"
      }
     },
@@ -28664,7 +28664,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28755,14 +28755,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Collecting Ammo Bricks by sliding over them <title refills [G_refill] /> your held weapon's magazine from reserves and grants 3 Stacks of <arc/>Bolt Charge.",
+     "main": "Collecting Ammo Bricks by sliding over them <title refills [G_refill] /> your held weapon's magazine from reserves and grants 3 stacks of <arc/>Bolt Charge.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738952783562,
+      "lastUpdate": 1755983592501,
       "updatedBy": "Stardust"
      }
     },
@@ -28772,7 +28772,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -28809,14 +28809,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<arc/>Arc <special/>Special or <heavy/>Power Weapon Kills while <arc/>Amplified create an explosion, <arc/>Blinding enemies within ? meters of the target.",
+     "main": "<arc/>Arc <special/>Special or <heavy/>Power Weapon Kills while <arc/>Amplified create an explosion, <arc/>Blinding enemies within 7.5 meters of the target.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1717536700790,
+      "lastUpdate": 1755983241232,
       "updatedBy": "Stardust"
      }
     },
@@ -28826,7 +28826,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1717539628564,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -30479,14 +30479,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Increases #element Weapon Damage while you have active Armor Charges:\n• <pve/>PVE: 10%|17%|22%|25% increased damage with 1|2|3|4 Mods\n• <pvp/>PVP: 3%|4.5%|5.5%|6% increased damage\n\nThe 4th tier of the damage buff is only obtainable through Artifact Perks and Exotic Armor.\n\nArmor Charge now decays over time at the rate of 1 every 10 seconds by default.\n\nvar element = <arc/>Arc",
+     "main": "Increases #element Weapon damage while you have active Armor Charges:\n• <pve/>PVE: 10%|17%|22%|25% increased damage with 1|2|3|4 Mods\n• <pvp/>PVP: 3%|4.5%|5.5%|6% increased damage\n\nThe 4th tier of the damage buff is only obtainable through Artifact Perks and Exotic Armor.\n\nArmor Charge now decays over time at the rate of 1 every 10 seconds by default.\n\nvar element = <arc/>Arc",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1716120597706,
+      "lastUpdate": 1755980565172,
       "updatedBy": "Stardust"
      }
     },
@@ -30496,7 +30496,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1716120788496,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37137,14 +37137,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = empty",
+     "main": "import main from 534479613\n\nvar element = <strand/>Strand Weapons matching the Ammo Type\n\n//var exceptions = This is increased to 10% with Trace Rifles and Swords.\n\n//var nonBenefit = empty",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722695739552,
+      "lastUpdate": 1755981448449,
       "updatedBy": "Stardust"
      }
     },
@@ -37154,7 +37154,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37385,14 +37385,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Upon <void/>Suppressing an enemy:\n• <title Refills [G_refill] /> readied weapon from reserves\n• Grants 30 mobility for 10 seconds\n• Increases Forward Movement Speed by 4% for 10s\n\n10 second cooldown between activations.\n\nKilling <void/>Suppressed enemies spawns a <void/>Void Breach.",
+     "main": "Upon <void/>Suppressing an enemy:\n• <title Refills [G_refill] /> readied weapon from reserves\n• Grants 30 Weapons stat for 10 seconds\n• Increases Forward Movement Speed by 4% for 10s\n\n10 second cooldown between activations.\n\nKilling <void/>Suppressed enemies spawns a <void/>Void Breach.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714217561389,
+      "lastUpdate": 1755981789221,
       "updatedBy": "Stardust"
      }
     },
@@ -37402,7 +37402,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -37412,14 +37412,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Grenade Ability Damage grants Melee Energy once per Damage Instance.\n\n'Damage Over Time' grenades only provide Melee Energy once per damage tick regardless of the number of enemies damaged. Other grenades only grant Melee Energy once per submunition.\n\nMelee Energy granted per Damage Instance:\n• 3%: Void Spike, Void Wall, Scatter Grenade, and Vortex Grenade\n• 8%: Axion Bolt, Suppressor Grenade, and Magnetic Grenade (including when used with the <void/>Chaos Accelerant aspect)\n\n#ChunkEnergyScalars",
+     "main": "Grenade Ability Damage grants Melee Energy once per Damage Instance.\n\n'Damage Over Time' grenades only provide Melee Energy once per damage tick regardless of the number of enemies damaged. Other grenades only grant Melee Energy once per submunition.\n\nMelee Energy granted per Damage Instance:\n• 3%: Void Spike, Void Wall, Scatter Grenade, and Vortex Grenade\n• 8%: Axion Bolt, Suppressor Grenade, and Magnetic Grenade (including when used with the <void/>Chaos Accelerant aspect)\n\nDoes not work with <void/>Unbreakable.\n\n#ChunkEnergyScalars",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1734439325575,
+      "lastUpdate": 1755981854399,
       "updatedBy": "Stardust"
      }
     },
@@ -37429,7 +37429,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1735009175023,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42458,14 +42458,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Grants <pve 15% /> <pvp [?%] /> Damage Resistance while within 15? meters of 3 enemies.\n\nThe Damage Resistance is NOT increased while Transcendent, it simply stacks with Transcendence's 20% Damage Resistance for a total of 32%.",
+     "main": "Grants <pve 15% /> <pvp [?%] /> Damage Resistance while within 15 meters of 3 enemies.\n\nThe Damage Resistance is NOT increased while Transcendent, it simply stacks with Transcendence's 20% Damage Resistance for a total of 32%.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738946410601,
+      "lastUpdate": 1755983099092,
       "updatedBy": "Stardust"
      }
     },
@@ -42475,7 +42475,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42512,14 +42512,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Elemental buffs grant 60% Additional Base Class Ability Regeneration Rate.",
+     "main": "Having an active elemental buff grants an additional 40% Base Class Ability Regeneration Rate.\n\nHaving 2+ active elemental buffs grants an additional 60% instead.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738946240166,
+      "lastUpdate": 1755983082979,
       "updatedBy": "Stardust"
      }
     },
@@ -42529,7 +42529,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42539,14 +42539,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Scoring multiple Precision Hits within 3 seconds of each causes your <bold next /> damage instance within 3 seconds (from any source) to trigger a <strand/>Severing Burst.\n\n<strand/>Severing Burst applies <strand/>Sever to enemies in a 3? meter radius. Radius is increased to ? meters while Transcendent.\n\nFurther Precision Hits within 4 seconds of an activation provide no activation progress.\n\nPrecision Hits required to prepare the Severing Burst:\n• 20% of magazine size rounded down + 1\n• Bows require 2 hits",
+     "main": "Scoring multiple Precision Hits within 3 seconds of each causes your <bold next /> damage instance within 3 seconds (from any source) to trigger a <strand/>Severing Burst.\n\n<strand/>Severing Burst applies <strand/>Sever to enemies in a 3 meter radius. Radius is increased to 6 meters while Transcendent.\n\nFurther Precision Hits within 4 seconds of an activation provide no activation progress.\n\nPrecision Hits required to prepare the Severing Burst:\n• 20% of magazine size rounded down + 1\n• Bows require 2 hits",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738948706706,
+      "lastUpdate": 1755983194737,
       "updatedBy": "Stardust"
      }
     },
@@ -42556,7 +42556,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42566,14 +42566,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Light abilities deal 10% increased damage to enemies affected by <stasis/>Stasis or <strand/>Strand elemental debuffs.",
+     "main": "Light abilities deal 10% increased damage to enemies affected by <stasis/>Stasis or <strand/>Strand elemental debuffs.\n\nLight Melee Abilities in PVE instead deal an additional 50% of their base damage.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738944770537,
+      "lastUpdate": 1755982877081,
       "updatedBy": "Stardust"
      }
     },
@@ -42583,7 +42583,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42620,14 +42620,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Elemental Melee Hits grant you <solar/>Radiant for 4 seconds.\n\nElemental Melee Kills grant you and allies within ? meters <solar/>Radiant for 4 seconds to.\n\n#MeleeAbilityDisambiguation",
+     "main": "Elemental Melee Hits grant you <solar/>Radiant for 5 seconds.\n\nElemental Melee Kills grant you and allies within ? meters <solar/>Radiant for 4 seconds to.\n\n#MeleeAbilityDisambiguation",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738944444837,
+      "lastUpdate": 1755982988737,
       "updatedBy": "Stardust"
      }
     },
@@ -42637,7 +42637,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738975855601,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -45156,14 +45156,14 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\nvar exceptions = This is increased to 10% with Trace Rifles and Swords.\n\nvar nonBenefit = empty",
+     "main": "import main from 534479613\n\nvar element = <stasis/>Stasis Weapons matching the Ammo Type\n\n//var exceptions = This is increased to 10% with Trace Rifles and Swords.\n\n//var nonBenefit = empty",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1722695724560,
+      "lastUpdate": 1755981434523,
       "updatedBy": "Stardust"
      }
     },
@@ -45173,7 +45173,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53522,14 +53522,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Precision Kills against <arc/>Blinded enemies release a <arc/>Blinding explosion, <arc/>Blinding enemies within 3? meters.",
+     "main": "Precision Kills against <arc/>Blinded enemies release a <arc/>Blinding explosion, <arc/>Blinding enemies within 7.5 meters.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714216077005,
+      "lastUpdate": 1755983249164,
       "updatedBy": "Stardust"
      }
     },
@@ -53539,7 +53539,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -53576,14 +53576,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "Being struck by a Melee Attack grants <pve 75% /> <pvp [50%] /> increased Melee Damage for your next Melee Attack within 5 seconds.\n\nBuff duration is not refreshable.\t\t\t",
+     "main": "Being struck by a Melee Attack grants an additional <pve 100% /> <pvp [50%] /> of your base Melee damage for your next Melee Attack within 5 seconds.\n\nBuff duration is not refreshable.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714216134183,
+      "lastUpdate": 1755983349407,
       "updatedBy": "Stardust"
      }
     },
@@ -53593,7 +53593,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56704,14 +56704,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "<stasis/>Freezing targets grants the following benefits for 11 seconds:\n• 60 Mobility, Resilience, and Recovery\n• 30? Stability\n• 15 Aim Assist\n• 20 Airborne Effectiveness",
+     "main": "<stasis/>Freezing targets grants the following benefits for 11 seconds:\n• ? Handling\n• 30 Health stat",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714218771435,
+      "lastUpdate": 1755983776178,
       "updatedBy": "Stardust"
      }
     },
@@ -56721,7 +56721,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56951,14 +56951,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "While at Critical Health:\nBeing damaged releases a burst of <arc/>Arc Energy, dealing <pve 50 /> <pvp [20] /> damage and applying <arc/>Jolt to enemies within ? meters.\n\n15? second cooldown between activations.",
+     "main": "While at Critical Health:\nBeing damaged releases a burst of <arc/>Arc Energy, dealing <pve 46 /> <pvp [20] /> damage and applying <arc/>Jolt to enemies within ? meters.\n\n15? second cooldown between activations.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1732212919782,
+      "lastUpdate": 1755983548119,
       "updatedBy": "Stardust"
      }
     },
@@ -56968,7 +56968,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1732219732702,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -56978,14 +56978,14 @@
    "type": "Subclass Fragment",
    "editor": {
     "en": {
-     "main": "After 1.25 seconds of sprinting and while maintaining both sprint and a movement speed of at least 5 meters per second:\nGrants 20 Mobility, Resilience, and Recovery.",
+     "main": "Grants 50 Health stat after 1.25 seconds of sprinting and while maintaining both sprint and a movement speed of at least 5 meters per second.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1714218754243,
+      "lastUpdate": 1755983528099,
       "updatedBy": "Stardust"
      }
     },
@@ -56995,7 +56995,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1714219892088,
+   "lastUpload": 1755984214899,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
