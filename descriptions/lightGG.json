@@ -8302,7 +8302,7 @@
  "531057500": {
   "hash": 531057500,
   "name": "Lucent Blades",
-  "lastUpload": 1755984214899,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
@@ -14182,13 +14182,11 @@
  "902934539": {
   "hash": 902934539,
   "name": "Blessing of Order",
-  "itemHash": 3045642045,
-  "itemName": "Boots of the Assembler",
-  "lastUpload": 1723480728683,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1723139566196,
+     "lastUpdate": 1755984861919,
      "updatedBy": "Stardust"
     }
    }
@@ -14204,7 +14202,7 @@
        "text": "Lumina"
       },
       {
-       "text": "."
+       "text": " and Noble Seekers grant Noble Rounds to it."
       }
      ]
     },
@@ -14217,7 +14215,7 @@
        "text": "Standing in a Rift or "
       },
       {
-       "text": "Well of Radiance creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff to them:"
+       "text": "Well of Radiance creates Noble Seekers that seek out allies within 40 meters and apply buffs to them:"
       }
      ]
     },
@@ -14231,7 +14229,7 @@
     {
      "linesContent": [
       {
-       "text": "• Empowering Rift Seeker: Grants "
+       "text": "• Empowering Rift Seeker: grants "
       },
       {
        "text": "35%"
@@ -14260,7 +14258,7 @@
     {
      "linesContent": [
       {
-       "text": "Noble Seekers grant Noble Rounds to Lumina."
+       "text": "Noble seekers spawn at a constant rate based on your Fireteam size."
       }
      ]
     },
@@ -14270,7 +14268,7 @@
     {
      "linesContent": [
       {
-       "text": "Number of Noble Seekers spawned is equal to [Fireteam Size]-1, with a minimum of 1 Seeker."
+       "text": "Buffing allies with Noble Seekers grants Class Ability energy based on your Fireteam size."
       }
      ]
     },
@@ -14280,7 +14278,7 @@
     {
      "linesContent": [
       {
-       "text": "Each time a Noble Seeker applies a buff, the Rift Duration is paused for 5 seconds."
+       "text": "Seekers prioritize allies who have not been healed in the last 8 seconds followed by nearby allies. Seekers will not target an ally more than once every 4 seconds."
       }
      ]
     }
@@ -14679,13 +14677,11 @@
  "926349160": {
   "hash": 926349160,
   "name": "Tome of Dawn",
-  "itemHash": 370930766,
-  "itemName": "Wings of Sacred Dawn",
-  "lastUpload": 1727530279353,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1727526257316,
+     "lastUpdate": 1755986151958,
      "updatedBy": "Stardust"
     }
    }
@@ -14739,13 +14735,6 @@
     {
      "linesContent": [
       {
-       "text": "• 25% Flinch Resistance"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "• 15% Damage Resistance"
       }
      ]
@@ -14753,16 +14742,30 @@
     {
      "linesContent": [
       {
-       "text": "• Weapon Kills "
+       "text": "• 25% Flinch Resistance"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Enemies are less accurate when targeting you"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Weapon Kills grant "
+      },
+      {
+       "text": "Restoration x1 and "
       },
       {
        "text": "refill"
       },
       {
-       "text": " the magazines of all equipped "
-      },
-      {
-       "text": "Solar Weapons from reserves"
+       "text": " the magazines of stowed weapons from reserves"
       }
      ]
     }
@@ -20868,13 +20871,11 @@
  "1341199512": {
   "hash": 1341199512,
   "name": "Devouring Rift",
-  "itemHash": 511888814,
-  "itemName": "Secant Filaments",
-  "lastUpload": 1738687242983,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1738636985650,
+     "lastUpdate": 1755985725404,
      "updatedBy": "Stardust"
     }
    }
@@ -20913,7 +20914,14 @@
        "text": "Kills with "
       },
       {
-       "text": "Devour active grant you ?% Class Ability energy."
+       "text": "Devour active grant you 10% Class Ability energy. Ability energy gained may be significantly decreased based on your selected ability's Chunk Energy Scalar. Learn more about this mechanic in "
+      },
+      {
+       "text": "our explainer blog post on the Clarity website",
+       "link": "https://url.d2clarity.com/chunk-energy-scalars"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -21666,13 +21674,11 @@
  "1420473289": {
   "hash": 1420473289,
   "name": "Blood Magic",
-  "itemHash": 3070555693,
-  "itemName": "Sanguine Alchemy",
-  "lastUpload": 1731793916910,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1731153763383,
+     "lastUpdate": 1755985683283,
      "updatedBy": "Stardust"
     }
    }
@@ -21717,6 +21723,16 @@
      "linesContent": [
       {
        "text": "Blood Magic pauses the duration of Rifts for as long as it is active. Doesn't apply to Well of Radiance."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Swapping to Sanguine Alchemy in combat disables its effects for 10 seconds."
       }
      ]
     }
@@ -29675,13 +29691,11 @@
  "1939153390": {
   "hash": 1939153390,
   "name": "Close Enough",
-  "itemHash": 121305948,
-  "itemName": "Geomag Stabilizers",
-  "lastUpload": 1739032704660,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1739026509456,
+     "lastUpdate": 1755985546093,
      "updatedBy": "Stardust"
     }
    }
@@ -29694,10 +29708,10 @@
        "text": "Collecting "
       },
       {
-       "text": "Ionic Traces grants 7% Super Energy with "
+       "text": "Ionic Traces grants 4% "
       },
       {
-       "text": "Chaos Reach selected."
+       "text": "Chaos Reach Super Energy."
       }
      ]
     },
@@ -29707,13 +29721,13 @@
     {
      "linesContent": [
       {
-       "text": "While at 6 Stacks of "
+       "text": "While at 5 Stacks of "
       },
       {
-       "text": "Bolt Charge or higher, after having sprinted for at least 3.8 seconds, maintaining sprint grants you a Stack of "
+       "text": "Bolt Charge or higher, after having sprinted for at least 1.5 seconds, maintaining sprint grants you a Stack of "
       },
       {
-       "text": "Bolt Charge every 2 seconds."
+       "text": "Bolt Charge every 0.33 seconds."
       }
      ]
     },
@@ -29733,7 +29747,7 @@
        "text": "0.75 second cooldown between refunds. This can increase "
       },
       {
-       "text": "Chaos Reach duration by ~120%."
+       "text": "Chaos Reach duration by up to ~120%."
       }
      ]
     }
@@ -39212,13 +39226,11 @@
  "2618534366": {
   "hash": 2618534366,
   "name": "Absorption Cells",
-  "itemHash": 3301944824,
-  "itemName": "Mantle of Battle Harmony",
-  "lastUpload": 1731793916910,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1731153436571,
+     "lastUpdate": 1755985581673,
      "updatedBy": "Stardust"
     }
    }
@@ -39270,7 +39282,7 @@
     {
      "linesContent": [
       {
-       "text": "• Players: ?%"
+       "text": "• Players: 2.5?%"
       }
      ]
     },
@@ -41186,13 +41198,11 @@
  "2710254013": {
   "hash": 2710254013,
   "name": "The Lost Voice",
-  "itemHash": 50291571,
-  "itemName": "Speaker's Sight",
-  "lastUpload": 1749077250275,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1749077209468,
+     "lastUpdate": 1755985844771,
      "updatedBy": "Stardust"
     }
    }
@@ -41235,7 +41245,14 @@
     {
      "linesContent": [
       {
-       "text": "• Lasts 15 seconds and has 100? HP"
+       "text": "• Lasts 9 seconds and has 100? "
+      },
+      {
+       "text": "Construct",
+       "link": "https://url.d2clarity.com/combatants"
+      },
+      {
+       "text": " HP"
       }
      ]
     },
@@ -41961,13 +41978,11 @@
  "2731901709": {
   "hash": 2731901709,
   "name": "Warlord's Sigil",
-  "itemHash": 3844826443,
-  "itemName": "Winter's Guile",
-  "lastUpload": 1731793916910,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1731153867609,
+     "lastUpdate": 1755986182074,
      "updatedBy": "Stardust"
     }
    }
@@ -41994,7 +42009,7 @@
     {
      "linesContent": [
       {
-       "text": "55% | 110% | 165% | 220% | 275%"
+       "text": "55% | 110% | 165% | 220% | 400%"
       }
      ]
     },
@@ -43767,6 +43782,70 @@
       },
       {
        "text": "."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2826938963": {
+  "hash": 2826938963,
+  "name": "Consul's Pitch",
+  "itemHash": 3481695565,
+  "itemName": "Eunoia",
+  "lastUpload": 1755986339031,
+  "updateTracker": {
+   "descriptions": {
+    "en": {
+     "lastUpdate": 1755985484261,
+     "updatedBy": "Stardust"
+    }
+   }
+  },
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Hellion projectiles deal 25% increased damage after being in flight for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hellion projectiles that have been in flight for for 1? second release 4 pieces of Shrapnel with slight tracking capabilities."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Shrapnel projectiles deal "
+      },
+      {
+       "text": "18"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "Solar Damage and apply 5? stacks of "
+      },
+      {
+       "text": "Scorch."
       }
      ]
     }
@@ -59418,13 +59497,11 @@
  "3927963103": {
   "hash": 3927963103,
   "name": "Conduction Tines",
-  "itemHash": 3381022969,
-  "itemName": "Crown of Tempests",
-  "lastUpload": 1739032704660,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1739026292629,
+     "lastUpdate": 1755985002197,
      "updatedBy": "Stardust"
     }
    }
@@ -59493,10 +59570,10 @@
     {
      "linesContent": [
       {
-       "text": "• 22%|44%|66% Decreased Passive Super Drain (with the exception of "
+       "text": "• 22%|44%|66% decreased Passive "
       },
       {
-       "text": "Chaos Reach)"
+       "text": "Stormtrance Super Drain"
       }
      ]
     }
@@ -62722,13 +62799,11 @@
  "4174493725": {
   "hash": 4174493725,
   "name": "Insatiable",
-  "itemHash": 1096253259,
-  "itemName": "Apotheosis Veil",
-  "lastUpload": 1727530279353,
+  "lastUpload": 1755986339031,
   "updateTracker": {
    "descriptions": {
     "en": {
-     "lastUpdate": 1727528113199,
+     "lastUpdate": 1755984280895,
      "updatedBy": "Stardust"
     }
    }
@@ -62738,24 +62813,7 @@
     {
      "linesContent": [
       {
-       "text": "On Super Ability activation:"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Fully restores Health, Grenade, Melee, and Class Ability Energy"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Grants "
-      },
-      {
-       "text": "Cure x3 to allies within ? meters"
+       "text": "Super Ability activation fully restores Health, Grenade, Melee, and Class Ability Energy for you and allies within ? meters."
       }
      ]
     },
