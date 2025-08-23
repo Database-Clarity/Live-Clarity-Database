@@ -9132,7 +9132,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755984214899,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -14829,20 +14829,18 @@
   },
   "902934539": {
    "name": "Blessing of Order",
-   "itemName": "Boots of the Assembler",
    "hash": 902934539,
-   "itemHash": 3045642045,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 30 Airborne Effectiveness to <yellow Lumina />.\n\nStanding in a Rift or <solar/>Well of Radiance creates Noble Seekers every 5 seconds that seek out allies within 35 meters and apply a buff to them:\n• Healing Rift Seeker: restores 75 HP and starts Health Regeneration\n• Empowering Rift Seeker: Grants <pve 35% /> <pvp [15%] /> increased damage for 5 seconds (<link Empowering Buff [#DamageBuffs] />)\n\nNoble Seekers grant Noble Rounds to Lumina.\n\nNumber of Noble Seekers spawned is equal to [Fireteam Size]-1, with a minimum of 1 Seeker.\n\nEach time a Noble Seeker applies a buff, the Rift Duration is paused for 5 seconds.",
+     "main": "Passively grants 30 Airborne Effectiveness to <yellow Lumina /> and Noble Seekers grant Noble Rounds to it.\n\nStanding in a Rift or <solar/>Well of Radiance creates Noble Seekers that seek out allies within 40 meters and apply buffs to them:\n• Healing Rift Seeker: restores 75 HP and starts Health Regeneration\n• Empowering Rift Seeker: grants <pve 35% /> <pvp [15%] /> increased damage for 5 seconds (<link Empowering Buff [#DamageBuffs] />)\n\nNoble seekers spawn at a constant rate based on your Fireteam size.\n\nBuffing allies with Noble Seekers grants Class Ability energy based on your Fireteam size.\n\nSeekers prioritize allies who have not been healed in the last 8 seconds followed by nearby allies. Seekers will not target an ally more than once every 4 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1723139566196,
+      "lastUpdate": 1755984861919,
       "updatedBy": "Stardust"
      }
     },
@@ -14852,7 +14850,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1723480728683,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -15300,20 +15298,18 @@
   },
   "926349160": {
    "name": "Tome of Dawn",
-   "itemName": "Wings of Sacred Dawn",
    "hash": 926349160,
-   "itemHash": 370930766,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While a <solar/>Solar Super Ability is equipped:\n• Grants 50 Airborne Effectiveness while airborne\n• Aiming Down Sights while airborne grants 'Tome of Dawn'\n\nTome of Dawn lasts 2.8 seconds and holds you in place midair. Weapon Hits add ? seconds to its duration.\n\nTome of Dawn grants the following benefits:\n• 25% Flinch Resistance\n• 15% Damage Resistance\n• Weapon Kills <title refill [G_refill] /> the magazines of all equipped <solar/>Solar Weapons from reserves",
+     "main": "While a <solar/>Solar Super Ability is equipped:\n• Grants 50 Airborne Effectiveness while airborne\n• Aiming Down Sights while airborne grants 'Tome of Dawn'\n\nTome of Dawn lasts 2.8 seconds and holds you in place midair. Weapon Hits add ? seconds to its duration.\n\nTome of Dawn grants the following benefits:\n• 15% Damage Resistance\n• 25% Flinch Resistance\n• Enemies are less accurate when targeting you\n• Weapon Kills grant <solar/>Restoration x1 and <title refill [G_refill] /> the magazines of stowed weapons from reserves",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727526257316,
+      "lastUpdate": 1755986151958,
       "updatedBy": "Stardust"
      }
     },
@@ -15323,7 +15319,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -22453,20 +22449,18 @@
   },
   "1341199512": {
    "name": "Devouring Rift",
-   "itemName": "Secant Filaments",
    "hash": 1341199512,
-   "itemHash": 511888814,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Empowering Rifts you cast grant <overload/>Overload Shot to you and allies inside it, allowing weapons to cause <overload/>Disruption on hit.\n\nWeapons with a Breaker Type (either intrinsic or from Artifact Perks) will not benefit from this.\n\nKills with <void/>Devour active grant you ?% Class Ability energy.\n\nEmpowering Rifts cast by you with a <void/>Void Super equipped have additional behaviors:\n• Standing in the Rift grants you <void/>Devour for 11 seconds (unaffected by <void/>Echo of Persistence)\n• Exiting and re-entering the Rift sets the duration of <void/>Devour to 11 seconds (even if you had a longer duration)\n\nKills can refresh the duration of <void/>Devour granted by <yellow Secant Filaments /> up to 11 seconds (22 with <void/>Echo of Persistence).\n\n// import overload from global",
+     "main": "Empowering Rifts you cast grant <overload/>Overload Shot to you and allies inside it, allowing weapons to cause <overload/>Disruption on hit.\n\nWeapons with a Breaker Type (either intrinsic or from Artifact Perks) will not benefit from this.\n\nKills with <void/>Devour active grant you 10% Class Ability energy. #ChunkEnergyScalars\n\nEmpowering Rifts cast by you with a <void/>Void Super equipped have additional behaviors:\n• Standing in the Rift grants you <void/>Devour for 11 seconds (unaffected by <void/>Echo of Persistence)\n• Exiting and re-entering the Rift sets the duration of <void/>Devour to 11 seconds (even if you had a longer duration)\n\nKills can refresh the duration of <void/>Devour granted by <yellow Secant Filaments /> up to 11 seconds (22 with <void/>Echo of Persistence).\n\n// import overload from global",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1738636985650,
+      "lastUpdate": 1755985725404,
       "updatedBy": "Stardust"
      }
     },
@@ -22476,7 +22470,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1738687242983,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -23530,20 +23524,18 @@
   },
   "1420473289": {
    "name": "Blood Magic",
-   "itemName": "Sanguine Alchemy",
    "hash": 1420473289,
-   "itemHash": 3070555693,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While standing in a Rift or a <solar/>Well of Radiance:\n• Grants 4 Stacks of Super-Matching Weapon Surge\n• Damaging enemies marks them for 5 seconds, increasing your damage against them by 10% (stacks with everything, does not buff teammates' damage)\n• Kills grant 'Blood Magic' for 5 seconds. Maximum of 15 seconds.\n\nBlood Magic pauses the duration of Rifts for as long as it is active. Doesn't apply to Well of Radiance.",
+     "main": "While standing in a Rift or a <solar/>Well of Radiance:\n• Grants 4 Stacks of Super-Matching Weapon Surge\n• Damaging enemies marks them for 5 seconds, increasing your damage against them by 10% (stacks with everything, does not buff teammates' damage)\n• Kills grant 'Blood Magic' for 5 seconds. Maximum of 15 seconds.\n\nBlood Magic pauses the duration of Rifts for as long as it is active. Doesn't apply to Well of Radiance.\n\nSwapping to Sanguine Alchemy in combat disables its effects for 10 seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731153763383,
+      "lastUpdate": 1755985683283,
       "updatedBy": "Stardust"
      }
     },
@@ -23553,7 +23545,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -32289,20 +32281,18 @@
   },
   "1939153390": {
    "name": "Close Enough",
-   "itemName": "Geomag Stabilizers",
    "hash": 1939153390,
-   "itemHash": 121305948,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Collecting <arc/>Ionic Traces grants 7% Super Energy with <arc/>Chaos Reach selected.\n\nWhile at 6 Stacks of <arc/>Bolt Charge or higher, after having sprinted for at least 3.8 seconds, maintaining sprint grants you a Stack of <arc/>Bolt Charge every 2 seconds.\n\n<arc/>Chaos Reach refunds 10% Super Energy on hit. \n0.75 second cooldown between refunds. This can increase <arc/>Chaos Reach duration by ~120%.",
+     "main": "Collecting <arc/>Ionic Traces grants 4% <arc/>Chaos Reach Super Energy.\n\nWhile at 5 Stacks of <arc/>Bolt Charge or higher, after having sprinted for at least 1.5 seconds, maintaining sprint grants you a Stack of <arc/>Bolt Charge every 0.33 seconds.\n\n<arc/>Chaos Reach refunds 10% Super Energy on hit. \n0.75 second cooldown between refunds. This can increase <arc/>Chaos Reach duration by up to ~120%.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1739026509456,
+      "lastUpdate": 1755985546093,
       "updatedBy": "Stardust"
      }
     },
@@ -32312,7 +32302,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1739032704660,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42263,20 +42253,18 @@
   },
   "2618534366": {
    "name": "Absorption Cells",
-   "itemName": "Mantle of Battle Harmony",
    "hash": 2618534366,
-   "itemHash": 3301944824,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Kills with Weapons matching your Super Element grant Super Energy based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 1.5%\n• T2 Minors, T1 Elites: 2%\n• T3 Minors, T2 Elites: ?%\n• T4 Minors, T3 Elites, and higher: 2.5%\n• Players: ?%\n\nWhile your Super is charged:\nKills with Weapons matching your Super's Element grant 4 Stacks of Subclass-Matching Weapon Surge for <pve 11 /> <pvp [6] /> seconds.",
+     "main": "Kills with Weapons matching your Super Element grant Super Energy based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 1.5%\n• T2 Minors, T1 Elites: 2%\n• T3 Minors, T2 Elites: ?%\n• T4 Minors, T3 Elites, and higher: 2.5%\n• Players: 2.5?%\n\nWhile your Super is charged:\nKills with Weapons matching your Super's Element grant 4 Stacks of Subclass-Matching Weapon Surge for <pve 11 /> <pvp [6] /> seconds.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731153436571,
+      "lastUpdate": 1755985581673,
       "updatedBy": "Stardust"
      }
     },
@@ -42286,7 +42274,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44157,20 +44145,18 @@
   },
   "2710254013": {
    "name": "The Lost Voice",
-   "itemName": "Speaker's Sight",
    "hash": 2710254013,
-   "itemHash": 50291571,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Replaces <solar/>Healing Grenades' Restoration Orb with a Healing Turret. Consuming a <solar/>Healing Grenade will spawn a Healing Turret in front of you.\n\nPassively highlights low-health allies with a soft, flashing, red glow.\n\nHealing Turret information:\n• Lasts 15 seconds and has 100? HP\n• Releases Healing Seekers every 3 seconds towards the user and allies within 30 meters\n• Healing Seekers apply <solar/>Cure x1 and <solar/>Restoration x1 for <pve 4 /> <pvp [3] /> seconds in a 7.5 meter radius (strength of both buffs is increased to x2 with <solar/>Touch of Flame equipped)\n\nRestoring health to damaged allies <pvp [6 times] /> spawns an Orb of Power that grants 2.5% Super Energy at their position. //Support Frame Auto Rifle Healing Shots do not trigger this.\n\n10 second cooldown between activations.",
+     "main": "Replaces <solar/>Healing Grenades' Restoration Orb with a Healing Turret. Consuming a <solar/>Healing Grenade will spawn a Healing Turret in front of you.\n\nPassively highlights low-health allies with a soft, flashing, red glow.\n\nHealing Turret information:\n• Lasts 9 seconds and has 100? <link Construct [#CombatantClassifications] /> HP\n• Releases Healing Seekers every 3 seconds towards the user and allies within 30 meters\n• Healing Seekers apply <solar/>Cure x1 and <solar/>Restoration x1 for <pve 4 /> <pvp [3] /> seconds in a 7.5 meter radius (strength of both buffs is increased to x2 with <solar/>Touch of Flame equipped)\n\nRestoring health to damaged allies <pvp [6 times] /> spawns an Orb of Power that grants 2.5% Super Energy at their position. //Support Frame Auto Rifle Healing Shots do not trigger this.\n\n10 second cooldown between activations.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1749077209468,
+      "lastUpdate": 1755985844771,
       "updatedBy": "Stardust"
      }
     },
@@ -44180,7 +44166,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1749077250275,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -44812,20 +44798,18 @@
   },
   "2731901709": {
    "name": "Warlord's Sigil",
-   "itemName": "Winter's Guile",
    "hash": 2731901709,
-   "itemHash": 3844826443,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "(Glaive) Melee Kills grant a Stack of Warlord's Sigil for 5 seconds. Maximum of 5 Stacks.\n\n(Glaive) Melee damage increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 275%\n\nPVE Combatants hit by <stasis/>Penumbral Blast automatically shatter.",
+     "main": "(Glaive) Melee Kills grant a Stack of Warlord's Sigil for 5 seconds. Maximum of 5 Stacks.\n\n(Glaive) Melee damage increase at 1|2|3|4|5 Stacks:\n55% | 110% | 165% | 220% | 400%\n\nPVE Combatants hit by <stasis/>Penumbral Blast automatically shatter.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1731153867609,
+      "lastUpdate": 1755986182074,
       "updatedBy": "Stardust"
      }
     },
@@ -44835,7 +44819,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1731793916910,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -46724,33 +46708,33 @@
    "inLiveDatabase": true
   },
   "2826938963": {
-   "hash": 2826938963,
    "name": "Consul's Pitch",
+   "itemName": "Eunoia",
+   "hash": 2826938963,
+   "itemHash": 3481695565,
    "type": "Armor Trait Exotic",
-   "lastUpload": 1753831097929,
-   "uploadedBy": "Stardust",
    "editor": {
     "en": {
-     "main": "",
-     "secondary": ""
+     "main": "<solar/>Hellion projectiles deal 25% increased damage after being in flight for ? seconds.\n\n<solar/>Hellion projectiles that have been in flight for for 1? second release 4 pieces of Shrapnel with slight tracking capabilities.\n\nShrapnel projectiles deal <pve 18 /> <pvp [?] /> <solar/>Solar Damage and apply 5? stacks of <solar/>Scorch.",
+     "secondary": "import self"
     }
    },
    "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1755985484261,
+      "updatedBy": "Stardust"
+     }
+    },
     "stats": {
      "lastUpdate": 0,
      "updatedBy": ""
-    },
-    "descriptions": {
-     "en": {
-      "lastUpdate": 0,
-      "updatedBy": ""
-     }
     }
    },
-   "uploadToLive": false,
-   "inLiveDatabase": false,
-   "itemHash": 3481695565,
-   "itemName": "Eunoia"
+   "uploadedBy": "Stardust",
+   "lastUpload": 1755986339031,
+   "inLiveDatabase": true,
+   "uploadToLive": false
   },
   "2827049491": {
    "hash": 2827049491,
@@ -63323,20 +63307,18 @@
   },
   "3927963103": {
    "name": "Conduction Tines",
-   "itemName": "Crown of Tempests",
    "hash": 3927963103,
-   "itemHash": 3381022969,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "While you have at least 1 <arc/>Arc Ability equipped:\n<arc/>Arc Ability and <arc/>Jolt Kills grant a Stack of Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nThere is a very short cooldown for acquiring Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% Decreased Passive Super Drain (with the exception of <arc/>Chaos Reach)",
+     "main": "While you have at least 1 <arc/>Arc Ability equipped:\n<arc/>Arc Ability and <arc/>Jolt Kills grant a Stack of Conduction Tines for <pve 7 /> <pvp [4] /> seconds. Maximum of 3 Stacks.\n\nThere is a very short cooldown for acquiring Stacks.\n\nConduction Tines 1|2|3 grant the following:\n• 167.5%|335%|502.5% additional Base Grenade, Melee, and Super Regeneration Rate\n• 22%|44%|66% decreased Passive <arc/>Stormtrance Super Drain",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1739026292629,
+      "lastUpdate": 1755985002197,
       "updatedBy": "Stardust"
      }
     },
@@ -63346,7 +63328,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1739032704660,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -66848,20 +66830,18 @@
   },
   "4174493725": {
    "name": "Insatiable",
-   "itemName": "Apotheosis Veil",
    "hash": 4174493725,
-   "itemHash": 1096253259,
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "On Super Ability activation:\n• Fully restores Health, Grenade, Melee, and Class Ability Energy\n• Grants <solar/>Cure x3 to allies within ? meters\n\nGrants 66% Grenade and Melee Ability Energy per second for 8 seconds after your Super ends.",
+     "main": "Super Ability activation fully restores Health, Grenade, Melee, and Class Ability Energy for you and allies within ? meters.\n\nGrants 66% Grenade and Melee Ability Energy per second for 8 seconds after your Super ends.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1727528113199,
+      "lastUpdate": 1755984280895,
       "updatedBy": "Stardust"
      }
     },
@@ -66871,7 +66851,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1727530279353,
+   "lastUpload": 1755986339031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
