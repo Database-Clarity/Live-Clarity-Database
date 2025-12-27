@@ -49290,14 +49290,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Direct Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown: \n• <primary/>Primary Weapons apply <pve 10 /> <pvp [4] /> additional <solar/>Scorch per Direct Hit (<pve 15 /> <pvp [9?] /> with <solar/>Ember of Ashes)\n• <special/>Special and <heavy/>Power Weapons apply 20 additional <solar/>Scorch (20 with <solar/>Ember of Ashes)\n\n\nScoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target. Hit counter persists through stow.\n\n<solar/>Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage.\n\nHits needed to prepare a <solar/>Scorching Shot and the <solar/>Scorch applied by weapon type:\n• #1\n• #2\n• #3\n• #4\n• #5\n• #6\n• #7\n• #8\n//• #9\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar 1 = Auto Rifle: 29 Hits | 10 <solar/>Scorch\nvar 2 = Fusion Rifle: 24 Hits | <solar/>?\nvar 3 = Machine Gun: ? Hits | <solar/>20\nvar 4 = Pulse Rifle: 18  Hits | <solar/>10\nvar 5 = Hand Cannon, Submachine Gun: 70% of Magazine size rounded up Hits | <solar/>10\nvar 6 = Rocket Sidearm, Grenade Launcher: 4 Hits | <solar/>20\nvar 7 = Sword: ? Hits | <solar/>? \nvar 8 = Bow: 2 Hits | <solar/>10\n//var 9 = \n\nenhanced (\nvar 1 = Auto Rifle: #e26 Hits | 10 <solar/>Scorch\nvar 2 = Fusion Rifle: #e? Hits | <solar/>?\nvar 3 = Machine Gun: #e16 Hits | <solar/>20\nvar 4 = Pulse Rifle: #e14  Hits | <solar/>10\nvar 5 = Hand Cannon, Submachine Gun: #e50% of Magazine size rounded up Hits | <solar/>10\nvar 6 = Rocket Sidearm, Grenade Launcher: #e3 Hits | <solar/>20\nvar 7 = Sword: #e? Hits | <solar/>? \nvar 8 = Bow: #e1 Hit | <solar/>10\n#e Decreases the number of Direct Hits required by varying amounts.\n)",
+     "main": "Direct Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown: \n• <primary/>Primary Weapons apply <pve 10 /> <pvp [4] /> additional <solar/>Scorch per Direct Hit (<pve 15 /> <pvp [9?] /> with <solar/>Ember of Ashes)\n• <special/>Special and <heavy/>Power Weapons apply 20 additional <solar/>Scorch (30 with <solar/>Ember of Ashes)\n\nScoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target. Hit counter persists through stow.\n\nNumber of Direct Hits required by weapon type:\n• Bows: #e${2-#c}\n• Swords: #e${3-#c}\n• Other Weapons: 55% of the base magazine size #Enhancement\n\n\n\n<solar/>Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage.\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar Enhancement = empty\nenhanced (\nvar c = 1\nvar Enhancement =  #e-1\n#e Nnumber of Direct Hits required is decreased by one.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755795365243,
+      "lastUpdate": 1766875116173,
       "updatedBy": "Stardust"
      }
     },
@@ -49307,7 +49307,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1755815364903,
+   "lastUpload": 1766875229810,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
