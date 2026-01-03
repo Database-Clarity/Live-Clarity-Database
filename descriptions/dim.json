@@ -1036,7 +1036,7 @@
     {
      "linesContent": [
       {
-       "text": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for ? seconds."
+       "text": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for 5? seconds."
       }
      ]
     },
@@ -1046,7 +1046,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for ? seconds."
+       "text": "Scoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for 5? seconds. Weapon damage refreshes buff duration."
       }
      ]
     }
@@ -1595,7 +1595,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants Unexpected and Decisive Social Benefits, along with 20 Airborne Effectiveness to "
+       "text": "Passively grants 20 Airborne Effectiveness to "
       },
       {
        "classNames": [ "primary" ]
@@ -14526,6 +14526,41 @@
    ]
   }
  },
+ "934928524": {
+  "hash": 934928524,
+  "name": "Contending Cascade",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring kills within 4 seconds of another kill each grant a stack of Contending Cascade. Maximum of ? stacks. Kills from any source count."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each stack of Contending Cascade grants increased Handling and Reload Speed."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Starting at 15 stacks, kills trigger an explosion matching this weapon's element."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "941997506": {
   "hash": 941997506,
   "name": "Icarus Grip",
@@ -18043,6 +18078,52 @@
    ]
   }
  },
+ "1164078247": {
+  "hash": 1164078247,
+  "name": "Imperial Allegiance",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants one stack of Imperial Allegiance for each ally within 15 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Benefits at 1|2|3 stacks:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Charge Rate"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 3.5%|7%|10.5% increased Cooling Efficiency"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 3.5%|7%|10.5% increased damage while above 50% Weapon Heat"
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1164602481": {
   "hash": 1164602481,
   "name": "Deconstruct",
@@ -19855,6 +19936,31 @@
      "linesContent": [
       {
        "text": "Context: normal Ammo Bricks grant 25-33% of your Total Reserves by default."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1309453587": {
+  "hash": 1309453587,
+  "name": "Air-Cooled Core",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Grants ? Handling and ?% decreased ADS Movement Speed Penalty while your magazine is fully loaded or weapon Heat is below 10%."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Sprinting for 0.5 seconds grants ? Reload Speed for 6 seconds."
       }
      ]
     }
@@ -22608,28 +22714,6 @@
       },
       {
        "text": "[PVP: 20%]"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": "Crossbows: "
-      },
-      {
-       "text": "32%"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 92?%]"
       }
      ]
     }
@@ -27281,6 +27365,85 @@
    ]
   }
  },
+ "1847323754": {
+  "hash": 1847323754,
+  "name": "Accelerated Assault",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "For single-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and "
+      },
+      {
+       "text": "5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For multi-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " 10% of the magazine and grants "
+      },
+      {
+       "text": "5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 4 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "1848187513": {
   "hash": 1848187513,
   "name": "Invigoration",
@@ -28534,16 +28697,6 @@
      "linesContent": [
       {
        "text": "• Does not grant any measurable benefit to Barricade HP despite stating it does"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Clarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future."
       }
      ]
     }
@@ -36575,7 +36728,7 @@
     {
      "linesContent": [
       {
-       "text": "• 50%? increased Lunge Distance (Swords)"
+       "text": "• 100%? increased Lunge Distance (Swords)"
       }
      ]
     },
@@ -39358,6 +39511,107 @@
    ]
   }
  },
+ "2671305723": {
+  "hash": 2671305723,
+  "name": "Accelerated Assault",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "For single-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "6%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For multi-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " 10% of the magazine and grants "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "6%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Damage bonus is increased by 20% (5%🠚6%)."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2675184851": {
   "hash": 2675184851,
   "name": "Incandescent",
@@ -39722,6 +39976,85 @@
      "linesContent": [
       {
        "text": "[Melee]  : Kinetic melee combo"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2697390518": {
+  "hash": 2697390518,
+  "name": "Accelerated Assault",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "For single-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and "
+      },
+      {
+       "text": "5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For multi-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " 10% of the magazine and grants "
+      },
+      {
+       "text": "5%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 4 seconds."
       }
      ]
     }
@@ -40620,7 +40953,7 @@
  "2731901711": {
   "hash": 2731901711,
   "name": "Helium Spirals",
-  "itemHash": 3787517196,
+  "itemHash": 950745251,
   "itemName": "Sunbracers",
   "descriptions": {
    "en": [
@@ -41630,16 +41963,6 @@
      "linesContent": [
       {
        "text": "Scoring a Kill with a weapon currently benefiting from the damage buff grants you a fresh instance of Nightmare Fuel (as if you scored another Powered Melee Kill)."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Clarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future."
       }
      ]
     }
@@ -49927,28 +50250,6 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "• "
-      },
-      {
-       "classNames": [ "heavy" ]
-      },
-      {
-       "text": "Crossbows: "
-      },
-      {
-       "text": "32%"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 92?%]"
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
@@ -54514,6 +54815,107 @@
    ]
   }
  },
+ "3713579091": {
+  "hash": 3713579091,
+  "name": "Accelerated Assault",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "For single-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "6%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "For multi-shot weapons:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " 10% of the magazine and grants "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "6%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " increased damage for 4 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " Damage bonus is increased by 20% (5%🠚6%)."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "3717985200": {
   "hash": 3717985200,
   "name": "Psychohack",
@@ -55909,14 +56311,17 @@
  "3824622015": {
   "hash": 3824622015,
   "name": "Grasp of the Devourer",
-  "itemHash": 2780717641,
+  "itemHash": 124786972,
   "itemName": "Necrotic Grip",
   "descriptions": {
    "en": [
     {
      "linesContent": [
       {
-       "text": "Passively grants 30 Airborne Effectiveness to Weapons of Sorrow: Thorn, Osteo Striga, Touch of Malice, and Necrochasm."
+       "text": "Passively grants 30 Airborne Effectiveness to Weapons of Sorrow: "
+      },
+      {
+       "text": "Thorn, Osteo Striga, Touch of Malice, and Necrochasm."
       }
      ]
     },

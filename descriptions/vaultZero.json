@@ -210,7 +210,7 @@
   "name": "Fleet Footed",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for ? seconds.\nScoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for ? seconds."
+   "en": "Dealing damage grants 15 Airborne Effectiveness and ?% increased Movement Speed for 5? seconds.\nScoring a Weapon Kill increases this to 30 Airborne Effectiveness and ?% Increased Movement Speed for 5? seconds. Weapon damage refreshes buff duration."
   }
  },
  "74393640": {
@@ -310,7 +310,7 @@
   "itemName": "Radiant Dance Machines",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Passively grants Unexpected and Decisive Social Benefits, along with 20 Airborne Effectiveness to [primary]Primary Weapons.\nGrants the following benefits while a [primary]Primary Weapon is readied and not Aiming Down Sights:\n• 30 Mobility\n• 5 Range and 30? Stability\n• 70% decreased Accuracy Cone Size\n• 2 degrees increased Precision Aim Cone Angle\n• 20% increased Aim Assist and Damage Falloff Distance\nDMT, Last Word, and Tommy's Matchbook are uniquely tuned and do not recieve as significant of a benefit.\n[primary]Primary Weapon Kills grant Class Ability Energy based on [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Elites and higher: 100% | Players: 20%\nAbility energy gained is NOT affected by Chunk Energy Scalars. Learn more about this mechanic in [our explainer blog post on the Clarity website](https://url.d2clarity.com/chunk-energy-scalars).\nAt full Class Ability energy, scoring multiple [primary]Primary Weapon Kills within 6 seconds of each grants an additional Class Ability Charge. Maximum of 2 extra charges.\nActivation progress granted by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Elites and higher: 100% | Players: 100%"
+   "en": "Passively grants 20 Airborne Effectiveness to [primary]Primary Weapons.\nGrants the following benefits while a [primary]Primary Weapon is readied and not Aiming Down Sights:\n• 30 Mobility\n• 5 Range and 30? Stability\n• 70% decreased Accuracy Cone Size\n• 2 degrees increased Precision Aim Cone Angle\n• 20% increased Aim Assist and Damage Falloff Distance\nDMT, Last Word, and Tommy's Matchbook are uniquely tuned and do not recieve as significant of a benefit.\n[primary]Primary Weapon Kills grant Class Ability Energy based on [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Elites and higher: 100% | Players: 20%\nAbility energy gained is NOT affected by Chunk Energy Scalars. Learn more about this mechanic in [our explainer blog post on the Clarity website](https://url.d2clarity.com/chunk-energy-scalars).\nAt full Class Ability energy, scoring multiple [primary]Primary Weapon Kills within 6 seconds of each grants an additional Class Ability Charge. Maximum of 2 extra charges.\nActivation progress granted by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Elites and higher: 100% | Players: 100%"
   }
  },
  "117884138": {
@@ -2579,6 +2579,14 @@
    "en": "Reduces Incoming AoE Damage from PVE Combatants by 15%|25%|30% with 1|2|3 Mods equipped.\nThe effects of different Resistance Mods stack multiplicatively with each other."
   }
  },
+ "934928524": {
+  "hash": 934928524,
+  "name": "Contending Cascade",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "Scoring kills within 4 seconds of another kill each grant a stack of Contending Cascade. Maximum of ? stacks. Kills from any source count.\nEach stack of Contending Cascade grants increased Handling and Reload Speed.\nStarting at 15 stacks, kills trigger an explosion matching this weapon's element."
+  }
+ },
  "941997506": {
   "hash": 941997506,
   "name": "Icarus Grip",
@@ -3205,6 +3213,14 @@
    "en": "Only works with a [Solar]Solar Super Ability equipped.\nReaching Critical Health consumes your Class Ability to spawn a [Solar]Sunspot under you.\nManually casting your Class Ability also spawns a [Solar]Sunspot under you.\nThe spawned [Solar]Sunspot grants the Sol Invictus buff even without having the Aspect equipped. (The Aspect is still required to extend the sunspot's duration)"
   }
  },
+ "1164078247": {
+  "hash": 1164078247,
+  "name": "Imperial Allegiance",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "Grants one stack of Imperial Allegiance for each ally within 15 meters.\nBenefits at 1|2|3 stacks:\n• ? Charge Rate\n• 3.5%|7%|10.5% increased Cooling Efficiency\n• 3.5%|7%|10.5% increased damage while above 50% Weapon Heat"
+  }
+ },
  "1164602481": {
   "hash": 1164602481,
   "name": "Deconstruct",
@@ -3707,6 +3723,14 @@
   "type": "Armor Mod General",
   "descriptions": {
    "en": "Only works in PvE game modes.\nAmmo Brick pickups generally grant an 1 additional ammo to [Strand]Strand Weapons matching the Ammo Type.\nMachine Guns receive 7 additional ammo, Trace Rifles receive 10% of their Total Reserves (rounded up) as additional ammo.\nFunctions the same way regardless of what spawned the Ammo Brick.\nContext: normal Ammo Bricks grant 25-33% of your Total Reserves by default."
+  }
+ },
+ "1309453587": {
+  "hash": 1309453587,
+  "name": "Air-Cooled Core",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "Grants ? Handling and ?% decreased ADS Movement Speed Penalty while your magazine is fully loaded or weapon Heat is below 10%.\nSprinting for 0.5 seconds grants ? Reload Speed for 6 seconds."
   }
  },
  "1316753551": {
@@ -4212,7 +4236,7 @@
   "name": "Vorpal Weapon",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Power Weapons: [pve]10% [pvp][20%]\n• [heavy]Crossbows: [pve]32% [pvp][92?%]"
+   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Power Weapons: [pve]10% [pvp][20%]"
   }
  },
  "1549056416": {
@@ -5125,6 +5149,14 @@
    "en": "Passively increases Zoom by 2.\nIncreasing Zoom has the following effects in ADS:\n• Increased Magnification\n• Increased Aim Assist Falloff Distance\n• Decreased Absolute Recoil\n• Narrowed Accuracy and Aim Assist Cones (size stays the same on-screen)"
   }
  },
+ "1847323754": {
+  "hash": 1847323754,
+  "name": "Accelerated Assault",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "For single-shot weapons:\nScoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and [pve]5% [pvp][?] increased damage for 8 seconds.\nAdditional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds.\nFor multi-shot weapons:\nScoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other refills 10% of the magazine and grants [pve]5% [pvp][?] increased damage for 4 seconds."
+  }
+ },
  "1848187513": {
   "hash": 1848187513,
   "name": "Invigoration",
@@ -5318,7 +5350,7 @@
   "itemName": "Heart of Inmost Light",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Grenade or Class Ability usage and dealing Elemental Melee damage grants the 'Empowered Abilities' buff to the other two abilities for 5 seconds.\ne.g.: Barricade usage 🠚 Empowered Grenade and Melee Abilities\nBuff display on the HUD is nonsensical and does not accurately represent the buff's behavior when chaining multiple abilities together.\nEmpowered Melee x1|x2 benefits:\n• 10% | 50% increased Melee damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Melee Regeneration Rate\nEmpowered Grenade x1|x2 benefits:\n• [pve]20% [pvp][10%] | [pve]35% [pvp][20%] increased Grenade damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Grenade Regeneration Rate\nEmpowered Class Ability x1|x2 benefits:\n• 25%|50% Additional Base Class Ability Regeneration Rate\n• Does not grant any measurable benefit to Barricade HP despite stating it does\nClarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future."
+   "en": "Grenade or Class Ability usage and dealing Elemental Melee damage grants the 'Empowered Abilities' buff to the other two abilities for 5 seconds.\ne.g.: Barricade usage 🠚 Empowered Grenade and Melee Abilities\nBuff display on the HUD is nonsensical and does not accurately represent the buff's behavior when chaining multiple abilities together.\nEmpowered Melee x1|x2 benefits:\n• 10% | 50% increased Melee damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Melee Regeneration Rate\nEmpowered Grenade x1|x2 benefits:\n• [pve]20% [pvp][10%] | [pve]35% [pvp][20%] increased Grenade damage\n• [pve]400% [pvp][100%] | [pve]800% [pvp][200%] Additional Base Grenade Regeneration Rate\nEmpowered Class Ability x1|x2 benefits:\n• 25%|50% Additional Base Class Ability Regeneration Rate\n• Does not grant any measurable benefit to Barricade HP despite stating it does"
   }
  },
  "1924584408": {
@@ -6748,7 +6780,7 @@
   "name": "Nadir Focus",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Firing or swinging the weapon grants a stack of Nadir Focus for 2 seconds. Stowing the weapon removes the buff.\nMaximum number of Stacks by Weapon Type:\n• Auto Rifles, Submachine Guns?: 11 stacks\n• Sidearms, Swords: 5 stacks\n• Hand Cannons, Scout Rifles: 4 stacks\n• Grenade Launchers: ? stacks\nBenefits scale linearly? with each stack, equalizing between Weapon Types at max stacks. (E.g.: you would gain 1/4 of the maximum benefit per stack with Hand Cannons)\nBenefits at max Stacks:\n• 10 Range\n• 7.5%? decreased Accuracy Cone Size\n• 50%? increased Lunge Distance (Swords)\n• ?% increased Projectile Velocity (Grenade Launchers)"
+   "en": "Firing or swinging the weapon grants a stack of Nadir Focus for 2 seconds. Stowing the weapon removes the buff.\nMaximum number of Stacks by Weapon Type:\n• Auto Rifles, Submachine Guns?: 11 stacks\n• Sidearms, Swords: 5 stacks\n• Hand Cannons, Scout Rifles: 4 stacks\n• Grenade Launchers: ? stacks\nBenefits scale linearly? with each stack, equalizing between Weapon Types at max stacks. (E.g.: you would gain 1/4 of the maximum benefit per stack with Hand Cannons)\nBenefits at max Stacks:\n• 10 Range\n• 7.5%? decreased Accuracy Cone Size\n• 100%? increased Lunge Distance (Swords)\n• ?% increased Projectile Velocity (Grenade Launchers)"
   }
  },
  "2526773280": {
@@ -7225,6 +7257,14 @@
    "en": "Superb handling. Move faster with this lightweight weapon equipped. This weapon grants additional speed benefits when MIDA Multi-Tool is also equipped."
   }
  },
+ "2671305723": {
+  "hash": 2671305723,
+  "name": "Accelerated Assault",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "For single-shot weapons:\nScoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and [enh][pve]6% [pvp][?] increased damage for 8 seconds.\nAdditional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds.\nFor multi-shot weapons:\nScoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other refills 10% of the magazine and grants [enh][pve]6% [pvp][?] increased damage for 4 seconds.\n[enh] Damage bonus is increased by 20% (5%🠚6%)."
+  }
+ },
  "2674202880": {
   "hash": 2674202880,
   "name": "Worldline Catalyst",
@@ -7273,6 +7313,14 @@
   "type": "Weapon Frame Enhanced",
   "descriptions": {
    "en": "Hybrid melee/ranged polearm with a frontal shield.\nGenerates energy on dealing ranged damage.\n[Aim Down Sights]  : Raise shield, depleting energy over time\n[Melee]  : Kinetic melee combo"
+  }
+ },
+ "2697390518": {
+  "hash": 2697390518,
+  "name": "Accelerated Assault",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "For single-shot weapons:\nScoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and [pve]5% [pvp][?] increased damage for 8 seconds.\nAdditional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds.\nFor multi-shot weapons:\nScoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other refills 10% of the magazine and grants [pve]5% [pvp][?] increased damage for 4 seconds."
   }
  },
  "2710254013": {
@@ -7386,7 +7434,7 @@
  "2731901711": {
   "hash": 2731901711,
   "name": "Helium Spirals",
-  "itemHash": 3787517196,
+  "itemHash": 950745251,
   "itemName": "Sunbracers",
   "type": "Armor Trait Exotic",
   "descriptions": {
@@ -7578,7 +7626,7 @@
   "itemName": "Sealed Ahamkara Grasps",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Powered Melee Kills and Finishers grant Nightmare Fuel for 7 seconds. [Strand]Grapple Melees do not count.\nGaining Nightmare Fuel refills the magazine of all stowed weapons from reserves.\nNightmare Fuel grants ? Handling and 50 Airborne Effectiveness while active.\nReadying a different weapon after gaining Nightmare Fuel refreshes its duration and grants [pve]35% [pvp][20%] increased weapon damage ([Empowering Buff](https://url.d2clarity.com/DamageBuffs)). Swapping weapons again removes Nightmare Fuel.\nScoring a Kill with a weapon currently benefiting from the damage buff grants you a fresh instance of Nightmare Fuel (as if you scored another Powered Melee Kill).\nClarity tooltip editor's note: We're replacing the previous Powered Melee term with Elemental Melee. The former is now exclusively used for perks that require the consumption of a Melee Ability Charge. This note is temporary and will be removed in the future."
+   "en": "Powered Melee Kills and Finishers grant Nightmare Fuel for 7 seconds. [Strand]Grapple Melees do not count.\nGaining Nightmare Fuel refills the magazine of all stowed weapons from reserves.\nNightmare Fuel grants ? Handling and 50 Airborne Effectiveness while active.\nReadying a different weapon after gaining Nightmare Fuel refreshes its duration and grants [pve]35% [pvp][20%] increased weapon damage ([Empowering Buff](https://url.d2clarity.com/DamageBuffs)). Swapping weapons again removes Nightmare Fuel.\nScoring a Kill with a weapon currently benefiting from the damage buff grants you a fresh instance of Nightmare Fuel (as if you scored another Powered Melee Kill)."
   }
  },
  "2805854721": {
@@ -9110,7 +9158,7 @@
   "name": "Vorpal Weapon",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Power Weapons: [pve]10% [pvp][20%]\n• [heavy]Crossbows: [pve]32% [pvp][92?%]\n[enh] Passively grants 5 Stability or Guard Resistance (Swords)."
+   "en": "Deals increased damage against [Minibosses, Bosses, and Vehicles](https://url.d2clarity.com/combatants), as well as Players in their Super Ability.\nDamage increase by Ammo Type:\n• [primary]Primary Weapons: [pve]20% [pvp][60%]\n• [special]Special Weapons: [pve]15% [pvp][20%]\n• [heavy]Power Weapons: [pve]10% [pvp][20%]\n[enh] Passively grants 5 Stability or Guard Resistance (Swords)."
   }
  },
  "3418782618": {
@@ -9871,6 +9919,14 @@
    "en": "Finishing a reload within ? seconds of a Weapon Kill grants ?% Ability Energy to the least-charged Ability."
   }
  },
+ "3713579091": {
+  "hash": 3713579091,
+  "name": "Accelerated Assault",
+  "type": "Weapon Trait Origin",
+  "descriptions": {
+   "en": "For single-shot weapons:\nScoring 3 hits with at least 1.2 seconds or at most 4 seconds between each other grants ? Reload Speed and [enh][pve]6% [pvp][?] increased damage for 8 seconds.\nAdditional hits while the buff duration is below 4 seconds refresh the timer to 4 seconds.\nFor multi-shot weapons:\nScoring 3 hits with at least 0.8 seconds or at most 1.2 seconds between each other refills 10% of the magazine and grants [enh][pve]6% [pvp][?] increased damage for 4 seconds.\n[enh] Damage bonus is increased by 20% (5%🠚6%)."
+  }
+ },
  "3717985200": {
   "hash": 3717985200,
   "name": "Psychohack",
@@ -10146,7 +10202,7 @@
  "3824622015": {
   "hash": 3824622015,
   "name": "Grasp of the Devourer",
-  "itemHash": 2780717641,
+  "itemHash": 124786972,
   "itemName": "Necrotic Grip",
   "type": "Armor Trait Exotic",
   "descriptions": {
