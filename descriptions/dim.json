@@ -52,19 +52,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Weaken for 6 second and grant "
-      },
-      {
-       "text": "2000%"
-      },
-      {
-       "text": " "
-      },
-      {
-       "text": "[PVP: 1000%]"
-      },
-      {
-       "text": " Additional Base Grenade Regeneration Rate for 1.75 seconds."
+       "text": "Weaken for 6 second and grant additional base grenade Regeneration Rate depending on the equipped grenade for 1.75 seconds."
       }
      ]
     },
@@ -74,7 +62,74 @@
     {
      "linesContent": [
       {
-       "text": "4 second cooldown between activations. Grants between 50-60% Grenade energy per activation."
+       "text": "• Axion: "
+      },
+      {
+       "text": "5000%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 4000%]"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Scatter: "
+      },
+      {
+       "text": "3700%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 2700%]"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Vortex: "
+      },
+      {
+       "text": "3400%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 2400%]"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Handheld Supernova: "
+      },
+      {
+       "text": "3000%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 2000%]"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "4 second cooldown between activations, which is removed on grenade usage. Grants between 50-60% Grenade energy per activation."
       }
      ]
     },
@@ -87,7 +142,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Vortex Grenades can proc it twice if enemies get hit by the initial explosion and the last few ticks."
+       "text": "Vortex Grenades can proc twice if enemies get hit by the initial explosion and the last few ticks."
       }
      ]
     }
@@ -3733,7 +3788,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Invisibility and restore Health."
+       "text": "Invisibility and restore 67 HP."
       }
      ]
     },
@@ -3743,7 +3798,7 @@
     {
      "linesContent": [
       {
-       "text": "Invisibility Duration and restored Health are based on "
+       "text": "Invisibility Duration is based on "
       },
       {
        "text": "Enemy Rank",
@@ -3757,28 +3812,21 @@
     {
      "linesContent": [
       {
-       "text": "• Minors: 6.8 seconds | 100 HP restored"
+       "text": "• Minors: 7 seconds"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Elites, Enemy Players: 9.8 seconds | ? HP restored"
+       "text": "• Elites, Enemy Players: 10 seconds"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Minibosses: 12.8 seconds | 200 HP restored"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "• Bosses: 13.3 seconds | 200 HP restored"
+       "text": "• Minibosses and Bosses: 13 seconds"
       }
      ]
     },
@@ -8950,36 +8998,42 @@
     {
      "linesContent": [
       {
-       "text": "Weapon and "
+       "text": "Scoring Weapon and "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc-Powered Melee Kills build up 'Jetpack Fuel'."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Once Jetpack Fuel is fully charged, pressing [Air Move] input while airborne thrusts you forward in a jet-propelled flight for ? seconds. Holding down the input results in a ?% longer flight duration."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Jetpack Activation Exhausts enemies in a ? meter radius and deals up to "
+       "text": "Arc-Powered Melee Kills build up 'Jetpack Fuel'. Weapon kills grant 15% energy, and "
       },
       {
-       "text": "?"
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc-Melee kills grant 35% energy. Jetpack Fuel additionally builds at a passive rate of 3.5% per second."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Once Jetpack Fuel is fully charged, pressing [Air Move] input while airborne thrusts you forward in a jet-propelled flight for 30 meters for 1.5 seconds. Holding down the input results in a 100% longer flight duration, traveling 50 meters over 3 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Jetpack Activation deals "
+      },
+      {
+       "text": "168"
       },
       {
        "text": " "
@@ -8994,7 +9048,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Damage to them."
+       "text": "Arc Damage in a 6 meter radius and applies Exhaust."
       }
      ]
     },
@@ -9010,10 +9064,10 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Melee Strike dealing "
+       "text": "Melee Strike for "
       },
       {
-       "text": "?"
+       "text": "336"
       },
       {
        "text": " "
@@ -9034,7 +9088,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Blinds targets in a ? meter radius, and grants 40 Melee stat for ? seconds."
+       "text": "Blinds targets in a ? meter radius, and grants 40 Melee stat for 7 seconds."
       }
      ]
     }
@@ -9265,21 +9319,21 @@
     {
      "linesContent": [
       {
-       "text": "• Synapse Junctions x1: 27?% | ?%"
+       "text": "• Synapse Junctions x1: 27% | 20%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Synapse Junctions x2: 61?% | ?%"
+       "text": "• Synapse Junctions x2: 61% | 40%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Synapse Junctions x3: 105?% | ?%"
+       "text": "• Synapse Junctions x3: 105% | 60%"
       }
      ]
     }
@@ -9352,7 +9406,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Ionic Trace Pickups grant 5% additional Arcbolt Grenade Energy."
+       "text": "Ionic Trace Pickups grant 7.5% additional Arcbolt Grenade Energy."
       }
      ]
     },
@@ -9455,7 +9509,7 @@
     {
      "linesContent": [
       {
-       "text": "Cross Counter grants 400% additional base Melee damage and restores ? HP on Melee Hits. Cross Counter's Melee deals "
+       "text": "Cross Counter grants 400% additional base Melee damage and restores 40 HP on Melee Hits. Cross Counter's Melee deals "
       },
       {
        "classNames": [ "arc" ]
@@ -13684,7 +13738,7 @@
     {
      "linesContent": [
       {
-       "text": "• Healing Rift Seeker: restores 75 HP and starts Health Regeneration"
+       "text": "• Healing Rift Seeker: restores 70 Health, 60 Shields, and starts Health Regeneration"
       }
      ]
     },
@@ -20750,7 +20804,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Ionic Traces move faster and grant doubled Ability Energy."
+       "text": "Ionic Traces move 66% faster and grant doubled Ability Energy."
       }
      ]
     },
@@ -24671,7 +24725,7 @@
     {
      "linesContent": [
       {
-       "text": "Casting a Barricade restores 80 Health and 75 Shield HP. Using "
+       "text": "Casting a Barricade restores 70 Health and 110 Shield HP. Using "
       },
       {
        "classNames": [ "arc" ]
@@ -27115,7 +27169,7 @@
     {
      "linesContent": [
       {
-       "text": "Parting Gift has an additional effect based on the element of your equipped Super Ability:"
+       "text": "Parting Gift applies an additional effect based on the element of your equipped Super Ability:"
       }
      ]
     },
@@ -27128,7 +27182,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc:  disorients for "
+       "text": "Arc:  Disorient (not Blind) for "
       },
       {
        "text": "7"
@@ -27153,7 +27207,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Solar: applies 40 "
+       "text": "Solar: 40 "
       },
       {
        "classNames": [ "solar" ]
@@ -27178,7 +27232,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis: applies "
+       "text": "Stasis:  "
       },
       {
        "text": "40"
@@ -27196,7 +27250,31 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Slow Stacks"
+       "text": "Slow Stacks for "
+      },
+      {
+       "text": "4"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 1.5]"
+      },
+      {
+       "text": " seconds ("
+      },
+      {
+       "text": "8"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: 2]"
+      },
+      {
+       "text": " seconds with Whisper of Durance)"
       }
      ]
     },
@@ -27209,7 +27287,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void: applies "
+       "text": "Void: "
       },
       {
        "text": "'Lite'",
@@ -27247,13 +27325,19 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Strand: applies "
+       "text": "Strand: "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Sever for ? seconds"
+       "text": "Sever for 10 seconds (15 with "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Thread of Continuity)"
       }
      ]
     },
@@ -28834,6 +28918,33 @@
       },
       {
        "text": "Volatile Rounds duration is increased by 0.75 seconds."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1927916065": {
+  "hash": 1927916065,
+  "name": "Unplanned Reprieve",
+  "itemHash": 2208405142,
+  "itemName": "Telesto",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Fires proximity seven bolts that deal impact damage and explode after 5 seconds or on enemy proximity."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Due to repeated bugs and exploits, these bolts are now immune to all forms of premature destruction."
       }
      ]
     }
@@ -30944,7 +31055,28 @@
     {
      "linesContent": [
       {
-       "text": "Each stack of Vanishing Shadow grants improved base Grenade, Melee, and Class ability regeneration rate."
+       "text": "Each stack of Vanishing Shadow grants improved base ability regeneration rate at 1|2|3 stacks."
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Class Ability: 67%|133%|200%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Grenade: ?%|?%|?%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Melee: ?%|?%|?%"
       }
      ]
     },
@@ -34305,7 +34437,7 @@
        "text": "Scoring a Weapon Kill while at Full HP or upon being out of combat for "
       },
       {
-       "text": "5"
+       "text": "4.5"
       },
       {
        "text": " "
@@ -34314,16 +34446,16 @@
        "text": "[PVP: 15]"
       },
       {
-       "text": " seconds, starts generating "
+       "text": " seconds, continuously generates a "
       },
       {
-       "text": "6"
+       "text": "6.6"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 1.2]"
+       "text": "[PVP: 1.1]"
       },
       {
        "text": " "
@@ -34342,28 +34474,28 @@
     {
      "linesContent": [
       {
-       "text": "Grants the following benefits while any Overshield is active:"
+       "text": "Grants the following while any Overshield is active:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ?% Accuracy Cone Size"
+       "text": "• 5% Decreased Accuracy Cone Size"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ? Stability"
+       "text": "• 35 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• ? Handling"
+       "text": "• 35 Handling"
       }
      ]
     },
@@ -34380,7 +34512,7 @@
     {
      "linesContent": [
       {
-       "text": "While any Overshield is active, scoring a kill enables 'Hasty Escape'. Hasty Escape activates upon the depletion of your Overshield, granting ? Mobility for 5 seconds."
+       "text": "While any Overshield is active, scoring a kill enables 'Hasty Escape'. Hasty Escape activates upon the depletion of your Overshield, granting 30 Mobility for 5 seconds."
       }
      ]
     }
@@ -45605,7 +45737,7 @@
        "classNames": [ "strand" ]
       },
       {
-       "text": "Tangle refunds an additional 30% Melee Ability Energy."
+       "text": "Tangle refunds an additional fixed 25% Melee Ability Energy."
       }
      ]
     }
@@ -47189,14 +47321,14 @@
     {
      "linesContent": [
       {
-       "text": "Damage increase at 1|2|3 Debuffs: "
+       "text": "Damage increased is "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "11%|22%|33%"
+       "text": "11%|22%|33% at 1|2|3 Debuffs."
       }
      ]
     },
@@ -52381,7 +52513,7 @@
  "3556461530": {
   "hash": 3556461530,
   "name": "Voltaic Mirror",
-  "itemHash": 1703551922,
+  "itemHash": 863908533,
   "itemName": "Blight Ranger",
   "descriptions": {
    "en": [
@@ -52457,10 +52589,10 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Blinding explosion in a ? meter radius around you that deals "
+       "text": "Blinding explosion in a 10 meter radius around you that deals "
       },
       {
-       "text": "300 to 575"
+       "text": "675 to 2700"
       },
       {
        "text": " "
@@ -52469,7 +52601,7 @@
        "text": "[PVP: ? to ?]"
       },
       {
-       "text": " damage based the the number of projectiles reflected"
+       "text": " damage with no falloff based the the number of projectiles reflected"
       }
      ]
     },
@@ -53816,16 +53948,6 @@
   "itemName": "Mask of the Quiet One",
   "descriptions": {
    "en": [
-    {
-     "linesContent": [
-      {
-       "text": "Kills at Critical Health fully restore Health. (Shields are not restored)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
     {
      "linesContent": [
       {
@@ -55641,7 +55763,7 @@
     {
      "linesContent": [
       {
-       "text": "Damage increase at 1|2|3 Debuffs: 10%|20%|30%"
+       "text": "Damage increased is 10%|20%|30% at 1|2|3 Debuffs."
       }
      ]
     }
