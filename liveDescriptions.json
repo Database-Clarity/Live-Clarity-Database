@@ -7414,41 +7414,14 @@
    "type": "Subclass Class",
    "editor": {
     "en": {
-     "main": "Only usable while on the ground.\n\nPerforms an evasive maneuver in your movement input's direction that instantly reloads your held weapon.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\n#Reload",
+     "main": "Only usable while on the ground.\n\nPerforms an evasive maneuver in your movement input's direction that instantly reloads all equipped weapons and collects ammo bricks that are on the ground within a 15 meter radius of you.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\n#Reload",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755981590951,
-      "updatedBy": "Stardust"
-     }
-    },
-    "stats": {
-     "lastUpdate": 0,
-     "updatedBy": ""
-    }
-   },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1755984214899,
-   "inLiveDatabase": true,
-   "uploadToLive": false
-  },
-  "426473317": {
-   "name": "Gambler's Dodge",
-   "hash": 426473317,
-   "type": "Subclass Class",
-   "editor": {
-    "en": {
-     "main": "Only usable while on the ground.\n\nPerforms a deft tumble in your movement input's direction.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\nPvE: Grants 1% Fixed Melee Ability Energy per 1 point in the Melee Stat. \n\nPvP: Grants 0.5% Fixed Melee Ability Energy per 1 point in the Melee Stat. \n\nIn both environments, the granted Melee Energy is doubled if performed within 15 meters of an enemy. \n\n#ChunkEnergyUnaffected",
-     "secondary": "import self"
-    }
-   },
-   "updateTracker": {
-    "descriptions": {
-     "en": {
-      "lastUpdate": 1767733850064,
+      "lastUpdate": 1767734087248,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -7458,7 +7431,34 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1767733883805,
+   "lastUpload": 1767735373031,
+   "inLiveDatabase": true,
+   "uploadToLive": false
+  },
+  "426473317": {
+   "name": "Gambler's Dodge",
+   "hash": 426473317,
+   "type": "Subclass Class",
+   "editor": {
+    "en": {
+     "main": "Only usable while on the ground.\n\nPerforms a deft tumble in your movement input's direction.\n\nRemoves tracking from PVE Combatant projectiles and disables Aim Assist on you for the duration of the animation.\n\nPvE: Grants 1% Fixed Melee Ability Energy per 1 point in the Melee Stat (up to 100 Melee Stat). \n\nPvP: Grants 0.35% Fixed Melee Ability Energy per 1 point in the Melee Stat (up to 100 Melee Stat). \n\nIn both environments, the granted Melee Energy is doubled if performed within 15 meters of an enemy. \n\n#ChunkEnergyUnaffected",
+     "secondary": "import self"
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 1767735329286,
+      "updatedBy": "Hawkmoona"
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Hawkmoona",
+   "lastUpload": 1767735373031,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
