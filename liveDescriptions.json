@@ -20336,15 +20336,15 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased  Handling Animation Duration\n• ${5*#d}?% to ${10*#d}?% decreased Accuracy Cone Size\n\nBenefits are halved on <special/>Special Ammo weapons.\n\nenhanced (\nvar d = 1 // add #e once we have more numbers\n#e Stronger effect.\n)",
+     "main": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased  Handling Animation Duration\n• ${5*#d}?% to ${10*#d}?% decreased Accuracy Cone Size\n\n<special/>Special weapons only receive 50% of the benefits. Stats are rounded up.\n\nenhanced (\nvar d = 1 // add #e once we have more numbers\n#e Stronger effect.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1745179075199,
-      "updatedBy": "Stardust"
+      "lastUpdate": 1768580213631,
+      "updatedBy": "Hawkmoona"
      }
     },
     "stats": {
@@ -20352,8 +20352,8 @@
      "updatedBy": ""
     }
    },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1745179110048,
+   "uploadedBy": "Hawkmoona",
+   "lastUpload": 1768580227910,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -66978,7 +66978,7 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1768192546229,
+   "lastUpload": 1768580227910,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -67730,15 +67730,15 @@
    "type": "Armor Mod General",
    "editor": {
     "en": {
-     "main": "Orb of Power Pickups immediately restore 15|75|75 HP with 1|2|3 Mods equipped.",
+     "main": "Orb of Power Pickups immediately restore 15|21|21 HP with 1|2|3 Mods equipped.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1755815362568,
-      "updatedBy": "Stardust"
+      "lastUpdate": 1768580193437,
+      "updatedBy": "Hawkmoona"
      }
     },
     "stats": {
@@ -67746,8 +67746,8 @@
      "updatedBy": ""
     }
    },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1755815364903,
+   "uploadedBy": "Hawkmoona",
+   "lastUpload": 1768580227910,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
