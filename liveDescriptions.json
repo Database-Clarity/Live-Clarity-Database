@@ -20969,14 +20969,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Picking up an ammo brick refills the magazine and grants <pve 15% /> <pvp [?] /> increased damage for #e${9+#d} seconds. \n\nBuff timer begins on readying the weapon.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
+     "main": "Picking up a <special/>Special ammo brick refills the magazine and grants 100 Reload and <pve 35% /> <pvp [15%] /> increased damage for #e${6+#d} seconds. \n\nPicking up a <heavy/>Heavy ammo brick grants the buff for #e${9+#d} seconds.\n\nBuff timer begins on readying the weapon.\n\nenhanced (\nvar d = 1\n#e Buff Duration is increased by 1 second.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1766853069881,
+      "lastUpdate": 1769535616296,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -20985,8 +20985,8 @@
      "updatedBy": ""
     }
    },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1766867819246,
+   "uploadedBy": "Hawkmoona",
+   "lastUpload": 1769542492526,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -65797,14 +65797,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns, Trace Rifles: #e${18-#d} | <arc/>13\n• Machine Guns: #e${16-#c} | <arc/>11\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>9\n• Sidearms: #e${10-#d} | <arc/>7\n• Rocket Pulse Rifle: #e${8-#d} | <arc/>5\n• Scout Rifles: #e${7-#d} | <arc/>4\n• Special Ammo Hand Cannon: #e${7-#d} | <arc/>4\n• Glaives: #e${4-#d} | <arc/>3\n• Linear Fusion Rifle: #e${4-#d} | <arc/>3\n• Rocket Sidearm: #e${4-#d} | <arc/>2\n• Grenade Launchers: #e${3-#d} | <arc/>2\n\nenhanced (\nvar c = 2\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns, Trace Rifles: #e${18-#d} | <arc/>13\n• Machine Guns: #e${16-#c} | <arc/>11\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>9\n• Sidearms: #e${10-#d} | <arc/>7\n• Rocket Pulse Rifle: #e${8-#d} | <arc/>5\n• Scout Rifles, Special Ammo Hand Cannons: #e${7-#d} | <arc/>4\n• Glaives, Linear Fusion Rifles: #e${4-#d} | <arc/>3 //Edge of Concurrence has this perk hard-coded, make sure to update it as well if updating here\n• Rocket Sidearm: #e${4-#d} | <arc/>2\n• Bows, Grenade Launchers: #e${3-#d} | <arc/>2\n\nenhanced (\nvar c = 2\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1766601105579,
+      "lastUpdate": 1769542482116,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -65813,8 +65813,8 @@
      "updatedBy": ""
     }
    },
-   "uploadedBy": "Stardust",
-   "lastUpload": 1766867819246,
+   "uploadedBy": "Hawkmoona",
+   "lastUpload": 1769542492526,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
