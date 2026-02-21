@@ -10728,14 +10728,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Powered Melee and Finisher Kills disorient and debuff enemies in a given radius around the target, increasing damage received by them by 30%.\n\nDoes not work with <strand/>Grapple melee or <solar/>Song of Flame.\n\nScreen becomes fully blackened for 7.5 seconds upon getting hit by the debuff before gradually fading away over the next 7.5 seconds. (HUD remains unobstructed)\n\nThe debuff Duration and application radius are dependent on <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\n\nFinishers increase the debuff duration by 5 seconds and the application radius by 5 meters. Both duration and radius are capped at the values provided by Bosses.\n\nApplying <void/>Weaken to the target extends the debuff's duration.",
+     "main": "Does not work with <strand/>Grapple melee or <solar/>Song of Flame melees.\n\nPowered Melee damage <void/>Weakens targets for 6 seconds (15% debuff).\n\nPowered Melee and Finisher Kills disorient and apply a stronger (30%) <void/>Weaken debuff to enemies in a given radius around the target.\n\nThe debuff Duration and application radius are dependent on <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 15 meter radius, 10 second duration\n• Elites, Players: 20m radius, 15s duration\n• Minibosses, Bosses: 25m radius, 20s duration\n\nFinishers increase the debuff duration by 5 seconds and the application radius by 5 meters. Both duration and radius are capped at the values provided by killing (Mini)Bosses.\n\nAdditional PvP effects of on-kill debuffs: screen is blackened for 7.5 seconds before gradually fading away over the following 7.5 seconds. (HUD remains unobstructed)\n\nApplying <void/>Weaken to the target extends the debuff's duration.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1766439054550,
+      "lastUpdate": 1771691469301,
       "updatedBy": "Stardust"
      }
     },
@@ -10745,7 +10745,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1766530840776,
+   "lastUpload": 1771691917050,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -19460,14 +19460,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Grants <strand/>Arcane Needles <barrier/>Shield-Piercing properties.\n\nScoring an <strand/>Arcane Needle hit on an enemy marks them with a vertical mark for 10 seconds. Marked Enemies explode on death, releasing a <strand/>Suspending Blast that <strand/>Suspends and damages targets in a 10 meter radius.\n\n<strand/>Suspending Blast damage by <link Enemy Rank [#CombatantClassifications] />:\nPlayers: 40, Minors: 80, Elites: 120, Minibosses: 160, Bosses: 200\n\nLanding 2 <strand/>Arcane Needle hits on a Marked Enemy triggers <strand/>Suspending Blast that deals 2x damage.\n\nLanding 5 <strand/>Needlestorm Hits on a single enemy triggers a <strand/>Suspending Blast that deals 11x damage.\n\n<strand/>Arcane Needle Kills and Killing <strand/>Suspended targets grant Melee Energy based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 15%\n• T2 Minors, T1 Elites: 22.2%\n• T3 Minors, T2 Elites, Enemy Players: 33%\n• T4 Minors, T3 Elites, and higher: 100%\n\n#ChunkEnergyUnaffected",
+     "main": "Grants <strand/>Arcane Needles <barrier/>Shield-Piercing properties.\n\nScoring an <strand/>Arcane Needle hit on an enemy marks them with a vertical mark for 10 seconds. Marked Enemies explode on death, releasing a <strand/>Suspending Blast that <strand/>Suspends and damages targets in a 10 meter radius.\n\n<strand/>Suspending Blast damage by <link Enemy Rank [#CombatantClassifications] />:\nPlayers: 40, Minors: 80, Elites: 120, Minibosses: 160, Bosses: 200\n\nLanding 2 <strand/>Arcane Needle hits on a Marked Enemy triggers <strand/>Suspending Blast that deals 2x damage.\n\nLanding 5 <strand/>Needlestorm Hits on a single enemy triggers a <strand/>Suspending Blast that deals 11x damage and inherits Super damage buffs.\n\n<strand/>Arcane Needle Kills and Killing <strand/>Suspended targets grant Melee Energy based on <link Enemy Rank [#CombatantClassifications] />:\n• Tier 1 (T1) Minors: 15%\n• T2 Minors, T1 Elites: 22.2%\n• T3 Minors, T2 Elites, Enemy Players: 33%\n• T4 Minors, T3 Elites, and higher: 100%\n\n#ChunkEnergyUnaffected",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1766443239292,
+      "lastUpdate": 1771691578855,
       "updatedBy": "Stardust"
      }
     },
@@ -19477,7 +19477,7 @@
     }
    },
    "uploadedBy": "Stardust",
-   "lastUpload": 1766530840776,
+   "lastUpload": 1771691917050,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -42591,6 +42591,33 @@
    },
    "uploadToLive": false,
    "inLiveDatabase": true
+  },
+  "2523469161": {
+   "name": "Classy Contender",
+   "hash": 2523469161,
+   "type": "Weapon Perk",
+   "editor": {
+    "en": {
+     "main": "",
+     "secondary": ""
+    }
+   },
+   "updateTracker": {
+    "descriptions": {
+     "en": {
+      "lastUpdate": 0,
+      "updatedBy": ""
+     }
+    },
+    "stats": {
+     "lastUpdate": 0,
+     "updatedBy": ""
+    }
+   },
+   "uploadedBy": "Stardust",
+   "lastUpload": 1771691917050,
+   "inLiveDatabase": false,
+   "uploadToLive": false
   },
   "2523856971": {
    "hash": 2523856971,
