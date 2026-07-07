@@ -47942,7 +47942,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within ? seconds of a Weapon Kill grants 40% increased damage for a variable duration based on the number of kills achieved before reloading, up to a maximum of 20 seconds."
+       "text": "Finishing a reload within ? seconds of a Weapon Kill grants 40% increased damage for a duration based on the number of kills achieved before reloading."
       }
      ]
     },
@@ -47952,7 +47952,17 @@
     {
      "linesContent": [
       {
-       "text": "Duration is calculated as 3 + (2 * Number of Kills) seconds long. Reloading after scoring additional weapon kills adds to this timer and can extend its duration."
+       "text": "Base duration is 3 + 2 additional seconds for each kill scored before reloading (One kill is 5 seconds, two kills is 7 seconds...)"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Each kill-reload adds its full amount to the currently active timer, extending its duration up to a maximum of 20 seconds."
       }
      ]
     }
