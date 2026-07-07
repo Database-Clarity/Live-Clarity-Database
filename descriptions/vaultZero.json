@@ -72,7 +72,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Aiming Down Sights for [enh]1.4 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• 40% increased precision damage (30% for [heavy]Heavy Ammo Sniper Rifles)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)\n[enh] Activation time is decreased by 0.1 seconds."
+   "en": "Aiming Down Sights for [enh]1.4 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• 40% increased precision damage (35% for [primary]Scout Rifles, 30% for [heavy]Heavy Ammo Sniper Rifles)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nFor glaives (Greasy Luck), the projectile must strike the target's critical hitbox in order to recieve the 40% [pvp][35%] damage bonus.\n[enh] Activation time is decreased by 0.1 seconds."
   }
  },
  "24925370": {
@@ -237,7 +237,7 @@
   "name": "Supercharged Magazine",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Refills 5% of the magazine every 1.5 seconds while [Arc]Amplified.\nActivating [Arc]Speed Booster increases this rate to once every 0.25 seconds, and allows the perk to overfill the magazine up to double its base capacity.\n[enh] Passively grants 15 Magazine stat. (Equivalent of 50% of Backup Mag's Magazine stat benefit)"
+   "en": "Refills 5% of the magazine (rounded up) every 1.5 seconds while [Arc]Amplified.\nActivating [Arc]Speed Booster increases this rate to once every 0.25 seconds, and allows the perk to overfill the magazine up to double its base capacity.\n[enh] Passively grants 15 Magazine stat. (Equivalent of 50% of Backup Mag's Magazine stat benefit)"
   }
  },
  "65797256": {
@@ -281,7 +281,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "82180537": {
@@ -289,7 +289,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "82994288": {
@@ -636,7 +636,7 @@
   "name": "Slideshot",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Sliding refills 15% of the Magazine (rounded up) and grants [enh]22 Range and Stability for your next shot (of the burst) within 2.5 seconds.\n0.3 second cooldown after activation but can activate multiple times during a slide.  Buff is removed on stow.\n[enh] Stat bonuses are increased by 2?."
+   "en": "Sliding refills 15% of the Magazine (rounded up) and grants [enh]22 Range and Stability for your next shot (of the burst) within 2.5 seconds.\n0.3 second cooldown after activation but can activate multiple times during a slide. Buff is removed on stow.\n[enh] Stat bonuses are increased by 2?."
   }
  },
  "192157151": {
@@ -660,7 +660,7 @@
   "name": "Butterfly",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Aiming Down Sights for 1.5 seconds without firing causes your next kill to trigger an explosion matching the weapon's element with a ? meter radius.\nTimer starts as soon as ADS input is pressed. Unscoping immediately removes the buff."
+   "en": "Aiming Down Sights for 1.5 seconds without firing causes your next kill to trigger an explosion matching the weapon's element within an 8 meter radius, experiencing a maximum of 30% damage falloff.\nTimer starts as soon as ADS input is pressed. Unscoping immediately removes the buff."
   }
  },
  "200829441": {
@@ -834,7 +834,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Rocket Launchers: 3 hits\n• Wave-Frame Grenade Launchers: 4 hits\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
   }
  },
  "247725512": {
@@ -858,7 +858,7 @@
   "name": "Reservoir Burst",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Passively grants 30 Magazine Size stat. (Identical to a Backup Mag mod)\nWhile Magazine is at or above maximum capacity:\nGrants [enh]27.5% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\nExplosions inherit the weapon's element and [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). Explosions triggered with Linear Fusion Rifle kills deal an additional 30% increased damage.\n[enh] Damage buff is increased by 10% (25%🠚27.5%)."
+   "en": "Passively grants 30 Magazine Size stat. (Identical to a Backup Mag mod)\nWhile Magazine is at or above maximum capacity:\nGrants [enh]33% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\nExplosions inherit the weapon's element and [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). Explosions triggered with Linear Fusion Rifle kills deal an additional 30% increased damage.\n[enh] Damage buff is increased by 10% (25%🠚27.5%)."
   }
  },
  "263649945": {
@@ -875,6 +875,11 @@
   "itemHash": 2591746970,
   "itemName": "Leviathan's Breath",
   "type": "Weapon Perk Exotic"
+ },
+ "270582335": {
+  "hash": 270582335,
+  "name": "Noble Deeds",
+  "type": "Weapon Trait Origin"
  },
  "280464955": {
   "hash": 280464955,
@@ -1015,7 +1020,7 @@
   "name": "Cascade Point",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nGrants the 'Cascade Point Ready' buff for 5 seconds.\nReadying the weapon while Cascade Point Ready is active reduces Firing Delay for [enh]2.75 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles: 17.5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%\n[enh] Buff duration is increased by 0.25 seconds."
+   "en": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nReadying this weapon reduces its Firing Delay for [enh]2.75 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nPrecision Hits requried per weapon archetype:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits\n• Hand Cannons, Scout Rifles: 4 hits\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits\n[enh] Buff duration is increased by 0.25 seconds."
   }
  },
  "332733060": {
@@ -1065,7 +1070,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "360865966": {
@@ -1347,7 +1352,7 @@
   "name": "Restoration Ritual",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Reviving an ally or performing a Finisher grants 'Restoration Ritual' and refills  the Magazine from reserves.\n'Restoration Ritual' refills the Magazine from reserves the next time it is emptied."
+   "en": "Reviving an ally or performing a Finisher grants 'Restoration Ritual' and refills the Magazine from reserves.\n'Restoration Ritual' refills the Magazine from reserves the next time it is emptied."
   }
  },
  "402033656": {
@@ -1401,6 +1406,11 @@
   "descriptions": {
    "en": "Fire a large slow-traveling projectile. Release the trigger after firing to remotely detonate it into 7 submunitions.\nDeals no self-damage."
   }
+ },
+ "415411839": {
+  "hash": 415411839,
+  "name": "Fail-deadly",
+  "type": "Weapon Trait Origin"
  },
  "422994787": {
   "hash": 422994787,
@@ -1530,7 +1540,7 @@
   "name": "Headseeker",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n• Scout Rifles: Precision: 8.66%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
   }
  },
  "461437088": {
@@ -1760,7 +1770,7 @@
   "name": "Gun and Run",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Weapon Kills within 10 seconds of each grants 6.25% increased Sprint Speed for 10 seconds.\nActivation progress by [Enemy Rank](https://url.d2clarity.com/combatants):\nMinors: 34% | Players, Elites, and higher: 100%\nBuff duration cannot be refreshed."
+   "en": "Kills grant one stack of 'Gun And Run' for 10 ([enh] 11) seconds. Maximum of 3 stacks. Stacks fall off one at a time.\nAfter sprinting for 0.75 seconds without a full magazine, consume one stack and refill 20% magazine capacity every 0.85 seconds.\nFor bows, this trait instead grants a ?% Faster Draw Time for ? seconds.\nProvides no benefit to Swords."
   }
  },
  "518387148": {
@@ -1944,7 +1954,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "569260333": {
@@ -2164,7 +2174,7 @@
   "name": "Desperado",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for [enh]7 seconds.\nBuff is removed on stow.\n[enh] Buff duration is increased by 1 second."
+   "en": "Finishing a reload 5.2 seconds after a Precision Kill or 3 kills within ? seconds of each reduces Firing Delay by 30% for [enh]7 seconds.\nBuff is removed on stow.\n[enh] Buff duration is increased by 1 second."
   }
  },
  "626115084": {
@@ -2237,6 +2247,11 @@
    "en": "Press [Heavy Attack] immediately after landing 3 Light Attacks to perform an overhead strike, dealing [pve]689 [pvp][?] damage followed by 3 additional ticks of [pve]417 [pvp][?] damage each.\n**With Impact Core Equipped:** Blade Melee Hits apply elemental effects matching your subclass:\n• [Arc] Grants x1 Bolt Charge\n• [Solar] 25? Scorch (35? with [Solar]Ember of Ashes)\n• [Void] Weakens for 6 seconds\n• [Stasis] 40 Slow for 1? second (2? with [Stasis]Whisper of Durance)\n• [Strand] Severs for 10 seconds (15 with [Strand]Thread of Continuity)"
   }
  },
+ "642688932": {
+  "hash": 642688932,
+  "name": "Elliptical Orbit",
+  "type": "Weapon Trait Origin"
+ },
  "647617635": {
   "hash": 647617635,
   "name": "Memento Mori",
@@ -2245,6 +2260,14 @@
   "type": "Weapon Frame Exotic",
   "descriptions": {
    "en": "Counts as a \"Dealer's Choice\" origin trait weapon, but does not benefit from the trait itself.\nGrants Radar while Aiming Down Sights.\nFinishing a reload within 3.6 seconds of a kill grants 6 'Memento Mori' shots, each dealing [pve]68% [pvp][29%] increased damage.\nStowing the weapon removes the buff."
+  }
+ },
+ "654512643": {
+  "hash": 654512643,
+  "name": "Gear Shift",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Finishing a reload within ? seconds of a Weapon Kill, or becoming [Arc]Amplified, grants 1 stack of 'Gear Shift' for 15 seconds. Maximum of 5 stacks.\nGrants 15%|20%|25%|30%|35% increased damage at 1|2|3|4|5 stacks.\nBuff can be triggered while stowed and refreshed with each new application of [Arc]Amplified."
   }
  },
  "656200654": {
@@ -2456,7 +2479,7 @@
   "name": "Jolting Feedback",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: [enh]17 | [Arc]13\n• Machine Guns: [enh]14 | [Arc]11\n• Auto Rifles: [enh]14 | [Arc]11\n• Pulse Rifles: [enh]13 | [Arc]9\n• Sidearms: [enh]9 | [Arc]7\n• Rocket Pulse Rifle: [enh]7 | [Arc]5\n• Scout Rifles, Special Ammo Hand Cannons: [enh]6 | [Arc]4\n• Glaives, Linear Fusion Rifles: [enh]3 | [Arc]3\n• Rocket Sidearm: [enh]3 | [Arc]2\n• Bows, Grenade Launchers: [enh]2 | [Arc]2\n[enh] Number of Hits required while not [Arc]Amplified is decreased by 1."
+   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: [enh]17 | [Arc]13\n• Machine Guns: [enh]14 | [Arc]11\n• Auto Rifles: [enh]14 | [Arc]11\n• Pulse Rifles: [enh]13 | [Arc]9\n• Sidearms: [enh]9 | [Arc]7\n• Rocket Pulse Rifle: [enh]7 | [Arc]5\n• Scout Rifles, Hand Cannons: [enh]5 | [Arc][enh]3\n• Swords: [enh]5 | [Arc][enh]4\n• Glaives, Linear Fusion Rifles: [enh]3 | [Arc]3\n• Rocket Sidearm, Sniper Rifle?: [enh]3 | [Arc]2\n• Bows, Grenade Launchers: [enh]2 | [Arc]2\n• Aggressive Frame Fusion Rifle?: [enh]2|1[Arc]\n[enh] Number of Hits required while not [Arc]Amplified is decreased by 1."
   }
  },
  "721001747": {
@@ -2534,7 +2557,7 @@
   "name": "Disorienting Grenades",
   "type": "Weapon Perk",
   "descriptions": {
-   "en": "Passively grants -200 Blast Radius,  25% decreased damage, and 15% decreased detonation radius.\nEnemies within 6 meters of the explosion are disoriented for 4.5 seconds. Disorient radius cannot be increased using other perks.\n[Champions and Bosses](https://url.d2clarity.com/combatants) are unaffected by Disorient.\n(Disorient is effectively the equivalent of [Arc]Arc Blind without any of the elemental synergies and anti-champion benefits)\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast."
+   "en": "Passively grants -200 Blast Radius, 25% decreased damage, and 15% decreased detonation radius.\nEnemies within 6 meters of the explosion are disoriented for 4.5 seconds. Disorient radius cannot be increased using other perks.\n[Champions and Bosses](https://url.d2clarity.com/combatants) are unaffected by Disorient.\n(Disorient is effectively the equivalent of [Arc]Arc Blind without any of the elemental synergies and anti-champion benefits)\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast."
   }
  },
  "745965939": {
@@ -2697,6 +2720,11 @@
    "en": "Full Auto. Deeper ammo reserves. Slightly faster reload when magazine is empty."
   }
  },
+ "816963252": {
+  "hash": 816963252,
+  "name": "Heretical Behavior",
+  "type": "Weapon Trait Origin"
+ },
  "818149482": {
   "hash": 818149482,
   "name": "Finality's Auger Catalyst",
@@ -2825,6 +2853,11 @@
    "en": "Weapon Kills grant 100 Handling and a 0.825x Handling Animation Duration Multiplier to all weapons for [enh]9.5 seconds.\nAdditional kills while the perk is active refresh the duration to 6.5 seconds.\n[enh] Initial Buff Duration is increased by 1 second."
   }
  },
+ "843406310": {
+  "hash": 843406310,
+  "name": "Carrion Munitions",
+  "type": "Weapon Trait Origin"
+ },
  "844190854": {
   "hash": 844190854,
   "name": "Lightning Seeker",
@@ -2874,7 +2907,7 @@
   "name": "One for All",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for [enh]11 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for [enh]11 seconds. Does not require Direct Hits.\nBuff duration cannot be refreshed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "861489047": {
@@ -2954,7 +2987,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "883550427": {
@@ -3174,7 +3207,7 @@
   "name": "Advanced Reflexes",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Upon Aiming Down Sights or Guarding within 1 second of receiving damage:\nGrants 30 Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds.\nBuff duration cannot be refreshed."
+   "en": "Upon Aiming Down Sights or Guarding within 1 second of receiving damage:\n• 5% Increased Damage\n• 30 Mobility\n• 40 Handling\n• 35 Charge Rate (Swords) for 7.5 seconds.\nBuff duration cannot be refreshed."
   }
  },
  "930759851": {
@@ -3246,7 +3279,7 @@
   "name": "Impulse Amplifier",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Passively grants 20 Reload Speed and 15% decreased Reload Animation Duration (20% for Rocket Launchers).\nPassively increases Projectile Velocity based on Weapon Archetype:\n• Rocket Launchers: 10%\n• Support-Frame Auto Rifles: 15%\n• Micro-Missile Sidearms: 25%"
+   "en": "Passively grants 20 Reload Speed and 15% decreased Reload Animation Duration (20% for Rocket Launchers).\nPassively increases Projectile Velocity based on Weapon Archetype:\n• Rocket Launchers: 10%\n• Support-Frame Auto Rifles: 15%\n• Micro-Missile Frame Weapons: 25%"
   }
  },
  "953234331": {
@@ -3374,7 +3407,7 @@
   "name": "Attrition Orbs",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants [enh]1.1% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits.\n[enh] Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%)."
+   "en": "Scoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants [enh]1.1% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Rocket Launchers: 3 hits\n• Wave-Frame Grenade Launchers: 4 hits\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits.\n[enh] Spawned Orbs grant 37.5?% more Super Energy (0.8%⁠🠚⁠1.1?⁠%)."
   }
  },
  "986191425": {
@@ -3394,6 +3427,11 @@
   "descriptions": {
    "en": "Grants the following for 5 seconds upon finishing a Reload within 3.6 seconds of a Weapon Kill:\n• 20 Aim Assist\n• ? ADS Handling\n• ?% decreased Accuracy Cone Growth\n[enh] Buff Duration is increased."
   }
+ },
+ "993575936": {
+  "hash": 993575936,
+  "name": "Loss",
+  "type": "Weapon Trait Origin"
  },
  "996573084": {
   "hash": 996573084,
@@ -3570,25 +3608,9 @@
  "1047830412": {
   "hash": 1047830412,
   "name": "Full Choke",
-  "stats": {
-   "PVE Damage": [
-    {
-     "active": {
-      "multiplier": [ 0.924 ]
-     }
-    }
-   ],
-   "PVP Damage": [
-    {
-     "active": {
-      "multiplier": [ 0.924 ]
-     }
-    }
-   ]
-  },
   "type": "Weapon Perk",
   "descriptions": {
-   "en": "While aiming-down-sights:\nDecreases Shotgun Pellet Spread by 3.75%\nReduces Precision Damage by 7.6%"
+   "en": "While Aiming Down Sights:\n• Decreases Shotgun Pellet Spread by 5%\n• Reduces Precision Multiplier by 7.6% (1.1078x🠚1.0294x)"
   }
  },
  "1048183818": {
@@ -4050,7 +4072,7 @@
   "name": "Lasting Impression",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Passively grants [enh]55 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 25% increased Explosive Damage.\n[enh] Grants 5 more Blast Radius passively."
+   "en": "Passively grants [enh]55 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 35% increased Explosive Damage.\n[enh] Grants 5 more Blast Radius passively."
   }
  },
  "1168162263": {
@@ -4058,7 +4080,7 @@
   "name": "Outlaw",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds.\nBuff is removed on stow."
+   "en": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds.\nBuff is removed on stow."
   }
  },
  "1170405455": {
@@ -4189,7 +4211,7 @@
   "name": "Closing Time",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased  Handling Animation Duration\n• 5?% to 10?% decreased Accuracy Cone Size\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up."
+   "en": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased Handling Animation Duration\n• 5?% to 10?% decreased Accuracy Cone Size\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up."
   }
  },
  "1195158366": {
@@ -4320,7 +4342,7 @@
   "name": "All-Star",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Picking up a [special]Special ammo brick refills the magazine and grants 100 Reload and [pve]35% [pvp][15%] increased damage for 6 seconds. [heavy]Heavy ammo bricks grants the buff for 9 seconds.\nTimer only begins upon readying the weapon."
+   "en": "Picking up a [special]Special ammo brick refills the magazine and grants 100 Reload and [pve]35% [pvp][15%] increased damage for 6 seconds. [heavy]Heavy ammo bricks grants the buff for 9 seconds.\nTimer only decreases while the weapon is readied, and remains paused while stowed."
   }
  },
  "1234111636": {
@@ -4466,7 +4488,7 @@
   "itemName": "Revision Zero",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Grants the Outlaw trait:\nPrecision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds.\nBuff is removed on stow."
+   "en": "Grants the Outlaw trait:\nPrecision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds.\nBuff is removed on stow."
   }
  },
  "1266604956": {
@@ -4499,7 +4521,7 @@
   "name": "Cluster Bomb",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Rocket detonations release 8 Cluster Bombs.\nEach Cluster Bomb deals up to [pve]150  [pvp][11] damage in a 4 meter radius."
+   "en": "Rocket detonations release 8 Cluster Bombs.\nEach Cluster Bomb deals up to [pve]150 [pvp][11] damage in a 4 meter radius."
   }
  },
  "1281216113": {
@@ -4776,7 +4798,7 @@
   "name": "Outlaw",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for [enh]7 seconds.\nBuff is removed on stow.\n[enh] Buff duration is increased by 1 second."
+   "en": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for [enh]7 seconds.\nBuff is removed on stow.\n[enh] Buff duration is increased by 1 second."
   }
  },
  "1354429876": {
@@ -4810,7 +4832,7 @@
   "name": "Gutshot Straight",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "While Aiming Down Sights:\n• Increased Body Shot damage\n• 20% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot damage increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%"
+   "en": "While Aiming Down Sights:\n• Increased Body Shot damage\n• 15% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot damage increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%"
   }
  },
  "1370847713": {
@@ -4984,7 +5006,7 @@
   "name": "Reservoir Burst",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Passively grants 30 Magazine Size stat. (Identical to a Backup Mag mod)\nWhile Magazine is at or above maximum capacity:\nGrants 25% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\nExplosions inherit the weapon's element and [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). Explosions triggered with Linear Fusion Rifle kills deal an additional 30% increased damage."
+   "en": "Passively grants 30 Magazine Size stat. (Identical to a Backup Mag mod)\nWhile Magazine is at or above maximum capacity:\nGrants 30% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius.\nExplosions inherit the weapon's element and [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). Explosions triggered with Linear Fusion Rifle kills deal an additional 30% increased damage."
   }
  },
  "1428297954": {
@@ -5132,7 +5154,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "1484442054": {
@@ -5186,7 +5208,7 @@
   "name": "Supercharged Magazine",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Refills 5% of the magazine every 1.5 seconds while [Arc]Amplified.\nActivating [Arc]Speed Booster increases this rate to once every 0.25 seconds, and allows the perk to overfill the magazine up to double its base capacity."
+   "en": "Refills 5% of the magazine (rounded up) every 1.5 seconds while [Arc]Amplified.\nActivating [Arc]Speed Booster increases this rate to once every 0.25 seconds, and allows the perk to overfill the magazine up to double its base capacity."
   }
  },
  "1513013523": {
@@ -5222,7 +5244,7 @@
   "name": "Tap the Trigger",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Starting to fire the weapon grants the following benefits for [enh]0.76 seconds:\n• 40 Stability\n• 50% decreased Recoil\n• 10% decreased Accuracy Cone Size\nFusion Rifles only receive 25% of the benefits.\n[Controller-Only] Weapon fires the instant trigger pressure is applied.\n[enh] Stronger Effect. Duration is increased by 0.16 seconds."
+   "en": "Firing grants 'Tap The Trigger' for [enh]0.76 seconds, providing the following benefits:\n• 40 Stability\n• 50% decreased Recoil\n• 10% decreased Accuracy Cone Size\nFusion Rifles only receive 25% of the benefits.\nBuff cannot be refreshed until Automatic Weapons stop firing, or until the next burst.\n[Controller-Only] Weapon fires the instant trigger pressure is applied.\n[enh] Stronger Effect. Duration is increased by 0.16 seconds."
   }
  },
  "1523832109": {
@@ -5264,7 +5286,7 @@
   "name": "Outlaw",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds.\nBuff is removed on stow."
+   "en": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds.\nBuff is removed on stow."
   }
  },
  "1530804125": {
@@ -5495,6 +5517,11 @@
    "en": "Upon damaging 3 Separate Enemies within 3 seconds of each, for 10 seconds:\n• 35 Handling and Reload Speed\n• 10 Stability and Range\n• 5% increased Damage Falloff Distance\n• 0.95x Reload Duration Multiplier\nBuff duration cannot be refreshed."
   }
  },
+ "1588586136": {
+  "hash": 1588586136,
+  "name": "Winterized Gear",
+  "type": "Weapon Trait Origin"
+ },
  "1588595445": {
   "hash": 1588595445,
   "name": "Counterbalance Stock",
@@ -5529,7 +5556,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "1600092898": {
@@ -6069,7 +6096,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for [enh]5 seconds.\nBuff is removed if you stop blocking or if Weapon Energy runs out.\n[enh] Buff Duration is increased by 1? second."
+   "en": "Blocking damage with this weapon increases movement speed while Blocking by 25?% for [enh]5 seconds.\nBuff is removed when you stop blocking or if Glaive/Sword Energy runs out.\n[enh] Buff Duration is increased by 1? second."
   }
  },
  "1739861752": {
@@ -6258,6 +6285,11 @@
    "en": "Grants the following to [Stasis]Stasis Weapons 1 second after readying them:\n• 5|8|10 Aim Assist with 1|2|3 Mods equipped\n• 0.9x|0.85x|0.8x Accuracy Cone Size\n• 0.85x|0.75x|0.7x ADS Animation Duration Multiplier"
   }
  },
+ "1807646319": {
+  "hash": 1807646319,
+  "name": "Nanotech Tracer Missiles",
+  "type": "Weapon Trait Origin"
+ },
  "1817649409": {
   "hash": 1817649409,
   "name": "Aggressive Burst",
@@ -6381,7 +6413,7 @@
   "itemName": "The Bombardiers",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Class Ability usage drops a Parting Gift that explodes after 1.5 seconds, dealing [pve]440 [pvp][120] damage over a 7.5 meter radius. Detonates instantly on contact with a surface or an enemy.\nParting Gift applies an additional effect based on the element of your equipped Super Ability:\n• [Arc]Arc:  Disorient (not Blind) for [pve]7 [pvp][3] seconds\n• [Solar]Solar: 40 [Solar]Scorch (60 with [Solar]Ember of Ashes)\n• [Stasis]Stasis:  [pve]40 [pvp][20] [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds ([pve]8 [pvp][2] seconds with Whisper of Durance)\n• [Void]Void: ['Lite'](https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit?gid=263629622#rangeid=1218524482) [Void]Suppression for [pve]9 [pvp][7] seconds\n• [Strand]Strand: [Strand]Sever for 10 seconds (15 with [Strand]Thread of Continuity)\nLite [Void]Suppression does NOT:\n• Disorient PVE Combatants\n• [Void]Suppress Players or Hive Lightbearers while they are Transcending or are in their Super\n• Activate [Void]Echo of Domineering or Loose Change"
+   "en": "Class Ability usage drops a Parting Gift that explodes after 1.5 seconds, dealing [pve]440 [pvp][120] damage over a 7.5 meter radius. Detonates instantly on contact with a surface or an enemy.\nParting Gift applies an additional effect based on the element of your equipped Super Ability:\n• [Arc]Arc: Disorient (not Blind) for [pve]7 [pvp][3] seconds\n• [Solar]Solar: 40 [Solar]Scorch (60 with [Solar]Ember of Ashes)\n• [Stasis]Stasis: [pve]40 [pvp][20] [Stasis]Slow Stacks for [pve]4 [pvp][1.5] seconds ([pve]8 [pvp][2] seconds with Whisper of Durance)\n• [Void]Void: ['Lite'](https://docs.google.com/spreadsheets/d/1i1KUwgVkd8qhwYj481gkV9sZNJQCE-C3Q-dpQutPCi4/edit?gid=263629622#rangeid=1218524482) [Void]Suppression for [pve]9 [pvp][7] seconds\n• [Strand]Strand: [Strand]Sever for 10 seconds (15 with [Strand]Thread of Continuity)\nLite [Void]Suppression does NOT:\n• Disorient PVE Combatants\n• [Void]Suppress Players or Hive Lightbearers while they are Transcending or are in their Super\n• Activate [Void]Echo of Domineering or Loose Change"
   }
  },
  "1847129788": {
@@ -6521,7 +6553,7 @@
   "name": "Tap the Trigger",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Starting to fire the weapon grants the following benefits for 0.6 seconds:\n• 40 Stability\n• 50% decreased Recoil\n• 10% decreased Accuracy Cone Size\nFusion Rifles only receive 25% of the benefits.\n[Controller-Only] Weapon fires the instant trigger pressure is applied."
+   "en": "Firing grants 'Tap The Trigger' for 0.6 seconds, providing the following benefits:\n• 40 Stability\n• 50% decreased Recoil\n• 10% decreased Accuracy Cone Size\nFusion Rifles only receive 25% of the benefits.\nBuff cannot be refreshed until Automatic Weapons stop firing, or until the next burst.\n[Controller-Only] Weapon fires the instant trigger pressure is applied."
   }
  },
  "1891463783": {
@@ -6591,7 +6623,7 @@
   "name": "Full Court",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further.\n[enh] Passively grants 5 Blast Radius."
+   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 35% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further.\n[enh] Passively grants 5 Blast Radius."
   }
  },
  "1906137414": {
@@ -7085,6 +7117,14 @@
    "en": "Grants 20 Stability, 60 Handling, and 60 Reload Speed while Grenade, Melee, and Class Abilities are all uncharged.\nSwords receive 50 Charge Rate and 40 Guard Endurance instead."
   }
  },
+ "2054520291": {
+  "hash": 2054520291,
+  "name": "Lucky Shot",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Finishing a reload within ? seconds of a Precision Kill grants 'Lucky Shot Ready'.\nScoring a Precision Hit while you have Lucky Shot Ready refills the magazine by 1 from reserves and begins a 7 second timer. Additional precision hits during this timer continue to refill the magazine from reserves."
+  }
+ },
  "2057080438": {
   "hash": 2057080438,
   "name": "Meaning-Making",
@@ -7184,7 +7224,7 @@
   "name": "Cluster Bomb",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Rocket detonations release 8 Cluster Bombs.\nEach Cluster Bomb deals up to [enh][pve]165  [enh][pvp][12.1] damage in a 4 meter radius.\n[enh] Cluster Bomb damage is increased by 10%."
+   "en": "Rocket detonations release 8 Cluster Bombs.\nEach Cluster Bomb deals up to [enh][pve]165 [enh][pvp][12.1] damage in a 4 meter radius.\n[enh] Cluster Bomb damage is increased by 10%."
   }
  },
  "2094761202": {
@@ -7378,7 +7418,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "2171805903": {
@@ -7602,7 +7642,7 @@
   "name": "Butterfly",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Aiming Down Sights for [enh]1.4 seconds without firing causes your next kill to trigger an explosion matching the weapon's element with a ? meter radius.\nTimer starts as soon as ADS input is pressed. Unscoping immediately removes the buff.\n[enh] Activation time is decreased by 0.1 seconds."
+   "en": "Aiming Down Sights for [enh]1.4 seconds without firing causes your next kill to trigger an explosion matching the weapon's element within an 8 meter radius, experiencing a maximum of 30% damage falloff.\nTimer starts as soon as ADS input is pressed. Unscoping immediately removes the buff.\n[enh] Activation time is decreased by 0.1 seconds."
   }
  },
  "2217963031": {
@@ -7929,6 +7969,14 @@
    "en": "Grants 20|40|50 Ammo Generation stat to [Strand]Strand Weapons with 1|2|3 Mods equipped.\nSwords receive 20|30|35 Ammo Capacity Stat instead (these values are the equivalent of having Hungry Edge, Backup Mag, or Enduring Blade equipped respectively).\nCurrently bugged and does not work with Swords."
   }
  },
+ "2305480722": {
+  "hash": 2305480722,
+  "name": "Mega Kill Clip",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Finishing a reload within ? seconds of a Weapon Kill grants 40% increased damage for a variable duration based on the number of kills achieved before reloading, up to a maximum of 20 seconds.\nDuration is calculated as 3 + (2 * Number of Kills) seconds long. Reloading after scoring additional weapon kills adds to this timer and can extend its duration."
+  }
+ },
  "2305736470": {
   "hash": 2305736470,
   "name": "Kinetic Reserves",
@@ -8007,6 +8055,11 @@
    "en": "While Aiming Down Sights with Kinetic Weapons:\nGrants 25%|30%|35% Flinch Resistance with 1|2|3 Mods equipped.\nStacks multiplicatively with other Flinch Resistance sources."
   }
  },
+ "2327629476": {
+  "hash": 2327629476,
+  "name": "Forge's Kin",
+  "type": "Weapon Trait Origin"
+ },
  "2333607307": {
   "hash": 2333607307,
   "name": "Impetus",
@@ -8024,7 +8077,7 @@
   "itemName": "Fortune's Favor",
   "type": "Armor Trait Exotic",
   "descriptions": {
-   "en": "Scoring a Weapon Kill while at Full HP or upon being out of combat for [pve]4.5 [pvp][15] seconds continuously generates [pve]6.6 [pvp][1.1] [Void]Void Overshield HP per second until you re-enter combat.\nGrants the following while any Overshield is active:\n• 5% Decreased Accuracy Cone Size\n• 35 Stability\n• 35 Handling\n• 15% increased weapon damage against Combatants (20% for Heat-Based weapons)\nWhile any Overshield is active, scoring a kill enables 'Hasty Escape'. Hasty Escape activates upon the depletion of your Overshield, granting 30 Mobility for 5 seconds."
+   "en": "Scoring a Weapon Kill while at Full HP or upon being out of combat for [pve]4.5 [pvp][15] seconds continuously generates [pve]6.6 [pvp][1.1] [Void]Void Overshield HP per second until you re-enter combat.\nGrants the following while any Overshield is active:\n• 5% Decreased Accuracy Cone Size\n• 25 Stability\n• 25 Handling\n• 15% increased weapon damage against Combatants (20% for Heat-Based weapons)\nWhile any Overshield is active, scoring a kill enables 'Hasty Escape'. Hasty Escape activates upon the depletion of your Overshield, granting 30 Mobility for 5 seconds."
   }
  },
  "2353477480": {
@@ -8174,7 +8227,7 @@
   "name": "Focused Fury",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for [enh]12 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Scoring 35% of the Base Magazine Capacity as Precision Hits grants 25% increased damage for [enh]12 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "2405598968": {
@@ -8345,6 +8398,14 @@
   "type": "Weapon Trait",
   "descriptions": {
    "en": "Finishing a reload within 3.6 seconds of scoring 1|2|3 Weapon Kills within 3.5 seconds of each grants 17%|33%|50% increased damage for 5 seconds.\nBuff is overwritten every time it is triggered and is removed on stow."
+  }
+ },
+ "2458610193": {
+  "hash": 2458610193,
+  "name": "Light Touch",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "While [Arc]Amplified, [Solar]Radiant, or [Void]Devour is active:\n• ? Handling\n• ? Reload Speed\n• ?% decreased Reload Animation Duration\n• ?% decreased ADS Duration"
   }
  },
  "2459015849": {
@@ -8634,7 +8695,7 @@
   "name": "Box Breathing",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Aiming Down Sights for 1.5 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• 40% increased precision damage (30% for [heavy]Heavy Ammo Sniper Rifles)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nThe precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
+   "en": "Aiming Down Sights for 1.5 seconds without firing grants the following for a single shot:\n• 10% increased Aim Assist Falloff Distance\n• 40% increased precision damage (35% for [primary]Scout Rifles, 30% for [heavy]Heavy Ammo Sniper Rifles)\nTimer starts as soon as the ADS input is pressed. Unscoping immediately removes the buff.\nFor glaives (Greasy Luck), the projectile must strike the target's critical hitbox in order to recieve the 40% [pvp][35%] damage bonus."
   }
  },
  "2562645296": {
@@ -8650,7 +8711,7 @@
   "name": "Collective Action",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Elemental Pickup Interactions grant [pve]20% [pvp][10%] increased damage for [enh]8 seconds. Can be activated while stowed.\nAdditional Pickup Interactions extend the duration by 7 seconds up to the maximum of 12 seconds.\nElemental Pickup Interactions:\n• Throwing [Strand]Tangles (or Elemental Orbs)\n• Collecting [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, or [Void]Void Breaches\nDoes not trigger with [Stasis]Stasis Shards generated from Facet of Awakening or Facet of Command.\n[enh] Initial buff duration is increased by 1 second."
+   "en": "Elemental Pickup Interactions grant [pve]🡅33% [pvp][🡅11%] increased damage for a variable duration based on the pickup. Can be activated while stowed.\n[Arc]Ionic Traces, [Stasis]Stasis Shards, and [Strand]Tangle Detonations grant the buff for 4 seconds. Throwing a held [Strand]Tangle grants 4 additional seconds. [Solar]Firesprites and [Void]Void Breaches grant the buff for 8 seconds.\nAdditional Pickups can extend the duration up to the maximum of 16 seconds.\nElemental Pickup Interactions:\n• Destroying a [Strand]Tangle (or Elemental Orbs), either by shooting or throwing.\n• Collecting [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, or [Void]Void Breaches\nDoes not trigger with [Stasis]Stasis Shards generated from Facet of Awakening or Facet of Command.\n[enh] Damage is increased by 10%. (30%⁠🠚⁠33%)"
   }
  },
  "2564164194": {
@@ -8668,7 +8729,7 @@
   "name": "Head Rush",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Upon standing up after crouching for 2 seconds:\nGrants ? Handling and 10 Reload Speed for 5 seconds."
+   "en": "Upon standing up after crouching for 2 seconds:\nGrants 30 Handling, 30 Reload Speed, and 15% Increased Damage to Hive Combatants for 5 seconds."
   }
  },
  "2565885237": {
@@ -8734,7 +8795,7 @@
   "itemName": "Outbreak Perfected",
   "type": "Weapon Trait Exotic",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n• Scout Rifles: Precision: 8.66%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent."
   }
  },
  "2578928835": {
@@ -9964,7 +10025,7 @@
   "itemName": "Slayer's Fang",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Grants the Cascade Point trait:\nAfter scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nGrants the 'Cascade Point Ready' buff for 5 seconds.\nReadying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles: 17.5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
+   "en": "Grants the Cascade Point trait:\nAfter scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nReadying this weapon reduces its Firing Delay for 2.5 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nPrecision Hits requried per weapon archetype:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits\n• Hand Cannons, Scout Rifles: 4 hits\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits"
   }
  },
  "2883096194": {
@@ -10010,7 +10071,7 @@
   "name": "Full Court",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 25% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further."
+   "en": "Starts linearly increasing Detonation and Burn (DoT) damage 0.2 seconds after the grenade projectile is fired.\nReaches maximum strength after 1.1 seconds at a 35% damage increase.\nThe damage increase is finalized at the point of detonation and any lingering effects left will not increase it further."
   }
  },
  "2889515627": {
@@ -10018,7 +10079,7 @@
   "name": "Adagio",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Weapon Kills grant the following for [enh]8 seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\nBows and Shotguns only receive a 20% damage increase. Buff is removed on stow.\n[enh] Buff duration is increased by 1 second."
+   "en": "Weapon Kills grant the following for [enh]8 seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\nHand Cannons only recieve a 27% damage increase. Buff is removed on stow.\n[enh] Buff duration is increased by 1 second."
   }
  },
  "2890807135": {
@@ -10054,7 +10115,7 @@
   "name": "Focused Fury",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for 11 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks."
+   "en": "Scoring 35% of the Base Magazine Capacity as Precision Hits grants 25% increased damage for 11 seconds.\nStowing or Reloading the weapon resets the Precision Hit counter. The buff remains active while stowed.\nDoes not buff the Splash/Explosive damage elements of other perks."
   }
  },
  "2896748467": {
@@ -10064,6 +10125,11 @@
   "descriptions": {
    "en": "Weapon Kills grant a Stack of Killing Tally. Maximum of 3 Stacks.\nStowing or reloading the weapon removes all Stacks.\nDamage increase at 1|2|3 Stacks:\n[pve]• PVE: 10% | 20% | 30%\n[pvp]• PVP: 5% | 10% | 15%\n[enh] Passively grants 10 Magazine Stat. (Identical to Tactical Mag)"
   }
+ },
+ "2897898513": {
+  "hash": 2897898513,
+  "name": "Veteran's Wisdom",
+  "type": "Weapon Trait Origin"
  },
  "2898218424": {
   "hash": 2898218424,
@@ -10378,7 +10444,7 @@
   "name": "Physic",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Triggering 'Support Frame Boost' by healing allies with the weapon grants [Solar]Restoration x1 for 4 seconds (6 with [Solar]Ember of Solace) to the user and the targeted ally."
+   "en": "Triggering 'Support Frame Boost' by healing allies with the weapon grants its element-matching effect to the user as well as the targeted ally.\nEffect granted based on Weapon Element:\n[Solar]Solar: Restoration x1 for 4 seconds (6 with [Solar]Ember of Solace)\n[Arc]Arc: Amplified for 5 seconds\n[Stasis]Stasis: x2 Frost Armor for 5 seconds\n[Strand]Strand: Releases 4 Unraveling Threads\n[Void]Void: Grants a ?HP Void Overshield for ? Seconds"
   }
  },
  "2982306509": {
@@ -10488,6 +10554,11 @@
    "en": "Consecutively missing multiple times within 2.5 seconds of each grants 25? Stability for 2.5 seconds.\nBuff is removed 1? second after scoring a Hit. Missing again refreshes the buff duration.\nMisses in a row required:\n• Auto Rifles, Submachine Guns: 10\n• Pulse Rifles: 9\n• Hand Cannons: 4\n• Linear Fusion Rifles: 2"
   }
  },
+ "3018257738": {
+  "hash": 3018257738,
+  "name": "Carrion Munitions",
+  "type": "Weapon Trait Origin"
+ },
  "3020052176": {
   "hash": 3020052176,
   "name": "Webcatcher",
@@ -10529,7 +10600,7 @@
   "name": "Disorienting Grenades",
   "type": "Weapon Perk",
   "descriptions": {
-   "en": "Passively grants -200 Blast Radius,  25% decreased damage, and 15% decreased detonation radius.\nEnemies within 6 meters of the explosion are disoriented for 4.5 seconds. Disorient radius cannot be increased using other perks.\n[Champions and Bosses](https://url.d2clarity.com/combatants) are unaffected by Disorient.\n(Disorient is effectively the equivalent of [Arc]Arc Blind without any of the elemental synergies and anti-champion benefits)\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast."
+   "en": "Passively grants -200 Blast Radius, 25% decreased damage, and 15% decreased detonation radius.\nEnemies within 6 meters of the explosion are disoriented for 4.5 seconds. Disorient radius cannot be increased using other perks.\n[Champions and Bosses](https://url.d2clarity.com/combatants) are unaffected by Disorient.\n(Disorient is effectively the equivalent of [Arc]Arc Blind without any of the elemental synergies and anti-champion benefits)\nPlayers near the explosion briefly lose their HUD and have their screen distorted for up to ? seconds. Duration varies depending on the distance from the blast."
   }
  },
  "3034060702": {
@@ -10579,7 +10650,7 @@
   "name": "Desperado",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds.\nBuff is removed on stow."
+   "en": "Finishing a reload 5.2 seconds after a Precision Kill or 3 kills within ? seconds of each reduces Firing Delay by 30% for 6 seconds.\nBuff is removed on stow."
   }
  },
  "3048420653": {
@@ -10790,8 +10861,13 @@
   "name": "Outlaw",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds.\nBuff is removed on stow."
+   "en": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds.\nBuff is removed on stow."
   }
+ },
+ "3129239575": {
+  "hash": 3129239575,
+  "name": "Featherweight",
+  "type": "Weapon Trait Origin"
  },
  "3131590896": {
   "hash": 3131590896,
@@ -10802,6 +10878,11 @@
   "descriptions": {
    "en": "Scoring hits with Tracking Missiles grant one stack of 'Grenades Prepped'. Maximum of 3 stacks.\nHold [Reload] to switch the gun to Grenade Launcher mode, loading a grenade for each stack gained.\nGrenades deal [pve]1,201 [pvp][134] damage on impact in a 4 meter radius with no self-damage."
   }
+ },
+ "3132659494": {
+  "hash": 3132659494,
+  "name": "Unburied Treasure",
+  "type": "Weapon Trait Origin"
  },
  "3143051906": {
   "hash": 3143051906,
@@ -10877,7 +10958,7 @@
   "name": "Slideshot",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Sliding refills 15% of the Magazine (rounded up) and grants 20 Range and Stability for your next shot (of the burst) within 2.5 seconds.\n0.3 second cooldown after activation but can activate multiple times during a slide.  Buff is removed on stow."
+   "en": "Sliding refills 15% of the Magazine (rounded up) and grants 20 Range and Stability for your next shot (of the burst) within 2.5 seconds.\n0.3 second cooldown after activation but can activate multiple times during a slide. Buff is removed on stow."
   }
  },
  "3164944314": {
@@ -10924,6 +11005,14 @@
   "type": "Armor Mod General",
   "descriptions": {
    "en": "Increases the Maximum Number of Armor Charge Stacks you can hold from 3 to 4|5|6 with 1|2|3 Mods equipped."
+  }
+ },
+ "3182497402": {
+  "hash": 3182497402,
+  "name": "Dimensional Shift",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Collecting a [Void]Void Breach grants 'Dimensional Breach' until your next Weapon Kill.\nScoring a Weapon Kill while Dimensional Breach is active grants a 22.5 HP [Void]Void Overshield for 8 seconds (12 with [Void]Echo of Persistence) and begins a 5 second timer.\nAdditional weapon kills extend the timer back to 5 seconds."
   }
  },
  "3183537623": {
@@ -11201,7 +11290,7 @@
   "name": "All-Star",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Picking up a [special]Special ammo brick refills the magazine and grants 100 Reload and [pve]35% [pvp][15%] increased damage for [enh]7 seconds. [heavy]Heavy ammo bricks grants the buff for [enh]10 seconds.\nTimer only begins upon readying the weapon.\n[enh] Buff Duration is increased by 1 second."
+   "en": "Picking up a [special]Special ammo brick refills the magazine and grants 100 Reload and [pve]35% [pvp][15%] increased damage for [enh]7 seconds. [heavy]Heavy ammo bricks grants the buff for [enh]10 seconds.\nTimer only decreases while the weapon is readied, and remains paused while stowed.\n[enh] Buff Duration is increased by 1 second."
   }
  },
  "3252839262": {
@@ -11406,7 +11495,7 @@
   "name": "Collective Action",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Elemental Pickup Interactions grant [pve]20% [pvp][10%] increased damage for 7 seconds. Can be activated while stowed.\nAdditional Pickup Interactions extend the duration by 7 seconds up to the maximum of 12 seconds.\nElemental Pickup Interactions:\n• Throwing [Strand]Tangles (or Elemental Orbs)\n• Collecting [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, or [Void]Void Breaches\nDoes not trigger with [Stasis]Stasis Shards generated from Facet of Awakening or Facet of Command."
+   "en": "Elemental Pickup Interactions grant [pve]30% [pvp][10%] increased damage for a variable duration based on the pickup. Can be activated while stowed.\n[Arc]Ionic Traces, [Stasis]Stasis Shards, and [Strand]Tangle Detonations grant the buff for 4 seconds. Throwing a held [Strand]Tangle grants 4 additional seconds. [Solar]Firesprites and [Void]Void Breaches grant the buff for 8 seconds.\nAdditional Pickups can extend the duration up to the maximum of 16 seconds.\nElemental Pickup Interactions:\n• Destroying a [Strand]Tangle (or Elemental Orbs), either by shooting or throwing.\n• Collecting [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, or [Void]Void Breaches\nDoes not trigger with [Stasis]Stasis Shards generated from Facet of Awakening or Facet of Command."
   }
  },
  "3325390304": {
@@ -11652,7 +11741,7 @@
   "name": "Built to Blast",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants the following benefits while [Void]Void Overshield, [Stasis]Frost Armor, or [Strand]Woven Mail is active:\n• 30 Stability\n• ? Aim Assist\n• ?% Flinch Resistance\n[enh] Effect lingers for ? seconds once conditions are no longer met."
+   "en": "Grants the following benefits while [Void]Void Overshield, [Stasis]Frost Armor, or [Strand]Woven Mail is active:\n• 30 Stability\n• ? Aim Assist\n• ?% Flinch Resistance\n[enh] Effect lingers for 2 seconds once conditions are no longer met."
   }
  },
  "3422796781": {
@@ -12064,7 +12153,7 @@
   "name": "Tilting at Windmills",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for 4 seconds.\nBuff is removed if you stop blocking or if Weapon Energy runs out."
+   "en": "Blocking damage with this weapon increases movement speed while Blocking by 25?% for 4 seconds.\nBuff is removed when you stop blocking or if Glaive/Sword Energy runs out."
   }
  },
  "3528046508": {
@@ -12488,7 +12577,7 @@
   "name": "Adagio",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Weapon Kills grant the following for 7 seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\nBows and Shotguns only receive a 20% damage increase. Buff is removed on stow."
+   "en": "Weapon Kills grant the following for 7 seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\nHand Cannons only recieve a 27% damage increase. Buff is removed on stow."
   }
  },
  "3674673997": {
@@ -12617,7 +12706,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "3719974635": {
@@ -12725,7 +12814,7 @@
   "name": "Cascade Point",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nGrants the 'Cascade Point Ready' buff for 5 seconds.\nReadying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nActivation progress on Precision Hits:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%\n• Hand Cannons, Sidearms, Scout Rifles: 17.5%\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
+   "en": "After scoring a kill or multiple Precision Hits within 5 seconds of each with a different weapon:\nReadying this weapon reduces its Firing Delay for 2.5 seconds.\nFiring Delay is reduced by 30% on SMGs and Machine Guns and by 40% on other archetypes.\nPrecision Hits requried per weapon archetype:\n• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits\n• Hand Cannons, Scout Rifles: 4 hits\n• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits"
   }
  },
  "3754350707": {
@@ -12733,7 +12822,7 @@
   "name": "Psychohack",
   "type": "Weapon Trait Origin",
   "descriptions": {
-   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
+   "en": "Scoring multiple Hits on targets Exhausts them. Triggering it on Players makes them deal 10% less damage.\nExhaust duration cannot be refreshed.\nHit Requirements by Weapon Type:\n• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles\n• 7 Hits: Scout Rifles\n• 12 Hits: Sidearms\n• 13 Hits: Submachine Guns\n• 14 Hits: Fusion Rifles\n• 16 Hits: Auto Rifles"
   }
  },
  "3755070117": {
@@ -13037,7 +13126,7 @@
   "itemName": "Wolfsbane",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Grants the Attrition Orbs trait:\nScoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
+   "en": "Grants the Attrition Orbs trait:\nScoring multiple Hits against enemies within 5 seconds of each spawns an Orb of Power that grants 0.8% Super Energy.\nDoes not require Direct Hits. Hit counter persists through stow.\nHit requirements for activation:\n• Rocket Launchers: 3 hits\n• Wave-Frame Grenade Launchers: 4 hits\n• Bows: 5 Hits\n• Swords: 10 Hits\n• Area-Denial Grenade Launchers: 48? Hits\n• Other Grenade Launchers: 11 Hits\n• Others: 67% of Magazine Size rounded down + 2\nSupport Frame Auto Rifle healing round Hits on damaged allies count as 2 Hits."
   }
  },
  "3865920554": {
@@ -13075,8 +13164,13 @@
   "name": "Impulse Amplifier",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Passively grants [enh]25 Reload Speed and 15% decreased Reload Animation Duration (20% for Rocket Launchers).\nPassively increases Projectile Velocity based on Weapon Archetype:\n• Rocket Launchers: 10%\n• Support-Frame Auto Rifles: 15%\n• Micro-Missile Sidearms: 25%\n[enh] Reload Speed Bonus is increased by 5."
+   "en": "Passively grants [enh]25 Reload Speed and 15% decreased Reload Animation Duration (20% for Rocket Launchers).\nPassively increases Projectile Velocity based on Weapon Archetype:\n• Rocket Launchers: 10%\n• Support-Frame Auto Rifles: 15%\n• Micro-Missile Frame Weapons: 25%\n[enh] Reload Speed Bonus is increased by 5."
   }
+ },
+ "3879154694": {
+  "hash": 3879154694,
+  "name": "Eyes Up",
+  "type": "Weapon Trait Origin"
  },
  "3884127242": {
   "hash": 3884127242,
@@ -13103,6 +13197,11 @@
   "descriptions": {
    "en": "Scoring multiple Direct Hits against a target within 3 seconds of each emits 3 damaging shockwaves from its location at the time of activation. Hit counter persists through stow.\nShockwaves appear 0.25 seconds after scoring enough Hits and have a 1 second delay between each pulse. With Bows, the initial delay is decreased to 0.167 seconds.\nEach shockwave deals up to [pve]90 [pvp][20] damage in a 6 meter radius. Shockwaves deal 33.33% more damage when activated on [Miniboss or higher tier](https://url.d2clarity.com/combatants) PvE Combatants.\nShockwaves inherit Weapon Damage Buffs, the weapon's passive Kinetic Damage Bonus in PVE (10% on [primary]Primary, 15% on [special]Special), and its [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling). They also count as non-direct Hits with the weapon for other interactions.\nThe perk cannot be retriggered by anyone on a target until 2? seconds after the last shockwave.\nHits required for Activation:\n• Submachine Guns: 14\n• Auto Rifles: 12\n• Pulse Rifles: 11\n• Non-burst Sidearms: 8\n• Hand Cannons, Scout Rifles: 5\n• Bows, Sniper Rifles: 3\nFrames-specific Hit requirements:\n• High-Impact Auto Rifles: 9\n• Precision Hand Cannons and Precision Scout Rifles: 6\n• Aggressive (120 RPM) Hand Cannons: 4"
   }
+ },
+ "3892542595": {
+  "hash": 3892542595,
+  "name": "Ignoble Deeds",
+  "type": "Weapon Trait Origin"
  },
  "3894668351": {
   "hash": 3894668351,
@@ -13213,7 +13312,7 @@
   "name": "Lasting Impression",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Passively grants 50 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 25% increased Explosive Damage."
+   "en": "Passively grants 50 Blast Radius.\nRockets attach on impact and detonate after 3 seconds, dealing 35% increased Explosive Damage."
   }
  },
  "3927963100": {
@@ -13311,7 +13410,7 @@
   "itemName": "Alethonym",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Grants the One For All trait:\nScoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed."
+   "en": "Grants the One For All trait:\nScoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits.\nBuff duration cannot be refreshed."
   }
  },
  "3949068808": {
@@ -13329,7 +13428,7 @@
   "name": "Closing Time",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased  Handling Animation Duration\n• 5?% to 10?% decreased Accuracy Cone Size\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up.\n[enh] Stronger effect."
+   "en": "Grants linearly scaling benefits as the Magazine drops from 50% capacity to empty:\n• 10 to 20 Range\n• 30? to 50? Handling\n• 10-20% decreased Handling Animation Duration\n• 5?% to 10?% decreased Accuracy Cone Size\n[special]Special weapons only receive 50% of the benefits. Stats are rounded up.\n[enh] Stronger effect."
   }
  },
  "3966416502": {
@@ -13337,7 +13436,7 @@
   "name": "Jolting Feedback",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: 18 | [Arc]13\n• Machine Guns: 16 | [Arc]11\n• Auto Rifles: 15 | [Arc]11\n• Pulse Rifles: 14 | [Arc]9\n• Sidearms: 10 | [Arc]7\n• Rocket Pulse Rifle: 8 | [Arc]5\n• Scout Rifles, Special Ammo Hand Cannons: 7 | [Arc]4\n• Glaives, Linear Fusion Rifles: 4 | [Arc]3\n• Rocket Sidearm: 4 | [Arc]2\n• Bows, Grenade Launchers: 3 | [Arc]2"
+   "en": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply [Arc]Jolt.\nBeing [Arc]Amplified decreases the number of Hits required.\nHits needed to activate normally | while [Arc]Amplified:\n• Submachine Guns, Trace Rifles: 18 | [Arc]13\n• Machine Guns: 16 | [Arc]11\n• Auto Rifles: 15 | [Arc]11\n• Pulse Rifles: 14 | [Arc]9\n• Sidearms: 10 | [Arc]7\n• Rocket Pulse Rifle: 8 | [Arc]5\n• Scout Rifles, Hand Cannons: 7 | [Arc]6\n• Swords: 7 | [Arc]5\n• Glaives, Linear Fusion Rifles: 4 | [Arc]3\n• Rocket Sidearm, Sniper Rifle?: 4 | [Arc]2\n• Bows, Grenade Launchers: 3 | [Arc]2\n• Aggressive Frame Fusion Rifle?: 3|1[Arc]"
   }
  },
  "3967134106": {
@@ -13594,6 +13693,14 @@
    "en": "Landing 14 Hits or 7 Precision Hits within 3 seconds of each other, or scoring a kill, triggers a poison burst at the target's location in a 5 meter radius.\nPoison deals [pve]32.35 [pvp][5?] damage on the first tick, then increases in damage every [pve]0.52 [pvp][0.7] seconds for a total of [pve]19 [pvp][?] ticks over [pve]10 [pvp][?] seconds.\nPoison damage increases by 11% per tick for the first 14 ticks, then by an average of 41% per tick for the last 5 ticks, dealing [pve]1366 [pvp][?] damage over the entire duration.\nTargets that die to poison trigger another burst of poison around them. Cooldown of 2 seconds.\nPoison counts as weapon damage and benefits from all related buffs. Reapplying the poison resets it back to the first stack."
   }
  },
+ "4019266109": {
+  "hash": 4019266109,
+  "name": "Collective Demolition",
+  "type": "Weapon Trait",
+  "descriptions": {
+   "en": "Collecting an Elemental Pickup enables Weapon Damage to generate Grenade Ability energy per hit for 8 seconds.\n[Arc]Ionic Traces, [Stasis]Stasis Shards, and Shot [Strand]Tangles extend the timer by 4 seconds. [Solar]Firesprites, [Void]Void Breaches, and Thrown [Strand]Tangles extend the timer by 8 seconds.\nTimer can be extended to a maximum of 16 seconds.\nMelee energy granted by weapon type:\nSpreadshot HC: 0.5%\nBurst Sidearm: 0.78%\nFusion Rifle: 1.15%\nRocket Pulse: 1.95%\nSidearm: 2.34%\nScout: 3.34%\nRocket Launcher: 12.9%\nElemental Pickups include [Solar]Firesprites, [Arc]Ionic Traces, [Stasis]Stasis Shards, [Strand]Tangles, and [Void]Void Breaches."
+  }
+ },
  "4024170927": {
   "hash": 4024170927,
   "name": "Misdirection",
@@ -13635,7 +13742,7 @@
   "name": "Headseeker",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n[enh] Passively grants 5 Stability."
+   "en": "Dealing non-Precision Direct damage grants the following benefits for 0.55 seconds:\n• 20% increased Precision Bonus (complicated, see specific damage increases below)\n• 3% increased Aim Assist Cone size\nPrecision damage increases by weapon type/frame:\n• Pulse Rifles: Adaptive: 7.1%, Aggressive Burst: 10%, Heavy Burst: 9.5%, High-Impact: 8.74%, Lightweight: 6.3%, Rapid-Fire: 10.3%\n• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%\n• Scout Rifles: Precision: 8.66%\n[Bug] Heavy Burst Hand Cannons: 7% increased Weakspot damage.\nThe distinction between Weakspots and Critspots is complicated and we might write an explainer blog post about it eventually. For the purposes of PvP, the two are equivalent.\n[enh] Passively grants 5 Stability."
   }
  },
  "4045839491": {
@@ -13671,7 +13778,7 @@
   "name": "One for All",
   "type": "Weapon Trait",
   "descriptions": {
-   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed."
+   "en": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits.\nBuff duration cannot be refreshed."
   }
  },
  "4063561849": {
@@ -13679,7 +13786,7 @@
   "name": "Physic",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "Triggering 'Support Frame Boost' by healing allies with the weapon grants [Solar]Restoration x1 for [enh]5 seconds ([enh]7.5 with [Solar]Ember of Solace) to the user and the targeted ally.\n[enh] Buff duration is increased by 25%."
+   "en": "Triggering 'Support Frame Boost' by healing allies with the weapon grants its element-matching effect to the user as well as the targeted ally.\nEffect granted based on Weapon Element:\n[Solar]Solar: Restoration x1 for [enh]5 seconds ([enh]7.5 with [Solar]Ember of Solace)\n[Arc]Arc: Amplified for 5 seconds\n[Stasis]Stasis: x2 Frost Armor for 5 seconds\n[Strand]Strand: Releases 4 Unraveling Threads\n[Void]Void: Grants a ?HP Void Overshield for ? Seconds\n[enh] Buff duration is increased by 25%."
   }
  },
  "4067652714": {
@@ -14143,7 +14250,7 @@
   "name": "Gutshot Straight",
   "type": "Weapon Trait Enhanced",
   "descriptions": {
-   "en": "While Aiming Down Sights:\n• Increased Body Shot damage\n• [enh]15% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot damage increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n[enh] Reduces Auto Aim penalty by 33?% (20%⁠🠚⁠15%)."
+   "en": "While Aiming Down Sights:\n• Increased Body Shot damage\n• [enh]10% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)\nBody Shot damage increases:\n• Auto/Scout Rifle, Bow, Hand Cannon: 20%\n• Pulse/Trace Rifle, Sidearm, SMG: 10%\n[enh] Reduces Auto Aim penalty by 33?% (20%⁠🠚⁠15%)."
   }
  },
  "4204405032": {
@@ -14163,7 +14270,7 @@
   "itemName": "Barrow-Dyad",
   "type": "Weapon Catalyst Exotic",
   "descriptions": {
-   "en": "Grants the One For All trait:\nScoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits.\nBuff duration cannot be refreshed."
+   "en": "Grants the One For All trait:\nScoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits.\nBuff duration cannot be refreshed."
   }
  },
  "4204405034": {

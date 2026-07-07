@@ -427,7 +427,13 @@
     {
      "linesContent": [
       {
-       "text": "• 40% increased precision damage (30% for "
+       "text": "• 40% increased precision damage (35% for "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Scout Rifles, 30% for "
       },
       {
        "classNames": [ "heavy" ]
@@ -453,7 +459,13 @@
     {
      "linesContent": [
       {
-       "text": "The precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
+       "text": "For glaives (Greasy Luck), the projectile must strike the target's critical hitbox in order to recieve the 40% "
+      },
+      {
+       "text": "[PVP: 35%]"
+      },
+      {
+       "text": " damage bonus."
       }
      ]
     },
@@ -1277,7 +1289,7 @@
        "text": "Refills"
       },
       {
-       "text": " 5% of the magazine every 1.5 seconds while "
+       "text": " 5% of the magazine (rounded up) every 1.5 seconds while "
       },
       {
        "classNames": [ "arc" ]
@@ -1601,7 +1613,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -1678,7 +1690,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -4097,7 +4109,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can activate multiple times during a slide.  Buff is removed on stow."
+       "text": "0.3 second cooldown after activation but can activate multiple times during a slide. Buff is removed on stow."
       }
      ]
     },
@@ -4203,7 +4215,7 @@
     {
      "linesContent": [
       {
-       "text": "Aiming Down Sights for 1.5 seconds without firing causes your next kill to trigger an explosion matching the weapon's element with a ? meter radius."
+       "text": "Aiming Down Sights for 1.5 seconds without firing causes your next kill to trigger an explosion matching the weapon's element within an 8 meter radius, experiencing a maximum of 30% damage falloff."
       }
      ]
     },
@@ -5266,6 +5278,20 @@
     {
      "linesContent": [
       {
+       "text": "• Rocket Launchers: 3 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Wave-Frame Grenade Launchers: 4 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Bows: 5 Hits"
       }
      ]
@@ -5516,7 +5542,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "27.5% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius."
+       "text": "33% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius."
       }
      ]
     },
@@ -5559,6 +5585,10 @@
   "name": "Chain Bowstring",
   "itemHash": 2591746970,
   "itemName": "Leviathan's Breath"
+ },
+ "270582335": {
+  "hash": 270582335,
+  "name": "Noble Deeds"
  },
  "280464955": {
   "hash": 280464955,
@@ -6263,19 +6293,12 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for "
+       "text": "Readying this weapon reduces its Firing Delay for "
       },
       {
        "text": "",
@@ -6302,28 +6325,28 @@
     {
      "linesContent": [
       {
-       "text": "Activation progress on Precision Hits:"
+       "text": "Precision Hits requried per weapon archetype:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%"
+       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Sidearms, Scout Rifles: 17.5%"
+       "text": "• Hand Cannons, Scout Rifles: 4 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
+       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits"
       }
      ]
     },
@@ -6702,7 +6725,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -8561,7 +8584,7 @@
        "text": "refills"
       },
       {
-       "text": "  the Magazine from reserves."
+       "text": " the Magazine from reserves."
       }
      ]
     },
@@ -8841,6 +8864,10 @@
     }
    ]
   }
+ },
+ "415411839": {
+  "hash": 415411839,
+  "name": "Fail-deadly"
  },
  "422994787": {
   "hash": 422994787,
@@ -9702,6 +9729,13 @@
      "linesContent": [
       {
        "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Scout Rifles: Precision: 8.66%"
       }
      ]
     },
@@ -11086,7 +11120,14 @@
     {
      "linesContent": [
       {
-       "text": "Scoring multiple Weapon Kills within 10 seconds of each grants 6.25% increased Sprint Speed for 10 seconds."
+       "text": "Kills grant one stack of 'Gun And Run' for 10 ("
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": " 11) seconds. Maximum of 3 stacks. Stacks fall off one at a time."
       }
      ]
     },
@@ -11096,21 +11137,13 @@
     {
      "linesContent": [
       {
-       "text": "Activation progress by "
+       "text": "After sprinting for 0.75 seconds without a full magazine, consume one stack and "
       },
       {
-       "text": "Enemy Rank",
-       "link": "https://url.d2clarity.com/combatants"
+       "text": "refill"
       },
       {
-       "text": ":"
-      }
-     ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Minors: 34% | Players, Elites, and higher: 100%"
+       "text": " 20% magazine capacity every 0.85 seconds."
       }
      ]
     },
@@ -11120,7 +11153,17 @@
     {
      "linesContent": [
       {
-       "text": "Buff duration cannot be refreshed."
+       "text": "For bows, this trait instead grants a ?% Faster Draw Time for ? seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Provides no benefit to Swords."
       }
      ]
     }
@@ -12094,7 +12137,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -13563,7 +13606,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for "
+       "text": "Finishing a reload 5.2 seconds after a Precision Kill or 3 kills within ? seconds of each reduces Firing Delay by 30% for "
       },
       {
        "text": "",
@@ -14084,6 +14127,10 @@
    ]
   }
  },
+ "642688932": {
+  "hash": 642688932,
+  "name": "Elliptical Orbit"
+ },
  "647617635": {
   "hash": 647617635,
   "name": "Memento Mori",
@@ -14137,6 +14184,53 @@
      "linesContent": [
       {
        "text": "Stowing the weapon removes the buff."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "654512643": {
+  "hash": 654512643,
+  "name": "Gear Shift",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within ? seconds of a Weapon Kill, or becoming "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified, grants 1 stack of 'Gear Shift' for 15 seconds. Maximum of 5 stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Grants 15%|20%|25%|30%|35% increased damage at 1|2|3|4|5 stacks."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff can be triggered while stowed and refreshed with each new application of "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified."
       }
      ]
     }
@@ -15525,17 +15619,45 @@
     {
      "linesContent": [
       {
-       "text": "• Scout Rifles, Special Ammo Hand Cannons: "
+       "text": "• Scout Rifles, Hand Cannons: "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "6 | "
+       "text": "5 | "
       },
       {
        "classNames": [ "arc" ]
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "3"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Swords: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "5 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
       },
       {
        "text": "4"
@@ -15565,7 +15687,7 @@
     {
      "linesContent": [
       {
-       "text": "• Rocket Sidearm: "
+       "text": "• Rocket Sidearm, Sniper Rifle?: "
       },
       {
        "text": "",
@@ -15599,6 +15721,23 @@
       },
       {
        "text": "2"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Aggressive Frame Fusion Rifle?: "
+      },
+      {
+       "text": "",
+       "classNames": [ "enhancedArrow" ]
+      },
+      {
+       "text": "2|1"
+      },
+      {
+       "classNames": [ "arc" ]
       }
      ]
     },
@@ -15960,7 +16099,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants -200 Blast Radius,  25% decreased damage, and 15% decreased detonation radius."
+       "text": "Passively grants -200 Blast Radius, 25% decreased damage, and 15% decreased detonation radius."
       }
      ]
     },
@@ -16984,6 +17123,10 @@
    ]
   }
  },
+ "816963252": {
+  "hash": 816963252,
+  "name": "Heretical Behavior"
+ },
  "818149482": {
   "hash": 818149482,
   "name": "Finality's Auger Catalyst",
@@ -17574,6 +17717,10 @@
    ]
   }
  },
+ "843406310": {
+  "hash": 843406310,
+  "name": "Carrion Munitions"
+ },
  "844190854": {
   "hash": 844190854,
   "name": "Lightning Seeker",
@@ -17974,7 +18121,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "11 seconds.  Does not require Direct Hits."
+       "text": "11 seconds. Does not require Direct Hits."
       }
      ]
     },
@@ -18477,7 +18624,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -20020,7 +20167,28 @@
     {
      "linesContent": [
       {
-       "text": "Grants 30 Mobility, 30 Handling, and 20 Charge Rate (Swords) for 7.5 seconds."
+       "text": "• 5% Increased Damage"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 30 Mobility"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 40 Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 35 Charge Rate (Swords) for 7.5 seconds."
       }
      ]
     },
@@ -20309,7 +20477,7 @@
     {
      "linesContent": [
       {
-       "text": "• Micro-Missile Sidearms: 25%"
+       "text": "• Micro-Missile Frame Weapons: 25%"
       }
      ]
     }
@@ -21172,6 +21340,20 @@
     {
      "linesContent": [
       {
+       "text": "• Rocket Launchers: 3 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Wave-Frame Grenade Launchers: 4 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Bows: 5 Hits"
       }
      ]
@@ -21317,6 +21499,10 @@
     }
    ]
   }
+ },
+ "993575936": {
+  "hash": 993575936,
+  "name": "Loss"
  },
  "1000724343": {
   "hash": 1000724343,
@@ -22083,21 +22269,21 @@
     {
      "linesContent": [
       {
-       "text": "While aiming-down-sights:"
+       "text": "While Aiming Down Sights:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Decreases Shotgun Pellet Spread by 3.75%"
+       "text": "• Decreases Shotgun Pellet Spread by 5%"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "Reduces Precision Damage by 7.6%"
+       "text": "• Reduces Precision Multiplier by 7.6% (1.1078x🠚1.0294x)"
       }
      ]
     }
@@ -25244,7 +25430,7 @@
     {
      "linesContent": [
       {
-       "text": "Rockets attach on impact and detonate after 3 seconds, dealing 25% increased Explosive Damage."
+       "text": "Rockets attach on impact and detonate after 3 seconds, dealing 35% increased Explosive Damage."
       }
      ]
     },
@@ -25273,7 +25459,7 @@
     {
      "linesContent": [
       {
-       "text": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+       "text": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds."
       }
      ]
     },
@@ -26042,7 +26228,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10-20% decreased  Handling Animation Duration"
+       "text": "• 10-20% decreased Handling Animation Duration"
       }
      ]
     },
@@ -26713,7 +26899,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer only begins upon readying the weapon."
+       "text": "Timer only decreases while the weapon is readied, and remains paused while stowed."
       }
      ]
     }
@@ -27358,7 +27544,7 @@
     {
      "linesContent": [
       {
-       "text": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+       "text": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds."
       }
      ]
     },
@@ -27512,7 +27698,7 @@
        "text": "150"
       },
       {
-       "text": "  "
+       "text": " "
       },
       {
        "text": "[PVP: 11]"
@@ -28923,7 +29109,7 @@
     {
      "linesContent": [
       {
-       "text": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for "
+       "text": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for "
       },
       {
        "text": "",
@@ -29173,7 +29359,7 @@
     {
      "linesContent": [
       {
-       "text": "• 20% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
+       "text": "• 15% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
       }
      ]
     },
@@ -30235,7 +30421,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants 25% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius."
+       "text": "Grants 30% increased damage and causes enemies to explode on death, dealing 162.5 damage in a ? meter radius."
       }
      ]
     },
@@ -31165,7 +31351,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -31438,7 +31624,7 @@
        "text": "Refills"
       },
       {
-       "text": " 5% of the magazine every 1.5 seconds while "
+       "text": " 5% of the magazine (rounded up) every 1.5 seconds while "
       },
       {
        "classNames": [ "arc" ]
@@ -31647,14 +31833,14 @@
     {
      "linesContent": [
       {
-       "text": "Starting to fire the weapon grants the following benefits for "
+       "text": "Firing grants 'Tap The Trigger' for "
       },
       {
        "text": "",
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "0.76 seconds:"
+       "text": "0.76 seconds, providing the following benefits:"
       }
      ]
     },
@@ -31692,6 +31878,16 @@
       },
       {
        "text": "."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff cannot be refreshed until Automatic Weapons stop firing, or until the next burst."
       }
      ]
     },
@@ -31819,7 +32015,7 @@
     {
      "linesContent": [
       {
-       "text": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+       "text": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds."
       }
      ]
     },
@@ -33459,6 +33655,10 @@
    ]
   }
  },
+ "1588586136": {
+  "hash": 1588586136,
+  "name": "Winterized Gear"
+ },
  "1588595445": {
   "hash": 1588595445,
   "name": "Counterbalance Stock",
@@ -33597,7 +33797,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -36514,7 +36714,7 @@
     {
      "linesContent": [
       {
-       "text": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for "
+       "text": "Blocking damage with this weapon increases movement speed while Blocking by 25?% for "
       },
       {
        "text": "",
@@ -36531,7 +36731,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed if you stop blocking or if Weapon Energy runs out."
+       "text": "Buff is removed when you stop blocking or if Glaive/Sword Energy runs out."
       }
      ]
     },
@@ -37373,6 +37573,10 @@
    ]
   }
  },
+ "1807646319": {
+  "hash": 1807646319,
+  "name": "Nanotech Tracer Missiles"
+ },
  "1817649409": {
   "hash": 1817649409,
   "name": "Aggressive Burst",
@@ -37951,7 +38155,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc:  Disorient (not Blind) for "
+       "text": "Arc: Disorient (not Blind) for "
       },
       {
        "text": "7"
@@ -38001,7 +38205,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis:  "
+       "text": "Stasis: "
       },
       {
        "text": "40"
@@ -39175,7 +39379,7 @@
     {
      "linesContent": [
       {
-       "text": "Starting to fire the weapon grants the following benefits for 0.6 seconds:"
+       "text": "Firing grants 'Tap The Trigger' for 0.6 seconds, providing the following benefits:"
       }
      ]
     },
@@ -39213,6 +39417,16 @@
       },
       {
        "text": "."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Buff cannot be refreshed until Automatic Weapons stop firing, or until the next burst."
       }
      ]
     },
@@ -39495,7 +39709,7 @@
     {
      "linesContent": [
       {
-       "text": "Reaches maximum strength after 1.1 seconds at a 25% damage increase."
+       "text": "Reaches maximum strength after 1.1 seconds at a 35% damage increase."
       }
      ]
     },
@@ -42851,6 +43065,37 @@
    ]
   }
  },
+ "2054520291": {
+  "hash": 2054520291,
+  "name": "Lucky Shot",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within ? seconds of a Precision Kill grants 'Lucky Shot Ready'."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Precision Hit while you have Lucky Shot Ready "
+      },
+      {
+       "text": "refills"
+      },
+      {
+       "text": " the magazine by 1 from reserves and begins a 7 second timer. Additional precision hits during this timer continue to refill the magazine from reserves."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2057080438": {
   "hash": 2057080438,
   "name": "Meaning-Making",
@@ -43444,7 +43689,7 @@
        "text": "165"
       },
       {
-       "text": "  "
+       "text": " "
       },
       {
        "text": "",
@@ -44645,7 +44890,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -45999,7 +46244,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "1.4 seconds without firing causes your next kill to trigger an explosion matching the weapon's element with a ? meter radius."
+       "text": "1.4 seconds without firing causes your next kill to trigger an explosion matching the weapon's element within an 8 meter radius, experiencing a maximum of 30% damage falloff."
       }
      ]
     },
@@ -47689,6 +47934,31 @@
    ]
   }
  },
+ "2305480722": {
+  "hash": 2305480722,
+  "name": "Mega Kill Clip",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Finishing a reload within ? seconds of a Weapon Kill grants 40% increased damage for a variable duration based on the number of kills achieved before reloading, up to a maximum of 20 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Duration is calculated as 3 + (2 * Number of Kills) seconds long. Reloading after scoring additional weapon kills adds to this timer and can extend its duration."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "2305736470": {
   "hash": 2305736470,
   "name": "Kinetic Reserves",
@@ -48210,6 +48480,10 @@
    ]
   }
  },
+ "2327629476": {
+  "hash": 2327629476,
+  "name": "Forge's Kin"
+ },
  "2333607307": {
   "hash": 2333607307,
   "name": "Impetus",
@@ -48291,14 +48565,14 @@
     {
      "linesContent": [
       {
-       "text": "• 35 Stability"
+       "text": "• 25 Stability"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 35 Handling"
+       "text": "• 25 Handling"
       }
      ]
     },
@@ -49151,7 +49425,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for "
+       "text": "Scoring 35% of the Base Magazine Capacity as Precision Hits grants 25% increased damage for "
       },
       {
        "text": "",
@@ -50178,6 +50452,67 @@
      "linesContent": [
       {
        "text": "Buff is overwritten every time it is triggered and is removed on stow."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "2458610193": {
+  "hash": 2458610193,
+  "name": "Light Touch",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "While "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Amplified, "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Radiant, or "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Devour is active:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Handling"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Reload Speed"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% decreased Reload Animation Duration"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ?% decreased ADS Duration"
       }
      ]
     }
@@ -52172,7 +52507,13 @@
     {
      "linesContent": [
       {
-       "text": "• 40% increased precision damage (30% for "
+       "text": "• 40% increased precision damage (35% for "
+      },
+      {
+       "classNames": [ "primary" ]
+      },
+      {
+       "text": "Scout Rifles, 30% for "
       },
       {
        "classNames": [ "heavy" ]
@@ -52198,7 +52539,13 @@
     {
      "linesContent": [
       {
-       "text": "The precision damage of Scout Rifles is decreased by 5% while Box Breathing is active. (This part of the perk is inconsistent and often doesn't get applied)"
+       "text": "For glaives (Greasy Luck), the projectile must strike the target's critical hitbox in order to recieve the 40% "
+      },
+      {
+       "text": "[PVP: 35%]"
+      },
+      {
+       "text": " damage bonus."
       }
      ]
     }
@@ -52241,23 +52588,16 @@
        "text": "Elemental Pickup Interactions grant "
       },
       {
-       "text": "20%"
+       "text": "🡅33%"
       },
       {
        "text": " "
       },
       {
-       "text": "[PVP: 10%]"
+       "text": "[PVP: 🡅11%]"
       },
       {
-       "text": " increased damage for "
-      },
-      {
-       "text": "",
-       "classNames": [ "enhancedArrow" ]
-      },
-      {
-       "text": "8 seconds. Can be activated while stowed."
+       "text": " increased damage for a variable duration based on the pickup. Can be activated while stowed."
       }
      ]
     },
@@ -52267,7 +52607,50 @@
     {
      "linesContent": [
       {
-       "text": "Additional Pickup Interactions extend the duration by 7 seconds up to the maximum of 12 seconds."
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces, "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards, and "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangle Detonations grant the buff for 4 seconds. Throwing a held "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangle grants 4 additional seconds. "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites and "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches grant the buff for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional Pickups can extend the duration up to the maximum of 16 seconds."
       }
      ]
     },
@@ -52284,13 +52667,13 @@
     {
      "linesContent": [
       {
-       "text": "• Throwing "
+       "text": "• Destroying a "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Tangles (or Elemental Orbs)"
+       "text": "Tangle (or Elemental Orbs), either by shooting or throwing."
       }
      ]
     },
@@ -52351,7 +52734,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Initial buff duration is increased by 1 second."
+       "text": " Damage is increased by 10%. (30%⁠🠚⁠33%)"
       }
      ]
     }
@@ -52406,7 +52789,7 @@
     {
      "linesContent": [
       {
-       "text": "Grants ? Handling and 10 Reload Speed for 5 seconds."
+       "text": "Grants 30 Handling, 30 Reload Speed, and 15% Increased Damage to Hive Combatants for 5 seconds."
       }
      ]
     }
@@ -52831,6 +53214,13 @@
      "linesContent": [
       {
        "text": "• Sidearms: Adaptive Burst: 8.46%, Heavy Burst: 7.36%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Scout Rifles: Precision: 8.66%"
       }
      ]
     },
@@ -60606,19 +60996,12 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds."
+       "text": "Readying this weapon reduces its Firing Delay for 2.5 seconds."
       }
      ]
     },
@@ -60638,28 +61021,28 @@
     {
      "linesContent": [
       {
-       "text": "Activation progress on Precision Hits:"
+       "text": "Precision Hits requried per weapon archetype:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%"
+       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Sidearms, Scout Rifles: 17.5%"
+       "text": "• Hand Cannons, Scout Rifles: 4 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
+       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits"
       }
      ]
     }
@@ -60846,7 +61229,7 @@
     {
      "linesContent": [
       {
-       "text": "Reaches maximum strength after 1.1 seconds at a 25% damage increase."
+       "text": "Reaches maximum strength after 1.1 seconds at a 35% damage increase."
       }
      ]
     },
@@ -60909,7 +61292,7 @@
     {
      "linesContent": [
       {
-       "text": "Bows and Shotguns only receive a 20% damage increase. Buff is removed on stow."
+       "text": "Hand Cannons only recieve a 27% damage increase. Buff is removed on stow."
       }
      ]
     },
@@ -61344,7 +61727,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring 50% of the Base Magazine Capacity as Precision Hits grants 20% increased damage for 11 seconds."
+       "text": "Scoring 35% of the Base Magazine Capacity as Precision Hits grants 25% increased damage for 11 seconds."
       }
      ]
     },
@@ -61433,6 +61816,10 @@
     }
    ]
   }
+ },
+ "2897898513": {
+  "hash": 2897898513,
+  "name": "Veteran's Wisdom"
  },
  "2898218424": {
   "hash": 2898218424,
@@ -63445,19 +63832,73 @@
     {
      "linesContent": [
       {
-       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants its element-matching effect to the user as well as the targeted ally."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Effect granted based on Weapon Element:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Solar: Restoration x1 for 4 seconds (6 with "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Restoration x1 for 4 seconds (6 with "
+       "text": "Ember of Solace)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "arc" ]
       },
       {
-       "classNames": [ "solar" ]
+       "text": "Arc: Amplified for 5 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "stasis" ]
       },
       {
-       "text": "Ember of Solace) to the user and the targeted ally."
+       "text": "Stasis: x2 Frost Armor for 5 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand: Releases 4 Unraveling Threads"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void: Grants a ?HP Void Overshield for ? Seconds"
       }
      ]
     }
@@ -64025,6 +64466,10 @@
    ]
   }
  },
+ "3018257738": {
+  "hash": 3018257738,
+  "name": "Carrion Munitions"
+ },
  "3020052176": {
   "hash": 3020052176,
   "name": "Webcatcher",
@@ -64231,7 +64676,7 @@
     {
      "linesContent": [
       {
-       "text": "Passively grants -200 Blast Radius,  25% decreased damage, and 15% decreased detonation radius."
+       "text": "Passively grants -200 Blast Radius, 25% decreased damage, and 15% decreased detonation radius."
       }
      ]
     },
@@ -64509,7 +64954,7 @@
     {
      "linesContent": [
       {
-       "text": "Finishing a reload within 5.2 seconds of a Precision Kill reduces Firing Delay by 30% for 6 seconds."
+       "text": "Finishing a reload 5.2 seconds after a Precision Kill or 3 kills within ? seconds of each reduces Firing Delay by 30% for 6 seconds."
       }
      ]
     },
@@ -65657,7 +66102,7 @@
     {
      "linesContent": [
       {
-       "text": "Precision Kills grant 70 Reload Speed with a 0.9x Reload Duration Multiplier for 6 seconds."
+       "text": "Precision Kills grant 70 Reload Speed with a 0.9x decreased Reload Animation Duration for 6 seconds."
       }
      ]
     },
@@ -65673,6 +66118,10 @@
     }
    ]
   }
+ },
+ "3129239575": {
+  "hash": 3129239575,
+  "name": "Featherweight"
  },
  "3131590896": {
   "hash": 3131590896,
@@ -65722,6 +66171,10 @@
     }
    ]
   }
+ },
+ "3132659494": {
+  "hash": 3132659494,
+  "name": "Unburied Treasure"
  },
  "3143051906": {
   "hash": 3143051906,
@@ -66003,7 +66456,7 @@
     {
      "linesContent": [
       {
-       "text": "0.3 second cooldown after activation but can activate multiple times during a slide.  Buff is removed on stow."
+       "text": "0.3 second cooldown after activation but can activate multiple times during a slide. Buff is removed on stow."
       }
      ]
     }
@@ -66286,6 +66739,59 @@
      "linesContent": [
       {
        "text": "Increases the Maximum Number of Armor Charge Stacks you can hold from 3 to 4|5|6 with 1|2|3 Mods equipped."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "3182497402": {
+  "hash": 3182497402,
+  "name": "Dimensional Shift",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Collecting a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breach grants 'Dimensional Breach' until your next Weapon Kill."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scoring a Weapon Kill while Dimensional Breach is active grants a 22.5 HP "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield for 8 seconds (12 with "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Echo of Persistence) and begins a 5 second timer."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional weapon kills extend the timer back to 5 seconds."
       }
      ]
     }
@@ -67979,7 +68485,7 @@
     {
      "linesContent": [
       {
-       "text": "Timer only begins upon readying the weapon."
+       "text": "Timer only decreases while the weapon is readied, and remains paused while stowed."
       }
      ]
     },
@@ -69137,7 +69643,7 @@
        "text": "Elemental Pickup Interactions grant "
       },
       {
-       "text": "20%"
+       "text": "30%"
       },
       {
        "text": " "
@@ -69146,7 +69652,7 @@
        "text": "[PVP: 10%]"
       },
       {
-       "text": " increased damage for 7 seconds. Can be activated while stowed."
+       "text": " increased damage for a variable duration based on the pickup. Can be activated while stowed."
       }
      ]
     },
@@ -69156,7 +69662,50 @@
     {
      "linesContent": [
       {
-       "text": "Additional Pickup Interactions extend the duration by 7 seconds up to the maximum of 12 seconds."
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces, "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards, and "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangle Detonations grant the buff for 4 seconds. Throwing a held "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangle grants 4 additional seconds. "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites and "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches grant the buff for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Additional Pickups can extend the duration up to the maximum of 16 seconds."
       }
      ]
     },
@@ -69173,13 +69722,13 @@
     {
      "linesContent": [
       {
-       "text": "• Throwing "
+       "text": "• Destroying a "
       },
       {
        "classNames": [ "strand" ]
       },
       {
-       "text": "Tangles (or Elemental Orbs)"
+       "text": "Tangle (or Elemental Orbs), either by shooting or throwing."
       }
      ]
     },
@@ -70483,7 +71032,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": " Effect lingers for ? seconds once conditions are no longer met."
+       "text": " Effect lingers for 2 seconds once conditions are no longer met."
       }
      ]
     }
@@ -73055,7 +73604,7 @@
     {
      "linesContent": [
       {
-       "text": "Blocking damage with Glaive Shield increased movement speed while Blocking by 25?% for 4 seconds."
+       "text": "Blocking damage with this weapon increases movement speed while Blocking by 25?% for 4 seconds."
       }
      ]
     },
@@ -73065,7 +73614,7 @@
     {
      "linesContent": [
       {
-       "text": "Buff is removed if you stop blocking or if Weapon Energy runs out."
+       "text": "Buff is removed when you stop blocking or if Glaive/Sword Energy runs out."
       }
      ]
     }
@@ -75747,7 +76296,7 @@
     {
      "linesContent": [
       {
-       "text": "Bows and Shotguns only receive a 20% damage increase. Buff is removed on stow."
+       "text": "Hand Cannons only recieve a 27% damage increase. Buff is removed on stow."
       }
      ]
     }
@@ -76666,7 +77215,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -77181,19 +77730,12 @@
      ]
     },
     {
-     "linesContent": [
-      {
-       "text": "Grants the 'Cascade Point Ready' buff for 5 seconds."
-      }
-     ]
-    },
-    {
      "classNames": [ "spacer" ]
     },
     {
      "linesContent": [
       {
-       "text": "Readying the weapon while Cascade Point Ready is active reduces Firing Delay for 2.5 seconds."
+       "text": "Readying this weapon reduces its Firing Delay for 2.5 seconds."
       }
      ]
     },
@@ -77213,28 +77755,28 @@
     {
      "linesContent": [
       {
-       "text": "Activation progress on Precision Hits:"
+       "text": "Precision Hits requried per weapon archetype:"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns: 50%"
+       "text": "• Bows, Linear Fusion/Sniper Rifles, Shotguns, Glaive Projectiles: 2 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Hand Cannons, Sidearms, Scout Rifles: 17.5%"
+       "text": "• Hand Cannons, Scout Rifles: 4 hits"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns: 8%"
+       "text": "• Auto/Trace/Pulse Rifles, SMGs, Machine Guns, Sidearms: 6 hits"
       }
      ]
     }
@@ -77276,7 +77818,7 @@
     {
      "linesContent": [
       {
-       "text": "• 3  Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
+       "text": "• 3 Hits: Bows, Glaives (both Projectile and Melee), Grenade/Rocket Launchers (Impact and Detonation damage count separately), Sniper Rifles"
       }
      ]
     },
@@ -79034,6 +79576,20 @@
     {
      "linesContent": [
       {
+       "text": "• Rocket Launchers: 3 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Wave-Frame Grenade Launchers: 4 hits"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "• Bows: 5 Hits"
       }
      ]
@@ -79422,7 +79978,7 @@
     {
      "linesContent": [
       {
-       "text": "• Micro-Missile Sidearms: 25%"
+       "text": "• Micro-Missile Frame Weapons: 25%"
       }
      ]
     },
@@ -79442,6 +79998,10 @@
     }
    ]
   }
+ },
+ "3879154694": {
+  "hash": 3879154694,
+  "name": "Eyes Up"
  },
  "3884127242": {
   "hash": 3884127242,
@@ -79709,6 +80269,10 @@
     }
    ]
   }
+ },
+ "3892542595": {
+  "hash": 3892542595,
+  "name": "Ignoble Deeds"
  },
  "3894668351": {
   "hash": 3894668351,
@@ -80290,7 +80854,7 @@
     {
      "linesContent": [
       {
-       "text": "Rockets attach on impact and detonate after 3 seconds, dealing 25% increased Explosive Damage."
+       "text": "Rockets attach on impact and detonate after 3 seconds, dealing 35% increased Explosive Damage."
       }
      ]
     }
@@ -80908,7 +81472,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits."
+       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits."
       }
      ]
     },
@@ -81031,7 +81595,7 @@
     {
      "linesContent": [
       {
-       "text": "• 10-20% decreased  Handling Animation Duration"
+       "text": "• 10-20% decreased Handling Animation Duration"
       }
      ]
     },
@@ -81203,13 +81767,26 @@
     {
      "linesContent": [
       {
-       "text": "• Scout Rifles, Special Ammo Hand Cannons: 7 | "
+       "text": "• Scout Rifles, Hand Cannons: 7 | "
       },
       {
        "classNames": [ "arc" ]
       },
       {
-       "text": "4"
+       "text": "6"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Swords: 7 | "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "5"
       }
      ]
     },
@@ -81229,7 +81806,7 @@
     {
      "linesContent": [
       {
-       "text": "• Rocket Sidearm: 4 | "
+       "text": "• Rocket Sidearm, Sniper Rifle?: 4 | "
       },
       {
        "classNames": [ "arc" ]
@@ -81249,6 +81826,16 @@
       },
       {
        "text": "2"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Aggressive Frame Fusion Rifle?: 3|1"
+      },
+      {
+       "classNames": [ "arc" ]
       }
      ]
     }
@@ -82618,6 +83205,173 @@
    ]
   }
  },
+ "4019266109": {
+  "hash": 4019266109,
+  "name": "Collective Demolition",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Collecting an Elemental Pickup enables Weapon Damage to generate Grenade Ability energy per hit for 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces, "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards, and Shot "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangles extend the timer by 4 seconds. "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites, "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches, and Thrown "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangles extend the timer by 8 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Timer can be extended to a maximum of 16 seconds."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Melee energy granted by weapon type:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Spreadshot HC: 0.5%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Burst Sidearm: 0.78%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Fusion Rifle: 1.15%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rocket Pulse: 1.95%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Sidearm: 2.34%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Scout: 3.34%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Rocket Launcher: 12.9%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Elemental Pickups include "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Firesprites, "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Ionic Traces, "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis Shards, "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Tangles, and "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Breaches."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4024170927": {
   "hash": 4024170927,
   "name": "Misdirection",
@@ -82900,6 +83654,13 @@
      ]
     },
     {
+     "linesContent": [
+      {
+       "text": "• Scout Rifles: Precision: 8.66%"
+      }
+     ]
+    },
+    {
      "classNames": [ "spacer" ]
     },
     {
@@ -83067,7 +83828,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits."
+       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits."
       }
      ]
     },
@@ -83092,13 +83853,27 @@
     {
      "linesContent": [
       {
-       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants "
-      },
+       "text": "Triggering 'Support Frame Boost' by healing allies with the weapon grants its element-matching effect to the user as well as the targeted ally."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Effect granted based on Weapon Element:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Restoration x1 for "
+       "text": "Solar: Restoration x1 for "
       },
       {
        "text": "",
@@ -83118,7 +83893,47 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ember of Solace) to the user and the targeted ally."
+       "text": "Ember of Solace)"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc: Amplified for 5 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Stasis: x2 Frost Armor for 5 seconds"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Strand: Releases 4 Unraveling Threads"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void: Grants a ?HP Void Overshield for ? Seconds"
       }
      ]
     },
@@ -85638,7 +86453,7 @@
        "classNames": [ "enhancedArrow" ]
       },
       {
-       "text": "15% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
+       "text": "10% decreased Auto Aim Cone Size (No effect on Magnetism AKA reticle stickiness)"
       }
      ]
     },
@@ -85814,7 +86629,7 @@
     {
      "linesContent": [
       {
-       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds.  Does not require Direct Hits."
+       "text": "Scoring Weapon Hits against 3 Separate Enemies within 3 seconds of each grants 35% increased damage for 10 seconds. Does not require Direct Hits."
       }
      ]
     },
