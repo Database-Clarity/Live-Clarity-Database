@@ -1752,7 +1752,7 @@
     {
      "linesContent": [
       {
-       "text": "Each of my detonations releases a Taken Seeker which aggressively tracks and then burrows into my targets, dealing 22 ticks of damage, one tick every 0.25 seconds, for 5.65 seconds."
+       "text": "Each of my detonations releases a Taken Seeker which aggressively tracks and then burrows nearby targets, dealing 22 ticks of damage, one tick every 0.25 seconds, for 5.65 seconds."
       }
      ]
     },
@@ -1765,10 +1765,32 @@
        "text": "My foes can be afflicted by up to 5 seekers at once, and "
       },
       {
-       "text": "Blighted Enemies (Direct Impacts from Witherhoard)"
+       "text": "Blighted Enemies (directly impacted by Witherhoard)"
       },
       {
        "text": " take 100% increased tick damage."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "I do not interact with "
+      },
+      {
+       "text": "Malfeasance"
+      },
+      {
+       "text": " or "
+      },
+      {
+       "text": "Wish-Ender"
+      },
+      {
+       "text": "."
       }
      ]
     },
@@ -4961,7 +4983,7 @@
        "text": "[PVP: 15-20%]"
       },
       {
-       "text": " increased damage past 40 meters and have a maximum range of 80 meters."
+       "text": " increased damage past 40 meters and have a maximum range of 80 meters. Precision hits with the fired arrow guide the seekers towards that enemy."
       }
      ]
     },
@@ -6535,6 +6557,28 @@
     {
      "linesContent": [
       {
+       "text": "Hits against "
+      },
+      {
+       "classNames": [ "strand" ]
+      },
+      {
+       "text": "Suspended enemies inflicts 20 Scorch (30 with "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Ember of Ashes)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "text": "Kills spawn a "
       },
       {
@@ -6557,7 +6601,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Firesprite, hold [Reload] to enable a Charged Laser. Charged Laser fires for 0.93 seconds at 1000 RPM and hits 15 times."
+       "text": "Firesprite, hold [Reload] to enable a Charged Laser. Charged Laser takes 0.5 seconds to charge, at which point it fires for 0.93 seconds at 1000 RPM and hits 15 times."
       }
      ]
     }
@@ -10429,7 +10473,7 @@
        "text": "[PVP: ?]"
       },
       {
-       "text": " damage in a 2.4 meter radius."
+       "text": " damage in a 3 meter radius."
       }
      ]
     },
@@ -12437,10 +12481,20 @@
     {
      "linesContent": [
       {
-       "text": "Holding down the trigger for 0.45 seconds creates a focused 'Solar Field' that continuously expands. The radius grows up to 4? meters wide over the course of ? seconds, dealing "
+       "text": "Holding down the trigger for 0.45 seconds creates a focused 'Solar Field' that continuously expands from the point of impact."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The radius grows up to 4? meters wide over the course of 4 seconds, dealing "
       },
       {
-       "text": "13.47"
+       "text": "19"
       },
       {
        "text": " "
@@ -16557,7 +16611,7 @@
        "text": "Blighted targets are "
       },
       {
-       "text": "STILL NOT CONSIDERED TO BE TAKEN.",
+       "text": "STILL NOT CONSIDERED \"TAKEN COMBATANTS\".",
        "classNames": [ "bold" ]
       }
      ]
@@ -17440,7 +17494,7 @@
        "text": "At 6 stacks, hold [Reload] to change this Fusion Rifle into a Linear Fusion Rifle. Grants three Hobgoblin-like shots that deal "
       },
       {
-       "text": "1417"
+       "text": "1475"
       },
       {
        "text": " "
@@ -17482,7 +17536,7 @@
     {
      "linesContent": [
       {
-       "text": "Upon leaving this mode, the magazine is refilled."
+       "text": "Exiting Linear Mode refills the magazine."
       }
      ]
     }
@@ -22488,25 +22542,6 @@
     {
      "linesContent": [
       {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Scorch and "
-      },
-      {
-       "classNames": [ "solar" ]
-      },
-      {
-       "text": "Ignitions that originate from this weapon deal 110% increased damage."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Direct Hits with Charged Shots apply "
       },
       {
@@ -27107,22 +27142,6 @@
     {
      "linesContent": [
       {
-       "text": "Intrinsically "
-      },
-      {
-       "classNames": [ "overload" ]
-      },
-      {
-       "text": "Anti-Overload."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "text": "Fires a powerful "
       },
       {
@@ -27338,7 +27357,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch the target (Tip: The Lament performs 3 hits per revved attack)."
+       "text": "Scorch the target. This allows The Lament to Scorch through a singular revved attack."
       }
      ]
     },
@@ -27361,7 +27380,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage, and thus, triggers Revved Consumption's healing."
+       "text": "Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage, and thus, triggers Revved Consumption's healing, granting 7HP per tick."
       }
      ]
     }
@@ -31771,13 +31790,13 @@
     {
      "linesContent": [
       {
-       "text": "Holding down the trigger for 16 rounds makes the 16th round "
+       "text": "Holding down the trigger for 16 rounds (is supposed to) make the 16th round "
       },
       {
        "classNames": [ "void" ]
       },
       {
-       "text": "Weaken for 6 Seconds and grants 'Vexadecimal'."
+       "text": "Weaken for 6 Seconds."
       }
      ]
     },
@@ -31803,13 +31822,13 @@
     {
      "linesContent": [
       {
-       "text": "Vexadecemial "
+       "text": "Releasing the trigger after firing a Vexadecemial round (16 shots) "
       },
       {
        "text": "refills"
       },
       {
-       "text": " 12 ammo from reserves on trigger release as long as the current magazine isn't empty."
+       "text": " 12 ammo from reserves on trigger release, as long as the current magazine isn't empty."
       }
      ]
     }
@@ -46115,10 +46134,10 @@
     {
      "linesContent": [
       {
-       "text": "'Charged' Light Attacks consume 20?% Sword Energy, dealing "
+       "text": "'Charged' Light Attacks consume 20% Sword Energy, dealing "
       },
       {
-       "text": "531"
+       "text": "539"
       },
       {
        "text": " "
@@ -46130,7 +46149,7 @@
        "text": " damage followed by two hits of "
       },
       {
-       "text": "133"
+       "text": "135"
       },
       {
        "text": " "
@@ -46152,7 +46171,7 @@
        "text": "Performing a Heavy Attack while Banshee's Wail is active consumes all stacks and performs an overhead strike, dealing "
       },
       {
-       "text": "708"
+       "text": "1054"
       },
       {
        "text": " "
@@ -46164,7 +46183,7 @@
        "text": " damage followed by two hits of "
       },
       {
-       "text": "133"
+       "text": "198"
       },
       {
        "text": " "
@@ -46197,14 +46216,14 @@
     {
      "linesContent": [
       {
-       "text": "• 4-6 Stacks: 100% increased damage"
+       "text": "• 4-6 Stacks: 54% increased damage"
       }
      ]
     },
     {
      "linesContent": [
       {
-       "text": "• 7-9 Stacks: 150% increased main attack damage | 185% increased secondary hits damage"
+       "text": "• 7-9 Stacks: 109% increased damage"
       }
      ]
     }
@@ -52045,7 +52064,61 @@
     {
      "linesContent": [
       {
-       "text": "This rocket's tracking capabilities are significantly stronger than other traditional tracking rocket launchers."
+       "text": "This rocket's tracking capabilities are stronger than other traditional tracking rocket launchers, and have a blast radius of 11 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Dealing damage with 3 rockets without reloading generates "
+      },
+      {
+       "classNames": [ "heavy" ]
+      },
+      {
+       "text": "1 Ammo. Finishing a reload after having dealt damage with all three rockets grants 'Prototype Trueseeker'."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Prototype Trueseeker grants the following benefits:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• 80% Faster Rate of Fire"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Stability"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Significantly improved tracking capabilities"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Rockets now explode into 8 cluster munitions upon detonation, each cluster having a blast radius of 3 meters."
       }
      ]
     }
@@ -63283,7 +63356,7 @@
     {
      "linesContent": [
       {
-       "text": "Rockets gain proximity detonation, exploding within a ? meter radius of targets."
+       "text": "Rockets gain proximity detonation, automatically exploding within a 2 meter radius of targets."
       }
      ]
     },
@@ -63293,7 +63366,7 @@
     {
      "linesContent": [
       {
-       "text": "These rockets deal increased detonation damage to account for its inability to deal impact damage."
+       "text": "These rockets deal increased detonation damage to account for the inability to deal impact damage."
       }
      ]
     }
@@ -66262,7 +66335,17 @@
     {
      "linesContent": [
       {
-       "text": "Fires a Taken projectile that creates a Blighted Pool in a 4.5 meter radius for 4.5 seconds upon impact with the ground. Enemies within the pool take damage every 0.3 seconds."
+       "text": "Fires a Taken projectile that creates a Blighted Pool in a 4.5 meter radius for 4.5 seconds upon impact with the ground."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Enemies within the pool take damage every 0.3 seconds."
       }
      ]
     }
@@ -81518,7 +81601,7 @@
        "text": "Fires a massive overpenetrating laser that ricochets into five sub-lasers on impact with the environment, each dealing "
       },
       {
-       "text": "390"
+       "text": "369"
       },
       {
        "text": " "
@@ -81541,7 +81624,7 @@
        "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": " take 90% decreased damage from sub-lasers."
+       "text": " take 95% decreased damage from sub-lasers."
       }
      ]
     }
