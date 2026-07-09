@@ -3413,6 +3413,12 @@
    ]
   }
  },
+ "136208450": {
+  "hash": 136208450,
+  "name": "Soulburn",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow"
+ },
  "136456835": {
   "hash": 136456835,
   "name": "Reversal of Fortune",
@@ -8573,7 +8579,17 @@
     {
      "linesContent": [
       {
-       "text": "Traps that are linked together deal 100% bonus damage (compared to a single bolt)."
+       "text": "Unlinked Arc Bolts deal damage in a 4 meter radius after detecting an enemy within 5 meters. Linked Arc Bolts only damage enemies touching the tripwire."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Traps that are linked together deal 100% bonus tick damage (compared to a single bolt)."
       }
      ]
     }
@@ -14400,6 +14416,45 @@
    ]
   }
  },
+ "651256110": {
+  "hash": 651256110,
+  "name": "Power Surge",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Scoring 2 hits within 3 seconds of each causes the next shot fired within 3 seconds to have an Explosive Payload. Explosive Payload deals "
+      },
+      {
+       "text": "122"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " additional damage over 4 meters."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hits with this Payload grant 8%? additional progress to Latent Power."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "654512643": {
   "hash": 654512643,
   "name": "Gear Shift",
@@ -15362,6 +15417,12 @@
     }
    ]
   }
+ },
+ "695800688": {
+  "hash": 695800688,
+  "name": "Soulforge",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow"
  },
  "697983358": {
   "hash": 697983358,
@@ -22212,6 +22273,153 @@
      "linesContent": [
       {
        "text": "Stow Animation Duration cannot be decreased below what it would be at 100 Handling."
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "1017906546": {
+  "hash": 1017906546,
+  "name": "Latent Power",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Direct Hits, Precision Hits, and Kills with this weapon charge 'Latent Power'. The amount of charge granted varies by source:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Hits: 4%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Precision Hits: 8%"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Kills: 25%"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Upon reaching 100% Progress towards Latent Power, hold [Reload] to enter 'Unleashed Power' and gain the following benefits for 13 seconds:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Instantly "
+      },
+      {
+       "text": "refill"
+      },
+      {
+       "text": " the magazine"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Increase RPM to 225"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Significantly improved Hip-Fire Accuracy"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• ? Stability and ? Aim Assist"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• Shots fired are immediately returned to the magazine, effectively granting infinite ammo"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Every shot fired in this mode also "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Weakens targets for 6 seconds on hit and gain Explosive Payloads that deal an additional "
+      },
+      {
+       "text": "87"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " damage on hit."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "After 3 seconds, Unleashed Power changes into Overwhelming Power, which drains 13 HP every second for the remaining 10 seconds of the buff."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Bug Notice",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": ": While Empowerment is active and this weapon is readied, Rocket Launchers and Micro-Missile damage is increased by 30%. "
+      },
+      {
+       "text": "Hazardous Propulsion"
+      },
+      {
+       "text": " Rockets deal 200% increased damage."
       }
      ]
     }
@@ -39447,7 +39655,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon of Sorrow."
+       "text": "This is a Weapon of Sorrow."
       }
      ]
     },
@@ -42529,6 +42737,12 @@
     }
    ]
   }
+ },
+ "1980732122": {
+  "hash": 1980732122,
+  "name": "Blades of Unmaking",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow"
  },
  "1988485648": {
   "hash": 1988485648,
@@ -58287,7 +58501,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon of Sorrow."
+       "text": "This is a Weapon of Sorrow."
       }
      ]
     },
@@ -64447,7 +64661,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon of Sorrow."
+       "text": "This is a Weapon of Sorrow."
       }
      ]
     },
@@ -87164,6 +87378,39 @@
    ]
   }
  },
+ "4170056386": {
+  "hash": 4170056386,
+  "name": "Turncoat Catalyst",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "descriptions": {
+   "en": [
+    {
+     "linesContent": [
+      {
+       "text": "Upon exiting Void Empowerment, gain a "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Void Overshield for 10 seconds (15 with Echo of Persistence)."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The amount of Void Overshield granted is determined by how long you were empowered. 3 HP is granted for for each second that Empowerment lasted, capping at 40 HP for 13 seconds of Empowerment."
+      }
+     ]
+    }
+   ]
+  }
+ },
  "4174493725": {
   "hash": 4174493725,
   "name": "Insatiable",
@@ -87448,7 +87695,7 @@
     {
      "linesContent": [
       {
-       "text": "Weapon of Sorrow."
+       "text": "This is a Weapon of Sorrow."
       }
      ]
     },

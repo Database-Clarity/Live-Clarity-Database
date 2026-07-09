@@ -520,6 +520,13 @@
    "en": "Precision Hits and Kills grant one stack of 'Dynamic Charge'. Maximum of 15 stacks.\nHolding [Reload] refills the magazine based on the number of stacks and converts them into 'Revolution' stacks. Switching modes again removes all stacks.\nRevolution stacks remain ready until fired, after which point they last 10 seconds. Arc Seekers gain 30% increased damage and 5% increased radius per stack of Revolution, up to 450% increased damage and a 75% larger splash radius.\nWhile Revolution is active, Arc Seekers generate x2 [Arc]Bolt Charge for each hit and gain the ability to discharge [Arc]Bolt Charge stacks. At or above 10 stacks of Revolution, hits generate x3 [Arc]Bolt Charge.\n[Arc]Bolt Charge generation is unaffected by [Arc]Spark of Frequency."
   }
  },
+ "136208450": {
+  "hash": 136208450,
+  "name": "Soulburn",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow",
+  "type": "Weapon Frame Exotic"
+ },
  "136456835": {
   "hash": 136456835,
   "name": "Reversal of Fortune",
@@ -1314,7 +1321,7 @@
   "itemName": "Anarchy",
   "type": "Weapon Frame Exotic",
   "descriptions": {
-   "en": "Grenades fired are Arc Traps that lay inactive for 30 seconds and connect to other bolts within 15 meters. Up to 6 Arc Traps can exist at a time.\nEnemies within 2 meters of a trap activate all linked traps. Activated traps deal damage once every 0.5 seconds and detonate after 10 seconds.\nTraps that are linked together deal 100% bonus damage (compared to a single bolt)."
+   "en": "Grenades fired are Arc Traps that lay inactive for 30 seconds and connect to other bolts within 15 meters. Up to 6 Arc Traps can exist at a time.\nEnemies within 2 meters of a trap activate all linked traps. Activated traps deal damage once every 0.5 seconds and detonate after 10 seconds.\nUnlinked Arc Bolts deal damage in a 4 meter radius after detecting an enemy within 5 meters. Linked Arc Bolts only damage enemies touching the tripwire.\nTraps that are linked together deal 100% bonus tick damage (compared to a single bolt)."
   }
  },
  "395096174": {
@@ -2264,6 +2271,16 @@
    "en": "Counts as a \"Dealer's Choice\" origin trait weapon, but does not benefit from the trait itself.\nGrants Radar while Aiming Down Sights.\nFinishing a reload within 3.6 seconds of a kill grants 6 'Memento Mori' shots, each dealing [pve]68% [pvp][29%] increased damage.\nStowing the weapon removes the buff."
   }
  },
+ "651256110": {
+  "hash": 651256110,
+  "name": "Power Surge",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "type": "Weapon Trait Exotic",
+  "descriptions": {
+   "en": "Scoring 2 hits within 3 seconds of each causes the next shot fired within 3 seconds to have an Explosive Payload. Explosive Payload deals [pve]122 [pvp][?] additional damage over 4 meters.\nHits with this Payload grant 8%? additional progress to Latent Power."
+  }
+ },
  "654512643": {
   "hash": 654512643,
   "name": "Gear Shift",
@@ -2399,6 +2416,13 @@
   "descriptions": {
    "en": "Hitting allies with healing projectiles from the weapon restores 3 HP to you for each projectile."
   }
+ },
+ "695800688": {
+  "hash": 695800688,
+  "name": "Soulforge",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow",
+  "type": "Weapon Trait Exotic"
  },
  "697983358": {
   "hash": 697983358,
@@ -3519,6 +3543,16 @@
   "type": "Armor Mod General",
   "descriptions": {
    "en": "Grants a 0.8x|0.75x|0.7x Ready/Stow Animation Duration Multiplier to [Void]Void Weapons with 1|2|3 Mods equipped.\nStow Animation Duration cannot be decreased below what it would be at 100 Handling."
+  }
+ },
+ "1017906546": {
+  "hash": 1017906546,
+  "name": "Latent Power",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "type": "Weapon Frame Exotic",
+  "descriptions": {
+   "en": "Direct Hits, Precision Hits, and Kills with this weapon charge 'Latent Power'. The amount of charge granted varies by source:\n• Hits: 4%\n• Precision Hits: 8%\n• Kills: 25%\nUpon reaching 100% Progress towards Latent Power, hold [Reload] to enter 'Unleashed Power' and gain the following benefits for 13 seconds:\n• Instantly refill the magazine\n• Increase RPM to 225\n• Significantly improved Hip-Fire Accuracy\n• ? Stability and ? Aim Assist\n• Shots fired are immediately returned to the magazine, effectively granting infinite ammo\nEvery shot fired in this mode also [Void]Weakens targets for 6 seconds on hit and gain Explosive Payloads that deal an additional [pve]87 [pvp][?] damage on hit.\nAfter 3 seconds, Unleashed Power changes into Overwhelming Power, which drains 13 HP every second for the remaining 10 seconds of the buff.\n**Bug Notice**: While Empowerment is active and this weapon is readied, Rocket Launchers and Micro-Missile damage is increased by 30%. Hazardous Propulsion Rockets deal 200% increased damage."
   }
  },
  "1019291327": {
@@ -6512,7 +6546,7 @@
   "itemName": "Thorn",
   "type": "Weapon Frame Exotic",
   "descriptions": {
-   "en": "Weapon of Sorrow.\nShots fired overpenetrate unlimited targets.\nDirect hits with this weapon apply poison, dealing [pve]26 [pvp][0.4] damage every 0.5 seconds for 2 seconds. Multiple instances of poison can be applied to a single target.\nKills create a Remnant which tracks towards you when within a 10 meter radius. Remnants last for 8 seconds in the world before despawning."
+   "en": "This is a Weapon of Sorrow.\nShots fired overpenetrate unlimited targets.\nDirect hits with this weapon apply poison, dealing [pve]26 [pvp][0.4] damage every 0.5 seconds for 2 seconds. Multiple instances of poison can be applied to a single target.\nKills create a Remnant which tracks towards you when within a 10 meter radius. Remnants last for 8 seconds in the world before despawning."
   }
  },
  "1864989992": {
@@ -6962,6 +6996,13 @@
   "descriptions": {
    "en": "Kills with Weapons matching your Grenade Element grant a Stack of Death Throes. Maximum of 5 Stacks.\nStacks decay one at a time over 8|7|6|5|4 seconds for the 1st|...|5th Stacks.\nDeath Throes benefits at 1|2|3|4|5 Stacks:\n• 0.5%|1%|1.5%|2%|2.5% Grenade Energy per second\n• [pve]PVE: 40%|55%|70%|85%|100% increased Grenade damage\n• [pvp]PVP: 20%|40%|60%|80%|100% increased Grenade damage\n[Strand]Grapple Grenade is uniquely tuned and receives an additive buff instead (170% at maximum stacks).\nOn Grenade Ability usage with active Death Throes Stacks, for 5 seconds:\nAllies receive 'Feel The Flames' while within 20 meters of you.\n'Feel the Flames' grants 10x Grenade Recharge Rate.\n(Grenade Regeneration Rate Multiplier is applied after all additive Grenade Recharge Rate modifiers.)"
   }
+ },
+ "1980732122": {
+  "hash": 1980732122,
+  "name": "Blades of Unmaking",
+  "itemHash": 2200470033,
+  "itemName": "Cull's Shadow",
+  "type": "Weapon Perk Exotic"
  },
  "1988485648": {
   "hash": 1988485648,
@@ -9473,7 +9514,7 @@
   "itemName": "Touch of Malice",
   "type": "Weapon Frame Exotic",
   "descriptions": {
-   "en": "Weapon of Sorrow.\nThe last round of this gun's magazine deals [pve]154% [pvp][30%] increased damage, drains 7 HP, and is always refunded when shot. Health drain is not lethal.\nScoring kills or activating 'Charged With Blight' restores 105 HP and begins Health Regeneration.\nHealing Activation from kills is based on [Combatant Rank](https://url.d2clarity.com/combatants):\n• Minors: 33.4%\n• Elites, Minibosses, and Bosses: 100%\n• Players: 66.7%"
+   "en": "This is a Weapon of Sorrow.\nThe last round of this gun's magazine deals [pve]154% [pvp][30%] increased damage, drains 7 HP, and is always refunded when shot. Health drain is not lethal.\nScoring kills or activating 'Charged With Blight' restores 105 HP and begins Health Regeneration.\nHealing Activation from kills is based on [Combatant Rank](https://url.d2clarity.com/combatants):\n• Minors: 33.4%\n• Elites, Minibosses, and Bosses: 100%\n• Players: 66.7%"
   }
  },
  "2726471870": {
@@ -10448,7 +10489,7 @@
   "itemName": "Osteo Striga",
   "type": "Weapon Frame Exotic",
   "descriptions": {
-   "en": "Weapon of Sorrow.\nDeals 10% more damage than other Precision Frame SMGs.\nFires slow seeking projectiles that track targets within the reticle from up to ? meters away."
+   "en": "This is a Weapon of Sorrow.\nDeals 10% more damage than other Precision Frame SMGs.\nFires slow seeking projectiles that track targets within the reticle from up to ? meters away."
   }
  },
  "2976676960": {
@@ -14217,6 +14258,16 @@
    "en": "Class Ability usage grants Melee Energy.\nMelee Energy Gains with 1|2|3 Mods:\n[pve]12% [pvp][6%] | [pve]17% [pvp][8.5%] | [pve]20% [pvp][10%]\nAbility energy gained may be significantly decreased based on your selected ability's Chunk Energy Scalar. Learn more about this mechanic in [our explainer blog post on the Clarity website](https://url.d2clarity.com/chunk-energy-scalars)."
   }
  },
+ "4170056386": {
+  "hash": 4170056386,
+  "name": "Turncoat Catalyst",
+  "itemHash": 253843484,
+  "itemName": "Turncoat",
+  "type": "Weapon Catalyst Exotic",
+  "descriptions": {
+   "en": "Upon exiting Void Empowerment, gain a [Void]Void Overshield for 10 seconds (15 with Echo of Persistence).\nThe amount of Void Overshield granted is determined by how long you were empowered. 3 HP is granted for for each second that Empowerment lasted, capping at 40 HP for 13 seconds of Empowerment."
+  }
+ },
  "4172222323": {
   "hash": 4172222323,
   "name": "Legacy PR-55 Frame",
@@ -14288,7 +14339,7 @@
   "itemName": "Necrochasm",
   "type": "Weapon Frame Exotic",
   "descriptions": {
-   "en": "Weapon of Sorrow.\nPrecision Kills, Cursed Thrall Explosion Kills, or killing a Poisoned enemy grants 70 Reload Speed, 10% decreased Reload Animation Duration, and trigger a Cursed Thrall Explosion at the target's location.\nCursed Thrall Explosions deal up to [pve]581 [pvp][130] [Arc]Arc damage and inflict Poison within a ? meter radius. Poison lasts for 3.5 seconds and deals [pve]10 [pvp][0.4] damage every 0.5 seconds.\nKills with Cursed Thrall Explosions refill the magazine.\nCursed Thrall Explosion and Poison inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling)."
+   "en": "This is a Weapon of Sorrow.\nPrecision Kills, Cursed Thrall Explosion Kills, or killing a Poisoned enemy grants 70 Reload Speed, 10% decreased Reload Animation Duration, and trigger a Cursed Thrall Explosion at the target's location.\nCursed Thrall Explosions deal up to [pve]581 [pvp][130] [Arc]Arc damage and inflict Poison within a ? meter radius. Poison lasts for 3.5 seconds and deals [pve]10 [pvp][0.4] damage every 0.5 seconds.\nKills with Cursed Thrall Explosions refill the magazine.\nCursed Thrall Explosion and Poison inherit the weapon's [Combatant Damage Scaling](https://url.d2clarity.com/combatant-scaling)."
   }
  },
  "4185339856": {
