@@ -39304,7 +39304,63 @@
     {
      "linesContent": [
       {
-       "text": "Healing burst builds up while the weapon is readied at a rate of 5? HP/s. The burst is released either every 7 seconds for a 35 HP heal or upon stowing the weapon, releasing the built-up health."
+       "text": "Healing effect is bugged!",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": " At Chaos Reshaped x2, while this weapon is held, a healing charge builds at a rate of 5/HP per second in the background. When this reaches 35/HP (after 7 seconds), the healing effect activates, healing for 5/HP per second."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stowing this weapon immediately triggers any built-up healing at the time of stow, and each 35/HP cycle continuously flows into the next, making the healing effect constant for as long as the weapon remains equipped and perk remains active."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "While this healing effect is active, from either holding the weapon or having stowed it, "
+      },
+      {
+       "text": "NO OTHER SOURCE OF HEALING can heal you above",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "< Max HP - (Currently Built Healing Amount) >"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Your Max HP (below 100 Health Stat) is 200 HP. Thus, this bug caps your 'maximum recoverable HP' at anywhere from "
+      },
+      {
+       "text": "165HP"
+      },
+      {
+       "text": " to "
+      },
+      {
+       "text": "195HP"
+      },
+      {
+       "text": ", depending on where in the 7-second cycle the perk is currently at. This unrecoverable HP segment can only be restored by Chaos Reshaped's 5/HPs heal."
       }
      ]
     },
@@ -78609,7 +78665,63 @@
     {
      "linesContent": [
       {
-       "text": "Healing burst builds up while the weapon is readied at a rate of 5? HP/s. The burst is released either every 7 seconds for a 35 HP heal or upon stowing the weapon, releasing the built-up health."
+       "text": "Healing effect is bugged!",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": " At Chaos Reshaped x2, while this weapon is held, a healing charge builds at a rate of 5/HP per second in the background. When this reaches 35/HP (after 7 seconds), the healing effect activates, healing for 5/HP per second."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Stowing this weapon immediately triggers any built-up healing at the time of stow, and each 35/HP cycle continuously flows into the next, making the healing effect constant for as long as the weapon remains equipped and perk remains active."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "While this healing effect is active, from either holding the weapon or having stowed it, "
+      },
+      {
+       "text": "NO OTHER SOURCE OF HEALING can heal you above",
+       "classNames": [ "bold" ]
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "< Max HP - (Currently Built Healing Amount) >"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Your Max HP (below 100 Health Stat) is 200 HP. Thus, this bug caps your 'maximum recoverable HP' at anywhere from "
+      },
+      {
+       "text": "165HP"
+      },
+      {
+       "text": " to "
+      },
+      {
+       "text": "195HP"
+      },
+      {
+       "text": ", depending on where in the 7-second cycle the perk is currently at. This unrecoverable HP segment can only be restored by Chaos Reshaped's 5/HPs heal."
       }
      ]
     }
