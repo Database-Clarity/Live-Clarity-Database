@@ -4042,7 +4042,7 @@
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Stasis Super Ability to be equipped. Overwrites Barricade Cooldown to Pre-EoF values, resulting in ~1.45x faster Base Class Ability Regeneration."
+       "text": "Stasis Super Ability to be equipped. Overwrites Barricade Cooldown to a unique, faster, 70 second Base Cooldown class ability (~30 seconds at 100 Class Stat)."
       }
      ]
     },
@@ -10412,7 +10412,7 @@
  "481860150": {
   "hash": 481860150,
   "name": "Wish-Dragon Teeth",
-  "itemHash": 475652357,
+  "itemHash": 405059572,
   "itemName": "Young Ahamkara's Spine",
   "descriptions": {
    "en": [
@@ -10493,7 +10493,7 @@
        "text": "Solar Ability Hits grant "
       },
       {
-       "text": "33%"
+       "text": "30%"
       },
       {
        "text": " "
@@ -10502,7 +10502,41 @@
        "text": "[PVP: 8%]"
       },
       {
-       "text": " Tripmine Grenade Energy. 0.3 second cooldown between energy gains."
+       "text": " Tripmine Grenade Energy. "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Crackshot's Golden Gun shots grant "
+      },
+      {
+       "text": "10%"
+      },
+      {
+       "text": " "
+      },
+      {
+       "text": "[PVP: ?]"
+      },
+      {
+       "text": " per hit (30% per full salvo). The first "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Scorch tick from your abilities will also trigger the energy gains."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "0.3 second cooldown between energy gains."
       }
      ]
     },
@@ -12664,7 +12698,82 @@
     {
      "linesContent": [
       {
-       "text": "\"Melee attacks\" performed by Super Abilities are also granted the damage bonus, which stacks additively with the "
+       "text": "The following Super 'Melee' Abilities are also granted the damage bonus if the above conditions are met:"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Fist of Havoc's Light Attack"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Hammer of Sol's Shrapnel"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "void" ]
+      },
+      {
+       "text": "Sentinel Shield's Light Attack"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Glacial Quake's Light Attacks"
+      }
+     ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "• "
+      },
+      {
+       "classNames": [ "stasis" ]
+      },
+      {
+       "text": "Glacial Quake's Howl of The Storm"
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "The ability damage bonus stacks additively with the "
       },
       {
        "text": "Shieldcrush"
@@ -13250,22 +13359,6 @@
     {
      "linesContent": [
       {
-       "text": "Hits with "
-      },
-      {
-       "classNames": [ "arc" ]
-      },
-      {
-       "text": "Arc Staff grant a Stack of 'Synapse Junctions' for 5 seconds. Maximum of 3 Stacks."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
        "classNames": [ "arc" ]
       },
       {
@@ -13276,6 +13369,22 @@
       },
       {
        "text": "Jolt."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
+       "text": "Hits with "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Arc Staff grant a Stack of 'Synapse Junctions' for 5 seconds. Maximum of 3 Stacks."
       }
      ]
     },
@@ -13319,7 +13428,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Staff's Heavy Palm Blast (Light->Light->Heavy) recieves 150% of the above damage bonuses."
+       "text": "Arc Staff's Heavy Palm Blast (Light->Light->Heavy) recieves a higher damage bonus, dealing 40%|96%|174% increased damage at 1|2|3 stacks of Synapse Junctions."
       }
      ]
     }
@@ -27347,7 +27456,7 @@
     {
      "linesContent": [
       {
-       "text": "• 45% increased weapon damage"
+       "text": "• 35% increased weapon damage"
       }
      ]
     },
@@ -30046,14 +30155,13 @@
     {
      "linesContent": [
       {
-       "text": "Gain stacks of 'The Saint' by dealing damage or scoring kills against enemies. Stacks granted by kill are based off "
+       "text": "Gain stacks of 'The Saint' by dealing damage or scoring kills against enemies. Maximum of 14 stacks. Stack duration is equal to the remaining duration of your currently active "
       },
       {
-       "text": "Enemy Rank",
-       "link": "https://url.d2clarity.com/combatants"
+       "classNames": [ "void" ]
       },
       {
-       "text": ", with Minor Tier enemies granting 1, Elite Tier enemies granting 2, and Miniboss+ enemies granting 3. Stacks granted by hits are granted after dealing ? damage."
+       "text": "Ward of Dawn."
       }
      ]
     },
@@ -30063,13 +30171,14 @@
     {
      "linesContent": [
       {
-       "text": "Maximum of 14 stacks. Stack duration is equal to the remaining duration of your currently active "
+       "text": "Stacks granted by kill are based off "
       },
       {
-       "classNames": [ "void" ]
+       "text": "Enemy Rank",
+       "link": "https://url.d2clarity.com/combatants"
       },
       {
-       "text": "Ward of Dawn."
+       "text": ", with Minor|Elite|Miniboss Tier enemies granting 1|2|3 stacks. Stacks granted by hit are granted after dealing an average of ~500-700 damage, with higher damage instances requiring at least 2 hits. Damage threshold is the same across all difficulties (ignores power-deltas)."
       }
      ]
     },
@@ -47240,6 +47349,16 @@
     {
      "linesContent": [
       {
+       "text": "Grants 625% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded."
+      }
+     ]
+    },
+    {
+     "classNames": [ "spacer" ]
+    },
+    {
+     "linesContent": [
+      {
        "classNames": [ "solar" ]
       },
       {
@@ -47255,17 +47374,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Ember of Ashes)"
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Proximity Explosive Knife kills trigger an "
+       "text": "Ember of Ashes). Proximity Explosive Knife kills trigger an "
       },
       {
        "classNames": [ "solar" ]
@@ -47312,13 +47421,13 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Knife Trick or "
+       "text": "Knife Tricks or "
       },
       {
        "classNames": [ "stasis" ]
       },
       {
-       "text": "Withering Blade charges, for four total Melee Charges."
+       "text": "Withering Blades beyond capacity."
       }
      ]
     },
@@ -47331,17 +47440,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Scorch grants ?% Melee Ability Energy per tick."
-      }
-     ]
-    },
-    {
-     "classNames": [ "spacer" ]
-    },
-    {
-     "linesContent": [
-      {
-       "text": "Grants 625% Additional Base Melee Recharge Rate while Proximity Knife remains unexploded."
+       "text": "Scorch grants 7% Melee Ability Energy per tick. (Due to chunk ability scaling, this grants ~5% energy to Proximity Knife)."
       }
      ]
     }
@@ -52331,7 +52430,13 @@
     {
      "linesContent": [
       {
-       "text": "Overwrites Barricade Cooldown to Pre-EoF values, resulting in ~1.45x faster Base Class Ability Regeneration."
+       "text": "Passively grants 45% faster Base Class Ability Regeneration (does not function with "
+      },
+      {
+       "classNames": [ "arc" ]
+      },
+      {
+       "text": "Thruster)."
       }
      ]
     },
@@ -58949,6 +59054,8 @@
  "2710254013": {
   "hash": 2710254013,
   "name": "The Lost Voice",
+  "itemHash": 50291571,
+  "itemName": "Speaker's Sight",
   "descriptions": {
    "en": [
     {
@@ -59038,13 +59145,19 @@
        "text": "[PVP: 3]"
       },
       {
-       "text": " seconds in a 7.5 meter radius (strength of both buffs is increased to x2 with "
+       "text": " seconds in a 7.5 meter radius (strength of both buffs is increased to "
       },
       {
        "classNames": [ "solar" ]
       },
       {
-       "text": "Touch of Flame equipped)"
+       "text": "x2, for the wearer only, while "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Touch of Flame equipped)."
       }
      ]
     },
@@ -75988,7 +76101,7 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "9 with Ember of Solace)"
+       "text": "9 with Ember of Solace) to the caster."
       }
      ]
     }
@@ -78086,7 +78199,19 @@
        "classNames": [ "solar" ]
       },
       {
-       "text": "Cure x2), 100 Reload Speed, and 20% decreased Reload Animation Duration for ? seconds."
+       "text": "Cure x2), 100 Reload Speed, and 20% decreased Reload Animation Duration for ? seconds. Healing is reduced to "
+      },
+      {
+       "classNames": [ "solar" ]
+      },
+      {
+       "text": "Cure x1 if the Hunter Aspect "
+      },
+      {
+       "text": "'On Your Mark'"
+      },
+      {
+       "text": " is at x10 stacks."
       }
      ]
     },
@@ -87930,7 +88055,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Moths. When both allies and enemies are close, one of each moth spawns."
+       "text": "Arc Moths."
       }
      ]
     },
@@ -87953,7 +88078,7 @@
        "classNames": [ "arc" ]
       },
       {
-       "text": "Arc Moths: slower-flying, offensive role. They seek out targets and detonate on contact, dealing up to "
+       "text": "Arc Moths: slower-flying, offensive role. They seek out targets at 10m/s and detonate on contact, dealing up to "
       },
       {
        "text": "526"
@@ -87990,7 +88115,7 @@
        "classNames": [ "void" ]
       },
       {
-       "text": "Void Moths: faster-flying, support role. They seek out allies and grant them a 22.5 HP "
+       "text": "Void Moths: faster-flying, support role. They seek out allies at 25m/s and grant them a 22.5 HP "
       },
       {
        "classNames": [ "void" ]
