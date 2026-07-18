@@ -10861,14 +10861,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Passively grants 10 Stability and ?% decreased Ready Animation Duration.\n\nCasting your Class Ability grants 'Wraithmetal Mail' for 15 seconds and reloads your currently equipped weapon.\n\n#Reload\n\nWraithmetal Mail grants the following benefits:\n• ? Stability\n• ? Handling\n• 12.5% increased Sprint Speed\n• 33% increased Slide Distance\n• ? Decreased ADS Movement Speed Penalty\n\nCurrently grants no benefit to the Class stat, unlike what the game says.",
+     "main": "Passively grants 10 Stability and ?% decreased Ready Animation Duration.\n\nCasting your Class Ability grants 'Wraithmetal Mail' for 15 seconds, collects all ammo bricks within 15 meters, and reloads your currently equipped weapon. #Reload\n\nWraithmetal Mail grants the following benefits:\n• 35 Stability\n• ? Handling\n• 12.5% increased Sprint Speed\n• 33% increased Slide Distance\n• ? Decreased ADS Movement Speed Penalty\n\nDoes not grant any benefit to the Class stat, despite what the game says.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1767637342672,
+      "lastUpdate": 1784406974848,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -10878,7 +10878,7 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1767637365197,
+   "lastUpload": 1784409735415,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -24326,14 +24326,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "Weapons of Light from <void/>Ward of Dawn can now persist outside the bubble for 15 seconds.\n\nWhile Weapons of Light is active: \nGain stacks of 'The Saint' by dealing damage or scoring kills against enemies. Maximum of 14 stacks. Stack duration is equal to the remaining duration of your currently active <void/>Ward of Dawn.\n\nStacks granted by kill are based off <link Enemy Rank [#CombatantClassifications] />, with Minor|Elite|Miniboss Tier enemies granting 1|2|3 stacks. Stacks granted by hit are granted after dealing an average of ~500-700 damage, with higher damage instances requiring at least 2 hits. Damage threshold is the same across all difficulties (ignores power-deltas).\n\nGaining a stack of 'The Saint' through <kinetic/>Kinetic or <void/>Void damage triggers a <void/>Suppressing Blast in a 6? meter radius around the target, applying <void/>Suppression for <pve 6 /> <pvp [?] /> seconds. \n\nPicking up your <void/>Ward of Dawn consumes all stacks of The Saint and extends its active timer by ? seconds per stack consumed. Maximum of two extensions per super. ",
+     "main": "Weapons of Light from <void/>Ward of Dawn can now persist outside the bubble for 15 seconds.\n\nWhile Weapons of Light is active: \nGain stacks of 'The Saint' by dealing damage or scoring kills against enemies. Maximum of 14 stacks. Stack duration is equal to the remaining duration of your currently active <void/>Ward of Dawn.\n\nStacks granted by kill are based off <link Enemy Rank [#CombatantClassifications] />, with Minor|Elite|Miniboss Tier enemies granting 1|2|3 stacks. Stacks granted by hit are granted after dealing an average of ~500-700 damage, with higher damage instances requiring at minimum 2 hits. Hit requirement stays the same across all difficulties (ignores power-deltas).\n\nGaining a stack of 'The Saint' through <kinetic/>Kinetic or <void/>Void damage triggers a <void/>Suppressing Blast in a 6? meter radius around the target, applying <void/>Suppression for <pve 6 /> <pvp [?] /> seconds. \n\nPicking up your <void/>Ward of Dawn consumes all stacks of The Saint and extends its active timer by ? seconds per stack consumed. Maximum of two extensions per super. ",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1784327814758,
+      "lastUpdate": 1784407216920,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -24343,7 +24343,7 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1784331766324,
+   "lastUpload": 1784409735415,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -54705,14 +54705,14 @@
    "type": "Armor Trait Exotic",
    "editor": {
     "en": {
-     "main": "<strand/>Threaded Spike can now target and bounce to <strand/>Tangles, detonating them on impact and immediately returning to the user.\n\nCatching the <strand/>Threaded Spike after it detonates a <strand/>Tangle equips you with a second throwable <strand/>Tangle. Alternatively, failing to catch the <strand/>Threaded Spike triggers an 8 meter <strand/>Strand Detonation around you, dealing <pve 727 /> <pvp [?] /> damage with no falloff. \n\nThis detonation counts as Powered Melee damage, scaling with the Melee stat and triggering melee-effects.\n\nCatching a <strand/>Threaded Spike that didn't detonate a <strand/>Tangle refunds an additional fixed 25% Melee Ability Energy.",
+     "main": "<strand/>Threaded Spike can now target and bounce to <strand/>Tangles, detonating them on impact and immediately returning to the user.\n\nCatching the <strand/>Threaded Spike after it detonates a <strand/>Tangle equips you with a second throwable <strand/>Tangle. Alternatively, failing to catch the <strand/>Threaded Spike triggers a 9 meter <strand/>Strand Detonation around you, dealing <pve 727 /> <pvp [?] /> damage with no falloff. \n\nThis detonation counts as Powered Melee damage, scaling with the Melee stat and triggering melee-effects.\n\nCatching a <strand/>Threaded Spike that didn't detonate a <strand/>Tangle refunds an additional fixed 25% Melee Ability Energy.",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1783933899270,
+      "lastUpdate": 1784407024320,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -54722,7 +54722,7 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1783935545841,
+   "lastUpload": 1784409735415,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
@@ -69580,14 +69580,14 @@
    "type": "Weapon Trait",
    "editor": {
     "en": {
-     "main": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns, Trace Rifles: #e${18-#d} | <arc/>13\n• Machine Guns: #e${16-#c} | <arc/>11\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>9\n• Sidearms: #e${10-#d} | <arc/>7\n• Rocket Pulse Rifle: #e${8-#d} | <arc/>5\n• Scout Rifles, Hand Cannons: #e${7-#c} | <arc/>#e${6-#b}\n• Swords: #e${7-#c} | <arc/>#e${5-#d}\n• Glaives, Linear Fusion Rifles: #e${4-#d} | <arc/>3 //Edge of Concurrence has this perk hard-coded, make sure to update it as well if updating here\n• Rocket Sidearm, Sniper Rifle?: #e${4-#d} | <arc/>2\n• Bows, Grenade Launchers: #e${3-#d} | <arc/>2\n• Aggressive Frame Fusion Rifle?: #e${3-#d}|1<<arc/>\n\nenhanced (\nvar b = 3\nvar c = 2\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1.\n)",
+     "main": "Scoring multiple Direct Hits with the weapon within 3 seconds of each causes the next Direct Hit to apply <arc/>Jolt.\n\nBeing <arc/>Amplified decreases the number of Hits required.\n\nHits needed to activate normally | while <arc/>Amplified:\n• Submachine Guns, Trace Rifles: #e${18-#d} | <arc/>13\n• Machine Guns: #e${16-#c} | <arc/>11\n• Auto Rifles: #e${15-#d} | <arc/>11\n• Pulse Rifles: #e${14-#d} | <arc/>9\n• Sidearms: #e${10-#d} | <arc/>7\n• Rocket Pulse Rifle: #e${8-#d} | <arc/>5\n• Scout Rifles, Hand Cannons: #e${7-#c} | <arc/>#e${6-#b}\n• Swords: #e${6-#c} | <arc/>#e${4-#d}\n• Glaives, Linear Fusion Rifles: #e${4-#d} | <arc/>3 \n• Rocket Sidearm, Sniper Rifle?: #e${4-#d} | <arc/>2\n• Bows, Grenade Launchers: #e${3-#d} | <arc/>2\n• Shotguns, Aggressive Frame Fusion Rifle: #e${3-#d}|1<<arc/>\n\nenhanced (\nvar b = 3\nvar c = 2\nvar d = 1\n#e Number of Hits required while not <arc/>Amplified is decreased by 1.\n)",
      "secondary": "import self"
     }
    },
    "updateTracker": {
     "descriptions": {
      "en": {
-      "lastUpdate": 1782551839685,
+      "lastUpdate": 1784409679202,
       "updatedBy": "Hawkmoona"
      }
     },
@@ -69597,7 +69597,7 @@
     }
    },
    "uploadedBy": "Hawkmoona",
-   "lastUpload": 1783446631691,
+   "lastUpload": 1784409735415,
    "inLiveDatabase": true,
    "uploadToLive": false
   },
