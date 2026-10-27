@@ -1,0 +1,37 @@
+name: Publish editor data bundle
+
+on:
+  push:
+    branches: [editor-data]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: editor-data-bundle
+  cancel-in-progress: true
+
+jobs:
+  bundle:
+    if: github.ref == 'refs/heads/editor-data'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build bundle
+        run: node scripts/build-bundle.mjs "$RUNNER_TEMP/editor-data-bundle/bundle.json"
+      - name: Publish only to editor-data-bundle
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+        run: |
+          publish="$RUNNER_TEMP/editor-data-bundle"
+          git -C "$publish" init --initial-branch=editor-data-bundle
+          git -C "$publish" config user.name "github-actions[bot]"
+          git -C "$publish" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C "$publish" config http.https://github.com/.extraheader "$(git config --get http.https://github.com/.extraheader)"
+          git -C "$publish" add bundle.json
+          git -C "$publish" commit -m "Bundle editor data at $SOURCE_COMMIT"
+          git -C "$publish" push --force "https://github.com/$GITHUB_REPOSITORY.git" HEAD:refs/heads/editor-data-bundle

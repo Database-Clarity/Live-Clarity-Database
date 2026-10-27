@@ -1,0 +1,25 @@
+{
+  "associated": [],
+  "hash": 3418782618,
+  "legacy": {
+    "inLiveDatabase": true,
+    "lastUpload": 1791495267470,
+    "updateTracker": {
+      "descriptions": {
+        "en": {
+          "lastUpdate": 1722273891908,
+          "updatedBy": "Stardust"
+        }
+      }
+    },
+    "uploadToLive": false,
+    "uploadedBy": "Stardust"
+  },
+  "text": {
+    "en": {
+      "text": "Upon emptying the Magazine:\n<title Refills [G_refill] /> #e${60*#d}% of the number of Hits landed (rounded up) into the Magazine from reserves.\n\nHits are counted from either your last reload or the last time the perk was triggered. Does not require Direct Hits.\n\nRequires firing 28.75% of the Magazine Capacity for the refill to activate.\n\nCannot load the Magazine beyond its base capacity.\n\nHits after triggering a refill do not count while the Rewind Rounds buff is active (1? second).\n\nAdaptive Burst Linear Fusion Rifle behavior:\n• Each individual bolt in the burst counts as a Hit\n• Refill amount is uniquely #e${14*#d}% of the number of Hits rounded up (numbers are subject to change once we get more data points)\n\n// For burst/spread weapons, it counts each individual hit separately and rounds up after calculating the refund amount. However, it will round DOWN after dividing this number by the size of the burst/spread.\n\nenhanced (\nvar d = 1.1666666666\n#e Refill amount is increased by 16.66% (60%⁠🠚⁠70%).\n)",
+      "updatedAt": "2024-07-29T17:24:51.908Z",
+      "updatedBy": "Stardust"
+    }
+  }
+}
