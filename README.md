@@ -3,11 +3,14 @@
 This branch is for independent review, not production adoption. Do not merge it into `converter`, deploy,
 write intermediate alias stubs, or release the converter without the existing owner approvals.
 
-The publisher and companion follow converter `4eabf5ad107ac06e8b0d34875b6dbde9c812d523`'s tested examples,
+The publisher and companion follow converter `047673916754f2b4a9af2635612dac8876af0dd7`'s tested examples,
 using the actual package imports and passing `databaseSettings`. Reference preflight rejects broken aliases,
 missing globals/imports and unclosed associations rather than silently dropping authored content. Output
 validation happens after description filtering. All eight conversions and version acquisition succeed before
 the CLI writes any files; local filesystem write failures can still leave partial files and must not be deployed.
+Named imports require authored exports, even for Object-prototype names such as `constructor`, `__proto__` and
+`toString`; explicitly authored and empty exports remain valid. Offline tests exercise both scopes in all presets
+and assert that missing names fail the actual CLI before creating outputs or advancing versions.
 
 ## Reproducible review installation
 
