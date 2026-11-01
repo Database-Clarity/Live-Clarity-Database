@@ -32,6 +32,14 @@ export function validateInitialized(s, outputs) {
   const expected = [...formats.map(x => `descriptions/${x}.json`), 'versions.json'].sort()
   if (!record(outputs) || canonical(Object.keys(outputs).sort()) !== canonical(expected) || canonical(Object.keys(s.outputDigests).sort()) !== canonical(expected)) fail()
   for (const path of expected) if (!sha256(s.outputDigests[path]) || digest(outputs[path]) !== s.outputDigests[path]) fail()
+  try {
+    const versions = JSON.parse(outputs['versions.json'])
+    if (!Number.isFinite(versions.descriptions) || versions.descriptions < 0) fail()
+    for (const path of expected.filter(path => path.startsWith('descriptions/'))) {
+      const rows = JSON.parse(outputs[path])
+      if (!record(rows)) fail()
+    }
+  } catch { fail() }
   if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(s.accepted.repository)) fail()
   const snapshots = { [sourceKey(s.accepted.repository, s.accepted.commit, s.accepted.blob)]: { ...s.source, repository: s.accepted.repository, commit: s.accepted.commit, blob: s.accepted.blob }, ...(s.sourceSnapshots ?? {}) }
   for (const [key, snapshot] of Object.entries(snapshots)) {

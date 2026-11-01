@@ -12,11 +12,16 @@ export const canonical = value => {
 }
 export const digest = value => createHash('sha256').update(value).digest('hex')
 
-// Keep every perk field: metadata and trackers can be emitted by a preset.
-// Unknown root administrative fields are not consumed by the converter.
+// Retain converter inputs, topology, metadata and trackers. Upload controls and
+// unrelated request/administrative fields are not read by this publisher.
+const renderFields = ['hash', 'aliasOf', 'aliasKind', 'name', 'type', 'itemHash', 'itemName', 'editor', 'associated', 'stats', 'lastUpload', 'uploadedBy', 'updateTracker', 'metadata', 'facts', 'custom', 'legacy']
 export function renderProjection(input) {
   if (!input || typeof input.perks !== 'object' || !input.perks || Array.isArray(input.perks)) throw new Error('Invalid accepted perks')
-  return { perks: input.perks, databaseSettings: input.databaseSettings ?? null }
+  const perks = Object.fromEntries(Object.entries(input.perks).map(([id, row]) => {
+    if (!row || typeof row !== 'object' || Array.isArray(row)) throw new Error('Invalid accepted perk')
+    return [id, Object.fromEntries(renderFields.filter(field => Object.hasOwn(row, field)).map(field => [field, row[field]]))]
+  }))
+  return { perks, databaseSettings: input.databaseSettings ?? null }
 }
 export function publisherIdentity(root) {
   const files = ['index.ts', 'externalData.ts', 'package.json', 'package-lock.json']
@@ -28,7 +33,7 @@ export function publisherIdentity(root) {
     }
   }
   walk('scripts')
-  return digest(canonical(files.sort().map(name => [name, digest(readFileSync(join(root, name)))])))
+  return digest(canonical({ runtime: process.versions.node, contract: 1, files: files.sort().map(name => [name, digest(readFileSync(join(root, name)))]) }))
 }
 export function translationFingerprint(input, manifest, publisher) {
   if (!manifest || typeof manifest.version !== 'string' || !manifest.version || typeof manifest.inventoryPath !== 'string' || !manifest.inventoryPath.startsWith('/')) throw new Error('Invalid manifest identity')

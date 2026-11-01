@@ -10,10 +10,13 @@ test('canonicalization ignores key order and source provenance, but not render i
   assert.equal(canonical({ b: 1, a: 2 }), canonical({ a: 2, b: 1 }))
   const f = run().fingerprint
   assert.equal(run({ ...input, requestId: 'unrelated' }).fingerprint, f)
+  assert.equal(run({ ...input, perks: { 300: { ...input.perks[300], requestId: 'unrelated', uploadToLive: true } } }).fingerprint, f)
   assert.equal(run(input, manifest, publisher, { schemaVersion: 1, translationFingerprint: f }).result, 'unchanged')
   for (const changed of [
     { ...input, perks: { ...input.perks, 1: { editor: { en: { main: 'global' } } } } },
     { ...input, perks: { 300: { ...input.perks[300], editor: { en: { main: 'changed' } } } } },
+    { ...input, perks: { 300: { ...input.perks[300], editor: { ...input.perks[300].editor, de: { main: 'Anders' } } } } },
+    { ...input, perks: { 300: { ...input.perks[300], updateTracker: { descriptions: { de: 2 } } } } },
     { ...input, databaseSettings: { changed: true } }
   ]) assert.notEqual(run(changed).fingerprint, f)
   assert.notEqual(run(input, { ...manifest, version: 'v2' }).fingerprint, f)

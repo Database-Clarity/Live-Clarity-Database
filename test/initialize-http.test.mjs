@@ -66,8 +66,9 @@ async function exercise(scenario) {
       releaseBarrier()
       translations = await pendingTranslation
     }
-    if (['unchanged', 'manifest-changed', 'manifest-fails'].includes(scenario) && first.code === 0) {
+    if (['unchanged', 'admin-only', 'manifest-changed', 'manifest-fails'].includes(scenario) && first.code === 0) {
       accepted = 'd'.repeat(40)
+      if (scenario === 'admin-only') { sourceBytes = Buffer.from(JSON.stringify({ perks: { ...source.perks, 300: { ...source.perks[300], requestId: 'different' } } })); sourceBlob = gitBlob(sourceBytes) }
       translations = await run('publish-fake-http.mjs', 'translations')
     }
     if (scenario === 'tampered-state' && first.code === 0) {
@@ -170,6 +171,10 @@ test('translation before English keeps updated translation and advances English'
 })
 test('a new accepted commit with identical inputs skips Git writes', async () => {
   const r = await exercise('unchanged'); assert.equal(r.translations.code, 0, r.translations.stderr)
+  assert.equal(JSON.parse(r.translations.stdout).result, 'unchanged'); assert.equal(r.patches, 1); assert.equal(r.inventoryReads, 0)
+})
+test('unconsumed administrative change skips inventory and output writes', async () => {
+  const r = await exercise('admin-only'); assert.equal(r.translations.code, 0, r.translations.stderr)
   assert.equal(JSON.parse(r.translations.stdout).result, 'unchanged'); assert.equal(r.patches, 1); assert.equal(r.inventoryReads, 0)
 })
 test('manifest identity change forces a build and updates provenance', async () => {
