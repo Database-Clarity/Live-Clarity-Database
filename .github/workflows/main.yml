@@ -1,15 +1,16 @@
-name: Build and Deploy descriptions
+name: Validate publisher adoption candidate
 
 on:
   push:
     branches:
-      - converter
+      - agents/publisher-adoption
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  test_and_merge:
+  validate_candidate:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,20 +23,10 @@ jobs:
           node-version: 20.x
 
       - name: Install 🔧
-        run: |
-          npm ci
-          npm i @icemourne/tool-box @icemourne/description-converter
+        run: npm ci
 
       - name: Build 🛠️
         run: npm run build
 
-      - name: Convert 🛠️
-        run: npm run convert
-
-      - name: Generate data 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: database # Folder you wish to deploy
-          branch: live # Branch you wish to deploy to
-          clean: true
-          clean-exclude: README.md
+      - name: Test offline publisher contracts
+        run: npm test
