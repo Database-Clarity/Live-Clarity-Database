@@ -92,3 +92,11 @@ production initializer: full provenance, manifest identity retrieval,
 format/coverage validation, initialized incremental publication and the
 complete race matrix remain outstanding. Do not expose a real Git proxy on
 its loopback endpoint or use it for an output write.
+
+The initialized fixture publisher can be exercised through the same fake Git
+server with `node scripts/publish-fake-http.mjs http://127.0.0.1:PORT
+CONFIG.json english` or `translations`. It refuses non-loopback endpoints.
+`node --test test/initialize-http.test.mjs` runs the initialization and both
+mode sequences. This remains experimental: concurrent interleavings, all
+structural cases, provenance/format validation and the full acceptance matrix
+are not complete; it must not be connected to a real repository or proxy.
