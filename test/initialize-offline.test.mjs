@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { digest } from '../scripts/publish-preflight.mjs'
 import { planInitialization, previewInitialization } from '../scripts/initialize-offline.mjs'
-import { inspectState, requiredFormats } from '../scripts/state-v2.mjs'
+import { inspectState, requiredFormats, sourceKey } from '../scripts/state-v2.mjs'
 import { structuralQueue } from '../scripts/structural-queue.mjs'
 const a = 'a'.repeat(40), b = 'b'.repeat(40), h = 'c'.repeat(64)
 const input = { perks: { 1: {}, 2: {}, 3: {}, 100: { editor: { en: { main: 'text' } } } } }
@@ -44,10 +44,15 @@ test('state validates mixed component source snapshots and rejects tampering', (
   nextArgs.accepted.blob = createHash('sha1').update(`blob ${nextArgs.accepted.bytes.length}\0`).update(nextArgs.accepted.bytes).digest('hex')
   nextArgs.accepted.commit = b
   const next = planInitialization(nextArgs), state = structuredClone(next.state)
-  state.sourceSnapshots = { [first.state.accepted.blob]: { ...first.state.source, commit: first.state.accepted.commit } }
+  const key = sourceKey(first.state.accepted.repository, first.state.accepted.commit, first.state.accepted.blob)
+  state.sourceSnapshots = { [key]: { ...first.state.source, ...first.state.accepted } }
   state.components[100] = first.state.components[100]; state.graph[100] = first.state.graph[100]
   const outputs = Object.fromEntries(Object.entries(next.files).filter(([p]) => p !== '.publication-state.json'))
   assert.equal(inspectState(state, outputs, nextArgs.accepted, b).status, 'initialized')
-  state.sourceSnapshots[first.state.accepted.blob].value.perks[100].editor.en.main = 'tampered'
+  const invalidRepo = structuredClone(state); invalidRepo.components[100].sourceRepo = 'other/repo'
+  assert.equal(inspectState(invalidRepo, outputs, nextArgs.accepted, b).status, 'recovery-required')
+  const invalidCommit = structuredClone(state); invalidCommit.components[100].sourceCommit = 'e'.repeat(40)
+  assert.equal(inspectState(invalidCommit, outputs, nextArgs.accepted, b).status, 'recovery-required')
+  state.sourceSnapshots[key].value.perks[100].editor.en.main = 'tampered'
   assert.equal(inspectState(state, outputs, nextArgs.accepted, b).status, 'recovery-required')
 })

@@ -53,7 +53,7 @@ const fingerprint = translationFingerprint(accepted.input, { version: manifest.v
 if (initial.state != null) {
   const versionBytes = initial.versionBytes
   validateInitialized(initial.state, { ...initial.files, 'versions.json': versionBytes })
-  if (initial.state.accepted.commit !== accepted.commit || initial.state.accepted.blob !== accepted.blob || initial.state.translationFingerprint !== fingerprint || initial.state.manifest.digest !== manifest.digest || initial.state.publisher.identity !== identity) throw new Error('Already initialized with different inputs')
+  if (initial.state.accepted.repository !== accepted.repository || initial.state.accepted.commit !== accepted.commit || initial.state.accepted.blob !== accepted.blob || initial.state.translationFingerprint !== fingerprint || initial.state.manifest.digest !== manifest.digest || initial.state.publisher.identity !== identity) throw new Error('Already initialized with different inputs')
   console.log(JSON.stringify({ result: 'already-initialized-fake', commit: initial.head, source: accepted.commit, operation: initial.state.baseline.operation }))
   process.exit(0)
 }

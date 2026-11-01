@@ -9,6 +9,7 @@ const own = (o, k) => Object.hasOwn(o, k)
 const fail = () => { throw new Error('recovery-required: invalid publication state') }
 const formats = ['braytech', 'clarity', 'clarityV2', 'crayon', 'dim', 'foundry', 'lightGG', 'vaultZero']
 export const requiredFormats = formats
+export const sourceKey = (repository, commit, blob) => `${repository}@${commit}:${blob}`
 export function graphOf(source) {
   if (!record(source?.perks)) fail()
   return Object.fromEntries(Object.entries(source.perks).map(([id, row]) => [id, topology(row)]))
@@ -31,22 +32,24 @@ export function validateInitialized(s, outputs) {
   const expected = [...formats.map(x => `descriptions/${x}.json`), 'versions.json'].sort()
   if (!record(outputs) || canonical(Object.keys(outputs).sort()) !== canonical(expected) || canonical(Object.keys(s.outputDigests).sort()) !== canonical(expected)) fail()
   for (const path of expected) if (!sha256(s.outputDigests[path]) || digest(outputs[path]) !== s.outputDigests[path]) fail()
-  const snapshots = { [s.accepted.blob]: { ...s.source, commit: s.accepted.commit }, ...(s.sourceSnapshots ?? {}) }
-  for (const [blob, snapshot] of Object.entries(snapshots)) {
-    if (!sha1(blob) || !sha1(snapshot.commit) || typeof snapshot.bytes !== 'string' || !sha256(snapshot.digest)) fail()
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(s.accepted.repository)) fail()
+  const snapshots = { [sourceKey(s.accepted.repository, s.accepted.commit, s.accepted.blob)]: { ...s.source, repository: s.accepted.repository, commit: s.accepted.commit, blob: s.accepted.blob }, ...(s.sourceSnapshots ?? {}) }
+  for (const [key, snapshot] of Object.entries(snapshots)) {
+    const blob = snapshot.blob
+    if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(snapshot.repository) || key !== sourceKey(snapshot.repository, snapshot.commit, blob) || !sha1(blob) || !sha1(snapshot.commit) || typeof snapshot.bytes !== 'string' || !sha256(snapshot.digest)) fail()
     const bytes = Buffer.from(snapshot.bytes, 'base64')
     try { if (bytes.toString('base64') !== snapshot.bytes || createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex') !== blob || digest(canonical(snapshot.value)) !== snapshot.digest || canonical(JSON.parse(bytes.toString('utf8'))) !== canonical(snapshot.value)) fail() } catch { fail() }
   }
   if (canonical(Object.keys(s.components).sort()) !== canonical(Object.keys(s.graph).sort())) fail()
   for (const [id, component] of Object.entries(s.components)) {
     if (!/^\d+$/.test(id) || !record(component) || !sha1(component.sourceCommit) || !sha1(component.sourceBlob) || !own(component, 'topology') || !Array.isArray(component.dependencies) || ![component.english, component.translations].every(x => x === null || sha1(x))) fail()
-    const snapshot = snapshots[component.sourceBlob]
+    const snapshot = snapshots[sourceKey(component.sourceRepo, component.sourceCommit, component.sourceBlob)]
     const row = snapshot?.value?.perks?.[id]
-    if (!snapshot || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || component.dependencies.some(dep => !own(s.components, dep))) fail()
+    if (!snapshot || snapshot.repository !== component.sourceRepo || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || component.dependencies.some(dep => !own(s.components, dep))) fail()
   }
   const members = new Set(), generations = new Set()
   for (const q of s.pending) {
-    if (!record(q) || !sha256(q.generation) || !sha1(q.sourceCommit) || !sha1(q.sourceBlob) || !Array.isArray(q.members) || !q.members.length || generations.has(q.generation)) fail()
+    if (!record(q) || !sha256(q.generation) || !sha1(q.sourceCommit) || !sha1(q.sourceBlob) || !snapshots[sourceKey(q.sourceRepo, q.sourceCommit, q.sourceBlob)] || !Array.isArray(q.members) || !q.members.length || generations.has(q.generation)) fail()
     generations.add(q.generation)
     for (const id of q.members) { if (!/^\d+$/.test(id) || members.has(id)) fail(); members.add(id) }
   }

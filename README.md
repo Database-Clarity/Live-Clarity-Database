@@ -100,3 +100,10 @@ CONFIG.json english` or `translations`. It refuses non-loopback endpoints.
 mode sequences. This remains experimental: concurrent interleavings, all
 structural cases, provenance/format validation and the full acceptance matrix
 are not complete; it must not be connected to a real repository or proxy.
+
+The experimental state identifies each retained source snapshot by repository,
+commit and blob together; the same blob at different commits has distinct
+provenance. Incremental fake HTTP tests also exercise a manifest metadata and
+inventory GET fixture, and barrier-controlled Git ref conflicts. These tests
+are partial: the complete interleaving, closure, bootstrap, format and
+production-gating acceptance matrix remains outstanding.

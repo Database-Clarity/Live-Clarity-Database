@@ -13,11 +13,12 @@ export function planInitialization({ accepted, output, publisher, manifest, lang
   const blob = createHash('sha1').update(`blob ${acceptedBytes.length}\0`).update(acceptedBytes).digest('hex')
   if (blob !== accepted.blob || canonical(JSON.parse(acceptedBytes.toString('utf8'))) !== canonical(accepted.input) || digest(manifest.bytes) !== manifest.digest) throw new Error('Pinned input digest mismatch')
   JSON.parse(Buffer.from(manifest.bytes).toString('utf8'))
+  const repository = accepted.repository ?? 'fixture/accepted'
   const source = accepted.input, graph = graphOf(source), components = {}
   for (const [id, row] of Object.entries(source.perks)) {
     const deps = [...new Set(dependencies(row))].sort()
     if (deps.some(dep => !Object.hasOwn(source.perks, dep))) throw new Error(`Missing dependency for ${id}`)
-    components[id] = { sourceCommit: accepted.commit, sourceBlob: accepted.blob, topology: graph[id], dependencies: deps, english: accepted.commit, translations: accepted.commit }
+    components[id] = { sourceRepo: repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, topology: graph[id], dependencies: deps, english: accepted.commit, translations: accepted.commit }
   }
   const files = {}, old = output.files
   if (!old || Object.keys(old).some(path => !/^descriptions\/[A-Za-z0-9_-]+\.json$/.test(path))) throw new Error('Invalid legacy output')
@@ -31,7 +32,7 @@ export function planInitialization({ accepted, output, publisher, manifest, lang
   files['versions.json'] = JSON.stringify(versions, null, 1)
   const manifestIdentity = { version: manifest.version, path: manifest.path, digest: manifest.digest }
   const operation = digest(canonical({ accepted: [accepted.commit, accepted.blob], output: [output.commit, output.tree], publisher, manifest: manifestIdentity, languages, digests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }))
-  const state = { schemaVersion: 2, initialized: true, baseline: { kind: 'initial-publication', outputCommit: output.commit, outputTree: output.tree, operation }, accepted: { commit: accepted.commit, blob: accepted.blob }, source: { digest: digest(canonical(source)), value: source, bytes: acceptedBytes.toString('base64') }, graph, publisher, manifest: manifestIdentity, inventory: { formats: [...requiredFormats], languages }, components, pending: [], translationFingerprint: fingerprint, outputDigests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }
+  const state = { schemaVersion: 2, initialized: true, baseline: { kind: 'initial-publication', outputCommit: output.commit, outputTree: output.tree, operation }, accepted: { repository, commit: accepted.commit, blob: accepted.blob }, source: { digest: digest(canonical(source)), value: source, bytes: acceptedBytes.toString('base64') }, graph, publisher, manifest: manifestIdentity, inventory: { formats: [...requiredFormats], languages }, components, pending: [], translationFingerprint: fingerprint, outputDigests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }
   validateInitialized(state, files)
   return { parent: output.commit, acceptedCommit: accepted.commit, operation, state, files: { ...files, '.publication-state.json': JSON.stringify(state, null, 1) } }
 }

@@ -24,7 +24,7 @@ test('English pipeline sends only en to converter and never takes translation sk
   assert.deepEqual(calls, ['fetch', 'install', ['convert', ['en']], 'publish'])
 })
 test('pending queue forces work despite matching fingerprint', async () => {
-  const { calls, options, plan, files } = make(); options.readOutput = async () => ({ state: { ...plan.state, pending: [{ generation: 'c'.repeat(64), sourceCommit: commit, sourceBlob: commit, members: ['100'] }] }, files })
+  const { calls, options, plan, files } = make(); options.readOutput = async () => ({ state: { ...plan.state, pending: [{ generation: 'c'.repeat(64), sourceRepo: plan.state.accepted.repository, sourceCommit: commit, sourceBlob: plan.state.accepted.blob, members: ['100'] }] }, files })
   await runPipeline(options); assert.equal(calls.at(-1), 'publish')
 })
 test('normal pipeline rejects missing and malformed state before work', async () => {
