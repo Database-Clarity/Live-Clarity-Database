@@ -37,3 +37,24 @@ this check-only workflow must not be mistaken for a ready production release.
 `npm run convert` is side-effectful: it reads `liveDescriptions.json`, fetches live inventory/version inputs and
 writes the eight description files and `versions.json` under `database`. Do not run it against production inputs
 or reuse output from a failed run. Tests use explicit local network-boundary fixtures and never publish.
+
+## Publish split work in progress
+
+This branch contains preliminary, isolated helpers only; it is not a publish
+candidate. The existing CLI and workflow still use the legacy full conversion
+and version flow. Do not enable a trigger, bootstrap a publication state, or
+use these helpers to write live output. The required atomic output adapter,
+component watermarks, queue persistence and generation-aware translation
+promotion, immutable source/manifest resolution, CLI orchestration, and
+inactive workflow templates are not implemented. The pure queue is an initial
+calculation, not a complete editor-facing queue contract. Independent review
+and all production approvals remain outstanding.
+
+The optional conversion language filter leaves the full input available to
+imports. When all three `PUBLISH_ACCEPTED_PATH`, `PUBLISH_INVENTORY_PATH` and
+`PUBLISH_INVENTORY_SHA256` are provided, the CLI reads those local files and
+verifies the inventory bytes; the caller is responsible for resolving immutable
+refs and manifest identity. The preflight helper is built-in-only and compares
+its conservative render fingerprint to a provided successful state. It does
+not fetch refs, publish, or persist that state. The atomic helper requires a
+caller-supplied adapter and safe composition logic; tests use only fake Git.

@@ -173,3 +173,23 @@ test('late clarityV2 association failure does not write earlier legacy presets',
     assert.equal(existsSync(join(dir, 'database')), false)
   })
 })
+
+test('language selection converts only English while retaining full lookup', () => {
+  const multilingual = {
+    ...globals,
+    300: perk(300, 'English', { editor: { en: { main: 'English', secondary: 'English' }, de: { main: 'Deutsch', secondary: 'Deutsch' } } })
+  }
+  for (const preset of Object.keys(converterSettings)) {
+    const english = databaseConverter(preset, multilingual, {}, undefined, ['en'])
+    assert.ok(english[300].descriptions.en, preset)
+    assert.equal(english[300].descriptions.de, undefined, preset)
+  }
+})
+
+test('pinned inventory digest is checked before output is written', () => {
+  runCli(input, { PUBLISH_ACCEPTED_PATH: 'liveDescriptions.json', PUBLISH_INVENTORY_PATH: 'inventory.json', PUBLISH_INVENTORY_SHA256: '0'.repeat(64) }, (run, dir) => {
+    assert.notEqual(run.status, 0)
+    assert.match(run.stderr, /Inventory digest mismatch/)
+    assert.equal(existsSync(join(dir, 'database')), false)
+  })
+})

@@ -29,7 +29,8 @@ export const databaseConverter = (
   converterType: string,
   database: IntermediatePerks,
   inventoryItem: InventoryItem,
-  databaseSettings?: Database['databaseSettings']
+  databaseSettings?: Database['databaseSettings'],
+  languages?: readonly string[]
 ) => {
   const settings = getSettings(converterType)
   validateReferences(database)
@@ -59,9 +60,15 @@ export const databaseConverter = (
     }
 
     const cleanPerk = getDataFromPerk(perk, settings.getFromPerk)
+    if (languages && cleanPerk.updateTracker?.descriptions) {
+      cleanPerk.updateTracker.descriptions = Object.fromEntries(
+        Object.entries(cleanPerk.updateTracker.descriptions).filter(([language]) => languages.includes(language))
+      )
+    }
 
     const descriptions = Object.entries(cleanPerk.editor).reduce<{ [key: string]: any }>(
       (acc, [language, descriptions]) => {
+        if (languages && !languages.includes(language)) return acc
         const descriptionData: DescriptionData = {
           database: lookup,
           descriptionString: descriptions[settings.editor],
