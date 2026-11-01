@@ -1,6 +1,6 @@
 import { canonical, digest } from './publish-preflight.mjs'
 import { graphOf, requiredFormats, validateInitialized } from './state-v2.mjs'
-import { dependencies } from './structural-queue.mjs'
+import { dependencies, implicitDependencies } from './structural-queue.mjs'
 import { createHash } from 'node:crypto'
 
 // Offline-only candidate builder. It cannot write Git or enable publication.
@@ -17,8 +17,9 @@ export function planInitialization({ accepted, output, publisher, manifest, lang
   const source = accepted.input, graph = graphOf(source), components = {}
   for (const [id, row] of Object.entries(source.perks)) {
     const deps = [...new Set(dependencies(row))].sort()
-    if (deps.some(dep => !Object.hasOwn(source.perks, dep))) throw new Error(`Missing dependency for ${id}`)
-    components[id] = { sourceRepo: repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, topology: graph[id], dependencies: deps, english: accepted.commit, translations: accepted.commit }
+    const implicit = implicitDependencies(row)
+    if ([...deps, ...implicit].some(dep => !Object.hasOwn(source.perks, dep))) throw new Error(`Missing dependency for ${id}`)
+    components[id] = { sourceRepo: repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, topology: graph[id], dependencies: deps, implicitDependencies: implicit, english: accepted.commit, translations: accepted.commit }
   }
   const files = {}, old = output.files
   if (!old || Object.keys(old).some(path => !/^descriptions\/[A-Za-z0-9_-]+\.json$/.test(path))) throw new Error('Invalid legacy output')

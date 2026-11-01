@@ -7,7 +7,7 @@ import { mkdtempSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 const gitBlob = bytes => createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
-const perk = (hash, text, extra = {}) => ({ hash, name: `Perk ${hash}`, type: 'Weapon Perk', uploadedBy: 'tester', updateTracker: { descriptions: {} }, editor: { en: { main: text, secondary: text }, de: { main: `DE ${text}`, secondary: `DE ${text}` } }, lastUpload: 1, inLiveDatabase: true, uploadToLive: true, ...extra })
+const perk = (hash, text, extra = {}) => ({ hash, name: `Perk ${hash}`, type: 'Weapon Perk', uploadedBy: 'tester', updateTracker: { descriptions: { en: { lastUpdate: 1, updatedBy: 'editor' }, de: { lastUpdate: 2, updatedBy: 'translator', sourceUpdatedAt: 1 } } }, editor: { en: { main: text, secondary: text }, de: { main: `DE ${text}`, secondary: `DE ${text}` } }, lastUpload: 1, inLiveDatabase: true, uploadToLive: true, ...extra })
 const both = (hash, text) => perk(hash, text, { editor: { en: { main: text, secondary: text }, de: { main: text, secondary: text } } })
 const source = { perks: { 1: perk(1, ''), 2: perk(2, ''), 3: perk(3, ''), 300: perk(300, 'English'), 500: { hash: 500, aliasOf: 300, aliasKind: 'frame' }, 600: perk(600, 'Other'), 700: perk(700, 'Independent') } }
 const outputHead = 'a'.repeat(40), acceptedHead = 'b'.repeat(40), treeHead = 'c'.repeat(40)
@@ -78,10 +78,10 @@ async function exercise(scenario) {
       head = '8'.repeat(40); commits.set(head, { tree: { sha: corruptTree } }); beforeEnglish = trees.get(corruptTree)
       english = await run('publish-fake-http.mjs', 'english')
     }
-    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'merge', 'removal', 'imports', 'globals'].includes(scenario) && first.code === 0) {
+    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'merge', 'removal', 'imports', 'globals', 'language-removal'].includes(scenario) && first.code === 0) {
       beforeEnglish = trees.get(commits.get(head).tree.sha)
       accepted = 'd'.repeat(40)
-      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : { ...source.perks, 300: perk(300, 'New English') }
+      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : { ...source.perks, 300: perk(300, 'New English') }
       sourceBytes = Buffer.from(JSON.stringify({ perks })); sourceBlob = gitBlob(sourceBytes)
       if (scenario === 'reverse') {
         translations = await run('publish-fake-http.mjs', 'translations')
@@ -170,6 +170,16 @@ test('translation before English keeps updated translation and advances English'
   const before = read(r.beforeEnglish, 'descriptions/clarity.json')['300'].descriptions
   const after = read(r.tree, 'descriptions/clarity.json')['300'].descriptions
   assert.notDeepEqual(before.en, after.en); assert.notDeepEqual(before.de, after.de)
+})
+test('missing accepted language retains the last published translation', async () => {
+  const r = await exercise('language-removal'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
+  const read = (tree, path) => JSON.parse(r.blobs.get(tree.find(x => x.path === path).sha).toString())
+  const before = read(r.beforeEnglish, 'descriptions/clarity.json')['300'].descriptions.de
+  const after = read(r.tree, 'descriptions/clarity.json')['300'].descriptions.de
+  assert.deepEqual(after, before)
+  const state = read(r.tree, '.publication-state.json')
+  assert.equal(state.components[300].translations, acceptedHead)
+  assert.equal(state.translationFingerprint, null)
 })
 test('a new accepted commit with identical inputs skips Git writes', async () => {
   const r = await exercise('unchanged'); assert.equal(r.translations.code, 0, r.translations.stderr)

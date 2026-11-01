@@ -40,12 +40,12 @@ export function promoteTranslations({ currentState, snapshotState, currentOutput
       if ((currentState.components[id]?.translations ?? null) !== (snapshotState.components[id]?.translations ?? null)) throw new Error(`Translation watermark changed: ${id}`)
       const next = converted[id]
       if (!next || next.aliasOf != null) continue
-      const descriptions = { ...next.descriptions }
+      const descriptions = { ...old.descriptions, ...next.descriptions }
       if (Object.hasOwn(old.descriptions ?? {}, 'en')) descriptions.en = old.descriptions.en
       else delete descriptions.en
       old.descriptions = descriptions
       if (old.updateTracker?.descriptions || next.updateTracker?.descriptions) {
-        const trackers = { ...next.updateTracker?.descriptions }
+        const trackers = { ...old.updateTracker?.descriptions, ...next.updateTracker?.descriptions }
         if (Object.hasOwn(old.updateTracker?.descriptions ?? {}, 'en')) trackers.en = old.updateTracker.descriptions.en
         else delete trackers.en
         old.updateTracker = { ...old.updateTracker, descriptions: trackers }

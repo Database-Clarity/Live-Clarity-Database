@@ -32,6 +32,11 @@ export function dependencies(row) {
   }
   return out
 }
+// These are directional converter inputs: adding them as undirected graph
+// edges would join every unrelated perk into one structural component.
+export function implicitDependencies(row) {
+  return row?.editor ? ['2', '3'] : []
+}
 export function structuralQueue(published, accepted, sourceCommit) {
   if (!/^[0-9a-f]{40}$/.test(sourceCommit)) throw new Error('Expected immutable source commit')
   const ids = new Set([...Object.keys(published), ...Object.keys(accepted)])

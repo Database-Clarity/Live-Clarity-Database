@@ -1,5 +1,5 @@
 import { canonical, digest } from './publish-preflight.mjs'
-import { topology, dependencies } from './structural-queue.mjs'
+import { topology, dependencies, implicitDependencies } from './structural-queue.mjs'
 import { createHash } from 'node:crypto'
 
 const sha1 = x => typeof x === 'string' && /^[a-f0-9]{40}$/.test(x)
@@ -53,11 +53,13 @@ export function validateInitialized(s, outputs) {
     if (!/^\d+$/.test(id) || !record(component) || !sha1(component.sourceCommit) || !sha1(component.sourceBlob) || !own(component, 'topology') || !Array.isArray(component.dependencies) || ![component.english, component.translations].every(x => x === null || sha1(x))) fail()
     const snapshot = snapshots[sourceKey(component.sourceRepo, component.sourceCommit, component.sourceBlob)]
     const row = snapshot?.value?.perks?.[id]
-    if (!snapshot || snapshot.repository !== component.sourceRepo || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || component.dependencies.some(dep => !own(s.components, dep))) fail()
+    if (!snapshot || snapshot.repository !== component.sourceRepo || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || canonical(component.implicitDependencies) !== canonical(implicitDependencies(row)) || [...component.dependencies, ...component.implicitDependencies].some(dep => !own(s.components, dep))) fail()
   }
   const members = new Set(), generations = new Set()
   for (const q of s.pending) {
     if (!record(q) || !sha256(q.generation) || !sha1(q.sourceCommit) || !sha1(q.sourceBlob) || !snapshots[sourceKey(q.sourceRepo, q.sourceCommit, q.sourceBlob)] || !Array.isArray(q.members) || !q.members.length || generations.has(q.generation)) fail()
+    const queuedSource = snapshots[sourceKey(q.sourceRepo, q.sourceCommit, q.sourceBlob)].value.perks
+    if (canonical(q.members) !== canonical([...q.members].sort()) || digest(canonical({ sourceCommit: q.sourceCommit, members: q.members, topology: q.members.map(id => [id, topology(queuedSource[id])]) })) !== q.generation) fail()
     generations.add(q.generation)
     for (const id of q.members) { if (!/^\d+$/.test(id) || members.has(id)) fail(); members.add(id) }
   }

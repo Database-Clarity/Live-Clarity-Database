@@ -6,7 +6,7 @@ import { resolveAccepted, resolveManifestIdentity, fetchPinnedInventory } from '
 import { gitDataAdapter } from './git-data-adapter.mjs'
 import { readPublishedTree } from './read-published-tree.mjs'
 import { publishAtomic } from './publish-output.mjs'
-import { structuralQueue, topology, dependencies } from './structural-queue.mjs'
+import { structuralQueue, topology, dependencies, implicitDependencies } from './structural-queue.mjs'
 import { composeEnglish } from './compose-english.mjs'
 import { validateInitialized, sourceKey } from './state-v2.mjs'
 import { digest, publisherIdentity, translationFingerprint, canonical } from './publish-preflight.mjs'
@@ -63,6 +63,7 @@ const output = await publishAtomic(adapter, async current => {
   const queue = structuralQueue(published, accepted.input.perks, accepted.commit).map(q => ({ ...q, sourceRepo: accepted.repository, sourceBlob: accepted.blob }))
   const blocked = new Set(queue.flatMap(q => q.members))
   const nextFiles = {}
+  const retainedTranslations = new Set()
   for (const [path, text] of Object.entries(current.files)) {
     if (!path.startsWith('descriptions/')) continue
     const name = path.slice('descriptions/'.length, -'.json'.length)
@@ -75,12 +76,17 @@ const output = await publishAtomic(adapter, async current => {
       for (const id of new Set([...Object.keys(old), ...Object.keys(next)])) {
         if (blocked.has(id)) { if (next[id] === undefined) delete merged[id]; else merged[id] = structuredClone(next[id]); continue }
         const prior = old[id], fresh = next[id]
+        if (prior && !fresh && Object.keys(prior.descriptions ?? {}).some(language => language !== 'en')) retainedTranslations.add(id)
         if (!prior || !fresh || prior.aliasOf != null || fresh.aliasOf != null) continue
-        const row = structuredClone(prior), d = { ...fresh.descriptions }
+        for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.descriptions ?? {}, language)) retainedTranslations.add(id)
+        for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.updateTracker?.descriptions ?? {}, language)) retainedTranslations.add(id)
+        // Missing languages may represent incomplete accepted coverage. Keep
+        // their last successful payloads and trackers until explicitly handled.
+        const row = structuredClone(prior), d = { ...prior.descriptions, ...fresh.descriptions }
         if (Object.hasOwn(prior.descriptions ?? {}, 'en')) d.en = prior.descriptions.en; else delete d.en
         row.descriptions = d
         if (prior.updateTracker?.descriptions || fresh.updateTracker?.descriptions) {
-          const tracker = { ...fresh.updateTracker?.descriptions }
+          const tracker = { ...prior.updateTracker?.descriptions, ...fresh.updateTracker?.descriptions }
           if (Object.hasOwn(prior.updateTracker?.descriptions ?? {}, 'en')) tracker.en = prior.updateTracker.descriptions.en; else delete tracker.en
           row.updateTracker = { ...prior.updateTracker, descriptions: tracker }
         }
@@ -99,13 +105,13 @@ const output = await publishAtomic(adapter, async current => {
     const old = state.components[id]
     const graph = topology(row), deps = [...new Set(dependencies(row))].sort()
     state.graph[id] = graph
-    state.components[id] = { topology: graph, dependencies: deps, sourceRepo: accepted.repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, english: mode === 'english' || blocked.has(id) ? accepted.commit : old?.english ?? null, translations: mode === 'translations' ? accepted.commit : old?.translations ?? null }
+    state.components[id] = { topology: graph, dependencies: deps, implicitDependencies: implicitDependencies(row), sourceRepo: accepted.repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, english: mode === 'english' || blocked.has(id) ? accepted.commit : old?.english ?? null, translations: mode === 'translations' && !retainedTranslations.has(id) ? accepted.commit : old?.translations ?? null }
   }
   state.sourceSnapshots = snapshots
   state.accepted = { repository: accepted.repository, commit: accepted.commit, blob: accepted.blob }
   state.source = { value: accepted.input, bytes: accepted.bytes.toString('base64'), digest: digest(canonical(accepted.input)) }
   state.pending = mode === 'english' ? queue : []
-  if (mode === 'translations') state.translationFingerprint = fingerprint
+  if (mode === 'translations') state.translationFingerprint = retainedTranslations.size ? null : fingerprint
   const changed = Object.entries(nextFiles).some(([path, bytes]) => bytes !== current.files[path])
   const versions = { ...current.versions, descriptions: changed ? Math.round(current.versions.descriptions * 10000 + 1) / 10000 : current.versions.descriptions }
   nextFiles['versions.json'] = JSON.stringify(versions, null, 1)

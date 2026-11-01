@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { digest } from '../scripts/publish-preflight.mjs'
+import { digest, canonical } from '../scripts/publish-preflight.mjs'
 import { runPipeline } from '../scripts/publish-pipeline.mjs'
 import { preflight } from '../scripts/publish-preflight.mjs'
 import { planInitialization } from '../scripts/initialize-offline.mjs'
@@ -24,10 +24,15 @@ test('English pipeline sends only en to converter and never takes translation sk
   assert.deepEqual(calls, ['fetch', 'install', ['convert', ['en']], 'publish'])
 })
 test('pending queue forces work despite matching fingerprint', async () => {
-  const { calls, options, plan, files } = make(); options.readOutput = async () => ({ state: { ...plan.state, pending: [{ generation: 'c'.repeat(64), sourceRepo: plan.state.accepted.repository, sourceCommit: commit, sourceBlob: plan.state.accepted.blob, members: ['100'] }] }, files })
+  const { calls, options, plan, files } = make(); const members = ['100']; const generation = digest(canonical({ sourceCommit: commit, members, topology: [['100', null]] })); options.readOutput = async () => ({ state: { ...plan.state, pending: [{ generation, sourceRepo: plan.state.accepted.repository, sourceCommit: commit, sourceBlob: plan.state.accepted.blob, members }] }, files })
   await runPipeline(options); assert.equal(calls.at(-1), 'publish')
 })
 test('normal pipeline rejects missing and malformed state before work', async () => {
   const { calls, options } = make(); options.readOutput = async () => ({ state: null }); await assert.rejects(runPipeline(options), /initialization-required/)
   options.readOutput = async () => ({ state: {}, files: {} }); await assert.rejects(runPipeline(options), /recovery-required/); assert.deepEqual(calls, [])
+})
+test('tampered queued generation is rejected before conversion', async () => {
+  const { calls, options, plan, files } = make()
+  options.readOutput = async () => ({ state: { ...plan.state, pending: [{ generation: 'c'.repeat(64), sourceRepo: plan.state.accepted.repository, sourceCommit: commit, sourceBlob: plan.state.accepted.blob, members: ['100'] }] }, files })
+  await assert.rejects(runPipeline(options), /recovery-required/); assert.deepEqual(calls, [])
 })
