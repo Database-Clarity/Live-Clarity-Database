@@ -101,6 +101,18 @@ export const databaseConverter = (
   return output
 }
 
+// Conversion is pure with respect to output storage and versions. The caller
+// supplies immutable inputs and chooses which languages may be converted.
+export const convertPresets = (
+  database: IntermediatePerks,
+  inventoryItem: InventoryItem,
+  databaseSettings: Database['databaseSettings'] | undefined,
+  mode: 'english' | 'translations'
+) => Object.fromEntries(Object.keys(converterSettings).map(key => [
+  key,
+  databaseConverter(key, database, inventoryItem, databaseSettings, mode === 'english' ? ['en'] : undefined)
+]))
+
 // only publish when started as the program, so databaseConverter can be imported by tests
 if (process.argv[1] !== undefined && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const { database, databaseSettings, inventoryItem } = await import('./externalData.js')

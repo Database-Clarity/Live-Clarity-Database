@@ -58,3 +58,23 @@ refs and manifest identity. The preflight helper is built-in-only and compares
 its conservative render fingerprint to a provided successful state. It does
 not fetch refs, publish, or persist that state. The atomic helper requires a
 caller-supplied adapter and safe composition logic; tests use only fake Git.
+
+The current WIP state validator records `schemaVersion`, per-hash topology and
+English/translation source commit watermarks, `pending` entries (generation,
+sourceCommit, members), translation fingerprint and output digests. These
+fields are experimental and are not an editor transport contract yet. A
+matched scheduled generation can be promoted by the isolated composition
+helper; it does not by itself validate ancestry or reference closure. Never
+clear queue entries or signal compiled success from the accepted-input marker.
+
+The legacy output has no known successful source or recoverable dependency
+baseline. Initialising component topology from the new accepted input would
+assume that its structural edits were already published. An English-only run
+cannot safely decide which components are independent until a trustworthy
+baseline is established. The current tree reader fails on absent state, and
+`planEnglish` requires a supplied published source. Bootstrap semantics for
+that initial period need resolution before the publisher can be activated.
+The files under `docs/workflows` are deliberately failing inactive sketches;
+they do not register schedules or dispatches. Four UTC opportunities are
+00:17, 06:17, 12:17 and 18:17; real registration requires a reviewed default
+workflow, immutable approved publisher code and separate owner approval.

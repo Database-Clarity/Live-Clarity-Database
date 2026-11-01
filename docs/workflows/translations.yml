@@ -1,0 +1,17 @@
+# INACTIVE DESIGN TEMPLATE. Do not copy to .github/workflows until the publisher
+# is completed, reviewed and owner-approved. This file runs no publication.
+name: Scheduled translations (template)
+on:
+  schedule:
+    - cron: '17 0,6,12,18 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: publish-output
+  cancel-in-progress: false
+jobs:
+  held:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'HELD - publisher orchestration and approval required' && exit 1

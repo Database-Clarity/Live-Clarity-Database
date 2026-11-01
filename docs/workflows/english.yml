@@ -1,0 +1,15 @@
+# INACTIVE DESIGN TEMPLATE. This intentionally cannot publish.
+name: Accepted English (template)
+on:
+  push:
+    branches: [converter]
+permissions:
+  contents: read
+concurrency:
+  group: publish-output
+  cancel-in-progress: false
+jobs:
+  held:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'HELD - publisher orchestration and approval required' && exit 1

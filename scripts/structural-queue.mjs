@@ -1,7 +1,7 @@
 // Pure queue calculation. This module does not write or publish state.
 import { canonical, digest } from './publish-preflight.mjs'
 
-function topology(row) {
+export function topology(row) {
   if (!row) return null
   return { aliasOf: row.aliasOf ?? null, aliasKind: row.aliasKind ?? null, associated: row.associated ?? [] }
 }
