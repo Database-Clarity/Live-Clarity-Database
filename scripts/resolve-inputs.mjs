@@ -10,7 +10,7 @@ export async function resolveAccepted(api, branch) {
   const bytes = Buffer.from(file.content.replace(/\s/g, ''), 'base64')
   const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
   if (blob !== file.sha) throw new Error('Accepted blob digest mismatch')
-  return { commit, blob, input: JSON.parse(bytes.toString('utf8')) }
+  return { commit, blob, bytes, input: JSON.parse(bytes.toString('utf8')) }
 }
 export async function resolveManifestIdentity(fetchJson) {
   const metadata = await fetchJson('https://www.bungie.net/Platform/Destiny2/Manifest/')

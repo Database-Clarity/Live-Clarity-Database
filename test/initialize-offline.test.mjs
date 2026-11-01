@@ -36,3 +36,18 @@ test('translation-only import retarget queues the old and new graph closure', ()
   const next = { ...old, 300: { editor: { de: { secondary: 'export x (\nimport main from 200\n)' } } } }
   assert.deepEqual(structuralQueue(old, next, a)[0].members, ['100', '200', '300'])
 })
+test('state validates mixed component source snapshots and rejects tampering', () => {
+  const firstArgs = args(), first = planInitialization(firstArgs)
+  const nextArgs = args()
+  nextArgs.accepted.input = { perks: { ...input.perks, 100: { editor: { en: { main: 'new' } } } } }
+  nextArgs.accepted.bytes = Buffer.from(JSON.stringify(nextArgs.accepted.input))
+  nextArgs.accepted.blob = createHash('sha1').update(`blob ${nextArgs.accepted.bytes.length}\0`).update(nextArgs.accepted.bytes).digest('hex')
+  nextArgs.accepted.commit = b
+  const next = planInitialization(nextArgs), state = structuredClone(next.state)
+  state.sourceSnapshots = { [first.state.accepted.blob]: { ...first.state.source, commit: first.state.accepted.commit } }
+  state.components[100] = first.state.components[100]; state.graph[100] = first.state.graph[100]
+  const outputs = Object.fromEntries(Object.entries(next.files).filter(([p]) => p !== '.publication-state.json'))
+  assert.equal(inspectState(state, outputs, nextArgs.accepted, b).status, 'initialized')
+  state.sourceSnapshots[first.state.accepted.blob].value.perks[100].editor.en.main = 'tampered'
+  assert.equal(inspectState(state, outputs, nextArgs.accepted, b).status, 'recovery-required')
+})

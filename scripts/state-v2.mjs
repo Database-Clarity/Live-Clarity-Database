@@ -22,7 +22,7 @@ export function inspectState(raw, outputs, accepted, observedOutput) {
   } catch { return { status: 'recovery-required', accepted: { commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown' } }
 }
 export function validateInitialized(s, outputs) {
-  if (!record(s) || s.schemaVersion !== 2 || s.initialized !== true || !record(s.baseline) || !['initial-publication', 'verified-import'].includes(s.baseline.kind) || !sha1(s.baseline.outputCommit) || !sha1(s.baseline.outputTree) || !sha256(s.baseline.operation) || !record(s.accepted) || !sha1(s.accepted.commit) || !sha1(s.accepted.blob) || !record(s.source) || !sha256(s.source.digest) || digest(canonical(s.source.value)) !== s.source.digest || !record(s.graph) || canonical(s.graph) !== canonical(graphOf(s.source.value)) || !record(s.publisher) || !sha256(s.publisher.identity) || !sha256(s.publisher.lock) || !sha1(s.publisher.converter) || !s.publisher.runtime || !s.publisher.toolbox || !record(s.manifest) || !s.manifest.version || !s.manifest.path || !sha256(s.manifest.digest) || !record(s.inventory) || canonical([...s.inventory.formats].sort()) !== canonical([...formats].sort()) || !Array.isArray(s.inventory.languages) || !s.inventory.languages.includes('en') || !record(s.components) || !Array.isArray(s.pending) || !(s.translationFingerprint === null || sha256(s.translationFingerprint)) || !record(s.outputDigests)) fail()
+  if (!record(s) || s.schemaVersion !== 2 || s.initialized !== true || !record(s.baseline) || !['initial-publication', 'verified-import'].includes(s.baseline.kind) || !sha1(s.baseline.outputCommit) || !sha1(s.baseline.outputTree) || !sha256(s.baseline.operation) || !record(s.accepted) || !sha1(s.accepted.commit) || !sha1(s.accepted.blob) || !record(s.source) || !sha256(s.source.digest) || digest(canonical(s.source.value)) !== s.source.digest || !record(s.graph) || !record(s.publisher) || !sha256(s.publisher.identity) || !sha256(s.publisher.lock) || !sha1(s.publisher.converter) || !s.publisher.runtime || !s.publisher.toolbox || !record(s.manifest) || !s.manifest.version || !s.manifest.path || !sha256(s.manifest.digest) || !record(s.inventory) || canonical([...s.inventory.formats].sort()) !== canonical([...formats].sort()) || !Array.isArray(s.inventory.languages) || !s.inventory.languages.includes('en') || !record(s.components) || !Array.isArray(s.pending) || !(s.translationFingerprint === null || sha256(s.translationFingerprint)) || !record(s.outputDigests)) fail()
   if (typeof s.source.bytes !== 'string') fail()
   const sourceBytes = Buffer.from(s.source.bytes, 'base64')
   try {
@@ -31,12 +31,18 @@ export function validateInitialized(s, outputs) {
   const expected = [...formats.map(x => `descriptions/${x}.json`), 'versions.json'].sort()
   if (!record(outputs) || canonical(Object.keys(outputs).sort()) !== canonical(expected) || canonical(Object.keys(s.outputDigests).sort()) !== canonical(expected)) fail()
   for (const path of expected) if (!sha256(s.outputDigests[path]) || digest(outputs[path]) !== s.outputDigests[path]) fail()
-  if (canonical(Object.keys(s.components).sort()) !== canonical(Object.keys(s.source.value.perks).sort())) fail()
+  const snapshots = { [s.accepted.blob]: { ...s.source, commit: s.accepted.commit }, ...(s.sourceSnapshots ?? {}) }
+  for (const [blob, snapshot] of Object.entries(snapshots)) {
+    if (!sha1(blob) || !sha1(snapshot.commit) || typeof snapshot.bytes !== 'string' || !sha256(snapshot.digest)) fail()
+    const bytes = Buffer.from(snapshot.bytes, 'base64')
+    try { if (bytes.toString('base64') !== snapshot.bytes || createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex') !== blob || digest(canonical(snapshot.value)) !== snapshot.digest || canonical(JSON.parse(bytes.toString('utf8'))) !== canonical(snapshot.value)) fail() } catch { fail() }
+  }
+  if (canonical(Object.keys(s.components).sort()) !== canonical(Object.keys(s.graph).sort())) fail()
   for (const [id, component] of Object.entries(s.components)) {
     if (!/^\d+$/.test(id) || !record(component) || !sha1(component.sourceCommit) || !sha1(component.sourceBlob) || !own(component, 'topology') || !Array.isArray(component.dependencies) || ![component.english, component.translations].every(x => x === null || sha1(x))) fail()
-    // Mixed source snapshots require retained per-component source documents;
-    // until those are represented, fail closed rather than invent a graph.
-    if (component.sourceCommit !== s.accepted.commit || component.sourceBlob !== s.accepted.blob || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(s.source.value.perks[id]))].sort()) || component.dependencies.some(dep => !own(s.source.value.perks, dep))) fail()
+    const snapshot = snapshots[component.sourceBlob]
+    const row = snapshot?.value?.perks?.[id]
+    if (!snapshot || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || component.dependencies.some(dep => !own(s.components, dep))) fail()
   }
   const members = new Set(), generations = new Set()
   for (const q of s.pending) {

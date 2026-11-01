@@ -81,3 +81,14 @@ The files under `docs/workflows` are deliberately failing inactive sketches;
 they do not register schedules or dispatches. Four UTC opportunities are
 00:17, 06:17, 12:17 and 18:17; real registration requires a reviewed default
 workflow, immutable approved publisher code and separate owner approval.
+
+An initialization integration exercise is available after `npm ci` and
+`npm run build` via `node scripts/initialize-fake-http.mjs
+http://127.0.0.1:PORT CONFIG.json`; CONFIG specifies `inventoryPath`,
+`manifestVersion`, and `manifestPath`. It refuses non-loopback endpoints and
+uses a fixture Git API with `heads/accepted` and `heads/output`. The automated
+fixture runs with `node --test test/initialize-http.test.mjs`. This is not a
+production initializer: full provenance, manifest identity retrieval,
+format/coverage validation, initialized incremental publication and the
+complete race matrix remain outstanding. Do not expose a real Git proxy on
+its loopback endpoint or use it for an output write.
