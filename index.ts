@@ -30,7 +30,8 @@ export const databaseConverter = (
   database: IntermediatePerks,
   inventoryItem: InventoryItem,
   databaseSettings?: Database['databaseSettings'],
-  languages?: readonly string[]
+  languages?: readonly string[],
+  onConvert?: (language: string) => void
 ) => {
   const settings = getSettings(converterType)
   validateReferences(database)
@@ -76,6 +77,7 @@ export const databaseConverter = (
           hash: cleanPerk.hash as number,
           language: language as Languages
         }
+        onConvert?.(language)
         const convertedDescription = descriptionConverter(descriptionData)
         if (convertedDescription) {
           acc[language] = descriptionFilter(convertedDescription, converterType)
@@ -107,10 +109,11 @@ export const convertPresets = (
   database: IntermediatePerks,
   inventoryItem: InventoryItem,
   databaseSettings: Database['databaseSettings'] | undefined,
-  mode: 'english' | 'translations'
+  mode: 'english' | 'translations',
+  onConvert?: (language: string) => void
 ) => Object.fromEntries(Object.keys(converterSettings).map(key => [
   key,
-  databaseConverter(key, database, inventoryItem, databaseSettings, mode === 'english' ? ['en'] : undefined)
+  databaseConverter(key, database, inventoryItem, databaseSettings, mode === 'english' ? ['en'] : undefined, onConvert)
 ]))
 
 // only publish when started as the program, so databaseConverter can be imported by tests

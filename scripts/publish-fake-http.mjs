@@ -29,6 +29,7 @@ const manifest = config.fixtureManifestHttp
   ? await resolveManifestIdentity(async () => call('GET', '/fixture/manifest'))
   : { version: config.manifestVersion, inventoryPath: config.manifestPath }
 const serializer = ['stat', 'multiplier', 'weaponTypes', 'classNames']
+const convertedLanguages = new Set()
 const output = await publishAtomic(adapter, async current => {
   validateInitialized(current.state, current.files)
   const accepted = await resolveAccepted(call, 'accepted')
@@ -54,7 +55,7 @@ const output = await publishAtomic(adapter, async current => {
   const { convertPresets } = await import('../index.js')
   const { customJsonStringify } = await import('@icemourne/tool-box')
   const { validateOutputReferences } = await import('@icemourne/description-converter')
-  const converted = convertPresets(accepted.input.perks, inventory, accepted.input.databaseSettings, mode)
+  const converted = convertPresets(accepted.input.perks, inventory, accepted.input.databaseSettings, mode, language => convertedLanguages.add(language))
   const state = structuredClone(current.state)
   const snapshots = { [sourceKey(state.accepted.repository, state.accepted.commit, state.accepted.blob)]: { ...state.source, repository: state.accepted.repository, commit: state.accepted.commit, blob: state.accepted.blob }, ...(state.sourceSnapshots ?? {}) }
   const published = Object.fromEntries(Object.entries(state.components).map(([id, c]) => [id, snapshots[sourceKey(c.sourceRepo, c.sourceCommit, c.sourceBlob)]?.value?.perks?.[id]]))
@@ -116,4 +117,4 @@ const output = await publishAtomic(adapter, async current => {
   if ((await resolveAccepted(call, 'accepted')).commit !== accepted.commit) throw new Error('Accepted source changed; retry')
   return { files: nextFiles, message: `Publish ${mode} (fake only)` }
 })
-console.log(JSON.stringify(output))
+console.log(JSON.stringify(config.traceConversions ? { ...output, convertedLanguages: [...convertedLanguages].sort() } : output))

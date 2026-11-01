@@ -14,7 +14,7 @@ const outputHead = 'a'.repeat(40), acceptedHead = 'b'.repeat(40), treeHead = 'c'
 async function exercise(scenario) {
   const dir = mkdtempSync(join(tmpdir(), 'split-http-'))
   const inv = join(dir, 'inventory.json'), config = join(dir, 'config.json')
-  writeFileSync(inv, '{}'); writeFileSync(config, JSON.stringify({ inventoryPath: inv, manifestVersion: '1', manifestPath: '/pinned.json', fixtureManifestHttp: true }))
+  writeFileSync(inv, '{}'); writeFileSync(config, JSON.stringify({ inventoryPath: inv, manifestVersion: '1', manifestPath: '/pinned.json', fixtureManifestHttp: true, traceConversions: true }))
   let accepted = acceptedHead, head = outputHead, count = 0, refReads = 0, outputReads = 0, patches = 0, inventoryReads = 0
   let releaseBarrier, signalBarrier
   const barrier = new Promise(resolve => { releaseBarrier = resolve }), barrierSeen = new Promise(resolve => { signalBarrier = resolve })
@@ -37,9 +37,9 @@ async function exercise(scenario) {
     else if (req.method === 'GET' && p.startsWith('/git/commits/')) response = commits.get(p.split('/').at(-1))
     else if (req.method === 'GET' && p.startsWith('/git/trees/')) response = { tree: trees.get(p.split('/').at(-1).split('?')[0]), truncated: false }
     else if (req.method === 'GET' && p.startsWith('/git/blobs/')) response = { encoding: 'base64', content: blobs.get(p.split('/').at(-1)).toString('base64') }
-    else if (req.method === 'POST' && p === '/git/blobs') { if (scenario === 'blob-fails') { status = 500; response = {} } else response = { sha: put(Buffer.from(body.content, 'base64')) } }
-    else if (req.method === 'POST' && p === '/git/trees') { if (scenario === 'tree-fails') { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); trees.set(sha, [...trees.get(body.base_tree).filter(x => !body.tree.some(y => y.path === x.path)), ...body.tree]); response = { sha } } }
-    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails') { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (scenario.startsWith('barrier') && patches === 1 && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
+    else if (req.method === 'POST' && p === '/git/blobs') { if (scenario === 'blob-fails' || (scenario === 'normal-blob-fails' && patches >= 1)) { status = 500; response = {} } else response = { sha: put(Buffer.from(body.content, 'base64')) } }
+    else if (req.method === 'POST' && p === '/git/trees') { if (scenario === 'tree-fails' || (scenario === 'normal-tree-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); trees.set(sha, [...trees.get(body.base_tree).filter(x => !body.tree.some(y => y.path === x.path)), ...body.tree]); response = { sha } } }
+    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails' || (scenario === 'normal-commit-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (scenario.startsWith('barrier') && patches === 1 && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
     else if (req.method === 'PATCH' && p === '/git/refs/heads/output') { patches++; if (scenario === 'ref-fails' || (scenario === 'normal-ref-fails' && patches > 1) || commits.get(body.sha)?.parents?.[0] !== head) { status = 422; response = {} } else { head = body.sha; if (scenario === 'ambiguous' || (scenario === 'normal-ambiguous' && patches === 2)) { res.destroy(); return } response = { object: { sha: head } } } }
     else { status = 404; response = { path: p } }
     res.writeHead(status, { 'content-type': 'application/json' }); res.end(JSON.stringify(response))
@@ -78,7 +78,7 @@ async function exercise(scenario) {
       head = '8'.repeat(40); commits.set(head, { tree: { sha: corruptTree } }); beforeEnglish = trees.get(corruptTree)
       english = await run('publish-fake-http.mjs', 'english')
     }
-    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'merge', 'removal', 'imports', 'globals'].includes(scenario) && first.code === 0) {
+    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'merge', 'removal', 'imports', 'globals'].includes(scenario) && first.code === 0) {
       beforeEnglish = trees.get(commits.get(head).tree.sha)
       accepted = 'd'.repeat(40)
       const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : { ...source.perks, 300: perk(300, 'New English') }
@@ -110,6 +110,8 @@ test('executable initializes through actual converter and fake HTTP Git objects'
 })
 test('initialized fixture runs English then translation through fake Git', async () => {
   const r = await exercise('vertical'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
+  assert.deepEqual(JSON.parse(r.english.stdout).convertedLanguages, ['en'])
+  assert.ok(JSON.parse(r.translations.stdout).convertedLanguages.includes('de'))
   const read = (tree, path) => JSON.parse(r.blobs.get(tree.find(x => x.path === path).sha).toString())
   const before = read(r.beforeEnglish, 'descriptions/clarity.json')['300'].descriptions
   const after = read(r.afterEnglish, 'descriptions/clarity.json')['300'].descriptions
@@ -171,7 +173,7 @@ test('translation before English keeps updated translation and advances English'
 })
 test('a new accepted commit with identical inputs skips Git writes', async () => {
   const r = await exercise('unchanged'); assert.equal(r.translations.code, 0, r.translations.stderr)
-  assert.equal(JSON.parse(r.translations.stdout).result, 'unchanged'); assert.equal(r.patches, 1); assert.equal(r.inventoryReads, 0)
+  assert.equal(JSON.parse(r.translations.stdout).result, 'unchanged'); assert.deepEqual(JSON.parse(r.translations.stdout).convertedLanguages, []); assert.equal(r.patches, 1); assert.equal(r.inventoryReads, 0)
 })
 test('unconsumed administrative change skips inventory and output writes', async () => {
   const r = await exercise('admin-only'); assert.equal(r.translations.code, 0, r.translations.stderr)
@@ -181,6 +183,8 @@ test('manifest identity change forces a build and updates provenance', async () 
   const r = await exercise('manifest-changed'); assert.equal(r.translations.code, 0, r.translations.stderr); assert.equal(r.patches, 2); assert.equal(r.inventoryReads, 1)
   const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
   assert.equal(state.manifest.version, '2')
+  const versions = JSON.parse(r.blobs.get(r.tree.find(x => x.path === 'versions.json').sha).toString())
+  assert.equal(versions.descriptions, 2.0626)
 })
 test('manifest identity failure never becomes an unchanged success', async () => {
   const r = await exercise('manifest-fails'); assert.notEqual(r.translations.code, 0); assert.match(r.translations.stderr, /Invalid Bungie manifest identity/)
@@ -199,6 +203,11 @@ test('identical blobs at different commits retain queued component provenance', 
 test('normal publication ref contention exhausts retries without changing published tree', async () => {
   const r = await exercise('normal-ref-fails'); assert.notEqual(r.english.code, 0); assert.match(r.english.stderr, /retry limit exhausted/)
   assert.equal(r.patches, 4); assert.deepEqual(r.tree, r.beforeEnglish)
+})
+test('incremental blob, tree and commit failures leave previous output and state intact', async () => {
+  for (const scenario of ['normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails']) {
+    const r = await exercise(scenario); assert.notEqual(r.english.code, 0, scenario); assert.equal(r.patches, 1, scenario); assert.deepEqual(r.tree, r.beforeEnglish, scenario)
+  }
 })
 test('ambiguous incremental ref success is reconciled without duplicate English commit', async () => {
   const r = await exercise('normal-ambiguous'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)

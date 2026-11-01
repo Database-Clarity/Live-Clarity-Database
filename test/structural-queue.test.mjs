@@ -14,3 +14,8 @@ test('text-only edits do not create structural queue; missing references fail cl
   assert.deepEqual(structuralQueue(before, { ...before, 300: { editor: { en: { main: 'new' } } } }, sha), [])
   assert.throws(() => structuralQueue(before, { ...before, 200: { aliasOf: 999 } }, sha), /Missing dependency/)
 })
+test('implicit global title dependency queues every row when its topology changes', () => {
+  const accepted = { ...before, 3: { editor: { en: { main: 'import main from 100' } } } }
+  const queue = structuralQueue(before, accepted, sha)
+  assert.deepEqual(queue[0].members, Object.keys(before).sort())
+})

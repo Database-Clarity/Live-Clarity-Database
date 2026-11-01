@@ -43,6 +43,14 @@ export function structuralQueue(published, accepted, sourceCommit) {
     }
   }
   const changed = new Set([...ids].filter(id => canonical(topology(published[id])) !== canonical(topology(accepted[id]))))
+  // Converter uses global variable 2 and global titles 3 implicitly. If their
+  // dependency topology changes, any converted row may depend on that change.
+  // Conservatively connect all rows for that generation; ordinary changes to
+  // other rows do not become connected through these shared globals.
+  if (changed.has('2') || changed.has('3')) {
+    const root = changed.has('2') ? '2' : '3'
+    for (const id of ids) { edges.get(root).add(id); edges.get(id).add(root) }
+  }
   const queue = []
   const visited = new Set()
   for (const start of [...changed].sort()) {
