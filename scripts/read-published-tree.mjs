@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { verifyOutputDigests } from './publication-state.mjs'
+import { validateInitialized } from './state-v2.mjs'
 // Decode from the tree of a particular output commit, never from a moving ref.
 export async function readPublishedTree(treeSha, call) {
   const tree = await call('GET', `/git/trees/${treeSha}?recursive=1`)
@@ -14,9 +14,11 @@ export async function readPublishedTree(treeSha, call) {
     if (actual !== entry.sha) throw new Error(`Output blob mismatch: ${entry.path}`)
     files[entry.path] = bytes.toString('utf8')
   }
-  if (!files['.publication-state.json'] || !files['versions.json']) throw new Error('Publication state or version missing; explicit bootstrap required')
-  const state = JSON.parse(files['.publication-state.json']), versions = JSON.parse(files['versions.json'])
+  if (!files['.publication-state.json']) throw new Error('initialization-required: explicit bootstrap required')
+  if (!files['versions.json']) throw new Error('recovery-required: version missing')
+  let state, versions
+  try { state = JSON.parse(files['.publication-state.json']); versions = JSON.parse(files['versions.json']) } catch { throw new Error('recovery-required: invalid state or version JSON') }
   const descriptions = Object.fromEntries(Object.entries(files).filter(([path]) => path.startsWith('descriptions/')))
-  verifyOutputDigests(state, descriptions)
-  return { state, versions, files: descriptions }
+  try { validateInitialized(state, { ...descriptions, 'versions.json': files['versions.json'] }) } catch { throw new Error('recovery-required: invalid publication state') }
+  return { state, versions, files: { ...descriptions, 'versions.json': files['versions.json'] } }
 }

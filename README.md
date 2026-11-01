@@ -67,13 +67,16 @@ matched scheduled generation can be promoted by the isolated composition
 helper; it does not by itself validate ancestry or reference closure. Never
 clear queue entries or signal compiled success from the accepted-input marker.
 
-The legacy output has no known successful source or recoverable dependency
-baseline. Initialising component topology from the new accepted input would
+The legacy output has a historically linked source commit, but its executed
+dependency and manifest baseline is not certified. Treating accepted input as
+the already-published component topology would
 assume that its structural edits were already published. An English-only run
 cannot safely decide which components are independent until a trustworthy
 baseline is established. The current tree reader fails on absent state, and
-`planEnglish` requires a supplied published source. Bootstrap semantics for
-that initial period need resolution before the publisher can be activated.
+`planEnglish` requires a supplied published source. Missing state reports
+`initialization-required` with unknown published coverage; an offline initial
+all-language candidate can be prepared without writing the output branch.
+The schema and simulator remain incomplete; do not use them for activation.
 The files under `docs/workflows` are deliberately failing inactive sketches;
 they do not register schedules or dispatches. Four UTC opportunities are
 00:17, 06:17, 12:17 and 18:17; real registration requires a reviewed default

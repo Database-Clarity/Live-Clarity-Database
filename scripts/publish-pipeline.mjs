@@ -1,5 +1,5 @@
 import { preflight } from './publish-preflight.mjs'
-import { validateState, verifyOutputDigests } from './publication-state.mjs'
+import { validateInitialized } from './state-v2.mjs'
 
 // The caller supplies I/O boundaries. Publication is responsible for re-reading
 // current state and recomposing on every CAS retry; this function never writes
@@ -9,8 +9,8 @@ export async function runPipeline({ mode, resolveAccepted, resolveManifest, read
   const accepted = await resolveAccepted()
   const manifest = await resolveManifest()
   const output = await readOutput()
-  validateState(output.state)
-  verifyOutputDigests(output.state, output.files)
+  if (output.state == null) throw new Error('initialization-required')
+  try { validateInitialized(output.state, output.files) } catch { throw new Error('recovery-required') }
   const check = preflight({ input: accepted.input, manifest, publisher, state: output.state })
   if (mode === 'translations' && check.result === 'unchanged' && output.state.pending.length === 0) return { result: 'unchanged', fingerprint: check.fingerprint }
   const inventory = await fetchInventory(manifest)

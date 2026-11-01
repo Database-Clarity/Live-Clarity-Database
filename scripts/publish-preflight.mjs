@@ -37,7 +37,7 @@ export function translationFingerprint(input, manifest, publisher) {
 }
 export function preflight({ input, manifest, publisher, state }) {
   const fingerprint = translationFingerprint(input, manifest, publisher)
-  if (state != null && (state.schemaVersion !== 1 || !Object.hasOwn(state, 'translationFingerprint') || (state.translationFingerprint !== null && !/^[a-f0-9]{64}$/.test(state.translationFingerprint)))) throw new Error('Invalid publication state')
+  if (state != null && (![1, 2].includes(state.schemaVersion) || !Object.hasOwn(state, 'translationFingerprint') || (state.translationFingerprint !== null && !/^[a-f0-9]{64}$/.test(state.translationFingerprint)))) throw new Error('Invalid publication state')
   return { fingerprint, result: state?.translationFingerprint === fingerprint ? 'unchanged' : 'work' }
 }
 

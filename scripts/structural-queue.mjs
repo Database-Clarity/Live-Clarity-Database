@@ -3,9 +3,20 @@ import { canonical, digest } from './publish-preflight.mjs'
 
 export function topology(row) {
   if (!row) return null
-  return { aliasOf: row.aliasOf ?? null, aliasKind: row.aliasKind ?? null, associated: row.associated ?? [] }
+  // Changes to an import target alter the dependency graph even when alias
+  // and association fields stay unchanged. Inspect both editor fields in
+  // every language, including imports nested inside exported text.
+  const imports = []
+  for (const [language, entry] of Object.entries(row.editor ?? {})) {
+    for (const [field, value] of Object.entries(entry ?? {})) {
+      if (typeof value !== 'string') continue
+      for (const match of value.matchAll(/^import [A-z0-9 ]+? from (\d+|global) *?$/gm)) imports.push([language, field, match[1]])
+    }
+  }
+  imports.sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b)))
+  return { aliasOf: row.aliasOf ?? null, aliasKind: row.aliasKind ?? null, associated: row.associated ?? [], imports }
 }
-function dependencies(row) {
+export function dependencies(row) {
   if (!row) return []
   const out = []
   if (row.aliasOf != null) out.push(String(row.aliasOf))
