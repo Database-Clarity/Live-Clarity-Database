@@ -35,7 +35,7 @@ const output = await publishAtomic(adapter, async current => {
   const accepted = await resolveAccepted(call, 'accepted')
   if (current.state.accepted.repository !== accepted.repository) throw new Error('Accepted repository changed; recovery required')
   // Compare API establishes ancestry in the accepted branch, not output refs.
-  for (const prior of new Set(Object.values(current.state.components).flatMap(x => [x.english, x.translations]).filter(Boolean))) {
+  for (const prior of new Set([...Object.values(current.state.components).flatMap(x => [x.english, x.translations, x.sourceCommit]), ...current.state.pending.map(x => x.sourceCommit)].filter(Boolean))) {
     if (prior === accepted.commit) continue
     const compared = await call('GET', `/compare/${prior}...${accepted.commit}`)
     if (!['ahead', 'identical'].includes(compared.status)) throw new Error('Stale or divergent accepted source')
