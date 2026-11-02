@@ -75,6 +75,16 @@ export function validateInitialized(s, outputs) {
     for (const path of expected.filter(path => path.startsWith('descriptions/'))) {
       const rows = JSON.parse(outputs[path])
       if (!record(rows)) fail()
+      // This built-in-only closure check also runs before dependency install.
+      for (const row of Object.values(rows)) {
+        if (!record(row)) fail()
+        const targets = own(row, 'aliasOf') ? [row.aliasOf] : (row.associated ?? [])
+        if (!Array.isArray(targets)) fail()
+        for (const target of targets) {
+          const key = String(target)
+          if (!own(rows, key) || !record(rows[key]) || own(rows[key], 'aliasOf') || !record(rows[key].descriptions)) fail()
+        }
+      }
     }
   } catch { fail() }
   if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(s.accepted.repository) || typeof s.accepted.ref !== 'string' || !/^[A-Za-z0-9._/-]+$/.test(s.accepted.ref)) fail()

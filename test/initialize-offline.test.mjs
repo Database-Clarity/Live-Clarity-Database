@@ -35,6 +35,9 @@ test('missing state reports unknown coverage and offline initialization preserve
   const stale = inspectState(retained, outputs, plan.state.accepted, b, statusInputs)
   assert.equal(stale.translationFreshness, 'retained'); assert.equal(stale.pendingAcceptedWork, true)
   assert.equal(inspectState(plan.state, outputs, plan.state.accepted, b, { ...statusInputs, sourceBytes: Buffer.from('{}').toString('base64') }).status, 'input-unavailable')
+  const invalidRefs = { ...outputs, 'descriptions/clarityV2.json': '{"500":{"hash":500,"aliasOf":999}}' }
+  const matchingDigest = { ...plan.state, outputDigests: { ...plan.state.outputDigests, 'descriptions/clarityV2.json': digest(invalidRefs['descriptions/clarityV2.json']) } }
+  assert.equal(inspectState(matchingDigest, invalidRefs, plan.state.accepted, b).status, 'recovery-required')
   assert.equal(inspectState({ ...plan.state, retainedLanguages: { 100: ['en'] } }, outputs, options.accepted, b).status, 'recovery-required')
   outputs['versions.json'] = '{}'
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'recovery-required')
