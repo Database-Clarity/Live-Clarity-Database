@@ -1,4 +1,4 @@
-import { canonical, digest } from './publish-preflight.mjs'
+import { canonical, digest, translationFingerprint } from './publish-preflight.mjs'
 import { topology, dependencies, implicitDependencies, structuralQueue } from './structural-queue.mjs'
 import { createHash } from 'node:crypto'
 
@@ -31,18 +31,27 @@ export function graphOf(source) {
   if (!record(source?.perks)) fail()
   return Object.fromEntries(Object.entries(source.perks).map(([id, row]) => [id, topology(row)]))
 }
-export function inspectState(raw, outputs, accepted, observedOutput, currentFingerprint = null) {
-  if (raw == null) return { status: 'initialization-required', accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown', pendingAcceptedWork: true }
+export function inspectState(raw, outputs, accepted, observedOutput, currentInputs = null) {
+  const source = { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }
+  if (raw == null) return { status: 'initialization-required', accepted: source, observedOutput, publishedCoverage: 'unknown', pendingAcceptedWork: true }
+  let state
+  try { state = typeof raw === 'string' ? JSON.parse(raw) : raw; validateInitialized(state, outputs) }
+  catch { return { status: 'recovery-required', accepted: source, observedOutput, publishedCoverage: 'unknown' } }
   try {
-    const state = typeof raw === 'string' ? JSON.parse(raw) : raw
-    validateInitialized(state, outputs)
     const retainedLanguages = state.retainedLanguages ?? {}
+    let currentFingerprint = null
+    if (currentInputs !== null) {
+      if (typeof currentInputs.sourceBytes !== 'string') throw new Error('Invalid status source')
+      const bytes = Buffer.from(currentInputs.sourceBytes, 'base64')
+      if (bytes.toString('base64') !== currentInputs.sourceBytes || createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex') !== accepted.blob) throw new Error('Status source blob mismatch')
+      currentFingerprint = translationFingerprint(JSON.parse(bytes.toString('utf8')), currentInputs.manifest, currentInputs.publisher)
+    }
     const sourceUnevaluated = accepted.repository !== state.accepted.repository || accepted.ref !== state.accepted.ref || accepted.commit !== state.accepted.commit || accepted.blob !== state.accepted.blob
     const translationFreshness = !sha256(currentFingerprint) || !state.translationFingerprint ? 'unknown' : currentFingerprint !== state.translationFingerprint ? 'pending' : Object.keys(retainedLanguages).length ? 'retained' : 'current'
     const knownPending = sourceUnevaluated || state.pending.length > 0 || Object.keys(retainedLanguages).length > 0 || translationFreshness === 'pending'
     const componentWatermarks = Object.fromEntries(Object.entries(state.components).map(([id, value]) => [id, { sourceRepo: value.sourceRepo, sourceCommit: value.sourceCommit, sourceBlob: value.sourceBlob, english: value.english, translations: value.translations }]))
-    return { status: 'initialized', pending: state.pending, superseded: state.superseded ?? [], retainedLanguages, componentWatermarks, translationFreshness, accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: knownPending ? true : translationFreshness === 'unknown' ? null : false, observedOutput }
-  } catch { return { status: 'recovery-required', accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown' } }
+    return { status: 'initialized', pending: state.pending, superseded: state.superseded ?? [], retainedLanguages, componentWatermarks, translationFreshness, accepted: source, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: knownPending ? true : translationFreshness === 'unknown' ? null : false, observedOutput }
+  } catch { return { status: 'input-unavailable', accepted: source, observedOutput, publishedCoverage: 'unknown' } }
 }
 export function validateInitialized(s, outputs) {
   if (!record(s) || s.schemaVersion !== 2 || s.initialized !== true || !record(s.baseline) || !['initial-publication', 'verified-import'].includes(s.baseline.kind) || !sha1(s.baseline.outputCommit) || !sha1(s.baseline.outputTree) || !sha256(s.baseline.operation) || !record(s.accepted) || !sha1(s.accepted.commit) || !sha1(s.accepted.blob) || !record(s.source) || !sha256(s.source.digest) || digest(canonical(s.source.value)) !== s.source.digest || !record(s.graph) || !record(s.publisher) || !sha256(s.publisher.identity) || !sha256(s.publisher.lock) || !sha1(s.publisher.converter) || !s.publisher.runtime || !s.publisher.toolbox || !record(s.manifest) || !s.manifest.version || !s.manifest.path || !sha256(s.manifest.digest) || !record(s.inventory) || !Array.isArray(s.inventory.formats) || !Array.isArray(s.inventory.languages) || !s.inventory.languages.includes('en') || !record(s.components) || !Array.isArray(s.pending) || !(s.translationFingerprint === null || sha256(s.translationFingerprint)) || !record(s.outputDigests)) fail()

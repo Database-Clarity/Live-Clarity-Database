@@ -1,7 +1,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
-import { digest } from '../scripts/publish-preflight.mjs'
+import { digest, translationFingerprint } from '../scripts/publish-preflight.mjs'
 import { planInitialization, previewInitialization } from '../scripts/initialize-offline.mjs'
 import { inspectState, requiredFormats, sourceKey } from '../scripts/state-v2.mjs'
 import { structuralQueue } from '../scripts/structural-queue.mjs'
@@ -22,16 +22,19 @@ test('missing state reports unknown coverage and offline initialization preserve
   assert.equal(options.output.files['descriptions/clarity.json'], '{}')
   const outputs = Object.fromEntries(Object.entries(plan.files).filter(([p]) => p !== '.publication-state.json'))
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'initialized')
+  const statusInputs = { sourceBytes: options.accepted.bytes.toString('base64'), manifest: { version: '1', inventoryPath: '/inventory' }, publisher: h }
+  plan.state.translationFingerprint = translationFingerprint(options.accepted.input, statusInputs.manifest, h)
   const retained = { ...plan.state, retainedLanguages: { 100: ['de'] } }
   assert.deepEqual(inspectState(retained, outputs, options.accepted, b).retainedLanguages, { 100: ['de'] })
   const unknown = inspectState(plan.state, outputs, plan.state.accepted, b)
   assert.equal(unknown.translationFreshness, 'unknown'); assert.equal(unknown.pendingAcceptedWork, null)
-  const current = inspectState(plan.state, outputs, plan.state.accepted, b, h)
+  const current = inspectState(plan.state, outputs, plan.state.accepted, b, statusInputs)
   assert.equal(current.translationFreshness, 'current'); assert.equal(current.pendingAcceptedWork, false)
-  const pending = inspectState(plan.state, outputs, plan.state.accepted, b, 'd'.repeat(64))
+  const pending = inspectState(plan.state, outputs, plan.state.accepted, b, { ...statusInputs, manifest: { ...statusInputs.manifest, version: '2' } })
   assert.equal(pending.translationFreshness, 'pending'); assert.equal(pending.pendingAcceptedWork, true)
-  const stale = inspectState(retained, outputs, plan.state.accepted, b, h)
+  const stale = inspectState(retained, outputs, plan.state.accepted, b, statusInputs)
   assert.equal(stale.translationFreshness, 'retained'); assert.equal(stale.pendingAcceptedWork, true)
+  assert.equal(inspectState(plan.state, outputs, plan.state.accepted, b, { ...statusInputs, sourceBytes: Buffer.from('{}').toString('base64') }).status, 'input-unavailable')
   assert.equal(inspectState({ ...plan.state, retainedLanguages: { 100: ['en'] } }, outputs, options.accepted, b).status, 'recovery-required')
   outputs['versions.json'] = '{}'
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'recovery-required')
