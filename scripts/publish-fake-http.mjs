@@ -29,6 +29,7 @@ const manifest = config.fixtureManifestHttp
   : { version: config.manifestVersion, inventoryPath: config.manifestPath }
 const serializer = ['stat', 'multiplier', 'weaponTypes', 'classNames']
 const convertedLanguages = new Set()
+const convertedComponents = new Set()
 const output = await publishAtomic(adapter, async current => {
   validateInitialized(current.state, current.files)
   const accepted = await resolveAccepted(call, 'accepted')
@@ -54,13 +55,18 @@ const output = await publishAtomic(adapter, async current => {
   const { convertPresets } = await import('../index.js')
   const { customJsonStringify } = await import('@icemourne/tool-box')
   const { validateOutputReferences } = await import('@icemourne/description-converter')
-  const converted = convertPresets(accepted.input.perks, inventory, accepted.input.databaseSettings, mode, language => convertedLanguages.add(language))
   const state = structuredClone(current.state)
   const snapshots = { [sourceKey(state.accepted.repository, state.accepted.commit, state.accepted.blob)]: { ...state.source, repository: state.accepted.repository, commit: state.accepted.commit, blob: state.accepted.blob }, ...(state.sourceSnapshots ?? {}) }
   const published = Object.fromEntries(Object.entries(state.components).map(([id, c]) => [id, snapshots[sourceKey(c.sourceRepo, c.sourceCommit, c.sourceBlob)]?.value?.perks?.[id]]))
   if (Object.values(published).some(x => !x)) throw new Error('Missing component source')
   const queue = structuralQueue(published, accepted.input.perks, accepted.commit, retainedSourceRows(state, snapshots)).map(q => ({ ...q, sourceRepo: accepted.repository, sourceBlob: accepted.blob }))
   const blocked = new Set(queue.flatMap(q => q.members))
+  const conversionPerks = { ...accepted.input.perks }
+  if (mode === 'english') for (const id of blocked) {
+    if (published[id]) conversionPerks[id] = published[id]
+    else delete conversionPerks[id]
+  }
+  const converted = convertPresets(conversionPerks, inventory, accepted.input.databaseSettings, mode, (language, hash) => { convertedLanguages.add(language); convertedComponents.add(hash) }, mode === 'english' ? blocked : undefined)
   const nextFiles = {}
   const retainedTranslations = new Map()
   const retain = (id, language) => { if (!retainedTranslations.has(id)) retainedTranslations.set(id, new Set()); retainedTranslations.get(id).add(language) }
@@ -76,6 +82,7 @@ const output = await publishAtomic(adapter, async current => {
       for (const id of new Set([...Object.keys(old), ...Object.keys(next)])) {
         if (blocked.has(id)) {
           const prior = old[id], fresh = next[id]
+          if (prior && !fresh && Object.hasOwn(accepted.input.perks, id)) throw new Error(`Structural output missing for ${id}`)
           // A structural promotion cannot carry an old language onto a new
           // topology, or silently discard one that lacks a replacement.
           if (prior && fresh && prior.aliasOf == null && fresh.aliasOf == null) {
@@ -147,4 +154,4 @@ const output = await publishAtomic(adapter, async current => {
     }
   }
 })
-console.log(JSON.stringify(config.traceConversions ? { ...output, convertedLanguages: [...convertedLanguages].sort() } : output))
+console.log(JSON.stringify(config.traceConversions ? { ...output, convertedLanguages: [...convertedLanguages].sort(), convertedComponents: [...convertedComponents].sort() } : output))

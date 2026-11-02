@@ -24,6 +24,7 @@ export function promoteTranslations({ currentState, snapshotState, currentOutput
         if (!Object.hasOwn(convertedOutputs, preset)) throw new Error(`Missing converted preset ${preset}`)
         const next = convertedOutputs[preset][id]
         const previous = outputs[preset][id]
+        if (previous && !next && Object.hasOwn(acceptedSource, id)) throw new Error(`Structural output missing for ${id}`)
         if (previous && next && previous.aliasOf == null && next.aliasOf == null) {
           for (const language of Object.keys(previous.descriptions ?? {})) {
             if (language !== 'en' && !Object.hasOwn(next.descriptions ?? {}, language)) throw new Error(`Structural translation missing for ${id}/${language}`)

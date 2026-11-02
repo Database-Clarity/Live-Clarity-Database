@@ -31,12 +31,16 @@ export function graphOf(source) {
   if (!record(source?.perks)) fail()
   return Object.fromEntries(Object.entries(source.perks).map(([id, row]) => [id, topology(row)]))
 }
-export function inspectState(raw, outputs, accepted, observedOutput) {
+export function inspectState(raw, outputs, accepted, observedOutput, currentFingerprint = null) {
   if (raw == null) return { status: 'initialization-required', accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown', pendingAcceptedWork: true }
   try {
     const state = typeof raw === 'string' ? JSON.parse(raw) : raw
     validateInitialized(state, outputs)
-    return { status: 'initialized', pending: state.pending, retainedLanguages: state.retainedLanguages ?? {}, accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: state.pending.length > 0 || Object.keys(state.retainedLanguages ?? {}).length > 0 || accepted.repository !== state.accepted.repository || accepted.ref !== state.accepted.ref || accepted.commit !== state.accepted.commit || accepted.blob !== state.accepted.blob, observedOutput }
+    const retainedLanguages = state.retainedLanguages ?? {}
+    const sourceUnevaluated = accepted.repository !== state.accepted.repository || accepted.ref !== state.accepted.ref || accepted.commit !== state.accepted.commit || accepted.blob !== state.accepted.blob
+    const translationFreshness = !sha256(currentFingerprint) || !state.translationFingerprint ? 'unknown' : currentFingerprint !== state.translationFingerprint ? 'pending' : Object.keys(retainedLanguages).length ? 'retained' : 'current'
+    const knownPending = sourceUnevaluated || state.pending.length > 0 || Object.keys(retainedLanguages).length > 0 || translationFreshness === 'pending'
+    return { status: 'initialized', pending: state.pending, retainedLanguages, translationFreshness, accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: knownPending ? true : translationFreshness === 'unknown' ? null : false, observedOutput }
   } catch { return { status: 'recovery-required', accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown' } }
 }
 export function validateInitialized(s, outputs) {

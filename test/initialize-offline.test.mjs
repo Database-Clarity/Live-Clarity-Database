@@ -24,6 +24,14 @@ test('missing state reports unknown coverage and offline initialization preserve
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'initialized')
   const retained = { ...plan.state, retainedLanguages: { 100: ['de'] } }
   assert.deepEqual(inspectState(retained, outputs, options.accepted, b).retainedLanguages, { 100: ['de'] })
+  const unknown = inspectState(plan.state, outputs, plan.state.accepted, b)
+  assert.equal(unknown.translationFreshness, 'unknown'); assert.equal(unknown.pendingAcceptedWork, null)
+  const current = inspectState(plan.state, outputs, plan.state.accepted, b, h)
+  assert.equal(current.translationFreshness, 'current'); assert.equal(current.pendingAcceptedWork, false)
+  const pending = inspectState(plan.state, outputs, plan.state.accepted, b, 'd'.repeat(64))
+  assert.equal(pending.translationFreshness, 'pending'); assert.equal(pending.pendingAcceptedWork, true)
+  const stale = inspectState(retained, outputs, plan.state.accepted, b, h)
+  assert.equal(stale.translationFreshness, 'retained'); assert.equal(stale.pendingAcceptedWork, true)
   assert.equal(inspectState({ ...plan.state, retainedLanguages: { 100: ['en'] } }, outputs, options.accepted, b).status, 'recovery-required')
   outputs['versions.json'] = '{}'
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'recovery-required')

@@ -31,7 +31,8 @@ export const databaseConverter = (
   inventoryItem: InventoryItem,
   databaseSettings?: Database['databaseSettings'],
   languages?: readonly string[],
-  onConvert?: (language: string) => void
+  onConvert?: (language: string, hash: string) => void,
+  excludedHashes?: ReadonlySet<string>
 ) => {
   const settings = getSettings(converterType)
   validateReferences(database)
@@ -40,6 +41,7 @@ export const databaseConverter = (
   const references: { [hash: string]: LiveAlias } = {}
 
   const newDatabase = _.transform(database, (acc: { [key: string]: LivePerk }, rawPerk, hash) => {
+    if (excludedHashes?.has(hash)) return
     const aliasOutput = isAliasStub(rawPerk) ? getAliasOutput(settings, rawPerk) : 'copy'
     const perk = lookup[hash]
     // 'skip' is a sandbox alias of a legacy setting, no perk means the alias points at a missing perk
@@ -77,7 +79,7 @@ export const databaseConverter = (
           hash: cleanPerk.hash as number,
           language: language as Languages
         }
-        onConvert?.(language)
+        onConvert?.(language, hash)
         const convertedDescription = descriptionConverter(descriptionData)
         if (convertedDescription) {
           acc[language] = descriptionFilter(convertedDescription, converterType)
@@ -110,10 +112,11 @@ export const convertPresets = (
   inventoryItem: InventoryItem,
   databaseSettings: Database['databaseSettings'] | undefined,
   mode: 'english' | 'translations',
-  onConvert?: (language: string) => void
+  onConvert?: (language: string, hash: string) => void,
+  excludedHashes?: ReadonlySet<string>
 ) => Object.fromEntries(Object.keys(converterSettings).map(key => [
   key,
-  databaseConverter(key, database, inventoryItem, databaseSettings, mode === 'english' ? ['en'] : undefined, onConvert)
+  databaseConverter(key, database, inventoryItem, databaseSettings, mode === 'english' ? ['en'] : undefined, onConvert, excludedHashes)
 ]))
 
 // only publish when started as the program, so databaseConverter can be imported by tests
