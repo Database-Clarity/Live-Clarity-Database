@@ -22,3 +22,11 @@ test('newer successful translation blocks an older conversion', () => {
   const current = state(); current.components[200].translations = b
   assert.throws(() => promoteTranslations({ currentState: current, snapshotState: state(), currentOutputs: old, convertedOutputs: converted, sourceCommit: a, fingerprint: f, acceptedSource: { 100: {} } }), /Translation watermark changed/)
 })
+test('deferred structure keeps prior uncovered language status', () => {
+  const snapshot = state(), current = state()
+  current.components[100].english = b
+  current.retainedLanguages = { 100: ['de'] }
+  const result = promoteTranslations({ currentState: current, snapshotState: snapshot, currentOutputs: old, convertedOutputs: converted, sourceCommit: a, fingerprint: f, acceptedSource: { 100: {} } })
+  assert.deepEqual(result.state.retainedLanguages, { 100: ['de'] })
+  assert.deepEqual(result.state.pending, current.pending)
+})

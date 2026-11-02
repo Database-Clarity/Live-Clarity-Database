@@ -21,6 +21,9 @@ test('missing state reports unknown coverage and offline initialization preserve
   assert.equal(options.output.files['descriptions/clarity.json'], '{}')
   const outputs = Object.fromEntries(Object.entries(plan.files).filter(([p]) => p !== '.publication-state.json'))
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'initialized')
+  const retained = { ...plan.state, retainedLanguages: { 100: ['de'] } }
+  assert.deepEqual(inspectState(retained, outputs, options.accepted, b).retainedLanguages, { 100: ['de'] })
+  assert.equal(inspectState({ ...plan.state, retainedLanguages: { 100: ['en'] } }, outputs, options.accepted, b).status, 'recovery-required')
   outputs['versions.json'] = '{}'
   assert.equal(inspectState(plan.state, outputs, options.accepted, b).status, 'recovery-required')
   assert.equal(inspectState('{broken', {}, options.accepted, b).status, 'recovery-required')

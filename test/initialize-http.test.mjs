@@ -49,7 +49,7 @@ async function exercise(scenario) {
     const port = server.address().port
     const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
     const first = await run(), second = scenario === 'duplicate' ? await run() : null
-    let english, translations, afterEnglish, beforeEnglish
+    let english, translations, repeatTranslation, afterEnglish, beforeEnglish
     if (scenario.startsWith('barrier') && first.code === 0) {
       accepted = 'd'.repeat(40)
       const firstPerks = scenario === 'barrier-structure' ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' } } : { ...source.perks, 300: perk(300, 'Translation A') }
@@ -78,10 +78,10 @@ async function exercise(scenario) {
       head = '8'.repeat(40); commits.set(head, { tree: { sha: corruptTree } }); beforeEnglish = trees.get(corruptTree)
       english = await run('publish-fake-http.mjs', 'english')
     }
-    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'merge', 'removal', 'imports', 'globals', 'language-removal'].includes(scenario) && first.code === 0) {
+    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'split-missing', 'split-missing-tracker', 'merge', 'removal', 'imports', 'globals', 'language-removal'].includes(scenario) && first.code === 0) {
       beforeEnglish = trees.get(commits.get(head).tree.sha)
       accepted = 'd'.repeat(40)
-      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : { ...source.perks, 300: perk(300, 'New English') }
+      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'split-missing' ? { ...source.perks, 500: { ...perk(500, 'Split'), editor: { en: { main: 'Split', secondary: 'Split' } } } } : scenario === 'split-missing-tracker' ? { ...source.perks, 500: perk(500, 'Split', { updateTracker: { descriptions: { en: { lastUpdate: 1 } } } }) } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : { ...source.perks, 300: perk(300, 'New English') }
       sourceBytes = Buffer.from(JSON.stringify({ perks })); sourceBlob = gitBlob(sourceBytes)
       if (scenario === 'reverse') {
         translations = await run('publish-fake-http.mjs', 'translations')
@@ -96,9 +96,10 @@ async function exercise(scenario) {
           afterEnglish = trees.get(commits.get(head).tree.sha)
         }
         if (english.code === 0) translations = await run('publish-fake-http.mjs', 'translations')
+        if (scenario === 'language-removal' && translations?.code === 0) repeatTranslation = await run('publish-fake-http.mjs', 'translations')
       }
     }
-    return { first, second, english, translations, beforeEnglish, afterEnglish, head, patches, inventoryReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
+    return { first, second, english, translations, repeatTranslation, beforeEnglish, afterEnglish, head, patches, inventoryReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
   } finally { await new Promise(resolve => server.close(resolve)); rmSync(dir, { recursive: true, force: true }) }
 }
 test('executable initializes through actual converter and fake HTTP Git objects', async () => {
@@ -151,6 +152,14 @@ test('split, canonical-to-stub merge and removal retain prior English topology u
     assert.deepEqual(read(r.tree, '.publication-state.json').pending, [])
   }
 })
+test('structural promotion with missing translation fails and retains queued output', async () => {
+  const r = await exercise('split-missing'); assert.equal(r.english.code, 0, r.english.stderr); assert.notEqual(r.translations.code, 0); assert.match(r.translations.stderr, /Structural translation missing/)
+  assert.deepEqual(r.tree, r.afterEnglish); assert.equal(r.patches, 2)
+})
+test('structural promotion with missing translation tracker fails and retains queued output', async () => {
+  const r = await exercise('split-missing-tracker'); assert.equal(r.english.code, 0, r.english.stderr); assert.notEqual(r.translations.code, 0); assert.match(r.translations.stderr, /Structural tracker missing/)
+  assert.deepEqual(r.tree, r.afterEnglish); assert.equal(r.patches, 2)
+})
 test('import-only retarget queues old and new dependency closure in fake Git', async () => {
   const r = await exercise('imports'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
   const read = (tree, path) => JSON.parse(r.blobs.get(tree.find(x => x.path === path).sha).toString())
@@ -179,7 +188,12 @@ test('missing accepted language retains the last published translation', async (
   assert.deepEqual(after, before)
   const state = read(r.tree, '.publication-state.json')
   assert.equal(state.components[300].translations, acceptedHead)
-  assert.equal(state.translationFingerprint, null)
+  assert.match(state.translationFingerprint, /^[a-f0-9]{64}$/); assert.deepEqual(state.retainedLanguages['300'], ['de'])
+  assert.equal(r.repeatTranslation.code, 0, r.repeatTranslation.stderr); assert.equal(JSON.parse(r.repeatTranslation.stdout).result, 'unchanged')
+  for (const item of r.beforeEnglish.filter(x => /^descriptions\/.+\.json$/.test(x.path))) {
+    const old = read(r.beforeEnglish, item.path)['300'], current = read(r.tree, item.path)['300']
+    if (old?.updateTracker?.descriptions?.de) assert.deepEqual(current.updateTracker.descriptions.de, old.updateTracker.descriptions.de, item.path)
+  }
 })
 test('a new accepted commit with identical inputs skips Git writes', async () => {
   const r = await exercise('unchanged'); assert.equal(r.translations.code, 0, r.translations.stderr)

@@ -40,15 +40,13 @@ or reuse output from a failed run. Tests use explicit local network-boundary fix
 
 ## Publish split work in progress
 
-This branch contains preliminary, isolated helpers only; it is not a publish
-candidate. The existing CLI and workflow still use the legacy full conversion
-and version flow. Do not enable a trigger, bootstrap a publication state, or
-use these helpers to write live output. The required atomic output adapter,
-component watermarks, queue persistence and generation-aware translation
-promotion, immutable source/manifest resolution, CLI orchestration, and
-inactive workflow templates are not implemented. The pure queue is an initial
-calculation, not a complete editor-facing queue contract. Independent review
-and all production approvals remain outstanding.
+This branch contains an experimental loopback-only publisher; it is not a
+production candidate. The existing `npm run convert` and workflow still use
+the legacy full conversion and version flow. The fake pipeline exercises an
+atomic Git adapter, component watermarks, structural queue and manifest input,
+but the complete race, provenance and format acceptance matrix remains open.
+Do not enable a trigger, bootstrap a publication state, or use these helpers
+to write live output. Independent review and production approvals remain held.
 
 The optional conversion language filter leaves the full input available to
 imports. When all three `PUBLISH_ACCEPTED_PATH`, `PUBLISH_INVENTORY_PATH` and
@@ -62,10 +60,11 @@ caller-supplied adapter and safe composition logic; tests use only fake Git.
 The current WIP state validator records `schemaVersion`, per-hash topology and
 English/translation source commit watermarks, `pending` entries (generation,
 sourceCommit, members), translation fingerprint and output digests. These
-fields are experimental and are not an editor transport contract yet. A
-matched scheduled generation can be promoted by the isolated composition
-helper; it does not by itself validate ancestry or reference closure. Never
-clear queue entries or signal compiled success from the accepted-input marker.
+fields are experimental and are not an editor transport contract yet. For
+compatible topology, `retainedLanguages` records carried-forward language
+payloads that could not be refreshed, while their prior component translation
+watermark remains unchanged. Never clear queue entries or signal compiled
+success from the accepted-input marker.
 
 The legacy output has a historically linked source commit, but its executed
 dependency and manifest baseline is not certified. Treating accepted input as

@@ -19,7 +19,7 @@ export function inspectState(raw, outputs, accepted, observedOutput) {
   try {
     const state = typeof raw === 'string' ? JSON.parse(raw) : raw
     validateInitialized(state, outputs)
-    return { status: 'initialized', pending: state.pending, accepted: { commit: accepted.commit, blob: accepted.blob }, observedOutput }
+    return { status: 'initialized', pending: state.pending, retainedLanguages: state.retainedLanguages ?? {}, accepted: { commit: accepted.commit, blob: accepted.blob }, observedOutput }
   } catch { return { status: 'recovery-required', accepted: { commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown' } }
 }
 export function validateInitialized(s, outputs) {
@@ -54,6 +54,12 @@ export function validateInitialized(s, outputs) {
     const snapshot = snapshots[sourceKey(component.sourceRepo, component.sourceCommit, component.sourceBlob)]
     const row = snapshot?.value?.perks?.[id]
     if (!snapshot || snapshot.repository !== component.sourceRepo || snapshot.commit !== component.sourceCommit || !row || canonical(component.topology) !== canonical(topology(row)) || canonical(component.topology) !== canonical(s.graph[id]) || canonical(component.dependencies) !== canonical([...new Set(dependencies(row))].sort()) || canonical(component.implicitDependencies) !== canonical(implicitDependencies(row)) || [...component.dependencies, ...component.implicitDependencies].some(dep => !own(s.components, dep))) fail()
+  }
+  if (s.retainedLanguages !== undefined) {
+    if (!record(s.retainedLanguages)) fail()
+    for (const [id, langs] of Object.entries(s.retainedLanguages)) {
+      if (!own(s.components, id) || !Array.isArray(langs) || !langs.length || langs.some(lang => typeof lang !== 'string' || !/^[a-zA-Z-]+$/.test(lang) || lang === 'en') || new Set(langs).size !== langs.length || canonical(langs) !== canonical([...langs].sort())) fail()
+    }
   }
   const members = new Set(), generations = new Set()
   for (const q of s.pending) {

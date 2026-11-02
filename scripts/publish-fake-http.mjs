@@ -1,7 +1,6 @@
 // Experimental loopback-only publisher for initialized fixtures. It refuses
 // real hosts and fails closed on unverifiable state or non-ancestral sources.
 import { readFileSync } from 'node:fs'
-import { createHash } from 'node:crypto'
 import { resolveAccepted, resolveManifestIdentity, fetchPinnedInventory } from './resolve-inputs.mjs'
 import { gitDataAdapter } from './git-data-adapter.mjs'
 import { readPublishedTree } from './read-published-tree.mjs'
@@ -63,7 +62,8 @@ const output = await publishAtomic(adapter, async current => {
   const queue = structuralQueue(published, accepted.input.perks, accepted.commit).map(q => ({ ...q, sourceRepo: accepted.repository, sourceBlob: accepted.blob }))
   const blocked = new Set(queue.flatMap(q => q.members))
   const nextFiles = {}
-  const retainedTranslations = new Set()
+  const retainedTranslations = new Map()
+  const retain = (id, language) => { if (!retainedTranslations.has(id)) retainedTranslations.set(id, new Set()); retainedTranslations.get(id).add(language) }
   for (const [path, text] of Object.entries(current.files)) {
     if (!path.startsWith('descriptions/')) continue
     const name = path.slice('descriptions/'.length, -'.json'.length)
@@ -74,12 +74,26 @@ const output = await publishAtomic(adapter, async current => {
     else {
       merged = structuredClone(old)
       for (const id of new Set([...Object.keys(old), ...Object.keys(next)])) {
-        if (blocked.has(id)) { if (next[id] === undefined) delete merged[id]; else merged[id] = structuredClone(next[id]); continue }
+        if (blocked.has(id)) {
+          const prior = old[id], fresh = next[id]
+          // A structural promotion cannot carry an old language onto a new
+          // topology, or silently discard one that lacks a replacement.
+          if (prior && fresh && prior.aliasOf == null && fresh.aliasOf == null) {
+            for (const language of Object.keys(prior.descriptions ?? {})) {
+              if (language !== 'en' && !Object.hasOwn(fresh.descriptions ?? {}, language)) throw new Error(`Structural translation missing for ${id}/${language}`)
+            }
+            for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) {
+              if (language !== 'en' && !Object.hasOwn(fresh.updateTracker?.descriptions ?? {}, language)) throw new Error(`Structural tracker missing for ${id}/${language}`)
+            }
+          }
+          if (fresh === undefined) delete merged[id]; else merged[id] = structuredClone(fresh)
+          continue
+        }
         const prior = old[id], fresh = next[id]
-        if (prior && !fresh && Object.keys(prior.descriptions ?? {}).some(language => language !== 'en')) retainedTranslations.add(id)
+        if (prior && !fresh) for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en') retain(id, language)
         if (!prior || !fresh || prior.aliasOf != null || fresh.aliasOf != null) continue
-        for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.descriptions ?? {}, language)) retainedTranslations.add(id)
-        for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.updateTracker?.descriptions ?? {}, language)) retainedTranslations.add(id)
+        for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.descriptions ?? {}, language)) retain(id, language)
+        for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.updateTracker?.descriptions ?? {}, language)) retain(id, language)
         // Missing languages may represent incomplete accepted coverage. Keep
         // their last successful payloads and trackers until explicitly handled.
         const row = structuredClone(prior), d = { ...prior.descriptions, ...fresh.descriptions }
@@ -111,7 +125,10 @@ const output = await publishAtomic(adapter, async current => {
   state.accepted = { repository: accepted.repository, commit: accepted.commit, blob: accepted.blob }
   state.source = { value: accepted.input, bytes: accepted.bytes.toString('base64'), digest: digest(canonical(accepted.input)) }
   state.pending = mode === 'english' ? queue : []
-  if (mode === 'translations') state.translationFingerprint = retainedTranslations.size ? null : fingerprint
+  if (mode === 'translations') {
+    state.translationFingerprint = fingerprint
+    state.retainedLanguages = Object.fromEntries([...retainedTranslations].map(([id, langs]) => [id, [...langs].sort()]))
+  }
   const changed = Object.entries(nextFiles).some(([path, bytes]) => bytes !== current.files[path])
   const versions = { ...current.versions, descriptions: changed ? Math.round(current.versions.descriptions * 10000 + 1) / 10000 : current.versions.descriptions }
   nextFiles['versions.json'] = JSON.stringify(versions, null, 1)
