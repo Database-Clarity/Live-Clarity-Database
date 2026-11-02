@@ -15,4 +15,7 @@ test('manifest identity pins inventory path and rejects malformed metadata', asy
   const result = await fetchPinnedInventory(async url => { assert.equal(url, 'https://www.bungie.net/v1.json'); return '{}' }, identity)
   assert.match(result.sha256, /^[a-f0-9]{64}$/)
   await assert.rejects(resolveManifestIdentity(async () => ({})), /Invalid/)
+  for (const path of ['/manifest.json?next=1', '/x/../latest', '//elsewhere/path']) {
+    await assert.rejects(resolveManifestIdentity(async () => ({ Response: { version: '1', jsonWorldComponentContentPaths: { en: { DestinyInventoryItemDefinition: path } } } })), /Invalid/)
+  }
 })

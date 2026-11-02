@@ -57,7 +57,7 @@ async function exercise(scenario) {
       else response = { encoding: 'base64', sha: sourceBlob, content: sourceBytes.toString('base64') }
     }
     else if (p.startsWith('/compare/')) response = { status: scenario === 'diverged' ? 'diverged' : 'ahead' }
-    else if (p === '/fixture/manifest') response = scenario === 'manifest-fails' ? {} : { Response: { version: scenario === 'manifest-changed' ? '2' : '1', jsonWorldComponentContentPaths: { en: { DestinyInventoryItemDefinition: '/pinned.json' } } } }
+    else if (p === '/fixture/manifest') response = scenario === 'manifest-fails' ? {} : { Response: { version: scenario === 'manifest-changed' ? '2' : '1', jsonWorldComponentContentPaths: { en: { DestinyInventoryItemDefinition: scenario === 'manifest-path' ? '/other-pinned.json' : '/pinned.json' } } } }
     else if (p.startsWith('/fixture/inventory?')) { inventoryReads++; response = { path: new URL(p, 'http://localhost').searchParams.get('path'), content: Buffer.from('{}').toString('base64') } }
     else if (req.method === 'GET' && p.startsWith('/git/commits/')) response = commits.get(p.split('/').at(-1))
     else if (req.method === 'GET' && p.startsWith('/git/trees/')) response = { tree: trees.get(p.split('/').at(-1).split('?')[0]), truncated: false }
@@ -72,7 +72,7 @@ async function exercise(scenario) {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve))
   try {
     const port = server.address().port
-    const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, script === 'import-baseline-fake-http.mjs' ? bundle : config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
+    const run = (script = 'initialize-fake-http.mjs', mode, blockDependencies = false) => new Promise(resolve => { const child = spawn(process.execPath, [...(blockDependencies ? ['--import', './test/fixtures/block-dependencies-register.mjs'] : []), `scripts/${script}`, `http://127.0.0.1:${port}`, script === 'import-baseline-fake-http.mjs' ? bundle : config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
     let first, second = null
     if (scenario === 'init-barrier') {
       const pending = run(); await barrierSeen; second = await run(); releaseBarrier(); first = await pending
@@ -121,10 +121,10 @@ async function exercise(scenario) {
       releaseBarrier()
       translations = await pendingTranslation
     }
-    if (['unchanged', 'admin-only', 'manifest-changed', 'manifest-fails'].includes(scenario) && first.code === 0) {
+    if (['unchanged', 'admin-only', 'manifest-changed', 'manifest-path', 'manifest-fails'].includes(scenario) && first.code === 0) {
       accepted = 'd'.repeat(40)
       if (scenario === 'admin-only') { sourceBytes = Buffer.from(JSON.stringify({ perks: { ...source.perks, 300: { ...source.perks[300], requestId: 'different' } } })); sourceBlob = gitBlob(sourceBytes) }
-      translations = await run('publish-fake-http.mjs', 'translations')
+      translations = await run('publish-fake-http.mjs', 'translations', scenario === 'unchanged')
     }
     if (scenario === 'tampered-state' && first.code === 0) {
       const priorTree = trees.get(commits.get(head).tree.sha), currentState = priorTree.find(x => x.path === '.publication-state.json')
@@ -315,6 +315,11 @@ test('manifest identity change forces a build and updates provenance', async () 
   assert.equal(state.manifest.version, '2')
   const versions = JSON.parse(r.blobs.get(r.tree.find(x => x.path === 'versions.json').sha).toString())
   assert.equal(versions.descriptions, 2.0626)
+})
+test('manifest component path change forces inventory fetch at the pinned path', async () => {
+  const r = await exercise('manifest-path'); assert.equal(r.translations.code, 0, r.translations.stderr); assert.equal(r.patches, 2); assert.equal(r.inventoryReads, 1)
+  const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(state.manifest.path, '/other-pinned.json'); assert.equal(state.manifest.digest, digest(Buffer.from('{}')))
 })
 test('manifest identity failure never becomes an unchanged success', async () => {
   const r = await exercise('manifest-fails'); assert.notEqual(r.translations.code, 0); assert.match(r.translations.stderr, /Invalid Bungie manifest identity/)

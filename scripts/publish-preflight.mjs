@@ -11,6 +11,7 @@ export const canonical = value => {
   return `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${canonical(value[k])}`).join(',')}}`
 }
 export const digest = value => createHash('sha256').update(value).digest('hex')
+export const validInventoryPath = path => typeof path === 'string' && /^\/[A-Za-z0-9._/-]+$/.test(path) && !path.startsWith('//') && !path.includes('..') && !path.includes('//')
 
 // Retain converter inputs, topology, metadata and trackers. Upload controls and
 // unrelated request/administrative fields are not read by this publisher.
@@ -36,7 +37,7 @@ export function publisherIdentity(root) {
   return digest(canonical({ runtime: process.versions.node, contract: 1, files: files.sort().map(name => [name, digest(readFileSync(join(root, name)))]) }))
 }
 export function translationFingerprint(input, manifest, publisher) {
-  if (!manifest || typeof manifest.version !== 'string' || !manifest.version || typeof manifest.inventoryPath !== 'string' || !manifest.inventoryPath.startsWith('/')) throw new Error('Invalid manifest identity')
+  if (!manifest || typeof manifest.version !== 'string' || !manifest.version || !validInventoryPath(manifest.inventoryPath)) throw new Error('Invalid manifest identity')
   if (typeof publisher !== 'string' || !/^[a-f0-9]{64}$/.test(publisher)) throw new Error('Invalid publisher identity')
   return digest(canonical({ contract: 1, mode: 'translations', input: renderProjection(input), manifest, publisher }))
 }
