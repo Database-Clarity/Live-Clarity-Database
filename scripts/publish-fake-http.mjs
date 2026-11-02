@@ -98,6 +98,7 @@ const output = await publishAtomic(adapter, async current => {
         }
         const prior = old[id], fresh = next[id]
         if (prior && !fresh) for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en') retain(id, language)
+        if (prior && !fresh) for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) if (language !== 'en') retain(id, language)
         if (!prior || !fresh || prior.aliasOf != null || fresh.aliasOf != null) continue
         for (const language of Object.keys(prior.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.descriptions ?? {}, language)) retain(id, language)
         for (const language of Object.keys(prior.updateTracker?.descriptions ?? {})) if (language !== 'en' && !Object.hasOwn(fresh.updateTracker?.descriptions ?? {}, language)) retain(id, language)
@@ -131,6 +132,14 @@ const output = await publishAtomic(adapter, async current => {
   state.sourceSnapshots = snapshots
   state.accepted = { repository: accepted.repository, ref: accepted.ref, commit: accepted.commit, blob: accepted.blob }
   state.source = { value: accepted.input, bytes: accepted.bytes.toString('base64'), digest: digest(canonical(accepted.input)) }
+  const currentGenerations = new Set(queue.map(item => item.generation))
+  const superseded = [...(state.superseded ?? [])]
+  for (const previous of state.pending) {
+    if (!currentGenerations.has(previous.generation) && !superseded.some(item => item.generation === previous.generation)) {
+      superseded.push({ ...previous, supersededBy: { repository: accepted.repository, commit: accepted.commit, blob: accepted.blob } })
+    }
+  }
+  state.superseded = superseded
   state.pending = mode === 'english' ? queue : []
   if (mode === 'translations') {
     state.translationFingerprint = fingerprint

@@ -51,6 +51,10 @@ export function promoteTranslations({ currentState, snapshotState, currentOutput
       // be replaced by an older run. Fail the whole attempt for safe retry.
       if ((currentState.components[id]?.translations ?? null) !== (snapshotState.components[id]?.translations ?? null)) throw new Error(`Translation watermark changed: ${id}`)
       const next = converted[id]
+      if (!next) {
+        for (const lang of Object.keys(old.descriptions ?? {})) if (lang !== 'en') retain(id, lang)
+        for (const lang of Object.keys(old.updateTracker?.descriptions ?? {})) if (lang !== 'en') retain(id, lang)
+      }
       if (!next || next.aliasOf != null) continue
       for (const lang of Object.keys(old.descriptions ?? {})) if (lang !== 'en' && !Object.hasOwn(next.descriptions ?? {}, lang)) retain(id, lang)
       for (const lang of Object.keys(old.updateTracker?.descriptions ?? {})) if (lang !== 'en' && !Object.hasOwn(next.updateTracker?.descriptions ?? {}, lang)) retain(id, lang)

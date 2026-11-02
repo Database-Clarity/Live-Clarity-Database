@@ -66,6 +66,20 @@ payloads that could not be refreshed, while their prior component translation
 watermark remains unchanged. Never clear queue entries or signal compiled
 success from the accepted-input marker.
 
+The status inspection fixture returns `initialization-required` for missing
+state and `recovery-required` for invalid state, with published coverage
+unknown. An initialized result includes the observed accepted source,
+last evaluated accepted source, queued generations, component watermarks and
+retained languages. Queue entries identify their source repository, commit,
+blob, generation and member hashes; only a successful publication of that
+generation can promote it. When a later accepted source replaces or reverts
+a generation, the fake publisher records it as `superseded` with the replacing
+source rather than reporting it as published.
+Translation freshness is `current`, `pending`, `retained`, or `unknown`;
+without a current render fingerprint it is unknown, not a success claim.
+`pendingAcceptedWork` is nullable when freshness cannot be determined. This
+shape is not yet a reviewed editor or Worker transport contract.
+
 The legacy output has a historically linked source commit, but its executed
 dependency and manifest baseline is not certified. Treating accepted input as
 the already-published component topology would

@@ -29,7 +29,7 @@ async function exercise(scenario) {
   const entries = [{ path: 'versions.json', type: 'blob', sha: put(Buffer.from('{"descriptions":2.0625}')) }, ...['clarity', 'dim', 'crayon', 'foundry', 'lightGG', 'braytech', 'vaultZero'].map(name => ({ path: `descriptions/${name}.json`, type: 'blob', sha: put(Buffer.from('{}')) })), { path: 'README.md', type: 'blob', sha: put(Buffer.from('preserved')) }]
   trees.set(treeHead, entries)
   commits.set('e'.repeat(40), { tree: { sha: treeHead } })
-  const baseSource = scenario === 'imports' ? { perks: { ...source.perks, 300: perk(300, 'import main from 600') } } : scenario === 'globals' ? { perks: { ...source.perks, 1: both(1, 'export nested (\nimport main from 600\n)'), 300: both(300, 'import nested from global') } } : source
+  const baseSource = scenario === 'imports' ? { perks: { ...source.perks, 300: perk(300, 'import main from 600') } } : scenario === 'globals' ? { perks: { ...source.perks, 1: both(1, 'export nested (\nimport main from 600\n)'), 300: both(300, 'import nested from global') } } : scenario === 'tracker-only' ? { perks: { ...source.perks, 300: { ...source.perks[300], editor: { ...source.perks[300].editor, de: { main: '', secondary: '' } } } } } : source
   let sourceBytes = Buffer.from(JSON.stringify(scenario === 'bad-conversion' ? { perks: { 1: perk(1, ''), 2: perk(2, ''), 3: perk(3, ''), 300: perk(300, 'import main from 999') } } : baseSource)), sourceBlob = gitBlob(sourceBytes)
   const historicalSourceBytes = Buffer.from(sourceBytes), historicalSourceBlob = sourceBlob
   const bundle = join(dir, 'bundle.json')
@@ -82,6 +82,16 @@ async function exercise(scenario) {
       if (scenario === 'duplicate') second = await run()
     }
     let english, translations, repeatTranslation, rollback, recoveryRuns, afterEnglish, beforeEnglish
+    if (scenario === 'reverted-structure' && first.code === 0) {
+      accepted = 'd'.repeat(40)
+      sourceBytes = Buffer.from(JSON.stringify({ perks: { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' } } })); sourceBlob = gitBlob(sourceBytes)
+      english = await run('publish-fake-http.mjs', 'english')
+      beforeEnglish = trees.get(commits.get(head).tree.sha)
+      if (english.code === 0) {
+        accepted = 'f'.repeat(40); sourceBytes = Buffer.from(JSON.stringify(source)); sourceBlob = gitBlob(sourceBytes)
+        translations = await run('publish-fake-http.mjs', 'english')
+      }
+    }
     if (scenario === 'rollback' && first.code === 0) {
       rollback = await run('rollback-fake-http.mjs')
       if (rollback.code === 0) english = await run('publish-fake-http.mjs', 'english')
@@ -134,10 +144,10 @@ async function exercise(scenario) {
       head = '8'.repeat(40); commits.set(head, { tree: { sha: corruptTree } }); beforeEnglish = trees.get(corruptTree)
       english = await run('publish-fake-http.mjs', 'english')
     }
-    if (['vertical', 'draft', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'split-missing', 'split-missing-tracker', 'merge', 'removal', 'imports', 'globals', 'language-removal', 'empty-english', 'bungie-filtered', 'queued-filtered-target'].includes(scenario) && first.code === 0) {
+    if (['vertical', 'draft', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'split-missing', 'split-missing-tracker', 'merge', 'removal', 'imports', 'globals', 'language-removal', 'empty-english', 'bungie-filtered', 'queued-filtered-target', 'tracker-only'].includes(scenario) && first.code === 0) {
       beforeEnglish = trees.get(commits.get(head).tree.sha)
       accepted = 'd'.repeat(40)
-      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'queued-filtered-target' ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 600: { ...source.perks[600], editor: { ...source.perks[600].editor, en: { main: '', secondary: '' } } }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'split-missing' ? { ...source.perks, 500: { ...perk(500, 'Split'), editor: { en: { main: 'Split', secondary: 'Split' } } } } : scenario === 'split-missing-tracker' ? { ...source.perks, 500: perk(500, 'Split', { updateTracker: { descriptions: { en: { lastUpdate: 1 } } } }) } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : scenario === 'empty-english' ? { ...source.perks, 300: { ...source.perks[300], editor: { ...source.perks[300].editor, en: { main: '', secondary: '' } } } } : scenario === 'bungie-filtered' ? { ...source.perks, 300: { ...source.perks[300], editor: { ...source.perks[300].editor, en: { main: 'Bungie identical', secondary: 'Bungie identical' } } } } : { ...source.perks, 300: perk(300, 'New English') }
+      const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'queued-filtered-target' ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 600: { ...source.perks[600], editor: { ...source.perks[600].editor, en: { main: '', secondary: '' } } }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'split-missing' ? { ...source.perks, 500: { ...perk(500, 'Split'), editor: { en: { main: 'Split', secondary: 'Split' } } } } : scenario === 'split-missing-tracker' ? { ...source.perks, 500: perk(500, 'Split', { updateTracker: { descriptions: { en: { lastUpdate: 1 } } } }) } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : ['empty-english', 'tracker-only'].includes(scenario) ? { ...baseSource.perks, 300: { ...baseSource.perks[300], editor: { ...baseSource.perks[300].editor, en: { main: '', secondary: '' } } } } : scenario === 'bungie-filtered' ? { ...source.perks, 300: { ...source.perks[300], editor: { ...source.perks[300].editor, en: { main: 'Bungie identical', secondary: 'Bungie identical' } } } } : { ...source.perks, 300: perk(300, 'New English') }
       sourceBytes = Buffer.from(JSON.stringify({ perks })); sourceBlob = gitBlob(sourceBytes)
       if (scenario === 'reverse') {
         translations = await run('publish-fake-http.mjs', 'translations')
@@ -313,6 +323,15 @@ test('English prefilters retain translated rows and trackers', async () => {
     assert.equal(interim.descriptions.en, undefined, scenario)
   }
 })
+test('a filtered row with tracker-only coverage retains its old watermark', async () => {
+  const r = await exercise('tracker-only'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
+  const read = (tree, path) => JSON.parse(r.blobs.get(tree.find(x => x.path === path).sha).toString())
+  const state = read(r.tree, '.publication-state.json')
+  assert.deepEqual(state.retainedLanguages['300'], ['de']); assert.equal(state.components['300'].translations, acceptedHead)
+  const before = read(r.beforeEnglish, 'descriptions/foundry.json')['300'].updateTracker.descriptions.de
+  const after = read(r.tree, 'descriptions/foundry.json')['300'].updateTracker.descriptions.de
+  assert.deepEqual(after, before)
+})
 test('retained coverage survives queued failure and clears after a complete structural retry', async () => {
   const r = await exercise('coverage-recovery')
   for (const index of [0, 1, 2, 4, 5]) assert.equal(r.recoveryRuns[index].code, 0, `${index}: ${r.recoveryRuns[index].stderr}`)
@@ -354,6 +373,15 @@ test('identical blobs at different commits retain queued component provenance', 
   assert.equal(pending.pending[0].sourceCommit, 'f'.repeat(40))
   assert.equal(read(r.tree, 'descriptions/clarityV2.json')[500].aliasOf, 600)
   assert.deepEqual(read(r.tree, '.publication-state.json').pending, [])
+})
+test('reverted structural queue is recorded as superseded rather than published', async () => {
+  const r = await exercise('reverted-structure'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
+  const read = tree => JSON.parse(r.blobs.get(tree.find(x => x.path === '.publication-state.json').sha).toString())
+  const prior = read(r.beforeEnglish), current = read(r.tree)
+  assert.ok(prior.pending.length); assert.deepEqual(current.pending, [])
+  assert.equal(current.superseded[0].generation, prior.pending[0].generation)
+  assert.equal(current.superseded[0].supersededBy.commit, 'f'.repeat(40))
+  assert.equal(current.components['500'].translations, acceptedHead)
 })
 test('normal publication ref contention exhausts retries without changing published tree', async () => {
   const r = await exercise('normal-ref-fails'); assert.notEqual(r.english.code, 0); assert.match(r.english.stderr, /retry limit exhausted/)

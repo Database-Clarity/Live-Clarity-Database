@@ -40,7 +40,8 @@ export function inspectState(raw, outputs, accepted, observedOutput, currentFing
     const sourceUnevaluated = accepted.repository !== state.accepted.repository || accepted.ref !== state.accepted.ref || accepted.commit !== state.accepted.commit || accepted.blob !== state.accepted.blob
     const translationFreshness = !sha256(currentFingerprint) || !state.translationFingerprint ? 'unknown' : currentFingerprint !== state.translationFingerprint ? 'pending' : Object.keys(retainedLanguages).length ? 'retained' : 'current'
     const knownPending = sourceUnevaluated || state.pending.length > 0 || Object.keys(retainedLanguages).length > 0 || translationFreshness === 'pending'
-    return { status: 'initialized', pending: state.pending, retainedLanguages, translationFreshness, accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: knownPending ? true : translationFreshness === 'unknown' ? null : false, observedOutput }
+    const componentWatermarks = Object.fromEntries(Object.entries(state.components).map(([id, value]) => [id, { sourceRepo: value.sourceRepo, sourceCommit: value.sourceCommit, sourceBlob: value.sourceBlob, english: value.english, translations: value.translations }]))
+    return { status: 'initialized', pending: state.pending, superseded: state.superseded ?? [], retainedLanguages, componentWatermarks, translationFreshness, accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, lastEvaluatedAcceptedSource: state.accepted, pendingAcceptedWork: knownPending ? true : translationFreshness === 'unknown' ? null : false, observedOutput }
   } catch { return { status: 'recovery-required', accepted: { repository: accepted.repository ?? null, ref: accepted.ref ?? null, commit: accepted.commit, blob: accepted.blob }, observedOutput, publishedCoverage: 'unknown' } }
 }
 export function validateInitialized(s, outputs) {
@@ -99,6 +100,16 @@ export function validateInitialized(s, outputs) {
     if (canonical(q.members) !== canonical([...q.members].sort()) || digest(canonical({ sourceCommit: q.sourceCommit, members: q.members, topology: q.members.map(id => [id, topology(queuedSource[id])]) })) !== q.generation) fail()
     generations.add(q.generation)
     for (const id of q.members) { if (!/^\d+$/.test(id) || members.has(id)) fail(); members.add(id) }
+  }
+  if (s.superseded !== undefined) {
+    if (!Array.isArray(s.superseded)) fail()
+    const seen = new Set()
+    for (const q of s.superseded) {
+      if (!record(q) || !sha256(q.generation) || !sha1(q.sourceCommit) || !sha1(q.sourceBlob) || !Array.isArray(q.members) || !q.members.length || seen.has(q.generation) || generations.has(q.generation) || !record(q.supersededBy) || !snapshots[sourceKey(q.supersededBy.repository, q.supersededBy.commit, q.supersededBy.blob)]) fail()
+      const source = snapshots[sourceKey(q.sourceRepo, q.sourceCommit, q.sourceBlob)]
+      if (!source || canonical(q.members) !== canonical([...q.members].sort()) || digest(canonical({ sourceCommit: q.sourceCommit, members: q.members, topology: q.members.map(id => [id, topology(source.value.perks[id])]) })) !== q.generation) fail()
+      seen.add(q.generation)
+    }
   }
   const published = Object.fromEntries(Object.entries(s.components).map(([id, component]) => [id, snapshots[sourceKey(component.sourceRepo, component.sourceCommit, component.sourceBlob)].value.perks[id]]))
   const expectedQueue = structuralQueue(published, s.source.value.perks, s.accepted.commit, retainedSourceRows(s, snapshots)).map(item => ({ ...item, sourceRepo: s.accepted.repository, sourceBlob: s.accepted.blob }))
