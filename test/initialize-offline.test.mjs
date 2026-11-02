@@ -59,6 +59,8 @@ test('state validates mixed component source snapshots and rejects tampering', (
   assert.equal(inspectState(invalidRepo, outputs, nextArgs.accepted, b).status, 'recovery-required')
   const invalidCommit = structuredClone(state); invalidCommit.components[100].sourceCommit = 'e'.repeat(40)
   assert.equal(inspectState(invalidCommit, outputs, nextArgs.accepted, b).status, 'recovery-required')
+  const invalidWatermark = structuredClone(state); invalidWatermark.components[100].translations = 'e'.repeat(40)
+  assert.equal(inspectState(invalidWatermark, outputs, nextArgs.accepted, b).status, 'recovery-required')
   state.sourceSnapshots[key].value.perks[100].editor.en.main = 'tampered'
   assert.equal(inspectState(state, outputs, nextArgs.accepted, b).status, 'recovery-required')
 })

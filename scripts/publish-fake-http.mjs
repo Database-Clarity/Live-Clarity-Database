@@ -7,7 +7,7 @@ import { readPublishedTree } from './read-published-tree.mjs'
 import { publishAtomic } from './publish-output.mjs'
 import { structuralQueue, topology, dependencies, implicitDependencies } from './structural-queue.mjs'
 import { composeEnglish } from './compose-english.mjs'
-import { validateInitialized, sourceKey } from './state-v2.mjs'
+import { validateInitialized, sourceKey, retainedSourceRows } from './state-v2.mjs'
 import { digest, publisherIdentity, translationFingerprint, canonical } from './publish-preflight.mjs'
 
 const [endpoint, configPath, mode] = process.argv.slice(2)
@@ -59,7 +59,7 @@ const output = await publishAtomic(adapter, async current => {
   const snapshots = { [sourceKey(state.accepted.repository, state.accepted.commit, state.accepted.blob)]: { ...state.source, repository: state.accepted.repository, commit: state.accepted.commit, blob: state.accepted.blob }, ...(state.sourceSnapshots ?? {}) }
   const published = Object.fromEntries(Object.entries(state.components).map(([id, c]) => [id, snapshots[sourceKey(c.sourceRepo, c.sourceCommit, c.sourceBlob)]?.value?.perks?.[id]]))
   if (Object.values(published).some(x => !x)) throw new Error('Missing component source')
-  const queue = structuralQueue(published, accepted.input.perks, accepted.commit).map(q => ({ ...q, sourceRepo: accepted.repository, sourceBlob: accepted.blob }))
+  const queue = structuralQueue(published, accepted.input.perks, accepted.commit, retainedSourceRows(state, snapshots)).map(q => ({ ...q, sourceRepo: accepted.repository, sourceBlob: accepted.blob }))
   const blocked = new Set(queue.flatMap(q => q.members))
   const nextFiles = {}
   const retainedTranslations = new Map()

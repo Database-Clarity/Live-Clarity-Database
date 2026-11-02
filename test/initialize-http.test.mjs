@@ -2,10 +2,14 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import http from 'node:http'
 import { spawn } from 'node:child_process'
-import { createHash } from 'node:crypto'
+import { createHash, generateKeyPairSync, sign } from 'node:crypto'
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
+import { planInitialization } from '../scripts/initialize-offline.mjs'
+import { canonical, digest } from '../scripts/publish-preflight.mjs'
+import { requiredFormats, inspectState, validateInitialized } from '../scripts/state-v2.mjs'
+import { validateOutputReferences } from '@icemourne/description-converter'
 const gitBlob = bytes => createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
 const perk = (hash, text, extra = {}) => ({ hash, name: `Perk ${hash}`, type: 'Weapon Perk', uploadedBy: 'tester', updateTracker: { descriptions: { en: { lastUpdate: 1, updatedBy: 'editor' }, de: { lastUpdate: 2, updatedBy: 'translator', sourceUpdatedAt: 1 } } }, editor: { en: { main: text, secondary: text }, de: { main: `DE ${text}`, secondary: `DE ${text}` } }, lastUpload: 1, inLiveDatabase: true, uploadToLive: true, ...extra })
 const both = (hash, text) => perk(hash, text, { editor: { en: { main: text, secondary: text }, de: { main: text, secondary: text } } })
@@ -15,7 +19,7 @@ async function exercise(scenario) {
   const dir = mkdtempSync(join(tmpdir(), 'split-http-'))
   const inv = join(dir, 'inventory.json'), config = join(dir, 'config.json')
   writeFileSync(inv, '{}'); writeFileSync(config, JSON.stringify({ inventoryPath: inv, manifestVersion: '1', manifestPath: '/pinned.json', fixtureManifestHttp: true, traceConversions: true }))
-  let accepted = acceptedHead, head = outputHead, count = 0, refReads = 0, outputReads = 0, patches = 0, inventoryReads = 0
+  let accepted = acceptedHead, head = outputHead, count = 0, refReads = 0, outputReads = 0, patches = 0, inventoryReads = 0, draftReads = 0
   let releaseBarrier, signalBarrier
   const barrier = new Promise(resolve => { releaseBarrier = resolve }), barrierSeen = new Promise(resolve => { signalBarrier = resolve })
   let blockedOnce = false
@@ -26,11 +30,32 @@ async function exercise(scenario) {
   commits.set('e'.repeat(40), { tree: { sha: treeHead } })
   const baseSource = scenario === 'imports' ? { perks: { ...source.perks, 300: perk(300, 'import main from 600') } } : scenario === 'globals' ? { perks: { ...source.perks, 1: both(1, 'export nested (\nimport main from 600\n)'), 300: both(300, 'import nested from global') } } : source
   let sourceBytes = Buffer.from(JSON.stringify(scenario === 'bad-conversion' ? { perks: { 1: perk(1, ''), 2: perk(2, ''), 3: perk(3, ''), 300: perk(300, 'import main from 999') } } : baseSource)), sourceBlob = gitBlob(sourceBytes)
+  const historicalSourceBytes = Buffer.from(sourceBytes), historicalSourceBlob = sourceBlob
+  const bundle = join(dir, 'bundle.json')
+  if (['import', 'import-invalid', 'import-ahead', 'import-ambiguous', 'import-source-moves', 'import-output-moves'].includes(scenario)) {
+    const { publicKey, privateKey } = generateKeyPairSync('ed25519'), manifestBytes = Buffer.from('{}'), hash = 'f'.repeat(64)
+    const legacy = Object.fromEntries(requiredFormats.filter(x => x !== 'clarityV2').map(x => [`descriptions/${x}.json`, '{}']))
+    const converted = Object.fromEntries(requiredFormats.map(x => [`descriptions/${x}.json`, '{}']))
+    const init = planInitialization({ accepted: { repository: 'fixture/accepted', ref: 'accepted', commit: acceptedHead, blob: sourceBlob, bytes: sourceBytes, input: baseSource }, output: { commit: outputHead, tree: treeHead, files: legacy, versions: { descriptions: 2.0625 }, versionBytes: '{"descriptions":2.0625}', state: null }, publisher: { identity: hash, lock: hash, converter: acceptedHead, runtime: 'node20', toolbox: '1.0.43' }, manifest: { version: 'v1', path: '/v1', digest: digest(manifestBytes), bytes: manifestBytes }, languages: ['en', 'de'], converted, fingerprint: hash, validateOutput: () => {} })
+    const candidate = structuredClone(init.state); candidate.baseline.kind = 'verified-import'; candidate.inventory.formats = candidate.inventory.formats.filter(x => x !== 'clarityV2'); candidate.outputDigests = structuredClone(candidate.baseline.outputDigests); candidate.translationFingerprint = null
+    const data = { executionRecord: Buffer.from(canonical({ runId: 'fixture-run', accepted: candidate.accepted, outputCommit: candidate.baseline.outputCommit, outputTree: candidate.baseline.outputTree, publisher: candidate.publisher, manifest: candidate.manifest })), dependencies: Buffer.from(canonical(candidate.publisher)), manifest: manifestBytes, graphProof: Buffer.from(canonical(candidate.graph)), legacyMapping: Buffer.from(JSON.stringify({ formats: Object.fromEntries(candidate.inventory.formats.map(x => [x, `descriptions/${x}.json`])), ownership: Object.fromEntries(Object.keys(candidate.components).map(x => [x, String(candidate.graph[x]?.aliasOf ?? x)])) })), outputProof: Buffer.from(canonical({ ...legacy, 'versions.json': '{"descriptions":2.0625}' })) }
+    const artifacts = Object.fromEntries(Object.entries(data).map(([k, v]) => [k, v.toString('base64')]))
+    const evidence = { executionRecordDigest: digest(data.executionRecord), dependenciesDigest: digest(data.dependencies), manifestBytesDigest: digest(data.manifest), graphProofDigest: digest(data.graphProof), legacyMappingDigest: digest(data.legacyMapping), outputProofDigest: digest(data.outputProof) }
+    candidate.baseline.proof = { evidenceDigest: digest(canonical(evidence)), keyFingerprint: digest(publicKey.export({ type: 'spki', format: 'der' })) }
+    evidence.signature = sign(null, Buffer.from(canonical({ candidate, evidence })), privateKey).toString('base64')
+    if (scenario === 'import-invalid') evidence.signature = Buffer.alloc(64).toString('base64')
+    writeFileSync(bundle, JSON.stringify({ candidate, artifacts, evidence, trustedPublicKey: publicKey.export({ type: 'spki', format: 'pem' }).toString() }))
+    if (scenario === 'import-ahead') { accepted = 'd'.repeat(40); sourceBytes = Buffer.from(JSON.stringify({ perks: { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' } } })); sourceBlob = gitBlob(sourceBytes) }
+  }
   const server = http.createServer(async (req, res) => {
     let raw = ''; for await (const chunk of req) raw += chunk; const body = raw ? JSON.parse(raw) : null; const p = req.url; let response, status = 200
     if (p === '/git/ref/heads/accepted') { refReads++; if (scenario === 'source-moves' && refReads === 2) accepted = 'd'.repeat(40); response = { object: { sha: accepted } } }
     else if (p === '/git/ref/heads/output') { outputReads++; if (scenario === 'output-moves' && outputReads === 2) head = 'e'.repeat(40); response = { object: { sha: head } } }
-    else if (p.startsWith('/contents/liveDescriptions.json?ref=')) response = { encoding: 'base64', sha: sourceBlob, content: sourceBytes.toString('base64') }
+    else if (p.startsWith('/contents/liveDescriptions.json?ref=')) {
+      if (p.endsWith('7'.repeat(40))) { draftReads++; const draft = Buffer.from(JSON.stringify({ perks: { ...source.perks, 300: perk(300, 'UNACCEPTED DRAFT') } })); response = { encoding: 'base64', sha: gitBlob(draft), content: draft.toString('base64') } }
+      else if (scenario === 'import-ahead' && p.endsWith(acceptedHead)) response = { encoding: 'base64', sha: historicalSourceBlob, content: historicalSourceBytes.toString('base64') }
+      else response = { encoding: 'base64', sha: sourceBlob, content: sourceBytes.toString('base64') }
+    }
     else if (p.startsWith('/compare/')) response = { status: scenario === 'diverged' ? 'diverged' : 'ahead' }
     else if (p === '/fixture/manifest') response = scenario === 'manifest-fails' ? {} : { Response: { version: scenario === 'manifest-changed' ? '2' : '1', jsonWorldComponentContentPaths: { en: { DestinyInventoryItemDefinition: '/pinned.json' } } } }
     else if (p.startsWith('/fixture/inventory?')) { inventoryReads++; response = { path: new URL(p, 'http://localhost').searchParams.get('path'), content: Buffer.from('{}').toString('base64') } }
@@ -38,18 +63,33 @@ async function exercise(scenario) {
     else if (req.method === 'GET' && p.startsWith('/git/trees/')) response = { tree: trees.get(p.split('/').at(-1).split('?')[0]), truncated: false }
     else if (req.method === 'GET' && p.startsWith('/git/blobs/')) response = { encoding: 'base64', content: blobs.get(p.split('/').at(-1)).toString('base64') }
     else if (req.method === 'POST' && p === '/git/blobs') { if (scenario === 'blob-fails' || (scenario === 'normal-blob-fails' && patches >= 1)) { status = 500; response = {} } else response = { sha: put(Buffer.from(body.content, 'base64')) } }
-    else if (req.method === 'POST' && p === '/git/trees') { if (scenario === 'tree-fails' || (scenario === 'normal-tree-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); trees.set(sha, [...trees.get(body.base_tree).filter(x => !body.tree.some(y => y.path === x.path)), ...body.tree]); response = { sha } } }
-    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails' || (scenario === 'normal-commit-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (scenario === 'initial-stage-source-moves') accepted = 'd'.repeat(40); if (scenario === 'initial-stage-output-moves') head = 'e'.repeat(40); if (scenario.startsWith('barrier') && patches === 1 && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
-    else if (req.method === 'PATCH' && p === '/git/refs/heads/output') { patches++; if (scenario === 'ref-fails' || (scenario === 'normal-ref-fails' && patches > 1) || commits.get(body.sha)?.parents?.[0] !== head) { status = 422; response = {} } else { head = body.sha; if (scenario === 'ambiguous' || (scenario === 'normal-ambiguous' && patches === 2)) { res.destroy(); return } response = { object: { sha: head } } } }
+    else if (req.method === 'POST' && p === '/git/trees') { if (scenario === 'tree-fails' || (scenario === 'normal-tree-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); trees.set(sha, [...trees.get(body.base_tree).filter(x => !body.tree.some(y => y.path === x.path)), ...body.tree.filter(y => y.sha !== null)]); response = { sha } } }
+    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails' || (scenario === 'normal-commit-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (['initial-stage-source-moves', 'import-source-moves'].includes(scenario)) accepted = 'd'.repeat(40); if (['initial-stage-output-moves', 'import-output-moves'].includes(scenario)) head = 'e'.repeat(40); if (((scenario.startsWith('barrier') && patches === 1) || (scenario === 'init-barrier' && patches === 0)) && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
+    else if (req.method === 'PATCH' && p === '/git/refs/heads/output') { patches++; if (scenario === 'ref-fails' || (scenario === 'normal-ref-fails' && patches > 1) || commits.get(body.sha)?.parents?.[0] !== head) { status = 422; response = {} } else { head = body.sha; if (scenario === 'ambiguous' || scenario === 'import-ambiguous' || (scenario === 'normal-ambiguous' && patches === 2)) { res.destroy(); return } response = { object: { sha: head } } } }
     else { status = 404; response = { path: p } }
     res.writeHead(status, { 'content-type': 'application/json' }); res.end(JSON.stringify(response))
   })
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve))
   try {
     const port = server.address().port
-    const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
-    const first = scenario === 'normal-uninitialized' ? await run('publish-fake-http.mjs', 'english') : await run(), second = scenario === 'duplicate' ? await run() : null
-    let english, translations, repeatTranslation, recoveryRuns, afterEnglish, beforeEnglish
+    const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, script === 'import-baseline-fake-http.mjs' ? bundle : config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
+    let first, second = null
+    if (scenario === 'init-barrier') {
+      const pending = run(); await barrierSeen; second = await run(); releaseBarrier(); first = await pending
+    } else {
+      first = scenario === 'normal-uninitialized' ? await run('publish-fake-http.mjs', 'english') : ['import', 'import-invalid', 'import-ahead', 'import-ambiguous', 'import-source-moves', 'import-output-moves'].includes(scenario) ? await run('import-baseline-fake-http.mjs') : await run()
+      if (scenario === 'duplicate') second = await run()
+    }
+    let english, translations, repeatTranslation, rollback, recoveryRuns, afterEnglish, beforeEnglish
+    if (scenario === 'rollback' && first.code === 0) {
+      rollback = await run('rollback-fake-http.mjs')
+      if (rollback.code === 0) english = await run('publish-fake-http.mjs', 'english')
+    }
+    if (scenario === 'import-ahead' && first.code === 0) {
+      beforeEnglish = trees.get(commits.get(head).tree.sha)
+      english = await run('publish-fake-http.mjs', 'english')
+      afterEnglish = trees.get(commits.get(head).tree.sha)
+    }
     if (scenario === 'coverage-recovery' && first.code === 0) {
       const step = async (commit, perks, mode) => {
         accepted = commit.repeat(40); sourceBytes = Buffer.from(JSON.stringify({ perks })); sourceBlob = gitBlob(sourceBytes)
@@ -93,7 +133,7 @@ async function exercise(scenario) {
       head = '8'.repeat(40); commits.set(head, { tree: { sha: corruptTree } }); beforeEnglish = trees.get(corruptTree)
       english = await run('publish-fake-http.mjs', 'english')
     }
-    if (['vertical', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'split-missing', 'split-missing-tracker', 'merge', 'removal', 'imports', 'globals', 'language-removal'].includes(scenario) && first.code === 0) {
+    if (['vertical', 'draft', 'structure', 'reverse', 'normal-ref-fails', 'normal-blob-fails', 'normal-tree-fails', 'normal-commit-fails', 'normal-ambiguous', 'collision', 'diverged', 'split', 'split-missing', 'split-missing-tracker', 'merge', 'removal', 'imports', 'globals', 'language-removal'].includes(scenario) && first.code === 0) {
       beforeEnglish = trees.get(commits.get(head).tree.sha)
       accepted = 'd'.repeat(40)
       const perks = ['structure', 'collision'].includes(scenario) ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' }, 700: perk(700, 'Independent changed') } : scenario === 'split' ? { ...source.perks, 500: perk(500, 'Split') } : scenario === 'split-missing' ? { ...source.perks, 500: { ...perk(500, 'Split'), editor: { en: { main: 'Split', secondary: 'Split' } } } } : scenario === 'split-missing-tracker' ? { ...source.perks, 500: perk(500, 'Split', { updateTracker: { descriptions: { en: { lastUpdate: 1 } } } }) } : scenario === 'merge' ? { ...source.perks, 600: { hash: 600, aliasOf: 300, aliasKind: 'frame' } } : scenario === 'removal' ? Object.fromEntries(Object.entries(source.perks).filter(([id]) => id !== '500')) : scenario === 'imports' ? { ...source.perks, 300: perk(300, 'import main from 700') } : scenario === 'globals' ? { ...baseSource.perks, 1: both(1, 'export nested (\nimport main from 700\n)') } : scenario === 'language-removal' ? { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } } : { ...source.perks, 300: perk(300, 'New English') }
@@ -114,7 +154,7 @@ async function exercise(scenario) {
         if (scenario === 'language-removal' && translations?.code === 0) repeatTranslation = await run('publish-fake-http.mjs', 'translations')
       }
     }
-    return { first, second, english, translations, repeatTranslation, recoveryRuns, beforeEnglish, afterEnglish, head, patches, inventoryReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
+    return { first, second, english, translations, repeatTranslation, rollback, recoveryRuns, beforeEnglish, afterEnglish, head, accepted, sourceBlob, patches, inventoryReads, draftReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
   } finally { await new Promise(resolve => server.close(resolve)); rmSync(dir, { recursive: true, force: true }) }
 }
 test('executable initializes through actual converter and fake HTTP Git objects', async () => {
@@ -127,6 +167,41 @@ test('executable initializes through actual converter and fake HTTP Git objects'
 test('normal fake publication never implicitly initializes missing state', async () => {
   const r = await exercise('normal-uninitialized'); assert.notEqual(r.first.code, 0); assert.match(r.first.stderr, /initialization-required/)
   assert.equal(r.head, outputHead); assert.equal(r.patches, 0)
+})
+test('fake rollback restores the legacy output as one commit and requires initialization again', async () => {
+  const r = await exercise('rollback'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.rollback.code, 0, r.rollback.stderr)
+  assert.equal(r.patches, 2); assert.equal(r.tree.some(x => x.path === '.publication-state.json'), false)
+  assert.equal(r.tree.filter(x => x.path.startsWith('descriptions/')).length, 7)
+  assert.equal(r.blobs.get(r.tree.find(x => x.path === 'versions.json').sha).toString(), '{"descriptions":2.0625}')
+  assert.equal(r.blobs.get(r.tree.find(x => x.path === 'README.md').sha).toString(), 'preserved')
+  assert.notEqual(r.english.code, 0); assert.match(r.english.stderr, /initialization-required/)
+})
+test('verified baseline import writes only state and preserves seven legacy outputs', async () => {
+  const r = await exercise('import'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.patches, 1)
+  const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(state.baseline.kind, 'verified-import'); assert.equal(state.translationFingerprint, null)
+  assert.equal(r.tree.filter(x => x.path.startsWith('descriptions/')).length, 7)
+  assert.equal(r.tree.some(x => x.path === 'descriptions/clarityV2.json'), false)
+  assert.equal(r.blobs.get(r.tree.find(x => x.path === 'versions.json').sha).toString(), '{"descriptions":2.0625}')
+  const invalid = await exercise('import-invalid'); assert.notEqual(invalid.first.code, 0); assert.equal(invalid.patches, 0); assert.equal(invalid.head, outputHead)
+})
+test('verified historical baseline remains distinct from newer accepted structure', async () => {
+  const r = await exercise('import-ahead'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr)
+  const state = JSON.parse(r.blobs.get(r.beforeEnglish.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(state.accepted.commit, acceptedHead); assert.equal(state.graph[500].aliasOf, 300)
+  assert.deepEqual(state.pending, []); assert.equal(state.translationFingerprint, null)
+  const outputs = Object.fromEntries(r.beforeEnglish.filter(x => /^descriptions\/.+\.json$/.test(x.path) || x.path === 'versions.json').map(x => [x.path, r.blobs.get(x.sha).toString()]))
+  const status = inspectState(state, outputs, { repository: 'fixture/accepted', ref: 'accepted', commit: r.accepted, blob: r.sourceBlob }, r.head)
+  assert.equal(status.pendingAcceptedWork, true); assert.equal(status.lastEvaluatedAcceptedSource.commit, acceptedHead)
+  const next = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(next.accepted.commit, 'd'.repeat(40)); assert.equal(next.graph[500].aliasOf, 300)
+  assert.ok(next.pending.some(q => q.members.includes('500')))
+  assert.equal(r.tree.some(x => x.path === 'descriptions/clarityV2.json'), false)
+})
+test('verified fixture import reconciles ambiguous success and aborts moved pins', async () => {
+  const ambiguous = await exercise('import-ambiguous'); assert.equal(ambiguous.first.code, 0, ambiguous.first.stderr); assert.equal(ambiguous.patches, 1)
+  const source = await exercise('import-source-moves'); assert.notEqual(source.first.code, 0); assert.equal(source.head, outputHead); assert.equal(source.patches, 0)
+  const output = await exercise('import-output-moves'); assert.notEqual(output.first.code, 0); assert.equal(output.head, 'e'.repeat(40)); assert.equal(output.patches, 0)
 })
 test('initialized fixture runs English then translation through fake Git', async () => {
   const r = await exercise('vertical'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
@@ -148,6 +223,10 @@ test('initialized fixture runs English then translation through fake Git', async
       }
     }
   }
+})
+test('both modes use accepted input and never read a newer unaccepted draft', async () => {
+  const r = await exercise('draft'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr); assert.equal(r.draftReads, 0)
+  for (const item of r.tree.filter(x => /^descriptions\/.+\.json$/.test(x.path))) assert.doesNotMatch(r.blobs.get(item.sha).toString(), /UNACCEPTED DRAFT/, item.path)
 })
 test('English queues retargeted component and scheduled run promotes all languages', async () => {
   const r = await exercise('structure'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
@@ -311,10 +390,16 @@ test('barrier-controlled English and translation races preserve newest source', 
     if (scenario !== 'barrier-en-en') assert.equal(state.components[300].translations, 'f'.repeat(40), scenario)
     for (const item of r.tree.filter(x => /^descriptions\/.+\.json$/.test(x.path))) {
       const row = read(item.path)['300']
+      validateOutputReferences(read(item.path))
       assert.ok(row?.descriptions?.en, `${scenario}/${item.path}`)
       if (scenario !== 'barrier-tr-tr') assert.match(JSON.stringify(row.descriptions.en), /English B/, `${scenario}/${item.path}`)
       if (scenario !== 'barrier-en-en' && row.descriptions.de) assert.match(JSON.stringify(row.descriptions.de), /DE English B/, `${scenario}/${item.path}`)
     }
+    const files = Object.fromEntries(r.tree.filter(x => /^descriptions\/.+\.json$/.test(x.path) || x.path === 'versions.json').map(x => [x.path, r.blobs.get(x.sha).toString()]))
+    assert.doesNotThrow(() => validateInitialized(state, files), scenario)
+    const beforeVersion = JSON.parse(r.blobs.get(r.afterEnglish.find(x => x.path === 'versions.json').sha).toString()).descriptions
+    const finalVersion = read('versions.json').descriptions
+    assert.ok(finalVersion === beforeVersion || Math.round((finalVersion - beforeVersion) * 10000) === 1, scenario)
     if (scenario === 'barrier-structure') {
       const queued = JSON.parse(r.blobs.get(r.afterEnglish.find(x => x.path === '.publication-state.json').sha).toString())
       assert.ok(queued.pending.some(x => x.sourceCommit === 'f'.repeat(40) && x.members.includes('500')))
@@ -331,4 +416,10 @@ test('conversion, changed source, blob and ref failures leave published head unc
 test('ambiguous success reconciles and duplicate initialization cannot replace state', async () => {
   const ambiguous = await exercise('ambiguous'); assert.equal(ambiguous.first.code, 0, ambiguous.first.stderr); assert.equal(ambiguous.patches, 1)
   const duplicate = await exercise('duplicate'); assert.equal(duplicate.first.code, 0, duplicate.first.stderr); assert.equal(duplicate.second.code, 0, duplicate.second.stderr); assert.equal(JSON.parse(duplicate.second.stdout).result, 'already-initialized-fake'); assert.equal(duplicate.patches, 1)
+})
+test('two simultaneous initializers cannot replace an established baseline', async () => {
+  const r = await exercise('init-barrier'); assert.equal(r.second.code, 0, r.second.stderr); assert.notEqual(r.first.code, 0); assert.match(r.first.stderr, /Pins changed/)
+  assert.equal(r.patches, 1)
+  const versions = JSON.parse(r.blobs.get(r.tree.find(x => x.path === 'versions.json').sha).toString())
+  assert.equal(versions.descriptions, 2.0626)
 })

@@ -14,6 +14,7 @@ export function gitDataAdapter(transport, ref, decode) {
       const entries = []
       for (const [path, content] of Object.entries(candidate.files)) {
         if (!/^(descriptions\/[A-Za-z0-9_-]+\.json|versions\.json|\.publication-state\.json)$/.test(path)) throw new Error('Unexpected publication path')
+        if (content === null) { entries.push({ path, mode: '100644', type: 'blob', sha: null }); continue }
         const blob = await call('POST', '/git/blobs', { content: Buffer.from(content).toString('base64'), encoding: 'base64' })
         entries.push({ path, mode: '100644', type: 'blob', sha: blob.sha })
       }

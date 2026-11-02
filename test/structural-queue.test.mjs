@@ -19,3 +19,9 @@ test('implicit global title dependency queues every row when its topology change
   const queue = structuralQueue(before, accepted, sha)
   assert.deepEqual(queue[0].members, Object.keys(before).sort())
 })
+test('retained translation source contributes dependency edges to structural closure', () => {
+  const published = { 1: {}, 2: {}, 3: {}, 100: { editor: { en: { main: 'plain' } } }, 200: { editor: { en: { main: 'target' } } }, 300: { editor: { en: { main: 'new target' } } } }
+  const retained = { 100: [{ editor: { de: { main: 'import main from 200' } } }] }
+  const accepted = { ...published, 200: { aliasOf: 300, aliasKind: 'frame' } }
+  assert.deepEqual(structuralQueue(published, accepted, sha, retained)[0].members, ['100', '200', '300'])
+})

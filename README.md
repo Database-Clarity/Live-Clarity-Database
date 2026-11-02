@@ -106,3 +106,12 @@ provenance. Incremental fake HTTP tests also exercise a manifest metadata and
 inventory GET fixture, and barrier-controlled Git ref conflicts. These tests
 are partial: the complete interleaving, closure, bootstrap, format and
 production-gating acceptance matrix remains outstanding.
+
+The offline baseline-import preview checks a signed attestation and hashes of
+the execution, dependency, manifest, graph and legacy-mapping artifacts. Its
+public key must be independently authorized; the preview does not establish
+that the signer or the underlying evidence is trustworthy, and performs no
+repository write. The separate loopback-only `import-baseline-fake-http.mjs`
+exercises a fixture Git state commit; it cannot validate a real trust anchor
+or authorize an output write. A verified legacy import preserves seven legacy
+files and the version bytes and records an unknown translation fingerprint.

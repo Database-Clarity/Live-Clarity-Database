@@ -37,11 +37,11 @@ export function dependencies(row) {
 export function implicitDependencies(row) {
   return row?.editor ? ['2', '3'] : []
 }
-export function structuralQueue(published, accepted, sourceCommit) {
+export function structuralQueue(published, accepted, sourceCommit, retainedSources = {}) {
   if (!/^[0-9a-f]{40}$/.test(sourceCommit)) throw new Error('Expected immutable source commit')
   const ids = new Set([...Object.keys(published), ...Object.keys(accepted)])
   const edges = new Map([...ids].map(id => [id, new Set()]))
-  for (const id of ids) for (const row of [published[id], accepted[id]]) {
+  for (const id of ids) for (const row of [published[id], accepted[id], ...(retainedSources[id] ?? [])]) {
     for (const target of dependencies(row)) {
       if (!edges.has(target)) throw new Error(`Missing dependency ${target}`)
       edges.get(id).add(target); edges.get(target).add(id)
