@@ -21,7 +21,7 @@ async function exercise(scenario) {
   let blockedOnce = false
   const blobs = new Map(), trees = new Map(), commits = new Map([[outputHead, { tree: { sha: treeHead } }]])
   const put = bytes => { const sha = gitBlob(bytes); blobs.set(sha, bytes); return sha }
-  const entries = [{ path: 'versions.json', type: 'blob', sha: put(Buffer.from('{"descriptions":2.0625}')) }, { path: 'descriptions/clarity.json', type: 'blob', sha: put(Buffer.from('{}')) }, { path: 'README.md', type: 'blob', sha: put(Buffer.from('preserved')) }]
+  const entries = [{ path: 'versions.json', type: 'blob', sha: put(Buffer.from('{"descriptions":2.0625}')) }, ...['clarity', 'dim', 'crayon', 'foundry', 'lightGG', 'braytech', 'vaultZero'].map(name => ({ path: `descriptions/${name}.json`, type: 'blob', sha: put(Buffer.from('{}')) })), { path: 'README.md', type: 'blob', sha: put(Buffer.from('preserved')) }]
   trees.set(treeHead, entries)
   commits.set('e'.repeat(40), { tree: { sha: treeHead } })
   const baseSource = scenario === 'imports' ? { perks: { ...source.perks, 300: perk(300, 'import main from 600') } } : scenario === 'globals' ? { perks: { ...source.perks, 1: both(1, 'export nested (\nimport main from 600\n)'), 300: both(300, 'import nested from global') } } : source
@@ -39,7 +39,7 @@ async function exercise(scenario) {
     else if (req.method === 'GET' && p.startsWith('/git/blobs/')) response = { encoding: 'base64', content: blobs.get(p.split('/').at(-1)).toString('base64') }
     else if (req.method === 'POST' && p === '/git/blobs') { if (scenario === 'blob-fails' || (scenario === 'normal-blob-fails' && patches >= 1)) { status = 500; response = {} } else response = { sha: put(Buffer.from(body.content, 'base64')) } }
     else if (req.method === 'POST' && p === '/git/trees') { if (scenario === 'tree-fails' || (scenario === 'normal-tree-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); trees.set(sha, [...trees.get(body.base_tree).filter(x => !body.tree.some(y => y.path === x.path)), ...body.tree]); response = { sha } } }
-    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails' || (scenario === 'normal-commit-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (scenario.startsWith('barrier') && patches === 1 && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
+    else if (req.method === 'POST' && p === '/git/commits') { if (scenario === 'commit-fails' || (scenario === 'normal-commit-fails' && patches >= 1)) { status = 500; response = {} } else { const sha = (++count).toString(16).padStart(40, '0'); commits.set(sha, { tree: { sha: body.tree }, parents: body.parents }); response = { sha }; if (scenario === 'initial-stage-source-moves') accepted = 'd'.repeat(40); if (scenario === 'initial-stage-output-moves') head = 'e'.repeat(40); if (scenario.startsWith('barrier') && patches === 1 && !blockedOnce) { blockedOnce = true; signalBarrier(); await barrier } } }
     else if (req.method === 'PATCH' && p === '/git/refs/heads/output') { patches++; if (scenario === 'ref-fails' || (scenario === 'normal-ref-fails' && patches > 1) || commits.get(body.sha)?.parents?.[0] !== head) { status = 422; response = {} } else { head = body.sha; if (scenario === 'ambiguous' || (scenario === 'normal-ambiguous' && patches === 2)) { res.destroy(); return } response = { object: { sha: head } } } }
     else { status = 404; response = { path: p } }
     res.writeHead(status, { 'content-type': 'application/json' }); res.end(JSON.stringify(response))
@@ -49,7 +49,20 @@ async function exercise(scenario) {
     const port = server.address().port
     const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
     const first = scenario === 'normal-uninitialized' ? await run('publish-fake-http.mjs', 'english') : await run(), second = scenario === 'duplicate' ? await run() : null
-    let english, translations, repeatTranslation, afterEnglish, beforeEnglish
+    let english, translations, repeatTranslation, recoveryRuns, afterEnglish, beforeEnglish
+    if (scenario === 'coverage-recovery' && first.code === 0) {
+      const step = async (commit, perks, mode) => {
+        accepted = commit.repeat(40); sourceBytes = Buffer.from(JSON.stringify({ perks })); sourceBlob = gitBlob(sourceBytes)
+        return run('publish-fake-http.mjs', mode)
+      }
+      const noGerman = { ...source.perks, 300: { ...source.perks[300], editor: { en: source.perks[300].editor.en } } }
+      const splitMissing = { ...noGerman, 500: { ...perk(500, 'Split'), editor: { en: { main: 'Split', secondary: 'Split' } } } }
+      const splitComplete = { ...source.perks, 500: perk(500, 'Split') }
+      recoveryRuns = []
+      recoveryRuns.push(await step('d', noGerman, 'english'), await step('d', noGerman, 'translations'))
+      recoveryRuns.push(await step('e', splitMissing, 'english'), await step('e', splitMissing, 'translations'))
+      recoveryRuns.push(await step('f', splitComplete, 'english'), await step('f', splitComplete, 'translations'))
+    }
     if (scenario.startsWith('barrier') && first.code === 0) {
       accepted = 'd'.repeat(40)
       const firstPerks = scenario === 'barrier-structure' ? { ...source.perks, 500: { hash: 500, aliasOf: 600, aliasKind: 'frame' } } : { ...source.perks, 300: perk(300, 'Translation A') }
@@ -101,7 +114,7 @@ async function exercise(scenario) {
         if (scenario === 'language-removal' && translations?.code === 0) repeatTranslation = await run('publish-fake-http.mjs', 'translations')
       }
     }
-    return { first, second, english, translations, repeatTranslation, beforeEnglish, afterEnglish, head, patches, inventoryReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
+    return { first, second, english, translations, repeatTranslation, recoveryRuns, beforeEnglish, afterEnglish, head, patches, inventoryReads, tree: trees.get(commits.get(head)?.tree.sha), blobs }
   } finally { await new Promise(resolve => server.close(resolve)); rmSync(dir, { recursive: true, force: true }) }
 }
 test('executable initializes through actual converter and fake HTTP Git objects', async () => {
@@ -200,6 +213,14 @@ test('missing accepted language retains the last published translation', async (
     const old = read(r.beforeEnglish, item.path)['300'], current = read(r.tree, item.path)['300']
     if (old?.updateTracker?.descriptions?.de) assert.deepEqual(current.updateTracker.descriptions.de, old.updateTracker.descriptions.de, item.path)
   }
+})
+test('retained coverage survives queued failure and clears after a complete structural retry', async () => {
+  const r = await exercise('coverage-recovery')
+  for (const index of [0, 1, 2, 4, 5]) assert.equal(r.recoveryRuns[index].code, 0, `${index}: ${r.recoveryRuns[index].stderr}`)
+  assert.notEqual(r.recoveryRuns[3].code, 0); assert.match(r.recoveryRuns[3].stderr, /Structural translation missing/)
+  const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.deepEqual(state.pending, []); assert.deepEqual(state.retainedLanguages, {})
+  assert.equal(state.components[300].translations, 'f'.repeat(40)); assert.equal(state.components[500].translations, 'f'.repeat(40))
 })
 test('a new accepted commit with identical inputs skips Git writes', async () => {
   const r = await exercise('unchanged'); assert.equal(r.translations.code, 0, r.translations.stderr)
@@ -303,8 +324,9 @@ test('barrier-controlled English and translation races preserve newest source', 
   }
 })
 test('conversion, changed source, blob and ref failures leave published head unchanged', async () => {
-  for (const scenario of ['bad-conversion', 'source-moves', 'blob-fails', 'tree-fails', 'commit-fails', 'ref-fails']) { const r = await exercise(scenario); assert.notEqual(r.first.code, 0, scenario); assert.equal(r.head, outputHead, scenario) }
+  for (const scenario of ['bad-conversion', 'source-moves', 'initial-stage-source-moves', 'blob-fails', 'tree-fails', 'commit-fails', 'ref-fails']) { const r = await exercise(scenario); assert.notEqual(r.first.code, 0, scenario); assert.equal(r.head, outputHead, scenario) }
   const moved = await exercise('output-moves'); assert.notEqual(moved.first.code, 0); assert.equal(moved.head, 'e'.repeat(40)); assert.equal(moved.patches, 0)
+  const staged = await exercise('initial-stage-output-moves'); assert.notEqual(staged.first.code, 0); assert.equal(staged.head, 'e'.repeat(40)); assert.equal(staged.patches, 0)
 })
 test('ambiguous success reconciles and duplicate initialization cannot replace state', async () => {
   const ambiguous = await exercise('ambiguous'); assert.equal(ambiguous.first.code, 0, ambiguous.first.stderr); assert.equal(ambiguous.patches, 1)

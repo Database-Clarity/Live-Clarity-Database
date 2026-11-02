@@ -3,6 +3,7 @@ import { digest } from './publish-preflight.mjs'
 const sha = value => typeof value === 'string' && /^[0-9a-f]{40}$/.test(value)
 export async function resolveAccepted(api, branch, repository = 'fixture/accepted') {
   if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repository)) throw new Error('Invalid accepted repository')
+  if (typeof branch !== 'string' || !/^[A-Za-z0-9._/-]+$/.test(branch) || branch.startsWith('/') || branch.includes('..')) throw new Error('Invalid accepted ref')
   const ref = await api('GET', `/git/ref/heads/${branch}`)
   const commit = ref?.object?.sha
   if (!sha(commit)) throw new Error('Invalid accepted commit')
@@ -11,7 +12,7 @@ export async function resolveAccepted(api, branch, repository = 'fixture/accepte
   const bytes = Buffer.from(file.content.replace(/\s/g, ''), 'base64')
   const blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex')
   if (blob !== file.sha) throw new Error('Accepted blob digest mismatch')
-  return { repository, commit, blob, bytes, input: JSON.parse(bytes.toString('utf8')) }
+  return { repository, ref: branch, commit, blob, bytes, input: JSON.parse(bytes.toString('utf8')) }
 }
 export async function resolveManifestIdentity(fetchJson) {
   const metadata = await fetchJson('https://www.bungie.net/Platform/Destiny2/Manifest/')

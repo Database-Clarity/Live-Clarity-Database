@@ -53,14 +53,14 @@ const fingerprint = translationFingerprint(accepted.input, { version: manifest.v
 if (initial.state != null) {
   const versionBytes = initial.versionBytes
   validateInitialized(initial.state, { ...initial.files, 'versions.json': versionBytes })
-  if (initial.state.accepted.repository !== accepted.repository || initial.state.accepted.commit !== accepted.commit || initial.state.accepted.blob !== accepted.blob || initial.state.translationFingerprint !== fingerprint || initial.state.manifest.digest !== manifest.digest || initial.state.publisher.identity !== identity) throw new Error('Already initialized with different inputs')
+  if (initial.state.accepted.repository !== accepted.repository || initial.state.accepted.ref !== accepted.ref || initial.state.accepted.commit !== accepted.commit || initial.state.accepted.blob !== accepted.blob || initial.state.translationFingerprint !== fingerprint || initial.state.manifest.digest !== manifest.digest || initial.state.publisher.identity !== identity) throw new Error('Already initialized with different inputs')
   console.log(JSON.stringify({ result: 'already-initialized-fake', commit: initial.head, source: accepted.commit, operation: initial.state.baseline.operation }))
   process.exit(0)
 }
 const result = convertPresets(accepted.input.perks, inventory, accepted.input.databaseSettings, 'translations')
 const converted = Object.fromEntries(Object.entries(result).map(([name, rows]) => [`descriptions/${name}.json`, customJsonStringify(rows, ['stat', 'multiplier', 'weaponTypes', 'classNames'])]))
 const languages = [...new Set(Object.values(accepted.input.perks).flatMap(perk => Object.keys(perk.editor ?? {})))].sort()
-const plan = planInitialization({ accepted, output: { commit: initial.head, tree: initial.tree, state: initial.state, files: initial.files, versions: initial.versions }, publisher, manifest, languages, converted, fingerprint, validateOutput: (_path, bytes) => validateOutputReferences(JSON.parse(bytes)) })
+const plan = planInitialization({ accepted, output: { commit: initial.head, tree: initial.tree, state: initial.state, files: initial.files, versions: initial.versions, versionBytes: initial.versionBytes }, publisher, manifest, languages, converted, fingerprint, validateOutput: (_path, bytes) => validateOutputReferences(JSON.parse(bytes)) })
 // Abort before any staging if either cumulative input or output changed.
 if ((await resolveAccepted(call, 'accepted')).commit !== accepted.commit || (await adapter.readHead()).head !== initial.head) throw new Error('Pins changed; replan')
 const commit = await adapter.stage(initial.head, { files: plan.files, message: 'Initialize publication (fake only)' })

@@ -23,6 +23,10 @@ export function planInitialization({ accepted, output, publisher, manifest, lang
   }
   const files = {}, old = output.files
   if (!old || Object.keys(old).some(path => !/^descriptions\/[A-Za-z0-9_-]+\.json$/.test(path))) throw new Error('Invalid legacy output')
+  const legacyPaths = requiredFormats.filter(name => name !== 'clarityV2').map(name => `descriptions/${name}.json`).sort()
+  if (canonical(Object.keys(old).sort()) !== canonical(legacyPaths) || typeof output.versionBytes !== 'string' || canonical(JSON.parse(output.versionBytes)) !== canonical(output.versions)) throw new Error('Incomplete pinned legacy baseline')
+  for (const path of legacyPaths) JSON.parse(old[path])
+  if (!converted || canonical(Object.keys(converted).sort()) !== canonical(requiredFormats.map(name => `descriptions/${name}.json`).sort())) throw new Error('Incomplete or unexpected converted output')
   for (const preset of requiredFormats) {
     const path = `descriptions/${preset}.json`, bytes = converted[path]
     if (typeof bytes !== 'string') throw new Error(`Missing output ${path}`)
@@ -32,8 +36,9 @@ export function planInitialization({ accepted, output, publisher, manifest, lang
   const versions = { ...output.versions, descriptions: changed ? Math.round(output.versions.descriptions * 10000 + 1) / 10000 : output.versions.descriptions }
   files['versions.json'] = JSON.stringify(versions, null, 1)
   const manifestIdentity = { version: manifest.version, path: manifest.path, digest: manifest.digest }
-  const operation = digest(canonical({ accepted: [accepted.commit, accepted.blob], output: [output.commit, output.tree], publisher, manifest: manifestIdentity, languages, digests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }))
-  const state = { schemaVersion: 2, initialized: true, baseline: { kind: 'initial-publication', outputCommit: output.commit, outputTree: output.tree, operation }, accepted: { repository, commit: accepted.commit, blob: accepted.blob }, source: { digest: digest(canonical(source)), value: source, bytes: acceptedBytes.toString('base64') }, graph, publisher, manifest: manifestIdentity, inventory: { formats: [...requiredFormats], languages }, components, pending: [], translationFingerprint: fingerprint, outputDigests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }
+  const baselineDigests = Object.fromEntries([...Object.entries(old), ['versions.json', output.versionBytes]].map(([path, bytes]) => [path, digest(bytes)]))
+  const operation = digest(canonical({ accepted: [repository, accepted.ref ?? 'accepted', accepted.commit, accepted.blob], output: [output.commit, output.tree], baselineDigests, publisher, manifest: manifestIdentity, languages, digests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }))
+  const state = { schemaVersion: 2, initialized: true, baseline: { kind: 'initial-publication', outputCommit: output.commit, outputTree: output.tree, operation, outputDigests: baselineDigests }, accepted: { repository, ref: accepted.ref ?? 'accepted', commit: accepted.commit, blob: accepted.blob }, source: { digest: digest(canonical(source)), value: source, bytes: acceptedBytes.toString('base64') }, graph, publisher, manifest: manifestIdentity, inventory: { formats: [...requiredFormats], languages }, components, pending: [], translationFingerprint: fingerprint, outputDigests: Object.fromEntries(Object.entries(files).map(([path, bytes]) => [path, digest(bytes)])) }
   validateInitialized(state, files)
   return { parent: output.commit, acceptedCommit: accepted.commit, operation, state, files: { ...files, '.publication-state.json': JSON.stringify(state, null, 1) } }
 }

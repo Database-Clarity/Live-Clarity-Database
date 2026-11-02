@@ -32,7 +32,7 @@ const convertedLanguages = new Set()
 const output = await publishAtomic(adapter, async current => {
   validateInitialized(current.state, current.files)
   const accepted = await resolveAccepted(call, 'accepted')
-  if (current.state.accepted.repository !== accepted.repository) throw new Error('Accepted repository changed; recovery required')
+  if (current.state.accepted.repository !== accepted.repository || current.state.accepted.ref !== accepted.ref) throw new Error('Accepted repository or ref changed; recovery required')
   // Compare API establishes ancestry in the accepted branch, not output refs.
   for (const prior of new Set([...Object.values(current.state.components).flatMap(x => [x.english, x.translations, x.sourceCommit]), ...current.state.pending.map(x => x.sourceCommit)].filter(Boolean))) {
     if (prior === accepted.commit) continue
@@ -122,7 +122,7 @@ const output = await publishAtomic(adapter, async current => {
     state.components[id] = { topology: graph, dependencies: deps, implicitDependencies: implicitDependencies(row), sourceRepo: accepted.repository, sourceCommit: accepted.commit, sourceBlob: accepted.blob, english: mode === 'english' || blocked.has(id) ? accepted.commit : old?.english ?? null, translations: mode === 'translations' && !retainedTranslations.has(id) ? accepted.commit : old?.translations ?? null }
   }
   state.sourceSnapshots = snapshots
-  state.accepted = { repository: accepted.repository, commit: accepted.commit, blob: accepted.blob }
+  state.accepted = { repository: accepted.repository, ref: accepted.ref, commit: accepted.commit, blob: accepted.blob }
   state.source = { value: accepted.input, bytes: accepted.bytes.toString('base64'), digest: digest(canonical(accepted.input)) }
   state.pending = mode === 'english' ? queue : []
   if (mode === 'translations') {
@@ -143,7 +143,7 @@ const output = await publishAtomic(adapter, async current => {
     message: `Publish ${mode} (fake only)`,
     beforeUpdate: async () => {
       const latest = await resolveAccepted(call, 'accepted')
-      if (latest.repository !== accepted.repository || latest.commit !== accepted.commit || latest.blob !== accepted.blob) throw Object.assign(new Error('Accepted source changed; replan'), { code: 'replan' })
+      if (latest.repository !== accepted.repository || latest.ref !== accepted.ref || latest.commit !== accepted.commit || latest.blob !== accepted.blob) throw Object.assign(new Error('Accepted source changed; replan'), { code: 'replan' })
     }
   }
 })

@@ -10,7 +10,8 @@ const input = { perks: { 1: {}, 2: {}, 3: {}, 100: { editor: { en: { main: 'text
 const converted = Object.fromEntries(requiredFormats.map(x => [`descriptions/${x}.json`, '{}']))
 const args = () => {
   const bytes = Buffer.from(JSON.stringify(input)), blob = createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex'), manifestBytes = Buffer.from('{}')
-  return { accepted: { commit: a, blob, input, bytes }, output: { commit: b, tree: a, versions: { descriptions: 2.0625 }, files: { 'descriptions/clarity.json': '{}' }, state: null }, publisher: { identity: h, lock: h, converter: a, runtime: 'node20', toolbox: '1.0.43' }, manifest: { version: '1', path: '/inventory', digest: digest(manifestBytes), bytes: manifestBytes }, languages: ['en', 'de'], converted: { ...converted }, fingerprint: h, validateOutput: () => {} }
+  const files = Object.fromEntries(requiredFormats.filter(name => name !== 'clarityV2').map(name => [`descriptions/${name}.json`, '{}']))
+  return { accepted: { commit: a, blob, input, bytes }, output: { commit: b, tree: a, versions: { descriptions: 2.0625 }, versionBytes: '{"descriptions":2.0625}', files, state: null }, publisher: { identity: h, lock: h, converter: a, runtime: 'node20', toolbox: '1.0.43' }, manifest: { version: '1', path: '/inventory', digest: digest(manifestBytes), bytes: manifestBytes }, languages: ['en', 'de'], converted: { ...converted }, fingerprint: h, validateOutput: () => {} }
 }
 test('missing state reports unknown coverage and offline initialization preserves legacy until publication', () => {
   const options = args()
@@ -30,7 +31,9 @@ test('missing state reports unknown coverage and offline initialization preserve
 })
 test('initializer requires all outputs and rejects existing state or dangling dependencies', () => {
   let options = args(); delete options.converted['descriptions/dim.json']
-  assert.throws(() => planInitialization(options), /Missing output/)
+  assert.throws(() => planInitialization(options), /Incomplete or unexpected converted output/)
+  options = args(); delete options.output.files['descriptions/braytech.json']; assert.throws(() => planInitialization(options), /Incomplete pinned legacy baseline/)
+  options = args(); options.output.versionBytes = '{"descriptions":9}'; assert.throws(() => planInitialization(options), /Incomplete pinned legacy baseline/)
   options = args(); options.output.state = {}; assert.throws(() => planInitialization(options), /missing state/)
   options = args(); options.accepted.input = { perks: { 100: { aliasOf: 999 } } }; options.accepted.bytes = Buffer.from(JSON.stringify(options.accepted.input)); options.accepted.blob = createHash('sha1').update(`blob ${options.accepted.bytes.length}\0`).update(options.accepted.bytes).digest('hex'); assert.throws(() => planInitialization(options), /Missing dependency/)
 })
