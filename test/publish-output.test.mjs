@@ -38,3 +38,8 @@ test('failed update and exhausted conflicts do not publish candidate', async () 
   await assert.rejects(publishAtomic(git, async current => ({ ...current.value, de: 'bad' })), /retry limit/)
   assert.equal((await git.readHead()).value.de, 'old')
 })
+test('source replans exhaust safely before the ref changes', async () => {
+  const git = fake(); let attempts = 0
+  await assert.rejects(publishAtomic(git, async current => ({ ...current.value, beforeUpdate: async () => { attempts++; throw Object.assign(new Error('source moved'), { code: 'replan' }) } })), /retry limit/)
+  assert.equal(attempts, 3); assert.equal((await git.readHead()).head, 'root')
+})

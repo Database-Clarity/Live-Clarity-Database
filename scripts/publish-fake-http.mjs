@@ -138,6 +138,13 @@ const output = await publishAtomic(adapter, async current => {
   validateInitialized(state, nextFiles)
   nextFiles['.publication-state.json'] = JSON.stringify(state, null, 1)
   if ((await resolveAccepted(call, 'accepted')).commit !== accepted.commit) throw new Error('Accepted source changed; retry')
-  return { files: nextFiles, message: `Publish ${mode} (fake only)` }
+  return {
+    files: nextFiles,
+    message: `Publish ${mode} (fake only)`,
+    beforeUpdate: async () => {
+      const latest = await resolveAccepted(call, 'accepted')
+      if (latest.repository !== accepted.repository || latest.commit !== accepted.commit || latest.blob !== accepted.blob) throw Object.assign(new Error('Accepted source changed; replan'), { code: 'replan' })
+    }
+  }
 })
 console.log(JSON.stringify(config.traceConversions ? { ...output, convertedLanguages: [...convertedLanguages].sort() } : output))

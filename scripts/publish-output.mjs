@@ -6,6 +6,12 @@ export async function publishAtomic(adapter, compose, maxAttempts = 3) {
     const candidate = await compose(current)
     if (candidate === null) return { result: 'unchanged', head: current.head }
     const commit = await adapter.stage(current.head, candidate)
+    if (candidate.beforeUpdate) {
+      try { await candidate.beforeUpdate() } catch (error) {
+        if (error.code === 'replan') continue
+        throw error
+      }
+    }
     try {
       await adapter.update(current.head, commit)
       return { result: 'published', head: commit }

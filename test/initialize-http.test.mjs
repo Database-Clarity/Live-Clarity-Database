@@ -48,7 +48,7 @@ async function exercise(scenario) {
   try {
     const port = server.address().port
     const run = (script = 'initialize-fake-http.mjs', mode) => new Promise(resolve => { const child = spawn(process.execPath, [`scripts/${script}`, `http://127.0.0.1:${port}`, config, ...(mode ? [mode] : [])], { cwd: process.cwd() }); let stdout = '', stderr = ''; child.stdout.on('data', x => { stdout += x }); child.stderr.on('data', x => { stderr += x }); child.on('close', code => resolve({ code, stdout, stderr })) })
-    const first = await run(), second = scenario === 'duplicate' ? await run() : null
+    const first = scenario === 'normal-uninitialized' ? await run('publish-fake-http.mjs', 'english') : await run(), second = scenario === 'duplicate' ? await run() : null
     let english, translations, repeatTranslation, afterEnglish, beforeEnglish
     if (scenario.startsWith('barrier') && first.code === 0) {
       accepted = 'd'.repeat(40)
@@ -58,10 +58,12 @@ async function exercise(scenario) {
       const secondMode = ['barrier-en-tr', 'barrier-tr-tr'].includes(scenario) ? 'translations' : 'english'
       const pendingTranslation = run('publish-fake-http.mjs', firstMode)
       await barrierSeen
-      accepted = 'f'.repeat(40)
-      const secondPerks = scenario === 'barrier-structure' ? { ...source.perks, 500: { hash: 500, aliasOf: 700, aliasKind: 'frame' }, 300: perk(300, 'English B') } : { ...source.perks, 300: perk(300, 'English B') }
-      sourceBytes = Buffer.from(JSON.stringify({ perks: secondPerks })); sourceBlob = gitBlob(sourceBytes)
-      english = await run('publish-fake-http.mjs', secondMode)
+      if (scenario !== 'barrier-same-source') {
+        accepted = 'f'.repeat(40)
+        const secondPerks = scenario === 'barrier-structure' ? { ...source.perks, 500: { hash: 500, aliasOf: 700, aliasKind: 'frame' }, 300: perk(300, 'English B') } : { ...source.perks, 300: perk(300, 'English B') }
+        sourceBytes = Buffer.from(JSON.stringify({ perks: secondPerks })); sourceBlob = gitBlob(sourceBytes)
+      }
+      if (scenario !== 'barrier-source-only') english = await run('publish-fake-http.mjs', secondMode)
       afterEnglish = trees.get(commits.get(head).tree.sha)
       releaseBarrier()
       translations = await pendingTranslation
@@ -108,6 +110,10 @@ test('executable initializes through actual converter and fake HTTP Git objects'
   assert.equal(read('versions.json').descriptions, 2.0626); assert.equal(read('.publication-state.json').initialized, true)
   assert.ok(read('descriptions/clarity.json')['300'].descriptions.de); assert.ok(read('descriptions/clarityV2.json')['500'].aliasOf)
   assert.equal(r.blobs.get(r.tree.find(x => x.path === 'README.md').sha).toString(), 'preserved')
+})
+test('normal fake publication never implicitly initializes missing state', async () => {
+  const r = await exercise('normal-uninitialized'); assert.notEqual(r.first.code, 0); assert.match(r.first.stderr, /initialization-required/)
+  assert.equal(r.head, outputHead); assert.equal(r.patches, 0)
 })
 test('initialized fixture runs English then translation through fake Git', async () => {
   const r = await exercise('vertical'); assert.equal(r.first.code, 0, r.first.stderr); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
@@ -252,7 +258,7 @@ test('staged translation retries after newer English wins the Git ref race', asy
   const read = (tree, path) => JSON.parse(r.blobs.get(tree.find(x => x.path === path).sha).toString())
   const english = read(r.afterEnglish, 'descriptions/clarity.json')['300'].descriptions.en
   const final = read(r.tree, 'descriptions/clarity.json')['300'].descriptions.en
-  assert.deepEqual(final, english); assert.ok(r.patches >= 4)
+  assert.deepEqual(final, english); assert.ok(r.patches >= 3)
   for (const item of r.afterEnglish.filter(x => /^descriptions\/.+\.json$/.test(x.path))) {
     const before = read(r.afterEnglish, item.path), after = read(r.tree, item.path)
     for (const [id, row] of Object.entries(before)) {
@@ -261,6 +267,17 @@ test('staged translation retries after newer English wins the Git ref race', asy
   }
   assert.equal(read(r.tree, 'versions.json').descriptions, 2.0628)
 })
+test('unchanged accepted source with a moved output triggers a real CAS retry', async () => {
+  const r = await exercise('barrier-same-source'); assert.equal(r.english.code, 0, r.english.stderr); assert.equal(r.translations.code, 0, r.translations.stderr)
+  assert.ok(r.patches >= 4)
+  const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(state.accepted.commit, 'd'.repeat(40))
+})
+test('accepted source movement during staging replans before any ref update', async () => {
+  const r = await exercise('barrier-source-only'); assert.equal(r.translations.code, 0, r.translations.stderr); assert.equal(r.patches, 2)
+  const state = JSON.parse(r.blobs.get(r.tree.find(x => x.path === '.publication-state.json').sha).toString())
+  assert.equal(state.accepted.commit, 'f'.repeat(40))
+})
 test('barrier-controlled English and translation races preserve newest source', async () => {
   for (const scenario of ['barrier-en-en', 'barrier-en-tr', 'barrier-tr-tr', 'barrier-structure']) {
     const r = await exercise(scenario)
@@ -268,9 +285,15 @@ test('barrier-controlled English and translation races preserve newest source', 
     const read = path => JSON.parse(r.blobs.get(r.tree.find(x => x.path === path).sha).toString())
     const state = read('.publication-state.json')
     assert.equal(state.accepted.commit, 'f'.repeat(40), scenario)
-    assert.ok(r.patches >= 3, scenario)
+    assert.ok(r.patches >= 2, scenario)
     if (scenario !== 'barrier-tr-tr') assert.equal(state.components[300].english, 'f'.repeat(40), scenario)
     if (scenario !== 'barrier-en-en') assert.equal(state.components[300].translations, 'f'.repeat(40), scenario)
+    for (const item of r.tree.filter(x => /^descriptions\/.+\.json$/.test(x.path))) {
+      const row = read(item.path)['300']
+      assert.ok(row?.descriptions?.en, `${scenario}/${item.path}`)
+      if (scenario !== 'barrier-tr-tr') assert.match(JSON.stringify(row.descriptions.en), /English B/, `${scenario}/${item.path}`)
+      if (scenario !== 'barrier-en-en' && row.descriptions.de) assert.match(JSON.stringify(row.descriptions.de), /DE English B/, `${scenario}/${item.path}`)
+    }
     if (scenario === 'barrier-structure') {
       const queued = JSON.parse(r.blobs.get(r.afterEnglish.find(x => x.path === '.publication-state.json').sha).toString())
       assert.ok(queued.pending.some(x => x.sourceCommit === 'f'.repeat(40) && x.members.includes('500')))
