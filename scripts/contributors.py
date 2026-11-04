@@ -9,6 +9,7 @@ so they deliberately remain counted. See contributors-exclusions.json for output
 import argparse
 from collections import defaultdict
 import fnmatch
+import html
 import json
 from pathlib import Path
 import re
@@ -92,11 +93,6 @@ def role_groups(users, people):
     return groups
 
 
-def safe(value):
-    # Unmatched names and language labels cannot inject Markdown or HTML.
-    return re.sub(r'([\\`*_{}\[\]()<>|#!])', r'\\\1', str(value)).replace('\n', ' ').replace('\r', ' ')
-
-
 def render(users, people):
     groups = role_groups(users, people)
     lines = ['## Contributors', '',
@@ -108,12 +104,23 @@ def render(users, people):
         if not rows:
             lines += ['None currently listed.' if role != 'former' else 'None.', '']
             continue
-        lines += ['| Contributor | Languages | Commits | Added | Removed |',
-                  '| --- | --- | ---: | ---: | ---: |']
-        for login, languages, person in sorted(rows, key=lambda row: row[0].lower()):
-            linked = f'[@{login}](https://github.com/{login})' if person.get('login') or role != 'former' else safe(login)
-            lines.append(f"| {linked} | {', '.join(map(safe, languages)) or '—'} | {person.get('commits', 0):,} | +{person.get('added', 0):,} | -{person.get('removed', 0):,} |")
-        lines += ['']
+        # Classic GitHub contributor grid: avatar, account and activity per cell.
+        lines += ['<table>']
+        for index, (login, languages, person) in enumerate(sorted(rows, key=lambda row: row[0].lower())):
+            if index % 4 == 0:
+                lines.append('<tr>')
+            label = html.escape(login)
+            if person.get('login') or role != 'former':
+                linked = (f'<a href="https://github.com/{login}"><img src="https://github.com/{login}.png?size=64" '
+                          f'width="64" height="64" alt="@{label}"><br>@{label}</a>')
+            else:
+                linked = label
+            language_line = '<br>Languages: ' + html.escape(', '.join(languages)) if languages else ''
+            lines.append(f'<td align="center">{linked}<br>{person.get("commits", 0):,} commits'
+                         f'<br>+{person.get("added", 0):,} / -{person.get("removed", 0):,}{language_line}</td>')
+            if index % 4 == 3 or index == len(rows) - 1:
+                lines.append('</tr>')
+        lines += ['</table>', '']
     return '\n'.join(lines).rstrip()
 
 

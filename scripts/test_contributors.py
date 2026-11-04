@@ -36,11 +36,23 @@ class ContributorsTest(unittest.TestCase):
         self.assertEqual([row[0] for row in groups['former']], ['Old'])
         self.assertEqual(groups['translator'][0][1], ['de', 'fr'])
         text = render(users, people)
-        self.assertIn('| [@Bob](https://github.com/Bob) | de, fr | 0 | +0 | -0 |', text)
-        self.assertIn('| [@Alice](https://github.com/Alice) | — | 2 | +10 | -3 |', text)
+        self.assertIn('https://github.com/Bob.png?size=64', text)
+        self.assertIn('alt="@Bob"', text)
+        self.assertIn('0 commits<br>+0 / -0<br>Languages: de, fr', text)
+        self.assertIn('2 commits<br>+10 / -3', text)
         self.assertIn('### Trials', text)
         with self.assertRaises(ValueError):
             role_groups({'5': {'login': 'What', 'role': 'unknown'}}, {})
+
+    def test_grid_rows_and_unmatched_name_escaping(self):
+        people = {str(i): {'label': f'Person {i}', 'commits': i} for i in range(5)}
+        people['0']['label'] = 'Person <script>'
+        text = render({}, people)
+        self.assertEqual(text.count('<tr>'), 2)
+        self.assertEqual(text.count('</tr>'), 2)
+        self.assertEqual(text.count('<td align="center">'), 5)
+        self.assertIn('Person &lt;script&gt;', text)
+        self.assertNotIn('<script>', text)
 
 
 if __name__ == '__main__':
