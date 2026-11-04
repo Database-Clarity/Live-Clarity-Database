@@ -23,11 +23,11 @@ jobs:
       - name: Fetch every branch (including editor-data permissions)
         run: git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*'
       - name: Test generator
-        run: python3 -m unittest discover -s scripts -p 'test_contributors.py'
+        run: python3 -m unittest discover -s .github/contributors -p 'test_contributors.py'
       - name: Generate contributors block
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/contributors.py
+        run: python3 .github/contributors/contributors.py
       - name: Commit only a changed README block
         run: |
           if git diff --quiet -- README.md; then

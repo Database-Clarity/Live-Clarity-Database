@@ -11,13 +11,13 @@ To learn more about how you can make use of our data and when a Partnership is r
 
 Current roles come from `editor-data:config/permissions.json`. Totals cover all fetched branch history, counting each commit SHA once.
 
-Bots are excluded. Commits include merges and output-only changes; line totals exclude merges and [generated outputs](scripts/contributors-exclusions.json). Historical editable JSON inputs remain included. These totals describe repository activity, not the value of a contribution.
+Bots are excluded. Commits include merges and output-only changes; line totals exclude merges and [generated outputs](.github/contributors/contributors-exclusions.json). Historical editable JSON inputs remain included. These totals describe repository activity, not the value of a contribution.
 
 ### Maintainers
 
 <table>
 <tr>
-<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>1,781 commits<br>+1,942,640 / -1,743,435</td>
+<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>1,782 commits<br>+1,942,685 / -1,743,457</td>
 </tr>
 </table>
 

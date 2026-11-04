@@ -97,7 +97,7 @@ def render(users, people):
     groups = role_groups(users, people)
     lines = ['## Contributors', '',
              'Current roles come from `editor-data:config/permissions.json`. Totals cover all fetched branch history, counting each commit SHA once.', '',
-             'Bots are excluded. Commits include merges and output-only changes; line totals exclude merges and [generated outputs](scripts/contributors-exclusions.json). Historical editable JSON inputs remain included. These totals describe repository activity, not the value of a contribution.', '']
+             'Bots are excluded. Commits include merges and output-only changes; line totals exclude merges and [generated outputs](.github/contributors/contributors-exclusions.json). Historical editable JSON inputs remain included. These totals describe repository activity, not the value of a contribution.', '']
     for role, title in ROLES + [('former', 'Former contributors')]:
         lines += ['### ' + title, '']
         rows = groups[role]
@@ -136,7 +136,7 @@ def generate():
     if command('git', 'rev-parse', '--is-shallow-repository').strip() != b'false':
         raise ValueError('Full history is required')
     users = json.loads(command('git', 'show', 'refs/remotes/origin/editor-data:config/permissions.json'))['users']
-    exclusions = json.loads(Path('scripts/contributors-exclusions.json').read_text())
+    exclusions = json.loads(Path('.github/contributors/contributors-exclusions.json').read_text())
     # Include every branch and archived tag; git log visits each SHA only once.
     refs = command('git', 'for-each-ref', '--format=%(refname)', 'refs/remotes/origin/').decode().splitlines()
     refs = [ref for ref in refs if ref != 'refs/remotes/origin/HEAD']
