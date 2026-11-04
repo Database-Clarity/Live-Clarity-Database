@@ -17,13 +17,18 @@ Bots are excluded. Commits include merges and output-only changes; line totals e
 
 <table>
 <tr>
-<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>1,784 commits<br>+1,943,322 / -1,743,737</td>
+<td align="center"><a href="https://github.com/Ice-mourne"><img src="https://github.com/Ice-mourne.png?size=64" width="64" height="64" alt="@Ice-mourne"><br>@Ice-mourne</a><br>187 commits<br>+1,570,267 / -1,598,503</td>
+<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>1,785 commits<br>+1,943,330 / -1,743,737</td>
 </tr>
 </table>
 
 ### Editors
 
-None currently listed.
+<table>
+<tr>
+<td align="center"><a href="https://github.com/HawkmoonaMatata"><img src="https://github.com/HawkmoonaMatata.png?size=64" width="64" height="64" alt="@HawkmoonaMatata"><br>@HawkmoonaMatata</a><br>520 commits<br>+892,636 / -890,921</td>
+</tr>
+</table>
 
 ### Translators
 
@@ -38,8 +43,6 @@ None currently listed.
 <table>
 <tr>
 <td align="center"><a href="https://github.com/gothfemme"><img src="https://github.com/gothfemme.png?size=64" width="64" height="64" alt="@gothfemme"><br>@gothfemme</a><br>8 commits<br>+41,713 / -41,713</td>
-<td align="center"><a href="https://github.com/HawkmoonaMatata"><img src="https://github.com/HawkmoonaMatata.png?size=64" width="64" height="64" alt="@HawkmoonaMatata"><br>@HawkmoonaMatata</a><br>520 commits<br>+892,636 / -890,921</td>
-<td align="center"><a href="https://github.com/Ice-mourne"><img src="https://github.com/Ice-mourne.png?size=64" width="64" height="64" alt="@Ice-mourne"><br>@Ice-mourne</a><br>187 commits<br>+1,570,267 / -1,598,503</td>
 <td align="center"><a href="https://github.com/zizouqi"><img src="https://github.com/zizouqi.png?size=64" width="64" height="64" alt="@zizouqi"><br>@zizouqi</a><br>33 commits<br>+249 / -137</td>
 </tr>
 </table>
