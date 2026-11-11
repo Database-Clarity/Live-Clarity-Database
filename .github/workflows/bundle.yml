@@ -3,6 +3,8 @@ name: Publish editor data bundle
 on:
   push:
     branches: [editor-data]
+  schedule:
+    - cron: "37 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -14,15 +16,33 @@ concurrency:
 
 jobs:
   bundle:
-    if: github.ref == 'refs/heads/editor-data'
+    if: github.ref == 'refs/heads/editor-data' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: editor-data
+      - uses: actions/checkout@v4
+        with:
+          repository: Database-Clarity/Description-data-generator
+          ref: v2
+          path: .report-generator
+      - uses: actions/checkout@v4
+        with:
+          repository: Database-Clarity/Description-editor
+          ref: 0acd005c0b60e2c9f61b7da6770a9b35c7ec4d8a
+          path: .report-source
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
       - name: Build bundle
-        run: node scripts/build-bundle.mjs "$RUNNER_TEMP/editor-data-bundle/bundle.json"
+        run: |
+          export GITHUB_SHA="$(git rev-parse HEAD)"
+          export REPORTS_GENERATOR_COMMIT="$(git -C .report-generator rev-parse HEAD)"
+          node scripts/build-bundle.mjs "$RUNNER_TEMP/editor-data-bundle/bundle.json"
+          npm --prefix .report-source ci --prefer-offline
+          .report-source/node_modules/.bin/esbuild scripts/build-report-items.mjs --bundle --platform=node --format=esm --outfile="$RUNNER_TEMP/build-report-items.mjs"
+          node "$RUNNER_TEMP/build-report-items.mjs" "$RUNNER_TEMP/editor-data-bundle"
       - name: Publish only to editor-data-bundle
         env:
           SOURCE_COMMIT: ${{ github.sha }}
@@ -32,6 +52,6 @@ jobs:
           git -C "$publish" config user.name "github-actions[bot]"
           git -C "$publish" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git -C "$publish" config http.https://github.com/.extraheader "$(git config --get http.https://github.com/.extraheader)"
-          git -C "$publish" add bundle.json
+          git -C "$publish" add bundle.json report-items.json report-items.worker.json
           git -C "$publish" commit -m "Bundle editor data at $SOURCE_COMMIT"
           git -C "$publish" push --force "https://github.com/$GITHUB_REPOSITORY.git" HEAD:refs/heads/editor-data-bundle
