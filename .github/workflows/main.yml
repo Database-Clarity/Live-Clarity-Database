@@ -1,3 +1,7 @@
+# Replaces today's converter main.yml (unpinned `npm i @icemourne/description-converter` plus a
+# clean deploy action). Pushes made by people to `converter` build the legacy files and the data
+# site through the reusable workflow. The publish pipeline pushes with github.token, which starts no
+# workflow, so it calls build-outputs.yml itself as a downstream job (packages/export/INSTALL.md).
 name: Build and Deploy descriptions
 
 on:
@@ -5,37 +9,15 @@ on:
     branches:
       - converter
 
-permissions:
-  contents: write
+permissions: {}
 
 jobs:
-  test_and_merge:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
-
-      - name: Install 🔧
-        run: |
-          npm ci
-          npm i @icemourne/tool-box @icemourne/description-converter
-
-      - name: Build 🛠️
-        run: npm run build
-
-      - name: Convert 🛠️
-        run: npm run convert
-
-      - name: Generate data 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: database # Folder you wish to deploy
-          branch: live # Branch you wish to deploy to
-          clean: true
-          clean-exclude: README.md
+  outputs:
+    if: github.repository == 'Database-Clarity/Live-Clarity-Database'
+    # The legacy job pushes `live` and `export-pins`; the site job lowers itself to read.
+    permissions:
+      contents: write
+    uses: Database-Clarity/Live-Clarity-Database/.github/workflows/build-outputs.yml@converter
+    with:
+      legacy: true
+    secrets: inherit
