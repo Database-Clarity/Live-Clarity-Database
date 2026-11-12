@@ -1,0 +1,24 @@
+# Config saves (exports/projects/<id>.json, written by the Worker's GitHub App, whose pushes start
+# workflows) rebuild the data site only. No workflow_dispatch: it needs the workflow on the default
+# branch `live`, which deployments rewrite.
+name: Data site (project configs)
+
+on:
+  push:
+    branches:
+      - editor-data
+    paths:
+      - 'exports/**'
+
+permissions: {}
+
+jobs:
+  site:
+    if: github.repository == 'Database-Clarity/Live-Clarity-Database'
+    # Read only: the legacy job (the only writer) never runs from here.
+    permissions:
+      contents: read
+    uses: Database-Clarity/Live-Clarity-Database/.github/workflows/build-outputs.yml@converter
+    with:
+      legacy: false
+    secrets: inherit
