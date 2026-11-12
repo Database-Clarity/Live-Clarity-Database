@@ -1,0 +1,166 @@
+# Reusable build of every consumer output (spec section 3). Installed on the `converter` branch of
+# Database-Clarity/Live-Clarity-Database and called as
+#   Database-Clarity/Live-Clarity-Database/.github/workflows/build-outputs.yml@converter
+# by converter main.yml (people's pushes), the editor-data publish pipeline (downstream of its
+# converter push), and editor-data exports.yml (config saves, `legacy: false`).
+#
+# A reusable workflow runs in the caller's context, so every checkout names its repository and ref.
+# Callers cap the token: only main.yml and the pipeline grant `contents: write` (legacy job).
+# Configs are data: they are read from files by Node; no workflow expression or shell line ever
+# contains a config value.
+name: Build outputs
+
+on:
+  workflow_call:
+    inputs:
+      legacy:
+        description: Build the seven legacy files to `live` first (data publishes only).
+        type: boolean
+        required: true
+
+jobs:
+  legacy:
+    if: inputs.legacy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Repo-wide, never cancelled while running. A newer pending run replaces an older pending one,
+    # which loses nothing: the run that executes checks out the CURRENT converter and live heads.
+    concurrency:
+      group: legacy-outputs
+      cancel-in-progress: false
+    # No permissions block: the job keeps what the caller grants (contents: write from main.yml and
+    # the pipeline; exports.yml grants read and never runs this job).
+    steps:
+      - name: Check out converter (current head; engine in .exports)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: converter
+          path: converter
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - name: Check out live (current head; the deploy pushes to it)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: live
+          path: live
+          fetch-depth: 0
+          filter: blob:none
+      - name: Check out export-pins (append-only; the pins are pushed to it)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: export-pins
+          path: pins
+      - name: Check out the legacy vocabulary baseline (editor-data exports/)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: editor-data
+          path: editor-data
+          sparse-checkout: exports
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Build the legacy files, deploy them to live, and write the publish pin
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: >-
+          node converter/.exports/legacy-job.mjs run
+          --converter converter --live live --pins pins
+          --vocab editor-data/exports/legacy-vocab.json
+          --run-id "$RUN_ID" --attempt "$RUN_ATTEMPT"
+
+  site:
+    needs: legacy
+    # After the legacy job, or when it was skipped (config saves) or failed: the site then builds
+    # from the latest pin, consistent and one publish behind.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # The deploy token is a secret of this environment only; its deployment branches are
+    # `converter` and `editor-data` (the callers' refs). A reusable workflow gets environment
+    # secrets only through a job that names the environment.
+    environment: data-site-deploy
+    # Repo-wide and separate from legacy-outputs, so a config save never replaces a legacy build.
+    # One run active, at most one pending (a newer pending run replaces an older one; every run
+    # reads both branch heads at its start).
+    concurrency:
+      group: data-site
+      cancel-in-progress: false
+    permissions:
+      contents: read
+    steps:
+      - name: Check out converter (engine in .exports; the pinned input by SHA)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: converter
+          path: converter
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - name: Check out live (legacy copies at the pin's live commit)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: live
+          path: live
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - name: Check out export-pins (read only)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: export-pins
+          path: pins
+          persist-credentials: false
+      - name: Check out the project configs (editor-data exports/)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Live-Clarity-Database
+          ref: editor-data
+          path: editor-data
+          sparse-checkout: exports
+          persist-credentials: false
+      - name: Check out the generator catalog (the pin's generatorSha by SHA)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          repository: Database-Clarity/Description-data-generator
+          ref: v2
+          path: generator
+          fetch-depth: 0
+          filter: blob:none
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Find the served deployment (Pages API; zero deployments = bootstrap)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PAGES_PROJECT: ${{ vars.PAGES_PROJECT }}
+        run: node converter/.exports/build-site.mjs locate --pages-project "$PAGES_PROJECT" --out "$RUNNER_TEMP/site-state.json"
+      - name: Build the site (no secrets in this step)
+        id: build
+        run: >-
+          node converter/.exports/build-site.mjs build
+          --state "$RUNNER_TEMP/site-state.json"
+          --converter converter --live live --pins pins
+          --exports editor-data/exports --generator generator
+          --out "$RUNNER_TEMP/site" --result "$RUNNER_TEMP/site-result.json"
+      - name: Deploy (one atomic Pages deployment)
+        if: steps.build.outputs.deploy == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          PAGES_PROJECT: ${{ vars.PAGES_PROJECT }}
+        run: >-
+          npx -y wrangler@4.153.0 pages deploy "$RUNNER_TEMP/site"
+          --project-name "$PAGES_PROJECT" --branch main
+          --commit-hash "$GITHUB_SHA" --commit-message "data site build" --commit-dirty=true
