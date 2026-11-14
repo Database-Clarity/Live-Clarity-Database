@@ -21825,7 +21825,15 @@ function scanBaseEnhanced(text, allowEmpty = false) {
 var unfinishedBaseEnhanced = (text) => scanBaseEnhanced(text).issues;
 
 // packages/core/src/markup/elementTags.ts
-var elementTagNames = ["kinetic", "arc", "solar", "void", "stasis", "strand"];
+var elementTagNames = [
+  "kinetic",
+  "arc",
+  "solar",
+  "void",
+  "stasis",
+  "strand",
+  "prismatic"
+];
 var inlineTokens = /<.+?\/>/g;
 var taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
 function elementTagToken(token) {
