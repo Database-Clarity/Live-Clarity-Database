@@ -23791,7 +23791,7 @@ async function publishableHash(tooltip, aliases = {}) {
       text: Object.fromEntries(
         Object.entries(parsed.text).map(([language, value2]) => [
           language,
-          fallback.includes(language) && english ? english.text : value2.text
+          lowerConsumerMarkup(fallback.includes(language) && english ? english.text : value2.text)
         ])
       ),
       associated: parsed.associated,
