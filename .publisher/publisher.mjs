@@ -74,7 +74,7 @@ __export(util_exports, {
   own: () => own,
   parsedType: () => parsedType,
   partial: () => partial,
-  pick: () => pick,
+  pick: () => pick2,
   prefixIssues: () => prefixIssues,
   primitiveTypes: () => primitiveTypes,
   promiseAllObject: () => promiseAllObject,
@@ -374,7 +374,7 @@ function optionalKeys(shape) {
     return shape[k]._zod.optin !== void 0 && shape[k]._zod.optout === "optional";
   });
 }
-function pick(schema, mask) {
+function pick2(schema, mask) {
   const currDef = schema._zod.def;
   const checks = currDef.checks;
   const hasChecks = checks && checks.length > 0;
@@ -654,9 +654,9 @@ function hexToUint8Array(hex3) {
 function uint8ArrayToHex(bytes) {
   return Array.from(bytes).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
-function members(proto, table) {
-  for (const key in table) {
-    const desc = Object.getOwnPropertyDescriptor(table, key);
+function members(proto, table2) {
+  for (const key in table2) {
+    const desc = Object.getOwnPropertyDescriptor(table2, key);
     if (desc.get)
       Object.defineProperty(proto, key, { ...desc, enumerable: false });
     else
@@ -671,10 +671,10 @@ function hide(inst, key, value2) {
   return own(inst, key, value2, false);
 }
 // @__NO_SIDE_EFFECTS__
-function derived(computes, table) {
+function derived(computes, table2) {
   for (const key in computes) {
     const compute = computes[key];
-    Object.defineProperty(table, key, {
+    Object.defineProperty(table2, key, {
       configurable: true,
       enumerable: true,
       get() {
@@ -685,7 +685,7 @@ function derived(computes, table) {
       }
     });
   }
-  return table;
+  return table2;
 }
 function defineBound(proto, key, fn) {
   Object.defineProperty(proto, key, {
@@ -4723,15 +4723,15 @@ var init_memoizer = __esm({
     PROVEN = 2;
     open = [];
     memo = {
-      alloc(_inst, payload, empty) {
+      alloc(_inst, payload, empty2) {
         const bucket = handoff;
         if (!bucket)
-          return empty;
+          return empty2;
         handoff = void 0;
-        const entry = { value: empty, issues: null };
+        const entry = { value: empty2, issues: null };
         bucket.set(payload.value, entry);
         open.push(entry);
-        return empty;
+        return empty2;
       },
       guard(inst) {
         var _a3;
@@ -20422,11 +20422,11 @@ var init_zod = __esm({
 });
 
 // packages/core/src/languageCodes.ts
-var languages;
+var languages2;
 var init_languageCodes = __esm({
   "packages/core/src/languageCodes.ts"() {
     "use strict";
-    languages = [
+    languages2 = [
       "en",
       "de",
       "es",
@@ -20451,17 +20451,17 @@ var init_languages = __esm({
     "use strict";
     init_zod();
     init_languageCodes();
-    langSchema = external_exports.enum(languages);
+    langSchema = external_exports.enum(languages2);
   }
 });
 
 // packages/core/src/legacyStats.ts
-var statNames, weaponTypes, modifiers, statSchema, legacyStatsSchema;
+var statNames2, weaponTypes2, modifiers, statSchema, legacyStatsSchema;
 var init_legacyStats = __esm({
   "packages/core/src/legacyStats.ts"() {
     "use strict";
     init_zod();
-    statNames = [
+    statNames2 = [
       "Aim Assist",
       "Airborne",
       "Blast Radius",
@@ -20484,7 +20484,7 @@ var init_legacyStats = __esm({
       "Guard Endurance",
       "Guard Resistance"
     ];
-    weaponTypes = [
+    weaponTypes2 = [
       "AR",
       "Bow",
       "Fusion",
@@ -20512,11 +20512,11 @@ var init_legacyStats = __esm({
       stat: external_exports.array(external_exports.number().finite()).optional()
     }).strict();
     statSchema = external_exports.object({
-      weaponTypes: external_exports.array(external_exports.enum(weaponTypes)).optional(),
+      weaponTypes: external_exports.array(external_exports.enum(weaponTypes2)).optional(),
       active: modifiers.optional(),
       passive: modifiers.optional()
     }).strict();
-    legacyStatsSchema = external_exports.partialRecord(external_exports.enum(statNames), external_exports.array(statSchema));
+    legacyStatsSchema = external_exports.partialRecord(external_exports.enum(statNames2), external_exports.array(statSchema));
   }
 });
 
@@ -20779,7 +20779,7 @@ function withField(target, source, field) {
   if (field === "hash") throw new Error("hash is not a field");
   if (field.startsWith(textPrefix)) {
     const lang = field.slice(textPrefix.length);
-    if (!languages.includes(lang)) throw new Error(`Unknown field ${field}`);
+    if (!languages2.includes(lang)) throw new Error(`Unknown field ${field}`);
     const text = { ...target.text };
     const value3 = source.text[lang];
     if (value3 === void 0) delete text[lang];
@@ -20800,7 +20800,7 @@ function changedFields(base, proposed) {
   const from = base ?? emptyLike(proposed.hash);
   if (from.hash !== proposed.hash) throw new Error("Cannot compare different tooltip hashes");
   const fields = [];
-  for (const lang of languages) {
+  for (const lang of languages2) {
     const field = `${textPrefix}${lang}`;
     if (!sameFieldValue(field, from.text[lang], proposed.text[lang])) fields.push(field);
   }
@@ -20862,7 +20862,7 @@ function merge3(base, head, next) {
     if (value2 !== void 0) merged[key] = value2;
   }
   const text = {};
-  for (const language of languages) {
+  for (const language of languages2) {
     const value2 = stamped(
       `text.${language}`,
       base.text[language],
@@ -21584,6 +21584,24 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 var RefRace = class extends Error {
 };
+var appCredits = {
+  author: {
+    name: "clarity-editor-backend[bot]",
+    email: "clarity-editor-backend[bot]@users.noreply.github.com"
+  },
+  committer: {
+    name: "clarity-editor-backend[bot]",
+    email: "clarity-editor-backend[bot]@users.noreply.github.com"
+  }
+};
+function requesterCredits(user) {
+  if (!Number.isSafeInteger(user.id) || user.id <= 0 || !/^[A-Za-z0-9][A-Za-z0-9-]{0,38}$/.test(user.login))
+    throw new Error("Invalid publisher requester identity");
+  return {
+    author: { name: user.login, email: `${user.id}+${user.login}@users.noreply.github.com` },
+    committer: appCredits.committer
+  };
+}
 var LocalRepository = class {
   path;
   commandTimeout = 12e4;
@@ -21647,7 +21665,14 @@ var LocalRepository = class {
     this.blobs.set(oid, bytes);
     return oid;
   }
-  commit(parent, tree, message) {
+  requireCredits = false;
+  commit(parent, tree, message, credits) {
+    if (!credits && this.requireCredits) throw new Error("Remote commits require explicit credits");
+    if (credits)
+      for (const identity of [credits.author, credits.committer]) {
+        if (!identity.name || !identity.email || /[<>\r\n\0]/.test(identity.name + identity.email))
+          throw new Error("Invalid commit credits");
+      }
     const temp = mkdtempSync(join(tmpdir(), "publisher-index-"));
     try {
       const modes = /* @__PURE__ */ new Map();
@@ -21669,7 +21694,13 @@ var LocalRepository = class {
       const root = this.git(["write-tree"], void 0, env).trim();
       const commit = this.git(
         ["commit-tree", root, ...parent ? ["-p", parent] : []],
-        message
+        message,
+        credits ? {
+          GIT_AUTHOR_NAME: credits.author.name,
+          GIT_AUTHOR_EMAIL: credits.author.email,
+          GIT_COMMITTER_NAME: credits.committer.name,
+          GIT_COMMITTER_EMAIL: credits.committer.email
+        } : {}
       ).trim();
       this.trees.set(commit, { ...tree });
       return commit;
@@ -21721,108 +21752,1184 @@ var LocalRepository = class {
   }
 };
 
-// scripts/publisher/publisher.ts
-import { createHash, createPublicKey, verify } from "node:crypto";
+// packages/export/src/converter/data.ts
+var weaponTypes = [
+  "AR",
+  "Bow",
+  "Fusion",
+  "GL",
+  "Glaive",
+  "HC",
+  "Heavy GL",
+  "LFR",
+  "LMG",
+  "Pulse",
+  "Rocket",
+  "Scout",
+  "Shotgun",
+  "Sidearm",
+  "SMG",
+  "Sniper",
+  "Sword",
+  "Trace",
+  // ---------
+  "Grenade",
+  "Melee",
+  "Super"
+];
+var languages = [
+  ["en", "English"],
+  ["de", "German - Deutsch"],
+  ["fr", "French - Fran\xE7ais"],
+  ["it", "Italian - Italiano"],
+  ["pl", "Polish - Polski"],
+  ["ru", "Russian - \u0420\u0443\u0441\u0441\u043A\u0438\u0439"],
+  ["es", "Spanish (Spain) - Espa\xF1ol (Espa\xF1a)"],
+  ["es-mx", "Spanish (Mexico) - Espa\xF1ol (M\xE9xico)"],
+  ["ko", "Korean - \uD55C\uAD6D\uC5B4"],
+  ["pt-br", "Portuguese (Brazil) - Portugu\xEAs (Brasil)"],
+  ["ja", "Japanese - \u65E5\u672C\u8A9E"],
+  ["zh-cht", "Chinese (Traditional) - \u7E41\u9AD4\u4E2D\u6587"],
+  ["zh-chs", "Chinese (Simplified) - \u7B80\u4F53\u4E2D\u6587"]
+];
+var languageKeys = languages.map((languageKey) => languageKey[0]);
+var textColoring = [
+  "blue",
+  "green",
+  "purple",
+  "yellow",
+  "center",
+  "bold",
+  "pve",
+  "pvp"
+];
+var images = [
+  "kinetic",
+  "arc",
+  "solar",
+  "stasis",
+  "void",
+  "strand",
+  "heavy",
+  "primary",
+  "special",
+  "barrier",
+  "overload",
+  "unstoppable",
+  "hunter",
+  "titan",
+  "warlock"
+];
+var table = [
+  "background_1",
+  "background_2",
+  "centerTable",
+  "formula",
+  "wide"
+];
+var empty = ["background", "breakSpaces", "bold"];
+var classNameList = {
+  line: [...textColoring, ...empty],
+  withText: [...textColoring, "background", "bold"],
+  empty: [...images, ...empty],
+  withExtraFunctionality: ["link", "title", "formula"],
+  extra: ["enhancedArrow", "spacer"],
+  table
+};
+var allClassNames = Object.values(classNameList).flat();
 
-// packages/core/src/index.ts
-init_languages();
-init_legacy();
-init_schemas3();
-init_contentHash();
-
-// packages/core/src/aliases.ts
-init_zod();
-init_legacy();
-var aliasesSchema = external_exports.record(
-  external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((value2) => Number(value2) <= 4294967295),
-  external_exports.object({ to: hashSchema, kind: external_exports.enum(["sandbox", "frame", "name"]) }).strict()
-);
-function resolveAlias(hash2, aliases) {
-  const seen = /* @__PURE__ */ new Set();
-  while (aliases[hash2]) {
-    if (seen.has(hash2)) throw new Error(`Cyclic tooltip alias at ${hash2}`);
-    seen.add(hash2);
-    hash2 = aliases[hash2].to;
-  }
-  return hash2;
-}
-var incomingIndexes = /* @__PURE__ */ new WeakMap();
-function incomingAliases(hash2, aliases) {
-  let index = incomingIndexes.get(aliases);
-  if (!index) {
-    index = /* @__PURE__ */ new Map();
-    for (const [alias, { kind }] of Object.entries(aliases)) {
-      const target = resolveAlias(Number(alias), aliases);
-      const list = index.get(target);
-      if (list) list.push([Number(alias), kind]);
-      else index.set(target, [[Number(alias), kind]]);
+// packages/export/src/converter/converterSettings.ts
+var converterSettings = {
+  clarity: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: true,
+      type: true,
+      uploadedBy: true,
+      updateTracker: false,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: true,
+      link: true,
+      title: true,
+      table: true,
+      includeClassNames: void 0,
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "legacy",
+    editor: "main",
+    optional: false
+  },
+  dim: {
+    getFromPerk: {
+      lastUpload: false,
+      stats: false,
+      type: false,
+      uploadedBy: false,
+      updateTracker: false,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: false,
+      link: true,
+      title: false,
+      table: false,
+      includeClassNames: ["spacer", "center", "bold", "breakSpaces", "background", "enhancedArrow", ...images],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: "",
+    aliases: "legacy",
+    editor: "secondary",
+    optional: false
+  },
+  crayon: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: true,
+      type: true,
+      uploadedBy: true,
+      updateTracker: false,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: false,
+      link: true,
+      title: false,
+      table: false,
+      includeClassNames: [
+        "spacer",
+        "stasis",
+        "arc",
+        "solar",
+        "void",
+        "primary",
+        "special",
+        "heavy",
+        "pve",
+        "pvp",
+        "background",
+        "bold"
+      ],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "legacy",
+    editor: "secondary",
+    optional: true,
+    toStringConverterOptions: {
+      classNames: {
+        stasis: ["<:stasis:915198000727461909>", ""],
+        arc: ["<:arc:720178925317128243>", ""],
+        solar: ["<:solar:720178909361995786>", ""],
+        void: ["<:void:720178940240461864>", ""],
+        primary: ["<:primary:968793055677251604>", ""],
+        special: ["<:special:968793055631114330>", ""],
+        heavy: ["<:heavy:968793055652106320>", ""],
+        pve: ["<:pve:922884406073507930>", ""],
+        pvp: ["<:pvp:922884468275019856>", ""],
+        background: ["**", "**"],
+        bold: ["**", "**"]
+      },
+      link: ["[", "]", "(", ")"]
     }
-    for (const list of index.values()) list.sort((x, y) => x[0] - y[0]);
-    incomingIndexes.set(aliases, index);
+  },
+  foundry: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: false,
+      type: true,
+      uploadedBy: true,
+      updateTracker: true,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: false,
+      link: false,
+      title: false,
+      table: false,
+      includeClassNames: ["spacer", "breakSpaces", "enhancedArrow", ...images],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "legacy",
+    editor: "secondary",
+    optional: false
+  },
+  lightGG: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: false,
+      type: false,
+      uploadedBy: false,
+      updateTracker: true,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: false,
+      link: true,
+      title: false,
+      table: false,
+      includeClassNames: ["spacer", "center", "bold", "breakSpaces", "background", "enhancedArrow"],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "legacy",
+    editor: "secondary",
+    optional: false
+  },
+  braytech: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: true,
+      type: true,
+      uploadedBy: true,
+      updateTracker: false,
+      associated: false,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: false,
+      link: true,
+      title: false,
+      table: false,
+      includeClassNames: [
+        "solar",
+        "void",
+        "arc",
+        "stasis",
+        "strand",
+        "primary",
+        "special",
+        "heavy",
+        "pve",
+        "pvp",
+        "background",
+        "spacer",
+        "bold"
+      ],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "legacy",
+    editor: "main",
+    // copied from clarity but crayon used secondary ???
+    optional: false,
+    // same as above
+    toStringConverterOptions: {
+      classNames: {
+        solar: ["\uE140", ""],
+        void: ["\uE144", ""],
+        arc: ["\uE143", ""],
+        stasis: ["\uE139", ""],
+        strand: ["\uEF0E", ""],
+        primary: ["\uF106", ""],
+        special: ["\uF107", ""],
+        heavy: ["\uF108", ""],
+        titan: ["\uF110", ""],
+        hunter: ["\uF111", ""],
+        warlock: ["\uF112", ""],
+        bold: ["**", "**"]
+      },
+      link: ["[", "]", "(", ")"]
+    }
+  },
+  vaultZero: {
+    getFromPerk: {
+      lastUpload: false,
+      stats: true,
+      type: true,
+      uploadedBy: false,
+      updateTracker: false,
+      associated: false,
+      languages: ["en"]
+    },
+    getFromDescription: {
+      formula: false,
+      link: true,
+      title: false,
+      table: false,
+      includeClassNames: [
+        "enhancedArrow",
+        "arc",
+        "solar",
+        "stasis",
+        "strand",
+        "void",
+        "primary",
+        "special",
+        "heavy",
+        "barrier",
+        "overload",
+        "unstoppable",
+        "pve",
+        "pvp",
+        "bold"
+      ],
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: "[enh]",
+    aliases: "legacy",
+    editor: "secondary",
+    optional: true,
+    toStringConverterOptions: {
+      classNames: {
+        arc: ["[Arc]", ""],
+        solar: ["[Solar]", ""],
+        stasis: ["[Stasis]", ""],
+        strand: ["[Strand]", ""],
+        void: ["[Void]", ""],
+        primary: ["[primary]", ""],
+        special: ["[special]", ""],
+        heavy: ["[heavy]", ""],
+        barrier: ["[barrier]", ""],
+        overload: ["[overload]", ""],
+        unstoppable: ["[unstoppable]", ""],
+        pve: ["[pve]", ""],
+        pvp: ["[pvp]", ""],
+        bold: ["**", "**"]
+      },
+      link: ["[", "]", "(", ")"]
+    }
+  },
+  // Output of the v2 editor: same as clarity, plus associations; stats are dropped because v2 data is stat-free
+  clarityV2: {
+    getFromPerk: {
+      lastUpload: true,
+      stats: false,
+      type: true,
+      uploadedBy: true,
+      updateTracker: false,
+      associated: true,
+      languages: void 0
+    },
+    getFromDescription: {
+      formula: true,
+      link: true,
+      title: true,
+      table: true,
+      includeClassNames: void 0,
+      excludeClassNames: []
+    },
+    enhancedArrowReplacement: void 0,
+    aliases: "reference",
+    editor: "main",
+    optional: false
   }
-  return index.get(hash2) ?? [];
+};
+var getSettings = (name) => {
+  const settings = converterSettings[name];
+  const includedClassNames = settings.getFromDescription.includeClassNames || allClassNames;
+  return {
+    ...settings,
+    getFromPerk: {
+      ...settings.getFromPerk,
+      languages: settings.getFromPerk.languages === void 0 ? languageKeys : settings.getFromPerk.languages
+    },
+    getFromDescription: {
+      ...settings.getFromDescription,
+      includeClassNames: includedClassNames.filter(
+        (className) => !settings.getFromDescription.excludeClassNames.includes(className)
+      )
+    }
+  };
+};
+
+// packages/export/src/converter/converterFunctions/expandAliases.ts
+var factNames = ["name", "type", "itemHash", "itemName"];
+var isAliasStub = (perk) => "aliasOf" in perk;
+var expandAliases = (perks) => {
+  const expanded = {};
+  for (const [hash2, perk] of Object.entries(perks)) {
+    if (!isAliasStub(perk)) {
+      expanded[hash2] = perk;
+      continue;
+    }
+    const original = perks[perk.aliasOf];
+    if (!original || isAliasStub(original)) continue;
+    const copy = { ...original, hash: perk.hash };
+    const facts = factNames.filter((fact) => perk[fact] !== void 0);
+    if (facts.length > 0) {
+      for (const fact of factNames) delete copy[fact];
+      Object.assign(copy, ...facts.map((fact) => ({ [fact]: perk[fact] })));
+    }
+    expanded[hash2] = copy;
+  }
+  return expanded;
+};
+var getAliasOutput = (settings, stub) => {
+  if (settings.aliases === "reference") return "reference";
+  return stub.aliasKind === "frame" ? "copy" : "skip";
+};
+
+// packages/export/src/converter/converterFunctions/validateReferences.ts
+var validateReferences = (database) => {
+  for (const hash2 of [1, 2, 3]) {
+    const perk = database[hash2];
+    if (!perk || isAliasStub(perk)) throw new Error(`Missing canonical reserved global ${hash2}`);
+  }
+  for (const [hash2, perk] of Object.entries(database)) {
+    if (isAliasStub(perk)) {
+      const target = database[perk.aliasOf];
+      if (!target || isAliasStub(target)) {
+        throw new Error(`Invalid alias ${hash2} -> ${perk.aliasOf}: target must be an existing canonical perk`);
+      }
+      continue;
+    }
+    for (const associated of perk.associated || []) {
+      const target = database[associated];
+      if (!target || isAliasStub(target) || associated === perk.hash) {
+        throw new Error(`Invalid association ${hash2} -> ${associated}: target must be another existing canonical perk`);
+      }
+    }
+  }
+};
+var validateOutputReferences = (database) => {
+  for (const [hash2, perk] of Object.entries(database)) {
+    const targets = "aliasOf" in perk ? [perk.aliasOf] : perk.associated || [];
+    for (const targetHash of targets) {
+      const target = database[targetHash];
+      if (!target || "aliasOf" in target || !target.descriptions) {
+        throw new Error(`Invalid output reference ${hash2} -> ${targetHash}: canonical target was filtered out`);
+      }
+    }
+  }
+};
+
+// packages/export/src/converter/converterFunctions/extractTitles.ts
+var extractTitles = (description) => {
+  if (!description) return {};
+  const titles = description.match(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm);
+  if (titles === null) return {};
+  return titles.reduce((acc, titleText) => {
+    const lines = titleText.split("\n");
+    const titleName = lines[0].replace(/title|\(.*/gi, "").trim();
+    lines.splice(0, 1);
+    lines.splice(-1, 1);
+    acc[titleName] = lines.join("\n");
+    return acc;
+  }, {});
+};
+
+// packages/export/src/converter/helpers.ts
+var unsafeKeys = /* @__PURE__ */ new Set(["__proto__", "constructor", "prototype"]);
+var pick = (object2, keys) => {
+  const result = {};
+  if (object2 == null) return result;
+  const source = Object(object2);
+  for (const key of keys) {
+    if (unsafeKeys.has(key) || !(key in source)) continue;
+    result[key] = source[key];
+  }
+  return result;
+};
+var pullInPlace = (array2, drop) => {
+  let write = 0;
+  for (let read = 0; read < array2.length; read++) {
+    const value2 = array2[read];
+    if (!drop(value2)) array2[write++] = value2;
+  }
+  array2.length = write;
+  return array2;
+};
+var isNullish = (value2) => value2 === void 0 || value2 === null;
+var isNullishOrNaN = (value2) => isNullish(value2) || Number.isNaN(value2);
+var isEmptyObject = (value2) => {
+  if (Array.isArray(value2)) return value2.length === 0;
+  if (value2 instanceof Map || value2 instanceof Set) return value2.size === 0;
+  for (const key in value2) if (Object.prototype.hasOwnProperty.call(value2, key)) return false;
+  return true;
+};
+function cleanObject(dirtyObject, allowMutations = false) {
+  const obj = allowMutations ? dirtyObject : structuredClone(dirtyObject);
+  const remover = (obj2) => {
+    for (const key in obj2) {
+      if (Array.isArray(obj2[key])) {
+        obj2[key] = pullInPlace(obj2[key], isNullishOrNaN);
+      }
+      if (isNullish(obj2[key])) delete obj2[key];
+      if (Number.isNaN(obj2[key])) delete obj2[key];
+      if (!obj2[key] || typeof obj2[key] !== "object") continue;
+      remover(obj2[key]);
+      if (isEmptyObject(obj2[key])) delete obj2[key];
+    }
+    if (Array.isArray(obj2)) return pullInPlace(obj2, (value2) => value2 === void 0);
+    return obj2;
+  };
+  return remover(obj);
+}
+function customJsonStringify(object2, properties, spaces = 1) {
+  const string4 = JSON.stringify(object2, void 0, spaces);
+  const regex = new RegExp(`"(${properties.join("|")})"\\s*:\\s*\\[([^]+?)\\]`, "g");
+  const matches = string4.match(regex);
+  if (matches === null) return string4;
+  const newString = matches.reduce((acc, match) => {
+    acc = acc.replace(match, match.replaceAll("\n", "").replace(/  +/g, " "));
+    return acc;
+  }, string4);
+  return newString;
 }
 
-// packages/core/src/publishableHash.ts
-init_contentHash();
+// packages/export/src/converter/converterFunctions/getDataFromPerk.ts
+var getDataFromPerk = (perk, filters) => {
+  const getFromPerk = ["hash", "name", "itemHash", "itemName", "editor"];
+  Object.entries(filters).forEach(([filterName, value2]) => {
+    if (value2 && typeof value2 === "boolean") {
+      getFromPerk.push(filterName);
+    }
+  });
+  const newPerk = pick(perk, getFromPerk);
+  const filteredDescriptionLanguages = pick(newPerk.editor, filters.languages || []);
+  const filteredUpdateTrackerLanguages = pick(newPerk.updateTracker?.descriptions, filters.languages || []);
+  const updateTracker = {
+    descriptions: filteredUpdateTrackerLanguages,
+    stats: filters.stats ? newPerk.updateTracker?.stats : void 0
+  };
+  return {
+    ...newPerk,
+    editor: filteredDescriptionLanguages,
+    updateTracker: filters.updateTracker ? updateTracker : void 0
+  };
+};
 
-// packages/core/src/markup/baseEnhanced.ts
-var enhancedMarkupType = "Weapon Trait Enhanced";
-var baseEnhancedMessage = "Use {{base}{enhanced}} with two nonempty inline arms on one line; pairs cannot nest.";
-var baseEnhancedPublishMessage = "Base/enhanced markup needs the new converter; it can be pushed after cut-over";
-function scanBaseEnhanced(text, allowEmpty = false) {
-  const pairs = [];
-  const issues = [];
-  let cursor = 0;
-  while (cursor < text.length) {
-    const from = text.indexOf("{{", cursor);
-    if (from < 0) break;
-    let pos = from + 2;
-    const braced = (at) => text[at - 1] === "#" ? /^\{[a-zA-Z0-9]+\}/.exec(text.slice(at, at + 64))?.[0].length ?? 0 : 0;
-    const arm = () => {
-      const begin = pos;
-      while (pos < text.length && text[pos] !== "}" && !/[\r\n]/.test(text[pos])) {
-        if (text.startsWith("{{", pos)) return null;
-        if (text[pos] === "{") {
-          const variable = braced(pos);
-          if (variable) {
-            pos += variable;
-            continue;
-          }
-          if (text[pos - 1] !== "$") return null;
-          let end2 = pos + 1;
-          for (; ; ) {
-            if (end2 >= text.length || /[\r\n]/.test(text[end2])) return null;
-            if (text[end2] === "}") break;
-            if (text[end2] === "{") {
-              const inner = braced(end2);
-              if (!inner) return null;
-              end2 += inner;
-            } else end2++;
-          }
-          pos = end2 + 1;
-        } else pos++;
+// packages/export/src/converter/converterFunctions/loadVariables.ts
+var getVariables = (description) => {
+  const variables = description.match(/^var [a-zA-Z0-9]+ = .+$/gm);
+  if (variables === null) return;
+  return variables.reduce((acc, variableText) => {
+    const varName = variableText.match(/(?<=var )[a-zA-Z0-9]+(?= = )/)?.[0].trim();
+    const varValue = variableText.match(/(?<=var [a-zA-Z0-9]+ = ).+/)?.[0].trim();
+    if (!varName || !varValue) return acc;
+    if (varValue === "empty") {
+      acc[varName] = "";
+      return acc;
+    }
+    acc[varName] = varValue;
+    return acc;
+  }, {});
+};
+var loadVariables = (descriptionData) => {
+  const { language, descriptionString, database } = descriptionData;
+  let description = descriptionString;
+  const getVariablesNames = (description2) => {
+    return description2.match(/#[a-zA-Z0-9]+/g) || [];
+  };
+  const replaceVariables = (variablesInDescription) => {
+    variablesInDescription.forEach((variableName) => {
+      const cleanVariableName = variableName.replace("#", "");
+      const variables = {
+        ...getVariables(description),
+        ...getVariables(database[2].editor[language]?.main || ""),
+        ...getVariables(database[2].editor[language]?.secondary || "")
+      };
+      if (variables[cleanVariableName] === void 0) return;
+      description = description.replaceAll(variableName, variables[cleanVariableName]);
+    });
+  };
+  replaceVariables(getVariablesNames(description));
+  return description;
+};
+
+// packages/export/src/converter/weaponTypeNames.ts
+var weaponTypeNames = [
+  "Auto Rifle",
+  "Combat Bow",
+  "Fusion Rifle",
+  "Glaive",
+  "Grenade Launcher",
+  "Hand Cannon",
+  "Linear Fusion Rifle",
+  "Machine Gun",
+  "Pulse Rifle",
+  "Rocket Launcher",
+  "Scout Rifle",
+  "Shotgun",
+  "Sidearm",
+  "Sniper Rifle",
+  "Submachine Gun",
+  "Sword",
+  "Trace Rifle"
+];
+var weaponTypeExtraTags = ["Grenade", "Melee", "Super", "Heavy Grenade Launcher"];
+var allWeaponTypeNames = [...weaponTypeNames, ...weaponTypeExtraTags];
+var legacyWeaponTypeNames = {
+  ar: "Auto Rifle",
+  bow: "Combat Bow",
+  fusion: "Fusion Rifle",
+  gl: "Grenade Launcher",
+  hc: "Hand Cannon",
+  "heavy gl": "Heavy Grenade Launcher",
+  lfr: "Linear Fusion Rifle",
+  lmg: "Machine Gun",
+  pulse: "Pulse Rifle",
+  rocket: "Rocket Launcher",
+  scout: "Scout Rifle",
+  smg: "Submachine Gun",
+  sniper: "Sniper Rifle",
+  trace: "Trace Rifle"
+};
+var canonicalByLowercase = new Map(allWeaponTypeNames.map((name) => [name.toLowerCase(), name]));
+var canonicalWeaponType = (name, legacy = false) => {
+  const key = name.trim().replace(/\s+/g, " ").toLowerCase();
+  return canonicalByLowercase.get(key) ?? (legacy ? legacyWeaponTypeNames[key] : void 0);
+};
+var legacyNames = weaponTypes.map((legacyName) => ({ legacyName, name: canonicalWeaponType(legacyName, true) }));
+
+// packages/core/src/markup/arithmetic.ts
+function evaluateMarkupMath(text) {
+  return text.replace(/\${.+?}/g, (expression) => {
+    const source = expression.match(
+      /(-?\d+(\.\d+)?)(\s{0,9}[+\-/*]\s{0,9}(-?\d+(\.\d+)?)){0,99}/
+    )?.[0];
+    if (!source) return expression;
+    const tokens = source.match(/-?\d+(?:\.\d+)?|[+*/-]/g) ?? [];
+    let index = 0;
+    function number4() {
+      return Number(tokens[index++]);
+    }
+    function product() {
+      let value3 = number4();
+      while (tokens[index] === "*" || tokens[index] === "/") {
+        const operator = tokens[index++];
+        const right = number4();
+        value3 = operator === "*" ? value3 * right : value3 / right;
       }
-      const value2 = text.slice(begin, pos);
-      return allowEmpty || value2.trim() ? value2 : null;
-    };
-    const base = arm();
-    if (base !== null && text.slice(pos, pos + 2) === "}{") {
-      pos += 2;
-      const enhanced = arm();
-      if (enhanced !== null && text.slice(pos, pos + 2) === "}}") {
-        cursor = pos + 2;
-        pairs.push({ from, to: cursor, base, enhanced });
+      return value3;
+    }
+    let value2 = product();
+    while (index < tokens.length) {
+      const operator = tokens[index];
+      if (operator.startsWith("-") && operator.length > 1) value2 += product();
+      else {
+        index++;
+        const right = product();
+        value2 = operator === "+" ? value2 + right : value2 - right;
+      }
+    }
+    if (!Number.isFinite(value2)) return String(value2);
+    const [coefficient, exponent = "0"] = String(value2).split("e");
+    const shifted = Math.round(Number(`${coefficient}e${Number(exponent) + 2}`));
+    const [rounded, roundedExponent = "0"] = String(shifted).split("e");
+    return String(Number(`${rounded}e${Number(roundedExponent) - 2}`));
+  });
+}
+
+// packages/export/src/converter/converterFunctions/math.ts
+var doMath = (description) => evaluateMarkupMath(description);
+
+// packages/export/src/converter/converterFunctions/loadExports.ts
+var getExports = (description) => {
+  const exported = description.match(/^export [A-z0-9 ]+ \([\s\S]*?\n\)$/gm);
+  if (exported === null) return /* @__PURE__ */ new Map();
+  return exported.reduce((acc, exportText) => {
+    const lines = exportText.split("\n");
+    const exportName = lines[0].replace(/export|hidden|\(.*/gi, "").trim();
+    lines.splice(0, 1);
+    lines.splice(-1, 1);
+    acc.set(exportName, lines.join("\n"));
+    return acc;
+  }, /* @__PURE__ */ new Map());
+};
+var loadExports = (descriptionData) => {
+  const { descriptionString, editorType, language, hash: hash2, database } = descriptionData;
+  let description = descriptionString;
+  const getImports = (descriptionString2) => {
+    if (!descriptionString2.includes("import")) return null;
+    const imports = [
+      ...descriptionString2.match(/^import [A-z0-9 ]+? from (\d+|global) *?$/gm) || [],
+      ...descriptionString2.match(/^import self *?$/gm) || []
+    ];
+    return imports.flatMap((importLine) => {
+      const importSelf = importLine.includes("import self");
+      if (importSelf) {
+        return {
+          line: importLine,
+          name: "self",
+          from: ""
+        };
+      }
+      const name = importLine.match(/(?<=import) .+ (?=from)/)?.[0].trim();
+      const from = importLine.match(/(?<=from) (\d+|global)/)?.[0].trim();
+      if (name === void 0 || from === void 0) return [];
+      return {
+        line: importLine,
+        name: importLine.match(/(?<=import) .+ (?=from)/)?.[0].trim() || "",
+        from: importLine.match(/(?<=from) (\d+|global)/)?.[0].trim() || ""
+      };
+    });
+  };
+  const replaceImports = (importsInDescription) => {
+    importsInDescription.forEach(({ line, name, from }) => {
+      const editorToImportFrom = editorType === "main" ? "secondary" : "main";
+      if (name === "self") {
+        const imported2 = database[hash2]?.editor[language]?.[editorToImportFrom];
+        if (imported2 === void 0) throw new Error(`Missing self import for ${hash2}/${language}/${editorToImportFrom}`);
+        description = description.replace(line, () => imported2.trim());
+        return;
+      }
+      if (name === "main" || name === "secondary") {
+        const imported2 = database[from]?.editor[language]?.[name];
+        if (imported2 === void 0) throw new Error(`Missing import ${name} from ${from} for ${hash2}/${language}`);
+        description = description.replace(line, () => imported2);
+        return;
+      }
+      if (from === "global") {
+        const globalExports = new Map([
+          ...getExports(database[1]?.editor[language]?.main || ""),
+          ...getExports(database[1]?.editor[language]?.secondary || "")
+        ]);
+        const imported2 = globalExports.get(name);
+        if (imported2 === void 0) throw new Error(`Missing global export ${name} for ${hash2}/${language}`);
+        description = description.replace(line, () => imported2);
+        return;
+      }
+      const imported = getExports(database[from]?.editor[language]?.[editorToImportFrom] || "").get(name);
+      if (imported === void 0) throw new Error(`Missing export ${name} from ${from} for ${hash2}/${language}`);
+      description = description.replace(line, () => imported);
+    });
+  };
+  for (let i = 0; i < 5; i++) {
+    const importsFound = getImports(description);
+    if (importsFound === null) break;
+    replaceImports(importsFound);
+  }
+  if (getImports(description)?.length) throw new Error(`Unresolved or cyclic imports for ${hash2}/${language} after 5 passes`);
+  return description;
+};
+
+// packages/export/src/converter/converterFunctions/removePerkSpecificText.ts
+var removePerkSpecificText = (description, perkType) => {
+  const enhancedExports = description.match(/^enhanced \([\s\S]*?\n\)$/gm);
+  if (enhancedExports && perkType !== "Weapon Trait Enhanced") {
+    enhancedExports.forEach((enhancedExport) => {
+      description = description.replace(enhancedExport, "");
+    });
+    description = description.replaceAll("#e", "");
+  }
+  const catalystExports = description.match(/^catalyst \([\s\S]*?\n\)$/gm);
+  if (catalystExports && perkType !== "Weapon Catalyst Exotic") {
+    catalystExports.forEach((catalystExport) => {
+      description = description.replace(catalystExport, "");
+    });
+  }
+  const exoticPerkExports = description.match(/^exotic perk \([\s\S]*?\n\)$/gm);
+  if (exoticPerkExports && perkType !== "Weapon Perk Exotic") {
+    exoticPerkExports.forEach((exoticPerkExport) => {
+      description = description.replace(exoticPerkExport, "");
+    });
+  }
+  return description;
+};
+
+// packages/export/src/converter/converterFunctions/removeUnusedText.ts
+var removeUnusedText = (description, removeTitle = true) => {
+  description = description.replace(/\r/g, "");
+  description = description.replace(/\/\*[^]*\*\/\n?/g, "");
+  description = description.replace(/^ *?\/\/.*$\n?| +\/\/.*$/gm, "");
+  description = description.replace(/^export hidden .* \([^]*?\n\)$/gm, "");
+  description = description.replace(/^export .* \( *$\n/gm, "");
+  description = description.replace(/^enhanced \($\n/gm, "");
+  if (removeTitle) {
+    description = description.replace(/\n?^title .+ \([^]*?\n\)$/gm, "");
+    description = description.replace(/\n^\) *$/gm, "");
+  }
+  description = description.replace(/^var .* = .+$\n?/gm, "");
+  description = description.replace(/\n\n\n+/gm, "\n\n");
+  return description.trim();
+};
+
+// packages/export/src/converter/converterFunctions/extractClassesFromLine.ts
+var getLineClasses = (line, classNamesArray) => {
+  const classNames = classNamesArray.flatMap((className) => {
+    const updatedClassName = `<${className}/>`;
+    if (line.match(new RegExp(updatedClassName)) === null) return [];
+    return className;
+  });
+  const cleanLine = classNames.reduce((acc, className) => {
+    acc = acc.replace(new RegExp(`<${className}/>`), "");
+    return acc;
+  }, line);
+  return {
+    classNames,
+    cleanLine
+  };
+};
+
+// packages/export/src/converter/converterFunctions/lineConverter.ts
+var convertLinesContent = (line, tiles) => {
+  const splittedLine = line.split(/(<.+?\/>|🡅)/g).filter((line2) => line2 !== "");
+  return splittedLine.reduce((acc, text) => {
+    if (text === "\u{1F845}") {
+      acc.push({
+        text: "\u{1F845}",
+        classNames: ["enhancedArrow"]
+      });
+      return acc;
+    }
+    const wrappersName = text.match(/<\w+/)?.[0].replace("<", "");
+    if (wrappersName === void 0) {
+      acc.push({
+        text
+      });
+      return acc;
+    }
+    const { empty: empty2, withText } = classNameList;
+    if (withText.includes(wrappersName)) {
+      acc.push({
+        text: text.replace(new RegExp(`<${wrappersName} | />`, "g"), ""),
+        classNames: [wrappersName]
+      });
+      return acc;
+    }
+    if (empty2.includes(wrappersName)) {
+      acc.push({
+        classNames: [wrappersName]
+      });
+      return acc;
+    }
+    const wrapperContent = text.match(/\[.+\]/)?.[0].replace(/\[|\]/g, "");
+    const wrapperText = text.replace(/ \[.+\] \/>/g, "");
+    if (!wrapperContent || !wrapperText) return acc;
+    if (wrappersName === "link") {
+      acc.push({
+        text: wrapperText.replace("<link ", ""),
+        link: wrapperContent,
+        classNames: ["link"]
+      });
+      return acc;
+    }
+    if (wrappersName === "formula") {
+      acc.push({
+        text: wrapperText.replace(/<formula ?/, ""),
+        formula: wrapperContent,
+        classNames: ["formula"]
+      });
+      return acc;
+    }
+    if (wrappersName === "title") {
+      acc.push({
+        text: wrapperText.replace("<title ", ""),
+        title: tiles[wrapperContent],
+        classNames: ["title"]
+      });
+      return acc;
+    }
+    return acc;
+  }, []);
+};
+
+// packages/export/src/converter/converterFunctions/splitTable.ts
+var splitTable = (line, title) => {
+  const { classNames, cleanLine } = getLineClasses(line, classNameList.empty);
+  const splittedLine = cleanLine.match(/\|.*?((?=\|)|$)/g) || [];
+  return {
+    classNames,
+    rowContent: splittedLine.map((tableCell) => {
+      const cellSpan = tableCell.match(/\|([bchr\d-]+)?/)?.[0]?.match(/-\d|\d/g);
+      const colSpan = cellSpan?.filter((number4) => Number(number4) > 0)[0];
+      const rowSpan = cellSpan?.filter((number4) => Number(number4) < 0)[0];
+      const inCellClasses = {
+        b: "bold",
+        c: "center",
+        h: "background",
+        r: "right"
+      };
+      const cellClassNames = tableCell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => inCellClasses[char] !== void 0).map((c) => inCellClasses[c]);
+      tableCell = tableCell.replace(/\|[bchr\d-]+|\|/, "").trim();
+      const convertCellContent = convertLinesContent(tableCell, title);
+      const cleanedCell = convertCellContent.flatMap((span) => {
+        if ((span.text === void 0 || span.text.trim() === "") && (span.classNames === void 0 || !span.classNames?.some((className) => typeof className === "string")))
+          return [];
+        return {
+          text: span.text,
+          classNames: span.classNames,
+          formula: span.formula,
+          title: span.title
+        };
+      });
+      return {
+        colSpan: colSpan ? Number(colSpan) : void 0,
+        rowSpan: rowSpan ? Number(rowSpan) * -1 : void 0,
+        classNames: cellClassNames,
+        cellContent: cleanedCell
+      };
+    })
+  };
+};
+
+// packages/export/src/converter/converterFunctions/separateTableWeaponType.ts
+var legacyNames2 = {
+  ar: "Auto Rifle",
+  bow: "Combat Bow",
+  fusion: "Fusion Rifle",
+  gl: "Grenade Launcher",
+  hc: "Hand Cannon",
+  "heavy gl": "Heavy Grenade Launcher",
+  lfr: "Linear Fusion Rifle",
+  lmg: "Machine Gun",
+  pulse: "Pulse Rifle",
+  rocket: "Rocket Launcher",
+  scout: "Scout Rifle",
+  smg: "Submachine Gun",
+  sniper: "Sniper Rifle",
+  trace: "Trace Rifle"
+};
+var separateTableWeaponType = (description, titles) => {
+  const ordinary = description.replace(/\r/g, "").split("\n").map((line) => {
+    const header = line.match(/^\s*<weapons(?:\s+(.*?))?\s*>\s*$/i) ?? line.match(/^\s*<\s*(?:weapon type\s*)?\((.*?)\)\s*>\s*$/);
+    if (header) {
+      const label = (header[1] || "Weapons").split(",").map((name) => {
+        const clean = name.trim();
+        const key = clean.toLowerCase();
+        return key === "other" ? "Other weapons" : Object.hasOwn(legacyNames2, key) ? legacyNames2[key] : clean;
+      }).join(", ");
+      return `<bold ${label} />`;
+    }
+    if (/^\s*(<\/weapons\s*>|<\$\$>)\s*$/i.test(line)) return "";
+    return line;
+  }).join("\n");
+  return separateBlocks(ordinary, titles);
+};
+var separateBlocks = (description, titles) => {
+  const splittedDescription = description.match(/(< table [^]+?\n<\$>\n?|< weapon type [^]+?\n<\$\$>\n?)|(.+\n?|\n)/g)?.map((l) => l.trimEnd());
+  if (!splittedDescription) return;
+  return splittedDescription.reduce((acc, description2) => {
+    if (description2.startsWith("< table ")) {
+      const tableLines = description2.split("\n");
+      if (tableLines.length < 3) return acc;
+      tableLines.splice(-1);
+      const firstLine = tableLines.splice(0, 1);
+      const tableClasses = classNameList.table;
+      const tableClassNames = firstLine[0].replace(/< table | >/g, "").match(/(\w+)/g)?.filter((string4) => tableClasses.includes(string4));
+      acc.push({
+        table: tableLines.flatMap((line) => splitTable(line, titles)),
+        classNames: [...tableClassNames || [], "table"],
+        isFormula: tableClassNames?.includes("formula")
+      });
+      return acc;
+    }
+    if (description2.trim() === "") {
+      acc.push({
+        classNames: ["spacer"]
+      });
+      return acc;
+    }
+    const { classNames, cleanLine } = getLineClasses(description2, classNameList.line);
+    const breakSpaces = description2.includes("<breakSpaces/>");
+    acc.push({
+      classNames,
+      linesContent: convertLinesContent(breakSpaces ? cleanLine.trimEnd() : cleanLine.trim(), titles)
+    });
+    return acc;
+  }, []);
+};
+
+// packages/export/src/converter/descriptionConverter.ts
+var prepareDescription = (descriptionData) => {
+  const { language, hash: hash2, database } = descriptionData;
+  let description = loadExports(descriptionData);
+  description = removePerkSpecificText(description, database[hash2].type);
+  description = loadVariables({ ...descriptionData, descriptionString: description });
+  description = doMath(description);
+  return {
+    preparedDescription: removeUnusedText(description.trim()),
+    titles: {
+      ...extractTitles(removeUnusedText(description, false)),
+      ...extractTitles(database[3].editor[language]?.main),
+      ...extractTitles(database[3].editor[language]?.secondary)
+    }
+  };
+};
+var descriptionConverter = (descriptionData) => {
+  const { preparedDescription, titles } = prepareDescription(descriptionData);
+  const convertedTitles = Object.entries(titles || {}).reduce(
+    (acc, [titleName, titleContent]) => {
+      const { preparedDescription: preparedDescription2 } = prepareDescription({ ...descriptionData, descriptionString: titleContent });
+      const convertedTitles2 = separateTableWeaponType(preparedDescription2, {});
+      if (convertedTitles2) acc[titleName] = convertedTitles2;
+      return acc;
+    },
+    {}
+  );
+  return separateTableWeaponType(preparedDescription, convertedTitles);
+};
+
+// packages/export/src/converter/descriptionFilter.ts
+var cleanDescription = (obj, converterType) => {
+  const { getFromDescription, enhancedArrowReplacement } = getSettings(converterType);
+  const remover = (obj2) => {
+    for (const key in obj2) {
+      if (key === "text") {
+        if (enhancedArrowReplacement !== void 0 && obj2[key] === "\u{1F845}") {
+          obj2[key] = enhancedArrowReplacement;
+          continue;
+        }
+        if (obj2.classNames?.includes("pvp") && !getFromDescription.includeClassNames?.includes("pvp")) {
+          const pvpText = obj2[key].match(/\[.+?\]/g)?.[0].replace(/\[|\]/g, "");
+          if (pvpText === null) continue;
+          obj2[key] = obj2[key].replace(pvpText, `PVP: ${pvpText}`);
+          continue;
+        }
+      }
+      if (key === "classNames") {
+        obj2[key] = obj2[key]?.filter((className) => {
+          return getFromDescription.includeClassNames?.includes(className);
+        });
         continue;
       }
+      if (!getFromDescription.link && key === "link") {
+        delete obj2[key];
+        continue;
+      }
+      if (!getFromDescription.title && key === "title") {
+        delete obj2[key];
+        continue;
+      }
+      if (!getFromDescription.table && key === "table") {
+        delete obj2[key];
+        continue;
+      }
+      if (obj2[key]?.hasOwnProperty("formula") || obj2[key]?.hasOwnProperty("isFormula")) {
+        if (!getFromDescription.formula) {
+          delete obj2[key];
+          continue;
+        }
+      }
+      if (!obj2[key] || typeof obj2[key] !== "object") continue;
+      remover(obj2[key]);
     }
-    const end = text.indexOf("\n", from);
-    cursor = end < 0 ? text.length : end + 1;
-    issues.push({ from, to: end < 0 ? text.length : end });
+    return obj2;
+  };
+  return remover(obj);
+};
+var descriptionToString = (description, converterType) => {
+  const options = getSettings(converterType).toStringConverterOptions;
+  return description?.reduce((acc, line) => {
+    if (line.classNames?.includes("spacer")) return acc = acc + "\n";
+    const newLine = line.linesContent?.reduce((acc2, linesContent) => {
+      if (linesContent.link && options?.link) {
+        const [textStart, textEnd, linkStat, linkEnd] = options.link;
+        acc2 = acc2 + `${textStart}${linesContent.text}${textEnd}${linkStat}${linesContent.link}${linkEnd}`;
+        return acc2;
+      }
+      if (linesContent.classNames && linesContent.classNames?.length !== 0 && options?.classNames) {
+        const newText = linesContent.classNames.reduce((acc3, className) => {
+          if (className === void 0) return acc3;
+          const [classNameStart, classNameEnd] = options.classNames?.[className] || ["", ""];
+          acc3 = acc3 + `${classNameStart}${linesContent.text || ""}${classNameEnd}`;
+          return acc3;
+        }, "");
+        acc2 = acc2 + newText;
+        return acc2;
+      }
+      acc2 = acc2 + linesContent.text;
+      return acc2;
+    }, "");
+    if (line.classNames && line.classNames?.length !== 0 && options?.classNames) {
+      const lineWithClassNames = line.classNames.reduce((acc2, className) => {
+        if (className === void 0) return acc2;
+        const [classNameStart, classNameEnd] = options.classNames?.[className] || [
+          "",
+          ""
+        ];
+        acc2 = acc2 + `${classNameStart}${newLine}${classNameEnd}`;
+        return acc2;
+      }, "");
+      acc = acc + "\n" + lineWithClassNames;
+      return acc;
+    }
+    acc = acc + "\n" + newLine;
+    return acc;
+  }, "").trim();
+};
+var normalizeLegacySections = (lines) => {
+  if (!lines) return lines;
+  let previousSection;
+  return lines.flatMap((line) => {
+    const { weaponTypes: weaponTypes3, weaponBlock, weaponOther, ...body } = line;
+    const label = weaponOther ? "Other" : weaponTypes3?.filter(Boolean).join(", ");
+    const section = label ? `${weaponBlock ?? ""}:${label}` : void 0;
+    const heading = section && section !== previousSection ? [{ linesContent: [{ text: `${label}:` }] }] : [];
+    previousSection = section;
+    body.linesContent?.forEach((content) => {
+      content.title = normalizeLegacySections(content.title);
+    });
+    body.table?.forEach((row) => row.rowContent?.forEach((cell) => cell.cellContent?.forEach((content) => {
+      content.title = normalizeLegacySections(content.title);
+    })));
+    return [...heading, body];
+  });
+};
+var descriptionFilter = (description, converterType) => {
+  const { toStringConverterOptions } = getSettings(converterType);
+  const newDescription = cleanObject(cleanDescription(normalizeLegacySections(description), converterType));
+  let removeSpacer = true;
+  const finalDescription = newDescription?.reduceRight((acc, line) => {
+    if (line.classNames?.includes("spacer") && removeSpacer) return acc;
+    removeSpacer = false;
+    acc.unshift(line);
+    return acc;
+  }, []);
+  if (!toStringConverterOptions) return finalDescription;
+  return descriptionToString(finalDescription, converterType);
+};
+
+// packages/export/src/converter/publisher.ts
+var databaseConverter = (converterType, database, identical) => {
+  const settings = getSettings(converterType);
+  validateReferences(database);
+  const lookup = expandAliases(database);
+  const references = {};
+  const newDatabase = {};
+  for (const [hash2, rawPerk] of Object.entries(database)) {
+    const aliasOutput = isAliasStub(rawPerk) ? getAliasOutput(settings, rawPerk) : "copy";
+    const perk = lookup[hash2];
+    if (aliasOutput === "skip" || perk === void 0) continue;
+    if (Number(hash2) < 50) continue;
+    const editorDescription = perk.editor.en?.main.trim() || "";
+    if (editorDescription === "") continue;
+    if (!settings.optional && identical.has(hash2)) continue;
+    if (isAliasStub(rawPerk) && aliasOutput === "reference") {
+      references[hash2] = { hash: rawPerk.hash, aliasOf: rawPerk.aliasOf };
+      continue;
+    }
+    const cleanPerk = getDataFromPerk(perk, settings.getFromPerk);
+    const descriptions = Object.entries(cleanPerk.editor).reduce(
+      (acc, [language, descriptions2]) => {
+        const descriptionData = {
+          database: lookup,
+          descriptionString: descriptions2[settings.editor],
+          editorType: settings.editor,
+          hash: cleanPerk.hash,
+          language
+        };
+        const convertedDescription = descriptionConverter(descriptionData);
+        if (convertedDescription) {
+          acc[language] = descriptionFilter(convertedDescription, converterType);
+        }
+        return acc;
+      },
+      {}
+    );
+    const { editor, ...withoutEditor } = cleanPerk;
+    newDatabase[hash2] = {
+      ...withoutEditor,
+      descriptions
+    };
   }
-  return { pairs, issues };
-}
-var unfinishedBaseEnhanced = (text) => scanBaseEnhanced(text).issues;
+  for (const [hash2, reference] of Object.entries(references)) {
+    if (newDatabase[reference.aliasOf] !== void 0) newDatabase[hash2] = reference;
+  }
+  const output2 = cleanObject(newDatabase);
+  validateOutputReferences(output2);
+  return output2;
+};
 
 // packages/core/src/markup/elementTags.ts
 var elementTagNames = [
@@ -21964,6 +23071,173 @@ function mergedVariable(name, defined) {
   return void 0;
 }
 
+// packages/export/src/elementTags.ts
+function lowerInput(input2) {
+  let perks;
+  for (const [hash2, perk] of Object.entries(input2.perks)) {
+    if (!("editor" in perk) || !perk.editor) continue;
+    let editor;
+    for (const [language, text] of Object.entries(perk.editor)) {
+      if (!text) continue;
+      const main2 = lowerConsumerMarkup(text.main);
+      const secondary = lowerConsumerMarkup(text.secondary);
+      if (main2 === text.main && secondary === text.secondary) continue;
+      editor ??= { ...perk.editor };
+      editor[language] = { ...text, main: main2, secondary };
+    }
+    if (!editor) continue;
+    perks ??= { ...input2.perks };
+    perks[hash2] = { ...perk, editor };
+  }
+  return perks ? { ...input2, perks } : input2;
+}
+
+// packages/core/src/setBonus.ts
+var setBonusCategoryId = "armor-set-bonus";
+var setBonusLegacyType = "Armor Set Bonus";
+var setBonusHoldMessage = "Set bonuses need the new converter; they can be pushed after cut-over";
+var isSetBonusType = (type) => type === setBonusCategoryId || type === setBonusLegacyType;
+var isHeldSetBonus = (tooltip, facts) => isSetBonusType(facts ? facts.type : tooltip.custom?.categoryId);
+
+// packages/export/src/setBonus.ts
+function withSetBonusType(perks) {
+  let renamed;
+  for (const [hash2, perk] of Object.entries(perks)) {
+    const type = perk.type;
+    if (type === setBonusLegacyType || !isSetBonusType(type)) continue;
+    renamed ??= { ...perks };
+    renamed[hash2] = { ...perk, type: setBonusLegacyType };
+  }
+  return renamed ?? perks;
+}
+
+// packages/export/src/legacy.ts
+var legacyPresets = [
+  "clarity",
+  "dim",
+  "crayon",
+  "foundry",
+  "lightGG",
+  "braytech",
+  "vaultZero",
+  "clarityV2"
+];
+var deployedLegacyPresets = legacyPresets.filter(
+  (preset) => preset !== "clarityV2"
+);
+var encoder = new TextEncoder();
+var isLegacyPreset = (preset) => legacyPresets.includes(preset) && Object.hasOwn(converterSettings, preset);
+function buildLegacy(input2, preset, options = {}) {
+  if (!isLegacyPreset(preset)) throw new Error(`Unknown legacy preset: ${String(preset)}`);
+  const identical = new Set([...options.identical ?? []].map(String));
+  const output2 = databaseConverter(preset, withSetBonusType(lowerInput(input2).perks), identical);
+  const text = customJsonStringify(output2, ["stat", "multiplier", "weaponTypes", "classNames"]);
+  return encoder.encode(text);
+}
+
+// scripts/publisher/publisher.ts
+import { createHash, createPublicKey, verify } from "node:crypto";
+
+// packages/core/src/index.ts
+init_languages();
+init_legacy();
+init_schemas3();
+init_contentHash();
+
+// packages/core/src/aliases.ts
+init_zod();
+init_legacy();
+var aliasesSchema = external_exports.record(
+  external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((value2) => Number(value2) <= 4294967295),
+  external_exports.object({ to: hashSchema, kind: external_exports.enum(["sandbox", "frame", "name"]) }).strict()
+);
+function resolveAlias(hash2, aliases) {
+  const seen = /* @__PURE__ */ new Set();
+  while (aliases[hash2]) {
+    if (seen.has(hash2)) throw new Error(`Cyclic tooltip alias at ${hash2}`);
+    seen.add(hash2);
+    hash2 = aliases[hash2].to;
+  }
+  return hash2;
+}
+var incomingIndexes = /* @__PURE__ */ new WeakMap();
+function incomingAliases(hash2, aliases) {
+  let index = incomingIndexes.get(aliases);
+  if (!index) {
+    index = /* @__PURE__ */ new Map();
+    for (const [alias, { kind }] of Object.entries(aliases)) {
+      const target = resolveAlias(Number(alias), aliases);
+      const list = index.get(target);
+      if (list) list.push([Number(alias), kind]);
+      else index.set(target, [[Number(alias), kind]]);
+    }
+    for (const list of index.values()) list.sort((x, y) => x[0] - y[0]);
+    incomingIndexes.set(aliases, index);
+  }
+  return index.get(hash2) ?? [];
+}
+
+// packages/core/src/publishableHash.ts
+init_contentHash();
+
+// packages/core/src/markup/baseEnhanced.ts
+var enhancedMarkupType = "Weapon Trait Enhanced";
+var baseEnhancedMessage = "Use {{base}{enhanced}} with two nonempty inline arms on one line; pairs cannot nest.";
+var baseEnhancedPublishMessage = "Base/enhanced markup needs the new converter; it can be pushed after cut-over";
+function scanBaseEnhanced(text, allowEmpty = false) {
+  const pairs = [];
+  const issues = [];
+  let cursor = 0;
+  while (cursor < text.length) {
+    const from = text.indexOf("{{", cursor);
+    if (from < 0) break;
+    let pos = from + 2;
+    const braced = (at) => text[at - 1] === "#" ? /^\{[a-zA-Z0-9]+\}/.exec(text.slice(at, at + 64))?.[0].length ?? 0 : 0;
+    const arm = () => {
+      const begin = pos;
+      while (pos < text.length && text[pos] !== "}" && !/[\r\n]/.test(text[pos])) {
+        if (text.startsWith("{{", pos)) return null;
+        if (text[pos] === "{") {
+          const variable = braced(pos);
+          if (variable) {
+            pos += variable;
+            continue;
+          }
+          if (text[pos - 1] !== "$") return null;
+          let end2 = pos + 1;
+          for (; ; ) {
+            if (end2 >= text.length || /[\r\n]/.test(text[end2])) return null;
+            if (text[end2] === "}") break;
+            if (text[end2] === "{") {
+              const inner = braced(end2);
+              if (!inner) return null;
+              end2 += inner;
+            } else end2++;
+          }
+          pos = end2 + 1;
+        } else pos++;
+      }
+      const value2 = text.slice(begin, pos);
+      return allowEmpty || value2.trim() ? value2 : null;
+    };
+    const base = arm();
+    if (base !== null && text.slice(pos, pos + 2) === "}{") {
+      pos += 2;
+      const enhanced = arm();
+      if (enhanced !== null && text.slice(pos, pos + 2) === "}}") {
+        cursor = pos + 2;
+        pairs.push({ from, to: cursor, base, enhanced });
+        continue;
+      }
+    }
+    const end = text.indexOf("\n", from);
+    cursor = end < 0 ? text.length : end + 1;
+    issues.push({ from, to: end < 0 ? text.length : end });
+  }
+  return { pairs, issues };
+}
+var unfinishedBaseEnhanced = (text) => scanBaseEnhanced(text).issues;
+
 // packages/core/src/exportLegacy.ts
 init_languages();
 init_schemas3();
@@ -22023,7 +23297,7 @@ function extractBlocks(text, kind) {
 }
 
 // packages/core/src/markup/weaponHeadings.ts
-var legacyNames = {
+var legacyNames3 = {
   ar: "Auto Rifle",
   bow: "Combat Bow",
   fusion: "Fusion Rifle",
@@ -22045,7 +23319,7 @@ function weaponSectionHeadings(text) {
     if (header) {
       const label = (header[1] || "Weapons").split(",").map((name) => {
         const clean = name.trim();
-        return clean.toLowerCase() === "other" ? "Other weapons" : Object.hasOwn(legacyNames, clean.toLowerCase()) ? legacyNames[clean.toLowerCase()] : clean;
+        return clean.toLowerCase() === "other" ? "Other weapons" : Object.hasOwn(legacyNames3, clean.toLowerCase()) ? legacyNames3[clean.toLowerCase()] : clean;
       }).join(", ");
       return `<bold ${label} />`;
     }
@@ -22227,45 +23501,6 @@ function parseLines(text, titles) {
   });
 }
 
-// packages/core/src/markup/arithmetic.ts
-function evaluateMarkupMath(text) {
-  return text.replace(/\${.+?}/g, (expression) => {
-    const source = expression.match(
-      /(-?\d+(\.\d+)?)(\s{0,9}[+\-/*]\s{0,9}(-?\d+(\.\d+)?)){0,99}/
-    )?.[0];
-    if (!source) return expression;
-    const tokens = source.match(/-?\d+(?:\.\d+)?|[+*/-]/g) ?? [];
-    let index = 0;
-    function number4() {
-      return Number(tokens[index++]);
-    }
-    function product() {
-      let value3 = number4();
-      while (tokens[index] === "*" || tokens[index] === "/") {
-        const operator = tokens[index++];
-        const right = number4();
-        value3 = operator === "*" ? value3 * right : value3 / right;
-      }
-      return value3;
-    }
-    let value2 = product();
-    while (index < tokens.length) {
-      const operator = tokens[index];
-      if (operator.startsWith("-") && operator.length > 1) value2 += product();
-      else {
-        index++;
-        const right = product();
-        value2 = operator === "+" ? value2 + right : value2 - right;
-      }
-    }
-    if (!Number.isFinite(value2)) return String(value2);
-    const [coefficient, exponent = "0"] = String(value2).split("e");
-    const shifted = Math.round(Number(`${coefficient}e${Number(exponent) + 2}`));
-    const [rounded, roundedExponent = "0"] = String(shifted).split("e");
-    return String(Number(`${rounded}e${Number(roundedExponent) - 2}`));
-  });
-}
-
 // packages/core/src/markup/prepare.ts
 function markupVariableReferences(text) {
   return text.match(/#[a-zA-Z0-9]+/g) ?? [];
@@ -22325,7 +23560,7 @@ var unusedMarkup = {
 function normalizeMarkupWhitespace(text) {
   return text.replace(unusedMarkup.blanks, "\n\n").trim();
 }
-function removeUnusedText(text, removeTitles = true) {
+function removeUnusedText2(text, removeTitles = true) {
   text = removeMarkupComments(text).replace(unusedMarkup.hidden, "").replace(unusedMarkup.exportOpen, "").replace(unusedMarkup.enhancedOpen, "");
   if (removeTitles) {
     text = text.replace(unusedMarkup.titles, "").replace(unusedMarkup.close, "");
@@ -22337,7 +23572,7 @@ function resolveImports(text, globals, diagnostics) {
     const imports = markupImports(text);
     if (!imports.length) return text;
     for (const line of imports) {
-      const visible = removeUnusedText(text, false).includes(line.trim());
+      const visible = removeUnusedText2(text, false).includes(line.trim());
       if (line.includes("import self")) {
         if (visible)
           diagnostics.push({
@@ -22558,7 +23793,7 @@ function prepareMarkup(text, globals, diagnostics, onCondition) {
     }
     text = evaluateMarkupMath(text);
   }
-  const cleanText = native ? text : removeUnusedText(text.trim());
+  const cleanText = native ? text : removeUnusedText2(text.trim());
   for (const variable of new Set(markupVariableReferences(cleanText))) {
     diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
   }
@@ -22566,7 +23801,7 @@ function prepareMarkup(text, globals, diagnostics, onCondition) {
     text: cleanText,
     nativeTitles: native?.nativeTitles,
     titles: native?.titles ?? {
-      ...extractBlocks(removeUnusedText(text, false), "title"),
+      ...extractBlocks(removeUnusedText2(text, false), "title"),
       ...extractBlocks(globals.titles, "title")
     }
   };
@@ -23352,7 +24587,7 @@ function fallbackBlock(source, name, count) {
   let at = 0;
   for (const line of source.split("\n")) {
     const to = at + line.length;
-    if (!tables.some((table) => at < table.to && to > table.from)) blocks.push({ from: at, to });
+    if (!tables.some((table2) => at < table2.to && to > table2.from)) blocks.push({ from: at, to });
     at = to + 1;
   }
   const block = blocks.find(
@@ -23711,7 +24946,7 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
     const descriptions = {
       ...tooltip.legacy?.updateTracker?.descriptions
     };
-    for (const language of languages) {
+    for (const language of languages2) {
       const translation = tooltip.text[language];
       if (!translation) continue;
       const exported = usesEnglishFallback(tooltip, language) && english ? english : translation;
@@ -23742,7 +24977,7 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
     };
   }
   if (omitted.size) {
-    for (const language of languages) {
+    for (const language of languages2) {
       const imports = Object.fromEntries(
         Object.entries(canonical).map(([hash2, entry]) => [
           hash2,
@@ -25226,13 +26461,6 @@ var aliasProposalsSchema = external_exports.object({
   ).default([])
 }).strict();
 
-// packages/core/src/setBonus.ts
-var setBonusCategoryId = "armor-set-bonus";
-var setBonusLegacyType = "Armor Set Bonus";
-var setBonusHoldMessage = "Set bonuses need the new converter; they can be pushed after cut-over";
-var isSetBonusType = (type) => type === setBonusCategoryId || type === setBonusLegacyType;
-var isHeldSetBonus = (tooltip, facts) => isSetBonusType(facts ? facts.type : tooltip.custom?.categoryId);
-
 // packages/core/src/reports/schemas.ts
 init_zod();
 init_languages();
@@ -25465,6 +26693,18 @@ var paths = (id) => {
     candidate: `refs/heads/publish-candidate/${id}`
   };
 };
+var ConsumerOutputRejected = class extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ConsumerOutputRejected";
+  }
+};
+var TextlessConsumerOutput = class extends ConsumerOutputRejected {
+  constructor(message) {
+    super(message);
+    this.name = "TextlessConsumerOutput";
+  }
+};
 var Publisher = class {
   constructor(git, options) {
     this.git = git;
@@ -25472,6 +26712,7 @@ var Publisher = class {
   }
   git;
   options;
+  checkedOutputs = /* @__PURE__ */ new Set();
   head(branch) {
     const h = this.git.head(dataRef(branch));
     if (!h) throw new Error(`Missing branch ${branch}`);
@@ -25614,7 +26855,20 @@ var Publisher = class {
     const permissions = permissionsSchema.parse(this.read(tree, "config/permissions.json"));
     if (!["maintainer", "editor"].includes(permissions.users[String(p.requester.id)]?.role))
       throw new Error("Requester revoked");
+    requesterCredits(p.requester);
     return p;
+  }
+  /** Recovery credits come from the signed envelope, never from an unverified log or receipt. */
+  credits(blob, opId) {
+    const envelope = JSON.parse(this.git.blob(blob));
+    const key = createPublicKey(this.options.publicKey);
+    if (createHash("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope.payload !== "string" || typeof envelope.sig !== "string" || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
+      throw new Error("Invalid credit envelope");
+    const raw = JSON.parse(envelope.payload);
+    const payload = raw.kind === "batch" ? batchPublishPayloadSchema.parse(raw) : publishPayloadSchema.parse(raw);
+    if (stableStringify(payload) !== envelope.payload || payload.opId !== opId || payload.repo !== this.options.repo || payload.dataBranch !== this.options.dataBranch || payload.liveBranch !== this.options.liveBranch)
+      throw new Error("Credit request target mismatch");
+    return requesterCredits(payload.requester);
   }
   receipt(commit, opId) {
     return this.read(this.git.tree(commit), paths(opId).receipt);
@@ -25635,7 +26889,29 @@ var Publisher = class {
     const entries = structuredClone(r.exported);
     stampUploads(entries, new Set(r.changed), live.perks, r.now, r.requester.login);
     const picks = this.pickRecomputeAt(this.git.tree(r.sourceCommit));
-    const bytes = json3({ ...live, perks: mergeLivePerks(live.perks, entries, picks) });
+    const merged = { ...live, perks: mergeLivePerks(live.perks, entries, picks) };
+    const bytes = json3(merged);
+    const checkKey = createHash("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
+    if (!this.checkedOutputs.has(checkKey)) {
+      for (const preset of deployedLegacyPresets) {
+        const convert = (input2) => {
+          try {
+            return JSON.parse(new TextDecoder().decode(buildLegacy(input2, preset)));
+          } catch (error62) {
+            throw new ConsumerOutputRejected(`${preset} conversion failed: ${String(error62)}`);
+          }
+        };
+        const before = convert(live), after = convert(merged);
+        for (const [hash2, row] of Object.entries(after)) {
+          const empty2 = (entry) => entry !== void 0 && entry.aliasOf === void 0 && Object.keys(entry.descriptions ?? {}).length === 0;
+          if (empty2(row) && !empty2(before[hash2]))
+            throw new TextlessConsumerOutput(
+              `${preset} tooltip ${hash2} has no descriptions; nothing published`
+            );
+        }
+      }
+      this.checkedOutputs.add(checkKey);
+    }
     return {
       bytes,
       outcome: bytes === this.git.blob(tree["liveDescriptions.json"]) ? "unchanged" : "published"
@@ -25649,7 +26925,7 @@ var Publisher = class {
       "liveDescriptions.json": this.git.writeBlob(bytes),
       [paths(r.opId).receipt]: this.git.writeBlob(json3(r))
     };
-    return this.git.commit(parent, tree, `Publish ${r.opId}`);
+    return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
   }
   async record(opId, receipt, candidate, result, requestBlob, landing) {
     const p = paths(opId);
@@ -25716,7 +26992,15 @@ var Publisher = class {
           times: { now: receipt?.now ?? this.options.now(), ...batchTimes }
         })
       );
-      const c = this.git.commit(h, tree, `Record ${opId}`);
+      let credits = appCredits;
+      if (receipt) credits = this.credits(blob, opId);
+      else {
+        try {
+          credits = this.credits(blob, opId);
+        } catch {
+        }
+      }
+      const c = this.git.commit(h, tree, `Record ${opId}`, credits);
       try {
         this.git.cas(dataRef(this.options.dataBranch), h, c);
         return;
@@ -25745,12 +27029,17 @@ var Publisher = class {
           requestBlob: t[p.request]
         })
       );
+      let credits = appCredits;
+      try {
+        credits = this.credits(t[p.request], opId);
+      } catch {
+      }
       delete t[p.request];
       try {
         this.git.cas(
           dataRef(this.options.dataBranch),
           h,
-          this.git.commit(h, t, `Close duplicate ${opId}`)
+          this.git.commit(h, t, `Close duplicate ${opId}`, credits)
         );
         return;
       } catch (e) {
@@ -25761,6 +27050,26 @@ var Publisher = class {
   }
   async operation(opId) {
     const p = paths(opId), s = this.head(this.options.dataBranch), tree = this.git.tree(s);
+    try {
+      await this.publishOperation(opId, s, tree);
+    } catch (error62) {
+      if (!(error62 instanceof ConsumerOutputRejected)) throw error62;
+      await this.record(
+        opId,
+        void 0,
+        void 0,
+        { status: "rejected", error: String(error62) },
+        tree[p.request]
+      );
+      try {
+        const candidate = this.git.head(p.candidate);
+        if (candidate) this.git.cas(p.candidate, candidate, void 0);
+      } catch {
+      }
+    }
+  }
+  async publishOperation(opId, s, tree) {
+    const p = paths(opId);
     if (tree[p.log]) {
       await this.duplicate(opId);
       return;
@@ -25894,6 +27203,12 @@ var Publisher = class {
         return;
       }
       if (l === r.liveParent) {
+        const checked = this.merge(l, r);
+        const candidateBytes = this.git.blob(this.git.tree(c)["liveDescriptions.json"]);
+        if (candidateBytes !== checked.bytes)
+          throw new ConsumerOutputRejected(
+            "stored candidate differs from its checked receipt; nothing published"
+          );
         let pushed = false;
         try {
           this.git.cas(dataRef(this.options.liveBranch), l, c);
@@ -26126,6 +27441,24 @@ var Publisher = class {
       }
     const plan = await this.batchPlan(at, payload, frozenAliases);
     if ("failure" in plan) return fail(plan.failure);
+    const receipt = {
+      opId,
+      requestBlob: blob,
+      sourceCommit: source,
+      liveParent: live,
+      now: plan.now,
+      publisherSha: this.options.publisherSha,
+      generatorSha: this.options.generatorSha,
+      outcome: "published",
+      entries: plan.entries,
+      exported: plan.exported,
+      changed: plan.changed,
+      requester: payload.requester,
+      intentDigest: payload.intentDigest,
+      batchId: payload.batchId,
+      contentRevision: payload.contentRevision
+    };
+    this.merge(live, receipt);
     let sourceCommit = source;
     if (!claimed) {
       const next = { ...tree };
@@ -26143,7 +27476,12 @@ var Publisher = class {
         { batchId: batch.id, opId, notBefore: payload.notBefore, claimed: true }
       ]);
       editIndex(this, next, updated, payload.hashes, claimedAt);
-      const c = this.git.commit(s, next, `Claim batch ${batch.id} for ${opId}`);
+      const c = this.git.commit(
+        s,
+        next,
+        `Claim batch ${batch.id} for ${opId}`,
+        this.credits(blob, opId)
+      );
       try {
         this.git.cas(dataRef(this.options.dataBranch), s, c);
         sourceCommit = c;
@@ -26151,23 +27489,7 @@ var Publisher = class {
         return void 0;
       }
     }
-    return {
-      opId,
-      requestBlob: blob,
-      sourceCommit,
-      liveParent: live,
-      now: plan.now,
-      publisherSha: this.options.publisherSha,
-      generatorSha: this.options.generatorSha,
-      outcome: "published",
-      entries: plan.entries,
-      exported: plan.exported,
-      changed: plan.changed,
-      requester: payload.requester,
-      intentDigest: payload.intentDigest,
-      batchId: payload.batchId,
-      contentRevision: payload.contentRevision
-    };
+    return { ...receipt, sourceCommit };
   }
   /**
    * The batch part of RECORD at head `tree` (edited in place). With a landed receipt: activation
@@ -26351,7 +27673,8 @@ var Publisher = class {
     const c = this.git.commit(
       old,
       { ...oldTree, "bundle.json": this.git.writeBlob(json3(bundle)) },
-      `Bundle ${h}`
+      `Bundle ${h}`,
+      appCredits
     );
     this.git.cas(ref, old, c);
   }
@@ -26384,6 +27707,7 @@ var RemoteRepository = class extends LocalRepository {
   constructor(cache, options) {
     super(cache);
     this.options = options;
+    this.requireCredits = !options.fileUrl;
     this.commandTimeout = options.timeout ?? 12e4;
     if (options.fileUrl) {
       const url2 = new URL(options.fileUrl);
@@ -26398,6 +27722,7 @@ var RemoteRepository = class extends LocalRepository {
   }
   options;
   preserveModes = true;
+  requireCredits = true;
   remote;
   /** Public seam for subprocess fault injection, never exposes Git's stderr/credential-bearing errors. */
   remoteGit(args) {
