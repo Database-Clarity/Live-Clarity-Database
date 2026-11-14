@@ -1,4 +1,4 @@
-name: Editor data pipeline (publish dry-run)
+name: Editor data pipeline
 
 on:
   push:
@@ -26,11 +26,21 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '24'
-      - name: Bundle live data and simulate publishing
+      # Publishes for real only when the installed config says publishWritesEnabled: true; the
+      # runtime also needs its baked build switch ON (config/publisher.json at the PIN source), so
+      # a dry-run install of an enabled build, or an enabled config on a dry-run build, never writes.
+      - name: Bundle live data and publish (or simulate)
         env:
           ARTIFACT_DIR: ${{ runner.temp }}/publisher-dry-run
           GITHUB_TOKEN: ${{ github.token }}
-        run: node .publisher/publisher.mjs --pipeline-dry-run . .publisher/config.json "$ARTIFACT_DIR"
+        run: |
+          set -euo pipefail
+          mode=--pipeline-dry-run
+          if node -e 'process.exit(JSON.parse(require("node:fs").readFileSync(".publisher/config.json", "utf8")).publishWritesEnabled === true ? 0 : 1)'; then
+            mode=--pipeline-publish
+          fi
+          echo "Publisher mode: $mode"
+          node .publisher/publisher.mjs "$mode" . .publisher/config.json "$ARTIFACT_DIR"
       - name: Upload would-be commits and catch-up status
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
