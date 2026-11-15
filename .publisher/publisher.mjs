@@ -20899,6 +20899,25 @@ var init_merge3 = __esm({
   }
 });
 
+// packages/core/src/schedule/stamps.ts
+function boundTranslationSources(tooltip) {
+  if (!tooltip.text.en) return tooltip;
+  const englishAt = Date.parse(tooltip.text.en.updatedAt);
+  const text = { ...tooltip.text };
+  for (const lang of languages2) {
+    const entry = text[lang];
+    if (lang !== "en" && entry?.sourceUpdatedAt && Date.parse(entry.sourceUpdatedAt) > englishAt)
+      text[lang] = { ...entry, sourceUpdatedAt: new Date(englishAt - 1).toISOString() };
+  }
+  return { ...tooltip, text };
+}
+var init_stamps = __esm({
+  "packages/core/src/schedule/stamps.ts"() {
+    "use strict";
+    init_languages();
+  }
+});
+
 // packages/core/src/schedule/activate.ts
 function mergeChanged(base, current, proposed, changed, choices = {}) {
   let from = current;
@@ -20915,11 +20934,11 @@ function mergeChanged(base, current, proposed, changed, choices = {}) {
 function activate({ base, current, proposed }) {
   const changed = changedFields(base, proposed);
   if (base === null && current === null)
-    return { ok: true, tooltip: proposed, created: true, changed };
+    return { ok: true, tooltip: boundTranslationSources(proposed), created: true, changed };
   if (base === null || current === null) return { ok: false, fields: [existsField], changed };
   const result = mergeChanged(base, current, proposed, changed);
   if (!result.ok) return { ok: false, fields: result.conflicts.map(({ field }) => field), changed };
-  return { ok: true, tooltip: result.merged, created: false, changed };
+  return { ok: true, tooltip: boundTranslationSources(result.merged), created: false, changed };
 }
 function resolveActivation({
   base,
@@ -20952,6 +20971,7 @@ var init_activate = __esm({
   "packages/core/src/schedule/activate.ts"() {
     "use strict";
     init_merge3();
+    init_stamps();
     init_fields();
     existsField = "$exists";
   }
@@ -21325,7 +21345,7 @@ function mergeAssociations(base, onto, proposed) {
   if (!result.ok) throw new Error("Association merge cannot conflict");
   return result.merged.associated;
 }
-function compose(input2) {
+function compose(input2, boundSources = true) {
   const { hash: hash2, base, proposed, snapshot, pushed } = input2;
   for (const tooltip of [base, proposed, snapshot])
     if (tooltip && tooltipSchema.parse(tooltip).hash !== hash2)
@@ -21342,10 +21362,19 @@ function compose(input2) {
         fieldValue(snapshot, field)
       )
     );
-    return { status: "overlay", tooltip: tooltipSchema.parse(tooltip), changed, unpublished };
+    return {
+      status: "overlay",
+      tooltip: boundSources ? boundTranslationSources(tooltipSchema.parse(tooltip)) : tooltipSchema.parse(tooltip),
+      changed,
+      unpublished
+    };
   }
   if (pushed) return { status: "stale", reason: missingSnapshotReason };
-  return { status: "whole", tooltip: proposed, changed };
+  return {
+    status: "whole",
+    tooltip: boundSources ? boundTranslationSources(proposed) : proposed,
+    changed
+  };
 }
 var missingSnapshotReason;
 var init_compose = __esm({
@@ -21353,6 +21382,7 @@ var init_compose = __esm({
     "use strict";
     init_merge3();
     init_schemas3();
+    init_stamps();
     init_fields();
     missingSnapshotReason = "No published snapshot; publish it manually first or rebase";
   }
@@ -21456,6 +21486,7 @@ __export(schedule_exports, {
   batchResultStatusSchema: () => batchResultStatusSchema,
   batchSchema: () => batchSchema,
   batchStatusSchema: () => batchStatusSchema,
+  boundTranslationSources: () => boundTranslationSources,
   changedFields: () => changedFields,
   checkNotBefore: () => checkNotBefore,
   compose: () => compose,
@@ -21492,6 +21523,7 @@ var init_schedule = __esm({
     init_compose();
     init_activate();
     init_zone();
+    init_stamps();
   }
 });
 
@@ -21833,7 +21865,7 @@ var classNameList = {
   withText: [...textColoring, "background", "bold"],
   empty: [...images, ...empty],
   withExtraFunctionality: ["link", "title", "formula"],
-  extra: ["enhancedArrow", "spacer"],
+  extra: ["arrow", "enhancedArrow", "spacer"],
   table
 };
 var allClassNames = Object.values(classNameList).flat();
@@ -22563,8 +22595,12 @@ var getLineClasses = (line, classNamesArray) => {
 
 // packages/export/src/converter/converterFunctions/lineConverter.ts
 var convertLinesContent = (line, tiles) => {
-  const splittedLine = line.split(/(<.+?\/>|🡅)/g).filter((line2) => line2 !== "");
+  const splittedLine = line.split(/(<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>|🡅)/g).filter((line2) => line2 !== "");
   return splittedLine.reduce((acc, text) => {
+    if (text === "<arrow/>") {
+      acc.push({ classNames: ["arrow"] });
+      return acc;
+    }
     if (text === "\u{1F845}") {
       acc.push({
         text: "\u{1F845}",
@@ -22581,7 +22617,11 @@ var convertLinesContent = (line, tiles) => {
     }
     const { empty: empty2, withText } = classNameList;
     if (withText.includes(wrappersName)) {
-      acc.push({
+      if (text.includes("<arrow/>")) {
+        const inner = text.replace(new RegExp(`^<${wrappersName} | />$`, "g"), "");
+        for (const part of inner.split(/(<arrow\/>)/).filter(Boolean))
+          acc.push(part === "<arrow/>" ? { classNames: [wrappersName, "arrow"] } : { text: part, classNames: [wrappersName] });
+      } else acc.push({
         text: text.replace(new RegExp(`<${wrappersName} | />`, "g"), ""),
         classNames: [wrappersName]
       });
@@ -23059,8 +23099,9 @@ function lowerDelimitedMarkup(text) {
   }
   return changed ? lines.join("\n") : text;
 }
-function lowerConsumerMarkup(text) {
-  return lowerDelimitedMarkup(lowerElementTags(text));
+function lowerConsumerMarkup(text, arrow) {
+  const lowered = lowerDelimitedMarkup(lowerElementTags(text));
+  return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
 }
 function mergedVariable(name, defined) {
   if (defined(name)) return void 0;
@@ -23072,15 +23113,16 @@ function mergedVariable(name, defined) {
 }
 
 // packages/export/src/elementTags.ts
-function lowerInput(input2) {
+function lowerInput(input2, arrow) {
+  const lower2 = (text) => lowerConsumerMarkup(text, arrow);
   let perks;
   for (const [hash2, perk] of Object.entries(input2.perks)) {
     if (!("editor" in perk) || !perk.editor) continue;
     let editor;
     for (const [language, text] of Object.entries(perk.editor)) {
       if (!text) continue;
-      const main2 = lowerConsumerMarkup(text.main);
-      const secondary = lowerConsumerMarkup(text.secondary);
+      const main2 = lower2(text.main);
+      const secondary = lower2(text.secondary);
       if (main2 === text.main && secondary === text.secondary) continue;
       editor ??= { ...perk.editor };
       editor[language] = { ...text, main: main2, secondary };
@@ -23130,7 +23172,16 @@ var isLegacyPreset = (preset) => legacyPresets.includes(preset) && Object.hasOwn
 function buildLegacy(input2, preset, options = {}) {
   if (!isLegacyPreset(preset)) throw new Error(`Unknown legacy preset: ${String(preset)}`);
   const identical = new Set([...options.identical ?? []].map(String));
-  const output2 = databaseConverter(preset, withSetBonusType(lowerInput(input2).perks), identical);
+  const output2 = databaseConverter(
+    preset,
+    withSetBonusType(
+      lowerInput(
+        input2,
+        preset === "clarityV2" ? options.arrowFallback ? "fallback" : void 0 : "legacy"
+      ).perks
+    ),
+    identical
+  );
   const text = customJsonStringify(output2, ["stat", "multiplier", "weaponTypes", "classNames"]);
   return encoder.encode(text);
 }
@@ -23263,7 +23314,8 @@ var markupIcons = [
   "unstoppable",
   "hunter",
   "titan",
-  "warlock"
+  "warlock",
+  "arrow"
 ];
 var markupEmpty = ["background", "breakSpaces", "bold"];
 var markupLineClasses = [...markupColors, ...markupEmpty];
@@ -23329,7 +23381,7 @@ function weaponSectionHeadings(text) {
 }
 
 // packages/core/src/markup/lines.ts
-var inlineToken = /<.+?\/>/;
+var inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
 function lineClasses(line, allowed2, offsets) {
   const classNames = allowed2.filter((name) => line.includes(`<${name}/>`));
   let cleanLine = line;
@@ -23353,7 +23405,9 @@ function markupStrayTags(text) {
     for (const segment of line.split(new RegExp(`(${inlineToken.source})`, "g"))) {
       const tags = segment.match(/<\w+/g) ?? [];
       const isToken = new RegExp(`^${inlineToken.source}$`).test(segment);
-      if (tags.length > (isToken ? 1 : 0)) stray.push(tags[0]);
+      const wrapper2 = /^<(\w+) /.exec(segment)?.[1] ?? "";
+      const arrows = isToken && [...markupColors, "background"].includes(wrapper2) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
+      if (tags.length > (isToken ? 1 + arrows : 0)) stray.push(tags[0]);
     }
   }
   return stray;
@@ -23433,6 +23487,11 @@ function lineSpans(text, titles) {
   const wrapper2 = text.match(/<\w+/)?.[0].slice(1);
   if (wrapper2 === void 0) return [{ text }];
   if ([...markupColors, "background", "bold"].includes(wrapper2)) {
+    const inner = text.replace(new RegExp(`^<${wrapper2} | />$`, "g"), "");
+    if (inner.includes("<arrow/>"))
+      return inner.split(/(<arrow\/>)/).filter(Boolean).map(
+        (part) => part === "<arrow/>" ? { classNames: [wrapper2, "arrow"] } : { text: part, classNames: [wrapper2] }
+      );
     return [{ text: text.replace(new RegExp(`<${wrapper2} | />`, "g"), ""), classNames: [wrapper2] }];
   }
   if ([...markupIcons, ...markupEmpty].includes(wrapper2)) return [{ classNames: [wrapper2] }];
@@ -23949,6 +24008,16 @@ var wrap = (tag, about) => ({
 });
 var markupSnippets = [
   {
+    id: "arrow-values",
+    label: "Value becomes another",
+    group: "Values",
+    template: "{{1:30%}}<arrow/>{{2:33%}}",
+    keywords: "arrow leads to becomes change value",
+    usage: /<arrow\/>/,
+    about: "Two values joined by an arrow in the surrounding text colour.",
+    help: { example: "30%<arrow/>33%" }
+  },
+  {
     id: "base-enhanced-pair",
     label: "Base and enhanced text",
     group: "Enhanced",
@@ -24163,6 +24232,7 @@ var markupTags = [
   }
 ];
 var iconAbout = {
+  arrow: "An arrow meaning leads to or becomes, drawn in the surrounding text colour.",
   kinetic: "Kinetic damage icon.",
   arc: "Arc damage icon.",
   solar: "Solar damage icon.",
@@ -24245,7 +24315,10 @@ var glyphPolicy = {
   ],
   characters: "	\n\r\u2013\u2014\u2018\u2019\u201C\u201D\u2022\u2026\u2190\u2191\u2192\u2193\u21D2\u2264\u2265\u2260\u2212\u221E\u2665\u2116\u2060\u3000\u3001\u3002\u3003\u3005\u3006\u3007\u3008\u3009\u300A\u300B\u300C\u300D\u300E\u300F\u3010\u3011\u3014\u3015\u301C",
   knownRisk: {
-    "\u{1F81A}": { reason: "Supplemental arrow needs a font some devices do not have.", replacement: "->" },
+    "\u{1F81A}": {
+      reason: "Supplemental arrow needs a font some devices do not have.",
+      replacement: "<arrow/>"
+    },
     "\u{1F805}": { reason: "Supplemental arrow needs a font some devices do not have.", replacement: "^" },
     "\u{1F845}": { reason: "Enhanced-perk marker: consumer support varies; DIM handles it specially." },
     "\uFEFF": {
@@ -25119,6 +25192,189 @@ function mergeSandboxPointers(aliases, conflicts, pointers) {
   return Object.fromEntries(
     Object.entries(merged).sort(([a], [b]) => Number(a) - Number(b))
   );
+}
+
+// packages/core/src/inactiveMoves.ts
+init_zod();
+init_contentHash();
+init_languages();
+var inactiveMovesPath = "config/inactive.json";
+var inactiveHashKey = external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((value2) => Number(value2) <= 4294967295);
+var inactiveMovesSchema = external_exports.record(
+  inactiveHashKey,
+  external_exports.object({
+    by: external_exports.number().int().positive(),
+    at: external_exports.string().datetime({ offset: true }),
+    note: external_exports.string().trim().max(1e3).optional(),
+    /** Retain a move-out marker so a partial publish can restore this item's stubs. */
+    inactive: external_exports.literal(false).optional()
+  }).strict()
+);
+function isMovedInactive(hash2, moves) {
+  return !!moves && Object.hasOwn(moves, String(hash2)) && moves[String(hash2)]?.inactive !== false;
+}
+function selectedInactiveMoves(moves, hashes, aliases) {
+  const selected = new Set(hashes);
+  return Object.fromEntries(
+    Object.entries(moves).filter(([hash2]) => selected.has(resolveAlias(Number(hash2), aliases)))
+  );
+}
+async function inactivePublishableHash(tooltip, aliases, moves = {}) {
+  if (isMovedInactive(tooltip.hash, moves)) {
+    return inactiveRemovalHash(tooltip.hash);
+  }
+  return publishableHash(tooltip, activeAliases(aliases, moves));
+}
+async function inactiveRemovalHash(hash2) {
+  const bytes = new TextEncoder().encode(stableStringify({ inactive: hash2 }));
+  const digest2 = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest2), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+var unreviewedInactiveMessage = "Publish inactive move decisions in Review changes before scheduling or publishing this batch";
+async function hasUnpublishedInactiveMove(hash2, snapshot, pushed, aliases, moves) {
+  const selected = Object.values(selectedInactiveMoves(moves, [hash2], aliases));
+  if (!selected.length) return false;
+  if (!snapshot && !pushed && selected.every((move) => move.inactive === false)) return false;
+  if (isMovedInactive(hash2, moves) || !snapshot || !pushed) return true;
+  return await inactivePublishableHash(snapshot, aliases, moves) !== pushed;
+}
+var activeAliasSnapshots = /* @__PURE__ */ new WeakMap();
+function activeAliases(aliases, moves) {
+  const cached2 = activeAliasSnapshots.get(aliases)?.get(moves);
+  if (cached2) return cached2;
+  const keys = Object.keys(moves);
+  if (!keys.some((key) => isMovedInactive(Number(key), moves))) return aliases;
+  const active = Object.fromEntries(
+    Object.entries(aliases).filter(
+      ([key]) => !isMovedInactive(Number(key), moves) && !isMovedInactive(resolveAlias(Number(key), aliases), moves)
+    ).map(([key, value2]) => {
+      const to = resolveAlias(Number(key), aliases);
+      return [key, to === value2.to ? value2 : { ...value2, to }];
+    })
+  );
+  let snapshots = activeAliasSnapshots.get(aliases);
+  if (!snapshots) activeAliasSnapshots.set(aliases, snapshots = /* @__PURE__ */ new WeakMap());
+  snapshots.set(moves, active);
+  return active;
+}
+function exportWithInactiveMoves(tooltips, now, catalog, aliases = {}, moves = {}) {
+  if (!Object.keys(moves).some((hash2) => isMovedInactive(Number(hash2), moves)))
+    return exportLegacy(tooltips, now, catalog, aliases);
+  for (const hash2 of [1, 2, 3])
+    if (isMovedInactive(hash2, moves))
+      throw new Error(
+        `Global tooltip ${hash2} is a required output input; move it out of Inactive before publishing`
+      );
+  const kept = tooltips.filter((tooltip) => !isMovedInactive(tooltip.hash, moves));
+  for (const language of languages2) {
+    const imports = Object.fromEntries(
+      tooltips.map((tooltip) => {
+        const text = usesEnglishFallback(tooltip, language) ? tooltip.text.en : tooltip.text[language];
+        return [tooltip.hash, lowerConsumerMarkup(text?.text ?? "")];
+      })
+    );
+    for (const alias of Object.keys(aliases))
+      imports[alias] = imports[resolveAlias(Number(alias), aliases)] ?? "";
+    for (const tooltip of kept) {
+      for (const hash2 of tooltip.associated)
+        if (isMovedInactive(resolveAlias(hash2, aliases), moves))
+          throw new Error(`Tooltip ${tooltip.hash} associates inactive tooltip ${hash2}`);
+      const text = imports[tooltip.hash];
+      if (!text) continue;
+      const { reads } = validateTextWithReads(
+        text,
+        language,
+        {
+          imports,
+          variables: imports[2] ?? "",
+          titles: imports[3] ?? ""
+        },
+        false,
+        tooltip.hash,
+        aliases
+      );
+      for (const [key, hash2] of reads.imports)
+        if (isMovedInactive(hash2, moves) || isMovedInactive(Number(key), moves))
+          throw new Error(`Tooltip ${tooltip.hash} imports inactive tooltip ${hash2} (${language})`);
+    }
+  }
+  const entries = exportLegacy(kept, now, catalog, aliases);
+  for (const hash2 of Object.keys(moves))
+    if (isMovedInactive(Number(hash2), moves)) delete entries[hash2];
+  return entries;
+}
+function applyInactiveLive(perks, moves, hashes, aliases, previous = perks) {
+  if (!Object.keys(moves).length) return perks;
+  const selected = selectedInactiveMoves(moves, hashes, aliases);
+  const result = { ...perks };
+  const removed = /* @__PURE__ */ new Set();
+  const record2 = (value2) => !!value2 && typeof value2 === "object" && !Array.isArray(value2);
+  const erase = (hash2) => {
+    delete result[hash2];
+    removed.add(hash2);
+  };
+  for (const key of Object.keys(moves))
+    if (!Object.hasOwn(selected, key) && !Object.hasOwn(previous, key)) erase(Number(key));
+  for (const key of Object.keys(selected)) {
+    const hash2 = Number(key);
+    if (!isMovedInactive(hash2, selected)) continue;
+    if ([1, 2, 3].includes(hash2))
+      throw new Error(`Global tooltip ${hash2} is a required output input`);
+    erase(hash2);
+    if (resolveAlias(hash2, aliases) === hash2) {
+      for (const [stub, value2] of Object.entries(result))
+        if (record2(value2) && value2.aliasOf === hash2 || Object.hasOwn(aliases, stub) && resolveAlias(Number(stub), aliases) === hash2)
+          erase(Number(stub));
+    }
+  }
+  for (const key of Object.keys(moves)) if (!Object.hasOwn(result, key)) removed.add(Number(key));
+  if (!removed.size) return result;
+  const liveAliases = { ...aliases };
+  for (const [key, value2] of Object.entries(perks))
+    if (record2(value2) && typeof value2.aliasOf === "number")
+      liveAliases[key] = { to: value2.aliasOf, kind: "name" };
+  for (const language of languages2)
+    for (const field of ["main", "secondary"]) {
+      const imports = {};
+      for (const [key, value2] of Object.entries(result)) {
+        if (!record2(value2) || "aliasOf" in value2) continue;
+        const editor = value2.editor;
+        if (!record2(editor)) throw new Error(`Invalid live tooltip ${key}`);
+        const translation = editor[language];
+        imports[key] = record2(translation) && typeof translation[field] === "string" ? translation[field] : "";
+      }
+      for (const [key, value2] of Object.entries(result))
+        if (record2(value2) && typeof value2.aliasOf === "number")
+          imports[key] = imports[value2.aliasOf] ?? "";
+      for (const [key, value2] of Object.entries(result)) {
+        if (!record2(value2) || "aliasOf" in value2) continue;
+        if (Array.isArray(value2.associated)) {
+          for (const hash2 of value2.associated)
+            if (typeof hash2 === "number" && (removed.has(hash2) || removed.has(resolveAlias(hash2, liveAliases))))
+              throw new Error(`Tooltip ${key} associates inactive tooltip ${hash2}`);
+        }
+        const text = imports[key];
+        if (!text) continue;
+        const { reads } = validateTextWithReads(
+          text,
+          language,
+          {
+            imports,
+            variables: imports[2] ?? "",
+            titles: imports[3] ?? ""
+          },
+          false,
+          Number(key),
+          liveAliases
+        );
+        for (const [source, hash2] of reads.imports)
+          if (removed.has(hash2) || removed.has(Number(source)))
+            throw new Error(
+              `Tooltip ${key} imports inactive tooltip ${hash2} (${language}, ${field})`
+            );
+      }
+    }
+  return result;
 }
 
 // packages/core/src/index.ts
@@ -26380,9 +26636,19 @@ function isTimeZone(value2) {
   }
 }
 var dateFormats = ["auto", "dmy", "iso", "mdy"];
+var editorFonts = ["default", "fira-code", "jetbrains-mono", "system"];
+var suggestAcceptKeys = ["enter", "tab"];
+var symbolRevealModes = ["popover", "caret"];
+var finderWheelModes = ["entries", "groups"];
+var defaultWorklistStepping = true;
 var timeDisplays = ["date", "datetime", "relative"];
 var timeZoneSchema = external_exports.string().min(1).max(64).refine((value2) => value2 === "auto" || isTimeZone(value2), "Unknown time zone");
 var syncedSettingsSchema = external_exports.object({
+  editorFont: external_exports.enum(editorFonts).default("default"),
+  suggestAccept: external_exports.enum(suggestAcceptKeys).default("enter"),
+  symbolReveal: external_exports.enum(symbolRevealModes).default("popover"),
+  finderWheel: external_exports.enum(finderWheelModes).default("entries"),
+  worklistStepping: external_exports.boolean().default(defaultWorklistStepping),
   dateFormat: external_exports.enum(dateFormats),
   timeDisplay: external_exports.enum(timeDisplays),
   timeZone: timeZoneSchema,
@@ -26738,6 +27004,15 @@ var Publisher = class {
       pointers
     );
   }
+  movesAt(tree) {
+    try {
+      return inactiveMovesSchema.parse(
+        tree[inactiveMovesPath] ? this.read(tree, inactiveMovesPath) : {}
+      );
+    } catch {
+      throw new ConsumerOutputRejected(`Invalid ${inactiveMovesPath}`);
+    }
+  }
   /**
    * The live-merge recompute for a publish from this snapshot (core mergeLivePerks): every key the
    * picks file names, with the same merged aliases the export used. No picks file: none (v2).
@@ -26889,11 +27164,28 @@ var Publisher = class {
     const entries = structuredClone(r.exported);
     stampUploads(entries, new Set(r.changed), live.perks, r.now, r.requester.login);
     const picks = this.pickRecomputeAt(this.git.tree(r.sourceCommit));
-    const merged = { ...live, perks: mergeLivePerks(live.perks, entries, picks) };
+    let perks;
+    try {
+      const sourceTree = this.git.tree(r.sourceCommit);
+      perks = applyInactiveLive(
+        mergeLivePerks(live.perks, entries, picks),
+        this.movesAt(sourceTree),
+        r.entries.map((e) => e.hash),
+        this.aliasesAt(sourceTree),
+        live.perks
+      );
+    } catch (error62) {
+      throw new ConsumerOutputRejected(String(error62));
+    }
+    const merged = { ...live, perks };
     const bytes = json3(merged);
     const checkKey = createHash("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
     if (!this.checkedOutputs.has(checkKey)) {
-      for (const preset of deployedLegacyPresets) {
+      const hasMoves = Object.keys(this.movesAt(this.git.tree(r.sourceCommit))).length > 0;
+      for (const preset of [
+        ...deployedLegacyPresets,
+        ...hasMoves ? ["clarityV2"] : []
+      ]) {
         const convert = (input2) => {
           try {
             return JSON.parse(new TextDecoder().decode(buildLegacy(input2, preset)));
@@ -27118,6 +27410,7 @@ var Publisher = class {
         if (!r) return;
         candidate = this.createCandidate(opId, blob, live, r);
       } else {
+        const moves = this.movesAt(tree);
         const entries = [], tooltips = [], outcomes = [];
         const seen = /* @__PURE__ */ new Set();
         const blocked = [...new Set(payload.hashes.map((h) => resolveAlias(h, aliases)))].filter(
@@ -27135,18 +27428,24 @@ var Publisher = class {
         }
         for (const hash2 of payload.hashes) {
           const canonical = resolveAlias(hash2, aliases), oid = tree[`tooltips/${canonical}.json`];
-          const tooltip = tooltipSchema.safeParse(oid ? JSON.parse(this.git.blob(oid)) : void 0);
+          const tooltip = tooltipSchema.safeParse(
+            oid ? JSON.parse(this.git.blob(oid)) : isMovedInactive(canonical, moves) ? { hash: canonical, text: {}, associated: [] } : void 0
+          );
           if (!tooltip.success || tooltip.data.hash !== canonical) {
             outcomes.push({ hash: canonical, status: "missing" });
             continue;
           }
-          const digest2 = await publishableHash(tooltip.data, aliases);
+          const digest2 = await inactivePublishableHash(tooltip.data, aliases, moves);
           outcomes.push({
             hash: canonical,
             status: digest2 === payload.expected[hash2] ? "accepted" : "stale"
           });
           if (!seen.has(canonical)) {
-            entries.push({ hash: canonical, digest: digest2, tooltipBlob: oid });
+            entries.push({
+              hash: canonical,
+              digest: digest2,
+              tooltipBlob: oid ?? this.git.writeBlob(json3(tooltip.data))
+            });
             tooltips.push(tooltip.data);
             seen.add(canonical);
           }
@@ -27244,22 +27543,33 @@ var Publisher = class {
    * same messages). An error is a terminal rejection before any write.
    */
   checkAndExport(tree, tooltips, aliases) {
-    if (tooltips.some(isTextlessDescription)) return { error: "Tooltip has no text to publish" };
+    const moves = selectedInactiveMoves(
+      this.movesAt(tree),
+      tooltips.map((t) => t.hash),
+      aliases
+    );
+    const active = tooltips.filter((t) => !isMovedInactive(t.hash, moves));
+    if (active.some(isTextlessDescription)) return { error: "Tooltip has no text to publish" };
     try {
-      this.checkAssociatedDescriptions(tree, tooltips, aliases);
+      this.checkAssociatedDescriptions(tree, active, aliases);
     } catch (error62) {
       return { error: String(error62) };
     }
-    if (tooltips.some((t) => !t.custom && !this.options.facts[t.hash]))
+    if (active.some((t) => !t.custom && !this.options.facts[t.hash]))
       return { error: "Missing generator facts" };
-    if (tooltips.some(
+    if (active.some(
       (tooltip) => Object.values(tooltip.text).some((translation) => translation?.text.includes("{{"))
     ))
       return { error: baseEnhancedPublishMessage };
-    if (tooltips.some((t) => isHeldSetBonus(t, this.options.facts[t.hash])))
+    if (active.some((t) => isHeldSetBonus(t, this.options.facts[t.hash])))
       return { error: setBonusHoldMessage };
     const now = this.options.now();
-    const exported = exportLegacy(tooltips, now, this.options.facts, aliases);
+    let exported;
+    try {
+      exported = exportWithInactiveMoves(tooltips, now, this.options.facts, aliases, moves);
+    } catch (error62) {
+      throw new ConsumerOutputRejected(String(error62));
+    }
     const unlowered = unloweredEntry(exported);
     if (unlowered !== void 0)
       return { error: `The export of tooltip ${unlowered} still holds unlowered markup` };
@@ -27314,6 +27624,7 @@ var Publisher = class {
     }
     const outcomes = [];
     const tooltips = [];
+    const moves = this.movesAt(tree);
     for (const m of members2) {
       const stored = (path) => {
         const value2 = this.read(tree, path);
@@ -27331,6 +27642,10 @@ var Publisher = class {
       }
       if (resolveAlias(m.hash, aliases) !== m.hash) {
         outcomes.push({ hash: m.hash, status: "alias" });
+        continue;
+      }
+      if (await hasUnpublishedInactiveMove(m.hash, snapshot, pushed[m.hash], aliases, moves)) {
+        outcomes.push({ hash: m.hash, status: "stale", reason: unreviewedInactiveMessage });
         continue;
       }
       const activation = activate({ base: m.base, current, proposed: m.proposed });
@@ -27363,7 +27678,7 @@ var Publisher = class {
     for (const tooltip of tooltips)
       entries.push({
         hash: tooltip.hash,
-        digest: await publishableHash(tooltip, aliases),
+        digest: await inactivePublishableHash(tooltip, aliases, this.movesAt(tree)),
         tooltipBlob: this.git.writeBlob(json3(tooltip))
       });
     return {
@@ -27379,19 +27694,24 @@ var Publisher = class {
    * stamped rule keeps current's stamps in RECORD, so live takes them too and equals a manual
    * publish of the activated tooltip (CONSUMER OUTPUT byte identity). Content always comes from
    * the proposal (a clean activation has the proposal's content in every non-translation changed
-   * field); translations already match (Q4 takes the upcoming entry whole). `current` is the
+   * field); translations take the upcoming entry, then source stamps are bounded against final
+   * English exactly as in activation. `current` is the
    * saved tooltip at the snapshot the claim validated (S, equal to S' outside schedule/).
    */
   composeMember(m, snapshot, current, pushed) {
-    const result = compose({ hash: m.hash, base: m.base, proposed: m.proposed, snapshot, pushed });
+    const result = compose(
+      { hash: m.hash, base: m.base, proposed: m.proposed, snapshot, pushed },
+      false
+    );
     if (result.status === "stale") return result;
     const activation = activate({ base: m.base, current, proposed: m.proposed });
-    if (!activation.ok) return result;
     let tooltip = result.tooltip;
-    for (const field of result.changed)
-      if (field === "text.en" || field === "bungieSnapshot")
-        tooltip = withField(tooltip, activation.tooltip, field);
-    return { ...result, tooltip };
+    if (activation.ok) {
+      for (const field of result.changed)
+        if (field === "text.en" || field === "bungieSnapshot")
+          tooltip = withField(tooltip, activation.tooltip, field);
+    }
+    return { ...result, tooltip: boundTranslationSources(tooltip) };
   }
   /** S' for a batch this opId already claimed: the oldest commit of the head's claimed run. */
   claimCommit(batchId, opId) {
@@ -27660,12 +27980,18 @@ var Publisher = class {
     const sandboxPointers = sandboxPointersSchema.safeParse(
       this.read(t, sandboxPointersPath)
     ).data;
+    let inactiveMoves;
+    try {
+      if (t[inactiveMovesPath]) inactiveMoves = this.movesAt(t);
+    } catch {
+    }
     const bundle = {
       sourceCommit: h,
       generatedAt: new Date(this.options.now()).toISOString(),
       tooltips,
       permissions: permissionsSchema.parse(this.read(t, "config/permissions.json")),
       pushed: pushedSchema.parse(this.read(t, "live/pushed.json")),
+      ...inactiveMoves ? { inactiveMoves } : {},
       ...sandboxPointers && Object.keys(sandboxPointers.pointers).length ? { sandboxPointers } : {},
       publishQueue,
       ...scheduledQueue.length ? { scheduledQueue } : {}

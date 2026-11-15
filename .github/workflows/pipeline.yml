@@ -4,7 +4,7 @@ on:
   push:
     branches: [editor-data]
     # Project configs are built by exports.yml (data site only), never by the publish pipeline.
-    paths-ignore: ['exports/**']
+    paths-ignore: ['exports/**', 'glossary/**']
 
 permissions:
   contents: write
