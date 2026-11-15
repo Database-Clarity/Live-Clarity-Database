@@ -3070,12 +3070,12 @@ var $ZodE164 = /* @__PURE__ */ $constructor("$ZodE164", (inst, def) => {
   $ZodStringFormat.init(inst, def);
 });
 var CC_SANITIZE = /[- ]/g;
-function isLuhnAlgo(digits) {
-  let length = digits.length;
+function isLuhnAlgo(digits2) {
+  let length = digits2.length;
   let bit = 1;
   let sum = 0;
   while (length) {
-    const value = digits.charCodeAt(--length) - 48;
+    const value = digits2.charCodeAt(--length) - 48;
     bit ^= 1;
     sum += bit ? [0, 2, 4, 6, 8, 1, 3, 5, 7, 9][value] : value;
   }
@@ -5071,17 +5071,17 @@ var recursive = /* @__PURE__ */ new WeakMap();
 var NONE = 0;
 var ASSUMED = 1;
 var PROVEN = 2;
-function isRecursive(inst, stack, resolve) {
+function isRecursive(inst, stack2, resolve) {
   const cached2 = recursive.get(inst);
   if (cached2 !== void 0)
     return cached2 ? PROVEN : NONE;
-  if (stack.has(inst))
+  if (stack2.has(inst))
     return PROVEN;
-  stack.add(inst);
+  stack2.add(inst);
   let result = NONE;
   const check2 = (child) => {
     if (result !== PROVEN && child?._zod) {
-      const answer = isRecursive(child, stack, resolve);
+      const answer = isRecursive(child, stack2, resolve);
       if (answer > result)
         result = answer;
     }
@@ -5092,7 +5092,7 @@ function isRecursive(inst, stack, resolve) {
       const desc = Object.getOwnPropertyDescriptor(sh, key);
       if (spread && !desc.enumerable)
         continue;
-      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve) : NONE;
+      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack2, resolve) : NONE;
       if (child > answer)
         answer = child;
     }
@@ -5157,7 +5157,7 @@ function isRecursive(inst, stack, resolve) {
     // `$ZodLazy` caches its inner on the def, so a resolved edge is followed exactly
     case "lazy": {
       const inner = def._cachedInner ?? (resolve ? inst._zod.innerType : void 0);
-      merge2(inner ? isRecursive(inner, stack, false) : ASSUMED);
+      merge2(inner ? isRecursive(inner, stack2, false) : ASSUMED);
       break;
     }
     // a leaf by choice: `parts` are regex fragments, not data positions
@@ -5200,7 +5200,7 @@ function isRecursive(inst, stack, resolve) {
       }
     }
   }
-  stack.delete(inst);
+  stack2.delete(inst);
   return settle(inst, result);
 }
 function settle(inst, answer) {
@@ -9357,8 +9357,8 @@ function ko_default() {
 var capitalizeFirstCharacter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
-function getUnitTypeFromNumber(number4) {
-  const abs = Math.abs(number4);
+function getUnitTypeFromNumber(number5) {
+  const abs = Math.abs(number5);
   const last = abs % 10;
   const last2 = abs % 100;
   if (last2 >= 11 && last2 <= 19 || last === 0)
@@ -20149,6 +20149,321 @@ var elementTagNames = [
   "prismatic"
 ];
 var taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
+
+// packages/core/src/languageCodes.ts
+var languages2 = [
+  "en",
+  "de",
+  "es",
+  "es-mx",
+  "fr",
+  "it",
+  "ja",
+  "ko",
+  "pl",
+  "pt-br",
+  "ru",
+  "zh-chs",
+  "zh-cht"
+];
+
+// packages/core/src/languages.ts
+var langSchema = external_exports.enum(languages2);
+
+// packages/core/src/legacyStats.ts
+var statNames = [
+  "Aim Assist",
+  "Airborne",
+  "Blast Radius",
+  "Charge Draw",
+  "Firing Delay",
+  "Handling",
+  "Damage",
+  "PVE Damage",
+  "PVP Damage",
+  "Range",
+  "Reload",
+  "Recoil Direction",
+  "Stability",
+  "Zoom",
+  "Ready",
+  "Stow",
+  "ADS",
+  "Guard Charge Rate",
+  "Guard Efficiency",
+  "Guard Endurance",
+  "Guard Resistance"
+];
+var weaponTypes2 = [
+  "AR",
+  "Bow",
+  "Fusion",
+  "GL",
+  "Glaive",
+  "HC",
+  "Heavy GL",
+  "LFR",
+  "LMG",
+  "Pulse",
+  "Rocket",
+  "Scout",
+  "Shotgun",
+  "Sidearm",
+  "SMG",
+  "Sniper",
+  "Sword",
+  "Trace",
+  "Grenade",
+  "Melee",
+  "Super"
+];
+var modifiers = external_exports.object({
+  multiplier: external_exports.array(external_exports.number().finite()).optional(),
+  stat: external_exports.array(external_exports.number().finite()).optional()
+}).strict();
+var statSchema = external_exports.object({
+  weaponTypes: external_exports.array(external_exports.enum(weaponTypes2)).optional(),
+  active: modifiers.optional(),
+  passive: modifiers.optional()
+}).strict();
+var legacyStatsSchema = external_exports.partialRecord(external_exports.enum(statNames), external_exports.array(statSchema));
+
+// packages/core/src/legacy.ts
+var hashSchema = external_exports.number().int().min(0).max(4294967295);
+var trackerEntrySchema = external_exports.object({
+  lastUpdate: external_exports.number().int().nonnegative(),
+  updatedBy: external_exports.string().optional()
+}).strict();
+var legacyMetadataSchema = external_exports.object({
+  uploadedBy: external_exports.string().optional(),
+  lastUpload: external_exports.number().int().nonnegative().optional(),
+  inLiveDatabase: external_exports.boolean().optional(),
+  uploadToLive: external_exports.boolean().optional(),
+  updateTracker: external_exports.object({
+    descriptions: external_exports.partialRecord(langSchema, trackerEntrySchema)
+  }).strict().optional()
+}).strict();
+var legacyPerkSchema = legacyMetadataSchema.extend({
+  hash: hashSchema,
+  name: external_exports.string(),
+  type: external_exports.string(),
+  itemHash: hashSchema.optional(),
+  itemName: external_exports.string().optional(),
+  editor: external_exports.partialRecord(langSchema, external_exports.object({
+    main: external_exports.string(),
+    secondary: external_exports.string()
+  }).strict()),
+  updateTracker: external_exports.object({
+    descriptions: external_exports.partialRecord(langSchema, trackerEntrySchema),
+    stats: trackerEntrySchema.optional()
+  }).strict().optional(),
+  stats: legacyStatsSchema.optional(),
+  importStatsFrom: hashSchema.optional(),
+  duration: external_exports.array(external_exports.number().finite()).optional(),
+  activationCondition: external_exports.string().optional()
+}).strict();
+var legacyDatabaseSchema = external_exports.object({
+  perks: external_exports.record(external_exports.string().regex(/^(0|[1-9]\d*)$/), legacyPerkSchema),
+  databaseSettings: external_exports.object({
+    folders: external_exports.record(external_exports.string(), external_exports.array(external_exports.object({
+      name: external_exports.string(),
+      has: external_exports.array(hashSchema),
+      hash: hashSchema.optional()
+    }).strict())),
+    enhancedPerks: external_exports.record(external_exports.string(), external_exports.object({
+      name: external_exports.string(),
+      linkedWith: hashSchema
+    }).strict()),
+    // Accept retired settings as inert input; malformed labels cannot block migration.
+    weaponTypeLabels: external_exports.unknown().optional()
+  }).strict()
+}).strict().superRefine(({ perks }, context) => {
+  for (const [hash2, perk] of Object.entries(perks)) {
+    if (Number(hash2) !== perk.hash) {
+      context.addIssue({ code: "custom", path: ["perks", hash2, "hash"], message: "Hash must match record key" });
+    }
+  }
+});
+
+// packages/core/src/compendium/types.ts
+var compendiumStyleSchema = external_exports.object({
+  // Carried on runs so concatenated source cells retain their own line alignment.
+  textAlign: external_exports.enum(["left", "center", "right", "justify", "start", "end"]).optional(),
+  color: external_exports.string().regex(/^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/).optional(),
+  bold: external_exports.literal(true).optional(),
+  italic: external_exports.literal(true).optional(),
+  underline: external_exports.literal(true).optional(),
+  strike: external_exports.literal(true).optional(),
+  sizePt: external_exports.number().positive().max(200).optional(),
+  href: external_exports.string().url().refine((value) => /^(https?:|mailto:)/.test(value)).optional()
+}).strict();
+var compendiumRunSchema = compendiumStyleSchema.extend({ text: external_exports.string() });
+var compendiumCellSchema = external_exports.object({
+  plain: external_exports.string(),
+  runs: external_exports.array(compendiumRunSchema),
+  // The cell's own background in the source sheet. Display only: never part of the cell's
+  // identity (sameCell ignores it) and never stored in a link snapshot.
+  background: external_exports.string().regex(/^#[0-9a-f]{6}$/).optional()
+}).strict().refine(
+  (cell) => cell.runs.map((run) => run.text).join("") === cell.plain,
+  "Compendium plain text must match its runs"
+);
+var compendiumTabSchema = external_exports.object({ gid: external_exports.string().regex(/^-?\d+$/), name: external_exports.string() });
+var compendiumPositionSchema = external_exports.object({
+  row: external_exports.number().int().min(1).max(2e4),
+  col: external_exports.number().int().min(0).max(255)
+});
+var compendiumGridCellSchema = compendiumPositionSchema.extend({
+  rowSpan: external_exports.number().int().min(1).max(256).optional(),
+  colSpan: external_exports.number().int().min(1).max(256).optional(),
+  cell: compendiumCellSchema
+});
+var compendiumCellOffsetSchema = external_exports.object({
+  dRow: external_exports.number().int().min(-2e4).max(2e4),
+  dCol: external_exports.number().int().min(-255).max(255)
+}).strict();
+var compendiumCellOffsetsSchema = external_exports.array(compendiumCellOffsetSchema).min(1).max(256).refine(
+  (cells) => new Set(cells.map(({ dRow, dCol }) => `${dRow}:${dCol}`)).size === cells.length,
+  "Description cells must be distinct"
+);
+var compendiumRowSchema = external_exports.object({
+  name: external_exports.string(),
+  nameNorm: external_exports.string(),
+  section: external_exports.string().optional(),
+  rowIndex: external_exports.number().int().positive(),
+  anchor: compendiumPositionSchema.optional(),
+  cell: compendiumCellSchema
+});
+var compendiumSheetSchema = external_exports.object({
+  gid: external_exports.string().regex(/^-?\d+$/),
+  name: external_exports.string(),
+  rows: external_exports.array(compendiumRowSchema),
+  grid: external_exports.array(compendiumGridCellSchema).optional()
+});
+var compendiumDataSchema = external_exports.object({
+  fetchedAt: external_exports.string().datetime({ offset: true }),
+  tabs: external_exports.array(compendiumSheetSchema)
+});
+var compendiumLinkSchema = external_exports.object({
+  gid: external_exports.string().regex(/^-?\d+$/),
+  rowKey: external_exports.string().min(1),
+  section: external_exports.string().optional(),
+  snapshot: compendiumCellSchema,
+  snapshotAt: external_exports.string().datetime({ offset: true }),
+  cells: compendiumCellOffsetsSchema.optional(),
+  sourceAnchor: compendiumPositionSchema.optional(),
+  parts: external_exports.array(external_exports.string()).optional(),
+  setBonusPieces: external_exports.union([external_exports.literal(2), external_exports.literal(4)]).optional()
+}).strict();
+
+// packages/core/src/schemas.ts
+var timestampSchema = external_exports.string().datetime({ offset: true });
+var numberId = external_exports.number().int().positive().max(Number.MAX_SAFE_INTEGER);
+var numberMapSchema = external_exports.object({
+  ids: external_exports.array(numberId),
+  next: numberId,
+  retired: external_exports.record(
+    external_exports.string().regex(/^[1-9]\d*$/),
+    external_exports.union([
+      external_exports.string(),
+      external_exports.null(),
+      external_exports.object({
+        value: external_exports.string(),
+        fallback: external_exports.array(langSchema),
+        variables: external_exports.record(external_exports.string(), external_exports.string()).optional()
+      }).strict()
+    ])
+  )
+}).strict().superRefine((map2, ctx) => {
+  const all = [...map2.ids, ...Object.keys(map2.retired).map(Number)];
+  if (new Set(all).size !== all.length || all.some((id2) => !Number.isSafeInteger(id2) || id2 >= map2.next))
+    ctx.addIssue({
+      code: "custom",
+      message: "Number ids must be unique, disjoint, and below next."
+    });
+});
+var langTextSchema = external_exports.object({
+  text: external_exports.string(),
+  updatedAt: timestampSchema,
+  updatedBy: external_exports.string(),
+  sourceUpdatedAt: timestampSchema.optional(),
+  numbers: numberMapSchema.optional()
+}).strict();
+var tooltipSchema = external_exports.object({
+  hash: hashSchema,
+  custom: external_exports.object({ name: external_exports.string(), categoryId: external_exports.string() }).strict().optional(),
+  text: external_exports.partialRecord(langSchema, langTextSchema),
+  associated: external_exports.array(hashSchema).refine((values) => new Set(values).size === values.length, "Associations must be unique"),
+  compendium: compendiumLinkSchema.optional(),
+  bungieSnapshot: external_exports.object({
+    description: external_exports.string(),
+    snapshotAt: timestampSchema
+  }).strict().optional(),
+  archive: external_exports.object({
+    removedAt: timestampSchema,
+    lastSeen: external_exports.object({
+      name: external_exports.string(),
+      categoryId: external_exports.string(),
+      icon: external_exports.string().optional(),
+      manifestVersion: external_exports.string()
+    }).strict(),
+    successor: hashSchema.optional(),
+    note: external_exports.string().optional()
+  }).strict().optional(),
+  legacy: legacyMetadataSchema.optional()
+}).strict().superRefine((tooltip, ctx) => {
+  for (const [lang, entry] of Object.entries(tooltip.text))
+    if (entry.numbers !== void 0 && (lang !== "en" || tooltip.hash >= 1 && tooltip.hash <= 3))
+      ctx.addIssue({
+        code: "custom",
+        path: ["text", lang, "numbers"],
+        message: "Number maps belong only to tooltip English."
+      });
+});
+var permissionsSchema = external_exports.object({
+  users: external_exports.record(
+    external_exports.string().regex(/^[1-9]\d*$/),
+    external_exports.object({
+      login: external_exports.string().min(1),
+      role: external_exports.enum(["maintainer", "editor", "trial", "translator"]),
+      languages: external_exports.array(langSchema).optional()
+    }).strict()
+  ),
+  /**
+   * Export partners (spec section 4): numeric GitHub id -> the export projects that account may
+   * edit. Optional and additive, so files without it parse as before. A user listed only here
+   * has the `partner` role: read-only, published data only, and nothing in `users` grants it.
+   */
+  partners: external_exports.record(
+    external_exports.string().regex(/^[1-9]\d*$/),
+    external_exports.object({
+      login: external_exports.string().min(1).max(39),
+      projects: external_exports.array(external_exports.string().regex(/^[a-z][a-z0-9-]{1,31}$/)).min(1).max(40).refine((list) => new Set(list).size === list.length, "Duplicate project")
+    }).strict()
+  ).optional()
+}).strict();
+var pushedSchema = external_exports.record(
+  external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((value) => Number(value) <= 4294967295),
+  external_exports.string().regex(/^[0-9a-f]{64}$/)
+);
+
+// packages/core/src/markup/syntax.ts
+var markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
+var markupEmpty = ["background", "breakSpaces", "bold"];
+var markupLineClasses = [...markupColors, ...markupEmpty];
+var markupRetiredColors = ["blue", "green", "purple"];
+var markupRetiredLineStyles = ["center", "breakSpaces", "background"];
+var markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles];
+
+// packages/core/src/markup/lines.ts
+var inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
+var elements = new Set(elementTagNames);
+var markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
+
+// packages/core/src/markup/numberSlots.ts
+var digits = String.raw`(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\??`;
+var number4 = new RegExp(`[-+]?${digits}`, "y");
+var stack = new RegExp(`[-+]?${digits}%?(?: ?\\| ?(?:${digits}%?|\u2026|\\.\\.\\.|\\?))+`, "y");
 
 // packages/export/src/legacy.ts
 var legacyPresets = [
