@@ -220,12 +220,18 @@ async function loadManifest(file) {
     try {
       const index = await (await fetch(`${bungie}/Platform/Destiny2/Manifest/`)).json();
       const version = index.Response?.version;
-      const path = index.Response?.jsonWorldComponentContentPaths?.en?.DestinyInventoryItemDefinition;
-      if (!version || !path?.startsWith("/"))
-        throw new Error("Manifest index without inventory items");
-      const response = await fetch(`${bungie}${path}`);
-      if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`);
-      return { version, inventoryItem: await response.json() };
+      const paths = index.Response?.jsonWorldComponentContentPaths?.en;
+      const tables = [paths?.DestinyInventoryItemDefinition, paths?.DestinySandboxPerkDefinition];
+      if (!version || !tables.every((path) => path?.startsWith("/")))
+        throw new Error("Manifest index without inventory items or sandbox perks");
+      const [inventoryItem, sandboxPerk] = await Promise.all(
+        tables.map(async (path) => {
+          const response = await fetch(`${bungie}${path}`);
+          if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`);
+          return await response.json();
+        })
+      );
+      return { version, inventoryItem, sandboxPerk };
     } catch (error) {
       console.log(`Bungie manifest attempt ${attempt + 1} failed: ${error.message}`);
     }
@@ -339,7 +345,7 @@ async function runLegacy(options) {
     );
     return report("manifest failed: nothing deployed");
   }
-  const identical = engine.bungieIdentical(input, manifest.inventoryItem).map(Number).sort((a, b) => a - b);
+  const identical = engine.bungieIdentical(input, manifest.inventoryItem, manifest.sandboxPerk).map(Number).sort((a, b) => a - b);
   const vocab = options.vocab && existsSync2(options.vocab) ? readJson(options.vocab).presets ?? {} : {};
   const previousFiles = new Map((effective?.pin.files ?? []).map((file) => [file.name, file]));
   const files = [];
@@ -438,7 +444,7 @@ async function captureVocab(options) {
   );
   const manifest = await loadManifest(options["manifest-file"]);
   if (!manifest) throw new Error("Bungie manifest fetch failed");
-  const identical = engine.bungieIdentical(input, manifest.inventoryItem).map(Number);
+  const identical = engine.bungieIdentical(input, manifest.inventoryItem, manifest.sandboxPerk).map(Number);
   const presets = {};
   for (const built of buildSeven(engine, input, identical)) {
     if (!built.markers) throw new Error(`${built.name}: ${built.error}`);

@@ -19802,7 +19802,7 @@ var classNameList = {
   withText: [...textColoring, "background", "bold"],
   empty: [...images, ...empty],
   withExtraFunctionality: ["link", "title", "formula"],
-  extra: ["enhancedArrow", "spacer"],
+  extra: ["arrow", "enhancedArrow", "spacer"],
   table
 };
 var allClassNames = Object.values(classNameList).flat();
@@ -20138,6 +20138,18 @@ var canonicalWeaponType = (name, legacy = false) => {
 };
 var legacyNames = weaponTypes.map((legacyName) => ({ legacyName, name: canonicalWeaponType(legacyName, true) }));
 
+// packages/core/src/markup/elementTags.ts
+var elementTagNames = [
+  "kinetic",
+  "arc",
+  "solar",
+  "void",
+  "stasis",
+  "strand",
+  "prismatic"
+];
+var taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
+
 // packages/export/src/legacy.ts
 var legacyPresets = [
   "clarity",
@@ -20204,6 +20216,7 @@ var iconSymbols = [
 ];
 var symbolIds = [
   ...iconSymbols,
+  "arrow",
   "enhancedArrow",
   "bold",
   "yellow",
@@ -20254,6 +20267,8 @@ var linksRule = external_exports.discriminatedUnion("mode", [
   external_exports.strictObject({ mode: external_exports.literal("replace"), pattern: external_exports.tuple([plain, plain, plain, plain]) })
 ]);
 var dataSchema = external_exports.strictObject({
+  /** Add the built-in feature showcase under reserved id -1. Absent means off. */
+  includeShowcase: external_exports.boolean().optional(),
   /** Item categories whose tooltips are included (generator category ids). */
   categories: uniqueList(categoryId, configLimits.categories),
   /** Item categories whose sandbox perks are included. */
@@ -20289,7 +20304,15 @@ var styleFile = external_exports.strictObject({
 });
 var legacyFile = external_exports.strictObject({
   ...fileBase,
-  preset: external_exports.enum(legacyPresets)
+  preset: external_exports.enum(legacyPresets),
+  arrowFallback: external_exports.boolean().optional()
+}).superRefine((file2, ctx) => {
+  if (file2.arrowFallback !== void 0 && file2.preset !== "clarityV2")
+    ctx.addIssue({
+      code: "custom",
+      path: ["arrowFallback"],
+      message: "Only clarityV2 can change arrow formatting"
+    });
 });
 var fileSchema = external_exports.union([styleFile, legacyFile]).superRefine((file2, ctx) => {
   if (!("shape" in file2) || file2.shape === "lines") return;

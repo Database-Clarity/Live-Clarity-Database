@@ -79,7 +79,7 @@ var classNameList = {
   withText: [...textColoring, "background", "bold"],
   empty: [...images, ...empty],
   withExtraFunctionality: ["link", "title", "formula"],
-  extra: ["enhancedArrow", "spacer"],
+  extra: ["arrow", "enhancedArrow", "spacer"],
   table
 };
 var allClassNames = Object.values(classNameList).flat();
@@ -809,8 +809,12 @@ var getLineClasses = (line, classNamesArray) => {
 
 // packages/export/src/converter/converterFunctions/lineConverter.ts
 var convertLinesContent = (line, tiles) => {
-  const splittedLine = line.split(/(<.+?\/>|🡅)/g).filter((line2) => line2 !== "");
+  const splittedLine = line.split(/(<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>|🡅)/g).filter((line2) => line2 !== "");
   return splittedLine.reduce((acc, text) => {
+    if (text === "<arrow/>") {
+      acc.push({ classNames: ["arrow"] });
+      return acc;
+    }
     if (text === "\u{1F845}") {
       acc.push({
         text: "\u{1F845}",
@@ -827,7 +831,11 @@ var convertLinesContent = (line, tiles) => {
     }
     const { empty: empty2, withText } = classNameList;
     if (withText.includes(wrappersName)) {
-      acc.push({
+      if (text.includes("<arrow/>")) {
+        const inner = text.replace(new RegExp(`^<${wrappersName} | />$`, "g"), "");
+        for (const part of inner.split(/(<arrow\/>)/).filter(Boolean))
+          acc.push(part === "<arrow/>" ? { classNames: [wrappersName, "arrow"] } : { text: part, classNames: [wrappersName] });
+      } else acc.push({
         text: text.replace(new RegExp(`<${wrappersName} | />`, "g"), ""),
         classNames: [wrappersName]
       });
@@ -1177,6 +1185,144 @@ var databaseConverter = (converterType, database, identical) => {
   return output;
 };
 
+// packages/core/src/markup/elementTags.ts
+var elementTagNames = [
+  "kinetic",
+  "arc",
+  "solar",
+  "void",
+  "stasis",
+  "strand",
+  "prismatic"
+];
+var inlineTokens = /<.+?\/>/g;
+var taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
+function elementTagToken(token) {
+  const match = taggedToken.exec(token);
+  if (!match || !match[2].trim()) return void 0;
+  return { element: match[1], text: match[2] };
+}
+function findElementTags(text) {
+  if (!text.includes(" />")) return [];
+  const found = [];
+  for (const match of text.matchAll(inlineTokens)) {
+    const tag = elementTagToken(match[0]);
+    if (tag) found.push({ ...tag, from: match.index, to: match.index + match[0].length });
+  }
+  return found;
+}
+function lowerElementTags(text) {
+  return lower(text, "", "");
+}
+var unsafeTint = /[#${}]|\/\*|\*\/|\/\/|[/*]$/;
+function lower(text, open, close) {
+  const tags = findElementTags(text);
+  if (!tags.length) return text;
+  let lowered = "";
+  let at = 0;
+  for (const tag of tags) {
+    const [, lead, body, trail] = /^(\s*)([^]*?)(\s*)$/.exec(tag.text);
+    const [o, c] = unsafeTint.test(body) ? ["", ""] : [open, close];
+    lowered += `${text.slice(at, tag.from)}<${tag.element}/>${lead}${o}${body}${c}${trail}`;
+    at = tag.to;
+  }
+  return lowered + text.slice(at);
+}
+var elementTextOpen = "\uE000";
+var elementTextClose = "\uE001";
+var elementTextMarkers = /[\uE000\uE001]/g;
+var marked = /* @__PURE__ */ new Map();
+function markElementTags(text) {
+  let result = marked.get(text);
+  if (result === void 0) {
+    result = lower(text, elementTextOpen, elementTextClose);
+    if (marked.size >= 256) marked.delete(marked.keys().next().value);
+    marked.set(text, result);
+  }
+  return result;
+}
+
+// packages/core/src/markup/braces.ts
+var enhancedArrowMarkup = "<enhanced/>";
+var legacyEnhancedArrow = "#e";
+var holderName = (word) => `Zb${word.length}w${word}`;
+var delimited = /#\{([a-zA-Z0-9]+)\}|<enhanced\/>/g;
+function lowerDelimitedMarkup(text) {
+  if (!text.includes("#{") && !text.includes(enhancedArrowMarkup)) return text;
+  const lines2 = text.split("\n");
+  let changed = false;
+  for (let index = 0; index < lines2.length; index++) {
+    const line = lines2[index];
+    if (!line.includes("#{") && !line.includes(enhancedArrowMarkup)) continue;
+    const declarations = [];
+    let out = "";
+    let at = 0;
+    for (const match of line.matchAll(delimited)) {
+      if (match.index < at) continue;
+      const legacy = match[1] === void 0 ? legacyEnhancedArrow : `#${match[1]}`;
+      const end = match.index + match[0].length;
+      const word = /^[a-zA-Z0-9]+/.exec(line.slice(end))?.[0];
+      out += line.slice(at, match.index) + legacy;
+      at = end;
+      if (word === void 0) continue;
+      for (const part of word === "empty" ? ["empt", "y"] : [word]) {
+        out += `#${holderName(part)}`;
+        declarations.push(`var ${holderName(part)} = ${part}`);
+      }
+      at = end + word.length;
+    }
+    if (out === "" && at === 0) continue;
+    changed = true;
+    out += line.slice(at);
+    lines2[index] = declarations.length ? [out, ...new Set(declarations)].join("\n") : out;
+  }
+  return changed ? lines2.join("\n") : text;
+}
+function lowerConsumerMarkup(text, arrow) {
+  const lowered = lowerDelimitedMarkup(lowerElementTags(text));
+  return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
+}
+
+// packages/export/src/elementTags.ts
+function lowerInput(input, arrow) {
+  const lower2 = (text) => lowerConsumerMarkup(text, arrow);
+  let perks;
+  for (const [hash, perk] of Object.entries(input.perks)) {
+    if (!("editor" in perk) || !perk.editor) continue;
+    let editor;
+    for (const [language, text] of Object.entries(perk.editor)) {
+      if (!text) continue;
+      const main = lower2(text.main);
+      const secondary = lower2(text.secondary);
+      if (main === text.main && secondary === text.secondary) continue;
+      editor ??= { ...perk.editor };
+      editor[language] = { ...text, main, secondary };
+    }
+    if (!editor) continue;
+    perks ??= { ...input.perks };
+    perks[hash] = { ...perk, editor };
+  }
+  return perks ? { ...input, perks } : input;
+}
+
+// packages/core/src/setBonus.ts
+var setBonusCategoryId = "armor-set-bonus";
+var setBonusLegacyType = "Armor Set Bonus";
+var isSetBonusType = (type) => type === setBonusCategoryId || type === setBonusLegacyType;
+
+// packages/export/src/setBonus.ts
+function withSetBonusType(perks) {
+  let renamed;
+  for (const [hash, perk] of Object.entries(perks)) {
+    const type = perk.type;
+    if (type === setBonusLegacyType || !isSetBonusType(type)) continue;
+    renamed ??= { ...perks };
+    renamed[hash] = { ...perk, type: setBonusLegacyType };
+  }
+  return renamed ?? perks;
+}
+var isSetBonusPerk = (perk) => isSetBonusType(perk?.type);
+
 // packages/export/src/legacy.ts
 var legacyPresets = [
   "clarity",
@@ -1194,21 +1340,32 @@ var deployedLegacyPresets = legacyPresets.filter(
 var legacyFileName = (preset) => `${preset}.json`;
 var encoder = new TextEncoder();
 var isLegacyPreset = (preset) => legacyPresets.includes(preset) && Object.hasOwn(converterSettings, preset);
-function bungieIdentical(input, inventoryItem) {
-  const lookup = expandAliases(input.perks);
+function bungieIdentical(input, inventoryItem, sandboxPerk) {
+  const lookup = expandAliases(lowerInput(input).perks);
   const hashes = [];
   for (const hash of Object.keys(input.perks)) {
     const perk = lookup[hash];
     if (perk === void 0) continue;
     const english = perk.editor.en?.main.trim() || "";
-    if (english === inventoryItem[hash]?.displayProperties?.description) hashes.push(hash);
+    if (english === inventoryItem[hash]?.displayProperties?.description || isSetBonusPerk(perk) && english === sandboxPerk?.[hash]?.displayProperties?.description) {
+      hashes.push(hash);
+    }
   }
   return hashes;
 }
 function buildLegacy(input, preset, options = {}) {
   if (!isLegacyPreset(preset)) throw new Error(`Unknown legacy preset: ${String(preset)}`);
   const identical = new Set([...options.identical ?? []].map(String));
-  const output = databaseConverter(preset, input.perks, identical);
+  const output = databaseConverter(
+    preset,
+    withSetBonusType(
+      lowerInput(
+        input,
+        preset === "clarityV2" ? options.arrowFallback ? "fallback" : void 0 : "legacy"
+      ).perks
+    ),
+    identical
+  );
   const text = customJsonStringify(output, ["stat", "multiplier", "weaponTypes", "classNames"]);
   return encoder.encode(text);
 }
@@ -1291,6 +1448,7 @@ var iconSymbols = [
 ];
 var symbolIds = [
   ...iconSymbols,
+  "arrow",
   "enhancedArrow",
   "bold",
   "yellow",
@@ -1311,6 +1469,76 @@ var reservedIds = /* @__PURE__ */ new Set(["_build", "changelog", "index", "api"
 var isValidId = (id) => idPattern.test(id) && !reservedIds.has(id) && !/^v\d+$/.test(id);
 var isLegacyFile = (file) => legacyPresets.includes(file.preset);
 
+// packages/core/src/markup/showcase.ts
+var showcaseId = "-1";
+var showcaseName = "Feature showcase";
+var showcaseText = `var e = \u{1F845}
+var amount = 10
+var optional = empty
+title Showcase (
+A title adds a definition on hover.
+)
+<bold Bold text /> can cover part of a line.
+<bold/>This whole line is bold.
+<yellow Exotic names use yellow text. />
+<pve This text is PvE-only. />
+<pvp [This text is PvP-only.] />
+PvE and PvP values can share a line: <pve 10 /> <pvp [5] />
+10 <pvp [5] /> is a value with a PvP override.
+Values per Stack: <pve 10|20|30 />. Pipes separate each Stack's value.
+{{Base perks use this text.}{Enhanced perks replace the base text with this line.}}
+A variable supplies #amount; math doubles it to \${#amount * 2}.
+Braces end a variable's name, so letters can follow it: #{amount}px.
+An empty variable writes nothing here: #optional
+<title Hover for a definition [Showcase] />
+<link This text opens a web link [https://d2clarity.com] />
+
+\u2022 A bullet starts each list line.
+\u2022 The blank line above this list adds a gap.
+<kinetic/>Kinetic damage icon.
+<arc/>Arc damage icon.
+<solar/>Solar damage icon.
+<void/>Void damage icon.
+<stasis/>Stasis damage icon.
+<strand/>Strand damage icon.
+<prismatic/>Prismatic subclass icon.
+30%<arrow/>33%: leads to or becomes.
+<primary/>Primary ammo icon.
+<special/>Special ammo icon.
+<heavy/>Heavy ammo icon.
+<barrier/>Barrier champion icon.
+<overload/>Overload champion icon.
+<unstoppable/>Unstoppable champion icon.
+<hunter/>Hunter class icon.
+<titan/>Titan class icon.
+<warlock/>Warlock class icon.
+<kinetic Kinetic-tagged text is tinted in the editor. />
+<arc Arc-tagged text is tinted in the editor. />
+<solar Solar-tagged text is tinted in the editor. />
+<void Void-tagged text is tinted in the editor. />
+<stasis Stasis-tagged text is tinted in the editor. />
+<strand Strand-tagged text is tinted in the editor. />
+<prismatic Prismatic-tagged text is tinted in the editor. />
+Exports apply the symbol settings without the text tint.
+enhanced (
+var d = 5
+Only enhanced perks show this section.
+<enhanced/>\${10+#{d}} is the enhanced value: base 10 plus 5.
+)
+export Showcase (
+An export shares this text with other tooltips.
+)
+export hidden Hidden (
+This hidden export is shared without being drawn here.
+)
+// Comments are notes that do not render.
+/* Block comments do not render either. */`;
+var showcaseGlobals = {
+  variables: "",
+  titles: "",
+  type: "Weapon Trait Enhanced"
+};
+
 // packages/core/src/markup/syntax.ts
 var markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
 var markupIcons = [
@@ -1329,7 +1557,8 @@ var markupIcons = [
   "unstoppable",
   "hunter",
   "titan",
-  "warlock"
+  "warlock",
+  "arrow"
 ];
 var markupEmpty = ["background", "breakSpaces", "bold"];
 var markupLineClasses = [...markupColors, ...markupEmpty];
@@ -1395,7 +1624,7 @@ function weaponSectionHeadings(text) {
 }
 
 // packages/core/src/markup/lines.ts
-var inlineToken = /<.+?\/>/;
+var inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
 function lineClasses(line, allowed, offsets) {
   const classNames = allowed.filter((name) => line.includes(`<${name}/>`));
   let cleanLine = line;
@@ -1419,33 +1648,104 @@ function markupStrayTags(text) {
     for (const segment of line.split(new RegExp(`(${inlineToken.source})`, "g"))) {
       const tags = segment.match(/<\w+/g) ?? [];
       const isToken = new RegExp(`^${inlineToken.source}$`).test(segment);
-      if (tags.length > (isToken ? 1 : 0)) stray.push(tags[0]);
+      const wrapper = /^<(\w+) /.exec(segment)?.[1] ?? "";
+      const arrows = isToken && [...markupColors, "background"].includes(wrapper) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
+      if (tags.length > (isToken ? 1 + arrows : 0)) stray.push(tags[0]);
     }
   }
   return stray;
 }
-function spans(line, titles) {
-  return line.split(new RegExp(`(${inlineToken.source}|\u{1F845})`, "g")).filter(Boolean).flatMap((text) => {
-    if (text === "\u{1F845}") return [{ text, classNames: ["enhancedArrow"] }];
-    const wrapper = text.match(/<\w+/)?.[0].slice(1);
-    if (wrapper === void 0) return [{ text }];
-    if ([...markupColors, "background", "bold"].includes(wrapper)) {
-      return [
-        { text: text.replace(new RegExp(`<${wrapper} | />`, "g"), ""), classNames: [wrapper] }
-      ];
+var elements = new Set(elementTagNames);
+var markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
+function trimMarked(text, start = true) {
+  if (!text.includes(elementTextOpen) && !text.includes(elementTextClose))
+    return start ? text.trim() : text.trimEnd();
+  const end = /[\s\uE000\uE001]*$/.exec(text)[0];
+  text = text.slice(0, text.length - end.length) + end.replace(/\s/g, "");
+  if (!start) return text;
+  const lead = /^[\s\uE000\uE001]*/.exec(text)[0];
+  return lead.replace(/\s/g, "") + text.slice(lead.length);
+}
+function markersPair(parts) {
+  let open = false;
+  for (const part of parts) {
+    if (part === elementTextOpen) {
+      if (open) return false;
+      open = true;
+    } else if (part === elementTextClose) {
+      if (!open) return false;
+      open = false;
     }
-    if ([...markupIcons, ...markupEmpty].includes(wrapper)) return [{ classNames: [wrapper] }];
-    const target = text.match(/\[.+\]/)?.[0].replace(/\[|\]/g, "");
-    const label = text.replace(/ \[.+\] \/>/g, "");
-    if (!target || !label) return [];
-    if (wrapper === "link")
-      return [{ text: label.replace("<link ", ""), link: target, classNames: ["link"] }];
-    if (wrapper === "title")
-      return [
-        { text: label.replace("<title ", ""), title: titles[target], classNames: ["title"] }
-      ];
-    return [];
-  });
+  }
+  return !open;
+}
+function spans(line, titles) {
+  const parts = line.split(markedPart);
+  const tinting = parts.length > 1 && markersPair(parts);
+  let tint;
+  let lead = -1;
+  let closed;
+  const out = [];
+  const space = (span2) => span2.text !== void 0 && !span2.classNames && !span2.text.trim();
+  for (const part of parts) {
+    if (!part) continue;
+    if (part === elementTextOpen) {
+      if (!tinting) continue;
+      closed = void 0;
+      let at = out.length - 1;
+      while (at >= 0 && space(out[at])) at--;
+      const icon = out[at];
+      const element = icon && icon.text === void 0 ? icon.classNames?.[0] : void 0;
+      tint = element && elements.has(element) ? element : void 0;
+      lead = tint ? at + 1 : -1;
+      continue;
+    }
+    if (part === elementTextClose) {
+      const last = out.at(-1);
+      closed = tint && last?.classNames?.[0] === "elementText" ? last : void 0;
+      tint = void 0;
+      lead = -1;
+      continue;
+    }
+    const text = part.replace(elementTextMarkers, "");
+    if (!text) continue;
+    for (const span2 of lineSpans(text, titles)) {
+      if (tint && span2.text !== void 0 && !span2.classNames) {
+        const spaces = lead >= 0 ? out.splice(lead).map((s) => s.text).join("") : "";
+        lead = -1;
+        out.push({ text: spaces + span2.text, classNames: ["elementText", tint] });
+      } else if (closed && space(span2)) {
+        closed.text += span2.text;
+      } else {
+        lead = -1;
+        out.push(span2);
+      }
+      closed = void 0;
+    }
+  }
+  return out;
+}
+function lineSpans(text, titles) {
+  if (text === "\u{1F845}") return [{ text, classNames: ["enhancedArrow"] }];
+  const wrapper = text.match(/<\w+/)?.[0].slice(1);
+  if (wrapper === void 0) return [{ text }];
+  if ([...markupColors, "background", "bold"].includes(wrapper)) {
+    const inner = text.replace(new RegExp(`^<${wrapper} | />$`, "g"), "");
+    if (inner.includes("<arrow/>"))
+      return inner.split(/(<arrow\/>)/).filter(Boolean).map(
+        (part) => part === "<arrow/>" ? { classNames: [wrapper, "arrow"] } : { text: part, classNames: [wrapper] }
+      );
+    return [{ text: text.replace(new RegExp(`<${wrapper} | />`, "g"), ""), classNames: [wrapper] }];
+  }
+  if ([...markupIcons, ...markupEmpty].includes(wrapper)) return [{ classNames: [wrapper] }];
+  const target = text.match(/\[.+\]/)?.[0].replace(/\[|\]/g, "");
+  const label = text.replace(/ \[.+\] \/>/g, "");
+  if (!target || !label) return [];
+  if (wrapper === "link")
+    return [{ text: label.replace("<link ", ""), link: target, classNames: ["link"] }];
+  if (wrapper === "title")
+    return [{ text: label.replace("<title ", ""), title: titles[target], classNames: ["title"] }];
+  return [];
 }
 function tableRow(line, titles) {
   const { classNames, cleanLine } = lineClasses(line, markupEmpty);
@@ -1465,11 +1765,13 @@ function tableRow(line, titles) {
         colSpan: colSpan ? Number(colSpan) : void 0,
         rowSpan: rowSpan ? -Number(rowSpan) : void 0,
         classNames: cell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => classes[char]).map((char) => classes[char]),
-        cellContent: spans(cell.replace(/\|[bchr\d-]+|\|/, "").trim(), titles).flatMap((part) => {
-          if (!part.text?.trim() && !part.classNames?.some((name) => typeof name === "string"))
-            return [];
-          return [{ text: part.text, classNames: part.classNames, title: part.title }];
-        })
+        cellContent: spans(trimMarked(cell.replace(/\|[bchr\d-]+|\|/, "")), titles).flatMap(
+          (part) => {
+            if (!part.text?.trim() && !part.classNames?.some((name) => typeof name === "string"))
+              return [];
+            return [{ text: part.text, classNames: part.classNames, title: part.title }];
+          }
+        )
       };
     })
   };
@@ -1495,10 +1797,7 @@ function parseLines(text, titles) {
     return [
       {
         classNames,
-        linesContent: spans(
-          block.includes("<breakSpaces/>") ? cleanLine.trimEnd() : cleanLine.trim(),
-          titles
-        )
+        linesContent: spans(trimMarked(cleanLine, !block.includes("<breakSpaces/>")), titles)
       }
     ];
   });
@@ -1515,14 +1814,28 @@ function scanBaseEnhanced(text, allowEmpty = false) {
     const from = text.indexOf("{{", cursor);
     if (from < 0) break;
     let pos = from + 2;
+    const braced = (at) => text[at - 1] === "#" ? /^\{[a-zA-Z0-9]+\}/.exec(text.slice(at, at + 64))?.[0].length ?? 0 : 0;
     const arm = () => {
       const begin = pos;
       while (pos < text.length && text[pos] !== "}" && !/[\r\n]/.test(text[pos])) {
         if (text.startsWith("{{", pos)) return null;
         if (text[pos] === "{") {
+          const variable = braced(pos);
+          if (variable) {
+            pos += variable;
+            continue;
+          }
           if (text[pos - 1] !== "$") return null;
-          const end2 = text.indexOf("}", pos);
-          if (end2 < 0 || /[{}\r\n]/.test(text.slice(pos + 1, end2))) return null;
+          let end2 = pos + 1;
+          for (; ; ) {
+            if (end2 >= text.length || /[\r\n]/.test(text[end2])) return null;
+            if (text[end2] === "}") break;
+            if (text[end2] === "{") {
+              const inner = braced(end2);
+              if (!inner) return null;
+              end2 += inner;
+            } else end2++;
+          }
           pos = end2 + 1;
         } else pos++;
       }
@@ -1629,7 +1942,8 @@ function resolveImports(text, globals, diagnostics) {
       }
       const name = line.match(/(?<=import) .+ (?=from)/)?.[0].trim() ?? "";
       const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
-      const source = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
+      const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
+      const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
       const imported = name === "main" || name === "secondary" ? source : extractBlocks(source ?? "", "export")[name];
       if (imported === void 0 && visible) {
         diagnostics.push({
@@ -1801,6 +2115,11 @@ function prepareNativeDocument(text, globals) {
   };
 }
 function prepareMarkup(text, globals, diagnostics, onCondition) {
+  text = lowerDelimitedMarkup(text);
+  if (globals.variables.includes("#{") || globals.variables.includes("<enhanced/>"))
+    globals = { ...globals, variables: lowerDelimitedMarkup(globals.variables) };
+  if (globals.titles.includes("#{") || globals.titles.includes("<enhanced/>"))
+    globals = { ...globals, titles: lowerDelimitedMarkup(globals.titles) };
   text = resolveImports(text, globals, diagnostics);
   const nativePairs = text.includes("{{") || globals.variables.includes("{{") || globals.titles.includes("{{");
   if (nativePairs) {
@@ -1847,8 +2166,72 @@ function prepareMarkup(text, globals, diagnostics, onCondition) {
 }
 
 // packages/core/src/markup/parse.ts
+var reservedMarker = /[\uE000\uE001]/;
+var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
 function parseMarkup(text, globals = { variables: "", titles: "" }) {
+  let reserved = false;
+  let tagged = false;
+  const clean = (source) => {
+    if (!reservedMarker.test(source)) return source;
+    reserved = true;
+    return source.replace(elementTextMarkers, "");
+  };
+  const mark = (source) => {
+    source = clean(source);
+    const marked2 = markElementTags(source);
+    if (marked2 !== source) tagged = true;
+    return lowerDelimitedMarkup(marked2);
+  };
+  const tinted = parseWith(text, globals, mark);
+  const parsed = tagged ? parseWith(text, globals, (source) => lowerDelimitedMarkup(lowerElementTags(clean(source)))) : tinted;
+  const lines2 = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
+  const diagnostics = parsed.diagnostics;
+  if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
+  return { lines: lines2, diagnostics };
+}
+function untinted(lines2) {
+  const spans2 = (parts) => {
+    const out = [];
+    for (const part of parts) {
+      const span2 = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
+      const last = out.at(-1);
+      const plain = (value) => value.text !== void 0 && Object.entries(value).every(([key, field]) => key === "text" || field === void 0);
+      if (last && plain(last) && plain(span2))
+        out[out.length - 1] = { text: last.text + span2.text };
+      else out.push(span2);
+    }
+    return out;
+  };
+  return lines2.map((line) => ({
+    ...line,
+    ...line.linesContent && { linesContent: spans2(line.linesContent) },
+    ...line.table && {
+      table: line.table.map((row) => ({
+        ...row,
+        rowContent: row.rowContent?.map((cell) => ({
+          ...cell,
+          cellContent: spans2(cell.cellContent)
+        }))
+      }))
+    }
+  }));
+}
+function parseWith(text, globals, lower2) {
   const diagnostics = [];
+  text = lower2(text);
+  globals = {
+    ...globals,
+    variables: lower2(globals.variables),
+    titles: lower2(globals.titles),
+    ...globals.imports && {
+      imports: new Proxy(globals.imports, {
+        get(target, key, receiver) {
+          const value = Reflect.get(target, key, receiver);
+          return typeof value === "string" ? lower2(value) : value;
+        }
+      })
+    }
+  };
   const prepared = prepareMarkup(text, globals, diagnostics);
   const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
     ([name, content]) => prepared.nativeTitles[name] ? prepareNativeTitle(prepared.nativeTitles[name], globals) : prepareMarkup(content, globals, []).text
@@ -1885,7 +2268,7 @@ function ruleFor(name, format, notes) {
     notes.retired.add(name);
     return void 0;
   }
-  const rule = format.symbols[name];
+  const rule = format.symbols[name] ?? (name === "arrow" ? { mode: "keep" } : void 0);
   if (!rule) notes.unchosen.add(name);
   return rule;
 }
@@ -1896,6 +2279,7 @@ function span(input, context) {
   const { format, shape } = context;
   const text = input.text ?? "";
   const names = unique(input.classNames);
+  if (names.includes("arrow")) names.unshift(...names.splice(names.indexOf("arrow"), 1));
   if (names.includes("link") && input.link !== void 0) {
     const rule = format.links;
     if (rule.mode === "keep" && shape === "lines")
@@ -1926,7 +2310,7 @@ function span(input, context) {
   }
   let out = input.text === void 0 ? {} : { text };
   for (const name of names) {
-    const rule = ruleFor(name, format, context.notes);
+    const rule = name === "arrow" && shape === "text" && (!format.symbols.arrow || format.symbols.arrow.mode === "keep") ? { mode: "replace", before: "\u2192", after: "" } : ruleFor(name, format, context.notes);
     if (rule?.mode === "keep" && shape === "lines") {
       out = { ...out, classNames: [...out.classNames ?? [], name] };
     } else if (rule?.mode === "replace") {
@@ -1963,7 +2347,26 @@ function lines(input, context) {
       if (context.format.spacer === "keep") output.push({ classNames: ["spacer"] });
       continue;
     }
-    let content = (line.linesContent ?? []).flatMap((part) => span(part, context));
+    let parts = line.linesContent ?? [];
+    const arrowRule = context.format.symbols.arrow ?? (context.shape === "text" ? { mode: "replace", before: "\u2192", after: "" } : { mode: "keep" });
+    if (arrowRule.mode !== "keep" && parts.some((part) => part.classNames?.includes("arrow"))) {
+      const joined = [];
+      for (const input2 of parts) {
+        const arrow = input2.classNames?.includes("arrow");
+        if (arrow && arrowRule.mode === "drop") continue;
+        const part = arrow ? {
+          ...input2,
+          text: arrowRule.mode === "replace" ? arrowRule.before + arrowRule.after : "",
+          classNames: input2.classNames?.filter((name) => name !== "arrow")
+        } : input2;
+        const last = joined.at(-1);
+        if (last && last.text !== void 0 && part.text !== void 0 && !last.link && !last.title && !part.link && !part.title && JSON.stringify(last.classNames ?? []) === JSON.stringify(part.classNames ?? []))
+          joined[joined.length - 1] = { ...last, text: last.text + part.text };
+        else joined.push(part);
+      }
+      parts = joined;
+    }
+    let content = parts.flatMap((part) => span(part, context));
     const classNames = [];
     for (const name of names) {
       const rule = ruleFor(name, context.format, context.notes);
@@ -2009,10 +2412,14 @@ function hasRawPair(input) {
   );
 }
 function compile(input, file, options) {
+  input = lowerInput(input);
   if (isLegacyFile(file)) {
     if (hasRawPair(input))
       throw new Error("Base/enhanced markup needs the new converter; legacy presets refuse it");
-    const bytes = buildLegacy(input, file.preset, { identical: options.identical });
+    const bytes = buildLegacy(input, file.preset, {
+      identical: options.identical,
+      arrowFallback: file.arrowFallback
+    });
     return {
       stages: compileStages,
       ran: ["resolve", "select-rows", "references", "serialise"],
@@ -2123,6 +2530,18 @@ function compileStyle(input, file, options) {
     }
     expanded[hash] = { hash: Number(hash), ...picked.get(hash), descriptions };
   }
+  if (data.includeShowcase) {
+    const descriptions = {};
+    const { lines: lines2, diagnostics } = parseMarkup(lowerConsumerMarkup(showcaseText), showcaseGlobals);
+    if (diagnostics.length) throw new Error("Invalid built-in showcase markup");
+    for (const language of languages2)
+      descriptions[language] = transform(lines2, format, shape, notes);
+    expanded[showcaseId] = {
+      hash: Number(showcaseId),
+      ...keys.includes("name") ? { name: showcaseName } : {},
+      descriptions
+    };
+  }
   if (notes.unchosen.size)
     notices.push({ kind: "unchosen-symbol", symbols: [...notes.unchosen].sort() });
   if (notes.retired.size)
@@ -2189,6 +2608,7 @@ var every = (rule) => Object.fromEntries(symbolIds.map((symbol) => [symbol, rule
 var markdownSymbols = (icons) => every((symbol) => {
   if (iconSymbols.includes(symbol))
     return icons === "words" ? replace(iconWords[symbol]) : drop;
+  if (symbol === "arrow") return replace("\u2192");
   if (symbol === "bold") return replace("**", "**");
   if (symbol === "enhancedArrow") return replace("[enh]");
   return drop;
@@ -2222,7 +2642,7 @@ var styleFormats = {
     spacer: "keep"
   },
   plain: {
-    symbols: every(() => drop),
+    symbols: { ...every(() => drop), arrow: replace("\u2192") },
     titles: { mode: "drop" },
     links: { mode: "drop" },
     elementTags: false,
@@ -2241,7 +2661,8 @@ function newStyleFile(id, style, data = defaultData(), shape = styleShapes[style
   const format = structuredClone(styleFormats[style]);
   if (shape === "text") {
     for (const symbol of symbolIds)
-      if (format.symbols[symbol]?.mode === "keep") format.symbols[symbol] = drop;
+      if (format.symbols[symbol]?.mode === "keep")
+        format.symbols[symbol] = symbol === "arrow" ? replace("\u2192") : drop;
     if (format.titles.mode === "keep") format.titles = { mode: "drop" };
     if (format.links.mode === "keep") format.links = { mode: "drop" };
   }
