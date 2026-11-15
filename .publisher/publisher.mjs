@@ -13,6 +13,113 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 
+// packages/core/src/markup/arithmetic.ts
+function evaluateMarkupMath(text) {
+  return text.replace(/\${.+?}/g, (expression) => {
+    const source = expression.match(
+      /(-?\d+(\.\d+)?)(\s{0,9}[+\-/*]\s{0,9}(-?\d+(\.\d+)?)){0,99}/
+    )?.[0];
+    if (!source) return expression;
+    const tokens = source.match(/-?\d+(?:\.\d+)?|[+*/-]/g) ?? [];
+    let index = 0;
+    function number5() {
+      return Number(tokens[index++]);
+    }
+    function product() {
+      let value3 = number5();
+      while (tokens[index] === "*" || tokens[index] === "/") {
+        const operator = tokens[index++];
+        const right = number5();
+        value3 = operator === "*" ? value3 * right : value3 / right;
+      }
+      return value3;
+    }
+    let value2 = product();
+    while (index < tokens.length) {
+      const operator = tokens[index];
+      if (operator.startsWith("-") && operator.length > 1) value2 += product();
+      else {
+        index++;
+        const right = product();
+        value2 = operator === "+" ? value2 + right : value2 - right;
+      }
+    }
+    if (!Number.isFinite(value2)) return String(value2);
+    const [coefficient, exponent = "0"] = String(value2).split("e");
+    const shifted = Math.round(Number(`${coefficient}e${Number(exponent) + 2}`));
+    const [rounded, roundedExponent = "0"] = String(shifted).split("e");
+    return String(Number(`${rounded}e${Number(roundedExponent) - 2}`));
+  });
+}
+var init_arithmetic = __esm({
+  "packages/core/src/markup/arithmetic.ts"() {
+    "use strict";
+  }
+});
+
+// packages/core/src/markup/elementTags.ts
+function elementTagToken(token) {
+  const match = taggedToken.exec(token);
+  if (!match || !match[2].trim()) return void 0;
+  return { element: match[1], text: match[2] };
+}
+function findElementTags(text) {
+  if (!text.includes(" />")) return [];
+  const found = [];
+  for (const match of text.matchAll(inlineTokens)) {
+    const tag = elementTagToken(match[0]);
+    if (tag) found.push({ ...tag, from: match.index, to: match.index + match[0].length });
+  }
+  return found;
+}
+function lowerElementTags(text) {
+  return lower(text, "", "");
+}
+function lower(text, open2, close) {
+  const tags = findElementTags(text);
+  if (!tags.length) return text;
+  let lowered = "";
+  let at = 0;
+  for (const tag of tags) {
+    const [, lead, body, trail] = /^(\s*)([^]*?)(\s*)$/.exec(tag.text);
+    const [o, c] = unsafeTint.test(body) ? ["", ""] : [open2, close];
+    lowered += `${text.slice(at, tag.from)}<${tag.element}/>${lead}${o}${body}${c}${trail}`;
+    at = tag.to;
+  }
+  return lowered + text.slice(at);
+}
+function markElementTags(text) {
+  let result = marked.get(text);
+  if (result === void 0) {
+    result = lower(text, elementTextOpen, elementTextClose);
+    if (marked.size >= 256) marked.delete(marked.keys().next().value);
+    marked.set(text, result);
+  }
+  return result;
+}
+var elementTagNames, inlineTokens, taggedToken, unsafeTint, elementTextOpen, elementTextClose, elementTextMarkers, marked;
+var init_elementTags = __esm({
+  "packages/core/src/markup/elementTags.ts"() {
+    "use strict";
+    elementTagNames = [
+      "kinetic",
+      "arc",
+      "solar",
+      "void",
+      "stasis",
+      "strand",
+      "prismatic"
+    ];
+    inlineTokens = /<.+?\/>/g;
+    taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
+    unsafeTint = /[#${}]|\/\*|\*\/|\/\/|[/*]$/;
+    elementTextOpen = "\uE000";
+    elementTextClose = "\uE001";
+    elementTextMarkers = /[\uE000\uE001]/g;
+    marked = /* @__PURE__ */ new Map();
+  }
+});
+
 // node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
@@ -560,11 +667,11 @@ function getSizableOrigin(input2) {
   return "unknown";
 }
 function codePointLength(str) {
-  const units = str.length;
+  const units2 = str.length;
   if (!highSurrogate.test(str))
-    return units;
-  let count = units;
-  for (let i = 0; i < units - 1; i++) {
+    return units2;
+  let count = units2;
+  for (let i = 0; i < units2 - 1; i++) {
     if ((str.charCodeAt(i) & 64512) === 55296 && (str.charCodeAt(i + 1) & 64512) === 56320) {
       count--;
       i++;
@@ -1801,8 +1908,8 @@ var init_checks = __esm({
       (_a3 = inst._zod.def).when ?? (_a3.when = _whenHasLength);
       inst._zod.check = (payload) => {
         const input2 = payload.value;
-        const units = input2.length;
-        const length = typeof input2 === "string" && units > def.maximum ? codePointLength(input2) : units;
+        const units2 = input2.length;
+        const length = typeof input2 === "string" && units2 > def.maximum ? codePointLength(input2) : units2;
         if (length <= def.maximum)
           return;
         const origin = getLengthableOrigin(input2);
@@ -1823,8 +1930,8 @@ var init_checks = __esm({
       (_a3 = inst._zod.def).when ?? (_a3.when = _whenHasLength);
       inst._zod.check = (payload) => {
         const input2 = payload.value;
-        const units = input2.length;
-        const length = typeof input2 === "string" && units >= def.minimum && units < def.minimum * 2 ? codePointLength(input2) : units;
+        const units2 = input2.length;
+        const length = typeof input2 === "string" && units2 >= def.minimum && units2 < def.minimum * 2 ? codePointLength(input2) : units2;
         if (length >= def.minimum)
           return;
         const origin = getLengthableOrigin(input2);
@@ -1845,8 +1952,8 @@ var init_checks = __esm({
       (_a3 = inst._zod.def).when ?? (_a3.when = _whenHasLength);
       inst._zod.check = (payload) => {
         const input2 = payload.value;
-        const units = input2.length;
-        const length = typeof input2 === "string" && units >= def.length && units <= def.length * 2 ? codePointLength(input2) : units;
+        const units2 = input2.length;
+        const length = typeof input2 === "string" && units2 >= def.length && units2 <= def.length * 2 ? codePointLength(input2) : units2;
         if (length === def.length)
           return;
         const origin = getLengthableOrigin(input2);
@@ -2191,12 +2298,12 @@ function isValidBase64URL(data) {
   const padded = base643.padEnd(Math.ceil(base643.length / 4) * 4, "=");
   return isValidBase64(padded);
 }
-function isLuhnAlgo(digits) {
-  let length = digits.length;
+function isLuhnAlgo(digits2) {
+  let length = digits2.length;
   let bit = 1;
   let sum = 0;
   while (length) {
-    const value2 = digits.charCodeAt(--length) - 48;
+    const value2 = digits2.charCodeAt(--length) - 48;
     bit ^= 1;
     sum += bit ? [0, 2, 4, 6, 8, 1, 3, 5, 7, 9][value2] : value2;
   }
@@ -2394,16 +2501,16 @@ function handleUnionResults(results, final, inst, ctx) {
   return final;
 }
 function handleExclusiveUnionResults(results, final, inst, ctx) {
-  const matches = [];
+  const matches2 = [];
   for (let i = 0; i < results.length; i++) {
     if (results[i].issues.length === 0)
-      matches.push(i);
+      matches2.push(i);
   }
-  if (matches.length === 1) {
-    final.value = results[matches[0]].value;
+  if (matches2.length === 1) {
+    final.value = results[matches2[0]].value;
     return final;
   }
-  if (matches.length === 0) {
+  if (matches2.length === 0) {
     final.issues.push({
       code: "invalid_union",
       input: final.value,
@@ -2417,7 +2524,7 @@ function handleExclusiveUnionResults(results, final, inst, ctx) {
       inst,
       errors: [],
       inclusive: false,
-      matches
+      matches: matches2
     });
   }
   return final;
@@ -4550,17 +4657,17 @@ function isRef(value2) {
 function cloneIssues(issues) {
   return issues.map((iss) => iss.path ? { ...iss, path: iss.path.slice() } : { ...iss });
 }
-function isRecursive(inst, stack, resolve4) {
+function isRecursive(inst, stack2, resolve4) {
   const cached2 = recursive.get(inst);
   if (cached2 !== void 0)
     return cached2 ? PROVEN : NONE;
-  if (stack.has(inst))
+  if (stack2.has(inst))
     return PROVEN;
-  stack.add(inst);
+  stack2.add(inst);
   let result = NONE;
   const check2 = (child) => {
     if (result !== PROVEN && child?._zod) {
-      const answer = isRecursive(child, stack, resolve4);
+      const answer = isRecursive(child, stack2, resolve4);
       if (answer > result)
         result = answer;
     }
@@ -4571,7 +4678,7 @@ function isRecursive(inst, stack, resolve4) {
       const desc = Object.getOwnPropertyDescriptor(sh, key);
       if (spread && !desc.enumerable)
         continue;
-      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack, resolve4) : NONE;
+      const child = desc.get ? ASSUMED : desc.value?._zod ? isRecursive(desc.value, stack2, resolve4) : NONE;
       if (child > answer)
         answer = child;
     }
@@ -4636,7 +4743,7 @@ function isRecursive(inst, stack, resolve4) {
     // `$ZodLazy` caches its inner on the def, so a resolved edge is followed exactly
     case "lazy": {
       const inner = def._cachedInner ?? (resolve4 ? inst._zod.innerType : void 0);
-      merge2(inner ? isRecursive(inner, stack, false) : ASSUMED);
+      merge2(inner ? isRecursive(inner, stack2, false) : ASSUMED);
       break;
     }
     // a leaf by choice: `parts` are regex fragments, not data positions
@@ -4679,7 +4786,7 @@ function isRecursive(inst, stack, resolve4) {
       }
     }
   }
-  stack.delete(inst);
+  stack2.delete(inst);
   return settle(inst, result);
 }
 function settle(inst, answer) {
@@ -8979,8 +9086,8 @@ var init_ko = __esm({
 });
 
 // node_modules/zod/v4/locales/lt.js
-function getUnitTypeFromNumber(number4) {
-  const abs = Math.abs(number4);
+function getUnitTypeFromNumber(number5) {
+  const abs = Math.abs(number5);
   const last = abs % 10;
   const last2 = abs % 100;
   if (last2 >= 11 && last2 <= 19 || last === 0)
@@ -19309,20 +19416,20 @@ function checkArrayGuards(arraySchema, guards) {
     if (guards.containsSchema) {
       const minContains = guards.minContains ?? 1;
       const ceiling = guards.maxContains !== void 0 ? guards.maxContains + 1 : Number.POSITIVE_INFINITY;
-      let matches = 0;
+      let matches2 = 0;
       for (const item of items) {
-        if (guards.containsSchema.safeParse(item).success && ++matches >= ceiling)
+        if (guards.containsSchema.safeParse(item).success && ++matches2 >= ceiling)
           break;
       }
-      if (matches < minContains) {
+      if (matches2 < minContains) {
         payload.issues.push({
           code: "custom",
-          message: `Array must contain at least ${minContains} matching ${plural(minContains)}; found ${matches}`,
+          message: `Array must contain at least ${minContains} matching ${plural(minContains)}; found ${matches2}`,
           input: items,
           continue: true
         });
       }
-      if (guards.maxContains !== void 0 && matches > guards.maxContains) {
+      if (guards.maxContains !== void 0 && matches2 > guards.maxContains) {
         payload.issues.push({
           code: "custom",
           message: `Array must contain at most ${guards.maxContains} matching ${plural(guards.maxContains)}`,
@@ -20456,12 +20563,12 @@ var init_languages = __esm({
 });
 
 // packages/core/src/legacyStats.ts
-var statNames2, weaponTypes2, modifiers, statSchema, legacyStatsSchema;
+var statNames, weaponTypes2, modifiers, statSchema, legacyStatsSchema;
 var init_legacyStats = __esm({
   "packages/core/src/legacyStats.ts"() {
     "use strict";
     init_zod();
-    statNames2 = [
+    statNames = [
       "Aim Assist",
       "Airborne",
       "Blast Radius",
@@ -20516,7 +20623,7 @@ var init_legacyStats = __esm({
       active: modifiers.optional(),
       passive: modifiers.optional()
     }).strict();
-    legacyStatsSchema = external_exports.partialRecord(external_exports.enum(statNames2), external_exports.array(statSchema));
+    legacyStatsSchema = external_exports.partialRecord(external_exports.enum(statNames), external_exports.array(statSchema));
   }
 });
 
@@ -20671,7 +20778,7 @@ function hasTooltipText(tooltip) {
 function isTextlessDescription(tooltip) {
   return tooltip.hash > 3 && !hasTooltipText(tooltip);
 }
-var timestampSchema, langTextSchema, tooltipSchema, permissionsSchema, pushedSchema;
+var timestampSchema, numberId, numberMapSchema, langTextSchema, tooltipSchema, permissionsSchema, pushedSchema;
 var init_schemas3 = __esm({
   "packages/core/src/schemas.ts"() {
     "use strict";
@@ -20680,11 +20787,36 @@ var init_schemas3 = __esm({
     init_languages();
     init_types();
     timestampSchema = external_exports.string().datetime({ offset: true });
+    numberId = external_exports.number().int().positive().max(Number.MAX_SAFE_INTEGER);
+    numberMapSchema = external_exports.object({
+      ids: external_exports.array(numberId),
+      next: numberId,
+      retired: external_exports.record(
+        external_exports.string().regex(/^[1-9]\d*$/),
+        external_exports.union([
+          external_exports.string(),
+          external_exports.null(),
+          external_exports.object({
+            value: external_exports.string(),
+            fallback: external_exports.array(langSchema),
+            variables: external_exports.record(external_exports.string(), external_exports.string()).optional()
+          }).strict()
+        ])
+      )
+    }).strict().superRefine((map2, ctx) => {
+      const all = [...map2.ids, ...Object.keys(map2.retired).map(Number)];
+      if (new Set(all).size !== all.length || all.some((id) => !Number.isSafeInteger(id) || id >= map2.next))
+        ctx.addIssue({
+          code: "custom",
+          message: "Number ids must be unique, disjoint, and below next."
+        });
+    });
     langTextSchema = external_exports.object({
       text: external_exports.string(),
       updatedAt: timestampSchema,
       updatedBy: external_exports.string(),
-      sourceUpdatedAt: timestampSchema.optional()
+      sourceUpdatedAt: timestampSchema.optional(),
+      numbers: numberMapSchema.optional()
     }).strict();
     tooltipSchema = external_exports.object({
       hash: hashSchema,
@@ -20708,7 +20840,15 @@ var init_schemas3 = __esm({
         note: external_exports.string().optional()
       }).strict().optional(),
       legacy: legacyMetadataSchema.optional()
-    }).strict();
+    }).strict().superRefine((tooltip, ctx) => {
+      for (const [lang, entry] of Object.entries(tooltip.text))
+        if (entry.numbers !== void 0 && (lang !== "en" || tooltip.hash >= 1 && tooltip.hash <= 3))
+          ctx.addIssue({
+            code: "custom",
+            path: ["text", lang, "numbers"],
+            message: "Number maps belong only to tooltip English."
+          });
+    });
     permissionsSchema = external_exports.object({
       users: external_exports.record(
         external_exports.string().regex(/^[1-9]\d*$/),
@@ -20738,6 +20878,1525 @@ var init_schemas3 = __esm({
   }
 });
 
+// node_modules/diff/libesm/diff/base.js
+var Diff;
+var init_base = __esm({
+  "node_modules/diff/libesm/diff/base.js"() {
+    Diff = class {
+      diff(oldStr, newStr, options = {}) {
+        let callback;
+        if (typeof options === "function") {
+          callback = options;
+          options = {};
+        } else if ("callback" in options) {
+          callback = options.callback;
+        }
+        const oldString = this.castInput(oldStr, options);
+        const newString = this.castInput(newStr, options);
+        const oldTokens = this.removeEmpty(this.tokenize(oldString, options));
+        const newTokens = this.removeEmpty(this.tokenize(newString, options));
+        return this.diffWithOptionsObj(oldTokens, newTokens, options, callback);
+      }
+      diffWithOptionsObj(oldTokens, newTokens, options, callback) {
+        var _a3;
+        const done = (value2) => {
+          value2 = this.postProcess(value2, options);
+          if (callback) {
+            setTimeout(function() {
+              callback(value2);
+            }, 0);
+            return void 0;
+          } else {
+            return value2;
+          }
+        };
+        const newLen = newTokens.length, oldLen = oldTokens.length;
+        let editLength = 1;
+        let maxEditLength = newLen + oldLen;
+        if (options.maxEditLength != null) {
+          maxEditLength = Math.min(maxEditLength, options.maxEditLength);
+        }
+        const maxExecutionTime = (_a3 = options.timeout) !== null && _a3 !== void 0 ? _a3 : Infinity;
+        const abortAfterTimestamp = Date.now() + maxExecutionTime;
+        const bestPath = [{ oldPos: -1, lastComponent: void 0 }];
+        let newPos = this.extractCommon(bestPath[0], newTokens, oldTokens, 0, options);
+        if (bestPath[0].oldPos + 1 >= oldLen && newPos + 1 >= newLen) {
+          return done(this.buildValues(bestPath[0].lastComponent, newTokens, oldTokens));
+        }
+        let minDiagonalToConsider = -Infinity, maxDiagonalToConsider = Infinity;
+        const execEditLength = () => {
+          for (let diagonalPath = Math.max(minDiagonalToConsider, -editLength); diagonalPath <= Math.min(maxDiagonalToConsider, editLength); diagonalPath += 2) {
+            let basePath;
+            const removePath = bestPath[diagonalPath - 1], addPath = bestPath[diagonalPath + 1];
+            if (removePath) {
+              bestPath[diagonalPath - 1] = void 0;
+            }
+            let canAdd = false;
+            if (addPath) {
+              const addPathNewPos = addPath.oldPos - diagonalPath;
+              canAdd = addPath && 0 <= addPathNewPos && addPathNewPos < newLen;
+            }
+            const canRemove = removePath && removePath.oldPos + 1 < oldLen;
+            if (!canAdd && !canRemove) {
+              bestPath[diagonalPath] = void 0;
+              continue;
+            }
+            if (!canRemove || canAdd && removePath.oldPos < addPath.oldPos) {
+              basePath = this.addToPath(addPath, true, false, 0, options);
+            } else {
+              basePath = this.addToPath(removePath, false, true, 1, options);
+            }
+            newPos = this.extractCommon(basePath, newTokens, oldTokens, diagonalPath, options);
+            if (basePath.oldPos + 1 >= oldLen && newPos + 1 >= newLen) {
+              return done(this.buildValues(basePath.lastComponent, newTokens, oldTokens)) || true;
+            } else {
+              bestPath[diagonalPath] = basePath;
+              if (basePath.oldPos + 1 >= oldLen) {
+                maxDiagonalToConsider = Math.min(maxDiagonalToConsider, diagonalPath - 1);
+              }
+              if (newPos + 1 >= newLen) {
+                minDiagonalToConsider = Math.max(minDiagonalToConsider, diagonalPath + 1);
+              }
+            }
+          }
+          editLength++;
+        };
+        if (callback) {
+          (function exec() {
+            setTimeout(function() {
+              if (editLength > maxEditLength || Date.now() > abortAfterTimestamp) {
+                return callback(void 0);
+              }
+              if (!execEditLength()) {
+                exec();
+              }
+            }, 0);
+          })();
+        } else {
+          while (editLength <= maxEditLength && Date.now() <= abortAfterTimestamp) {
+            const ret = execEditLength();
+            if (ret) {
+              return ret;
+            }
+          }
+        }
+      }
+      addToPath(path, added, removed, oldPosInc, options) {
+        const last = path.lastComponent;
+        if (last && !options.oneChangePerToken && last.added === added && last.removed === removed) {
+          return {
+            oldPos: path.oldPos + oldPosInc,
+            lastComponent: { count: last.count + 1, added, removed, previousComponent: last.previousComponent }
+          };
+        } else {
+          return {
+            oldPos: path.oldPos + oldPosInc,
+            lastComponent: { count: 1, added, removed, previousComponent: last }
+          };
+        }
+      }
+      extractCommon(basePath, newTokens, oldTokens, diagonalPath, options) {
+        const newLen = newTokens.length, oldLen = oldTokens.length;
+        let oldPos = basePath.oldPos, newPos = oldPos - diagonalPath, commonCount = 0;
+        while (newPos + 1 < newLen && oldPos + 1 < oldLen && this.equals(oldTokens[oldPos + 1], newTokens[newPos + 1], options)) {
+          newPos++;
+          oldPos++;
+          commonCount++;
+          if (options.oneChangePerToken) {
+            basePath.lastComponent = { count: 1, previousComponent: basePath.lastComponent, added: false, removed: false };
+          }
+        }
+        if (commonCount && !options.oneChangePerToken) {
+          basePath.lastComponent = { count: commonCount, previousComponent: basePath.lastComponent, added: false, removed: false };
+        }
+        basePath.oldPos = oldPos;
+        return newPos;
+      }
+      equals(left, right, options) {
+        if (options.comparator) {
+          return options.comparator(left, right);
+        } else {
+          return left === right || !!options.ignoreCase && left.toLowerCase() === right.toLowerCase();
+        }
+      }
+      removeEmpty(array2) {
+        const ret = [];
+        for (let i = 0; i < array2.length; i++) {
+          if (array2[i]) {
+            ret.push(array2[i]);
+          }
+        }
+        return ret;
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      castInput(value2, options) {
+        return value2;
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      tokenize(value2, options) {
+        return Array.from(value2);
+      }
+      join(chars) {
+        return chars.join("");
+      }
+      postProcess(changeObjects, options) {
+        return changeObjects;
+      }
+      get useLongestToken() {
+        return false;
+      }
+      buildValues(lastComponent, newTokens, oldTokens) {
+        const components = [];
+        let nextComponent;
+        while (lastComponent) {
+          components.push(lastComponent);
+          nextComponent = lastComponent.previousComponent;
+          delete lastComponent.previousComponent;
+          lastComponent = nextComponent;
+        }
+        components.reverse();
+        const componentLen = components.length;
+        let componentPos = 0, newPos = 0, oldPos = 0;
+        for (; componentPos < componentLen; componentPos++) {
+          const component = components[componentPos];
+          if (!component.removed) {
+            if (!component.added && this.useLongestToken) {
+              let value2 = newTokens.slice(newPos, newPos + component.count);
+              value2 = value2.map(function(value3, i) {
+                const oldValue = oldTokens[oldPos + i];
+                return oldValue.length > value3.length ? oldValue : value3;
+              });
+              component.value = this.join(value2);
+            } else {
+              component.value = this.join(newTokens.slice(newPos, newPos + component.count));
+            }
+            newPos += component.count;
+            if (!component.added) {
+              oldPos += component.count;
+            }
+          } else {
+            component.value = this.join(oldTokens.slice(oldPos, oldPos + component.count));
+            oldPos += component.count;
+          }
+        }
+        return components;
+      }
+    };
+  }
+});
+
+// node_modules/diff/libesm/diff/array.js
+function diffArrays(oldArr, newArr, options) {
+  return arrayDiff.diff(oldArr, newArr, options);
+}
+var ArrayDiff, arrayDiff;
+var init_array = __esm({
+  "node_modules/diff/libesm/diff/array.js"() {
+    init_base();
+    ArrayDiff = class extends Diff {
+      tokenize(value2) {
+        return value2.slice();
+      }
+      join(value2) {
+        return value2;
+      }
+      removeEmpty(value2) {
+        return value2;
+      }
+    };
+    arrayDiff = new ArrayDiff();
+  }
+});
+
+// node_modules/diff/libesm/index.js
+var init_libesm = __esm({
+  "node_modules/diff/libesm/index.js"() {
+    init_array();
+  }
+});
+
+// packages/core/src/numbers/identity.ts
+function units(text, slots) {
+  const lines = [[]];
+  let at = 0;
+  const push = (part) => {
+    for (const match of part.matchAll(/\n|[\p{L}\p{N}_]+|[^\s\p{L}\p{N}_]/gu)) {
+      if (match[0] === "\n") lines.push([]);
+      else lines.at(-1).push({ text: match[0], line: lines.length - 1 });
+    }
+  };
+  slots.forEach((slot, index) => {
+    push(text.slice(at, slot.from));
+    lines.at(-1).push({ text: "" + slot.kind, slot: index, line: lines.length - 1 });
+    at = slot.to;
+  });
+  push(text.slice(at));
+  return lines;
+}
+function matches(a, b) {
+  const pairs = [];
+  let old = 0, next = 0;
+  for (const part of diffArrays(a, b)) {
+    if (!part.added && !part.removed)
+      for (let i = 0; i < part.value.length; i++) pairs.push([old + i, next + i]);
+    if (!part.added) old += part.value.length;
+    if (!part.removed) next += part.value.length;
+  }
+  return pairs;
+}
+function window(units2, index, width) {
+  const line = units2[index].line;
+  return JSON.stringify(
+    units2.slice(Math.max(0, index - width), index + width + 1).filter((unit) => unit.line === line).map((unit) => unit.text.toLowerCase())
+  );
+}
+function alignSlots(before, after) {
+  const old = numberSlots(before), next = numberSlots(after);
+  const result = {
+    kind: "text",
+    before: old,
+    after: next,
+    map: /* @__PURE__ */ new Map(),
+    changed: [],
+    steps: /* @__PURE__ */ new Map()
+  };
+  const keep = (a2, b2, step) => {
+    result.map.set(a2, b2);
+    result.steps.set(a2, step);
+    if (old[a2].value !== next[b2].value) result.changed.push(a2);
+  };
+  if (numberTemplate(before, old) === numberTemplate(after, next)) {
+    old.forEach((_, index) => keep(index, index, "value"));
+    result.kind = result.changed.length ? "value" : "same";
+    return result;
+  }
+  if (old.length === next.length && old.every((slot, i) => slot.kind === next[i].kind && slot.value === next[i].value) && lowerConsumerMarkup(before) === lowerConsumerMarkup(after)) {
+    old.forEach((_, index) => keep(index, index, "value"));
+    result.kind = "same";
+    return result;
+  }
+  const oldLines = units(numberProse(before), old), nextLines = units(numberProse(after), next);
+  const keys = (lines) => lines.map((line) => JSON.stringify(line.map((unit) => unit.text)));
+  const aKeys = keys(oldLines), bKeys = keys(nextLines);
+  const aCounts = counts(aKeys), bCounts = counts(bKeys);
+  const usedA = /* @__PURE__ */ new Set(), usedB = /* @__PURE__ */ new Set();
+  const unique = (a2, b2) => aCounts.get(aKeys[a2]) === 1 && bCounts.get(bKeys[b2]) === 1 && (bCounts.get(aKeys[a2]) ?? 0) <= 1 && (aCounts.get(bKeys[b2]) ?? 0) <= 1;
+  const pairLine = (a2, b2, step) => {
+    if (!unique(a2, b2)) return;
+    const pairs2 = oldLines[a2].flatMap(
+      (unit, i) => unit.slot === void 0 ? [] : [[unit.slot, nextLines[b2][i].slot]]
+    );
+    if (pairs2.some(([x, y]) => old[x].scope !== next[y].scope)) return;
+    usedA.add(a2);
+    usedB.add(b2);
+    for (const [x, y] of pairs2) keep(x, y, step);
+  };
+  for (const [a2, b2] of matches(aKeys, bKeys)) pairLine(a2, b2, "line");
+  const nextByKey = new Map(bKeys.map((key, index) => [key, index]));
+  for (let a2 = 0; a2 < oldLines.length; a2++) {
+    if (usedA.has(a2) || !oldLines[a2].some((unit) => !slotUnit(unit) && new RegExp("\\p{L}", "u").test(unit.text)))
+      continue;
+    const b2 = nextByKey.get(aKeys[a2]);
+    if (b2 !== void 0 && !usedB.has(b2)) pairLine(a2, b2, "moved");
+  }
+  const remaining = (lines, used) => lines.flatMap(
+    (line, i) => used.has(i) ? [] : [{ text: "\n", line: -1 }, ...line, { text: "\n", line: -1 }]
+  );
+  const a = remaining(oldLines, usedA), b = remaining(nextLines, usedB);
+  const signatures = (list) => counts(list.flatMap((unit, i) => slotUnit(unit) ? [window(list, i, 3)] : []));
+  const aSigs = signatures(a), bSigs = signatures(b);
+  const pairs = matches(
+    a.map((unit) => unit.text),
+    b.map((unit) => unit.text)
+  );
+  const paired = new Map(pairs);
+  for (const [i, j] of pairs) {
+    const x = a[i].slot, y = b[j].slot;
+    if (x === void 0 || y === void 0 || !unique(a[i].line, b[j].line)) continue;
+    if (paired.get(i - 1) !== j - 1 || paired.get(i + 1) !== j + 1 || slotUnit(a[i - 1]) || slotUnit(a[i + 1]))
+      continue;
+    if (old[x].scope !== next[y].scope || window(a, i, 2) !== window(b, j, 2)) continue;
+    if (aSigs.get(window(a, i, 3)) !== 1 || bSigs.get(window(b, j, 3)) !== 1) continue;
+    keep(x, y, "word");
+  }
+  return result;
+}
+var counts, slotUnit;
+var init_identity = __esm({
+  "packages/core/src/numbers/identity.ts"() {
+    "use strict";
+    init_libesm();
+    init_braces();
+    init_numberSlots();
+    counts = (values) => {
+      const result = /* @__PURE__ */ new Map();
+      for (const value2 of values) result.set(value2, (result.get(value2) ?? 0) + 1);
+      return result;
+    };
+    slotUnit = (unit) => unit?.slot !== void 0;
+  }
+});
+
+// packages/core/src/markup/baseEnhanced.ts
+function scanBaseEnhanced(text, allowEmpty = false) {
+  const pairs = [];
+  const issues = [];
+  let cursor = 0;
+  while (cursor < text.length) {
+    const from = text.indexOf("{{", cursor);
+    if (from < 0) break;
+    let pos = from + 2;
+    const braced = (at) => text[at - 1] === "#" ? /^\{(?:[a-zA-Z0-9]+|=[1-9]\d*)\}/.exec(text.slice(at))?.[0].length ?? 0 : 0;
+    const arm = () => {
+      const begin = pos;
+      while (pos < text.length && text[pos] !== "}" && !/[\r\n]/.test(text[pos])) {
+        if (text.startsWith("{{", pos)) return null;
+        if (text[pos] === "{") {
+          const variable = braced(pos);
+          if (variable) {
+            pos += variable;
+            continue;
+          }
+          if (text[pos - 1] !== "$") return null;
+          let end2 = pos + 1;
+          for (; ; ) {
+            if (end2 >= text.length || /[\r\n]/.test(text[end2])) return null;
+            if (text[end2] === "}") break;
+            if (text[end2] === "{") {
+              const inner = braced(end2);
+              if (!inner) return null;
+              end2 += inner;
+            } else end2++;
+          }
+          pos = end2 + 1;
+        } else pos++;
+      }
+      const value2 = text.slice(begin, pos);
+      return allowEmpty || value2.trim() ? value2 : null;
+    };
+    const base = arm();
+    if (base !== null && text.slice(pos, pos + 2) === "}{") {
+      pos += 2;
+      const enhanced = arm();
+      if (enhanced !== null && text.slice(pos, pos + 2) === "}}") {
+        cursor = pos + 2;
+        pairs.push({ from, to: cursor, base, enhanced });
+        continue;
+      }
+    }
+    const end = text.indexOf("\n", from);
+    cursor = end < 0 ? text.length : end + 1;
+    issues.push({ from, to: end < 0 ? text.length : end });
+  }
+  return { pairs, issues };
+}
+var enhancedMarkupType, baseEnhancedMessage, baseEnhancedPublishMessage, unfinishedBaseEnhanced;
+var init_baseEnhanced = __esm({
+  "packages/core/src/markup/baseEnhanced.ts"() {
+    "use strict";
+    enhancedMarkupType = "Weapon Trait Enhanced";
+    baseEnhancedMessage = "Use {{base}{enhanced}} with two nonempty inline arms on one line; pairs cannot nest.";
+    baseEnhancedPublishMessage = "Base/enhanced markup needs the new converter; it can be pushed after cut-over";
+    unfinishedBaseEnhanced = (text) => scanBaseEnhanced(text).issues;
+  }
+});
+
+// packages/core/src/markup/syntax.ts
+function extractVariables(text) {
+  return Object.fromEntries(
+    [...text.matchAll(/^var ([a-zA-Z0-9]+) = (.+)$/gm)].map((match) => [
+      match[1],
+      match[2].trim() === "empty" ? "" : match[2].trim()
+    ])
+  );
+}
+function extractBlocks(text, kind) {
+  const pattern = kind === "title" ? /^title [A-z0-9 ]+ \([^]*?\n\)$/gm : /^export [A-z0-9 ]+ \([\s\S]*?\n\)$/gm;
+  return Object.fromEntries(
+    [...text.matchAll(pattern)].map(([block]) => {
+      const lines = block.split("\n");
+      const name = lines[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
+      return [name, lines.slice(1, -1).join("\n")];
+    })
+  );
+}
+var markupColors, markupIcons, markupEmpty, markupLineClasses, markupRetiredColors, markupRetiredLineStyles, markupRetired, markupTableClasses;
+var init_syntax = __esm({
+  "packages/core/src/markup/syntax.ts"() {
+    "use strict";
+    markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
+    markupIcons = [
+      "kinetic",
+      "arc",
+      "solar",
+      "stasis",
+      "void",
+      "strand",
+      "prismatic",
+      "heavy",
+      "primary",
+      "special",
+      "barrier",
+      "overload",
+      "unstoppable",
+      "hunter",
+      "titan",
+      "warlock",
+      "arrow"
+    ];
+    markupEmpty = ["background", "breakSpaces", "bold"];
+    markupLineClasses = [...markupColors, ...markupEmpty];
+    markupRetiredColors = ["blue", "green", "purple"];
+    markupRetiredLineStyles = ["center", "breakSpaces", "background"];
+    markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles];
+    markupTableClasses = [
+      "background_1",
+      "background_2",
+      "centerTable",
+      "formula",
+      "wide"
+    ];
+  }
+});
+
+// packages/core/src/markup/prepare.ts
+function markupVariableReferences(text) {
+  return text.match(/#[a-zA-Z0-9]+/g) ?? [];
+}
+function markupImports(text) {
+  return [
+    ...text.match(/^import [A-z0-9 ]+? from (\d+|global) *?$/gm) ?? [],
+    ...text.match(/^import self *?$/gm) ?? []
+  ];
+}
+function markupConditionMatches(text, keyword) {
+  return [...text.matchAll(new RegExp(`^${keyword} \\([\\s\\S]*?\\n\\)$`, "gm"))];
+}
+function markupCommentContext(text) {
+  let offsets = Array.from({ length: text.length }, (_, index) => index);
+  const comments = [];
+  for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
+    let remaining = "";
+    let remainingOffsets = [];
+    let last = 0;
+    for (const match of text.matchAll(pattern)) {
+      remaining += text.slice(last, match.index);
+      remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
+      if (index > 0) {
+        comments.push({
+          from: offsets[match.index],
+          to: offsets[match.index + match[0].length - 1] + 1
+        });
+      }
+      last = match.index + match[0].length;
+    }
+    remaining += text.slice(last);
+    remainingOffsets = remainingOffsets.concat(offsets.slice(last));
+    text = remaining;
+    offsets = remainingOffsets;
+  }
+  return { text, offsets, comments };
+}
+function removeMarkupComments(text) {
+  return text.replace(/\r/g, "").replace(markupCommentPatterns[0], "").replace(markupCommentPatterns[1], "");
+}
+function normalizeMarkupWhitespace(text) {
+  return text.replace(unusedMarkup.blanks, "\n\n").trim();
+}
+function removeUnusedText(text, removeTitles = true) {
+  text = removeMarkupComments(text).replace(unusedMarkup.hidden, "").replace(unusedMarkup.exportOpen, "").replace(unusedMarkup.enhancedOpen, "");
+  if (removeTitles) {
+    text = text.replace(unusedMarkup.titles, "").replace(unusedMarkup.close, "");
+  }
+  return normalizeMarkupWhitespace(text.replace(unusedMarkup.variables, ""));
+}
+function resolveImports(text, globals, diagnostics) {
+  for (let pass = 0; pass < 5; pass++) {
+    const imports = markupImports(text);
+    if (!imports.length) return text;
+    for (const line of imports) {
+      const visible = removeUnusedText(text, false).includes(line.trim());
+      if (line.includes("import self")) {
+        if (visible)
+          diagnostics.push({
+            severity: "error",
+            message: "import self requires the removed secondary editor."
+          });
+        text = text.replace(line, "");
+        continue;
+      }
+      const name = line.match(/(?<=import) .+ (?=from)/)?.[0].trim() ?? "";
+      const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
+      const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
+      const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
+      const imported = name === "main" || name === "secondary" ? source : extractBlocks(source ?? "", "export")[name];
+      if (imported === void 0 && visible) {
+        diagnostics.push({
+          severity: "error",
+          message: `Unresolved import "${name}" from ${from}.`
+        });
+      }
+      text = text.replace(line, () => imported ?? "");
+    }
+  }
+  if (/^import /m.test(text)) {
+    diagnostics.push({
+      severity: "error",
+      message: "Import expansion exceeded the converter limit of five passes (possible cycle)."
+    });
+  }
+  return text;
+}
+function nativePieces(text) {
+  if (!text.includes("{{")) return [text];
+  const pieces = [];
+  const visible = markupCommentContext(text);
+  let at = 0;
+  for (const pair2 of scanBaseEnhanced(visible.text, true).pairs) {
+    const from = visible.offsets[pair2.from], to = visible.offsets[pair2.to - 1] + 1;
+    pieces.push(text.slice(at, from), { base: pair2.base, enhanced: pair2.enhanced });
+    at = to;
+  }
+  pieces.push(text.slice(at));
+  return pieces;
+}
+function nativeSlice(pieces, from, to) {
+  const output2 = [];
+  let at = 0;
+  for (const piece of pieces) {
+    const end = at + pieceLength(piece);
+    if (end > from && at < to) {
+      if (typeof piece === "string")
+        output2.push(piece.slice(Math.max(0, from - at), Math.min(piece.length, to - at)));
+      else {
+        if (from > at || to < end)
+          throw new Error("Structural cleanup crossed a native inline token");
+        output2.push(piece);
+      }
+    }
+    at = end;
+  }
+  return output2;
+}
+function nativeKeep(pieces, offsets) {
+  const output2 = [];
+  for (let index = 0; index < offsets.length; ) {
+    const from = offsets[index++];
+    let to = from + 1;
+    while (index < offsets.length && offsets[index] === to) {
+      index++;
+      to++;
+    }
+    output2.push(...nativeSlice(pieces, from, to));
+  }
+  return output2;
+}
+function nativeRemove(pieces, pattern, keepPrefix = 0) {
+  const output2 = [];
+  const source = nativeStructure(pieces);
+  let at = 0;
+  for (const match of source.matchAll(pattern)) {
+    output2.push(...nativeSlice(pieces, at, match.index + keepPrefix));
+    at = match.index + match[0].length;
+  }
+  output2.push(...nativeSlice(pieces, at, source.length));
+  return output2;
+}
+function cleanNative(pieces, removeTitles = true) {
+  pieces = nativeKeep(pieces, markupCommentContext(nativeStructure(pieces)).offsets);
+  for (const pattern of [unusedMarkup.hidden, unusedMarkup.exportOpen, unusedMarkup.enhancedOpen])
+    pieces = nativeRemove(pieces, pattern);
+  if (removeTitles)
+    for (const pattern of [unusedMarkup.titles, unusedMarkup.close])
+      pieces = nativeRemove(pieces, pattern);
+  pieces = nativeRemove(pieces, unusedMarkup.variables);
+  pieces = nativeRemove(pieces, unusedMarkup.blanks, 2);
+  const source = nativeStructure(pieces);
+  return nativeSlice(pieces, source.length - source.trimStart().length, source.trimEnd().length);
+}
+function replaceNativeVariable(pieces, variable, value2) {
+  const output2 = [];
+  const append = (piece) => {
+    const last = output2.length - 1;
+    if (typeof piece === "string" && typeof output2[last] === "string") output2[last] += piece;
+    else output2.push(piece);
+  };
+  for (const piece of pieces) {
+    if (typeof piece !== "string" || !piece.includes(variable)) {
+      append(piece);
+      continue;
+    }
+    if (!value2.includes("{{")) {
+      append(piece.replaceAll(variable, value2));
+      continue;
+    }
+    piece.split(variable).forEach((part, index) => {
+      if (index) nativePieces(value2).forEach(append);
+      append(part);
+    });
+  }
+  return output2;
+}
+function prepareNativePieces(pieces, globals) {
+  const references = pieces.flatMap(
+    (piece) => typeof piece === "string" ? markupVariableReferences(piece) : []
+  );
+  for (const variable of references) {
+    const variables2 = {
+      ...extractVariables(nativeSource(pieces)),
+      ...extractVariables(globals.variables)
+    };
+    globals.onVariable?.(variable.slice(1));
+    const value2 = Object.hasOwn(variables2, variable.slice(1)) ? variables2[variable.slice(1)] : void 0;
+    if (value2 !== void 0) pieces = replaceNativeVariable(pieces, variable, value2);
+  }
+  const variables = {
+    ...extractVariables(nativeSource(pieces)),
+    ...extractVariables(globals.variables)
+  };
+  return pieces.map((piece) => {
+    if (typeof piece === "string") return evaluateMarkupMath(piece);
+    if (piece.rendered !== void 0) return piece;
+    let arm = globals.type === enhancedMarkupType ? piece.enhanced : piece.base;
+    for (const variable of markupVariableReferences(arm)) {
+      globals.onVariable?.(variable.slice(1));
+      const value2 = Object.hasOwn(variables, variable.slice(1)) ? variables[variable.slice(1)] : void 0;
+      if (value2 !== void 0) arm = arm.replaceAll(variable, value2);
+    }
+    return { ...piece, rendered: evaluateMarkupMath(arm) };
+  });
+}
+function prepareNativeTitle(pieces, globals) {
+  return formatNumbers(
+    renderNative(cleanNative(prepareNativePieces(pieces, globals))),
+    globals.lang
+  );
+}
+function prepareNativeDocument(text, globals) {
+  const pieces = prepareNativePieces(nativePieces(text), globals);
+  const titlePieces = cleanNative(pieces, false);
+  const source = nativeStructure(titlePieces);
+  const titles = /* @__PURE__ */ Object.create(null);
+  const nativeTitles = /* @__PURE__ */ Object.create(null);
+  const globalTitles = extractBlocks(globals.titles, "title");
+  for (const match of source.matchAll(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm)) {
+    const firstLine = match[0].indexOf("\n");
+    const name = match[0].slice(0, firstLine).replace(/title|\(.*/gi, "").trim();
+    const body = nativeSlice(
+      titlePieces,
+      match.index + firstLine + 1,
+      match.index + match[0].length - 2
+    );
+    titles[name] = renderNative(body);
+    if (!Object.hasOwn(globalTitles, name) && body.some((piece) => typeof piece !== "string"))
+      nativeTitles[name] = body;
+  }
+  return {
+    text: renderNative(cleanNative(pieces)),
+    titles: { ...titles, ...globalTitles },
+    nativeTitles
+  };
+}
+function prepareMarkup(text, globals, diagnostics, onCondition) {
+  text = lowerDelimitedMarkup(text);
+  if (globals.variables.includes("#{") || globals.variables.includes("<enhanced/>"))
+    globals = { ...globals, variables: lowerDelimitedMarkup(globals.variables) };
+  if (globals.titles.includes("#{") || globals.titles.includes("<enhanced/>"))
+    globals = { ...globals, titles: lowerDelimitedMarkup(globals.titles) };
+  text = resolveImports(text, globals, diagnostics);
+  const nativePairs = text.includes("{{") || globals.variables.includes("{{") || globals.titles.includes("{{");
+  if (nativePairs) {
+    for (const source of [text, globals.variables, globals.titles]) {
+      if (source.includes("{{") && scanBaseEnhanced(removeMarkupComments(source)).issues.length) {
+        diagnostics.push({ severity: "error", message: baseEnhancedMessage });
+      }
+    }
+  }
+  for (const [keyword, type] of markupConditions) {
+    const matches2 = markupConditionMatches(text, keyword);
+    for (const match of matches2) onCondition?.(keyword, match[0]);
+    if (matches2.length && globals.type !== type) {
+      for (const match of matches2.reverse())
+        text = text.slice(0, match.index) + text.slice(match.index + match[0].length);
+      if (keyword === "enhanced") text = text.replaceAll("#e", "");
+    }
+  }
+  let native;
+  if (nativePairs) {
+    native = prepareNativeDocument(text, globals);
+    text = native.text;
+  } else {
+    for (const variable of markupVariableReferences(text)) {
+      const variables = { ...extractVariables(text), ...extractVariables(globals.variables) };
+      globals.onVariable?.(variable.slice(1));
+      const value2 = variables[variable.slice(1)];
+      if (value2 !== void 0) text = text.replaceAll(variable, value2);
+    }
+    text = evaluateMarkupMath(text);
+  }
+  const cleanText = native ? text : removeUnusedText(text.trim());
+  for (const variable of new Set(markupVariableReferences(cleanText))) {
+    diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
+  }
+  return {
+    text: formatNumbers(cleanText, globals.lang),
+    nativeTitles: native?.nativeTitles,
+    // Title bodies are prepared independently; shared titles still contain unevaluated maths.
+    titles: native?.titles ?? {
+      ...extractBlocks(removeUnusedText(text, false), "title"),
+      ...extractBlocks(globals.titles, "title")
+    }
+  };
+}
+var markupConditions, markupCommentPatterns, unusedMarkup, pairSource, pieceLength, nativeSource, nativeStructure, renderNative;
+var init_prepare = __esm({
+  "packages/core/src/markup/prepare.ts"() {
+    "use strict";
+    init_baseEnhanced();
+    init_arithmetic();
+    init_numberFormat();
+    init_braces();
+    init_syntax();
+    markupConditions = [
+      ["enhanced", enhancedMarkupType],
+      ["catalyst", "Weapon Catalyst Exotic"],
+      ["exotic perk", "Weapon Perk Exotic"]
+    ];
+    markupCommentPatterns = [/\/\*[^]*\*\/\n?/g, /^ *?\/\/.*$\n?| +\/\/.*$/gm];
+    unusedMarkup = {
+      hidden: /^export hidden .* \([^]*?\n\)$/gm,
+      exportOpen: /^export .* \( *$\n/gm,
+      enhancedOpen: /^enhanced \($\n/gm,
+      titles: /\n?^title .+ \([^]*?\n\)$/gm,
+      close: /\n^\) *$/gm,
+      variables: /^var .* = .+$\n?/gm,
+      blanks: /\n\n\n+/gm
+    };
+    pairSource = (piece) => `{{${piece.base}}{${piece.enhanced}}}`;
+    pieceLength = (piece) => typeof piece === "string" ? piece.length : pairSource(piece).length;
+    nativeSource = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : pairSource(piece)).join("");
+    nativeStructure = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : "\uFFFC".repeat(pieceLength(piece))).join("");
+    renderNative = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : piece.rendered).join("");
+  }
+});
+
+// packages/core/src/numbers/freeze.ts
+function numberVariables(text) {
+  const result = [];
+  let offset = 0;
+  const blocks = [];
+  const prose = numberProse(text).split("\n");
+  for (const [index, line] of text.replace(/\r/g, " ").split("\n").entries()) {
+    const match = /^var ([a-zA-Z0-9]+) = (.+)$/.exec(line);
+    const visible = /^var ([a-zA-Z0-9]+) = (.+)$/.exec(prose[index]);
+    if (match) {
+      const value2 = (visible ?? match)[2];
+      result.push({
+        name: match[1],
+        value: value2.trim(),
+        from: offset + line.length - match[2].length + value2.length - value2.trimStart().length,
+        // The real preparer reads declarations before stripping comments. A hidden
+        // declaration is therefore ambiguous, even though it has no prose value slot.
+        ambiguous: !visible || /\/\*|\/\//.test(match[2]) || blocks.some((block) => /^(enhanced|catalyst|exotic perk) /.test(block))
+      });
+    }
+    if (numberBlockOpen.test(line.trim())) blocks.push(line.trim());
+    else if (/^\)\s*$/.test(line.trim())) blocks.pop();
+    offset += line.length + 1;
+  }
+  return result;
+}
+function formulaLocals(formula, text) {
+  const definitions = numberVariables(text);
+  const result = /* @__PURE__ */ new Set();
+  const visited = /* @__PURE__ */ new Set();
+  const visit2 = (source) => {
+    for (const ref of variableReferences(source)) {
+      for (const local of definitions.filter((entry) => ref.name.startsWith(entry.name))) {
+        if (visited.has(local)) continue;
+        visited.add(local);
+        result.add(local.name);
+        visit2(local.value);
+      }
+    }
+  };
+  visit2(formula);
+  return result;
+}
+function freezeFormula(formula, english, numbers, translations) {
+  const variables = numberVariables(english);
+  const locals = formulaLocals(formula, english);
+  const prefixAmbiguity = (source) => {
+    const names = [
+      ...numberVariables(source).map((variable) => variable.name),
+      ...variableReferences(source).map((ref) => ref.name)
+    ];
+    return [...locals].some(
+      (name) => names.some((other) => other !== name && (other.startsWith(name) || name.startsWith(other)))
+    );
+  };
+  const retiredSources = Object.values(numbers.retired).flatMap((value2) => value2 === null ? [] : [typeof value2 === "string" ? value2 : value2.value]).join("\n");
+  if (locals.size && (markupImports(english).length || prefixAmbiguity(english + "\n" + retiredSources)))
+    return null;
+  const values = /* @__PURE__ */ new Map();
+  const visiting = /* @__PURE__ */ new Set();
+  let valid = true;
+  const expand = (source) => {
+    let result = "", at = 0;
+    for (const ref of variableReferences(source)) {
+      result += source.slice(at, ref.from);
+      if (!locals.has(ref.name)) result += source.slice(ref.from, ref.to);
+      else {
+        if (visiting.has(ref.name)) {
+          valid = false;
+          return "";
+        }
+        let value2 = values.get(ref.name);
+        if (value2 === void 0) {
+          const definitions = variables.filter((entry) => entry.name === ref.name);
+          if (definitions.length !== 1 || definitions[0].ambiguous) {
+            valid = false;
+            return "";
+          }
+          visiting.add(ref.name);
+          value2 = expand(definitions[0].value);
+          visiting.delete(ref.name);
+          if (!/^[+-]?\d+(?:\.\d+)?$/.test(value2)) {
+            valid = false;
+            return "";
+          }
+          values.set(ref.name, value2);
+        }
+        result += value2;
+      }
+      at = ref.to;
+    }
+    return result + source.slice(at);
+  };
+  const frozen = expand(formula);
+  if (!valid) return null;
+  const slots = numberSlots(english);
+  const fallback = [];
+  for (const [lang, entry] of Object.entries(translations)) {
+    if (lang === "en") continue;
+    const definitions = numberVariables(entry.text);
+    const agrees = !(locals.size && (markupImports(entry.text).length || prefixAmbiguity(entry.text))) && [...locals].every((name) => {
+      const own2 = definitions.filter((variable) => variable.name === name);
+      if (own2.length !== 1 || own2[0].ambiguous) return false;
+      const original = variables.find((variable) => variable.name === name);
+      const slot = slots.findIndex(
+        (slot2) => slot2.from === original.from && slot2.value === original.value
+      );
+      return own2[0].value === values.get(name) || slot >= 0 && own2[0].value === `#{=${numbers.ids[slot]}}`;
+    });
+    if (!agrees) fallback.push(lang);
+  }
+  return fallback.length ? { value: frozen, fallback: fallback.sort(), variables: Object.fromEntries(values) } : frozen;
+}
+var init_freeze = __esm({
+  "packages/core/src/numbers/freeze.ts"() {
+    "use strict";
+    init_braces();
+    init_prepare();
+    init_numberSlots();
+  }
+});
+
+// packages/core/src/numbers/map.ts
+function numberTokens(text) {
+  return [...text.matchAll(/#\{=[^}\n]*(?:}|$)/gm)].map((match) => {
+    const valid = /^#\{=([1-9]\d*)\}$/.exec(match[0]);
+    const id = valid ? Number(valid[1]) : void 0;
+    return {
+      from: match.index,
+      to: match.index + match[0].length,
+      ...id !== void 0 && Number.isSafeInteger(id) ? { id } : {}
+    };
+  });
+}
+function implicitNumberMap(count) {
+  return { ids: Array.from({ length: count }, (_, i) => i + 1), next: count + 1, retired: {} };
+}
+function readNumberMap(english) {
+  const count = numberSlots(english.text).length;
+  const map2 = english.numbers === void 0 ? implicitNumberMap(count) : numberMapSchema.parse(english.numbers);
+  if (map2.ids.length !== count)
+    throw new Error(`Number map has ${map2.ids.length} ids for ${count} English slots.`);
+  return map2;
+}
+function numberValues(english, lang) {
+  const map2 = readNumberMap(english);
+  const values = /* @__PURE__ */ new Map();
+  numberSlots(english.text).forEach((slot, i) => values.set(map2.ids[i], slot.value));
+  for (const [id, retired2] of Object.entries(map2.retired))
+    values.set(
+      Number(id),
+      retired2 === null ? null : typeof retired2 === "string" ? retired2 : lang !== void 0 && retired2.fallback.includes(lang) ? null : retired2.value
+    );
+  return values;
+}
+function resolveNumberTokens(text, values) {
+  if (!text.includes("#{=")) return text;
+  let result = "", at = 0;
+  for (const token of numberTokens(text)) {
+    const value2 = token.id === void 0 ? void 0 : values.get(token.id);
+    if (typeof value2 !== "string")
+      throw new Error(
+        token.id === void 0 ? "Malformed number token." : `Unknown or unfreezable number #{=${token.id}}.`
+      );
+    if (value2.includes("#{=")) throw new Error("A number value cannot contain number tokens.");
+    result += text.slice(at, token.from) + value2;
+    at = token.to;
+  }
+  return result + text.slice(at);
+}
+function reconcileNumberMap(before, after, tooltip) {
+  const old = before ?? { text: "" };
+  const map2 = readNumberMap(old);
+  const alignment = alignSlots(old.text, after.text);
+  const next = { ids: [], next: map2.next, retired: { ...map2.retired } };
+  const carried = new Map([...alignment.map].map(([a, b]) => [b, map2.ids[a]]));
+  next.ids = alignment.after.map((_, index) => carried.get(index) ?? next.next++);
+  const referenced = new Set(
+    Object.entries(tooltip.text).flatMap(
+      ([lang, entry]) => lang === "en" ? [] : numberTokens(entry.text).flatMap((token) => token.id === void 0 ? [] : [token.id])
+    )
+  );
+  for (const [index, slot] of alignment.before.entries()) {
+    const id = map2.ids[index];
+    if (!alignment.map.has(index) && referenced.has(id)) {
+      const referencing = Object.fromEntries(
+        Object.entries(tooltip.text).filter(
+          ([lang, entry]) => lang !== "en" && numberTokens(entry.text).some((token) => token.id === id)
+        )
+      );
+      next.retired[id] = slot.kind === "M" ? freezeFormula(slot.value, old.text, map2, referencing) : slot.value;
+    }
+  }
+  for (const id of Object.keys(next.retired))
+    if (!referenced.has(Number(id))) delete next.retired[id];
+  const implicit = implicitNumberMap(next.ids.length);
+  return next.next === implicit.next && next.ids.every((id, i) => id === implicit.ids[i]) && !Object.keys(next.retired).length ? void 0 : next;
+}
+var init_map = __esm({
+  "packages/core/src/numbers/map.ts"() {
+    "use strict";
+    init_numberSlots();
+    init_schemas3();
+    init_identity();
+    init_freeze();
+  }
+});
+
+// packages/core/src/markup/braces.ts
+function variableReferences(text, offset = 0) {
+  if (!text.includes("#")) return [];
+  const found = [];
+  for (const match of text.matchAll(variableReferencePattern)) {
+    const from = offset + match.index;
+    found.push({
+      name: match[1] ?? match[2],
+      braced: match[1] !== void 0,
+      from,
+      to: from + match[0].length
+    });
+  }
+  return found;
+}
+function isHolderName(name) {
+  const match = holderPattern.exec(name);
+  return match !== null && Number(match[1]) === match[2].length;
+}
+function reservedNames(text) {
+  const found = [];
+  for (const match of text.matchAll(/^var ([a-zA-Z0-9]+) /gm))
+    if (reservedNamePattern.test(match[1]))
+      found.push({
+        name: match[1],
+        from: match.index + 4,
+        to: match.index + 4 + match[1].length
+      });
+  for (const ref of variableReferences(text))
+    if (reservedNamePattern.test(ref.name)) found.push(ref);
+  return found.sort((a, b) => a.from - b.from);
+}
+function lowerDelimitedMarkup(text) {
+  if (!text.includes("#{") && !text.includes(enhancedArrowMarkup)) return text;
+  const lines = text.split("\n");
+  let changed = false;
+  for (let index = 0; index < lines.length; index++) {
+    const line = lines[index];
+    if (!line.includes("#{") && !line.includes(enhancedArrowMarkup)) continue;
+    const declarations = [];
+    let out = "";
+    let at = 0;
+    for (const match of line.matchAll(delimited)) {
+      if (match.index < at) continue;
+      const legacy = match[1] === void 0 ? legacyEnhancedArrow : `#${match[1]}`;
+      const end = match.index + match[0].length;
+      const word = /^[a-zA-Z0-9]+/.exec(line.slice(end))?.[0];
+      out += line.slice(at, match.index) + legacy;
+      at = end;
+      if (word === void 0) continue;
+      for (const part of word === "empty" ? ["empt", "y"] : [word]) {
+        out += `#${holderName(part)}`;
+        declarations.push(`var ${holderName(part)} = ${part}`);
+      }
+      at = end + word.length;
+    }
+    if (out === "" && at === 0) continue;
+    changed = true;
+    out += line.slice(at);
+    lines[index] = declarations.length ? [out, ...new Set(declarations)].join("\n") : out;
+  }
+  return changed ? lines.join("\n") : text;
+}
+function lowerConsumerMarkup(text, arrow) {
+  const lowered = lowerDelimitedMarkup(lowerElementTags(text));
+  return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
+}
+function mergedVariable(name, defined) {
+  if (defined(name)) return void 0;
+  for (let length = name.length - 1; length > 0; length--) {
+    const prefix = name.slice(0, length);
+    if (defined(prefix)) return prefix;
+  }
+  return void 0;
+}
+var enhancedArrowMarkup, legacyEnhancedArrow, variableReferencePattern, holderName, holderPattern, reservedNamePattern, reservedNameMessage, delimited;
+var init_braces = __esm({
+  "packages/core/src/markup/braces.ts"() {
+    "use strict";
+    init_elementTags();
+    init_map();
+    enhancedArrowMarkup = "<enhanced/>";
+    legacyEnhancedArrow = "#e";
+    variableReferencePattern = /#\{([a-zA-Z0-9]+)\}|#([a-zA-Z0-9]+)/g;
+    holderName = (word) => `Zb${word.length}w${word}`;
+    holderPattern = /^Zb(\d+)w([a-zA-Z0-9]+)$/;
+    reservedNamePattern = /^Zb\d+w/;
+    reservedNameMessage = (name) => `#${name} is a reserved name (braces generate names starting Zb<number>w): rename it.`;
+    delimited = /#\{([a-zA-Z0-9]+)\}|<enhanced\/>/g;
+  }
+});
+
+// packages/core/src/markup/weaponHeadings.ts
+function weaponSectionHeadings(text) {
+  return text.replace(/\r/g, "").split("\n").map((line) => {
+    const header = line.match(/^\s*<weapons(?:\s+(.*?))?\s*>\s*$/i) ?? line.match(/^\s*<\s*(?:weapon type\s*)?\((.*?)\)\s*>\s*$/);
+    if (header) {
+      const label = (header[1] || "Weapons").split(",").map((name) => {
+        const clean = name.trim();
+        return clean.toLowerCase() === "other" ? "Other weapons" : Object.hasOwn(legacyNames2, clean.toLowerCase()) ? legacyNames2[clean.toLowerCase()] : clean;
+      }).join(", ");
+      return `<bold ${label} />`;
+    }
+    if (/^\s*(<\/weapons\s*>|<\$\$>)\s*$/i.test(line)) return "";
+    return line;
+  }).join("\n");
+}
+var legacyNames2;
+var init_weaponHeadings = __esm({
+  "packages/core/src/markup/weaponHeadings.ts"() {
+    "use strict";
+    legacyNames2 = {
+      ar: "Auto Rifle",
+      bow: "Combat Bow",
+      fusion: "Fusion Rifle",
+      gl: "Grenade Launcher",
+      hc: "Hand Cannon",
+      "heavy gl": "Heavy Grenade Launcher",
+      lfr: "Linear Fusion Rifle",
+      lmg: "Machine Gun",
+      pulse: "Pulse Rifle",
+      rocket: "Rocket Launcher",
+      scout: "Scout Rifle",
+      smg: "Submachine Gun",
+      sniper: "Sniper Rifle",
+      trace: "Trace Rifle"
+    };
+  }
+});
+
+// packages/core/src/markup/lines.ts
+function lineClasses(line, allowed2, offsets) {
+  const classNames = allowed2.filter((name) => line.includes(`<${name}/>`));
+  let cleanLine = line;
+  for (const name of classNames) {
+    const marker2 = `<${name}/>`;
+    const index = cleanLine.indexOf(marker2);
+    if (index !== -1) {
+      cleanLine = cleanLine.slice(0, index) + cleanLine.slice(index + marker2.length);
+      offsets?.splice(index, marker2.length);
+    }
+  }
+  return {
+    classNames,
+    cleanLine
+  };
+}
+function markupInlineRanges(line) {
+  return [markupLineClasses, markupEmpty, []].flatMap((allowed2) => {
+    const offsets = Array.from({ length: line.length }, (_, index) => index);
+    const { cleanLine } = lineClasses(line, allowed2, offsets);
+    return [...cleanLine.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
+      from: offsets[match.index],
+      to: offsets[match.index + match[0].length - 1] + 1
+    }));
+  });
+}
+function markupStrayTags(text) {
+  const stray = [];
+  for (const line of weaponSectionHeadings(text).split("\n")) {
+    if (line.startsWith("< table ") || line.startsWith("<$>")) continue;
+    for (const segment of line.split(new RegExp(`(${inlineToken.source})`, "g"))) {
+      const tags = segment.match(/<\w+/g) ?? [];
+      const isToken = new RegExp(`^${inlineToken.source}$`).test(segment);
+      const wrapper2 = /^<(\w+) /.exec(segment)?.[1] ?? "";
+      const arrows = isToken && [...markupColors, "background"].includes(wrapper2) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
+      if (tags.length > (isToken ? 1 + arrows : 0)) stray.push(tags[0]);
+    }
+  }
+  return stray;
+}
+function trimMarked(text, start = true) {
+  if (!text.includes(elementTextOpen) && !text.includes(elementTextClose))
+    return start ? text.trim() : text.trimEnd();
+  const end = /[\s\uE000\uE001]*$/.exec(text)[0];
+  text = text.slice(0, text.length - end.length) + end.replace(/\s/g, "");
+  if (!start) return text;
+  const lead = /^[\s\uE000\uE001]*/.exec(text)[0];
+  return lead.replace(/\s/g, "") + text.slice(lead.length);
+}
+function markersPair(parts) {
+  let open2 = false;
+  for (const part of parts) {
+    if (part === elementTextOpen) {
+      if (open2) return false;
+      open2 = true;
+    } else if (part === elementTextClose) {
+      if (!open2) return false;
+      open2 = false;
+    }
+  }
+  return !open2;
+}
+function spans(line, titles) {
+  const parts = line.split(markedPart);
+  const tinting = parts.length > 1 && markersPair(parts);
+  let tint;
+  let lead = -1;
+  let closed;
+  const out = [];
+  const space = (span) => span.text !== void 0 && !span.classNames && !span.text.trim();
+  for (const part of parts) {
+    if (!part) continue;
+    if (part === elementTextOpen) {
+      if (!tinting) continue;
+      closed = void 0;
+      let at = out.length - 1;
+      while (at >= 0 && space(out[at])) at--;
+      const icon = out[at];
+      const element = icon && icon.text === void 0 ? icon.classNames?.[0] : void 0;
+      tint = element && elements.has(element) ? element : void 0;
+      lead = tint ? at + 1 : -1;
+      continue;
+    }
+    if (part === elementTextClose) {
+      const last = out.at(-1);
+      closed = tint && last?.classNames?.[0] === "elementText" ? last : void 0;
+      tint = void 0;
+      lead = -1;
+      continue;
+    }
+    const text = part.replace(elementTextMarkers, "");
+    if (!text) continue;
+    for (const span of lineSpans(text, titles)) {
+      if (tint && span.text !== void 0 && !span.classNames) {
+        const spaces = lead >= 0 ? out.splice(lead).map((s) => s.text).join("") : "";
+        lead = -1;
+        out.push({ text: spaces + span.text, classNames: ["elementText", tint] });
+      } else if (closed && space(span)) {
+        closed.text += span.text;
+      } else {
+        lead = -1;
+        out.push(span);
+      }
+      closed = void 0;
+    }
+  }
+  return out;
+}
+function lineSpans(text, titles) {
+  if (text === "\u{1F845}") return [{ text, classNames: ["enhancedArrow"] }];
+  const wrapper2 = text.match(/<\w+/)?.[0].slice(1);
+  if (wrapper2 === void 0) return [{ text }];
+  if ([...markupColors, "background", "bold"].includes(wrapper2)) {
+    const inner = text.replace(new RegExp(`^<${wrapper2} | />$`, "g"), "");
+    if (inner.includes("<arrow/>"))
+      return inner.split(/(<arrow\/>)/).filter(Boolean).map(
+        (part) => part === "<arrow/>" ? { classNames: [wrapper2, "arrow"] } : { text: part, classNames: [wrapper2] }
+      );
+    return [{ text: text.replace(new RegExp(`<${wrapper2} | />`, "g"), ""), classNames: [wrapper2] }];
+  }
+  if ([...markupIcons, ...markupEmpty].includes(wrapper2)) return [{ classNames: [wrapper2] }];
+  const target = text.match(/\[.+\]/)?.[0].replace(/\[|\]/g, "");
+  const label = text.replace(/ \[.+\] \/>/g, "");
+  if (!target || !label) return [];
+  if (wrapper2 === "link")
+    return [{ text: label.replace("<link ", ""), link: target, classNames: ["link"] }];
+  if (wrapper2 === "title")
+    return [{ text: label.replace("<title ", ""), title: titles[target], classNames: ["title"] }];
+  return [];
+}
+function tableRow(line, titles) {
+  const { classNames, cleanLine } = lineClasses(line, markupEmpty);
+  return {
+    classNames,
+    rowContent: (cleanLine.match(/\|.*?((?=\|)|$)/g) ?? []).map((cell) => {
+      const span = cell.match(/\|([bchr\d-]+)?/)?.[0].match(/-\d|\d/g);
+      const colSpan = span?.filter((value2) => Number(value2) > 0)[0];
+      const rowSpan = span?.filter((value2) => Number(value2) < 0)[0];
+      const classes = {
+        b: "bold",
+        c: "center",
+        h: "background",
+        r: "right"
+      };
+      return {
+        colSpan: colSpan ? Number(colSpan) : void 0,
+        rowSpan: rowSpan ? -Number(rowSpan) : void 0,
+        classNames: cell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => classes[char]).map((char) => classes[char]),
+        cellContent: spans(trimMarked(cell.replace(/\|[bchr\d-]+|\|/, "")), titles).flatMap(
+          (part) => {
+            if (!part.text?.trim() && !part.classNames?.some((name) => typeof name === "string"))
+              return [];
+            return [{ text: part.text, classNames: part.classNames, title: part.title }];
+          }
+        )
+      };
+    })
+  };
+}
+function parseLines(text, titles) {
+  const blocks = weaponSectionHeadings(text).match(/(< table [^]+?\n<\$>\n?)|(.+\n?|\n)/g) ?? [];
+  return blocks.flatMap((block) => {
+    block = block.trimEnd();
+    if (block.startsWith("< table ")) {
+      const rows = block.split("\n");
+      if (rows.length < 3) return [];
+      const names = rows[0].replace(/< table | >/g, "").match(/(\w+)/g)?.filter((name) => markupTableClasses.includes(name));
+      return [
+        {
+          table: rows.slice(1, -1).map((row) => tableRow(row, titles)),
+          classNames: [...names ?? [], "table"],
+          isFormula: names?.includes("formula")
+        }
+      ];
+    }
+    if (!block.trim()) return [{ classNames: ["spacer"] }];
+    const { classNames, cleanLine } = lineClasses(block, markupLineClasses);
+    return [
+      {
+        classNames,
+        linesContent: spans(trimMarked(cleanLine, !block.includes("<breakSpaces/>")), titles)
+      }
+    ];
+  });
+}
+var inlineToken, elements, markedPart;
+var init_lines = __esm({
+  "packages/core/src/markup/lines.ts"() {
+    "use strict";
+    init_elementTags();
+    init_syntax();
+    init_weaponHeadings();
+    inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
+    elements = new Set(elementTagNames);
+    markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
+  }
+});
+
+// packages/core/src/markup/numberSlots.ts
+function numberProse(text) {
+  const chars = text.split("");
+  for (const { from, to } of markupCommentContext(text).comments)
+    for (let at = from; at < to; at++) if (chars[at] !== "\n") chars[at] = " ";
+  return chars.join("").replace(/\r/g, " ");
+}
+function numberMathRanges(text) {
+  const refs = new Map(variableReferences(text).map((ref) => [ref.from, ref.to]));
+  const ranges = [];
+  for (let from = text.indexOf("${"); from >= 0; from = text.indexOf("${", from + 2)) {
+    let at = from + 2;
+    for (; at < text.length && text[at] !== "\n" && text[at] !== "}"; at++) {
+      const end = refs.get(at);
+      if (end !== void 0) at = end - 1;
+      else if (text.startsWith("#{=", at)) {
+        const end2 = text.indexOf("}", at + 3);
+        if (end2 >= 0) at = end2;
+      }
+    }
+    if (text[at] === "}") ranges.push({ from, to: at + 1 });
+  }
+  return ranges;
+}
+function numberTargetRanges(line) {
+  return markupInlineRanges(line).flatMap((range) => {
+    const token = line.slice(range.from, range.to);
+    if (!/^<(?:link|title|formula) /.test(token)) return [];
+    const target = /\[.+\]/.exec(token);
+    return target ? [{ from: range.from + target.index, to: range.from + target.index + target[0].length }] : [];
+  });
+}
+function numberTemplate(text, slots = numberSlots(text)) {
+  let result = "", at = 0;
+  for (const slot of slots) {
+    result += text.slice(at, slot.from).replaceAll("", "") + "" + slot.kind;
+    at = slot.to;
+  }
+  return result + text.slice(at).replaceAll("", "");
+}
+function numberSlots(text, hash2) {
+  if (hash2 !== void 0 && hash2 >= 1 && hash2 <= 3) return [];
+  const prose = numberProse(text);
+  const slots = [];
+  let offset = 0, inTable = false;
+  let block = "", nearestHeading = "";
+  const parents = [];
+  for (const [lineNo, line] of prose.split("\n").entries()) {
+    const base = offset;
+    offset += line.length + 1;
+    const trimmed = line.trim();
+    if (numberBlockOpen.test(trimmed)) {
+      parents.push({ block, heading: nearestHeading });
+      block = trimmed.toLowerCase().replace(/\s+/g, " ");
+      nearestHeading = "";
+      continue;
+    }
+    if (/^\)\s*$/.test(trimmed)) {
+      const parent = parents.pop();
+      block = parent?.block ?? "";
+      nearestHeading = parent?.heading ?? "";
+      continue;
+    }
+    if (/^< table\b/.test(trimmed)) inTable = true;
+    if (/^<\$>/.test(trimmed)) {
+      inTable = false;
+      continue;
+    }
+    if (/^import\b/.test(trimmed) || /^<\$\$>/.test(trimmed) || /^<\/weapons\b/.test(trimmed))
+      continue;
+    const isHeading = heading(trimmed);
+    const scope = JSON.stringify([block, nearestHeading]);
+    const skip = /^<\s.*>\s*$/.test(trimmed);
+    const excluded = [...variableReferences(line), ...numberTargetRanges(line)];
+    for (const tag of line.matchAll(/<\/?[a-zA-Z_]+[0-9]*(?=[\s/>])/g))
+      excluded.push({ from: tag.index, to: tag.index + tag[0].length });
+    if (inTable)
+      for (const mod of line.matchAll(/\|[bchr\d-]+/g))
+        excluded.push({ from: mod.index, to: mod.index + mod[0].length });
+    const math = new Map(numberMathRanges(line).map((range) => [range.from, range.to]));
+    const pairs = scanBaseEnhanced(line).pairs;
+    const inline = markupInlineRanges(line).filter(
+      (range) => /^<pv[ep] /.test(line.slice(range.from, range.to))
+    );
+    const start = /^\s*var [a-zA-Z0-9]+ = /.exec(line)?.[0].length ?? 0;
+    const lineStart = slots.length;
+    for (let at = start; !skip && at < line.length; ) {
+      if (excluded.some((range) => contains(range, at))) {
+        at++;
+        continue;
+      }
+      let kind = "N", to = math.get(at);
+      if (to !== void 0) kind = "M";
+      else {
+        const previous = line[at - 1] ?? "";
+        const before = line[at - 2] ?? "";
+        if (!/[0-9+-]/.test(line[at]) || /[\p{L}\p{N}_.#]/u.test(previous) && !(previous === "x" && !/[\p{L}\p{N}_]/u.test(before))) {
+          at++;
+          continue;
+        }
+        stack.lastIndex = number4.lastIndex = at;
+        const stacked = inTable ? null : stack.exec(line);
+        const match = stacked ?? number4.exec(line);
+        if (!match) {
+          at++;
+          continue;
+        }
+        to = at + match[0].length;
+        if (!unitAfter.test(line.slice(to)) || line[to] === "." && /\d/.test(line[to + 1] ?? "")) {
+          at = to;
+          continue;
+        }
+        if (stacked) kind = "S";
+      }
+      let arm = "";
+      for (const range of inline)
+        if (contains(range, at)) arm += line.slice(range.from + 1, range.from + 4);
+      for (const pair2 of pairs)
+        if (contains(pair2, at))
+          arm += at < pair2.from + 2 + pair2.base.length ? "/base" : "/enhanced";
+      if (inTable) arm += `/cell${line.slice(0, at).split("|").length - 1}`;
+      slots.push({
+        kind,
+        value: text.slice(base + at, base + to),
+        from: base + at,
+        to: base + to,
+        line: lineNo,
+        scope: scope + arm
+      });
+      at = to;
+    }
+    if (isHeading) {
+      const local = slots.slice(lineStart).map((slot) => ({ ...slot, from: slot.from - base, to: slot.to - base }));
+      nearestHeading = numberTemplate(line, local).toLowerCase().replace(/\s+/g, " ").trim();
+    }
+  }
+  return slots;
+}
+var digits, number4, stack, unitAfter, contains, numberBlockOpen, heading;
+var init_numberSlots = __esm({
+  "packages/core/src/markup/numberSlots.ts"() {
+    "use strict";
+    init_braces();
+    init_lines();
+    init_prepare();
+    init_baseEnhanced();
+    digits = String.raw`(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?\??`;
+    number4 = new RegExp(`[-+]?${digits}`, "y");
+    stack = new RegExp(`[-+]?${digits}%?(?: ?\\| ?(?:${digits}%?|\u2026|\\.\\.\\.|\\?))+`, "y");
+    unitAfter = /^(?:%|x\b|×|ms\b|s\b|m\b|HP\b|hp\b|k\b|\+|[^\p{L}\p{N}_]|$)/u;
+    contains = (range, at) => at >= range.from && at < range.to;
+    numberBlockOpen = /^(?:(?:title|export)\b.*\(|(?:enhanced|catalyst|exotic perk) \()\s*$/;
+    heading = (line) => /^<\s.*>\s*$/.test(line) || /:\s*$/.test(line);
+  }
+});
+
+// packages/core/src/markup/numberFormat.ts
+function formatNumbers(text, lang = "en") {
+  if (!commaLanguages.has(lang) || !/[.,]/.test(text)) return text;
+  let output2 = "", at = 0;
+  for (const slot of numberSlots(text)) {
+    if (slot.kind === "M") continue;
+    const value2 = slot.value.replace(
+      /\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+\.\d+/g,
+      (number5) => number5.replaceAll(",", "").replace(".", ",")
+    );
+    output2 += text.slice(at, slot.from) + value2;
+    at = slot.to;
+  }
+  return output2 + text.slice(at);
+}
+var commaLanguages;
+var init_numberFormat = __esm({
+  "packages/core/src/markup/numberFormat.ts"() {
+    "use strict";
+    init_numberSlots();
+    commaLanguages = /* @__PURE__ */ new Set(["de", "es", "fr", "it", "pl", "pt-br", "ru"]);
+  }
+});
+
 // packages/core/src/contentHash.ts
 function stableStringify(value2) {
   if (value2 === null || typeof value2 === "string" || typeof value2 === "boolean") {
@@ -20758,12 +22417,132 @@ var init_contentHash = __esm({
   }
 });
 
+// packages/core/src/validation/numbers.ts
+function gluedNumberIssues(text) {
+  if (!text.includes("#") && !text.includes("${")) return [];
+  const { text: prose, offsets } = markupCommentContext(text);
+  const locals = extractVariables(prose);
+  const variables = variableReferences(prose);
+  const plainDigits = new Set(
+    variables.filter((ref) => !ref.braced && /\d/.test(ref.name) && !Object.hasOwn(locals, ref.name)).map((ref) => ref.from)
+  );
+  const urls = [...prose.matchAll(/[a-z][a-z0-9+.-]*:\/\/[^\s<>"']+/gi)].map((match) => ({
+    from: match.index,
+    to: match.index + match[0].length
+  }));
+  const numeric = [...numberMathRanges(prose), ...numberTokens(prose)];
+  const touches = (left, right) => left === right || left + 1 === right && /[.,]/.test(prose[left]);
+  const joinedNumbers = new Set(
+    numeric.filter(
+      ({ from, to }) => numeric.some((other) => touches(other.to, from) || touches(to, other.from))
+    ).map(({ from }) => from)
+  );
+  const references = [...variables, ...numeric];
+  return references.filter(({ from, to }) => !urls.some((url2) => from >= url2.from && to <= url2.to)).filter(
+    ({ from, to }) => plainDigits.has(from) || joinedNumbers.has(from) || new RegExp("\\p{Nd}[.,]?$", "u").test(prose.slice(Math.max(0, from - 3), from)) || new RegExp("^[.,]?\\p{Nd}", "u").test(prose.slice(to, to + 3))
+  ).map(({ from, to }) => ({
+    severity: "error",
+    code: "glued-number",
+    message: plainDigits.has(from) ? unbracedNumberMessage : gluedNumberMessage,
+    from: offsets[from],
+    to: offsets[to - 1] + 1
+  }));
+}
+function numberTokenIssues(text, lang, hash2, values) {
+  if (!text.includes("#{=")) return [];
+  const issues = [];
+  const maths = numberMathRanges(text);
+  let offset = 0;
+  for (const line of text.split("\n")) {
+    const targets = numberTargetRanges(line);
+    for (const token of numberTokens(line)) {
+      const from = offset + token.from, to = offset + token.to;
+      let message;
+      if (lang === "en") message = "Number tokens belong in translations.";
+      else if (hash2 !== void 0 && hash2 >= 1 && hash2 <= 3)
+        message = "Number tokens do not belong in global documents.";
+      else if (token.id === void 0) message = "Malformed number token; use #{=<id>}.";
+      else if (/^\s*import\b/.test(line) || numberBlockOpen.test(line.trim()) || /^\s*var\b/.test(line) && token.from < line.indexOf(" = ") + 3 || /^\s*<\s.*>\s*$/.test(line) || targets.some((range) => token.from >= range.from && token.from < range.to) || maths.some((range) => from >= range.from && from < range.to))
+        message = "Number tokens cannot go here.";
+      else if (values && !values.has(token.id)) message = `Unknown number #{=${token.id}}.`;
+      if (message) issues.push({ severity: "error", message, from, to });
+    }
+    offset += line.length + 1;
+  }
+  return issues;
+}
+function validateNumberTooltip(tooltip, head) {
+  if (Object.values(tooltip.text).every(
+    (entry) => entry?.numbers === void 0 && !entry?.text.includes("#{=")
+  ))
+    return [];
+  const issues = [];
+  const english = tooltip.text.en;
+  let values;
+  let retired2 = {};
+  try {
+    if (english) {
+      retired2 = readNumberMap(english).retired;
+      values = numberValues(english);
+    } else values = /* @__PURE__ */ new Map();
+  } catch (error62) {
+    issues.push({
+      lang: "en",
+      severity: "error",
+      from: 0,
+      to: english?.text.length ?? 0,
+      message: String(error62)
+    });
+  }
+  for (const [lang, entry] of Object.entries(tooltip.text)) {
+    issues.push(
+      ...numberTokenIssues(entry.text, lang, tooltip.hash, values).map((issue2) => ({
+        ...issue2,
+        lang
+      }))
+    );
+    if (head !== void 0 && lang !== "en" && english && entry.text.includes("#{=")) {
+      const previous = new Set(
+        numberTokens(head?.text[lang]?.text ?? "").map(({ id }) => id)
+      );
+      for (const token of numberTokens(entry.text))
+        if (token.id !== void 0 && Object.hasOwn(retired2, token.id) && !previous.has(token.id))
+          issues.push({
+            lang,
+            severity: "error",
+            from: token.from,
+            to: token.to,
+            message: `Number #{=${token.id}} was removed from English; reload`
+          });
+    }
+  }
+  return issues;
+}
+var gluedNumberMessage, unbracedNumberMessage;
+var init_numbers = __esm({
+  "packages/core/src/validation/numbers.ts"() {
+    "use strict";
+    init_braces();
+    init_syntax();
+    init_prepare();
+    init_numberSlots();
+    init_map();
+    gluedNumberMessage = "Make the whole number one variable or number token; do not glue digits to a reference.";
+    unbracedNumberMessage = "Use braces for this variable name. If the digits are part of a number, make the whole number one variable or number token.";
+  }
+});
+
 // packages/core/src/schedule/fields.ts
 function isTranslationField(field) {
   return field.startsWith(textPrefix) && field !== "text.en";
 }
 function sameFieldValue(field, a, b) {
   if (a === void 0 || b === void 0) return a === b;
+  if (field === "text.en") {
+    const before = a;
+    const after = b;
+    return before.text === after.text && equal(before.numbers, after.numbers);
+  }
   if (field.startsWith(textPrefix))
     return a.text === b.text;
   if (field === "bungieSnapshot")
@@ -20829,6 +22608,119 @@ var init_fields = __esm({
   }
 });
 
+// packages/core/src/numbers/carry.ts
+function changedNumberSlots(before, after) {
+  const alignment = alignSlots(before, after);
+  const changed = new Set(alignment.changed);
+  const definitions = numberVariables(before);
+  const names = new Set(
+    definitions.filter(
+      (variable) => alignment.before.some(
+        (slot, i) => changed.has(i) && slot.from >= variable.from && slot.to <= variable.from + variable.value.length
+      )
+    ).map((variable) => variable.name)
+  );
+  alignment.before.forEach((slot, i) => {
+    if (slot.kind === "M" && [...formulaLocals(slot.value, before)].some((name) => names.has(name)))
+      changed.add(i);
+  });
+  return changed;
+}
+function numericLiterals(source) {
+  const normalized = source.normalize("NFKC");
+  const readings = [
+    normalized,
+    normalized.replace(/(\d),(?=\d)/g, "$1."),
+    normalized.replace(/(?<=\d)[. ]+(?=\d{3}(?!\d))/g, "")
+  ];
+  return readings.flatMap(
+    (text) => [...text.matchAll(/(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/g)].map(
+      (match) => String(Number(match[0].replaceAll(",", "")))
+    )
+  );
+}
+function renderVariants(source) {
+  return [void 0, ...markupConditions.map(([, type]) => type)].map(
+    (type) => prepareMarkup(source, { variables: "", titles: "", type }, []).text
+  );
+}
+function canCarryNumbers(before, after, translation) {
+  if (translation.sourceUpdatedAt !== before.updatedAt) return false;
+  if ([before.text, after.text, translation.text].some((text) => gluedNumberIssues(text).length))
+    return false;
+  const alignment = alignSlots(before.text, after.text);
+  if (alignment.kind === "text") return false;
+  const oldMap = readNumberMap(before), newMap = readNumberMap(after);
+  if (oldMap.ids.length !== newMap.ids.length || oldMap.ids.some((id, i) => id !== newMap.ids[i]))
+    return false;
+  const changed = changedNumberSlots(before.text, after.text);
+  const prose = numberProse(translation.text);
+  const maths = numberMathRanges(prose);
+  if (changed.size && maths.length) {
+    const definitions = numberVariables(translation.text);
+    const names = new Set(definitions.map((local) => local.name));
+    if (maths.some(({ from, to }) => {
+      const source = prose.slice(from, to);
+      const locals = formulaLocals(source, translation.text);
+      if (locals.size && markupImports(translation.text).length) return true;
+      return [
+        source,
+        ...definitions.filter((local) => locals.has(local.name)).map((local) => local.value)
+      ].some((value2) => variableReferences(value2).some((ref) => !names.has(ref.name)));
+    }))
+      return false;
+  }
+  const tokens = new Set(numberTokens(translation.text).map((token) => token.id));
+  if ([...changed].some((index) => !tokens.has(oldMap.ids[index]))) return false;
+  const oldValues = /* @__PURE__ */ new Set();
+  for (const index of changed) {
+    const slot = alignment.before[index];
+    numericLiterals(slot.value).forEach((value2) => oldValues.add(value2));
+    if (slot.kind === "M") {
+      const definitions = numberVariables(before.text);
+      const names = new Set(definitions.map((local) => local.name));
+      const locals = formulaLocals(slot.value, before.text);
+      if (locals.size && markupImports(before.text).length) return false;
+      const sources = [
+        slot.value,
+        ...definitions.filter((local) => locals.has(local.name)).map((local) => local.value)
+      ];
+      if (sources.some((source) => variableReferences(source).some((ref) => !names.has(ref.name))))
+        return false;
+      renderVariants(slot.value + "\n" + before.text).map((text) => text.split("\n")[0]).flatMap(numericLiterals).forEach((value2) => oldValues.add(value2));
+    }
+  }
+  let literalText = removeMarkupComments(translation.text).replace(/#\{=[^}\n]*(?:}|$)/gm, " ");
+  const localNames = new Set(
+    markupImports(literalText).length ? [] : numberVariables(literalText).map((local) => local.name)
+  );
+  literalText = literalText.replace(
+    variableReferencePattern,
+    (reference, braced, legacy) => localNames.has(braced ?? legacy) ? reference : "\uE000"
+  );
+  const scans = [
+    literalText,
+    ...renderVariants(literalText),
+    // Local-only maths uses the real declaration/comment order too.
+    ...maths.length ? renderVariants(translation.text.replace(/#\{=[^}\n]*(?:}|$)/gm, " ")) : []
+  ].map((text) => text.normalize("NFKC"));
+  if (scans.some((text) => /\uE000[\d\uE000]|\d\uE000/.test(text))) return false;
+  if (scans.flatMap(numericLiterals).some((value2) => oldValues.has(value2))) return false;
+  return true;
+}
+var init_carry = __esm({
+  "packages/core/src/numbers/carry.ts"() {
+    "use strict";
+    init_prepare();
+    init_braces();
+    init_freeze();
+    init_identity();
+    init_map();
+    init_numbers();
+    init_numberSlots();
+  }
+});
+
 // packages/core/src/merge3.ts
 function merge3(base, head, next) {
   for (const value2 of [base, head, next]) tooltipSchema.parse(value2);
@@ -20863,11 +22755,26 @@ function merge3(base, head, next) {
   }
   const text = {};
   for (const language of languages2) {
+    const original2 = base.text[language], theirs2 = head.text[language], mine2 = next.text[language];
+    const oldEnglish = base.text.en;
+    const carried = (entry, english) => Boolean(
+      original2 && oldEnglish && english && original2.sourceUpdatedAt === oldEnglish.updatedAt && original2.text === entry.text && original2.updatedBy === entry.updatedBy && entry.updatedAt === entry.sourceUpdatedAt && Date.parse(entry.sourceUpdatedAt ?? "") > Date.parse(oldEnglish.updatedAt) && Date.parse(entry.updatedAt) <= Date.parse(english.updatedAt)
+    );
+    let edited;
+    if (language !== "en" && original2 && theirs2 && mine2) {
+      if (carried(theirs2, head.text.en) && mine2.text !== original2.text) edited = mine2;
+      else if (carried(mine2, next.text.en) && theirs2.text !== original2.text) edited = theirs2;
+    }
+    if (edited && oldEnglish && text.en) {
+      text[language] = canCarryNumbers(oldEnglish, text.en, edited) ? { ...edited, sourceUpdatedAt: text.en.updatedAt } : edited;
+      continue;
+    }
     const value2 = stamped(
       `text.${language}`,
       base.text[language],
       head.text[language],
       next.text[language],
+      // Retries keep the complete saved entry, including its authoritative number map.
       (entry) => entry.text
     );
     if (value2 !== void 0) text[language] = value2;
@@ -20895,6 +22802,7 @@ var init_merge3 = __esm({
     init_contentHash();
     init_languages();
     init_schemas3();
+    init_carry();
     equal2 = (a, b) => a === void 0 || b === void 0 ? a === b : stableStringify(a) === stableStringify(b);
   }
 });
@@ -20919,7 +22827,26 @@ var init_stamps = __esm({
 });
 
 // packages/core/src/schedule/activate.ts
-function mergeChanged(base, current, proposed, changed, choices = {}) {
+function reconcileScheduledNumbers(base, source, proposed, tooltip) {
+  const english = tooltip.text.en;
+  if (!english) return { ok: true, tooltip };
+  const changedEnglish = !sameFieldValue("text.en", base?.text.en, proposed.text.en);
+  const keepsProposal = changedEnglish && english.text === proposed.text.en?.text && sameFieldValue("text.en", source?.text.en, base?.text.en);
+  const numbers = keepsProposal ? proposed.text.en?.numbers : source?.text.en?.text === english.text ? source.text.en.numbers : reconcileNumberMap(source?.text.en, english, tooltip);
+  const stagedTokens = Object.entries(tooltip.text).some(
+    ([lang, entry]) => lang !== "en" && entry.text.includes("#{=")
+  );
+  if ((changedEnglish || !source?.text.en) && !keepsProposal && proposed.text.en && stagedTokens && stableStringify(readNumberMap({ text: english.text, numbers })) !== stableStringify(readNumberMap(proposed.text.en)))
+    return {
+      ok: false,
+      reason: `Tooltip ${tooltip.hash}: English number identities changed; reload and re-pick the staged numbers`
+    };
+  const en = { ...english };
+  delete en.numbers;
+  if (numbers) en.numbers = numbers;
+  return { ok: true, tooltip: { ...tooltip, text: { ...tooltip.text, en } } };
+}
+function mergeChanged(base, current, proposed, changed, choices = {}, identityBase = base) {
   let from = current;
   let to = current;
   for (const field of changed) {
@@ -20929,16 +22856,48 @@ function mergeChanged(base, current, proposed, changed, choices = {}) {
       from = withField(from, base, field);
     to = withField(to, proposed, field);
   }
-  return merge3(from, current, to);
+  const result = merge3(from, current, to);
+  if (!result.ok) return result;
+  const transfer = reconcileScheduledNumbers(identityBase, current, proposed, result.merged);
+  if (!transfer.ok)
+    return {
+      ok: false,
+      reason: transfer.reason,
+      conflicts: [{ field: "text.en", base: void 0, head: void 0, next: transfer.reason }]
+    };
+  result.merged = transfer.tooltip;
+  const issues = validateNumberTooltip(result.merged, current);
+  if (issues.length)
+    return {
+      ok: false,
+      reason: `Tooltip ${proposed.hash} (${issues[0].lang}): ${issues[0].message}`,
+      conflicts: issues.map((issue2) => ({
+        field: changed.includes(`text.${issue2.lang}`) ? `text.${issue2.lang}` : "text.en",
+        base: void 0,
+        head: void 0,
+        next: issue2.message
+      }))
+    };
+  return result;
 }
 function activate({ base, current, proposed }) {
   const changed = changedFields(base, proposed);
-  if (base === null && current === null)
-    return { ok: true, tooltip: boundTranslationSources(proposed), created: true, changed };
-  if (base === null || current === null) return { ok: false, fields: [existsField], changed };
-  const result = mergeChanged(base, current, proposed, changed);
-  if (!result.ok) return { ok: false, fields: result.conflicts.map(({ field }) => field), changed };
-  return { ok: true, tooltip: boundTranslationSources(result.merged), created: false, changed };
+  if (base === null !== (current === null)) return { ok: false, fields: [existsField], changed };
+  const empty2 = { hash: proposed.hash, text: {}, associated: [] };
+  const result = mergeChanged(base ?? empty2, current ?? empty2, proposed, changed);
+  if (!result.ok)
+    return {
+      ok: false,
+      fields: [...new Set(result.conflicts.map(({ field }) => field))],
+      changed,
+      ..."reason" in result ? { reason: String(result.reason) } : {}
+    };
+  return {
+    ok: true,
+    tooltip: boundTranslationSources(result.merged),
+    created: current === null,
+    changed
+  };
 }
 function resolveActivation({
   base,
@@ -20957,13 +22916,24 @@ function resolveActivation({
   if (base !== null && current === null) {
     const choice = choices[existsField];
     if (!choice) return { ok: false, missing: [existsField] };
-    return { ok: true, tooltip: choice === "upcoming" ? proposed : null };
+    if (choice === "current") return { ok: true, tooltip: null };
+    const empty2 = { hash: proposed.hash, text: {}, associated: [] };
+    const result2 = mergeChanged(empty2, empty2, proposed, changedFields(null, proposed), {}, base);
+    return result2.ok ? { ok: true, tooltip: result2.merged } : {
+      ok: false,
+      missing: [...new Set(result2.conflicts.map(({ field }) => field))],
+      ..."reason" in result2 ? { reason: String(result2.reason) } : {}
+    };
   }
   if (choices[existsField]) throw new Error("No existence choice applies here");
-  if (current === null) return { ok: true, tooltip: proposed };
   const from = base ?? { hash: proposed.hash, text: {}, associated: [] };
-  const result = mergeChanged(from, current, proposed, changed, choices);
-  if (!result.ok) return { ok: false, missing: result.conflicts.map(({ field }) => field) };
+  const result = mergeChanged(from, current ?? from, proposed, changed, choices);
+  if (!result.ok)
+    return {
+      ok: false,
+      missing: [...new Set(result.conflicts.map(({ field }) => field))],
+      ..."reason" in result ? { reason: String(result.reason) } : {}
+    };
   return { ok: true, tooltip: result.merged };
 }
 var existsField;
@@ -20971,6 +22941,9 @@ var init_activate = __esm({
   "packages/core/src/schedule/activate.ts"() {
     "use strict";
     init_merge3();
+    init_map();
+    init_contentHash();
+    init_numbers();
     init_stamps();
     init_fields();
     existsField = "$exists";
@@ -21347,32 +23320,36 @@ function mergeAssociations(base, onto, proposed) {
 }
 function compose(input2, boundSources = true) {
   const { hash: hash2, base, proposed, snapshot, pushed } = input2;
-  for (const tooltip of [base, proposed, snapshot])
-    if (tooltip && tooltipSchema.parse(tooltip).hash !== hash2)
+  for (const tooltip2 of [base, proposed, snapshot])
+    if (tooltip2 && tooltipSchema.parse(tooltip2).hash !== hash2)
       throw new Error(`Tooltip does not belong to member ${hash2}`);
   const changed = changedFields(base, proposed);
+  let tooltip = proposed;
+  let unpublished = [];
   if (snapshot) {
-    let tooltip = snapshot;
+    tooltip = snapshot;
     for (const field of changed)
       tooltip = field === "associated" && base ? { ...tooltip, associated: mergeAssociations(base, snapshot, proposed) } : withField(tooltip, proposed, field);
-    const unpublished = changed.filter(
+    unpublished = changed.filter(
       (field) => !(field === "associated" && base) && !sameFieldValue(
         field,
         base ? fieldValue(base, field) : void 0,
         fieldValue(snapshot, field)
       )
     );
-    return {
-      status: "overlay",
-      tooltip: boundSources ? boundTranslationSources(tooltipSchema.parse(tooltip)) : tooltipSchema.parse(tooltip),
-      changed,
-      unpublished
-    };
-  }
-  if (pushed) return { status: "stale", reason: missingSnapshotReason };
+  } else if (pushed) return { status: "stale", reason: missingSnapshotReason };
+  const head = snapshot ?? base;
+  const transfer = reconcileScheduledNumbers(base, head, proposed, tooltip);
+  if (!transfer.ok) return { status: "stale", reason: transfer.reason };
+  tooltip = transfer.tooltip;
+  const issue2 = validateNumberTooltip(tooltip, head)[0];
+  if (issue2)
+    return { status: "stale", reason: `Tooltip ${hash2} (${issue2.lang}): ${issue2.message}` };
+  tooltip = boundSources ? boundTranslationSources(tooltipSchema.parse(tooltip)) : tooltipSchema.parse(tooltip);
+  if (snapshot) return { status: "overlay", tooltip, changed, unpublished };
   return {
     status: "whole",
-    tooltip: boundSources ? boundTranslationSources(proposed) : proposed,
+    tooltip,
     changed
   };
 }
@@ -21381,6 +23358,8 @@ var init_compose = __esm({
   "packages/core/src/schedule/compose.ts"() {
     "use strict";
     init_merge3();
+    init_activate();
+    init_numbers();
     init_schemas3();
     init_stamps();
     init_fields();
@@ -21504,6 +23483,7 @@ __export(schedule_exports, {
   notBeforeSchema: () => notBeforeSchema,
   nowMinute: () => nowMinute,
   openStatuses: () => openStatuses,
+  reconcileScheduledNumbers: () => reconcileScheduledNumbers,
   resolveActivation: () => resolveActivation,
   scheduleIndexSchema: () => scheduleIndexSchema,
   scheduleLimits: () => scheduleLimits,
@@ -22299,9 +24279,9 @@ function cleanObject(dirtyObject, allowMutations = false) {
 function customJsonStringify(object2, properties, spaces = 1) {
   const string4 = JSON.stringify(object2, void 0, spaces);
   const regex = new RegExp(`"(${properties.join("|")})"\\s*:\\s*\\[([^]+?)\\]`, "g");
-  const matches = string4.match(regex);
-  if (matches === null) return string4;
-  const newString = matches.reduce((acc, match) => {
+  const matches2 = string4.match(regex);
+  if (matches2 === null) return string4;
+  const newString = matches2.reduce((acc, match) => {
     acc = acc.replace(match, match.replaceAll("\n", "").replace(/  +/g, " "));
     return acc;
   }, string4);
@@ -22413,47 +24393,10 @@ var canonicalWeaponType = (name, legacy = false) => {
 };
 var legacyNames = weaponTypes.map((legacyName) => ({ legacyName, name: canonicalWeaponType(legacyName, true) }));
 
-// packages/core/src/markup/arithmetic.ts
-function evaluateMarkupMath(text) {
-  return text.replace(/\${.+?}/g, (expression) => {
-    const source = expression.match(
-      /(-?\d+(\.\d+)?)(\s{0,9}[+\-/*]\s{0,9}(-?\d+(\.\d+)?)){0,99}/
-    )?.[0];
-    if (!source) return expression;
-    const tokens = source.match(/-?\d+(?:\.\d+)?|[+*/-]/g) ?? [];
-    let index = 0;
-    function number4() {
-      return Number(tokens[index++]);
-    }
-    function product() {
-      let value3 = number4();
-      while (tokens[index] === "*" || tokens[index] === "/") {
-        const operator = tokens[index++];
-        const right = number4();
-        value3 = operator === "*" ? value3 * right : value3 / right;
-      }
-      return value3;
-    }
-    let value2 = product();
-    while (index < tokens.length) {
-      const operator = tokens[index];
-      if (operator.startsWith("-") && operator.length > 1) value2 += product();
-      else {
-        index++;
-        const right = product();
-        value2 = operator === "+" ? value2 + right : value2 - right;
-      }
-    }
-    if (!Number.isFinite(value2)) return String(value2);
-    const [coefficient, exponent = "0"] = String(value2).split("e");
-    const shifted = Math.round(Number(`${coefficient}e${Number(exponent) + 2}`));
-    const [rounded, roundedExponent = "0"] = String(shifted).split("e");
-    return String(Number(`${rounded}e${Number(roundedExponent) - 2}`));
-  });
-}
-
 // packages/export/src/converter/converterFunctions/math.ts
-var doMath = (description) => evaluateMarkupMath(description);
+init_arithmetic();
+init_numberFormat();
+var doMath = (description, language = "en") => formatNumbers(evaluateMarkupMath(description), language);
 
 // packages/export/src/converter/converterFunctions/loadExports.ts
 var getExports = (description) => {
@@ -22560,7 +24503,7 @@ var removePerkSpecificText = (description, perkType) => {
 };
 
 // packages/export/src/converter/converterFunctions/removeUnusedText.ts
-var removeUnusedText = (description, removeTitle = true) => {
+var removeUnusedText2 = (description, removeTitle = true) => {
   description = description.replace(/\r/g, "");
   description = description.replace(/\/\*[^]*\*\/\n?/g, "");
   description = description.replace(/^ *?\/\/.*$\n?| +\/\/.*$/gm, "");
@@ -22672,8 +24615,8 @@ var splitTable = (line, title) => {
     classNames,
     rowContent: splittedLine.map((tableCell) => {
       const cellSpan = tableCell.match(/\|([bchr\d-]+)?/)?.[0]?.match(/-\d|\d/g);
-      const colSpan = cellSpan?.filter((number4) => Number(number4) > 0)[0];
-      const rowSpan = cellSpan?.filter((number4) => Number(number4) < 0)[0];
+      const colSpan = cellSpan?.filter((number5) => Number(number5) > 0)[0];
+      const rowSpan = cellSpan?.filter((number5) => Number(number5) < 0)[0];
       const inCellClasses = {
         b: "bold",
         c: "center",
@@ -22704,7 +24647,7 @@ var splitTable = (line, title) => {
 };
 
 // packages/export/src/converter/converterFunctions/separateTableWeaponType.ts
-var legacyNames2 = {
+var legacyNames3 = {
   ar: "Auto Rifle",
   bow: "Combat Bow",
   fusion: "Fusion Rifle",
@@ -22727,7 +24670,7 @@ var separateTableWeaponType = (description, titles) => {
       const label = (header[1] || "Weapons").split(",").map((name) => {
         const clean = name.trim();
         const key = clean.toLowerCase();
-        return key === "other" ? "Other weapons" : Object.hasOwn(legacyNames2, key) ? legacyNames2[key] : clean;
+        return key === "other" ? "Other weapons" : Object.hasOwn(legacyNames3, key) ? legacyNames3[key] : clean;
       }).join(", ");
       return `<bold ${label} />`;
     }
@@ -22776,11 +24719,14 @@ var prepareDescription = (descriptionData) => {
   let description = loadExports(descriptionData);
   description = removePerkSpecificText(description, database[hash2].type);
   description = loadVariables({ ...descriptionData, descriptionString: description });
-  description = doMath(description);
+  const titles = extractTitles(removeUnusedText2(description, false));
+  const editor = database[hash2].editor;
+  const numberLanguage = editor[language]?.main === editor.en?.main ? "en" : language;
+  description = doMath(description, numberLanguage);
   return {
-    preparedDescription: removeUnusedText(description.trim()),
+    preparedDescription: removeUnusedText2(description.trim()),
     titles: {
-      ...extractTitles(removeUnusedText(description, false)),
+      ...titles,
       ...extractTitles(database[3].editor[language]?.main),
       ...extractTitles(database[3].editor[language]?.secondary)
     }
@@ -22895,7 +24841,7 @@ var normalizeLegacySections = (lines) => {
     const { weaponTypes: weaponTypes3, weaponBlock, weaponOther, ...body } = line;
     const label = weaponOther ? "Other" : weaponTypes3?.filter(Boolean).join(", ");
     const section = label ? `${weaponBlock ?? ""}:${label}` : void 0;
-    const heading = section && section !== previousSection ? [{ linesContent: [{ text: `${label}:` }] }] : [];
+    const heading2 = section && section !== previousSection ? [{ linesContent: [{ text: `${label}:` }] }] : [];
     previousSection = section;
     body.linesContent?.forEach((content) => {
       content.title = normalizeLegacySections(content.title);
@@ -22903,7 +24849,7 @@ var normalizeLegacySections = (lines) => {
     body.table?.forEach((row) => row.rowContent?.forEach((cell) => cell.cellContent?.forEach((content) => {
       content.title = normalizeLegacySections(content.title);
     })));
-    return [...heading, body];
+    return [...heading2, body];
   });
 };
 var descriptionFilter = (description, converterType) => {
@@ -22971,148 +24917,8 @@ var databaseConverter = (converterType, database, identical) => {
   return output2;
 };
 
-// packages/core/src/markup/elementTags.ts
-var elementTagNames = [
-  "kinetic",
-  "arc",
-  "solar",
-  "void",
-  "stasis",
-  "strand",
-  "prismatic"
-];
-var inlineTokens = /<.+?\/>/g;
-var taggedToken = new RegExp(`^<(${elementTagNames.join("|")}) ([^<|[\\]\\n]+) />$`);
-function elementTagToken(token) {
-  const match = taggedToken.exec(token);
-  if (!match || !match[2].trim()) return void 0;
-  return { element: match[1], text: match[2] };
-}
-function findElementTags(text) {
-  if (!text.includes(" />")) return [];
-  const found = [];
-  for (const match of text.matchAll(inlineTokens)) {
-    const tag = elementTagToken(match[0]);
-    if (tag) found.push({ ...tag, from: match.index, to: match.index + match[0].length });
-  }
-  return found;
-}
-function lowerElementTags(text) {
-  return lower(text, "", "");
-}
-var unsafeTint = /[#${}]|\/\*|\*\/|\/\/|[/*]$/;
-function lower(text, open2, close) {
-  const tags = findElementTags(text);
-  if (!tags.length) return text;
-  let lowered = "";
-  let at = 0;
-  for (const tag of tags) {
-    const [, lead, body, trail] = /^(\s*)([^]*?)(\s*)$/.exec(tag.text);
-    const [o, c] = unsafeTint.test(body) ? ["", ""] : [open2, close];
-    lowered += `${text.slice(at, tag.from)}<${tag.element}/>${lead}${o}${body}${c}${trail}`;
-    at = tag.to;
-  }
-  return lowered + text.slice(at);
-}
-var elementTextOpen = "\uE000";
-var elementTextClose = "\uE001";
-var elementTextMarkers = /[\uE000\uE001]/g;
-var marked = /* @__PURE__ */ new Map();
-function markElementTags(text) {
-  let result = marked.get(text);
-  if (result === void 0) {
-    result = lower(text, elementTextOpen, elementTextClose);
-    if (marked.size >= 256) marked.delete(marked.keys().next().value);
-    marked.set(text, result);
-  }
-  return result;
-}
-
-// packages/core/src/markup/braces.ts
-var enhancedArrowMarkup = "<enhanced/>";
-var legacyEnhancedArrow = "#e";
-var variableReferencePattern = /#\{([a-zA-Z0-9]+)\}|#([a-zA-Z0-9]+)/g;
-function variableReferences(text, offset = 0) {
-  if (!text.includes("#")) return [];
-  const found = [];
-  for (const match of text.matchAll(variableReferencePattern)) {
-    const from = offset + match.index;
-    found.push({
-      name: match[1] ?? match[2],
-      braced: match[1] !== void 0,
-      from,
-      to: from + match[0].length
-    });
-  }
-  return found;
-}
-var holderName = (word) => `Zb${word.length}w${word}`;
-var holderPattern = /^Zb(\d+)w([a-zA-Z0-9]+)$/;
-function isHolderName(name) {
-  const match = holderPattern.exec(name);
-  return match !== null && Number(match[1]) === match[2].length;
-}
-var reservedNamePattern = /^Zb\d+w/;
-var reservedNameMessage = (name) => `#${name} is a reserved name (braces generate names starting Zb<number>w): rename it.`;
-function reservedNames(text) {
-  const found = [];
-  for (const match of text.matchAll(/^var ([a-zA-Z0-9]+) /gm))
-    if (reservedNamePattern.test(match[1]))
-      found.push({
-        name: match[1],
-        from: match.index + 4,
-        to: match.index + 4 + match[1].length
-      });
-  for (const ref of variableReferences(text))
-    if (reservedNamePattern.test(ref.name)) found.push(ref);
-  return found.sort((a, b) => a.from - b.from);
-}
-var delimited = /#\{([a-zA-Z0-9]+)\}|<enhanced\/>/g;
-function lowerDelimitedMarkup(text) {
-  if (!text.includes("#{") && !text.includes(enhancedArrowMarkup)) return text;
-  const lines = text.split("\n");
-  let changed = false;
-  for (let index = 0; index < lines.length; index++) {
-    const line = lines[index];
-    if (!line.includes("#{") && !line.includes(enhancedArrowMarkup)) continue;
-    const declarations = [];
-    let out = "";
-    let at = 0;
-    for (const match of line.matchAll(delimited)) {
-      if (match.index < at) continue;
-      const legacy = match[1] === void 0 ? legacyEnhancedArrow : `#${match[1]}`;
-      const end = match.index + match[0].length;
-      const word = /^[a-zA-Z0-9]+/.exec(line.slice(end))?.[0];
-      out += line.slice(at, match.index) + legacy;
-      at = end;
-      if (word === void 0) continue;
-      for (const part of word === "empty" ? ["empt", "y"] : [word]) {
-        out += `#${holderName(part)}`;
-        declarations.push(`var ${holderName(part)} = ${part}`);
-      }
-      at = end + word.length;
-    }
-    if (out === "" && at === 0) continue;
-    changed = true;
-    out += line.slice(at);
-    lines[index] = declarations.length ? [out, ...new Set(declarations)].join("\n") : out;
-  }
-  return changed ? lines.join("\n") : text;
-}
-function lowerConsumerMarkup(text, arrow) {
-  const lowered = lowerDelimitedMarkup(lowerElementTags(text));
-  return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
-}
-function mergedVariable(name, defined) {
-  if (defined(name)) return void 0;
-  for (let length = name.length - 1; length > 0; length--) {
-    const prefix = name.slice(0, length);
-    if (defined(prefix)) return prefix;
-  }
-  return void 0;
-}
-
 // packages/export/src/elementTags.ts
+init_braces();
 function lowerInput(input2, arrow) {
   const lower2 = (text) => lowerConsumerMarkup(text, arrow);
   let perks;
@@ -23121,6 +24927,8 @@ function lowerInput(input2, arrow) {
     let editor;
     for (const [language, text] of Object.entries(perk.editor)) {
       if (!text) continue;
+      if (text.main.includes("#{=") || text.secondary.includes("#{="))
+        throw new Error(`Unresolved number token in ${hash2}/${language}`);
       const main2 = lower2(text.main);
       const secondary = lower2(text.secondary);
       if (main2 === text.main && secondary === text.secondary) continue;
@@ -23231,642 +25039,25 @@ function incomingAliases(hash2, aliases) {
 // packages/core/src/publishableHash.ts
 init_contentHash();
 
-// packages/core/src/markup/baseEnhanced.ts
-var enhancedMarkupType = "Weapon Trait Enhanced";
-var baseEnhancedMessage = "Use {{base}{enhanced}} with two nonempty inline arms on one line; pairs cannot nest.";
-var baseEnhancedPublishMessage = "Base/enhanced markup needs the new converter; it can be pushed after cut-over";
-function scanBaseEnhanced(text, allowEmpty = false) {
-  const pairs = [];
-  const issues = [];
-  let cursor = 0;
-  while (cursor < text.length) {
-    const from = text.indexOf("{{", cursor);
-    if (from < 0) break;
-    let pos = from + 2;
-    const braced = (at) => text[at - 1] === "#" ? /^\{[a-zA-Z0-9]+\}/.exec(text.slice(at, at + 64))?.[0].length ?? 0 : 0;
-    const arm = () => {
-      const begin = pos;
-      while (pos < text.length && text[pos] !== "}" && !/[\r\n]/.test(text[pos])) {
-        if (text.startsWith("{{", pos)) return null;
-        if (text[pos] === "{") {
-          const variable = braced(pos);
-          if (variable) {
-            pos += variable;
-            continue;
-          }
-          if (text[pos - 1] !== "$") return null;
-          let end2 = pos + 1;
-          for (; ; ) {
-            if (end2 >= text.length || /[\r\n]/.test(text[end2])) return null;
-            if (text[end2] === "}") break;
-            if (text[end2] === "{") {
-              const inner = braced(end2);
-              if (!inner) return null;
-              end2 += inner;
-            } else end2++;
-          }
-          pos = end2 + 1;
-        } else pos++;
-      }
-      const value2 = text.slice(begin, pos);
-      return allowEmpty || value2.trim() ? value2 : null;
-    };
-    const base = arm();
-    if (base !== null && text.slice(pos, pos + 2) === "}{") {
-      pos += 2;
-      const enhanced = arm();
-      if (enhanced !== null && text.slice(pos, pos + 2) === "}}") {
-        cursor = pos + 2;
-        pairs.push({ from, to: cursor, base, enhanced });
-        continue;
-      }
-    }
-    const end = text.indexOf("\n", from);
-    cursor = end < 0 ? text.length : end + 1;
-    issues.push({ from, to: end < 0 ? text.length : end });
-  }
-  return { pairs, issues };
-}
-var unfinishedBaseEnhanced = (text) => scanBaseEnhanced(text).issues;
-
 // packages/core/src/exportLegacy.ts
+init_baseEnhanced();
+init_braces();
 init_languages();
 init_schemas3();
 
 // packages/core/src/validation/index.ts
 init_languages();
 
-// packages/core/src/markup/syntax.ts
-var markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
-var markupIcons = [
-  "kinetic",
-  "arc",
-  "solar",
-  "stasis",
-  "void",
-  "strand",
-  "prismatic",
-  "heavy",
-  "primary",
-  "special",
-  "barrier",
-  "overload",
-  "unstoppable",
-  "hunter",
-  "titan",
-  "warlock",
-  "arrow"
-];
-var markupEmpty = ["background", "breakSpaces", "bold"];
-var markupLineClasses = [...markupColors, ...markupEmpty];
-var markupRetiredColors = ["blue", "green", "purple"];
-var markupRetiredLineStyles = ["center", "breakSpaces", "background"];
-var markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles];
-var markupTableClasses = [
-  "background_1",
-  "background_2",
-  "centerTable",
-  "formula",
-  "wide"
-];
-function extractVariables(text) {
-  return Object.fromEntries(
-    [...text.matchAll(/^var ([a-zA-Z0-9]+) = (.+)$/gm)].map((match) => [
-      match[1],
-      match[2].trim() === "empty" ? "" : match[2].trim()
-    ])
-  );
-}
-function extractBlocks(text, kind) {
-  const pattern = kind === "title" ? /^title [A-z0-9 ]+ \([^]*?\n\)$/gm : /^export [A-z0-9 ]+ \([\s\S]*?\n\)$/gm;
-  return Object.fromEntries(
-    [...text.matchAll(pattern)].map(([block]) => {
-      const lines = block.split("\n");
-      const name = lines[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
-      return [name, lines.slice(1, -1).join("\n")];
-    })
-  );
-}
-
-// packages/core/src/markup/weaponHeadings.ts
-var legacyNames3 = {
-  ar: "Auto Rifle",
-  bow: "Combat Bow",
-  fusion: "Fusion Rifle",
-  gl: "Grenade Launcher",
-  hc: "Hand Cannon",
-  "heavy gl": "Heavy Grenade Launcher",
-  lfr: "Linear Fusion Rifle",
-  lmg: "Machine Gun",
-  pulse: "Pulse Rifle",
-  rocket: "Rocket Launcher",
-  scout: "Scout Rifle",
-  smg: "Submachine Gun",
-  sniper: "Sniper Rifle",
-  trace: "Trace Rifle"
-};
-function weaponSectionHeadings(text) {
-  return text.replace(/\r/g, "").split("\n").map((line) => {
-    const header = line.match(/^\s*<weapons(?:\s+(.*?))?\s*>\s*$/i) ?? line.match(/^\s*<\s*(?:weapon type\s*)?\((.*?)\)\s*>\s*$/);
-    if (header) {
-      const label = (header[1] || "Weapons").split(",").map((name) => {
-        const clean = name.trim();
-        return clean.toLowerCase() === "other" ? "Other weapons" : Object.hasOwn(legacyNames3, clean.toLowerCase()) ? legacyNames3[clean.toLowerCase()] : clean;
-      }).join(", ");
-      return `<bold ${label} />`;
-    }
-    if (/^\s*(<\/weapons\s*>|<\$\$>)\s*$/i.test(line)) return "";
-    return line;
-  }).join("\n");
-}
-
-// packages/core/src/markup/lines.ts
-var inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
-function lineClasses(line, allowed2, offsets) {
-  const classNames = allowed2.filter((name) => line.includes(`<${name}/>`));
-  let cleanLine = line;
-  for (const name of classNames) {
-    const marker2 = `<${name}/>`;
-    const index = cleanLine.indexOf(marker2);
-    if (index !== -1) {
-      cleanLine = cleanLine.slice(0, index) + cleanLine.slice(index + marker2.length);
-      offsets?.splice(index, marker2.length);
-    }
-  }
-  return {
-    classNames,
-    cleanLine
-  };
-}
-function markupStrayTags(text) {
-  const stray = [];
-  for (const line of weaponSectionHeadings(text).split("\n")) {
-    if (line.startsWith("< table ") || line.startsWith("<$>")) continue;
-    for (const segment of line.split(new RegExp(`(${inlineToken.source})`, "g"))) {
-      const tags = segment.match(/<\w+/g) ?? [];
-      const isToken = new RegExp(`^${inlineToken.source}$`).test(segment);
-      const wrapper2 = /^<(\w+) /.exec(segment)?.[1] ?? "";
-      const arrows = isToken && [...markupColors, "background"].includes(wrapper2) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
-      if (tags.length > (isToken ? 1 + arrows : 0)) stray.push(tags[0]);
-    }
-  }
-  return stray;
-}
-var elements = new Set(elementTagNames);
-var markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
-function trimMarked(text, start = true) {
-  if (!text.includes(elementTextOpen) && !text.includes(elementTextClose))
-    return start ? text.trim() : text.trimEnd();
-  const end = /[\s\uE000\uE001]*$/.exec(text)[0];
-  text = text.slice(0, text.length - end.length) + end.replace(/\s/g, "");
-  if (!start) return text;
-  const lead = /^[\s\uE000\uE001]*/.exec(text)[0];
-  return lead.replace(/\s/g, "") + text.slice(lead.length);
-}
-function markersPair(parts) {
-  let open2 = false;
-  for (const part of parts) {
-    if (part === elementTextOpen) {
-      if (open2) return false;
-      open2 = true;
-    } else if (part === elementTextClose) {
-      if (!open2) return false;
-      open2 = false;
-    }
-  }
-  return !open2;
-}
-function spans(line, titles) {
-  const parts = line.split(markedPart);
-  const tinting = parts.length > 1 && markersPair(parts);
-  let tint;
-  let lead = -1;
-  let closed;
-  const out = [];
-  const space = (span) => span.text !== void 0 && !span.classNames && !span.text.trim();
-  for (const part of parts) {
-    if (!part) continue;
-    if (part === elementTextOpen) {
-      if (!tinting) continue;
-      closed = void 0;
-      let at = out.length - 1;
-      while (at >= 0 && space(out[at])) at--;
-      const icon = out[at];
-      const element = icon && icon.text === void 0 ? icon.classNames?.[0] : void 0;
-      tint = element && elements.has(element) ? element : void 0;
-      lead = tint ? at + 1 : -1;
-      continue;
-    }
-    if (part === elementTextClose) {
-      const last = out.at(-1);
-      closed = tint && last?.classNames?.[0] === "elementText" ? last : void 0;
-      tint = void 0;
-      lead = -1;
-      continue;
-    }
-    const text = part.replace(elementTextMarkers, "");
-    if (!text) continue;
-    for (const span of lineSpans(text, titles)) {
-      if (tint && span.text !== void 0 && !span.classNames) {
-        const spaces = lead >= 0 ? out.splice(lead).map((s) => s.text).join("") : "";
-        lead = -1;
-        out.push({ text: spaces + span.text, classNames: ["elementText", tint] });
-      } else if (closed && space(span)) {
-        closed.text += span.text;
-      } else {
-        lead = -1;
-        out.push(span);
-      }
-      closed = void 0;
-    }
-  }
-  return out;
-}
-function lineSpans(text, titles) {
-  if (text === "\u{1F845}") return [{ text, classNames: ["enhancedArrow"] }];
-  const wrapper2 = text.match(/<\w+/)?.[0].slice(1);
-  if (wrapper2 === void 0) return [{ text }];
-  if ([...markupColors, "background", "bold"].includes(wrapper2)) {
-    const inner = text.replace(new RegExp(`^<${wrapper2} | />$`, "g"), "");
-    if (inner.includes("<arrow/>"))
-      return inner.split(/(<arrow\/>)/).filter(Boolean).map(
-        (part) => part === "<arrow/>" ? { classNames: [wrapper2, "arrow"] } : { text: part, classNames: [wrapper2] }
-      );
-    return [{ text: text.replace(new RegExp(`<${wrapper2} | />`, "g"), ""), classNames: [wrapper2] }];
-  }
-  if ([...markupIcons, ...markupEmpty].includes(wrapper2)) return [{ classNames: [wrapper2] }];
-  const target = text.match(/\[.+\]/)?.[0].replace(/\[|\]/g, "");
-  const label = text.replace(/ \[.+\] \/>/g, "");
-  if (!target || !label) return [];
-  if (wrapper2 === "link")
-    return [{ text: label.replace("<link ", ""), link: target, classNames: ["link"] }];
-  if (wrapper2 === "title")
-    return [{ text: label.replace("<title ", ""), title: titles[target], classNames: ["title"] }];
-  return [];
-}
-function tableRow(line, titles) {
-  const { classNames, cleanLine } = lineClasses(line, markupEmpty);
-  return {
-    classNames,
-    rowContent: (cleanLine.match(/\|.*?((?=\|)|$)/g) ?? []).map((cell) => {
-      const span = cell.match(/\|([bchr\d-]+)?/)?.[0].match(/-\d|\d/g);
-      const colSpan = span?.filter((value2) => Number(value2) > 0)[0];
-      const rowSpan = span?.filter((value2) => Number(value2) < 0)[0];
-      const classes = {
-        b: "bold",
-        c: "center",
-        h: "background",
-        r: "right"
-      };
-      return {
-        colSpan: colSpan ? Number(colSpan) : void 0,
-        rowSpan: rowSpan ? -Number(rowSpan) : void 0,
-        classNames: cell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => classes[char]).map((char) => classes[char]),
-        cellContent: spans(trimMarked(cell.replace(/\|[bchr\d-]+|\|/, "")), titles).flatMap(
-          (part) => {
-            if (!part.text?.trim() && !part.classNames?.some((name) => typeof name === "string"))
-              return [];
-            return [{ text: part.text, classNames: part.classNames, title: part.title }];
-          }
-        )
-      };
-    })
-  };
-}
-function parseLines(text, titles) {
-  const blocks = weaponSectionHeadings(text).match(/(< table [^]+?\n<\$>\n?)|(.+\n?|\n)/g) ?? [];
-  return blocks.flatMap((block) => {
-    block = block.trimEnd();
-    if (block.startsWith("< table ")) {
-      const rows = block.split("\n");
-      if (rows.length < 3) return [];
-      const names = rows[0].replace(/< table | >/g, "").match(/(\w+)/g)?.filter((name) => markupTableClasses.includes(name));
-      return [
-        {
-          table: rows.slice(1, -1).map((row) => tableRow(row, titles)),
-          classNames: [...names ?? [], "table"],
-          isFormula: names?.includes("formula")
-        }
-      ];
-    }
-    if (!block.trim()) return [{ classNames: ["spacer"] }];
-    const { classNames, cleanLine } = lineClasses(block, markupLineClasses);
-    return [
-      {
-        classNames,
-        linesContent: spans(trimMarked(cleanLine, !block.includes("<breakSpaces/>")), titles)
-      }
-    ];
-  });
-}
-
-// packages/core/src/markup/prepare.ts
-function markupVariableReferences(text) {
-  return text.match(/#[a-zA-Z0-9]+/g) ?? [];
-}
-function markupImports(text) {
-  return [
-    ...text.match(/^import [A-z0-9 ]+? from (\d+|global) *?$/gm) ?? [],
-    ...text.match(/^import self *?$/gm) ?? []
-  ];
-}
-var markupConditions = [
-  ["enhanced", enhancedMarkupType],
-  ["catalyst", "Weapon Catalyst Exotic"],
-  ["exotic perk", "Weapon Perk Exotic"]
-];
-function markupConditionMatches(text, keyword) {
-  return [...text.matchAll(new RegExp(`^${keyword} \\([\\s\\S]*?\\n\\)$`, "gm"))];
-}
-var markupCommentPatterns = [/\/\*[^]*\*\/\n?/g, /^ *?\/\/.*$\n?| +\/\/.*$/gm];
-function markupCommentContext(text) {
-  let offsets = Array.from({ length: text.length }, (_, index) => index);
-  const comments = [];
-  for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
-    let remaining = "";
-    let remainingOffsets = [];
-    let last = 0;
-    for (const match of text.matchAll(pattern)) {
-      remaining += text.slice(last, match.index);
-      remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
-      if (index > 0) {
-        comments.push({
-          from: offsets[match.index],
-          to: offsets[match.index + match[0].length - 1] + 1
-        });
-      }
-      last = match.index + match[0].length;
-    }
-    remaining += text.slice(last);
-    remainingOffsets = remainingOffsets.concat(offsets.slice(last));
-    text = remaining;
-    offsets = remainingOffsets;
-  }
-  return { text, offsets, comments };
-}
-function removeMarkupComments(text) {
-  return text.replace(/\r/g, "").replace(markupCommentPatterns[0], "").replace(markupCommentPatterns[1], "");
-}
-var unusedMarkup = {
-  hidden: /^export hidden .* \([^]*?\n\)$/gm,
-  exportOpen: /^export .* \( *$\n/gm,
-  enhancedOpen: /^enhanced \($\n/gm,
-  titles: /\n?^title .+ \([^]*?\n\)$/gm,
-  close: /\n^\) *$/gm,
-  variables: /^var .* = .+$\n?/gm,
-  blanks: /\n\n\n+/gm
-};
-function normalizeMarkupWhitespace(text) {
-  return text.replace(unusedMarkup.blanks, "\n\n").trim();
-}
-function removeUnusedText2(text, removeTitles = true) {
-  text = removeMarkupComments(text).replace(unusedMarkup.hidden, "").replace(unusedMarkup.exportOpen, "").replace(unusedMarkup.enhancedOpen, "");
-  if (removeTitles) {
-    text = text.replace(unusedMarkup.titles, "").replace(unusedMarkup.close, "");
-  }
-  return normalizeMarkupWhitespace(text.replace(unusedMarkup.variables, ""));
-}
-function resolveImports(text, globals, diagnostics) {
-  for (let pass = 0; pass < 5; pass++) {
-    const imports = markupImports(text);
-    if (!imports.length) return text;
-    for (const line of imports) {
-      const visible = removeUnusedText2(text, false).includes(line.trim());
-      if (line.includes("import self")) {
-        if (visible)
-          diagnostics.push({
-            severity: "error",
-            message: "import self requires the removed secondary editor."
-          });
-        text = text.replace(line, "");
-        continue;
-      }
-      const name = line.match(/(?<=import) .+ (?=from)/)?.[0].trim() ?? "";
-      const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
-      const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
-      const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
-      const imported = name === "main" || name === "secondary" ? source : extractBlocks(source ?? "", "export")[name];
-      if (imported === void 0 && visible) {
-        diagnostics.push({
-          severity: "error",
-          message: `Unresolved import "${name}" from ${from}.`
-        });
-      }
-      text = text.replace(line, () => imported ?? "");
-    }
-  }
-  if (/^import /m.test(text)) {
-    diagnostics.push({
-      severity: "error",
-      message: "Import expansion exceeded the converter limit of five passes (possible cycle)."
-    });
-  }
-  return text;
-}
-var pairSource = (piece) => `{{${piece.base}}{${piece.enhanced}}}`;
-var pieceLength = (piece) => typeof piece === "string" ? piece.length : pairSource(piece).length;
-var nativeSource = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : pairSource(piece)).join("");
-var nativeStructure = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : "\uFFFC".repeat(pieceLength(piece))).join("");
-var renderNative = (pieces) => pieces.map((piece) => typeof piece === "string" ? piece : piece.rendered).join("");
-function nativePieces(text) {
-  if (!text.includes("{{")) return [text];
-  const pieces = [];
-  const visible = markupCommentContext(text);
-  let at = 0;
-  for (const pair2 of scanBaseEnhanced(visible.text, true).pairs) {
-    const from = visible.offsets[pair2.from], to = visible.offsets[pair2.to - 1] + 1;
-    pieces.push(text.slice(at, from), { base: pair2.base, enhanced: pair2.enhanced });
-    at = to;
-  }
-  pieces.push(text.slice(at));
-  return pieces;
-}
-function nativeSlice(pieces, from, to) {
-  const output2 = [];
-  let at = 0;
-  for (const piece of pieces) {
-    const end = at + pieceLength(piece);
-    if (end > from && at < to) {
-      if (typeof piece === "string")
-        output2.push(piece.slice(Math.max(0, from - at), Math.min(piece.length, to - at)));
-      else {
-        if (from > at || to < end)
-          throw new Error("Structural cleanup crossed a native inline token");
-        output2.push(piece);
-      }
-    }
-    at = end;
-  }
-  return output2;
-}
-function nativeKeep(pieces, offsets) {
-  const output2 = [];
-  for (let index = 0; index < offsets.length; ) {
-    const from = offsets[index++];
-    let to = from + 1;
-    while (index < offsets.length && offsets[index] === to) {
-      index++;
-      to++;
-    }
-    output2.push(...nativeSlice(pieces, from, to));
-  }
-  return output2;
-}
-function nativeRemove(pieces, pattern, keepPrefix = 0) {
-  const output2 = [];
-  const source = nativeStructure(pieces);
-  let at = 0;
-  for (const match of source.matchAll(pattern)) {
-    output2.push(...nativeSlice(pieces, at, match.index + keepPrefix));
-    at = match.index + match[0].length;
-  }
-  output2.push(...nativeSlice(pieces, at, source.length));
-  return output2;
-}
-function cleanNative(pieces, removeTitles = true) {
-  pieces = nativeKeep(pieces, markupCommentContext(nativeStructure(pieces)).offsets);
-  for (const pattern of [unusedMarkup.hidden, unusedMarkup.exportOpen, unusedMarkup.enhancedOpen])
-    pieces = nativeRemove(pieces, pattern);
-  if (removeTitles)
-    for (const pattern of [unusedMarkup.titles, unusedMarkup.close])
-      pieces = nativeRemove(pieces, pattern);
-  pieces = nativeRemove(pieces, unusedMarkup.variables);
-  pieces = nativeRemove(pieces, unusedMarkup.blanks, 2);
-  const source = nativeStructure(pieces);
-  return nativeSlice(pieces, source.length - source.trimStart().length, source.trimEnd().length);
-}
-function replaceNativeVariable(pieces, variable, value2) {
-  const output2 = [];
-  const append = (piece) => {
-    const last = output2.length - 1;
-    if (typeof piece === "string" && typeof output2[last] === "string") output2[last] += piece;
-    else output2.push(piece);
-  };
-  for (const piece of pieces) {
-    if (typeof piece !== "string" || !piece.includes(variable)) {
-      append(piece);
-      continue;
-    }
-    if (!value2.includes("{{")) {
-      append(piece.replaceAll(variable, value2));
-      continue;
-    }
-    piece.split(variable).forEach((part, index) => {
-      if (index) nativePieces(value2).forEach(append);
-      append(part);
-    });
-  }
-  return output2;
-}
-function prepareNativePieces(pieces, globals) {
-  const references = pieces.flatMap(
-    (piece) => typeof piece === "string" ? markupVariableReferences(piece) : []
-  );
-  for (const variable of references) {
-    const variables2 = {
-      ...extractVariables(nativeSource(pieces)),
-      ...extractVariables(globals.variables)
-    };
-    globals.onVariable?.(variable.slice(1));
-    const value2 = Object.hasOwn(variables2, variable.slice(1)) ? variables2[variable.slice(1)] : void 0;
-    if (value2 !== void 0) pieces = replaceNativeVariable(pieces, variable, value2);
-  }
-  const variables = {
-    ...extractVariables(nativeSource(pieces)),
-    ...extractVariables(globals.variables)
-  };
-  return pieces.map((piece) => {
-    if (typeof piece === "string") return evaluateMarkupMath(piece);
-    if (piece.rendered !== void 0) return piece;
-    let arm = globals.type === enhancedMarkupType ? piece.enhanced : piece.base;
-    for (const variable of markupVariableReferences(arm)) {
-      globals.onVariable?.(variable.slice(1));
-      const value2 = Object.hasOwn(variables, variable.slice(1)) ? variables[variable.slice(1)] : void 0;
-      if (value2 !== void 0) arm = arm.replaceAll(variable, value2);
-    }
-    return { ...piece, rendered: evaluateMarkupMath(arm) };
-  });
-}
-function prepareNativeTitle(pieces, globals) {
-  return renderNative(cleanNative(prepareNativePieces(pieces, globals)));
-}
-function prepareNativeDocument(text, globals) {
-  const pieces = prepareNativePieces(nativePieces(text), globals);
-  const titlePieces = cleanNative(pieces, false);
-  const source = nativeStructure(titlePieces);
-  const titles = /* @__PURE__ */ Object.create(null);
-  const nativeTitles = /* @__PURE__ */ Object.create(null);
-  const globalTitles = extractBlocks(globals.titles, "title");
-  for (const match of source.matchAll(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm)) {
-    const firstLine = match[0].indexOf("\n");
-    const name = match[0].slice(0, firstLine).replace(/title|\(.*/gi, "").trim();
-    const body = nativeSlice(
-      titlePieces,
-      match.index + firstLine + 1,
-      match.index + match[0].length - 2
-    );
-    titles[name] = renderNative(body);
-    if (!Object.hasOwn(globalTitles, name) && body.some((piece) => typeof piece !== "string"))
-      nativeTitles[name] = body;
-  }
-  return {
-    text: renderNative(cleanNative(pieces)),
-    titles: { ...titles, ...globalTitles },
-    nativeTitles
-  };
-}
-function prepareMarkup(text, globals, diagnostics, onCondition) {
-  text = lowerDelimitedMarkup(text);
-  if (globals.variables.includes("#{") || globals.variables.includes("<enhanced/>"))
-    globals = { ...globals, variables: lowerDelimitedMarkup(globals.variables) };
-  if (globals.titles.includes("#{") || globals.titles.includes("<enhanced/>"))
-    globals = { ...globals, titles: lowerDelimitedMarkup(globals.titles) };
-  text = resolveImports(text, globals, diagnostics);
-  const nativePairs = text.includes("{{") || globals.variables.includes("{{") || globals.titles.includes("{{");
-  if (nativePairs) {
-    for (const source of [text, globals.variables, globals.titles]) {
-      if (source.includes("{{") && scanBaseEnhanced(removeMarkupComments(source)).issues.length) {
-        diagnostics.push({ severity: "error", message: baseEnhancedMessage });
-      }
-    }
-  }
-  for (const [keyword, type] of markupConditions) {
-    const matches = markupConditionMatches(text, keyword);
-    for (const match of matches) onCondition?.(keyword, match[0]);
-    if (matches.length && globals.type !== type) {
-      for (const match of matches.reverse())
-        text = text.slice(0, match.index) + text.slice(match.index + match[0].length);
-      if (keyword === "enhanced") text = text.replaceAll("#e", "");
-    }
-  }
-  let native;
-  if (nativePairs) {
-    native = prepareNativeDocument(text, globals);
-    text = native.text;
-  } else {
-    for (const variable of markupVariableReferences(text)) {
-      const variables = { ...extractVariables(text), ...extractVariables(globals.variables) };
-      globals.onVariable?.(variable.slice(1));
-      const value2 = variables[variable.slice(1)];
-      if (value2 !== void 0) text = text.replaceAll(variable, value2);
-    }
-    text = evaluateMarkupMath(text);
-  }
-  const cleanText = native ? text : removeUnusedText2(text.trim());
-  for (const variable of new Set(markupVariableReferences(cleanText))) {
-    diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
-  }
-  return {
-    text: cleanText,
-    nativeTitles: native?.nativeTitles,
-    titles: native?.titles ?? {
-      ...extractBlocks(removeUnusedText2(text, false), "title"),
-      ...extractBlocks(globals.titles, "title")
-    }
-  };
-}
+// packages/core/src/markup/index.ts
+init_syntax();
+init_lines();
+init_prepare();
 
 // packages/core/src/markup/parse.ts
+init_braces();
+init_elementTags();
+init_lines();
+init_prepare();
 var reservedMarker = /[\uE000\uE001]/;
 var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
 function parseMarkup(text, globals = { variables: "", titles: "" }) {
@@ -23957,7 +25148,14 @@ function parseWith(text, globals, lower2) {
   return { lines: parseLines(prepared.text, titles), diagnostics };
 }
 
+// packages/core/src/markup/index.ts
+init_elementTags();
+init_braces();
+init_weaponHeadings();
+
 // packages/core/src/markup/clashes.ts
+init_prepare();
+init_syntax();
 var globalVariablesHash = 2;
 var globalTitlesHash = 3;
 function markupDefinitions(text) {
@@ -23996,6 +25194,7 @@ function describeGlobalClash(clash) {
 }
 
 // packages/core/src/markup/snippets.ts
+init_syntax();
 var wrap = (tag, about) => ({
   id: `wrap:${tag}`,
   label: `<${tag} text />`,
@@ -24275,12 +25474,21 @@ var markupSymbols = [
 ];
 
 // packages/core/src/markup/transforms.ts
+init_syntax();
 var value = String.raw`[+-]?\d+(?:\.\d+)?(?:%|x|s)?`;
 var pair = new RegExp(String.raw`(?<![\w.])(${value}) +\[(${value})\]`, "g");
 var bareNumber = new RegExp(String.raw`^\s*(${value})\s*$`);
 var bracketed = new RegExp(String.raw`^\s*\[(${value})\]\s*$`);
 var valueList = new RegExp(String.raw`^\s*${value}(?:\s*,\s*${value}){1,}\s*$`);
 var iconNames = new Map(markupIcons.map((name) => [name.toLowerCase(), name]));
+
+// packages/core/src/markup/index.ts
+init_baseEnhanced();
+
+// packages/core/src/validation/index.ts
+init_prepare();
+init_braces();
+init_syntax();
 
 // packages/core/src/validation/glyph-policy.ts
 var glyphPolicy = {
@@ -24354,6 +25562,8 @@ function glyphWarnings(text) {
 }
 
 // packages/core/src/validation/retired.ts
+init_prepare();
+init_syntax();
 var retiredColours = markupRetiredColors;
 var retiredWrappers = [...retiredColours, "center", "background", "breakSpaces"];
 var retiredMarkers = [...retiredColours, ...markupRetiredLineStyles];
@@ -24757,6 +25967,7 @@ function applyRetiredEdits(text, edits) {
 }
 
 // packages/core/src/validation/index.ts
+init_numbers();
 var emptyEnglishMessage = "English text must not be empty.";
 function validateTextWithReads(text, lang, globals, requireEnglish, selfHash, aliases) {
   const imports = /* @__PURE__ */ new Map();
@@ -24782,6 +25993,8 @@ function validateTextWithReads(text, lang, globals, requireEnglish, selfHash, al
 }
 function validateText(text, lang, globals = { variables: "", titles: "" }, requireEnglish = true, selfHash) {
   const issues = [];
+  issues.push(...gluedNumberIssues(text));
+  issues.push(...numberTokenIssues(text, lang, selfHash));
   function add(severity, message, token) {
     const from = token ? Math.max(0, text.indexOf(token)) : 0;
     const to = Math.min(text.length, from + (token?.length ?? text.length));
@@ -24945,6 +26158,8 @@ function variableNameIssues(text, defined, native) {
 }
 
 // packages/core/src/exportLegacy.ts
+init_map();
+init_numbers();
 function exportFacts(facts) {
   if (!facts) return {};
   return {
@@ -24959,7 +26174,10 @@ function usesEnglishFallback(tooltip, language) {
   const english = tooltip.text.en;
   const translation = tooltip.text[language];
   return Boolean(
-    language !== "en" && english && english.text.trim() !== "" && translation && translation.sourceUpdatedAt !== void 0 && Date.parse(english.updatedAt) - Date.parse(translation.sourceUpdatedAt) > translationMaxAge
+    language !== "en" && english && english.text.trim() !== "" && translation && (translation.sourceUpdatedAt !== void 0 && Date.parse(english.updatedAt) - Date.parse(translation.sourceUpdatedAt) > translationMaxAge || translation.text.includes("#{=") && numberTokens(translation.text).some((token) => {
+      const retired2 = token.id === void 0 ? void 0 : english.numbers?.retired[token.id];
+      return retired2 === null || typeof retired2 === "object" && retired2.fallback.includes(language);
+    }))
   );
 }
 function isLegacyAliasStub(entry) {
@@ -25003,6 +26221,9 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
   const omitted = /* @__PURE__ */ new Set();
   for (const input2 of tooltips) {
     const tooltip = tooltipSchema.parse(input2);
+    const numberIssue = validateNumberTooltip(tooltip)[0];
+    if (numberIssue)
+      throw new Error(`Tooltip ${tooltip.hash} (${numberIssue.lang}): ${numberIssue.message}`);
     if (isTextlessDescription(tooltip)) {
       omitted.add(tooltip.hash);
       continue;
@@ -25023,7 +26244,8 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
       const translation = tooltip.text[language];
       if (!translation) continue;
       const exported = usesEnglishFallback(tooltip, language) && english ? english : translation;
-      const text = lowerConsumerMarkup(exported.text);
+      const resolved = exported.text.includes("#{=") && english ? resolveNumberTokens(exported.text, numberValues(english, language)) : exported.text;
+      const text = lowerConsumerMarkup(resolved);
       editor[language] = { main: text, secondary: text };
       const old = tooltip.legacy?.updateTracker?.descriptions[language];
       descriptions[language] = {
@@ -25094,6 +26316,7 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
 }
 
 // packages/core/src/publishableHash.ts
+init_braces();
 init_schemas3();
 async function publishableHash(tooltip, aliases = {}) {
   const parsed = tooltipSchema.parse(tooltip);
@@ -25112,6 +26335,7 @@ async function publishableHash(tooltip, aliases = {}) {
       ),
       associated: parsed.associated,
       custom: parsed.custom,
+      numbers: english?.numbers,
       ...fallback.length ? { fallback: fallback.sort() } : {},
       ...incoming.length ? { aliases: incoming } : {}
     })
@@ -25198,6 +26422,7 @@ function mergeSandboxPointers(aliases, conflicts, pointers) {
 init_zod();
 init_contentHash();
 init_languages();
+init_braces();
 var inactiveMovesPath = "config/inactive.json";
 var inactiveHashKey = external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((value2) => Number(value2) <= 4294967295);
 var inactiveMovesSchema = external_exports.record(
@@ -25382,9 +26607,11 @@ init_merge3();
 
 // packages/core/src/globals/index.ts
 init_languages();
+init_syntax();
 
 // packages/core/src/status/index.ts
 init_languages();
+init_map();
 
 // packages/core/src/compendium/index.ts
 init_types();
@@ -26561,6 +27788,9 @@ init_types();
 // packages/core/src/compendium/diff.ts
 init_types();
 
+// packages/core/src/compendium/englishEvidence.ts
+init_prepare();
+
 // packages/core/src/compendium/reviewed.ts
 init_types();
 
@@ -26834,6 +28064,15 @@ var reportActionSchema = external_exports.object({
   text: reportText(1e3).optional()
 }).strict();
 
+// packages/core/src/index.ts
+init_numberSlots();
+init_numberFormat();
+init_identity();
+init_map();
+init_freeze();
+init_carry();
+init_numbers();
+
 // scripts/publisher/publisher.ts
 init_schedule();
 
@@ -26938,8 +28177,8 @@ function editIndex(io, tree, batch, hashes, at) {
 }
 
 // scripts/publisher/publisher.ts
-import { setTimeout } from "node:timers/promises";
-var publishBackoff = () => setTimeout(3e4);
+import { setTimeout as setTimeout2 } from "node:timers/promises";
+var publishBackoff = () => setTimeout2(3e4);
 var json3 = (v) => JSON.stringify(v, null, 2) + "\n";
 function unloweredEntry(entries) {
   const strings = (value2) => typeof value2 === "string" ? [value2] : value2 && typeof value2 === "object" ? Object.values(value2).flatMap(strings) : [];
