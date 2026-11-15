@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 2162040231,
+  "english": "Disabled in the Crucible.\n\nHaving 5 or more stacks of Untold Greed improves Elemental Pickups:\n• <solar Firesprites /> grant 25% Grenade Ability Energy instead of 11.25%.\n• <arc Ionic Traces /> grant 21% Grenade and Melee Ability Energy instead of 11.25%, 27% Class Ability Energy instead of 13.5%, and 2% Super Energy.\n• <void Void Breaches /> grant 25% Class Ability Energy instead of 11.25%.\n• <stasis Stasis Shards /> grant 36% Melee Ability Energy instead of 10%. This increase is additive with <stasis Whisper of Hunger />'s 60% bonus; the source reports 42.5% Melee Ability Energy per pickup with both.\n• <strand Tangles /> deal 350% increased damage. This also affects <strand Whirling Maelstrom />.\n\nOrbs of Power have no discernible improvement.\n\nReaching Critical Health with 5 or more stacks of Untold Greed consumes all stacks and spawns 4 Orbs of Power for you and allies. Each grants approximately 3.15% Super Energy.\n\nThe Orbs launch forward at high speed regardless of whether you look up or down.\n\n// The source labels Firesprite and Void Breach gains as 120% increases, Ionic Traces as 100% Class and 85% Grenade/Melee increases, and Stasis Shards as a 260% increase. Its 42.5% combined Shard gain does not follow from the stated 10% base, 260% increase, and Whisper of Hunger's 60% additive bonus. All reported endpoint gains are retained without correcting the source math. The source suspects the fast-moving Orbs can clip inside walls but does not confirm this.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Armor Perks",
+    "gid": "1287885342",
+    "range": "C114:F114",
+    "text": "4 Piece | Overflowing Coffers\n>>DISABLED IN CRUCIBLE<<\n\nWhile at x5 Untold Greed or higher:\nElemental Pickups are massively improved.\nNo discernible effect on Orbs of Power.\n\nFiresprites (+120%) | 11.25% -> 25% Grenade Energy\nIonic Traces (+100% Class, +85% Grenade/Melee) | 11.25% Grenade/Melee + 13.5% Class -> 21% Grenade/Melee + 27% Class + 2% Super\nVoid Breaches (+120%) | 11.25% -> 25% Class Energy\nStasis Shards (+260%) | 10% -> 36% Melee Energy. Additive to Hunger's +60%, totalling 42.5% Energy per pickup.\nStrand Tangles | 350% increased damage. Affects Whirling Maelstrom too!\n\nUpon reaching Critical Health while having x5 Untold Greed or higher:\nConsumes ALL STACKS to spawn 4 Orbs of Power that each grant ~3.15% Super Energy.\nThe Orbs of Power are ejected in front of the user at high speeds, likely clipping inside walls.\n\nLooking upwards/downwards does not affect where the Orbs go.\nAllied Guardians get the Orbs, too."
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

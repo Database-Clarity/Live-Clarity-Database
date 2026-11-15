@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 2274196887,
+  "english": "Plants a Well for 30 seconds, restoring 300 HP to you and dealing up to <pve 150 /> <pvp [?] /> damage while applying 40 stacks of <solar Scorch /> to enemies within 8.5 meters. Creates 3 Orbs of Power that each grant 3.6% Super Energy. Duration scales with your Super Stat, reaching 40 seconds at 200 Super.\n\nThe Well has 800 HP and can be <stasis Frozen /> and damaged by <stasis Shatter />. PvE Combatants deal 25% of normal damage to it.\n\nYou and allies within its 6 meter aura receive the following benefits:\n• 25% increased Weapon Damage.\n• 50 HP restored per second.\n• 20% Damage Resistance against PvE Combatants, reduced to 10% against <link Bosses [#CombatantClassifications] />.\n• 50% Damage Resistance against Players' <special/>Special Weapons, <heavy/>Power Weapons, and abilities; 40% against their <primary/>Primary Weapons.\n• Immunity to <stasis Stasis /> effects.\n\nThe aura removes active <solar Restoration />. Leaving grants <solar Radiant /> for 8 seconds.\n\nThe caster's Weapon Damage inside counts as Super Ability Damage, and their kills inside can generate a maximum of 5 Orbs of Power.\n\n// The source does not identify what grants the extra 20 Scorch stacks or 4 seconds of Radiant in its 40+20 and 8+4 notation. Cast damage has no supplied PvP value.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Solar",
+    "gid": "1186062409",
+    "range": "D139:M139, N139",
+    "text": "Places down a Well of Radiance for 30 seconds, restoring 300HP to the caster, dealing up to 150 damage, and inflicting 40+20 Scorch to enemies within 8.5 metres.\nCreates 3 Orbs of Power, each granting 3.6% Super Energy.\nSuper Duration scales with Super Stat, up to 40 seconds at 200 Super.\n\nWell of Radiance:\nConstruct with 800 HP. Can be frozen and damaged by Stasis Shatter\nProjects an aura that buffs the caster and allies within 6 metres. Leaving the aura grants Radiant for 8+4 seconds.\nCombatants deal 0.25x Damage against the Well of Radiance.\n\nFor Guardians inside the Well of Radiance:\n25% Increased Weapon Damage, 20% Damage Resist against Combatants (10% vs Boss Combatants), immunity to Stasis Effects, and restores 50HP/s.\nGuardians receive 50% Damage Resist against Special and Power Weapons, as well as Abilities. Primary Weapons remain at 40% Damage Resist.\nRemoves any active Restoration effect. \nWeapon Damage dealt by the Caster is counted as Super Ability Damage. Caster can spawn up to 5 Orbs from scoring kills within the Well.\nTier 4 Super\n\nBase Cooldown:\n455 seconds"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

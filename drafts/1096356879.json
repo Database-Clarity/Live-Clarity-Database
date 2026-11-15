@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 1096356879,
+  "english": "Deals non-lethal damage based on <solar Scorch /> stacks. Damage starts after 0.5 seconds and ticks every 0.56 seconds, except for a 0.93 second delay before the second tick.\n\nReaching 100 stacks removes all <solar Scorch /> and triggers an <solar Ignition />.\n\nEach tick's damage is given as 2.7 + (0.175 × <solar Scorch /> stacks). Non-<link Boss [#CombatantClassifications] /> Combatants take 20% increased damage. Reaching at least 60 stacks increases damage by 2.5%, indicated by yellow damage numbers.\n\nDuration and decay rate depend on difficulty. The source lists a 2.3 second duration before losing 1 stack every 0.04 seconds (25 stacks per second).\n\n// Source examples give 3|5|6.5|7.21|8.64 damage per tick at 1|30|50|60|80 stacks, which do not match the formula. The sandbox for the formula and examples, the scope of the 2.5% increase, and the difficulty of the decay values are unspecified.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Solar",
+    "gid": "1186062409",
+    "range": "D11:N11",
+    "text": "Scorched Enemies are dealt Scorch-stack based damage every 0.56 seconds after being scorched for 0.5 seconds. \nAll Scorch is removed upon reaching x100 Scorch to trigger an Ignition.\nThe 2nd Scorch tick has a 0.93s delay for some reason.\n\nScorch Stack Damage Scaling per Tick:\n2.7 + (0.175 * Scorch Stacks) | Non-Boss Combatants receive 20% increased damage.\n x1 = 3 | x30 = 5 | x50 = 6.5 | x60 = 7.21 | x80 = 8.64 | Scorch Damage is non-lethal.\nDeals 2.5% increased damage upon reaching at least x60 Scorch, indicated by Yellow Damage Numbers.\n\nScorch Decay:\nScorch duration and decay rate is difficulty-dependent. \n Scorch lasts for 2.3 seconds, then decreases by x1 stacks every 0.04 seconds (-25/s)"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

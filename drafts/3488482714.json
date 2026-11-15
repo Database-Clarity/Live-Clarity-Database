@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 3488482714,
+  "english": "Continuously restores <pve 35|50 /> <pvp [17.5|25] /> HP per second at 1|2 stacks. Healing cannot be interrupted and does not stack with Healing Rift.\n\nReapplying <solar Restoration /> keeps the highest stack count and refreshes the longest duration previously reached. A longer new application becomes the duration used for later refreshes. For example, reaching 15 seconds allows <solar Phoenix Dive /> or a <solar Healing Grenade /> to refresh it to 15 seconds.\n\nThe duration can normally be extended up to 15 seconds. <solar Ember of Empyrean /> and <solar Ember of Mercy /> extend the duration rather than reapplying <solar Restoration />. Extending a <solar Solar /> effect with more than 15 seconds remaining sets its duration to 15 seconds.\n\n// Source also says Phoenix Dive after Healing Grenade refreshes the duration to 4+2 seconds. The +2 condition is not identified, so it is not attributed to a fragment.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Solar",
+    "gid": "1186062409",
+    "range": "D9:N9",
+    "text": "Continuously restores health. Effect is uninterruptible and can be extended up to 15 seconds by default. \nx1 = 35 [17.5] HP/s | x2 = 50 [25] HP/s\nHealing Effect does not stack with Healing Rift.\n\nReapplying Restoration will refresh its duration to its longest achieved duration, keeping the highest Restoration stack.\nIf the new duration is longer than the previous longest, the new duration is used instead.\nEg: If the maximum Restoration duration achieved was 15 seconds, a Phoenix Dive or Healing Grenade will refresh it to 15 seconds.\nUsing a Phoenix Dive after using a Healing Grenade will refresh its duration to 4+2 seconds.\nEmpyrean and Mercy are both duration extenders, and do not count as reapplying Restoration. Extending a Solar Effect that is at >15 seconds will set it to 15 seconds."
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

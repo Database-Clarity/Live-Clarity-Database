@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 655301426,
+  "english": "Cloaks you and prevents Combatants from directly targeting you. They instead shoot at your last visible location or stop firing. Loud Actions allow Combatants to track you, but they do not fire.\n\nEnemy Players cannot see your Health bar. You ping enemy radars for 0.6 seconds every 5 seconds, and Loud Actions also ping their radars.\n\nTracking projectiles and abilities that scan for enemies, such as <solar Firebolt Grenades />, cannot target you. Projectiles already tracking you stop doing so.\n\nMaximum Radar Range is decreased to 24 meters for 5 seconds. The Radar Booster weapon mod removes this reduction. Reapplying <void Invisibility /> without breaking it refreshes the duration of the longest-lasting <void Invisibility /> effect.\n\nOffensive Actions immediately end <void Invisibility />:\n• Firing a weapon\n• Using a Grenade, Melee, Super, or <void Blink /> Ability\n• Placing a Barricade or Rift\n• Summoning a Vehicle\n\nLoud Actions ping enemy radars and allow Combatants to track you:\n• Starting to sprint\n• Using a movement ability other than <void Blink />\n• Using a <hunter/>Hunter Class Ability\n\n// Source gives the radar-reduction duration as 5+2 seconds without identifying what grants the additional 2 seconds.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Void",
+    "gid": "1907852650",
+    "range": "D7:N7",
+    "text": "Cloaks the user, granting various benefits, while lowering Maximum Radar Range to 24 meters for 5+2 seconds. Immediately ends upon performing an Offensive Action.\n Radar Booster Weapon Mod removes the Radar Reduction. Reapplying Invisibility without it breaking refreshes the duration of the longest lasting invisibility.\n\nCombatants are unable to directly target the user, preferring to either shoot at the user's last visible location, or not firing. Combatants will track through Loud Actions, but not fire.\n\nGuardians are unable to see the user's health bar, and the user's radar will only ping every 5 seconds for 0.6 seconds, or upon performing Loud Actions.\n\nWeapons and Abilities that are able to home in (Tracking Projectiles) or scan (Firebolt Grenades) for enemies will not target the user, and will stop tracking if they already were. \n\nOffensive Actions: Instantly ends Invisibility\nShooting | Grenade, Melee, Super, or Blink Ability Usage | Barricade or Rift Placement | Vehicle Summon\n\nLoud Actions: Pings Radar | Combatants Track\nBeginning Sprint | Non-Blink Movement Ability Usage | Hunter Class Ability Usage"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

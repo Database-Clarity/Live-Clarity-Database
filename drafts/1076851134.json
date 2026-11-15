@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 1076851134,
+  "english": "Gaining, losing, or consuming Armor Charge restores 5? HP and grants 'Repurposed Charge'. The number of Armor Charges changed simultaneously plus 1 determines the number of stacks granted. Maximum of 7 stacks, reached by losing or spending 6 Armor Charges at once through Kickstart or Finisher mods.\n\nRepurposed Charge grants <pve 0%|13%|21%|29.5%|31%|33%|35% /> <pvp [0%|?%|?%|?%|?%|?%|?%] /> Damage Resistance at 1|2|3|4|5|6|7 stacks.\n\nEach activation grants or extends the duration by 3 seconds per Repurposed Charge stack granted by that activation. Extensions maintain the highest stack count and cannot extend the remaining duration beyond 30 seconds.\n\nPicking up an Orb of Power grants 2 stacks for 6 seconds. Special Finisher grants 4 stacks for 12 seconds; picking up an Orb of Power afterwards adds 6 seconds while maintaining 4 stacks.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Armor Perks",
+    "gid": "1287885342",
+    "range": "C38:F38",
+    "text": "4 Piece | Repurposed Charge\n\nGaining, losing, or consuming Armor Charges restores 5? HP and grants stacks of Repurposed Charge.\n\nRepurposed Charge stacks are based on the amount of simultaneously(!) gained/lost/consumed Armor charges + 1.\nMaxes out at x7 with 6 Armor Charges simultaneously lost/spent through Kickstart or Finisher Mods.\n\nInitial Buff duration as well as Buff Extensions are equal to (3 seconds X Repurposed Charge Stacks gained/lost/consumed)\n Buff can be extended to a maximum of 30 seconds, maintaining the highest stack.\nExamples: Orb Pickups grant x2 (13% DR) for +6 seconds.\n Special Finisher will grant x4 (29.5% DR) for +12 seconds. Picking up an Orb afterwards will maintain x4 stacks and add +6 seconds.\n\nRepurposed Charge:\nGrant Damage Resist per Repurposed Charge stack, up to 35% [?%] DR at 7 stacks.\nx1 = 0% [0%] | x2 = 13% [?%] | x3 = 21% [?%] | x4 = 29.5% [?%] | x5 = 31% [?%] | x6 = 33% [?%] | x7 = 35% [?%]"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

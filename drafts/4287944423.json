@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 4287944423,
+  "english": "Requires Warmind Charges.\n\nKilling enemies of the <link Elite Tier or higher [#CombatantClassifications] /> or destroying a <link Construct [#CombatantClassifications] /> or <strand Tangle /> triggers a Warmind Detonation at the target's location.\n\nDetonations from enemy kills deal <pve 405 /> <pvp [?] /> <solar Solar /> damage. They restore 50 HP to you and allies within 10 meters without falloff. Detonations from destroying Constructs deal half as much damage and restore half as much HP.\n\nDetonation kills can grant Warmind Charges but cannot trigger further detonations.\n\n0.3? second cooldown between detonations.\n\n// Source explicitly calls for more testing of the half-strength Construct detonation and questions the cooldown. It does not clarify whether Tangles use the Construct values, whether Warmind Charges are consumed, or whether the 10 meter radius applies equally to damage and healing.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Armor Perks",
+    "gid": "1287885342",
+    "range": "C80:F80",
+    "text": "4 Piece | Rasputin's Reprisal\n\nUpon killing an Elite+ Combatant or destroying a Construct/Tangle while having Warmind Charges:\n\nTriggers a Warmind Detonation, centered on the Combatant/Construct.\nDetonation (from Elite Kill) deals 405 [?] Solar Damage and restores 50 HP to the user and their allies over 10 meters without falloff.\nDetonation (from destroying a Construct) deals half the damage and restores half the health. <---NEEDS MORE THOROUGH TESTING\nDetonation Kills can grant Warmind Charges, but will not chain into additional Warmind Detonations.\nIncurs a 0.3? second internal cooldown between explosions? Hard to test sometimes"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 1476923953,
+  "english": "Grenade or Class Ability usage and dealing Elemental Melee damage grants the 'Empowered Abilities' buff to the other two abilities for 5 seconds. Maximum of 2 stacks per ability.\n\nEmpowered Abilities grants the following at 1|2 stacks:\n• <pve 400% /> <pvp [100%] /> | <pve 800% /> <pvp [200%] /> additional Base Grenade and Melee Regeneration Rate\n• 25%|50% additional Base Class Ability Regeneration Rate\n\nEach ability's stacks and duration are tracked separately. For example, dealing Elemental Melee damage empowers Grenade and Class Abilities. Using your Class Ability before those stacks expire increases Grenade empowerment to 2 stacks and refreshes its duration, empowers Melee for 5 seconds, and leaves the Class Ability's existing empowerment unchanged.\n\nThe buff display on the HUD does not accurately represent the active ability regeneration when chaining abilities together.",
+  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "source": {
+    "tab": "Exotic Class",
+    "gid": "20898389",
+    "range": "C5",
+    "text": "On Grenade or Class Ability Usage, or upon dealing Powered Melee Damage:\nGrants a stack of Empowered Abilities for the other two abilities for 5 seconds, up to 2 stacks. \ne.g.: Dealing Combination Blow damage -> Increased Grenade and Class Ability Regeneration.\n\nEmpowered Abilities:\nx1 = 400% [100%] | x2 = 800% [200%] Additional Base Grenade and Melee Regeneration Rate.\nx1 = 25% | x2 = 50% Additional Base Class Ability Regeneration Rate.\n\nBuff display is NOT accurate to the active ability regen.\nWith the example in mind, Class Ability Usage before Empowered x1 from Melee runs out will do the following:\nGrenade Empower will go to x2 and will have its duration refreshed. Melee will receive Empower x1 for 5 seconds, and Class Empower x1 won't be refreshed, despite the UI saying Empowered x2"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-15T02:25:12.518Z",
+  "model": "gpt-6.1-sol"
+}
