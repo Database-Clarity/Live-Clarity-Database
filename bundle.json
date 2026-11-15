@@ -1,6 +1,6 @@
 {
-  "sourceCommit": "9e16bd98b24095a785d77dd088889c21104ce230",
-  "generatedAt": "2026-11-15T00:36:40.310Z",
+  "sourceCommit": "0e47e001c6e919b2546251fdb14c7fa4a05690f0",
+  "generatedAt": "2026-11-15T01:25:00.088Z",
   "tooltips": {
     "0": {
       "hash": 0,
@@ -43975,7 +43975,7 @@
       "hash": 2890807135,
       "text": {
         "en": {
-          "text": "Direct Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown: \n• <primary/>Primary Weapons apply <pve 10 /> <pvp [4] /> additional <solar/>Scorch per Direct Hit (<pve 15 /> <pvp [9?] /> with <solar/>Ember of Ashes)\n• <special/>Special and <heavy/>Power Weapons apply 20 additional <solar/>Scorch (30 with <solar/>Ember of Ashes)\n\nScoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target. Hit counter persists through stow.\n\nNumber of Direct Hits required by weapon type:\n• Bows: <enhanced/>${2#c}\n• Swords: <enhanced/>${3#c}\n• Other Weapons: 55% of the base magazine size <enhanced/> #c\n\n<solar/>Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage.\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar c = empty\nenhanced (\nvar c = -1\n<enhanced/> Decreases the number of Direct Hits required by one.\n)",
+          "text": "Direct Hits against <solar/>Scorched Enemies apply additional <solar/>Scorch on a 0.5 second cooldown: \n• <primary/>Primary Weapons apply <pve 10 /> <pvp [4] /> additional <solar/>Scorch per Direct Hit (<pve 15 /> <pvp [9?] /> with <solar/>Ember of Ashes)\n• <special/>Special and <heavy/>Power Weapons apply 20 additional <solar/>Scorch (30 with <solar/>Ember of Ashes)\n\nScoring multiple Direct Hits within 3? seconds of each causes the next Direct Hit to <solar/>Scorch the target. Hit counter persists through stow.\n\nNumber of Direct Hits required by weapon type:\n• Bows: <enhanced/>${2+#d}\n• Swords: <enhanced/>${3+#d}\n• Other Weapons: 55% of the base magazine size <enhanced/> #c\n\n<solar/>Scorch applied by Burning Ambition to Unscorched targets counts as Weapon Damage.\n\n<solar/>Ember of Ashes increases the amount of <solar/>Scorch applied by 50%.\n\nvar d = 0\nvar c = empty\nenhanced (\nvar c = -1\nvar d = -1\n<enhanced/> Decreases the number of Direct Hits required by one.\n)",
           "updatedAt": "2025-12-29T03:18:18.628Z",
           "updatedBy": "Hawkmoona"
         }
