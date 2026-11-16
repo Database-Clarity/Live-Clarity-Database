@@ -21435,7 +21435,11 @@ function resolveImports(text, globals, diagnostics) {
       const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
       const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
       const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
-      const imported = name2 === "main" || name2 === "secondary" ? source : extractBlocks(source ?? "", "export")[name2];
+      let imported = source;
+      if (name2 !== "main" && name2 !== "secondary") {
+        const blocks = extractBlocks(source ?? "", "export");
+        imported = Object.hasOwn(blocks, name2) ? blocks[name2] : void 0;
+      }
       if (imported === void 0 && visible) {
         diagnostics.push({
           severity: "error",
@@ -23839,6 +23843,7 @@ var images = [
   "stasis",
   "void",
   "strand",
+  "prismatic",
   "heavy",
   "primary",
   "special",
@@ -23866,6 +23871,14 @@ var classNameList = {
   table
 };
 var allClassNames = Object.values(classNameList).flat();
+
+// packages/export/src/converter/prismatic.ts
+var prismaticAssets = {
+  dim: "\u{F0156}",
+  vaultZero: "[Prismatic]",
+  braytech: null,
+  crayon: null
+};
 
 // packages/export/src/converter/converterSettings.ts
 var converterSettings = {
@@ -23936,6 +23949,7 @@ var converterSettings = {
         "arc",
         "solar",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -23956,6 +23970,7 @@ var converterSettings = {
         arc: ["<:arc:720178925317128243>", ""],
         solar: ["<:solar:720178909361995786>", ""],
         void: ["<:void:720178940240461864>", ""],
+        prismatic: [prismaticAssets.crayon ?? "", ""],
         primary: ["<:primary:968793055677251604>", ""],
         special: ["<:special:968793055631114330>", ""],
         heavy: ["<:heavy:968793055652106320>", ""],
@@ -24034,6 +24049,7 @@ var converterSettings = {
         "arc",
         "stasis",
         "strand",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -24058,6 +24074,7 @@ var converterSettings = {
         arc: ["\uE143", ""],
         stasis: ["\uE139", ""],
         strand: ["\uEF0E", ""],
+        prismatic: [prismaticAssets.braytech ?? "", ""],
         primary: ["\uF106", ""],
         special: ["\uF107", ""],
         heavy: ["\uF108", ""],
@@ -24091,6 +24108,7 @@ var converterSettings = {
         "stasis",
         "strand",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -24114,6 +24132,7 @@ var converterSettings = {
         stasis: ["[Stasis]", ""],
         strand: ["[Strand]", ""],
         void: ["[Void]", ""],
+        prismatic: [prismaticAssets.vaultZero, ""],
         primary: ["[primary]", ""],
         special: ["[special]", ""],
         heavy: ["[heavy]", ""],
@@ -24730,14 +24749,275 @@ var separateBlocks = (description, titles) => {
   }, []);
 };
 
+// packages/core/src/markup/parse.ts
+init_braces();
+init_numberSlots();
+init_freeze();
+init_map();
+init_numberFormat();
+init_elementTags();
+init_lines();
+init_prepare();
+var reservedMarker = /[\uE000\uE001]/;
+var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
+function parseMarkup(text, globals = { variables: "", titles: "" }, options) {
+  if (options) return parseNumberSlots(text, globals, options.slots);
+  return parseOrdinary(text, globals);
+}
+function parseOrdinary(text, globals, indexed = false) {
+  const numbered2 = !!globals.numberInput && text.includes("#{=");
+  const numberIssues = [];
+  if (numbered2) {
+    const input2 = globals.numberInput;
+    if (input2.issue) numberIssues.push({ severity: "error", message: input2.issue });
+    const tokens = numberTokens(text);
+    if (input2.fallback || tokens.some((token) => token.id !== void 0 && input2.values.get(token.id) === null))
+      return parseMarkup(input2.english, { ...globals, numberInput: void 0, lang: "en" });
+    for (const token of [...tokens].reverse())
+      if (token.id === void 0 || !input2.values.has(token.id)) {
+        numberIssues.push({
+          severity: "error",
+          message: token.id === void 0 ? "Malformed number token." : `Unknown number #{=${token.id}}.`
+        });
+        text = text.slice(0, token.from) + "?" + text.slice(token.to);
+      }
+    try {
+      text = resolveNumberTokens(text, input2.values);
+    } catch (error62) {
+      numberIssues.push({ severity: "error", message: String(error62) });
+      text = "?";
+    }
+  }
+  let reserved = false;
+  let tagged = false;
+  const clean = (source) => {
+    if (!reservedMarker.test(source)) return source;
+    reserved = true;
+    return source.replace(elementTextMarkers, "");
+  };
+  const mark = (source) => {
+    source = clean(source);
+    const marked2 = markElementTags(source);
+    if (marked2 !== source) tagged = true;
+    return lowerDelimitedMarkup(marked2);
+  };
+  const tinted = parseWith(text, globals, mark, numbered2, indexed);
+  const parsed = tagged ? parseWith(
+    text,
+    globals,
+    (source) => lowerDelimitedMarkup(lowerElementTags(clean(source))),
+    numbered2,
+    indexed
+  ) : tinted;
+  const lines = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
+  const diagnostics = parsed.diagnostics;
+  diagnostics.push(...numberIssues);
+  if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
+  return { lines, diagnostics };
+}
+function parseNumberSlots(text, globals, ids) {
+  const open2 = "\uE100", close = "\uE101";
+  if (text.includes(open2) || text.includes(close)) return parseMarkup(text, globals);
+  const variables = numberVariables(text);
+  const slots = numberSlots(text);
+  const markers = [];
+  let source = "", at = 0;
+  for (const [index, slot] of slots.entries()) {
+    const id = ids[index];
+    if (id === void 0 || variables.some(
+      (variable) => variable.from <= slot.from && !text.slice(variable.from, slot.from).includes("\n")
+    ))
+      continue;
+    const key = id.toString(16).replace(/[0-9a-f]/g, (char) => String.fromCharCode(103 + parseInt(char, 16)));
+    markers.push({ from: slot.from, to: slot.to, key });
+  }
+  for (const ref of variableReferences(text)) {
+    if (ref.name === "e" || slots.some((slot) => ref.from >= slot.from && ref.to <= slot.to) || variables.some(
+      (variable) => variable.from <= ref.from && !text.slice(variable.from, ref.from).includes("\n")
+    ))
+      continue;
+    const lineStart = text.lastIndexOf("\n", ref.from - 1) + 1;
+    const lineEnd = text.indexOf("\n", ref.to);
+    const line = text.slice(lineStart, lineEnd < 0 ? text.length : lineEnd);
+    if (numberTargetRanges(line).some(
+      (range) => ref.from - lineStart >= range.from && ref.from - lineStart < range.to
+    ))
+      continue;
+    markers.push({ from: ref.from, to: ref.to, key: "w" + ref.name });
+  }
+  for (const marker2 of markers.sort((a, b) => a.from - b.from)) {
+    source += text.slice(at, marker2.from) + open2 + marker2.key + close + text.slice(marker2.from, marker2.to) + open2 + close;
+    at = marker2.to;
+  }
+  source += text.slice(at);
+  const parsed = parseOrdinary(source, globals, true);
+  const spans2 = (parts) => {
+    let active;
+    return parts.flatMap((part) => {
+      const title = part.title ? lines(part.title) : void 0;
+      if (!part.text || !part.text.includes(open2) && active === void 0)
+        return [{ ...part, ...title && { title } }];
+      const slots2 = [];
+      const variables2 = [];
+      let output2 = "";
+      let at2 = 0, slot = active;
+      for (const marker2 of part.text.matchAll(/\uE100(w[a-zA-Z0-9]+|[g-v]*)\uE101/g)) {
+        if (marker2.index > at2) {
+          const from = output2.length;
+          output2 += part.text.slice(at2, marker2.index);
+          if (typeof slot === "number") slots2.push({ id: slot, from, to: output2.length });
+          else if (slot) variables2.push({ name: slot, from, to: output2.length });
+        }
+        slot = marker2[1].startsWith("w") ? marker2[1].slice(1) : marker2[1] ? parseInt(
+          [...marker2[1]].map((char) => (char.charCodeAt(0) - 103).toString(16)).join(""),
+          16
+        ) : void 0;
+        at2 = marker2.index + marker2[0].length;
+      }
+      if (at2 < part.text.length) {
+        const from = output2.length;
+        output2 += part.text.slice(at2);
+        if (typeof slot === "number") slots2.push({ id: slot, from, to: output2.length });
+        else if (slot) variables2.push({ name: slot, from, to: output2.length });
+      }
+      active = slot;
+      if (!output2 && !part.classNames?.length && !part.link && !part.title) return [];
+      return [
+        {
+          ...part,
+          text: output2,
+          ...slots2.length && { slots: slots2 },
+          ...variables2.length && { variables: variables2 },
+          ...title && { title }
+        }
+      ];
+    });
+  };
+  const lines = (input2) => input2.map((line) => ({
+    ...line,
+    ...line.linesContent && { linesContent: spans2(line.linesContent) },
+    ...line.table && {
+      table: line.table.map((row) => ({
+        ...row,
+        ...row.rowContent && {
+          rowContent: row.rowContent.map((cell) => ({
+            ...cell,
+            cellContent: spans2(cell.cellContent)
+          }))
+        }
+      }))
+    }
+  }));
+  return { ...parsed, lines: lines(parsed.lines) };
+}
+function untinted(lines) {
+  const spans2 = (parts) => {
+    const out = [];
+    for (const part of parts) {
+      const span = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
+      const last = out.at(-1);
+      const plain = (value2) => value2.text !== void 0 && Object.entries(value2).every(([key, field]) => key === "text" || field === void 0);
+      if (last && plain(last) && plain(span))
+        out[out.length - 1] = { text: last.text + span.text };
+      else out.push(span);
+    }
+    return out;
+  };
+  return lines.map((line) => ({
+    ...line,
+    ...line.linesContent && { linesContent: spans2(line.linesContent) },
+    ...line.table && {
+      table: line.table.map((row) => ({
+        ...row,
+        rowContent: row.rowContent?.map((cell) => ({
+          ...cell,
+          cellContent: spans2(cell.cellContent)
+        }))
+      }))
+    }
+  }));
+}
+function parseWith(text, globals, lower2, numbered2 = false, indexed = false) {
+  const diagnostics = [];
+  text = lower2(text);
+  globals = {
+    ...globals,
+    variables: lower2(globals.variables),
+    titles: lower2(globals.titles),
+    ...globals.imports && {
+      imports: new Proxy(globals.imports, {
+        get(target, key, receiver) {
+          const value2 = Reflect.get(target, key, receiver);
+          if (typeof key === "string" && globals.numberInput?.hasImportedNumbers?.(key))
+            numbered2 = true;
+          return typeof value2 === "string" ? lower2(value2) : value2;
+        }
+      })
+    }
+  };
+  const prepared = prepareMarkup(text, globals, diagnostics);
+  const tidy = (text2) => indexed ? normalizeMarkupWhitespace(text2.replace(/\uE100w[a-zA-Z0-9]+\uE101\uE100\uE101/g, "")) : text2;
+  const format = (text2) => numbered2 && globals.lang === void 0 ? formatNumbers(text2, globals.numberInput?.lang) : text2;
+  const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
+    ([name2, content]) => prepared.nativeTitles[name2] ? prepareNativeTitle(prepared.nativeTitles[name2], globals) : prepareMarkup(content, globals, []).text
+  ) : Object.values(prepared.titles).map((content) => prepareMarkup(content, globals, []).text);
+  for (const tag of new Set([prepared.text, ...titleBodies].flatMap(markupStrayTags))) {
+    diagnostics.push({
+      severity: "warning",
+      message: `Unclosed or unknown tag "${tag}": text after it is read as markup and may be dropped or recoloured. Write a complete "${tag} text />" tag, or remove the "<".`
+    });
+  }
+  const titles = {};
+  for (const [name2, content] of Object.entries(prepared.titles)) {
+    const native = prepared.nativeTitles?.[name2];
+    const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
+    if (native) {
+      for (const variable of new Set(markupVariableReferences(body))) {
+        diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
+      }
+    }
+    titles[name2] = parseLines(format(tidy(body)), {});
+  }
+  return { lines: parseLines(format(tidy(prepared.text)), titles), diagnostics };
+}
+
 // packages/export/src/converter/descriptionConverter.ts
-var prepareDescription = (descriptionData) => {
+var numberLanguage = ({ database, hash: hash2, language }) => database[hash2].editor[language]?.englishFallback ? "en" : language;
+var nativeDescription = (descriptionData, description) => {
+  const { database, hash: hash2, language } = descriptionData;
+  const library = (id) => {
+    const text = database[id]?.editor[language];
+    return [text?.main, text?.secondary].filter(Boolean).join("\n");
+  };
+  const variables = library(2);
+  const titles = library(3);
+  let native = [description, variables, titles].some((source) => source.includes("{{"));
+  const imports = new Proxy(/* @__PURE__ */ Object.create(null), {
+    get(_target, key) {
+      const source = typeof key === "string" ? database[key]?.editor[language]?.main : void 0;
+      if (source?.includes("{")) native = true;
+      return source;
+    }
+  });
+  const parsed = parseMarkup(description, {
+    variables,
+    titles,
+    imports,
+    type: database[hash2].type,
+    lang: numberLanguage(descriptionData)
+  });
+  if (!native) return void 0;
+  const error62 = parsed.diagnostics.find((diagnostic) => diagnostic.severity === "error");
+  if (error62) throw new Error(`Tooltip ${hash2} (${language}): ${error62.message}`);
+  return parsed.lines;
+};
+var prepareDescription = (descriptionData, imported) => {
   const { language, hash: hash2, database } = descriptionData;
-  let description = loadExports(descriptionData);
+  let description = imported ?? loadExports(descriptionData);
   description = removePerkSpecificText(description, database[hash2].type);
   description = loadVariables({ ...descriptionData, descriptionString: description });
   const titles = extractTitles(removeUnusedText2(description, false));
-  description = doMath(description, database[hash2].editor[language]?.englishFallback ? "en" : language);
+  description = doMath(description, numberLanguage(descriptionData));
   return {
     preparedDescription: removeUnusedText2(description.trim()),
     titles: {
@@ -24747,8 +25027,11 @@ var prepareDescription = (descriptionData) => {
     }
   };
 };
-var descriptionConverter = (descriptionData) => {
-  const { preparedDescription, titles } = prepareDescription(descriptionData);
+var convertDescription = (descriptionData) => {
+  const imported = loadExports(descriptionData);
+  const native = nativeDescription(descriptionData, imported);
+  if (native !== void 0) return { lines: native.length ? native : void 0, native: true };
+  const { preparedDescription, titles } = prepareDescription(descriptionData, imported);
   const convertedTitles = Object.entries(titles || {}).reduce(
     (acc, [titleName, titleContent]) => {
       const { preparedDescription: preparedDescription2 } = prepareDescription({ ...descriptionData, descriptionString: titleContent });
@@ -24758,13 +25041,18 @@ var descriptionConverter = (descriptionData) => {
     },
     {}
   );
-  return separateTableWeaponType(preparedDescription, convertedTitles);
+  return { lines: separateTableWeaponType(preparedDescription, convertedTitles), native: false };
 };
+var descriptionConverter = (descriptionData) => convertDescription(descriptionData).lines;
 
 // packages/export/src/converter/descriptionFilter.ts
 var cleanDescription = (obj, converterType) => {
   const { getFromDescription, enhancedArrowReplacement } = getSettings(converterType);
   const remover = (obj2) => {
+    if (converterType === "dim" && obj2?.classNames?.includes("prismatic")) {
+      obj2.text = prismaticAssets.dim + (obj2.text || "");
+      obj2.classNames = obj2.classNames.filter((name2) => name2 !== "prismatic");
+    }
     for (const key in obj2) {
       if (key === "text") {
         if (enhancedArrowReplacement !== void 0 && obj2[key] === "\u{1F845}") {
@@ -24887,6 +25175,7 @@ var databaseConverter = (converterType, database, identical) => {
   validateReferences(database);
   const lookup = expandAliases(database);
   const references = {};
+  const variants = {};
   const newDatabase = {};
   for (const [hash2, rawPerk] of Object.entries(database)) {
     const aliasOutput = isAliasStub(rawPerk) ? getAliasOutput(settings, rawPerk) : "copy";
@@ -24898,7 +25187,6 @@ var databaseConverter = (converterType, database, identical) => {
     if (!settings.optional && identical.has(hash2)) continue;
     if (isAliasStub(rawPerk) && aliasOutput === "reference") {
       references[hash2] = { hash: rawPerk.hash, aliasOf: rawPerk.aliasOf };
-      continue;
     }
     const cleanPerk = getDataFromPerk(perk, settings.getFromPerk);
     const descriptions = Object.entries(cleanPerk.editor).reduce(
@@ -24919,13 +25207,19 @@ var databaseConverter = (converterType, database, identical) => {
       {}
     );
     const { editor, ...withoutEditor } = cleanPerk;
-    newDatabase[hash2] = {
+    const convertedPerk = {
       ...withoutEditor,
       descriptions
     };
+    if (references[hash2]) {
+      variants[hash2] = convertedPerk;
+    } else newDatabase[hash2] = convertedPerk;
   }
   for (const [hash2, reference] of Object.entries(references)) {
-    if (newDatabase[reference.aliasOf] !== void 0) newDatabase[hash2] = reference;
+    const target = newDatabase[reference.aliasOf];
+    if (target === void 0) continue;
+    const variant = variants[hash2];
+    newDatabase[hash2] = JSON.stringify(variant.descriptions) !== JSON.stringify(target.descriptions) ? variant : reference;
   }
   const output2 = cleanObject(newDatabase);
   validateOutputReferences(output2);
@@ -24934,8 +25228,8 @@ var databaseConverter = (converterType, database, identical) => {
 
 // packages/export/src/elementTags.ts
 init_braces();
-function lowerInput(input2, arrow) {
-  const lower2 = (text) => lowerConsumerMarkup(text, arrow);
+function lowerInput(input2, arrow, elementTags = false) {
+  const lower2 = (text) => elementTags ? lowerDelimitedMarkup(text) : lowerConsumerMarkup(text, arrow);
   let perks;
   for (const [hash2, perk] of Object.entries(input2.perks)) {
     if (!("editor" in perk) || !perk.editor) continue;
@@ -25067,103 +25361,6 @@ init_languages();
 init_syntax();
 init_lines();
 init_prepare();
-
-// packages/core/src/markup/parse.ts
-init_braces();
-init_elementTags();
-init_lines();
-init_prepare();
-var reservedMarker = /[\uE000\uE001]/;
-var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
-function parseMarkup(text, globals = { variables: "", titles: "" }) {
-  let reserved = false;
-  let tagged = false;
-  const clean = (source) => {
-    if (!reservedMarker.test(source)) return source;
-    reserved = true;
-    return source.replace(elementTextMarkers, "");
-  };
-  const mark = (source) => {
-    source = clean(source);
-    const marked2 = markElementTags(source);
-    if (marked2 !== source) tagged = true;
-    return lowerDelimitedMarkup(marked2);
-  };
-  const tinted = parseWith(text, globals, mark);
-  const parsed = tagged ? parseWith(text, globals, (source) => lowerDelimitedMarkup(lowerElementTags(clean(source)))) : tinted;
-  const lines = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
-  const diagnostics = parsed.diagnostics;
-  if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
-  return { lines, diagnostics };
-}
-function untinted(lines) {
-  const spans2 = (parts) => {
-    const out = [];
-    for (const part of parts) {
-      const span = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
-      const last = out.at(-1);
-      const plain = (value2) => value2.text !== void 0 && Object.entries(value2).every(([key, field]) => key === "text" || field === void 0);
-      if (last && plain(last) && plain(span))
-        out[out.length - 1] = { text: last.text + span.text };
-      else out.push(span);
-    }
-    return out;
-  };
-  return lines.map((line) => ({
-    ...line,
-    ...line.linesContent && { linesContent: spans2(line.linesContent) },
-    ...line.table && {
-      table: line.table.map((row) => ({
-        ...row,
-        rowContent: row.rowContent?.map((cell) => ({
-          ...cell,
-          cellContent: spans2(cell.cellContent)
-        }))
-      }))
-    }
-  }));
-}
-function parseWith(text, globals, lower2) {
-  const diagnostics = [];
-  text = lower2(text);
-  globals = {
-    ...globals,
-    variables: lower2(globals.variables),
-    titles: lower2(globals.titles),
-    ...globals.imports && {
-      imports: new Proxy(globals.imports, {
-        get(target, key, receiver) {
-          const value2 = Reflect.get(target, key, receiver);
-          return typeof value2 === "string" ? lower2(value2) : value2;
-        }
-      })
-    }
-  };
-  const prepared = prepareMarkup(text, globals, diagnostics);
-  const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
-    ([name2, content]) => prepared.nativeTitles[name2] ? prepareNativeTitle(prepared.nativeTitles[name2], globals) : prepareMarkup(content, globals, []).text
-  ) : Object.values(prepared.titles).map((content) => prepareMarkup(content, globals, []).text);
-  for (const tag of new Set([prepared.text, ...titleBodies].flatMap(markupStrayTags))) {
-    diagnostics.push({
-      severity: "warning",
-      message: `Unclosed or unknown tag "${tag}": text after it is read as markup and may be dropped or recoloured. Write a complete "${tag} text />" tag, or remove the "<".`
-    });
-  }
-  const titles = {};
-  for (const [name2, content] of Object.entries(prepared.titles)) {
-    const native = prepared.nativeTitles?.[name2];
-    const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
-    if (native) {
-      for (const variable of new Set(markupVariableReferences(body))) {
-        diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
-      }
-    }
-    titles[name2] = parseLines(body, {});
-  }
-  return { lines: parseLines(prepared.text, titles), diagnostics };
-}
-
-// packages/core/src/markup/index.ts
 init_elementTags();
 init_braces();
 init_weaponHeadings();
@@ -28250,6 +28447,17 @@ var inScope = (item) => /^(weapon-(perk|trait|mod)|armor-mod|subclass)(-|$)/.tes
 var subclass = (item) => /^subclass(-|$)/.test(item.categoryId);
 var owns = (item, owner) => item.itemHash === owner || Boolean(item.owners?.includes(owner));
 var numbered = (item) => / (II|III|IV)$/.test(item.name);
+function aliasPairedBase(item, items, aliases) {
+  if (!item || !enhanced(item)) return item?.baseHash;
+  if (item.baseHash !== void 0)
+    return items[item.baseHash] && items[resolveAlias(item.baseHash, aliases)] ? item.baseHash : void 0;
+  const candidates = Object.values(items).filter(
+    (base) => !enhanced(base) && !exotic(base) && inScope(base) && name(base) === name(item) && item.plugCategoryHash !== void 0 && base.plugCategoryHash === item.plugCategoryHash && base.categoryId === item.categoryId.replace(/-enhanced$/, "")
+  );
+  const targets = new Set(candidates.map((base) => resolveAlias(base.hash, aliases)));
+  const target = [...targets][0];
+  return candidates.length > 1 && targets.size === 1 && target !== void 0 && items[target] ? target : void 0;
+}
 function effectiveAliases(generated, input2, items) {
   const groups = aliasGroupsSchema.parse(input2);
   const aliases = { ...aliasesSchema.parse(generated) };
@@ -28309,27 +28517,16 @@ function effectiveAliases(generated, input2, items) {
     }
   }
   for (const key of Object.keys(aliases)) resolveAlias(Number(key), aliases);
-  const pairedBase = (item) => {
-    if (!item || !enhanced(item)) return item?.baseHash;
-    if (item.baseHash !== void 0)
-      return items[item.baseHash] && items[resolveAlias(item.baseHash, aliases)] ? item.baseHash : void 0;
-    const candidates = Object.values(items).filter(
-      (base) => !enhanced(base) && !exotic(base) && inScope(base) && name(base) === name(item) && item.plugCategoryHash !== void 0 && base.plugCategoryHash === item.plugCategoryHash && base.categoryId === item.categoryId.replace(/-enhanced$/, "")
-    );
-    const targets = new Set(candidates.map((base) => resolveAlias(base.hash, aliases)));
-    const target = [...targets][0];
-    return candidates.length > 1 && targets.size === 1 && target !== void 0 && items[target] ? target : void 0;
-  };
   let changed;
   do {
     changed = false;
     for (const [key, group] of Object.entries(groups.groups)) {
       const canonical = Number(key), item = items[key];
       if (!item || !enhanced(item) || generated[key]) continue;
-      const canonicalBase = pairedBase(item);
+      const canonicalBase = aliasPairedBase(item, items, aliases);
       for (const member of group.members) {
         if (aliases[member]?.kind !== "name" || aliases[member]?.to !== canonical) continue;
-        const memberBase = pairedBase(items[member]);
+        const memberBase = aliasPairedBase(items[member], items, aliases);
         if (canonicalBase === void 0 || memberBase === void 0 || resolveAlias(memberBase, aliases) !== resolveAlias(canonicalBase, aliases)) {
           delete aliases[member];
           issues.push({
@@ -28354,6 +28551,7 @@ function composeAliases(generated, groups, items, conflicts = {}, pointers) {
   const result = effectiveAliases(generated, groups, items);
   const aliases = { ...result.aliases };
   for (const [hash2, alias] of Object.entries(result.aliases)) {
+    if (Object.hasOwn(generated, hash2)) continue;
     if (alias.kind === "name" && (Object.hasOwn(conflicts, hash2) || Object.hasOwn(conflicts, String(alias.to))))
       throw new Error(`Alias group member ${hash2} is a shared sandbox identity`);
   }
