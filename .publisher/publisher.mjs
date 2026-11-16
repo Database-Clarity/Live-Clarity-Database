@@ -21828,16 +21828,19 @@ function implicitNumberMap(count) {
   return { ids: Array.from({ length: count }, (_, i) => i + 1), next: count + 1, retired: {} };
 }
 function readNumberMap(english) {
-  const count = numberSlots(english.text).length;
+  return numberMapForCount(english, numberSlots(english.text).length);
+}
+function numberMapForCount(english, count) {
   const map2 = english.numbers === void 0 ? implicitNumberMap(count) : numberMapSchema.parse(english.numbers);
   if (map2.ids.length !== count)
     throw new Error(`Number map has ${map2.ids.length} ids for ${count} English slots.`);
   return map2;
 }
 function numberValues(english, lang) {
-  const map2 = readNumberMap(english);
+  const slots = numberSlots(english.text);
+  const map2 = numberMapForCount(english, slots.length);
   const values = /* @__PURE__ */ new Map();
-  numberSlots(english.text).forEach((slot, i) => values.set(map2.ids[i], slot.value));
+  slots.forEach((slot, i) => values.set(map2.ids[i], slot.value));
   for (const [id, retired2] of Object.entries(map2.retired))
     values.set(
       Number(id),
@@ -21862,8 +21865,8 @@ function resolveNumberTokens(text, values) {
 }
 function reconcileNumberMap(before, after, tooltip) {
   const old = before ?? { text: "" };
-  const map2 = readNumberMap(old);
   const alignment = alignSlots(old.text, after.text);
+  const map2 = numberMapForCount(old, alignment.before.length);
   const next = { ids: [], next: map2.next, retired: { ...map2.retired } };
   const carried = new Map([...alignment.map].map(([a, b]) => [b, map2.ids[a]]));
   next.ids = alignment.after.map((_, index) => carried.get(index) ?? next.next++);
@@ -23340,9 +23343,15 @@ function mergeAssociations(base, onto, proposed) {
   return result.merged.associated;
 }
 function compose(input2, boundSources = true) {
+  for (const tooltip of [input2.base, input2.proposed, input2.snapshot])
+    if (tooltip && tooltipSchema.parse(tooltip).hash !== input2.hash)
+      throw new Error(`Tooltip does not belong to member ${input2.hash}`);
+  return composeParsed(input2, boundSources);
+}
+function composeParsed(input2, boundSources = true) {
   const { hash: hash2, base, proposed, snapshot, pushed } = input2;
   for (const tooltip2 of [base, proposed, snapshot])
-    if (tooltip2 && tooltipSchema.parse(tooltip2).hash !== hash2)
+    if (tooltip2 && tooltip2.hash !== hash2)
       throw new Error(`Tooltip does not belong to member ${hash2}`);
   const changed = changedFields(base, proposed);
   let tooltip = proposed;
@@ -23490,6 +23499,7 @@ __export(schedule_exports, {
   changedFields: () => changedFields,
   checkNotBefore: () => checkNotBefore,
   compose: () => compose,
+  composeParsed: () => composeParsed,
   dueSchema: () => dueSchema,
   existsField: () => existsField,
   fieldValue: () => fieldValue,
