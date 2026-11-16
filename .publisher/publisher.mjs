@@ -58,8 +58,8 @@ var init_arithmetic = __esm({
 });
 
 // packages/core/src/markup/elementTags.ts
-function elementTagToken(token) {
-  const match = taggedToken.exec(token);
+function elementTagToken(token2) {
+  const match = taggedToken.exec(token2);
   if (!match || !match[2].trim()) return void 0;
   return { element: match[1], text: match[2] };
 }
@@ -81,9 +81,9 @@ function lower(text, open2, close) {
   let lowered = "";
   let at = 0;
   for (const tag of tags) {
-    const [, lead, body, trail] = /^(\s*)([^]*?)(\s*)$/.exec(tag.text);
-    const [o, c] = unsafeTint.test(body) ? ["", ""] : [open2, close];
-    lowered += `${text.slice(at, tag.from)}<${tag.element}/>${lead}${o}${body}${c}${trail}`;
+    const [, lead, body2, trail] = /^(\s*)([^]*?)(\s*)$/.exec(tag.text);
+    const [o, c] = unsafeTint.test(body2) ? ["", ""] : [open2, close];
+    lowered += `${text.slice(at, tag.from)}<${tag.element}/>${lead}${o}${body2}${c}${trail}`;
     at = tag.to;
   }
   return lowered + text.slice(at);
@@ -2332,9 +2332,9 @@ function isValidIBAN(input2) {
     return false;
   return isIso7064Mod97(input2);
 }
-function isValidJWT(token, algorithm = null) {
+function isValidJWT(token2, algorithm = null) {
   try {
-    const tokensParts = token.split(".");
+    const tokensParts = token2.split(".");
     if (tokensParts.length !== 3)
       return false;
     const [header] = tokensParts;
@@ -4993,13 +4993,13 @@ var init_ar = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0645\u062F\u062E\u0644\u0627\u062A \u063A\u064A\u0631 \u0645\u0642\u0628\u0648\u0644\u0629: \u064A\u0641\u062A\u0631\u0636 \u0625\u062F\u062E\u0627\u0644 instanceof ${issue2.expected}\u060C \u0648\u0644\u0643\u0646 \u062A\u0645 \u0625\u062F\u062E\u0627\u0644 ${received}`;
             }
-            return `\u0645\u062F\u062E\u0644\u0627\u062A \u063A\u064A\u0631 \u0645\u0642\u0628\u0648\u0644\u0629: \u064A\u0641\u062A\u0631\u0636 \u0625\u062F\u062E\u0627\u0644 ${expected}\u060C \u0648\u0644\u0643\u0646 \u062A\u0645 \u0625\u062F\u062E\u0627\u0644 ${received}`;
+            return `\u0645\u062F\u062E\u0644\u0627\u062A \u063A\u064A\u0631 \u0645\u0642\u0628\u0648\u0644\u0629: \u064A\u0641\u062A\u0631\u0636 \u0625\u062F\u062E\u0627\u0644 ${expected2}\u060C \u0648\u0644\u0643\u0646 \u062A\u0645 \u0625\u062F\u062E\u0627\u0644 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5111,13 +5111,13 @@ var init_az = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Yanl\u0131\u015F d\u0259y\u0259r: g\xF6zl\u0259nil\u0259n instanceof ${issue2.expected}, daxil olan ${received}`;
             }
-            return `Yanl\u0131\u015F d\u0259y\u0259r: g\xF6zl\u0259nil\u0259n ${expected}, daxil olan ${received}`;
+            return `Yanl\u0131\u015F d\u0259y\u0259r: g\xF6zl\u0259nil\u0259n ${expected2}, daxil olan ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5280,13 +5280,13 @@ var init_be = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u041D\u044F\u043F\u0440\u0430\u0432\u0456\u043B\u044C\u043D\u044B \u045E\u0432\u043E\u0434: \u0447\u0430\u043A\u0430\u045E\u0441\u044F instanceof ${issue2.expected}, \u0430\u0442\u0440\u044B\u043C\u0430\u043D\u0430 ${received}`;
             }
-            return `\u041D\u044F\u043F\u0440\u0430\u0432\u0456\u043B\u044C\u043D\u044B \u045E\u0432\u043E\u0434: \u0447\u0430\u043A\u0430\u045E\u0441\u044F ${expected}, \u0430\u0442\u0440\u044B\u043C\u0430\u043D\u0430 ${received}`;
+            return `\u041D\u044F\u043F\u0440\u0430\u0432\u0456\u043B\u044C\u043D\u044B \u045E\u0432\u043E\u0434: \u0447\u0430\u043A\u0430\u045E\u0441\u044F ${expected2}, \u0430\u0442\u0440\u044B\u043C\u0430\u043D\u0430 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5405,13 +5405,13 @@ var init_bg = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u041D\u0435\u0432\u0430\u043B\u0438\u0434\u0435\u043D \u0432\u0445\u043E\u0434: \u043E\u0447\u0430\u043A\u0432\u0430\u043D instanceof ${issue2.expected}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D ${received}`;
             }
-            return `\u041D\u0435\u0432\u0430\u043B\u0438\u0434\u0435\u043D \u0432\u0445\u043E\u0434: \u043E\u0447\u0430\u043A\u0432\u0430\u043D ${expected}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D ${received}`;
+            return `\u041D\u0435\u0432\u0430\u043B\u0438\u0434\u0435\u043D \u0432\u0445\u043E\u0434: \u043E\u0447\u0430\u043A\u0432\u0430\u043D ${expected2}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5535,10 +5535,10 @@ var init_bn = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0985\u09AC\u09C8\u09A7 \u0987\u09A8\u09AA\u09C1\u099F: \u09AA\u09CD\u09B0\u09A4\u09CD\u09AF\u09BE\u09B6\u09BF\u09A4 ${expected}, \u09AA\u09CD\u09B0\u09BE\u09AA\u09CD\u09A4 ${received}`;
+            return `\u0985\u09AC\u09C8\u09A7 \u0987\u09A8\u09AA\u09C1\u099F: \u09AA\u09CD\u09B0\u09A4\u09CD\u09AF\u09BE\u09B6\u09BF\u09A4 ${expected2}, \u09AA\u09CD\u09B0\u09BE\u09AA\u09CD\u09A4 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5655,13 +5655,13 @@ var init_ca = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Tipus inv\xE0lid: s'esperava instanceof ${issue2.expected}, s'ha rebut ${received}`;
             }
-            return `Tipus inv\xE0lid: s'esperava ${expected}, s'ha rebut ${received}`;
+            return `Tipus inv\xE0lid: s'esperava ${expected2}, s'ha rebut ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5793,14 +5793,14 @@ var init_ckb = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             const postfix = ["\u0627", "\u0648", "\u06C6", "\u0648\u0648", "\u06D5", "\u06CC", "\u06CE"].some((p) => received.endsWith(p)) ? "\u06CC\u06D5" : "\u06D5";
             const isEnglish = /^[a-zA-Z]+$/.test(received);
             if (receivedType === "null" || receivedType === "undefined")
               return `\u062F\u0627\u0648\u0627\u06A9\u0631\u0627\u0648\u06D5`;
-            return `\u0686\u0627\u0648\u06D5\u0695\u0648\u0627\u0646\u06A9\u0631\u0627\u0648\u06D5 ${expected} \u0628\u06CE\u062A\u060C \u0628\u06D5\u06B5\u0627\u0645 ${received}${isEnglish ? "" : postfix}`;
+            return `\u0686\u0627\u0648\u06D5\u0695\u0648\u0627\u0646\u06A9\u0631\u0627\u0648\u06D5 ${expected2} \u0628\u06CE\u062A\u060C \u0628\u06D5\u06B5\u0627\u0645 ${received}${isEnglish ? "" : postfix}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -5918,13 +5918,13 @@ var init_cs = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Neplatn\xFD vstup: o\u010Dek\xE1v\xE1no instanceof ${issue2.expected}, obdr\u017Eeno ${received}`;
             }
-            return `Neplatn\xFD vstup: o\u010Dek\xE1v\xE1no ${expected}, obdr\u017Eeno ${received}`;
+            return `Neplatn\xFD vstup: o\u010Dek\xE1v\xE1no ${expected2}, obdr\u017Eeno ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6044,13 +6044,13 @@ var init_da = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ugyldigt input: forventede instanceof ${issue2.expected}, fik ${received}`;
             }
-            return `Ugyldigt input: forventede ${expected}, fik ${received}`;
+            return `Ugyldigt input: forventede ${expected2}, fik ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6166,13 +6166,13 @@ var init_de = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ung\xFCltige Eingabe: erwartet instanceof ${issue2.expected}, erhalten ${received}`;
             }
-            return `Ung\xFCltige Eingabe: erwartet ${expected}, erhalten ${received}`;
+            return `Ung\xFCltige Eingabe: erwartet ${expected2}, erhalten ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6284,13 +6284,13 @@ var init_el = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (typeof issue2.expected === "string" && /^[A-Z]/.test(issue2.expected)) {
               return `\u039C\u03B7 \u03AD\u03B3\u03BA\u03C5\u03C1\u03B7 \u03B5\u03AF\u03C3\u03BF\u03B4\u03BF\u03C2: \u03B1\u03BD\u03B1\u03BC\u03B5\u03BD\u03CC\u03C4\u03B1\u03BD instanceof ${issue2.expected}, \u03BB\u03AE\u03C6\u03B8\u03B7\u03BA\u03B5 ${received}`;
             }
-            return `\u039C\u03B7 \u03AD\u03B3\u03BA\u03C5\u03C1\u03B7 \u03B5\u03AF\u03C3\u03BF\u03B4\u03BF\u03C2: \u03B1\u03BD\u03B1\u03BC\u03B5\u03BD\u03CC\u03C4\u03B1\u03BD ${expected}, \u03BB\u03AE\u03C6\u03B8\u03B7\u03BA\u03B5 ${received}`;
+            return `\u039C\u03B7 \u03AD\u03B3\u03BA\u03C5\u03C1\u03B7 \u03B5\u03AF\u03C3\u03BF\u03B4\u03BF\u03C2: \u03B1\u03BD\u03B1\u03BC\u03B5\u03BD\u03CC\u03C4\u03B1\u03BD ${expected2}, \u03BB\u03AE\u03C6\u03B8\u03B7\u03BA\u03B5 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6411,10 +6411,10 @@ var init_en = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = getTypeName(issue2.expected);
+            const expected2 = getTypeName(issue2.expected);
             const receivedType = parsedType(issue2.input);
             const received = getTypeName(receivedType, issue2.input);
-            return `Invalid input: expected ${expected}, received ${received}`;
+            return `Invalid input: expected ${expected2}, received ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6537,13 +6537,13 @@ var init_eo = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Nevalida enigo: atendi\u011Dis instanceof ${issue2.expected}, ricevi\u011Dis ${received}`;
             }
-            return `Nevalida enigo: atendi\u011Dis ${expected}, ricevi\u011Dis ${received}`;
+            return `Nevalida enigo: atendi\u011Dis ${expected2}, ricevi\u011Dis ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6678,13 +6678,13 @@ var init_es = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Entrada inv\xE1lida: se esperaba instanceof ${issue2.expected}, recibido ${received}`;
             }
-            return `Entrada inv\xE1lida: se esperaba ${expected}, recibido ${received}`;
+            return `Entrada inv\xE1lida: se esperaba ${expected2}, recibido ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -6800,13 +6800,13 @@ var init_fa = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0648\u0631\u0648\u062F\u06CC \u0646\u0627\u0645\u0639\u062A\u0628\u0631: \u0645\u06CC\u200C\u0628\u0627\u06CC\u0633\u062A instanceof ${issue2.expected} \u0645\u06CC\u200C\u0628\u0648\u062F\u060C ${received} \u062F\u0631\u06CC\u0627\u0641\u062A \u0634\u062F`;
             }
-            return `\u0648\u0631\u0648\u062F\u06CC \u0646\u0627\u0645\u0639\u062A\u0628\u0631: \u0645\u06CC\u200C\u0628\u0627\u06CC\u0633\u062A ${expected} \u0645\u06CC\u200C\u0628\u0648\u062F\u060C ${received} \u062F\u0631\u06CC\u0627\u0641\u062A \u0634\u062F`;
+            return `\u0648\u0631\u0648\u062F\u06CC \u0646\u0627\u0645\u0639\u062A\u0628\u0631: \u0645\u06CC\u200C\u0628\u0627\u06CC\u0633\u062A ${expected2} \u0645\u06CC\u200C\u0628\u0648\u062F\u060C ${received} \u062F\u0631\u06CC\u0627\u0641\u062A \u0634\u062F`;
           }
           case "invalid_value":
             if (issue2.values.length === 1) {
@@ -6928,13 +6928,13 @@ var init_fi = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Virheellinen tyyppi: odotettiin instanceof ${issue2.expected}, oli ${received}`;
             }
-            return `Virheellinen tyyppi: odotettiin ${expected}, oli ${received}`;
+            return `Virheellinen tyyppi: odotettiin ${expected2}, oli ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7067,13 +7067,13 @@ var init_fr = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Entr\xE9e invalide : instance de ${issue2.expected} attendu, ${received} re\xE7u`;
             }
-            return `Entr\xE9e invalide : ${expected} attendu, ${received} re\xE7u`;
+            return `Entr\xE9e invalide : ${expected2} attendu, ${received} re\xE7u`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7184,13 +7184,13 @@ var init_fr_CA = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Entr\xE9e invalide : attendu instanceof ${issue2.expected}, re\xE7u ${received}`;
             }
-            return `Entr\xE9e invalide : attendu ${expected}, re\xE7u ${received}`;
+            return `Entr\xE9e invalide : attendu ${expected2}, re\xE7u ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7303,10 +7303,10 @@ var init_gu = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0A85\u0AAE\u0ABE\u0AA8\u0ACD\u0AAF \u0A87\u0AA8\u0AAA\u0AC1\u0A9F: \u0A85\u0AAA\u0AC7\u0A95\u0ACD\u0AB7\u0ABF\u0AA4 ${expected}, \u0AAA\u0ACD\u0AB0\u0ABE\u0AAA\u0ACD\u0AA4 ${received}`;
+            return `\u0A85\u0AAE\u0ABE\u0AA8\u0ACD\u0AAF \u0A87\u0AA8\u0AAA\u0AC1\u0A9F: \u0A85\u0AAA\u0AC7\u0A95\u0ACD\u0AB7\u0ABF\u0AA4 ${expected2}, \u0AAA\u0ACD\u0AB0\u0ABE\u0AAA\u0ACD\u0AA4 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7465,13 +7465,13 @@ var init_he = __esm({
         switch (issue2.code) {
           case "invalid_type": {
             const expectedKey = issue2.expected;
-            const expected = TypeDictionary[expectedKey ?? ""] ?? typeLabel(expectedKey);
+            const expected2 = TypeDictionary[expectedKey ?? ""] ?? typeLabel(expectedKey);
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? TypeNames[receivedType]?.label ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u05E7\u05DC\u05D8 \u05DC\u05D0 \u05EA\u05E7\u05D9\u05DF: \u05E6\u05E8\u05D9\u05DA \u05DC\u05D4\u05D9\u05D5\u05EA instanceof ${issue2.expected}, \u05D4\u05EA\u05E7\u05D1\u05DC ${received}`;
             }
-            return `\u05E7\u05DC\u05D8 \u05DC\u05D0 \u05EA\u05E7\u05D9\u05DF: \u05E6\u05E8\u05D9\u05DA \u05DC\u05D4\u05D9\u05D5\u05EA ${expected}, \u05D4\u05EA\u05E7\u05D1\u05DC ${received}`;
+            return `\u05E7\u05DC\u05D8 \u05DC\u05D0 \u05EA\u05E7\u05D9\u05DF: \u05E6\u05E8\u05D9\u05DA \u05DC\u05D4\u05D9\u05D5\u05EA ${expected2}, \u05D4\u05EA\u05E7\u05D1\u05DC ${received}`;
           }
           case "invalid_value": {
             if (issue2.values.length === 1) {
@@ -7631,10 +7631,10 @@ var init_hi = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0905\u092E\u093E\u0928\u094D\u092F \u0907\u0928\u092A\u0941\u091F: \u0905\u092A\u0947\u0915\u094D\u0937\u093F\u0924 ${expected}, \u092A\u094D\u0930\u093E\u092A\u094D\u0924 ${received}`;
+            return `\u0905\u092E\u093E\u0928\u094D\u092F \u0907\u0928\u092A\u0941\u091F: \u0905\u092A\u0947\u0915\u094D\u0937\u093F\u0924 ${expected2}, \u092A\u094D\u0930\u093E\u092A\u094D\u0924 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7762,13 +7762,13 @@ var init_hr = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Neispravan unos: o\u010Dekuje se instanceof ${issue2.expected}, a primljeno je ${received}`;
             }
-            return `Neispravan unos: o\u010Dekuje se ${expected}, a primljeno je ${received}`;
+            return `Neispravan unos: o\u010Dekuje se ${expected2}, a primljeno je ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -7884,13 +7884,13 @@ var init_hu = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\xC9rv\xE9nytelen bemenet: a v\xE1rt \xE9rt\xE9k instanceof ${issue2.expected}, a kapott \xE9rt\xE9k ${received}`;
             }
-            return `\xC9rv\xE9nytelen bemenet: a v\xE1rt \xE9rt\xE9k ${expected}, a kapott \xE9rt\xE9k ${received}`;
+            return `\xC9rv\xE9nytelen bemenet: a v\xE1rt \xE9rt\xE9k ${expected2}, a kapott \xE9rt\xE9k ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8044,13 +8044,13 @@ var init_hy = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u054D\u056D\u0561\u056C \u0574\u0578\u0582\u057F\u0584\u0561\u0563\u0580\u0578\u0582\u0574\u2024 \u057D\u057A\u0561\u057D\u057E\u0578\u0582\u0574 \u0567\u0580 instanceof ${issue2.expected}, \u057D\u057F\u0561\u0581\u057E\u0565\u056C \u0567 ${received}`;
             }
-            return `\u054D\u056D\u0561\u056C \u0574\u0578\u0582\u057F\u0584\u0561\u0563\u0580\u0578\u0582\u0574\u2024 \u057D\u057A\u0561\u057D\u057E\u0578\u0582\u0574 \u0567\u0580 ${expected}, \u057D\u057F\u0561\u0581\u057E\u0565\u056C \u0567 ${received}`;
+            return `\u054D\u056D\u0561\u056C \u0574\u0578\u0582\u057F\u0584\u0561\u0563\u0580\u0578\u0582\u0574\u2024 \u057D\u057A\u0561\u057D\u057E\u0578\u0582\u0574 \u0567\u0580 ${expected2}, \u057D\u057F\u0561\u0581\u057E\u0565\u056C \u0567 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8167,13 +8167,13 @@ var init_id = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Input tidak valid: diharapkan instanceof ${issue2.expected}, diterima ${received}`;
             }
-            return `Input tidak valid: diharapkan ${expected}, diterima ${received}`;
+            return `Input tidak valid: diharapkan ${expected2}, diterima ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8287,13 +8287,13 @@ var init_is = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Rangt gildi: \xDE\xFA sl\xF3st inn ${received} \xFEar sem \xE1 a\xF0 vera instanceof ${issue2.expected}`;
             }
-            return `Rangt gildi: \xDE\xFA sl\xF3st inn ${received} \xFEar sem \xE1 a\xF0 vera ${expected}`;
+            return `Rangt gildi: \xDE\xFA sl\xF3st inn ${received} \xFEar sem \xE1 a\xF0 vera ${expected2}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8408,13 +8408,13 @@ var init_it = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Input non valido: atteso instanceof ${issue2.expected}, ricevuto ${received}`;
             }
-            return `Input non valido: atteso ${expected}, ricevuto ${received}`;
+            return `Input non valido: atteso ${expected2}, ricevuto ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8528,13 +8528,13 @@ var init_ja = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u7121\u52B9\u306A\u5165\u529B: instanceof ${issue2.expected}\u304C\u671F\u5F85\u3055\u308C\u307E\u3057\u305F\u304C\u3001${received}\u304C\u5165\u529B\u3055\u308C\u307E\u3057\u305F`;
             }
-            return `\u7121\u52B9\u306A\u5165\u529B: ${expected}\u304C\u671F\u5F85\u3055\u308C\u307E\u3057\u305F\u304C\u3001${received}\u304C\u5165\u529B\u3055\u308C\u307E\u3057\u305F`;
+            return `\u7121\u52B9\u306A\u5165\u529B: ${expected2}\u304C\u671F\u5F85\u3055\u308C\u307E\u3057\u305F\u304C\u3001${received}\u304C\u5165\u529B\u3055\u308C\u307E\u3057\u305F`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8650,13 +8650,13 @@ var init_ka = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u10D0\u10E0\u10D0\u10E1\u10EC\u10DD\u10E0\u10D8 \u10E8\u10D4\u10E7\u10D5\u10D0\u10DC\u10D0: \u10DB\u10DD\u10E1\u10D0\u10DA\u10DD\u10D3\u10DC\u10D4\u10DA\u10D8 instanceof ${issue2.expected}, \u10DB\u10D8\u10E6\u10D4\u10D1\u10E3\u10DA\u10D8 ${received}`;
             }
-            return `\u10D0\u10E0\u10D0\u10E1\u10EC\u10DD\u10E0\u10D8 \u10E8\u10D4\u10E7\u10D5\u10D0\u10DC\u10D0: \u10DB\u10DD\u10E1\u10D0\u10DA\u10DD\u10D3\u10DC\u10D4\u10DA\u10D8 ${expected}, \u10DB\u10D8\u10E6\u10D4\u10D1\u10E3\u10DA\u10D8 ${received}`;
+            return `\u10D0\u10E0\u10D0\u10E1\u10EC\u10DD\u10E0\u10D8 \u10E8\u10D4\u10E7\u10D5\u10D0\u10DC\u10D0: \u10DB\u10DD\u10E1\u10D0\u10DA\u10DD\u10D3\u10DC\u10D4\u10DA\u10D8 ${expected2}, \u10DB\u10D8\u10E6\u10D4\u10D1\u10E3\u10DA\u10D8 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8772,13 +8772,13 @@ var init_km = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u1791\u17B7\u1793\u17D2\u1793\u1793\u17D0\u1799\u1794\u1789\u17D2\u1785\u17BC\u179B\u1798\u17B7\u1793\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C\u17D6 \u178F\u17D2\u179A\u17BC\u179C\u1780\u17B6\u179A instanceof ${issue2.expected} \u1794\u17C9\u17BB\u1793\u17D2\u178F\u17C2\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793 ${received}`;
             }
-            return `\u1791\u17B7\u1793\u17D2\u1793\u1793\u17D0\u1799\u1794\u1789\u17D2\u1785\u17BC\u179B\u1798\u17B7\u1793\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C\u17D6 \u178F\u17D2\u179A\u17BC\u179C\u1780\u17B6\u179A ${expected} \u1794\u17C9\u17BB\u1793\u17D2\u178F\u17C2\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793 ${received}`;
+            return `\u1791\u17B7\u1793\u17D2\u1793\u1793\u17D0\u1799\u1794\u1789\u17D2\u1785\u17BC\u179B\u1798\u17B7\u1793\u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C\u17D6 \u178F\u17D2\u179A\u17BC\u179C\u1780\u17B6\u179A ${expected2} \u1794\u17C9\u17BB\u1793\u17D2\u178F\u17C2\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -8903,10 +8903,10 @@ var init_kn = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0C85\u0CAE\u0CBE\u0CA8\u0CCD\u0CAF \u0C87\u0CA8\u0CCD\u200C\u0CAA\u0CC1\u0C9F\u0CCD: \u0CA8\u0CBF\u0CB0\u0CC0\u0C95\u0CCD\u0CB7\u0CBF\u0CB8\u0CB2\u0CBE\u0C97\u0CBF\u0CA6\u0CC6 ${expected}, \u0CB8\u0CCD\u0CB5\u0CC0\u0C95\u0CB0\u0CBF\u0CB8\u0CBF\u0CA6\u0CA8\u0CC1 ${received}`;
+            return `\u0C85\u0CAE\u0CBE\u0CA8\u0CCD\u0CAF \u0C87\u0CA8\u0CCD\u200C\u0CAA\u0CC1\u0C9F\u0CCD: \u0CA8\u0CBF\u0CB0\u0CC0\u0C95\u0CCD\u0CB7\u0CBF\u0CB8\u0CB2\u0CBE\u0C97\u0CBF\u0CA6\u0CC6 ${expected2}, \u0CB8\u0CCD\u0CB5\u0CC0\u0C95\u0CB0\u0CBF\u0CB8\u0CBF\u0CA6\u0CA8\u0CC1 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9023,13 +9023,13 @@ var init_ko = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\uC798\uBABB\uB41C \uC785\uB825: \uC608\uC0C1 \uD0C0\uC785\uC740 instanceof ${issue2.expected}, \uBC1B\uC740 \uD0C0\uC785\uC740 ${received}\uC785\uB2C8\uB2E4`;
             }
-            return `\uC798\uBABB\uB41C \uC785\uB825: \uC608\uC0C1 \uD0C0\uC785\uC740 ${expected}, \uBC1B\uC740 \uD0C0\uC785\uC740 ${received}\uC785\uB2C8\uB2E4`;
+            return `\uC798\uBABB\uB41C \uC785\uB825: \uC608\uC0C1 \uD0C0\uC785\uC740 ${expected2}, \uBC1B\uC740 \uD0C0\uC785\uC740 ${received}\uC785\uB2C8\uB2E4`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9238,13 +9238,13 @@ var init_lt = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Gautas tipas ${received}, o tik\u0117tasi - instanceof ${issue2.expected}`;
             }
-            return `Gautas tipas ${received}, o tik\u0117tasi - ${expected}`;
+            return `Gautas tipas ${received}, o tik\u0117tasi - ${expected2}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9362,13 +9362,13 @@ var init_mk = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0413\u0440\u0435\u0448\u0435\u043D \u0432\u043D\u0435\u0441: \u0441\u0435 \u043E\u0447\u0435\u043A\u0443\u0432\u0430 instanceof ${issue2.expected}, \u043F\u0440\u0438\u043C\u0435\u043D\u043E ${received}`;
             }
-            return `\u0413\u0440\u0435\u0448\u0435\u043D \u0432\u043D\u0435\u0441: \u0441\u0435 \u043E\u0447\u0435\u043A\u0443\u0432\u0430 ${expected}, \u043F\u0440\u0438\u043C\u0435\u043D\u043E ${received}`;
+            return `\u0413\u0440\u0435\u0448\u0435\u043D \u0432\u043D\u0435\u0441: \u0441\u0435 \u043E\u0447\u0435\u043A\u0443\u0432\u0430 ${expected2}, \u043F\u0440\u0438\u043C\u0435\u043D\u043E ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9482,13 +9482,13 @@ var init_ms = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Input tidak sah: dijangka instanceof ${issue2.expected}, diterima ${received}`;
             }
-            return `Input tidak sah: dijangka ${expected}, diterima ${received}`;
+            return `Input tidak sah: dijangka ${expected2}, diterima ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9600,10 +9600,10 @@ var init_ne = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0905\u092E\u093E\u0928\u094D\u092F \u0907\u0928\u092A\u0941\u091F: \u0905\u092A\u0947\u0915\u094D\u0937\u093F\u0924 ${expected}, \u092A\u094D\u0930\u093E\u092A\u094D\u0924 ${received}`;
+            return `\u0905\u092E\u093E\u0928\u094D\u092F \u0907\u0928\u092A\u0941\u091F: \u0905\u092A\u0947\u0915\u094D\u0937\u093F\u0924 ${expected2}, \u092A\u094D\u0930\u093E\u092A\u094D\u0924 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9719,13 +9719,13 @@ var init_nl = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ongeldige invoer: verwacht instanceof ${issue2.expected}, ontving ${received}`;
             }
-            return `Ongeldige invoer: verwacht ${expected}, ontving ${received}`;
+            return `Ongeldige invoer: verwacht ${expected2}, ontving ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9842,13 +9842,13 @@ var init_nn = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ugyldig input: forventa instanceof ${issue2.expected}, fekk ${received}`;
             }
-            return `Ugyldig input: forventa ${expected}, fekk ${received}`;
+            return `Ugyldig input: forventa ${expected2}, fekk ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -9962,13 +9962,13 @@ var init_no = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ugyldig input: forventet instanceof ${issue2.expected}, fikk ${received}`;
             }
-            return `Ugyldig input: forventet ${expected}, fikk ${received}`;
+            return `Ugyldig input: forventet ${expected2}, fikk ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10083,13 +10083,13 @@ var init_ota = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `F\xE2sit giren: umulan instanceof ${issue2.expected}, al\u0131nan ${received}`;
             }
-            return `F\xE2sit giren: umulan ${expected}, al\u0131nan ${received}`;
+            return `F\xE2sit giren: umulan ${expected2}, al\u0131nan ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10203,13 +10203,13 @@ var init_ps = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0646\u0627\u0633\u0645 \u0648\u0631\u0648\u062F\u064A: \u0628\u0627\u06CC\u062F instanceof ${issue2.expected} \u0648\u0627\u06CC, \u0645\u06AB\u0631 ${received} \u062A\u0631\u0644\u0627\u0633\u0647 \u0634\u0648`;
             }
-            return `\u0646\u0627\u0633\u0645 \u0648\u0631\u0648\u062F\u064A: \u0628\u0627\u06CC\u062F ${expected} \u0648\u0627\u06CC, \u0645\u06AB\u0631 ${received} \u062A\u0631\u0644\u0627\u0633\u0647 \u0634\u0648`;
+            return `\u0646\u0627\u0633\u0645 \u0648\u0631\u0648\u062F\u064A: \u0628\u0627\u06CC\u062F ${expected2} \u0648\u0627\u06CC, \u0645\u06AB\u0631 ${received} \u062A\u0631\u0644\u0627\u0633\u0647 \u0634\u0648`;
           }
           case "invalid_value":
             if (issue2.values.length === 1) {
@@ -10329,13 +10329,13 @@ var init_pl = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Nieprawid\u0142owe dane wej\u015Bciowe: oczekiwano instanceof ${issue2.expected}, otrzymano ${received}`;
             }
-            return `Nieprawid\u0142owe dane wej\u015Bciowe: oczekiwano ${expected}, otrzymano ${received}`;
+            return `Nieprawid\u0142owe dane wej\u015Bciowe: oczekiwano ${expected2}, otrzymano ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10477,10 +10477,10 @@ var init_pt = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = translateOriginWithArticle(issue2.expected, "indefinite");
+            const expected2 = translateOriginWithArticle(issue2.expected, "indefinite");
             const receivedType = parsedType(issue2.input);
             const received = translateOriginWithArticle(receivedType, "indefinite");
-            return `Entrada inv\xE1lida: esperava ${expected}, recebeu ${received}`;
+            return `Entrada inv\xE1lida: esperava ${expected2}, recebeu ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10627,10 +10627,10 @@ var init_pt_BR = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = translateOriginWithArticle(issue2.expected, "indefinite");
+            const expected2 = translateOriginWithArticle(issue2.expected, "indefinite");
             const receivedType = parsedType(issue2.input);
             const received = translateOriginWithArticle(receivedType, "indefinite");
-            return `Entrada inv\xE1lida: esperava ${expected}, recebeu ${received}`;
+            return `Entrada inv\xE1lida: esperava ${expected2}, recebeu ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10762,10 +10762,10 @@ var init_ro = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `Intrare invalid\u0103: a\u0219teptat ${expected}, primit ${received}`;
+            return `Intrare invalid\u0103: a\u0219teptat ${expected2}, primit ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -10930,13 +10930,13 @@ var init_ru = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u041D\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u0432\u0432\u043E\u0434: \u043E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C instanceof ${issue2.expected}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E ${received}`;
             }
-            return `\u041D\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u0432\u0432\u043E\u0434: \u043E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C ${expected}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E ${received}`;
+            return `\u041D\u0435\u0432\u0435\u0440\u043D\u044B\u0439 \u0432\u0432\u043E\u0434: \u043E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C ${expected2}, \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043E ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11057,13 +11057,13 @@ var init_sk = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Neplatn\xFD vstup: o\u010Dak\xE1van\xE9 instanceof ${issue2.expected}, obdr\u017Ean\xE9 ${received}`;
             }
-            return `Neplatn\xFD vstup: o\u010Dak\xE1van\xE9 ${expected}, obdr\u017Ean\xE9 ${received}`;
+            return `Neplatn\xFD vstup: o\u010Dak\xE1van\xE9 ${expected2}, obdr\u017Ean\xE9 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11178,13 +11178,13 @@ var init_sl = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Neveljaven vnos: pri\u010Dakovano instanceof ${issue2.expected}, prejeto ${received}`;
             }
-            return `Neveljaven vnos: pri\u010Dakovano ${expected}, prejeto ${received}`;
+            return `Neveljaven vnos: pri\u010Dakovano ${expected2}, prejeto ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11299,13 +11299,13 @@ var init_sv = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ogiltig inmatning: f\xF6rv\xE4ntat instanceof ${issue2.expected}, fick ${received}`;
             }
-            return `Ogiltig inmatning: f\xF6rv\xE4ntat ${expected}, fick ${received}`;
+            return `Ogiltig inmatning: f\xF6rv\xE4ntat ${expected2}, fick ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11422,13 +11422,13 @@ var init_ta = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0BA4\u0BB5\u0BB1\u0BBE\u0BA9 \u0B89\u0BB3\u0BCD\u0BB3\u0BC0\u0B9F\u0BC1: \u0B8E\u0BA4\u0BBF\u0BB0\u0BCD\u0BAA\u0BBE\u0BB0\u0BCD\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 instanceof ${issue2.expected}, \u0BAA\u0BC6\u0BB1\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ${received}`;
             }
-            return `\u0BA4\u0BB5\u0BB1\u0BBE\u0BA9 \u0B89\u0BB3\u0BCD\u0BB3\u0BC0\u0B9F\u0BC1: \u0B8E\u0BA4\u0BBF\u0BB0\u0BCD\u0BAA\u0BBE\u0BB0\u0BCD\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ${expected}, \u0BAA\u0BC6\u0BB1\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ${received}`;
+            return `\u0BA4\u0BB5\u0BB1\u0BBE\u0BA9 \u0B89\u0BB3\u0BCD\u0BB3\u0BC0\u0B9F\u0BC1: \u0B8E\u0BA4\u0BBF\u0BB0\u0BCD\u0BAA\u0BBE\u0BB0\u0BCD\u0B95\u0BCD\u0B95\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ${expected2}, \u0BAA\u0BC6\u0BB1\u0BAA\u0BCD\u0BAA\u0B9F\u0BCD\u0B9F\u0BA4\u0BC1 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11546,10 +11546,10 @@ var init_tg = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `\u0412\u0443\u0440\u0443\u0434\u0438 \u043D\u043E\u0434\u0443\u0440\u0443\u0441\u0442: ${expected} \u0438\u043D\u0442\u0438\u0437\u043E\u0440 \u043C\u0435\u0440\u0430\u0444\u0442, ${received} \u0433\u0438\u0440\u0438\u0444\u0442\u0430 \u0448\u0443\u0434`;
+            return `\u0412\u0443\u0440\u0443\u0434\u0438 \u043D\u043E\u0434\u0443\u0440\u0443\u0441\u0442: ${expected2} \u0438\u043D\u0442\u0438\u0437\u043E\u0440 \u043C\u0435\u0440\u0430\u0444\u0442, ${received} \u0433\u0438\u0440\u0438\u0444\u0442\u0430 \u0448\u0443\u0434`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11667,13 +11667,13 @@ var init_th = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E44\u0E21\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07: \u0E04\u0E27\u0E23\u0E40\u0E1B\u0E47\u0E19 instanceof ${issue2.expected} \u0E41\u0E15\u0E48\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A ${received}`;
             }
-            return `\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E44\u0E21\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07: \u0E04\u0E27\u0E23\u0E40\u0E1B\u0E47\u0E19 ${expected} \u0E41\u0E15\u0E48\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A ${received}`;
+            return `\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E02\u0E49\u0E2D\u0E21\u0E39\u0E25\u0E44\u0E21\u0E48\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07: \u0E04\u0E27\u0E23\u0E40\u0E1B\u0E47\u0E19 ${expected2} \u0E41\u0E15\u0E48\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11786,10 +11786,10 @@ var init_tk = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
-            return `N\xE4dogry baha: gara\u015Fylan ${expected} \xFDerine ${received} alyndy`;
+            return `N\xE4dogry baha: gara\u015Fylan ${expected2} \xFDerine ${received} alyndy`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -11900,13 +11900,13 @@ var init_tr = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Ge\xE7ersiz de\u011Fer: beklenen instanceof ${issue2.expected}, al\u0131nan ${received}`;
             }
-            return `Ge\xE7ersiz de\u011Fer: beklenen ${expected}, al\u0131nan ${received}`;
+            return `Ge\xE7ersiz de\u011Fer: beklenen ${expected2}, al\u0131nan ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12019,13 +12019,13 @@ var init_uk = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u041D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0456 \u0432\u0445\u0456\u0434\u043D\u0456 \u0434\u0430\u043D\u0456: \u043E\u0447\u0456\u043A\u0443\u0454\u0442\u044C\u0441\u044F instanceof ${issue2.expected}, \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043E ${received}`;
             }
-            return `\u041D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0456 \u0432\u0445\u0456\u0434\u043D\u0456 \u0434\u0430\u043D\u0456: \u043E\u0447\u0456\u043A\u0443\u0454\u0442\u044C\u0441\u044F ${expected}, \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043E ${received}`;
+            return `\u041D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0456 \u0432\u0445\u0456\u0434\u043D\u0456 \u0434\u0430\u043D\u0456: \u043E\u0447\u0456\u043A\u0443\u0454\u0442\u044C\u0441\u044F ${expected2}, \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043E ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12150,13 +12150,13 @@ var init_ur = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u063A\u0644\u0637 \u0627\u0646 \u067E\u0679: instanceof ${issue2.expected} \u0645\u062A\u0648\u0642\u0639 \u062A\u06BE\u0627\u060C ${received} \u0645\u0648\u0635\u0648\u0644 \u06C1\u0648\u0627`;
             }
-            return `\u063A\u0644\u0637 \u0627\u0646 \u067E\u0679: ${expected} \u0645\u062A\u0648\u0642\u0639 \u062A\u06BE\u0627\u060C ${received} \u0645\u0648\u0635\u0648\u0644 \u06C1\u0648\u0627`;
+            return `\u063A\u0644\u0637 \u0627\u0646 \u067E\u0679: ${expected2} \u0645\u062A\u0648\u0642\u0639 \u062A\u06BE\u0627\u060C ${received} \u0645\u0648\u0635\u0648\u0644 \u06C1\u0648\u0627`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12271,13 +12271,13 @@ var init_uz = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `Noto\u2018g\u2018ri kirish: kutilgan instanceof ${issue2.expected}, qabul qilingan ${received}`;
             }
-            return `Noto\u2018g\u2018ri kirish: kutilgan ${expected}, qabul qilingan ${received}`;
+            return `Noto\u2018g\u2018ri kirish: kutilgan ${expected2}, qabul qilingan ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12391,13 +12391,13 @@ var init_vi = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u0110\u1EA7u v\xE0o kh\xF4ng h\u1EE3p l\u1EC7: mong \u0111\u1EE3i instanceof ${issue2.expected}, nh\u1EADn \u0111\u01B0\u1EE3c ${received}`;
             }
-            return `\u0110\u1EA7u v\xE0o kh\xF4ng h\u1EE3p l\u1EC7: mong \u0111\u1EE3i ${expected}, nh\u1EADn \u0111\u01B0\u1EE3c ${received}`;
+            return `\u0110\u1EA7u v\xE0o kh\xF4ng h\u1EE3p l\u1EC7: mong \u0111\u1EE3i ${expected2}, nh\u1EADn \u0111\u01B0\u1EE3c ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12512,13 +12512,13 @@ var init_zh_CN = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u65E0\u6548\u8F93\u5165\uFF1A\u671F\u671B instanceof ${issue2.expected}\uFF0C\u5B9E\u9645\u63A5\u6536 ${received}`;
             }
-            return `\u65E0\u6548\u8F93\u5165\uFF1A\u671F\u671B ${expected}\uFF0C\u5B9E\u9645\u63A5\u6536 ${received}`;
+            return `\u65E0\u6548\u8F93\u5165\uFF1A\u671F\u671B ${expected2}\uFF0C\u5B9E\u9645\u63A5\u6536 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12630,13 +12630,13 @@ var init_zh_TW = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\u7121\u6548\u7684\u8F38\u5165\u503C\uFF1A\u9810\u671F\u70BA instanceof ${issue2.expected}\uFF0C\u4F46\u6536\u5230 ${received}`;
             }
-            return `\u7121\u6548\u7684\u8F38\u5165\u503C\uFF1A\u9810\u671F\u70BA ${expected}\uFF0C\u4F46\u6536\u5230 ${received}`;
+            return `\u7121\u6548\u7684\u8F38\u5165\u503C\uFF1A\u9810\u671F\u70BA ${expected2}\uFF0C\u4F46\u6536\u5230 ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -12751,13 +12751,13 @@ var init_yo = __esm({
       return (issue2) => {
         switch (issue2.code) {
           case "invalid_type": {
-            const expected = TypeDictionary[issue2.expected] ?? issue2.expected;
+            const expected2 = TypeDictionary[issue2.expected] ?? issue2.expected;
             const receivedType = parsedType(issue2.input);
             const received = TypeDictionary[receivedType] ?? receivedType;
             if (/^[A-Z]/.test(issue2.expected)) {
               return `\xCCb\xE1w\u1ECDl\xE9 a\u1E63\xEC\u1E63e: a n\xED l\xE1ti fi instanceof ${issue2.expected}, \xE0m\u1ECD\u0300 a r\xED ${received}`;
             }
-            return `\xCCb\xE1w\u1ECDl\xE9 a\u1E63\xEC\u1E63e: a n\xED l\xE1ti fi ${expected}, \xE0m\u1ECD\u0300 a r\xED ${received}`;
+            return `\xCCb\xE1w\u1ECDl\xE9 a\u1E63\xEC\u1E63e: a n\xED l\xE1ti fi ${expected2}, \xE0m\u1ECD\u0300 a r\xED ${received}`;
           }
           case "invalid_value":
             if (issue2.values.length === 1)
@@ -14362,7 +14362,7 @@ function generateRecordCheck(doc, ctx, schema, accessor) {
   }, `return INVALID;`);
   return outputVar;
 }
-function emitOwnKeys(doc, ctx, accessor, kVar, body, onSymbol) {
+function emitOwnKeys(doc, ctx, accessor, kVar, body2, onSymbol) {
   const propIsEnumerableConst = addConstant(ctx, Object.prototype.propertyIsEnumerable);
   const symsVar = newVar(ctx);
   const keysVar = newVar(ctx);
@@ -14373,7 +14373,7 @@ function emitOwnKeys(doc, ctx, accessor, kVar, body, onSymbol) {
   doc.indented((d) => {
     d.write(`const ${kVar} = ${keysVar}[${iVar}];`);
     d.write(`if (${kVar} === "__proto__" || !${propIsEnumerableConst}.call(${accessor}, ${kVar})) continue;`);
-    body(d);
+    body2(d);
   });
   doc.write(`}`);
   doc.write(`for (let ${iVar} = 0; ${iVar} < ${symsVar}.length; ${iVar}++) {`);
@@ -14383,7 +14383,7 @@ function emitOwnKeys(doc, ctx, accessor, kVar, body, onSymbol) {
     if (onSymbol)
       d.write(onSymbol);
     else
-      body(d);
+      body2(d);
   });
   doc.write(`}`);
 }
@@ -15577,8 +15577,8 @@ function describe(description) {
   const ch = new $ZodCheck({ check: "describe" });
   ch._zod.onattach = [
     (inst) => {
-      const existing = globalRegistry.get(inst) ?? {};
-      globalRegistry.add(inst, { ...existing, description });
+      const existing2 = globalRegistry.get(inst) ?? {};
+      globalRegistry.add(inst, { ...existing2, description });
     }
   ];
   ch._zod.check = () => {
@@ -15590,8 +15590,8 @@ function meta(metadata) {
   const ch = new $ZodCheck({ check: "meta" });
   ch._zod.onattach = [
     (inst) => {
-      const existing = globalRegistry.get(inst) ?? {};
-      globalRegistry.add(inst, { ...existing, ...metadata });
+      const existing2 = globalRegistry.get(inst) ?? {};
+      globalRegistry.add(inst, { ...existing2, ...metadata });
     }
   ];
   ch._zod.check = () => {
@@ -15721,13 +15721,13 @@ function initializeContext(params) {
     external: params?.external ?? void 0
   };
 }
-function handleUnrepresentable(schema, ctx, json4, params, message) {
+function handleUnrepresentable(schema, ctx, json6, params, message) {
   const result = typeof ctx.unrepresentable === "function" ? ctx.unrepresentable({ zodSchema: schema, path: params.path, message }) : ctx.unrepresentable;
   if (result === "any")
     return false;
   if (result === void 0 || result === "throw")
     throw new Error(message);
-  Object.assign(json4, result);
+  Object.assign(json6, result);
   return true;
 }
 function processSchema(schema, ctx, _params = { path: [], schemaPath: [] }) {
@@ -15799,8 +15799,8 @@ function extractDefs(ctx, schema) {
   for (const entry of ctx.seen.entries()) {
     const id = ctx.metadataRegistry.get(entry[0])?.id;
     if (id) {
-      const existing = idToSchema.get(id);
-      if (existing && existing !== entry[0]) {
+      const existing2 = idToSchema.get(id);
+      if (existing2 && existing2 !== entry[0]) {
         throw new Error(`Duplicate schema id "${id}" detected during JSON Schema conversion. Two different schemas cannot share the same id when converted together.`);
       }
       idToSchema.set(id, entry[0]);
@@ -15961,12 +15961,12 @@ function foldObjects(members3) {
   }
   return folded;
 }
-function foldIntersection(json4) {
-  const allOf = json4.allOf;
+function foldIntersection(json6) {
+  const allOf = json6.allOf;
   if (!Array.isArray(allOf) || allOf.length < 2)
     return;
   for (const key of FOLDABLE_KEYS)
-    if (key in json4)
+    if (key in json6)
       return;
   const unions = allOf.filter((m) => UNION_KEYS.some((k) => Array.isArray(m[k])));
   let folded = null;
@@ -15985,8 +15985,8 @@ function foldIntersection(json4) {
   }
   if (!folded)
     return;
-  delete json4.allOf;
-  assignProps(json4, folded);
+  delete json6.allOf;
+  assignProps(json6, folded);
 }
 function finalize(ctx, schema) {
   const root = ctx.seen.get(schema);
@@ -16003,12 +16003,12 @@ function finalize(ctx, schema) {
     if (ref) {
       flattenRef(ref);
       const refSeen = ctx.seen.get(ref);
-      const refSchema = refSeen.schema;
-      if (refSchema.$ref && (ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0")) {
+      const refSchema2 = refSeen.schema;
+      if (refSchema2.$ref && (ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0")) {
         schema2.allOf = schema2.allOf ?? [];
-        schema2.allOf.push(refSchema);
+        schema2.allOf.push(refSchema2);
       } else {
-        assignProps(schema2, refSchema);
+        assignProps(schema2, refSchema2);
       }
       assignProps(schema2, _cached);
       const isParentRef = zodSchema._zod.parent === ref;
@@ -16021,7 +16021,7 @@ function finalize(ctx, schema) {
           }
         }
       }
-      if (refSchema.$ref && refSeen.def) {
+      if (refSchema2.$ref && refSeen.def) {
         for (const key in schema2) {
           if (key === "$ref" || key === "allOf")
             continue;
@@ -16068,20 +16068,20 @@ function finalize(ctx, schema) {
     if (ctx.intersections.length) {
       const carriers = /* @__PURE__ */ new Map();
       for (const seen of ctx.seen.values()) {
-        for (const json4 of [seen.schema, seen.def]) {
-          const allOf = json4?.allOf;
+        for (const json6 of [seen.schema, seen.def]) {
+          const allOf = json6?.allOf;
           if (!Array.isArray(allOf))
             continue;
-          const existing = carriers.get(allOf);
-          if (existing)
-            existing.push(json4);
+          const existing2 = carriers.get(allOf);
+          if (existing2)
+            existing2.push(json6);
           else
-            carriers.set(allOf, [json4]);
+            carriers.set(allOf, [json6]);
         }
       }
       for (const allOf of ctx.intersections) {
-        for (const json4 of carriers.get(allOf) ?? [])
-          foldIntersection(json4);
+        for (const json6 of carriers.get(allOf) ?? [])
+          foldIntersection(json6);
       }
     }
   }
@@ -16261,31 +16261,31 @@ function inputOptin(schema) {
   }
   return schema._zod.optin;
 }
-function stringifyKeyNames(bySchema, json4, visited) {
-  if (json4.$ref) {
-    if (visited.has(json4))
-      return json4;
-    visited.add(json4);
-    const def = bySchema.get(json4)?.def;
+function stringifyKeyNames(bySchema, json6, visited) {
+  if (json6.$ref) {
+    if (visited.has(json6))
+      return json6;
+    visited.add(json6);
+    const def = bySchema.get(json6)?.def;
     if (!def)
-      return json4;
+      return json6;
     const inlined = stringifyKeyNames(bySchema, def, visited);
-    return inlined === def ? json4 : inlined;
+    return inlined === def ? json6 : inlined;
   }
   for (const keyword of ["anyOf", "oneOf"]) {
-    const branches = json4[keyword];
+    const branches = json6[keyword];
     if (!Array.isArray(branches))
       continue;
     const mapped = branches.map((branch) => stringifyKeyNames(bySchema, branch, visited));
     if (mapped.some((branch, i) => branch !== branches[i]))
-      json4 = { ...json4, [keyword]: mapped };
+      json6 = { ...json6, [keyword]: mapped };
   }
-  const types = Array.isArray(json4.type) ? json4.type : [json4.type];
+  const types = Array.isArray(json6.type) ? json6.type : [json6.type];
   const numericType = !types.includes("string") && types.some((t) => t === "number" || t === "integer");
-  const values = json4.enum ?? (json4.const !== void 0 ? [json4.const] : void 0);
+  const values = json6.enum ?? (json6.const !== void 0 ? [json6.const] : void 0);
   if (!numericType && !values?.some((v) => typeof v === "number"))
-    return json4;
-  const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json4;
+    return json6;
+  const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json6;
   if (rest.enum)
     rest.enum = rest.enum.map((v) => typeof v === "number" ? String(v) : v);
   else if (typeof rest.const === "number")
@@ -16323,7 +16323,7 @@ function rewriteKeyNames(ctx) {
     }
   }
 }
-function serializeDefaultValue(value2, schema, ctx, json4, params) {
+function serializeDefaultValue(value2, schema, ctx, json6, params) {
   let unrepresentable = false;
   const serialized = JSON.stringify(value2, (_, val) => {
     if (typeof val !== "bigint")
@@ -16333,7 +16333,7 @@ function serializeDefaultValue(value2, schema, ctx, json4, params) {
   });
   if (!unrepresentable)
     return JSON.parse(serialized);
-  handleUnrepresentable(schema, ctx, json4, params, "BigInt defaults cannot be represented in JSON Schema");
+  handleUnrepresentable(schema, ctx, json6, params, "BigInt defaults cannot be represented in JSON Schema");
   return UNREPRESENTABLE_DEFAULT;
 }
 function toJSONSchema(input2, params) {
@@ -16451,29 +16451,29 @@ var init_json_schema_processors = __esm({
     ]);
     exactPattern = (p) => exactPatterns.get(p) ?? p;
     stringProcessor = (schema, ctx, _json, _params) => {
-      const json4 = _json;
-      json4.type = "string";
+      const json6 = _json;
+      json6.type = "string";
       const { minimum, maximum, format, patterns, contentEncoding, laxFormat } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json4.minLength = minimum;
+        json6.minLength = minimum;
       if (typeof maximum === "number")
-        json4.maxLength = maximum;
+        json6.maxLength = maximum;
       if (format) {
-        json4.format = formatMap[format] ?? format;
-        if (json4.format === "")
-          delete json4.format;
+        json6.format = formatMap[format] ?? format;
+        if (json6.format === "")
+          delete json6.format;
         if (format === "time" || laxFormat) {
-          delete json4.format;
+          delete json6.format;
         }
       }
       if (contentEncoding)
-        json4.contentEncoding = contentEncoding;
+        json6.contentEncoding = contentEncoding;
       if (patterns && patterns.size > 0) {
         const patternList = [...patterns].map(exactPattern);
         if (patternList.length === 1)
-          json4.pattern = patternList[0].source;
+          json6.pattern = patternList[0].source;
         else if (patternList.length > 1) {
-          json4.allOf = [
+          json6.allOf = [
             ...patternList.map((regex) => ({
               ...ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0" ? { type: "string" } : {},
               pattern: regex.source
@@ -16483,31 +16483,31 @@ var init_json_schema_processors = __esm({
       }
     };
     numberProcessor = (schema, ctx, _json, params) => {
-      const json4 = _json;
+      const json6 = _json;
       const { minimum, maximum, multipleOf, exclusiveMaximum, exclusiveMinimum, isInt } = aggregateChecks(schema);
-      json4.type = isInt ? "integer" : "number";
+      json6.type = isInt ? "integer" : "number";
       const exMin = typeof exclusiveMinimum === "number" && exclusiveMinimum >= (minimum ?? Number.NEGATIVE_INFINITY);
       const exMax = typeof exclusiveMaximum === "number" && exclusiveMaximum <= (maximum ?? Number.POSITIVE_INFINITY);
       const legacy = ctx.target === "draft-04" || ctx.target === "openapi-3.0";
       if (exMin) {
         if (legacy) {
-          json4.minimum = exclusiveMinimum;
-          json4.exclusiveMinimum = true;
+          json6.minimum = exclusiveMinimum;
+          json6.exclusiveMinimum = true;
         } else {
-          json4.exclusiveMinimum = exclusiveMinimum;
+          json6.exclusiveMinimum = exclusiveMinimum;
         }
       } else if (typeof minimum === "number") {
-        json4.minimum = minimum;
+        json6.minimum = minimum;
       }
       if (exMax) {
         if (legacy) {
-          json4.maximum = exclusiveMaximum;
-          json4.exclusiveMaximum = true;
+          json6.maximum = exclusiveMaximum;
+          json6.exclusiveMaximum = true;
         } else {
-          json4.exclusiveMaximum = exclusiveMaximum;
+          json6.exclusiveMaximum = exclusiveMaximum;
         }
       } else if (typeof maximum === "number") {
-        json4.maximum = maximum;
+        json6.maximum = maximum;
       }
       if (multipleOf) {
         const divisors = /* @__PURE__ */ new Set();
@@ -16515,75 +16515,75 @@ var init_json_schema_processors = __esm({
           if (Number.isFinite(divisor) && divisor !== 0)
             divisors.add(Math.abs(divisor));
           else
-            handleUnrepresentable(schema, ctx, json4, params, `A multipleOf divisor of ${divisor} cannot be represented in JSON Schema`);
+            handleUnrepresentable(schema, ctx, json6, params, `A multipleOf divisor of ${divisor} cannot be represented in JSON Schema`);
         }
         const [first, ...rest] = divisors;
         if (first !== void 0)
-          json4.multipleOf = first;
+          json6.multipleOf = first;
         if (rest.length)
-          json4.allOf = [...json4.allOf ?? [], ...rest.map((m) => ({ multipleOf: m }))];
+          json6.allOf = [...json6.allOf ?? [], ...rest.map((m) => ({ multipleOf: m }))];
       }
     };
-    booleanProcessor = (_schema, _ctx, json4, _params) => {
-      json4.type = "boolean";
+    booleanProcessor = (_schema, _ctx, json6, _params) => {
+      json6.type = "boolean";
     };
-    bigintProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "BigInt cannot be represented in JSON Schema");
+    bigintProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "BigInt cannot be represented in JSON Schema");
     };
-    symbolProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Symbols cannot be represented in JSON Schema");
+    symbolProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Symbols cannot be represented in JSON Schema");
     };
-    nullProcessor = (_schema, ctx, json4, _params) => {
+    nullProcessor = (_schema, ctx, json6, _params) => {
       if (ctx.target === "openapi-3.0") {
-        json4.type = "string";
-        json4.nullable = true;
-        json4.enum = [null];
+        json6.type = "string";
+        json6.nullable = true;
+        json6.enum = [null];
       } else {
-        json4.type = "null";
+        json6.type = "null";
       }
     };
-    undefinedProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Undefined cannot be represented in JSON Schema");
+    undefinedProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Undefined cannot be represented in JSON Schema");
     };
-    voidProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Void cannot be represented in JSON Schema");
+    voidProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Void cannot be represented in JSON Schema");
     };
-    neverProcessor = (_schema, _ctx, json4, _params) => {
-      json4.not = {};
+    neverProcessor = (_schema, _ctx, json6, _params) => {
+      json6.not = {};
     };
     anyProcessor = (_schema, _ctx, _json, _params) => {
     };
     unknownProcessor = (_schema, _ctx, _json, _params) => {
     };
-    dateProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Date cannot be represented in JSON Schema");
+    dateProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Date cannot be represented in JSON Schema");
     };
-    enumProcessor = (schema, _ctx, json4, _params) => {
+    enumProcessor = (schema, _ctx, json6, _params) => {
       const def = schema._zod.def;
       const values = getEnumValues(def.entries);
       if (values.length === 0) {
-        json4.not = {};
+        json6.not = {};
         return;
       }
       if (values.every((v) => typeof v === "number"))
-        json4.type = "number";
+        json6.type = "number";
       if (values.every((v) => typeof v === "string"))
-        json4.type = "string";
-      json4.enum = values;
+        json6.type = "string";
+      json6.enum = values;
     };
-    literalProcessor = (schema, ctx, json4, params) => {
+    literalProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       if (def.values.length === 0) {
-        json4.not = {};
+        json6.not = {};
         return;
       }
       const vals = [];
       for (const val of def.values) {
         if (val === void 0) {
-          if (handleUnrepresentable(schema, ctx, json4, params, "Literal `undefined` cannot be represented in JSON Schema"))
+          if (handleUnrepresentable(schema, ctx, json6, params, "Literal `undefined` cannot be represented in JSON Schema"))
             return;
         } else if (typeof val === "bigint") {
-          if (handleUnrepresentable(schema, ctx, json4, params, "BigInt literals cannot be represented in JSON Schema"))
+          if (handleUnrepresentable(schema, ctx, json6, params, "BigInt literals cannot be represented in JSON Schema"))
             return;
           vals.push(Number(val));
         } else {
@@ -16593,37 +16593,37 @@ var init_json_schema_processors = __esm({
       if (vals.length === 0) {
       } else if (vals.length === 1) {
         const val = vals[0];
-        json4.type = val === null ? "null" : typeof val;
+        json6.type = val === null ? "null" : typeof val;
         if (ctx.target === "draft-04" || ctx.target === "openapi-3.0") {
-          json4.enum = [val];
+          json6.enum = [val];
         } else {
-          json4.const = val;
+          json6.const = val;
         }
       } else {
         if (vals.every((v) => typeof v === "number"))
-          json4.type = "number";
+          json6.type = "number";
         if (vals.every((v) => typeof v === "string"))
-          json4.type = "string";
+          json6.type = "string";
         if (vals.every((v) => typeof v === "boolean"))
-          json4.type = "boolean";
+          json6.type = "boolean";
         if (vals.every((v) => v === null))
-          json4.type = "null";
-        json4.enum = vals;
+          json6.type = "null";
+        json6.enum = vals;
       }
     };
-    nanProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "NaN cannot be represented in JSON Schema");
+    nanProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "NaN cannot be represented in JSON Schema");
     };
-    templateLiteralProcessor = (schema, _ctx, json4, _params) => {
-      const _json = json4;
+    templateLiteralProcessor = (schema, _ctx, json6, _params) => {
+      const _json = json6;
       const pattern = schema._zod.pattern;
       if (!pattern)
         throw new Error("Pattern not found in template literal");
       _json.type = "string";
       _json.pattern = pattern.source;
     };
-    fileProcessor = (schema, _ctx, json4, _params) => {
-      const _json = json4;
+    fileProcessor = (schema, _ctx, json6, _params) => {
+      const _json = json6;
       _json.type = "string";
       _json.format = "binary";
       _json.contentEncoding = "binary";
@@ -16641,50 +16641,50 @@ var init_json_schema_processors = __esm({
       else
         _json.anyOf = mime.map((m) => ({ contentMediaType: m }));
     };
-    successProcessor = (_schema, _ctx, json4, _params) => {
-      json4.type = "boolean";
+    successProcessor = (_schema, _ctx, json6, _params) => {
+      json6.type = "boolean";
     };
-    customProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Custom types cannot be represented in JSON Schema");
+    customProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Custom types cannot be represented in JSON Schema");
     };
-    functionProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Function types cannot be represented in JSON Schema");
+    functionProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Function types cannot be represented in JSON Schema");
     };
-    transformProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Transforms cannot be represented in JSON Schema");
+    transformProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Transforms cannot be represented in JSON Schema");
     };
-    mapProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Map cannot be represented in JSON Schema");
+    mapProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Map cannot be represented in JSON Schema");
     };
-    setProcessor = (schema, ctx, json4, params) => {
-      handleUnrepresentable(schema, ctx, json4, params, "Set cannot be represented in JSON Schema");
+    setProcessor = (schema, ctx, json6, params) => {
+      handleUnrepresentable(schema, ctx, json6, params, "Set cannot be represented in JSON Schema");
     };
     arrayProcessor = (schema, ctx, _json, params) => {
-      const json4 = _json;
+      const json6 = _json;
       const def = schema._zod.def;
       const { minimum, maximum } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json4.minItems = minimum;
+        json6.minItems = minimum;
       if (typeof maximum === "number")
-        json4.maxItems = maximum;
-      json4.type = "array";
-      json4.items = processSchema(def.element, ctx, {
+        json6.maxItems = maximum;
+      json6.type = "array";
+      json6.items = processSchema(def.element, ctx, {
         ...params,
         path: [...params.path, "items"]
       });
     };
     objectProcessor = (schema, ctx, _json, params) => {
-      const json4 = _json;
+      const json6 = _json;
       const def = schema._zod.def;
       const shape = def.shape;
       const symbolKeys = Object.getOwnPropertySymbols(shape);
-      if (symbolKeys.length && handleUnrepresentable(schema, ctx, json4, params, "Symbol keys cannot be represented in JSON Schema")) {
+      if (symbolKeys.length && handleUnrepresentable(schema, ctx, json6, params, "Symbol keys cannot be represented in JSON Schema")) {
         return;
       }
-      json4.type = "object";
-      json4.properties = {};
+      json6.type = "object";
+      json6.properties = {};
       for (const key in shape) {
-        assignProp(json4.properties, key, processSchema(shape[key], ctx, {
+        assignProp(json6.properties, key, processSchema(shape[key], ctx, {
           ...params,
           path: [...params.path, "properties", key]
         }));
@@ -16697,21 +16697,21 @@ var init_json_schema_processors = __esm({
         }
       }
       if (requiredKeys.length > 0) {
-        json4.required = requiredKeys;
+        json6.required = requiredKeys;
       }
       if (def.catchall?._zod.def.type === "never") {
-        json4.additionalProperties = false;
+        json6.additionalProperties = false;
       } else if (!def.catchall) {
         if (ctx.io === "output")
-          json4.additionalProperties = false;
+          json6.additionalProperties = false;
       } else if (def.catchall) {
-        json4.additionalProperties = processSchema(def.catchall, ctx, {
+        json6.additionalProperties = processSchema(def.catchall, ctx, {
           ...params,
           path: [...params.path, "additionalProperties"]
         });
       }
     };
-    unionProcessor = (schema, ctx, json4, params) => {
+    unionProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       const isExclusive = def.inclusive === false;
       const options = def.options.map((x, i) => processSchema(x, ctx, {
@@ -16719,12 +16719,12 @@ var init_json_schema_processors = __esm({
         path: [...params.path, isExclusive ? "oneOf" : "anyOf", i]
       }));
       if (isExclusive) {
-        json4.oneOf = options;
+        json6.oneOf = options;
       } else {
-        json4.anyOf = options;
+        json6.anyOf = options;
       }
     };
-    intersectionProcessor = (schema, ctx, json4, params) => {
+    intersectionProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       const a = processSchema(def.left, ctx, {
         ...params,
@@ -16739,13 +16739,13 @@ var init_json_schema_processors = __esm({
         ...isSimpleIntersection(a) ? a.allOf : [a],
         ...isSimpleIntersection(b) ? b.allOf : [b]
       ];
-      json4.allOf = allOf;
+      json6.allOf = allOf;
       ctx.intersections.push(allOf);
     };
     tupleProcessor = (schema, ctx, _json, params) => {
-      const json4 = _json;
+      const json6 = _json;
       const def = schema._zod.def;
-      json4.type = "array";
+      json6.type = "array";
       const prefixPath = ctx.target === "draft-2020-12" ? "prefixItems" : "items";
       const restPath = ctx.target === "draft-2020-12" ? "items" : ctx.target === "openapi-3.0" ? "items" : "additionalItems";
       const prefixItems = def.items.map((x, i) => processSchema(x, ctx, {
@@ -16767,50 +16767,50 @@ var init_json_schema_processors = __esm({
       const maxItems = def.items.length;
       const isClosed = !def.rest;
       if (ctx.target === "draft-2020-12") {
-        json4.prefixItems = prefixItems;
+        json6.prefixItems = prefixItems;
         if (isClosed) {
-          json4.items = false;
+          json6.items = false;
         } else if (rest) {
-          json4.items = rest;
+          json6.items = rest;
         }
         if (minItems > 0)
-          json4.minItems = minItems;
+          json6.minItems = minItems;
         if (isClosed)
-          json4.maxItems = maxItems;
+          json6.maxItems = maxItems;
       } else if (ctx.target === "openapi-3.0") {
-        json4.items = {
+        json6.items = {
           anyOf: prefixItems
         };
         if (rest) {
-          json4.items.anyOf.push(rest);
+          json6.items.anyOf.push(rest);
         }
         if (minItems > 0)
-          json4.minItems = minItems;
+          json6.minItems = minItems;
         if (isClosed)
-          json4.maxItems = maxItems;
+          json6.maxItems = maxItems;
       } else {
-        json4.items = prefixItems;
+        json6.items = prefixItems;
         if (isClosed) {
-          json4.additionalItems = false;
+          json6.additionalItems = false;
         } else if (rest) {
-          json4.additionalItems = rest;
+          json6.additionalItems = rest;
         }
         if (minItems > 0)
-          json4.minItems = minItems;
+          json6.minItems = minItems;
         if (isClosed)
-          json4.maxItems = maxItems;
+          json6.maxItems = maxItems;
       }
       const { minimum, maximum } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json4.minItems = minimum;
+        json6.minItems = minimum;
       if (typeof maximum === "number")
-        json4.maxItems = maximum;
+        json6.maxItems = maximum;
     };
     pendingRecords = /* @__PURE__ */ new WeakMap();
     recordProcessor = (schema, ctx, _json, params) => {
-      const json4 = _json;
+      const json6 = _json;
       const def = schema._zod.def;
-      json4.type = "object";
+      json6.type = "object";
       const keyType = def.keyType;
       const patterns = aggregateChecks(keyType).patterns;
       if (def.mode === "loose" && patterns && patterns.size > 0) {
@@ -16818,13 +16818,13 @@ var init_json_schema_processors = __esm({
           ...params,
           path: [...params.path, "patternProperties", "*"]
         });
-        json4.patternProperties = {};
+        json6.patternProperties = {};
         for (const pattern of patterns) {
-          assignProp(json4.patternProperties, exactPattern(pattern).source, valueSchema);
+          assignProp(json6.patternProperties, exactPattern(pattern).source, valueSchema);
         }
       } else {
         if (ctx.target === "draft-07" || ctx.target === "draft-2020-12") {
-          json4.propertyNames = processSchema(def.keyType, ctx, {
+          json6.propertyNames = processSchema(def.keyType, ctx, {
             ...params,
             path: [...params.path, "propertyNames"]
           });
@@ -16836,7 +16836,7 @@ var init_json_schema_processors = __esm({
           }
           pending.push(schema);
         }
-        json4.additionalProperties = processSchema(def.valueType, ctx, {
+        json6.additionalProperties = processSchema(def.valueType, ctx, {
           ...params,
           path: [...params.path, "additionalProperties"]
         });
@@ -16846,19 +16846,19 @@ var init_json_schema_processors = __esm({
       if (keyValues && !def.partial && !omittableOnInput) {
         const validKeyValues = [...keyValues].filter((v) => typeof v === "string" || typeof v === "number");
         if (validKeyValues.length > 0) {
-          json4.required = validKeyValues.map(String);
+          json6.required = validKeyValues.map(String);
         }
       }
     };
-    nullableProcessor = (schema, ctx, json4, params) => {
+    nullableProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       const inner = processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       if (ctx.target === "openapi-3.0") {
         seen.ref = def.innerType;
-        json4.nullable = true;
+        json6.nullable = true;
       } else {
-        json4.anyOf = [inner, { type: "null" }];
+        json6.anyOf = [inner, { type: "null" }];
       }
     };
     nonoptionalProcessor = (schema, ctx, _json, params) => {
@@ -16868,27 +16868,27 @@ var init_json_schema_processors = __esm({
       seen.ref = def.innerType;
     };
     UNREPRESENTABLE_DEFAULT = /* @__PURE__ */ Symbol();
-    defaultProcessor = (schema, ctx, json4, params) => {
+    defaultProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
-      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json4, params);
+      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json6, params);
       if (value2 !== UNREPRESENTABLE_DEFAULT)
-        json4.default = value2;
+        json6.default = value2;
     };
-    prefaultProcessor = (schema, ctx, json4, params) => {
+    prefaultProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
       if (ctx.io !== "input")
         return;
-      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json4, params);
+      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json6, params);
       if (value2 !== UNREPRESENTABLE_DEFAULT)
-        json4._prefault = value2;
+        json6._prefault = value2;
     };
-    catchProcessor = (schema, ctx, json4, params) => {
+    catchProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
@@ -16897,10 +16897,10 @@ var init_json_schema_processors = __esm({
       try {
         catchValue = def.catchValue(void 0);
       } catch {
-        handleUnrepresentable(schema, ctx, json4, params, "Dynamic catch values are not supported in JSON Schema");
+        handleUnrepresentable(schema, ctx, json6, params, "Dynamic catch values are not supported in JSON Schema");
         return;
       }
-      json4.default = catchValue;
+      json6.default = catchValue;
     };
     pipeProcessor = (schema, ctx, _json, params) => {
       const def = schema._zod.def;
@@ -16910,12 +16910,12 @@ var init_json_schema_processors = __esm({
       const seen = ctx.seen.get(schema);
       seen.ref = innerType;
     };
-    readonlyProcessor = (schema, ctx, json4, params) => {
+    readonlyProcessor = (schema, ctx, json6, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
-      json4.readOnly = true;
+      json6.readOnly = true;
     };
     promiseProcessor = (schema, ctx, _json, params) => {
       const def = schema._zod.def;
@@ -18390,7 +18390,7 @@ var init_schemas2 = __esm({
       (inst, def) => {
         $ZodString.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json4, params) => stringProcessor(inst, ctx, json4, params);
+        inst._zod.processJSONSchema = (ctx, json6, params) => stringProcessor(inst, ctx, json6, params);
       },
       /* @__PURE__ */ util_exports.derived({
         format: (inst) => aggregateChecks(inst).format ?? null,
@@ -18644,7 +18644,7 @@ var init_schemas2 = __esm({
       (inst, def) => {
         $ZodNumber.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json4, params) => numberProcessor(inst, ctx, json4, params);
+        inst._zod.processJSONSchema = (ctx, json6, params) => numberProcessor(inst, ctx, json6, params);
         inst.isFinite = true;
       },
       /* @__PURE__ */ util_exports.derived({
@@ -18716,14 +18716,14 @@ var init_schemas2 = __esm({
     ZodBoolean = /* @__PURE__ */ $constructor("ZodBoolean", (inst, def) => {
       $ZodBoolean.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => booleanProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => booleanProcessor(inst, ctx, json6, params);
     });
     ZodBigInt = /* @__PURE__ */ $constructor(
       "ZodBigInt",
       (inst, def) => {
         $ZodBigInt.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json4, params) => bigintProcessor(inst, ctx, json4, params);
+        inst._zod.processJSONSchema = (ctx, json6, params) => bigintProcessor(inst, ctx, json6, params);
       },
       /* @__PURE__ */ util_exports.derived({
         minValue: (inst) => aggregateChecks(inst).minimum ?? null,
@@ -18772,44 +18772,44 @@ var init_schemas2 = __esm({
     ZodSymbol = /* @__PURE__ */ $constructor("ZodSymbol", (inst, def) => {
       $ZodSymbol.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => symbolProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => symbolProcessor(inst, ctx, json6, params);
     });
     ZodUndefined = /* @__PURE__ */ $constructor("ZodUndefined", (inst, def) => {
       $ZodUndefined.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => undefinedProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => undefinedProcessor(inst, ctx, json6, params);
     });
     ZodNull = /* @__PURE__ */ $constructor("ZodNull", (inst, def) => {
       $ZodNull.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => nullProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => nullProcessor(inst, ctx, json6, params);
     });
     ZodAny = /* @__PURE__ */ $constructor("ZodAny", (inst, def) => {
       $ZodAny.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => anyProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => anyProcessor(inst, ctx, json6, params);
     });
     ZodUnknown = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
       $ZodUnknown.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => unknownProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => unknownProcessor(inst, ctx, json6, params);
     });
     ZodNever = /* @__PURE__ */ $constructor("ZodNever", (inst, def) => {
       $ZodNever.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => neverProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => neverProcessor(inst, ctx, json6, params);
     });
     ZodVoid = /* @__PURE__ */ $constructor("ZodVoid", (inst, def) => {
       $ZodVoid.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => voidProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => voidProcessor(inst, ctx, json6, params);
     });
     ZodDate = /* @__PURE__ */ $constructor(
       "ZodDate",
       (inst, def) => {
         $ZodDate.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json4, params) => dateProcessor(inst, ctx, json4, params);
+        inst._zod.processJSONSchema = (ctx, json6, params) => dateProcessor(inst, ctx, json6, params);
         inst.min = (value2, params) => inst.check(_gte(value2, params));
         inst.max = (value2, params) => inst.check(_lte(value2, params));
       },
@@ -18828,7 +18828,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodArray.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => arrayProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => arrayProcessor(inst, ctx, json6, params);
       inst.element = def.element;
     }, {
       min(n, params) {
@@ -18851,7 +18851,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodObjectJIT.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => objectProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => objectProcessor(inst, ctx, json6, params);
       util_exports.installLazyProp(inst, "shape", (self) => self._zod.def.shape, false);
     }, {
       keyof() {
@@ -18900,13 +18900,13 @@ var init_schemas2 = __esm({
     ZodUnion = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
       $ZodUnion.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => unionProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => unionProcessor(inst, ctx, json6, params);
       inst.options = def.options;
     });
     ZodXor = /* @__PURE__ */ $constructor("ZodXor", (inst, def) => {
       ZodUnion.init(inst, def);
       $ZodXor.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => unionProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => unionProcessor(inst, ctx, json6, params);
       inst.options = def.options;
     });
     ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("ZodDiscriminatedUnion", (inst, def) => {
@@ -18916,13 +18916,13 @@ var init_schemas2 = __esm({
     ZodIntersection = /* @__PURE__ */ $constructor("ZodIntersection", (inst, def) => {
       $ZodIntersection.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => intersectionProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => intersectionProcessor(inst, ctx, json6, params);
     });
     ZodTuple = /* @__PURE__ */ $constructor("ZodTuple", (inst, def) => {
       _ensureDefaultMemoizer();
       $ZodTuple.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => tupleProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => tupleProcessor(inst, ctx, json6, params);
     }, {
       rest(rest) {
         return this.clone({
@@ -18944,7 +18944,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodRecord.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => recordProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => recordProcessor(inst, ctx, json6, params);
       inst.keyType = def.keyType;
       inst.valueType = def.valueType;
     });
@@ -18952,7 +18952,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodMap.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => mapProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => mapProcessor(inst, ctx, json6, params);
       inst.keyType = def.keyType;
       inst.valueType = def.valueType;
       inst.min = (...args) => inst.check(_minSize(...args));
@@ -18964,7 +18964,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodSet.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => setProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => setProcessor(inst, ctx, json6, params);
       inst.min = (...args) => inst.check(_minSize(...args));
       inst.nonempty = (params) => inst.check(_minSize(1, params));
       inst.max = (...args) => inst.check(_maxSize(...args));
@@ -18973,7 +18973,7 @@ var init_schemas2 = __esm({
     ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
       $ZodEnum.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => enumProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => enumProcessor(inst, ctx, json6, params);
       inst.enum = def.entries;
       inst.options = [...inst._zod.values];
       const keys = new Set(Object.keys(def.entries));
@@ -19011,7 +19011,7 @@ var init_schemas2 = __esm({
     ZodLiteral = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
       $ZodLiteral.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => literalProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => literalProcessor(inst, ctx, json6, params);
       inst.values = new Set(def.values);
       Object.defineProperty(inst, "value", {
         get() {
@@ -19025,7 +19025,7 @@ var init_schemas2 = __esm({
     ZodFile = /* @__PURE__ */ $constructor("ZodFile", (inst, def) => {
       $ZodFile.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => fileProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => fileProcessor(inst, ctx, json6, params);
       inst.min = (size, params) => inst.check(_minSize(size, params));
       inst.max = (size, params) => inst.check(_maxSize(size, params));
       inst.mime = (types, params) => inst.check(_mime(Array.isArray(types) ? types : [types], params));
@@ -19034,7 +19034,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodTransform.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => transformProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => transformProcessor(inst, ctx, json6, params);
       inst._zod.parse = (payload, _ctx) => {
         if (_ctx.direction === "backward") {
           throw new $ZodEncodeError(inst.constructor.name);
@@ -19067,62 +19067,62 @@ var init_schemas2 = __esm({
     ZodOptional = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
       $ZodOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => optionalProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => optionalProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodExactOptional = /* @__PURE__ */ $constructor("ZodExactOptional", (inst, def) => {
       $ZodExactOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => optionalProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => optionalProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodNullable = /* @__PURE__ */ $constructor("ZodNullable", (inst, def) => {
       $ZodNullable.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => nullableProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => nullableProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodDefault = /* @__PURE__ */ $constructor("ZodDefault", (inst, def) => {
       $ZodDefault.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => defaultProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => defaultProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
       inst.removeDefault = inst.unwrap;
     });
     ZodPrefault = /* @__PURE__ */ $constructor("ZodPrefault", (inst, def) => {
       $ZodPrefault.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => prefaultProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => prefaultProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodNonOptional = /* @__PURE__ */ $constructor("ZodNonOptional", (inst, def) => {
       $ZodNonOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => nonoptionalProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => nonoptionalProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodSuccess = /* @__PURE__ */ $constructor("ZodSuccess", (inst, def) => {
       $ZodSuccess.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => successProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => successProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodCatch = /* @__PURE__ */ $constructor("ZodCatch", (inst, def) => {
       $ZodCatch.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => catchProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => catchProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
       inst.removeCatch = inst.unwrap;
     });
     ZodNaN = /* @__PURE__ */ $constructor("ZodNaN", (inst, def) => {
       $ZodNaN.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => nanProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => nanProcessor(inst, ctx, json6, params);
     });
     ZodPipe = /* @__PURE__ */ $constructor("ZodPipe", (inst, def) => {
       $ZodPipe.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => pipeProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => pipeProcessor(inst, ctx, json6, params);
       inst.in = def.in;
       inst.out = def.out;
     });
@@ -19137,35 +19137,35 @@ var init_schemas2 = __esm({
     ZodReadonly = /* @__PURE__ */ $constructor("ZodReadonly", (inst, def) => {
       $ZodReadonly.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => readonlyProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => readonlyProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodTemplateLiteral = /* @__PURE__ */ $constructor("ZodTemplateLiteral", (inst, def) => {
       $ZodTemplateLiteral.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => templateLiteralProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => templateLiteralProcessor(inst, ctx, json6, params);
     });
     ZodLazy = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
       $ZodLazy.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => lazyProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => lazyProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.getter();
     });
     ZodPromise = /* @__PURE__ */ $constructor("ZodPromise", (inst, def) => {
       $ZodPromise.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => promiseProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => promiseProcessor(inst, ctx, json6, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodFunction = /* @__PURE__ */ $constructor("ZodFunction", (inst, def) => {
       $ZodFunction.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => functionProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => functionProcessor(inst, ctx, json6, params);
     });
     ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
       $ZodCustom.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json4, params) => customProcessor(inst, ctx, json4, params);
+      inst._zod.processJSONSchema = (ctx, json6, params) => customProcessor(inst, ctx, json6, params);
     });
     describe2 = describe;
     meta2 = meta;
@@ -21592,14 +21592,14 @@ function prepareNativeDocument(text, globals) {
   for (const match of source.matchAll(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm)) {
     const firstLine = match[0].indexOf("\n");
     const name2 = match[0].slice(0, firstLine).replace(/title|\(.*/gi, "").trim();
-    const body = nativeSlice(
+    const body2 = nativeSlice(
       titlePieces,
       match.index + firstLine + 1,
       match.index + match[0].length - 2
     );
-    titles[name2] = renderNative(body);
-    if (!Object.hasOwn(globalTitles, name2) && body.some((piece) => typeof piece !== "string"))
-      nativeTitles[name2] = body;
+    titles[name2] = renderNative(body2);
+    if (!Object.hasOwn(globalTitles, name2) && body2.some((piece) => typeof piece !== "string"))
+      nativeTitles[name2] = body2;
   }
   return {
     text: renderNative(cleanNative(pieces)),
@@ -21851,15 +21851,15 @@ function numberValues(english, lang) {
 function resolveNumberTokens(text, values) {
   if (!text.includes("#{=")) return text;
   let result = "", at = 0;
-  for (const token of numberTokens(text)) {
-    const value2 = token.id === void 0 ? void 0 : values.get(token.id);
+  for (const token2 of numberTokens(text)) {
+    const value2 = token2.id === void 0 ? void 0 : values.get(token2.id);
     if (typeof value2 !== "string")
       throw new Error(
-        token.id === void 0 ? "Malformed number token." : `Unknown or unfreezable number #{=${token.id}}.`
+        token2.id === void 0 ? "Malformed number token." : `Unknown or unfreezable number #{=${token2.id}}.`
       );
     if (value2.includes("#{=")) throw new Error("A number value cannot contain number tokens.");
-    result += text.slice(at, token.from) + value2;
-    at = token.to;
+    result += text.slice(at, token2.from) + value2;
+    at = token2.to;
   }
   return result + text.slice(at);
 }
@@ -21872,7 +21872,7 @@ function reconcileNumberMap(before, after, tooltip) {
   next.ids = alignment.after.map((_, index) => carried.get(index) ?? next.next++);
   const referenced = new Set(
     Object.entries(tooltip.text).flatMap(
-      ([lang, entry]) => lang === "en" ? [] : numberTokens(entry.text).flatMap((token) => token.id === void 0 ? [] : [token.id])
+      ([lang, entry]) => lang === "en" ? [] : numberTokens(entry.text).flatMap((token2) => token2.id === void 0 ? [] : [token2.id])
     )
   );
   for (const [index, slot] of alignment.before.entries()) {
@@ -21880,7 +21880,7 @@ function reconcileNumberMap(before, after, tooltip) {
     if (!alignment.map.has(index) && referenced.has(id)) {
       const referencing = Object.fromEntries(
         Object.entries(tooltip.text).filter(
-          ([lang, entry]) => lang !== "en" && numberTokens(entry.text).some((token) => token.id === id)
+          ([lang, entry]) => lang !== "en" && numberTokens(entry.text).some((token2) => token2.id === id)
         )
       );
       next.retired[id] = slot.kind === "M" ? freezeFormula(slot.value, old.text, map2, referencing) : slot.value;
@@ -21940,7 +21940,7 @@ function lowerDelimitedMarkup(text) {
   for (let index = 0; index < lines.length; index++) {
     const line = lines[index];
     if (!line.includes("#{") && !line.includes(enhancedArrowMarkup)) continue;
-    const declarations = [];
+    const declarations2 = [];
     let out = "";
     let at = 0;
     for (const match of line.matchAll(delimited)) {
@@ -21953,14 +21953,14 @@ function lowerDelimitedMarkup(text) {
       if (word === void 0) continue;
       for (const part of word === "empty" ? ["empt", "y"] : [word]) {
         out += `#${holderName(part)}`;
-        declarations.push(`var ${holderName(part)} = ${part}`);
+        declarations2.push(`var ${holderName(part)} = ${part}`);
       }
       at = end + word.length;
     }
     if (out === "" && at === 0) continue;
     changed = true;
     out += line.slice(at);
-    lines[index] = declarations.length ? [out, ...new Set(declarations)].join("\n") : out;
+    lines[index] = declarations2.length ? [out, ...new Set(declarations2)].join("\n") : out;
   }
   return changed ? lines.join("\n") : text;
 }
@@ -22266,9 +22266,9 @@ function numberMathRanges(text) {
 }
 function numberTargetRanges(line, inline = markupInlineRanges(line)) {
   return inline.flatMap((range) => {
-    const token = line.slice(range.from, range.to);
-    if (!/^<(?:link|title|formula) /.test(token)) return [];
-    const target = /\[.+\]/.exec(token);
+    const token2 = line.slice(range.from, range.to);
+    if (!/^<(?:link|title|formula) /.test(token2)) return [];
+    const target = /\[.+\]/.exec(token2);
     return target ? [{ from: range.from + target.index, to: range.from + target.index + target[0].length }] : [];
   });
 }
@@ -22479,16 +22479,16 @@ function numberTokenIssues(text, lang, hash2, values) {
   let offset = 0;
   for (const line of text.split("\n")) {
     const targets = numberTargetRanges(line);
-    for (const token of numberTokens(line)) {
-      const from = offset + token.from, to = offset + token.to;
+    for (const token2 of numberTokens(line)) {
+      const from = offset + token2.from, to = offset + token2.to;
       let message;
       if (lang === "en") message = "Number tokens belong in translations.";
       else if (hash2 !== void 0 && hash2 >= 1 && hash2 <= 3)
         message = "Number tokens do not belong in global documents.";
-      else if (token.id === void 0) message = "Malformed number token; use #{=<id>}.";
-      else if (/^\s*import\b/.test(line) || numberBlockOpen.test(line.trim()) || /^\s*var\b/.test(line) && token.from < line.indexOf(" = ") + 3 || /^\s*<\s.*>\s*$/.test(line) || targets.some((range) => token.from >= range.from && token.from < range.to) || maths.some((range) => from >= range.from && from < range.to))
+      else if (token2.id === void 0) message = "Malformed number token; use #{=<id>}.";
+      else if (/^\s*import\b/.test(line) || numberBlockOpen.test(line.trim()) || /^\s*var\b/.test(line) && token2.from < line.indexOf(" = ") + 3 || /^\s*<\s.*>\s*$/.test(line) || targets.some((range) => token2.from >= range.from && token2.from < range.to) || maths.some((range) => from >= range.from && from < range.to))
         message = "Number tokens cannot go here.";
-      else if (values && !values.has(token.id)) message = `Unknown number #{=${token.id}}.`;
+      else if (values && !values.has(token2.id)) message = `Unknown number #{=${token2.id}}.`;
       if (message) issues.push({ severity: "error", message, from, to });
     }
     offset += line.length + 1;
@@ -22529,14 +22529,14 @@ function validateNumberTooltip(tooltip, head) {
       const previous = new Set(
         numberTokens(head?.text[lang]?.text ?? "").map(({ id }) => id)
       );
-      for (const token of numberTokens(entry.text))
-        if (token.id !== void 0 && Object.hasOwn(retired2, token.id) && !previous.has(token.id))
+      for (const token2 of numberTokens(entry.text))
+        if (token2.id !== void 0 && Object.hasOwn(retired2, token2.id) && !previous.has(token2.id))
           issues.push({
             lang,
             severity: "error",
-            from: token.from,
-            to: token.to,
-            message: `Number #{=${token.id}} was removed from English; reload`
+            from: token2.from,
+            to: token2.to,
+            message: `Number #{=${token2.id}} was removed from English; reload`
           });
     }
   }
@@ -22694,7 +22694,7 @@ function canCarryNumbers(before, after, translation) {
     }))
       return false;
   }
-  const tokens = new Set(numberTokens(translation.text).map((token) => token.id));
+  const tokens = new Set(numberTokens(translation.text).map((token2) => token2.id));
   if ([...changed].some((index) => !tokens.has(oldMap.ids[index]))) return false;
   const oldValues = /* @__PURE__ */ new Set();
   for (const index of changed) {
@@ -23277,8 +23277,8 @@ var init_schemas4 = __esm({
 // packages/core/src/schedule/digest.ts
 async function sha256(text) {
   const bytes = new TextEncoder().encode(text);
-  const digest4 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest4), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest5 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest5), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 function approvedProposal({ base, proposed }) {
   if (base === null) return withoutTranslations(proposed);
@@ -23566,10 +23566,10 @@ async function verifyScheduleIntent(envelope, key) {
     throw new Error("Invalid schedule intent signature");
   return scheduleIntentSchema.parse(JSON.parse(checked.payload));
 }
-async function verifyScheduleRequest(value2, body, key, target) {
+async function verifyScheduleRequest(value2, body2, key, target) {
   const request = scheduleRequestSchema.parse(value2);
   const intent = await verifyScheduleIntent(request.envelope, key);
-  if (intent.repo !== target.repo || intent.dataBranch !== target.dataBranch || intent.liveBranch !== target.liveBranch || intent.requestId !== request.requestId || intent.batchId !== request.batchId || intent.requester.id !== request.requesterId || intent.bodyDigest !== request.bodyDigest || await scheduleBodyDigest(body) !== intent.bodyDigest)
+  if (intent.repo !== target.repo || intent.dataBranch !== target.dataBranch || intent.liveBranch !== target.liveBranch || intent.requestId !== request.requestId || intent.batchId !== request.batchId || intent.requester.id !== request.requesterId || intent.bodyDigest !== request.bodyDigest || await scheduleBodyDigest(body2) !== intent.bodyDigest)
     throw new Error("Schedule request does not match its signed intent");
   return { request, intent };
 }
@@ -23886,23 +23886,31 @@ var LocalRepository = class {
     const tree = Object.fromEntries(
       this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
         const [meta3, path] = line.split("	");
-        const [mode, type, oid2] = meta3.split(" ");
+        const [mode, type, oid4] = meta3.split(" ");
         if (!this.preserveModes && (mode !== "100644" || type !== "blob"))
           throw new Error("Only plain blob trees supported");
-        return [path, oid2];
+        return [path, oid4];
       })
     );
     this.trees.set(commit2, tree);
     return { ...tree };
   }
-  blob(oid2) {
-    if (!this.blobs.has(oid2)) this.blobs.set(oid2, this.git(["cat-file", "blob", oid2]));
-    return this.blobs.get(oid2);
+  treeModes(commit2) {
+    return Object.fromEntries(
+      this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
+        const tab = line.indexOf("	");
+        return [line.slice(tab + 1), line.slice(0, 6)];
+      })
+    );
+  }
+  blob(oid4) {
+    if (!this.blobs.has(oid4)) this.blobs.set(oid4, this.git(["cat-file", "blob", oid4]));
+    return this.blobs.get(oid4);
   }
   writeBlob(bytes) {
-    const oid2 = this.git(["hash-object", "-w", "--stdin"], bytes).trim();
-    this.blobs.set(oid2, bytes);
-    return oid2;
+    const oid4 = this.git(["hash-object", "-w", "--stdin"], bytes).trim();
+    this.blobs.set(oid4, bytes);
+    return oid4;
   }
   requireCredits = false;
   commit(parent, tree, message, credits) {
@@ -23924,9 +23932,9 @@ var LocalRepository = class {
       this.git(["read-tree", "--empty"], void 0, env);
       this.git(
         ["update-index", "-z", "--index-info"],
-        Object.entries(tree).sort().map(([p, oid2]) => {
+        Object.entries(tree).sort().map(([p, oid4]) => {
           if (/[\0\n\t]/.test(p)) throw new Error("Invalid tree path");
-          return `${modes.get(p) ?? "100644"} ${oid2}	${p}\0`;
+          return `${modes.get(p) ?? "100644"} ${oid4}	${p}\0`;
         }).join(""),
         env
       );
@@ -23953,6 +23961,24 @@ var LocalRepository = class {
       this.git(["update-ref", ref, next ?? "0".repeat(40), old ?? "0".repeat(40)]);
     } catch {
       throw new RefRace(`Ref raced: ${ref}`);
+    }
+  }
+  casMany(updates) {
+    if (updates.length !== 2 || new Set(updates.map((update) => update.ref)).size !== 2 || updates.some(
+      ({ ref, old, next }) => !/^refs\/heads\/[A-Za-z0-9/_-]+$/.test(ref) || !/^[a-f0-9]{40}$/.test(old) || !/^[a-f0-9]{40}$/.test(next)
+    ))
+      throw new Error("Invalid atomic publication");
+    try {
+      this.git(
+        ["update-ref", "--stdin"],
+        `start
+${updates.map(({ ref, old, next }) => `update ${ref} ${next} ${old}
+`).join("")}prepare
+commit
+`
+      );
+    } catch {
+      throw new RefRace("Atomic publication raced");
     }
   }
   ancestor(a, b) {
@@ -24977,15 +25003,15 @@ function parseOrdinary(text, globals, indexed = false) {
     const input2 = globals.numberInput;
     if (input2.issue) numberIssues.push({ severity: "error", message: input2.issue });
     const tokens = numberTokens(text);
-    if (input2.fallback || tokens.some((token) => token.id !== void 0 && input2.values.get(token.id) === null))
+    if (input2.fallback || tokens.some((token2) => token2.id !== void 0 && input2.values.get(token2.id) === null))
       return parseMarkup(input2.english, { ...globals, numberInput: void 0, lang: "en" });
-    for (const token of [...tokens].reverse())
-      if (token.id === void 0 || !input2.values.has(token.id)) {
+    for (const token2 of [...tokens].reverse())
+      if (token2.id === void 0 || !input2.values.has(token2.id)) {
         numberIssues.push({
           severity: "error",
-          message: token.id === void 0 ? "Malformed number token." : `Unknown number #{=${token.id}}.`
+          message: token2.id === void 0 ? "Malformed number token." : `Unknown number #{=${token2.id}}.`
         });
-        text = text.slice(0, token.from) + "?" + text.slice(token.to);
+        text = text.slice(0, token2.from) + "?" + text.slice(token2.to);
       }
     try {
       text = resolveNumberTokens(text, input2.values);
@@ -25176,13 +25202,13 @@ function parseWith(text, globals, lower2, numbered2 = false, indexed = false) {
   const titles = {};
   for (const [name2, content] of Object.entries(prepared.titles)) {
     const native = prepared.nativeTitles?.[name2];
-    const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
+    const body2 = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
     if (native) {
-      for (const variable of new Set(markupVariableReferences(body))) {
+      for (const variable of new Set(markupVariableReferences(body2))) {
         diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
       }
     }
-    titles[name2] = parseLines(format(tidy(body)), {});
+    titles[name2] = parseLines(format(tidy(body2)), {});
   }
   return { lines: parseLines(format(tidy(prepared.text)), titles), diagnostics };
 }
@@ -25347,18 +25373,18 @@ var normalizeLegacySections = (lines) => {
   if (!lines) return lines;
   let previousSection;
   return lines.flatMap((line) => {
-    const { weaponTypes: weaponTypes3, weaponBlock, weaponOther, ...body } = line;
+    const { weaponTypes: weaponTypes3, weaponBlock, weaponOther, ...body2 } = line;
     const label = weaponOther ? "Other" : weaponTypes3?.filter(Boolean).join(", ");
     const section = label ? `${weaponBlock ?? ""}:${label}` : void 0;
     const heading2 = section && section !== previousSection ? [{ linesContent: [{ text: `${label}:` }] }] : [];
     previousSection = section;
-    body.linesContent?.forEach((content) => {
+    body2.linesContent?.forEach((content) => {
       content.title = normalizeLegacySections(content.title);
     });
-    body.table?.forEach((row) => row.rowContent?.forEach((cell) => cell.cellContent?.forEach((content) => {
+    body2.table?.forEach((row) => row.rowContent?.forEach((cell) => cell.cellContent?.forEach((content) => {
       content.title = normalizeLegacySections(content.title);
     })));
-    return [...heading2, body];
+    return [...heading2, body2];
   });
 };
 var descriptionFilter = (description, converterType) => {
@@ -25510,7 +25536,7 @@ function buildLegacy(input2, preset, options = {}) {
 }
 
 // scripts/publisher/publisher.ts
-import { createHash, createPublicKey, verify } from "node:crypto";
+import { createHash as createHash2, createPublicKey, verify } from "node:crypto";
 
 // packages/core/src/index.ts
 init_languages();
@@ -25602,9 +25628,9 @@ function markupDefinitions(text) {
 function findGlobalNameClashes(text, globals) {
   const variables = extractVariables(globals.variables);
   const titles = extractBlocks(globals.titles, "title");
-  return markupDefinitions(text).filter((definition) => {
-    if (definition.kind === "variable") globals.onVariable?.(definition.name);
-    return Object.hasOwn(definition.kind === "variable" ? variables : titles, definition.name);
+  return markupDefinitions(text).filter((definition2) => {
+    if (definition2.kind === "variable") globals.onVariable?.(definition2.name);
+    return Object.hasOwn(definition2.kind === "variable" ? variables : titles, definition2.name);
   });
 }
 function describeGlobalClash(clash) {
@@ -25990,7 +26016,7 @@ var converterToken = /<.+?\/>/g;
 var marker = new RegExp(`^<(${retiredMarkers.join("|")})\\s*/>$`);
 var wrapper = new RegExp(`^<(${retiredWrappers.join("|")})\\s+([\\s\\S]*?)\\s*/>$`);
 var noun = (name2) => `<${name2} \u2026 />`;
-var retired = (token, advice) => `Retired markup ${token}: no longer supported. ${advice}`;
+var retired = (token2, advice) => `Retired markup ${token2}: no longer supported. ${advice}`;
 function markerEdit(line, lineFrom, from, to) {
   const start = from - lineFrom;
   const end = to - lineFrom;
@@ -25999,16 +26025,16 @@ function markerEdit(line, lineFrom, from, to) {
     return { from: from - 1, to, insert: "" };
   return { from, to, insert: "" };
 }
-function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
-  const to = from + token.length;
-  const bare = marker.exec(token);
+function tokenOccurrence(token2, line, lineFrom, from, sourceToken = token2) {
+  const to = from + token2.length;
+  const bare = marker.exec(token2);
   if (bare) {
     const name3 = bare[1];
     return {
       kind: "marker",
       name: name3,
       token: `<${name3}/>`,
-      source: token,
+      source: token2,
       from,
       to,
       message: retired(`<${name3}/>`, "Remove the marker."),
@@ -26022,7 +26048,7 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
       ]
     };
   }
-  const wrapped = wrapper.exec(token);
+  const wrapped = wrapper.exec(token2);
   if (!wrapped) return null;
   const name2 = wrapped[1];
   const inner = wrapper.exec(sourceToken)?.[2] ?? wrapped[2];
@@ -26045,7 +26071,7 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
     kind: "wrapper",
     name: name2,
     token: noun(name2),
-    source: token,
+    source: token2,
     from,
     to,
     message: retired(
@@ -26095,7 +26121,7 @@ function placementCandidates(source) {
   const mapOccurrence = (item, positions = offsets) => {
     const from = positions[item.from];
     const to = positions[item.to - 1] + 1;
-    const token = source.slice(from, to);
+    const token2 = source.slice(from, to);
     item.fixes = item.fixes.map((fix) => ({
       ...fix,
       edits: fix.edits.flatMap((edit) => {
@@ -26154,7 +26180,7 @@ function placementCandidates(source) {
         return [{ from: editFrom, to: editTo, insert }];
       })
     }));
-    found.push({ ...item, from, to, source: token });
+    found.push({ ...item, from, to, source: token2 });
   };
   for (const item of tableOccurrences(text, text)) mapOccurrence(item);
   let lineFrom = 0;
@@ -26162,13 +26188,13 @@ function placementCandidates(source) {
     let clean = line;
     const positions = offsets.slice(lineFrom, lineFrom + line.length);
     for (const name2 of markupLineClasses) {
-      const token = `<${name2}/>`;
-      const index = clean.indexOf(token);
+      const token2 = `<${name2}/>`;
+      const index = clean.indexOf(token2);
       if (index !== -1) {
         if (retiredMarkers.includes(name2))
-          mapOccurrence(tokenOccurrence(token, clean, 0, index), positions);
-        clean = clean.slice(0, index) + clean.slice(index + token.length);
-        positions.splice(index, token.length);
+          mapOccurrence(tokenOccurrence(token2, clean, 0, index), positions);
+        clean = clean.slice(0, index) + clean.slice(index + token2.length);
+        positions.splice(index, token2.length);
       }
     }
     for (const match of clean.matchAll(converterToken)) {
@@ -26413,9 +26439,9 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
   const issues = [];
   issues.push(...gluedNumberIssues(text));
   issues.push(...numberTokenIssues(text, lang, selfHash));
-  function add(severity, message, token) {
-    const from = token ? Math.max(0, text.indexOf(token)) : 0;
-    const to = Math.min(text.length, from + (token?.length ?? text.length));
+  function add(severity, message, token2) {
+    const from = token2 ? Math.max(0, text.indexOf(token2)) : 0;
+    const to = Math.min(text.length, from + (token2?.length ?? text.length));
     if (!issues.some((issue2) => issue2.message === message)) {
       issues.push({ severity, message, from, to });
     }
@@ -26592,8 +26618,8 @@ function usesEnglishFallback(tooltip, language) {
   const english = tooltip.text.en;
   const translation = tooltip.text[language];
   return Boolean(
-    language !== "en" && english && english.text.trim() !== "" && translation && (translation.sourceUpdatedAt !== void 0 && Date.parse(english.updatedAt) - Date.parse(translation.sourceUpdatedAt) > translationMaxAge || translation.text.includes("#{=") && numberTokens(translation.text).some((token) => {
-      const retired2 = token.id === void 0 ? void 0 : english.numbers?.retired[token.id];
+    language !== "en" && english && english.text.trim() !== "" && translation && (translation.sourceUpdatedAt !== void 0 && Date.parse(english.updatedAt) - Date.parse(translation.sourceUpdatedAt) > translationMaxAge || translation.text.includes("#{=") && numberTokens(translation.text).some((token2) => {
+      const retired2 = token2.id === void 0 ? void 0 : english.numbers?.retired[token2.id];
       return retired2 === null || typeof retired2 === "object" && retired2.fallback.includes(language);
     }))
   );
@@ -26783,8 +26809,8 @@ async function publishableHash(tooltip, aliases = {}) {
       ...incoming.length ? { aliases: incoming } : {}
     })
   );
-  const digest4 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest4), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest5 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest5), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
 // packages/core/src/index.ts
@@ -26895,8 +26921,8 @@ async function inactivePublishableHash(tooltip, aliases, moves = {}) {
 }
 async function inactiveRemovalHash(hash2) {
   const bytes = new TextEncoder().encode(stableStringify({ inactive: hash2 }));
-  const digest4 = await crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest4), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest5 = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest5), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 var unreviewedInactiveMessage = "Publish inactive move decisions in Review changes before scheduling or publishing this batch";
 async function hasUnpublishedInactiveMove(hash2, snapshot, pushed, aliases, moves) {
@@ -27110,12 +27136,12 @@ var globalRecordSchema = external_exports.object({
 }).strict().superRefine((record2, ctx) => {
   if (!validGlobalName(record2.kind, record2.name))
     ctx.addIssue({ code: "custom", message: "Name cannot round-trip through the resolver" });
-  for (const [lang, definition] of Object.entries(record2.definitions)) {
-    if (definition.provenance && (definition.provenance.lang !== lang || definition.provenance.hash !== (record2.kind === "variables" ? 2 : 3)))
+  for (const [lang, definition2] of Object.entries(record2.definitions)) {
+    if (definition2.provenance && (definition2.provenance.lang !== lang || definition2.provenance.hash !== (record2.kind === "variables" ? 2 : 3)))
       ctx.addIssue({ code: "custom", message: "Definition provenance kind/language mismatch" });
-    if (record2.kind === "variables" && /[\r\n]/.test(definition.body))
+    if (record2.kind === "variables" && /[\r\n]/.test(definition2.body))
       ctx.addIssue({ code: "custom", message: "Variables must fit on one line" });
-    if (record2.kind === "titles" && !definition.body.trim())
+    if (record2.kind === "titles" && !definition2.body.trim())
       ctx.addIssue({ code: "custom", message: "Title bodies must not be empty" });
   }
 });
@@ -27244,10 +27270,130 @@ init_contentHash();
 init_prepare();
 init_syntax();
 init_schemas3();
+function declarations(raw, kind) {
+  const offsets = [];
+  let text = "";
+  for (let i = 0; i < raw.length; i++) {
+    if (raw[i] !== "\r") {
+      offsets.push(i);
+      text += raw[i];
+    }
+  }
+  const boundary = (index) => index === text.length ? raw.length : offsets[index];
+  const pattern = kind === "variables" ? /^var ([a-zA-Z0-9]+) = (.+)$/gm : /^title ([A-z0-9 ]+) \(\n[^]*?\n\)$/gm;
+  const found = [];
+  const comments = markupCommentContext(raw).comments;
+  let last = 0;
+  const names = /* @__PURE__ */ new Set();
+  for (const match of text.matchAll(pattern)) {
+    const name2 = match[1];
+    if (!validGlobalName(kind, name2) || names.has(name2))
+      throw new Error(`Duplicate or unrepresentable ${kind} declaration: ${name2}`);
+    names.add(name2);
+    const from = boundary(match.index), to = boundary(match.index + match[0].length);
+    if (removeMarkupComments(raw.slice(last, from)).trim() || comments.some((comment) => from >= comment.from && from < comment.to))
+      throw new Error("Aggregate needs manual mapping: prose or commented declaration");
+    const nameFrom = from + (kind === "variables" ? 4 : 6);
+    const nameTo = nameFrom + name2.length;
+    let bodyFrom, bodyTo;
+    if (kind === "variables") {
+      const value2 = match[2];
+      bodyFrom = boundary(match.index + 7 + name2.length + value2.length - value2.trimStart().length);
+      bodyTo = boundary(match.index + 7 + name2.length + value2.trimEnd().length);
+    } else {
+      bodyFrom = boundary(match.index + match[0].indexOf("\n") + 1);
+      bodyTo = boundary(match.index + match[0].length - 2);
+    }
+    if (raw[bodyTo - 1] === "\r" && raw[bodyTo] === "\n") bodyTo--;
+    const body2 = raw.slice(bodyFrom, bodyTo);
+    found.push({
+      name: name2,
+      body: kind === "variables" && body2 === "empty" ? "" : body2,
+      from,
+      to,
+      beforeName: raw.slice(from, nameFrom),
+      afterName: raw.slice(nameTo, bodyFrom),
+      afterBody: raw.slice(bodyTo, to)
+    });
+    last = to;
+  }
+  if (removeMarkupComments(raw.slice(last)).trim())
+    throw new Error("Aggregate needs manual mapping: unparsed source");
+  return found;
+}
+function projectGlobals(input2) {
+  const store = globalStoreSchema.parse(input2);
+  const entries = new Map(store.entries.map((entry) => [entry.id, entry]));
+  const result = {};
+  for (const aggregate of store.aggregates) {
+    const text = {};
+    const kind = aggregate.document.hash === 2 ? "variables" : "titles";
+    for (const [language, layout] of Object.entries(aggregate.languages)) {
+      const lang = language;
+      const expected2 = [];
+      const raw = layout.segments.map((segment) => {
+        if ("literal" in segment) return segment.literal;
+        const entry = entries.get(segment.entryId);
+        const definition2 = entry.definitions[lang];
+        expected2.push({ name: entry.name, body: definition2.body });
+        const body2 = kind === "variables" && definition2.body === "" ? "empty" : definition2.body;
+        return segment.beforeName + entry.name + segment.afterName + body2 + segment.afterBody;
+      }).join("");
+      const parsed = declarations(raw, kind);
+      if (JSON.stringify(parsed.map(({ name: name2, body: body2 }) => ({ name: name2, body: body2 }))) !== JSON.stringify(expected2))
+        throw new Error("Projection recipe changed declaration identity or body");
+      const resolved = kind === "variables" ? extractVariables(raw.replace(/\r/g, "")) : extractBlocks(raw.replace(/\r/g, ""), "title");
+      for (const { name: name2, body: body2 } of expected2) {
+        if (resolved[name2] !== body2.replace(/\r/g, ""))
+          throw new Error(`Projection changes resolver semantics for ${name2}`);
+      }
+      text[lang] = { ...layout.metadata, text: raw };
+    }
+    result[aggregate.document.hash] = tooltipSchema.parse({ ...aggregate.document, text });
+  }
+  return result;
+}
 
 // packages/core/src/globals/references.ts
 init_prepare();
 init_braces();
+function globalReferenceSpans(text, kind) {
+  const { comments } = markupCommentContext(text);
+  const tags = [...text.matchAll(/<(title|link) ([^\n]*?) \[([^\]\n]+)\] \/>/dg)];
+  const labels = tags.map((tag) => ({ from: tag.indices[2][0], to: tag.indices[2][1] }));
+  const bracketedLabel = (label) => label.includes("[") || label.includes("]");
+  const literalLinks = tags.filter(
+    (tag) => tag[1] === "link" && (bracketedLabel(tag[2]) || !/^#(?:[a-zA-Z0-9]+|\{[a-zA-Z0-9]+\})$/.test(tag[3]))
+  ).map((tag) => ({ from: tag.indices[3][0], to: tag.indices[3][1] }));
+  const urls = [...text.matchAll(/https?:\/\/[^\s<>]+/g)].map((url2) => ({
+    from: url2.index,
+    to: url2.index + url2[0].length
+  }));
+  const refs = kind === "variables" ? variableReferences(text) : tags.filter(
+    (tag) => tag[1] === "title" && !bracketedLabel(tag[2]) && validGlobalName("titles", tag[3])
+  ).map((tag) => {
+    const [from, to] = tag.indices[3];
+    return { name: tag[3], from, to };
+  });
+  return refs.filter(
+    (ref) => ![...comments, ...labels, ...literalLinks, ...urls].some(
+      (span) => ref.from < span.to && ref.to > span.from
+    )
+  );
+}
+function rewriteGlobalReferences(text, kind, beforeName, afterName) {
+  if (!validGlobalName(kind, beforeName) || !validGlobalName(kind, afterName))
+    throw new Error("Invalid global reference name");
+  if (kind === "variables" && (beforeName === "e" || afterName === "e") && beforeName !== afterName)
+    throw new Error("The legacy enhanced arrow identity is protected");
+  const edits = globalReferenceSpans(text, kind).filter((ref) => ref.name === beforeName);
+  let next = text;
+  for (const ref of [...edits].reverse()) {
+    const value2 = kind === "titles" ? afterName : ref.braced ? `#{${afterName}}` : `#${afterName}`;
+    next = next.slice(0, ref.from) + value2 + next.slice(ref.to);
+  }
+  return { text: next, edits };
+}
 
 // packages/core/src/globals/transition.ts
 init_contentHash();
@@ -27258,10 +27404,681 @@ init_languages();
 // packages/core/src/globals/source.ts
 init_braces();
 init_map();
+function globalSourceLanguage(tooltip, lang, mode) {
+  return mode === "live" && usesEnglishFallback(tooltip, lang) ? "en" : lang;
+}
+function globalSourceText(tooltip, lang, mode) {
+  if (!tooltip.text[lang]) return void 0;
+  const source = tooltip.text[globalSourceLanguage(tooltip, lang, mode)];
+  if (mode === "authored") return source.text;
+  const resolved = source.text.includes("#{=") && tooltip.text.en ? resolveNumberTokens(source.text, numberValues(tooltip.text.en, lang)) : source.text;
+  return lowerConsumerMarkup(resolved);
+}
+
+// packages/core/src/globals/transition.ts
+function assertGlobalTransition(beforeInput, afterInput, tooltips) {
+  const before = globalStoreSchema.parse(beforeInput), after = globalStoreSchema.parse(afterInput);
+  const beforeAggregates = projectGlobals(before), afterAggregates = projectGlobals(after);
+  for (const old of before.entries) {
+    const next = after.entries.find((entry) => entry.id === old.id);
+    if (!next || next.kind !== old.kind)
+      throw new Error("Global IDs and kinds are immutable; use tombstones");
+    if (old.tombstone && stableStringify(old) !== stableStringify(next))
+      throw new Error("Tombstones are immutable");
+    if (old.kind === "variables" && old.name === "e" && (next.name !== old.name || next.tombstone))
+      throw new Error("The legacy enhanced arrow identity is protected");
+    if (old.kind === "variables" && old.name === "e" && Object.keys(old.definitions).some((lang) => !Object.hasOwn(next.definitions, lang)))
+      throw new Error("The legacy enhanced arrow definitions are protected");
+    if (stableStringify(old) !== stableStringify(next) && old.revision === next.revision)
+      throw new Error("Changed global requires a new revision");
+    if (next.name !== old.name && (next.nameHistory.length !== old.nameHistory.length + 1 || stableStringify(next.nameHistory.slice(0, -1)) !== stableStringify(old.nameHistory) || next.nameHistory.at(-1)?.name !== old.name || next.nameHistory.at(-1)?.revision !== old.revision))
+      throw new Error("Rename must append the previous identity to name history");
+    if (next.name === old.name && stableStringify(next.nameHistory) !== stableStringify(old.nameHistory))
+      throw new Error("Name history is append-only on rename");
+    for (const [lang, definition2] of Object.entries(old.definitions)) {
+      const replacement = next.definitions[lang];
+      if (replacement && stableStringify(definition2.provenance ?? null) !== stableStringify(replacement.provenance ?? null))
+        throw new Error("Migration ancestry is immutable");
+      if (replacement && stableStringify(definition2) !== stableStringify(replacement) && definition2.revision === replacement.revision)
+        throw new Error("Changed definition requires a new revision");
+    }
+  }
+  for (const entry of after.entries) {
+    if (entry.tombstone) continue;
+    if (entry.kind === "variables" && reservedNamePattern.test(entry.name))
+      throw new Error("Generated variable names are reserved");
+    if (entry.kind === "variables" && entry.name === "e" && Object.values(entry.definitions).some((definition2) => definition2.body !== "\u{1F845}"))
+      throw new Error("The legacy enhanced arrow value is protected");
+  }
+  for (const mode of ["authored", "live"]) {
+    for (const hash2 of [2, 3]) {
+      for (const lang of languages2) {
+        const old = beforeAggregates[hash2], next = afterAggregates[hash2];
+        const beforeText = old ? globalSourceText(old, lang, mode) ?? "" : "";
+        const afterText = next ? globalSourceText(next, lang, mode) ?? "" : "";
+        const names = (text) => hash2 === 2 ? extractVariables(text) : extractBlocks(text, "title");
+        const oldNames = names(beforeText);
+        const added = new Set(
+          Object.keys(names(afterText)).filter((name2) => !Object.hasOwn(oldNames, name2))
+        );
+        if (!added.size) continue;
+        for (const tooltip of Object.values(tooltips)) {
+          if (tooltip.hash === 2 || tooltip.hash === 3) continue;
+          for (const local of markupDefinitions(globalSourceText(tooltip, lang, mode) ?? "")) {
+            if (local.kind === (hash2 === 2 ? "variable" : "title") && added.has(local.name))
+              throw new Error(
+                `Local/global name clash: ${local.name}, tooltip ${tooltip.hash}, ${lang}`
+              );
+          }
+        }
+      }
+    }
+  }
+}
 
 // packages/core/src/globals/impact.ts
 init_prepare();
 init_schemas3();
+var keyOf = (hash2, lang) => `${hash2}:${lang}`;
+function resolveSnapshot(snapshot, blockers) {
+  const result = /* @__PURE__ */ new Map();
+  try {
+    const { tooltips: _tooltips, ...header } = snapshot;
+    void _tooltips;
+    globalImpactHeaderSchema.parse(header);
+    for (const [key, tooltip] of Object.entries(snapshot.tooltips)) {
+      tooltipSchema.parse(tooltip);
+      if (key !== String(tooltip.hash)) throw new Error(`Catalogue key/hash mismatch: ${key}`);
+      if (resolveAlias(tooltip.hash, snapshot.aliases) !== tooltip.hash)
+        throw new Error(`Alias ${key} has its own tooltip`);
+    }
+    for (const alias of Object.keys(snapshot.aliases)) {
+      const canonical = resolveAlias(Number(alias), snapshot.aliases);
+      const target = snapshot.tooltips[canonical];
+      if (!target || snapshot.mode === "live" && isTextlessDescription(target)) continue;
+      if (!Object.hasOwn(snapshot.types, alias))
+        blockers.add(`Missing alias converter type provenance: ${snapshot.revision}/${alias}`);
+      else if (snapshot.types[alias] !== snapshot.types[canonical])
+        blockers.add(
+          `Alias-specific render context requires separate review: ${snapshot.revision}/${alias} -> ${canonical}`
+        );
+    }
+    for (const tooltip of Object.values(snapshot.tooltips)) {
+      if (tooltip.hash >= 1 && tooltip.hash <= 3 || snapshot.mode === "live" && isTextlessDescription(tooltip))
+        continue;
+      if (!Object.hasOwn(snapshot.types, String(tooltip.hash)))
+        blockers.add(`Missing converter type provenance: ${snapshot.revision}/${tooltip.hash}`);
+      for (const language of Object.keys(tooltip.text)) {
+        const lang = language;
+        const blockHiddenImports = (source) => {
+          const visible = removeUnusedText(source, false);
+          if (markupImports(source).some((line) => !visible.includes(line.trim())))
+            blockers.add(
+              `Hidden import context requires review: ${snapshot.revision}/${tooltip.hash}/${lang}`
+            );
+        };
+        const catalog = new Proxy(
+          {},
+          {
+            get(_target, key) {
+              if (typeof key !== "string") return void 0;
+              const hash2 = key === "global" ? 1 : Number(key);
+              if (!Number.isInteger(hash2)) return void 0;
+              const imported = snapshot.tooltips[resolveAlias(hash2, snapshot.aliases)];
+              const source = imported && !(snapshot.mode === "live" && isTextlessDescription(imported)) ? globalSourceText(imported, lang, snapshot.mode) : void 0;
+              if (source !== void 0) blockHiddenImports(source);
+              return source;
+            }
+          }
+        );
+        const text = globalSourceText(tooltip, lang, snapshot.mode);
+        blockHiddenImports(text);
+        const numberLanguage2 = globalSourceLanguage(tooltip, lang, snapshot.mode);
+        const globals = {
+          variables: catalog[2] ?? "",
+          titles: catalog[3] ?? "",
+          imports: catalog,
+          type: snapshot.types[tooltip.hash],
+          lang: numberLanguage2
+        };
+        const validation = validateTextWithReads(
+          text,
+          lang,
+          globals,
+          false,
+          tooltip.hash,
+          snapshot.aliases
+        );
+        const parsed = parseMarkup(text, globals);
+        for (const issue2 of parsed.diagnostics) {
+          if (issue2.severity === "error")
+            blockers.add(`${snapshot.revision}/${tooltip.hash}/${lang}: ${issue2.message}`);
+        }
+        result.set(keyOf(tooltip.hash, lang), {
+          hash: tooltip.hash,
+          lang,
+          result: {
+            rendered: JSON.stringify(parsed.lines),
+            reads: {
+              imports: [...validation.reads.imports].map(([key, hash2]) => ({ key, hash: hash2 })),
+              variables: [...validation.reads.variables],
+              conservativeTitles: true
+            }
+          }
+        });
+      }
+    }
+  } catch (error62) {
+    blockers.add(
+      `Unproven snapshot ${snapshot.revision}: ${error62 instanceof Error ? error62.message : String(error62)}`
+    );
+  }
+  return result;
+}
+function languageAffected(snapshot, change, lang) {
+  if (!change.languages) return true;
+  if (change.languages.includes("en")) return true;
+  const aggregate = snapshot.tooltips[change.kind === "variables" ? 2 : 3];
+  const source = aggregate ? globalSourceLanguage(aggregate, lang, snapshot.mode) : lang;
+  return change.languages.includes(source);
+}
+function calculateGlobalImpact(before, after, changes2, destination) {
+  for (const change of changes2) {
+    globalCauseSchema.parse(change.cause);
+    for (const name2 of [change.beforeName, change.afterName])
+      if (name2 !== void 0 && !validGlobalName(change.kind, name2))
+        throw new Error("Invalid changed global name");
+    if (!change.beforeName && !change.afterName) throw new Error("Missing changed global identity");
+  }
+  const blockers = /* @__PURE__ */ new Set();
+  if (before.repository !== after.repository || before.mode !== after.mode)
+    blockers.add("Before/after snapshots must describe the same repository and resolution mode");
+  const old = resolveSnapshot(before, blockers), next = resolveSnapshot(after, blockers);
+  const rows = [];
+  for (const key of /* @__PURE__ */ new Set([...old.keys(), ...next.keys()])) {
+    const a = old.get(key), b = next.get(key), { hash: hash2, lang } = a ?? b;
+    const causes = [];
+    let reason = "variable-read";
+    for (const change of changes2) {
+      let affected = false;
+      for (const [snapshot, cell] of [
+        [before, a],
+        [after, b]
+      ]) {
+        if (!cell || !languageAffected(snapshot, change, lang)) continue;
+        if (cell.result.reads.imports.some(
+          (read) => read.hash === (change.kind === "variables" ? 2 : 3)
+        )) {
+          affected = true;
+          reason = "aggregate-import";
+        } else if (change.kind === "titles") {
+          affected = true;
+          reason = "title-preparation";
+        } else if (cell.result.reads.variables.some(
+          (name2) => name2 === change.beforeName || name2 === change.afterName
+        )) {
+          affected = true;
+        }
+      }
+      if (affected || blockers.size) causes.push(change.cause);
+    }
+    if (causes.length)
+      rows.push({
+        consumer: { hash: hash2, lang, destination },
+        causes,
+        reason: blockers.size ? "unproven" : reason,
+        before: a?.result ?? null,
+        after: b?.result ?? null
+      });
+  }
+  return globalImpactSchema.parse({
+    version: 1,
+    beforeRevision: before.revision,
+    afterRevision: after.revision,
+    complete: blockers.size === 0,
+    blockers: [...blockers],
+    rows
+  });
+}
+
+// packages/core/src/globalsRelease/model.ts
+init_zod();
+var oid2 = external_exports.string().regex(/^[a-f0-9]{40}$/);
+var digest3 = external_exports.string().regex(/^[a-f0-9]{64}$/);
+var globalSourcesSchema = external_exports.object({
+  authored: oid2,
+  definitions: oid2,
+  projections: oid2,
+  config: oid2,
+  live: oid2,
+  upcoming: oid2,
+  aliases: oid2,
+  generator: oid2,
+  fallback: digest3,
+  resolver: digest3
+}).strict();
+var globalLayoutSchema = external_exports.object({ version: external_exports.literal(1), aggregates: globalStoreSchema.shape.aggregates }).strict().refine(
+  (layout) => layout.aggregates.length === 2 && [2, 3].every(
+    (hash2) => layout.aggregates.some((aggregate) => aggregate.document.hash === hash2)
+  ),
+  "Both compatibility libraries are required"
+);
+var globalPublishedSchema = external_exports.object({
+  version: external_exports.literal(1),
+  destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/),
+  store: globalStoreSchema
+}).strict().refine(
+  (published) => published.store.aggregates.length === 2 && [2, 3].every(
+    (hash2) => published.store.aggregates.some((aggregate) => aggregate.document.hash === hash2)
+  ),
+  "Both published compatibility libraries are required"
+);
+var globalsReleasePaths = {
+  layout: "globals/layout.json",
+  sync: "globals/sync.json",
+  entry: (id) => `globals/entries/${id}.json`,
+  published: (destination) => `globals/live/${destination}.json`
+};
+var emptyGitTree = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
+async function globalIdentityDigest(value2, algorithm = "SHA-256") {
+  const bytes = new TextEncoder().encode(JSON.stringify(value2));
+  return [...new Uint8Array(await crypto.subtle.digest(algorithm, bytes))].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+async function observeGlobalSources(input2) {
+  for (const value2 of Object.values(input2)) if (value2 !== null) oid2.parse(value2);
+  return globalSourcesSchema.parse({
+    authored: input2.authored,
+    definitions: input2.definitions,
+    projections: await globalIdentityDigest(
+      [1, input2.projections, input2.layout, input2.published],
+      "SHA-1"
+    ),
+    config: input2.config,
+    live: input2.live,
+    upcoming: input2.upcoming,
+    aliases: await globalIdentityDigest(
+      [1, input2.aliasGroups, input2.sandboxPointers, input2.generator],
+      "SHA-1"
+    ),
+    generator: input2.generator,
+    fallback: await globalIdentityDigest([
+      1,
+      "exportLegacy/globalSourceText",
+      input2.resolverRevision
+    ]),
+    resolver: await globalIdentityDigest([1, "calculateGlobalImpact", input2.resolverRevision])
+  });
+}
+
+// packages/core/src/globalsRelease/compose.ts
+init_languages();
+init_contentHash();
+function reconcileGlobalStore(layout, entries) {
+  const aggregates = structuredClone(layout);
+  for (const aggregate of aggregates) {
+    const kind = aggregate.document.hash === 2 ? "variables" : "titles";
+    for (const lang of languages2) {
+      const definitions = entries.filter(
+        (entry) => !entry.tombstone && entry.kind === kind && entry.definitions[lang]
+      );
+      let cell = aggregate.languages[lang];
+      if (!cell && definitions.length) {
+        const definition2 = definitions[0].definitions[lang];
+        cell = aggregate.languages[lang] = {
+          metadata: { updatedAt: definition2.updatedAt, updatedBy: definition2.updatedBy },
+          segments: [{ literal: "" }]
+        };
+      }
+      if (!cell) continue;
+      const latest = definitions.map((entry) => entry.definitions[lang]).sort((a, b) => a.updatedAt.localeCompare(b.updatedAt)).at(-1);
+      if (latest && Date.parse(latest.updatedAt) > Date.parse(cell.metadata.updatedAt)) {
+        const {
+          body: _body,
+          revision: _revision,
+          provenance: _provenance,
+          sourceRevision: _sourceRevision,
+          ...metadata
+        } = latest;
+        void _body;
+        void _revision;
+        void _provenance;
+        void _sourceRevision;
+        cell.metadata = metadata;
+      }
+      const valid = new Set(definitions.map((entry) => entry.id));
+      cell.segments = cell.segments.filter(
+        (segment) => !("entryId" in segment) || valid.has(segment.entryId)
+      );
+      const present = new Set(
+        cell.segments.flatMap((segment) => "entryId" in segment ? [segment.entryId] : [])
+      );
+      for (const entry of definitions) {
+        if (present.has(entry.id)) continue;
+        cell.segments.push(
+          { literal: "\n" },
+          {
+            entryId: entry.id,
+            beforeName: kind === "variables" ? "var " : "title ",
+            afterName: kind === "variables" ? " = " : " (\n",
+            afterBody: kind === "variables" ? "" : "\n)"
+          }
+        );
+      }
+    }
+  }
+  const result = globalStoreSchema.parse({ version: 1, entries, aggregates });
+  projectGlobals(result);
+  return result;
+}
+function composeGlobalRelease(published, saved, ids) {
+  globalStoreSchema.parse(published);
+  globalStoreSchema.parse(saved);
+  if (new Set(ids).size !== ids.length) throw new Error("Duplicate release global");
+  const replacements = new Map(
+    saved.entries.filter((entry) => ids.includes(entry.id)).map((entry) => [entry.id, entry])
+  );
+  if (replacements.size !== ids.length) throw new Error("Deleted release dependency");
+  const entries = published.entries.map((entry) => replacements.get(entry.id) ?? entry);
+  for (const entry of replacements.values())
+    if (!entries.some((old) => old.id === entry.id)) entries.push(entry);
+  return reconcileGlobalStore(published.aggregates, entries);
+}
+function changedGlobalIds(published, saved) {
+  const next = new Map(saved.entries.map((entry) => [entry.id, entry]));
+  for (const entry of published.entries)
+    if (!next.has(entry.id)) throw new Error("Missing global tombstone");
+  return saved.entries.filter((entry) => {
+    const previous = published.entries.find((old) => old.id === entry.id);
+    return stableStringify(previous ?? null) !== stableStringify(entry);
+  }).map((entry) => entry.id);
+}
+
+// packages/core/src/globalsRelease/plan.ts
+init_contentHash();
+function changes(input2, ids, names) {
+  return ids.flatMap((id) => {
+    const old = input2.published.entries.find((entry) => entry.id === id);
+    const next = input2.saved.entries.find((entry) => entry.id === id);
+    const causes = input2.causes.filter((cause) => cause.globalId === id);
+    if (!causes.length)
+      causes.push({
+        globalId: id,
+        beforeRevision: old?.revision ?? null,
+        afterRevision: next.revision
+      });
+    return causes.map((cause) => ({
+      cause,
+      kind: next.kind,
+      beforeName: names?.[id] ?? old?.name,
+      afterName: next.name
+    }));
+  });
+}
+function impacts(input2, store, ids) {
+  const beforeGlobals = projectGlobals(input2.published), afterGlobals = projectGlobals(store);
+  const afterLive = Object.fromEntries(
+    Object.entries({ ...input2.live.tooltips, ...input2.authored.tooltips, ...afterGlobals }).filter(
+      ([, document]) => resolveAlias(document.hash, input2.authored.aliases) === document.hash
+    )
+  );
+  const pairs = [
+    [
+      { ...input2.authored, tooltips: { ...input2.authored.tooltips, ...beforeGlobals } },
+      { ...input2.authored, tooltips: { ...input2.authored.tooltips, ...afterGlobals } },
+      void 0,
+      void 0
+    ],
+    ...(input2.priorAuthored ?? []).map(
+      ({ snapshot, names, published }) => [
+        snapshot,
+        { ...input2.authored, tooltips: { ...input2.authored.tooltips, ...afterGlobals } },
+        names,
+        published
+      ]
+    ),
+    [
+      { ...input2.live, tooltips: { ...input2.live.tooltips, ...beforeGlobals } },
+      {
+        ...input2.live,
+        aliases: input2.authored.aliases,
+        types: input2.authored.types,
+        tooltips: afterLive
+      },
+      void 0,
+      void 0
+    ]
+  ];
+  return pairs.map(([before, after, names, published]) => {
+    if (published && !calculateGlobalImpact(published, published, [], input2.destination).complete)
+      throw new Error("Sync pending: historical published closure is incomplete");
+    let observedBefore = before;
+    let result = calculateGlobalImpact(
+      observedBefore,
+      after,
+      changes(input2, ids, names),
+      input2.destination
+    );
+    if (!result.complete && names && published) {
+      observedBefore = {
+        ...before,
+        tooltips: { ...before.tooltips, 2: published.tooltips[2], 3: published.tooltips[3] }
+      };
+      result = calculateGlobalImpact(
+        observedBefore,
+        after,
+        changes(input2, ids, names),
+        input2.destination
+      );
+    }
+    if (!result.complete) throw new Error("Sync pending: resolver closure is incomplete");
+    return expandReleaseDependencies(
+      input2,
+      observedBefore,
+      after,
+      result,
+      changes(input2, ids, names).map((change) => change.cause)
+    );
+  });
+}
+function expandReleaseDependencies(input2, before, after, impact, causes) {
+  const probe = [
+    { kind: "titles", beforeName: "Release", afterName: "Release", cause: causes[0] }
+  ];
+  const census = calculateGlobalImpact(before, after, probe, input2.destination);
+  if (!census.complete) throw new Error("Sync pending: import release closure is incomplete");
+  const key = (row) => `${row.consumer.hash}:${row.consumer.lang}`;
+  const rows = new Map(impact.rows.map((row) => [key(row), row]));
+  const globalOnly = calculateGlobalImpact(
+    before,
+    { ...before, tooltips: { ...before.tooltips, 2: after.tooltips[2], 3: after.tooltips[3] } },
+    probe,
+    input2.destination
+  );
+  if (!globalOnly.complete) throw new Error("Sync pending: global fallback closure is incomplete");
+  for (const row of globalOnly.rows)
+    if (row.before?.rendered !== row.after?.rendered && !rows.has(key(row))) {
+      const actual = census.rows.find((candidate) => key(candidate) === key(row));
+      if (actual)
+        rows.set(key(actual), {
+          ...actual,
+          reason: "variable-read",
+          causes: [...new Map(causes.map((cause) => [stableStringify(cause), cause])).values()]
+        });
+    }
+  const dependencies = /* @__PURE__ */ new Map();
+  let progress = true;
+  while (progress) {
+    progress = false;
+    const add = (hash2, causes2) => {
+      hash2 = resolveAlias(hash2, after.aliases);
+      if (hash2 === 2 || hash2 === 3 || stableStringify(input2.live.tooltips[hash2] ?? null) === stableStringify(after.tooltips[hash2] ?? null))
+        return;
+      const existing2 = dependencies.get(hash2) ?? /* @__PURE__ */ new Map();
+      for (const cause of causes2)
+        if (!existing2.has(stableStringify(cause))) {
+          existing2.set(stableStringify(cause), cause);
+          progress = true;
+        }
+      dependencies.set(hash2, existing2);
+    };
+    for (const row of rows.values()) {
+      if (input2.live.tooltips[row.consumer.hash] || input2.live.aliases[row.consumer.hash])
+        add(row.consumer.hash, row.causes);
+      for (const read of [
+        ...row.before?.reads.imports ?? [],
+        ...row.after?.reads.imports ?? []
+      ])
+        add(read.hash, row.causes);
+    }
+    for (const row of census.rows) {
+      const causes2 = new Map(
+        (rows.get(key(row))?.causes ?? []).map((cause) => [stableStringify(cause), cause])
+      );
+      const reads = [
+        row.consumer.hash,
+        ...[...row.before?.reads.imports ?? [], ...row.after?.reads.imports ?? []].map(
+          (read) => read.hash
+        )
+      ];
+      for (const hash2 of reads)
+        for (const [id, cause] of dependencies.get(hash2) ?? [])
+          if (!causes2.has(id)) {
+            causes2.set(id, cause);
+            progress = true;
+          }
+      if (causes2.size)
+        rows.set(key(row), {
+          ...row,
+          reason: rows.get(key(row))?.reason ?? "aggregate-import",
+          causes: [...causes2.values()]
+        });
+    }
+  }
+  return { ...impact, rows: [...rows.values()] };
+}
+async function planGlobalRelease(input2) {
+  const changed = changedGlobalIds(input2.published, input2.saved);
+  if (!changed.length) return [];
+  const groups = changed.map((id) => /* @__PURE__ */ new Set([id]));
+  const join4 = (ids) => {
+    const touching = groups.filter((group) => ids.some((id) => group.has(id)));
+    if (touching.length < 2) return;
+    const target = touching[0];
+    for (const group of touching.slice(1)) {
+      for (const id of group) target.add(id);
+      groups.splice(groups.indexOf(group), 1);
+    }
+  };
+  const complete = impacts(input2, input2.saved, changed);
+  for (const result2 of complete)
+    for (const row of result2.rows) join4(row.causes.map((cause) => cause.globalId));
+  const membership = /* @__PURE__ */ new Map();
+  for (const id of changed)
+    for (const impact of impacts(input2, composeGlobalRelease(input2.published, input2.saved, [id]), [
+      id
+    ]))
+      for (const row of impact.rows) {
+        const key = `${row.consumer.hash}:${row.consumer.lang}`;
+        const ids = membership.get(key) ?? /* @__PURE__ */ new Set();
+        ids.add(id);
+        membership.set(key, ids);
+        join4([...ids]);
+      }
+  for (const store of [input2.saved, input2.published])
+    for (const entry of store.entries) {
+      const reads = Object.values(entry.definitions).flatMap(
+        (cell) => ["variables", "titles"].flatMap(
+          (kind) => globalReferenceSpans(cell.body, kind).map((span) => ({ kind, name: span.name }))
+        )
+      );
+      join4([
+        entry.id,
+        ...store.entries.filter(
+          (other) => reads.some((read) => read.kind === other.kind && read.name === other.name)
+        ).map((other) => other.id)
+      ]);
+    }
+  const result = [];
+  for (const group of groups) {
+    const ids = [...group].sort();
+    const store = composeGlobalRelease(input2.published, input2.saved, ids);
+    const contexts = impacts(input2, store, ids);
+    const rows = /* @__PURE__ */ new Map();
+    for (const impact of contexts)
+      for (const view of impact.rows) {
+        const { hash: hash2, lang } = view.consumer;
+        const saved = input2.authored.tooltips[hash2] ?? input2.live.tooltips[hash2];
+        if (!saved) throw new Error("Deleted consumer dependency");
+        const dependencies = new Set(
+          [...view.before?.reads.imports ?? [], ...view.after?.reads.imports ?? []].map(
+            (read) => resolveAlias(read.hash, input2.authored.aliases)
+          )
+        );
+        const dependencyDocuments = {};
+        for (const dependency of dependencies) {
+          const document = dependency === 2 || dependency === 3 ? projectGlobals(store)[dependency] : input2.authored.tooltips[dependency] ?? input2.live.tooltips[dependency];
+          if (!document) throw new Error("Deleted imported dependency");
+          dependencyDocuments[dependency] = document;
+        }
+        const id = await globalIdentityDigest(view.consumer);
+        const old = rows.get(id);
+        const previous = input2.live.tooltips[hash2] ?? input2.priorAuthored?.find(({ snapshot }) => snapshot.tooltips[hash2])?.snapshot.tooltips[hash2] ?? input2.authored.tooltips[hash2];
+        const beforeSource = previous ? globalSourceText(previous, lang, input2.live.tooltips[hash2] ? "live" : "authored") ?? "" : "";
+        const afterSource = globalSourceText(saved, lang, "live") ?? "";
+        rows.set(id, {
+          id,
+          view: {
+            ...view,
+            before: view.before ?? old?.view.before ?? null,
+            causes: [
+              ...new Map(
+                [...old?.view.causes ?? [], ...view.causes].map((cause) => [
+                  stableStringify(cause),
+                  cause
+                ])
+              ).values()
+            ]
+          },
+          beforeSource,
+          afterSource,
+          contentDigest: await globalIdentityDigest(saved),
+          dependencyDigest: await globalIdentityDigest({
+            ids,
+            entries: store.entries.filter((entry) => ids.includes(entry.id)),
+            dependencyDocuments,
+            aliases: input2.authored.aliases,
+            types: input2.authored.types,
+            reads: [view.before?.reads, view.after?.reads]
+          }),
+          impactDigest: await globalIdentityDigest([
+            old?.impactDigest ?? null,
+            view,
+            beforeSource,
+            afterSource
+          ])
+        });
+      }
+    const hashes = /* @__PURE__ */ new Set();
+    for (const row of rows.values()) {
+      if (input2.live.tooltips[row.view.consumer.hash] || input2.live.aliases[row.view.consumer.hash])
+        hashes.add(resolveAlias(row.view.consumer.hash, input2.authored.aliases));
+      for (const read of [
+        ...row.view.before?.reads.imports ?? [],
+        ...row.view.after?.reads.imports ?? []
+      ])
+        hashes.add(resolveAlias(read.hash, input2.authored.aliases));
+    }
+    hashes.add(2);
+    hashes.add(3);
+    result.push({
+      ids,
+      rows: [...rows.values()],
+      hashes: [...hashes].sort((a, b) => a - b),
+      store
+    });
+  }
+  return result.sort((a, b) => stableStringify(a.ids).localeCompare(stableStringify(b.ids)));
+}
 
 // packages/core/src/status/index.ts
 init_languages();
@@ -28550,13 +29367,13 @@ init_contentHash();
 init_zod();
 init_legacy();
 var commit = external_exports.string().regex(/^[0-9a-f]{40}$/);
-var digest3 = external_exports.string().regex(/^[0-9a-f]{64}$/);
+var digest4 = external_exports.string().regex(/^[0-9a-f]{64}$/);
 var members2 = external_exports.array(hashSchema).min(2).max(256).refine((v) => new Set(v).size === v.length);
 var selection = {
   canonical: hashSchema,
   members: members2,
   /** Compare with server-recomputed membership/facts digest, never trust client eligibility. */
-  factsDigest: digest3,
+  factsDigest: digest4,
   /** Single-group only. Server still refuses loss of a locale absent from canonical text. */
   acknowledgeConflicts: external_exports.literal(true).optional(),
   note: external_exports.string().max(500).optional()
@@ -28567,7 +29384,7 @@ var aliasGroupOperationSchema = external_exports.discriminatedUnion("op", [
   external_exports.object({
     op: external_exports.literal("reject"),
     members: members2,
-    factsDigest: digest3,
+    factsDigest: digest4,
     reason: external_exports.string().max(500).optional()
   }).strict(),
   external_exports.object({ op: external_exports.literal("ungroup"), canonical: hashSchema }).strict(),
@@ -28627,8 +29444,8 @@ var aliasGroupsSchema = external_exports.object({
   archives: external_exports.array(aliasGroupArchiveSchema).optional()
 }).strict().superRefine((value2, ctx) => {
   const seen = /* @__PURE__ */ new Set();
-  const paths2 = value2.archives?.map((archive) => archive.path) ?? [];
-  if (new Set(paths2).size !== paths2.length)
+  const paths3 = value2.archives?.map((archive) => archive.path) ?? [];
+  if (new Set(paths3).size !== paths3.length)
     ctx.addIssue({ code: "custom", message: "Duplicate alias archive path" });
   for (const [key, group] of Object.entries(value2.groups)) {
     if (!group.members.includes(Number(key)))
@@ -29018,8 +29835,1157 @@ function editIndex(io, tree, batch, hashes, at) {
 
 // scripts/publisher/publisher.ts
 import { setTimeout as setTimeout2 } from "node:timers/promises";
+
+// scripts/publisher/globals.ts
+init_zod();
+import { createHash } from "node:crypto";
+init_syntax();
+init_languages();
+init_schemas3();
+init_contentHash();
+init_schemas4();
+
+// apps/worker/src/globals/model.ts
+init_zod();
+init_languages();
+var limits = {
+  requestBytes: 16384,
+  fileBytes: 65536,
+  entryBytes: 16384,
+  metadataBytes: 4096,
+  body: 8192,
+  causes: 32,
+  page: 3,
+  destinations: 4
+};
+var oid3 = external_exports.string().regex(/^[a-f0-9]{40}$/);
+function globalFileBytes(value2) {
+  return new TextEncoder().encode(`${JSON.stringify(value2, null, 2)}
+`).byteLength;
+}
+var token = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/);
+var destinationsSchema = external_exports.array(token).min(1).max(limits.destinations).refine((v) => new Set(v).size === v.length, "Duplicate destination");
+var sourcesSchema = external_exports.object({
+  authored: oid3,
+  definitions: oid3,
+  projections: oid3,
+  config: oid3,
+  live: oid3,
+  upcoming: oid3,
+  aliases: oid3,
+  generator: oid3,
+  fallback: globalDigestSchema,
+  resolver: globalDigestSchema
+}).strict();
+var nameProofRequestSchema = external_exports.object({
+  version: external_exports.literal(1),
+  type: external_exports.literal("name-proof"),
+  id: token,
+  operation: external_exports.enum(["create", "rename"]),
+  kind: globalKindSchema,
+  name: external_exports.string().min(1).max(128),
+  globalId: globalIdSchema.nullable(),
+  revision: globalRevisionSchema.nullable(),
+  expectedHead: oid3,
+  sources: sourcesSchema,
+  by: external_exports.string().min(1).max(128),
+  at: external_exports.iso.datetime()
+}).strict();
+var sourceIdentity = external_exports.object({ path: external_exports.string().max(256), blob: oid3, revision: globalRevisionSchema }).strict();
+var pendingCauseSchema = external_exports.object({
+  version: external_exports.literal(1),
+  id: token,
+  operation: external_exports.enum(["create", "edit", "rename", "remove"]),
+  globalId: globalIdSchema,
+  lang: langSchema.nullable(),
+  beforeSources: sourcesSchema,
+  expectedHead: oid3,
+  at: external_exports.iso.datetime(),
+  by: external_exports.string().min(1).max(128),
+  before: sourceIdentity.nullable(),
+  after: sourceIdentity,
+  intentId: token.nullable()
+}).strict();
+var syncSchema = external_exports.object({
+  version: external_exports.literal(1),
+  status: external_exports.enum(["sync-pending", "sync-failed", "current"]),
+  causeIds: external_exports.array(token).max(limits.causes),
+  causeEntries: external_exports.record(token, globalIdSchema),
+  // Producer diagnostics are private. Normalize them before returning or persisting state.
+  lastFailure: external_exports.string().max(512).nullable().transform((v) => v === null ? null : "Sync failed. Retry sync.")
+}).strict().refine(
+  (v) => new Set(v.causeIds).size === v.causeIds.length && Object.keys(v.causeEntries).length === v.causeIds.length && v.causeIds.every((id) => Object.hasOwn(v.causeEntries, id)) && (v.status === "current" ? v.causeIds.length === 0 && v.lastFailure === null : v.causeIds.length > 0) && (v.status !== "sync-failed" || v.lastFailure !== null),
+  "Invalid Sync pending state"
+);
+var entrySchema = globalRecordSchema.superRefine((entry, ctx) => {
+  if (entry.name.length > 128 || entry.nameHistory.length > 32 || Object.values(entry.definitions).some((d) => d.body.length > limits.body))
+    ctx.addIssue({ code: "custom", message: "Global entry exceeds admission limits" });
+});
+var proof = { version: external_exports.literal(1), complete: external_exports.literal(true), sources: sourcesSchema };
+var clashSchema = external_exports.object({
+  ...proof,
+  kind: globalKindSchema,
+  name: external_exports.string().max(128),
+  occupiedBy: globalIdSchema.nullable(),
+  localClash: external_exports.literal(false),
+  // The producer must evaluate effective fallback, unresolved reads, and title preparation.
+  coverage: external_exports.literal("authored-live-upcoming-fallback")
+}).strict();
+var removalSchema = external_exports.object({
+  ...proof,
+  id: globalIdSchema,
+  revision: globalRevisionSchema,
+  lang: langSchema.nullable(),
+  references: external_exports.object({
+    authored: external_exports.literal(0),
+    effective: external_exports.literal(0),
+    live: external_exports.literal(0),
+    upcoming: external_exports.literal(0),
+    unresolved: external_exports.literal(0),
+    conservativeTitles: external_exports.literal(0)
+  }).strict()
+}).strict();
+var rowSchema = external_exports.object({
+  ...proof,
+  id: token,
+  review: globalReviewSchema,
+  impactDigest: globalDigestSchema,
+  projected: external_exports.literal(false),
+  view: globalImpactRowSchema.extend({
+    variant: external_exports.number().int().nonnegative(),
+    name: external_exports.string().max(256),
+    category: external_exports.string().max(128),
+    line: external_exports.number().int().positive().nullable(),
+    path: external_exports.array(external_exports.string().max(128)).max(32).nullable(),
+    direct: external_exports.boolean().nullable(),
+    archived: external_exports.boolean(),
+    beforeSource: external_exports.string().max(8192),
+    afterSource: external_exports.string().max(8192)
+  }).strict()
+}).strict().refine(
+  (v) => v.review.causes.length <= limits.causes && JSON.stringify(v.review.consumer) === JSON.stringify(v.view.consumer) && JSON.stringify(v.review.causes) === JSON.stringify(v.view.causes),
+  "Review manifest mismatch"
+).refine((v) => {
+  if ((v.review.acknowledgement?.by.length ?? 0) > 128) return false;
+  const maximumAudit = {
+    by: "\0".repeat(128),
+    at: "9999-12-31T23:59:59.999Z",
+    contentDigest: v.review.contentDigest,
+    dependencyDigest: v.review.dependencyDigest,
+    impactDigest: v.impactDigest,
+    decision: "no-text-change"
+  };
+  return globalFileBytes({ ...v, review: { ...v.review, acknowledgement: maximumAudit } }) <= limits.entryBytes;
+}, "Review must reserve acknowledgement capacity");
+var publicationSchema = external_exports.object({
+  ...proof,
+  consumer: globalConsumerSchema,
+  causeIds: external_exports.array(token).max(limits.causes),
+  independent: external_exports.boolean(),
+  // Offline producer has checked all current ledger acknowledgements and resolver blockers.
+  approved: external_exports.literal(true)
+}).strict();
+var pageSchema = external_exports.object({
+  version: external_exports.literal(1),
+  ids: external_exports.array(globalIdSchema).max(limits.page),
+  nextCursor: token.nullable()
+}).strict();
+var catalogSchema = external_exports.object({ version: external_exports.literal(1), lastPage: external_exports.number().int().min(0).max(99999) }).strict();
+var reviewPageSchema = external_exports.object({ ...proof, ids: external_exports.array(token).max(limits.page), nextCursor: token.nullable() }).strict();
+var expected = { expectedHead: oid3 };
+var existing = { id: globalIdSchema, revision: globalRevisionSchema };
+var definition = { lang: langSchema, body: external_exports.string().max(limits.body) };
+var mutationSchema = external_exports.object({
+  ...expected,
+  mutation: external_exports.discriminatedUnion("operation", [
+    external_exports.object({
+      operation: external_exports.literal("create"),
+      kind: globalKindSchema,
+      name: external_exports.string().min(1).max(128),
+      ...definition
+    }).strict(),
+    external_exports.object({ operation: external_exports.literal("edit"), ...existing, ...definition }).strict(),
+    external_exports.object({ operation: external_exports.literal("rename"), ...existing, name: external_exports.string().min(1).max(128) }).strict(),
+    external_exports.object({ operation: external_exports.literal("remove"), ...existing, lang: langSchema.optional() }).strict(),
+    external_exports.object({
+      operation: external_exports.literal("acknowledge"),
+      id: globalIdSchema,
+      consumerId: token,
+      contentDigest: globalDigestSchema,
+      dependencyDigest: globalDigestSchema,
+      impactDigest: globalDigestSchema,
+      decision: external_exports.literal("no-text-change")
+    }).strict()
+  ])
+}).strict();
+var retrySchema = external_exports.object({
+  expectedHead: oid3,
+  id: globalIdSchema,
+  causeIds: external_exports.array(token).min(1).max(limits.causes).refine((v) => new Set(v).size === v.length, "Duplicate cause")
+}).strict();
+function sameSources(a, b) {
+  return Object.keys(a).every((key) => a[key] === b[key]);
+}
+
+// apps/worker/src/globals/handlers.ts
+init_braces();
+init_syntax();
+
+// apps/worker/src/github.ts
+init_zod();
+
+// apps/worker/src/crypto.ts
+var encoder2 = new TextEncoder();
+
+// apps/worker/src/github.ts
+var shaSchema = external_exports.object({ sha: external_exports.string().regex(/^[0-9a-f]{40}$/) });
+var fileSchema = shaSchema.extend({ content: external_exports.string(), encoding: external_exports.string() });
+var refSchema = external_exports.object({ object: shaSchema });
+var commitSchema2 = external_exports.object({ tree: shaSchema });
+var refPattern = /^[0-9a-f]{40}$/;
+var blobFields = external_exports.object({
+  oid: external_exports.string().regex(refPattern),
+  isTruncated: external_exports.boolean(),
+  text: external_exports.string().nullable()
+});
+var blobEntry = external_exports.union([external_exports.null(), external_exports.object({}).strict(), blobFields]);
+var graphqlSchema = external_exports.object({
+  data: external_exports.object({ repository: external_exports.record(external_exports.string(), external_exports.unknown()).nullable() }).nullable(),
+  errors: external_exports.array(external_exports.unknown()).optional()
+});
+var notFoundError = external_exports.object({
+  type: external_exports.literal("NOT_FOUND"),
+  path: external_exports.tuple([external_exports.literal("repository"), external_exports.literal("ref"), external_exports.literal("target"), external_exports.string()])
+});
+var exportBlob = external_exports.object({ object: external_exports.union([blobFields, external_exports.object({}).strict()]) }).nullable();
+var exportsRepository = external_exports.object({
+  ref: external_exports.object({
+    target: external_exports.object({ oid: shaSchema.shape.sha, tree: external_exports.object({ oid: shaSchema.shape.sha }) }).passthrough()
+  }).nullable()
+});
+var exportsDir = external_exports.object({
+  object: external_exports.union([
+    external_exports.object({
+      entries: external_exports.array(external_exports.object({ name: external_exports.string(), object: external_exports.unknown().optional() }))
+    }),
+    external_exports.object({}).strict()
+  ])
+}).nullable();
+var exportsHistory = external_exports.object({
+  nodes: external_exports.array(external_exports.object({ committedDate: external_exports.iso.datetime({ offset: true }) }))
+});
+exportsRepository.safeParse({
+  ref: { target: { oid: "0".repeat(40), tree: { oid: "0".repeat(40) } } }
+});
+exportBlob.safeParse({ object: { oid: "0".repeat(40), isTruncated: false, text: "{}" } });
+exportsDir.safeParse({ object: { entries: [{ name: "warm.json", object: {} }] } });
+exportsHistory.safeParse({ nodes: [{ committedDate: "2026-01-01T00:00:00Z" }] });
+
+// apps/worker/src/globals/storage.ts
+var decoder = new TextDecoder("utf-8", { fatal: true });
+
+// apps/worker/src/globals/handlers.ts
+async function namePaths(kind, name2) {
+  const digest5 = new Uint8Array(
+    await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${kind}:${name2}`))
+  );
+  const key = [...digest5].map((b) => b.toString(16).padStart(2, "0")).join("");
+  return {
+    claim: `globals/names/${kind}/${key}.json`,
+    proof: `globals/proofs/clashes/${kind}/${key}.json`
+  };
+}
+
+// scripts/publisher/globals.ts
+var json4 = (value2) => `${JSON.stringify(value2, null, 2)}
+`;
+var currentSync = {
+  version: 1,
+  status: "current",
+  causeIds: [],
+  causeEntries: {},
+  lastFailure: null
+};
+var hasGlobals = (tree) => Object.keys(tree).some((path) => path.startsWith("globals/"));
+function globalTreeOid(tree, prefix, modes = {}) {
+  const entries = Object.entries(tree).filter(([path]) => path.startsWith(`${prefix}/`));
+  if (!entries.length) return emptyGitTree;
+  const files = /* @__PURE__ */ new Map(), directories = /* @__PURE__ */ new Set();
+  for (const [path, oid4] of entries) {
+    const rest = path.slice(prefix.length + 1), slash = rest.indexOf("/");
+    if (slash < 0) files.set(rest, oid4);
+    else directories.add(rest.slice(0, slash));
+  }
+  const parts = [
+    ...[...files].map(([name2, oid4]) => ({ name: name2, oid: oid4, directory: false })),
+    ...[...directories].map((name2) => ({
+      name: name2,
+      oid: globalTreeOid(tree, `${prefix}/${name2}`, modes),
+      directory: true
+    }))
+  ].sort(
+    (a, b) => Buffer.compare(
+      Buffer.from(a.name + (a.directory ? "/" : "")),
+      Buffer.from(b.name + (b.directory ? "/" : ""))
+    )
+  );
+  const bytes = Buffer.concat(
+    parts.map(
+      ({ name: name2, oid: oid4, directory }) => Buffer.concat([
+        Buffer.from(`${directory ? "40000" : modes[`${prefix}/${name2}`] ?? "100644"} ${name2}\0`),
+        Buffer.from(oid4, "hex")
+      ])
+    )
+  );
+  return createHash("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
+}
+var intentSchema = external_exports.object({
+  version: external_exports.literal(1),
+  id: external_exports.string(),
+  operation: external_exports.literal("rename"),
+  globalId: entrySchema.shape.id,
+  revision: entrySchema.shape.revision,
+  expectedHead: external_exports.string().regex(/^[a-f0-9]{40}$/),
+  sources: sourcesSchema,
+  name: external_exports.string(),
+  by: external_exports.string(),
+  at: external_exports.iso.datetime()
+}).strict();
+var GlobalsPublisher = class _GlobalsPublisher {
+  constructor(publisher) {
+    this.publisher = publisher;
+  }
+  publisher;
+  get git() {
+    return this.publisher.git;
+  }
+  get options() {
+    return this.publisher.options;
+  }
+  read(tree, path) {
+    return this.publisher.read(tree, path);
+  }
+  write(tree, path, value2, maximum = limits.fileBytes) {
+    if (globalFileBytes(value2) > maximum) throw new Error("Global metadata exceeds its byte limit");
+    tree[path] = this.git.writeBlob(json4(value2));
+  }
+  async sources(tree, live, head, historical = false) {
+    const pin = external_exports.object({ sourceSha: external_exports.string(), sha256: external_exports.string(), capabilities: external_exports.array(external_exports.string()) }).parse(this.read(tree, ".publisher/PIN"));
+    if (!historical && (pin.sourceSha !== this.options.publisherSha || pin.sha256 !== this.options.publisherDigest) || !pin.capabilities.includes("globalsRelease"))
+      throw new Error("Installed publisher lacks globalsRelease");
+    const modes = this.git.treeModes?.(head ?? this.publisher.head(this.options.dataBranch)) ?? {};
+    return observeGlobalSources({
+      authored: globalTreeOid(tree, "tooltips", modes),
+      definitions: globalTreeOid(tree, "globals/entries", modes),
+      projections: globalTreeOid(tree, "globals/projections", modes),
+      layout: tree[globalsReleasePaths.layout],
+      published: tree[globalsReleasePaths.published(this.options.liveBranch)],
+      config: globalTreeOid(tree, "config", modes),
+      live,
+      upcoming: globalTreeOid(tree, "schedule", modes),
+      aliasGroups: tree["config/alias-groups.json"] ?? null,
+      sandboxPointers: tree["config/sandbox-pointers.json"] ?? null,
+      generator: this.options.generatorSha,
+      resolverRevision: pin.sourceSha
+    });
+  }
+  /** Historical identities use their installed public generator inputs, never the
+   * running epoch. The current snapshot still requires the verified running PIN.
+   */
+  historical(tree, sources) {
+    const raw = this.publisher.read(tree, ".publisher/config.json");
+    if (!raw) {
+      if (sources.generator !== this.options.generatorSha)
+        throw new Error("Missing historical generator inputs");
+      return this;
+    }
+    const generatorSha = external_exports.string().regex(/^[a-f0-9]{40}$/).parse(raw.generatorSha);
+    if (generatorSha !== sources.generator) throw new Error("Historical generator mismatch");
+    const facts = external_exports.record(external_exports.string(), external_exports.object({ name: external_exports.string(), type: external_exports.string() })).parse(raw.facts);
+    return new _GlobalsPublisher(
+      new Publisher(this.git, {
+        ...this.options,
+        generatorSha,
+        facts,
+        aliases: aliasesSchema.parse(raw.aliases),
+        aliasFacts: raw.aliasFacts,
+        sandboxConflicts: raw.sandboxConflicts
+      })
+    );
+  }
+  store(tree) {
+    const layout = globalLayoutSchema.parse(this.read(tree, globalsReleasePaths.layout));
+    const entries = Object.keys(tree).filter((path) => /^globals\/entries\/g_[\w-]+\.json$/.test(path)).sort().map((path) => {
+      const entry = entrySchema.parse(this.read(tree, path));
+      if (path !== globalsReleasePaths.entry(entry.id))
+        throw new Error("Global identity mismatch");
+      return entry;
+    });
+    return reconcileGlobalStore(layout.aggregates, entries);
+  }
+  documents(tree, prefix) {
+    return Object.fromEntries(
+      Object.keys(tree).filter((path) => path.startsWith(`${prefix}/`)).map((path) => {
+        const document = tooltipSchema.parse(this.read(tree, path));
+        if (path !== `${prefix}/${document.hash}.json`)
+          throw new Error("Global consumer identity mismatch");
+        return [document.hash, document];
+      })
+    );
+  }
+  canonicalDocuments(tree, prefix, aliases) {
+    return Object.fromEntries(
+      Object.entries(this.documents(tree, prefix)).filter(
+        ([, document]) => resolveAlias(document.hash, aliases) === document.hash
+      )
+    );
+  }
+  upcoming(tree) {
+    return Object.keys(tree).filter((path) => /^schedule\/batches\/[^/]+\/tooltips\/\d+\.json$/.test(path)).flatMap((path) => {
+      const member = batchMemberSchema.parse(this.read(tree, path));
+      return [member.base, member.proposed].flatMap(
+        (document) => document ? [{ [document.hash]: document }] : []
+      );
+    });
+  }
+  capture(tree, revision2, liveCommit) {
+    const published = globalPublishedSchema.parse(
+      this.read(tree, globalsReleasePaths.published(this.options.liveBranch))
+    );
+    if (published.destination !== this.options.liveBranch)
+      throw new Error("Published global destination mismatch");
+    const saved = this.store(tree);
+    const aliases = this.publisher.aliasesAt(tree);
+    const types = Object.fromEntries(
+      Object.entries(this.options.facts).map(([hash2, fact]) => [hash2, fact.type])
+    );
+    const snapshot = (tooltips, mode) => ({
+      repository: this.options.repo,
+      revision: revision2,
+      aliases,
+      types,
+      tooltips,
+      mode
+    });
+    const storedLiveDocuments = {
+      ...this.documents(tree, "live/tooltips"),
+      ...projectGlobals(published.store)
+    };
+    const actual = external_exports.object({ perks: external_exports.record(external_exports.string(), external_exports.record(external_exports.string(), external_exports.unknown())) }).parse(this.publisher.read(this.git.tree(liveCommit), "liveDescriptions.json"));
+    const liveDocuments = Object.fromEntries(
+      Object.entries(storedLiveDocuments).filter(
+        ([hash2]) => actual.perks[hash2] && actual.perks[hash2].aliasOf === void 0
+      )
+    );
+    if (!liveDocuments[2] || !liveDocuments[3])
+      throw new Error("Missing last-published global library");
+    const liveAliases = {};
+    const liveTypes = {};
+    for (const [hash2, value2] of Object.entries(actual.perks)) {
+      if (typeof value2.type === "string") liveTypes[hash2] = value2.type;
+      if (value2.aliasOf !== void 0) {
+        if (typeof value2.aliasOf !== "number" || !["name", "sandbox", "frame"].includes(String(value2.aliasKind)))
+          throw new Error("Unknown live alias provenance");
+        liveAliases[hash2] = {
+          to: value2.aliasOf,
+          kind: value2.aliasKind
+        };
+      } else if (!liveDocuments[hash2]) throw new Error("Missing last-published consumer snapshot");
+    }
+    const exported = exportLegacy(Object.values(liveDocuments), 0, this.options.facts, liveAliases);
+    for (const [hash2, value2] of Object.entries(exported)) {
+      if ("aliasOf" in value2) continue;
+      if (stableStringify(value2.editor) !== stableStringify(actual.perks[hash2]?.editor ?? null))
+        throw new Error("Published snapshots differ from actual live inputs");
+    }
+    return {
+      saved,
+      published: published.store,
+      authored: snapshot(
+        { ...this.canonicalDocuments(tree, "tooltips", aliases), ...projectGlobals(saved) },
+        "authored"
+      ),
+      live: {
+        ...snapshot(liveDocuments, "live"),
+        aliases: liveAliases,
+        types: { ...types, ...liveTypes }
+      }
+    };
+  }
+  causes(tree) {
+    const causes = [];
+    const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
+    for (const id of sync.causeIds) {
+      const cause = pendingCauseSchema.parse(this.read(tree, `globals/causes/${id}.json`));
+      if (cause.id !== id || cause.globalId !== sync.causeEntries[id])
+        throw new Error("Global cause identity mismatch");
+      const beforeTree = this.git.tree(cause.expectedHead);
+      if (cause.before) {
+        const before = entrySchema.parse(JSON.parse(this.git.blob(cause.before.blob)));
+        if (beforeTree[cause.before.path] !== cause.before.blob || before.id !== cause.globalId || before.revision !== cause.before.revision)
+          throw new Error("Unproven before global identity");
+      } else if (beforeTree[globalsReleasePaths.entry(cause.globalId)])
+        throw new Error("Unproven global creation");
+      const after = entrySchema.parse(JSON.parse(this.git.blob(cause.after.blob)));
+      if (after.id !== cause.globalId || after.revision !== cause.after.revision || cause.after.path !== globalsReleasePaths.entry(cause.globalId))
+        throw new Error("Unproven after global identity");
+      const current = entrySchema.parse(this.read(tree, globalsReleasePaths.entry(cause.globalId)));
+      causes.push({
+        globalId: cause.globalId,
+        beforeRevision: cause.before?.revision ?? null,
+        afterRevision: cause.intentId && current.nameHistory.some((old) => old.revision === cause.before?.revision) ? cause.intentId : cause.after.revision
+      });
+    }
+    for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/reviews/")))
+      causes.push(...rowSchema.parse(this.read(tree, path)).review.causes);
+    return [...new Map(causes.map((cause) => [stableStringify(cause), cause])).values()];
+  }
+  async plan(tree, revision2, live) {
+    await this.validateCauses(tree, revision2);
+    const captured = this.capture(tree, revision2, live);
+    const causes = this.causes(tree);
+    const prior = /* @__PURE__ */ new Map();
+    for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/causes/")).sort()) {
+      const cause = pendingCauseSchema.parse(this.read(tree, path));
+      if (!causes.some(
+        (tuple2) => tuple2.globalId === cause.globalId && tuple2.beforeRevision === (cause.before?.revision ?? null) && (tuple2.afterRevision === cause.after.revision || tuple2.afterRevision === cause.intentId)
+      ))
+        continue;
+      const beforeTree = this.git.tree(cause.expectedHead), historical = this.historical(beforeTree, cause.beforeSources), before = historical.capture(beforeTree, cause.expectedHead, cause.beforeSources.live), beforeStore = before.saved;
+      prior.set(cause.expectedHead, {
+        snapshot: before.authored,
+        published: before.live,
+        names: Object.fromEntries(beforeStore.entries.map((entry) => [entry.id, entry.name]))
+      });
+    }
+    const result = await planGlobalRelease({
+      ...captured,
+      causes,
+      priorAuthored: [...prior.values()],
+      destination: this.options.liveBranch
+    });
+    for (const component of result)
+      for (const id of component.ids) {
+        const entry = captured.saved.entries.find((entry2) => entry2.id === id);
+        const previous = captured.published.entries.find((entry2) => entry2.id === id);
+        const removed = Object.keys(previous?.definitions ?? {}).filter(
+          (lang) => !entry.definitions[lang]
+        );
+        if (component.rows.some(
+          (row) => row.view.causes.some((cause) => cause.globalId === id) && (entry.tombstone || removed.includes(row.view.consumer.lang) || removed.includes("en"))
+        ))
+          throw new Error("Sync pending: a removed global dependency is still referenced");
+      }
+    for (const upcoming of this.upcoming(tree)) {
+      const snapshot = {
+        ...captured.live,
+        tooltips: {
+          ...captured.authored.tooltips,
+          ...upcoming,
+          ...projectGlobals(captured.published)
+        }
+      };
+      const frozen = await planGlobalRelease({
+        ...captured,
+        authored: snapshot,
+        live: snapshot,
+        causes,
+        destination: this.options.liveBranch
+      });
+      if (frozen.some(
+        (component) => component.rows.some((row) => Object.hasOwn(upcoming, row.view.consumer.hash))
+      ))
+        throw new Error("Sync pending: upcoming global dependencies require rebase");
+    }
+    return result;
+  }
+  async validateCauses(tree, head) {
+    const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
+    for (const id of sync.causeIds) {
+      const cause = pendingCauseSchema.parse(this.read(tree, `globals/causes/${id}.json`));
+      if (!this.git.ancestor(cause.expectedHead, head) || !sameSources(
+        await this.historical(this.git.tree(cause.expectedHead), cause.beforeSources).sources(
+          this.git.tree(cause.expectedHead),
+          cause.beforeSources.live,
+          cause.expectedHead,
+          true
+        ),
+        cause.beforeSources
+      ))
+        throw new Error("Unproven global cause sources");
+    }
+  }
+  async release(tree, revision2, roots, live) {
+    if (!hasGlobals(tree)) return void 0;
+    const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
+    const sources = await this.sources(tree, live, revision2);
+    const captured = this.capture(tree, revision2, live), components = await this.plan(tree, revision2, live);
+    const selected = roots.map((hash2) => resolveAlias(hash2, captured.authored.aliases));
+    const activeSelection = selected.filter(
+      (hash2) => !isMovedInactive(hash2, this.publisher.movesAt(tree))
+    );
+    const aggregate = selected.includes(2) || selected.includes(3);
+    const relevant = components.filter(
+      (component) => aggregate || component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some((hash2) => hash2 !== 2 && hash2 !== 3 && activeSelection.includes(hash2))
+    );
+    const ready = relevant.filter(
+      (component) => sync.status === "current" && component.rows.every((row) => {
+        const stored = rowSchema.safeParse(this.read(tree, `globals/reviews/${row.id}.json`));
+        return stored.success && sameSources(stored.data.sources, sources) && this.approved(tree, row);
+      })
+    );
+    if (!aggregate && ready.length !== relevant.length || aggregate && relevant.length && !ready.length || relevant.some(
+      (component) => !ready.includes(component) && (component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some(
+        (hash2) => hash2 !== 2 && hash2 !== 3 && activeSelection.includes(hash2)
+      ))
+    ))
+      throw new Error("Sync pending: global dependency review required");
+    const ids = ready.flatMap((component) => component.ids);
+    const store = composeGlobalRelease(captured.published, captured.saved, ids);
+    const hashes = [
+      .../* @__PURE__ */ new Set([...selected, ...ready.flatMap((component) => component.hashes)])
+    ].sort((a, b) => a - b);
+    if (ids.length) {
+      const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
+      const moves = this.publisher.movesAt(tree);
+      for (const hash2 of hashes) {
+        const stored = this.read(tree, `live/tooltips/${hash2}.json`);
+        if (await hasUnpublishedInactiveMove(
+          hash2,
+          stored === void 0 ? null : tooltipSchema.parse(stored),
+          markers[hash2],
+          captured.authored.aliases,
+          moves
+        ))
+          throw new Error("Publish inactive move decisions before releasing global dependencies");
+      }
+    }
+    const globals = projectGlobals(store);
+    const documents = hashes.map((hash2) => {
+      const document = globals[hash2] ?? captured.authored.tooltips[hash2] ?? captured.live.tooltips[hash2];
+      if (!document) throw new Error("Deleted release dependency");
+      return document;
+    });
+    const published = globalPublishedSchema.parse({
+      version: 1,
+      destination: this.options.liveBranch,
+      store
+    });
+    const digest5 = await globalIdentityDigest({
+      sourceCommit: revision2,
+      sources,
+      ids,
+      documents,
+      published,
+      rows: ready.flatMap((component) => component.rows)
+    });
+    const receipt = { version: 1, roots, sources, digest: digest5, published };
+    return { documents, receipt };
+  }
+  async validate(receipt, tree, head, live) {
+    if (!hasGlobals(tree) && !receipt) return void 0;
+    if (!receipt || receipt.version !== 1) throw new Error("Global release receipt required");
+    const checked = await this.release(tree, head, receipt.roots, live);
+    if (!checked || checked.receipt.digest !== receipt.digest || stableStringify(checked.receipt.published) !== stableStringify(receipt.published))
+      throw new Error("Global release changed since review");
+    return checked.documents;
+  }
+  /** Current permission check also applies to old acknowledgements at drain/recovery. */
+  approved(tree, row) {
+    const stored = rowSchema.safeParse(this.read(tree, `globals/reviews/${row.id}.json`));
+    if (!stored.success) return false;
+    const audit = stored.data.review.acknowledgement;
+    if (!audit || audit.contentDigest !== row.contentDigest || audit.dependencyDigest !== row.dependencyDigest || audit.impactDigest !== row.impactDigest)
+      return false;
+    const access = Object.values(
+      permissionsSchema.parse(this.read(tree, "config/permissions.json")).users
+    ).find((user) => user.login === audit.by);
+    return !!access && (["maintainer", "editor"].includes(access.role) || access.role === "translator" && row.view.consumer.lang !== "en" && !!access.languages?.includes(row.view.consumer.lang));
+  }
+  async materialize(tree, head, live) {
+    const store = this.store(tree);
+    const sources = await this.sources(tree, live, head);
+    const components = await this.plan(tree, head, live);
+    const oldRows = new Map(
+      Object.keys(tree).filter((path) => path.startsWith("globals/reviews/")).map((path) => [path, this.read(tree, path)])
+    );
+    for (const path of Object.keys(tree).filter(
+      (path2) => path2.startsWith("globals/reviews/") || path2.startsWith("globals/review-pages/")
+    ))
+      delete tree[path];
+    const rowsByEntry = /* @__PURE__ */ new Map();
+    const captured = this.capture(tree, head, live);
+    for (const component of components)
+      for (const row of component.rows) {
+        const path = `globals/reviews/${row.id}.json`;
+        const old = rowSchema.safeParse(oldRows.get(path));
+        const audit = old.success ? old.data.review.acknowledgement : void 0;
+        const keep = audit && old.success && old.data.sources.config === sources.config && old.data.sources.generator === sources.generator && old.data.sources.fallback === sources.fallback && old.data.sources.resolver === sources.resolver && audit.contentDigest === row.contentDigest && audit.dependencyDigest === row.dependencyDigest && audit.impactDigest === row.impactDigest;
+        const name2 = this.options.facts[row.view.consumer.hash]?.name ?? String(row.view.consumer.hash);
+        const value2 = rowSchema.parse({
+          version: 1,
+          complete: true,
+          sources,
+          id: row.id,
+          projected: false,
+          impactDigest: row.impactDigest,
+          review: {
+            version: 1,
+            consumer: row.view.consumer,
+            causes: row.view.causes,
+            contentDigest: row.contentDigest,
+            dependencyDigest: row.dependencyDigest,
+            ...keep ? { acknowledgement: audit } : {}
+          },
+          view: {
+            ...row.view,
+            variant: 0,
+            name: name2,
+            category: this.options.facts[row.view.consumer.hash]?.type ?? "",
+            line: null,
+            path: null,
+            direct: null,
+            archived: !!captured.authored.tooltips[row.view.consumer.hash]?.archive,
+            beforeSource: row.beforeSource,
+            afterSource: row.afterSource
+          }
+        });
+        this.write(tree, path, value2, limits.entryBytes);
+        for (const id of component.ids)
+          rowsByEntry.set(id, [...rowsByEntry.get(id) ?? [], row.id]);
+      }
+    for (const entry of store.entries) {
+      const ids = [...new Set(rowsByEntry.get(entry.id) ?? [])].sort();
+      for (let page = 0; page === 0 || page * limits.page < ids.length; page++)
+        this.write(
+          tree,
+          `globals/review-pages/${entry.id}/p${page}.json`,
+          {
+            version: 1,
+            complete: true,
+            sources,
+            ids: ids.slice(page * limits.page, (page + 1) * limits.page),
+            nextCursor: (page + 1) * limits.page < ids.length ? `p${page + 1}` : null
+          },
+          limits.metadataBytes
+        );
+    }
+    await this.proofs(tree, head, sources, live, components);
+  }
+  async record(tree, receipt, head, live) {
+    const path = globalsReleasePaths.published(this.options.liveBranch);
+    const previous = globalPublishedSchema.parse(this.read(tree, path));
+    const released = changedGlobalIds(previous.store, receipt.published.store);
+    for (const rowPath of Object.keys(tree).filter((path2) => path2.startsWith("globals/reviews/"))) {
+      const row = rowSchema.parse(this.read(tree, rowPath));
+      if (row.review.causes.some((cause) => released.includes(cause.globalId)))
+        delete tree[rowPath];
+    }
+    tree[path] = this.git.writeBlob(json4(globalPublishedSchema.parse(receipt.published)));
+    if (syncSchema.parse(this.read(tree, globalsReleasePaths.sync)).status === "current") {
+      await this.materialize(tree, head, live);
+      for (const retry of Object.keys(tree).filter((path2) => path2.startsWith("globals/retries/")))
+        delete tree[retry];
+    }
+  }
+  async drain() {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const head = this.publisher.head(this.options.dataBranch), original = this.git.tree(head);
+      if (!hasGlobals(original)) return;
+      const tree = { ...original };
+      try {
+        const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
+        this.causes(tree);
+        await this.intents(tree, head);
+        await this.releaseObsoleteClaims(tree);
+        const store = this.store(tree);
+        tree[globalsReleasePaths.layout] = this.git.writeBlob(
+          json4(globalLayoutSchema.parse({ version: 1, aggregates: store.aggregates }))
+        );
+        for (const [hash2, document] of Object.entries(projectGlobals(store)))
+          tree[`tooltips/${hash2}.json`] = this.git.writeBlob(json4(document));
+        for (const path of Object.keys(tree).filter(
+          (path2) => path2.startsWith("globals/projections/")
+        ))
+          delete tree[path];
+        const live = this.publisher.head(this.options.liveBranch);
+        await this.materialize(tree, head, live);
+        for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/retries/")))
+          delete tree[path];
+        this.write(
+          tree,
+          globalsReleasePaths.sync,
+          syncSchema.parse(currentSync),
+          limits.entryBytes
+        );
+        if (this.publisher.head(this.options.liveBranch) !== live)
+          throw new RefRace("Global live inputs raced");
+        if (stableStringify(tree) === stableStringify(original)) return;
+        const commit2 = this.git.commit(
+          head,
+          tree,
+          `Sync ${sync.causeIds.length} global causes`,
+          appCredits
+        );
+        this.git.cas(`refs/heads/${this.options.dataBranch}`, head, commit2);
+        return;
+      } catch (error62) {
+        if (error62 instanceof RefRace) continue;
+        const sync = syncSchema.safeParse(this.read(original, globalsReleasePaths.sync));
+        if (sync.success && sync.data.causeIds.length) {
+          let failed = { ...original };
+          this.write(
+            failed,
+            globalsReleasePaths.sync,
+            syncSchema.parse({
+              ...sync.data,
+              status: "sync-failed",
+              lastFailure: "Sync failed. Retry sync."
+            }),
+            limits.entryBytes
+          );
+          try {
+            const live = this.publisher.head(this.options.liveBranch);
+            const proofs = { ...failed };
+            await this.occupiedProofs(proofs, head, live);
+            if (this.publisher.head(this.options.liveBranch) !== live)
+              throw new RefRace("Global proof inputs raced");
+            failed = proofs;
+          } catch (proofError) {
+            if (proofError instanceof RefRace) continue;
+          }
+          try {
+            if (stableStringify(failed) === stableStringify(original)) throw error62;
+            this.git.cas(
+              `refs/heads/${this.options.dataBranch}`,
+              head,
+              this.git.commit(head, failed, "Record global sync failure", appCredits)
+            );
+          } catch (race) {
+            if (race instanceof RefRace) continue;
+            throw race;
+          }
+        }
+        throw error62;
+      }
+    }
+    throw new Error("Sync pending: global inputs kept moving");
+  }
+  async intents(tree, head) {
+    const seen = /* @__PURE__ */ new Set();
+    const current = await this.sources(tree, this.publisher.head(this.options.liveBranch), head);
+    for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/intents/")).sort()) {
+      const intent = intentSchema.parse(this.read(tree, path));
+      const entryPath = globalsReleasePaths.entry(intent.globalId), entry = entrySchema.parse(this.read(tree, entryPath));
+      const claimPath = (await namePaths(entry.kind, intent.name)).claim;
+      const claim2 = this.read(tree, claimPath);
+      const access = Object.values(
+        permissionsSchema.parse(this.read(tree, "config/permissions.json")).users
+      ).find((user) => user.login === intent.by);
+      const key = `${intent.globalId}:${intent.revision}`;
+      const accepted = !seen.has(key) && entry.revision === intent.revision && !entry.tombstone && claim2?.intentId === intent.id && !!access && ["editor", "maintainer"].includes(access.role) && this.git.ancestor(intent.expectedHead, head) && ["config", "live", "upcoming", "aliases", "generator", "fallback", "resolver"].every((key2) => current[key2] === intent.sources[key2]) && sameSources(
+        await this.historical(this.git.tree(intent.expectedHead), intent.sources).sources(
+          this.git.tree(intent.expectedHead),
+          intent.sources.live,
+          intent.expectedHead,
+          true
+        ),
+        intent.sources
+      );
+      seen.add(key);
+      if (claim2?.intentId === intent.id) delete tree[claimPath];
+      delete tree[path];
+      if (!accepted) continue;
+      const before = this.store(tree), next = structuredClone(entry);
+      next.nameHistory.push({
+        name: entry.name,
+        revision: entry.revision,
+        at: intent.at,
+        by: intent.by
+      });
+      next.name = intent.name;
+      next.revision = intent.id;
+      const all = before.entries.map(
+        (candidate) => candidate.id === next.id ? next : structuredClone(candidate)
+      );
+      for (const candidate of all)
+        for (const definition2 of Object.values(candidate.definitions)) {
+          const rewritten = rewriteGlobalReferences(
+            definition2.body,
+            entry.kind,
+            entry.name,
+            intent.name
+          );
+          if (rewritten.edits.length) {
+            definition2.body = rewritten.text;
+            definition2.revision = intent.id;
+            candidate.revision = intent.id;
+          }
+        }
+      const documents = this.documents(tree, "tooltips");
+      for (const document of Object.values(documents)) {
+        if (document.hash === 2 || document.hash === 3) continue;
+        for (const cell of Object.values(document.text))
+          cell.text = rewriteGlobalReferences(cell.text, entry.kind, entry.name, intent.name).text;
+      }
+      const after = reconcileGlobalStore(before.aggregates, all);
+      assertGlobalTransition(before, after, documents);
+      for (const candidate of after.entries)
+        this.write(
+          tree,
+          globalsReleasePaths.entry(candidate.id),
+          entrySchema.parse(candidate),
+          limits.entryBytes
+        );
+      for (const document of Object.values(documents))
+        tree[`tooltips/${document.hash}.json`] = this.git.writeBlob(json4(document));
+      this.write(
+        tree,
+        claimPath,
+        { id: entry.id, kind: entry.kind, name: intent.name },
+        limits.metadataBytes
+      );
+      delete tree[(await namePaths(entry.kind, entry.name)).claim];
+    }
+  }
+  async releaseObsoleteClaims(tree) {
+    const claimSchema = external_exports.object({
+      id: entrySchema.shape.id,
+      kind: entrySchema.shape.kind,
+      name: external_exports.string(),
+      intentId: external_exports.string().optional()
+    }).strict();
+    for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/names/"))) {
+      const claim2 = claimSchema.parse(this.read(tree, path));
+      if (path !== (await namePaths(claim2.kind, claim2.name)).claim)
+        throw new Error("Global name claim identity mismatch");
+      const entry = entrySchema.parse(this.read(tree, globalsReleasePaths.entry(claim2.id)));
+      if (entry.id !== claim2.id || entry.kind !== claim2.kind)
+        throw new Error("Global name claim owner mismatch");
+      if (entry.tombstone || entry.name !== claim2.name || claim2.intentId) delete tree[path];
+    }
+  }
+  /** A name census is independent of render-impact completeness. In particular,
+   * import cycles cannot prevent the same-name body edit needed to repair them.
+   * Only occupied names are certified here; no release/removal proof is produced.
+   */
+  localNames(tree, captured) {
+    const documents = [
+      ...Object.values(this.documents(tree, "tooltips")),
+      ...Object.values(captured.live.tooltips),
+      ...Object.values(projectGlobals(captured.saved)),
+      ...this.upcoming(tree).flatMap((documents2) => Object.values(documents2))
+    ];
+    const localNames = /* @__PURE__ */ new Set();
+    for (const document of documents)
+      for (const mode of ["authored", "live"])
+        for (const lang of languages2) {
+          const source = globalSourceText(document, lang, mode) ?? "";
+          const localSources = document.hash === 2 ? [] : document.hash === 3 ? Object.values(extractBlocks(source, "title")) : [source];
+          for (const text of localSources)
+            for (const definition2 of markupDefinitions(text))
+              localNames.add(`${definition2.kind}:${definition2.name}`);
+        }
+    return localNames;
+  }
+  async occupiedProofs(tree, head, live) {
+    const captured = this.capture(tree, head, live);
+    const sources = await this.sources(tree, live, head);
+    const localNames = this.localNames(tree, captured);
+    for (const entry of captured.saved.entries) {
+      if (entry.tombstone) continue;
+      const path = (await namePaths(entry.kind, entry.name)).proof;
+      const other = captured.published.entries.some(
+        (published) => !published.tombstone && published.id !== entry.id && published.kind === entry.kind && published.name === entry.name
+      );
+      if (other || localNames.has(`${entry.kind === "variables" ? "variable" : "title"}:${entry.name}`)) {
+        delete tree[path];
+        continue;
+      }
+      this.write(
+        tree,
+        path,
+        clashSchema.parse({
+          version: 1,
+          complete: true,
+          sources,
+          kind: entry.kind,
+          name: entry.name,
+          occupiedBy: entry.id,
+          localClash: false,
+          coverage: "authored-live-upcoming-fallback"
+        }),
+        limits.metadataBytes
+      );
+    }
+  }
+  async proofs(tree, head, sources, live, components) {
+    const captured = this.capture(tree, head, live), requested = /* @__PURE__ */ new Map();
+    for (const entry of captured.saved.entries)
+      if (!entry.tombstone) requested.set(`${entry.kind}:${entry.name}`, entry);
+    for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/retries/"))) {
+      const raw = this.read(tree, path);
+      if (raw?.type !== "name-proof") continue;
+      const request = nameProofRequestSchema.parse(raw);
+      requested.set(`${request.kind}:${request.name}`, request);
+    }
+    const snapshots = [
+      captured.authored,
+      captured.live,
+      ...this.upcoming(tree).flatMap(
+        (documents) => ["authored", "live"].map((mode) => ({
+          ...captured.authored,
+          mode,
+          tooltips: { ...captured.authored.tooltips, ...documents }
+        }))
+      )
+    ];
+    const authoredSources = { ...captured.authored, tooltips: this.documents(tree, "tooltips") };
+    const localNames = this.localNames(tree, captured);
+    for (const snapshot of snapshots) {
+      const validation = calculateGlobalImpact(snapshot, snapshot, [], this.options.liveBranch);
+      if (!validation.complete) throw new Error("Sync pending: proof coverage is incomplete");
+    }
+    for (const path of Object.keys(tree).filter(
+      (path2) => path2.startsWith("globals/proofs/publication/")
+    ))
+      delete tree[path];
+    const moves = this.publisher.movesAt(tree);
+    for (const document of Object.values(captured.authored.tooltips))
+      for (const lang of [
+        .../* @__PURE__ */ new Set([
+          ...Object.keys(document.text),
+          ...isMovedInactive(document.hash, moves) ? ["en"] : []
+        ])
+      ]) {
+        const relevant = isMovedInactive(document.hash, moves) ? [] : components.filter(
+          (component) => document.hash === 2 || document.hash === 3 || component.rows.some(
+            (row) => row.view.consumer.hash === document.hash && row.view.consumer.lang === lang
+          )
+        );
+        const ready = relevant.filter(
+          (component) => component.rows.every((row) => this.approved(tree, row))
+        );
+        if (document.hash === 2 || document.hash === 3 ? relevant.length > 0 && ready.length === 0 : ready.length !== relevant.length)
+          continue;
+        const consumer = { hash: document.hash, lang, destination: this.options.liveBranch };
+        this.write(
+          tree,
+          `globals/proofs/publication/${this.options.liveBranch}/${document.hash}-${lang}.json`,
+          publicationSchema.parse({
+            version: 1,
+            complete: true,
+            sources,
+            consumer,
+            causeIds: [],
+            independent: relevant.length === 0,
+            approved: true
+          }),
+          limits.metadataBytes
+        );
+      }
+    for (const request of requested.values()) {
+      const owners = [...captured.saved.entries, ...captured.published.entries].filter(
+        (entry) => !entry.tombstone && entry.kind === request.kind && entry.name === request.name
+      );
+      const occupied = owners[0];
+      const localClash = localNames.has(
+        `${request.kind === "variables" ? "variable" : "title"}:${request.name}`
+      );
+      const path = (await namePaths(request.kind, request.name)).proof;
+      if (localClash || new Set(owners.map((entry) => entry.id)).size > 1) {
+        delete tree[path];
+        continue;
+      }
+      this.write(
+        tree,
+        path,
+        clashSchema.parse({
+          version: 1,
+          complete: true,
+          sources,
+          kind: request.kind,
+          name: request.name,
+          occupiedBy: occupied?.id ?? null,
+          localClash: false,
+          coverage: "authored-live-upcoming-fallback"
+        }),
+        limits.metadataBytes
+      );
+    }
+    for (const entry of captured.saved.entries)
+      for (const lang of [void 0, ...Object.keys(entry.definitions)]) {
+        const names = [
+          ...new Set(
+            [
+              entry.name,
+              captured.published.entries.find((published) => published.id === entry.id)?.name
+            ].filter((name2) => name2 !== void 0)
+          )
+        ];
+        const path = `globals/proofs/removal/${entry.id}-${lang ?? "all"}.json`;
+        delete tree[path];
+        const referenced = snapshots.some((snapshot) => {
+          const change = {
+            cause: {
+              globalId: entry.id,
+              beforeRevision: entry.revision,
+              afterRevision: entry.revision
+            },
+            kind: entry.kind,
+            beforeName: names[0],
+            afterName: entry.name,
+            ...lang ? { languages: [lang] } : {}
+          };
+          const impact = calculateGlobalImpact(
+            snapshot,
+            snapshot,
+            names.map((name2) => ({ ...change, beforeName: name2 })),
+            this.options.liveBranch
+          );
+          return !impact.complete || impact.rows.length || Object.values(snapshot.tooltips).some(
+            (document) => languages2.some(
+              (language) => (!lang || language === lang || lang === "en") && globalReferenceSpans(
+                globalSourceText(document, language, snapshot.mode) ?? "",
+                entry.kind
+              ).some((span) => names.includes(span.name))
+            )
+          );
+        });
+        const authoredReference = Object.values(authoredSources.tooltips).some(
+          (document) => Object.values(document.text).some(
+            (cell) => globalReferenceSpans(cell.text, entry.kind).some((span) => names.includes(span.name))
+          )
+        );
+        if (!referenced && !authoredReference)
+          this.write(
+            tree,
+            path,
+            removalSchema.parse({
+              version: 1,
+              complete: true,
+              sources,
+              id: entry.id,
+              revision: entry.revision,
+              lang: lang ?? null,
+              references: {
+                authored: 0,
+                effective: 0,
+                live: 0,
+                upcoming: 0,
+                unresolved: 0,
+                conservativeTitles: 0
+              }
+            }),
+            limits.metadataBytes
+          );
+      }
+  }
+};
+
+// scripts/publisher/publisher.ts
 var publishBackoff = () => setTimeout2(3e4);
-var json3 = (v) => JSON.stringify(v, null, 2) + "\n";
+var json5 = (v) => JSON.stringify(v, null, 2) + "\n";
 function unloweredEntry(entries) {
   const strings = (value2) => typeof value2 === "string" ? [value2] : value2 && typeof value2 === "object" ? Object.values(value2).flatMap(strings) : [];
   const unlowered = (text) => /[\uE000\uE001]/.test(text) || findElementTags(text).length > 0 || text.includes("#{") || text.includes(enhancedArrowMarkup);
@@ -29028,7 +30994,7 @@ function unloweredEntry(entries) {
   return void 0;
 }
 var dataRef = (branch) => `refs/heads/${branch}`;
-var paths = (id) => {
+var paths2 = (id) => {
   publishOpIdSchema.parse(id);
   const month = publishMonth(id);
   return {
@@ -29213,7 +31179,7 @@ var Publisher = class _Publisher {
     const entries = this.pendingRequests(head);
     const reorders = entries.some((e) => e.kind === "batch" && e.due && !e.claimed);
     const liveHead = reorders ? this.git.head(dataRef(this.options.liveBranch)) : void 0;
-    const inFlight = (e) => e.kind === "batch" && e.claimed || reorders && (liveHead !== void 0 && this.receipt(liveHead, e.opId) !== void 0 || this.git.head(paths(e.opId).candidate) !== void 0);
+    const inFlight = (e) => e.kind === "batch" && e.claimed || reorders && (liveHead !== void 0 && this.receipt(liveHead, e.opId) !== void 0 || this.git.head(paths2(e.opId).candidate) !== void 0);
     const fresh = entries.filter((e) => !inFlight(e));
     const claimed = entries.filter(inFlight).map((e) => e.opId);
     const batches = fresh.filter((e) => e.kind === "batch" && e.due).map((e, i) => ({ e, i, key: e.key })).sort((a, b) => a.key - b.key || a.i - b.i);
@@ -29235,7 +31201,7 @@ var Publisher = class _Publisher {
     if (typeof envelope.payload !== "string" || typeof envelope.sig !== "string")
       throw new Error("Invalid signed envelope");
     const key = createPublicKey(this.options.publicKey);
-    const fingerprint = createHash("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
+    const fingerprint = createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
     if (fingerprint !== this.options.keyFingerprint || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
       throw new Error("Invalid signature or key pin");
     const p = await parsePublishRequestPayload(JSON.parse(envelope.payload));
@@ -29253,7 +31219,7 @@ var Publisher = class _Publisher {
   credits(blob, opId) {
     const envelope = JSON.parse(this.git.blob(blob));
     const key = createPublicKey(this.options.publicKey);
-    if (createHash("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope.payload !== "string" || typeof envelope.sig !== "string" || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
+    if (createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope.payload !== "string" || typeof envelope.sig !== "string" || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
       throw new Error("Invalid credit envelope");
     const raw = JSON.parse(envelope.payload);
     const payload = raw.kind === "batch" ? batchPublishPayloadSchema.parse(raw) : publishPayloadSchema.parse(raw);
@@ -29262,10 +31228,10 @@ var Publisher = class _Publisher {
     return requesterCredits(payload.requester);
   }
   receipt(commit2, opId) {
-    return this.read(this.git.tree(commit2), paths(opId).receipt);
+    return this.read(this.git.tree(commit2), paths2(opId).receipt);
   }
   candidate(opId, blob) {
-    const c = this.git.head(paths(opId).candidate);
+    const c = this.git.head(paths2(opId).candidate);
     if (c) {
       const r = this.receipt(c, opId);
       if (!r || r.opId !== opId || r.requestBlob !== blob)
@@ -29297,8 +31263,8 @@ var Publisher = class _Publisher {
       throw new ConsumerOutputRejected(String(error62));
     }
     const merged = { ...live, perks };
-    const bytes = json3(merged);
-    const checkKey = createHash("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
+    const bytes = json5(merged);
+    const checkKey = createHash2("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
     if (!this.checkedOutputs.has(checkKey)) {
       const hasMoves = Object.keys(this.movesAt(this.git.tree(r.sourceCommit))).length > 0;
       for (const preset of [
@@ -29334,15 +31300,52 @@ var Publisher = class _Publisher {
     const tree = {
       ...this.git.tree(parent),
       "liveDescriptions.json": this.git.writeBlob(bytes),
-      [paths(r.opId).receipt]: this.git.writeBlob(json3(r))
+      [paths2(r.opId).receipt]: this.git.writeBlob(json5(r))
     };
     return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
   }
-  async record(opId, receipt, candidate, result, requestBlob, landing) {
-    const p = paths(opId);
+  async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive) {
+    const p = paths2(opId);
     for (let i = 0; i < 5; i++) {
       const h = this.head(this.options.dataBranch), tree = this.git.tree(h);
       if (tree[p.log]) return;
+      if (atomicLive) {
+        if (!receipt || !this.git.casMany)
+          throw new ConsumerOutputRejected("Atomic globals publication is unavailable");
+        const signed = await this.verifyRequest(receipt.requestBlob, opId, tree);
+        const documents = await new GlobalsPublisher(this).validate(
+          receipt.globals,
+          tree,
+          h,
+          atomicLive.parent
+        );
+        if (!documents || receipt.sourceCommit !== h || signed.kind !== "push" || stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
+          throw new ConsumerOutputRejected("Global receipt identity mismatch");
+        const aliases = this.aliasesAt(tree), moves = selectedInactiveMoves(
+          this.movesAt(tree),
+          documents.map((document) => document.hash),
+          aliases
+        );
+        const exported = exportWithInactiveMoves(
+          documents,
+          receipt.now,
+          this.options.facts,
+          aliases,
+          moves
+        );
+        if (stableStringify(exported) !== stableStringify(receipt.exported) || documents.length !== receipt.entries.length)
+          throw new ConsumerOutputRejected("Global receipt export mismatch");
+        for (const document of documents) {
+          const entry = receipt.entries.find((entry2) => entry2.hash === document.hash);
+          if (!entry || entry.digest !== await inactivePublishableHash(document, aliases, moves) || stableStringify(document) !== stableStringify(JSON.parse(this.git.blob(entry.tooltipBlob))))
+            throw new ConsumerOutputRejected("Global receipt dependency mismatch");
+        }
+        const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
+        if (stableStringify(
+          receipt.entries.filter((entry) => markers[entry.hash] !== entry.digest).map((entry) => entry.hash)
+        ) !== stableStringify(receipt.changed))
+          throw new ConsumerOutputRejected("Global receipt upload marker mismatch");
+      }
       const blob = receipt?.requestBlob ?? requestBlob ?? tree[p.request];
       let request;
       try {
@@ -29365,7 +31368,10 @@ var Publisher = class _Publisher {
           pushed[e.hash] = e.digest;
           tree[`live/tooltips/${e.hash}.json`] = e.tooltipBlob;
         }
-        tree["live/pushed.json"] = this.git.writeBlob(json3(pushed));
+        tree["live/pushed.json"] = this.git.writeBlob(json5(pushed));
+        if (receipt.globals) {
+          await new GlobalsPublisher(this).record(tree, receipt.globals, h, candidate);
+        }
       }
       if (tree[p.request] && tree[p.request] !== blob) {
         let strayIntent;
@@ -29376,7 +31382,7 @@ var Publisher = class _Publisher {
         let n = 1;
         while (tree[p.log.replace(".json", `.dup-${n}.json`)]) n++;
         tree[p.log.replace(".json", `.dup-${n}.json`)] = this.git.writeBlob(
-          json3({
+          json5({
             status: strayIntent !== void 0 && strayIntent === (receipt?.intentDigest ?? intentDigest) ? "duplicate" : "conflict",
             requestBlob: tree[p.request]
           })
@@ -29384,7 +31390,7 @@ var Publisher = class _Publisher {
       }
       delete tree[p.request];
       tree[p.log] = this.git.writeBlob(
-        json3({
+        json5({
           request,
           intentDigest: receipt?.intentDigest ?? intentDigest ?? null,
           candidateCommit: candidate ?? null,
@@ -29413,7 +31419,16 @@ var Publisher = class _Publisher {
       }
       const c = this.git.commit(h, tree, `Record ${opId}`, credits);
       try {
-        this.git.cas(dataRef(this.options.dataBranch), h, c);
+        if (atomicLive)
+          this.git.casMany([
+            { ref: dataRef(this.options.dataBranch), old: h, next: c },
+            {
+              ref: dataRef(this.options.liveBranch),
+              old: atomicLive.parent,
+              next: atomicLive.candidate
+            }
+          ]);
+        else this.git.cas(dataRef(this.options.dataBranch), h, c);
         return;
       } catch (e) {
         if (!(e instanceof RefRace)) throw e;
@@ -29422,7 +31437,7 @@ var Publisher = class _Publisher {
     throw new Error("RECORD exhausted; drain stopped");
   }
   async duplicate(opId) {
-    const p = paths(opId);
+    const p = paths2(opId);
     for (let i = 0; i < 5; i++) {
       const h = this.head(this.options.dataBranch), t = this.git.tree(h);
       if (!t[p.request]) return;
@@ -29435,7 +31450,7 @@ var Publisher = class _Publisher {
       let n = 1;
       while (t[p.log.replace(".json", `.dup-${n}.json`)]) n++;
       t[p.log.replace(".json", `.dup-${n}.json`)] = this.git.writeBlob(
-        json3({
+        json5({
           status: intent === original.intentDigest ? "duplicate" : "conflict",
           requestBlob: t[p.request]
         })
@@ -29460,7 +31475,7 @@ var Publisher = class _Publisher {
     throw new Error("Duplicate closure raced");
   }
   async operation(opId) {
-    const p = paths(opId), s = this.head(this.options.dataBranch), tree = this.git.tree(s);
+    const p = paths2(opId), s = this.head(this.options.dataBranch), tree = this.git.tree(s);
     try {
       await this.publishOperation(opId, s, tree);
     } catch (error62) {
@@ -29480,7 +31495,7 @@ var Publisher = class _Publisher {
     }
   }
   async publishOperation(opId, s, tree) {
-    const p = paths(opId);
+    const p = paths2(opId);
     if (tree[p.log]) {
       await this.duplicate(opId);
       return;
@@ -29528,6 +31543,8 @@ var Publisher = class _Publisher {
         return;
       }
       if (payload.kind === "batch") {
+        if (hasGlobals(tree))
+          throw new ConsumerOutputRejected("Scheduled publication requires pinned globals support");
         const r = await this.claimBatch(opId, blob, s, tree, live, payload, aliases);
         if (!r) return;
         candidate = this.createCandidate(opId, blob, live, r);
@@ -29549,24 +31566,24 @@ var Publisher = class _Publisher {
           return;
         }
         for (const hash2 of payload.hashes) {
-          const canonical = resolveAlias(hash2, aliases), oid2 = tree[`tooltips/${canonical}.json`];
+          const canonical = resolveAlias(hash2, aliases), oid4 = tree[`tooltips/${canonical}.json`];
           const tooltip = tooltipSchema.safeParse(
-            oid2 ? JSON.parse(this.git.blob(oid2)) : isMovedInactive(canonical, moves) ? { hash: canonical, text: {}, associated: [] } : void 0
+            oid4 ? JSON.parse(this.git.blob(oid4)) : isMovedInactive(canonical, moves) ? { hash: canonical, text: {}, associated: [] } : void 0
           );
           if (!tooltip.success || tooltip.data.hash !== canonical) {
             outcomes.push({ hash: canonical, status: "missing" });
             continue;
           }
-          const digest4 = await inactivePublishableHash(tooltip.data, aliases, moves);
+          const digest5 = await inactivePublishableHash(tooltip.data, aliases, moves);
           outcomes.push({
             hash: canonical,
-            status: digest4 === payload.expected[hash2] ? "accepted" : "stale"
+            status: digest5 === payload.expected[hash2] ? "accepted" : "stale"
           });
           if (!seen.has(canonical)) {
             entries.push({
               hash: canonical,
-              digest: digest4,
-              tooltipBlob: oid2 ?? this.git.writeBlob(json3(tooltip.data))
+              digest: digest5,
+              tooltipBlob: oid4 ?? this.git.writeBlob(json5(tooltip.data))
             });
             tooltips.push(tooltip.data);
             seen.add(canonical);
@@ -29575,6 +31592,28 @@ var Publisher = class _Publisher {
         if (outcomes.some((e) => e.status !== "accepted")) {
           await this.record(opId, void 0, void 0, { status: "stale", outcomes }, blob);
           return;
+        }
+        let globals;
+        if (hasGlobals(tree)) {
+          try {
+            const release = await new GlobalsPublisher(this).release(tree, s, payload.hashes, live);
+            if (!release) throw new Error("Missing global release");
+            globals = release.receipt;
+            tooltips.splice(0, tooltips.length, ...release.documents);
+            entries.splice(
+              0,
+              entries.length,
+              ...await Promise.all(
+                release.documents.map(async (tooltip) => ({
+                  hash: tooltip.hash,
+                  digest: await inactivePublishableHash(tooltip, aliases, moves),
+                  tooltipBlob: this.git.writeBlob(json5(tooltip))
+                }))
+              )
+            );
+          } catch {
+            throw new ConsumerOutputRejected("Sync pending: global dependency review required");
+          }
         }
         const checked = this.checkAndExport(tree, tooltips, aliases);
         if ("error" in checked) {
@@ -29601,7 +31640,8 @@ var Publisher = class _Publisher {
           exported: checked.exported,
           changed: entries.filter((e) => pushed[e.hash] !== e.digest).map((e) => e.hash),
           requester: payload.requester,
-          intentDigest: payload.intentDigest
+          intentDigest: payload.intentDigest,
+          ...globals ? { globals } : {}
         };
         candidate = this.createCandidate(opId, blob, live, r);
       }
@@ -29630,6 +31670,29 @@ var Publisher = class _Publisher {
           throw new ConsumerOutputRejected(
             "stored candidate differs from its checked receipt; nothing published"
           );
+        if (r.globals || hasGlobals(this.git.tree(this.head(this.options.dataBranch)))) {
+          try {
+            await this.record(
+              opId,
+              r,
+              c,
+              void 0,
+              void 0,
+              { at: this.options.now(), source: "cas" },
+              { parent: l, candidate: c }
+            );
+          } catch (error62) {
+            if (error62 instanceof RefRace) throw error62;
+            throw new ConsumerOutputRejected(
+              "Global publication changed or requires recovery; nothing partially published"
+            );
+          }
+          try {
+            this.git.cas(p.candidate, c, void 0);
+          } catch {
+          }
+          return;
+        }
         let pushed = false;
         try {
           this.git.cas(dataRef(this.options.liveBranch), l, c);
@@ -29648,6 +31711,8 @@ var Publisher = class _Publisher {
           return;
         }
       } else {
+        if (r.globals || hasGlobals(this.git.tree(this.head(this.options.dataBranch))))
+          throw new ConsumerOutputRejected("Global live inputs changed; review publication again");
         if (++rebases > 3) throw new Error("Rebase limit");
         const next = this.buildCandidate(l, r);
         try {
@@ -29698,7 +31763,7 @@ var Publisher = class _Publisher {
     return { now, exported };
   }
   createCandidate(opId, blob, live, r) {
-    const p = paths(opId);
+    const p = paths2(opId);
     const c = this.buildCandidate(live, r);
     let candidate;
     for (let i = 0; i < 6 && !candidate; i++) {
@@ -29801,7 +31866,7 @@ var Publisher = class _Publisher {
       entries.push({
         hash: tooltip.hash,
         digest: await inactivePublishableHash(tooltip, aliases, this.movesAt(tree)),
-        tooltipBlob: this.git.writeBlob(json3(tooltip))
+        tooltipBlob: this.git.writeBlob(json5(tooltip))
       });
     return {
       entries,
@@ -29915,7 +31980,7 @@ var Publisher = class _Publisher {
         { status: "publishing", claim: { opId, claimedAt } },
         { at: claimedAt, by: payload.requester, action: "claim", notBefore: payload.notBefore }
       );
-      next[path] = this.git.writeBlob(json3(updated));
+      next[path] = this.git.writeBlob(json5(updated));
       editDue(this, next, (entries) => [
         ...entries.filter((e) => e.batchId !== batch.id && e.opId !== opId),
         { batchId: batch.id, opId, notBefore: payload.notBefore, claimed: true }
@@ -29977,7 +32042,7 @@ var Publisher = class _Publisher {
           },
           { at: recordedAt, by: payload.requester, action: status }
         );
-        tree[path] = this.git.writeBlob(json3(updated2));
+        tree[path] = this.git.writeBlob(json5(updated2));
         editIndex(this, tree, updated2, payload.hashes, recordedAt);
       }
       return { recordedAt };
@@ -30001,7 +32066,7 @@ var Publisher = class _Publisher {
         saved === void 0 ? null : tooltipSchema.parse(saved),
         pushedAt[m.hash] !== void 0
       );
-      if (composed.status === "stale" || this.git.writeBlob(json3(composed.tooltip)) !== e.tooltipBlob)
+      if (composed.status === "stale" || this.git.writeBlob(json5(composed.tooltip)) !== e.tooltipBlob)
         throw new Error(`Composition of ${e.hash} differs from its receipt; operator required`);
     }
     const batch = batchSchema.parse(this.read(tree, path));
@@ -30015,7 +32080,7 @@ var Publisher = class _Publisher {
       const activation = activate({ base: m.base, current, proposed: m.proposed });
       if (activation.ok) {
         if (!current || stableStringify(current) !== stableStringify(activation.tooltip))
-          tree[currentPath] = this.git.writeBlob(json3(activation.tooltip));
+          tree[currentPath] = this.git.writeBlob(json5(activation.tooltip));
         outcomes.push({ hash: m.hash, status: activation.created ? "created" : "activated" });
         continue;
       }
@@ -30032,7 +32097,7 @@ var Publisher = class _Publisher {
         proposed: m.proposed,
         currentAtRecord: current
       });
-      tree[conflictPath] = this.git.writeBlob(json3(file2));
+      tree[conflictPath] = this.git.writeBlob(json5(file2));
       outcomes.push({ hash: m.hash, status: "conflict", fields: activation.fields });
     }
     const land = landing ?? { at: this.options.now(), source: "observed" };
@@ -30060,7 +32125,7 @@ var Publisher = class _Publisher {
         hashes: payload.hashes
       }
     );
-    tree[path] = this.git.writeBlob(json3(updated));
+    tree[path] = this.git.writeBlob(json5(updated));
     dropDue();
     editIndex(this, tree, updated, payload.hashes, recordedAt);
     return { landedAt, landedAtSource: land.source, recordedAt };
@@ -30092,7 +32157,7 @@ var Publisher = class _Publisher {
     });
     const publishQueue = this.queue(h).map((id) => {
       try {
-        const e = this.read(t, paths(id).request);
+        const e = this.read(t, paths2(id).request);
         const value2 = JSON.parse(e.payload);
         if (value2?.kind === "batch") return batchEntry(batchPublishPayloadSchema.parse(value2));
         const p = publishPayloadSchema.parse(value2);
@@ -30134,15 +32199,16 @@ var Publisher = class _Publisher {
     };
     const c = this.git.commit(
       old,
-      { ...oldTree, "bundle.json": this.git.writeBlob(json3(bundle)) },
+      { ...oldTree, "bundle.json": this.git.writeBlob(json5(bundle)) },
       `Bundle ${h}`,
       appCredits
     );
     this.git.cas(ref, old, c);
   }
-  async run() {
+  async run(syncGlobals = true) {
     const start = this.options.now();
     try {
+      if (syncGlobals) await new GlobalsPublisher(this).drain();
       if (this.queue(this.head(this.options.dataBranch)).length) this.bundle();
       for (let n = 0; n < 20 && this.options.now() - start < 20 * 6e4; n++) {
         const [id] = this.queue(this.head(this.options.dataBranch));
@@ -30157,7 +32223,7 @@ var Publisher = class _Publisher {
 
 // scripts/publisher/pipeline.ts
 import { execFileSync as execFileSync2 } from "node:child_process";
-import { createHash as createHash2, createPublicKey as createPublicKey2 } from "node:crypto";
+import { createHash as createHash3, createPublicKey as createPublicKey2 } from "node:crypto";
 import { mkdtempSync as mkdtempSync2, mkdirSync, readFileSync, rmSync as rmSync2, writeFileSync } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
 import { join as join2, resolve as resolve2 } from "node:path";
@@ -30215,14 +32281,14 @@ var RemoteRepository = class extends LocalRepository {
       return void 0;
     }
     this.remoteGit(["fetch", "--no-tags", this.remote, ref]);
-    const oid2 = this.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
-    this.git(["update-ref", ref, oid2]);
-    return oid2;
+    const oid4 = this.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
+    this.git(["update-ref", ref, oid4]);
+    return oid4;
   }
   cas(ref, old, next) {
     this.validate(ref);
-    for (const oid2 of [old, next])
-      if (oid2 !== void 0 && !/^[0-9a-f]{40}$/.test(oid2)) throw new Error("Invalid object ID");
+    for (const oid4 of [old, next])
+      if (oid4 !== void 0 && !/^[0-9a-f]{40}$/.test(oid4)) throw new Error("Invalid object ID");
     const candidate = ref.startsWith("refs/heads/publish-candidate/");
     if (!candidate && (!next || old && !this.ancestor(old, next)))
       throw new Error("Data/live/bundle refs must advance monotonically");
@@ -30245,6 +32311,36 @@ var RemoteRepository = class extends LocalRepository {
       throw error62;
     }
     this.git(next ? ["update-ref", ref, next] : ["update-ref", "-d", ref]);
+  }
+  casMany(updates) {
+    if (updates.length !== 2 || !updates.some(({ ref }) => ref === "refs/heads/editor-data") || !updates.some(({ ref }) => ref === "refs/heads/converter-v2-test"))
+      throw new Error("Atomic publication outside held scope");
+    for (const { ref, old, next } of updates) {
+      this.validate(ref);
+      if (!/^[a-f0-9]{40}$/.test(old) || !/^[a-f0-9]{40}$/.test(next) || old === next || !this.ancestor(old, next))
+        throw new Error("Atomic publication must advance both branches");
+      if (this.head(ref) !== old) throw new RefRace("Atomic publication raced");
+    }
+    try {
+      this.remoteGit([
+        "push",
+        "--atomic",
+        "--porcelain",
+        ...updates.map(({ ref, old }) => `--force-with-lease=${ref}:${old}`),
+        this.remote,
+        ...updates.map(({ ref, next }) => `${next}:${ref}`)
+      ]);
+      const confirmed = updates.map(({ ref }) => this.head(ref));
+      if (!updates.every(({ next }, index) => confirmed[index] === next))
+        throw new TransportUnresolved("Atomic publication requires reconciliation");
+    } catch (error62) {
+      const observed = updates.map(({ ref }) => this.head(ref));
+      if (updates.every(({ next }, index) => observed[index] === next)) return;
+      if (updates.some(({ old }, index) => observed[index] !== old))
+        throw new RefRace("Atomic publication raced or landed");
+      throw error62;
+    }
+    for (const { ref, next } of updates) this.git(["update-ref", ref, next]);
   }
 };
 
@@ -30299,9 +32395,9 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       "refs/remotes/origin/"
     ]);
     for (const line of refs.trim().split("\n")) {
-      const [ref, oid2] = line.split(" ");
+      const [ref, oid4] = line.split(" ");
       if (ref.endsWith("/HEAD")) continue;
-      command(["update-ref", ref.replace("refs/remotes/origin/", "refs/heads/"), oid2]);
+      command(["update-ref", ref.replace("refs/remotes/origin/", "refs/heads/"), oid4]);
     }
     const remoteNames = new Set(
       refs.split("\n").map((l) => l.split(" ")[0].replace("refs/remotes/origin/", "refs/heads/"))
@@ -30336,6 +32432,7 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   const options = { ...config2, publicKey: "", now: Date.now };
   try {
     const initial = snapshot("initial");
+    if (enabled) await new GlobalsPublisher(new Publisher(initial, options)).drain();
     publishBundle(initial, options);
     const bases = gitAt(initial.path, ["for-each-ref", "--format=%(objectname)", "refs/heads/"]).trim().split("\n");
     try {
@@ -30347,11 +32444,11 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       });
       if (!response.ok) throw new Error("Worker key unavailable");
       const key = await response.json();
-      const fingerprint = createHash2("sha256").update(createPublicKey2(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
+      const fingerprint = createHash3("sha256").update(createPublicKey2(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
       if (key.algorithm !== "Ed25519" || fingerprint !== config2.keyFingerprint || key.fingerprint !== fingerprint)
         throw new Error("Worker key fingerprint mismatch");
       options.publicKey = key.publicKey;
-      await new Publisher(initial, options).run();
+      await new Publisher(initial, options).run(!enabled);
     } catch (e) {
       failure2 = e;
     }
@@ -30394,7 +32491,7 @@ Pending requests stay durable. The client may kick once after 3 minutes; maintai
 }
 function verifyRuntime(root) {
   const pin = JSON.parse(readFileSync(join2(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash2("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  if (!/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash3("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
@@ -30407,7 +32504,12 @@ async function main() {
     const options = JSON.parse(readFileSync2(config2, "utf8"));
     if (options.publisherSha !== pin.sourceSha || !/^[0-9a-f]{40}$/.test(options.generatorSha))
       throw new Error("Config requires the publisher source PIN and full generator commit");
-    await runPipeline(source, options, output2, flag === "--pipeline-publish");
+    await runPipeline(
+      source,
+      { ...options, publisherDigest: pin.sha256 },
+      output2,
+      flag === "--pipeline-publish"
+    );
     return;
   }
   if (flag !== "--dry-run" || !source || !config2 || !output2)
@@ -30428,7 +32530,12 @@ async function main() {
     });
     const git = new LocalRepository(repo);
     const options = JSON.parse(readFileSync2(config2, "utf8"));
-    const publisher = new Publisher(git, { ...options, now: Date.now });
+    const pin = verifyRuntime(dirname(fileURLToPath(import.meta.url)));
+    const publisher = new Publisher(git, {
+      ...options,
+      publisherDigest: pin.sha256,
+      now: Date.now
+    });
     let failure2;
     try {
       await publisher.run();
