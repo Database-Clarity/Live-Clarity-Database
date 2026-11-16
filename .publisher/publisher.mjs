@@ -9,8 +9,8 @@ var __esm = (fn, res, err) => function __init() {
   }
 };
 var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
+  for (var name2 in all)
+    __defProp(target, name2, { get: all[name2], enumerable: true });
 };
 
 // packages/core/src/markup/arithmetic.ts
@@ -563,12 +563,12 @@ function merge(a, b) {
   });
   return clone(a, def);
 }
-function partial(Class2, schema, mask, name = "partial") {
+function partial(Class2, schema, mask, name2 = "partial") {
   const currDef = schema._zod.def;
   const checks = currDef.checks;
   const hasChecks = checks && checks.length > 0;
   if (hasChecks) {
-    throw new Error(`.${name}() cannot be used on object schemas containing refinements`);
+    throw new Error(`.${name2}() cannot be used on object schemas containing refinements`);
   }
   const selected = mask ? new Set(maskedKeys(schema, mask)) : void 0;
   const newShape = {};
@@ -1003,7 +1003,7 @@ function newError(Definition) {
   return new Definition();
 }
 // @__NO_SIDE_EFFECTS__
-function $constructor(name, initializer3, proto, params) {
+function $constructor(name2, initializer3, proto, params) {
   const zodProto = {};
   function Internals(def) {
     this.def = def;
@@ -1021,10 +1021,10 @@ function $constructor(name, initializer3, proto, params) {
       } finally {
         _zodDesc.value = void 0;
       }
-    } else if (inst._zod.traits.has(name)) {
+    } else if (inst._zod.traits.has(name2)) {
       return;
     }
-    inst._zod.traits.add(name);
+    inst._zod.traits.add(name2);
     initializer3(inst, def);
     if (initialized) {
       const own2 = Object.getPrototypeOf(inst);
@@ -1050,7 +1050,7 @@ function $constructor(name, initializer3, proto, params) {
   const Parent = params?.Parent ?? Object;
   class Definition extends Parent {
   }
-  Object.defineProperty(Definition, "name", { value: name });
+  Object.defineProperty(Definition, "name", { value: name2 });
   function _(def) {
     const inst = params?.Parent ? newError(Definition) : this;
     init(inst, def);
@@ -1071,10 +1071,10 @@ function $constructor(name, initializer3, proto, params) {
     value: (inst) => {
       if (params?.Parent && inst instanceof params.Parent)
         return true;
-      return inst?._zod?.traits?.has(name);
+      return inst?._zod?.traits?.has(name2);
     }
   });
-  Object.defineProperty(_, "name", { value: name });
+  Object.defineProperty(_, "name", { value: name2 });
   return _;
 }
 function config(newConfig) {
@@ -1098,8 +1098,8 @@ var init_core = __esm({
       }
     };
     $ZodEncodeError = class extends Error {
-      constructor(name) {
-        super(`Encountered unidirectional transform during encode: ${name}`);
+      constructor(name2) {
+        super(`Encountered unidirectional transform during encode: ${name2}`);
         this.name = "ZodEncodeError";
       }
     };
@@ -13112,13 +13112,13 @@ ${code}
   return fn;
 }
 function addConstant(ctx, value2) {
-  for (const [name2, v] of ctx.constants) {
+  for (const [name3, v] of ctx.constants) {
     if (v === value2)
-      return name2;
+      return name3;
   }
-  const name = `c${ctx.constantCounter++}`;
-  ctx.constants.set(name, value2);
-  return name;
+  const name2 = `c${ctx.constantCounter++}`;
+  ctx.constants.set(name2, value2);
+  return name2;
 }
 function addUserConstant(ctx, fn) {
   ctx.definite = false;
@@ -15911,9 +15911,9 @@ function undeclaredConstraint(member) {
     return null;
   return Object.keys(extra).length ? extra : null;
 }
-function foldObjects(members2) {
+function foldObjects(members3) {
   const objects = [];
-  for (const member of members2) {
+  for (const member of members3) {
     if (typeof member !== "object" || member.type !== "object")
       return null;
     for (const key in member) {
@@ -20657,7 +20657,9 @@ var init_legacy = __esm({
       itemName: external_exports.string().optional(),
       editor: external_exports.partialRecord(langSchema, external_exports.object({
         main: external_exports.string(),
-        secondary: external_exports.string()
+        secondary: external_exports.string(),
+        // Export provenance: English fallback retains English number formatting.
+        englishFallback: external_exports.literal(true).optional()
       }).strict()),
       updateTracker: external_exports.object({
         descriptions: external_exports.partialRecord(langSchema, trackerEntrySchema),
@@ -21277,10 +21279,10 @@ function scanBaseEnhanced(text, allowEmpty = false) {
     const base = arm();
     if (base !== null && text.slice(pos, pos + 2) === "}{") {
       pos += 2;
-      const enhanced = arm();
-      if (enhanced !== null && text.slice(pos, pos + 2) === "}}") {
+      const enhanced2 = arm();
+      if (enhanced2 !== null && text.slice(pos, pos + 2) === "}}") {
         cursor = pos + 2;
-        pairs.push({ from, to: cursor, base, enhanced });
+        pairs.push({ from, to: cursor, base, enhanced: enhanced2 });
         continue;
       }
     }
@@ -21315,8 +21317,8 @@ function extractBlocks(text, kind) {
   return Object.fromEntries(
     [...text.matchAll(pattern)].map(([block]) => {
       const lines = block.split("\n");
-      const name = lines[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
-      return [name, lines.slice(1, -1).join("\n")];
+      const name2 = lines[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
+      return [name2, lines.slice(1, -1).join("\n")];
     })
   );
 }
@@ -21376,10 +21378,14 @@ function markupCommentContext(text) {
   let offsets = Array.from({ length: text.length }, (_, index) => index);
   const comments = [];
   for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
+    const matches2 = text.matchAll(pattern);
+    let next = matches2.next();
+    if (next.done) continue;
     let remaining = "";
     let remainingOffsets = [];
     let last = 0;
-    for (const match of text.matchAll(pattern)) {
+    for (; !next.done; next = matches2.next()) {
+      const match = next.value;
       remaining += text.slice(last, match.index);
       remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
       if (index > 0) {
@@ -21425,15 +21431,15 @@ function resolveImports(text, globals, diagnostics) {
         text = text.replace(line, "");
         continue;
       }
-      const name = line.match(/(?<=import) .+ (?=from)/)?.[0].trim() ?? "";
+      const name2 = line.match(/(?<=import) .+ (?=from)/)?.[0].trim() ?? "";
       const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
       const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
       const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
-      const imported = name === "main" || name === "secondary" ? source : extractBlocks(source ?? "", "export")[name];
+      const imported = name2 === "main" || name2 === "secondary" ? source : extractBlocks(source ?? "", "export")[name2];
       if (imported === void 0 && visible) {
         diagnostics.push({
           severity: "error",
-          message: `Unresolved import "${name}" from ${from}.`
+          message: `Unresolved import "${name2}" from ${from}.`
         });
       }
       text = text.replace(line, () => imported ?? "");
@@ -21581,15 +21587,15 @@ function prepareNativeDocument(text, globals) {
   const globalTitles = extractBlocks(globals.titles, "title");
   for (const match of source.matchAll(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm)) {
     const firstLine = match[0].indexOf("\n");
-    const name = match[0].slice(0, firstLine).replace(/title|\(.*/gi, "").trim();
+    const name2 = match[0].slice(0, firstLine).replace(/title|\(.*/gi, "").trim();
     const body = nativeSlice(
       titlePieces,
       match.index + firstLine + 1,
       match.index + match[0].length - 2
     );
-    titles[name] = renderNative(body);
-    if (!Object.hasOwn(globalTitles, name) && body.some((piece) => typeof piece !== "string"))
-      nativeTitles[name] = body;
+    titles[name2] = renderNative(body);
+    if (!Object.hasOwn(globalTitles, name2) && body.some((piece) => typeof piece !== "string"))
+      nativeTitles[name2] = body;
   }
   return {
     text: renderNative(cleanNative(pieces)),
@@ -21732,7 +21738,7 @@ function freezeFormula(formula, english, numbers, translations) {
       ...variableReferences(source).map((ref) => ref.name)
     ];
     return [...locals].some(
-      (name) => names.some((other) => other !== name && (other.startsWith(name) || name.startsWith(other)))
+      (name2) => names.some((other) => other !== name2 && (other.startsWith(name2) || name2.startsWith(other)))
     );
   };
   const retiredSources = Object.values(numbers.retired).flatMap((value2) => value2 === null ? [] : [typeof value2 === "string" ? value2 : value2.value]).join("\n");
@@ -21780,14 +21786,14 @@ function freezeFormula(formula, english, numbers, translations) {
   for (const [lang, entry] of Object.entries(translations)) {
     if (lang === "en") continue;
     const definitions = numberVariables(entry.text);
-    const agrees = !(locals.size && (markupImports(entry.text).length || prefixAmbiguity(entry.text))) && [...locals].every((name) => {
-      const own2 = definitions.filter((variable) => variable.name === name);
+    const agrees = !(locals.size && (markupImports(entry.text).length || prefixAmbiguity(entry.text))) && [...locals].every((name2) => {
+      const own2 = definitions.filter((variable) => variable.name === name2);
       if (own2.length !== 1 || own2[0].ambiguous) return false;
-      const original = variables.find((variable) => variable.name === name);
+      const original = variables.find((variable) => variable.name === name2);
       const slot = slots.findIndex(
         (slot2) => slot2.from === original.from && slot2.value === original.value
       );
-      return own2[0].value === values.get(name) || slot >= 0 && own2[0].value === `#{=${numbers.ids[slot]}}`;
+      return own2[0].value === values.get(name2) || slot >= 0 && own2[0].value === `#{=${numbers.ids[slot]}}`;
     });
     if (!agrees) fallback.push(lang);
   }
@@ -21903,8 +21909,8 @@ function variableReferences(text, offset = 0) {
   }
   return found;
 }
-function isHolderName(name) {
-  const match = holderPattern.exec(name);
+function isHolderName(name2) {
+  const match = holderPattern.exec(name2);
   return match !== null && Number(match[1]) === match[2].length;
 }
 function reservedNames(text) {
@@ -21955,10 +21961,10 @@ function lowerConsumerMarkup(text, arrow) {
   const lowered = lowerDelimitedMarkup(lowerElementTags(text));
   return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
 }
-function mergedVariable(name, defined) {
-  if (defined(name)) return void 0;
-  for (let length = name.length - 1; length > 0; length--) {
-    const prefix = name.slice(0, length);
+function mergedVariable(name2, defined) {
+  if (defined(name2)) return void 0;
+  for (let length = name2.length - 1; length > 0; length--) {
+    const prefix = name2.slice(0, length);
     if (defined(prefix)) return prefix;
   }
   return void 0;
@@ -21975,7 +21981,7 @@ var init_braces = __esm({
     holderName = (word) => `Zb${word.length}w${word}`;
     holderPattern = /^Zb(\d+)w([a-zA-Z0-9]+)$/;
     reservedNamePattern = /^Zb\d+w/;
-    reservedNameMessage = (name) => `#${name} is a reserved name (braces generate names starting Zb<number>w): rename it.`;
+    reservedNameMessage = (name2) => `#${name2} is a reserved name (braces generate names starting Zb<number>w): rename it.`;
     delimited = /#\{([a-zA-Z0-9]+)\}|<enhanced\/>/g;
   }
 });
@@ -21985,8 +21991,8 @@ function weaponSectionHeadings(text) {
   return text.replace(/\r/g, "").split("\n").map((line) => {
     const header = line.match(/^\s*<weapons(?:\s+(.*?))?\s*>\s*$/i) ?? line.match(/^\s*<\s*(?:weapon type\s*)?\((.*?)\)\s*>\s*$/);
     if (header) {
-      const label = (header[1] || "Weapons").split(",").map((name) => {
-        const clean = name.trim();
+      const label = (header[1] || "Weapons").split(",").map((name2) => {
+        const clean = name2.trim();
         return clean.toLowerCase() === "other" ? "Other weapons" : Object.hasOwn(legacyNames2, clean.toLowerCase()) ? legacyNames2[clean.toLowerCase()] : clean;
       }).join(", ");
       return `<bold ${label} />`;
@@ -22020,10 +22026,10 @@ var init_weaponHeadings = __esm({
 
 // packages/core/src/markup/lines.ts
 function lineClasses(line, allowed2, offsets) {
-  const classNames = allowed2.filter((name) => line.includes(`<${name}/>`));
+  const classNames = allowed2.filter((name2) => line.includes(`<${name2}/>`));
   let cleanLine = line;
-  for (const name of classNames) {
-    const marker2 = `<${name}/>`;
+  for (const name2 of classNames) {
+    const marker2 = `<${name2}/>`;
     const index = cleanLine.indexOf(marker2);
     if (index !== -1) {
       cleanLine = cleanLine.slice(0, index) + cleanLine.slice(index + marker2.length);
@@ -22036,7 +22042,13 @@ function lineClasses(line, allowed2, offsets) {
   };
 }
 function markupInlineRanges(line) {
+  if (!line.includes("<")) return [];
   return [markupLineClasses, markupEmpty, []].flatMap((allowed2) => {
+    if (!allowed2.some((name2) => line.includes(`<${name2}/>`)))
+      return [...line.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
+        from: match.index,
+        to: match.index + match[0].length
+      }));
     const offsets = Array.from({ length: line.length }, (_, index) => index);
     const { cleanLine } = lineClasses(line, allowed2, offsets);
     return [...cleanLine.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
@@ -22169,7 +22181,7 @@ function tableRow(line, titles) {
         classNames: cell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => classes[char]).map((char) => classes[char]),
         cellContent: spans(trimMarked(cell.replace(/\|[bchr\d-]+|\|/, "")), titles).flatMap(
           (part) => {
-            if (!part.text?.trim() && !part.classNames?.some((name) => typeof name === "string"))
+            if (!part.text?.trim() && !part.classNames?.some((name2) => typeof name2 === "string"))
               return [];
             return [{ text: part.text, classNames: part.classNames, title: part.title }];
           }
@@ -22185,7 +22197,7 @@ function parseLines(text, titles) {
     if (block.startsWith("< table ")) {
       const rows = block.split("\n");
       if (rows.length < 3) return [];
-      const names = rows[0].replace(/< table | >/g, "").match(/(\w+)/g)?.filter((name) => markupTableClasses.includes(name));
+      const names = rows[0].replace(/< table | >/g, "").match(/(\w+)/g)?.filter((name2) => markupTableClasses.includes(name2));
       return [
         {
           table: rows.slice(1, -1).map((row) => tableRow(row, titles)),
@@ -22219,12 +22231,16 @@ var init_lines = __esm({
 
 // packages/core/src/markup/numberSlots.ts
 function numberProse(text) {
+  if (!text.includes("\r") && !text.includes("//") && !text.includes("/*")) return text;
+  const { comments } = markupCommentContext(text);
+  if (!comments.length) return text.replace(/\r/g, " ");
   const chars = text.split("");
-  for (const { from, to } of markupCommentContext(text).comments)
+  for (const { from, to } of comments)
     for (let at = from; at < to; at++) if (chars[at] !== "\n") chars[at] = " ";
   return chars.join("").replace(/\r/g, " ");
 }
 function numberMathRanges(text) {
+  if (!text.includes("${")) return [];
   const refs = new Map(variableReferences(text).map((ref) => [ref.from, ref.to]));
   const ranges = [];
   for (let from = text.indexOf("${"); from >= 0; from = text.indexOf("${", from + 2)) {
@@ -22241,8 +22257,8 @@ function numberMathRanges(text) {
   }
   return ranges;
 }
-function numberTargetRanges(line) {
-  return markupInlineRanges(line).flatMap((range) => {
+function numberTargetRanges(line, inline = markupInlineRanges(line)) {
+  return inline.flatMap((range) => {
     const token = line.slice(range.from, range.to);
     if (!/^<(?:link|title|formula) /.test(token)) return [];
     const target = /\[.+\]/.exec(token);
@@ -22290,7 +22306,8 @@ function numberSlots(text, hash2) {
     const isHeading = heading(trimmed);
     const scope = JSON.stringify([block, nearestHeading]);
     const skip = /^<\s.*>\s*$/.test(trimmed);
-    const excluded = [...variableReferences(line), ...numberTargetRanges(line)];
+    const inlineRanges = markupInlineRanges(line);
+    const excluded = [...variableReferences(line), ...numberTargetRanges(line, inlineRanges)];
     for (const tag of line.matchAll(/<\/?[a-zA-Z_]+[0-9]*(?=[\s/>])/g))
       excluded.push({ from: tag.index, to: tag.index + tag[0].length });
     if (inTable)
@@ -22298,7 +22315,7 @@ function numberSlots(text, hash2) {
         excluded.push({ from: mod.index, to: mod.index + mod[0].length });
     const math = new Map(numberMathRanges(line).map((range) => [range.from, range.to]));
     const pairs = scanBaseEnhanced(line).pairs;
-    const inline = markupInlineRanges(line).filter(
+    const inline = inlineRanges.filter(
       (range) => /^<pv[ep] /.test(line.slice(range.from, range.to))
     );
     const start = /^\s*var [a-zA-Z0-9]+ = /.exec(line)?.[0].length ?? 0;
@@ -22621,7 +22638,7 @@ function changedNumberSlots(before, after) {
     ).map((variable) => variable.name)
   );
   alignment.before.forEach((slot, i) => {
-    if (slot.kind === "M" && [...formulaLocals(slot.value, before)].some((name) => names.has(name)))
+    if (slot.kind === "M" && [...formulaLocals(slot.value, before)].some((name2) => names.has(name2)))
       changed.add(i);
   });
   return changed;
@@ -22782,15 +22799,15 @@ function merge3(base, head, next) {
   const original = new Set(base.associated);
   const theirs = new Set(head.associated);
   const mine = new Set(next.associated);
-  const members2 = new Set(
+  const members3 = new Set(
     [...original, ...theirs, ...mine].filter(
       (hash2) => original.has(hash2) ? theirs.has(hash2) && mine.has(hash2) : theirs.has(hash2) || mine.has(hash2)
     )
   );
   const sameOrder = (a, b) => a.length === b.length && a.every((hash2, index) => hash2 === b[index]);
-  const associated = sameOrder(head.associated, base.associated) ? next.associated.filter((hash2) => members2.has(hash2)) : sameOrder(next.associated, base.associated) ? head.associated.filter((hash2) => members2.has(hash2)) : [
-    ...next.associated.filter((hash2) => members2.has(hash2)),
-    ...head.associated.filter((hash2) => members2.has(hash2) && !mine.has(hash2))
+  const associated = sameOrder(head.associated, base.associated) ? next.associated.filter((hash2) => members3.has(hash2)) : sameOrder(next.associated, base.associated) ? head.associated.filter((hash2) => members3.has(hash2)) : [
+    ...next.associated.filter((hash2) => members3.has(hash2)),
+    ...head.associated.filter((hash2) => members3.has(hash2) && !mine.has(hash2))
   ];
   if (conflicts.length) return { ok: false, conflicts };
   return { ok: true, merged: tooltipSchema.parse({ ...merged, text, associated }) };
@@ -23071,7 +23088,7 @@ var init_schemas4 = __esm({
     });
     batchSchema = external_exports.object({
       id: batchIdSchema,
-      name: external_exports.string().min(1).max(scheduleLimits.nameLength).refine((name) => name.trim() === name, "Name has surrounding spaces"),
+      name: external_exports.string().min(1).max(scheduleLimits.nameLength).refine((name2) => name2.trim() === name2, "Name has surrounding spaces"),
       createdBy: userSchema,
       createdAt: timestampSchema,
       /** +1 on EVERY write to the batch; clients send it as their CAS expectation. */
@@ -23208,8 +23225,8 @@ var init_schemas4 = __esm({
 // packages/core/src/schedule/digest.ts
 async function sha256(text) {
   const bytes = new TextEncoder().encode(text);
-  const digest2 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest2), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest3 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest3), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 function approvedProposal({ base, proposed }) {
   if (base === null) return withoutTranslations(proposed);
@@ -23218,8 +23235,8 @@ function approvedProposal({ base, proposed }) {
     value2 = withField(value2, proposed, field);
   return value2;
 }
-function approvalInput(members2) {
-  const sorted = [...members2].sort((a, b) => a.hash - b.hash);
+function approvalInput(members3) {
+  const sorted = [...members3].sort((a, b) => a.hash - b.hash);
   for (const [index, member] of sorted.entries()) {
     if (index > 0 && sorted[index - 1].hash === member.hash)
       throw new Error(`Duplicate member ${member.hash}`);
@@ -23235,8 +23252,8 @@ function approvalInput(members2) {
     }))
   });
 }
-function approvedDigest(members2) {
-  return sha256(approvalInput(members2));
+function approvedDigest(members3) {
+  return sha256(approvalInput(members3));
 }
 function batchIntentDigest(value2) {
   return sha256(
@@ -23653,11 +23670,11 @@ var LocalRepository = class {
       return void 0;
     }
   }
-  tree(commit) {
-    const cached2 = this.trees.get(commit);
+  tree(commit2) {
+    const cached2 = this.trees.get(commit2);
     if (cached2) return { ...cached2 };
     const tree = Object.fromEntries(
-      this.git(["ls-tree", "-rz", "--full-tree", commit]).split("\0").filter(Boolean).map((line) => {
+      this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
         const [meta3, path] = line.split("	");
         const [mode, type, oid] = meta3.split(" ");
         if (!this.preserveModes && (mode !== "100644" || type !== "blob"))
@@ -23665,7 +23682,7 @@ var LocalRepository = class {
         return [path, oid];
       })
     );
-    this.trees.set(commit, tree);
+    this.trees.set(commit2, tree);
     return { ...tree };
   }
   blob(oid) {
@@ -23704,7 +23721,7 @@ var LocalRepository = class {
         env
       );
       const root = this.git(["write-tree"], void 0, env).trim();
-      const commit = this.git(
+      const commit2 = this.git(
         ["commit-tree", root, ...parent ? ["-p", parent] : []],
         message,
         credits ? {
@@ -23714,8 +23731,8 @@ var LocalRepository = class {
           GIT_COMMITTER_EMAIL: credits.committer.email
         } : {}
       ).trim();
-      this.trees.set(commit, { ...tree });
-      return commit;
+      this.trees.set(commit2, { ...tree });
+      return commit2;
     } finally {
       rmSync(temp, { recursive: true, force: true });
     }
@@ -23754,11 +23771,11 @@ var LocalRepository = class {
       "--",
       path
     ]).split("\n");
-    let commit = "";
+    let commit2 = "";
     const entries = [];
     for (const line of lines) {
-      if (/^[0-9a-f]{40}$/.test(line)) commit = line;
-      else if (line) entries.push({ commit, path: line });
+      if (/^[0-9a-f]{40}$/.test(line)) commit2 = line;
+      else if (line) entries.push({ commit: commit2, path: line });
     }
     return entries;
   }
@@ -24135,8 +24152,8 @@ var converterSettings = {
     optional: false
   }
 };
-var getSettings = (name) => {
-  const settings = converterSettings[name];
+var getSettings = (name2) => {
+  const settings = converterSettings[name2];
   const includedClassNames = settings.getFromDescription.includeClassNames || allClassNames;
   return {
     ...settings,
@@ -24177,7 +24194,7 @@ var expandAliases = (perks) => {
 };
 var getAliasOutput = (settings, stub) => {
   if (settings.aliases === "reference") return "reference";
-  return stub.aliasKind === "frame" ? "copy" : "skip";
+  return stub.aliasKind === "frame" || stub.aliasKind === "name" ? "copy" : "skip";
 };
 
 // packages/export/src/converter/converterFunctions/validateReferences.ts
@@ -24386,9 +24403,9 @@ var legacyWeaponTypeNames = {
   sniper: "Sniper Rifle",
   trace: "Trace Rifle"
 };
-var canonicalByLowercase = new Map(allWeaponTypeNames.map((name) => [name.toLowerCase(), name]));
-var canonicalWeaponType = (name, legacy = false) => {
-  const key = name.trim().replace(/\s+/g, " ").toLowerCase();
+var canonicalByLowercase = new Map(allWeaponTypeNames.map((name2) => [name2.toLowerCase(), name2]));
+var canonicalWeaponType = (name2, legacy = false) => {
+  const key = name2.trim().replace(/\s+/g, " ").toLowerCase();
   return canonicalByLowercase.get(key) ?? (legacy ? legacyWeaponTypeNames[key] : void 0);
 };
 var legacyNames = weaponTypes.map((legacyName) => ({ legacyName, name: canonicalWeaponType(legacyName, true) }));
@@ -24429,9 +24446,9 @@ var loadExports = (descriptionData) => {
           from: ""
         };
       }
-      const name = importLine.match(/(?<=import) .+ (?=from)/)?.[0].trim();
+      const name2 = importLine.match(/(?<=import) .+ (?=from)/)?.[0].trim();
       const from = importLine.match(/(?<=from) (\d+|global)/)?.[0].trim();
-      if (name === void 0 || from === void 0) return [];
+      if (name2 === void 0 || from === void 0) return [];
       return {
         line: importLine,
         name: importLine.match(/(?<=import) .+ (?=from)/)?.[0].trim() || "",
@@ -24440,17 +24457,17 @@ var loadExports = (descriptionData) => {
     });
   };
   const replaceImports = (importsInDescription) => {
-    importsInDescription.forEach(({ line, name, from }) => {
+    importsInDescription.forEach(({ line, name: name2, from }) => {
       const editorToImportFrom = editorType === "main" ? "secondary" : "main";
-      if (name === "self") {
+      if (name2 === "self") {
         const imported2 = database[hash2]?.editor[language]?.[editorToImportFrom];
         if (imported2 === void 0) throw new Error(`Missing self import for ${hash2}/${language}/${editorToImportFrom}`);
         description = description.replace(line, () => imported2.trim());
         return;
       }
-      if (name === "main" || name === "secondary") {
-        const imported2 = database[from]?.editor[language]?.[name];
-        if (imported2 === void 0) throw new Error(`Missing import ${name} from ${from} for ${hash2}/${language}`);
+      if (name2 === "main" || name2 === "secondary") {
+        const imported2 = database[from]?.editor[language]?.[name2];
+        if (imported2 === void 0) throw new Error(`Missing import ${name2} from ${from} for ${hash2}/${language}`);
         description = description.replace(line, () => imported2);
         return;
       }
@@ -24459,13 +24476,13 @@ var loadExports = (descriptionData) => {
           ...getExports(database[1]?.editor[language]?.main || ""),
           ...getExports(database[1]?.editor[language]?.secondary || "")
         ]);
-        const imported2 = globalExports.get(name);
-        if (imported2 === void 0) throw new Error(`Missing global export ${name} for ${hash2}/${language}`);
+        const imported2 = globalExports.get(name2);
+        if (imported2 === void 0) throw new Error(`Missing global export ${name2} for ${hash2}/${language}`);
         description = description.replace(line, () => imported2);
         return;
       }
-      const imported = getExports(database[from]?.editor[language]?.[editorToImportFrom] || "").get(name);
-      if (imported === void 0) throw new Error(`Missing export ${name} from ${from} for ${hash2}/${language}`);
+      const imported = getExports(database[from]?.editor[language]?.[editorToImportFrom] || "").get(name2);
+      if (imported === void 0) throw new Error(`Missing export ${name2} from ${from} for ${hash2}/${language}`);
       description = description.replace(line, () => imported);
     });
   };
@@ -24667,8 +24684,8 @@ var separateTableWeaponType = (description, titles) => {
   const ordinary = description.replace(/\r/g, "").split("\n").map((line) => {
     const header = line.match(/^\s*<weapons(?:\s+(.*?))?\s*>\s*$/i) ?? line.match(/^\s*<\s*(?:weapon type\s*)?\((.*?)\)\s*>\s*$/);
     if (header) {
-      const label = (header[1] || "Weapons").split(",").map((name) => {
-        const clean = name.trim();
+      const label = (header[1] || "Weapons").split(",").map((name2) => {
+        const clean = name2.trim();
         const key = clean.toLowerCase();
         return key === "other" ? "Other weapons" : Object.hasOwn(legacyNames3, key) ? legacyNames3[key] : clean;
       }).join(", ");
@@ -24720,9 +24737,7 @@ var prepareDescription = (descriptionData) => {
   description = removePerkSpecificText(description, database[hash2].type);
   description = loadVariables({ ...descriptionData, descriptionString: description });
   const titles = extractTitles(removeUnusedText2(description, false));
-  const editor = database[hash2].editor;
-  const numberLanguage = editor[language]?.main === editor.en?.main ? "en" : language;
-  description = doMath(description, numberLanguage);
+  description = doMath(description, database[hash2].editor[language]?.englishFallback ? "en" : language);
   return {
     preparedDescription: removeUnusedText2(description.trim()),
     titles: {
@@ -25126,7 +25141,7 @@ function parseWith(text, globals, lower2) {
   };
   const prepared = prepareMarkup(text, globals, diagnostics);
   const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
-    ([name, content]) => prepared.nativeTitles[name] ? prepareNativeTitle(prepared.nativeTitles[name], globals) : prepareMarkup(content, globals, []).text
+    ([name2, content]) => prepared.nativeTitles[name2] ? prepareNativeTitle(prepared.nativeTitles[name2], globals) : prepareMarkup(content, globals, []).text
   ) : Object.values(prepared.titles).map((content) => prepareMarkup(content, globals, []).text);
   for (const tag of new Set([prepared.text, ...titleBodies].flatMap(markupStrayTags))) {
     diagnostics.push({
@@ -25135,15 +25150,15 @@ function parseWith(text, globals, lower2) {
     });
   }
   const titles = {};
-  for (const [name, content] of Object.entries(prepared.titles)) {
-    const native = prepared.nativeTitles?.[name];
+  for (const [name2, content] of Object.entries(prepared.titles)) {
+    const native = prepared.nativeTitles?.[name2];
     const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
     if (native) {
       for (const variable of new Set(markupVariableReferences(body))) {
         diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
       }
     }
-    titles[name] = parseLines(body, {});
+    titles[name2] = parseLines(body, {});
   }
   return { lines: parseLines(prepared.text, titles), diagnostics };
 }
@@ -25167,14 +25182,14 @@ function markupDefinitions(text) {
   const clean = markupCommentContext(text);
   for (const match of clean.text.matchAll(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm)) {
     const header = match[0].split("\n")[0];
-    const name = header.replace(/title|\(.*/gi, "").trim();
+    const name2 = header.replace(/title|\(.*/gi, "").trim();
     const prefix = header.match(/^title +/)?.[0].length ?? 0;
     const spelled = header.slice(prefix).replace(/ *\(.*$/, "");
     const start = match.index + prefix;
-    if (!name || !spelled) continue;
+    if (!name2 || !spelled) continue;
     found.push({
       kind: "title",
-      name,
+      name: name2,
       from: clean.offsets[start],
       to: clean.offsets[start + spelled.length - 1] + 1
     });
@@ -25397,13 +25412,13 @@ var markupTags = [
     usage: /<pvp /,
     about: "A PvP-only value, shown in brackets."
   },
-  ...["yellow"].map((name) => ({
-    id: `tag:${name}`,
-    label: `<${name} />`,
-    template: `<${name} {{1:text}} />`,
-    keywords: name,
-    usage: new RegExp(`<${name} `),
-    about: `${name[0].toUpperCase()}${name.slice(1)} text.`
+  ...["yellow"].map((name2) => ({
+    id: `tag:${name2}`,
+    label: `<${name2} />`,
+    template: `<${name2} {{1:text}} />`,
+    keywords: name2,
+    usage: new RegExp(`<${name2} `),
+    about: `${name2[0].toUpperCase()}${name2.slice(1)} text.`
   })),
   {
     id: "tag:bold",
@@ -25457,19 +25472,19 @@ var styleAbout = {
 };
 var retiredLineStyles = markupRetiredLineStyles;
 var markupSymbols = [
-  ...markupIcons.map((name) => ({
-    id: `icon:${name}`,
-    name,
-    keywords: `${name} icon`,
-    usage: new RegExp(`<${name}/>`),
-    about: iconAbout[name] ?? "Icon."
+  ...markupIcons.map((name2) => ({
+    id: `icon:${name2}`,
+    name: name2,
+    keywords: `${name2} icon`,
+    usage: new RegExp(`<${name2}/>`),
+    about: iconAbout[name2] ?? "Icon."
   })),
-  ...markupEmpty.filter((name) => !retiredLineStyles.includes(name)).map((name) => ({
-    id: `style:${name}`,
-    name,
-    keywords: `${name} line style`,
-    usage: new RegExp(`<${name}/>`),
-    about: styleAbout[name] ?? "Line style."
+  ...markupEmpty.filter((name2) => !retiredLineStyles.includes(name2)).map((name2) => ({
+    id: `style:${name2}`,
+    name: name2,
+    keywords: `${name2} line style`,
+    usage: new RegExp(`<${name2}/>`),
+    about: styleAbout[name2] ?? "Line style."
   }))
 ];
 
@@ -25480,7 +25495,7 @@ var pair = new RegExp(String.raw`(?<![\w.])(${value}) +\[(${value})\]`, "g");
 var bareNumber = new RegExp(String.raw`^\s*(${value})\s*$`);
 var bracketed = new RegExp(String.raw`^\s*\[(${value})\]\s*$`);
 var valueList = new RegExp(String.raw`^\s*${value}(?:\s*,\s*${value}){1,}\s*$`);
-var iconNames = new Map(markupIcons.map((name) => [name.toLowerCase(), name]));
+var iconNames = new Map(markupIcons.map((name2) => [name2.toLowerCase(), name2]));
 
 // packages/core/src/markup/index.ts
 init_baseEnhanced();
@@ -25571,7 +25586,7 @@ var quick = /(?:blue|green|purple|center|breakSpaces|background)\b|^(?:catalyst|
 var converterToken = /<.+?\/>/g;
 var marker = new RegExp(`^<(${retiredMarkers.join("|")})\\s*/>$`);
 var wrapper = new RegExp(`^<(${retiredWrappers.join("|")})\\s+([\\s\\S]*?)\\s*/>$`);
-var noun = (name) => `<${name} \u2026 />`;
+var noun = (name2) => `<${name2} \u2026 />`;
 var retired = (token, advice) => `Retired markup ${token}: no longer supported. ${advice}`;
 function markerEdit(line, lineFrom, from, to) {
   const start = from - lineFrom;
@@ -25585,15 +25600,15 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
   const to = from + token.length;
   const bare = marker.exec(token);
   if (bare) {
-    const name2 = bare[1];
+    const name3 = bare[1];
     return {
       kind: "marker",
-      name: name2,
-      token: `<${name2}/>`,
+      name: name3,
+      token: `<${name3}/>`,
       source: token,
       from,
       to,
-      message: retired(`<${name2}/>`, "Remove the marker."),
+      message: retired(`<${name3}/>`, "Remove the marker."),
       fixes: [
         {
           id: "remove-marker",
@@ -25606,7 +25621,7 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
   }
   const wrapped = wrapper.exec(token);
   if (!wrapped) return null;
-  const name = wrapped[1];
+  const name2 = wrapped[1];
   const inner = wrapper.exec(sourceToken)?.[2] ?? wrapped[2];
   const fixes = [
     {
@@ -25616,7 +25631,7 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
       edits: [{ from, to, insert: inner }]
     }
   ];
-  if (retiredColours.includes(name))
+  if (retiredColours.includes(name2))
     fixes.push({
       id: "to-yellow",
       label: "Change to yellow",
@@ -25625,14 +25640,14 @@ function tokenOccurrence(token, line, lineFrom, from, sourceToken = token) {
     });
   return {
     kind: "wrapper",
-    name,
-    token: noun(name),
+    name: name2,
+    token: noun(name2),
     source: token,
     from,
     to,
     message: retired(
-      noun(name),
-      retiredColours.includes(name) ? "Remove the tag (the text stays) or change it to <yellow \u2026 />." : "Remove the tag (the text stays)."
+      noun(name2),
+      retiredColours.includes(name2) ? "Remove the tag (the text stays) or change it to <yellow \u2026 />." : "Remove the tag (the text stays)."
     ),
     fixes
   };
@@ -25743,11 +25758,11 @@ function placementCandidates(source) {
   for (const line of text.split("\n")) {
     let clean = line;
     const positions = offsets.slice(lineFrom, lineFrom + line.length);
-    for (const name of markupLineClasses) {
-      const token = `<${name}/>`;
+    for (const name2 of markupLineClasses) {
+      const token = `<${name2}/>`;
       const index = clean.indexOf(token);
       if (index !== -1) {
-        if (retiredMarkers.includes(name))
+        if (retiredMarkers.includes(name2))
           mapOccurrence(tokenOccurrence(token, clean, 0, index), positions);
         clean = clean.slice(0, index) + clean.slice(index + token.length);
         positions.splice(index, token.length);
@@ -25764,8 +25779,8 @@ function placementCandidates(source) {
 function parserNames(lines) {
   const names = [];
   const classes = (values) => {
-    for (const name of values ?? [])
-      if (name && (retiredMarkers.includes(name) || name === "table")) names.push(name);
+    for (const name2 of values ?? [])
+      if (name2 && (retiredMarkers.includes(name2) || name2 === "table")) names.push(name2);
   };
   const spans2 = (values) => {
     for (const span of values) {
@@ -25809,7 +25824,7 @@ function stripRetired(value2) {
       Object.entries(value2).sort(([a], [b]) => a.localeCompare(b)).flatMap(([key, item]) => {
         if (key === "classNames") {
           const classes = (item ?? []).filter(
-            (name) => name && !retiredMarkers.includes(name)
+            (name2) => name2 && !retiredMarkers.includes(name2)
           );
           return classes.length ? [[key, classes]] : [];
         }
@@ -25823,7 +25838,7 @@ function normalizedLines(lines) {
   return lines.flatMap((line) => {
     if (!line.table) return [stripRetired(line)];
     return line.table.map((row) => ({
-      classNames: (line.classNames ?? []).filter((name) => name !== "table"),
+      classNames: (line.classNames ?? []).filter((name2) => name2 !== "table"),
       linesContent: (row.rowContent ?? []).flatMap((cell, index) => [
         ...index ? [{ text: " | " }] : [],
         ...cell.cellContent.map((span) => ({
@@ -25850,7 +25865,7 @@ function verifyFix(source, occurrence, fix) {
     return "The edit would change a source comment.";
   if (JSON.stringify(supportedTokens(source)) !== JSON.stringify(supportedTokens(next)))
     return "The edit would change supported markup.";
-  const type = markupConditions.find(([name]) => name === occurrence.name)?.[1];
+  const type = markupConditions.find(([name2]) => name2 === occurrence.name)?.[1];
   const before = parseMarkup(source, { variables: "", titles: "", type }).lines;
   const after = parseMarkup(next, { variables: "", titles: "", type }).lines;
   const normalize = fix.structural ? normalizedLines : stripRetired;
@@ -25860,7 +25875,7 @@ function verifyFix(source, occurrence, fix) {
     return "The edit does not remove a retired parser finding.";
   return void 0;
 }
-function fallbackBlock(source, name, count) {
+function fallbackBlock(source, name2, count) {
   const { text, offsets } = markupCommentContext(source);
   const tables = [...text.matchAll(/< table [\s\S]*?\n<\$>/g)].map((match) => ({
     from: offsets[match.index],
@@ -25875,37 +25890,37 @@ function fallbackBlock(source, name, count) {
   }
   const block = blocks.find(
     ({ from, to }) => parserNames(parseMarkup(source.slice(0, from) + source.slice(to)).lines).filter(
-      (value2) => value2 === name
+      (value2) => value2 === name2
     ).length < count
-  ) ?? blocks.find(({ from, to }) => source.slice(from, to).includes(name)) ?? blocks[0] ?? { from: 0, to: source.length };
+  ) ?? blocks.find(({ from, to }) => source.slice(from, to).includes(name2)) ?? blocks[0] ?? { from: 0, to: source.length };
   return { ...block, source: source.slice(block.from, block.to) };
 }
 function findRetiredMarkup(source) {
   const names = parserNames(parseMarkup(source).lines);
   const candidates = placementCandidates(source);
   const found = [];
-  for (const name of names) {
-    const count = names.filter((value2) => value2 === name).length;
+  for (const name2 of names) {
+    const count = names.filter((value2) => value2 === name2).length;
     const index = candidates.findIndex(
-      (item) => item.name === name && parserNames(parseMarkup(source.slice(0, item.from) + source.slice(item.to)).lines).filter(
-        (value2) => value2 === name
+      (item) => item.name === name2 && parserNames(parseMarkup(source.slice(0, item.from) + source.slice(item.to)).lines).filter(
+        (value2) => value2 === name2
       ).length < count
     );
     const candidate = index < 0 ? void 0 : candidates.splice(index, 1)[0];
     found.push(
       candidate ?? {
-        kind: name === "table" ? "table" : "wrapper",
-        name,
-        token: noun(name),
-        ...fallbackBlock(source, name, count),
-        message: retired(noun(name), "Fix by hand: an exact source token could not be mapped."),
+        kind: name2 === "table" ? "table" : "wrapper",
+        name: name2,
+        token: noun(name2),
+        ...fallbackBlock(source, name2, count),
+        message: retired(noun(name2), "Fix by hand: an exact source token could not be mapped."),
         fixes: [],
         refusalReason: "An exact source token could not be mapped."
       }
     );
   }
-  prepareMarkup(source, { variables: "", titles: "" }, [], (name, block) => {
-    if (name === "enhanced") return;
+  prepareMarkup(source, { variables: "", titles: "" }, [], (name2, block) => {
+    if (name2 === "enhanced") return;
     const from = source.indexOf(block);
     const mapped = from >= 0 && source.lastIndexOf(block) === from;
     const rangeFrom = Math.max(0, from);
@@ -25914,12 +25929,12 @@ function findRetiredMarkup(source) {
     const closeFrom = from + block.lastIndexOf("\n");
     found.push({
       kind: "condition",
-      name,
-      token: `${name} ( \u2026 )`,
+      name: name2,
+      token: `${name2} ( \u2026 )`,
       source: source.slice(rangeFrom, end),
       from: rangeFrom,
       to: end,
-      message: retired(`${name} ( \u2026 )`, "Keep its contents, or fix by hand."),
+      message: retired(`${name2} ( \u2026 )`, "Keep its contents, or fix by hand."),
       fixes: mapped ? [
         {
           id: "keep-contents",
@@ -25985,7 +26000,7 @@ function validateTextWithReads(text, lang, globals, requireEnglish, selfHash, al
   const issues = validateText(
     text,
     lang,
-    { ...globals, imports: catalog, onVariable: (name) => variables.add(name) },
+    { ...globals, imports: catalog, onVariable: (name2) => variables.add(name2) },
     requireEnglish,
     selfHash
   );
@@ -26006,9 +26021,9 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
     add("error", emptyEnglishMessage);
   }
   let names;
-  const defined = (name) => {
+  const defined = (name2) => {
     names ??= { ...extractVariables(text), ...extractVariables(globals.variables) };
-    return Object.hasOwn(names, name);
+    return Object.hasOwn(names, name2);
   };
   for (const diagnostic of parseMarkup(text, globals).diagnostics) {
     if (diagnostic.message === baseEnhancedMessage && text.includes("{{")) {
@@ -26133,11 +26148,11 @@ function variableNameIssues(text, defined, native) {
   const order = [
     ...new Set(
       markupVariableReferences(removeMarkupComments(lowerDelimitedMarkup(text))).map(
-        (name) => name.slice(1)
+        (name2) => name2.slice(1)
       )
     )
   ];
-  const at = (name) => references.find((ref) => ref.name === name);
+  const at = (name2) => references.find((ref) => ref.name === name2);
   for (const [index, earlier] of order.entries()) {
     if (!defined(earlier)) continue;
     for (const later of order.slice(index + 1)) {
@@ -26187,8 +26202,8 @@ function aliasStub(alias, aliases, catalog) {
   const entry = aliases[alias];
   if (!entry) return void 0;
   const facts = catalog?.[alias];
-  if (catalog && entry.kind === "frame" && !facts) {
-    throw new Error(`Missing manifest facts for frame alias ${alias}`);
+  if (catalog && (entry.kind === "frame" || entry.kind === "name") && !facts) {
+    throw new Error(`Missing manifest facts for ${entry.kind} alias ${alias}`);
   }
   return {
     hash: Number(alias),
@@ -26198,10 +26213,9 @@ function aliasStub(alias, aliases, catalog) {
   };
 }
 var isRecord = (value2) => typeof value2 === "object" && value2 !== null;
-function mergeLivePerks(live, entries, picks) {
+function mergeLivePerks(live, entries, picks, groups) {
   const merged = { ...live, ...entries };
-  if (!picks) return merged;
-  for (const key of picks.keys) {
+  for (const key of picks?.keys ?? []) {
     if (Object.hasOwn(entries, key)) continue;
     const current = merged[key];
     if (isRecord(current) && !("aliasOf" in current)) continue;
@@ -26209,6 +26223,27 @@ function mergeLivePerks(live, entries, picks) {
     const target = stub && merged[String(stub.aliasOf)];
     if (stub && isRecord(target) && !("aliasOf" in target)) merged[key] = stub;
     else delete merged[key];
+  }
+  if (groups) {
+    const keys = /* @__PURE__ */ new Set([
+      ...Object.keys(live).filter((key) => {
+        const entry = live[key];
+        return isRecord(entry) && "aliasOf" in entry && (entry.aliasKind === "name" || groups.aliases[key] && resolveAlias(Number(key), groups.aliases) !== entry.aliasOf);
+      }),
+      ...Object.keys(groups.aliases).filter((key) => groups.aliases[key]?.kind === "name")
+    ]);
+    for (const key of keys) {
+      if (Object.hasOwn(entries, key)) continue;
+      const stub = aliasStub(key, groups.aliases, groups.catalog);
+      const target = stub && merged[String(stub.aliasOf)];
+      if (stub && isRecord(target) && !("aliasOf" in target)) merged[key] = stub;
+      else {
+        const current = merged[key];
+        if (groups.aliases[key]?.kind === "name" && isRecord(current) && !("aliasOf" in current))
+          throw new Error(`Publish canonical ${stub?.aliasOf} before grouping live tooltip ${key}`);
+        delete merged[key];
+      }
+    }
   }
   return merged;
 }
@@ -26243,10 +26278,15 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
     for (const language of languages2) {
       const translation = tooltip.text[language];
       if (!translation) continue;
-      const exported = usesEnglishFallback(tooltip, language) && english ? english : translation;
+      const englishFallback = usesEnglishFallback(tooltip, language);
+      const exported = englishFallback && english ? english : translation;
       const resolved = exported.text.includes("#{=") && english ? resolveNumberTokens(exported.text, numberValues(english, language)) : exported.text;
       const text = lowerConsumerMarkup(resolved);
-      editor[language] = { main: text, secondary: text };
+      editor[language] = {
+        main: text,
+        secondary: text,
+        ...englishFallback ? { englishFallback: true } : {}
+      };
       const old = tooltip.legacy?.updateTracker?.descriptions[language];
       descriptions[language] = {
         lastUpdate: Date.parse(exported.updatedAt),
@@ -26340,8 +26380,8 @@ async function publishableHash(tooltip, aliases = {}) {
       ...incoming.length ? { aliases: incoming } : {}
     })
   );
-  const digest2 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest2), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest3 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest3), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
 // packages/core/src/index.ts
@@ -26452,8 +26492,8 @@ async function inactivePublishableHash(tooltip, aliases, moves = {}) {
 }
 async function inactiveRemovalHash(hash2) {
   const bytes = new TextEncoder().encode(stableStringify({ inactive: hash2 }));
-  const digest2 = await crypto.subtle.digest("SHA-256", bytes);
-  return Array.from(new Uint8Array(digest2), (byte) => byte.toString(16).padStart(2, "0")).join("");
+  const digest3 = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest3), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 var unreviewedInactiveMessage = "Publish inactive move decisions in Review changes before scheduling or publishing this batch";
 async function hasUnpublishedInactiveMove(hash2, snapshot, pushed, aliases, moves) {
@@ -26608,6 +26648,217 @@ init_merge3();
 // packages/core/src/globals/index.ts
 init_languages();
 init_syntax();
+
+// packages/core/src/globals/model.ts
+init_zod();
+init_languages();
+init_legacy();
+init_schemas3();
+init_syntax();
+var globalIdSchema = external_exports.string().regex(/^g_[a-zA-Z0-9_-]{8,80}$/);
+var globalRevisionSchema = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
+var globalDigestSchema = external_exports.string().regex(/^[a-f0-9]{64}$/);
+var globalKindSchema = external_exports.enum(["variables", "titles"]);
+function validGlobalName(kind, name2) {
+  if (kind === "variables") return /^[a-zA-Z0-9]+$/.test(name2);
+  return /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)*$/.test(name2) && Object.hasOwn(extractBlocks(`title ${name2} (
+body
+)`, "title"), name2);
+}
+var sourceSchema = external_exports.object({
+  repository: external_exports.string().min(1),
+  revision: globalRevisionSchema,
+  path: external_exports.string().min(1),
+  /** JSON keys selecting the original decoded string; spans index its UTF-16 code units. */
+  selector: external_exports.array(external_exports.string()).min(1),
+  spanConvention: external_exports.literal("decoded-utf16"),
+  hash: external_exports.union([external_exports.literal(2), external_exports.literal(3)]),
+  lang: langSchema,
+  from: external_exports.number().int().nonnegative(),
+  to: external_exports.number().int().positive()
+}).strict().refine((v) => v.to > v.from, "Source span must be nonempty");
+var globalDefinitionSchema = external_exports.object({
+  /** Body only; an empty variable is serialized as the legacy `empty` value. */
+  body: external_exports.string(),
+  revision: globalRevisionSchema,
+  updatedAt: timestampSchema,
+  updatedBy: external_exports.string(),
+  sourceUpdatedAt: timestampSchema.optional(),
+  sourceRevision: globalRevisionSchema.optional(),
+  /** Present if and only if migrated. */
+  provenance: sourceSchema.optional()
+}).strict();
+var globalRecordSchema = external_exports.object({
+  version: external_exports.literal(1),
+  id: globalIdSchema,
+  kind: globalKindSchema,
+  name: external_exports.string().min(1),
+  revision: globalRevisionSchema,
+  definitions: external_exports.partialRecord(langSchema, globalDefinitionSchema),
+  nameHistory: external_exports.array(
+    external_exports.object({
+      name: external_exports.string().min(1),
+      revision: globalRevisionSchema,
+      at: timestampSchema,
+      by: external_exports.string().min(1)
+    }).strict()
+  ),
+  tombstone: external_exports.object({ at: timestampSchema, by: external_exports.string().min(1) }).strict().optional()
+}).strict().superRefine((record2, ctx) => {
+  if (!validGlobalName(record2.kind, record2.name))
+    ctx.addIssue({ code: "custom", message: "Name cannot round-trip through the resolver" });
+  for (const [lang, definition] of Object.entries(record2.definitions)) {
+    if (definition.provenance && (definition.provenance.lang !== lang || definition.provenance.hash !== (record2.kind === "variables" ? 2 : 3)))
+      ctx.addIssue({ code: "custom", message: "Definition provenance kind/language mismatch" });
+    if (record2.kind === "variables" && /[\r\n]/.test(definition.body))
+      ctx.addIssue({ code: "custom", message: "Variables must fit on one line" });
+    if (record2.kind === "titles" && !definition.body.trim())
+      ctx.addIssue({ code: "custom", message: "Title bodies must not be empty" });
+  }
+});
+var globalSegmentSchema = external_exports.union([
+  external_exports.object({ literal: external_exports.string() }).strict(),
+  external_exports.object({
+    entryId: globalIdSchema,
+    beforeName: external_exports.string(),
+    afterName: external_exports.string(),
+    afterBody: external_exports.string()
+  }).strict()
+]);
+var globalAggregateSchema = external_exports.object({
+  document: external_exports.object(tooltipSchema.shape).omit({ text: true }).strict(),
+  languages: external_exports.partialRecord(
+    langSchema,
+    external_exports.object({
+      metadata: langTextSchema.omit({ text: true }),
+      segments: external_exports.array(globalSegmentSchema)
+    }).strict()
+  )
+}).strict();
+var globalStoreSchema = external_exports.object({
+  version: external_exports.literal(1),
+  entries: external_exports.array(globalRecordSchema),
+  aggregates: external_exports.array(globalAggregateSchema)
+}).strict().superRefine((store, ctx) => {
+  const ids = /* @__PURE__ */ new Set(), names = /* @__PURE__ */ new Set(), hashes = /* @__PURE__ */ new Set();
+  for (const entry of store.entries) {
+    if (ids.has(entry.id)) ctx.addIssue({ code: "custom", message: "Duplicate global ID" });
+    ids.add(entry.id);
+    const key = `${entry.kind}:${entry.name}`;
+    if (!entry.tombstone && names.has(key))
+      ctx.addIssue({ code: "custom", message: "Duplicate global name across languages" });
+    if (!entry.tombstone) names.add(key);
+  }
+  for (const aggregate of store.aggregates) {
+    const hash2 = aggregate.document.hash;
+    if (hash2 !== 2 && hash2 !== 3 || hashes.has(hash2))
+      ctx.addIssue({ code: "custom", message: "Expected unique aggregate hashes 2 and 3" });
+    hashes.add(hash2);
+    for (const [lang, layout] of Object.entries(aggregate.languages)) {
+      const seen = /* @__PURE__ */ new Set();
+      for (const segment of layout.segments) {
+        if (!("entryId" in segment)) continue;
+        const entry = store.entries.find((v) => v.id === segment.entryId);
+        if (!entry || entry.tombstone || entry.kind !== (hash2 === 2 ? "variables" : "titles") || !entry.definitions[lang] || seen.has(segment.entryId))
+          ctx.addIssue({ code: "custom", message: "Invalid or duplicate projection entry" });
+        seen.add(segment.entryId);
+      }
+      for (const entry of store.entries) {
+        if (!entry.tombstone && entry.kind === (hash2 === 2 ? "variables" : "titles") && entry.definitions[lang] && !seen.has(entry.id))
+          ctx.addIssue({ code: "custom", message: "Definition missing from projection" });
+      }
+    }
+  }
+  for (const entry of store.entries) {
+    if (entry.tombstone) continue;
+    for (const lang of Object.keys(entry.definitions))
+      if (!store.aggregates.some(
+        (a) => a.document.hash === (entry.kind === "variables" ? 2 : 3) && Object.hasOwn(a.languages, lang)
+      ))
+        ctx.addIssue({ code: "custom", message: "Missing language projection" });
+  }
+});
+var globalConsumerSchema = external_exports.object({
+  hash: hashSchema,
+  lang: langSchema,
+  destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/)
+}).strict();
+var globalCauseSchema = external_exports.object({
+  globalId: globalIdSchema,
+  beforeRevision: globalRevisionSchema.nullable(),
+  afterRevision: globalRevisionSchema.nullable()
+}).strict();
+var globalReviewSchema = external_exports.object({
+  version: external_exports.literal(1),
+  consumer: globalConsumerSchema,
+  causes: external_exports.array(globalCauseSchema).min(1),
+  contentDigest: globalDigestSchema,
+  dependencyDigest: globalDigestSchema,
+  acknowledgement: external_exports.object({
+    by: external_exports.string().min(1),
+    at: timestampSchema,
+    contentDigest: globalDigestSchema,
+    dependencyDigest: globalDigestSchema,
+    /** Binds the before/after rendered review, including its complete cause set. */
+    impactDigest: globalDigestSchema,
+    decision: external_exports.enum(["edited", "no-text-change"])
+  }).strict().optional()
+}).strict();
+
+// packages/core/src/globals/impactModel.ts
+init_zod();
+var globalReadSchema = external_exports.object({
+  imports: external_exports.array(external_exports.object({ key: external_exports.string(), hash: external_exports.number().int().nonnegative() }).strict()),
+  variables: external_exports.array(external_exports.string()),
+  /** All global titles are prepared, even when their display tag is absent. */
+  conservativeTitles: external_exports.literal(true)
+}).strict();
+var globalImpactRowSchema = external_exports.object({
+  consumer: globalConsumerSchema,
+  causes: external_exports.array(globalCauseSchema).min(1),
+  reason: external_exports.enum(["variable-read", "title-preparation", "aggregate-import", "unproven"]),
+  before: external_exports.object({ rendered: external_exports.string(), reads: globalReadSchema }).strict().nullable(),
+  after: external_exports.object({ rendered: external_exports.string(), reads: globalReadSchema }).strict().nullable()
+}).strict();
+var globalImpactSchema = external_exports.object({
+  version: external_exports.literal(1),
+  beforeRevision: globalRevisionSchema,
+  afterRevision: globalRevisionSchema,
+  complete: external_exports.boolean(),
+  blockers: external_exports.array(external_exports.string()),
+  rows: external_exports.array(globalImpactRowSchema)
+}).strict().refine((v) => v.complete === (v.blockers.length === 0), "Completeness requires no blockers");
+var globalImpactHeaderSchema = external_exports.object({
+  repository: external_exports.string().min(1),
+  revision: globalRevisionSchema,
+  aliases: aliasesSchema,
+  types: external_exports.record(external_exports.string(), external_exports.string()),
+  mode: external_exports.enum(["authored", "live"])
+}).strict();
+
+// packages/core/src/globals/projection.ts
+init_contentHash();
+init_prepare();
+init_syntax();
+init_schemas3();
+
+// packages/core/src/globals/references.ts
+init_prepare();
+init_braces();
+
+// packages/core/src/globals/transition.ts
+init_contentHash();
+init_braces();
+init_syntax();
+init_languages();
+
+// packages/core/src/globals/source.ts
+init_braces();
+init_map();
+
+// packages/core/src/globals/impact.ts
+init_prepare();
+init_schemas3();
 
 // packages/core/src/status/index.ts
 init_languages();
@@ -27890,8 +28141,61 @@ var syncedSettingsSchema = external_exports.object({
 init_zod();
 init_legacy();
 init_schemas3();
+init_contentHash();
+
+// packages/core/src/aliasGroupOperations.ts
+init_zod();
+init_legacy();
+var commit = external_exports.string().regex(/^[0-9a-f]{40}$/);
+var digest2 = external_exports.string().regex(/^[0-9a-f]{64}$/);
+var members2 = external_exports.array(hashSchema).min(2).max(256).refine((v) => new Set(v).size === v.length);
+var selection = {
+  canonical: hashSchema,
+  members: members2,
+  /** Compare with server-recomputed membership/facts digest, never trust client eligibility. */
+  factsDigest: digest2,
+  /** Single-group only. Server still refuses loss of a locale absent from canonical text. */
+  acknowledgeConflicts: external_exports.literal(true).optional(),
+  note: external_exports.string().max(500).optional()
+};
+var aliasGroupOperationSchema = external_exports.discriminatedUnion("op", [
+  external_exports.object({ op: external_exports.literal("accept"), ...selection }).strict(),
+  external_exports.object({ op: external_exports.literal("split"), ...selection }).strict(),
+  external_exports.object({
+    op: external_exports.literal("reject"),
+    members: members2,
+    factsDigest: digest2,
+    reason: external_exports.string().max(500).optional()
+  }).strict(),
+  external_exports.object({ op: external_exports.literal("ungroup"), canonical: hashSchema }).strict(),
+  external_exports.object({
+    op: external_exports.literal("setCanonical"),
+    canonical: hashSchema,
+    to: hashSchema,
+    acknowledgeConflicts: external_exports.literal(true).optional()
+  }).strict()
+]).superRefine((op, ctx) => {
+  if ((op.op === "accept" || op.op === "split") && !op.members.includes(op.canonical))
+    ctx.addIssue({ code: "custom", message: "Canonical must be a selected member" });
+  if (op.op === "setCanonical" && op.canonical === op.to)
+    ctx.addIssue({ code: "custom", message: "Canonical must change" });
+});
+var aliasGroupsRequestSchema = external_exports.object({
+  expectedHead: commit,
+  ops: external_exports.array(aliasGroupOperationSchema).min(1).max(100)
+}).strict();
+
+// packages/core/src/aliasGroups.ts
+var aliasGroupsPath = "config/alias-groups.json";
 var hashKey3 = external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((v) => Number(v) <= 4294967295);
 var actor = external_exports.object({ id: external_exports.string().min(1), login: external_exports.string().min(1) }).strict();
+var aliasGroupArchiveSchema = external_exports.object({
+  path: external_exports.string().regex(/^migration-archives\/alias-groups\/[0-9a-f]{40}\/(0|[1-9]\d*)\.json$/).refine((path) => Number(path.split("/").at(-1)?.replace(".json", "")) <= 4294967295),
+  files: external_exports.record(
+    hashKey3,
+    external_exports.string().regex(/^[0-9a-f]{40}$/).nullable()
+  ).refine((files) => Object.keys(files).length > 0)
+}).strict();
 var aliasGroupsSchema = external_exports.object({
   version: external_exports.literal(1),
   groups: external_exports.record(
@@ -27916,9 +28220,13 @@ var aliasGroupsSchema = external_exports.object({
       at: timestampSchema,
       reason: external_exports.string().optional()
     }).strict()
-  )
+  ),
+  archives: external_exports.array(aliasGroupArchiveSchema).optional()
 }).strict().superRefine((value2, ctx) => {
   const seen = /* @__PURE__ */ new Set();
+  const paths2 = value2.archives?.map((archive) => archive.path) ?? [];
+  if (new Set(paths2).size !== paths2.length)
+    ctx.addIssue({ code: "custom", message: "Duplicate alias archive path" });
   for (const [key, group] of Object.entries(value2.groups)) {
     if (!group.members.includes(Number(key)))
       ctx.addIssue({ code: "custom", message: "Canonical must be a member" });
@@ -27928,6 +28236,134 @@ var aliasGroupsSchema = external_exports.object({
     }
   }
 });
+var aliasGroupIssueSchema = external_exports.object({ canonical: hashSchema, member: hashSchema.optional(), reason: external_exports.string().min(1) }).strict();
+var aliasGroupsResponseSchema = external_exports.object({
+  head: external_exports.string().regex(/^[0-9a-f]{40}$/),
+  config: aliasGroupsSchema,
+  issues: external_exports.array(aliasGroupIssueSchema),
+  affectedCanonicals: external_exports.array(hashSchema).refine((v) => new Set(v).size === v.length)
+}).strict();
+var enhanced = (item) => !exotic(item) && (item.isEnhanced ?? item.categoryId.includes("-enhanced"));
+var exotic = (item) => item.exotic ?? item.categoryId.endsWith("-exotic");
+var name = (item) => item.name.trim().toLowerCase();
+var inScope = (item) => /^(weapon-(perk|trait|mod)|armor-mod|subclass)(-|$)/.test(item.categoryId);
+var subclass = (item) => /^subclass(-|$)/.test(item.categoryId);
+var owns = (item, owner) => item.itemHash === owner || Boolean(item.owners?.includes(owner));
+var numbered = (item) => / (II|III|IV)$/.test(item.name);
+function effectiveAliases(generated, input2, items) {
+  const groups = aliasGroupsSchema.parse(input2);
+  const aliases = { ...aliasesSchema.parse(generated) };
+  const issues = [];
+  for (const [key, item] of Object.entries(items)) {
+    if (String(item.hash) !== key) throw new Error(`Alias fact key does not match hash: ${key}`);
+  }
+  for (const [key, group] of Object.entries(groups.groups)) {
+    const canonical = Number(key), base = items[key];
+    const frameOwner = group.basis.exoticFrameOwner;
+    if (group.kind === "X") {
+      issues.push({ canonical, reason: "Cross-category alias groups are disabled" });
+      continue;
+    }
+    const exoticFrame = Boolean(
+      base && group.kind === "S" && base.categoryId === "weapon-frame-exotic" && frameOwner !== void 0 && owns(base, frameOwner) && !numbered(base)
+    );
+    if (!base || !inScope(base) && !exoticFrame || generated[key]) {
+      issues.push({ canonical, reason: "Canonical missing, excluded, or generated alias" });
+      continue;
+    }
+    if (name(base) !== group.basis.name.trim().toLowerCase() || base.categoryId !== group.basis.categoryId) {
+      issues.push({ canonical, reason: "Canonical no longer satisfies alias group basis" });
+      continue;
+    }
+    const eligibleMembers = [];
+    for (const hash2 of group.members) {
+      if (hash2 === canonical) continue;
+      if (generated[hash2]) {
+        issues.push({ canonical, member: hash2, reason: "Generated alias takes precedence" });
+        continue;
+      }
+      const item = items[hash2];
+      if (!item || !inScope(item) && !exoticFrame || (exoticFrame ? item.categoryId !== "weapon-frame-exotic" || !numbered(item) || frameOwner === void 0 || !owns(item, frameOwner) || item.name.replace(/ (II|III|IV)$/, "").trim().toLowerCase() !== name(base) : name(item) !== name(base)) || exotic(item) !== exotic(base) || enhanced(item) !== enhanced(base) || group.kind === "S" && (item.categoryId !== base.categoryId || !subclass(base) && (item.plugCategoryHash === void 0 || base.plugCategoryHash === void 0 || item.plugCategoryHash !== base.plugCategoryHash)) || subclass(base) && item.inGameDescription !== base.inGameDescription) {
+        issues.push({
+          canonical,
+          member: hash2,
+          reason: "Member no longer satisfies alias group facts"
+        });
+        continue;
+      }
+      eligibleMembers.push(hash2);
+    }
+    const sharedExoticOwner = [base.itemHash, ...base.owners ?? []].some(
+      (owner) => owner !== void 0 && eligibleMembers.every((hash2) => owns(items[hash2], owner))
+    );
+    for (const hash2 of eligibleMembers) {
+      if (exotic(base) && !exoticFrame && !sharedExoticOwner) {
+        issues.push({
+          canonical,
+          member: hash2,
+          reason: "Member no longer satisfies alias group facts"
+        });
+      } else {
+        aliases[hash2] = { to: canonical, kind: "name" };
+      }
+    }
+  }
+  for (const key of Object.keys(aliases)) resolveAlias(Number(key), aliases);
+  const pairedBase = (item) => {
+    if (!item || !enhanced(item)) return item?.baseHash;
+    if (item.baseHash !== void 0)
+      return items[item.baseHash] && items[resolveAlias(item.baseHash, aliases)] ? item.baseHash : void 0;
+    const candidates = Object.values(items).filter(
+      (base) => !enhanced(base) && !exotic(base) && inScope(base) && name(base) === name(item) && item.plugCategoryHash !== void 0 && base.plugCategoryHash === item.plugCategoryHash && base.categoryId === item.categoryId.replace(/-enhanced$/, "")
+    );
+    const targets = new Set(candidates.map((base) => resolveAlias(base.hash, aliases)));
+    const target = [...targets][0];
+    return candidates.length > 1 && targets.size === 1 && target !== void 0 && items[target] ? target : void 0;
+  };
+  let changed;
+  do {
+    changed = false;
+    for (const [key, group] of Object.entries(groups.groups)) {
+      const canonical = Number(key), item = items[key];
+      if (!item || !enhanced(item) || generated[key]) continue;
+      const canonicalBase = pairedBase(item);
+      for (const member of group.members) {
+        if (aliases[member]?.kind !== "name" || aliases[member]?.to !== canonical) continue;
+        const memberBase = pairedBase(items[member]);
+        if (canonicalBase === void 0 || memberBase === void 0 || resolveAlias(memberBase, aliases) !== resolveAlias(canonicalBase, aliases)) {
+          delete aliases[member];
+          issues.push({
+            canonical,
+            member,
+            reason: "Enhanced member no longer shares the canonical base group"
+          });
+          changed = true;
+        }
+      }
+    }
+  } while (changed);
+  return { aliases, issues };
+}
+function composeAliases(generated, groups, items, conflicts = {}, pointers) {
+  aliasesSchema.parse(generated);
+  sandboxConflictsSchema.parse(conflicts);
+  if (pointers != null) sandboxPointersSchema.parse(pointers);
+  for (const key of Object.keys(generated)) resolveAlias(Number(key), generated);
+  const picked = mergeSandboxPointers(generated, conflicts, pointers);
+  if (groups == null) return { aliases: picked, issues: [] };
+  const result = effectiveAliases(generated, groups, items);
+  const aliases = { ...result.aliases };
+  for (const [hash2, alias] of Object.entries(result.aliases)) {
+    if (alias.kind === "name" && (Object.hasOwn(conflicts, hash2) || Object.hasOwn(conflicts, String(alias.to))))
+      throw new Error(`Alias group member ${hash2} is a shared sandbox identity`);
+  }
+  for (const [hash2, alias] of Object.entries(picked)) {
+    if (Object.hasOwn(generated, hash2)) continue;
+    aliases[hash2] = { ...alias, to: resolveAlias(alias.to, result.aliases) };
+  }
+  for (const key of Object.keys(aliases)) resolveAlias(Number(key), aliases);
+  return { aliases, issues: result.issues };
+}
 var aliasProposalSchema = external_exports.object({
   kind: external_exports.enum(["S", "X"]),
   canonical: hashSchema,
@@ -28103,17 +28539,17 @@ var unpublishedMessage = "This field has saved changes that are not published ye
 var eventsArchive = (batchId, seq) => `schedule/batches/${batchId}/events/${String(seq).padStart(8, "0")}.json`;
 function batchMembers(io, tree, batchId) {
   const prefix = `schedule/batches/${batchId}/tooltips/`;
-  const members2 = [];
+  const members3 = [];
   for (const path of Object.keys(tree)) {
     if (!path.startsWith(prefix)) continue;
-    const name = path.slice(prefix.length);
-    if (!/^(0|[1-9]\d*)\.json$/.test(name)) throw new Error(`Unexpected batch entry ${path}`);
+    const name2 = path.slice(prefix.length);
+    if (!/^(0|[1-9]\d*)\.json$/.test(name2)) throw new Error(`Unexpected batch entry ${path}`);
     const member = batchMemberSchema.parse(io.read(tree, path));
-    if (String(member.hash) !== name.slice(0, -5))
+    if (String(member.hash) !== name2.slice(0, -5))
       throw new Error(`Batch member ${path} carries another hash`);
-    members2.push(member);
+    members3.push(member);
   }
-  return members2.sort((a, b) => a.hash - b.hash);
+  return members3.sort((a, b) => a.hash - b.hash);
 }
 function withEvent(io, tree, batch, update, event) {
   const revision = batch.revision + 1;
@@ -28210,7 +28646,7 @@ var TextlessConsumerOutput = class extends ConsumerOutputRejected {
     this.name = "TextlessConsumerOutput";
   }
 };
-var Publisher = class {
+var Publisher = class _Publisher {
   constructor(git, options) {
     this.git = git;
     this.options = options;
@@ -28234,14 +28670,51 @@ var Publisher = class {
    * the same merge as the Worker and the editor). A malformed picks file throws: fail closed.
    */
   aliasesAt(tree) {
-    const raw = this.read(tree, sandboxPointersPath);
-    if (raw === void 0) return this.options.aliases;
-    const pointers = sandboxPointersSchema.parse(raw);
-    return mergeSandboxPointers(
-      this.options.aliases,
-      this.options.sandboxConflicts ?? {},
-      pointers
+    return _Publisher.aliasesAt(
+      this.options,
+      this.read(tree, aliasGroupsPath),
+      this.read(tree, sandboxPointersPath)
     );
+  }
+  /** The read-only parity command shares the same pinned-fact checks and composition. */
+  static aliasesAt(options, raw, pointers) {
+    const groups = raw === void 0 ? void 0 : aliasGroupsSchema.parse(raw);
+    if (groups) {
+      const facts = options.aliasFacts;
+      if (!facts || !/^[0-9a-f]{40}$/.test(facts.generatorSha) || facts.generatorSha !== options.generatorSha)
+        throw new Error("Alias groups require matching pinned generator facts");
+      if (!facts.items || typeof facts.items !== "object" || Array.isArray(facts.items))
+        throw new Error("Alias groups require complete pinned generator items");
+      for (const hash2 of /* @__PURE__ */ new Set([
+        ...Object.keys(options.facts),
+        ...Object.values(groups.groups).flatMap((group) => group.members.map(String)),
+        ...Object.keys(facts.items ?? {})
+      ])) {
+        const item = facts.items?.[hash2];
+        if (!item || !Number.isInteger(item.hash) || item.hash < 0 || item.hash > 4294967295 || String(item.hash) !== hash2 || typeof item.name !== "string" || typeof item.categoryId !== "string" || !item.categoryId || typeof item.inGameDescription !== "string" || typeof options.facts[hash2]?.name !== "string" || typeof options.facts[hash2]?.type !== "string")
+          throw new Error(`Incomplete pinned alias facts for ${hash2}`);
+        for (const flag of ["isEnhanced", "exotic"])
+          if (item[flag] !== void 0 && typeof item[flag] !== "boolean")
+            throw new Error(`Invalid pinned alias fact ${hash2}.${flag}`);
+        for (const field of ["plugCategoryHash", "baseHash", "dimBaseHash", "itemHash"])
+          if (item[field] !== void 0 && (!Number.isInteger(item[field]) || item[field] < 0 || item[field] > 4294967295))
+            throw new Error(`Invalid pinned alias fact ${hash2}.${field}`);
+        if (item.owners !== void 0 && (!Array.isArray(item.owners) || item.owners.some(
+          (owner) => !Number.isInteger(owner) || owner < 0 || owner > 4294967295
+        )))
+          throw new Error(`Invalid pinned alias owners for ${hash2}`);
+      }
+    }
+    const composed = composeAliases(
+      options.aliases,
+      groups,
+      options.aliasFacts?.items ?? {},
+      options.sandboxConflicts ?? {},
+      pointers === void 0 ? void 0 : sandboxPointersSchema.parse(pointers)
+    );
+    if (groups && composed.issues.length)
+      throw new Error(`Alias group facts drift: ${JSON.stringify(composed.issues)}`);
+    return composed.aliases;
   }
   movesAt(tree) {
     try {
@@ -28384,8 +28857,8 @@ var Publisher = class {
       throw new Error("Credit request target mismatch");
     return requesterCredits(payload.requester);
   }
-  receipt(commit, opId) {
-    return this.read(this.git.tree(commit), paths(opId).receipt);
+  receipt(commit2, opId) {
+    return this.read(this.git.tree(commit2), paths(opId).receipt);
   }
   candidate(opId, blob) {
     const c = this.git.head(paths(opId).candidate);
@@ -28402,15 +28875,18 @@ var Publisher = class {
     if (!live?.perks || !live.databaseSettings) throw new Error("Invalid live file");
     const entries = structuredClone(r.exported);
     stampUploads(entries, new Set(r.changed), live.perks, r.now, r.requester.login);
-    const picks = this.pickRecomputeAt(this.git.tree(r.sourceCommit));
     let perks;
     try {
       const sourceTree = this.git.tree(r.sourceCommit);
+      if (sourceTree[aliasGroupsPath] && r.generatorSha !== this.options.generatorSha)
+        throw new Error("Generator revision differs from frozen alias-group receipt");
+      const aliases = this.aliasesAt(sourceTree);
+      const groups = sourceTree[aliasGroupsPath] ? { aliases, catalog: this.options.facts } : void 0;
       perks = applyInactiveLive(
-        mergeLivePerks(live.perks, entries, picks),
+        mergeLivePerks(live.perks, entries, this.pickRecomputeAt(sourceTree), groups),
         this.movesAt(sourceTree),
         r.entries.map((e) => e.hash),
-        this.aliasesAt(sourceTree),
+        aliases,
         live.perks
       );
     } catch (error62) {
@@ -28639,7 +29115,10 @@ var Publisher = class {
           opId,
           void 0,
           void 0,
-          { status: "rejected", error: `Invalid ${sandboxPointersPath}: ${String(e)}` },
+          {
+            status: "rejected",
+            error: `Invalid alias configuration (${sandboxPointersPath}, ${aliasGroupsPath}): ${String(e)}`
+          },
           blob
         );
         return;
@@ -28674,15 +29153,15 @@ var Publisher = class {
             outcomes.push({ hash: canonical, status: "missing" });
             continue;
           }
-          const digest2 = await inactivePublishableHash(tooltip.data, aliases, moves);
+          const digest3 = await inactivePublishableHash(tooltip.data, aliases, moves);
           outcomes.push({
             hash: canonical,
-            status: digest2 === payload.expected[hash2] ? "accepted" : "stale"
+            status: digest3 === payload.expected[hash2] ? "accepted" : "stale"
           });
           if (!seen.has(canonical)) {
             entries.push({
               hash: canonical,
-              digest: digest2,
+              digest: digest3,
               tooltipBlob: oid ?? this.git.writeBlob(json3(tooltip.data))
             });
             tooltips.push(tooltip.data);
@@ -28833,21 +29312,21 @@ var Publisher = class {
    * guard on effective publication, inside the publisher (I1). Read-only; a failure is terminal.
    */
   async batchPlan(tree, payload, aliases) {
-    let members2;
+    let members3;
     try {
-      members2 = batchMembers(this, tree, payload.batchId);
+      members3 = batchMembers(this, tree, payload.batchId);
     } catch (e) {
       return { failure: { status: "rejected", error: `Invalid batch member: ${String(e)}` } };
     }
-    if (members2.map((m) => m.hash).join() !== payload.hashes.join())
+    if (members3.map((m) => m.hash).join() !== payload.hashes.join())
       return {
         failure: { status: "rejected", error: "Batch members differ from the signed request" }
       };
-    if (await approvedDigest(members2) !== payload.approvedDigest)
+    if (await approvedDigest(members3) !== payload.approvedDigest)
       return {
         failure: { status: "rejected", error: "Batch content differs from what was approved" }
       };
-    const blocked = members2.filter((m) => tree[schedulePaths.conflict(m.hash)]).map((m) => m.hash);
+    const blocked = members3.filter((m) => tree[schedulePaths.conflict(m.hash)]).map((m) => m.hash);
     if (blocked.length)
       return {
         failure: {
@@ -28864,7 +29343,7 @@ var Publisher = class {
     const outcomes = [];
     const tooltips = [];
     const moves = this.movesAt(tree);
-    for (const m of members2) {
+    for (const m of members3) {
       const stored = (path) => {
         const value2 = this.read(tree, path);
         if (value2 === void 0) return null;
@@ -28996,7 +29475,10 @@ var Publisher = class {
       try {
         frozenAliases = this.aliasesAt(at);
       } catch (e) {
-        return fail({ status: "rejected", error: `Invalid ${sandboxPointersPath}: ${String(e)}` });
+        return fail({
+          status: "rejected",
+          error: `Invalid alias configuration (${sandboxPointersPath}, ${aliasGroupsPath}): ${String(e)}`
+        });
       }
     const plan = await this.batchPlan(at, payload, frozenAliases);
     if ("failure" in plan) return fail(plan.failure);
@@ -29098,13 +29580,13 @@ var Publisher = class {
     }
     if (receipt.batchId !== payload.batchId) throw new Error("Receipt batch mismatch");
     const frozen = this.git.tree(receipt.sourceCommit);
-    const members2 = batchMembers(this, frozen, payload.batchId);
+    const members3 = batchMembers(this, frozen, payload.batchId);
     const snapshotAt = (hash2) => {
       const value2 = this.read(frozen, `live/tooltips/${hash2}.json`);
       return value2 === void 0 ? null : tooltipSchema.parse(value2);
     };
     const pushedAt = pushedSchema.parse(this.read(frozen, "live/pushed.json"));
-    const byHash = new Map(members2.map((m) => [m.hash, m]));
+    const byHash = new Map(members3.map((m) => [m.hash, m]));
     for (const e of receipt.entries) {
       const m = byHash.get(e.hash);
       if (!m) throw new Error(`Receipt member ${e.hash} missing at S'; operator required`);
@@ -29122,7 +29604,7 @@ var Publisher = class {
     if (batch.status !== "publishing" || batch.opId !== opId || batch.claim?.opId !== opId)
       throw new Error(`Batch ${batch.id} is not claimed by ${opId}; operator required`);
     const outcomes = [];
-    for (const m of members2) {
+    for (const m of members3) {
       const currentPath = `tooltips/${m.hash}.json`;
       const raw = this.read(tree, currentPath);
       const current = raw === void 0 ? null : tooltipSchema.parse(raw);
@@ -29230,6 +29712,17 @@ var Publisher = class {
       tooltips,
       permissions: permissionsSchema.parse(this.read(t, "config/permissions.json")),
       pushed: pushedSchema.parse(this.read(t, "live/pushed.json")),
+      // Preserve malformed config too: omitting it would resurrect archived members in readers.
+      // Raw invalid JSON becomes null, which the web schema rejects, without wedging the queue.
+      ...t[aliasGroupsPath] ? {
+        aliasGroups: (() => {
+          try {
+            return this.read(t, aliasGroupsPath);
+          } catch {
+            return null;
+          }
+        })()
+      } : {},
       ...inactiveMoves ? { inactiveMoves } : {},
       ...sandboxPointers && Object.keys(sandboxPointers.pointers).length ? { sandboxPointers } : {},
       publishQueue,

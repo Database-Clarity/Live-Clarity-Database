@@ -3,8 +3,8 @@ name: Editor data pipeline
 on:
   push:
     branches: [editor-data]
-    # Project configs are built by exports.yml (data site only), never by the publish pipeline.
-    paths-ignore: ['exports/**', 'glossary/**']
+    # Project configs, glossary, and entry marks never trigger the publish pipeline.
+    paths-ignore: ['exports/**', 'glossary/**', 'config/marks.json']
 
 permissions:
   contents: write
