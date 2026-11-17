@@ -120,6 +120,47 @@ var init_elementTags = __esm({
   }
 });
 
+// packages/core/src/markup/comments.ts
+function markupCommentContext(text) {
+  let offsets = Array.from({ length: text.length }, (_, index) => index);
+  const comments = [];
+  for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
+    const matches2 = text.matchAll(pattern);
+    let next = matches2.next();
+    if (next.done) continue;
+    let remaining = "";
+    let remainingOffsets = [];
+    let last = 0;
+    for (; !next.done; next = matches2.next()) {
+      const match = next.value;
+      remaining += text.slice(last, match.index);
+      remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
+      if (index > 0) {
+        comments.push({
+          from: offsets[match.index],
+          to: offsets[match.index + match[0].length - 1] + 1
+        });
+      }
+      last = match.index + match[0].length;
+    }
+    remaining += text.slice(last);
+    remainingOffsets = remainingOffsets.concat(offsets.slice(last));
+    text = remaining;
+    offsets = remainingOffsets;
+  }
+  return { text, offsets, comments };
+}
+function removeMarkupComments(text) {
+  return text.replace(/\r/g, "").replace(markupCommentPatterns[0], "").replace(markupCommentPatterns[1], "");
+}
+var markupCommentPatterns;
+var init_comments = __esm({
+  "packages/core/src/markup/comments.ts"() {
+    "use strict";
+    markupCommentPatterns = [/\/\*[^]*\*\/\n?/g, /^ *?\/\/.*$\n?| +\/\/.*$/gm];
+  }
+});
+
 // node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
@@ -305,7 +346,7 @@ function putProp(target, key, value2) {
   else
     target[key] = value2;
 }
-function mirrorShape(target, source, keys, wrap2) {
+function mirrorShape(target, source, keys, wrap) {
   const raw = sourceShape(source);
   for (const key of keys) {
     const desc = Object.getOwnPropertyDescriptor(raw, key);
@@ -314,10 +355,10 @@ function mirrorShape(target, source, keys, wrap2) {
     if (desc.get) {
       deferProp(target, key, () => {
         const value2 = source._zod.def.shape[key];
-        return wrap2 ? wrap2(value2, key) : value2;
+        return wrap ? wrap(value2, key) : value2;
       });
     } else
-      putProp(target, key, wrap2 ? wrap2(desc.value, key) : desc.value);
+      putProp(target, key, wrap ? wrap(desc.value, key) : desc.value);
   }
 }
 function mirrorProps(target, source) {
@@ -21335,7 +21376,17 @@ var markupColors, markupIcons, markupEmpty, markupLineClasses, markupRetiredColo
 var init_syntax = __esm({
   "packages/core/src/markup/syntax.ts"() {
     "use strict";
-    markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
+    markupColors = [
+      "blue",
+      "green",
+      "purple",
+      "yellow",
+      "exotic",
+      "center",
+      "bold",
+      "pve",
+      "pvp"
+    ];
     markupIcons = [
       "kinetic",
       "arc",
@@ -21359,7 +21410,7 @@ var init_syntax = __esm({
     markupLineClasses = [...markupColors, ...markupEmpty];
     markupRetiredColors = ["blue", "green", "purple"];
     markupRetiredLineStyles = ["center", "breakSpaces", "background"];
-    markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles];
+    markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles, "yellow"];
     markupTableClasses = [
       "background_1",
       "background_2",
@@ -21382,38 +21433,6 @@ function markupImports(text) {
 }
 function markupConditionMatches(text, keyword) {
   return [...text.matchAll(new RegExp(`^${keyword} \\([\\s\\S]*?\\n\\)$`, "gm"))];
-}
-function markupCommentContext(text) {
-  let offsets = Array.from({ length: text.length }, (_, index) => index);
-  const comments = [];
-  for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
-    const matches2 = text.matchAll(pattern);
-    let next = matches2.next();
-    if (next.done) continue;
-    let remaining = "";
-    let remainingOffsets = [];
-    let last = 0;
-    for (; !next.done; next = matches2.next()) {
-      const match = next.value;
-      remaining += text.slice(last, match.index);
-      remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
-      if (index > 0) {
-        comments.push({
-          from: offsets[match.index],
-          to: offsets[match.index + match[0].length - 1] + 1
-        });
-      }
-      last = match.index + match[0].length;
-    }
-    remaining += text.slice(last);
-    remainingOffsets = remainingOffsets.concat(offsets.slice(last));
-    text = remaining;
-    offsets = remainingOffsets;
-  }
-  return { text, offsets, comments };
-}
-function removeMarkupComments(text) {
-  return text.replace(/\r/g, "").replace(markupCommentPatterns[0], "").replace(markupCommentPatterns[1], "");
 }
 function normalizeMarkupWhitespace(text) {
   return text.replace(unusedMarkup.blanks, "\n\n").trim();
@@ -21667,10 +21686,12 @@ function prepareMarkup(text, globals, diagnostics, onCondition) {
     }
   };
 }
-var markupConditions, markupCommentPatterns, unusedMarkup, pairSource, pieceLength, nativeSource, nativeStructure, renderNative;
+var markupConditions, unusedMarkup, pairSource, pieceLength, nativeSource, nativeStructure, renderNative;
 var init_prepare = __esm({
   "packages/core/src/markup/prepare.ts"() {
     "use strict";
+    init_comments();
+    init_comments();
     init_baseEnhanced();
     init_arithmetic();
     init_numberFormat();
@@ -21681,7 +21702,6 @@ var init_prepare = __esm({
       ["catalyst", "Weapon Catalyst Exotic"],
       ["exotic perk", "Weapon Perk Exotic"]
     ];
-    markupCommentPatterns = [/\/\*[^]*\*\/\n?/g, /^ *?\/\/.*$\n?| +\/\/.*$/gm];
     unusedMarkup = {
       hidden: /^export hidden .* \([^]*?\n\)$/gm,
       exportOpen: /^export .* \( *$\n/gm,
@@ -21911,6 +21931,23 @@ var init_map = __esm({
 });
 
 // packages/core/src/markup/braces.ts
+function hasExoticMarkup(text) {
+  if (!text.includes("<")) return false;
+  return /<exotic(?= |\/>)/.test(commentsOrCR.test(text) ? removeMarkupComments(text) : text);
+}
+function lowerExoticMarkup(text) {
+  if (!text.includes("<") || !text.includes("exotic") && !text.includes("/*") && !text.includes("\r"))
+    return text;
+  if (!commentsOrCR.test(text)) return text.replace(exoticTagPattern, "<yellow");
+  const context = markupCommentContext(text);
+  const matches2 = [...context.text.matchAll(exoticTagPattern)];
+  if (!matches2.length) return text;
+  const characters = text.split("");
+  for (const match of matches2)
+    for (let index = 0; index < 6; index++)
+      characters[context.offsets[match.index + 1 + index]] = "yellow"[index];
+  return characters.join("");
+}
 function variableReferences(text, offset = 0) {
   if (!text.includes("#")) return [];
   const found = [];
@@ -21977,7 +22014,7 @@ function lowerDelimitedMarkup(text) {
   return changed ? lines.join("\n") : text;
 }
 function lowerConsumerMarkup(text, arrow) {
-  const lowered = lowerDelimitedMarkup(lowerElementTags(text));
+  const lowered = lowerDelimitedMarkup(lowerElementTags(lowerExoticMarkup(text)));
   return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
 }
 function isMarkupOnly(before, after, values, afterValues = values) {
@@ -21996,14 +22033,17 @@ function mergedVariable(name2, defined) {
   }
   return void 0;
 }
-var enhancedArrowMarkup, legacyEnhancedArrow, variableReferencePattern, holderName, holderPattern, reservedNamePattern, reservedNameMessage, delimited;
+var enhancedArrowMarkup, legacyEnhancedArrow, exoticTagPattern, commentsOrCR, variableReferencePattern, holderName, holderPattern, reservedNamePattern, reservedNameMessage, delimited;
 var init_braces = __esm({
   "packages/core/src/markup/braces.ts"() {
     "use strict";
     init_elementTags();
+    init_comments();
     init_map();
     enhancedArrowMarkup = "<enhanced/>";
     legacyEnhancedArrow = "#e";
+    exoticTagPattern = /<exotic(?= |\/>)/g;
+    commentsOrCR = /\/\*|\/\/|\r/;
     variableReferencePattern = /#\{([a-zA-Z0-9]+)\}|#([a-zA-Z0-9]+)/g;
     holderName = (word) => `Zb${word.length}w${word}`;
     holderPattern = /^Zb(\d+)w([a-zA-Z0-9]+)$/;
@@ -22072,13 +22112,13 @@ function markupInlineRanges(line) {
   if (!line.includes("<")) return [];
   return [markupLineClasses, markupEmpty, []].flatMap((allowed2) => {
     if (!allowed2.some((name2) => line.includes(`<${name2}/>`)))
-      return [...line.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
+      return [...line.matchAll(new RegExp(sourceInlineToken, "g"))].map((match) => ({
         from: match.index,
         to: match.index + match[0].length
       }));
     const offsets = Array.from({ length: line.length }, (_, index) => index);
     const { cleanLine } = lineClasses(line, allowed2, offsets);
-    return [...cleanLine.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
+    return [...cleanLine.matchAll(new RegExp(sourceInlineToken, "g"))].map((match) => ({
       from: offsets[match.index],
       to: offsets[match.index + match[0].length - 1] + 1
     }));
@@ -22091,9 +22131,11 @@ function markupStrayTags(text) {
     for (const segment of line.split(new RegExp(`(${inlineToken.source})`, "g"))) {
       const tags = segment.match(/<\w+/g) ?? [];
       const isToken = new RegExp(`^${inlineToken.source}$`).test(segment);
-      const wrapper2 = /^<(\w+) /.exec(segment)?.[1] ?? "";
-      const arrows = isToken && [...markupColors, "background"].includes(wrapper2) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
+      const wrapper2 = /^<(\w+)(?: |\/>)/.exec(segment)?.[1] ?? "";
+      const arrows = isToken && [...parserColors, "background"].includes(wrapper2) && segment.endsWith(" />") ? segment.match(/<arrow\/>/g)?.length ?? 0 : 0;
       if (tags.length > (isToken ? 1 + arrows : 0)) stray.push(tags[0]);
+      else if (isToken && wrapper2 && ![...parserColors, ...markupIcons, ...markupEmpty, "link", "title"].includes(wrapper2))
+        stray.push(tags[0]);
     }
   }
   return stray;
@@ -22170,7 +22212,7 @@ function lineSpans(text, titles) {
   if (text === "\u{1F845}") return [{ text, classNames: ["enhancedArrow"] }];
   const wrapper2 = text.match(/<\w+/)?.[0].slice(1);
   if (wrapper2 === void 0) return [{ text }];
-  if ([...markupColors, "background", "bold"].includes(wrapper2)) {
+  if ([...parserColors, "background", "bold"].includes(wrapper2)) {
     const inner = text.replace(new RegExp(`^<${wrapper2} | />$`, "g"), "");
     if (inner.includes("<arrow/>"))
       return inner.split(/(<arrow\/>)/).filter(Boolean).map(
@@ -22234,7 +22276,7 @@ function parseLines(text, titles) {
       ];
     }
     if (!block.trim()) return [{ classNames: ["spacer"] }];
-    const { classNames, cleanLine } = lineClasses(block, markupLineClasses);
+    const { classNames, cleanLine } = lineClasses(block, parserLineClasses);
     return [
       {
         classNames,
@@ -22243,7 +22285,7 @@ function parseLines(text, titles) {
     ];
   });
 }
-var inlineToken, elements, markedPart;
+var inlineToken, sourceInlineToken, parserColors, parserLineClasses, elements, markedPart;
 var init_lines = __esm({
   "packages/core/src/markup/lines.ts"() {
     "use strict";
@@ -22251,6 +22293,9 @@ var init_lines = __esm({
     init_syntax();
     init_weaponHeadings();
     inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
+    sourceInlineToken = /<(?:blue|green|purple|yellow|exotic|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
+    parserColors = markupColors.filter((name2) => name2 !== "exotic");
+    parserLineClasses = markupLineClasses.filter((name2) => name2 !== "exotic");
     elements = new Set(elementTagNames);
     markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
   }
@@ -25049,7 +25094,7 @@ function parseOrdinary(text, globals, indexed = false) {
   };
   const mark = (source) => {
     source = clean(source);
-    const marked2 = markElementTags(source);
+    const marked2 = markElementTags(lowerExoticMarkup(source));
     if (marked2 !== source) tagged = true;
     return lowerDelimitedMarkup(marked2);
   };
@@ -25057,7 +25102,7 @@ function parseOrdinary(text, globals, indexed = false) {
   const parsed = tagged ? parseWith(
     text,
     globals,
-    (source) => lowerDelimitedMarkup(lowerElementTags(clean(source))),
+    (source) => lowerDelimitedMarkup(lowerElementTags(lowerExoticMarkup(clean(source)))),
     numbered2,
     indexed
   ) : tinted;
@@ -25481,7 +25526,7 @@ var databaseConverter = (converterType, database, identical) => {
 // packages/export/src/elementTags.ts
 init_braces();
 function lowerInput(input2, arrow, elementTags = false) {
-  const lower2 = (text) => elementTags ? lowerDelimitedMarkup(text) : lowerConsumerMarkup(text, arrow);
+  const lower2 = (text) => elementTags ? lowerDelimitedMarkup(lowerExoticMarkup(text)) : lowerConsumerMarkup(text, arrow);
   let perks;
   for (const [hash2, perk] of Object.entries(input2.perks)) {
     if (!("editor" in perk) || !perk.editor) continue;
@@ -25659,180 +25704,6 @@ function describeGlobalClash(clash) {
 
 // packages/core/src/markup/snippets.ts
 init_syntax();
-var wrap = (tag, about) => ({
-  id: `wrap:${tag}`,
-  label: `<${tag} text />`,
-  group: "Format",
-  template: `<${tag} {{1:text}} />`,
-  keywords: `${tag} wrap colour color format`,
-  usage: new RegExp(`<${tag} `),
-  wraps: true,
-  about
-});
-var markupSnippets = [
-  {
-    id: "arrow-values",
-    label: "Value becomes another",
-    group: "Values",
-    template: "{{1:30%}}<arrow/>{{2:33%}}",
-    keywords: "arrow leads to becomes change value",
-    usage: /<arrow\/>/,
-    about: "Two values joined by an arrow in the surrounding text colour.",
-    help: { example: "30%<arrow/>33%" }
-  },
-  {
-    id: "base-enhanced-pair",
-    label: "Base and enhanced text",
-    group: "Enhanced",
-    template: "{{{{1:base}}}{{{2:enhanced}}}}",
-    keywords: "base enhanced pair inline variant alternate",
-    usage: /\{\{/,
-    fromSelection: true,
-    about: "Base, then enhanced. No nesting.",
-    help: { block: "base-enhanced-pair" }
-  },
-  {
-    id: "pair",
-    label: "PvE and PvP values",
-    group: "Values",
-    template: "<pve {{1:value}} /> <pvp [{{2:value}}] />",
-    keywords: "pve pvp pair both numbers values",
-    usage: /<pve [^<>]*\/>\s*<pvp /,
-    fromSelection: true,
-    about: "A value for PvE and the bracketed PvP value beside it.",
-    help: { example: "<pve 1 /> <pvp [2] />" }
-  },
-  {
-    id: "pve",
-    label: "<pve value />",
-    group: "Values",
-    template: "<pve {{1:value}} />",
-    keywords: "pve value number",
-    usage: /<pve /,
-    wraps: true,
-    about: "A PvE-only value.",
-    help: { example: "<pve PvE: 10%|20% />" }
-  },
-  {
-    id: "pvp",
-    label: "<pvp [value] />",
-    group: "Values",
-    template: "<pvp [{{1:value}}] />",
-    keywords: "pvp value number",
-    usage: /<pvp /,
-    wraps: true,
-    about: "A PvP-only value, shown in brackets.",
-    help: { example: "11 <pvp [7.5] /> seconds" }
-  },
-  {
-    id: "enhanced-block",
-    label: "Enhanced section",
-    group: "Enhanced",
-    template: "enhanced (\nvar d = {{1:amount}}\n<enhanced/> {{2:What the enhanced version changes.}}\n)",
-    keywords: "enhanced block arrow section var",
-    usage: /^enhanced \(/m,
-    block: true,
-    about: "The enhanced-only section. Its first line already carries the enhanced arrow.",
-    help: { block: "enhanced" }
-  },
-  {
-    id: "enhanced-formula",
-    label: "<enhanced/>${base+#{d}}",
-    group: "Enhanced",
-    template: "<enhanced/>${{{1:base}}+#{d}}",
-    keywords: "enhanced formula e d base add bonus arrow",
-    usage: /(?:#e|<enhanced\/>)\$\{/,
-    about: "The base value with the enhanced bonus #{d} added in the enhanced version.",
-    help: { block: "enhanced" }
-  },
-  {
-    id: "icon-word",
-    label: "Element icon and word",
-    group: "Icons",
-    template: "<{{1:solar}}/>{{2:Solar}}",
-    keywords: "element icon word arc solar void stasis strand prismatic kinetic",
-    usage: /<(?:kinetic|arc|solar|void|stasis|strand|prismatic)\/>[A-Za-z]/,
-    about: "An element icon followed by its name.",
-    help: { example: "Applies <arc/>Jolt." }
-  },
-  {
-    id: "title-ref",
-    label: "Title reference",
-    group: "References",
-    template: "<title {{1:Text}} [{{2:Name}}] />",
-    keywords: "title reference global tooltip hover definition",
-    usage: /<title /,
-    wraps: true,
-    about: "Text that shows a title definition when hovered."
-  },
-  {
-    id: "link-ref",
-    label: "Link",
-    group: "References",
-    template: "<link {{1:Text}} [{{2:https://example.com}}] />",
-    keywords: "link url web reference",
-    usage: /<link /,
-    wraps: true,
-    about: "Text that links to a web address."
-  },
-  wrap("yellow", "Yellow text."),
-  wrap("bold", "Bold text."),
-  {
-    id: "decl-var",
-    label: "var name = value",
-    group: "Blocks",
-    template: "var {{1:name}} = {{2:value}}",
-    keywords: "var variable declare define",
-    usage: /^var /m,
-    block: true,
-    about: "A variable, used elsewhere as #name.",
-    help: { example: "var Zoom = 1\nZoom +#Zoom" }
-  },
-  {
-    id: "decl-title",
-    label: "title Name ( \u2026 )",
-    group: "Blocks",
-    template: "title {{1:Name}} (\n{{2:text}}\n)",
-    keywords: "title block definition global",
-    usage: /^title [A-Za-z0-9 ]+ \(/m,
-    block: true,
-    about: "A title definition other text can point at.",
-    help: { block: "title" }
-  },
-  {
-    id: "decl-export",
-    label: "export Name ( \u2026 )",
-    group: "Blocks",
-    template: "export {{1:Name}} (\n{{2:text}}\n)",
-    keywords: "export share",
-    usage: /^export /m,
-    block: true,
-    about: "A named text other tooltips can import.",
-    help: { example: "export name ( \u2026 )", note: "Drawn here too." }
-  },
-  {
-    id: "decl-export-hidden",
-    label: "export hidden Name ( \u2026 )",
-    group: "Blocks",
-    template: "export hidden {{1:Name}} (\n{{2:text}}\n)",
-    keywords: "export hidden share",
-    usage: /^export hidden /m,
-    block: true,
-    about: "An export that does not show in this tooltip.",
-    help: { example: "export hidden name ( \u2026 )", note: "Not drawn here." }
-  },
-  {
-    id: "decl-import",
-    label: "import name from \u2026",
-    group: "Blocks",
-    template: "import {{1:name}} from {{2:global}}",
-    keywords: "import use",
-    usage: /^import /m,
-    block: true,
-    about: "Brings in text another tooltip or the globals export.",
-    help: { example: "import main from 554409585", note: "Draws its text." }
-  }
-];
 var markupTags = [
   {
     id: "tag:pve",
@@ -25850,7 +25721,7 @@ var markupTags = [
     usage: /<pvp /,
     about: "A PvP-only value, shown in brackets."
   },
-  ...["yellow"].map((name2) => ({
+  ...["exotic"].map((name2) => ({
     id: `tag:${name2}`,
     label: `<${name2} />`,
     template: `<${name2} {{1:text}} />`,
@@ -26072,9 +25943,9 @@ function tokenOccurrence(token2, line, lineFrom, from, sourceToken = token2) {
   if (retiredColours.includes(name2))
     fixes.push({
       id: "to-yellow",
-      label: "Change to yellow",
+      label: "Change to Exotic",
       structural: false,
-      edits: [{ from, to, insert: `<yellow ${inner} />` }]
+      edits: [{ from, to, insert: `<exotic ${inner} />` }]
     });
   return {
     kind: "wrapper",
@@ -26085,7 +25956,7 @@ function tokenOccurrence(token2, line, lineFrom, from, sourceToken = token2) {
     to,
     message: retired(
       noun(name2),
-      retiredColours.includes(name2) ? "Remove the tag (the text stays) or change it to <yellow \u2026 />." : "Remove the tag (the text stays)."
+      retiredColours.includes(name2) ? "Remove the tag (the text stays) or change it to <exotic \u2026 />." : "Remove the tag (the text stays)."
     ),
     fixes
   };
@@ -26406,6 +26277,38 @@ function findRetiredMarkup(source) {
       occurrence.refusalReason = reason ?? "A lossless source edit could not be verified.";
       occurrence.message = retired(occurrence.token, `Fix by hand: ${occurrence.refusalReason}`);
     }
+  }
+  const context = markupCommentContext(source);
+  for (const match of context.text.matchAll(
+    /<yellow(?= |\/>).*?\/>|^export hidden (?=[A-z0-9 ]+ \()/gm
+  )) {
+    const hidden = match[0].startsWith("export");
+    const keyword = hidden ? "hidden " : "yellow";
+    const start = match.index + (hidden ? 7 : 1);
+    const from = context.offsets[match.index];
+    const to = context.offsets[match.index + match[0].length - 1] + 1;
+    const positions = context.offsets.slice(start, start + keyword.length);
+    found.push({
+      kind: hidden ? "condition" : match[0] === "<yellow/>" ? "marker" : "wrapper",
+      name: hidden ? "export hidden" : "yellow",
+      token: hidden ? "export hidden" : "<yellow \u2026 />",
+      source: source.slice(from, to),
+      from,
+      to,
+      message: hidden ? "Retired markup export hidden: use a plain export." : "Deprecated markup <yellow \u2026 />: use <exotic \u2026 />.",
+      fixes: [
+        {
+          id: hidden ? "plain-export" : "rename-exotic",
+          label: hidden ? "Change to export" : "Change to <exotic \u2026 />",
+          structural: false,
+          edits: positions.map((at, index) => ({
+            from: at,
+            to: at + 1,
+            insert: index === 0 && !hidden ? "exotic" : ""
+          }))
+        }
+      ]
+    });
   }
   return found.sort((a, b) => a.from - b.from || a.to - b.to);
 }
@@ -31036,6 +30939,10 @@ var markupBracesCapability = "markupBraces";
 var prismaticTagsCapability = "prismaticTags";
 var arrowSymbolCapability = "arrowSymbol";
 var numberTokensCapability = "numberTokens";
+var exoticTagsCapability = "exoticTags";
+function hasExoticText(tooltip) {
+  return Object.values(tooltip.text).some((entry) => entry && hasExoticMarkup(entry.text));
+}
 function hasNumberTokens(tooltip) {
   return Object.values(tooltip.text).some((entry) => entry?.text.includes("#{="));
 }
@@ -31088,6 +30995,14 @@ function refuseReservedNames(tooltip) {
 function refuseUnlowerable(tooltip, pin, action, head) {
   const issue2 = validateNumberTooltip(tooltip, head)[0];
   if (issue2) throw new HttpError(422, `Tooltip ${tooltip.hash} (${issue2.lang}): ${issue2.message}`);
+  if (exporter.publisherEnabled() && hasExoticText(tooltip)) {
+    const capabilities = pin?.value?.capabilities;
+    if (!Array.isArray(capabilities) || !capabilities.includes(exoticTagsCapability))
+      throw new HttpError(
+        422,
+        `Tooltip ${tooltip.hash} contains <exotic \u2026 />, which can't be ${action}: the publisher installed in the data branch does not lower it yet (${publisherPinPath} lacks the "${exoticTagsCapability}" capability). Update the installed publisher first.`
+      );
+  }
   if (hasNumberTokens(tooltip)) {
     const capabilities = pin?.value?.capabilities;
     if (!exporter.publisherEnabled() || !Array.isArray(capabilities) || !capabilities.includes(numberTokensCapability))
