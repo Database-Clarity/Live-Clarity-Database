@@ -25722,18 +25722,7 @@ var markupSnippets = [
     usage: /<pvp /,
     wraps: true,
     about: "A PvP-only value, shown in brackets.",
-    help: { example: "<pvp PvP: 2%|4% />" }
-  },
-  {
-    id: "pvp-override",
-    label: "Value with PvP override",
-    group: "Values",
-    template: "{{1:value}} <pvp [{{2:value}}] />",
-    keywords: "pvp override after value unit seconds",
-    usage: /[\w%] <pvp \[/,
-    fromSelection: true,
-    about: "A plain value followed by the PvP number; the unit stays outside the tag.",
-    help: { example: "1 <pvp [2] /> stacks" }
+    help: { example: "11 <pvp [7.5] /> seconds" }
   },
   {
     id: "enhanced-block",
