@@ -62,6 +62,7 @@ var images = [
   "stasis",
   "void",
   "strand",
+  "prismatic",
   "heavy",
   "primary",
   "special",
@@ -89,6 +90,14 @@ var classNameList = {
   table
 };
 var allClassNames = Object.values(classNameList).flat();
+
+// packages/export/src/converter/prismatic.ts
+var prismaticAssets = {
+  dim: "\u{F0156}",
+  vaultZero: "[Prismatic]",
+  braytech: null,
+  crayon: null
+};
 
 // packages/export/src/converter/converterSettings.ts
 var converterSettings = {
@@ -159,6 +168,7 @@ var converterSettings = {
         "arc",
         "solar",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -179,6 +189,7 @@ var converterSettings = {
         arc: ["<:arc:720178925317128243>", ""],
         solar: ["<:solar:720178909361995786>", ""],
         void: ["<:void:720178940240461864>", ""],
+        prismatic: [prismaticAssets.crayon ?? "", ""],
         primary: ["<:primary:968793055677251604>", ""],
         special: ["<:special:968793055631114330>", ""],
         heavy: ["<:heavy:968793055652106320>", ""],
@@ -257,6 +268,7 @@ var converterSettings = {
         "arc",
         "stasis",
         "strand",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -281,6 +293,7 @@ var converterSettings = {
         arc: ["\uE143", ""],
         stasis: ["\uE139", ""],
         strand: ["\uEF0E", ""],
+        prismatic: [prismaticAssets.braytech ?? "", ""],
         primary: ["\uF106", ""],
         special: ["\uF107", ""],
         heavy: ["\uF108", ""],
@@ -314,6 +327,7 @@ var converterSettings = {
         "stasis",
         "strand",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -337,6 +351,7 @@ var converterSettings = {
         stasis: ["[Stasis]", ""],
         strand: ["[Strand]", ""],
         void: ["[Void]", ""],
+        prismatic: [prismaticAssets.vaultZero, ""],
         primary: ["[primary]", ""],
         special: ["[special]", ""],
         heavy: ["[heavy]", ""],
@@ -417,7 +432,7 @@ var expandAliases = (perks) => {
 };
 var getAliasOutput = (settings, stub) => {
   if (settings.aliases === "reference") return "reference";
-  return stub.aliasKind === "frame" ? "copy" : "skip";
+  return stub.aliasKind === "frame" || stub.aliasKind === "name" ? "copy" : "skip";
 };
 
 // packages/export/src/converter/converterFunctions/validateReferences.ts
@@ -20547,7 +20562,9 @@ var legacyPerkSchema = legacyMetadataSchema.extend({
   itemName: external_exports.string().optional(),
   editor: external_exports.partialRecord(langSchema, external_exports.object({
     main: external_exports.string(),
-    secondary: external_exports.string()
+    secondary: external_exports.string(),
+    // Export provenance: English fallback retains English number formatting.
+    englishFallback: external_exports.literal(true).optional()
   }).strict()),
   updateTracker: external_exports.object({
     descriptions: external_exports.partialRecord(langSchema, trackerEntrySchema),
@@ -20722,8 +20739,17 @@ var permissionsSchema = external_exports.object({
     external_exports.object({
       login: external_exports.string().min(1),
       role: external_exports.enum(["maintainer", "editor", "trial", "translator"]),
-      languages: external_exports.array(langSchema).optional()
-    }).strict()
+      languages: external_exports.array(langSchema).optional(),
+      /**
+       * Translation manager (PRODUCT "Translation managers"): the languages this translator
+       * manages (adds/removes translators, rolls back uploads). Only translators, and only
+       * languages they translate, never English; maintainers assign it.
+       */
+      manages: external_exports.array(langSchema).min(1).optional()
+    }).strict().refine(
+      (access) => !access.manages || access.role === "translator" && access.manages.every((lang) => lang !== "en" && access.languages?.includes(lang)),
+      "Only translators manage languages, and only non-English languages they translate"
+    )
   ),
   /**
    * Export partners (spec section 4): numeric GitHub id -> the export projects that account may
@@ -20874,10 +20900,14 @@ function markupCommentContext(text) {
   let offsets = Array.from({ length: text.length }, (_, index) => index);
   const comments = [];
   for (const [index, pattern] of [/\r/g, ...markupCommentPatterns].entries()) {
+    const matches = text.matchAll(pattern);
+    let next = matches.next();
+    if (next.done) continue;
     let remaining = "";
     let remainingOffsets = [];
     let last = 0;
-    for (const match of text.matchAll(pattern)) {
+    for (; !next.done; next = matches.next()) {
+      const match = next.value;
       remaining += text.slice(last, match.index);
       remainingOffsets = remainingOffsets.concat(offsets.slice(last, match.index));
       if (index > 0) {
@@ -20936,7 +20966,11 @@ function resolveImports(text, globals, diagnostics) {
       const from = line.match(/(?<=from) (\d+|global)/)?.[0].trim() ?? "";
       const raw = globals.imports?.[from] ?? (from === "global" ? globals.imports?.["1"] : void 0);
       const source = raw === void 0 ? void 0 : lowerDelimitedMarkup(raw);
-      const imported = name === "main" || name === "secondary" ? source : extractBlocks(source ?? "", "export")[name];
+      let imported = source;
+      if (name !== "main" && name !== "secondary") {
+        const blocks = extractBlocks(source ?? "", "export");
+        imported = Object.hasOwn(blocks, name) ? blocks[name] : void 0;
+      }
       if (imported === void 0 && visible) {
         diagnostics.push({
           severity: "error",
@@ -21161,6 +21195,61 @@ function prepareMarkup(text, globals, diagnostics, onCondition) {
   };
 }
 
+// packages/core/src/numbers/freeze.ts
+function numberVariables(text) {
+  const result = [];
+  let offset = 0;
+  const blocks = [];
+  const prose = numberProse(text).split("\n");
+  for (const [index, line] of text.replace(/\r/g, " ").split("\n").entries()) {
+    const match = /^var ([a-zA-Z0-9]+) = (.+)$/.exec(line);
+    const visible = /^var ([a-zA-Z0-9]+) = (.+)$/.exec(prose[index]);
+    if (match) {
+      const value = (visible ?? match)[2];
+      result.push({
+        name: match[1],
+        value: value.trim(),
+        from: offset + line.length - match[2].length + value.length - value.trimStart().length,
+        // The real preparer reads declarations before stripping comments. A hidden
+        // declaration is therefore ambiguous, even though it has no prose value slot.
+        ambiguous: !visible || /\/\*|\/\//.test(match[2]) || blocks.some((block) => /^(enhanced|catalyst|exotic perk) /.test(block))
+      });
+    }
+    if (numberBlockOpen.test(line.trim())) blocks.push(line.trim());
+    else if (/^\)\s*$/.test(line.trim())) blocks.pop();
+    offset += line.length + 1;
+  }
+  return result;
+}
+
+// packages/core/src/numbers/map.ts
+function numberTokens(text) {
+  return [...text.matchAll(/#\{=[^}\n]*(?:}|$)/gm)].map((match) => {
+    const valid = /^#\{=([1-9]\d*)\}$/.exec(match[0]);
+    const id = valid ? Number(valid[1]) : void 0;
+    return {
+      from: match.index,
+      to: match.index + match[0].length,
+      ...id !== void 0 && Number.isSafeInteger(id) ? { id } : {}
+    };
+  });
+}
+function resolveNumberTokens(text, values) {
+  if (!text.includes("#{=")) return text;
+  let result = "", at = 0;
+  for (const token of numberTokens(text)) {
+    const value = token.id === void 0 ? void 0 : values.get(token.id);
+    if (typeof value !== "string")
+      throw new Error(
+        token.id === void 0 ? "Malformed number token." : `Unknown or unfreezable number #{=${token.id}}.`
+      );
+    if (value.includes("#{=")) throw new Error("A number value cannot contain number tokens.");
+    result += text.slice(at, token.from) + value;
+    at = token.to;
+  }
+  return result + text.slice(at);
+}
+
 // packages/core/src/markup/braces.ts
 var enhancedArrowMarkup = "<enhanced/>";
 var legacyEnhancedArrow = "#e";
@@ -21268,7 +21357,13 @@ function lineClasses(line, allowed, offsets) {
   };
 }
 function markupInlineRanges(line) {
+  if (!line.includes("<")) return [];
   return [markupLineClasses, markupEmpty, []].flatMap((allowed) => {
+    if (!allowed.some((name) => line.includes(`<${name}/>`)))
+      return [...line.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
+        from: match.index,
+        to: match.index + match[0].length
+      }));
     const offsets = Array.from({ length: line.length }, (_, index) => index);
     const { cleanLine } = lineClasses(line, allowed, offsets);
     return [...cleanLine.matchAll(new RegExp(inlineToken, "g"))].map((match) => ({
@@ -21446,12 +21541,16 @@ var stack = new RegExp(`[-+]?${digits}%?(?: ?\\| ?(?:${digits}%?|\u2026|\\.\\.\\
 var unitAfter = /^(?:%|x\b|×|ms\b|s\b|m\b|HP\b|hp\b|k\b|\+|[^\p{L}\p{N}_]|$)/u;
 var contains = (range, at) => at >= range.from && at < range.to;
 function numberProse(text) {
+  if (!text.includes("\r") && !text.includes("//") && !text.includes("/*")) return text;
+  const { comments } = markupCommentContext(text);
+  if (!comments.length) return text.replace(/\r/g, " ");
   const chars = text.split("");
-  for (const { from, to } of markupCommentContext(text).comments)
+  for (const { from, to } of comments)
     for (let at = from; at < to; at++) if (chars[at] !== "\n") chars[at] = " ";
   return chars.join("").replace(/\r/g, " ");
 }
 function numberMathRanges(text) {
+  if (!text.includes("${")) return [];
   const refs = new Map(variableReferences(text).map((ref) => [ref.from, ref.to]));
   const ranges = [];
   for (let from = text.indexOf("${"); from >= 0; from = text.indexOf("${", from + 2)) {
@@ -21468,8 +21567,8 @@ function numberMathRanges(text) {
   }
   return ranges;
 }
-function numberTargetRanges(line) {
-  return markupInlineRanges(line).flatMap((range) => {
+function numberTargetRanges(line, inline = markupInlineRanges(line)) {
+  return inline.flatMap((range) => {
     const token = line.slice(range.from, range.to);
     if (!/^<(?:link|title|formula) /.test(token)) return [];
     const target = /\[.+\]/.exec(token);
@@ -21519,7 +21618,8 @@ function numberSlots(text, hash2) {
     const isHeading = heading(trimmed);
     const scope = JSON.stringify([block, nearestHeading]);
     const skip = /^<\s.*>\s*$/.test(trimmed);
-    const excluded = [...variableReferences(line), ...numberTargetRanges(line)];
+    const inlineRanges = markupInlineRanges(line);
+    const excluded = [...variableReferences(line), ...numberTargetRanges(line, inlineRanges)];
     for (const tag of line.matchAll(/<\/?[a-zA-Z_]+[0-9]*(?=[\s/>])/g))
       excluded.push({ from: tag.index, to: tag.index + tag[0].length });
     if (inTable)
@@ -21527,7 +21627,7 @@ function numberSlots(text, hash2) {
         excluded.push({ from: mod.index, to: mod.index + mod[0].length });
     const math = new Map(numberMathRanges(line).map((range) => [range.from, range.to]));
     const pairs = scanBaseEnhanced(line).pairs;
-    const inline = markupInlineRanges(line).filter(
+    const inline = inlineRanges.filter(
       (range) => /^<pv[ep] /.test(line.slice(range.from, range.to))
     );
     const start = /^\s*var [a-zA-Z0-9]+ = /.exec(line)?.[0].length ?? 0;
@@ -21920,16 +22020,267 @@ var separateBlocks = (description, titles) => {
   }, []);
 };
 
+// packages/core/src/markup/parse.ts
+var reservedMarker = /[\uE000\uE001]/;
+var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
+function parseMarkup(text, globals = { variables: "", titles: "" }, options) {
+  if (options) return parseNumberSlots(text, globals, options.slots);
+  return parseOrdinary(text, globals);
+}
+function parseOrdinary(text, globals, indexed = false) {
+  const numbered = !!globals.numberInput && text.includes("#{=");
+  const numberIssues = [];
+  if (numbered) {
+    const input2 = globals.numberInput;
+    if (input2.issue) numberIssues.push({ severity: "error", message: input2.issue });
+    const tokens = numberTokens(text);
+    if (input2.fallback || tokens.some((token) => token.id !== void 0 && input2.values.get(token.id) === null))
+      return parseMarkup(input2.english, { ...globals, numberInput: void 0, lang: "en" });
+    for (const token of [...tokens].reverse())
+      if (token.id === void 0 || !input2.values.has(token.id)) {
+        numberIssues.push({
+          severity: "error",
+          message: token.id === void 0 ? "Malformed number token." : `Unknown number #{=${token.id}}.`
+        });
+        text = text.slice(0, token.from) + "?" + text.slice(token.to);
+      }
+    try {
+      text = resolveNumberTokens(text, input2.values);
+    } catch (error62) {
+      numberIssues.push({ severity: "error", message: String(error62) });
+      text = "?";
+    }
+  }
+  let reserved = false;
+  let tagged = false;
+  const clean = (source) => {
+    if (!reservedMarker.test(source)) return source;
+    reserved = true;
+    return source.replace(elementTextMarkers, "");
+  };
+  const mark = (source) => {
+    source = clean(source);
+    const marked2 = markElementTags(source);
+    if (marked2 !== source) tagged = true;
+    return lowerDelimitedMarkup(marked2);
+  };
+  const tinted = parseWith(text, globals, mark, numbered, indexed);
+  const parsed = tagged ? parseWith(
+    text,
+    globals,
+    (source) => lowerDelimitedMarkup(lowerElementTags(clean(source))),
+    numbered,
+    indexed
+  ) : tinted;
+  const lines2 = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
+  const diagnostics = parsed.diagnostics;
+  diagnostics.push(...numberIssues);
+  if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
+  return { lines: lines2, diagnostics };
+}
+function parseNumberSlots(text, globals, ids) {
+  const open2 = "\uE100", close = "\uE101";
+  if (text.includes(open2) || text.includes(close)) return parseMarkup(text, globals);
+  const variables = numberVariables(text);
+  const slots = numberSlots(text);
+  const markers = [];
+  let source = "", at = 0;
+  for (const [index, slot] of slots.entries()) {
+    const id = ids[index];
+    if (id === void 0 || variables.some(
+      (variable) => variable.from <= slot.from && !text.slice(variable.from, slot.from).includes("\n")
+    ))
+      continue;
+    const key = id.toString(16).replace(/[0-9a-f]/g, (char) => String.fromCharCode(103 + parseInt(char, 16)));
+    markers.push({ from: slot.from, to: slot.to, key });
+  }
+  for (const ref of variableReferences(text)) {
+    if (ref.name === "e" || slots.some((slot) => ref.from >= slot.from && ref.to <= slot.to) || variables.some(
+      (variable) => variable.from <= ref.from && !text.slice(variable.from, ref.from).includes("\n")
+    ))
+      continue;
+    const lineStart = text.lastIndexOf("\n", ref.from - 1) + 1;
+    const lineEnd = text.indexOf("\n", ref.to);
+    const line = text.slice(lineStart, lineEnd < 0 ? text.length : lineEnd);
+    if (numberTargetRanges(line).some(
+      (range) => ref.from - lineStart >= range.from && ref.from - lineStart < range.to
+    ))
+      continue;
+    markers.push({ from: ref.from, to: ref.to, key: "w" + ref.name });
+  }
+  for (const marker of markers.sort((a, b) => a.from - b.from)) {
+    source += text.slice(at, marker.from) + open2 + marker.key + close + text.slice(marker.from, marker.to) + open2 + close;
+    at = marker.to;
+  }
+  source += text.slice(at);
+  const parsed = parseOrdinary(source, globals, true);
+  const spans2 = (parts) => {
+    let active;
+    return parts.flatMap((part) => {
+      const title = part.title ? lines2(part.title) : void 0;
+      if (!part.text || !part.text.includes(open2) && active === void 0)
+        return [{ ...part, ...title && { title } }];
+      const slots2 = [];
+      const variables2 = [];
+      let output2 = "";
+      let at2 = 0, slot = active;
+      for (const marker of part.text.matchAll(/\uE100(w[a-zA-Z0-9]+|[g-v]*)\uE101/g)) {
+        if (marker.index > at2) {
+          const from = output2.length;
+          output2 += part.text.slice(at2, marker.index);
+          if (typeof slot === "number") slots2.push({ id: slot, from, to: output2.length });
+          else if (slot) variables2.push({ name: slot, from, to: output2.length });
+        }
+        slot = marker[1].startsWith("w") ? marker[1].slice(1) : marker[1] ? parseInt(
+          [...marker[1]].map((char) => (char.charCodeAt(0) - 103).toString(16)).join(""),
+          16
+        ) : void 0;
+        at2 = marker.index + marker[0].length;
+      }
+      if (at2 < part.text.length) {
+        const from = output2.length;
+        output2 += part.text.slice(at2);
+        if (typeof slot === "number") slots2.push({ id: slot, from, to: output2.length });
+        else if (slot) variables2.push({ name: slot, from, to: output2.length });
+      }
+      active = slot;
+      if (!output2 && !part.classNames?.length && !part.link && !part.title) return [];
+      return [
+        {
+          ...part,
+          text: output2,
+          ...slots2.length && { slots: slots2 },
+          ...variables2.length && { variables: variables2 },
+          ...title && { title }
+        }
+      ];
+    });
+  };
+  const lines2 = (input2) => input2.map((line) => ({
+    ...line,
+    ...line.linesContent && { linesContent: spans2(line.linesContent) },
+    ...line.table && {
+      table: line.table.map((row) => ({
+        ...row,
+        ...row.rowContent && {
+          rowContent: row.rowContent.map((cell) => ({
+            ...cell,
+            cellContent: spans2(cell.cellContent)
+          }))
+        }
+      }))
+    }
+  }));
+  return { ...parsed, lines: lines2(parsed.lines) };
+}
+function untinted(lines2) {
+  const spans2 = (parts) => {
+    const out = [];
+    for (const part of parts) {
+      const span2 = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
+      const last = out.at(-1);
+      const plain = (value) => value.text !== void 0 && Object.entries(value).every(([key, field]) => key === "text" || field === void 0);
+      if (last && plain(last) && plain(span2))
+        out[out.length - 1] = { text: last.text + span2.text };
+      else out.push(span2);
+    }
+    return out;
+  };
+  return lines2.map((line) => ({
+    ...line,
+    ...line.linesContent && { linesContent: spans2(line.linesContent) },
+    ...line.table && {
+      table: line.table.map((row) => ({
+        ...row,
+        rowContent: row.rowContent?.map((cell) => ({
+          ...cell,
+          cellContent: spans2(cell.cellContent)
+        }))
+      }))
+    }
+  }));
+}
+function parseWith(text, globals, lower2, numbered = false, indexed = false) {
+  const diagnostics = [];
+  text = lower2(text);
+  globals = {
+    ...globals,
+    variables: lower2(globals.variables),
+    titles: lower2(globals.titles),
+    ...globals.imports && {
+      imports: new Proxy(globals.imports, {
+        get(target, key, receiver) {
+          const value = Reflect.get(target, key, receiver);
+          if (typeof key === "string" && globals.numberInput?.hasImportedNumbers?.(key))
+            numbered = true;
+          return typeof value === "string" ? lower2(value) : value;
+        }
+      })
+    }
+  };
+  const prepared = prepareMarkup(text, globals, diagnostics);
+  const tidy = (text2) => indexed ? normalizeMarkupWhitespace(text2.replace(/\uE100w[a-zA-Z0-9]+\uE101\uE100\uE101/g, "")) : text2;
+  const format = (text2) => numbered && globals.lang === void 0 ? formatNumbers(text2, globals.numberInput?.lang) : text2;
+  const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
+    ([name, content]) => prepared.nativeTitles[name] ? prepareNativeTitle(prepared.nativeTitles[name], globals) : prepareMarkup(content, globals, []).text
+  ) : Object.values(prepared.titles).map((content) => prepareMarkup(content, globals, []).text);
+  for (const tag of new Set([prepared.text, ...titleBodies].flatMap(markupStrayTags))) {
+    diagnostics.push({
+      severity: "warning",
+      message: `Unclosed or unknown tag "${tag}": text after it is read as markup and may be dropped or recoloured. Write a complete "${tag} text />" tag, or remove the "<".`
+    });
+  }
+  const titles = {};
+  for (const [name, content] of Object.entries(prepared.titles)) {
+    const native = prepared.nativeTitles?.[name];
+    const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
+    if (native) {
+      for (const variable of new Set(markupVariableReferences(body))) {
+        diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
+      }
+    }
+    titles[name] = parseLines(format(tidy(body)), {});
+  }
+  return { lines: parseLines(format(tidy(prepared.text)), titles), diagnostics };
+}
+
 // packages/export/src/converter/descriptionConverter.ts
-var prepareDescription = (descriptionData) => {
+var numberLanguage = ({ database, hash: hash2, language }) => database[hash2].editor[language]?.englishFallback ? "en" : language;
+var nativeDescription = (descriptionData, description) => {
+  const { database, hash: hash2, language } = descriptionData;
+  const library = (id) => {
+    const text = database[id]?.editor[language];
+    return [text?.main, text?.secondary].filter(Boolean).join("\n");
+  };
+  const variables = library(2);
+  const titles = library(3);
+  let native = [description, variables, titles].some((source) => source.includes("{{"));
+  const imports = new Proxy(/* @__PURE__ */ Object.create(null), {
+    get(_target, key) {
+      const source = typeof key === "string" ? database[key]?.editor[language]?.main : void 0;
+      if (source?.includes("{")) native = true;
+      return source;
+    }
+  });
+  const parsed = parseMarkup(description, {
+    variables,
+    titles,
+    imports,
+    type: database[hash2].type,
+    lang: numberLanguage(descriptionData)
+  });
+  if (!native) return void 0;
+  const error62 = parsed.diagnostics.find((diagnostic) => diagnostic.severity === "error");
+  if (error62) throw new Error(`Tooltip ${hash2} (${language}): ${error62.message}`);
+  return parsed.lines;
+};
+var prepareDescription = (descriptionData, imported) => {
   const { language, hash: hash2, database } = descriptionData;
-  let description = loadExports(descriptionData);
+  let description = imported ?? loadExports(descriptionData);
   description = removePerkSpecificText(description, database[hash2].type);
   description = loadVariables({ ...descriptionData, descriptionString: description });
   const titles = extractTitles(removeUnusedText2(description, false));
-  const editor = database[hash2].editor;
-  const numberLanguage = editor[language]?.main === editor.en?.main ? "en" : language;
-  description = doMath(description, numberLanguage);
+  description = doMath(description, numberLanguage(descriptionData));
   return {
     preparedDescription: removeUnusedText2(description.trim()),
     titles: {
@@ -21939,8 +22290,11 @@ var prepareDescription = (descriptionData) => {
     }
   };
 };
-var descriptionConverter = (descriptionData) => {
-  const { preparedDescription, titles } = prepareDescription(descriptionData);
+var convertDescription = (descriptionData) => {
+  const imported = loadExports(descriptionData);
+  const native = nativeDescription(descriptionData, imported);
+  if (native !== void 0) return { lines: native.length ? native : void 0, native: true };
+  const { preparedDescription, titles } = prepareDescription(descriptionData, imported);
   const convertedTitles = Object.entries(titles || {}).reduce(
     (acc, [titleName, titleContent]) => {
       const { preparedDescription: preparedDescription2 } = prepareDescription({ ...descriptionData, descriptionString: titleContent });
@@ -21950,13 +22304,18 @@ var descriptionConverter = (descriptionData) => {
     },
     {}
   );
-  return separateTableWeaponType(preparedDescription, convertedTitles);
+  return { lines: separateTableWeaponType(preparedDescription, convertedTitles), native: false };
 };
+var descriptionConverter = (descriptionData) => convertDescription(descriptionData).lines;
 
 // packages/export/src/converter/descriptionFilter.ts
 var cleanDescription = (obj, converterType) => {
   const { getFromDescription, enhancedArrowReplacement } = getSettings(converterType);
   const remover = (obj2) => {
+    if (converterType === "dim" && obj2?.classNames?.includes("prismatic")) {
+      obj2.text = prismaticAssets.dim + (obj2.text || "");
+      obj2.classNames = obj2.classNames.filter((name) => name !== "prismatic");
+    }
     for (const key in obj2) {
       if (key === "text") {
         if (enhancedArrowReplacement !== void 0 && obj2[key] === "\u{1F845}") {
@@ -22079,6 +22438,7 @@ var databaseConverter = (converterType, database, identical) => {
   validateReferences(database);
   const lookup = expandAliases(database);
   const references = {};
+  const variants = {};
   const newDatabase = {};
   for (const [hash2, rawPerk] of Object.entries(database)) {
     const aliasOutput = isAliasStub(rawPerk) ? getAliasOutput(settings, rawPerk) : "copy";
@@ -22090,7 +22450,6 @@ var databaseConverter = (converterType, database, identical) => {
     if (!settings.optional && identical.has(hash2)) continue;
     if (isAliasStub(rawPerk) && aliasOutput === "reference") {
       references[hash2] = { hash: rawPerk.hash, aliasOf: rawPerk.aliasOf };
-      continue;
     }
     const cleanPerk = getDataFromPerk(perk, settings.getFromPerk);
     const descriptions = Object.entries(cleanPerk.editor).reduce(
@@ -22111,13 +22470,19 @@ var databaseConverter = (converterType, database, identical) => {
       {}
     );
     const { editor, ...withoutEditor } = cleanPerk;
-    newDatabase[hash2] = {
+    const convertedPerk = {
       ...withoutEditor,
       descriptions
     };
+    if (references[hash2]) {
+      variants[hash2] = convertedPerk;
+    } else newDatabase[hash2] = convertedPerk;
   }
   for (const [hash2, reference] of Object.entries(references)) {
-    if (newDatabase[reference.aliasOf] !== void 0) newDatabase[hash2] = reference;
+    const target = newDatabase[reference.aliasOf];
+    if (target === void 0) continue;
+    const variant = variants[hash2];
+    newDatabase[hash2] = JSON.stringify(variant.descriptions) !== JSON.stringify(target.descriptions) ? variant : reference;
   }
   const output2 = cleanObject(newDatabase);
   validateOutputReferences(output2);
@@ -22125,8 +22490,8 @@ var databaseConverter = (converterType, database, identical) => {
 };
 
 // packages/export/src/elementTags.ts
-function lowerInput(input2, arrow) {
-  const lower2 = (text) => lowerConsumerMarkup(text, arrow);
+function lowerInput(input2, arrow, elementTags = false) {
+  const lower2 = (text) => elementTags ? lowerDelimitedMarkup(text) : lowerConsumerMarkup(text, arrow);
   let perks;
   for (const [hash2, perk] of Object.entries(input2.perks)) {
     if (!("editor" in perk) || !perk.editor) continue;
@@ -22265,12 +22630,12 @@ var itemKeys = [
   "name",
   "itemHash",
   "itemName",
-  "type",
-  "lastUpload",
-  "uploadedBy",
-  "updateTracker",
-  "associated"
+  "category",
+  "edited",
+  "editedBy",
+  "references"
 ];
+var languageFilesModes = ["combined", "perLanguage"];
 var iconSymbols = [
   "kinetic",
   "arc",
@@ -22311,167 +22676,58 @@ var idPattern = /^[a-z][a-z0-9-]{1,31}$/;
 var reservedIds = /* @__PURE__ */ new Set(["_build", "changelog", "index", "api", "assets", "well-known"]);
 var isValidId = (id) => idPattern.test(id) && !reservedIds.has(id) && !/^v\d+$/.test(id);
 var isLegacyFile = (file2) => legacyPresets.includes(file2.preset);
+var isPerLanguage = (file2) => !isLegacyFile(file2) && file2.data.languageFiles === "perLanguage";
+var filePath = (projectId, file2) => `${projectId}/v${file2.formatVersion}/${file2.id}${file2.data?.languageFiles === "perLanguage" ? "" : ".json"}`;
+function fileUrls(projectId, file2) {
+  const key = filePath(projectId, file2);
+  if (isLegacyFile(file2)) return [{ path: key, languages: [...exportLanguages] }];
+  const languages3 = exportLanguages.filter((language) => file2.data.languages.includes(language));
+  return isPerLanguage(file2) ? languages3.map((language) => ({ path: `${key}/${language}.json`, languages: [language] })) : [{ path: key, languages: languages3 }];
+}
 
 // packages/core/src/markup/showcase.ts
 var showcaseId = "-1";
 var showcaseName = "Feature showcase";
 var showcaseText = `var e = \u{1F845}
-var amount = 10
+var stacks = 3
 var optional = empty
 title Showcase (
-A title adds a definition on hover.
+This text is the note: apps show it on hover or tap.
 )
-<bold Bold text /> can cover part of a line.
-<bold/>This whole line is bold.
-<yellow Exotic names use yellow text. />
-<pve This text is PvE-only. />
-<pvp [This text is PvP-only.] />
-PvE and PvP values can share a line: <pve 10 /> <pvp [5] />
-10 <pvp [5] /> is a value with a PvP override.
-Values per Stack: <pve 10|20|30 />. Pipes separate each Stack's value.
-{{Base perks use this text.}{Enhanced perks replace the base text with this line.}}
-A variable supplies #amount; math doubles it to \${#amount * 2}.
-Braces end a variable's name, so letters can follow it: #{amount}px.
-An empty variable writes nothing here: #optional
-<title Hover for a definition [Showcase] />
-<link This text opens a web link [https://d2clarity.com] />
+<bold Bold /> marks key words and <yellow yellow /> marks Exotic names.
+<bold/>A bold line is bold from start to end.
+<pve 30% /> <pvp [15%] /> pairs a PvE value with its PvP value.
+Lasts 11 <pvp [7.5] /> seconds: the bracketed value applies in PvP.
+<pve 10|20|30 /> lists one value per stack.
+30%<arrow/>33% marks a value that changes.
+{{Base perks get this line; Enhanced perks get their own.}{Enhanced perks get this line; base perks get their own.}}
+Variables and math arrive worked out: #stacks stacks, \${#stacks * 10}%, #{stacks}x.#optional
+<title Notes [Showcase] /> carry extra text for a word.
+<link Links [https://d2clarity.com] /> open a web page.
 
-\u2022 A bullet starts each list line.
-\u2022 The blank line above this list adds a gap.
-<kinetic/>Kinetic damage icon.
-<arc/>Arc damage icon.
-<solar/>Solar damage icon.
-<void/>Void damage icon.
-<stasis/>Stasis damage icon.
-<strand/>Strand damage icon.
-<prismatic/>Prismatic subclass icon.
-30%<arrow/>33%: leads to or becomes.
-<primary/>Primary ammo icon.
-<special/>Special ammo icon.
-<heavy/>Heavy ammo icon.
-<barrier/>Barrier champion icon.
-<overload/>Overload champion icon.
-<unstoppable/>Unstoppable champion icon.
-<hunter/>Hunter class icon.
-<titan/>Titan class icon.
-<warlock/>Warlock class icon.
-<kinetic Kinetic-tagged text is tinted in the editor. />
-<arc Arc-tagged text is tinted in the editor. />
-<solar Solar-tagged text is tinted in the editor. />
-<void Void-tagged text is tinted in the editor. />
-<stasis Stasis-tagged text is tinted in the editor. />
-<strand Strand-tagged text is tinted in the editor. />
-<prismatic Prismatic-tagged text is tinted in the editor. />
-Exports apply the symbol settings without the text tint.
+export Showcase (
+\u2022 Bullets start list lines.
+\u2022 The gap above this list is a spacer line.
+)
+<kinetic/>Kinetic <arc/>Arc <solar/>Solar <void/>Void <stasis/>Stasis <strand/>Strand <prismatic/>Prismatic
+<primary/>Primary <special/>Special <heavy/>Heavy
+<barrier/>Barrier <overload/>Overload <unstoppable/>Unstoppable
+<hunter/>Hunter <titan/>Titan <warlock/>Warlock
+Element words come with their element, to draw as its icon or tint: <kinetic Kinetic />, <arc Jolt />, <solar Scorch />, <void Volatile />, <stasis Slow />, <strand Sever />, <prismatic Transcendence />.
 enhanced (
 var d = 5
-Only enhanced perks show this section.
-<enhanced/>\${10+#{d}} is the enhanced value: base 10 plus 5.
-)
-export Showcase (
-An export shares this text with other tooltips.
+<enhanced/>\${10+#{d}}% is an enhanced value: only Enhanced perks have this line.
 )
 export hidden Hidden (
-This hidden export is shared without being drawn here.
+A hidden export is shared with other tooltips and never drawn here.
 )
-// Comments are notes that do not render.
-/* Block comments do not render either. */`;
+// Comments and variables are for editors: no file contains them.
+/* A block comment. */`;
 var showcaseGlobals = {
   variables: "",
   titles: "",
   type: "Weapon Trait Enhanced"
 };
-
-// packages/core/src/markup/parse.ts
-var reservedMarker = /[\uE000\uE001]/;
-var reservedMarkerMessage = "Remove the private-use character U+E000 or U+E001: the preview reserves it for element-tagged text.";
-function parseMarkup(text, globals = { variables: "", titles: "" }) {
-  let reserved = false;
-  let tagged = false;
-  const clean = (source) => {
-    if (!reservedMarker.test(source)) return source;
-    reserved = true;
-    return source.replace(elementTextMarkers, "");
-  };
-  const mark = (source) => {
-    source = clean(source);
-    const marked2 = markElementTags(source);
-    if (marked2 !== source) tagged = true;
-    return lowerDelimitedMarkup(marked2);
-  };
-  const tinted = parseWith(text, globals, mark);
-  const parsed = tagged ? parseWith(text, globals, (source) => lowerDelimitedMarkup(lowerElementTags(clean(source)))) : tinted;
-  const lines2 = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
-  const diagnostics = parsed.diagnostics;
-  if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
-  return { lines: lines2, diagnostics };
-}
-function untinted(lines2) {
-  const spans2 = (parts) => {
-    const out = [];
-    for (const part of parts) {
-      const span2 = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
-      const last = out.at(-1);
-      const plain = (value) => value.text !== void 0 && Object.entries(value).every(([key, field]) => key === "text" || field === void 0);
-      if (last && plain(last) && plain(span2))
-        out[out.length - 1] = { text: last.text + span2.text };
-      else out.push(span2);
-    }
-    return out;
-  };
-  return lines2.map((line) => ({
-    ...line,
-    ...line.linesContent && { linesContent: spans2(line.linesContent) },
-    ...line.table && {
-      table: line.table.map((row) => ({
-        ...row,
-        rowContent: row.rowContent?.map((cell) => ({
-          ...cell,
-          cellContent: spans2(cell.cellContent)
-        }))
-      }))
-    }
-  }));
-}
-function parseWith(text, globals, lower2) {
-  const diagnostics = [];
-  text = lower2(text);
-  globals = {
-    ...globals,
-    variables: lower2(globals.variables),
-    titles: lower2(globals.titles),
-    ...globals.imports && {
-      imports: new Proxy(globals.imports, {
-        get(target, key, receiver) {
-          const value = Reflect.get(target, key, receiver);
-          return typeof value === "string" ? lower2(value) : value;
-        }
-      })
-    }
-  };
-  const prepared = prepareMarkup(text, globals, diagnostics);
-  const titleBodies = prepared.nativeTitles ? Object.entries(prepared.titles).map(
-    ([name, content]) => prepared.nativeTitles[name] ? prepareNativeTitle(prepared.nativeTitles[name], globals) : prepareMarkup(content, globals, []).text
-  ) : Object.values(prepared.titles).map((content) => prepareMarkup(content, globals, []).text);
-  for (const tag of new Set([prepared.text, ...titleBodies].flatMap(markupStrayTags))) {
-    diagnostics.push({
-      severity: "warning",
-      message: `Unclosed or unknown tag "${tag}": text after it is read as markup and may be dropped or recoloured. Write a complete "${tag} text />" tag, or remove the "<".`
-    });
-  }
-  const titles = {};
-  for (const [name, content] of Object.entries(prepared.titles)) {
-    const native = prepared.nativeTitles?.[name];
-    const body = native ? prepareNativeTitle(native, globals) : prepareMarkup(content, globals, diagnostics).text;
-    if (native) {
-      for (const variable of new Set(markupVariableReferences(body))) {
-        diagnostics.push({ severity: "warning", message: `Unknown variable ${variable}.` });
-      }
-    }
-    titles[name] = parseLines(body, {});
-  }
-  return { lines: parseLines(prepared.text, titles), diagnostics };
-}
 
 // packages/export/src/v1/transform.ts
 var emptyNotes = () => ({
@@ -22496,6 +22752,8 @@ function span(input2, context) {
   const { format, shape } = context;
   const text = input2.text ?? "";
   const names = unique(input2.classNames);
+  const tint = names.includes("elementText") ? names.find((name) => elementTagNames.includes(name)) : void 0;
+  if (tint) names.splice(names.indexOf(tint), 1);
   if (names.includes("arrow")) names.unshift(...names.splice(names.indexOf("arrow"), 1));
   if (names.includes("link") && input2.link !== void 0) {
     const rule = format.links;
@@ -22538,6 +22796,7 @@ function span(input2, context) {
       delete out.text;
     }
   }
+  if (tint && out.classNames?.includes("elementText")) out.classNames.push(tint);
   return out.text === void 0 && !out.classNames ? [] : [out];
 }
 function compact(spans2) {
@@ -22605,9 +22864,37 @@ function lines(input2, context) {
 function renderText(input2, separator = "\n") {
   return input2.map((line) => (line.linesContent ?? []).map((part) => part.text ?? "").join("")).join(separator).trim();
 }
+var iconNames = /* @__PURE__ */ new Set([...iconSymbols, "arrow", "enhancedArrow"]);
+function toPart(span2) {
+  const names = (span2.classNames ?? []).filter((name) => name !== "link" && name !== "title");
+  let element;
+  if (names.includes("elementText")) {
+    const last = names[names.length - 1];
+    if (elementTagNames.includes(last)) element = names.pop();
+    names.splice(names.indexOf("elementText"), 1);
+  }
+  const icon = names.find((name) => iconNames.has(name));
+  const style = names.filter((name) => name !== icon);
+  return {
+    ...icon ? { icon } : {},
+    ...span2.text !== void 0 ? { text: span2.text } : {},
+    ...style.length ? { style } : {},
+    ...element ? { element } : {},
+    ...span2.link !== void 0 ? { link: span2.link } : {},
+    ...span2.title ? { note: toLines(span2.title) } : {}
+  };
+}
+function toLines(input2) {
+  return input2.map(
+    (line) => line.classNames?.[0] === "spacer" && !line.linesContent ? { spacer: true } : {
+      ...line.classNames ? { style: line.classNames } : {},
+      parts: (line.linesContent ?? []).map(toPart)
+    }
+  );
+}
 function transform2(input2, format, shape, notes) {
   const output2 = lines(input2, { format, shape, notes });
-  return shape === "lines" ? output2 : renderText(output2);
+  return shape === "lines" ? toLines(output2) : renderText(output2);
 }
 
 // packages/export/src/v1/compile.ts
@@ -22621,18 +22908,9 @@ var compileStages = [
   "serialise"
 ];
 var encoder2 = new TextEncoder();
-function hasRawPair(input2) {
-  return Object.values(input2.perks).some(
-    (perk) => !isAliasStub(perk) && Object.values(perk.editor).some(
-      (text) => text?.main.includes("{{") || text?.secondary.includes("{{")
-    )
-  );
-}
 function compile2(input2, file2, options) {
-  input2 = lowerInput(input2);
+  input2 = lowerInput(input2, void 0, !isLegacyFile(file2) && file2.format.elementTags);
   if (isLegacyFile(file2)) {
-    if (hasRawPair(input2))
-      throw new Error("Base/enhanced markup needs the new converter; legacy presets refuse it");
     const bytes = buildLegacy(input2, file2.preset, {
       identical: options.identical,
       arrowFallback: file2.arrowFallback
@@ -22647,6 +22925,7 @@ function compile2(input2, file2, options) {
   }
   return compileStyle(input2, file2, options);
 }
+var standsIn = (perk, language, rows) => rows[language] === void 0 || perk.editor[language]?.englishFallback === true;
 function globalsOf(lookup, language) {
   const imports = /* @__PURE__ */ Object.create(null);
   for (const [hash2, perk] of Object.entries(lookup))
@@ -22660,19 +22939,21 @@ function compileStyle(input2, file2, options) {
   validateReferences(input2.perks);
   const lookup = expandAliases(input2.perks);
   const languages3 = exportLanguages.filter((language) => data.languages.includes(language));
-  const globals = new Map(languages3.map((language) => [language, globalsOf(lookup, language)]));
+  const perLanguage = isPerLanguage(file2);
+  const resolving = perLanguage ? exportLanguages.filter((language) => language === "en" || languages3.includes(language)) : languages3;
+  const globals = new Map(resolving.map((language) => [language, globalsOf(lookup, language)]));
   const resolved = /* @__PURE__ */ new Map();
   const resolve = (hash2, perk) => {
     let rows = resolved.get(hash2);
     if (rows) return rows;
     rows = {};
-    for (const language of languages3) {
+    for (const language of resolving) {
       const text = perk.editor[language]?.main;
       if (text === void 0) continue;
       const markupGlobals = {
         ...globals.get(language),
         type: perk.type,
-        lang: text === perk.editor.en?.main ? "en" : language
+        lang: perk.editor[language]?.englishFallback ? "en" : language
       };
       const { lines: lines2, diagnostics } = parseMarkup(text, markupGlobals);
       const error62 = diagnostics.find((diagnostic) => diagnostic.severity === "error");
@@ -22689,6 +22970,7 @@ function compileStyle(input2, file2, options) {
   const sandbox = new Set(data.sandboxPerks);
   const uncategorised = [];
   const selected = [];
+  const categoryOf = /* @__PURE__ */ new Map();
   for (const [hash2, raw] of Object.entries(input2.perks)) {
     const perk = lookup[hash2];
     if (perk === void 0 || Number(hash2) < 50) continue;
@@ -22704,102 +22986,155 @@ function compileStyle(input2, file2, options) {
     }
     if (!(alias?.aliasKind === "sandbox" ? sandbox : categories).has(category)) continue;
     const rows = resolve(hash2, perk);
-    if (!languages3.some((language) => rows[language])) continue;
+    if (perLanguage ? !languages3.every((language) => rows[language] ?? rows.en) : !languages3.some((language) => rows[language]))
+      continue;
     selected.push(hash2);
+    categoryOf.set(hash2, category);
   }
   if (uncategorised.length)
     notices.push({ kind: "uncategorised", hashes: uncategorised.sort((a, b) => a - b) });
   ran.push("select-rows");
-  const keys = itemKeys.filter((key) => data.keys.includes(key));
+  const keys = new Set(data.keys);
   const picked = /* @__PURE__ */ new Map();
   for (const hash2 of selected) {
     const perk = lookup[hash2];
     const item = {};
-    for (const key of keys) {
-      if (key === "updateTracker") {
-        const tracker = perk.updateTracker?.descriptions ?? {};
-        const descriptions = Object.fromEntries(
-          languages3.flatMap(
-            (language) => tracker[language] ? [[language, tracker[language]]] : []
-          )
-        );
-        if (Object.keys(descriptions).length) item.updateTracker = { descriptions };
-        continue;
-      }
-      const value = perk[key];
-      if (value !== void 0 && value !== "") item[key] = value;
-    }
+    if (keys.has("name") && perk.name) item.name = perk.name;
+    if (keys.has("itemHash") && perk.itemHash !== void 0) item.itemHash = perk.itemHash;
+    if (keys.has("itemName") && perk.itemName) item.itemName = perk.itemName;
+    if (keys.has("category")) item.category = categoryOf.get(hash2);
+    if (keys.has("references") && perk.associated?.length) item.references = [...perk.associated];
     picked.set(hash2, item);
   }
+  const editedOf = (hash2, source) => {
+    const tracker = lookup[hash2].updateTracker?.descriptions[source];
+    if (!tracker) return void 0;
+    const edit = {};
+    if (keys.has("edited")) edit.at = new Date(tracker.lastUpdate).toISOString();
+    if (keys.has("editedBy") && tracker.updatedBy) edit.by = tracker.updatedBy;
+    return Object.keys(edit).length ? edit : void 0;
+  };
   ran.push("select-keys");
   const inFile = new Set(selected.map(Number));
   for (const item of picked.values()) {
-    if (!Array.isArray(item.associated)) continue;
-    const kept = item.associated.filter((target) => inFile.has(target));
-    if (kept.length) item.associated = kept;
-    else delete item.associated;
+    if (!item.references) continue;
+    const kept = item.references.filter((target) => inFile.has(target));
+    if (kept.length) item.references = kept;
+    else delete item.references;
   }
   ran.push("references");
   const notes = emptyNotes();
-  const expanded = {};
-  for (const hash2 of selected) {
-    const rows = resolved.get(hash2);
-    const descriptions = {};
-    for (const language of languages3) {
-      const lines2 = rows[language];
-      if (lines2) descriptions[language] = transform2(lines2, format, shape, notes);
-    }
-    expanded[hash2] = { hash: Number(hash2), ...picked.get(hash2), descriptions };
-  }
+  const transformed = /* @__PURE__ */ new Map();
+  const textOf = (hash2, language) => {
+    const key = `${hash2}
+${language}`;
+    if (!transformed.has(key))
+      transformed.set(key, transform2(resolved.get(hash2)[language], format, shape, notes));
+    return transformed.get(key);
+  };
+  let showcase;
   if (data.includeShowcase) {
-    const descriptions = {};
-    const { lines: lines2, diagnostics } = parseMarkup(lowerConsumerMarkup(showcaseText), showcaseGlobals);
+    const { lines: lines2, diagnostics } = parseMarkup(
+      format.elementTags ? showcaseText : lowerConsumerMarkup(showcaseText),
+      showcaseGlobals
+    );
     if (diagnostics.length) throw new Error("Invalid built-in showcase markup");
-    for (const language of languages3)
-      descriptions[language] = transform2(lines2, format, shape, notes);
-    expanded[showcaseId] = {
-      hash: Number(showcaseId),
-      ...keys.includes("name") ? { name: showcaseName } : {},
-      descriptions
-    };
+    showcase = transform2(lines2, format, shape, notes);
   }
+  const expand = (outputLanguages) => {
+    const expanded = {};
+    for (const hash2 of selected) {
+      const rows = resolved.get(hash2);
+      const descriptions = {};
+      const edited = {};
+      for (const language of outputLanguages) {
+        const own2 = rows[language] !== void 0;
+        if (!own2 && !perLanguage) continue;
+        descriptions[language] = textOf(hash2, own2 ? language : "en");
+        const source = perLanguage && standsIn(lookup[hash2], language, rows) ? "en" : language;
+        const edit = editedOf(hash2, source);
+        if (edit) edited[source] = edit;
+      }
+      const { references, ...item } = picked.get(hash2);
+      expanded[hash2] = {
+        hash: Number(hash2),
+        ...item,
+        ...Object.keys(edited).length ? { edited } : {},
+        ...references ? { references } : {},
+        descriptions
+      };
+    }
+    if (showcase !== void 0)
+      expanded[showcaseId] = {
+        hash: Number(showcaseId),
+        ...keys.has("name") ? { name: showcaseName } : {},
+        descriptions: Object.fromEntries(outputLanguages.map((language) => [language, showcase]))
+      };
+    return expanded;
+  };
+  const expandedOutputs = (perLanguage ? languages3.map((language) => [language]) : [languages3]).map(
+    (outputLanguages) => ({ languages: outputLanguages, expanded: expand(outputLanguages) })
+  );
   if (notes.unchosen.size)
     notices.push({ kind: "unchosen-symbol", symbols: [...notes.unchosen].sort() });
   if (notes.retired.size)
     notices.push({ kind: "retired-markup", classNames: [...notes.retired].sort() });
   if (notes.tables) notices.push({ kind: "tables-dropped", count: notes.tables });
   ran.push("transform");
-  const encoded = encodeV1(expanded);
+  const encoded = expandedOutputs.map((output2) => ({
+    ...output2,
+    file: encodeV1(output2.expanded, { shape, languages: output2.languages })
+  }));
   ran.push("encode");
-  validateV1(encoded);
-  const bytes = encoder2.encode(JSON.stringify(encoded));
+  const outputs = encoded.map((output2) => {
+    validateV1(output2.file);
+    return { ...output2, bytes: encoder2.encode(JSON.stringify(output2.file)) };
+  });
   ran.push("serialise");
-  return { stages: compileStages, ran, legacy: false, expanded, file: encoded, bytes, notices };
+  const [first] = outputs;
+  return {
+    stages: compileStages,
+    ran,
+    legacy: false,
+    outputs,
+    expanded: first.expanded,
+    file: first.file,
+    bytes: first.bytes,
+    notices
+  };
 }
-function encodeV1(expanded) {
-  const texts = [];
+function encodeV1(expanded, header) {
+  const descriptions = [];
   const index = /* @__PURE__ */ new Map();
-  const items = {};
+  const perks = {};
   for (const [hash2, item] of Object.entries(expanded)) {
-    const { descriptions, ...keys } = item;
+    const { descriptions: own2, ...keys } = item;
     delete keys.hash;
-    const key = JSON.stringify(descriptions);
-    let t = index.get(key);
-    if (t === void 0) {
-      t = texts.push(descriptions) - 1;
-      index.set(key, t);
+    const key = JSON.stringify(own2);
+    let description = index.get(key);
+    if (description === void 0) {
+      description = descriptions.push(own2) - 1;
+      index.set(key, description);
     }
-    items[hash2] = { ...keys, t };
+    perks[hash2] = { ...keys, description };
   }
-  return { texts, items };
+  return {
+    format: 1,
+    shape: header.shape,
+    languages: [...header.languages],
+    descriptions,
+    perks
+  };
 }
 function validateV1(file2) {
-  for (const [hash2, item] of Object.entries(file2.items)) {
-    if (!Number.isInteger(item.t) || item.t < 0 || item.t >= file2.texts.length)
-      throw new Error(`Item ${hash2} points at missing text ${item.t}`);
-    for (const target of item.associated ?? [])
-      if (!Object.hasOwn(file2.items, String(target)))
-        throw new Error(`Item ${hash2} is associated with ${target}, which is not in the file`);
+  if (file2.format !== 1 || !Array.isArray(file2.descriptions) || !file2.perks)
+    throw new Error("Not a format v1 file");
+  for (const [hash2, perk] of Object.entries(file2.perks)) {
+    if (!Number.isInteger(perk.description) || perk.description < 0 || perk.description >= file2.descriptions.length)
+      throw new Error(`Perk ${hash2} points at missing description ${perk.description}`);
+    for (const target of perk.references ?? [])
+      if (!Object.hasOwn(file2.perks, String(target)))
+        throw new Error(`Perk ${hash2} refers to ${target}, which is not in the file`);
   }
 }
 
@@ -22875,7 +23210,8 @@ var defaultData = () => ({
   sandboxPerks: [],
   frameAliases: true,
   languages: ["en"],
-  keys: ["name"],
+  languageFiles: "combined",
+  keys: ["name", "edited"],
   bungieIdentical: false
 });
 function newStyleFile(id, style, data = defaultData(), shape = styleShapes[style]) {
@@ -22891,34 +23227,45 @@ function newStyleFile(id, style, data = defaultData(), shape = styleShapes[style
 }
 
 // packages/export/src/v1/project.ts
-var filePath = (projectId, file2) => `${projectId}/v${file2.formatVersion}/${file2.id}.json`;
+var fileStatus = {
+  built: "current",
+  carried: "stale",
+  frozen: "frozen"
+};
 function projectIndex(config2, built, notices = []) {
   const files = [];
-  for (const file2 of config2.files) {
-    const path = filePath(config2.id, file2);
-    if (built[path])
-      files.push({ id: file2.id, formatVersion: file2.formatVersion, path, ...built[path] });
-  }
-  for (const entry of config2.retained ?? []) {
-    if (built[entry.path])
+  const add = (file2, until) => {
+    for (const { path, languages: languages3 } of fileUrls(config2.id, file2)) {
+      const url2 = built[path];
+      if (!url2) continue;
       files.push({
-        id: entry.snapshot.id,
-        formatVersion: entry.formatVersion,
-        path: entry.path,
-        ...built[entry.path],
-        until: entry.until
+        id: file2.id,
+        format: file2.formatVersion,
+        path,
+        // The served bytes decide: carried bytes keep the languages of their last build.
+        languages: url2.languages ?? languages3,
+        sha256: url2.sha256,
+        bytes: url2.bytes,
+        updatedAt: url2.lastUpdate,
+        status: fileStatus[url2.outcome],
+        ...until ? { updatesUntil: until } : {}
       });
-  }
+    }
+  };
+  for (const file2 of config2.files) add(file2);
+  for (const entry of config2.retained ?? [])
+    add({ ...entry.snapshot, formatVersion: entry.formatVersion }, entry.until);
   return { project: config2.id, name: config2.name, files, notices: [...notices] };
 }
 
 // packages/export/decoder/decode-v1.mjs
 function decodeV1(file2) {
   const decoded = {};
-  for (const [hash2, item] of Object.entries(file2.items)) {
-    const { t, ...keys } = item;
-    const descriptions = file2.texts[t];
-    if (descriptions === void 0) throw new Error(`Item ${hash2} points at missing text ${t}`);
+  for (const [hash2, perk] of Object.entries(file2.perks)) {
+    const { description, ...keys } = perk;
+    const descriptions = file2.descriptions[description];
+    if (descriptions === void 0)
+      throw new Error(`Perk ${hash2} points at missing description ${description}`);
     decoded[hash2] = { hash: Number(hash2), ...keys, descriptions };
   }
   return decoded;
@@ -22931,11 +23278,12 @@ function markerSet(file2, tokens = []) {
   const used = /* @__PURE__ */ new Set();
   const wanted = [...new Set(tokens.filter((token) => token.length > 0))];
   const v1 = isV1(file2);
+  const classKeys = v1 ? ["style", "icon", "element"] : ["classNames"];
   const visit2 = (value, path, parentKey) => {
     markers.add(`${path}:${typeOf(value)}`);
     if (typeof value === "string") {
       for (const token of wanted) if (!used.has(token) && value.includes(token)) used.add(token);
-      if (parentKey === "classNames") markers.add(`class ${path}=${value}`);
+      if (classKeys.includes(parentKey)) markers.add(`class ${path}=${value}`);
       return;
     }
     if (Array.isArray(value)) {
@@ -22952,9 +23300,9 @@ function markerSet(file2, tokens = []) {
   for (const token of used) markers.add(`token ${JSON.stringify(token)}`);
   return [...markers].sort();
 }
-var isV1 = (file2) => !!file2 && typeof file2 === "object" && "texts" in file2 && "items" in file2;
+var isV1 = (file2) => !!file2 && typeof file2 === "object" && "descriptions" in file2 && "perks" in file2;
 function isDataKeyed(path, v1) {
-  if (v1) return path === "$.items" || path === "$.texts[]";
+  if (v1) return path === "$.perks" || path === "$.descriptions[]" || path === "$.perks.*.edited";
   return path === "$" || path === "$.*.descriptions";
 }
 function markerChange(baseline, current) {
@@ -22998,11 +23346,15 @@ export {
   encodeV1,
   exportLanguages,
   filePath,
+  fileStatus,
+  fileUrls,
   iconSymbols,
   idPattern,
   isLegacyFile,
+  isPerLanguage,
   isValidId,
   itemKeys,
+  languageFilesModes,
   legacyFileName,
   legacyPresets,
   markerChange,
@@ -23012,6 +23364,8 @@ export {
   outputTokens,
   projectIndex,
   shapes,
+  showcaseText,
+  standsIn,
   styleFormats,
   styleShapes,
   styles,

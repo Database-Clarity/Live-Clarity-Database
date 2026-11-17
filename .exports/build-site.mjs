@@ -275,30 +275,49 @@ async function childMain() {
       send({ type: "done", result: buildOne(message.job) });
   });
   function buildOne(job) {
-    let bytes;
+    let outputs;
     let notices;
     try {
       const plan = engine.compile(input, job.file, options);
-      bytes = plan.bytes;
+      outputs = plan.outputs ?? [{ bytes: plan.bytes }];
       notices = plan.notices;
     } catch (error) {
       return { key: job.key, ok: false, reason: "failed", error: messageOf(error) };
     }
     try {
-      if (!job.path.startsWith(`${job.projectId}/`) || job.path.split("/").some((part) => part === ".." || part === "" || part === "."))
-        throw new Error(`Path ${job.path} is outside project ${job.projectId}`);
-      if (bytes.byteLength > job.maxBytes)
-        throw new Error(`${bytes.byteLength} bytes is over the ${job.maxBytes}-byte limit`);
-      const parsed = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes));
-      if (!engine.isLegacyFile(job.file)) engine.validateV1(parsed);
-      const markers = engine.markerSet(parsed, engine.outputTokens(job.file));
-      writeFileSync2(job.outPath, bytes);
+      if (outputs.length !== job.urls.length)
+        throw new Error(`${outputs.length} outputs for ${job.urls.length} URLs`);
+      const built = job.urls.map((url, index) => {
+        const { languages, bytes } = outputs[index];
+        if (languages && languages.join() !== url.languages.join())
+          throw new Error(`Output ${index} holds ${languages.join()}, not ${url.languages.join()}`);
+        if (!url.path.startsWith(`${job.projectId}/`) || url.path.split("/").some((part) => part === ".." || part === "" || part === "."))
+          throw new Error(`Path ${url.path} is outside project ${job.projectId}`);
+        if (bytes.byteLength > job.maxBytes)
+          throw new Error(
+            `${url.path}: ${bytes.byteLength} bytes is over the ${job.maxBytes}-byte limit`
+          );
+        const parsed = JSON.parse(
+          new TextDecoder("utf-8", { fatal: true }).decode(bytes)
+        );
+        if (!engine.isLegacyFile(job.file)) engine.validateV1(parsed);
+        return {
+          path: url.path,
+          languages: url.languages,
+          outPath: `${job.outPath}.${index}`,
+          bytes,
+          markers: engine.markerSet(parsed, engine.outputTokens(job.file))
+        };
+      });
+      for (const output of built) writeFileSync2(output.outPath, output.bytes);
       return {
         key: job.key,
         ok: true,
-        sha256: sha256(bytes),
-        bytes: bytes.byteLength,
-        markers,
+        outputs: built.map(({ bytes, ...output }) => ({
+          ...output,
+          sha256: sha256(bytes),
+          bytes: bytes.byteLength
+        })),
         notices
       };
     } catch (error) {
@@ -444,7 +463,7 @@ var snapshotNames = ["engine.mjs", "input.json", "identical.json", "catalog.json
 var isRecord = (value) => typeof value === "object" && value !== null && !Array.isArray(value);
 var isIsoTime = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/.test(value) && !Number.isNaN(Date.parse(value));
 var isStrings = (value) => Array.isArray(value) && value.every((item) => typeof item === "string");
-var isManifestFile = (file) => isRecord(file) && typeof file.sha256 === "string" && /^[0-9a-f]{64}$/.test(file.sha256) && Number.isSafeInteger(file.bytes) && file.bytes >= 0 && isIsoTime(file.lastUpdate) && (file.lastBuilt === void 0 || isIsoTime(file.lastBuilt)) && ["built", "carried", "frozen"].includes(file.outcome) && (file.retainUntil === void 0 || typeof file.retainUntil === "string") && (file.markers === void 0 || isStrings(file.markers)) && (file.baseline === void 0 || isStrings(file.baseline));
+var isManifestFile = (file) => isRecord(file) && typeof file.sha256 === "string" && /^[0-9a-f]{64}$/.test(file.sha256) && Number.isSafeInteger(file.bytes) && file.bytes >= 0 && isIsoTime(file.lastUpdate) && (file.lastBuilt === void 0 || isIsoTime(file.lastBuilt)) && ["built", "carried", "frozen"].includes(file.outcome) && (file.retainUntil === void 0 || typeof file.retainUntil === "string") && (file.markers === void 0 || isStrings(file.markers)) && (file.languages === void 0 || isStrings(file.languages)) && (file.baseline === void 0 || isStrings(file.baseline));
 function checkManifest(value) {
   const manifest = value;
   const ok = isRecord(value) && manifest.manifestVersion === manifestVersion && typeof manifest.buildId === "string" && /^[0-9a-f]{16}$/.test(manifest.buildId) && isIsoTime(manifest.builtAt) && isPinId(manifest.pinId) && isRecord(manifest.files) && Object.entries(manifest.files).every(
@@ -559,6 +578,7 @@ async function buildSite(options) {
   const buildId = sha256(snapshotNames.map((name) => snapshotShas[name]).join("\n")).slice(0, 16);
   const engine = await import(pathToFileURL3(join3(engineDir, "engine.mjs")).href);
   const config = await import(pathToFileURL3(join3(engineDir, "config.mjs")).href);
+  const deletesRetained = config.deletesRetained ?? (() => false);
   if (existsSync3(out) && readdirSync(out).length) throw new Error(`${out} is not empty`);
   mkdirSync2(out, { recursive: true });
   for (const name of snapshotNames) writeFile(join3(work, name), snapshotBytes[name]);
@@ -629,15 +649,18 @@ async function buildSite(options) {
       entries.push({
         project: project.id,
         path: engine.filePath(project.id, file),
+        urls: engine.fileUrls(project.id, file),
         fileId: file.id,
         file,
         kind: "active"
       });
     for (const entry of project.retained ?? []) {
       const expired = Date.parse(entry.until) <= now.getTime();
+      if (expired && deletesRetained(entry)) continue;
       entries.push({
         project: project.id,
         path: entry.path,
+        urls: engine.fileUrls(project.id, entry.snapshot),
         fileId: entry.snapshot.id,
         file: entry.snapshot,
         kind: expired ? "expired" : "retained",
@@ -649,13 +672,18 @@ async function buildSite(options) {
           file: entry.snapshot.id,
           path: entry.path,
           kind: "retained-ends",
-          message: `Keeps updating until ${entry.until}`
+          message: `${engine.fileUrls(project.id, entry.snapshot).map((url) => url.path).join(
+            ", "
+          )}: keeps updating until ${entry.until}${deletesRetained(entry) ? ", then deleted" : ""}`
         });
     }
   }
   for (const entry of entries)
-    if (!safeSitePath(entry.path) || !entry.path.startsWith(`${entry.project}/`))
-      throw new Error(`Path ${entry.path} is outside project ${entry.project}`);
+    entry.key = entry.kind === "active" || entries.filter((other) => other.path === entry.path).length === 1 ? entry.path : `${entry.path}/_retained-${sha256(entry.urls.map((url) => url.path).join(",")).slice(0, 16)}`;
+  for (const entry of entries)
+    for (const path of [entry.path, ...entry.urls.map((url) => url.path)])
+      if (!safeSitePath(path) || !path.startsWith(`${entry.project}/`))
+        throw new Error(`Path ${path} is outside project ${entry.project}`);
   const outcomes = /* @__PURE__ */ new Map();
   const legacyByName = new Map(pin.files.map((file) => [file.name, file]));
   const deployed = new Set(engine.deployedLegacyPresets);
@@ -691,6 +719,10 @@ async function buildSite(options) {
       });
     }
   };
+  const carryOrDropAll = async (entry, kind, reason, frozen = false) => {
+    for (const url of entry.urls)
+      await carryOrDrop({ ...entry, path: url.path }, kind, reason, frozen);
+  };
   for (const project of brokenProjects)
     for (const path of Object.keys(previous?.files ?? {}).filter(
       (path2) => path2.startsWith(`${project}/`)
@@ -698,7 +730,8 @@ async function buildSite(options) {
       await carryOrDrop(
         {
           project,
-          fileId: path.split("/").pop().replace(/\.json$/, ""),
+          // `<project>/v<n>/<file>.json`, `<project>/v<n>/<file>/<lang>.json`, or index.json.
+          fileId: (path.split("/")[2] ?? path.split("/").pop()).replace(/\.json$/, ""),
           path
         },
         "carried-forward",
@@ -707,7 +740,7 @@ async function buildSite(options) {
   const builds = [];
   for (const entry of entries) {
     if (entry.kind === "expired") {
-      await carryOrDrop(entry, "frozen", `Retained until ${entry.until}: frozen`, true);
+      await carryOrDropAll(entry, "frozen", `Retained until ${entry.until}: frozen`, true);
       continue;
     }
     if (engine.isLegacyFile(entry.file) && deployed.has(entry.file.preset)) {
@@ -763,6 +796,7 @@ async function buildSite(options) {
           outcome: record2.outcome,
           ...entry.until ? { retainUntil: entry.until } : {},
           markers,
+          languages: entry.urls[0].languages,
           ...baseline ? { baseline } : {}
         }
       });
@@ -778,11 +812,11 @@ async function buildSite(options) {
     }
     builds.push(entry);
   }
-  const lastAttempt = (path) => previous?.attempts?.[path] ?? previous?.files[path]?.lastBuilt ?? "";
+  const lastAttempt = (entry) => previous?.attempts?.[entry.key] ?? previous?.files[entry.urls[0].path]?.lastBuilt ?? "";
   const attempts = {};
   builds.sort((a, b) => {
-    const at = lastAttempt(a.path);
-    const bt = lastAttempt(b.path);
+    const at = lastAttempt(a);
+    const bt = lastAttempt(b);
     return at === bt ? a.path.localeCompare(b.path) : at < bt ? -1 : 1;
   });
   const pool = new BuildPool(
@@ -797,7 +831,7 @@ async function buildSite(options) {
     limits.fileTimeoutMs
   );
   const results = /* @__PURE__ */ new Map();
-  const outPaths = /* @__PURE__ */ new Map();
+  let jobs = 0;
   const skipped = [];
   const queue = [...builds];
   const running = /* @__PURE__ */ new Map();
@@ -807,22 +841,20 @@ async function buildSite(options) {
     while (queue.length || running.size) {
       while (queue.length && running.size < limits.pool && elapsed() < limits.carryAfterMs) {
         const entry = queue.shift();
-        attempts[entry.path] = nowIso;
-        const outPath = join3(work, `out-${outPaths.size}.json`);
-        outPaths.set(entry.path, outPath);
+        attempts[entry.key] = nowIso;
         const job = {
-          key: entry.path,
+          key: entry.key,
           projectId: entry.project,
-          path: entry.path,
+          urls: entry.urls,
           file: entry.file,
-          outPath,
+          outPath: join3(work, `out-${jobs++}`),
           maxBytes: limits.maxBytes
         };
         running.set(
-          entry.path,
+          entry.key,
           pool.run(job).then((result2) => {
-            results.set(entry.path, result2);
-            return entry.path;
+            results.set(entry.key, result2);
+            return entry.key;
           })
         );
       }
@@ -845,7 +877,7 @@ async function buildSite(options) {
         budgetHit = true;
         pool.close();
         for (const path of running.keys())
-          skipped.push(builds.find((entry) => entry.path === path));
+          skipped.push(builds.find((entry) => entry.key === path));
         running.clear();
       }
     }
@@ -853,60 +885,73 @@ async function buildSite(options) {
     pool.close();
   }
   for (const entry of skipped) {
-    results.delete(entry.path);
-    const before = lastAttempt(entry.path);
-    if (before) attempts[entry.path] = before;
-    else delete attempts[entry.path];
-    await carryOrDrop(
+    results.delete(entry.key);
+    const before = lastAttempt(entry);
+    if (before) attempts[entry.key] = before;
+    else delete attempts[entry.key];
+    await carryOrDropAll(
       entry,
       "budget",
       "Not built within this run's time budget (it builds first next run)"
     );
-    const kept = outcomes.get(entry.path);
-    if (kept) kept.file = { ...kept.file, lastBuilt: previous?.files[entry.path]?.lastBuilt };
+    for (const { path } of entry.urls) {
+      const kept = outcomes.get(path);
+      if (kept) kept.file = { ...kept.file, lastBuilt: previous?.files[path]?.lastBuilt };
+    }
   }
   for (const entry of builds) {
-    const result2 = results.get(entry.path);
+    const result2 = results.get(entry.key);
     if (!result2) continue;
     if (!result2.ok) {
       const label = result2.reason === "timeout" ? "Timed out" : result2.reason === "invalid" ? "Invalid output" : result2.reason === "crashed" ? "Build process crashed" : "Build failed";
-      await carryOrDrop(entry, "build-failed", `${label}: ${result2.error}`);
+      await carryOrDropAll(entry, "build-failed", `${label}: ${result2.error}`);
       continue;
     }
-    const old = previous?.files[entry.path];
-    let baseline;
-    if (entry.kind === "retained") {
-      baseline = old?.baseline ?? old?.markers ?? result2.markers;
-      const change = engine.markerChange(baseline, result2.markers);
-      if (change) {
-        await carryOrDrop(entry, "frozen", breakingMessage(change), true);
-        const kept = outcomes.get(entry.path);
-        if (kept) kept.file = { ...kept.file, baseline };
-        continue;
+    let published2 = false;
+    for (const output of result2.outputs) {
+      const old = previous?.files[output.path];
+      let baseline;
+      if (entry.kind === "retained") {
+        baseline = old?.baseline ?? old?.markers ?? output.markers;
+        const change = engine.markerChange(baseline, output.markers);
+        if (change) {
+          await carryOrDrop(
+            { ...entry, path: output.path },
+            "frozen",
+            breakingMessage(change),
+            true
+          );
+          const kept = outcomes.get(output.path);
+          if (kept) kept.file = { ...kept.file, baseline };
+          continue;
+        }
       }
-    }
-    for (const notice of result2.notices)
-      notices.push({
-        project: entry.project,
-        file: entry.fileId,
-        path: entry.path,
-        kind: "compile",
-        message: JSON.stringify(notice).slice(0, 300),
-        detail: notice
+      outcomes.set(output.path, {
+        from: output.outPath,
+        file: {
+          sha256: output.sha256,
+          bytes: output.bytes,
+          lastUpdate: old?.sha256 === output.sha256 ? old.lastUpdate : nowIso,
+          lastBuilt: nowIso,
+          outcome: "built",
+          ...entry.until ? { retainUntil: entry.until } : {},
+          markers: output.markers,
+          languages: output.languages,
+          ...baseline ? { baseline } : {}
+        }
       });
-    outcomes.set(entry.path, {
-      from: outPaths.get(entry.path),
-      file: {
-        sha256: result2.sha256,
-        bytes: result2.bytes,
-        lastUpdate: old?.sha256 === result2.sha256 ? old.lastUpdate : nowIso,
-        lastBuilt: nowIso,
-        outcome: "built",
-        ...entry.until ? { retainUntil: entry.until } : {},
-        markers: result2.markers,
-        ...baseline ? { baseline } : {}
-      }
-    });
+      published2 = true;
+    }
+    if (published2)
+      for (const notice of result2.notices)
+        notices.push({
+          project: entry.project,
+          file: entry.fileId,
+          path: entry.path,
+          kind: "compile",
+          message: JSON.stringify(notice).slice(0, 300),
+          detail: notice
+        });
   }
   const files = {};
   const put = (path, bytes) => writeFile(join3(out, ...path.split("/")), bytes);
@@ -937,7 +982,8 @@ async function buildSite(options) {
           sha256: file.sha256,
           bytes: file.bytes,
           lastUpdate: file.lastUpdate,
-          outcome: file.outcome
+          outcome: file.outcome,
+          languages: file.languages
         };
     const index = engine.projectIndex(
       project,

@@ -19779,6 +19779,7 @@ var images = [
   "stasis",
   "void",
   "strand",
+  "prismatic",
   "heavy",
   "primary",
   "special",
@@ -19806,6 +19807,14 @@ var classNameList = {
   table
 };
 var allClassNames = Object.values(classNameList).flat();
+
+// packages/export/src/converter/prismatic.ts
+var prismaticAssets = {
+  dim: "\u{F0156}",
+  vaultZero: "[Prismatic]",
+  braytech: null,
+  crayon: null
+};
 
 // packages/export/src/converter/converterSettings.ts
 var converterSettings = {
@@ -19876,6 +19885,7 @@ var converterSettings = {
         "arc",
         "solar",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -19896,6 +19906,7 @@ var converterSettings = {
         arc: ["<:arc:720178925317128243>", ""],
         solar: ["<:solar:720178909361995786>", ""],
         void: ["<:void:720178940240461864>", ""],
+        prismatic: [prismaticAssets.crayon ?? "", ""],
         primary: ["<:primary:968793055677251604>", ""],
         special: ["<:special:968793055631114330>", ""],
         heavy: ["<:heavy:968793055652106320>", ""],
@@ -19974,6 +19985,7 @@ var converterSettings = {
         "arc",
         "stasis",
         "strand",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -19998,6 +20010,7 @@ var converterSettings = {
         arc: ["\uE143", ""],
         stasis: ["\uE139", ""],
         strand: ["\uEF0E", ""],
+        prismatic: [prismaticAssets.braytech ?? "", ""],
         primary: ["\uF106", ""],
         special: ["\uF107", ""],
         heavy: ["\uF108", ""],
@@ -20031,6 +20044,7 @@ var converterSettings = {
         "stasis",
         "strand",
         "void",
+        "prismatic",
         "primary",
         "special",
         "heavy",
@@ -20054,6 +20068,7 @@ var converterSettings = {
         stasis: ["[Stasis]", ""],
         strand: ["[Strand]", ""],
         void: ["[Void]", ""],
+        prismatic: [prismaticAssets.vaultZero, ""],
         primary: ["[primary]", ""],
         special: ["[special]", ""],
         heavy: ["[heavy]", ""],
@@ -20251,7 +20266,9 @@ var legacyPerkSchema = legacyMetadataSchema.extend({
   itemName: external_exports.string().optional(),
   editor: external_exports.partialRecord(langSchema, external_exports.object({
     main: external_exports.string(),
-    secondary: external_exports.string()
+    secondary: external_exports.string(),
+    // Export provenance: English fallback retains English number formatting.
+    englishFallback: external_exports.literal(true).optional()
   }).strict()),
   updateTracker: external_exports.object({
     descriptions: external_exports.partialRecord(langSchema, trackerEntrySchema),
@@ -20426,8 +20443,17 @@ var permissionsSchema = external_exports.object({
     external_exports.object({
       login: external_exports.string().min(1),
       role: external_exports.enum(["maintainer", "editor", "trial", "translator"]),
-      languages: external_exports.array(langSchema).optional()
-    }).strict()
+      languages: external_exports.array(langSchema).optional(),
+      /**
+       * Translation manager (PRODUCT "Translation managers"): the languages this translator
+       * manages (adds/removes translators, rolls back uploads). Only translators, and only
+       * languages they translate, never English; maintainers assign it.
+       */
+      manages: external_exports.array(langSchema).min(1).optional()
+    }).strict().refine(
+      (access) => !access.manages || access.role === "translator" && access.manages.every((lang) => lang !== "en" && access.languages?.includes(lang)),
+      "Only translators manage languages, and only non-English languages they translate"
+    )
   ),
   /**
    * Export partners (spec section 4): numeric GitHub id -> the export projects that account may
@@ -20505,12 +20531,12 @@ var itemKeys = [
   "name",
   "itemHash",
   "itemName",
-  "type",
-  "lastUpload",
-  "uploadedBy",
-  "updateTracker",
-  "associated"
+  "category",
+  "edited",
+  "editedBy",
+  "references"
 ];
+var languageFilesModes = ["combined", "perLanguage"];
 var iconSymbols = [
   "kinetic",
   "arc",
@@ -20551,9 +20577,16 @@ var idPattern = /^[a-z][a-z0-9-]{1,31}$/;
 var reservedIds = /* @__PURE__ */ new Set(["_build", "changelog", "index", "api", "assets", "well-known"]);
 var isValidId = (id2) => idPattern.test(id2) && !reservedIds.has(id2) && !/^v\d+$/.test(id2);
 var isLegacyFile = (file2) => legacyPresets.includes(file2.preset);
+var isPerLanguage = (file2) => !isLegacyFile(file2) && file2.data.languageFiles === "perLanguage";
+var filePath = (projectId, file2) => `${projectId}/v${file2.formatVersion}/${file2.id}${file2.data?.languageFiles === "perLanguage" ? "" : ".json"}`;
+function fileUrls(projectId, file2) {
+  const key = filePath(projectId, file2);
+  if (isLegacyFile(file2)) return [{ path: key, languages: [...exportLanguages] }];
+  const languages3 = exportLanguages.filter((language) => file2.data.languages.includes(language));
+  return isPerLanguage(file2) ? languages3.map((language) => ({ path: `${key}/${language}.json`, languages: [language] })) : [{ path: key, languages: languages3 }];
+}
 
 // packages/export/src/v1/config.ts
-var urlPath = (projectId, fileId, formatVersion) => `${projectId}/v${formatVersion}/${fileId}.json`;
 var id = external_exports.string().refine(isValidId, "Use 2-32 of a-z, 0-9, and -, starting with a letter; not a reserved name");
 var plain = external_exports.string().max(configLimits.string).refine((value) => !/[\u0000-\u001f\u007f]/.test(value), "Control characters are not allowed");
 var categoryId = external_exports.string().regex(/^[a-z][a-z0-9-]{0,63}$/);
@@ -20593,6 +20626,8 @@ var dataSchema = external_exports.strictObject({
     (list) => list.length > 0,
     "Choose at least one language"
   ),
+  /** One file with every language, or one URL per language (`<file>/<lang>.json`). */
+  languageFiles: external_exports.enum(languageFilesModes),
   keys: uniqueList(external_exports.enum(itemKeys), itemKeys.length),
   /** Include tooltips whose English text is exactly Bungie's own description. */
   bungieIdentical: external_exports.boolean()
@@ -20639,13 +20674,24 @@ var fileSchema = external_exports.union([styleFile, legacyFile]).superRefine((fi
   if (file2.format.links.mode === "keep") keepAt(["format", "links"]);
 });
 var retainedSchema = external_exports.strictObject({
+  /** Absent on the original format-switch, rename, and file-removal entries. */
+  reason: external_exports.literal("language").optional(),
   path: external_exports.string().max(128),
   uid: external_exports.string().regex(/^[a-z0-9]{8,32}$/),
   formatVersion: external_exports.literal(1),
   snapshot: fileSchema,
   /** ISO date-time; the URL keeps updating until then. */
   until: external_exports.iso.datetime()
+}).superRefine((entry, ctx) => {
+  if (entry.reason === "language" && !isPerLanguage(entry.snapshot))
+    ctx.addIssue({
+      code: "custom",
+      path: ["snapshot"],
+      message: "Kept languages need a per-language file"
+    });
 });
+var retainedDeletionReasons = ["language"];
+var deletesRetained = (entry) => retainedDeletionReasons.includes(entry.reason ?? "url");
 var configSchema = external_exports.strictObject({
   schema: external_exports.literal(configSchemaVersion),
   id,
@@ -20673,12 +20719,21 @@ var configSchema = external_exports.strictObject({
       message: `At most ${configLimits.urlSlots} URLs per project (active files and retained entries)`
     });
   const paths = /* @__PURE__ */ new Map();
-  config2.files.forEach(
-    (file2, index) => paths.set(urlPath(config2.id, file2.id, file2.formatVersion), `files.${index}`)
-  );
+  const folders = /* @__PURE__ */ new Map();
+  config2.files.forEach((file2, index) => {
+    folders.set(filePath(config2.id, file2), file2.uid);
+    for (const url2 of fileUrls(config2.id, file2)) paths.set(url2.path, `files.${index}`);
+  });
   (config2.retained ?? []).forEach((entry, index) => {
     const at = ["retained", index];
-    const own2 = urlPath(config2.id, entry.snapshot.id, entry.formatVersion);
+    if (folders.has(entry.path) && folders.get(entry.path) !== entry.uid)
+      ctx.addIssue({
+        code: "custom",
+        path: [...at, "path"],
+        message: `The URL folder ${entry.path} belongs to another file`
+      });
+    else folders.set(entry.path, entry.uid);
+    const own2 = filePath(config2.id, { ...entry.snapshot, formatVersion: entry.formatVersion });
     if (entry.path !== own2)
       ctx.addIssue({
         code: "custom",
@@ -20697,13 +20752,15 @@ var configSchema = external_exports.strictObject({
         path: [...at, "snapshot", "uid"],
         message: "Snapshot uid differs from the entry"
       });
-    if (paths.has(entry.path))
-      ctx.addIssue({
-        code: "custom",
-        path: [...at, "path"],
-        message: `URL already used by ${paths.get(entry.path)}`
-      });
-    else paths.set(entry.path, `retained.${index}`);
+    for (const url2 of fileUrls(config2.id, entry.snapshot)) {
+      if (paths.has(url2.path))
+        ctx.addIssue({
+          code: "custom",
+          path: [...at, "path"],
+          message: `URL already used by ${paths.get(url2.path)}`
+        });
+      else paths.set(url2.path, `retained.${index}`);
+    }
   });
   const perUid = /* @__PURE__ */ new Map();
   for (const entry of config2.retained ?? [])
@@ -20736,25 +20793,36 @@ function migrateConfig(stored, table2 = migrations, target = configSchemaVersion
   }
   return target === configSchemaVersion ? configSchema.parse(config2) : config2;
 }
-function immutableChanges(previous, next, { maintainer = false } = {}) {
+function immutableChanges(previous, next, { maintainer = false, now } = {}) {
   const problems = [];
   if (next.id !== previous.id) problems.push("The project id cannot change");
   const active = new Set(previous.files.flatMap((file2) => file2.uid ? [file2.uid] : []));
   const retained = new Set((previous.retained ?? []).map((entry) => entry.uid));
   const owners = /* @__PURE__ */ new Map();
   for (const file2 of previous.files)
-    if (file2.uid) owners.set(urlPath(previous.id, file2.id, file2.formatVersion), file2.uid);
-  for (const entry of previous.retained ?? []) owners.set(entry.path, entry.uid);
+    if (file2.uid) {
+      owners.set(filePath(previous.id, file2), file2.uid);
+      for (const url2 of fileUrls(previous.id, file2)) owners.set(url2.path, file2.uid);
+    }
+  for (const entry of previous.retained ?? [])
+    if (!(now && deletesRetained(entry) && Date.parse(entry.until) <= now.getTime())) {
+      owners.set(entry.path, entry.uid);
+      for (const url2 of fileUrls(previous.id, entry.snapshot)) owners.set(url2.path, entry.uid);
+    }
   for (const file2 of next.files) {
     if (file2.uid && !active.has(file2.uid)) {
       if (!retained.has(file2.uid))
         problems.push(`File ${file2.id} has a uid the server did not assign`);
       else if (!maintainer) problems.push(`Only a maintainer can restore file ${file2.id}`);
     }
-    const path = urlPath(next.id, file2.id, file2.formatVersion);
-    const owner = owners.get(path);
-    if (owner !== void 0 && owner !== file2.uid)
-      problems.push(`The URL ${path} belongs to another file`);
+    for (const path of /* @__PURE__ */ new Set([
+      filePath(next.id, file2),
+      ...fileUrls(next.id, file2).map((url2) => url2.path)
+    ])) {
+      const owner = owners.get(path);
+      if (owner !== void 0 && owner !== file2.uid)
+        problems.push(`The URL ${path} belongs to another file`);
+    }
   }
   const before = (previous.retained ?? []).map((entry) => JSON.stringify(entry));
   const after = (next.retained ?? []).map((entry) => JSON.stringify(entry));
@@ -20777,17 +20845,23 @@ export {
   configSchema,
   configSchemaVersion,
   dataSchema,
+  deletesRetained,
   exportLanguages,
+  filePath,
   fileSchema,
+  fileUrls,
   formatSchema,
   iconSymbols,
   idPattern,
   immutableChanges,
   isLegacyFile,
+  isPerLanguage,
   isValidId,
   itemKeys,
+  languageFilesModes,
   migrateConfig,
   migrations,
+  retainedDeletionReasons,
   retainedSchema,
   shapes,
   styles,
