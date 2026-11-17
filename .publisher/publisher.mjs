@@ -21916,6 +21916,9 @@ function variableReferences(text, offset = 0) {
   }
   return found;
 }
+function hasDelimitedMarkup(text) {
+  return /#\{[a-zA-Z0-9]+\}/.test(text) || text.includes(enhancedArrowMarkup);
+}
 function isHolderName(name2) {
   const match = holderPattern.exec(name2);
   return match !== null && Number(match[1]) === match[2].length;
@@ -21967,6 +21970,14 @@ function lowerDelimitedMarkup(text) {
 function lowerConsumerMarkup(text, arrow) {
   const lowered = lowerDelimitedMarkup(lowerElementTags(text));
   return arrow ? lowered.replaceAll("<arrow/>", arrow === "legacy" ? "\u{1F81A}" : "\u2192") : lowered;
+}
+function isMarkupOnly(before, after, values, afterValues = values) {
+  const lower2 = (text, map2) => lowerConsumerMarkup(map2 ? resolveNumberTokens(text, map2) : text);
+  try {
+    return before !== void 0 && before !== after && lower2(before, values) === lower2(after, afterValues);
+  } catch {
+    return false;
+  }
 }
 function mergedVariable(name2, defined) {
   if (defined(name2)) return void 0;
@@ -25536,7 +25547,7 @@ function buildLegacy(input2, preset, options = {}) {
 }
 
 // scripts/publisher/publisher.ts
-import { createHash as createHash2, createPublicKey, verify } from "node:crypto";
+import { createHash as createHash3, createPublicKey as createPublicKey2, verify as verify2 } from "node:crypto";
 
 // packages/core/src/index.ts
 init_languages();
@@ -29774,7 +29785,10 @@ function batchMembers(io, tree, batchId) {
 }
 function withEvent(io, tree, batch, update, event) {
   const revision2 = batch.revision + 1;
-  let events = [...batch.events, { ...event, revision: revision2, contentRevision: batch.contentRevision }];
+  let events = [
+    ...batch.events,
+    { ...event, revision: revision2, contentRevision: update.contentRevision ?? batch.contentRevision }
+  ];
   const overflow = events.length - scheduleLimits.inlineEvents;
   if (overflow > 0) {
     const prefix = `schedule/batches/${batch.id}/events/`;
@@ -30034,6 +30048,17 @@ init_syntax();
 // apps/worker/src/github.ts
 init_zod();
 
+// apps/worker/src/http.ts
+var HttpError = class extends Error {
+  constructor(status, message, details) {
+    super(message);
+    this.status = status;
+    this.details = details;
+  }
+  status;
+  details;
+};
+
 // apps/worker/src/crypto.ts
 var encoder2 = new TextEncoder();
 
@@ -30057,6 +30082,15 @@ var notFoundError = external_exports.object({
   type: external_exports.literal("NOT_FOUND"),
   path: external_exports.tuple([external_exports.literal("repository"), external_exports.literal("ref"), external_exports.literal("target"), external_exports.string()])
 });
+var rawBlobFields = external_exports.object({
+  oid: external_exports.string().regex(refPattern),
+  byteSize: external_exports.number().int().nonnegative(),
+  isBinary: external_exports.boolean().nullable(),
+  isTruncated: external_exports.boolean(),
+  text: external_exports.string().nullable()
+}).strict();
+var blobContent = (value2) => `${JSON.stringify(value2, null, 2)}
+`;
 var exportBlob = external_exports.object({ object: external_exports.union([blobFields, external_exports.object({}).strict()]) }).nullable();
 var exportsRepository = external_exports.object({
   ref: external_exports.object({
@@ -30983,6 +31017,1005 @@ var GlobalsPublisher = class _GlobalsPublisher {
   }
 };
 
+// scripts/schedule-prepare/prepare.ts
+init_zod();
+init_schedule();
+
+// apps/worker/src/schedule/validation.ts
+init_zod();
+init_schedule();
+
+// config/publisher.json
+var publisher_default = {
+  enabled: true
+};
+
+// apps/worker/src/elementTags.ts
+var reservedMarker2 = /[\uE000\uE001]/;
+var publisherPinPath = ".publisher/PIN";
+var elementTagsCapability = "elementTags";
+var markupBracesCapability = "markupBraces";
+var prismaticTagsCapability = "prismaticTags";
+var arrowSymbolCapability = "arrowSymbol";
+var numberTokensCapability = "numberTokens";
+function hasNumberTokens(tooltip) {
+  return Object.values(tooltip.text).some((entry) => entry?.text.includes("#{="));
+}
+function hasArrowSymbol(tooltip) {
+  return Object.values(tooltip.text).some((entry) => entry?.text.includes("<arrow/>"));
+}
+var exporter = {
+  publisherEnabled: () => publisher_default.enabled
+};
+function pinLowersElementTags(pin) {
+  const capabilities = pin?.capabilities;
+  return Array.isArray(capabilities) && capabilities.includes(elementTagsCapability);
+}
+function pinLowersMarkupBraces(pin) {
+  const capabilities = pin?.capabilities;
+  return Array.isArray(capabilities) && capabilities.includes(markupBracesCapability);
+}
+function pinLowersPrismaticTags(pin) {
+  const capabilities = pin?.capabilities;
+  return Array.isArray(capabilities) && capabilities.includes(elementTagsCapability) && capabilities.includes(prismaticTagsCapability);
+}
+function firstDelimited(tooltip) {
+  for (const [lang, entry] of Object.entries(tooltip.text)) {
+    if (!hasDelimitedMarkup(entry.text)) continue;
+    const text = /#\{[a-zA-Z0-9]+\}/.exec(entry.text)?.[0] ?? enhancedArrowMarkup;
+    return { lang, text };
+  }
+  return void 0;
+}
+function refuseUnlowerableDelimited(tooltip, lowers, action) {
+  refuseReservedNames(tooltip);
+  if (lowers) return;
+  const found = firstDelimited(tooltip);
+  if (!found) return;
+  throw new HttpError(
+    422,
+    `Tooltip ${tooltip.hash} (${found.lang}) contains "${found.text}", which can't be ${action}: the publisher installed in the data branch does not lower it yet (${publisherPinPath} lacks the "${markupBracesCapability}" capability). Write #name or #e for now.`
+  );
+}
+function refuseReservedNames(tooltip) {
+  for (const [lang, entry] of Object.entries(tooltip.text)) {
+    const [found] = reservedNames(entry.text);
+    if (found)
+      throw new HttpError(
+        422,
+        `Tooltip ${tooltip.hash} (${lang}): ${reservedNameMessage(found.name)}`
+      );
+  }
+}
+function refuseUnlowerable(tooltip, pin, action, head) {
+  const issue2 = validateNumberTooltip(tooltip, head)[0];
+  if (issue2) throw new HttpError(422, `Tooltip ${tooltip.hash} (${issue2.lang}): ${issue2.message}`);
+  if (hasNumberTokens(tooltip)) {
+    const capabilities = pin?.value?.capabilities;
+    if (!exporter.publisherEnabled() || !Array.isArray(capabilities) || !capabilities.includes(numberTokensCapability))
+      throw new HttpError(
+        422,
+        `Tooltip ${tooltip.hash} contains number tokens, which can't be ${action}: an enabled publisher and ${publisherPinPath} with the "${numberTokensCapability}" capability are required.`
+      );
+  }
+  if (hasArrowSymbol(tooltip)) {
+    const capabilities = pin?.value?.capabilities;
+    if (!exporter.publisherEnabled() || !Array.isArray(capabilities) || !capabilities.includes(arrowSymbolCapability))
+      throw new HttpError(
+        422,
+        `Tooltip ${tooltip.hash} contains <arrow/>, which can't be ${action}: an enabled publisher and ${publisherPinPath} with the "${arrowSymbolCapability}" capability are required.`
+      );
+  }
+  refuseUnlowerableTags(
+    tooltip,
+    pin === void 0 || pinLowersElementTags(pin.value),
+    action,
+    pin === void 0 || pinLowersPrismaticTags(pin.value)
+  );
+  refuseUnlowerableDelimited(
+    tooltip,
+    pin === void 0 || pinLowersMarkupBraces(pin.value),
+    action
+  );
+}
+function firstTag(tooltip, element) {
+  for (const [lang, entry] of Object.entries(tooltip.text)) {
+    const tag = findElementTags(entry.text).find((found) => !element || found.element === element);
+    if (tag) return { lang, tag, text: entry.text.slice(tag.from, tag.to) };
+  }
+  return void 0;
+}
+function refuseReservedMarkers(tooltip) {
+  for (const [lang, entry] of Object.entries(tooltip.text)) {
+    if (reservedMarker2.test(entry.text))
+      throw new HttpError(
+        422,
+        `Tooltip ${tooltip.hash} (${lang}) contains the private-use character U+E000 or U+E001, which the preview reserves for element-tagged text; remove it.`
+      );
+  }
+}
+function refuseUnlowerableTags(tooltip, lowers, action, lowersPrismatic = lowers) {
+  refuseReservedMarkers(tooltip);
+  if (lowers && lowersPrismatic) return;
+  const found = lowers ? firstTag(tooltip, "prismatic") : firstTag(tooltip);
+  if (!found) return;
+  const capability = lowers ? prismaticTagsCapability : elementTagsCapability;
+  throw new HttpError(
+    422,
+    `Tooltip ${tooltip.hash} (${found.lang}) contains element-tagged text "${found.text}", which can't be ${action}: the publisher installed in the data branch does not lower it yet (${publisherPinPath} lacks the "${capability}" capability). Write "<${found.tag.element}/>${found.tag.text}" for now.`
+  );
+}
+
+// apps/worker/src/permissions.ts
+function checkEdit(access, base, next) {
+  if (isTextlessDescription(next) && (base === null || hasTooltipText(base))) {
+    if (!["maintainer", "editor"].includes(access.role))
+      throw new HttpError(403, "Only editors and maintainers can create link-only tooltips");
+    if (base === null && !next.compendium)
+      throw new HttpError(422, "A text-less tooltip requires a Compendium link");
+  }
+  if (access.role === "translator" && base === null)
+    throw new HttpError(403, "Translators may not create tooltips");
+  if (next.hash > 3 && base && !hasTooltipText(base) && hasTooltipText(next) && !next.text.en?.text.trim())
+    throw new HttpError(422, "Write English text before adding translations to this tooltip");
+  if (JSON.stringify(base?.archive) !== JSON.stringify(next.archive) && access.role !== "maintainer" && !(access.role === "editor" && base?.archive && !next.archive))
+    throw new HttpError(403, "Archive changes require maintainer role");
+  const categoryChanged = base?.custom?.categoryId !== next.custom?.categoryId;
+  const attachmentCategoryChange = [base?.custom?.categoryId, next.custom?.categoryId].some(
+    (category) => category === "weapon-attachment" || category === "attachment-effect"
+  );
+  if (categoryChanged && attachmentCategoryChange && !["editor", "maintainer"].includes(access.role))
+    throw new HttpError(403, "Attachment category changes require editor role or higher");
+  if (access.role === "translator") {
+    const withoutAllowed = (value2) => ({
+      ...value2,
+      text: Object.fromEntries(
+        Object.entries(value2.text).filter(
+          ([lang]) => !access.languages?.includes(lang)
+        )
+      )
+    });
+    const original = base;
+    if (stableStringify(withoutAllowed(original)) !== stableStringify(withoutAllowed(next))) {
+      throw new HttpError(403, "Translators may change only text in their assigned languages");
+    }
+  }
+  for (const [language, entry] of Object.entries(next.text)) {
+    const issue2 = gluedNumberIssues(entry.text)[0];
+    if (issue2)
+      throw new HttpError(422, "Tooltip " + next.hash + " (" + language + "): " + issue2.message);
+  }
+}
+function checkEnglishRevision(access, head, next, noTranslationImpact, now = Date.now()) {
+  const before = head?.text.en;
+  const after = next.text.en;
+  if (!after) return "none";
+  const future = () => {
+    const at = Date.parse(after.updatedAt);
+    if (at > now + 5 * 6e4 && !(before && at === Date.parse(before.updatedAt) + 1))
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: the English revision is in the future; check your device clock`
+      );
+  };
+  if (!before) {
+    future();
+    const sources = languages2.map((lang) => lang === "en" ? void 0 : head?.text[lang]?.sourceUpdatedAt).filter((source) => source !== void 0).map((source) => Date.parse(source));
+    if (sources.length && !(Date.parse(after.updatedAt) > Math.max(...sources)))
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: the new English revision must be newer than its translations' source`
+      );
+    return "none";
+  }
+  if (after.text === before.text || isMarkupOnly(before.text, after.text)) {
+    if (after.updatedAt !== before.updatedAt || after.updatedBy !== before.updatedBy)
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: unchanged English must keep its stored revision`
+      );
+    return "none";
+  }
+  if (after.updatedAt === before.updatedAt) {
+    if (!noTranslationImpact)
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: English text changed without a new English revision`
+      );
+    if (access.role !== "maintainer" && access.role !== "editor")
+      throw new HttpError(
+        403,
+        "Only editors and maintainers can mark a save as having no translation impact"
+      );
+    if (after.updatedBy !== before.updatedBy)
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: a change with no translation impact keeps the English revision author`
+      );
+    return "kept";
+  }
+  if (!(Date.parse(after.updatedAt) > Date.parse(before.updatedAt)))
+    throw new HttpError(
+      422,
+      `Tooltip ${next.hash}: the new English revision must be newer than the stored one`
+    );
+  future();
+  return "new";
+}
+function checkTranslationStamps(head, next, english = next.text.en) {
+  for (const lang of languages2) {
+    if (lang === "en") continue;
+    const before = head?.text[lang];
+    const after = next.text[lang];
+    if (!after) continue;
+    const tokenEdit = before?.text.includes("#{=") || after.text.includes("#{=");
+    const markupOnly = isMarkupOnly(
+      before?.text,
+      after.text,
+      tokenEdit && head?.text.en ? numberValues(head.text.en, lang) : void 0,
+      tokenEdit && english ? numberValues(english, lang) : void 0
+    );
+    if (before && (after.text === before.text || markupOnly)) {
+      if (after.updatedAt !== before.updatedAt || after.updatedBy !== before.updatedBy || after.sourceUpdatedAt !== before.sourceUpdatedAt)
+        throw new HttpError(
+          422,
+          `Tooltip ${next.hash}: unchanged ${lang} text must keep its stored revision`
+        );
+      continue;
+    }
+    if (english && after.sourceUpdatedAt === void 0)
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: the changed ${lang} text needs the English revision it translates`
+      );
+    if (english && !(Date.parse(after.sourceUpdatedAt) <= Date.parse(english.updatedAt)))
+      throw new HttpError(
+        422,
+        `Tooltip ${next.hash}: the ${lang} source revision is newer than the English revision`
+      );
+  }
+}
+
+// apps/worker/src/schedule/store.ts
+init_schedule();
+init_zod();
+var unpublishedMessage2 = "This field has saved changes that are not published yet; publish them first";
+var memberCap = 15;
+var saveChangeCap = 15;
+var scheduledSaveChangeCap = 10;
+var memberByteCap = 8 * 1024;
+var eventArchiveSchema = external_exports.object({ events: external_exports.array(external_exports.unknown()).min(1) }).strict();
+var indexEntrySchema = scheduleIndexSchema.shape.batches.element;
+var storedIndexSchema = external_exports.object({
+  batches: external_exports.array(external_exports.looseObject({ id: external_exports.string(), status: batchStatusSchema, updatedAt: external_exports.string() })).max(scheduleLimits.openBatches + scheduleLimits.indexTerminal)
+}).strict();
+var fixed = ["config/permissions.json", publisherPinPath, schedulePaths.due, schedulePaths.index];
+
+// apps/worker/src/schedule/validation.ts
+var encoder3 = new TextEncoder();
+var batchSaveChangeSchema = external_exports.object({ hash: hashSchema, base: tooltipSchema.nullable(), next: tooltipSchema }).strict().refine(({ hash: hash2, base, next }) => next.hash === hash2 && (!base || base.hash === hash2), {
+  message: "Change hash, base hash and next hash must agree"
+});
+var sameTooltip = (a, b) => a === null || b === null ? a === b : stableStringify(a) === stableStringify(b);
+function overlay(from, to, fields) {
+  if (from === null) return to;
+  let value2 = from;
+  for (const field of fields) value2 = withField(value2, to, field);
+  return tooltipSchema.parse(value2);
+}
+function parseMember(value2, batchId, hash2) {
+  const member = batchMemberSchema.parse(value2);
+  if (member.hash !== hash2)
+    throw new HttpError(502, `Stored member ${hash2} of ${batchId} mismatch`);
+  return member;
+}
+function refuseMemberSize(member) {
+  if (encoder3.encode(blobContent(member)).byteLength > memberByteCap)
+    throw new HttpError(
+      413,
+      `Tooltip ${member.hash} is too large to stage in a batch (${memberByteCap / 1024} KiB per tooltip)`
+    );
+}
+function validateBatchSave({
+  batch,
+  batchId,
+  input: input2,
+  own: own2,
+  files,
+  pushed,
+  pin,
+  access,
+  now,
+  user,
+  head
+}) {
+  const blocked = [];
+  const stale = [];
+  const conflicts = [];
+  const before = [];
+  const written = [];
+  for (const [index, change] of input2.changes.entries()) {
+    const file2 = files[index];
+    if (own2.has(change.hash)) {
+      if (!file2) throw new HttpError(502, `Batch member ${change.hash} is unreadable`);
+      const stored = parseMember(file2.value, batchId, change.hash);
+      let merged = change.next;
+      if (change.base === null) {
+        conflicts.push({ ...change, head: stored.proposed, fields: ["$exists"] });
+        continue;
+      }
+      checkEdit(access, change.base, change.next);
+      if (!sameTooltip(change.base, stored.proposed)) {
+        const result = merge3(change.base, stored.proposed, change.next);
+        if (!result.ok) {
+          conflicts.push({
+            ...change,
+            head: stored.proposed,
+            fields: result.conflicts.map(({ field }) => field)
+          });
+          continue;
+        }
+        merged = result.merged;
+      }
+      checkEdit(access, stored.proposed, merged);
+      const changed = changedFields(stored.proposed, merged);
+      if (!changed.length) continue;
+      if (batch.status !== "draft" && changed.some((field) => !isTranslationField(field)))
+        throw new HttpError(409, "Unschedule to edit", { hash: change.hash, fields: changed });
+      const proposed = overlay(stored.proposed, merged, changed);
+      if (proposed.text.en) {
+        const english2 = { ...proposed.text.en };
+        const numbers = stored.proposed.text.en?.text === english2.text ? stored.proposed.text.en.numbers : reconcileNumberMap(stored.proposed.text.en, english2, proposed);
+        delete english2.numbers;
+        if (numbers) english2.numbers = numbers;
+        proposed.text.en = english2;
+      }
+      checkEnglishRevision(access, stored.proposed, proposed, false, Date.parse(now));
+      const currentFile = files[input2.changes.length + index];
+      const current = currentFile ? tooltipSchema.parse(currentFile.value) : null;
+      if (current && current.hash !== change.hash)
+        throw new HttpError(502, "Stored tooltip hash mismatch");
+      const projection = { base: stored.base, current, proposed };
+      const activation = activate(projection);
+      let english = activation.ok ? activation.tooltip.text.en : proposed.text.en;
+      if (!activation.ok) {
+        const choices = {};
+        for (const field of activation.fields)
+          if (field !== "$exists" || stored.base !== null && current === null)
+            choices[field] = "upcoming";
+        for (let pass = 0; pass < 2; pass++) {
+          const resolved = resolveActivation({ ...projection, choices });
+          if (resolved.ok) {
+            english = resolved.tooltip?.text.en;
+            break;
+          }
+          for (const field of resolved.missing) choices[field] = "upcoming";
+        }
+      }
+      checkTranslationStamps(stored.proposed, proposed, english ?? proposed.text.en);
+      refuseUnlowerable(proposed, pin, "saved", stored.proposed);
+      const member = batchMemberSchema.parse({
+        ...stored,
+        proposed,
+        updatedAt: now,
+        updatedBy: user.login
+      });
+      refuseMemberSize(member);
+      if (pushed) {
+        const snapshotFile = files[2 * input2.changes.length + index];
+        const composed = composeParsed({
+          hash: change.hash,
+          base: member.base,
+          proposed: member.proposed,
+          snapshot: snapshotFile ? tooltipSchema.parse(snapshotFile.value) : null,
+          pushed: pushed.has(change.hash)
+        });
+        if (composed.status === "stale") stale.push({ hash: change.hash, reason: composed.reason });
+        else if (composed.status === "overlay" && composed.unpublished.length)
+          blocked.push({ hash: change.hash, fields: composed.unpublished });
+      }
+      before.push(stored);
+      written.push(member);
+    } else {
+      const current = file2 ? tooltipSchema.parse(file2.value) : null;
+      if (current && current.hash !== change.hash)
+        throw new HttpError(502, "Stored tooltip hash mismatch");
+      if (!sameTooltip(change.base, current)) {
+        conflicts.push({
+          ...change,
+          head: current,
+          fields: change.base === null || current === null ? ["$exists"] : ["$base"]
+        });
+        continue;
+      }
+      checkEdit(access, current, change.next);
+      const changed = changedFields(current, change.next);
+      if (!changed.length) continue;
+      const proposed = overlay(current, change.next, changed);
+      if (proposed.text.en) {
+        const english = { ...proposed.text.en };
+        const numbers = current?.text.en?.text === english.text ? current.text.en.numbers : reconcileNumberMap(current?.text.en, english, proposed);
+        delete english.numbers;
+        if (numbers) english.numbers = numbers;
+        proposed.text.en = english;
+      }
+      checkEnglishRevision(access, current, proposed, false, Date.parse(now));
+      checkTranslationStamps(current, proposed);
+      refuseUnlowerable(proposed, pin, "saved", current);
+      const member = batchMemberSchema.parse({
+        hash: change.hash,
+        base: current,
+        baseCommit: head,
+        proposed,
+        updatedAt: now,
+        updatedBy: user.login
+      });
+      refuseMemberSize(member);
+      written.push(member);
+    }
+  }
+  if (conflicts.length) return { conflicts, before, written };
+  if (stale.length)
+    throw new HttpError(409, "Current changed under this batch; rebase the listed tooltips", {
+      members: stale
+    });
+  if (blocked.length) throw new HttpError(409, unpublishedMessage2, { members: blocked });
+  return { conflicts, before, written };
+}
+function refuseScheduleMembers(message, members3) {
+  throw new HttpError(409, message, { members: members3 });
+}
+function validateScheduleMembers(hashes, files, pushed) {
+  const members3 = [];
+  const composed = [];
+  const snapshots = /* @__PURE__ */ new Map();
+  const stale = [];
+  const unpublished = [];
+  const blocked = [];
+  const first = [];
+  for (const [index, hash2] of hashes.entries()) {
+    const [memberRaw, currentRaw, snapshotRaw, conflictRaw] = files.slice(index * 4, index * 4 + 4);
+    if (!memberRaw) throw new HttpError(502, `Batch member ${hash2} is unreadable`);
+    const member = batchMemberSchema.parse(memberRaw.value);
+    if (member.hash !== hash2) throw new HttpError(502, "Stored member hash mismatch");
+    members3.push(member);
+    if (conflictRaw) blocked.push({ hash: hash2, reason: "Resolve the batch activation first" });
+    const current = currentRaw ? tooltipSchema.parse(currentRaw.value) : null;
+    const snapshot = snapshotRaw ? tooltipSchema.parse(snapshotRaw.value) : null;
+    snapshots.set(hash2, snapshot);
+    const result = composeParsed({
+      hash: hash2,
+      base: member.base,
+      proposed: member.proposed,
+      snapshot,
+      pushed: pushed.has(hash2)
+    });
+    if (result.status === "stale") {
+      stale.push({ hash: hash2, reason: result.reason });
+      continue;
+    }
+    if (result.status === "overlay" && result.unpublished.length)
+      unpublished.push({ hash: hash2, fields: result.unpublished });
+    if (result.status === "whole") first.push(hash2);
+    const activation = activate({ base: member.base, current, proposed: member.proposed });
+    if (!activation.ok)
+      stale.push({
+        hash: hash2,
+        fields: activation.fields,
+        ...activation.reason ? { reason: activation.reason } : {}
+      });
+    composed.push(result.tooltip);
+  }
+  if (blocked.length) refuseScheduleMembers("Resolve the batch activation first", blocked);
+  if (stale.length)
+    refuseScheduleMembers("Current changed under this batch; rebase the listed tooltips", stale);
+  if (unpublished.length) refuseScheduleMembers(unpublishedMessage2, unpublished);
+  return { members: members3, composed, snapshots, first };
+}
+
+// scripts/schedule-prepare/intents.ts
+import { createHash as createHash2, createPublicKey, verify } from "node:crypto";
+init_schedule();
+var InvalidScheduleIntent = class extends Error {
+};
+function verifiedSource(pub, raw) {
+  const envelope = scheduleEnvelopeSchema.parse(raw);
+  const key = createPublicKey(pub.options.publicKey);
+  if (createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== pub.options.keyFingerprint || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
+    throw new InvalidScheduleIntent("Invalid schedule signature or key pin");
+  const intent = scheduleIntentSchema.parse(JSON.parse(envelope.payload));
+  if (stableStringify(intent) !== envelope.payload || intent.repo !== pub.options.repo || intent.dataBranch !== pub.options.dataBranch || intent.liveBranch !== pub.options.liveBranch)
+    throw new InvalidScheduleIntent("Schedule intent target or canonical bytes mismatch");
+  const tree = pub.git.tree(intent.sourceCommit);
+  const batch = batchSchema.parse(pub.read(tree, `schedule/batches/${intent.batchId}/batch.json`));
+  const members3 = batchMembers(pub, tree, intent.batchId);
+  const oid4 = members3.length ? globalTreeOid(
+    tree,
+    `schedule/batches/${intent.batchId}/tooltips`,
+    pub.git.treeModes?.(intent.sourceCommit)
+  ) : null;
+  if (batch.id !== intent.batchId || batch.revision !== intent.expectedRevision || batch.contentRevision !== intent.contentRevision || oid4 !== intent.memberTreeOid || batch.claim || (intent.kind === "save" ? batch.status !== intent.returnStatus : !["draft", "scheduled"].includes(batch.status)))
+    throw new InvalidScheduleIntent("Signed schedule source identity mismatch");
+  return { intent, tree, batch, members: members3 };
+}
+function verifiedRequest(pub, tree, path) {
+  const request = scheduleRequestSchema.parse(pub.read(tree, path));
+  const source = verifiedSource(pub, request.envelope);
+  const { intent } = source;
+  const bodyOid = tree[scheduleIntentPaths.body(intent.requestId)];
+  if (!bodyOid) throw new InvalidScheduleIntent("Missing submitted schedule bytes");
+  const body2 = pub.git.blob(bodyOid);
+  if (Buffer.byteLength(body2) > 300 * 1024 || createHash2("sha256").update(body2).digest("hex") !== intent.bodyDigest || request.bodyDigest !== intent.bodyDigest || request.requestId !== intent.requestId || path !== scheduleIntentPaths.request(intent.requestId) || request.batchId !== intent.batchId || request.requesterId !== intent.requester.id || request.admissionRevision <= intent.expectedRevision)
+    throw new InvalidScheduleIntent("Schedule request or submitted bytes mismatch");
+  const input2 = JSON.parse(body2);
+  if (input2.requestId !== intent.requestId || input2.revision !== intent.expectedRevision)
+    throw new InvalidScheduleIntent("Submitted request identity mismatch");
+  return { ...source, request, input: input2 };
+}
+async function schedulePayload(pub, envelope) {
+  const { intent, members: members3 } = verifiedSource(pub, envelope);
+  if (intent.kind !== "schedule")
+    throw new InvalidScheduleIntent("Publication requires a signed schedule approval");
+  const approval = {
+    kind: "batch",
+    opId: intent.requestId,
+    repo: intent.repo,
+    dataBranch: intent.dataBranch,
+    liveBranch: intent.liveBranch,
+    requester: intent.requester,
+    batchId: intent.batchId,
+    contentRevision: intent.contentRevision,
+    notBefore: intent.notBefore,
+    hashes: members3.map((m) => m.hash),
+    approvedDigest: await approvedDigest(members3)
+  };
+  return batchPublishPayloadSchema.parse({
+    ...approval,
+    createdAt: intent.createdAt,
+    intentDigest: await batchIntentDigest(approval)
+  });
+}
+async function verifyPreparedPublication(pub, raw, opId) {
+  const payload = await schedulePayload(pub, raw.sourceIntent);
+  if (raw.payload !== stableStringify(payload) || raw.sig !== raw.sourceIntent.sig || payload.opId !== opId)
+    throw new InvalidScheduleIntent("Prepared publication differs from signed source approval");
+  return payload;
+}
+var publication = (payload, sourceIntent, preparedRequestId) => ({
+  payload: stableStringify(payload),
+  sig: sourceIntent.sig,
+  sourceIntent,
+  preparedRequestId
+});
+
+// scripts/schedule-prepare/prepare.ts
+var PreparationRejected = class extends Error {
+  constructor(message, details) {
+    super(message);
+    this.details = details;
+  }
+  details;
+};
+var ProposalRejected = class extends PreparationRejected {
+};
+var SCHEDULE_GLOBALS_UNSUPPORTED = "Scheduled publication does not support globals yet";
+var saveInput = external_exports.object({
+  requestId: external_exports.string(),
+  revision: external_exports.number().int().nonnegative(),
+  changes: external_exports.array(batchSaveChangeSchema).min(1).max(saveChangeCap).refine((changes2) => new Set(changes2.map((c) => c.hash)).size === changes2.length),
+  message: external_exports.string().trim().min(1).max(500)
+}).strict();
+function reject(message) {
+  throw new PreparationRejected(message);
+}
+var SchedulePreparer = class {
+  constructor(pub) {
+    this.pub = pub;
+  }
+  pub;
+  file(tree, path) {
+    return tree[path] ? { sha: tree[path], value: this.pub.read(tree, path) } : null;
+  }
+  access(tree, id) {
+    const access = permissionsSchema.parse(this.pub.read(tree, "config/permissions.json")).users[String(id)];
+    if (!access || !["maintainer", "editor", "translator"].includes(access.role))
+      throw new ProposalRejected("Requester revoked");
+    return access;
+  }
+  pin(tree) {
+    const pin = external_exports.object({ sourceSha: external_exports.string(), sha256: external_exports.string(), capabilities: external_exports.array(external_exports.string()) }).parse(this.pub.read(tree, ".publisher/PIN"));
+    if (pin.sourceSha !== this.pub.options.publisherSha || pin.sha256 !== this.pub.options.publisherDigest || !pin.capabilities.includes("scheduledBatches") || !pin.capabilities.includes("schedulePreparationV1"))
+      reject("Installed publisher lacks matching schedulePreparationV1 PIN");
+    return pin;
+  }
+  /** Also reused at claim to recheck current save authorization against its signed source. */
+  validateSave(tree, checked) {
+    const { intent, batch, members: members3 } = checked;
+    if (intent.kind !== "save") return reject("Expected a signed save");
+    const inputResult = saveInput.safeParse(checked.input);
+    if (!inputResult.success) throw new ProposalRejected("Invalid batch save proposal");
+    const input2 = inputResult.data;
+    const access = this.access(tree, intent.requester.id);
+    const own2 = new Set(members3.map((m) => m.hash));
+    const adds = input2.changes.filter((c) => !own2.has(c.hash));
+    if (intent.returnStatus === "scheduled" && input2.changes.length > scheduledSaveChangeCap)
+      throw new ProposalRejected("Too many scheduled save changes");
+    if (adds.length && (access.role === "translator" || batch.status !== "draft"))
+      throw new ProposalRejected("Unschedule to add batch members");
+    if (own2.size + adds.length > memberCap) throw new ProposalRejected("Too many batch members");
+    const aliases = this.pub.aliasesAt(tree);
+    for (const { hash: hash2 } of input2.changes) {
+      if (resolveAlias(hash2, aliases) !== hash2)
+        throw new ProposalRejected(`Tooltip ${hash2} is an alias`);
+      for (const other of this.batches(tree)) {
+        if (other.id !== batch.id && isOpenStatus(other.status) && tree[schedulePaths.member(other.id, hash2)])
+          throw new ProposalRejected(`Tooltip ${hash2} already belongs to open batch ${other.id}`);
+      }
+    }
+    const scheduled = batch.status === "scheduled";
+    const files = [
+      ...input2.changes.map(
+        ({ hash: hash2 }) => this.file(
+          own2.has(hash2) ? checked.tree : tree,
+          own2.has(hash2) ? schedulePaths.member(batch.id, hash2) : `tooltips/${hash2}.json`
+        )
+      ),
+      ...input2.changes.map(({ hash: hash2 }) => this.file(tree, `tooltips/${hash2}.json`)),
+      ...scheduled ? input2.changes.map(({ hash: hash2 }) => this.file(tree, `live/tooltips/${hash2}.json`)) : []
+    ];
+    let result;
+    try {
+      result = validateBatchSave({
+        batch,
+        batchId: batch.id,
+        input: input2,
+        own: own2,
+        files,
+        ...scheduled ? {
+          pushed: new Set(
+            Object.keys(pushedSchema.parse(this.pub.read(tree, "live/pushed.json"))).map(
+              Number
+            )
+          )
+        } : {},
+        pin: { value: this.pin(tree) },
+        access,
+        now: iso(this.pub.options.now()),
+        user: intent.requester,
+        head: intent.sourceCommit
+      });
+    } catch (error62) {
+      if (error62 instanceof HttpError && error62.status < 500)
+        throw new ProposalRejected(error62.message, error62.details);
+      throw error62;
+    }
+    if (result.conflicts.length)
+      throw new ProposalRejected("Conflicting batch save", result.conflicts);
+    return result;
+  }
+  batches(tree) {
+    return Object.keys(tree).filter((p) => /^schedule\/batches\/[0-7][0-9A-HJKMNP-TV-Z]{25}\/batch\.json$/.test(p)).sort().map((p) => {
+      const batch = batchSchema.parse(this.pub.read(tree, p));
+      if (p !== schedulePaths.batch(batch.id)) reject("Stored batch identity mismatch");
+      return batch;
+    });
+  }
+  refreshIndex(tree) {
+    const entries = this.batches(tree).map((b) => ({
+      id: b.id,
+      name: b.name,
+      status: b.status,
+      notBefore: b.notBefore,
+      opId: b.opId,
+      revision: b.revision,
+      // Advisory membership comes from names, not member bodies that validation may
+      // just have rejected. Failure outcomes must still be able to commit.
+      hashes: Object.keys(tree).flatMap((path) => {
+        const prefix = `schedule/batches/${b.id}/tooltips/`;
+        if (!path.startsWith(prefix)) return [];
+        const name2 = path.slice(prefix.length);
+        if (!/^(0|[1-9]\d*)\.json$/.test(name2)) return [];
+        const hash2 = hashSchema.safeParse(Number(name2.slice(0, -5)));
+        return hash2.success ? [hash2.data] : [];
+      }).sort((a, b2) => a - b2),
+      updatedAt: b.events.at(-1)?.at ?? b.createdAt
+    }));
+    if (!entries.length && !tree[schedulePaths.index]) return;
+    const terminal = entries.filter((b) => !isOpenStatus(b.status)).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.id.localeCompare(b.id));
+    const keep = new Set(terminal.slice(0, scheduleLimits.indexTerminal).map((b) => b.id));
+    const index = scheduleIndexSchema.parse({
+      batches: entries.filter((b) => isOpenStatus(b.status) || keep.has(b.id))
+    });
+    let oldIndex;
+    try {
+      oldIndex = this.pub.read(tree, schedulePaths.index);
+    } catch (error62) {
+      if (!(error62 instanceof SyntaxError)) throw error62;
+    }
+    const previous = scheduleIndexSchema.safeParse(oldIndex);
+    if (previous.success && stableStringify({
+      batches: [...previous.data.batches].sort((a, b) => a.id.localeCompare(b.id))
+    }) === stableStringify(index))
+      return;
+    tree[schedulePaths.index] = this.pub.writeBlob(json2(index));
+  }
+  collision(tree, opId) {
+    if (tree[paths2(opId).request] || tree[paths2(opId).log])
+      reject("Publication operation ID already exists");
+  }
+  original(tree, checked) {
+    const original = this.pub.read(
+      tree,
+      scheduleIntentPaths.publication(checked.batch.id)
+    );
+    const source = this.pub.read(checked.tree, paths2(checked.batch.opId).request);
+    if (!original || stableStringify(source) !== stableStringify(original))
+      reject("Withdrawn publication identity mismatch");
+    return original;
+  }
+  async validatePublication(tree, payload, head) {
+    this.pin(tree);
+    if (hasGlobals(tree)) reject(SCHEDULE_GLOBALS_UNSUPPORTED);
+    const members3 = batchMembers(this.pub, tree, payload.batchId);
+    if (!members3.length || members3.length > memberCap)
+      reject("Invalid scheduled batch member count");
+    for (const member of members3) {
+      refuseMemberSize(member);
+      for (const other of this.batches(tree))
+        if (other.id !== payload.batchId && isOpenStatus(other.status) && tree[schedulePaths.member(other.id, member.hash)])
+          reject(`Tooltip ${member.hash} already belongs to open batch ${other.id}`);
+    }
+    const pushed = new Set(
+      Object.keys(pushedSchema.parse(this.pub.read(tree, "live/pushed.json"))).map(Number)
+    );
+    validateScheduleMembers(
+      members3.map((m) => m.hash),
+      members3.flatMap((m) => [
+        this.file(tree, schedulePaths.member(payload.batchId, m.hash)),
+        this.file(tree, `tooltips/${m.hash}.json`),
+        this.file(tree, `live/tooltips/${m.hash}.json`),
+        this.file(tree, schedulePaths.conflict(m.hash))
+      ]),
+      pushed
+    );
+    const plan = await this.pub.batchPlan(tree, payload, this.pub.aliasesAt(tree));
+    if ("failure" in plan) {
+      const Rejection = plan.failure.proposalRejected ? ProposalRejected : plan.failure.retryable ? ConsumerOutputRejected : PreparationRejected;
+      throw new Rejection(plan.failure.error ?? plan.failure.status, plan.failure.outcomes);
+    }
+    const live = this.pub.head(this.pub.options.liveBranch);
+    this.pub.merge(live, {
+      ...plan,
+      opId: payload.opId,
+      requestBlob: "",
+      sourceCommit: head,
+      liveParent: live,
+      publisherSha: this.pub.options.publisherSha,
+      generatorSha: this.pub.options.generatorSha,
+      outcome: "published",
+      requester: payload.requester,
+      intentDigest: payload.intentDigest
+    });
+  }
+  async prepare(tree, head, batch, request, checked) {
+    const { intent } = checked;
+    if (!this.pub.git.ancestor(intent.sourceCommit, head))
+      reject("Schedule source is not in data branch history");
+    if (intent.batchId !== batch.id || batch.contentRevision !== intent.contentRevision || batch.preparation?.kind !== intent.kind || batch.preparation.returnStatus !== (intent.kind === "schedule" ? "scheduled" : intent.returnStatus))
+      reject("Preparation intent or content fence mismatch");
+    for (const m of batchMembers(this.pub, tree, batch.id))
+      if (tree[schedulePaths.member(batch.id, m.hash)] !== checked.tree[schedulePaths.member(batch.id, m.hash)])
+        reject("Accepted members changed during preparation");
+    if (batchMembers(this.pub, tree, batch.id).length !== checked.members.length)
+      reject("Accepted membership changed during preparation");
+    const access = this.access(tree, intent.requester.id);
+    this.pin(tree);
+    let contentChanged = false;
+    if (intent.kind === "save") {
+      const result = this.validateSave(tree, checked);
+      contentChanged = isContentChange(result.before, result.written);
+      if (intent.returnStatus === "scheduled" && contentChanged) reject("Unschedule to edit");
+      for (const m of result.written)
+        tree[schedulePaths.member(batch.id, m.hash)] = this.pub.writeBlob(json2(m));
+    } else if (!["maintainer", "editor"].includes(access.role)) reject("Scheduling role revoked");
+    const scheduled = batch.preparation.returnStatus === "scheduled";
+    let ready = null;
+    if (scheduled) {
+      let envelope;
+      if (intent.kind === "schedule") {
+        if (batch.opId !== intent.requestId || batch.notBefore !== intent.notBefore || batch.zone !== intent.zone)
+          reject("Schedule target changed");
+        envelope = publication(
+          await schedulePayload(this.pub, request.envelope),
+          request.envelope,
+          request.requestId
+        );
+      } else {
+        const original = this.original(tree, checked);
+        envelope = { ...original, preparedRequestId: request.requestId };
+      }
+      this.collision(tree, batch.opId);
+      const payload = await this.pub.verifyRequest(
+        this.pub.writeBlob(json2(envelope)),
+        batch.opId,
+        tree
+      );
+      if (payload.kind !== "batch" || payload.batchId !== batch.id || payload.contentRevision !== batch.contentRevision || payload.notBefore !== batch.notBefore)
+        reject("Publication approval identity mismatch");
+      await this.validatePublication(tree, payload, head);
+      tree[paths2(batch.opId).request] = this.pub.writeBlob(json2(envelope));
+      ready = request.requestId;
+    }
+    const at = iso(this.pub.options.now());
+    const updated = withEvent(
+      this.pub,
+      tree,
+      batch,
+      {
+        status: scheduled ? "scheduled" : "draft",
+        preparation: null,
+        preparedRequestId: ready,
+        contentRevision: batch.contentRevision + Number(contentChanged),
+        scheduledContentRevision: scheduled ? batch.contentRevision : null
+      },
+      {
+        action: "prepared",
+        by: intent.requester,
+        at,
+        hashes: batchMembers(this.pub, tree, batch.id).map((m) => m.hash)
+      }
+    );
+    tree[schedulePaths.batch(batch.id)] = this.pub.writeBlob(json2(updated));
+    tree[scheduleIntentPaths.request(request.requestId)] = this.pub.writeBlob(
+      json2({
+        ...request,
+        status: "completed",
+        updatedAt: at,
+        retryable: false,
+        reasons: [],
+        ...this.pub.options.runUrl.startsWith("https://") ? { workflowUrl: this.pub.options.runUrl } : {},
+        result: {
+          revision: updated.revision,
+          contentRevision: updated.contentRevision,
+          status: updated.status
+        }
+      })
+    );
+    this.refreshDue(tree);
+  }
+  /** due is only a trigger: derive it from the authoritative states after materialization. */
+  refreshDue(tree) {
+    tree[schedulePaths.due] = this.pub.writeBlob(
+      json2(
+        dueSchema.parse({
+          entries: this.batches(tree).filter(
+            (batch) => batch.opId && batch.notBefore && (batch.status === "scheduled" || batch.status === "publishing" || batch.status === "preparing" && batch.preparation?.returnStatus === "scheduled")
+          ).map((batch) => ({
+            batchId: batch.id,
+            opId: batch.opId,
+            notBefore: batch.notBefore,
+            claimed: batch.claim?.opId === batch.opId
+          }))
+        })
+      )
+    );
+  }
+  async failure(tree, batch, request, error62, checked) {
+    const semantic = error62 instanceof PreparationRejected || error62 instanceof ProposalOutputRejected || error62 instanceof InvalidScheduleIntent || error62 instanceof external_exports.ZodError || error62 instanceof SyntaxError || error62 instanceof HttpError && error62.status < 500;
+    const at = iso(this.pub.options.now());
+    const reason = (error62 instanceof Error ? error62.message : String(error62)).slice(0, 2e3) || "Preparation failed";
+    const details = error62 instanceof PreparationRejected || error62 instanceof HttpError ? error62.details : void 0;
+    const parsed = external_exports.array(
+      external_exports.object({
+        hash: external_exports.number().int().nonnegative().max(4294967295),
+        fields: external_exports.array(external_exports.string().max(100)).max(100).optional(),
+        reason: external_exports.string().optional()
+      })
+    ).safeParse(
+      Array.isArray(details) ? details : details?.members
+    );
+    const reasons = parsed.success && parsed.data.length ? parsed.data.slice(0, 100).map((r) => ({ ...r, reason: (r.reason ?? reason).slice(0, 2e3) })) : [{ reason }];
+    let restored = false;
+    let update = { status: "needs_attention" };
+    if ((error62 instanceof ProposalRejected || error62 instanceof ProposalOutputRejected) && checked?.intent.kind === "save" && checked.intent.onValidationFailure === "keep_scheduled") {
+      try {
+        const source = checked.batch;
+        const original = this.original(tree, checked);
+        this.collision(tree, source.opId);
+        const payload = await this.pub.verifyRequest(
+          this.pub.writeBlob(json2(original)),
+          source.opId,
+          tree
+        );
+        if (payload.kind !== "batch" || payload.batchId !== batch.id || payload.contentRevision !== source.contentRevision || payload.notBefore !== source.notBefore || batch.opId !== source.opId || batch.notBefore !== source.notBefore)
+          reject("Cannot restore superseded publication");
+        tree[paths2(source.opId).request] = this.pub.writeBlob(json2(original));
+        update = {
+          status: "scheduled",
+          preparation: null,
+          preparedRequestId: source.preparedRequestId ?? null,
+          opId: source.opId,
+          notBefore: source.notBefore,
+          zone: source.zone,
+          scheduledContentRevision: source.scheduledContentRevision
+        };
+        restored = true;
+      } catch (restoreError) {
+        if (reasons.length === 100) reasons.pop();
+        reasons.push({
+          reason: `Accepted schedule could not be restored: ${restoreError instanceof Error ? restoreError.message : String(restoreError)}`.slice(
+            0,
+            2e3
+          )
+        });
+      }
+    }
+    const updated = withEvent(
+      this.pub,
+      tree,
+      batch,
+      {
+        ...update,
+        lastPreparationFailure: { requestId: request.requestId, at, reason }
+      },
+      { at, by: checked?.intent.requester ?? batch.createdBy, action: "preparation_failed" }
+    );
+    tree[schedulePaths.batch(batch.id)] = this.pub.writeBlob(json2(updated));
+    const { result: _result, ...record2 } = request;
+    void _result;
+    tree[scheduleIntentPaths.request(request.requestId)] = this.pub.writeBlob(
+      json2({
+        ...record2,
+        status: restored ? "failed" : "needs_attention",
+        retryable: !semantic,
+        updatedAt: at,
+        reasons,
+        ...this.pub.options.runUrl.startsWith("https://") ? { workflowUrl: this.pub.options.runUrl } : {}
+      })
+    );
+    this.refreshDue(tree);
+  }
+  async drain() {
+    const ref = `refs/heads/${this.pub.options.dataBranch}`;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const head = this.pub.head(this.pub.options.dataBranch), tree = this.pub.git.tree(head);
+      const original = { ...tree };
+      const requests = this.batches(tree).filter((b) => b.status === "preparing" && b.preparation).map((b) => scheduleIntentPaths.request(b.preparation.requestId)).sort();
+      for (const path of requests) {
+        const record2 = this.pub.read(tree, path);
+        const request = scheduleRequestSchema.parse(record2);
+        if (request.status !== "pending") continue;
+        const batch = batchSchema.parse(this.pub.read(tree, schedulePaths.batch(request.batchId)));
+        if (!matchesPreparationFence(batch, request)) continue;
+        let checked;
+        let next = { ...tree };
+        try {
+          checked = verifiedRequest(this.pub, tree, path);
+          await this.prepare(next, head, batch, request, checked);
+        } catch (error62) {
+          next = { ...tree };
+          await this.failure(next, batch, request, error62, checked);
+        }
+        const current = batchSchema.parse(this.pub.read(tree, schedulePaths.batch(batch.id)));
+        if (!matchesPreparationFence(current, request)) continue;
+        Object.assign(tree, next);
+      }
+      this.refreshIndex(tree);
+      if (stableStringify(tree) === stableStringify(original)) return;
+      const commit2 = this.pub.git.commit(head, tree, "Prepare scheduled changes", appCredits);
+      try {
+        this.pub.git.cas(ref, head, commit2);
+        return;
+      } catch (error62) {
+        const observed = this.pub.head(this.pub.options.dataBranch);
+        if (observed === commit2 || this.pub.git.ancestor(commit2, observed)) return;
+        if (!(error62 instanceof RefRace)) throw error62;
+      }
+    }
+    throw new Error("Schedule preparation CAS exhausted; requests remain durable");
+  }
+};
+
 // scripts/publisher/publisher.ts
 var publishBackoff = () => setTimeout2(3e4);
 var json5 = (v) => JSON.stringify(v, null, 2) + "\n";
@@ -31010,7 +32043,9 @@ var ConsumerOutputRejected = class extends Error {
     this.name = "ConsumerOutputRejected";
   }
 };
-var TextlessConsumerOutput = class extends ConsumerOutputRejected {
+var ProposalOutputRejected = class extends ConsumerOutputRejected {
+};
+var TextlessConsumerOutput = class extends ProposalOutputRejected {
   constructor(message) {
     super(message);
     this.name = "TextlessConsumerOutput";
@@ -31040,11 +32075,15 @@ var Publisher = class _Publisher {
    * the same merge as the Worker and the editor). A malformed picks file throws: fail closed.
    */
   aliasesAt(tree) {
-    return _Publisher.aliasesAt(
-      this.options,
-      this.read(tree, aliasGroupsPath),
-      this.read(tree, sandboxPointersPath)
-    );
+    try {
+      return _Publisher.aliasesAt(
+        this.options,
+        this.read(tree, aliasGroupsPath),
+        this.read(tree, sandboxPointersPath)
+      );
+    } catch (error62) {
+      throw new ConsumerOutputRejected(String(error62));
+    }
   }
   /** The read-only parity command shares the same pinned-fact checks and composition. */
   static aliasesAt(options, raw, pointers) {
@@ -31176,7 +32215,14 @@ var Publisher = class _Publisher {
    * operation would then revert it on live, or it would drop the frozen one's live output.
    */
   queue(head) {
-    const entries = this.pendingRequests(head);
+    const tree = this.git.tree(head);
+    const entries = this.pendingRequests(head).filter((entry) => {
+      if (entry.kind !== "batch") return true;
+      const batch = batchSchema.safeParse(
+        this.read(tree, schedulePaths.batch(entry.payload.batchId))
+      ).data;
+      return !batch || batch.opId !== entry.opId || !["preparing", "needs_attention"].includes(batch.status);
+    });
     const reorders = entries.some((e) => e.kind === "batch" && e.due && !e.claimed);
     const liveHead = reorders ? this.git.head(dataRef(this.options.liveBranch)) : void 0;
     const inFlight = (e) => e.kind === "batch" && e.claimed || reorders && (liveHead !== void 0 && this.receipt(liveHead, e.opId) !== void 0 || this.git.head(paths2(e.opId).candidate) !== void 0);
@@ -31198,11 +32244,19 @@ var Publisher = class _Publisher {
   }
   async verifyRequest(blob, opId, tree) {
     const envelope = JSON.parse(this.git.blob(blob));
+    if (envelope.sourceIntent) {
+      const payload = await verifyPreparedPublication(this, envelope, opId);
+      const permissions2 = permissionsSchema.parse(this.read(tree, "config/permissions.json"));
+      if (!["maintainer", "editor"].includes(permissions2.users[String(payload.requester.id)]?.role))
+        throw new Error("Requester revoked");
+      requesterCredits(payload.requester);
+      return payload;
+    }
     if (typeof envelope.payload !== "string" || typeof envelope.sig !== "string")
       throw new Error("Invalid signed envelope");
-    const key = createPublicKey(this.options.publicKey);
-    const fingerprint = createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
-    if (fingerprint !== this.options.keyFingerprint || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
+    const key = createPublicKey2(this.options.publicKey);
+    const fingerprint = createHash3("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
+    if (fingerprint !== this.options.keyFingerprint || !verify2(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
       throw new Error("Invalid signature or key pin");
     const p = await parsePublishRequestPayload(JSON.parse(envelope.payload));
     if (stableStringify(p) !== envelope.payload || await publishRequestIntentDigest(p) !== p.intentDigest)
@@ -31218,8 +32272,15 @@ var Publisher = class _Publisher {
   /** Recovery credits come from the signed envelope, never from an unverified log or receipt. */
   credits(blob, opId) {
     const envelope = JSON.parse(this.git.blob(blob));
-    const key = createPublicKey(this.options.publicKey);
-    if (createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope.payload !== "string" || typeof envelope.sig !== "string" || !verify(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
+    if (envelope.sourceIntent) {
+      const { intent } = verifiedSource(this, envelope.sourceIntent);
+      const payload2 = batchPublishPayloadSchema.parse(JSON.parse(envelope.payload));
+      if (intent.kind !== "schedule" || intent.requestId !== opId || payload2.opId !== opId || stableStringify(payload2.requester) !== stableStringify(intent.requester) || payload2.batchId !== intent.batchId || payload2.notBefore !== intent.notBefore || payload2.contentRevision !== intent.contentRevision)
+        throw new Error("Prepared credit identity mismatch");
+      return requesterCredits(intent.requester);
+    }
+    const key = createPublicKey2(this.options.publicKey);
+    if (createHash3("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope.payload !== "string" || typeof envelope.sig !== "string" || !verify2(null, Buffer.from(envelope.payload), key, Buffer.from(envelope.sig, "base64")))
       throw new Error("Invalid credit envelope");
     const raw = JSON.parse(envelope.payload);
     const payload = raw.kind === "batch" ? batchPublishPayloadSchema.parse(raw) : publishPayloadSchema.parse(raw);
@@ -31264,7 +32325,7 @@ var Publisher = class _Publisher {
     }
     const merged = { ...live, perks };
     const bytes = json5(merged);
-    const checkKey = createHash2("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
+    const checkKey = createHash3("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
     if (!this.checkedOutputs.has(checkKey)) {
       const hasMoves = Object.keys(this.movesAt(this.git.tree(r.sourceCommit))).length > 0;
       for (const preset of [
@@ -31278,7 +32339,13 @@ var Publisher = class _Publisher {
             throw new ConsumerOutputRejected(`${preset} conversion failed: ${String(error62)}`);
           }
         };
-        const before = convert(live), after = convert(merged);
+        const before = convert(live);
+        let after;
+        try {
+          after = convert(merged);
+        } catch (error62) {
+          throw new ProposalOutputRejected(error62 instanceof Error ? error62.message : String(error62));
+        }
         for (const [hash2, row] of Object.entries(after)) {
           const empty2 = (entry) => entry !== void 0 && entry.aliasOf === void 0 && Object.keys(entry.descriptions ?? {}).length === 0;
           if (empty2(row) && !empty2(before[hash2]))
@@ -31309,6 +32376,10 @@ var Publisher = class _Publisher {
     for (let i = 0; i < 5; i++) {
       const h = this.head(this.options.dataBranch), tree = this.git.tree(h);
       if (tree[p.log]) return;
+      if (!receipt && new SchedulePreparer(this).batches(tree).some(
+        (batch) => batch.opId === opId && ["preparing", "needs_attention"].includes(batch.status)
+      ))
+        return;
       if (atomicLive) {
         if (!receipt || !this.git.casMany)
           throw new ConsumerOutputRejected("Atomic globals publication is unavailable");
@@ -31543,8 +32614,7 @@ var Publisher = class _Publisher {
         return;
       }
       if (payload.kind === "batch") {
-        if (hasGlobals(tree))
-          throw new ConsumerOutputRejected("Scheduled publication requires pinned globals support");
+        if (hasGlobals(tree)) throw new ConsumerOutputRejected(SCHEDULE_GLOBALS_UNSUPPORTED);
         const r = await this.claimBatch(opId, blob, s, tree, live, payload, aliases);
         if (!r) return;
         candidate = this.createCandidate(opId, blob, live, r);
@@ -31736,20 +32806,21 @@ var Publisher = class _Publisher {
       aliases
     );
     const active = tooltips.filter((t) => !isMovedInactive(t.hash, moves));
-    if (active.some(isTextlessDescription)) return { error: "Tooltip has no text to publish" };
+    if (active.some(isTextlessDescription))
+      return { error: "Tooltip has no text to publish", proposalRejected: true };
     try {
       this.checkAssociatedDescriptions(tree, active, aliases);
     } catch (error62) {
-      return { error: String(error62) };
+      return { error: String(error62), retryable: true };
     }
     if (active.some((t) => !t.custom && !this.options.facts[t.hash]))
-      return { error: "Missing generator facts" };
+      return { error: "Missing generator facts", retryable: true };
     if (active.some(
       (tooltip) => Object.values(tooltip.text).some((translation) => translation?.text.includes("{{"))
     ))
-      return { error: baseEnhancedPublishMessage };
+      return { error: baseEnhancedPublishMessage, proposalRejected: true };
     if (active.some((t) => isHeldSetBonus(t, this.options.facts[t.hash])))
-      return { error: setBonusHoldMessage };
+      return { error: setBonusHoldMessage, proposalRejected: true };
     const now = this.options.now();
     let exported;
     try {
@@ -31759,7 +32830,10 @@ var Publisher = class _Publisher {
     }
     const unlowered = unloweredEntry(exported);
     if (unlowered !== void 0)
-      return { error: `The export of tooltip ${unlowered} still holds unlowered markup` };
+      return {
+        error: `The export of tooltip ${unlowered} still holds unlowered markup`,
+        proposalRejected: true
+      };
     return { now, exported };
   }
   createCandidate(opId, blob, live, r) {
@@ -31860,7 +32934,7 @@ var Publisher = class _Publisher {
     if (outcomes.some((o) => o.status !== "accepted"))
       return { failure: { status: "stale", outcomes } };
     const checked = this.checkAndExport(tree, tooltips, aliases);
-    if ("error" in checked) return { failure: { status: "rejected", error: checked.error } };
+    if ("error" in checked) return { failure: { status: "rejected", ...checked } };
     const entries = [];
     for (const tooltip of tooltips)
       entries.push({
@@ -31926,7 +33000,8 @@ var Publisher = class _Publisher {
    */
   async claimBatch(opId, blob, s, tree, live, payload, aliases) {
     const fail = async (failure2) => {
-      await this.record(opId, void 0, void 0, failure2, blob);
+      const { status, error: error62, outcomes } = failure2;
+      await this.record(opId, void 0, void 0, { status, error: error62, outcomes }, blob);
       return void 0;
     };
     const path = schedulePaths.batch(payload.batchId);
@@ -31934,9 +33009,40 @@ var Publisher = class _Publisher {
     if (!parsed.success)
       return fail({ status: "rejected", error: "Missing or invalid batch.json" });
     const batch = parsed.data;
+    if (batch.opId === opId && ["preparing", "needs_attention"].includes(batch.status)) return;
     const claimed = batch.status === "publishing" && batch.opId === opId && batch.claim?.opId === opId;
     if (batch.opId !== opId || batch.status !== "scheduled" && !claimed || batch.scheduledContentRevision !== payload.contentRevision || batch.contentRevision !== payload.contentRevision || batch.notBefore !== payload.notBefore)
       return fail({ status: "superseded", error: supersededMessage });
+    const envelope = JSON.parse(this.git.blob(blob));
+    if (!claimed && Date.parse(payload.notBefore) > this.options.now()) return;
+    if (batch.preparedRequestId != null || envelope.preparedRequestId != null || envelope.sourceIntent) {
+      if (!claimed && !canClaimPreparedBatch(batch, envelope.preparedRequestId ?? "") || claimed && (batch.preparation || !batch.preparedRequestId || batch.preparedRequestId !== envelope.preparedRequestId))
+        return fail({ status: "rejected", error: "Batch preparation ready fence mismatch" });
+      try {
+        new SchedulePreparer(this).pin(tree);
+        const checked = verifiedRequest(
+          this,
+          tree,
+          scheduleIntentPaths.request(batch.preparedRequestId)
+        );
+        if (checked.request.status !== "completed" || checked.intent.batchId !== batch.id)
+          throw new Error("Preparation result does not authorize this batch");
+        if (checked.intent.kind === "save") {
+          const result = new SchedulePreparer(this).validateSave(tree, checked);
+          for (const member of result.written) {
+            const accepted = this.read(
+              tree,
+              schedulePaths.member(batch.id, member.hash)
+            );
+            if (stableStringify(accepted?.proposed) !== stableStringify(member.proposed))
+              throw new Error("Accepted translations differ from prepared signed save");
+          }
+        } else if (checked.intent.requestId !== payload.opId || stableStringify(checked.request.envelope) !== stableStringify(envelope.sourceIntent))
+          throw new Error("Prepared schedule approval mismatch");
+      } catch (error62) {
+        return fail({ status: "rejected", error: String(error62) });
+      }
+    }
     const source = claimed ? this.claimCommit(payload.batchId, opId) : s;
     const at = claimed ? this.git.tree(source) : tree;
     let frozenAliases = aliases;
@@ -32027,6 +33133,7 @@ var Publisher = class _Publisher {
           batch2,
           {
             status: "draft",
+            preparedRequestId: null,
             opId: null,
             scheduledContentRevision: null,
             claim: null,
@@ -32208,7 +33315,10 @@ var Publisher = class _Publisher {
   async run(syncGlobals = true) {
     const start = this.options.now();
     try {
-      if (syncGlobals) await new GlobalsPublisher(this).drain();
+      if (syncGlobals) {
+        await new SchedulePreparer(this).drain();
+        await new GlobalsPublisher(this).drain();
+      }
       if (this.queue(this.head(this.options.dataBranch)).length) this.bundle();
       for (let n = 0; n < 20 && this.options.now() - start < 20 * 6e4; n++) {
         const [id] = this.queue(this.head(this.options.dataBranch));
@@ -32223,7 +33333,7 @@ var Publisher = class _Publisher {
 
 // scripts/publisher/pipeline.ts
 import { execFileSync as execFileSync2 } from "node:child_process";
-import { createHash as createHash3, createPublicKey as createPublicKey2 } from "node:crypto";
+import { createHash as createHash4, createPublicKey as createPublicKey3 } from "node:crypto";
 import { mkdtempSync as mkdtempSync2, mkdirSync, readFileSync, rmSync as rmSync2, writeFileSync } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
 import { join as join2, resolve as resolve2 } from "node:path";
@@ -32344,11 +33454,6 @@ var RemoteRepository = class extends LocalRepository {
   }
 };
 
-// config/publisher.json
-var publisher_default = {
-  enabled: true
-};
-
 // scripts/publisher/pipeline.ts
 var bundleRef = "refs/heads/editor-data-bundle";
 var gitAt = (cwd, args) => execFileSync2("git", ["-C", cwd, ...args], {
@@ -32432,8 +33537,7 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   const options = { ...config2, publicKey: "", now: Date.now };
   try {
     const initial = snapshot("initial");
-    if (enabled) await new GlobalsPublisher(new Publisher(initial, options)).drain();
-    publishBundle(initial, options);
+    if (!enabled) publishBundle(initial, options);
     const bases = gitAt(initial.path, ["for-each-ref", "--format=%(objectname)", "refs/heads/"]).trim().split("\n");
     try {
       const endpoint = new URL(config2.keyEndpoint);
@@ -32444,11 +33548,15 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       });
       if (!response.ok) throw new Error("Worker key unavailable");
       const key = await response.json();
-      const fingerprint = createHash3("sha256").update(createPublicKey2(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
+      const fingerprint = createHash4("sha256").update(createPublicKey3(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
       if (key.algorithm !== "Ed25519" || fingerprint !== config2.keyFingerprint || key.fingerprint !== fingerprint)
         throw new Error("Worker key fingerprint mismatch");
       options.publicKey = key.publicKey;
-      await new Publisher(initial, options).run(!enabled);
+      const publisher = new Publisher(initial, options);
+      await new SchedulePreparer(publisher).drain();
+      await new GlobalsPublisher(publisher).drain();
+      if (enabled) publishBundle(initial, options);
+      await publisher.run(false);
     } catch (e) {
       failure2 = e;
     }
@@ -32491,7 +33599,7 @@ Pending requests stay durable. The client may kick once after 3 minutes; maintai
 }
 function verifyRuntime(root) {
   const pin = JSON.parse(readFileSync(join2(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash3("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  if (!/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash4("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
