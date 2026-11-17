@@ -20474,15 +20474,27 @@ var pushedSchema = external_exports.record(
 );
 
 // packages/core/src/markup/syntax.ts
-var markupColors = ["blue", "green", "purple", "yellow", "center", "bold", "pve", "pvp"];
+var markupColors = [
+  "blue",
+  "green",
+  "purple",
+  "yellow",
+  "exotic",
+  "center",
+  "bold",
+  "pve",
+  "pvp"
+];
 var markupEmpty = ["background", "breakSpaces", "bold"];
 var markupLineClasses = [...markupColors, ...markupEmpty];
 var markupRetiredColors = ["blue", "green", "purple"];
 var markupRetiredLineStyles = ["center", "breakSpaces", "background"];
-var markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles];
+var markupRetired = [...markupRetiredColors, ...markupRetiredLineStyles, "yellow"];
 
 // packages/core/src/markup/lines.ts
 var inlineToken = /<(?:blue|green|purple|yellow|center|bold|pve|pvp|background) (?:(?:<arrow\/>)|[^<>])*? \/>|<.+?\/>/;
+var parserColors = markupColors.filter((name) => name !== "exotic");
+var parserLineClasses = markupLineClasses.filter((name) => name !== "exotic");
 var elements = new Set(elementTagNames);
 var markedPart = new RegExp(`(${inlineToken.source}|\u{1F845}|[\uE000\uE001])`, "g");
 
@@ -20560,7 +20572,7 @@ var symbolIds = [
   "arrow",
   "enhancedArrow",
   "bold",
-  "yellow",
+  "exotic",
   "pve",
   "pvp",
   "elementText"
@@ -20690,7 +20702,7 @@ var retainedSchema = external_exports.strictObject({
       message: "Kept languages need a per-language file"
     });
 });
-var retainedDeletionReasons = ["language"];
+var retainedDeletionReasons = ["language", "url"];
 var deletesRetained = (entry) => retainedDeletionReasons.includes(entry.reason ?? "url");
 var configSchema = external_exports.strictObject({
   schema: external_exports.literal(configSchemaVersion),
