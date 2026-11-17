@@ -1,0 +1,36 @@
+{
+  "request": {
+    "payload": "{\"approvedDigest\":\"5dcfdde3437e9ccb261ff7a7db75df0565c062acd9cae01bf1a2ef51270139da\",\"batchId\":\"01M7MSYDNFYRPXXD4246RP3G4H\",\"contentRevision\":1,\"createdAt\":\"2026-11-17T13:08:50.468Z\",\"dataBranch\":\"editor-data\",\"hashes\":[3268255645],\"intentDigest\":\"0de973a4629d2bdd87f9697cb78d9f8b333d428e47960503cc307e9d6aa7cd1f\",\"kind\":\"batch\",\"liveBranch\":\"converter-v2-test\",\"notBefore\":\"2026-11-17T13:15:00.000Z\",\"opId\":\"01M7MSZP8W6R2W7ETHR21F23SN\",\"repo\":\"Database-Clarity/Live-Clarity-Database\",\"requester\":{\"id\":117818418,\"login\":\"StardustD2\"}}",
+    "sig": "FwPpV1YUj+o1I4BNh4UB6drvrpoEdHSiQFIsGwKAE01OPmjPeYWLWn1l2RJgvkgV3DSCPPwsyDTn3muIhkfDCA==",
+    "sourceIntent": {
+      "payload": "{\"batchId\":\"01M7MSYDNFYRPXXD4246RP3G4H\",\"bodyDigest\":\"1555ccb5f4ead8294fdf77ad336eabb22202250560d3260cdf1e7e265466c343\",\"contentRevision\":1,\"createdAt\":\"2026-11-17T13:08:50.468Z\",\"dataBranch\":\"editor-data\",\"expectedRevision\":3,\"kind\":\"schedule\",\"liveBranch\":\"converter-v2-test\",\"memberTreeOid\":\"69916ea4644d891f99da5665bb01b02d2ae1be5a\",\"notBefore\":\"2026-11-17T13:15:00.000Z\",\"repo\":\"Database-Clarity/Live-Clarity-Database\",\"requestId\":\"01M7MSZP8W6R2W7ETHR21F23SN\",\"requester\":{\"id\":117818418,\"login\":\"StardustD2\"},\"sourceCommit\":\"5b7b09567ba3e5fba5ebe58bffa4dadf3e139dad\",\"version\":1,\"zone\":\"Europe/Budapest\"}",
+      "sig": "FwPpV1YUj+o1I4BNh4UB6drvrpoEdHSiQFIsGwKAE01OPmjPeYWLWn1l2RJgvkgV3DSCPPwsyDTn3muIhkfDCA=="
+    },
+    "preparedRequestId": "01M7MSZP8W6R2W7ETHR21F23SN"
+  },
+  "intentDigest": "0de973a4629d2bdd87f9697cb78d9f8b333d428e47960503cc307e9d6aa7cd1f",
+  "candidateCommit": "25e823d99f5a240c59e9dab5452068b79218c522",
+  "result": {
+    "status": "done",
+    "outcomes": [
+      {
+        "hash": 3268255645,
+        "digest": "e5ac354ae6ab658cfb68bc7570886d5ecb7925e02aa75bc3348af5e063ef3722",
+        "status": "published"
+      }
+    ]
+  },
+  "liveCommit": "25e823d99f5a240c59e9dab5452068b79218c522",
+  "recordCommit": null,
+  "pins": {
+    "publisherSha": "7d2f4853c9bad60f6f4da2eb3258ea782ad5da9e",
+    "generatorSha": "1354e3a8c5cd4e16bf40e136fbdaa966f4dd2a32"
+  },
+  "runUrl": "https://github.com/Database-Clarity/Live-Clarity-Database/actions/workflows/pipeline.yml",
+  "times": {
+    "now": 1794921345320,
+    "landedAt": "2026-11-17T13:17:27.321Z",
+    "landedAtSource": "cas",
+    "recordedAt": "2026-11-17T13:17:28.069Z"
+  }
+}
