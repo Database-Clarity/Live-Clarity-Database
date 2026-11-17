@@ -20857,8 +20857,17 @@ var init_schemas3 = __esm({
         external_exports.object({
           login: external_exports.string().min(1),
           role: external_exports.enum(["maintainer", "editor", "trial", "translator"]),
-          languages: external_exports.array(langSchema).optional()
-        }).strict()
+          languages: external_exports.array(langSchema).optional(),
+          /**
+           * Translation manager (PRODUCT "Translation managers"): the languages this translator
+           * manages (adds/removes translators, rolls back uploads). Only translators, and only
+           * languages they translate, never English; maintainers assign it.
+           */
+          manages: external_exports.array(langSchema).min(1).optional()
+        }).strict().refine(
+          (access) => !access.manages || access.role === "translator" && access.manages.every((lang) => lang !== "en" && access.languages?.includes(lang)),
+          "Only translators manage languages, and only non-English languages they translate"
+        )
       ),
       /**
        * Export partners (spec section 4): numeric GitHub id -> the export projects that account may
@@ -31248,14 +31257,7 @@ function checkTranslationStamps(head, next, english = next.text.en) {
     const before = head?.text[lang];
     const after = next.text[lang];
     if (!after) continue;
-    const tokenEdit = before?.text.includes("#{=") || after.text.includes("#{=");
-    const markupOnly = isMarkupOnly(
-      before?.text,
-      after.text,
-      tokenEdit && head?.text.en ? numberValues(head.text.en, lang) : void 0,
-      tokenEdit && english ? numberValues(english, lang) : void 0
-    );
-    if (before && (after.text === before.text || markupOnly)) {
+    if (before && keepsTranslationRevision(head, lang, after.text, english)) {
       if (after.updatedAt !== before.updatedAt || after.updatedBy !== before.updatedBy || after.sourceUpdatedAt !== before.sourceUpdatedAt)
         throw new HttpError(
           422,
@@ -31274,6 +31276,18 @@ function checkTranslationStamps(head, next, english = next.text.en) {
         `Tooltip ${next.hash}: the ${lang} source revision is newer than the English revision`
       );
   }
+}
+function keepsTranslationRevision(head, lang, text, english = head?.text.en) {
+  const before = head?.text[lang];
+  if (!before) return false;
+  if (text === before.text) return true;
+  const tokenEdit = before.text.includes("#{=") || text.includes("#{=");
+  return isMarkupOnly(
+    before.text,
+    text,
+    tokenEdit && head?.text.en ? numberValues(head.text.en, lang) : void 0,
+    tokenEdit && english ? numberValues(english, lang) : void 0
+  );
 }
 
 // apps/worker/src/schedule/store.ts
