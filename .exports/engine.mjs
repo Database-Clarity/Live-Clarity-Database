@@ -22705,7 +22705,15 @@ var configLimits = {
   categories: 64
 };
 var idPattern = /^[a-z][a-z0-9-]{1,31}$/;
-var reservedIds = /* @__PURE__ */ new Set(["_build", "changelog", "index", "api", "assets", "well-known"]);
+var reservedIds = /* @__PURE__ */ new Set([
+  "_build",
+  "changelog",
+  "index",
+  "api",
+  "assets",
+  "well-known",
+  "reference"
+]);
 var isValidId = (id) => idPattern.test(id) && !reservedIds.has(id) && !/^v\d+$/.test(id);
 var isLegacyFile = (file2) => legacyPresets.includes(file2.preset);
 var isPerLanguage = (file2) => !isLegacyFile(file2) && file2.data.languageFiles === "perLanguage";
@@ -23041,7 +23049,8 @@ function compileStyle(input2, file2, options) {
     const tracker = lookup[hash2].updateTracker?.descriptions[source];
     if (!tracker) return void 0;
     const edit = {};
-    if (keys.has("edited")) edit.at = new Date(tracker.lastUpdate).toISOString();
+    if (keys.has("edited") && tracker.lastUpdate)
+      edit.at = new Date(tracker.lastUpdate).toISOString();
     if (keys.has("editedBy") && tracker.updatedBy) edit.by = tracker.updatedBy;
     return Object.keys(edit).length ? edit : void 0;
   };
@@ -23082,9 +23091,11 @@ ${language}`;
         const own2 = rows[language] !== void 0;
         if (!own2 && !perLanguage) continue;
         descriptions[language] = textOf(hash2, own2 ? language : "en");
-        const source = perLanguage && standsIn(lookup[hash2], language, rows) ? "en" : language;
+        const englishStandIn = perLanguage && language !== "en" && standsIn(lookup[hash2], language, rows);
+        const source = englishStandIn ? "en" : language;
         const edit = editedOf(hash2, source);
         if (edit) edited[source] = edit;
+        else if (englishStandIn && (keys.has("edited") || keys.has("editedBy"))) edited.en = {};
       }
       const { references, ...item } = picked.get(hash2);
       expanded[hash2] = {
@@ -23211,28 +23222,28 @@ var styleFormats = {
     symbols: every(() => keep),
     titles: { mode: "keep" },
     links: { mode: "keep" },
-    elementTags: false,
+    elementTags: true,
     spacer: "keep"
   },
   markdown: {
     symbols: markdownSymbols("words"),
     titles: { mode: "drop" },
     links: { mode: "replace", pattern: ["[", "]", "(", ")"] },
-    elementTags: false,
+    elementTags: true,
     spacer: "keep"
   },
   discord: {
     symbols: markdownSymbols("drop"),
     titles: { mode: "drop" },
     links: { mode: "replace", pattern: ["[", "]", "(", ")"] },
-    elementTags: false,
+    elementTags: true,
     spacer: "keep"
   },
   plain: {
     symbols: { ...every(() => drop), arrow: replace("\u2192") },
     titles: { mode: "drop" },
     links: { mode: "drop" },
-    elementTags: false,
+    elementTags: true,
     spacer: "keep"
   }
 };
