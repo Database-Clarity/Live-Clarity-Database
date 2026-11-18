@@ -406,6 +406,99 @@
           }
         },
         "nameHistory": []
+      },
+      {
+        "version": 1,
+        "id": "g_d657c818-cfe1-4a03-a519-3650f662d797",
+        "kind": "exports",
+        "name": "anti_barrier",
+        "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+        "definitions": {
+          "en": {
+            "body": "<barrier/>Shield-Piercing weapons are required to break a <barrier/>Barrier Champion's immunity shield in order to stun them. Damaging their shields also halts their health regeneration for 1.6 seconds.\n\nAdditionally, Shield-Piercing weapons can overpenetrate an unlimited number of enemies. They also bypass Hydra Shields, Hobgoblin immunity, (Taken) Phalanx shields, and Scorn Buckler shields.\n\nTitan Barricades receive 30% Increased Damage from Shield-Piercing weapons.",
+            "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+            "updatedAt": "2024-01-15T14:20:00.353Z",
+            "updatedBy": "Stardust",
+            "provenance": {
+              "repository": "Database-Clarity/Live-Clarity-Database",
+              "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+              "path": "tooltips/1.json",
+              "selector": [
+                "text",
+                "en",
+                "text"
+              ],
+              "spanConvention": "decoded-utf16",
+              "hash": 1,
+              "lang": "en",
+              "from": 0,
+              "to": 496
+            }
+          }
+        },
+        "nameHistory": []
+      },
+      {
+        "version": 1,
+        "id": "g_c37748a2-1671-44be-85ce-04232870b9a7",
+        "kind": "exports",
+        "name": "overload",
+        "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+        "definitions": {
+          "en": {
+            "body": "<overload/>Overload Shots/effects apply <overload/>Disruption for <pve 6.5 /> <pvp [5] /> seconds. Applying Disruption stuns <overload/>Overload Champions and prevents them from regenerating health for the duration of the effect.\n\nDisruption decreases damage dealt by PvE Combatants by 25%. It also decreases Melee, Grenade, and Class Ability regeneration speeds by 40% in PvP.",
+            "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+            "updatedAt": "2024-01-15T14:20:00.353Z",
+            "updatedBy": "Stardust",
+            "provenance": {
+              "repository": "Database-Clarity/Live-Clarity-Database",
+              "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+              "path": "tooltips/1.json",
+              "selector": [
+                "text",
+                "en",
+                "text"
+              ],
+              "spanConvention": "decoded-utf16",
+              "hash": 1,
+              "lang": "en",
+              "from": 498,
+              "to": 895
+            }
+          }
+        },
+        "nameHistory": []
+      },
+      {
+        "version": 1,
+        "id": "g_c6cd6230-8438-442e-be60-2d81dbaeb997",
+        "kind": "exports",
+        "name": "unstoppable",
+        "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+        "definitions": {
+          "en": {
+            "body": "<unstoppable/>Unstoppable Shots/effects are required to stun <unstoppable/>Unstoppable Champions – immobilizing them and removing their passive 70% Damage Resistance for the duration of the stun.",
+            "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+            "updatedAt": "2024-01-15T14:20:00.353Z",
+            "updatedBy": "Stardust",
+            "provenance": {
+              "repository": "Database-Clarity/Live-Clarity-Database",
+              "revision": "76d8164d5797b6c1f4fc7b76e04bb9624df07ba5",
+              "path": "tooltips/1.json",
+              "selector": [
+                "text",
+                "en",
+                "text"
+              ],
+              "spanConvention": "decoded-utf16",
+              "hash": 1,
+              "lang": "en",
+              "from": 897,
+              "to": 1115
+            }
+          }
+        },
+        "nameHistory": []
       }
     ],
     "aggregates": [
@@ -590,6 +683,70 @@
               {
                 "entryId": "g_ddbd987c-85d9-48e3-907a-561c1967e238",
                 "beforeName": "title ",
+                "afterName": " (\n",
+                "afterBody": "\n)"
+              },
+              {
+                "literal": ""
+              }
+            ]
+          }
+        }
+      },
+      {
+        "document": {
+          "hash": 1,
+          "custom": {
+            "name": "Global exports",
+            "categoryId": "none"
+          },
+          "associated": [],
+          "legacy": {
+            "uploadedBy": "Stardust",
+            "lastUpload": 1743183422022,
+            "inLiveDatabase": true,
+            "uploadToLive": false,
+            "updateTracker": {
+              "descriptions": {
+                "en": {
+                  "lastUpdate": 1705328400353,
+                  "updatedBy": "Stardust"
+                }
+              }
+            }
+          }
+        },
+        "languages": {
+          "en": {
+            "metadata": {
+              "updatedAt": "2024-01-15T14:20:00.353Z",
+              "updatedBy": "Stardust"
+            },
+            "segments": [
+              {
+                "literal": ""
+              },
+              {
+                "entryId": "g_d657c818-cfe1-4a03-a519-3650f662d797",
+                "beforeName": "export hidden ",
+                "afterName": " (\n",
+                "afterBody": "\n)"
+              },
+              {
+                "literal": "\n\n"
+              },
+              {
+                "entryId": "g_c37748a2-1671-44be-85ce-04232870b9a7",
+                "beforeName": "export hidden ",
+                "afterName": " (\n",
+                "afterBody": "\n)"
+              },
+              {
+                "literal": "\n\n"
+              },
+              {
+                "entryId": "g_c6cd6230-8438-442e-be60-2d81dbaeb997",
+                "beforeName": "export hidden ",
                 "afterName": " (\n",
                 "afterBody": "\n)"
               },
