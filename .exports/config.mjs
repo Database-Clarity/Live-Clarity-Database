@@ -20586,15 +20586,7 @@ var configLimits = {
   categories: 64
 };
 var idPattern = /^[a-z][a-z0-9-]{1,31}$/;
-var reservedIds = /* @__PURE__ */ new Set([
-  "_build",
-  "changelog",
-  "index",
-  "api",
-  "assets",
-  "well-known",
-  "reference"
-]);
+var reservedIds = /* @__PURE__ */ new Set(["_build", "changelog", "index", "api", "assets", "well-known"]);
 var isValidId = (id2) => idPattern.test(id2) && !reservedIds.has(id2) && !/^v\d+$/.test(id2);
 var isLegacyFile = (file2) => legacyPresets.includes(file2.preset);
 var isPerLanguage = (file2) => !isLegacyFile(file2) && file2.data.languageFiles === "perLanguage";
