@@ -26999,12 +26999,23 @@ init_syntax();
 var globalIdSchema = external_exports.string().regex(/^g_[a-zA-Z0-9_-]{8,80}$/);
 var globalRevisionSchema = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
 var globalDigestSchema = external_exports.string().regex(/^[a-f0-9]{64}$/);
-var globalKindSchema = external_exports.enum(["variables", "titles"]);
+var globalKindSchema = external_exports.enum(["variables", "titles", "exports"]);
+function globalAggregateHash(kind) {
+  return kind === "exports" ? 1 : kind === "variables" ? 2 : 3;
+}
+function globalAggregateKind(hash2) {
+  if (hash2 === 1) return "exports";
+  if (hash2 === 2) return "variables";
+  if (hash2 === 3) return "titles";
+  throw new Error("Expected aggregate 1, 2, or 3");
+}
 function validGlobalName(kind, name2) {
   if (kind === "variables") return /^[a-zA-Z0-9]+$/.test(name2);
-  return /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)*$/.test(name2) && Object.hasOwn(extractBlocks(`title ${name2} (
+  if (kind === "exports" && (name2 === "main" || name2 === "secondary")) return false;
+  const declaration = kind === "exports" ? "export" : "title";
+  return /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)*$/.test(name2) && Object.hasOwn(extractBlocks(`${declaration} ${name2} (
 body
-)`, "title"), name2);
+)`, declaration), name2);
 }
 var sourceSchema = external_exports.object({
   repository: external_exports.string().min(1),
@@ -27013,7 +27024,7 @@ var sourceSchema = external_exports.object({
   /** JSON keys selecting the original decoded string; spans index its UTF-16 code units. */
   selector: external_exports.array(external_exports.string()).min(1),
   spanConvention: external_exports.literal("decoded-utf16"),
-  hash: external_exports.union([external_exports.literal(2), external_exports.literal(3)]),
+  hash: external_exports.union([external_exports.literal(1), external_exports.literal(2), external_exports.literal(3)]),
   lang: langSchema,
   from: external_exports.number().int().nonnegative(),
   to: external_exports.number().int().positive()
@@ -27049,12 +27060,12 @@ var globalRecordSchema = external_exports.object({
   if (!validGlobalName(record2.kind, record2.name))
     ctx.addIssue({ code: "custom", message: "Name cannot round-trip through the resolver" });
   for (const [lang, definition2] of Object.entries(record2.definitions)) {
-    if (definition2.provenance && (definition2.provenance.lang !== lang || definition2.provenance.hash !== (record2.kind === "variables" ? 2 : 3)))
+    if (definition2.provenance && (definition2.provenance.lang !== lang || definition2.provenance.hash !== globalAggregateHash(record2.kind)))
       ctx.addIssue({ code: "custom", message: "Definition provenance kind/language mismatch" });
     if (record2.kind === "variables" && /[\r\n]/.test(definition2.body))
       ctx.addIssue({ code: "custom", message: "Variables must fit on one line" });
-    if (record2.kind === "titles" && !definition2.body.trim())
-      ctx.addIssue({ code: "custom", message: "Title bodies must not be empty" });
+    if (record2.kind !== "variables" && !definition2.body.trim())
+      ctx.addIssue({ code: "custom", message: "Title and export bodies must not be empty" });
   }
 });
 var globalSegmentSchema = external_exports.union([
@@ -27092,20 +27103,22 @@ var globalStoreSchema = external_exports.object({
   }
   for (const aggregate of store.aggregates) {
     const hash2 = aggregate.document.hash;
-    if (hash2 !== 2 && hash2 !== 3 || hashes.has(hash2))
-      ctx.addIssue({ code: "custom", message: "Expected unique aggregate hashes 2 and 3" });
+    if (![1, 2, 3].includes(hash2) || hashes.has(hash2)) {
+      ctx.addIssue({ code: "custom", message: "Expected unique aggregate hashes 1, 2, and 3" });
+      continue;
+    }
     hashes.add(hash2);
     for (const [lang, layout] of Object.entries(aggregate.languages)) {
       const seen = /* @__PURE__ */ new Set();
       for (const segment of layout.segments) {
         if (!("entryId" in segment)) continue;
         const entry = store.entries.find((v) => v.id === segment.entryId);
-        if (!entry || entry.tombstone || entry.kind !== (hash2 === 2 ? "variables" : "titles") || !entry.definitions[lang] || seen.has(segment.entryId))
+        if (!entry || entry.tombstone || entry.kind !== globalAggregateKind(hash2) || !entry.definitions[lang] || seen.has(segment.entryId))
           ctx.addIssue({ code: "custom", message: "Invalid or duplicate projection entry" });
         seen.add(segment.entryId);
       }
       for (const entry of store.entries) {
-        if (!entry.tombstone && entry.kind === (hash2 === 2 ? "variables" : "titles") && entry.definitions[lang] && !seen.has(entry.id))
+        if (!entry.tombstone && entry.kind === globalAggregateKind(hash2) && entry.definitions[lang] && !seen.has(entry.id))
           ctx.addIssue({ code: "custom", message: "Definition missing from projection" });
       }
     }
@@ -27114,7 +27127,7 @@ var globalStoreSchema = external_exports.object({
     if (entry.tombstone) continue;
     for (const lang of Object.keys(entry.definitions))
       if (!store.aggregates.some(
-        (a) => a.document.hash === (entry.kind === "variables" ? 2 : 3) && Object.hasOwn(a.languages, lang)
+        (a) => a.document.hash === globalAggregateHash(entry.kind) && Object.hasOwn(a.languages, lang)
       ))
         ctx.addIssue({ code: "custom", message: "Missing language projection" });
   }
@@ -27192,7 +27205,10 @@ function declarations(raw, kind) {
     }
   }
   const boundary = (index) => index === text.length ? raw.length : offsets[index];
-  const pattern = kind === "variables" ? /^var ([a-zA-Z0-9]+) = (.+)$/gm : /^title ([A-z0-9 ]+) \(\n[^]*?\n\)$/gm;
+  const pattern = kind === "variables" ? /^var ([a-zA-Z0-9]+) = (.+)$/gm : new RegExp(
+    `^${kind === "exports" ? "export (?:hidden )?" : "title "}([A-z0-9 ]+) \\(\\n[^]*?\\n\\)$`,
+    "gm"
+  );
   const found = [];
   const comments = markupCommentContext(raw).comments;
   let last = 0;
@@ -27205,7 +27221,7 @@ function declarations(raw, kind) {
     const from = boundary(match.index), to = boundary(match.index + match[0].length);
     if (removeMarkupComments(raw.slice(last, from)).trim() || comments.some((comment) => from >= comment.from && from < comment.to))
       throw new Error("Aggregate needs manual mapping: prose or commented declaration");
-    const nameFrom = from + (kind === "variables" ? 4 : 6);
+    const nameFrom = from + (kind === "variables" ? 4 : match[0].indexOf("\n") - 2 - name2.length);
     const nameTo = nameFrom + name2.length;
     let bodyFrom, bodyTo;
     if (kind === "variables") {
@@ -27239,7 +27255,7 @@ function projectGlobals(input2) {
   const result = {};
   for (const aggregate of store.aggregates) {
     const text = {};
-    const kind = aggregate.document.hash === 2 ? "variables" : "titles";
+    const kind = globalAggregateKind(aggregate.document.hash);
     for (const [language, layout] of Object.entries(aggregate.languages)) {
       const lang = language;
       const expected2 = [];
@@ -27254,7 +27270,7 @@ function projectGlobals(input2) {
       const parsed = declarations(raw, kind);
       if (JSON.stringify(parsed.map(({ name: name2, body: body2 }) => ({ name: name2, body: body2 }))) !== JSON.stringify(expected2))
         throw new Error("Projection recipe changed declaration identity or body");
-      const resolved = kind === "variables" ? extractVariables(raw.replace(/\r/g, "")) : extractBlocks(raw.replace(/\r/g, ""), "title");
+      const resolved = kind === "variables" ? extractVariables(raw.replace(/\r/g, "")) : extractBlocks(raw.replace(/\r/g, ""), kind === "exports" ? "export" : "title");
       for (const { name: name2, body: body2 } of expected2) {
         if (resolved[name2] !== body2.replace(/\r/g, ""))
           throw new Error(`Projection changes resolver semantics for ${name2}`);
@@ -27281,7 +27297,12 @@ function globalReferenceSpans(text, kind) {
     from: url2.index,
     to: url2.index + url2[0].length
   }));
-  const refs = kind === "variables" ? variableReferences(text) : tags.filter(
+  const refs = kind === "exports" ? [...text.matchAll(/^import ([A-z0-9 ]+?) from (?:global|0*1) *\r?$/dgm)].filter((match) => validGlobalName("exports", match[1].trim())).map((match) => {
+    const [start] = match.indices[1];
+    const name2 = match[1].trim();
+    const from = start + match[1].length - match[1].trimStart().length;
+    return { name: name2, from, to: from + name2.length };
+  }) : kind === "variables" ? variableReferences(text) : tags.filter(
     (tag) => tag[1] === "title" && !bracketedLabel(tag[2]) && validGlobalName("titles", tag[3])
   ).map((tag) => {
     const [from, to] = tag.indices[3];
@@ -27301,7 +27322,7 @@ function rewriteGlobalReferences(text, kind, beforeName, afterName) {
   const edits = globalReferenceSpans(text, kind).filter((ref) => ref.name === beforeName);
   let next = text;
   for (const ref of [...edits].reverse()) {
-    const value2 = kind === "titles" ? afterName : ref.braced ? `#{${afterName}}` : `#${afterName}`;
+    const value2 = kind !== "variables" ? afterName : ref.braced ? `#{${afterName}}` : `#${afterName}`;
     next = next.slice(0, ref.from) + value2 + next.slice(ref.to);
   }
   return { text: next, edits };
@@ -27311,6 +27332,7 @@ function rewriteGlobalReferences(text, kind, beforeName, afterName) {
 init_contentHash();
 init_braces();
 init_syntax();
+init_prepare();
 init_languages();
 
 // packages/core/src/globals/source.ts
@@ -27363,21 +27385,26 @@ function assertGlobalTransition(beforeInput, afterInput, tooltips) {
       throw new Error("The legacy enhanced arrow value is protected");
   }
   for (const mode of ["authored", "live"]) {
-    for (const hash2 of [2, 3]) {
+    for (const hash2 of [1, 2, 3]) {
       for (const lang of languages2) {
         const old = beforeAggregates[hash2], next = afterAggregates[hash2];
         const beforeText = old ? globalSourceText(old, lang, mode) ?? "" : "";
         const afterText = next ? globalSourceText(next, lang, mode) ?? "" : "";
-        const names = (text) => hash2 === 2 ? extractVariables(text) : extractBlocks(text, "title");
+        const names = (text) => hash2 === 2 ? extractVariables(text) : extractBlocks(text, hash2 === 1 ? "export" : "title");
         const oldNames = names(beforeText);
         const added = new Set(
           Object.keys(names(afterText)).filter((name2) => !Object.hasOwn(oldNames, name2))
         );
         if (!added.size) continue;
         for (const tooltip of Object.values(tooltips)) {
-          if (tooltip.hash === 2 || tooltip.hash === 3) continue;
-          for (const local of markupDefinitions(globalSourceText(tooltip, lang, mode) ?? "")) {
-            if (local.kind === (hash2 === 2 ? "variable" : "title") && added.has(local.name))
+          if (tooltip.hash === hash2) continue;
+          const source = globalSourceText(tooltip, lang, mode) ?? "";
+          const locals = hash2 === 1 ? Object.keys(extractBlocks(removeMarkupComments(source), "export")).map((name2) => ({
+            kind: "export",
+            name: name2
+          })) : markupDefinitions(source);
+          for (const local of locals) {
+            if (local.kind === (hash2 === 2 ? "variable" : hash2 === 1 ? "export" : "title") && added.has(local.name))
               throw new Error(
                 `Local/global name clash: ${local.name}, tooltip ${tooltip.hash}, ${lang}`
               );
@@ -27502,7 +27529,7 @@ function resolveSnapshot(snapshot, blockers) {
 function languageAffected(snapshot, change, lang) {
   if (!change.languages) return true;
   if (change.languages.includes("en")) return true;
-  const aggregate = snapshot.tooltips[change.kind === "variables" ? 2 : 3];
+  const aggregate = snapshot.tooltips[globalAggregateHash(change.kind)];
   const source = aggregate ? globalSourceLanguage(aggregate, lang, snapshot.mode) : lang;
   return change.languages.includes(source);
 }
@@ -27530,15 +27557,13 @@ function calculateGlobalImpact(before, after, changes2, destination) {
         [after, b]
       ]) {
         if (!cell || !languageAffected(snapshot, change, lang)) continue;
-        if (cell.result.reads.imports.some(
-          (read) => read.hash === (change.kind === "variables" ? 2 : 3)
-        )) {
+        if (cell.result.reads.imports.some((read) => read.hash === globalAggregateHash(change.kind))) {
           affected = true;
           reason = "aggregate-import";
         } else if (change.kind === "titles") {
           affected = true;
           reason = "title-preparation";
-        } else if (cell.result.reads.variables.some(
+        } else if (change.kind === "variables" && cell.result.reads.variables.some(
           (name2) => name2 === change.beforeName || name2 === change.afterName
         )) {
           affected = true;
@@ -27582,7 +27607,7 @@ var globalSourcesSchema = external_exports.object({
   resolver: digest3
 }).strict();
 var globalLayoutSchema = external_exports.object({ version: external_exports.literal(1), aggregates: globalStoreSchema.shape.aggregates }).strict().refine(
-  (layout) => layout.aggregates.length === 2 && [2, 3].every(
+  (layout) => (layout.aggregates.length === 2 || layout.aggregates.length === 3) && new Set(layout.aggregates.map((aggregate) => aggregate.document.hash)).size === layout.aggregates.length && layout.aggregates.every((aggregate) => [1, 2, 3].includes(aggregate.document.hash)) && [2, 3].every(
     (hash2) => layout.aggregates.some((aggregate) => aggregate.document.hash === hash2)
   ),
   "Both compatibility libraries are required"
@@ -27592,7 +27617,7 @@ var globalPublishedSchema = external_exports.object({
   destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/),
   store: globalStoreSchema
 }).strict().refine(
-  (published) => published.store.aggregates.length === 2 && [2, 3].every(
+  (published) => (published.store.aggregates.length === 2 || published.store.aggregates.length === 3) && [2, 3].every(
     (hash2) => published.store.aggregates.some((aggregate) => aggregate.document.hash === hash2)
   ),
   "Both published compatibility libraries are required"
@@ -27640,7 +27665,7 @@ init_contentHash();
 function reconcileGlobalStore(layout, entries) {
   const aggregates = structuredClone(layout);
   for (const aggregate of aggregates) {
-    const kind = aggregate.document.hash === 2 ? "variables" : "titles";
+    const kind = globalAggregateKind(aggregate.document.hash);
     for (const lang of languages2) {
       const definitions = entries.filter(
         (entry) => !entry.tombstone && entry.kind === kind && entry.definitions[lang]
@@ -27682,7 +27707,7 @@ function reconcileGlobalStore(layout, entries) {
           { literal: "\n" },
           {
             entryId: entry.id,
-            beforeName: kind === "variables" ? "var " : "title ",
+            beforeName: kind === "variables" ? "var " : kind === "exports" ? "export " : "title ",
             afterName: kind === "variables" ? " = " : " (\n",
             afterBody: kind === "variables" ? "" : "\n)"
           }
@@ -27788,7 +27813,15 @@ function impacts(input2, store, ids) {
     if (!result.complete && names && published) {
       observedBefore = {
         ...before,
-        tooltips: { ...before.tooltips, 2: published.tooltips[2], 3: published.tooltips[3] }
+        tooltips: {
+          ...before.tooltips,
+          ...Object.fromEntries(
+            store.aggregates.map(({ document }) => [
+              document.hash,
+              published.tooltips[document.hash]
+            ])
+          )
+        }
       };
       result = calculateGlobalImpact(
         observedBefore,
@@ -27817,7 +27850,18 @@ function expandReleaseDependencies(input2, before, after, impact, causes) {
   const rows = new Map(impact.rows.map((row) => [key(row), row]));
   const globalOnly = calculateGlobalImpact(
     before,
-    { ...before, tooltips: { ...before.tooltips, 2: after.tooltips[2], 3: after.tooltips[3] } },
+    {
+      ...before,
+      tooltips: {
+        ...before.tooltips,
+        ...Object.fromEntries(
+          input2.saved.aggregates.map(({ document }) => [
+            document.hash,
+            after.tooltips[document.hash]
+          ])
+        )
+      }
+    },
     probe,
     input2.destination
   );
@@ -27838,7 +27882,7 @@ function expandReleaseDependencies(input2, before, after, impact, causes) {
     progress = false;
     const add = (hash2, causes2) => {
       hash2 = resolveAlias(hash2, after.aliases);
-      if (hash2 === 2 || hash2 === 3 || stableStringify(input2.live.tooltips[hash2] ?? null) === stableStringify(after.tooltips[hash2] ?? null))
+      if (hash2 === 2 || hash2 === 3 || hash2 === 1 && input2.saved.aggregates.some((aggregate) => aggregate.document.hash === 1) || stableStringify(input2.live.tooltips[hash2] ?? null) === stableStringify(after.tooltips[hash2] ?? null))
         return;
       const existing2 = dependencies.get(hash2) ?? /* @__PURE__ */ new Map();
       for (const cause of causes2)
@@ -27918,7 +27962,7 @@ async function planGlobalRelease(input2) {
   for (const store of [input2.saved, input2.published])
     for (const entry of store.entries) {
       const reads = Object.values(entry.definitions).flatMap(
-        (cell) => ["variables", "titles"].flatMap(
+        (cell) => ["variables", "titles", "exports"].flatMap(
           (kind) => globalReferenceSpans(cell.body, kind).map((span) => ({ kind, name: span.name }))
         )
       );
@@ -27947,7 +27991,7 @@ async function planGlobalRelease(input2) {
         );
         const dependencyDocuments = {};
         for (const dependency of dependencies) {
-          const document = dependency === 2 || dependency === 3 ? projectGlobals(store)[dependency] : input2.authored.tooltips[dependency] ?? input2.live.tooltips[dependency];
+          const document = Object.hasOwn(projectGlobals(store), dependency) ? projectGlobals(store)[dependency] : input2.authored.tooltips[dependency] ?? input2.live.tooltips[dependency];
           if (!document) throw new Error("Deleted imported dependency");
           dependencyDocuments[dependency] = document;
         }
@@ -28003,8 +28047,7 @@ async function planGlobalRelease(input2) {
       ])
         hashes.add(resolveAlias(read.hash, input2.authored.aliases));
     }
-    hashes.add(2);
-    hashes.add(3);
+    for (const aggregate of store.aggregates) hashes.add(aggregate.document.hash);
     result.push({
       ids,
       rows: [...rows.values()],
@@ -30131,6 +30174,8 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const pin = external_exports.object({ sourceSha: external_exports.string(), sha256: external_exports.string(), capabilities: external_exports.array(external_exports.string()) }).parse(this.read(tree, ".publisher/PIN"));
     if (!historical && (pin.sourceSha !== this.options.publisherSha || pin.sha256 !== this.options.publisherDigest) || !pin.capabilities.includes("globalsRelease"))
       throw new Error("Installed publisher lacks globalsRelease");
+    if (!historical && this.store(tree).aggregates.some((aggregate) => aggregate.document.hash === 1) && !pin.capabilities.includes("globalsExportsV1"))
+      throw new Error("Installed publisher lacks globalsExportsV1");
     const modes = this.git.treeModes?.(head ?? this.publisher.head(this.options.dataBranch)) ?? {};
     return observeGlobalSources({
       authored: globalTreeOid(tree, "tooltips", modes),
@@ -30373,9 +30418,12 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const activeSelection = selected.filter(
       (hash2) => !isMovedInactive(hash2, this.publisher.movesAt(tree))
     );
-    const aggregate = selected.includes(2) || selected.includes(3);
+    const aggregateHashes = captured.saved.aggregates.map(({ document }) => document.hash);
+    const aggregate = selected.some((hash2) => aggregateHashes.includes(hash2));
     const relevant = components.filter(
-      (component) => aggregate || component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some((hash2) => hash2 !== 2 && hash2 !== 3 && activeSelection.includes(hash2))
+      (component) => aggregate || component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some(
+        (hash2) => !aggregateHashes.includes(hash2) && activeSelection.includes(hash2)
+      )
     );
     const ready = relevant.filter(
       (component) => sync.status === "current" && component.rows.every((row) => {
@@ -30388,7 +30436,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     );
     if (!aggregate && ready.length !== relevant.length || aggregate && relevant.length && !ready.length || relevant.some(
       (component) => !ready.includes(component) && (component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some(
-        (hash2) => hash2 !== 2 && hash2 !== 3 && activeSelection.includes(hash2)
+        (hash2) => !aggregateHashes.includes(hash2) && activeSelection.includes(hash2)
       ))
     ))
       throw new Error("Sync pending: global dependency review required");
@@ -30414,7 +30462,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     }
     const globals = projectGlobals(store);
     if (batch) {
-      for (const hash2 of [2, 3]) if (!hashes.includes(hash2)) hashes.push(hash2);
+      for (const hash2 of aggregateHashes) if (!hashes.includes(hash2)) hashes.push(hash2);
     }
     hashes.sort((a, b) => a - b);
     const documents = hashes.map((hash2) => {
@@ -30462,7 +30510,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       const pinnedDocuments = this.canonicalDocuments(sourceTree, "live/tooltips", sourceAliases);
       for (const document of documents)
         if (selected.includes(document.hash)) pinnedDocuments[document.hash] = document;
-        else if (document.hash !== 2 && document.hash !== 3) {
+        else if (!aggregateHashes.includes(document.hash)) {
           const original = this.read(sourceTree, `tooltips/${document.hash}.json`);
           if (!original) throw new Error("Scheduled imported dependency was deleted");
           pinnedDocuments[document.hash] = tooltipSchema.parse(original);
@@ -30496,7 +30544,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
       const reads = comparison.rows.filter((row) => selected.includes(resolveAlias(row.consumer.hash, snapshot.aliases))).map((row) => row.after.reads);
       const used = store.entries.filter(
         (entry) => entry.kind === "titles" || reads.some(
-          (read) => read.variables.includes(entry.name) || read.imports.some((dependency) => dependency.hash === 2)
+          (read) => entry.kind === "variables" && read.variables.includes(entry.name) || read.imports.some(
+            (dependency) => dependency.hash === globalAggregateHash(entry.kind)
+          )
         )
       );
       for (const entry of used) {
@@ -30508,7 +30558,11 @@ var GlobalsPublisher = class _GlobalsPublisher {
           );
       }
       for (const entry of pinned.entries)
-        if ((entry.kind === "titles" || reads.some((read) => read.variables.includes(entry.name))) && !used.some((candidate) => candidate.id === entry.id))
+        if ((entry.kind === "titles" || reads.some(
+          (read) => entry.kind === "variables" && read.variables.includes(entry.name) || read.imports.some(
+            (dependency) => dependency.hash === globalAggregateHash(entry.kind)
+          )
+        )) && !used.some((candidate) => candidate.id === entry.id))
           throw new Error(
             `Global ${entry.name} changed after scheduling; return to draft and schedule again`
           );
@@ -30773,7 +30827,8 @@ var GlobalsPublisher = class _GlobalsPublisher {
         }
       const documents = this.documents(tree, "tooltips");
       for (const document of Object.values(documents)) {
-        if (document.hash === 2 || document.hash === 3) continue;
+        if (before.aggregates.some((aggregate) => aggregate.document.hash === document.hash))
+          continue;
         for (const cell of Object.values(document.text))
           cell.text = rewriteGlobalReferences(cell.text, entry.kind, entry.name, intent.name).text;
       }
@@ -30830,10 +30885,13 @@ var GlobalsPublisher = class _GlobalsPublisher {
       for (const mode of ["authored", "live"])
         for (const lang of languages2) {
           const source = globalSourceText(document, lang, mode) ?? "";
-          const localSources = document.hash === 2 ? [] : document.hash === 3 ? Object.values(extractBlocks(source, "title")) : [source];
-          for (const text of localSources)
+          const localSources = document.hash === 2 ? [] : document.hash === 3 || document.hash === 1 ? Object.values(extractBlocks(source, document.hash === 1 ? "export" : "title")) : [source];
+          for (const text of localSources) {
+            for (const name2 of Object.keys(extractBlocks(text, "export")))
+              localNames.add(`export:${name2}`);
             for (const definition2 of markupDefinitions(text))
               localNames.add(`${definition2.kind}:${definition2.name}`);
+          }
         }
     return localNames;
   }
@@ -30847,7 +30905,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
       const other = captured.published.entries.some(
         (published) => !published.tombstone && published.id !== entry.id && published.kind === entry.kind && published.name === entry.name
       );
-      if (other || localNames.has(`${entry.kind === "variables" ? "variable" : "title"}:${entry.name}`)) {
+      if (other || localNames.has(
+        `${entry.kind === "variables" ? "variable" : entry.kind === "exports" ? "export" : "title"}:${entry.name}`
+      )) {
         delete tree[path];
         continue;
       }
@@ -30908,14 +30968,16 @@ var GlobalsPublisher = class _GlobalsPublisher {
         ])
       ]) {
         const relevant = isMovedInactive(document.hash, moves) ? [] : components.filter(
-          (component) => document.hash === 2 || document.hash === 3 || component.rows.some(
+          (component) => captured.saved.aggregates.some(
+            (aggregate) => aggregate.document.hash === document.hash
+          ) || component.rows.some(
             (row) => row.view.consumer.hash === document.hash && row.view.consumer.lang === lang
           )
         );
         const ready = relevant.filter(
           (component) => component.rows.every((row) => this.approved(tree, row))
         );
-        if (document.hash === 2 || document.hash === 3 ? relevant.length > 0 && ready.length === 0 : ready.length !== relevant.length)
+        if (captured.saved.aggregates.some((aggregate) => aggregate.document.hash === document.hash) ? relevant.length > 0 && ready.length === 0 : ready.length !== relevant.length)
           continue;
         const consumer = { hash: document.hash, lang, destination: this.options.liveBranch };
         this.write(
@@ -30939,7 +31001,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       );
       const occupied = owners[0];
       const localClash = localNames.has(
-        `${request.kind === "variables" ? "variable" : "title"}:${request.name}`
+        `${request.kind === "variables" ? "variable" : request.kind === "exports" ? "export" : "title"}:${request.name}`
       );
       const path = (await namePaths(request.kind, request.name)).proof;
       if (localClash || new Set(owners.map((entry) => entry.id)).size > 1) {
@@ -32801,6 +32863,7 @@ var Publisher = class _Publisher {
           now: checked.now,
           publisherSha: this.options.publisherSha,
           generatorSha: this.options.generatorSha,
+          ...this.options.verifierDigest ? { verifierSha256: this.options.verifierDigest } : {},
           outcome: "published",
           entries,
           exported: checked.exported,
@@ -33049,7 +33112,7 @@ var Publisher = class _Publisher {
         const pin = this.read(tree, ".publisher/PIN");
         if (!pin?.capabilities.includes("scheduledGlobalsV1"))
           throw new Error("The installed publisher does not support scheduled globals yet");
-        if (members3.some((member) => member.hash === 2 || member.hash === 3))
+        if (members3.some((member) => member.hash === 1 || member.hash === 2 || member.hash === 3))
           throw new Error("Use global entry mutations instead of scheduled aggregate edits");
         const envelope = prepared;
         if (!envelope?.sourceIntent)
@@ -33219,6 +33282,7 @@ var Publisher = class _Publisher {
       now: plan.now,
       publisherSha: this.options.publisherSha,
       generatorSha: this.options.generatorSha,
+      ...this.options.verifierDigest ? { verifierSha256: this.options.verifierDigest } : {},
       outcome: "published",
       entries: plan.entries,
       exported: plan.exported,
@@ -33516,6 +33580,8 @@ var RemoteRepository = class extends LocalRepository {
   constructor(cache, options) {
     super(cache);
     this.options = options;
+    if (options.liveBranch !== void 0 && !["converter-v2-test", "converter"].includes(options.liveBranch))
+      throw new Error("Remote publication target is not allowlisted");
     this.requireCredits = !options.fileUrl;
     this.commandTimeout = options.timeout ?? 12e4;
     if (options.fileUrl) {
@@ -33549,7 +33615,7 @@ var RemoteRepository = class extends LocalRepository {
     }
   }
   validate(ref) {
-    if (!/^refs\/heads\/(editor-data|converter-v2-test|editor-data-bundle|publish-candidate\/[0-7][0-9A-HJKMNP-TV-Z]{25})$/.test(
+    if (ref !== `refs/heads/${this.options.liveBranch ?? "converter-v2-test"}` && !/^refs\/heads\/(editor-data|editor-data-bundle|publish-candidate\/[0-7][0-9A-HJKMNP-TV-Z]{25})$/.test(
       ref
     ))
       throw new Error("Remote ref outside publisher scope");
@@ -33594,7 +33660,9 @@ var RemoteRepository = class extends LocalRepository {
     this.git(next ? ["update-ref", ref, next] : ["update-ref", "-d", ref]);
   }
   casMany(updates) {
-    if (updates.length !== 2 || !updates.some(({ ref }) => ref === "refs/heads/editor-data") || !updates.some(({ ref }) => ref === "refs/heads/converter-v2-test"))
+    if (updates.length !== 2 || !updates.some(({ ref }) => ref === "refs/heads/editor-data") || !updates.some(
+      ({ ref }) => ref === `refs/heads/${this.options.liveBranch ?? "converter-v2-test"}`
+    ))
       throw new Error("Atomic publication outside held scope");
     for (const { ref, old, next } of updates) {
       this.validate(ref);
@@ -33633,6 +33701,54 @@ var gitAt = (cwd, args) => execFileSync2("git", ["-C", cwd, ...args], {
   timeout: 12e4,
   maxBuffer
 });
+function publicationIdentity(repo, branch = "converter") {
+  const commit2 = repo.head("refs/heads/" + branch);
+  const added = repo.additions(commit2, ".publish/receipts").at(-1);
+  if (!added) return;
+  if (added.commit !== commit2) {
+    console.log("Output handoff: non-publisher descendant; no publication handoff needed");
+    return;
+  }
+  const tree = repo.tree(commit2);
+  const receipt = JSON.parse(repo.blob(tree[added.path]));
+  const receiptPath = paths2(receipt.opId).receipt;
+  if (added.path !== receiptPath) throw new Error("Publication receipt path mismatch");
+  const data = repo.head("refs/heads/editor-data");
+  const record2 = repo.additions(data, paths2(receipt.opId).log).at(-1);
+  if (!record2) throw new Error("Publication receipt has no confirmed RECORD");
+  const recordTree = repo.tree(record2.commit);
+  const log = JSON.parse(repo.blob(recordTree[paths2(receipt.opId).log]));
+  if (log.candidateCommit !== commit2 || !["done", "unchanged"].includes(log.result?.status))
+    throw new Error("Publication RECORD differs from receipt");
+  const hash2 = (bytes) => createHash4("sha256").update(bytes).digest("hex");
+  const enginePin = tree[".exports/PIN"] ? repo.blob(tree[".exports/PIN"]).trim() : null;
+  if (!/^[a-f0-9]{40}$/.test(receipt.generatorSha) || branch === "converter" && (!enginePin || !/^[a-f0-9]{40}$/.test(enginePin) || !tree[".exports/engine.mjs"] || !receipt.verifierSha256 || !/^[a-f0-9]{64}$/.test(receipt.verifierSha256) || !recordTree[".publisher/verify-publication.mjs"] || hash2(repo.blob(recordTree[".publisher/verify-publication.mjs"])) !== receipt.verifierSha256))
+    throw new Error("Invalid immutable publication identity");
+  return {
+    opId: receipt.opId,
+    commit: commit2,
+    recordCommit: record2.commit,
+    receiptPath,
+    receiptBlob: tree[receiptPath],
+    sourceCommit: receipt.sourceCommit,
+    requestBlob: receipt.requestBlob,
+    inputBlob: tree["liveDescriptions.json"],
+    inputSha256: hash2(repo.blob(tree["liveDescriptions.json"])),
+    enginePin,
+    engineSha256: tree[".exports/engine.mjs"] ? hash2(repo.blob(tree[".exports/engine.mjs"])) : null,
+    generatorSha: receipt.generatorSha,
+    publisherSha: receipt.publisherSha,
+    publisherDigest: hash2(repo.blob(recordTree[".publisher/publisher.mjs"])),
+    verifierSha256: receipt.verifierSha256 ?? null,
+    outcome: receipt.outcome
+  };
+}
+function needsOutputs(repo, identity) {
+  const refs = repo.git(["for-each-ref", "--format=%(objectname)", "refs/heads/export-pins"]).trim();
+  const tree = refs ? repo.tree(refs) : {};
+  const pin = tree["pins/latest.json"] ? JSON.parse(repo.blob(tree["pins/latest.json"])) : void 0;
+  return pin?.inputSha256 !== identity.inputSha256 || pin?.engine !== identity.enginePin || pin?.generatorSha !== identity.generatorSha;
+}
 function simulationArtifact(repo, out, bases) {
   const revisions = ["--branches", "--not", ...bases];
   const count = Number(gitAt(repo.path, ["rev-list", "--count", ...revisions]).trim());
@@ -33648,8 +33764,8 @@ function simulationArtifact(repo, out, bases) {
   );
 }
 async function runPipeline(checkout, config2, output2, remoteMode = false) {
-  if (config2.repo !== "Database-Clarity/Live-Clarity-Database" || config2.dataBranch !== "editor-data" || config2.liveBranch !== "converter-v2-test")
-    throw new Error("Pipeline target is not the held test target");
+  if (config2.repo !== "Database-Clarity/Live-Clarity-Database" || config2.dataBranch !== "editor-data" || !["converter-v2-test", "converter"].includes(config2.liveBranch))
+    throw new Error("Pipeline target is not an allowlisted publication target");
   const enabled = remoteMode && publisher_default.enabled && config2.publishWritesEnabled === true;
   if (remoteMode && !enabled) throw new Error("Remote publishing disabled by config");
   if (enabled && !process.env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN required");
@@ -33658,6 +33774,8 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   const temp = mkdtempSync2(join2(tmpdir2(), "publisher-pipeline-"));
   let failure2;
   const reports = [];
+  const publications = [];
+  let handoff2;
   function snapshot(label) {
     gitAt(cwd, ["fetch", "--prune", "--no-tags", "origin", "+refs/heads/*:refs/remotes/origin/*"]);
     const repo = join2(temp, label + ".git");
@@ -33680,7 +33798,11 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
     );
     for (const ref of command(["for-each-ref", "--format=%(refname)", "refs/heads/"]).trim().split("\n"))
       if (ref && !remoteNames.has(ref)) command(["update-ref", "-d", ref]);
-    return enabled ? new RemoteRepository(repo, { repo: config2.repo, token: process.env.GITHUB_TOKEN }) : new LocalRepository(repo);
+    return enabled ? new RemoteRepository(repo, {
+      repo: config2.repo,
+      token: process.env.GITHUB_TOKEN,
+      liveBranch: config2.liveBranch
+    }) : new LocalRepository(repo);
   }
   function publishBundle(repo, options2) {
     const pub = new Publisher(repo, options2), old = repo.head(bundleRef);
@@ -33708,6 +33830,11 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   const options = { ...config2, publicKey: "", now: Date.now };
   try {
     const initial = snapshot("initial");
+    if (config2.liveBranch === "converter") {
+      const tree = initial.tree(initial.head("refs/heads/converter"));
+      if (!tree[".exports/PIN"] || !/^[a-f0-9]{40}$/.test(initial.blob(tree[".exports/PIN"]).trim()) || !tree[".exports/engine.mjs"])
+        throw new Error("Production target requires a pinned installed engine");
+    }
     if (!enabled) publishBundle(initial, options);
     const bases = gitAt(initial.path, ["for-each-ref", "--format=%(objectname)", "refs/heads/"]).trim().split("\n");
     try {
@@ -33736,7 +33863,16 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
     failure2 = e;
   } finally {
     try {
-      publishBundle(snapshot("catch-up"), options);
+      const latest = snapshot("catch-up");
+      publishBundle(latest, options);
+      if (enabled && !failure2) {
+        const identity = publicationIdentity(latest, config2.liveBranch);
+        if (identity) {
+          publications.push(identity);
+          if (config2.liveBranch === "converter" && needsOutputs(latest, identity))
+            handoff2 = identity;
+        }
+      }
     } catch (e) {
       failure2 ??= e;
     }
@@ -33747,6 +33883,8 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
           dryRun: !enabled,
           publishWritesEnabled: enabled,
           reports,
+          publications,
+          handoff: handoff2 ?? null,
           error: failure2 ? String(failure2) : null
         },
         null,
@@ -33767,10 +33905,19 @@ Pending requests stay durable. The client may kick once after 3 minutes; maintai
     rmSync2(temp, { recursive: true, force: true });
   }
   if (failure2) throw failure2;
+  const productionPush = handoff2 !== void 0;
+  if (process.env.GITHUB_OUTPUT)
+    writeFileSync(
+      process.env.GITHUB_OUTPUT,
+      `production_push=${productionPush}
+publication=${productionPush ? JSON.stringify(handoff2) : ""}
+`,
+      { flag: "a" }
+    );
 }
 function verifyRuntime(root) {
   const pin = JSON.parse(readFileSync(join2(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash4("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash4("sha256").update(readFileSync(join2(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash4("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
@@ -33785,7 +33932,7 @@ async function main() {
       throw new Error("Config requires the publisher source PIN and full generator commit");
     await runPipeline(
       source,
-      { ...options, publisherDigest: pin.sha256 },
+      { ...options, publisherDigest: pin.sha256, verifierDigest: pin.verifierSha256 },
       output2,
       flag === "--pipeline-publish"
     );
@@ -33813,6 +33960,7 @@ async function main() {
     const publisher = new Publisher(git, {
       ...options,
       publisherDigest: pin.sha256,
+      verifierDigest: pin.verifierSha256,
       now: Date.now
     });
     let failure2;
