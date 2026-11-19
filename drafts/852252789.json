@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 852252789,
+  "english": "Quickly throws a <solar Throwing Hammer /> that deals <pve 539 /> <pvp [90] /> damage.\n\nDeals increased damage based on the distance traveled, up to 36% increased Throwing Hammer damage at 35+ meters. This bonus is multiplicative to everything.\n\nDistance traveled:\n• Less than 2 meters: no increase\n• 2 to 4 meters: 6%\n• 5 to 8 meters: 12%\n• 9 to 16 meters: 18%\n• 17 to 25 meters: 24%\n• 26 to 34 meters: 30%\n• 35 meters or more: 36%\n\nPicking the Hammer up from the ground grants 121.5% Melee Ability Energy. Picking it up after scoring a hit grants 1 stack of <solar Cure />.\n\nThe Hammer explodes automatically after 10 seconds on the ground, dealing up to <pve 325 /> <pvp [60] /> damage. This explosion counts as Melee Damage.\n\n#ChunkEnergyScalars",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
+  "source": {
+    "tab": "Solar",
+    "gid": "1186062409",
+    "range": "D99:M99, N99",
+    "text": "Quickly throws a Solar Hammer that deals 539 [90] damage.\nDeals increased damage based on the distance traveled, up to 36% increased damage at 35+ meters. Multiplicative to everything.\n<2m = Base | 2-4m = 6% | 5-8m = 12% | 9m-16m = 18% | 17-25m = 24% | 26-34m = 30% | 35+m = 36% increased Throwing Hammer Damage. \n\nHammer is able to be picked up again from the ground, granting 121.5% Melee Ability Energy. \nPicking up the hammer after scoring a hit grants Cure x1.\n\nAutomatically explodes after being in the ground for 10 seconds, dealing up to 325 [60] damage. Explosion counts as Melee Damage.\nBase Cooldown: 131.7 seconds\n\nChunk Scalar: 0.9x"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-19T22:53:29.494Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
+}

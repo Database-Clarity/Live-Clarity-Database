@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 2216698406,
+  "english": "A medium trajectory grenade that creates a <solar/>Solar Flare on impact, dealing up to <pve 63 /> <pvp [20] /> damage and applying <pve 17+4.5 /> <pvp [10+10] /> stacks of <solar/>Scorch to enemies within 5 meters.\n\nThe Solar Flare only begins dealing damage or applying <solar/>Scorch 1 second after being created. It then deals <pve 78 /> <pvp [25] /> damage every 0.267 seconds, resulting in 13 damage ticks over its 4 second duration, for <pve 1014 /> <pvp [325] /> damage to enemies within its 4 meter radius.\n\nThe flare's damage field does not apply <solar/>Scorch. When it expires, it applies up to 17+13 stacks of <solar/>Scorch to Combatants inside the Solar Flare, although this is inconsistent.\n\nThe Solar Flare also applies 1 stack of <solar/>Scorch after 0.75 seconds, then 7.5+2.5 stacks every 0.533 seconds, up to 53+27 stacks over its duration.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
+  "source": {
+    "tab": "Solar",
+    "gid": "1186062409",
+    "range": "D45:M45, N45:N46",
+    "text": "Medium Trajectory | DoT Field\n\nDeals up to 63 [20] damage and inflicts x17+4.5 [x10+10] Scorch to enemies within 5 metres on impact, as well as creating a Solar Flare. \n\nSolar Flare:\nDeals 78 [25] damage every 0.267 seconds up to 13 times over its 4 second duration, for a total of 1,014 [325] damage to enemies within its 4 metre radius.\nDoes not Scorch within its DoT Field, it inflicts up to x17+13 Scorch to Combatants inside the Solar Flare when it expires, although it's inconsistent.\nInflicts x1 Scorch after 0.75 seconds, followed by x7.5+2.5 Scorch every 0.533 seconds, up to x53+27 Scorch over its duration.\nSolar Flare only begin dealing damage or inflicting scorch after 1 second of being created.\nBase Cooldown: 199.5 seconds\n\nChunk Scalar: 0.5x"
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-19T22:53:29.494Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
+}
