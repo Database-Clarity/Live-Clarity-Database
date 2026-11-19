@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 1875006807,
-  "english": "Disabled in the Crucible.\n\nStowing your weapon while Built Bitter is active starts Critical Health Regeneration and restores HP based on the number of stacks lost by swapping weapons:\n• 1|2|3|4 stacks: <pve approximately 35 /> <pvp [?] /> | <pve approximately 65 /> <pvp [?] /> | <pve 87.5 /> <pvp [?] /> | <pve approximately 105 /> <pvp [?] /> HP.\n• 5|6|7 stacks: <pve 130 /> <pvp [?] /> | <pve approximately 170 /> <pvp [?] /> | <pve 195 /> <pvp [?] /> HP.\n• 8|9|10 stacks: <pve full heal /> <pvp [?] />.\n\nHealing can inconsistently be much higher than these values.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "Disabled in the Crucible.\n\nStowing your weapon while Built Bitter is active starts Critical Health Regeneration and restores HP based on the amount of damage taken.\n\nHealing can inconsistently be much higher.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Armor Perks",
     "gid": "1287885342",
     "range": "C30:F30",
-    "text": "4 Piece | Bittersweet\n>>DISABLED IN CRUCIBLE<< \n\nOn Weapon Stow, while Built Bitter stacks are active.\nBegins Critical Health Regeneration.\nRestores Health based on the amount of Built Bitter stacks lost by swapping weapons.\nDo note there are some weird inconsistencies that can result in MUCH higher healing values.\n\nx1 = ~35 [?] | x2 = ~65 [?] | x3 = 87.5 [?] | x4 = ~105 [?] | x5 = 130 [?]\nx6 = ~170 [?] | x7 = 195 [?] | x8 = Full Heal [?] | x9 = Full Heal [?] | x10 = Full Heal [?] \n\nBut acktually you should test with Brawn beyond x8!\nNo, thank you, I'd rather chew bricks."
+    "text": "4 Piece | Bittersweet\n>>DISABLED IN CRUCIBLE<< \n\nOn Weapon Stow, while Built Bitter stacks are active.\nBegins Critical Health Regeneration.\nRestores Health based on the amount of damage taken.\nDo note there are some weird inconsistencies that can result in MUCH higher healing values."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

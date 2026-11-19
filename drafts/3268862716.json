@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "hash": 3268862716,
-  "english": "An explosion that deals <pve 676 /> <pvp [120 against Players, 250 against Constructs] /> <solar Solar /> damage in an 8 meter radius. Has no Damage Falloff in PvE, but has Damage Falloff in PvP.\n\nRemoves all <solar Scorch /> and prevents it from being reapplied for 1.6 seconds.\n\nDamage can benefit from certain damage increases carried by the initial <solar Scorch /> source. For example, a <solar Fusion Grenade /> with <yellow Verity's Brow /> at 5 stacks grants 100% increased <solar Ignition /> damage. Melee damage increases do not affect <solar Ignition /> or <solar Scorch /> damage.\n\n<solar Ignition /> damage stuns <link Unstoppable Champions [#CombatantClassifications] />.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "An explosion that deals <pve 676 /> <pvp [120 against Players, 250 against Constructs] /> <solar Solar /> damage in an 8 meter radius. Has no Damage Falloff in PvE, but has Damage Falloff in PvP.\n\nRemoves all <solar Scorch /> and prevents it from being reapplied for 1.6 seconds.\n\nDamage can benefit from certain damage increases carried by the initial <solar Scorch /> source. For example, a <solar Fusion Grenade /> with <exotic Verity's Brow /> at 5 stacks grants 100% increased <solar Ignition /> damage. Melee damage increases do not affect <solar Ignition /> or <solar Scorch /> damage.\n\n<solar Ignition /> damage stuns <link Unstoppable Champions [#CombatantClassifications] />.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Solar",
     "gid": "1186062409",
@@ -10,6 +10,6 @@
     "text": "Explosion that deals 676 [120 Guardians | 250 Construct] Solar Damage in a 8 meter radius without [with] damage falloff. \nIgnitions remove all Scorch, and incur a 1.6 second cooldown before Scorch can be reapplied. \n\nIgnition damage can be increased through certain damage increases if the initial Scorch source had a damage increase.\nEg: Verity's Brow x5 + Fusion Grenade = 100% Increased Ignition Damage.\nMelee Damage Buffs do not scale Ignition nor Scorch damage.\n\nUnstoppable Champions become Stunned upon receiving Ignition damage."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

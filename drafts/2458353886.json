@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 2458353886,
-  "english": "Dealing damage grants a stack of 'Truth'. Maximum of 999 stacks. Kills typically grant 20–35 stacks and Finishers grant around 60–90, with gains apparently varying by your current stack count. All stacks are removed on death.\n\nTruth grants Damage Resistance as stacks accumulate, reaching 3.75%|7.5%|10%|15% at 250|500|750|999 stacks.\n\nReaching 999 stacks renames the buff to 'Power' and grants:\n• 50% additional Base Grenade and Melee Ability Regeneration Rate\n• 35% additional Base Class Ability Regeneration Rate\n• 15% Damage Resistance\n\n// Kill and Finisher stack gains are approximate and apparently vary with current stacks; the source does not provide a formula.\n// The source lists 10% Damage Resistance at 750 stacks, which is not proportional to its other listed thresholds. The draft preserves the stated 10%.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "Dealing damage grants a stack of 'Truth'. Maximum of 999 stacks. Kills typically grant 20–35 stacks and Finishers grant around 60–90, with gains apparently varying by your current stack count. All stacks are removed on death.\n\nTruth grants Damage Resistance as stacks accumulate, reaching 3.75%|7.5%|10%|15% at 250|500|750|999 stacks.\n\nReaching 999 stacks renames the buff to 'Power' and grants:\n• 50% additional Base Grenade, Melee, and Class Ability Regeneration Rate\n• <pve 15% /> <pvp [10%] /> Damage Resistance\n\n// Kill and Finisher stack gains are approximate and apparently vary with current stacks; the source does not provide a formula.\n// The source lists 10% Damage Resistance at 750 stacks, which is not proportional to its other listed thresholds. The draft preserves the stated 10%.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Armor Perks",
     "gid": "1287885342",
     "range": "C92:F92",
-    "text": "4 Piece | Truth to Power\n\nEach damage instance scored grants a stack of Truth, up to a maximum of x999 stacks. wherein it gets renamed to Power.\nKills and Finishers grant many more stacks, although it seems to have different gains depending on the stack amount.\nKills tend to be within 20-35 stacks. Finishers tend to give around 60-90 stacks. \nALL stacks are removed on death.\n\nTruth grants Damage Resist per stack, up to 15% DR at maximum.\n250 = 3.75% | 500 = 7.5% | 750 = 10% | 999 = 15% Damage Resist\n\nTruth to Power Effect at x999 stacks:\n+50% Additional Base Grenade, and Melee Regeneration Rate.\n+35% Additional Base Class Regeneration Rate\n15% Damage Resist."
+    "text": "4 Piece | Truth to Power\n\nEach damage instance scored grants a stack of Truth, up to a maximum of x999 stacks. wherein it gets renamed to Power.\nKills and Finishers grant many more stacks, although it seems to have different gains depending on the stack amount.\nKills tend to be within 20-35 stacks. Finishers tend to give around 60-90 stacks. \nALL stacks are removed on death.\n\nTruth grants Damage Resist per stack, up to 15% DR at maximum.\n250 = 3.75% | 500 = 7.5% | 750 = 10% | 999 = 15% Damage Resist\n\nTruth to Power Effect at x999 stacks:\n+50% Additional Base Grenade, Melee, and Class Ability Regeneration Rate.\n15% [10%] Damage Resist."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

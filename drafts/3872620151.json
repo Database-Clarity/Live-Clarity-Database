@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 3872620151,
-  "english": "Dealing or receiving damage at least every 7 seconds builds 'Power of the Son', granting a stack after 12 seconds and reaching 2 stacks after 24 seconds.\n\nPower of the Son grants 15%|25% Damage Resistance against PVE Combatants and ?%|?% Flinch Resistance at 1|2 stacks.\n\nMaximum of 2 stacks.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "Passively grants 15% Flinch Resistance.\n\nDealing or receiving damage at least every 5 seconds builds 'Power of the Son', granting a stack after 12 seconds and reaching 2 stacks after 24 seconds. Once triggered, the Combat Timer extends to 7 seconds.\n\nPower of the Son grants 15%|25% Damage Resistance against PVE Combatants at 1|2 stacks.\n\nMaximum of 2 stacks.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Armor Perks",
     "gid": "1287885342",
     "range": "C20:F20",
-    "text": "4 Piece | Power of the Son\n\nWhile maintaining a state of dealing or receiving damage every 7 seconds:\nGrants a stack of Power of the Son after 12 seconds, up to 2 stacks after 24 seconds.\n\nPower of the Son x1 | 15% Damage Resist against Combatants and ?% Flinch Resist.\nPower of the Son x2 | 25% Damage Resist against Combatants and ?% Flinch Resist."
+    "text": "4 Piece | Power of the Son\n\nPassively grants 15% Flinch Resist.\n\nWhile maintaining a state of dealing or receiving damage every 5 seconds:\nGrants a stack of Power of the Son after 12 seconds, up to 2 stacks after 24 seconds.\nCombat Timer is extended to 7 seconds once triggered.\n\nPower of the Son x1 | 15% Damage Resist against Combatants.\nPower of the Son x2 | 25% Damage Resist against Combatants."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

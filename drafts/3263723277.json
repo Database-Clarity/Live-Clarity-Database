@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 3263723277,
-  "english": "Restores <pve 60 /> <pvp [30] /> HP per stack of <solar Cure /> over 0.1 seconds.\n\n1 second cooldown between activations. Further <solar Cure /> activations during this cooldown do not restore HP.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "Restores HP over 0.1 seconds based on the number of <solar Cure /> stacks: <pve 60 /> <pvp [30] /> HP at x1, <pve 120 /> <pvp [60] /> HP at x2, and <pve 240 /> <pvp [120] /> HP at x3.\n\n1 second cooldown between activations. Further <solar Cure /> activations during this cooldown do not restore HP.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Solar",
     "gid": "1186062409",
     "range": "D6:N6",
-    "text": "Restores 60 [30] HP per stack of Cure over 0.1 seconds.\n\nIncurs a 1 second cooldown between Cure activations. Additional activations will not recover health."
+    "text": "Restores health per stack of Cure over 0.1 seconds.\nx1 = 60 [30] | x2 = 120 [60] | x3 = 240 [120] HP\n\nIncurs a 1 second cooldown between Cure activations. Additional activations will not recover health."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

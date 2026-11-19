@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 4239423954,
-  "english": "<stasis Slowed /> enemies have 50% decreased Movement Speed. PVE Combatants also become less accurate. Reaching 100 stacks of <stasis Slow /> <stasis Freezes /> the enemy.\n\n<stasis Slowed /> Players also receive:\n• 50% decreased Jump Height and no access to Movement Abilities\n• ?% increased Flinch\n• 75% decreased Stability, Handling, Reload Speed, and Recoil Direction\n\nWeapon stat reductions apply after Weapon Perks and use uncapped values. For example, 160 Reload Speed becomes 40, and 80 Handling becomes 20.\n\nAny amount of <stasis Slow /> stuns <overload/>Overload Champions.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "<stasis Slowed /> Combatants have 0.5x Movement Speed and are less accurate. Reaching 100 stacks of <stasis Slow /> <stasis Freezes /> the enemy.\n\n<stasis Slowed /> Players also receive:\n• 0.5x Movement Speed\n• 0.6x Jump Height and no access to Movement Abilities\n• 40% increased Flinch\n• 0.25x Stability, Ready/Stow Animation Duration, Reload Speed, and Recoil Direction\n• 0.5x ADS Animation Duration\n\nWeapon stat reductions apply after Weapon Perks and use uncapped values. For example, 160 Reload Speed becomes 40, and 80 Handling becomes 20.\n\nAny amount of <stasis Slow /> stuns <overload/>Overload Champions.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Stasis",
     "gid": "1088259962",
     "range": "D9:N9",
-    "text": "Slowed Enemies receive multiple penalties related to movement or weapon performance.\nFreeze occurs upon reaching x100 Slow.\n\nSlowed Combatants have 50% Decreased Movement Speed and are less accurate.\n\nSlowed Guardians have 50% Reduced Movement Speed, 50% Decreased Jump Height, are unable to use Movement Abilities, receive ?% increased Flinch, and have a penalty to their Weapon Stats.\n\nSlowed Weapon Stat Penalties:\nStability, Handling, Reload Speed and Recoil Direction are decreased by 75%.\nStat Reduction takes place after Weapon Perks. Weapon Stats are considered uncapped before slow's reduction is applied.\nEg: 160 Reload Speed will be reduced be 40 Reload Speed. 80 Handling would be reduced to 20 Handling.\n\nOverload Champions become Stunned upon receiving any amount of Slow Stacks."
+    "text": "Slowed Enemies receive multiple penalties related to movement or weapon performance.\nFreeze occurs upon reaching x100 Slow.\n\nSlowed Combatants have 0.5x Movement Speed and are less accurate.\n\nSlowed Guardians have 0.5x Movement Speed, 0.6x Jump Height, are unable to use Movement Abilities, receive 40% increased Flinch, and have a penalty to their Weapon Stats.\n\nSlowed Weapon Stat Penalties:\nStability, Ready/Stow Animation Duration, Reload Speed and Recoil Direction are decreased to 0.25x.\nADS Animation Duration is decreased to 0.5x.\nStat Reduction takes place after Weapon Perks. Weapon Stats are considered uncapped before slow's reduction is applied.\nEg: 160 Reload Speed will be reduced be 40 Reload Speed. 80 Handling would be reduced to 20 Handling.\n\nOverload Champions become Stunned upon receiving any amount of Slow Stacks."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }

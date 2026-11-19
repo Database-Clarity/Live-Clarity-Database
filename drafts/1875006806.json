@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "hash": 1875006806,
-  "english": "Taking ? damage grants a stack of 'Built Bitter'. Maximum of 10 stacks after receiving ? damage. Self-damage does not count.\n\nBuilt Bitter increases Reload Speed and decreases Reload Animation Duration per stack, reaching 50?? Reload Speed and approximately 10%–15% decreased Reload Animation Duration at 10 stacks. Values at lower stack counts are unknown.\n\nStowing the weapon removes the buff.",
-  "sourceCommit": "00d915fee26f39accff407b348b57e63e1e6ef61",
+  "english": "Taking 50 damage grants a stack of 'Built Bitter'. Maximum of 10 stacks after receiving 500 damage. Self-damage does not count.\n\nBuilt Bitter grants 6? Reload Speed and 1% decreased Reload Animation Duration per stack, up to 60 Reload Speed and 10% decreased Reload Animation Duration at 10 stacks.\n\nStowing the weapon removes the buff.",
+  "sourceCommit": "e7a8f8a1ab79a8e1c9b393b32317a0bf84ca06dd",
   "source": {
     "tab": "Armor Perks",
     "gid": "1287885342",
     "range": "C29:F29",
-    "text": "2 Piece | Built Bitter\n\nGrants a stack of Built Bitter for every ? damage taken, up to 10 stacks after receiving ? damage.\nSelf damage does not count. Stacks are lost when stowing.\n\nBuilt Bitter grants Reload Speed and Reload Duration Multiplier per stack until stowed.\nGrants up to +50?? Reload Speed and ~0.85–0.9x Reload Duration Multiplier.\n\n+? | +? | +? | +? | +? | +? | +? | +? | +? | +50??  Reload Speed.\n?x | ?x | ?x | ?x | ?x | ?x | ?x | ?x | ?x | ~0.85x–0.9x Reload Duration Multiplier."
+    "text": "2 Piece | Built Bitter\n\nGrants a stack of Built Bitter for every 50 damage taken, up to 10 stacks after receiving 500 damage.\nSelf damage does not count. Stacks are lost when stowing.\n\nBuilt Bitter grants +6? Reload Speed and 0.99x Reload Duration Multiplier per stack until stowed.\nGrants up to +60 Reload Speed and 0.9x Reload Duration Multiplier."
   },
   "styleGuide": "v4.12",
-  "createdAt": "2026-11-15T02:25:12.518Z",
-  "model": "gpt-6.1-sol"
+  "createdAt": "2026-11-19T18:37:38.255Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
 }
