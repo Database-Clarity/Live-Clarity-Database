@@ -30004,6 +30004,13 @@ var retrySchema = external_exports.object({
   id: globalIdSchema,
   causeIds: external_exports.array(token).min(1).max(limits.causes).refine((v) => new Set(v).size === v.length, "Duplicate cause")
 }).strict();
+var paths = {
+  sync: "globals/sync.json",
+  entry: (id) => `globals/entries/${id}.json`,
+  row: (id) => `globals/reviews/${id}.json`,
+  page: (cursor) => `globals/pages/${cursor}.json`,
+  removal: (id, lang) => `globals/proofs/removal/${id}-${lang ?? "all"}.json`
+};
 function sameSources(a, b) {
   return Object.keys(a).every((key) => a[key] === b[key]);
 }
@@ -30096,6 +30103,25 @@ async function namePaths(kind, name2) {
     proof: `globals/proofs/clashes/${kind}/${key}.json`
   };
 }
+function syncView(sync, causeIds = sync.causeIds) {
+  return {
+    status: causeIds.length ? sync.status : "current",
+    causeIds,
+    // Never reflect producer error details, tooltip text, or upstream credentials.
+    ...causeIds.length && sync.lastFailure !== null ? { lastFailure: "Sync failed. Retry sync." } : {}
+  };
+}
+function publicGlobalSync(sync) {
+  const state = syncView(sync);
+  return {
+    status: state.status,
+    causeIds: state.causeIds,
+    lastFailure: state.lastFailure ?? null,
+    causeEntries: Object.fromEntries(
+      state.causeIds.map((cause) => [cause, sync.causeEntries[cause]])
+    )
+  };
+}
 
 // scripts/publisher/globals.ts
 var json4 = (value2) => `${JSON.stringify(value2, null, 2)}
@@ -30108,6 +30134,27 @@ var currentSync = {
   lastFailure: null
 };
 var hasGlobals = (tree) => Object.keys(tree).some((path) => path.startsWith("globals/"));
+function bundleGlobals(tree, read) {
+  const catalog = catalogSchema.parse(read(tree, "globals/catalog.json"));
+  const entries = [];
+  const cursors = /* @__PURE__ */ new Set();
+  const ids = /* @__PURE__ */ new Set();
+  for (let cursor = "p0"; cursor !== null; ) {
+    if (!/^p\d{1,5}$/.test(cursor) || cursors.has(cursor) || cursors.size > catalog.lastPage)
+      throw new Error("Invalid global catalog pages");
+    cursors.add(cursor);
+    const page = pageSchema.parse(read(tree, paths.page(cursor)));
+    for (const id of page.ids) {
+      const entry = entrySchema.parse(read(tree, paths.entry(id)));
+      if (entry.id !== id || ids.has(id)) throw new Error("Invalid global catalog identity");
+      ids.add(id);
+      entries.push(entry);
+    }
+    cursor = page.nextCursor;
+  }
+  if (cursors.size !== catalog.lastPage + 1) throw new Error("Invalid global catalog tail");
+  return { entries, sync: publicGlobalSync(syncSchema.parse(read(tree, paths.sync))) };
+}
 function globalTreeOid(tree, prefix, modes = {}) {
   const entries = Object.entries(tree).filter(([path]) => path.startsWith(`${prefix}/`));
   if (!entries.length) return emptyGitTree;
@@ -33536,7 +33583,18 @@ var Publisher = class _Publisher {
       ...inactiveMoves ? { inactiveMoves } : {},
       ...sandboxPointers && Object.keys(sandboxPointers.pointers).length ? { sandboxPointers } : {},
       publishQueue,
-      ...scheduledQueue.length ? { scheduledQueue } : {}
+      ...scheduledQueue.length ? { scheduledQueue } : {},
+      // The globals catalogue at this same head; null (never a partial list) when malformed,
+      // so the editor says it is unavailable without stopping the bundle or the queue.
+      ...hasGlobals(t) ? {
+        globals: (() => {
+          try {
+            return bundleGlobals(t, (tree, path) => this.read(tree, path));
+          } catch {
+            return null;
+          }
+        })()
+      } : {}
     };
     const c = this.git.commit(
       old,
