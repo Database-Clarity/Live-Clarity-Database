@@ -11,7 +11,8 @@ on:
   push:
     branches: [editor-data]
     # Exports, glossary, snippets, and entry marks never trigger the publish pipeline.
-    paths-ignore: ['exports/**', 'glossary/**', 'snippets/**', 'config/marks.json']
+    # The final Current-save manifest writes a kick. Individual uploads leave the pipeline idle.
+    paths-ignore: ['exports/**', 'glossary/**', 'snippets/**', 'config/marks.json', 'current-saves/**']
 
 permissions:
   contents: write
