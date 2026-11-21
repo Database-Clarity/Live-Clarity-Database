@@ -1,9 +1,732 @@
 {
-  "associated": [],
   "hash": 4019266109,
+  "text": {
+    "en": {
+      "text": "Collecting an Elemental Pickup enables Weapon Damage to generate Grenade Ability energy per hit for 8 seconds. \n\n<arc/>Ionic Traces, <stasis/>Stasis Shards, and Shot <strand/>Tangles extend the timer by 4 seconds. <solar/>Firesprites, <void/>Void Breaches, and Thrown <strand/>Tangles extend the timer by 8 seconds. \n\nTimer can be extended to a maximum of 16 seconds.\n\nGrenade energy granted by weapon type:\nSpreadshot HC: <enhanced/>${0.5 * #d}%\nBurst Sidearm: <enhanced/>${0.78 * #d}%\nFusion Rifle: <enhanced/>${1.15 * #d}%\nRocket Pulse: <enhanced/>${1.95 * #d}%\nSidearm: <enhanced/>${2.34 * #d}%\nScout: <enhanced/>${3.34 * #d}%\nRocket Launcher: <enhanced/>${12.9 * #d}%\n\nElemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Tangles, and <void/>Void Breaches.\n\nenhanced (\nvar d = 1.1\n<enhanced/> Melee Energy generated is increased by 10%.\n)",
+      "updatedAt": "2026-07-07T19:46:34.287Z",
+      "updatedBy": "Hawkmoona"
+    }
+  },
+  "associated": [],
+  "compendium": {
+    "gid": "1662574278",
+    "rowKey": "Collective Demolition",
+    "section": "Weapon Traits",
+    "snapshot": {
+      "plain": "On Elemental-Pickup Interaction:\nEach scored damage instance grants ↑increased Grenade Ability Energy for an Elemental-Pickup based duration.\nAverages 10% ↑11% Grenade Energy per second under Sustained Damage across ALL WEAPON TYPES.\nGrenade Gain Formula: 10% / (1 / (60 / RPM)\nChecks out for non-burst Weapons. Rocket Launchers assume 2 procs per shot. Swords assume 60RPM.\n\nFiresprites and Void Breaches grant +8 seconds. \nIonic Traces, Stasis Shards, and both the Pickup AND Explosion of Tangles/Arc Elemental Orbs grant +4 seconds. \nAdditional pickups extend the buff duration by their corresponding duration, up to 16 seconds.\nBuff can be activated while stowed, and persists through stow.\n\nApproximate Grenade Ability Gains per Damage Instance scored:\nRapid-Fire Shotgun: ↑0.35% | Adaptive SMG: ↑0.66% + Adaptive Trace: ↑0.67%\nRapid-Fire Auto: ↑0.825% | Lightweight Pulse: ↑0.88% | Precision SMG + Aggressive MG: ↑0.99%\nAggressive Fusion: ↑1.05% | Rapid-Fire Fusion: ↑1.12% | Rapid-Fire Sidearm + High-Impact Pulse: ↑1.31%\nHigh-Impact MG: ↑1.65% | Adaptive Fusion: ↑1.76% | Heavy-Burst Pulse: ↑2.3% \nPrecision Scout: ↑3.33% | Precision HC: ↑3.4% | High-Impact Scout: ↑3.97%\nAdaptive HC: ↑4.26% | Aggressive HC: ↑4.95% | Breech GL + Adaptive Sniper: ↑6.6%\nRapid-Fire Glaive: ↑7.04% | Swords: ↑9.9% | Aggressive Rocket: ↑10.77%\nAdaptive Rocket: ↑11.65% | Precision LFR: ↑12.38%",
+      "runs": [
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "On "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "Elemental-Pickup Interaction"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": ":"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\nEach scored damage instance grants "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑increased"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Grenade Ability Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for an "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Elemental-Pickup based duration"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\nAverages "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": "10%"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": " ↑11% "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Grenade Energy per second "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "under Sustained Damage across "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 9,
+          "text": "ALL "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "WEAPON "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "TYPES"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "."
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\nGrenade Gain "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Formula:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": " 10% "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "/ (1 / (60 / RPM)\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 6,
+          "text": "Checks out for non-burst Weapons. "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "italic": true,
+          "sizePt": 6,
+          "text": "Rocket Launchers"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 6,
+          "text": " assume 2 procs per shot. Swords assume 60RPM.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#f9cb9c",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Firesprites"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " and "
+        },
+        {
+          "textAlign": "center",
+          "color": "#b4a7d6",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Void Breaches"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " grant +8 seconds. \n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#d0e0e3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Ionic Traces"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ", "
+        },
+        {
+          "textAlign": "center",
+          "color": "#9fc5e8",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Stasis Shards"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ", and both the Pickup AND Explosion of "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Tangles"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "/"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Arc Elemental Orbs"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " grant +4 seconds. \nAdditional pickups extend the buff duration by their corresponding duration, up to 16 seconds.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Buff can be activated while stowed, and persists through stow.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Approximate Grenade Ability Gains per Damage Instance scored:\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Rapid-Fire Shotgun:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑0.35% |"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Adaptive SMG:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑0.66% "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": "+"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Adaptive Trace:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑0.67%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Rapid-Fire Auto: "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑0.825% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Lightweight Pulse:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑0.88% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Precision SMG "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": "+"
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Aggressive MG:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑0.99%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Aggressive Fusion: "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑1.05% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Rapid-Fire Fusion:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑1.12% |"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Rapid-Fire Sidearm + High-Impact Pulse:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑1.31%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "High-Impact MG:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑1.65% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Adaptive Fusion: "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑1.76% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Heavy-Burst Pulse:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑2.3% \n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Precision Scout:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 6,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑3.33% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Precision HC:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑3.4% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "High-Impact Scout:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑3.97%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Adaptive HC:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑4.26% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#999999",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Aggressive HC:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑4.95% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Breech GL + Adaptive Sniper: "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": "↑6.6%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Rapid-Fire Glaive:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑7.04% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Swords:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑9.9% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Aggressive Rocket:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑10.77%\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Adaptive Rocket:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑11.65% | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a481e1",
+          "bold": true,
+          "sizePt": 6,
+          "text": "Precision LFR:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 6,
+          "text": " ↑12.38%"
+        }
+      ]
+    },
+    "snapshotAt": "2026-11-20T22:02:54.190Z"
+  },
   "legacy": {
-    "inLiveDatabase": true,
+    "uploadedBy": "Stardust",
     "lastUpload": 1791495267470,
+    "inLiveDatabase": true,
+    "uploadToLive": false,
     "updateTracker": {
       "descriptions": {
         "en": {
@@ -11,15 +734,6 @@
           "updatedBy": "Hawkmoona"
         }
       }
-    },
-    "uploadToLive": false,
-    "uploadedBy": "Stardust"
-  },
-  "text": {
-    "en": {
-      "text": "Collecting an Elemental Pickup enables Weapon Damage to generate Grenade Ability energy per hit for 8 seconds. \n\n<arc/>Ionic Traces, <stasis/>Stasis Shards, and Shot <strand/>Tangles extend the timer by 4 seconds. <solar/>Firesprites, <void/>Void Breaches, and Thrown <strand/>Tangles extend the timer by 8 seconds. \n\nTimer can be extended to a maximum of 16 seconds.\n\nGrenade energy granted by weapon type:\nSpreadshot HC: <enhanced/>${0.5 * #d}%\nBurst Sidearm: <enhanced/>${0.78 * #d}%\nFusion Rifle: <enhanced/>${1.15 * #d}%\nRocket Pulse: <enhanced/>${1.95 * #d}%\nSidearm: <enhanced/>${2.34 * #d}%\nScout: <enhanced/>${3.34 * #d}%\nRocket Launcher: <enhanced/>${12.9 * #d}%\n\nElemental Pickups include <solar/>Firesprites, <arc/>Ionic Traces, <stasis/>Stasis Shards, <strand/>Tangles, and <void/>Void Breaches.\n\nenhanced (\nvar d = 1.1\n<enhanced/> Melee Energy generated is increased by 10%.\n)",
-      "updatedAt": "2026-07-07T19:46:34.287Z",
-      "updatedBy": "Hawkmoona"
     }
   }
 }
