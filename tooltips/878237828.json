@@ -1,9 +1,311 @@
 {
-  "associated": [],
   "hash": 878237828,
+  "text": {
+    "en": {
+      "text": "Dealing damage or scoring kills increments continuously scales up stat bonuses. Stacks displayed on-screen are only visual aides, the buff ramps up continuously.\n\nMaximum effect is displayed as x5 Willing Vessel. Stat bonuses constantly decrease by 2.2?% of the maximum bonus per second?.\n\nStat bonuses when the visual stack display reaches 1|2|3|4|5 stacks:\n• ?|?|?|?|20? Stability\n• ?|?|?|?|30? Handling\n• 2?|5|10|25|30 Reload Speed\n• ?|?|?|?|15% decreased Draw/Charge Time\n• 20|40|50|70|80 Charge Rate (Swords)",
+      "updatedAt": "2025-07-25T20:22:25.689Z",
+      "updatedBy": "Stardust"
+    }
+  },
+  "associated": [],
+  "compendium": {
+    "gid": "1662574278",
+    "rowKey": "Willing Vessel \n\nEpisode: Heresy",
+    "section": "Origin Traits",
+    "snapshot": {
+      "plain": "Dealing damage or scoring kills increments a Damage based counter towards stat bonuses.\n100% Counter is displayed as x5 Willing Vessel. Counter constantly decreases by 2.2% every 0.5 seconds.\n\nVisual Buff Stacks to Damage Thresholds:\nAuto: ? | ? | ? | ? | ?\nBow: ~180 | ~750 | ? | ? | ?\nSidearm: ? | ? | ? | ? | ?\nSMG : ? | ? | ? | ? | ?\nFusion Rifle: ? | ? | ? | ? | ?\nGlaive: ? | ? | ? | ? | ?\nGL: I | don't | think | so | lmao\nLFR: ~380 | ~1750 | ~3450 | ~4150 | ~6200\nMG: ~385 | ? | ? | ? | ?\nSword: ? | ? | ? | ? | ?\n\nGrants a continuously increasing Stability, Handling, Reload Speed, and Charge Rate stat bonus as more damage/kills are scored.\nStat Bonuses (at the start of the stack):\nx1 = +? Stability, +? Handling, +2? Reload Speed, 0.?x Draw/Charge Time Multiplier, and +20 Charge Rate\nx2 = +? Stability, +? Handling, +5 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +40 Charge Rate\nx3 = +? Stability, +? Handling, +10 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +50 Charge Rate\nx4 = +? Stability, +? Handling, +25 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +70 Charge Rate\nx5 = +30 ↑+35 Stability, +30 ↑+35 Handling, +30 ↑+35 Reload Speed, 0.85x ↑0.8x Draw/Charge Time Multiplier, and +60 ↑+65 Charge Rate\n\nThis is basically Target Lock's S Curve mixed with Field-Tested on top of being actually damage based, so it is much harder to test, sorry!",
+      "runs": [
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Dealing damage or scoring kills increments a Damage based counter towards stat bonuses.\n100% Counter is displayed as "
+        },
+        {
+          "textAlign": "center",
+          "color": "#5db69e",
+          "bold": true,
+          "sizePt": 9,
+          "text": "x5 Willing Vessel"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ". Counter constantly decreases by 2.2% every 0.5 seconds.\n\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Visual Buff Stacks"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " to Damage Thresholds:"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Auto"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#bba5f3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Bow"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ~180 | ~750 | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Sidearm"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "SMG "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#bba5f3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Fusion Rifle"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Glaive"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "GL"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": I | don't | think | so | lmao\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#bba5f3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "LFR"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ~380 | ~1750 | ~3450 | ~4150 | ~6200\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "MG"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ~385 | ? | ? | ? | ?\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#bba5f3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Sword"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ": ? | ? | ? | ? | ?\n\nGrants a continuously increasing Stability, Handling, Reload Speed, and Charge Rate stat bonus as more damage/kills are scored.\nStat Bonuses (at the start of the stack):\nx1 = +? Stability, +? Handling, +2? Reload Speed, 0.?x Draw/Charge Time Multiplier, and +20 Charge Rate\nx2 = +? Stability, +? Handling, +5 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +40 Charge Rate\nx3 = +? Stability, +? Handling, +10 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +50 Charge Rate\nx4 = +? Stability, +? Handling, +25 Reload Speed, 0.?x Draw/Charge Time Multiplier, and +70 Charge Rate\nx5 = +30 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑+35 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Stability, +30 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑+35 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Handling, +30 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑+35"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " Reload Speed, 0.85x "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑0.8x"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " Draw/Charge Time Multiplier, and +60 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ffd966",
+          "bold": true,
+          "sizePt": 9,
+          "text": "↑+65"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " Charge Rate\n\nThis is basically Target Lock's S Curve mixed with "
+        },
+        {
+          "textAlign": "center",
+          "color": "#6aa84f",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Field-Tested"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " on top of being "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "actually damage based"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": ", so it is much harder to test, sorry!"
+        }
+      ]
+    },
+    "snapshotAt": "2026-11-22T22:44:35.052Z"
+  },
   "legacy": {
-    "inLiveDatabase": true,
+    "uploadedBy": "Stardust",
     "lastUpload": 1791495267470,
+    "inLiveDatabase": true,
+    "uploadToLive": false,
     "updateTracker": {
       "descriptions": {
         "en": {
@@ -11,15 +313,6 @@
           "updatedBy": "Stardust"
         }
       }
-    },
-    "uploadToLive": false,
-    "uploadedBy": "Stardust"
-  },
-  "text": {
-    "en": {
-      "text": "Dealing damage or scoring kills increments continuously scales up stat bonuses. Stacks displayed on-screen are only visual aides, the buff ramps up continuously.\n\nMaximum effect is displayed as x5 Willing Vessel. Stat bonuses constantly decrease by 2.2?% of the maximum bonus per second?.\n\nStat bonuses when the visual stack display reaches 1|2|3|4|5 stacks:\n• ?|?|?|?|20? Stability\n• ?|?|?|?|30? Handling\n• 2?|5|10|25|30 Reload Speed\n• ?|?|?|?|15% decreased Draw/Charge Time\n• 20|40|50|70|80 Charge Rate (Swords)",
-      "updatedAt": "2025-07-25T20:22:25.689Z",
-      "updatedBy": "Stardust"
     }
   }
 }
