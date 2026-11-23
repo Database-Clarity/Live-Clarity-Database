@@ -2,15 +2,352 @@
   "hash": 1406835319,
   "text": {
     "en": {
-      "text": "",
-      "updatedAt": "1970-01-01T00:00:00.000Z",
-      "updatedBy": ""
+      "text": "Firing generates Heat equal to the Heat Generated stat. Heat dissipates each second by the displayed Cooling Efficiency value, even while stowed. Reaching 1000 Heat triggers Overheat, forcing a Manual Vent and making the weapon unusable until Heat drops to 150 or below.\n\nManually cancelling a Vent at 125 Heat or below grants 'Dynamic Heat Limiter', decreasing Heat Generation by 50% for 5 seconds. Stowing the weapon removes the buff.\n\nGaining the buff by cancelling the Vent through reloading or starting a sprint freezes its timer until the next time you fire the weapon, provided you dealt damage with the weapon before starting that Vent.\n\nPrimary Ammo Dynamic Heat Weapons deal increased direct damage based on <link Enemy Rank [#CombatantClassifications] />:\n• Minors: 15%\n• Elites, Minibosses, Bosses, and Vehicles: 38%\n• Players: 2.5%",
+      "updatedAt": "2026-11-20T00:05:24.708Z",
+      "updatedBy": "StardustD2"
     }
   },
   "associated": [],
+  "compendium": {
+    "gid": "1662574278",
+    "rowKey": "Dynamic Heat Weapon",
+    "section": "Intrinsic Traits",
+    "snapshot": {
+      "plain": "Firing generates Heat equal to the Heat Generated stat. \nPassively dissipates Heat equal to the displayed Cooling Efficiency value each second, even while stowed.\nReaching 1000 Heat triggers Overheat, forcing a Manual Vent and rendering the weapon unusable until its Heat is ≤150.\n\nUpon cancelling a Manual Vent while Heat is ≤125:\nDynamic Heat Limiter | -50% Heat Generation for 5 seconds or until stowing the weapon.\nTriggering Dynamic Heat Limiter through reload or sprint after having dealt damage will freeze the timer until shooting.\n\nPrimary Ammo Dynamic Heat Weapons intrinsically deal 15% Increased Impact Damage to Rank-and-File, and 38% Increased Impact Damage to Elites, Mini-bosses, Bosses, and Vehicles.\nAdditionally, they deal 2.5% increased direct damage to Guardians.\n\nAdditional information regarding Heat Weapons.",
+      "runs": [
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Firing generates "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Heat "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "equal to the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Heat Generated stat"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": ". \nPassively "
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "dissipates "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Heat "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "equal to the displayed "
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Cooling Efficiency value "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "each second, even while stowed.\nReaching "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "1000 Heat"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": " triggers "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e06666",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Overheat"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": ", forcing a Manual Vent and rendering the weapon "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e06666",
+          "bold": true,
+          "sizePt": 8,
+          "text": "unusable "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "until its "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Heat"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": " is "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "≤150"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": ".\n\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": "Upon "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": "cancelling "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": "a "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": "Manual Vent"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": " while "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": "Heat"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": "is"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#f9cb9c",
+          "bold": true,
+          "italic": true,
+          "sizePt": 8,
+          "text": "≤125"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": ":\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Dynamic Heat Limiter"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": " | "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "-50% Heat Generation"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": " for 5 seconds or until stowing the weapon.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": "Triggering "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "italic": true,
+          "sizePt": 8,
+          "text": "Dynamic Heat Limiter"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 8,
+          "text": " through reload or sprint after having dealt damage will freeze the timer until shooting."
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 8,
+          "text": "\n\nPrimary Ammo"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 8,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Dynamic Heat Weapons"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 8,
+          "text": " intrinsically deal 15% Increased Impact Damage to Rank-and-File, and 38% Increased Impact Damage to Elites, Mini-bosses, Bosses, and Vehicles.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 8,
+          "text": "Additionally, they deal 2.5% increased direct damage to Guardians.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 8,
+          "text": "\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "italic": true,
+          "sizePt": 8,
+          "href": "https://docs.google.com/#rangeid=1962653729",
+          "text": "Additional information regarding Heat Weapons."
+        }
+      ]
+    },
+    "snapshotAt": "2026-11-20T00:05:24.709Z"
+  },
+  "bungieSnapshot": {
+    "description": "Higher base damage. High heat generated, [Reload]  to vent heat from the weapon. Overheating forces a sustained vent. Weapon cools down more rapidly between shots.",
+    "snapshotAt": "2026-11-20T00:05:24.708Z"
+  },
   "legacy": {
     "uploadedBy": "Stardust",
-    "lastUpload": 1766528245793,
+    "lastUpload": 1791495267470,
     "inLiveDatabase": false,
     "uploadToLive": false,
     "updateTracker": {

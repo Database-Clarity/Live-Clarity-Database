@@ -2,15 +2,888 @@
   "hash": 2078075300,
   "text": {
     "en": {
-      "text": "",
-      "updatedAt": "1970-01-01T00:00:00.000Z",
-      "updatedBy": ""
+      "text": "Fires slow, tracking projectiles that travel at 40 meters per second with no distance limit (their tracers eventually disappear, however). //Aim Assist Falloff Distance is increased by 50% compared to regular Auto Rifles at 0 Range, scaling down to a 25% increase at 100 Range.\n\nDealing damage from any source generates 1% Weapon Energy per <pve 4 /> <pvp [3.6] /> damage. Damage dealt with this weapon doubles the amount generated.\n\nLooking near an ally within healing range widens the reticle. Hip-firing in this state fires healing projectiles with much stronger tracking. Each healing shot consumes 2% Weapon Energy and restores 13.3 HP on impact. Shots alternate between allies when multiple are targeted.\n\nHealing range scales linearly from 28 to 38 meters between 0 and 100 Range.\n\nScoring 5 healing hits on allies within 1 second of each enables subsequent healing hits within 1s of each to grant you and the healed ally 'Support Frame Boost', increasing Weapon Damage by 10% for 6s. Damage increase stacks with everything.\n\n1.5 second cooldown between Support Frame Boost applications on the same ally.\n\nSupport Frame Boost applications also grant the ally an effect based on the weapon's element:\n• <arc Arc />: <arc Amplified /> for 7s\n• <solar Solar />: <solar Restoration x1 /> for 4s (6 with <solar Ember of Solace />)\n• <void Void />: 15 <void Void Overshield /> for 10s (15 with <void Echo of Persistence />)\n• <strand Strand />: Releases 4 <strand Unravel /> seekers\n• <stasis Stasis />: 1 stack of <stasis Frost Armor /> for 5s\n\nOnly applying Rapid Healing triggers On-Heal effects for healed allies. Shots that restore missing health count as Weapon Hits for other perks.",
+      "updatedAt": "2026-11-20T00:05:24.708Z",
+      "updatedBy": "StardustD2"
     }
   },
   "associated": [],
+  "compendium": {
+    "gid": "1662574278",
+    "rowKey": "Support Frame",
+    "section": "Intrinsic Traits",
+    "snapshot": {
+      "plain": "Shoots slow, tracking projectiles that travel at a speed of 40m/s. Projectiles do not have a distance limit, but will eventually lose their tracers.\n Has 50% Increased Aim Assist Falloff Distance at 0 Range, down to 25% at 100 Range, compared to a regular Auto Rifle.\n\nDealing ANY (really, ANY!) damage generates Weapon Energy, at a rate of 1% Energy for every 4 [3.6] damage dealt, reaching 100% Charge after dealing 400 [360] damage.\nDealing damage with the Support Auto Rifle doubles the Weapon Energy gains, generating 1% Energy for every 2 [1.8] damage, requiring 200 [180] damage to fully charge.\n\nLooking near an ally within range widens the reticle. Hipfiring while an ally is in healing range will shoot healing projectiles that have much stronger tracking.\nConsumes 2% Weapon Energy per healing shot fired towards an ally, restoring 13.3 HP to them on impact.\nTargeting Range = 28 + (0.1 x Range Stat) meters, up to 38 Meters at 100 Range.\nIf multiple allies are targeted, then the healing shots will alternate between allies.\n\nUpon scoring 5 healing hits within 1 second of each on allies:\nThe next healing hits within 1 seconds of each on allies bestows them with an Element-Matching Effect, and applies Support Frame Boost to the user and the targeted ally.\nSupport Frame Boost grants 10% increased weapon damage for 6 seconds. Stacks with everything.\nArc Support Frames bestow Amplified for 7 seconds to the targeted ally.\nSolar Support Frames bestow Restoration x1 for 4+2 seconds to the targeted ally.\nVoid Support Frames bestow 15 Void Overshield for 10+5 seconds to the targeted ally. \nStrand Support Frames cause the targeted ally to release 4 Unraveling Projectiles.\nStasis Support Frames bestow a stack of Frost Armor for 5 seconds to the targeted ally.\n\nOnly triggers On-Heal Effects upon applying Rapid Healing. Shots that restore missing health count for \"on-hit\" related interactions.\nIncurs a 1.5 second cooldown upon applying the Support Frame Boost before additional healing hits count towards the Support Frame Boost on the same ally.",
+      "runs": [
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Shoots slow, tracking projectiles that travel at a speed of 40m/s. "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Projectiles do not have a distance limit, but will eventually lose their tracers.\n Has 50% Increased Aim Assist Falloff Distance at 0 Range, down to 25% at 100 Range, compared to a regular Auto Rifle.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\nDealing ANY"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 6,
+          "text": " (really, ANY!)"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " damage generates "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Weapon Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ", at a rate of "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "1% Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for every "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "4"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ea9999",
+          "bold": true,
+          "sizePt": 9,
+          "text": "[3.6]"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " damage dealt, reaching 100% Charge after dealing "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "400"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ea9999",
+          "bold": true,
+          "sizePt": 9,
+          "text": "[360]"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " damage.\nDealing damage with the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Support Auto Rifle"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " doubles the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Weapon Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " gains, generating "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "1% Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for every "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "2"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ea9999",
+          "bold": true,
+          "sizePt": 9,
+          "text": "[1.8]"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " damage, requiring "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "200 "
+        },
+        {
+          "textAlign": "center",
+          "color": "#ea9999",
+          "bold": true,
+          "sizePt": 9,
+          "text": "[180]"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " damage to fully charge.\n\nLooking near an "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "ally "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "within range widens the reticle. Hipfiring while an "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "ally "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "is in "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "healing range"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " will shoot "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "healing projectiles"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " that have much stronger tracking.\nConsumes "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "2% Weapon Energy"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " per "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "healing shot"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " fired towards an "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ", "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "restoring 13.3 HP "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "to them on impact.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Targeting Range = 28 + (0.1 x Range Stat) meters, up to 38 Meters at 100 Range.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "If multiple "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "italic": true,
+          "sizePt": 9,
+          "text": "allies "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "are targeted, then the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "italic": true,
+          "sizePt": 9,
+          "text": "healing shots"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " will alternate between "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "italic": true,
+          "sizePt": 9,
+          "text": "allies"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "."
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\n\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Upon scoring "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "5 healing hits"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " within "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "1 second of each"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " on "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "italic": true,
+          "sizePt": 9,
+          "text": "allies"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": ":"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "\nThe next "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "healing hits"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " within 1 seconds of each on "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "allies "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "bestows them with an "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Element-Matching Effect"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ", and applies "
+        },
+        {
+          "textAlign": "center",
+          "color": "#e6b8af",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Support Frame Boost"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " to the user and the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e6b8af",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Support Frame Boost"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " grants 10% increased weapon damage for 6 seconds. "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Stacks with everything.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Arc Support Frames"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " bestow "
+        },
+        {
+          "textAlign": "center",
+          "color": "#89cdd1",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Amplified "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "for 7 seconds to the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e0a261",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Solar Support Frames"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " bestow "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Restoration x1"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "bold": true,
+          "sizePt": 9,
+          "text": "4"
+        },
+        {
+          "textAlign": "center",
+          "color": "#f6b26b",
+          "bold": true,
+          "sizePt": 7,
+          "text": "+2"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " seconds to the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#bba5f3",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Void Support Frames"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " bestow "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "15 Void Overshield"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for "
+        },
+        {
+          "textAlign": "center",
+          "color": "#d5a6bd",
+          "bold": true,
+          "sizePt": 9,
+          "text": "10"
+        },
+        {
+          "textAlign": "center",
+          "color": "#b4a7d6",
+          "bold": true,
+          "sizePt": 7,
+          "text": "+5"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " seconds to the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ". \n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Strand Support Frames"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " cause the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "to release"
+        },
+        {
+          "textAlign": "center",
+          "color": "#63d275",
+          "bold": true,
+          "sizePt": 9,
+          "text": " 4 Unraveling Projectiles"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Stasis Support Frames"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " bestow a "
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "stack "
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "of "
+        },
+        {
+          "textAlign": "center",
+          "color": "#6fa8dc",
+          "bold": true,
+          "sizePt": 9,
+          "text": "Frost Armor"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": " for 5 seconds to the "
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "bold": true,
+          "sizePt": 9,
+          "text": "targeted ally"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "bold": true,
+          "sizePt": 9,
+          "text": ".\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": "\nOnly triggers "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "italic": true,
+          "sizePt": 9,
+          "text": "On-Heal Effects"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " upon applying "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Rapid Healing"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": ". Shots that "
+        },
+        {
+          "textAlign": "center",
+          "color": "#dd7e6b",
+          "italic": true,
+          "sizePt": 9,
+          "text": "restore missing health"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " count for \"on-hit\" related interactions.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#e06666",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Incurs a 1.5 second cooldown upon applying the Support Frame Boost before additional healing hits count towards the Support Frame Boost on the same ally."
+        }
+      ]
+    },
+    "snapshotAt": "2026-11-20T00:05:24.710Z"
+  },
+  "bungieSnapshot": {
+    "description": "Harming targets builds a restorative charge. Hip firing at allies while this weapon is charged heals them. Rapid healing increases weapon damage and grants Amplified to your allies.",
+    "snapshotAt": "2026-11-20T00:05:24.708Z"
+  },
   "legacy": {
     "uploadedBy": "Stardust",
-    "lastUpload": 1781268193799,
+    "lastUpload": 1791495267470,
     "inLiveDatabase": false,
     "uploadToLive": false,
     "updateTracker": {
