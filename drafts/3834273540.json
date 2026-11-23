@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "hash": 3834273540,
+  "english": "Dealing Kinetic Weapon damage and scoring Kinetic Weapon kills progresses a 125 point counter, which spawns a unique Kinetic Ammo Brick at 100%.\n\nThe counter lasts 15 seconds and is refreshed by Kinetic Weapon damage.\n\nEach damage point grants 0.03% progress, so 3770 damage is required per brick. A499 generates 75% less progress (15K damage per brick).\n\nKill progress based on <link Enemy Rank [#CombatantClassifications] />:\n• Rank-and-File: 8%\n• Elites: 16%\n• Minibosses: 32%\n• Champions and higher: 100%\n\nThe damage requirement ignores Power Delta but counts actual damage dealt, so the same base damage is needed even when Power Level differences reduce your damage.\n\nCollecting a Kinetic Ammo Brick grants 5% Special and 5% Heavy Ammo Progress, refills the magazines of equipped Kinetic Weapons, and generates Special and Heavy ammo for them equal to 1/3 of a magazine plus 1 ammo.\n\nAmmo generation exceptions:\n• Bastion grants 1 additional ammo\n• Cull's Shadow grants 2 additional ammo\n• Praxic grants 2 additional ammo\n• Microcosm grants 12 additional ammo\n\nBricks count for Ammo Pickup effects, and Kinetic Ammo Generation is unaffected by Scavenger Bricks. A brick cannot directly spawn another brick.",
+  "sourceCommit": "379a7bf462f6b605aa4a7ac0d129ca9574934765",
+  "source": {
+    "tab": "Artifact Perks",
+    "gid": "473308249",
+    "range": "B14:C14",
+    "text": "Dealing Kinetic Weapon Damage and scoring Kinetic Weapon Kills progress a 125 point counter, spawning an unique Kinetic Ammo Brick upon reaching 100%.\nCounter that lasts 15s and is refreshed upon dealing Kinetic Weapon Damage.\n\nEach damage point grants 0.03% progress, requiring 3770 damage to spawn a brick.\nA499 generates 75% less progress (15K damage for a brick).\nRnF Kill = 8% | Elite = 16% | Miniboss = 32% | Champion+ = 100%\nDamage requirement IGNORES Power-Delta, but considers ACTUAL DAMAGE DEALT.\nThis means it requires the same \"base damage\" regardless of reduced damage from PL deltas.\n\nUpon collecting a Kinetic Ammo Brick:\n+5% Special and +5% Heavy Ammo Progress. Cannot directly spawn a brick.\nRefills equipped Kinetic Damage Weapons and generates Special/Heavy Ammo for them.\nGenerates (1/3rd of Magazine) + 1 Ammo, with certain exceptions.\nCounts for Ammo Pickup effects. Kinetic Ammo Generation is unaffected by Scavenger Bricks.\n\nBastion = +1 Ammo | Cull's Shadow = +2 Ammo | Praxic = +2 Ammo |  Microcosm = +12 Ammo."
+  },
+  "styleGuide": "v4.12",
+  "createdAt": "2026-11-23T02:15:54.971Z",
+  "model": "opencode-go/deepseek-v4.1-flash"
+}
