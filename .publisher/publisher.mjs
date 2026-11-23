@@ -30452,6 +30452,7 @@ function publicGlobalSync(sync) {
 // scripts/publisher/globals.ts
 var json4 = (value2) => `${JSON.stringify(value2, null, 2)}
 `;
+var livePerksSchema = external_exports.record(external_exports.string(), external_exports.record(external_exports.string(), external_exports.unknown()));
 var currentSync = {
   version: 1,
   status: "current",
@@ -30635,6 +30636,25 @@ var GlobalsPublisher = class _GlobalsPublisher {
       );
     });
   }
+  liveSnapshot(revision2, perks, documents, types) {
+    const tooltips = {};
+    const aliases = {};
+    const liveTypes = { ...types };
+    for (const [hash2, value2] of Object.entries(perks)) {
+      if (typeof value2.type === "string") liveTypes[hash2] = value2.type;
+      if (value2.aliasOf === void 0) {
+        if (!documents[hash2]) throw new Error("Missing last-published consumer snapshot");
+        tooltips[hash2] = documents[hash2];
+      } else {
+        const { aliasOf, aliasKind } = value2;
+        if (typeof aliasOf !== "number" || aliasKind !== "name" && aliasKind !== "sandbox" && aliasKind !== "frame")
+          throw new Error("Unknown live alias provenance");
+        aliases[hash2] = { to: aliasOf, kind: aliasKind };
+      }
+    }
+    if (!tooltips[2] || !tooltips[3]) throw new Error("Missing last-published global library");
+    return { repository: this.options.repo, revision: revision2, aliases, types: liveTypes, tooltips, mode: "live" };
+  }
   capture(tree, revision2, liveCommit, roots = []) {
     const published = globalPublishedSchema.parse(
       this.read(tree, globalsReleasePaths.published(this.options.liveBranch))
@@ -30646,44 +30666,18 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const types = Object.fromEntries(
       Object.entries(this.options.facts).map(([hash2, fact]) => [hash2, fact.type])
     );
-    const snapshot = (tooltips, mode) => ({
-      repository: this.options.repo,
-      revision: revision2,
-      aliases,
-      types,
-      tooltips,
-      mode
-    });
-    const storedLiveDocuments = {
-      ...this.documents(tree, "live/tooltips"),
-      ...projectGlobals(published.store)
-    };
-    const actual = external_exports.object({ perks: external_exports.record(external_exports.string(), external_exports.record(external_exports.string(), external_exports.unknown())) }).parse(this.publisher.read(this.git.tree(liveCommit), "liveDescriptions.json"));
-    const liveDocuments = Object.fromEntries(
-      Object.entries(storedLiveDocuments).filter(
-        ([hash2]) => actual.perks[hash2] && actual.perks[hash2].aliasOf === void 0
-      )
+    const livePerks = external_exports.object({ perks: livePerksSchema }).parse(this.publisher.read(this.git.tree(liveCommit), "liveDescriptions.json")).perks;
+    const live = this.liveSnapshot(
+      revision2,
+      livePerks,
+      { ...this.documents(tree, "live/tooltips"), ...projectGlobals(published.store) },
+      types
     );
-    if (!liveDocuments[2] || !liveDocuments[3])
-      throw new Error("Missing last-published global library");
-    const liveAliases = {};
-    const liveTypes = {};
-    for (const [hash2, value2] of Object.entries(actual.perks)) {
-      if (typeof value2.type === "string") liveTypes[hash2] = value2.type;
-      if (value2.aliasOf !== void 0) {
-        if (typeof value2.aliasOf !== "number" || !["name", "sandbox", "frame"].includes(String(value2.aliasKind)))
-          throw new Error("Unknown live alias provenance");
-        liveAliases[hash2] = {
-          to: value2.aliasOf,
-          kind: value2.aliasKind
-        };
-      } else if (!liveDocuments[hash2]) throw new Error("Missing last-published consumer snapshot");
-    }
-    const exported = exportLegacy(Object.values(liveDocuments), 0, this.options.facts, liveAliases);
+    const exported = exportLegacy(Object.values(live.tooltips), 0, this.options.facts, live.aliases);
     for (const [hash2, value2] of Object.entries(exported)) {
       if ("aliasOf" in value2) continue;
       const expectedEditor = structuredClone(value2.editor);
-      const actualEditor = structuredClone(actual.perks[hash2]?.editor ?? null);
+      const actualEditor = structuredClone(livePerks[hash2]?.editor ?? null);
       for (const editor of [expectedEditor, actualEditor])
         if (editor && typeof editor === "object" && !Array.isArray(editor)) {
           for (const cell of Object.values(editor))
@@ -30696,19 +30690,20 @@ var GlobalsPublisher = class _GlobalsPublisher {
     return {
       saved,
       published: published.store,
-      authored: snapshot(
-        {
+      authored: {
+        repository: this.options.repo,
+        revision: revision2,
+        aliases,
+        types,
+        tooltips: {
           ...this.canonicalDocuments(tree, "tooltips", aliases),
           ...Object.fromEntries(roots.map((document) => [document.hash, document])),
           ...projectGlobals(saved)
         },
-        "authored"
-      ),
-      live: {
-        ...snapshot(liveDocuments, "live"),
-        aliases: liveAliases,
-        types: { ...types, ...liveTypes }
-      }
+        mode: "authored"
+      },
+      live,
+      livePerks
     };
   }
   causes(tree) {
@@ -30878,16 +30873,31 @@ var GlobalsPublisher = class _GlobalsPublisher {
           "The global generator changed after scheduling; return to draft and schedule again"
         );
       const sourceAliases = this.publisher.aliasesAt(sourceTree);
-      const snapshot = {
-        ...captured.live,
-        revision: revision2,
-        aliases: captured.authored.aliases,
-        types: captured.authored.types,
-        tooltips: {
+      const aliases = captured.authored.aliases;
+      const exported = exportWithInactiveMoves(
+        documents,
+        0,
+        this.options.facts,
+        aliases,
+        selectedInactiveMoves(moves, hashes, aliases)
+      );
+      const perks = this.publisher.mergePublicationPerks(
+        tree,
+        captured.livePerks,
+        exported,
+        hashes
+      );
+      const snapshot = this.liveSnapshot(
+        revision2,
+        livePerksSchema.parse(perks),
+        {
           ...captured.live.tooltips,
-          ...Object.fromEntries(documents.map((document) => [document.hash, document]))
-        }
-      };
+          ...Object.fromEntries(
+            documents.filter((document) => exported[document.hash]).map((document) => [document.hash, document])
+          )
+        },
+        captured.authored.types
+      );
       const pinned = this.store(sourceTree);
       const pinnedDocuments = this.canonicalDocuments(sourceTree, "live/tooltips", sourceAliases);
       for (const document of documents)
@@ -30901,6 +30911,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         ...snapshot,
         revision: batch.source,
         aliases: sourceAliases,
+        types: captured.authored.types,
         tooltips: { ...pinnedDocuments, ...projectGlobals(pinned) }
       };
       const comparison = calculateGlobalImpact(
@@ -30917,13 +30928,14 @@ var GlobalsPublisher = class _GlobalsPublisher {
       );
       if (!comparison.complete)
         throw new Error("Scheduled global dependency closure is incomplete");
-      if (comparison.rows.some(
-        (row) => selected.includes(resolveAlias(row.consumer.hash, snapshot.aliases)) && stableStringify(row.before) !== stableStringify(row.after)
-      ))
+      const selectedRows = comparison.rows.filter(
+        ({ consumer }) => selected.includes(resolveAlias(consumer.hash, originalSnapshot.aliases)) || selected.includes(resolveAlias(consumer.hash, snapshot.aliases))
+      );
+      if (selectedRows.some((row) => stableStringify(row.before) !== stableStringify(row.after)))
         throw new Error(
           "Global dependencies changed after scheduling; return to draft and schedule again"
         );
-      const reads = comparison.rows.filter((row) => selected.includes(resolveAlias(row.consumer.hash, snapshot.aliases))).map((row) => row.after.reads);
+      const reads = selectedRows.map((row) => row.after.reads);
       const used = store.entries.filter(
         (entry) => entry.kind === "titles" || reads.some(
           (read) => entry.kind === "variables" && read.variables.includes(entry.name) || read.imports.some(
@@ -33264,6 +33276,17 @@ var Publisher = class _Publisher {
       return { c, r };
     }
   }
+  mergePublicationPerks(sourceTree, live, entries, hashes) {
+    const aliases = this.aliasesAt(sourceTree);
+    const groups = sourceTree[aliasGroupsPath] ? { aliases, catalog: this.options.facts } : void 0;
+    return applyInactiveLive(
+      mergeLivePerks(live, entries, this.pickRecomputeAt(sourceTree), groups),
+      this.movesAt(sourceTree),
+      hashes,
+      aliases,
+      live
+    );
+  }
   merge(parent, r) {
     const tree = this.git.tree(parent);
     const live = this.read(tree, "liveDescriptions.json");
@@ -33275,14 +33298,11 @@ var Publisher = class _Publisher {
       const sourceTree = this.git.tree(r.sourceCommit);
       if (sourceTree[aliasGroupsPath] && r.generatorSha !== this.options.generatorSha)
         throw new Error("Generator revision differs from frozen alias-group receipt");
-      const aliases = this.aliasesAt(sourceTree);
-      const groups = sourceTree[aliasGroupsPath] ? { aliases, catalog: this.options.facts } : void 0;
-      perks = applyInactiveLive(
-        mergeLivePerks(live.perks, entries, this.pickRecomputeAt(sourceTree), groups),
-        this.movesAt(sourceTree),
-        r.entries.map((e) => e.hash),
-        aliases,
-        live.perks
+      perks = this.mergePublicationPerks(
+        sourceTree,
+        live.perks,
+        entries,
+        r.entries.map((e) => e.hash)
       );
     } catch (error62) {
       throw new ConsumerOutputRejected(String(error62));
