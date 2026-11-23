@@ -24000,6 +24000,7 @@ var maxBuffer = 1 << 30;
 
 // scripts/publisher/git.ts
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { mkdtempSync, rmSync, realpathSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
@@ -24024,12 +24025,17 @@ function requesterCredits(user) {
     committer: appCredits.committer
   };
 }
+var bulkPath = /^(tooltips|live\/tooltips|globals|schedule\/batches\/[^/]+\/tooltips)\//;
 var LocalRepository = class {
   path;
   commandTimeout = 12e4;
   preserveModes = false;
   trees = /* @__PURE__ */ new Map();
   blobs = /* @__PURE__ */ new Map();
+  /** A bulk document's object ID to every bulk object ID of a tree that holds it. */
+  bulk = /* @__PURE__ */ new Map();
+  /** Blobs not yet in the object store; commit() imports them all with one Git process. */
+  unwritten = /* @__PURE__ */ new Map();
   constructor(path) {
     this.path = realpathSync(resolve(path));
     if (this.git(["rev-parse", "--is-bare-repository"]).trim() !== "true")
@@ -24039,14 +24045,18 @@ var LocalRepository = class {
     if (this.git(["remote"]).trim()) throw new Error("Simulator must have no remotes");
   }
   git(args, input2, extraEnv = {}) {
+    return this.gitBytes(args, input2, extraEnv).toString();
+  }
+  gitBytes(args, input2, extraEnv = {}) {
     return execFileSync("git", ["--git-dir", this.path, ...args], {
       input: input2,
       timeout: this.commandTimeout,
       maxBuffer,
-      encoding: "utf8",
       stdio: ["pipe", "pipe", "pipe"],
       env: {
         ...process.env,
+        // Only remoteGit authenticates, through its own configuration variables.
+        GITHUB_TOKEN: void 0,
         GIT_AUTHOR_NAME: "Publisher simulator",
         GIT_AUTHOR_EMAIL: "publisher@invalid",
         GIT_COMMITTER_NAME: "Publisher simulator",
@@ -24076,7 +24086,33 @@ var LocalRepository = class {
       })
     );
     this.trees.set(commit2, tree);
+    const bulk = Object.keys(tree).filter((path) => bulkPath.test(path)).map((path) => tree[path]);
+    for (const oid4 of bulk) this.bulk.set(oid4, bulk);
     return { ...tree };
+  }
+  /**
+   * Load bulk documents through one Git process instead of one each; all or nothing. An object
+   * that is missing or not a blob stays uncached, so blob() still fails on it when it is used.
+   */
+  readBulk(bulk) {
+    const oids = [...new Set(bulk)].filter((oid4) => !this.blobs.has(oid4));
+    const output2 = this.gitBytes(["cat-file", "--batch"], oids.map((oid4) => `${oid4}
+`).join(""));
+    const read = /* @__PURE__ */ new Map();
+    let at = 0;
+    for (const oid4 of oids) {
+      const end = output2.indexOf("\n", at);
+      const header = end < 0 ? "" : output2.toString("latin1", at, end);
+      at = end + 1;
+      if (header === `${oid4} missing`) continue;
+      const [, named, type, size] = /^([0-9a-f]{40}) ([a-z]+) (\d+)$/.exec(header) ?? [];
+      const stop = at + Number(size);
+      if (named !== oid4 || output2[stop] !== 10) throw new Error("Unexpected Git batch output");
+      if (type === "blob") read.set(oid4, output2.toString("utf8", at, stop));
+      at = stop + 1;
+    }
+    if (at !== output2.length) throw new Error("Unexpected Git batch output");
+    for (const [oid4, bytes] of read) this.blobs.set(oid4, bytes);
   }
   treeModes(commit2) {
     return Object.fromEntries(
@@ -24088,13 +24124,38 @@ var LocalRepository = class {
     );
   }
   blob(oid4) {
+    if (!this.blobs.has(oid4) && this.bulk.has(oid4)) this.readBulk(this.bulk.get(oid4));
     if (!this.blobs.has(oid4)) this.blobs.set(oid4, this.git(["cat-file", "blob", oid4]));
     return this.blobs.get(oid4);
   }
   writeBlob(bytes) {
-    const oid4 = this.git(["hash-object", "-w", "--stdin"], bytes).trim();
+    const buffer = Buffer.from(bytes);
+    const oid4 = createHash("sha1").update(`blob ${buffer.length}\0`).update(buffer).digest("hex");
+    if (!this.blobs.has(oid4)) this.unwritten.set(oid4, buffer);
     this.blobs.set(oid4, bytes);
     return oid4;
+  }
+  /** Import the waiting blobs (no refs). Git itself must name every one of them. */
+  writeBlobs() {
+    if (!this.unwritten.size) return;
+    const stream = [...this.unwritten.values()].flatMap((buffer, index) => [
+      Buffer.from(`blob
+mark :${index + 1}
+data ${buffer.length}
+`),
+      buffer,
+      Buffer.from(`
+get-mark :${index + 1}
+`)
+    ]);
+    const stored = this.gitBytes(
+      ["fast-import", "--quiet", "--done"],
+      Buffer.concat([...stream, Buffer.from("done\n")])
+    );
+    if (stored.toString() !== [...this.unwritten.keys()].map((oid4) => `${oid4}
+`).join(""))
+      throw new Error("Unexpected Git import output");
+    this.unwritten.clear();
   }
   requireCredits = false;
   commit(parent, tree, message, credits) {
@@ -24104,6 +24165,7 @@ var LocalRepository = class {
         if (!identity.name || !identity.email || /[<>\r\n\0]/.test(identity.name + identity.email))
           throw new Error("Invalid commit credits");
       }
+    this.writeBlobs();
     const temp = mkdtempSync(join(tmpdir(), "publisher-index-"));
     try {
       const modes = /* @__PURE__ */ new Map();
@@ -24731,13 +24793,7 @@ function cleanObject(dirtyObject, allowMutations = false) {
 function customJsonStringify(object2, properties, spaces = 1) {
   const string4 = JSON.stringify(object2, void 0, spaces);
   const regex = new RegExp(`"(${properties.join("|")})"\\s*:\\s*\\[([^]+?)\\]`, "g");
-  const matches2 = string4.match(regex);
-  if (matches2 === null) return string4;
-  const newString = matches2.reduce((acc, match) => {
-    acc = acc.replace(match, match.replaceAll("\n", "").replace(/  +/g, " "));
-    return acc;
-  }, string4);
-  return newString;
+  return string4.replace(regex, (match) => match.replaceAll("\n", "").replace(/  +/g, " "));
 }
 
 // packages/export/src/converter/converterFunctions/getDataFromPerk.ts
@@ -25720,7 +25776,7 @@ function buildLegacy(input2, preset, options = {}) {
 }
 
 // scripts/publisher/publisher.ts
-import { createHash as createHash4, createPublicKey as createPublicKey3, verify as verify3 } from "node:crypto";
+import { createHash as createHash5, createPublicKey as createPublicKey3, verify as verify3 } from "node:crypto";
 
 // packages/core/src/index.ts
 init_languages();
@@ -27742,6 +27798,37 @@ function resolveSnapshot(snapshot, blockers) {
   }
   return result;
 }
+var GlobalSnapshotScans = class {
+  resolved = /* @__PURE__ */ new WeakMap();
+  referenced = /* @__PURE__ */ new WeakMap();
+  /** Every rendered cell, with whatever keeps the snapshot from being proven. */
+  resolve(snapshot) {
+    let resolved = this.resolved.get(snapshot);
+    if (!resolved) {
+      const blockers = /* @__PURE__ */ new Set();
+      resolved = { cells: resolveSnapshot(snapshot, blockers), blockers };
+      this.resolved.set(snapshot, resolved);
+    }
+    return resolved;
+  }
+  /** Every authored reference name of one kind in one language of the snapshot's sources. */
+  references(snapshot, kind, lang) {
+    const scans = this.referenced.get(snapshot) ?? /* @__PURE__ */ new Map();
+    this.referenced.set(snapshot, scans);
+    let names = scans.get(`${kind}:${lang}`);
+    if (!names) {
+      names = new Set(
+        Object.values(snapshot.tooltips).flatMap(
+          (tooltip) => globalReferenceSpans(globalSourceText(tooltip, lang, snapshot.mode) ?? "", kind).map(
+            (span) => span.name
+          )
+        )
+      );
+      scans.set(`${kind}:${lang}`, names);
+    }
+    return names;
+  }
+};
 function languageAffected(snapshot, change, lang) {
   if (!change.languages) return true;
   if (change.languages.includes("en")) return true;
@@ -27749,7 +27836,7 @@ function languageAffected(snapshot, change, lang) {
   const source2 = aggregate ? globalSourceLanguage(aggregate, lang, snapshot.mode) : lang;
   return change.languages.includes(source2);
 }
-function calculateGlobalImpact(before, after, changes2, destination) {
+function calculateGlobalImpact(before, after, changes2, destination, scans = new GlobalSnapshotScans()) {
   for (const change of changes2) {
     globalCauseSchema.parse(change.cause);
     for (const name2 of [change.beforeName, change.afterName])
@@ -27760,10 +27847,11 @@ function calculateGlobalImpact(before, after, changes2, destination) {
   const blockers = /* @__PURE__ */ new Set();
   if (before.repository !== after.repository || before.mode !== after.mode)
     blockers.add("Before/after snapshots must describe the same repository and resolution mode");
-  const old = resolveSnapshot(before, blockers), next = resolveSnapshot(after, blockers);
+  const old = scans.resolve(before), next = scans.resolve(after);
+  for (const blocker of [...old.blockers, ...next.blockers]) blockers.add(blocker);
   const rows = [];
-  for (const key of /* @__PURE__ */ new Set([...old.keys(), ...next.keys()])) {
-    const a = old.get(key), b = next.get(key), { hash: hash2, lang } = a ?? b;
+  for (const key of /* @__PURE__ */ new Set([...old.cells.keys(), ...next.cells.keys()])) {
+    const a = old.cells.get(key), b = next.cells.get(key), { hash: hash2, lang } = a ?? b;
     const causes = [];
     let reason = "variable-read";
     for (const change of changes2) {
@@ -27982,7 +28070,7 @@ function changes(input2, ids, names) {
     }));
   });
 }
-function impacts(input2, store, ids) {
+function impacts(input2, store, ids, scans) {
   const beforeGlobals = projectGlobals(input2.published), afterGlobals = projectGlobals(store);
   const afterLive = Object.fromEntries(
     Object.entries({ ...input2.live.tooltips, ...input2.authored.tooltips, ...afterGlobals }).filter(
@@ -28017,14 +28105,15 @@ function impacts(input2, store, ids) {
     ]
   ];
   return pairs.map(([before, after, names, published]) => {
-    if (published && !calculateGlobalImpact(published, published, [], input2.destination).complete)
+    if (published && !calculateGlobalImpact(published, published, [], input2.destination, scans).complete)
       throw new Error("Sync pending: historical published closure is incomplete");
     let observedBefore = before;
     let result = calculateGlobalImpact(
       observedBefore,
       after,
       changes(input2, ids, names),
-      input2.destination
+      input2.destination,
+      scans
     );
     if (!result.complete && names && published) {
       observedBefore = {
@@ -28043,7 +28132,8 @@ function impacts(input2, store, ids) {
         observedBefore,
         after,
         changes(input2, ids, names),
-        input2.destination
+        input2.destination,
+        scans
       );
     }
     if (!result.complete) throw new Error("Sync pending: resolver closure is incomplete");
@@ -28052,15 +28142,16 @@ function impacts(input2, store, ids) {
       observedBefore,
       after,
       result,
-      changes(input2, ids, names).map((change) => change.cause)
+      changes(input2, ids, names).map((change) => change.cause),
+      scans
     );
   });
 }
-function expandReleaseDependencies(input2, before, after, impact, causes) {
+function expandReleaseDependencies(input2, before, after, impact, causes, scans) {
   const probe = [
     { kind: "titles", beforeName: "Release", afterName: "Release", cause: causes[0] }
   ];
-  const census = calculateGlobalImpact(before, after, probe, input2.destination);
+  const census = calculateGlobalImpact(before, after, probe, input2.destination, scans);
   if (!census.complete) throw new Error("Sync pending: import release closure is incomplete");
   const key = (row) => `${row.consumer.hash}:${row.consumer.lang}`;
   const rows = new Map(impact.rows.map((row) => [key(row), row]));
@@ -28079,7 +28170,8 @@ function expandReleaseDependencies(input2, before, after, impact, causes) {
       }
     },
     probe,
-    input2.destination
+    input2.destination,
+    scans
   );
   if (!globalOnly.complete) throw new Error("Sync pending: global fallback closure is incomplete");
   for (const row of globalOnly.rows)
@@ -28160,14 +28252,18 @@ async function planGlobalRelease(input2) {
       groups.splice(groups.indexOf(group), 1);
     }
   };
-  const complete = impacts(input2, input2.saved, changed);
+  const scans = new GlobalSnapshotScans();
+  const complete = impacts(input2, input2.saved, changed, scans);
   for (const result2 of complete)
     for (const row of result2.rows) join5(row.causes.map((cause) => cause.globalId));
   const membership = /* @__PURE__ */ new Map();
   for (const id of changed)
-    for (const impact of impacts(input2, composeGlobalRelease(input2.published, input2.saved, [id]), [
-      id
-    ]))
+    for (const impact of impacts(
+      input2,
+      composeGlobalRelease(input2.published, input2.saved, [id]),
+      [id],
+      scans
+    ))
       for (const row of impact.rows) {
         const key = `${row.consumer.hash}:${row.consumer.lang}`;
         const ids = membership.get(key) ?? /* @__PURE__ */ new Set();
@@ -28193,7 +28289,7 @@ async function planGlobalRelease(input2) {
   for (const group of groups) {
     const ids = [...group].sort();
     const store = composeGlobalRelease(input2.published, input2.saved, ids);
-    const contexts = impacts(input2, store, ids);
+    const contexts = impacts(input2, store, ids, scans);
     const rows = /* @__PURE__ */ new Map();
     for (const impact of contexts)
       for (const view of impact.rows) {
@@ -30366,7 +30462,7 @@ import { setTimeout as setTimeout2 } from "node:timers/promises";
 
 // scripts/publisher/globals.ts
 init_zod();
-import { createHash } from "node:crypto";
+import { createHash as createHash2 } from "node:crypto";
 init_syntax();
 init_languages();
 init_schemas3();
@@ -30547,7 +30643,7 @@ function globalTreeOid(tree, prefix, modes = {}) {
       ({ name: name2, oid: oid4, mode }) => Buffer.concat([Buffer.from(`${mode} ${name2}\0`), Buffer.from(oid4, "hex")])
     )
   );
-  return createHash("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
+  return createHash2("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
 }
 var intentSchema = external_exports.object({
   version: external_exports.literal(1),
@@ -30659,13 +30755,35 @@ var GlobalsPublisher = class _GlobalsPublisher {
       )
     );
   }
+  /**
+   * The bases, and the proposals, of each batch that can still reach Current or live. A cancelled
+   * or published batch is final: no Worker route or publisher step reopens it, and what it
+   * published is in Current and live. The exception is a member with an open activation conflict,
+   * whose stored proposal the resolve route can still write to Current. A batch that does not
+   * prove its final status counts.
+   */
   upcoming(tree) {
-    return Object.keys(tree).filter((path) => /^schedule\/batches\/[^/]+\/tooltips\/\d+\.json$/.test(path)).flatMap((path) => {
+    const batches = /* @__PURE__ */ new Map();
+    for (const path of Object.keys(tree)) {
+      const id = /^schedule\/batches\/([^/]+)\/tooltips\/\d+\.json$/.exec(path)?.[1];
+      if (!id) continue;
       const member = batchMemberSchema.parse(this.read(tree, path));
-      return [member.base, member.proposed].flatMap(
-        (document) => document ? [{ [document.hash]: document }] : []
-      );
-    });
+      let batch = batches.get(id);
+      if (!batch) {
+        const stored = batchSchema.safeParse(this.read(tree, schedulePaths.batch(id)));
+        batch = {
+          final: stored.success && stored.data.id === id && !isOpenStatus(stored.data.status),
+          sides: [{}, {}]
+        };
+        batches.set(id, batch);
+      }
+      if (batch.final && !tree[schedulePaths.conflict(member.hash)]) continue;
+      if (member.base) batch.sides[0][member.hash] = member.base;
+      batch.sides[1][member.hash] = member.proposed;
+    }
+    return [...batches.values()].flatMap(
+      ({ sides }) => sides.filter((documents) => Object.keys(documents).length)
+    );
   }
   liveSnapshot(revision2, perks, documents, types) {
     const tooltips = {};
@@ -31376,8 +31494,15 @@ var GlobalsPublisher = class _GlobalsPublisher {
     ];
     const authoredSources = { ...captured.authored, tooltips: this.documents(tree, "tooltips") };
     const localNames = this.localNames(tree, captured);
+    const scans = new GlobalSnapshotScans();
     for (const snapshot of snapshots) {
-      const validation = calculateGlobalImpact(snapshot, snapshot, [], this.options.liveBranch);
+      const validation = calculateGlobalImpact(
+        snapshot,
+        snapshot,
+        [],
+        this.options.liveBranch,
+        scans
+      );
       if (!validation.complete) throw new Error("Sync pending: proof coverage is incomplete");
     }
     for (const path of Object.keys(tree).filter(
@@ -31488,21 +31613,15 @@ var GlobalsPublisher = class _GlobalsPublisher {
             snapshot,
             snapshot,
             names.map((name2) => ({ ...change, beforeName: name2 })),
-            this.options.liveBranch
+            this.options.liveBranch,
+            scans
           );
-          return !impact.complete || impact.rows.length || Object.values(snapshot.tooltips).some(
-            (document) => languages2.some(
-              (language) => (!lang || language === lang || lang === "en") && globalReferenceSpans(
-                globalSourceText(document, language, snapshot.mode) ?? "",
-                entry.kind
-              ).some((span) => names.includes(span.name))
-            )
+          return !impact.complete || impact.rows.length || languages2.some(
+            (language) => (!lang || language === lang || lang === "en") && names.some((name2) => scans.references(snapshot, entry.kind, language).has(name2))
           );
         });
-        const authoredReference = Object.values(authoredSources.tooltips).some(
-          (document) => Object.values(document.text).some(
-            (cell) => globalReferenceSpans(cell.text, entry.kind).some((span) => names.includes(span.name))
-          )
+        const authoredReference = languages2.some(
+          (language) => names.some((name2) => scans.references(authoredSources, entry.kind, language).has(name2))
         );
         if (!referenced && !authoredReference)
           this.write(
@@ -32038,14 +32157,14 @@ function validateScheduleMembers(hashes, files, pushed) {
 }
 
 // scripts/schedule-prepare/intents.ts
-import { createHash as createHash2, createPublicKey, verify } from "node:crypto";
+import { createHash as createHash3, createPublicKey, verify } from "node:crypto";
 init_schedule();
 var InvalidScheduleIntent = class extends Error {
 };
 function verifiedSource(pub, raw) {
   const envelope2 = scheduleEnvelopeSchema.parse(raw);
   const key = createPublicKey(pub.options.publicKey);
-  if (createHash2("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== pub.options.keyFingerprint || !verify(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
+  if (createHash3("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== pub.options.keyFingerprint || !verify(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
     throw new InvalidScheduleIntent("Invalid schedule signature or key pin");
   const intent = scheduleIntentSchema.parse(JSON.parse(envelope2.payload));
   if (stableStringify(intent) !== envelope2.payload || intent.repo !== pub.options.repo || intent.dataBranch !== pub.options.dataBranch || intent.liveBranch !== pub.options.liveBranch)
@@ -32072,7 +32191,7 @@ function verifiedRequest(pub, tree, path) {
   const bodyOid = tree[scheduleIntentPaths.body(intent.requestId)];
   if (!bodyOid) throw new InvalidScheduleIntent("Missing submitted schedule bytes");
   const body2 = pub.git.blob(bodyOid);
-  if (Buffer.byteLength(body2) > 300 * 1024 || createHash2("sha256").update(body2).digest("hex") !== intent.bodyDigest || request.bodyDigest !== intent.bodyDigest || request.requestId !== intent.requestId || path !== scheduleIntentPaths.request(intent.requestId) || request.batchId !== intent.batchId || request.requesterId !== intent.requester.id || request.admissionRevision <= intent.expectedRevision)
+  if (Buffer.byteLength(body2) > 300 * 1024 || createHash3("sha256").update(body2).digest("hex") !== intent.bodyDigest || request.bodyDigest !== intent.bodyDigest || request.requestId !== intent.requestId || path !== scheduleIntentPaths.request(intent.requestId) || request.batchId !== intent.batchId || request.requesterId !== intent.requester.id || request.admissionRevision <= intent.expectedRevision)
     throw new InvalidScheduleIntent("Schedule request or submitted bytes mismatch");
   const input2 = JSON.parse(body2);
   if (input2.requestId !== intent.requestId || input2.revision !== intent.expectedRevision)
@@ -32715,7 +32834,7 @@ var SchedulePreparer = class {
 
 // scripts/publisher/currentSave.ts
 init_zod();
-import { createHash as createHash3, createPublicKey as createPublicKey2, verify as verify2 } from "node:crypto";
+import { createHash as createHash4, createPublicKey as createPublicKey2, verify as verify2 } from "node:crypto";
 
 // apps/worker/src/save.ts
 init_zod();
@@ -32881,7 +33000,7 @@ Clarity-Carried: ${carried.join(";")}` : ""}`
 }
 
 // scripts/publisher/currentSave.ts
-var sha2562 = (bytes) => createHash3("sha256").update(bytes).digest("hex");
+var sha2562 = (bytes) => createHash4("sha256").update(bytes).digest("hex");
 var pinSchema = external_exports.object({
   sourceSha: external_exports.string(),
   sha256: external_exports.string(),
@@ -33262,7 +33381,7 @@ var Publisher = class _Publisher {
     if (typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string")
       throw new Error("Invalid signed envelope");
     const key = createPublicKey3(this.options.publicKey);
-    const fingerprint = createHash4("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
+    const fingerprint = createHash5("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
     if (fingerprint !== this.options.keyFingerprint || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
       throw new Error("Invalid signature or key pin");
     const p = await parsePublishRequestPayload(JSON.parse(envelope2.payload));
@@ -33287,7 +33406,7 @@ var Publisher = class _Publisher {
       return requesterCredits(intent.requester);
     }
     const key = createPublicKey3(this.options.publicKey);
-    if (createHash4("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string" || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
+    if (createHash5("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string" || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
       throw new Error("Invalid credit envelope");
     const raw = JSON.parse(envelope2.payload);
     const payload = raw.kind === "batch" ? batchPublishPayloadSchema.parse(raw) : publishPayloadSchema.parse(raw);
@@ -33342,7 +33461,7 @@ var Publisher = class _Publisher {
     }
     const merged = { ...live, perks };
     const bytes = json5(merged);
-    const checkKey = createHash4("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
+    const checkKey = createHash5("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
     if (!this.checkedOutputs.has(checkKey)) {
       const hasMoves = Object.keys(this.movesAt(this.git.tree(r.sourceCommit))).length > 0;
       for (const preset of [
@@ -34491,7 +34610,7 @@ var Publisher = class _Publisher {
 
 // scripts/publisher/pipeline.ts
 import { execFileSync as execFileSync2 } from "node:child_process";
-import { createHash as createHash5, createPublicKey as createPublicKey4 } from "node:crypto";
+import { createHash as createHash6, createPublicKey as createPublicKey4 } from "node:crypto";
 import { mkdtempSync as mkdtempSync2, mkdirSync, readFileSync, rmSync as rmSync2, writeFileSync } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
 import { join as join3, resolve as resolve2 } from "node:path";
@@ -34643,7 +34762,7 @@ function publicationIdentity(repo, branch = "converter") {
   const log = JSON.parse(repo.blob(recordTree[paths2(receipt.opId).log]));
   if (log.candidateCommit !== commit2 || !["done", "unchanged"].includes(log.result?.status))
     throw new Error("Publication RECORD differs from receipt");
-  const hash2 = (bytes) => createHash5("sha256").update(bytes).digest("hex");
+  const hash2 = (bytes) => createHash6("sha256").update(bytes).digest("hex");
   const enginePin = tree[".exports/PIN"] ? repo.blob(tree[".exports/PIN"]).trim() : null;
   if (!/^[a-f0-9]{40}$/.test(receipt.generatorSha) || branch === "converter" && (!enginePin || !/^[a-f0-9]{40}$/.test(enginePin) || !tree[".exports/engine.mjs"] || !receipt.verifierSha256 || !/^[a-f0-9]{64}$/.test(receipt.verifierSha256) || !recordTree[".publisher/verify-publication.mjs"] || hash2(repo.blob(recordTree[".publisher/verify-publication.mjs"])) !== receipt.verifierSha256))
     throw new Error("Invalid immutable publication identity");
@@ -34769,7 +34888,7 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       });
       if (!response.ok) throw new Error("Worker key unavailable");
       const key = await response.json();
-      const fingerprint = createHash5("sha256").update(createPublicKey4(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
+      const fingerprint = createHash6("sha256").update(createPublicKey4(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
       if (key.algorithm !== "Ed25519" || fingerprint !== config2.keyFingerprint || key.fingerprint !== fingerprint)
         throw new Error("Worker key fingerprint mismatch");
       options.publicKey = key.publicKey;
@@ -34841,7 +34960,7 @@ publication=${productionPush ? JSON.stringify(handoff2) : ""}
 }
 function verifyRuntime(root) {
   const pin = JSON.parse(readFileSync(join3(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash5("sha256").update(readFileSync(join3(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash5("sha256").update(readFileSync(join3(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash6("sha256").update(readFileSync(join3(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash6("sha256").update(readFileSync(join3(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
