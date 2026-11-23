@@ -23537,8 +23537,9 @@ function compose(input2, boundSources = true) {
   return composeParsed(input2, boundSources);
 }
 function composeParsed(input2, boundSources = true) {
-  const { hash: hash2, base, proposed, snapshot, pushed } = input2;
-  for (const tooltip2 of [base, proposed, snapshot])
+  const { hash: hash2, base, proposed, pushed } = input2;
+  const snapshot = pushed ? input2.snapshot : null;
+  for (const tooltip2 of [base, proposed, input2.snapshot])
     if (tooltip2 && tooltip2.hash !== hash2)
       throw new Error(`Tooltip does not belong to member ${hash2}`);
   const changed = changedFields(base, proposed);
@@ -26672,8 +26673,27 @@ function aliasStub(alias, aliases, catalog) {
   };
 }
 var isRecord = (value2) => typeof value2 === "object" && value2 !== null;
-function mergeLivePerks(live, entries, picks, groups) {
+function withUnpublishedRemovals(aliases, removed, live, entries, catalog) {
+  const view = { ...aliases };
+  for (const [hash2, { canonical }] of Object.entries(removed ?? {})) {
+    const row = live[hash2];
+    if (!isRecord(row) || row.aliasKind !== "name") continue;
+    if (Object.hasOwn(entries, hash2) || Object.hasOwn(aliases, hash2)) continue;
+    if (catalog && !catalog[hash2] || resolveAlias(canonical, view) === Number(hash2)) continue;
+    view[hash2] = { to: canonical, kind: "name" };
+  }
+  return view;
+}
+function mergeLivePerks(live, entries, picks, groups, removed) {
   const merged = { ...live, ...entries };
+  if (removed) {
+    const keep = (view) => ({
+      ...view,
+      aliases: withUnpublishedRemovals(view.aliases, removed, live, entries, view.catalog)
+    });
+    picks &&= keep(picks);
+    groups &&= keep(groups);
+  }
   for (const key of picks?.keys ?? []) {
     if (Object.hasOwn(entries, key)) continue;
     const current = merged[key];
@@ -29708,12 +29728,16 @@ var aliasGroupOperationSchema = external_exports.discriminatedUnion("op", [
     canonical: hashSchema,
     to: hashSchema,
     acknowledgeConflicts: external_exports.literal(true).optional()
-  }).strict()
+  }).strict(),
+  /** One non-canonical member leaves; it starts as a copy of the group's current tooltip. */
+  external_exports.object({ op: external_exports.literal("removeMember"), canonical: hashSchema, member: hashSchema }).strict()
 ]).superRefine((op, ctx) => {
   if ((op.op === "accept" || op.op === "split") && !op.members.includes(op.canonical))
     ctx.addIssue({ code: "custom", message: "Canonical must be a selected member" });
   if (op.op === "setCanonical" && op.canonical === op.to)
     ctx.addIssue({ code: "custom", message: "Canonical must change" });
+  if (op.op === "removeMember" && op.canonical === op.member)
+    ctx.addIssue({ code: "custom", message: "The main entry cannot leave its own group" });
 });
 var aliasGroupsRequestSchema = external_exports.object({
   expectedHead: commit,
@@ -29756,7 +29780,10 @@ var aliasGroupsSchema = external_exports.object({
       reason: external_exports.string().optional()
     }).strict()
   ),
-  archives: external_exports.array(aliasGroupArchiveSchema).optional()
+  archives: external_exports.array(aliasGroupArchiveSchema).optional(),
+  /** Members a maintainer took out of a group. Adoption tools never regroup them silently;
+   * a manual accept that includes one clears its entry. */
+  removed: external_exports.record(hashKey3, external_exports.object({ canonical: hashSchema, by: actor, at: timestampSchema }).strict()).optional()
 }).strict().superRefine((value2, ctx) => {
   const seen = /* @__PURE__ */ new Set();
   const paths3 = value2.archives?.map((archive) => archive.path) ?? [];
@@ -29776,7 +29803,9 @@ var aliasGroupsResponseSchema = external_exports.object({
   head: external_exports.string().regex(/^[0-9a-f]{40}$/),
   config: aliasGroupsSchema,
   issues: external_exports.array(aliasGroupIssueSchema),
-  affectedCanonicals: external_exports.array(hashSchema).refine((v) => new Set(v).size === v.length)
+  affectedCanonicals: external_exports.array(hashSchema).refine((v) => new Set(v).size === v.length),
+  /** A removed member's stored document, when it has one. */
+  tooltip: tooltipSchema.optional()
 }).strict();
 var enhanced = (item) => !exotic(item) && (item.isEnhanced ?? item.categoryId.includes("-enhanced"));
 var exotic = (item) => item.exotic ?? item.categoryId.endsWith("-exotic");
@@ -33280,9 +33309,11 @@ var Publisher = class _Publisher {
   }
   mergePublicationPerks(sourceTree, live, entries, hashes) {
     const aliases = this.aliasesAt(sourceTree);
-    const groups = sourceTree[aliasGroupsPath] ? { aliases, catalog: this.options.facts } : void 0;
+    const raw = this.read(sourceTree, aliasGroupsPath);
+    const groups = raw === void 0 ? void 0 : { aliases, catalog: this.options.facts };
+    const removed = raw === void 0 ? void 0 : aliasGroupsSchema.parse(raw).removed;
     return applyInactiveLive(
-      mergeLivePerks(live, entries, this.pickRecomputeAt(sourceTree), groups),
+      mergeLivePerks(live, entries, this.pickRecomputeAt(sourceTree), groups, removed),
       this.movesAt(sourceTree),
       hashes,
       aliases,
