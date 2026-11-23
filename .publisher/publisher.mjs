@@ -23991,7 +23991,7 @@ var init_publishRequest = __esm({
 import { execFileSync as execFileSync3 } from "node:child_process";
 import { mkdtempSync as mkdtempSync3, readFileSync as readFileSync2, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2, rmSync as rmSync3, realpathSync as realpathSync2 } from "node:fs";
 import { tmpdir as tmpdir3 } from "node:os";
-import { dirname, join as join3, resolve as resolve3 } from "node:path";
+import { dirname, join as join4, resolve as resolve3 } from "node:path";
 import { fileURLToPath } from "node:url";
 
 // scripts/publisher/childProcess.mjs
@@ -28129,7 +28129,7 @@ async function planGlobalRelease(input2) {
   const changed = changedGlobalIds(input2.published, input2.saved);
   if (!changed.length) return [];
   const groups = changed.map((id) => /* @__PURE__ */ new Set([id]));
-  const join4 = (ids) => {
+  const join5 = (ids) => {
     const touching = groups.filter((group) => ids.some((id) => group.has(id)));
     if (touching.length < 2) return;
     const target = touching[0];
@@ -28140,7 +28140,7 @@ async function planGlobalRelease(input2) {
   };
   const complete = impacts(input2, input2.saved, changed);
   for (const result2 of complete)
-    for (const row of result2.rows) join4(row.causes.map((cause) => cause.globalId));
+    for (const row of result2.rows) join5(row.causes.map((cause) => cause.globalId));
   const membership = /* @__PURE__ */ new Map();
   for (const id of changed)
     for (const impact of impacts(input2, composeGlobalRelease(input2.published, input2.saved, [id]), [
@@ -28151,7 +28151,7 @@ async function planGlobalRelease(input2) {
         const ids = membership.get(key) ?? /* @__PURE__ */ new Set();
         ids.add(id);
         membership.set(key, ids);
-        join4([...ids]);
+        join5([...ids]);
       }
   for (const store of [input2.saved, input2.published])
     for (const entry of store.entries) {
@@ -28160,7 +28160,7 @@ async function planGlobalRelease(input2) {
           (kind) => globalReferenceSpans(cell.body, kind).map((span) => ({ kind, name: span.name }))
         )
       );
-      join4([
+      join5([
         entry.id,
         ...store.entries.filter(
           (other) => reads.some((read) => read.kind === other.kind && read.name === other.name)
@@ -28250,6 +28250,146 @@ async function planGlobalRelease(input2) {
     });
   }
   return result.sort((a, b) => stableStringify(a.ids).localeCompare(stableStringify(b.ids)));
+}
+
+// packages/core/src/globalsRelease/admission.ts
+var publicationSourcesPath = (destination) => `globals/proofs/publication-sources/${destination}.json`;
+
+// packages/core/src/globalsRelease/configTree.ts
+init_zod();
+
+// packages/core/src/marks.ts
+init_zod();
+init_legacy();
+var marksPath = "config/marks.json";
+var maxMarksBytes = 7e5;
+var maxMarkedEntries = 1500;
+var maxEntryMarks = 1500;
+var maxMarkNoteChars = 2e3;
+var markColours = ["neutral", "blue", "green", "amber", "red", "purple"];
+var markIdSchema = external_exports.string().regex(/^[a-z][a-z0-9-]{0,47}$/);
+var stamp = { by: external_exports.number().int().positive(), at: external_exports.string().datetime({ offset: true }) };
+var markTypeSchema = external_exports.object({
+  id: markIdSchema,
+  label: external_exports.string().trim().min(1).max(64),
+  colour: external_exports.enum(markColours),
+  ...stamp
+}).strict();
+var entryMarkSchema = external_exports.object({
+  type: markIdSchema,
+  note: external_exports.string().trim().max(maxMarkNoteChars).optional(),
+  ...stamp
+}).strict();
+var marksSchema = external_exports.object({
+  types: external_exports.array(markTypeSchema).max(32),
+  entries: external_exports.record(inactiveHashKey, external_exports.array(entryMarkSchema).min(1).max(32)).refine(
+    (entries) => Object.keys(entries).length <= maxMarkedEntries,
+    "Too many marked entries"
+  )
+}).strict().superRefine((value2, ctx) => {
+  const ids = new Set(value2.types.map((type) => type.id));
+  if (ids.size !== value2.types.length)
+    ctx.addIssue({ code: "custom", message: "Duplicate mark type IDs" });
+  const labels = new Set(value2.types.map((type) => type.label.toLowerCase()));
+  if (labels.size !== value2.types.length)
+    ctx.addIssue({ code: "custom", message: "Duplicate mark type labels" });
+  let count = 0;
+  for (const marks of Object.values(value2.entries)) {
+    count += marks.length;
+    if (new Set(marks.map((mark) => mark.type)).size !== marks.length)
+      ctx.addIssue({ code: "custom", message: "Duplicate entry marks" });
+    if (marks.some((mark) => !ids.has(mark.type)))
+      ctx.addIssue({ code: "custom", message: "Unknown mark type" });
+  }
+  if (count > maxEntryMarks)
+    ctx.addIssue({ code: "custom", message: `Too many entry marks (maximum ${maxEntryMarks})` });
+});
+var marksFileSchema = marksSchema.superRefine((value2, ctx) => {
+  if (new TextEncoder().encode(JSON.stringify(value2, null, 2) + "\n").length > maxMarksBytes)
+    ctx.addIssue({ code: "custom", message: `Marks file exceeds ${maxMarksBytes} bytes` });
+});
+var markActionSchema = external_exports.discriminatedUnion("action", [
+  external_exports.object({
+    action: external_exports.literal("mark"),
+    hash: hashSchema,
+    type: markIdSchema,
+    note: external_exports.string().trim().max(maxMarkNoteChars).optional()
+  }).strict(),
+  external_exports.object({ action: external_exports.literal("unmark"), hash: hashSchema, type: markIdSchema }).strict(),
+  external_exports.object({
+    action: external_exports.literal("create-type"),
+    id: markIdSchema,
+    label: markTypeSchema.shape.label,
+    colour: markTypeSchema.shape.colour
+  }).strict(),
+  external_exports.object({
+    action: external_exports.literal("edit-type"),
+    id: markIdSchema,
+    label: markTypeSchema.shape.label,
+    colour: markTypeSchema.shape.colour
+  }).strict(),
+  external_exports.object({ action: external_exports.literal("remove-type"), id: markIdSchema, force: external_exports.boolean().optional() }).strict()
+]);
+var marksRevisionSchema = external_exports.string().regex(/^[0-9a-f]{40}$/).nullable();
+var updateMarksSchema = external_exports.object({
+  revision: marksRevisionSchema,
+  change: markActionSchema
+}).strict();
+
+// packages/core/src/globalsRelease/configTree.ts
+var globalsConfigWithoutMarks = "globalsConfigWithoutMarksV1";
+var treeModes = /* @__PURE__ */ new Set([16384, 33188, 33261, 40960, 57344]);
+var treeEntry = external_exports.object({
+  nameRaw: external_exports.string(),
+  mode: external_exports.number().int().transform(
+    (mode) => treeModes.has(mode) || !/^[0-7]+$/.test(String(mode)) ? mode : parseInt(String(mode), 8)
+  ).refine((mode) => treeModes.has(mode)),
+  oid: external_exports.string().regex(/^[0-9a-f]{40}$/)
+}).strict();
+var entriesSchema = external_exports.array(treeEntry);
+var encoder2 = new TextEncoder();
+var marksName = marksPath.slice("config/".length);
+var join2 = (parts) => {
+  const joined = new Uint8Array(parts.reduce((length, part) => length + part.length, 0));
+  let offset = 0;
+  for (const part of parts) {
+    joined.set(part, offset);
+    offset += part.length;
+  }
+  return joined;
+};
+async function gitTreeOid(entries) {
+  const seen = /* @__PURE__ */ new Set();
+  const sorted = entries.map(({ nameRaw, mode, oid: oid4 }) => {
+    const name2 = atob(nameRaw);
+    if (!name2 || name2.includes("/") || name2.includes("\0") || seen.has(name2))
+      throw new Error("Invalid Git tree filename");
+    seen.add(name2);
+    return {
+      sortKey: name2 + (mode === 16384 ? "/" : "\0"),
+      bytes: join2([
+        encoder2.encode(`${mode.toString(8)} `),
+        Uint8Array.from(name2, (byte) => byte.charCodeAt(0)),
+        new Uint8Array(1),
+        Uint8Array.from(oid4.match(/../g), (byte) => parseInt(byte, 16))
+      ])
+    };
+  });
+  sorted.sort((a, b) => a.sortKey < b.sortKey ? -1 : a.sortKey > b.sortKey ? 1 : 0);
+  const body2 = join2(sorted.map(({ bytes }) => bytes));
+  const object2 = join2([encoder2.encode(`tree ${body2.length}\0`), body2]);
+  const digest6 = new Uint8Array(await crypto.subtle.digest("SHA-1", object2));
+  return Array.from(digest6, (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+async function globalConfigIdentity(input2, expectedRawOid) {
+  const entries = entriesSchema.parse(input2);
+  if (expectedRawOid !== void 0 && await gitTreeOid(entries) !== expectedRawOid)
+    throw new Error("Git config tree OID mismatch");
+  return gitTreeOid(
+    entries.filter(
+      ({ nameRaw, mode }) => !(atob(nameRaw) === marksName && (mode === 33188 || mode === 33261))
+    )
+  );
 }
 
 // packages/core/src/status/index.ts
@@ -30221,7 +30361,7 @@ var HttpError = class extends Error {
 };
 
 // apps/worker/src/crypto.ts
-var encoder2 = new TextEncoder();
+var encoder3 = new TextEncoder();
 
 // apps/worker/src/github.ts
 var shaSchema = external_exports.object({ sha: external_exports.string().regex(/^[0-9a-f]{40}$/) });
@@ -30341,34 +30481,38 @@ function bundleGlobals(tree, read) {
   if (cursors.size !== catalog.lastPage + 1) throw new Error("Invalid global catalog tail");
   return { entries, sync: publicGlobalSync(syncSchema.parse(read(tree, paths.sync))) };
 }
-function globalTreeOid(tree, prefix, modes = {}) {
+function globalTreeEntries(tree, prefix, modes = {}) {
   const entries = Object.entries(tree).filter(([path]) => path.startsWith(`${prefix}/`));
-  if (!entries.length) return emptyGitTree;
   const files = /* @__PURE__ */ new Map(), directories = /* @__PURE__ */ new Set();
   for (const [path, oid4] of entries) {
     const rest = path.slice(prefix.length + 1), slash = rest.indexOf("/");
     if (slash < 0) files.set(rest, oid4);
     else directories.add(rest.slice(0, slash));
   }
-  const parts = [
-    ...[...files].map(([name2, oid4]) => ({ name: name2, oid: oid4, directory: false })),
+  return [
+    ...[...files].map(([name2, oid4]) => ({
+      name: name2,
+      oid: oid4,
+      mode: modes[`${prefix}/${name2}`] ?? "100644"
+    })),
     ...[...directories].map((name2) => ({
       name: name2,
       oid: globalTreeOid(tree, `${prefix}/${name2}`, modes),
-      directory: true
+      mode: "40000"
     }))
-  ].sort(
+  ];
+}
+function globalTreeOid(tree, prefix, modes = {}) {
+  const parts = globalTreeEntries(tree, prefix, modes).sort(
     (a, b) => Buffer.compare(
-      Buffer.from(a.name + (a.directory ? "/" : "")),
-      Buffer.from(b.name + (b.directory ? "/" : ""))
+      Buffer.from(a.name + (a.mode === "40000" ? "/" : "")),
+      Buffer.from(b.name + (b.mode === "40000" ? "/" : ""))
     )
   );
+  if (!parts.length) return emptyGitTree;
   const bytes = Buffer.concat(
     parts.map(
-      ({ name: name2, oid: oid4, directory }) => Buffer.concat([
-        Buffer.from(`${directory ? "40000" : modes[`${prefix}/${name2}`] ?? "100644"} ${name2}\0`),
-        Buffer.from(oid4, "hex")
-      ])
+      ({ name: name2, oid: oid4, mode }) => Buffer.concat([Buffer.from(`${mode} ${name2}\0`), Buffer.from(oid4, "hex")])
     )
   );
   return createHash("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
@@ -30410,13 +30554,20 @@ var GlobalsPublisher = class _GlobalsPublisher {
     if (!historical && this.store(tree).aggregates.some((aggregate) => aggregate.document.hash === 1) && !pin.capabilities.includes("globalsExportsV1"))
       throw new Error("Installed publisher lacks globalsExportsV1");
     const modes = this.git.treeModes?.(head ?? this.publisher.head(this.options.dataBranch)) ?? {};
+    const config2 = pin.capabilities.includes(globalsConfigWithoutMarks) ? await globalConfigIdentity(
+      globalTreeEntries(tree, "config", modes).map(({ name: name2, oid: oid4, mode }) => ({
+        nameRaw: Buffer.from(name2).toString("base64"),
+        oid: oid4,
+        mode: parseInt(mode, 8)
+      }))
+    ) : globalTreeOid(tree, "config", modes);
     return observeGlobalSources({
       authored: globalTreeOid(tree, "tooltips", modes),
       definitions: globalTreeOid(tree, "globals/entries", modes),
       projections: globalTreeOid(tree, "globals/projections", modes),
       layout: tree[globalsReleasePaths.layout],
       published: tree[globalsReleasePaths.published(this.options.liveBranch)],
-      config: globalTreeOid(tree, "config", modes),
+      config: config2,
       live,
       upcoming: globalTreeOid(tree, "schedule", modes),
       aliasGroups: tree["config/alias-groups.json"] ?? null,
@@ -30648,9 +30799,8 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const sources = await this.sources(tree, live, revision2);
     const captured = this.capture(tree, revision2, live, batch?.documents), components = await this.plan(tree, revision2, live, batch?.documents);
     const selected = roots.map((hash2) => resolveAlias(hash2, captured.authored.aliases));
-    const activeSelection = selected.filter(
-      (hash2) => !isMovedInactive(hash2, this.publisher.movesAt(tree))
-    );
+    const moves = this.publisher.movesAt(tree);
+    const activeSelection = selected.filter((hash2) => !isMovedInactive(hash2, moves));
     const aggregateHashes = captured.saved.aggregates.map(({ document }) => document.hash);
     const aggregate = selected.some((hash2) => aggregateHashes.includes(hash2));
     const relevant = components.filter(
@@ -30680,7 +30830,6 @@ var GlobalsPublisher = class _GlobalsPublisher {
     ].sort((a, b) => a - b);
     if (ids.length) {
       const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
-      const moves = this.publisher.movesAt(tree);
       for (const hash2 of hashes) {
         const stored = this.read(tree, `live/tooltips/${hash2}.json`);
         if (await hasUnpublishedInactiveMove(
@@ -30699,7 +30848,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     }
     hashes.sort((a, b) => a - b);
     const documents = hashes.map((hash2) => {
-      const document = globals[hash2] ?? captured.authored.tooltips[hash2] ?? captured.live.tooltips[hash2];
+      const document = globals[hash2] ?? captured.authored.tooltips[hash2] ?? captured.live.tooltips[hash2] ?? (!batch && selected.includes(hash2) && isMovedInactive(hash2, moves) ? { hash: hash2, text: {}, associated: [] } : void 0);
       if (!document) throw new Error("Deleted release dependency");
       return document;
     });
@@ -31193,29 +31342,34 @@ var GlobalsPublisher = class _GlobalsPublisher {
     ))
       delete tree[path];
     const moves = this.publisher.movesAt(tree);
-    for (const document of Object.values(captured.authored.tooltips))
+    const hashes = new Set(Object.keys(captured.authored.tooltips).map(Number));
+    for (const key of Object.keys(moves)) {
+      const hash2 = Number(key);
+      if (isMovedInactive(hash2, moves) && resolveAlias(hash2, captured.authored.aliases) === hash2)
+        hashes.add(hash2);
+    }
+    for (const hash2 of hashes)
       for (const lang of [
         .../* @__PURE__ */ new Set([
-          ...Object.keys(document.text),
-          ...isMovedInactive(document.hash, moves) ? ["en"] : []
+          ...Object.keys(captured.authored.tooltips[hash2]?.text ?? {}),
+          ...isMovedInactive(hash2, moves) ? ["en"] : []
         ])
       ]) {
-        const relevant = isMovedInactive(document.hash, moves) ? [] : components.filter(
-          (component) => captured.saved.aggregates.some(
-            (aggregate) => aggregate.document.hash === document.hash
-          ) || component.rows.some(
-            (row) => row.view.consumer.hash === document.hash && row.view.consumer.lang === lang
+        const aggregate = captured.saved.aggregates.some(({ document }) => document.hash === hash2);
+        const relevant = isMovedInactive(hash2, moves) ? [] : components.filter(
+          (component) => aggregate || component.rows.some(
+            (row) => row.view.consumer.hash === hash2 && row.view.consumer.lang === lang
           )
         );
         const ready = relevant.filter(
           (component) => component.rows.every((row) => this.approved(tree, row))
         );
-        if (captured.saved.aggregates.some((aggregate) => aggregate.document.hash === document.hash) ? relevant.length > 0 && ready.length === 0 : ready.length !== relevant.length)
+        if (aggregate ? relevant.length > 0 && ready.length === 0 : ready.length !== relevant.length)
           continue;
-        const consumer = { hash: document.hash, lang, destination: this.options.liveBranch };
+        const consumer = { hash: hash2, lang, destination: this.options.liveBranch };
         this.write(
           tree,
-          `globals/proofs/publication/${this.options.liveBranch}/${document.hash}-${lang}.json`,
+          `globals/proofs/publication/${this.options.liveBranch}/${hash2}-${lang}.json`,
           publicationSchema.parse({
             version: 1,
             complete: true,
@@ -31228,6 +31382,12 @@ var GlobalsPublisher = class _GlobalsPublisher {
           limits.metadataBytes
         );
       }
+    this.write(
+      tree,
+      publicationSourcesPath(this.options.liveBranch),
+      sources,
+      limits.metadataBytes
+    );
     for (const request of requested.values()) {
       const owners = [...captured.saved.entries, ...captured.published.entries].filter(
         (entry) => !entry.tombstone && entry.kind === request.kind && entry.name === request.name
@@ -34244,7 +34404,7 @@ import { execFileSync as execFileSync2 } from "node:child_process";
 import { createHash as createHash5, createPublicKey as createPublicKey4 } from "node:crypto";
 import { mkdtempSync as mkdtempSync2, mkdirSync, readFileSync, rmSync as rmSync2, writeFileSync } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
-import { join as join2, resolve as resolve2 } from "node:path";
+import { join as join3, resolve as resolve2 } from "node:path";
 
 // scripts/publisher/remote.ts
 var TransportUnresolved = class extends Error {
@@ -34426,9 +34586,9 @@ function simulationArtifact(repo, out, bases) {
   const revisions = ["--branches", "--not", ...bases];
   const count = Number(gitAt(repo.path, ["rev-list", "--count", ...revisions]).trim());
   if (count)
-    gitAt(repo.path, ["bundle", "create", join2(out, "would-be-commits.bundle"), ...revisions]);
+    gitAt(repo.path, ["bundle", "create", join3(out, "would-be-commits.bundle"), ...revisions]);
   writeFileSync(
-    join2(out, "would-be-commits.json"),
+    join3(out, "would-be-commits.json"),
     JSON.stringify(
       { commits: count, bundle: count ? "would-be-commits.bundle" : null, prerequisites: bases },
       null,
@@ -34444,14 +34604,14 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   if (enabled && !process.env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN required");
   const cwd = resolve2(checkout), out = resolve2(output2);
   mkdirSync(out, { recursive: true });
-  const temp = mkdtempSync2(join2(tmpdir2(), "publisher-pipeline-"));
+  const temp = mkdtempSync2(join3(tmpdir2(), "publisher-pipeline-"));
   let failure2;
   const reports = [];
   const publications = [];
   let handoff2;
   function snapshot(label) {
     gitAt(cwd, ["fetch", "--prune", "--no-tags", "origin", "+refs/heads/*:refs/remotes/origin/*"]);
-    const repo = join2(temp, label + ".git");
+    const repo = join3(temp, label + ".git");
     gitAt(cwd, ["clone", "--bare", "--no-hardlinks", "--", cwd, repo]);
     const command = (args) => gitAt(repo, args);
     command(["remote", "remove", "origin"]);
@@ -34551,7 +34711,7 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       failure2 ??= e;
     }
     writeFileSync(
-      join2(out, "result.json"),
+      join3(out, "result.json"),
       JSON.stringify(
         {
           dryRun: !enabled,
@@ -34566,7 +34726,7 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       ) + "\n"
     );
     writeFileSync(
-      join2(out, "summary.md"),
+      join3(out, "summary.md"),
       `Publish writes are ${enabled ? "enabled" : "disabled"}. Bundles use real editor-data heads.
 
 Catch-up watchdog: this run refreshes the bundle before simulation and again afterwards, even on drain failure.
@@ -34590,8 +34750,8 @@ publication=${productionPush ? JSON.stringify(handoff2) : ""}
     );
 }
 function verifyRuntime(root) {
-  const pin = JSON.parse(readFileSync(join2(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash5("sha256").update(readFileSync(join2(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash5("sha256").update(readFileSync(join2(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  const pin = JSON.parse(readFileSync(join3(root, "PIN"), "utf8"));
+  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash5("sha256").update(readFileSync(join3(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash5("sha256").update(readFileSync(join3(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
@@ -34617,9 +34777,9 @@ async function main() {
       "Usage: publisher.mjs --dry-run <local repository> <config.json> <artifact directory>"
     );
   const local = realpathSync2(resolve3(source2)), out = resolve3(output2);
-  const temp = mkdtempSync3(join3(tmpdir3(), "publisher-dry-run-"));
+  const temp = mkdtempSync3(join4(tmpdir3(), "publisher-dry-run-"));
   try {
-    const repo = join3(temp, "simulator.git");
+    const repo = join4(temp, "simulator.git");
     execFileSync3("git", ["clone", "--mirror", "--no-hardlinks", "--", local, repo], {
       stdio: "pipe",
       maxBuffer
@@ -34646,11 +34806,11 @@ async function main() {
     mkdirSync2(out, { recursive: true });
     execFileSync3(
       "git",
-      ["--git-dir", repo, "bundle", "create", join3(out, "would-be-commits.bundle"), "--all"],
+      ["--git-dir", repo, "bundle", "create", join4(out, "would-be-commits.bundle"), "--all"],
       { maxBuffer }
     );
     writeFileSync2(
-      join3(out, "result.json"),
+      join4(out, "result.json"),
       JSON.stringify(
         {
           dryRun: true,
