@@ -24066,11 +24066,11 @@ var LocalRepository = class {
     if (cached2) return { ...cached2 };
     const tree = Object.fromEntries(
       this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
-        const [meta3, path] = line.split("	");
-        const [mode, type, oid4] = meta3.split(" ");
+        const tab = line.indexOf("	");
+        const [mode, type, oid4] = line.slice(0, tab).split(" ");
         if (!this.preserveModes && (mode !== "100644" || type !== "blob"))
           throw new Error("Only plain blob trees supported");
-        return [path, oid4];
+        return [line.slice(tab + 1), oid4];
       })
     );
     this.trees.set(commit2, tree);
@@ -33355,6 +33355,17 @@ var Publisher = class _Publisher {
     };
     return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
   }
+  onlyAddedPublishKicks(source2, head, tree, opId) {
+    if (!this.git.ancestor(source2, head)) return false;
+    const reviewed = this.git.tree(source2);
+    const reviewedModes = this.git.treeModes?.(source2);
+    const currentModes = this.git.treeModes?.(head);
+    const kick = new RegExp(`^publish/kicks/${opId}-[0-9]+\\.json$`);
+    const added = Object.keys(tree).filter((path) => !Object.hasOwn(reviewed, path));
+    return added.length > 0 && added.every((path) => kick.test(path) && (!currentModes || currentModes[path] === "100644")) && Object.entries(reviewed).every(
+      ([path, oid4]) => tree[path] === oid4 && (!currentModes || Object.hasOwn(currentModes, path) && currentModes[path] === reviewedModes?.[path])
+    );
+  }
   async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive) {
     const p = paths2(opId);
     for (let i = 0; i < 5; i++) {
@@ -33368,6 +33379,9 @@ var Publisher = class _Publisher {
         if (!receipt || !this.git.casMany)
           throw new ConsumerOutputRejected("Atomic globals publication is unavailable");
         const signed = await this.verifyRequest(receipt.requestBlob, opId, tree);
+        const source2 = receipt.sourceCommit;
+        if (source2 !== h && (signed.kind === "batch" || !this.onlyAddedPublishKicks(source2, h, tree, opId)))
+          throw new ConsumerOutputRejected("Global receipt identity mismatch");
         let documents;
         if (signed.kind === "batch") {
           const plan = await this.batchPlan(
@@ -33386,10 +33400,10 @@ var Publisher = class _Publisher {
           documents = await new GlobalsPublisher(this).validate(
             receipt.globals,
             tree,
-            h,
+            source2,
             atomicLive.parent
           );
-        if (!documents || receipt.sourceCommit !== h || stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
+        if (!documents || stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
           throw new ConsumerOutputRejected("Global receipt identity mismatch");
         const aliases = this.aliasesAt(tree), moves = selectedInactiveMoves(
           this.movesAt(tree),
