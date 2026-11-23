@@ -22638,9 +22638,11 @@ function buildAllLegacy(input2, previousVersions, options = {}) {
   return { files, versions: { name: "versions.json", ...versions } };
 }
 
-// packages/export/src/v1/vocabulary.ts
+// packages/export/src/v2/vocabulary.ts
 var configSchemaVersion = 1;
-var supportedFormatVersions = [1];
+var configurableFormatVersion = 2;
+var supportedFormatVersions = [1, configurableFormatVersion];
+var currentFileFormatVersion = (preset, version2) => version2 === 1 && styles.some((style) => style === preset) ? configurableFormatVersion : version2;
 var styles = ["structured", "markdown", "discord", "plain"];
 var shapes = ["lines", "text"];
 var exportLanguages = [
@@ -22766,7 +22768,7 @@ var showcaseGlobals = {
   type: "Weapon Trait Enhanced"
 };
 
-// packages/export/src/v1/transform.ts
+// packages/export/src/v2/transform.ts
 var emptyNotes = () => ({
   unchosen: /* @__PURE__ */ new Set(),
   retired: /* @__PURE__ */ new Set(),
@@ -22936,7 +22938,7 @@ function transform2(input2, format, shape, notes) {
   return shape === "lines" ? toLines(output2) : renderText(output2);
 }
 
-// packages/export/src/v1/compile.ts
+// packages/export/src/v2/compile.ts
 var compileStages = [
   "resolve",
   "select-rows",
@@ -22962,6 +22964,8 @@ function compile2(input2, file2, options) {
       notices: []
     };
   }
+  if (file2.formatVersion !== configurableFormatVersion)
+    throw new Error("Unsupported configurable file format");
   return compileStyle(input2, file2, options);
 }
 var standsIn = (perk, language, rows) => rows[language] === void 0 || perk.editor[language]?.englishFallback === true;
@@ -23125,11 +23129,11 @@ ${language}`;
   ran.push("transform");
   const encoded = expandedOutputs.map((output2) => ({
     ...output2,
-    file: encodeV1(output2.expanded, { shape, languages: output2.languages })
+    file: encodeV2(output2.expanded, { shape, languages: output2.languages })
   }));
   ran.push("encode");
   const outputs = encoded.map((output2) => {
-    validateV1(output2.file);
+    validateV2(output2.file);
     return { ...output2, bytes: encoder2.encode(JSON.stringify(output2.file)) };
   });
   ran.push("serialise");
@@ -23145,7 +23149,7 @@ ${language}`;
     notices
   };
 }
-function encodeV1(expanded, header) {
+function encodeV2(expanded, header) {
   const descriptions = [];
   const index = /* @__PURE__ */ new Map();
   const perks = {};
@@ -23161,16 +23165,16 @@ function encodeV1(expanded, header) {
     perks[hash2] = { ...keys, description };
   }
   return {
-    format: 1,
+    format: configurableFormatVersion,
     shape: header.shape,
     languages: [...header.languages],
     descriptions,
     perks
   };
 }
-function validateV1(file2) {
-  if (file2.format !== 1 || !Array.isArray(file2.descriptions) || !file2.perks)
-    throw new Error("Not a format v1 file");
+function validateV2(file2) {
+  if (file2.format !== configurableFormatVersion || !Array.isArray(file2.descriptions) || !file2.perks)
+    throw new Error("Not a format v2 file");
   for (const [hash2, perk] of Object.entries(file2.perks)) {
     if (!Number.isInteger(perk.description) || perk.description < 0 || perk.description >= file2.descriptions.length)
       throw new Error(`Perk ${hash2} points at missing description ${perk.description}`);
@@ -23180,7 +23184,7 @@ function validateV1(file2) {
   }
 }
 
-// packages/export/src/v1/styles.ts
+// packages/export/src/v2/styles.ts
 var keep = { mode: "keep" };
 var drop = { mode: "drop" };
 var replace = (before, after = "") => ({ mode: "replace", before, after });
@@ -23265,10 +23269,17 @@ function newStyleFile(id, style, data = defaultData(), shape = styleShapes[style
     if (format.titles.mode === "keep") format.titles = { mode: "drop" };
     if (format.links.mode === "keep") format.links = { mode: "drop" };
   }
-  return { id, formatVersion: 1, preset: style, shape, data: structuredClone(data), format };
+  return {
+    id,
+    formatVersion: configurableFormatVersion,
+    preset: style,
+    shape,
+    data: structuredClone(data),
+    format
+  };
 }
 
-// packages/export/src/v1/project.ts
+// packages/export/src/v2/project.ts
 var fileStatus = {
   built: "current",
   carried: "stale",
@@ -23295,13 +23306,12 @@ function projectIndex(config2, built, notices = []) {
     }
   };
   for (const file2 of config2.files) add(file2);
-  for (const entry of config2.retained ?? [])
-    add({ ...entry.snapshot, formatVersion: entry.formatVersion }, entry.until);
+  for (const entry of config2.retained ?? []) add(entry.snapshot, entry.until);
   return { project: config2.id, name: config2.name, files, notices: [...notices] };
 }
 
-// packages/export/decoder/decode-v1.mjs
-function decodeV1(file2) {
+// packages/export/decoder/decode-v2.mjs
+function decodeV2(file2) {
   const decoded = {};
   for (const [hash2, perk] of Object.entries(file2.perks)) {
     const { description, ...keys } = perk;
@@ -23313,14 +23323,14 @@ function decodeV1(file2) {
   return decoded;
 }
 
-// packages/export/src/v1/markers.ts
+// packages/export/src/v2/markers.ts
 var typeOf = (value) => value === null ? "null" : Array.isArray(value) ? "array" : typeof value;
 function markerSet(file2, tokens = []) {
   const markers = /* @__PURE__ */ new Set();
   const used = /* @__PURE__ */ new Set();
   const wanted = [...new Set(tokens.filter((token) => token.length > 0))];
-  const v1 = isV1(file2);
-  const classKeys = v1 ? ["style", "icon", "element"] : ["classNames"];
+  const configurable = isConfigurableOutput(file2);
+  const classKeys = configurable ? ["style", "icon", "element"] : ["classNames"];
   const visit2 = (value, path, parentKey) => {
     markers.add(`${path}:${typeOf(value)}`);
     if (typeof value === "string") {
@@ -23333,7 +23343,7 @@ function markerSet(file2, tokens = []) {
       return;
     }
     if (value && typeof value === "object") {
-      const wildcard = isDataKeyed(path, v1);
+      const wildcard = isDataKeyed(path, configurable);
       for (const [key, child] of Object.entries(value))
         visit2(child, `${path}.${wildcard ? "*" : key}`, key);
     }
@@ -23342,9 +23352,10 @@ function markerSet(file2, tokens = []) {
   for (const token of used) markers.add(`token ${JSON.stringify(token)}`);
   return [...markers].sort();
 }
-var isV1 = (file2) => !!file2 && typeof file2 === "object" && "descriptions" in file2 && "perks" in file2;
-function isDataKeyed(path, v1) {
-  if (v1) return path === "$.perks" || path === "$.descriptions[]" || path === "$.perks.*.edited";
+var isConfigurableOutput = (file2) => !!file2 && typeof file2 === "object" && "descriptions" in file2 && "perks" in file2;
+function isDataKeyed(path, configurable) {
+  if (configurable)
+    return path === "$.perks" || path === "$.descriptions[]" || path === "$.perks.*.edited";
   return path === "$" || path === "$.*.descriptions";
 }
 function markerChange(baseline, current) {
@@ -23382,10 +23393,13 @@ export {
   compileStages,
   configLimits,
   configSchemaVersion,
-  decodeV1,
+  configurableFormatVersion,
+  currentFileFormatVersion,
+  decodeV2 as decodeV1,
+  decodeV2,
   defaultData,
   deployedLegacyPresets,
-  encodeV1,
+  encodeV2,
   exportLanguages,
   filePath,
   fileStatus,
@@ -23413,5 +23427,5 @@ export {
   styles,
   supportedFormatVersions,
   symbolIds,
-  validateV1
+  validateV2
 };

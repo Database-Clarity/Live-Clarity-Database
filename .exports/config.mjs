@@ -20519,9 +20519,11 @@ var deployedLegacyPresets = legacyPresets.filter(
 );
 var encoder = new TextEncoder();
 
-// packages/export/src/v1/vocabulary.ts
+// packages/export/src/v2/vocabulary.ts
 var configSchemaVersion = 1;
-var supportedFormatVersions = [1];
+var configurableFormatVersion = 2;
+var supportedFormatVersions = [1, configurableFormatVersion];
+var currentFileFormatVersion = (preset, version2) => version2 === 1 && styles.some((style) => style === preset) ? configurableFormatVersion : version2;
 var styles = ["structured", "markdown", "discord", "plain"];
 var shapes = ["lines", "text"];
 var exportLanguages = [
@@ -20606,7 +20608,7 @@ function fileUrls(projectId, file2) {
   return isPerLanguage(file2) ? languages3.map((language) => ({ path: `${key}/${language}.json`, languages: [language] })) : [{ path: key, languages: languages3 }];
 }
 
-// packages/export/src/v1/config.ts
+// packages/export/src/v2/config.ts
 var id = external_exports.string().refine(isValidId, "Use 2-32 of a-z, 0-9, and -, starting with a letter; not a reserved name");
 var plain = external_exports.string().max(configLimits.string).refine((value) => !/[\u0000-\u001f\u007f]/.test(value), "Control characters are not allowed");
 var categoryId = external_exports.string().regex(/^[a-z][a-z0-9-]{0,63}$/);
@@ -20662,11 +20664,11 @@ var formatSchema = external_exports.strictObject({
 var fileBase = {
   id,
   /** Server-assigned, immutable (spec section 5, "URL ownership"); absent on a file not saved yet. */
-  uid: external_exports.string().regex(/^[a-z0-9]{8,32}$/).optional(),
-  formatVersion: external_exports.literal(1)
+  uid: external_exports.string().regex(/^[a-z0-9]{8,32}$/).optional()
 };
 var styleFile = external_exports.strictObject({
   ...fileBase,
+  formatVersion: external_exports.literal(configurableFormatVersion),
   preset: external_exports.enum(styles),
   shape: external_exports.enum(shapes),
   data: dataSchema,
@@ -20674,6 +20676,7 @@ var styleFile = external_exports.strictObject({
 });
 var legacyFile = external_exports.strictObject({
   ...fileBase,
+  formatVersion: external_exports.literal(1),
   preset: external_exports.enum(legacyPresets),
   arrowFallback: external_exports.boolean().optional()
 }).superRefine((file2, ctx) => {
@@ -20698,7 +20701,7 @@ var retainedSchema = external_exports.strictObject({
   reason: external_exports.literal("language").optional(),
   path: external_exports.string().max(128),
   uid: external_exports.string().regex(/^[a-z0-9]{8,32}$/),
-  formatVersion: external_exports.literal(1),
+  formatVersion: external_exports.literal([1, configurableFormatVersion]),
   snapshot: fileSchema,
   /** ISO date-time; the URL keeps updating until then. */
   until: external_exports.iso.datetime()
@@ -20794,6 +20797,30 @@ var configSchema = external_exports.strictObject({
       });
 });
 var migrations = {};
+function upgradeFormat(config2) {
+  const upgrade = (value) => {
+    if (!value || typeof value !== "object" || !("formatVersion" in value)) return void 0;
+    if (value.formatVersion !== 1 || !("preset" in value) || currentFileFormatVersion(value.preset, value.formatVersion) === value.formatVersion)
+      return void 0;
+    const parsed = styleFile.safeParse({ ...value, formatVersion: configurableFormatVersion });
+    return parsed.success ? parsed.data : void 0;
+  };
+  if (Array.isArray(config2.files)) config2.files = config2.files.map((file2) => upgrade(file2) ?? file2);
+  if (!Array.isArray(config2.retained) || typeof config2.id !== "string") return;
+  const project = config2.id;
+  config2.retained = config2.retained.map((entry) => {
+    if (!entry || typeof entry !== "object" || entry.formatVersion !== 1) return entry;
+    const snapshot = upgrade(entry.snapshot);
+    if (!snapshot || entry.path !== filePath(project, { ...snapshot, formatVersion: 1 }))
+      return entry;
+    return {
+      ...entry,
+      formatVersion: configurableFormatVersion,
+      path: filePath(project, snapshot),
+      snapshot
+    };
+  });
+}
 function migrateConfig(stored, table2 = migrations, target = configSchemaVersion) {
   if (!stored || typeof stored !== "object" || Array.isArray(stored))
     throw new Error("A config must be a JSON object");
@@ -20811,7 +20838,9 @@ function migrateConfig(stored, table2 = migrations, target = configSchemaVersion
       throw new Error(`Migration from schema ${version2} must produce schema ${version2 + 1}`);
     version2 += 1;
   }
-  return target === configSchemaVersion ? configSchema.parse(config2) : config2;
+  if (target !== configSchemaVersion) return config2;
+  upgradeFormat(config2);
+  return configSchema.parse(config2);
 }
 function immutableChanges(previous, next, { maintainer = false, now } = {}) {
   const problems = [];
@@ -20864,6 +20893,8 @@ export {
   configLimits,
   configSchema,
   configSchemaVersion,
+  configurableFormatVersion,
+  currentFileFormatVersion,
   dataSchema,
   deletesRetained,
   exportLanguages,
