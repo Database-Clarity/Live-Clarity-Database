@@ -24004,6 +24004,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 var RefRace = class extends Error {
 };
+var emptyTreeOid = "4b825dc642cb6eb9a060e54bf8d69288fbee4904";
 var appCredits = {
   author: {
     name: "clarity-editor-backend[bot]",
@@ -24078,9 +24079,10 @@ var LocalRepository = class {
   }
   treeModes(commit2) {
     return Object.fromEntries(
-      this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
+      this.git(["ls-tree", "-rtz", "--full-tree", commit2]).split("\0").filter(Boolean).flatMap((line) => {
         const tab = line.indexOf("	");
-        return [line.slice(tab + 1), line.slice(0, 6)];
+        const [mode, type, oid4] = line.slice(0, tab).split(" ");
+        return type === "tree" && oid4 !== emptyTreeOid ? [] : [[line.slice(tab + 1), mode]];
       })
     );
   }
@@ -30063,96 +30065,6 @@ function stampUploads(entries, changed, livePerks, now, uploader) {
   }
 }
 
-// scripts/publisher/batch.ts
-init_schedule();
-var json2 = (v) => JSON.stringify(v, null, 2) + "\n";
-var iso = (ms) => new Date(ms).toISOString();
-var supersededMessage = "Superseded: the batch was rescheduled, unscheduled, or changed after this operation was signed";
-var resolveActivationMessage = "Resolve the batch activation first";
-var unpublishedMessage = "This field has saved changes that are not published yet; publish them first";
-var eventsArchive = (batchId, seq) => `schedule/batches/${batchId}/events/${String(seq).padStart(8, "0")}.json`;
-function batchMembers(io, tree, batchId) {
-  const prefix = `schedule/batches/${batchId}/tooltips/`;
-  const members3 = [];
-  for (const path of Object.keys(tree)) {
-    if (!path.startsWith(prefix)) continue;
-    const name2 = path.slice(prefix.length);
-    if (!/^(0|[1-9]\d*)\.json$/.test(name2)) throw new Error(`Unexpected batch entry ${path}`);
-    const member = batchMemberSchema.parse(io.read(tree, path));
-    if (String(member.hash) !== name2.slice(0, -5))
-      throw new Error(`Batch member ${path} carries another hash`);
-    members3.push(member);
-  }
-  return members3.sort((a, b) => a.hash - b.hash);
-}
-function withEvent(io, tree, batch, update, event) {
-  const revision2 = batch.revision + 1;
-  let events = [
-    ...batch.events,
-    { ...event, revision: revision2, contentRevision: update.contentRevision ?? batch.contentRevision }
-  ];
-  const overflow = events.length - scheduleLimits.inlineEvents;
-  if (overflow > 0) {
-    const prefix = `schedule/batches/${batch.id}/events/`;
-    let archived = 0;
-    for (const path of Object.keys(tree)) {
-      if (!path.startsWith(prefix)) continue;
-      if (!/^\d{8}\.json$/.test(path.slice(prefix.length)))
-        throw new Error(`Unexpected archive entry ${path}`);
-      const file2 = io.read(tree, path);
-      if (!Array.isArray(file2?.events)) throw new Error(`Malformed archive ${path}`);
-      archived += file2.events.length;
-    }
-    const target = eventsArchive(batch.id, archived);
-    if (tree[target]) throw new Error(`Archive ${target} already exists`);
-    tree[target] = io.writeBlob(json2({ events: events.slice(0, overflow) }));
-    events = events.slice(overflow);
-  }
-  return batchSchema.parse({ ...batch, ...update, revision: revision2, events });
-}
-function advisory(io, tree, path) {
-  try {
-    return io.read(tree, path);
-  } catch {
-    return void 0;
-  }
-}
-function editDue(io, tree, edit) {
-  const current = dueSchema.safeParse(advisory(io, tree, schedulePaths.due));
-  if (!current.success) return;
-  const next = dueSchema.safeParse({ entries: edit(current.data.entries) });
-  if (!next.success) return;
-  if (stableStringify(next.data) !== stableStringify(current.data))
-    tree[schedulePaths.due] = io.writeBlob(json2(next.data));
-}
-function editIndex(io, tree, batch, hashes, at) {
-  const current = scheduleIndexSchema.safeParse(advisory(io, tree, schedulePaths.index));
-  if (!current.success) return;
-  const entry = scheduleIndexEntry(batch, hashes, at);
-  const batches = current.data.batches.some((b) => b.id === batch.id) ? current.data.batches.map((b) => b.id === batch.id ? entry : b) : [...current.data.batches, entry];
-  const terminal = batches.filter((b) => b.status === "published" || b.status === "cancelled").sort((a, b) => Date.parse(a.updatedAt) - Date.parse(b.updatedAt));
-  const drop = new Set(
-    terminal.slice(0, Math.max(0, terminal.length - scheduleLimits.indexTerminal)).map((b) => b.id)
-  );
-  const next = scheduleIndexSchema.safeParse({
-    batches: batches.filter((b) => !drop.has(b.id))
-  });
-  if (next.success) tree[schedulePaths.index] = io.writeBlob(`${JSON.stringify(next.data)}
-`);
-}
-
-// scripts/publisher/publisher.ts
-import { setTimeout as setTimeout2 } from "node:timers/promises";
-
-// scripts/publisher/globals.ts
-init_zod();
-import { createHash } from "node:crypto";
-init_syntax();
-init_languages();
-init_schemas3();
-init_contentHash();
-init_schemas4();
-
 // apps/worker/src/globals/model.ts
 init_zod();
 init_languages();
@@ -30341,6 +30253,96 @@ var paths = {
 function sameSources(a, b) {
   return Object.keys(a).every((key) => a[key] === b[key]);
 }
+
+// scripts/publisher/batch.ts
+init_schedule();
+var json2 = (v) => JSON.stringify(v, null, 2) + "\n";
+var iso = (ms) => new Date(ms).toISOString();
+var supersededMessage = "Superseded: the batch was rescheduled, unscheduled, or changed after this operation was signed";
+var resolveActivationMessage = "Resolve the batch activation first";
+var unpublishedMessage = "This field has saved changes that are not published yet; publish them first";
+var eventsArchive = (batchId, seq) => `schedule/batches/${batchId}/events/${String(seq).padStart(8, "0")}.json`;
+function batchMembers(io, tree, batchId) {
+  const prefix = `schedule/batches/${batchId}/tooltips/`;
+  const members3 = [];
+  for (const path of Object.keys(tree)) {
+    if (!path.startsWith(prefix)) continue;
+    const name2 = path.slice(prefix.length);
+    if (!/^(0|[1-9]\d*)\.json$/.test(name2)) throw new Error(`Unexpected batch entry ${path}`);
+    const member = batchMemberSchema.parse(io.read(tree, path));
+    if (String(member.hash) !== name2.slice(0, -5))
+      throw new Error(`Batch member ${path} carries another hash`);
+    members3.push(member);
+  }
+  return members3.sort((a, b) => a.hash - b.hash);
+}
+function withEvent(io, tree, batch, update, event) {
+  const revision2 = batch.revision + 1;
+  let events = [
+    ...batch.events,
+    { ...event, revision: revision2, contentRevision: update.contentRevision ?? batch.contentRevision }
+  ];
+  const overflow = events.length - scheduleLimits.inlineEvents;
+  if (overflow > 0) {
+    const prefix = `schedule/batches/${batch.id}/events/`;
+    let archived = 0;
+    for (const path of Object.keys(tree)) {
+      if (!path.startsWith(prefix)) continue;
+      if (!/^\d{8}\.json$/.test(path.slice(prefix.length)))
+        throw new Error(`Unexpected archive entry ${path}`);
+      const file2 = io.read(tree, path);
+      if (!Array.isArray(file2?.events)) throw new Error(`Malformed archive ${path}`);
+      archived += file2.events.length;
+    }
+    const target = eventsArchive(batch.id, archived);
+    if (tree[target]) throw new Error(`Archive ${target} already exists`);
+    tree[target] = io.writeBlob(json2({ events: events.slice(0, overflow) }));
+    events = events.slice(overflow);
+  }
+  return batchSchema.parse({ ...batch, ...update, revision: revision2, events });
+}
+function advisory(io, tree, path) {
+  try {
+    return io.read(tree, path);
+  } catch {
+    return void 0;
+  }
+}
+function editDue(io, tree, edit) {
+  const current = dueSchema.safeParse(advisory(io, tree, schedulePaths.due));
+  if (!current.success) return;
+  const next = dueSchema.safeParse({ entries: edit(current.data.entries) });
+  if (!next.success) return;
+  if (stableStringify(next.data) !== stableStringify(current.data))
+    tree[schedulePaths.due] = io.writeBlob(json2(next.data));
+}
+function editIndex(io, tree, batch, hashes, at) {
+  const current = scheduleIndexSchema.safeParse(advisory(io, tree, schedulePaths.index));
+  if (!current.success) return;
+  const entry = scheduleIndexEntry(batch, hashes, at);
+  const batches = current.data.batches.some((b) => b.id === batch.id) ? current.data.batches.map((b) => b.id === batch.id ? entry : b) : [...current.data.batches, entry];
+  const terminal = batches.filter((b) => b.status === "published" || b.status === "cancelled").sort((a, b) => Date.parse(a.updatedAt) - Date.parse(b.updatedAt));
+  const drop = new Set(
+    terminal.slice(0, Math.max(0, terminal.length - scheduleLimits.indexTerminal)).map((b) => b.id)
+  );
+  const next = scheduleIndexSchema.safeParse({
+    batches: batches.filter((b) => !drop.has(b.id))
+  });
+  if (next.success) tree[schedulePaths.index] = io.writeBlob(`${JSON.stringify(next.data)}
+`);
+}
+
+// scripts/publisher/publisher.ts
+import { setTimeout as setTimeout2 } from "node:timers/promises";
+
+// scripts/publisher/globals.ts
+init_zod();
+import { createHash } from "node:crypto";
+init_syntax();
+init_languages();
+init_schemas3();
+init_contentHash();
+init_schemas4();
 
 // apps/worker/src/globals/handlers.ts
 init_braces();
@@ -33355,16 +33357,39 @@ var Publisher = class _Publisher {
     };
     return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
   }
-  onlyAddedPublishKicks(source2, head, tree, opId) {
+  onlyPublishBookkeeping(source2, head, tree, opId) {
     if (!this.git.ancestor(source2, head)) return false;
     const reviewed = this.git.tree(source2);
     const reviewedModes = this.git.treeModes?.(source2);
     const currentModes = this.git.treeModes?.(head);
-    const kick = new RegExp(`^publish/kicks/${opId}-[0-9]+\\.json$`);
-    const added = Object.keys(tree).filter((path) => !Object.hasOwn(reviewed, path));
-    return added.length > 0 && added.every((path) => kick.test(path) && (!currentModes || currentModes[path] === "100644")) && Object.entries(reviewed).every(
-      ([path, oid4]) => tree[path] === oid4 && (!currentModes || Object.hasOwn(currentModes, path) && currentModes[path] === reviewedModes?.[path])
-    );
+    if (Object.keys(reviewedModes ?? {}).some((path) => !Object.hasOwn(reviewed, path)) || Object.keys(currentModes ?? {}).some((path) => !Object.hasOwn(tree, path)))
+      return false;
+    const regular = (modes, path) => !modes || modes[path] === "100644";
+    const nameProofRequest = (snapshot, path) => {
+      const id = /^globals\/retries\/([0-9a-f-]{36})\.json$/.exec(path)?.[1];
+      if (!id) return false;
+      const request = nameProofRequestSchema.safeParse(this.read(snapshot, path));
+      return request.success && request.data.id === id;
+    };
+    for (const [path, oid4] of Object.entries(reviewed)) {
+      if (!Object.hasOwn(tree, path)) {
+        if (!regular(reviewedModes, path) || !nameProofRequest(reviewed, path)) return false;
+      } else if (tree[path] !== oid4 || currentModes && (!Object.hasOwn(currentModes, path) || currentModes[path] !== reviewedModes?.[path])) {
+        return false;
+      }
+    }
+    for (const path of Object.keys(tree)) {
+      if (Object.hasOwn(reviewed, path)) continue;
+      if (!regular(currentModes, path)) return false;
+      const request = /^publish\/requests\/([^/]+)\.json$/.exec(path)?.[1];
+      const kick = /^publish\/kicks\/(?:batch-)?([^/]+)-[0-9]+\.json$/.exec(path)?.[1];
+      const saveKick = /^publish\/kicks\/current-save-([^/]+)\.json$/.exec(path)?.[1];
+      const log = /^publish\/log\/([^/]+)\/([^/.]+)(?:\.dup-[0-9]+)?\.json$/.exec(path);
+      const queueAddition = request !== opId && publishOpIdSchema.safeParse(request).success || publishOpIdSchema.safeParse(kick).success || publishOpIdSchema.safeParse(saveKick).success || /^publish\/kicks\/due-[0-9]{12}-[0-9]+\.json$/.test(path) || log && log[2] !== opId && publishOpIdSchema.safeParse(log[2]).success && log[1] === publishMonth(log[2]);
+      const clashProof = /^globals\/proofs\/clashes\/(?:exports|variables|titles)\/[0-9a-f]{64}\.json$/;
+      if (!queueAddition && !clashProof.test(path) && !nameProofRequest(tree, path)) return false;
+    }
+    return true;
   }
   async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive) {
     const p = paths2(opId);
@@ -33380,7 +33405,7 @@ var Publisher = class _Publisher {
           throw new ConsumerOutputRejected("Atomic globals publication is unavailable");
         const signed = await this.verifyRequest(receipt.requestBlob, opId, tree);
         const source2 = receipt.sourceCommit;
-        if (source2 !== h && (signed.kind === "batch" || !this.onlyAddedPublishKicks(source2, h, tree, opId)))
+        if (source2 !== h && (signed.kind === "batch" || !this.onlyPublishBookkeeping(source2, h, tree, opId)))
           throw new ConsumerOutputRejected("Global receipt identity mismatch");
         let documents;
         if (signed.kind === "batch") {
