@@ -28231,8 +28231,40 @@ function changes(input2, ids, names) {
     }));
   });
 }
-function impacts(input2, store, ids, scans) {
+function impacts(input2, store, ids, scans, withdrawals) {
   const beforeGlobals = projectGlobals(input2.published), afterGlobals = projectGlobals(store);
+  const alternativeGlobals = /* @__PURE__ */ new Map();
+  const fallbackAlternatives = (before, singleton) => {
+    return new Map(
+      ids.map((id) => {
+        const key = `${singleton}:${id}`;
+        if (!alternativeGlobals.has(key)) {
+          try {
+            alternativeGlobals.set(
+              key,
+              projectGlobals(
+                composeGlobalRelease(
+                  input2.published,
+                  input2.saved,
+                  singleton ? [id] : ids.filter((candidate) => candidate !== id)
+                )
+              )
+            );
+          } catch {
+            alternativeGlobals.set(key, void 0);
+          }
+        }
+        const globals = alternativeGlobals.get(key);
+        return [
+          id,
+          globals && scans.resolve({
+            ...before,
+            tooltips: { ...before.tooltips, ...globals }
+          })
+        ];
+      })
+    );
+  };
   const afterLive = Object.fromEntries(
     Object.entries({ ...input2.live.tooltips, ...input2.authored.tooltips, ...afterGlobals }).filter(
       ([, document]) => resolveAlias(document.hash, input2.authored.aliases) === document.hash
@@ -28266,13 +28298,14 @@ function impacts(input2, store, ids, scans) {
     ]
   ];
   return pairs.map(([before, after, names, published]) => {
+    const edited = changes(input2, ids, names);
     if (published && !calculateGlobalImpact(published, published, [], input2.destination, scans).complete)
       throw new Error("Sync pending: historical published closure is incomplete");
     let observedBefore = before;
     let result = calculateGlobalImpact(
       observedBefore,
       after,
-      changes(input2, ids, names),
+      edited,
       input2.destination,
       scans
     );
@@ -28292,23 +28325,33 @@ function impacts(input2, store, ids, scans) {
       result = calculateGlobalImpact(
         observedBefore,
         after,
-        changes(input2, ids, names),
+        edited,
         input2.destination,
         scans
       );
     }
     if (!result.complete) throw new Error("Sync pending: resolver closure is incomplete");
+    if (withdrawals?.size) {
+      const current = names ? calculateGlobalImpact(after, after, edited, input2.destination, scans) : result;
+      for (const row of current.rows)
+        for (const { globalId } of row.causes) {
+          const removed = withdrawals.get(globalId);
+          if (removed === null || removed?.includes(row.consumer.lang) || removed?.includes("en"))
+            throw new Error("Sync pending: a removed global dependency is still referenced");
+        }
+    }
     return expandReleaseDependencies(
       input2,
       observedBefore,
       after,
       result,
-      changes(input2, ids, names).map((change) => change.cause),
-      scans
+      edited.map((change) => change.cause),
+      scans,
+      withdrawals && ids.length > 1 ? (singleton) => fallbackAlternatives(observedBefore, singleton) : void 0
     );
   });
 }
-function expandReleaseDependencies(input2, before, after, impact, causes, scans) {
+function expandReleaseDependencies(input2, before, after, impact, causes, scans, counterfactuals) {
   const probe = [
     { kind: "titles", beforeName: "Release", afterName: "Release", cause: causes[0] }
   ];
@@ -28335,15 +28378,37 @@ function expandReleaseDependencies(input2, before, after, impact, causes, scans)
     scans
   );
   if (!globalOnly.complete) throw new Error("Sync pending: global fallback closure is incomplete");
+  let omissions;
+  let singletons;
   for (const row of globalOnly.rows)
     if (row.before?.rendered !== row.after?.rendered && !rows.has(key(row))) {
       const actual = census.rows.find((candidate) => key(candidate) === key(row));
-      if (actual)
-        rows.set(key(actual), {
-          ...actual,
-          reason: "variable-read",
-          causes: [...new Map(causes.map((cause) => [stableStringify(cause), cause])).values()]
-        });
+      if (!actual) continue;
+      omissions ??= counterfactuals?.(false);
+      const matching = (candidates) => candidates && [...candidates.values()].every((scan) => scan?.blockers.size === 0) ? new Set(
+        [...candidates].filter(
+          ([, scan]) => scan?.cells.get(key(row))?.result.rendered === row.after?.rendered
+        ).map(([id]) => id)
+      ) : void 0;
+      const unchangedWithout = matching(omissions);
+      let attributable = causes.filter(({ globalId }) => !unchangedWithout?.has(globalId));
+      if (!attributable.length) {
+        singletons ??= counterfactuals?.(true);
+        const unchangedWithOnly = matching(singletons);
+        attributable = causes.filter(({ globalId }) => unchangedWithOnly?.has(globalId));
+      }
+      rows.set(key(actual), {
+        ...actual,
+        reason: "variable-read",
+        causes: [
+          ...new Map(
+            (attributable.length ? attributable : causes).map((cause) => [
+              stableStringify(cause),
+              cause
+            ])
+          ).values()
+        ]
+      });
     }
   const dependencies = /* @__PURE__ */ new Map();
   let progress = true;
@@ -28450,7 +28515,17 @@ async function planGlobalRelease(input2) {
   for (const group of groups) {
     const ids = [...group].sort();
     const store = composeGlobalRelease(input2.published, input2.saved, ids);
-    const contexts = impacts(input2, store, ids, scans);
+    const withdrawals = /* @__PURE__ */ new Map();
+    for (const entry of store.entries) {
+      if (!group.has(entry.id)) continue;
+      const previous = input2.published.entries.find(({ id }) => id === entry.id);
+      const removed = Object.keys(previous?.definitions ?? {}).filter(
+        (lang) => !entry.definitions[lang]
+      );
+      if (entry.tombstone || removed.length)
+        withdrawals.set(entry.id, entry.tombstone ? null : removed);
+    }
+    const contexts = impacts(input2, store, ids, scans, withdrawals);
     const rows = /* @__PURE__ */ new Map();
     for (const impact of contexts)
       for (const view of impact.rows) {
@@ -31287,25 +31362,12 @@ var GlobalsPublisher = class _GlobalsPublisher {
         names: Object.fromEntries(beforeStore.entries.map((entry) => [entry.id, entry.name]))
       });
     }
-    const result = await planGlobalRelease({
+    return planGlobalRelease({
       ...captured,
       causes,
       priorAuthored: [...prior.values()],
       destination: this.options.liveBranch
     });
-    for (const component of result)
-      for (const id of component.ids) {
-        const entry = captured.saved.entries.find((entry2) => entry2.id === id);
-        const previous = captured.published.entries.find((entry2) => entry2.id === id);
-        const removed = Object.keys(previous?.definitions ?? {}).filter(
-          (lang) => !entry.definitions[lang]
-        );
-        if (component.rows.some(
-          (row) => row.view.causes.some((cause) => cause.globalId === id) && (entry.tombstone || removed.includes(row.view.consumer.lang) || removed.includes("en"))
-        ))
-          throw new Error("Sync pending: a removed global dependency is still referenced");
-      }
-    return result;
   }
   async validateCauses(tree, head) {
     const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
@@ -31531,10 +31593,10 @@ var GlobalsPublisher = class _GlobalsPublisher {
     };
     return { documents, receipt, entryOnlyAggregates };
   }
-  async validate(receipt, tree, head, live) {
+  async validate(receipt, tree, head, live, cached2) {
     if (!hasGlobals(tree) && !receipt) return void 0;
     if (!receipt || receipt.version !== 1) throw new Error("Global release receipt required");
-    const checked = await this.release(tree, head, receipt.roots, live);
+    const checked = cached2 ?? await this.release(tree, head, receipt.roots, live);
     if (!checked || checked.receipt.digest !== receipt.digest || stableStringify(checked.receipt.published) !== stableStringify(receipt.published))
       throw new Error("Global release changed since review");
     return checked;
@@ -31600,7 +31662,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
           }
         });
         this.write(tree, path, value2, limits.entryBytes);
-        for (const id of component.ids)
+        for (const id of new Set(row.view.causes.map(({ globalId }) => globalId)))
           rowsByEntry.set(id, [...rowsByEntry.get(id) ?? [], row.id]);
       }
     for (const entry of store.entries) {
@@ -33617,7 +33679,9 @@ var Publisher = class _Publisher {
   }
   git;
   options;
-  checkedOutputs = /* @__PURE__ */ new Set();
+  checkedOutput;
+  candidateOutput;
+  reviewedRelease;
   head(branch) {
     const h = this.git.head(dataRef(branch));
     if (!h) throw new Error(`Missing branch ${branch}`);
@@ -33879,10 +33943,12 @@ var Publisher = class _Publisher {
     const entries = structuredClone(r.exported);
     stampUploads(entries, new Set(r.changed), live.perks, r.now, r.requester.login);
     let perks;
+    let hasMoves;
     try {
       const sourceTree = this.git.tree(r.sourceCommit);
       if (sourceTree[aliasGroupsPath] && r.generatorSha !== this.options.generatorSha)
         throw new Error("Generator revision differs from frozen alias-group receipt");
+      hasMoves = Object.keys(this.movesAt(sourceTree)).length > 0;
       perks = this.mergePublicationPerks(
         sourceTree,
         live.perks,
@@ -33894,36 +33960,45 @@ var Publisher = class _Publisher {
     }
     const merged = { ...live, perks };
     const bytes = json5(merged);
-    const checkKey = createHash5("sha256").update(tree["liveDescriptions.json"]).update(bytes).digest("hex");
-    if (!this.checkedOutputs.has(checkKey)) {
-      const hasMoves = Object.keys(this.movesAt(this.git.tree(r.sourceCommit))).length > 0;
-      for (const preset of [
-        ...deployedLegacyPresets,
-        ...hasMoves ? ["clarityV2"] : []
-      ]) {
-        const convert = (input2) => {
+    const { publisherSha, publisherDigest } = this.options;
+    const pin = JSON.stringify([publisherSha, publisherDigest]);
+    const presets = hasMoves ? [...deployedLegacyPresets, "clarityV2"] : deployedLegacyPresets;
+    const checkKey = createHash5("sha256").update(JSON.stringify([parent, pin, presets])).update(bytes).digest("hex");
+    if (this.checkedOutput?.key !== checkKey) {
+      const candidate = this.candidateOutput;
+      const before = candidate?.commit === parent && candidate.pin === pin ? candidate.after : void 0;
+      const after = /* @__PURE__ */ new Map();
+      for (const preset of presets) {
+        const emptyRows = (input2) => {
           try {
-            return JSON.parse(new TextDecoder().decode(buildLegacy(input2, preset)));
+            const rows = JSON.parse(
+              new TextDecoder().decode(buildLegacy(input2, preset))
+            );
+            return new Set(
+              Object.entries(rows).flatMap(
+                ([hash2, row]) => row.aliasOf === void 0 && Object.keys(row.descriptions ?? {}).length === 0 ? [hash2] : []
+              )
+            );
           } catch (error62) {
             throw new ConsumerOutputRejected(`${preset} conversion failed: ${String(error62)}`);
           }
         };
-        const before = convert(live);
-        let after;
+        const beforeEmpty = before?.get(preset) ?? emptyRows(live);
+        let afterEmpty;
         try {
-          after = convert(merged);
+          afterEmpty = emptyRows(merged);
         } catch (error62) {
           throw new ProposalOutputRejected(error62 instanceof Error ? error62.message : String(error62));
         }
-        for (const [hash2, row] of Object.entries(after)) {
-          const empty2 = (entry) => entry !== void 0 && entry.aliasOf === void 0 && Object.keys(entry.descriptions ?? {}).length === 0;
-          if (empty2(row) && !empty2(before[hash2]))
+        for (const hash2 of afterEmpty) {
+          if (!beforeEmpty.has(hash2))
             throw new TextlessConsumerOutput(
               `${preset} tooltip ${hash2} has no descriptions; nothing published`
             );
         }
+        after.set(preset, afterEmpty);
       }
-      this.checkedOutputs.add(checkKey);
+      this.checkedOutput = { key: checkKey, after };
     }
     return {
       bytes,
@@ -33932,13 +34007,28 @@ var Publisher = class _Publisher {
   }
   buildCandidate(parent, receipt) {
     const { bytes, outcome: outcome2 } = this.merge(parent, receipt);
+    const after = this.checkedOutput?.after;
     const r = { ...receipt, liveParent: parent, outcome: outcome2 };
     const tree = {
       ...this.git.tree(parent),
       "liveDescriptions.json": this.git.writeBlob(bytes),
       [paths2(r.opId).receipt]: this.git.writeBlob(json5(r))
     };
-    return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
+    const candidate = this.git.commit(
+      parent,
+      tree,
+      `Publish ${r.opId}`,
+      this.credits(r.requestBlob, r.opId)
+    );
+    if (after) {
+      const { publisherSha, publisherDigest } = this.options;
+      this.candidateOutput = {
+        commit: candidate,
+        pin: JSON.stringify([publisherSha, publisherDigest]),
+        after
+      };
+    }
+    return candidate;
   }
   manualSourceAdvance(source2, head, tree, opId) {
     if (!this.git.ancestor(source2, head)) return "blocked";
@@ -33994,6 +34084,10 @@ var Publisher = class _Publisher {
         return "blocked";
     }
     return rebuild ? "rebuild" : "bookkeeping";
+  }
+  releaseKey(requestBlob, data, live) {
+    const { publisherSha, publisherDigest, generatorSha } = this.options;
+    return JSON.stringify([requestBlob, data, live, publisherSha, publisherDigest, generatorSha]);
   }
   assertRequestedDigests(entries, hashes, expected2, aliases) {
     const markers = new Map(entries.map(({ hash: hash2, digest: digest6 }) => [hash2, digest6]));
@@ -34138,11 +34232,13 @@ var Publisher = class _Publisher {
             (entry) => tooltipSchema.parse(JSON.parse(this.git.blob(entry.tooltipBlob)))
           );
         } else {
+          const reviewed = this.reviewedRelease;
           const release = await new GlobalsPublisher(this).validate(
             receipt.globals,
             tree,
             source2,
-            atomicLive.parent
+            atomicLive.parent,
+            source2 === h && reviewed?.key === this.releaseKey(receipt.requestBlob, h, atomicLive.parent) ? reviewed.release : void 0
           );
           documents = release?.documents;
           entryOnlyAggregates = release?.entryOnlyAggregates ?? [];
@@ -34499,6 +34595,10 @@ var Publisher = class _Publisher {
           try {
             const release = await new GlobalsPublisher(this).release(tree, s, payload.hashes, live);
             if (!release) throw new Error("Missing global release");
+            this.reviewedRelease = {
+              key: this.releaseKey(blob, s, live),
+              release: structuredClone(release)
+            };
             globals = release.receipt;
             entryOnlyAggregates = release.entryOnlyAggregates;
             tooltips.splice(0, tooltips.length, ...release.documents);
