@@ -27966,7 +27966,7 @@ async function observeGlobalSources(input2) {
 // packages/core/src/globalsRelease/compose.ts
 init_languages();
 init_contentHash();
-function reconcileGlobalStore(layout, entries) {
+function reconcileGlobalStore(layout, entries, { preserveNewLanguageSourceStamp = false } = {}) {
   const aggregates = structuredClone(layout);
   for (const aggregate of aggregates) {
     const kind = globalAggregateKind(aggregate.document.hash);
@@ -27975,15 +27975,22 @@ function reconcileGlobalStore(layout, entries) {
         (entry) => !entry.tombstone && entry.kind === kind && entry.definitions[lang]
       );
       let cell = aggregate.languages[lang];
-      if (!cell && definitions.length) {
-        const definition2 = definitions[0].definitions[lang];
+      const latest = definitions.map((entry) => entry.definitions[lang]).sort((a, b) => a.updatedAt.localeCompare(b.updatedAt)).at(-1);
+      if (!cell && latest) {
+        const definition2 = preserveNewLanguageSourceStamp ? latest : definitions[0].definitions[lang];
+        const { updatedAt, updatedBy, sourceUpdatedAt } = definition2;
         cell = aggregate.languages[lang] = {
-          metadata: { updatedAt: definition2.updatedAt, updatedBy: definition2.updatedBy },
+          metadata: {
+            updatedAt,
+            updatedBy,
+            ...preserveNewLanguageSourceStamp && sourceUpdatedAt !== void 0 && {
+              sourceUpdatedAt
+            }
+          },
           segments: [{ literal: "" }]
         };
       }
       if (!cell) continue;
-      const latest = definitions.map((entry) => entry.definitions[lang]).sort((a, b) => a.updatedAt.localeCompare(b.updatedAt)).at(-1);
       if (latest && Date.parse(latest.updatedAt) > Date.parse(cell.metadata.updatedAt)) {
         const {
           body: _body,
@@ -28398,12 +28405,15 @@ var entryMarkSchema = external_exports.object({
   note: external_exports.string().trim().max(maxMarkNoteChars).optional(),
   ...stamp
 }).strict();
+var compendiumDecisionKindSchema = external_exports.enum(["no-match", "not-needed"]);
+var compendiumDecisionSchema = external_exports.object({ kind: compendiumDecisionKindSchema, ...stamp }).strict();
 var marksSchema = external_exports.object({
   types: external_exports.array(markTypeSchema).max(32),
   entries: external_exports.record(inactiveHashKey, external_exports.array(entryMarkSchema).min(1).max(32)).refine(
     (entries) => Object.keys(entries).length <= maxMarkedEntries,
     "Too many marked entries"
-  )
+  ),
+  compendium: external_exports.record(inactiveHashKey, compendiumDecisionSchema).optional()
 }).strict().superRefine((value2, ctx) => {
   const ids = new Set(value2.types.map((type) => type.id));
   if (ids.size !== value2.types.length)
@@ -28426,6 +28436,7 @@ var marksFileSchema = marksSchema.superRefine((value2, ctx) => {
   if (new TextEncoder().encode(JSON.stringify(value2, null, 2) + "\n").length > maxMarksBytes)
     ctx.addIssue({ code: "custom", message: `Marks file exceeds ${maxMarksBytes} bytes` });
 });
+var decisionHashes = external_exports.array(hashSchema).min(1);
 var markActionSchema = external_exports.discriminatedUnion("action", [
   external_exports.object({
     action: external_exports.literal("mark"),
@@ -28446,7 +28457,13 @@ var markActionSchema = external_exports.discriminatedUnion("action", [
     label: markTypeSchema.shape.label,
     colour: markTypeSchema.shape.colour
   }).strict(),
-  external_exports.object({ action: external_exports.literal("remove-type"), id: markIdSchema, force: external_exports.boolean().optional() }).strict()
+  external_exports.object({ action: external_exports.literal("remove-type"), id: markIdSchema, force: external_exports.boolean().optional() }).strict(),
+  external_exports.object({
+    action: external_exports.literal("compendium-set"),
+    kind: compendiumDecisionKindSchema,
+    hashes: decisionHashes
+  }).strict(),
+  external_exports.object({ action: external_exports.literal("compendium-clear"), hashes: decisionHashes }).strict()
 ]);
 var marksRevisionSchema = external_exports.string().regex(/^[0-9a-f]{40}$/).nullable();
 var updateMarksSchema = external_exports.object({
@@ -30609,6 +30626,8 @@ function bundleGlobals(tree, read) {
   if (cursors.size !== catalog.lastPage + 1) throw new Error("Invalid global catalog tail");
   return { entries, sync: publicGlobalSync(syncSchema.parse(read(tree, paths.sync))) };
 }
+var GlobalReleaseRejected = class extends Error {
+};
 function globalTreeEntries(tree, prefix, modes = {}) {
   const entries = Object.entries(tree).filter(([path]) => path.startsWith(`${prefix}/`));
   const files = /* @__PURE__ */ new Map(), directories = /* @__PURE__ */ new Set();
@@ -30736,7 +30755,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         throw new Error("Global identity mismatch");
       return entry;
     });
-    return reconcileGlobalStore(layout.aggregates, entries);
+    return reconcileGlobalStore(layout.aggregates, entries, { preserveNewLanguageSourceStamp: true });
   }
   documents(tree, prefix) {
     return Object.fromEntries(
@@ -30803,6 +30822,89 @@ var GlobalsPublisher = class _GlobalsPublisher {
     }
     if (!tooltips[2] || !tooltips[3]) throw new Error("Missing last-published global library");
     return { repository: this.options.repo, revision: revision2, aliases, types: liveTypes, tooltips, mode: "live" };
+  }
+  publicationSnapshot(tree, revision2, captured, documents) {
+    const { aliases, types } = captured.authored;
+    const hashes = documents.map(({ hash: hash2 }) => hash2);
+    const exported = exportWithInactiveMoves(
+      documents,
+      0,
+      this.options.facts,
+      aliases,
+      selectedInactiveMoves(this.publisher.movesAt(tree), hashes, aliases)
+    );
+    const perks = livePerksSchema.parse(
+      this.publisher.mergePublicationPerks(tree, captured.livePerks, exported, hashes)
+    );
+    const snapshot = this.liveSnapshot(
+      revision2,
+      perks,
+      {
+        ...captured.live.tooltips,
+        ...Object.fromEntries(
+          documents.filter(({ hash: hash2 }) => exported[hash2]).map((document) => [document.hash, document])
+        )
+      },
+      types
+    );
+    return { snapshot, perks };
+  }
+  async checkSavedLayout(tree, revision2, captured, selected, beforeDocuments, afterDocuments) {
+    const { aliases } = captured.authored;
+    const moves = this.publisher.movesAt(tree);
+    for (const hash2 of selected) {
+      const requested = tooltipSchema.parse(this.read(tree, `tooltips/${hash2}.json`));
+      const projected = afterDocuments.find((document) => document.hash === hash2);
+      if (await inactivePublishableHash(requested, aliases, moves) !== await inactivePublishableHash(projected, aliases, moves))
+        throw new GlobalReleaseRejected(
+          `Tooltip ${hash2} would publish a different revision than requested. Review the changes again.`
+        );
+    }
+    if (stableStringify(beforeDocuments) === stableStringify(afterDocuments)) return;
+    if ("error" in this.publisher.checkAndExport(tree, afterDocuments, aliases))
+      throw new GlobalReleaseRejected("The saved global layout cannot be exported");
+    const before = this.publicationSnapshot(tree, revision2, captured, beforeDocuments);
+    const after = this.publicationSnapshot(tree, revision2, captured, afterDocuments);
+    const comparison = calculateGlobalImpact(
+      before.snapshot,
+      after.snapshot,
+      [
+        {
+          // Title preparation covers every consumer in the existing resolver.
+          kind: "titles",
+          beforeName: "Release",
+          cause: { globalId: "g_release000", beforeRevision: null, afterRevision: "layout" }
+        }
+      ],
+      this.options.liveBranch
+    );
+    if (!comparison.complete || comparison.rows.some((row) => stableStringify(row.before) !== stableStringify(row.after)))
+      throw new GlobalReleaseRejected(
+        "The saved global layout changes or cannot prove consumer output"
+      );
+    const baseline = projectGlobals(captured.published);
+    const perks = { ...before.perks };
+    for (const hash2 of selected) {
+      const previous = before.snapshot.tooltips[hash2];
+      if (captured.livePerks[hash2] && stableStringify(previous) !== stableStringify(after.snapshot.tooltips[hash2]) && stableStringify(previous) === stableStringify(baseline[hash2]))
+        perks[hash2] = captured.livePerks[hash2];
+    }
+    if (legacyPresets.some(
+      (preset) => !Buffer.from(buildLegacy({ perks }, preset)).equals(
+        buildLegacy({ perks: after.perks }, preset)
+      )
+    ))
+      throw new GlobalReleaseRejected("The saved global layout changes legacy consumer output");
+  }
+  async hasReleaseChanges(tree, captured, documents, aggregateHashes) {
+    const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
+    const moves = this.publisher.movesAt(tree);
+    for (const document of documents) {
+      const previous = aggregateHashes.includes(document.hash) ? await inactivePublishableHash(document, captured.live.aliases) : markers[document.hash];
+      const next = await inactivePublishableHash(document, captured.authored.aliases, moves);
+      if (previous !== next) return true;
+    }
+    return false;
   }
   capture(tree, revision2, liveCommit, roots = []) {
     const published = globalPublishedSchema.parse(
@@ -30946,9 +31048,13 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const moves = this.publisher.movesAt(tree);
     const activeSelection = selected.filter((hash2) => !isMovedInactive(hash2, moves));
     const aggregateHashes = captured.saved.aggregates.map(({ document }) => document.hash);
-    const aggregate = selected.some((hash2) => aggregateHashes.includes(hash2));
+    const selectedAggregates = activeSelection.filter((hash2) => aggregateHashes.includes(hash2));
+    const aggregate = selectedAggregates.length > 0;
+    const selectedEntries = new Set(
+      captured.saved.entries.filter((entry) => activeSelection.includes(globalAggregateHash(entry.kind))).map((entry) => entry.id)
+    );
     const relevant = components.filter(
-      (component) => aggregate || component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some(
+      (component) => component.ids.some((id) => selectedEntries.has(id)) || component.rows.some((row) => activeSelection.includes(row.view.consumer.hash)) || component.hashes.some(
         (hash2) => !aggregateHashes.includes(hash2) && activeSelection.includes(hash2)
       )
     );
@@ -30966,9 +31072,10 @@ var GlobalsPublisher = class _GlobalsPublisher {
         (hash2) => !aggregateHashes.includes(hash2) && activeSelection.includes(hash2)
       ))
     ))
-      throw new Error("Sync pending: global dependency review required");
+      throw new GlobalReleaseRejected("Sync pending: global dependency review required");
     const ids = ready.flatMap((component) => component.ids);
-    const store = composeGlobalRelease(captured.published, captured.saved, ids);
+    let store = composeGlobalRelease(captured.published, captured.saved, ids);
+    let entryOnlyAggregates = ready.length !== relevant.length ? selectedAggregates : [];
     const hashes = [
       .../* @__PURE__ */ new Set([...selected, ...ready.flatMap((component) => component.hashes)])
     ].sort((a, b) => a - b);
@@ -30983,7 +31090,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
           captured.authored.aliases,
           moves
         ))
-          throw new Error("Publish inactive move decisions before releasing global dependencies");
+          throw new GlobalReleaseRejected(
+            "Publish inactive move decisions before releasing global dependencies"
+          );
       }
     }
     const globals = projectGlobals(store);
@@ -30991,11 +31100,45 @@ var GlobalsPublisher = class _GlobalsPublisher {
       for (const hash2 of aggregateHashes) if (!hashes.includes(hash2)) hashes.push(hash2);
     }
     hashes.sort((a, b) => a - b);
-    const documents = hashes.map((hash2) => {
+    let documents = hashes.map((hash2) => {
+      if (aggregateHashes.includes(hash2) && !globals[hash2])
+        throw new Error(`Missing published layout for aggregate ${hash2}`);
       const document = globals[hash2] ?? captured.authored.tooltips[hash2] ?? captured.live.tooltips[hash2] ?? (!batch && selected.includes(hash2) && isMovedInactive(hash2, moves) ? { hash: hash2, text: {}, associated: [] } : void 0);
       if (!document) throw new Error("Deleted release dependency");
       return document;
     });
+    if (aggregate && !entryOnlyAggregates.length) {
+      try {
+        if (sync.status !== "current")
+          throw new GlobalReleaseRejected("Sync pending: global dependency review required");
+        const exact = {
+          ...store,
+          aggregates: store.aggregates.map(
+            (layout) => selectedAggregates.includes(layout.document.hash) ? captured.saved.aggregates.find(
+              ({ document }) => document.hash === layout.document.hash
+            ) : layout
+          )
+        };
+        const projected = projectGlobals(exact);
+        const exactDocuments = documents.map((document) => projected[document.hash] ?? document);
+        await this.checkSavedLayout(
+          tree,
+          revision2,
+          captured,
+          selectedAggregates,
+          documents,
+          exactDocuments
+        );
+        store = exact;
+        documents = exactDocuments;
+      } catch (error62) {
+        if (!ids.length && !await this.hasReleaseChanges(tree, captured, documents, aggregateHashes))
+          throw error62 instanceof GlobalReleaseRejected ? error62 : new GlobalReleaseRejected(
+            "The saved global layout changes or cannot prove consumer output"
+          );
+        entryOnlyAggregates = selectedAggregates;
+      }
+    }
     const published = globalPublishedSchema.parse({
       version: 1,
       destination: this.options.liveBranch,
@@ -31022,31 +31165,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
           "The global generator changed after scheduling; return to draft and schedule again"
         );
       const sourceAliases = this.publisher.aliasesAt(sourceTree);
-      const aliases = captured.authored.aliases;
-      const exported = exportWithInactiveMoves(
-        documents,
-        0,
-        this.options.facts,
-        aliases,
-        selectedInactiveMoves(moves, hashes, aliases)
-      );
-      const perks = this.publisher.mergePublicationPerks(
-        tree,
-        captured.livePerks,
-        exported,
-        hashes
-      );
-      const snapshot = this.liveSnapshot(
-        revision2,
-        livePerksSchema.parse(perks),
-        {
-          ...captured.live.tooltips,
-          ...Object.fromEntries(
-            documents.filter((document) => exported[document.hash]).map((document) => [document.hash, document])
-          )
-        },
-        captured.authored.types
-      );
+      const { snapshot } = this.publicationSnapshot(tree, revision2, captured, documents);
       const pinned = this.store(sourceTree);
       const pinnedDocuments = this.canonicalDocuments(sourceTree, "live/tooltips", sourceAliases);
       for (const document of documents)
@@ -31126,7 +31245,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       published,
       ...batch ? { batchSource: batch.source } : {}
     };
-    return { documents, receipt };
+    return { documents, receipt, entryOnlyAggregates };
   }
   async validate(receipt, tree, head, live) {
     if (!hasGlobals(tree) && !receipt) return void 0;
@@ -31134,7 +31253,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const checked = await this.release(tree, head, receipt.roots, live);
     if (!checked || checked.receipt.digest !== receipt.digest || stableStringify(checked.receipt.published) !== stableStringify(receipt.published))
       throw new Error("Global release changed since review");
-    return checked.documents;
+    return checked;
   }
   /** Current permission check also applies to old acknowledgements at drain/recovery. */
   approved(tree, row) {
@@ -31375,7 +31494,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
         for (const cell of Object.values(document.text))
           cell.text = rewriteGlobalReferences(cell.text, entry.kind, entry.name, intent.name).text;
       }
-      const after = reconcileGlobalStore(before.aggregates, all);
+      const after = reconcileGlobalStore(before.aggregates, all, {
+        preserveNewLanguageSourceStamp: true
+      });
       assertGlobalTransition(before, after, documents);
       for (const candidate of after.entries)
         this.write(
@@ -31510,6 +31631,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
     ))
       delete tree[path];
     const moves = this.publisher.movesAt(tree);
+    const entryAggregates = new Map(
+      captured.saved.entries.map(({ id, kind }) => [id, globalAggregateHash(kind)])
+    );
     const hashes = new Set(Object.keys(captured.authored.tooltips).map(Number));
     for (const key of Object.keys(moves)) {
       const hash2 = Number(key);
@@ -31525,7 +31649,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       ]) {
         const aggregate = captured.saved.aggregates.some(({ document }) => document.hash === hash2);
         const relevant = isMovedInactive(hash2, moves) ? [] : components.filter(
-          (component) => aggregate || component.rows.some(
+          (component) => aggregate && component.ids.some((id) => entryAggregates.get(id) === hash2) || component.rows.some(
             (row) => row.view.consumer.hash === hash2 && row.view.consumer.lang === lang
           )
         );
@@ -33200,10 +33324,10 @@ var Publisher = class _Publisher {
    * Generator aliases plus the maintainer sandbox picks at this snapshot (core mergeSandboxPointers,
    * the same merge as the Worker and the editor). A malformed picks file throws: fail closed.
    */
-  aliasesAt(tree) {
+  aliasesAt(tree, options = this.options) {
     try {
       return _Publisher.aliasesAt(
-        this.options,
+        options,
         this.read(tree, aliasGroupsPath),
         this.read(tree, sandboxPointersPath)
       );
@@ -33541,8 +33665,108 @@ var Publisher = class _Publisher {
     }
     return true;
   }
+  assertRequestedDigests(entries, hashes, expected2, aliases) {
+    const markers = new Map(entries.map(({ hash: hash2, digest: digest6 }) => [hash2, digest6]));
+    if (markers.size !== entries.length)
+      throw new ConsumerOutputRejected("Publication has duplicate markers");
+    for (const hash2 of hashes) {
+      const digest6 = expected2(hash2);
+      if (!digest6 || markers.get(resolveAlias(hash2, aliases)) !== digest6)
+        throw new ConsumerOutputRejected(
+          `Tooltip ${hash2} would publish a different revision than requested. Review the changes again.`
+        );
+    }
+  }
+  async verifyReceiptDigests(receipt, atomic = false) {
+    const frozen = this.git.tree(receipt.sourceCommit);
+    const signed = await this.verifyRequest(receipt.requestBlob, receipt.opId, frozen);
+    const options = receipt.generatorSha === this.options.generatorSha ? this.options : this.read(frozen, ".publisher/config.json");
+    if (options?.generatorSha !== receipt.generatorSha)
+      throw new ConsumerOutputRejected(
+        "Missing pinned generator facts for the publication receipt"
+      );
+    const aliases = this.aliasesAt(frozen, options);
+    const moves = this.movesAt(frozen);
+    const pushed = pushedSchema.parse(this.read(frozen, "live/pushed.json"));
+    if (signed.intentDigest !== receipt.intentDigest || stableStringify(signed.requester) !== stableStringify(receipt.requester))
+      throw new ConsumerOutputRejected("Receipt does not match the signed publication intent");
+    if (!receipt.globals && receipt.entries.length !== new Set(signed.hashes.map((hash2) => resolveAlias(hash2, aliases))).size)
+      throw new ConsumerOutputRejected("Receipt does not match the requested rows");
+    if (signed.kind === "push") {
+      if (!atomic)
+        this.assertRequestedDigests(
+          receipt.entries,
+          signed.hashes,
+          (hash2) => signed.expected[hash2],
+          aliases
+        );
+    } else {
+      const members3 = batchMembers(this, frozen, signed.batchId);
+      if (signed.batchId !== receipt.batchId || stableStringify(members3.map(({ hash: hash2 }) => hash2)) !== stableStringify(signed.hashes) || await approvedDigest(members3) !== signed.approvedDigest)
+        throw new ConsumerOutputRejected("Batch receipt differs from the signed request");
+      const expected2 = /* @__PURE__ */ new Map();
+      const entries = new Map(receipt.entries.map((entry) => [entry.hash, entry]));
+      for (const member of members3) {
+        const { hash: hash2 } = member;
+        const document = (prefix) => {
+          const raw = this.read(frozen, `${prefix}/${hash2}.json`);
+          return raw === void 0 ? null : tooltipSchema.parse(raw);
+        };
+        const composed = this.composeMember(
+          member,
+          document("live/tooltips"),
+          document("tooltips"),
+          pushed[hash2] !== void 0
+        );
+        if (composed.status === "stale" || this.git.writeBlob(json5(composed.tooltip)) !== entries.get(hash2)?.tooltipBlob)
+          throw new ConsumerOutputRejected(
+            `Tooltip ${hash2} differs from the approved batch composition`
+          );
+        expected2.set(hash2, await inactivePublishableHash(composed.tooltip, aliases, moves));
+      }
+      this.assertRequestedDigests(
+        receipt.entries,
+        signed.hashes,
+        (hash2) => expected2.get(hash2),
+        aliases
+      );
+    }
+    if (atomic) return;
+    try {
+      const documents = [];
+      for (const entry of receipt.entries) {
+        const document = tooltipSchema.parse(JSON.parse(this.git.blob(entry.tooltipBlob)));
+        if (document.hash !== entry.hash || await inactivePublishableHash(document, aliases, moves) !== entry.digest)
+          throw new Error(`Tooltip ${entry.hash} does not match its receipt marker`);
+        if (signed.kind === "push" && !receipt.globals) {
+          const source2 = this.read(frozen, `tooltips/${entry.hash}.json`) ?? (isMovedInactive(entry.hash, moves) ? { hash: entry.hash, text: {}, associated: [] } : void 0);
+          if (stableStringify(document) !== stableStringify(tooltipSchema.parse(source2)))
+            throw new Error(`Tooltip ${entry.hash} does not match the frozen source snapshot`);
+        }
+        documents.push(document);
+      }
+      const exported = exportWithInactiveMoves(
+        documents,
+        receipt.now,
+        options.facts,
+        aliases,
+        selectedInactiveMoves(
+          moves,
+          documents.map(({ hash: hash2 }) => hash2),
+          aliases
+        )
+      );
+      if (stableStringify(exported) !== stableStringify(receipt.exported) || stableStringify(
+        receipt.entries.filter(({ hash: hash2, digest: digest6 }) => pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2)
+      ) !== stableStringify(receipt.changed))
+        throw new Error("Publication receipt export or upload markers differ from its snapshots");
+    } catch (error62) {
+      throw new ConsumerOutputRejected(String(error62));
+    }
+  }
   async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive) {
     const p = paths2(opId);
+    if (receipt) await this.verifyReceiptDigests(receipt, atomicLive !== void 0);
     for (let i = 0; i < 5; i++) {
       const h = this.head(this.options.dataBranch), tree = this.git.tree(h);
       if (tree[p.log]) return;
@@ -33558,6 +33782,7 @@ var Publisher = class _Publisher {
         if (source2 !== h && (signed.kind === "batch" || !this.onlyPublishBookkeeping(source2, h, tree, opId)))
           throw new ConsumerOutputRejected("Global receipt identity mismatch");
         let documents;
+        let entryOnlyAggregates = [];
         if (signed.kind === "batch") {
           const plan = await this.batchPlan(
             tree,
@@ -33571,16 +33796,29 @@ var Publisher = class _Publisher {
           documents = plan.entries.map(
             (entry) => tooltipSchema.parse(JSON.parse(this.git.blob(entry.tooltipBlob)))
           );
-        } else
-          documents = await new GlobalsPublisher(this).validate(
+        } else {
+          const release = await new GlobalsPublisher(this).validate(
             receipt.globals,
             tree,
             source2,
             atomicLive.parent
           );
+          documents = release?.documents;
+          entryOnlyAggregates = release?.entryOnlyAggregates ?? [];
+        }
         if (!documents || stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
           throw new ConsumerOutputRejected("Global receipt identity mismatch");
-        const aliases = this.aliasesAt(tree), moves = selectedInactiveMoves(
+        const aliases = this.aliasesAt(tree);
+        if (signed.kind === "push")
+          this.assertRequestedDigests(
+            receipt.entries,
+            signed.hashes.filter(
+              (hash2) => !entryOnlyAggregates.includes(resolveAlias(hash2, aliases))
+            ),
+            (hash2) => signed.expected[hash2],
+            aliases
+          );
+        const moves = selectedInactiveMoves(
           this.movesAt(tree),
           documents.map((document) => document.hash),
           aliases
@@ -33739,6 +33977,12 @@ var Publisher = class _Publisher {
       await this.publishOperation(opId, s, tree);
     } catch (error62) {
       if (!(error62 instanceof ConsumerOutputRejected)) throw error62;
+      const live = this.head(this.options.liveBranch);
+      const pending = this.git.head(p.candidate);
+      if (this.receipt(live, opId) || pending && this.git.ancestor(pending, live))
+        throw new Error("Publication already landed. Operator required to finish RECORD.", {
+          cause: error62
+        });
       await this.record(
         opId,
         void 0,
@@ -33851,11 +34095,13 @@ var Publisher = class _Publisher {
           return;
         }
         let globals;
+        let entryOnlyAggregates = [];
         if (hasGlobals(tree)) {
           try {
             const release = await new GlobalsPublisher(this).release(tree, s, payload.hashes, live);
             if (!release) throw new Error("Missing global release");
             globals = release.receipt;
+            entryOnlyAggregates = release.entryOnlyAggregates;
             tooltips.splice(0, tooltips.length, ...release.documents);
             entries.splice(
               0,
@@ -33868,10 +34114,18 @@ var Publisher = class _Publisher {
                 }))
               )
             );
-          } catch {
-            throw new ConsumerOutputRejected("Sync pending: global dependency review required");
+          } catch (error62) {
+            throw new ConsumerOutputRejected(
+              error62 instanceof GlobalReleaseRejected ? error62.message : "Sync pending: global dependency review required"
+            );
           }
         }
+        this.assertRequestedDigests(
+          entries,
+          payload.hashes.filter((hash2) => !entryOnlyAggregates.includes(resolveAlias(hash2, aliases))),
+          (hash2) => payload.expected[hash2],
+          aliases
+        );
         const checked = this.checkAndExport(tree, tooltips, aliases);
         if ("error" in checked) {
           await this.record(
@@ -33940,7 +34194,7 @@ var Publisher = class _Publisher {
               { parent: l, candidate: c }
             );
           } catch (error62) {
-            if (error62 instanceof RefRace) throw error62;
+            if (error62 instanceof RefRace || error62 instanceof ConsumerOutputRejected) throw error62;
             throw new ConsumerOutputRejected(
               "Global publication changed or requires recovery; nothing partially published"
             );
@@ -33951,6 +34205,7 @@ var Publisher = class _Publisher {
           }
           return;
         }
+        await this.verifyReceiptDigests(r);
         let pushed = false;
         try {
           this.git.cas(dataRef(this.options.liveBranch), l, c);
@@ -34175,9 +34430,24 @@ var Publisher = class _Publisher {
     for (const tooltip of documents)
       entries.push({
         hash: tooltip.hash,
-        digest: await inactivePublishableHash(tooltip, aliases, this.movesAt(tree)),
+        digest: await inactivePublishableHash(tooltip, aliases, moves),
         tooltipBlob: this.git.writeBlob(json5(tooltip))
       });
+    if (globals) {
+      const expected2 = new Map(
+        await Promise.all(
+          tooltips.map(
+            async (tooltip) => [tooltip.hash, await inactivePublishableHash(tooltip, aliases, moves)]
+          )
+        )
+      );
+      try {
+        this.assertRequestedDigests(entries, payload.hashes, (hash2) => expected2.get(hash2), aliases);
+      } catch (error62) {
+        if (!(error62 instanceof ConsumerOutputRejected)) throw error62;
+        return { failure: { status: "rejected", error: error62.message } };
+      }
+    }
     return {
       entries,
       now: checked.now,
@@ -34417,28 +34687,8 @@ var Publisher = class _Publisher {
     if (receipt.batchId !== payload.batchId) throw new Error("Receipt batch mismatch");
     const frozen = this.git.tree(receipt.sourceCommit);
     const members3 = batchMembers(this, frozen, payload.batchId);
-    const snapshotAt = (hash2) => {
-      const value2 = this.read(frozen, `live/tooltips/${hash2}.json`);
-      return value2 === void 0 ? null : tooltipSchema.parse(value2);
-    };
-    const pushedAt = pushedSchema.parse(this.read(frozen, "live/pushed.json"));
-    const byHash = new Map(members3.map((m) => [m.hash, m]));
-    if (receipt.globals && (stableStringify(receipt.globals.roots) !== stableStringify(payload.hashes) || stableStringify(members3.map((member) => member.hash)) !== stableStringify(payload.hashes) || members3.some((member) => !receipt.entries.some((entry) => entry.hash === member.hash))))
+    if (receipt.globals && stableStringify(receipt.globals.roots) !== stableStringify(payload.hashes))
       throw new Error("Global batch receipt roots differ from its signed members");
-    for (const e of receipt.entries) {
-      const m = byHash.get(e.hash);
-      if (!m && receipt.globals) continue;
-      if (!m) throw new Error(`Receipt member ${e.hash} missing at S'; operator required`);
-      const saved = this.read(frozen, `tooltips/${m.hash}.json`);
-      const composed = this.composeMember(
-        m,
-        snapshotAt(m.hash),
-        saved === void 0 ? null : tooltipSchema.parse(saved),
-        pushedAt[m.hash] !== void 0
-      );
-      if (composed.status === "stale" || this.git.writeBlob(json5(composed.tooltip)) !== e.tooltipBlob)
-        throw new Error(`Composition of ${e.hash} differs from its receipt; operator required`);
-    }
     const batch = batchSchema.parse(this.read(tree, path));
     if (batch.status !== "publishing" || batch.opId !== opId || batch.claim?.opId !== opId)
       throw new Error(`Batch ${batch.id} is not claimed by ${opId}; operator required`);
@@ -34502,7 +34752,21 @@ var Publisher = class _Publisher {
     return { landedAt, landedAtSource: land.source, recordedAt };
   }
   bundle() {
-    const h = this.head(this.options.dataBranch), t = this.git.tree(h), ref = dataRef("editor-data-bundle"), old = this.git.head(ref), oldTree = old ? this.git.tree(old) : {};
+    const ref = dataRef("editor-data-bundle");
+    let old = this.git.head(ref);
+    for (let attempt = 0; ; attempt++) {
+      try {
+        return this.bundleAt(ref, old);
+      } catch (error62) {
+        if (!(error62 instanceof RefRace) || attempt === 2) throw error62;
+        const current = this.git.head(ref);
+        if (!current || current === old || old && !this.git.ancestor(old, current)) throw error62;
+        old = current;
+      }
+    }
+  }
+  bundleAt(ref, old) {
+    const h = this.head(this.options.dataBranch), t = this.git.tree(h), oldTree = old ? this.git.tree(old) : {};
     const prior = old ? this.read(oldTree, "bundle.json") : void 0;
     if (prior?.sourceCommit === h) return;
     if (prior && !this.git.ancestor(prior.sourceCommit, h))
@@ -34669,6 +34933,10 @@ var RemoteRepository = class extends LocalRepository {
       this.git(["update-ref", "-d", ref]);
       return void 0;
     }
+    const [advertisedOid] = advertised.split("	");
+    if (!/^[0-9a-f]{40}$/.test(advertisedOid) || advertised !== `${advertisedOid}	${ref}`)
+      throw new TransportUnresolved("Invalid remote ref advertisement");
+    if (super.head(ref) === advertisedOid) return advertisedOid;
     this.remoteGit(["fetch", "--no-tags", this.remote, ref]);
     const oid4 = this.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
     this.git(["update-ref", ref, oid4]);
@@ -34819,7 +35087,17 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
   const publications = [];
   let handoff2;
   function snapshot(label) {
-    gitAt(cwd, ["fetch", "--prune", "--no-tags", "origin", "+refs/heads/*:refs/remotes/origin/*"]);
+    const shallow = gitAt(cwd, ["rev-parse", "--is-shallow-repository"]).trim() === "true";
+    gitAt(cwd, [
+      "fetch",
+      "--prune",
+      "--no-tags",
+      ...shallow ? ["--unshallow"] : [],
+      "origin",
+      "+refs/heads/*:refs/remotes/origin/*"
+    ]);
+    if (shallow && gitAt(cwd, ["rev-parse", "--is-shallow-repository"]).trim() !== "false")
+      throw new Error("Publisher snapshot requires complete Git history");
     const repo = join3(temp, label + ".git");
     gitAt(cwd, ["clone", "--bare", "--no-hardlinks", "--", cwd, repo]);
     const command = (args) => gitAt(repo, args);
@@ -34847,17 +35125,30 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
     }) : new LocalRepository(repo);
   }
   function publishBundle(repo, options2) {
-    const pub = new Publisher(repo, options2), old = repo.head(bundleRef);
-    pub.bundle();
-    const next = repo.head(bundleRef);
-    if (next !== old && !(repo instanceof RemoteRepository)) {
+    const pub = new Publisher(repo, options2);
+    let next;
+    for (let attempt = 0; ; attempt++) {
+      const old = repo.head(bundleRef);
+      pub.bundle();
+      next = repo.head(bundleRef);
+      if (next === old || repo instanceof RemoteRepository) break;
       gitAt(cwd, ["fetch", "--no-tags", repo.path, `+${bundleRef}:refs/publisher/bundle`]);
-      gitAt(cwd, [
-        "push",
-        `--force-with-lease=${bundleRef}:${old ?? ""}`,
-        "origin",
-        `${next}:${bundleRef}`
-      ]);
+      try {
+        gitAt(cwd, [
+          "push",
+          `--force-with-lease=${bundleRef}:${old ?? ""}`,
+          "origin",
+          `${next}:${bundleRef}`
+        ]);
+        break;
+      } catch (error62) {
+        if (attempt === 2) throw error62;
+        gitAt(cwd, ["fetch", "--no-tags", "origin", `+${bundleRef}:refs/publisher/bundle-base`]);
+        gitAt(repo.path, ["fetch", "--no-tags", cwd, "refs/publisher/bundle-base"]);
+        const current = repo.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
+        if (current === old || old && !repo.ancestor(old, current)) throw error62;
+        repo.cas(bundleRef, next, current);
+      }
     }
     const queue = pub.queue(pub.head(options2.dataBranch));
     reports.push({

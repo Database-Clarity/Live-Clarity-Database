@@ -17,70 +17,29 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: editor-data-pipeline
-  cancel-in-progress: false
-
 jobs:
   pipeline:
     if: github.repository == 'Database-Clarity/Live-Clarity-Database' && github.ref == 'refs/heads/editor-data'
-    runs-on: ${{ inputs.runner || 'blacksmith-4vcpu-ubuntu-2404' }}
-    timeout-minutes: 30
-    outputs:
-      production_push: ${{ steps.publish.outputs.production_push }}
-      publication: ${{ steps.publish.outputs.publication }}
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          ref: editor-data
-          fetch-depth: 0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version: '24'
-      # Publishes for real only when the installed config says publishWritesEnabled: true; the
-      # runtime also needs its baked build switch ON (config/publisher.json at the PIN source), so
-      # a dry-run install of an enabled build, or an enabled config on a dry-run build, never writes.
-      - name: Bundle live data and publish (or simulate)
-        id: publish
-        env:
-          ARTIFACT_DIR: ${{ runner.temp }}/publisher-dry-run
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          mode=--pipeline-dry-run
-          if node -e 'process.exit(JSON.parse(require("node:fs").readFileSync(".publisher/config.json", "utf8")).publishWritesEnabled === true ? 0 : 1)'; then
-            mode=--pipeline-publish
-          fi
-          echo "Publisher mode: $mode"
-          node .publisher/publisher.mjs "$mode" . .publisher/config.json "$ARTIFACT_DIR"
-      - name: Upload would-be commits and catch-up status
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: publisher-dry-run-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/publisher-dry-run/
-          if-no-files-found: error
-          retention-days: 7
-      - name: Show catch-up watchdog status
-        if: always()
-        env:
-          ARTIFACT_DIR: ${{ runner.temp }}/publisher-dry-run
-        run: |
-          if [ -f "$ARTIFACT_DIR/summary.md" ]; then
-            cat "$ARTIFACT_DIR/summary.md" >> "$GITHUB_STEP_SUMMARY"
-          fi
+    concurrency:
+      group: editor-data-pipeline
+      cancel-in-progress: false
+    uses: ./.github/workflows/publisher-run.yml
+    with:
+      runner: ${{ inputs.runner || 'blacksmith-4vcpu-ubuntu-2404' }}
+    # Production output secrets are inherited only in the production install.
 
   # Replaces bundle.yml's report-catalog step with the same inputs (generator v2, editor 0acd005c).
-  # It rebuilds report-items.json and report-items.worker.json for the bundle the pipeline job just
-  # published (the publisher carries both forward unchanged). Both jobs run in the same workflow
-  # run, so the workflow's concurrency group serializes every editor-data-bundle writer. This job
-  # runs the pinned editor's npm dependencies, so it holds only a read token; report-items-push
-  # validates its output on a separate runner and makes the only write.
+  # Each build reads the latest bundle after entering the report lane. New runs may replace
+  # pending builds, while active builds finish. The next build covers any superseded bundle.
+  # The pinned editor's npm dependencies get a read token. A separate runner validates and pushes.
   report-items:
     needs: pipeline
     if: ${{ !cancelled() && github.repository == 'Database-Clarity/Live-Clarity-Database' && github.ref == 'refs/heads/editor-data' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: editor-data-report-items
+      cancel-in-progress: false
     permissions:
       contents: read
     outputs:
@@ -135,6 +94,10 @@ jobs:
     if: ${{ !cancelled() && needs.report-items.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    concurrency:
+      # Only another artifact for this exact head can replace a pending push.
+      group: editor-data-report-items-push-${{ needs.report-items.outputs.head }}
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:
@@ -155,8 +118,8 @@ jobs:
           [[ "$BUNDLE_HEAD" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::No bundle head from report-items"; exit 1; }
           git fetch --depth=1 --no-tags origin refs/heads/editor-data-bundle
           if [ "$(git rev-parse FETCH_HEAD)" != "$BUNDLE_HEAD" ]; then
-            echo "::error::editor-data-bundle moved after the catalogs were built; the next run rebuilds them."
-            exit 1
+            echo "editor-data-bundle moved after the catalogs were built. A later run covers the new head."
+            exit 0
           fi
           git show "$BUNDLE_HEAD:bundle.json" > "$RUNNER_TEMP/bundle.json"
           # Only the two catalogs, each for exactly this bundle; anything else fails closed.
@@ -189,6 +152,13 @@ jobs:
           fi
           commit="$(git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
             commit-tree "$tree" -p "$BUNDLE_HEAD" -m "Report catalogs for $source")"
-          # Fast-forward only, leased on the head read above, never --force: a raced head fails
-          # this job and leaves the branch untouched; the next run rebuilds the catalogs.
-          git push --force-with-lease="refs/heads/editor-data-bundle:$BUNDLE_HEAD" origin "$commit:refs/heads/editor-data-bundle"
+          # Fast-forward child of the exact head we validated. A concurrent writer can
+          # win the lease. Treat failure as superseded only after confirming head movement.
+          ref=refs/heads/editor-data-bundle
+          if git push --force-with-lease="$ref:$BUNDLE_HEAD" origin "$commit:$ref"; then
+            exit 0
+          fi
+          advertised="$(git ls-remote --exit-code --refs origin "$ref")"
+          read -r actual actual_ref <<< "$advertised"
+          [[ "$actual" =~ ^[0-9a-f]{40}$ && "$actual_ref" == "$ref" && "$actual" != "$BUNDLE_HEAD" ]]
+          echo "editor-data-bundle advanced during the push. A later run covers the new head."
