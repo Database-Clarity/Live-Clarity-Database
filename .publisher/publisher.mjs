@@ -25879,6 +25879,160 @@ function describeGlobalClash(clash) {
 
 // packages/core/src/markup/snippets.ts
 init_syntax();
+var stopPattern = /\{\{(\d+)(?::((?:[^{}]|\{(?!\{))*?))?\}\}/g;
+function expandTemplate(template, replacement) {
+  let text = "";
+  let last = 0;
+  const found = [];
+  let first = true;
+  for (const match of template.matchAll(stopPattern)) {
+    text += template.slice(last, match.index);
+    last = match.index + match[0].length;
+    const number5 = Number(match[1]);
+    let value2 = match[2] ?? "";
+    if (first && number5 > 0 && replacement !== void 0 && replacement !== "") {
+      value2 = replacement;
+      first = false;
+    } else if (number5 > 0) first = false;
+    found.push({ number: number5, from: text.length, to: text.length + value2.length });
+    text += value2;
+  }
+  text += template.slice(last);
+  found.sort((a, b) => (a.number || 1e9) - (b.number || 1e9));
+  return { text, stops: found.map(({ from, to }) => ({ from, to })) };
+}
+var markupSnippets = [
+  {
+    id: "editor-note",
+    label: "Editor note",
+    group: "Blocks",
+    template: "// {{1:note}}",
+    keywords: "editor note comment",
+    usage: /^\/\//m,
+    block: true,
+    about: "A note for editors, omitted from the rendered text.",
+    help: { example: "// note", note: "Not drawn." }
+  },
+  {
+    id: "base-enhanced-pair",
+    label: "Base and enhanced text",
+    group: "Enhanced",
+    template: "{{{{1:base}}}{{{2:enhanced}}}}",
+    keywords: "base enhanced pair inline variant alternate",
+    usage: /\{\{/,
+    fromSelection: true,
+    about: "Base, then enhanced. No nesting.",
+    help: { block: "base-enhanced-pair" }
+  },
+  {
+    id: "pair",
+    label: "PvE and PvP values",
+    group: "Values",
+    template: "<pve {{1:?}} /> <pvp [{{2:?}}] />",
+    keywords: "pve pvp pair both numbers values",
+    usage: /<pve [^<>]*\/>\s*<pvp /,
+    fromSelection: true,
+    about: "A value for PvE and the bracketed PvP value beside it.",
+    help: { example: "<pve 1 /> <pvp [2] />" }
+  },
+  {
+    id: "pve",
+    label: "<pve value />",
+    group: "Values",
+    template: "<pve {{1:value}} />",
+    keywords: "pve value number",
+    usage: /<pve /,
+    wraps: true,
+    about: "A PvE-only value.",
+    help: { example: "<pve PvE: 10%|20% />" }
+  },
+  {
+    id: "pvp",
+    label: "<pvp [value] />",
+    group: "Values",
+    template: "<pvp [{{1:value}}] />",
+    keywords: "pvp value number",
+    usage: /<pvp /,
+    wraps: true,
+    about: "A PvP-only value, shown in brackets.",
+    help: { example: "11 <pvp [7.5] /> seconds" }
+  },
+  {
+    id: "enhanced-block",
+    label: "Enhanced section",
+    group: "Enhanced",
+    template: "enhanced (\n<enhanced/> {{0}}\n)",
+    keywords: "enhanced block arrow section var",
+    usage: /^enhanced \(/m,
+    block: true,
+    about: "The enhanced-only section. Its first line already carries the enhanced arrow.",
+    help: { block: "enhanced" }
+  },
+  {
+    id: "enhanced-formula",
+    label: "Base with enhanced bonus",
+    group: "Enhanced",
+    template: "<enhanced/>${{{1:base}}+#{d}}",
+    keywords: "enhanced formula e d base add bonus arrow",
+    usage: /(?:#e|<enhanced\/>)\$\{/,
+    about: "The base value with the enhanced bonus #{d} added in the enhanced version.",
+    help: { block: "enhanced" }
+  },
+  {
+    id: "icon-word",
+    label: "Element icon and word",
+    group: "Icons",
+    template: "<{{1:solar}} {{2:Solar}} />",
+    keywords: "element icon word arc solar void stasis strand prismatic kinetic",
+    usage: /<(?:kinetic|arc|solar|void|stasis|strand|prismatic) /,
+    about: "An element icon with text tagged in its element.",
+    help: { example: "Applies <arc Jolt />." }
+  },
+  {
+    id: "decl-var",
+    label: "var name = value",
+    group: "Blocks",
+    template: "var {{1:name}} = {{2:value}}",
+    keywords: "var variable declare define",
+    usage: /^var /m,
+    block: true,
+    about: "A variable, used elsewhere as #name.",
+    help: { example: "var Zoom = 1\nZoom +#Zoom" }
+  },
+  {
+    id: "decl-title",
+    label: "title Name ( \u2026 )",
+    group: "Blocks",
+    template: "title {{1:Name}} (\n{{2:text}}\n)",
+    keywords: "title block definition global",
+    usage: /^title [A-Za-z0-9 ]+ \(/m,
+    block: true,
+    about: "A title definition other text can point at.",
+    help: { block: "title" }
+  },
+  {
+    id: "decl-export",
+    label: "export Name ( \u2026 )",
+    group: "Blocks",
+    template: "export {{1:Name}} (\n{{2:text}}\n)",
+    keywords: "export share",
+    usage: /^export /m,
+    block: true,
+    about: "A named text other tooltips can import.",
+    help: { example: "export name ( \u2026 )", note: "Drawn here too." }
+  },
+  {
+    id: "decl-import",
+    label: "import name from \u2026",
+    group: "Blocks",
+    template: "import {{1:main}} from {{2:hash}}",
+    keywords: "import use",
+    usage: /^import /m,
+    block: true,
+    about: "Brings in text another tooltip or the globals export.",
+    help: { example: "import main from 554409585", note: "Draws its text." }
+  }
+];
 var markupTags = [
   {
     id: "tag:pve",
@@ -30396,6 +30550,136 @@ function sameSources(a, b) {
   return Object.keys(a).every((key) => a[key] === b[key]);
 }
 
+// packages/core/src/customSnippets.ts
+init_zod();
+init_braces();
+init_syntax();
+init_prepare();
+init_syntax();
+init_baseEnhanced();
+init_numberSlots();
+var snippetsPath = "config/snippets.json";
+var personalSnippetIdSchema = external_exports.string().regex(/^me:[a-zA-Z0-9-]{1,64}$/);
+var teamSnippetIdSchema = external_exports.string().regex(/^team:[a-zA-Z0-9-]{1,64}$/);
+var builtInLabels = new Set([...markupSnippets, ...markupTags].map((s) => s.label.toLowerCase()));
+builtInLabels.add(enhancedArrowMarkup);
+function snippetTemplateIssue(template) {
+  if ((template.match(/</g)?.length ?? 0) > 100) return "Template allows at most 100 < characters";
+  if (variableReferences(template).length > 100)
+    return "Template allows at most 100 variable references";
+  if (/\s{41}/.test(template)) return "Template whitespace runs must be at most 40 characters";
+  if (/\{\{(?:[1-9]\d*\}\}|0:)/.test(template)) return "Template fields use {{n:default}} or {{0}}";
+  const text = expandTemplate(template).text.trim();
+  if (variableReferences(text).length > 100)
+    return "Template allows at most 100 variable references";
+  if (/\s{41}/.test(text)) return "Template whitespace runs must be at most 40 characters";
+  const source2 = removeMarkupComments(text);
+  if (/#\{(?![a-zA-Z0-9]+\})/.test(source2)) return "Malformed variable: write #{name}";
+  for (const line of source2.split("\n")) {
+    if (/^import\b/.test(line) && !markupImports(line).includes(line))
+      return "Malformed import declaration";
+  }
+  for (const kind of ["title", "export"]) {
+    const count = [...source2.matchAll(new RegExp(`^${kind} .+ \\(`, "gm"))].length;
+    if (count !== Object.keys(extractBlocks(source2, kind)).length)
+      return `Unbalanced or duplicate ${kind} block`;
+  }
+  if ([...source2.matchAll(/^enhanced \(/gm)].length !== markupConditionMatches(source2, "enhanced").length)
+    return "Unbalanced enhanced block";
+  for (const math of source2.matchAll(/\$\{/g)) {
+    if (!/^\$\{(?:#\{[a-zA-Z0-9]+\}|[^{}\n])+\}/.test(source2.slice(math.index)))
+      return "Unbalanced math expression";
+  }
+  const knownTags = /* @__PURE__ */ new Set([
+    ...markupColors,
+    ...markupEmpty,
+    ...markupIcons,
+    ...markupLineClasses,
+    "link",
+    "title",
+    "pve",
+    "pvp",
+    "enhanced"
+  ]);
+  for (const tag of source2.matchAll(/<(\w+)/g)) {
+    if (!knownTags.has(tag[1])) return `Unknown markup tag <${tag[1]}>`;
+  }
+  if (/\{\{\d+(?::|\}\})/.test(text)) return "Malformed template field";
+  let offset = 0;
+  const targets = source2.split("\n").flatMap((line) => {
+    const ranges = numberTargetRanges(line).map((range) => ({
+      from: offset + range.from,
+      to: offset + range.to
+    }));
+    offset += line.length + 1;
+    return ranges;
+  });
+  for (const ref of variableReferences(source2)) {
+    if (targets.some((target) => ref.from >= target.from && ref.to <= target.to)) continue;
+    if (source2.slice(ref.from, ref.to).startsWith("#{")) continue;
+    return "Write variables as #{name}, rather than #name";
+  }
+  const issue2 = (customSnippetScope(template).enhanced ? [void 0, enhancedMarkupType] : [void 0]).flatMap((type) => validateText(text, "en", { variables: "", titles: "", type }, false)).find(
+    (issue3) => !issue3.message.startsWith("Unknown variable ") && !issue3.message.startsWith("Unknown title ") && !issue3.message.startsWith("Unresolved import ")
+  );
+  return issue2?.message;
+}
+var snippetContentSchema = external_exports.object({
+  label: external_exports.string().trim().min(1, "Label is required").max(40, "Label must be at most 40 characters").refine(
+    (label) => !builtInLabels.has(label.toLowerCase()),
+    "Label clashes with a built-in label"
+  ),
+  template: external_exports.string().min(1, "Template is required").max(2e3, "Template must be at most 2,000 characters").superRefine((template, ctx) => {
+    const issue2 = snippetTemplateIssue(template);
+    if (issue2) ctx.addIssue({ code: "custom", message: issue2 });
+  }),
+  keywords: external_exports.string().max(2e3).optional()
+}).strict();
+var customSnippetSchema = snippetContentSchema.extend({
+  id: external_exports.union([personalSnippetIdSchema, teamSnippetIdSchema])
+});
+var personalSnippetSchema = customSnippetSchema.extend({ id: personalSnippetIdSchema });
+var teamSnippetSchema = customSnippetSchema.extend({ id: teamSnippetIdSchema });
+var storedSnippetSchema = external_exports.object({
+  id: external_exports.union([personalSnippetIdSchema, teamSnippetIdSchema]),
+  label: external_exports.string().min(1).max(40),
+  template: external_exports.string().min(1).max(2e3),
+  keywords: external_exports.string().max(2e3).optional()
+}).strict();
+var storedPersonalSnippetSchema = storedSnippetSchema.extend({
+  id: personalSnippetIdSchema
+});
+var storedTeamSnippetSchema = storedSnippetSchema.extend({ id: teamSnippetIdSchema });
+function customSnippetScope(template) {
+  const text = expandTemplate(template).text;
+  return {
+    lineStart: /[\r\n]|^(?:var|title|export|import|enhanced)\b/.test(text),
+    enhanced: /\{\{|<enhanced\/>|^enhanced \(/m.test(text),
+    link: /<link /.test(text)
+  };
+}
+var teamSnippetsSchema = external_exports.object({
+  v: external_exports.literal(1),
+  snippets: external_exports.array(storedTeamSnippetSchema).max(100).refine(
+    (snippets) => new Set(snippets.map((s) => s.id)).size === snippets.length,
+    "Duplicate snippet id"
+  ).refine(
+    (snippets) => new Set(snippets.map((s) => s.label.toLowerCase())).size === snippets.length,
+    "Duplicate team snippet label"
+  )
+}).strict();
+var snippetChangeSchema = external_exports.object({
+  id: teamSnippetIdSchema,
+  base: storedTeamSnippetSchema.nullable(),
+  next: teamSnippetSchema.nullable()
+}).strict().refine(
+  (op) => (!op.base || op.base.id === op.id) && (!op.next || op.next.id === op.id),
+  "Snippet ids must match"
+);
+
+// scripts/publisher/publisher.ts
+init_languages();
+
 // scripts/publisher/batch.ts
 init_schedule();
 var json2 = (v) => JSON.stringify(v, null, 2) + "\n";
@@ -31353,10 +31637,12 @@ var GlobalsPublisher = class _GlobalsPublisher {
         delete tree[retry];
     }
   }
-  async drain() {
+  async drain(expectedHead) {
     for (let attempt = 0; attempt < 3; attempt++) {
       const head = this.publisher.head(this.options.dataBranch), original = this.git.tree(head);
-      if (!hasGlobals(original)) return;
+      if (expectedHead !== void 0 && head !== expectedHead)
+        throw new RefRace("Global sync source moved");
+      if (!hasGlobals(original)) return head;
       const tree = { ...original };
       try {
         const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
@@ -31385,7 +31671,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         );
         if (this.publisher.head(this.options.liveBranch) !== live)
           throw new RefRace("Global live inputs raced");
-        if (stableStringify(tree) === stableStringify(original)) return;
+        if (stableStringify(tree) === stableStringify(original)) return head;
         const commit2 = this.git.commit(
           head,
           tree,
@@ -31393,7 +31679,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
           appCredits
         );
         this.git.cas(`refs/heads/${this.options.dataBranch}`, head, commit2);
-        return;
+        return commit2;
       } catch (error62) {
         if (error62 instanceof RefRace) continue;
         const sync = syncSchema.safeParse(this.read(original, globalsReleasePaths.sync));
@@ -33301,6 +33587,29 @@ var TextlessConsumerOutput = class extends ProposalOutputRejected {
     this.name = "TextlessConsumerOutput";
   }
 };
+var ManualSourceAdvanced = class extends Error {
+  constructor(candidate, requestBlob, source2, head, hashes) {
+    super("The manual publish source kept changing. The request is still queued.");
+    this.candidate = candidate;
+    this.requestBlob = requestBlob;
+    this.source = source2;
+    this.head = head;
+    this.hashes = hashes;
+  }
+  candidate;
+  requestBlob;
+  source;
+  head;
+  hashes;
+};
+var NamedPartRefusal = class extends ConsumerOutputRejected {
+  constructor(message, outcomes) {
+    super(message);
+    this.outcomes = outcomes;
+  }
+  outcomes;
+};
+var derivedGlobalPath = (path) => /^globals\/(?:proofs|review-pages)\//.test(path);
 var Publisher = class _Publisher {
   constructor(git, options) {
     this.git = git;
@@ -33631,13 +33940,13 @@ var Publisher = class _Publisher {
     };
     return this.git.commit(parent, tree, `Publish ${r.opId}`, this.credits(r.requestBlob, r.opId));
   }
-  onlyPublishBookkeeping(source2, head, tree, opId) {
-    if (!this.git.ancestor(source2, head)) return false;
+  manualSourceAdvance(source2, head, tree, opId) {
+    if (!this.git.ancestor(source2, head)) return "blocked";
     const reviewed = this.git.tree(source2);
     const reviewedModes = this.git.treeModes?.(source2);
     const currentModes = this.git.treeModes?.(head);
     if (Object.keys(reviewedModes ?? {}).some((path) => !Object.hasOwn(reviewed, path)) || Object.keys(currentModes ?? {}).some((path) => !Object.hasOwn(tree, path)))
-      return false;
+      return "blocked";
     const regular = (modes, path) => !modes || modes[path] === "100644";
     const nameProofRequest = (snapshot, path) => {
       const id = /^globals\/retries\/([0-9a-f-]{36})\.json$/.exec(path)?.[1];
@@ -33645,25 +33954,46 @@ var Publisher = class _Publisher {
       const request = nameProofRequestSchema.safeParse(this.read(snapshot, path));
       return request.success && request.data.id === id;
     };
+    let rebuild = false;
+    const acceptChange = (path) => {
+      if (Object.hasOwn(reviewed, path) && !regular(reviewedModes, path) || Object.hasOwn(tree, path) && !regular(currentModes, path))
+        return false;
+      const localized = /^(?:glossary|snippets)\/([^/]+)\.json$/.exec(path)?.[1];
+      if (path === marksPath || localized !== "en" && langSchema.safeParse(localized).success || /^exports\/projects\/[a-z0-9][a-z0-9-]*\.json$/.test(path) || /^current-saves\/(?:[0-7][0-9A-HJKMNP-TV-Z]{25}\/(?:\d+|request|conflicts)|requesters\/\d+)\.json$/.test(
+        path
+      ))
+        return true;
+      if (/^tooltips\/(?:0|[1-9]\d*)\.json$/.test(path) || /^globals\/(?:layout\.json$|sync\.json$|catalog\.json$|(?:entries|causes|intents|names|reviews|projections|pages)\/)/.test(
+        path
+      ) || derivedGlobalPath(path) || path.startsWith("schedule/") || [snippetsPath, inactiveMovesPath, aliasGroupsPath, sandboxPointersPath].includes(path)) {
+        rebuild = true;
+        return true;
+      }
+      return false;
+    };
     for (const [path, oid4] of Object.entries(reviewed)) {
       if (!Object.hasOwn(tree, path)) {
-        if (!regular(reviewedModes, path) || !nameProofRequest(reviewed, path)) return false;
-      } else if (tree[path] !== oid4 || currentModes && (!Object.hasOwn(currentModes, path) || currentModes[path] !== reviewedModes?.[path])) {
-        return false;
+        if (!(regular(reviewedModes, path) && nameProofRequest(reviewed, path)) && !acceptChange(path))
+          return "blocked";
+      } else {
+        if (currentModes && (!Object.hasOwn(currentModes, path) || currentModes[path] !== reviewedModes?.[path]))
+          return "blocked";
+        if (tree[path] !== oid4 && !acceptChange(path)) return "blocked";
       }
     }
     for (const path of Object.keys(tree)) {
       if (Object.hasOwn(reviewed, path)) continue;
-      if (!regular(currentModes, path)) return false;
+      if (!regular(currentModes, path)) return "blocked";
       const request = /^publish\/requests\/([^/]+)\.json$/.exec(path)?.[1];
       const kick = /^publish\/kicks\/(?:batch-)?([^/]+)-[0-9]+\.json$/.exec(path)?.[1];
       const saveKick = /^publish\/kicks\/current-save-([^/]+)\.json$/.exec(path)?.[1];
       const log = /^publish\/log\/([^/]+)\/([^/.]+)(?:\.dup-[0-9]+)?\.json$/.exec(path);
       const queueAddition = request !== opId && publishOpIdSchema.safeParse(request).success || publishOpIdSchema.safeParse(kick).success || publishOpIdSchema.safeParse(saveKick).success || /^publish\/kicks\/due-[0-9]{12}-[0-9]+\.json$/.test(path) || log && log[2] !== opId && publishOpIdSchema.safeParse(log[2]).success && log[1] === publishMonth(log[2]);
       const clashProof = /^globals\/proofs\/clashes\/(?:exports|variables|titles)\/[0-9a-f]{64}\.json$/;
-      if (!queueAddition && !clashProof.test(path) && !nameProofRequest(tree, path)) return false;
+      if (!queueAddition && !clashProof.test(path) && !nameProofRequest(tree, path) && !acceptChange(path))
+        return "blocked";
     }
-    return true;
+    return rebuild ? "rebuild" : "bookkeeping";
   }
   assertRequestedDigests(entries, hashes, expected2, aliases) {
     const markers = new Map(entries.map(({ hash: hash2, digest: digest6 }) => [hash2, digest6]));
@@ -33779,8 +34109,19 @@ var Publisher = class _Publisher {
           throw new ConsumerOutputRejected("Atomic globals publication is unavailable");
         const signed = await this.verifyRequest(receipt.requestBlob, opId, tree);
         const source2 = receipt.sourceCommit;
-        if (source2 !== h && (signed.kind === "batch" || !this.onlyPublishBookkeeping(source2, h, tree, opId)))
-          throw new ConsumerOutputRejected("Global receipt identity mismatch");
+        if (source2 !== h) {
+          const advance = signed.kind === "batch" ? "blocked" : this.manualSourceAdvance(source2, h, tree, opId);
+          if (advance === "rebuild")
+            throw new ManualSourceAdvanced(
+              atomicLive.candidate,
+              receipt.requestBlob,
+              source2,
+              h,
+              signed.hashes
+            );
+          if (advance === "blocked")
+            throw new ConsumerOutputRejected("Global receipt identity mismatch");
+        }
         let documents;
         let entryOnlyAggregates = [];
         if (signed.kind === "batch") {
@@ -33972,32 +34313,80 @@ var Publisher = class _Publisher {
     throw new Error("Duplicate closure raced");
   }
   async operation(opId) {
-    const p = paths2(opId), s = this.head(this.options.dataBranch), tree = this.git.tree(s);
-    try {
-      await this.publishOperation(opId, s, tree);
-    } catch (error62) {
-      if (!(error62 instanceof ConsumerOutputRejected)) throw error62;
-      const live = this.head(this.options.liveBranch);
-      const pending = this.git.head(p.candidate);
-      if (this.receipt(live, opId) || pending && this.git.ancestor(pending, live))
-        throw new Error("Publication already landed. Operator required to finish RECORD.", {
-          cause: error62
-        });
-      await this.record(
-        opId,
-        void 0,
-        void 0,
-        { status: "rejected", error: String(error62) },
-        tree[p.request]
-      );
+    const p = paths2(opId);
+    let rebuilding;
+    for (let attempt = 0; ; attempt++) {
+      let s = this.head(this.options.dataBranch);
+      let tree = this.git.tree(s);
       try {
-        const candidate = this.git.head(p.candidate);
-        if (candidate) this.git.cas(p.candidate, candidate, void 0);
-      } catch {
+        if (rebuilding && !tree[p.log]) {
+          if (tree[p.request] !== rebuilding.requestBlob || s !== rebuilding.head && this.manualSourceAdvance(rebuilding.head, s, tree, opId) === "blocked")
+            throw new RefRace("Manual publish source no longer matches the retry fence");
+          const checked = await new GlobalsPublisher(this).drain(s);
+          const materialized = this.git.tree(checked);
+          const previous = this.git.tree(rebuilding.source);
+          const paths3 = /* @__PURE__ */ new Set([...Object.keys(previous), ...Object.keys(tree)]);
+          const sources = publicationSourcesPath(this.options.liveBranch);
+          if (tree[sources] && tree[sources] === materialized[sources] && [...paths3].some(
+            (path) => derivedGlobalPath(path) && previous[path] !== tree[path] && tree[path] !== materialized[path]
+          ))
+            throw new NamedPartRefusal(
+              `Could not verify the global proofs for ${this.partNames(previous, rebuilding.hashes)}. Nothing in this part went live. Review before publishing again.`
+            );
+          s = this.head(this.options.dataBranch);
+          tree = this.git.tree(s);
+          if (s !== checked && !tree[p.log] && this.manualSourceAdvance(checked, s, tree, opId) !== "bookkeeping")
+            throw new RefRace("Manual publish source moved after sync");
+        }
+        return await this.publishOperation(opId, s, tree, rebuilding);
+      } catch (error62) {
+        if (error62 instanceof ManualSourceAdvanced && attempt < 2) {
+          rebuilding = error62;
+          continue;
+        }
+        if (rebuilding && error62 instanceof RefRace) {
+          const landed = this.receipt(this.head(this.options.liveBranch), opId);
+          if (landed?.requestBlob === rebuilding.requestBlob && this.git.tree(this.head(this.options.dataBranch))[p.log])
+            return;
+          if (attempt < 2) continue;
+        }
+        if (!(error62 instanceof ConsumerOutputRejected)) throw error62;
+        const live = this.head(this.options.liveBranch);
+        const pending = this.git.head(p.candidate);
+        if (this.receipt(live, opId) || pending && this.git.ancestor(pending, live))
+          throw new Error("Publication already landed. Operator required to finish RECORD.", {
+            cause: error62
+          });
+        await this.record(
+          opId,
+          void 0,
+          void 0,
+          error62 instanceof NamedPartRefusal ? {
+            status: "rejected",
+            code: "selected-rows-changed",
+            error: error62.message,
+            outcomes: error62.outcomes
+          } : { status: "rejected", error: String(error62) },
+          tree[p.request]
+        );
+        try {
+          if (pending) this.git.cas(p.candidate, pending, void 0);
+        } catch {
+        }
+        return;
       }
     }
   }
-  async publishOperation(opId, s, tree) {
+  partNames(previous, hashes, current = []) {
+    return [
+      ...new Set(
+        hashes.map(
+          (hash2) => current.find((tooltip) => tooltip.hash === hash2)?.custom?.name || this.read(previous, `tooltips/${hash2}.json`)?.custom?.name || this.options.facts[hash2]?.name || `Tooltip ${hash2}`
+        )
+      )
+    ].join(", ");
+  }
+  async publishOperation(opId, s, tree, rebuilding) {
     const p = paths2(opId);
     if (tree[p.log]) {
       await this.duplicate(opId);
@@ -34015,7 +34404,8 @@ var Publisher = class _Publisher {
     }
     const blob = tree[p.request];
     let candidate = this.candidate(opId, blob);
-    if (!candidate) {
+    if (rebuilding && !candidate) throw new RefRace("Manual publish candidate moved");
+    if (!candidate || candidate.c === rebuilding?.candidate) {
       let payload;
       try {
         payload = await this.verifyRequest(blob, opId, tree);
@@ -34091,6 +34481,15 @@ var Publisher = class _Publisher {
           }
         }
         if (outcomes.some((e) => e.status !== "accepted")) {
+          if (rebuilding) {
+            const previous = this.git.tree(rebuilding.source);
+            const hashes = outcomes.filter(({ status }) => status !== "accepted").map(({ hash: hash2 }) => hash2);
+            const guidance = outcomes.some(({ status }) => status === "accepted") ? "The other rows in this part also stayed unpublished. You can publish them again." : "Nothing in this part went live. Review the changed text before publishing again.";
+            throw new NamedPartRefusal(
+              `Saved text changed after review for ${this.partNames(previous, hashes, tooltips)}. ${guidance}`,
+              outcomes
+            );
+          }
           await this.record(opId, void 0, void 0, { status: "stale", outcomes }, blob);
           return;
         }
@@ -34155,13 +34554,18 @@ var Publisher = class _Publisher {
           intentDigest: payload.intentDigest,
           ...globals ? { globals } : {}
         };
-        candidate = this.createCandidate(opId, blob, live, r);
+        candidate = this.createCandidate(opId, blob, live, r, rebuilding?.candidate);
       }
     }
     let rebases = 0;
     for (let attempt = 0; attempt < 6; attempt++) {
       candidate = this.candidate(opId, blob);
-      if (!candidate) throw new Error("Candidate disappeared");
+      if (!candidate) {
+        const landed2 = this.receipt(this.head(this.options.liveBranch), opId);
+        if (landed2?.opId === opId && landed2.requestBlob === blob && this.git.tree(this.head(this.options.dataBranch))[p.log])
+          return;
+        throw new Error("Candidate disappeared");
+      }
       const { c, r } = candidate, l = this.head(this.options.liveBranch);
       const found = this.receipt(l, opId);
       if (found || this.git.ancestor(c, l)) {
@@ -34194,7 +34598,8 @@ var Publisher = class _Publisher {
               { parent: l, candidate: c }
             );
           } catch (error62) {
-            if (error62 instanceof RefRace || error62 instanceof ConsumerOutputRejected) throw error62;
+            if (error62 instanceof RefRace || error62 instanceof ManualSourceAdvanced || error62 instanceof ConsumerOutputRejected)
+              throw error62;
             throw new ConsumerOutputRejected(
               "Global publication changed or requires recovery; nothing partially published"
             );
@@ -34279,17 +34684,19 @@ var Publisher = class _Publisher {
       };
     return { now, exported };
   }
-  createCandidate(opId, blob, live, r) {
+  createCandidate(opId, blob, live, r, previous) {
     const p = paths2(opId);
     const c = this.buildCandidate(live, r);
     let candidate;
     for (let i = 0; i < 6 && !candidate; i++) {
       try {
-        this.git.cas(p.candidate, void 0, c);
+        this.git.cas(p.candidate, previous, c);
       } catch {
       }
       candidate = this.candidate(opId, blob);
+      if (candidate?.c === previous) candidate = void 0;
     }
+    if (!candidate && previous) throw new RefRace("Replacement candidate moved");
     if (!candidate) throw new Error("Candidate create unresolved");
     return candidate;
   }
