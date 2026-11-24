@@ -1296,14 +1296,14 @@ function toDotPath(_path) {
   return segs.join("");
 }
 function prettifyError(error62) {
-  const lines = [];
+  const lines2 = [];
   const issues = [...error62.issues].sort((a, b) => (a.path ?? []).length - (b.path ?? []).length);
   for (const issue2 of issues) {
-    lines.push(`\u2716 ${issue2.message}`);
+    lines2.push(`\u2716 ${issue2.message}`);
     if (issue2.path?.length)
-      lines.push(`  \u2192 at ${toDotPath(issue2.path)}`);
+      lines2.push(`  \u2192 at ${toDotPath(issue2.path)}`);
   }
-  return lines.join("\n");
+  return lines2.join("\n");
 }
 var _messageDesc, _issuesDesc, _installedToString, initializer, $ZodError, $ZodRealError;
 var init_errors = __esm({
@@ -2205,9 +2205,9 @@ var init_doc = __esm({
           return;
         }
         const content = arg;
-        const lines = content.split("\n").filter((x) => x);
-        const minIndent = Math.min(...lines.map((x) => x.length - x.trimStart().length));
-        const dedented = lines.map((x) => x.slice(minIndent)).map((x) => " ".repeat(this.indent * 2) + x);
+        const lines2 = content.split("\n").filter((x) => x);
+        const minIndent = Math.min(...lines2.map((x) => x.length - x.trimStart().length));
+        const dedented = lines2.map((x) => x.slice(minIndent)).map((x) => " ".repeat(this.indent * 2) + x);
         for (const line of dedented) {
           this.content.push(line);
         }
@@ -15762,13 +15762,13 @@ function initializeContext(params) {
     external: params?.external ?? void 0
   };
 }
-function handleUnrepresentable(schema, ctx, json6, params, message) {
+function handleUnrepresentable(schema, ctx, json7, params, message) {
   const result = typeof ctx.unrepresentable === "function" ? ctx.unrepresentable({ zodSchema: schema, path: params.path, message }) : ctx.unrepresentable;
   if (result === "any")
     return false;
   if (result === void 0 || result === "throw")
     throw new Error(message);
-  Object.assign(json6, result);
+  Object.assign(json7, result);
   return true;
 }
 function processSchema(schema, ctx, _params = { path: [], schemaPath: [] }) {
@@ -16002,12 +16002,12 @@ function foldObjects(members3) {
   }
   return folded;
 }
-function foldIntersection(json6) {
-  const allOf = json6.allOf;
+function foldIntersection(json7) {
+  const allOf = json7.allOf;
   if (!Array.isArray(allOf) || allOf.length < 2)
     return;
   for (const key of FOLDABLE_KEYS)
-    if (key in json6)
+    if (key in json7)
       return;
   const unions = allOf.filter((m) => UNION_KEYS.some((k) => Array.isArray(m[k])));
   let folded = null;
@@ -16026,8 +16026,8 @@ function foldIntersection(json6) {
   }
   if (!folded)
     return;
-  delete json6.allOf;
-  assignProps(json6, folded);
+  delete json7.allOf;
+  assignProps(json7, folded);
 }
 function finalize(ctx, schema) {
   const root = ctx.seen.get(schema);
@@ -16104,25 +16104,25 @@ function finalize(ctx, schema) {
         compactTypeUnion(entry[1].def ?? entry[1].schema);
       }
     }
-    for (const rewrite of ctx.deferred)
-      rewrite();
+    for (const rewrite2 of ctx.deferred)
+      rewrite2();
     if (ctx.intersections.length) {
       const carriers = /* @__PURE__ */ new Map();
       for (const seen of ctx.seen.values()) {
-        for (const json6 of [seen.schema, seen.def]) {
-          const allOf = json6?.allOf;
+        for (const json7 of [seen.schema, seen.def]) {
+          const allOf = json7?.allOf;
           if (!Array.isArray(allOf))
             continue;
           const existing2 = carriers.get(allOf);
           if (existing2)
-            existing2.push(json6);
+            existing2.push(json7);
           else
-            carriers.set(allOf, [json6]);
+            carriers.set(allOf, [json7]);
         }
       }
       for (const allOf of ctx.intersections) {
-        for (const json6 of carriers.get(allOf) ?? [])
-          foldIntersection(json6);
+        for (const json7 of carriers.get(allOf) ?? [])
+          foldIntersection(json7);
       }
     }
   }
@@ -16302,31 +16302,31 @@ function inputOptin(schema) {
   }
   return schema._zod.optin;
 }
-function stringifyKeyNames(bySchema, json6, visited) {
-  if (json6.$ref) {
-    if (visited.has(json6))
-      return json6;
-    visited.add(json6);
-    const def = bySchema.get(json6)?.def;
+function stringifyKeyNames(bySchema, json7, visited) {
+  if (json7.$ref) {
+    if (visited.has(json7))
+      return json7;
+    visited.add(json7);
+    const def = bySchema.get(json7)?.def;
     if (!def)
-      return json6;
+      return json7;
     const inlined = stringifyKeyNames(bySchema, def, visited);
-    return inlined === def ? json6 : inlined;
+    return inlined === def ? json7 : inlined;
   }
   for (const keyword of ["anyOf", "oneOf"]) {
-    const branches = json6[keyword];
+    const branches = json7[keyword];
     if (!Array.isArray(branches))
       continue;
     const mapped = branches.map((branch) => stringifyKeyNames(bySchema, branch, visited));
     if (mapped.some((branch, i) => branch !== branches[i]))
-      json6 = { ...json6, [keyword]: mapped };
+      json7 = { ...json7, [keyword]: mapped };
   }
-  const types = Array.isArray(json6.type) ? json6.type : [json6.type];
+  const types = Array.isArray(json7.type) ? json7.type : [json7.type];
   const numericType = !types.includes("string") && types.some((t) => t === "number" || t === "integer");
-  const values = json6.enum ?? (json6.const !== void 0 ? [json6.const] : void 0);
+  const values = json7.enum ?? (json7.const !== void 0 ? [json7.const] : void 0);
   if (!numericType && !values?.some((v) => typeof v === "number"))
-    return json6;
-  const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json6;
+    return json7;
+  const { minimum, maximum, exclusiveMinimum, exclusiveMaximum, multipleOf, format, id, ...rest } = json7;
   if (rest.enum)
     rest.enum = rest.enum.map((v) => typeof v === "number" ? String(v) : v);
   else if (typeof rest.const === "number")
@@ -16364,7 +16364,7 @@ function rewriteKeyNames(ctx) {
     }
   }
 }
-function serializeDefaultValue(value2, schema, ctx, json6, params) {
+function serializeDefaultValue(value2, schema, ctx, json7, params) {
   let unrepresentable = false;
   const serialized = JSON.stringify(value2, (_, val) => {
     if (typeof val !== "bigint")
@@ -16374,7 +16374,7 @@ function serializeDefaultValue(value2, schema, ctx, json6, params) {
   });
   if (!unrepresentable)
     return JSON.parse(serialized);
-  handleUnrepresentable(schema, ctx, json6, params, "BigInt defaults cannot be represented in JSON Schema");
+  handleUnrepresentable(schema, ctx, json7, params, "BigInt defaults cannot be represented in JSON Schema");
   return UNREPRESENTABLE_DEFAULT;
 }
 function toJSONSchema(input2, params) {
@@ -16492,29 +16492,29 @@ var init_json_schema_processors = __esm({
     ]);
     exactPattern = (p) => exactPatterns.get(p) ?? p;
     stringProcessor = (schema, ctx, _json, _params) => {
-      const json6 = _json;
-      json6.type = "string";
+      const json7 = _json;
+      json7.type = "string";
       const { minimum, maximum, format, patterns, contentEncoding, laxFormat } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json6.minLength = minimum;
+        json7.minLength = minimum;
       if (typeof maximum === "number")
-        json6.maxLength = maximum;
+        json7.maxLength = maximum;
       if (format) {
-        json6.format = formatMap[format] ?? format;
-        if (json6.format === "")
-          delete json6.format;
+        json7.format = formatMap[format] ?? format;
+        if (json7.format === "")
+          delete json7.format;
         if (format === "time" || laxFormat) {
-          delete json6.format;
+          delete json7.format;
         }
       }
       if (contentEncoding)
-        json6.contentEncoding = contentEncoding;
+        json7.contentEncoding = contentEncoding;
       if (patterns && patterns.size > 0) {
         const patternList = [...patterns].map(exactPattern);
         if (patternList.length === 1)
-          json6.pattern = patternList[0].source;
+          json7.pattern = patternList[0].source;
         else if (patternList.length > 1) {
-          json6.allOf = [
+          json7.allOf = [
             ...patternList.map((regex) => ({
               ...ctx.target === "draft-07" || ctx.target === "draft-04" || ctx.target === "openapi-3.0" ? { type: "string" } : {},
               pattern: regex.source
@@ -16524,31 +16524,31 @@ var init_json_schema_processors = __esm({
       }
     };
     numberProcessor = (schema, ctx, _json, params) => {
-      const json6 = _json;
+      const json7 = _json;
       const { minimum, maximum, multipleOf, exclusiveMaximum, exclusiveMinimum, isInt } = aggregateChecks(schema);
-      json6.type = isInt ? "integer" : "number";
+      json7.type = isInt ? "integer" : "number";
       const exMin = typeof exclusiveMinimum === "number" && exclusiveMinimum >= (minimum ?? Number.NEGATIVE_INFINITY);
       const exMax = typeof exclusiveMaximum === "number" && exclusiveMaximum <= (maximum ?? Number.POSITIVE_INFINITY);
       const legacy = ctx.target === "draft-04" || ctx.target === "openapi-3.0";
       if (exMin) {
         if (legacy) {
-          json6.minimum = exclusiveMinimum;
-          json6.exclusiveMinimum = true;
+          json7.minimum = exclusiveMinimum;
+          json7.exclusiveMinimum = true;
         } else {
-          json6.exclusiveMinimum = exclusiveMinimum;
+          json7.exclusiveMinimum = exclusiveMinimum;
         }
       } else if (typeof minimum === "number") {
-        json6.minimum = minimum;
+        json7.minimum = minimum;
       }
       if (exMax) {
         if (legacy) {
-          json6.maximum = exclusiveMaximum;
-          json6.exclusiveMaximum = true;
+          json7.maximum = exclusiveMaximum;
+          json7.exclusiveMaximum = true;
         } else {
-          json6.exclusiveMaximum = exclusiveMaximum;
+          json7.exclusiveMaximum = exclusiveMaximum;
         }
       } else if (typeof maximum === "number") {
-        json6.maximum = maximum;
+        json7.maximum = maximum;
       }
       if (multipleOf) {
         const divisors = /* @__PURE__ */ new Set();
@@ -16556,75 +16556,75 @@ var init_json_schema_processors = __esm({
           if (Number.isFinite(divisor) && divisor !== 0)
             divisors.add(Math.abs(divisor));
           else
-            handleUnrepresentable(schema, ctx, json6, params, `A multipleOf divisor of ${divisor} cannot be represented in JSON Schema`);
+            handleUnrepresentable(schema, ctx, json7, params, `A multipleOf divisor of ${divisor} cannot be represented in JSON Schema`);
         }
         const [first, ...rest] = divisors;
         if (first !== void 0)
-          json6.multipleOf = first;
+          json7.multipleOf = first;
         if (rest.length)
-          json6.allOf = [...json6.allOf ?? [], ...rest.map((m) => ({ multipleOf: m }))];
+          json7.allOf = [...json7.allOf ?? [], ...rest.map((m) => ({ multipleOf: m }))];
       }
     };
-    booleanProcessor = (_schema, _ctx, json6, _params) => {
-      json6.type = "boolean";
+    booleanProcessor = (_schema, _ctx, json7, _params) => {
+      json7.type = "boolean";
     };
-    bigintProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "BigInt cannot be represented in JSON Schema");
+    bigintProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "BigInt cannot be represented in JSON Schema");
     };
-    symbolProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Symbols cannot be represented in JSON Schema");
+    symbolProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Symbols cannot be represented in JSON Schema");
     };
-    nullProcessor = (_schema, ctx, json6, _params) => {
+    nullProcessor = (_schema, ctx, json7, _params) => {
       if (ctx.target === "openapi-3.0") {
-        json6.type = "string";
-        json6.nullable = true;
-        json6.enum = [null];
+        json7.type = "string";
+        json7.nullable = true;
+        json7.enum = [null];
       } else {
-        json6.type = "null";
+        json7.type = "null";
       }
     };
-    undefinedProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Undefined cannot be represented in JSON Schema");
+    undefinedProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Undefined cannot be represented in JSON Schema");
     };
-    voidProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Void cannot be represented in JSON Schema");
+    voidProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Void cannot be represented in JSON Schema");
     };
-    neverProcessor = (_schema, _ctx, json6, _params) => {
-      json6.not = {};
+    neverProcessor = (_schema, _ctx, json7, _params) => {
+      json7.not = {};
     };
     anyProcessor = (_schema, _ctx, _json, _params) => {
     };
     unknownProcessor = (_schema, _ctx, _json, _params) => {
     };
-    dateProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Date cannot be represented in JSON Schema");
+    dateProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Date cannot be represented in JSON Schema");
     };
-    enumProcessor = (schema, _ctx, json6, _params) => {
+    enumProcessor = (schema, _ctx, json7, _params) => {
       const def = schema._zod.def;
       const values = getEnumValues(def.entries);
       if (values.length === 0) {
-        json6.not = {};
+        json7.not = {};
         return;
       }
       if (values.every((v) => typeof v === "number"))
-        json6.type = "number";
+        json7.type = "number";
       if (values.every((v) => typeof v === "string"))
-        json6.type = "string";
-      json6.enum = values;
+        json7.type = "string";
+      json7.enum = values;
     };
-    literalProcessor = (schema, ctx, json6, params) => {
+    literalProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       if (def.values.length === 0) {
-        json6.not = {};
+        json7.not = {};
         return;
       }
       const vals = [];
       for (const val of def.values) {
         if (val === void 0) {
-          if (handleUnrepresentable(schema, ctx, json6, params, "Literal `undefined` cannot be represented in JSON Schema"))
+          if (handleUnrepresentable(schema, ctx, json7, params, "Literal `undefined` cannot be represented in JSON Schema"))
             return;
         } else if (typeof val === "bigint") {
-          if (handleUnrepresentable(schema, ctx, json6, params, "BigInt literals cannot be represented in JSON Schema"))
+          if (handleUnrepresentable(schema, ctx, json7, params, "BigInt literals cannot be represented in JSON Schema"))
             return;
           vals.push(Number(val));
         } else {
@@ -16634,37 +16634,37 @@ var init_json_schema_processors = __esm({
       if (vals.length === 0) {
       } else if (vals.length === 1) {
         const val = vals[0];
-        json6.type = val === null ? "null" : typeof val;
+        json7.type = val === null ? "null" : typeof val;
         if (ctx.target === "draft-04" || ctx.target === "openapi-3.0") {
-          json6.enum = [val];
+          json7.enum = [val];
         } else {
-          json6.const = val;
+          json7.const = val;
         }
       } else {
         if (vals.every((v) => typeof v === "number"))
-          json6.type = "number";
+          json7.type = "number";
         if (vals.every((v) => typeof v === "string"))
-          json6.type = "string";
+          json7.type = "string";
         if (vals.every((v) => typeof v === "boolean"))
-          json6.type = "boolean";
+          json7.type = "boolean";
         if (vals.every((v) => v === null))
-          json6.type = "null";
-        json6.enum = vals;
+          json7.type = "null";
+        json7.enum = vals;
       }
     };
-    nanProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "NaN cannot be represented in JSON Schema");
+    nanProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "NaN cannot be represented in JSON Schema");
     };
-    templateLiteralProcessor = (schema, _ctx, json6, _params) => {
-      const _json = json6;
+    templateLiteralProcessor = (schema, _ctx, json7, _params) => {
+      const _json = json7;
       const pattern = schema._zod.pattern;
       if (!pattern)
         throw new Error("Pattern not found in template literal");
       _json.type = "string";
       _json.pattern = pattern.source;
     };
-    fileProcessor = (schema, _ctx, json6, _params) => {
-      const _json = json6;
+    fileProcessor = (schema, _ctx, json7, _params) => {
+      const _json = json7;
       _json.type = "string";
       _json.format = "binary";
       _json.contentEncoding = "binary";
@@ -16682,50 +16682,50 @@ var init_json_schema_processors = __esm({
       else
         _json.anyOf = mime.map((m) => ({ contentMediaType: m }));
     };
-    successProcessor = (_schema, _ctx, json6, _params) => {
-      json6.type = "boolean";
+    successProcessor = (_schema, _ctx, json7, _params) => {
+      json7.type = "boolean";
     };
-    customProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Custom types cannot be represented in JSON Schema");
+    customProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Custom types cannot be represented in JSON Schema");
     };
-    functionProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Function types cannot be represented in JSON Schema");
+    functionProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Function types cannot be represented in JSON Schema");
     };
-    transformProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Transforms cannot be represented in JSON Schema");
+    transformProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Transforms cannot be represented in JSON Schema");
     };
-    mapProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Map cannot be represented in JSON Schema");
+    mapProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Map cannot be represented in JSON Schema");
     };
-    setProcessor = (schema, ctx, json6, params) => {
-      handleUnrepresentable(schema, ctx, json6, params, "Set cannot be represented in JSON Schema");
+    setProcessor = (schema, ctx, json7, params) => {
+      handleUnrepresentable(schema, ctx, json7, params, "Set cannot be represented in JSON Schema");
     };
     arrayProcessor = (schema, ctx, _json, params) => {
-      const json6 = _json;
+      const json7 = _json;
       const def = schema._zod.def;
       const { minimum, maximum } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json6.minItems = minimum;
+        json7.minItems = minimum;
       if (typeof maximum === "number")
-        json6.maxItems = maximum;
-      json6.type = "array";
-      json6.items = processSchema(def.element, ctx, {
+        json7.maxItems = maximum;
+      json7.type = "array";
+      json7.items = processSchema(def.element, ctx, {
         ...params,
         path: [...params.path, "items"]
       });
     };
     objectProcessor = (schema, ctx, _json, params) => {
-      const json6 = _json;
+      const json7 = _json;
       const def = schema._zod.def;
       const shape = def.shape;
       const symbolKeys = Object.getOwnPropertySymbols(shape);
-      if (symbolKeys.length && handleUnrepresentable(schema, ctx, json6, params, "Symbol keys cannot be represented in JSON Schema")) {
+      if (symbolKeys.length && handleUnrepresentable(schema, ctx, json7, params, "Symbol keys cannot be represented in JSON Schema")) {
         return;
       }
-      json6.type = "object";
-      json6.properties = {};
+      json7.type = "object";
+      json7.properties = {};
       for (const key in shape) {
-        assignProp(json6.properties, key, processSchema(shape[key], ctx, {
+        assignProp(json7.properties, key, processSchema(shape[key], ctx, {
           ...params,
           path: [...params.path, "properties", key]
         }));
@@ -16738,21 +16738,21 @@ var init_json_schema_processors = __esm({
         }
       }
       if (requiredKeys.length > 0) {
-        json6.required = requiredKeys;
+        json7.required = requiredKeys;
       }
       if (def.catchall?._zod.def.type === "never") {
-        json6.additionalProperties = false;
+        json7.additionalProperties = false;
       } else if (!def.catchall) {
         if (ctx.io === "output")
-          json6.additionalProperties = false;
+          json7.additionalProperties = false;
       } else if (def.catchall) {
-        json6.additionalProperties = processSchema(def.catchall, ctx, {
+        json7.additionalProperties = processSchema(def.catchall, ctx, {
           ...params,
           path: [...params.path, "additionalProperties"]
         });
       }
     };
-    unionProcessor = (schema, ctx, json6, params) => {
+    unionProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       const isExclusive = def.inclusive === false;
       const options = def.options.map((x, i) => processSchema(x, ctx, {
@@ -16760,12 +16760,12 @@ var init_json_schema_processors = __esm({
         path: [...params.path, isExclusive ? "oneOf" : "anyOf", i]
       }));
       if (isExclusive) {
-        json6.oneOf = options;
+        json7.oneOf = options;
       } else {
-        json6.anyOf = options;
+        json7.anyOf = options;
       }
     };
-    intersectionProcessor = (schema, ctx, json6, params) => {
+    intersectionProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       const a = processSchema(def.left, ctx, {
         ...params,
@@ -16780,13 +16780,13 @@ var init_json_schema_processors = __esm({
         ...isSimpleIntersection(a) ? a.allOf : [a],
         ...isSimpleIntersection(b) ? b.allOf : [b]
       ];
-      json6.allOf = allOf;
+      json7.allOf = allOf;
       ctx.intersections.push(allOf);
     };
     tupleProcessor = (schema, ctx, _json, params) => {
-      const json6 = _json;
+      const json7 = _json;
       const def = schema._zod.def;
-      json6.type = "array";
+      json7.type = "array";
       const prefixPath = ctx.target === "draft-2020-12" ? "prefixItems" : "items";
       const restPath = ctx.target === "draft-2020-12" ? "items" : ctx.target === "openapi-3.0" ? "items" : "additionalItems";
       const prefixItems = def.items.map((x, i) => processSchema(x, ctx, {
@@ -16808,50 +16808,50 @@ var init_json_schema_processors = __esm({
       const maxItems = def.items.length;
       const isClosed = !def.rest;
       if (ctx.target === "draft-2020-12") {
-        json6.prefixItems = prefixItems;
+        json7.prefixItems = prefixItems;
         if (isClosed) {
-          json6.items = false;
+          json7.items = false;
         } else if (rest) {
-          json6.items = rest;
+          json7.items = rest;
         }
         if (minItems > 0)
-          json6.minItems = minItems;
+          json7.minItems = minItems;
         if (isClosed)
-          json6.maxItems = maxItems;
+          json7.maxItems = maxItems;
       } else if (ctx.target === "openapi-3.0") {
-        json6.items = {
+        json7.items = {
           anyOf: prefixItems
         };
         if (rest) {
-          json6.items.anyOf.push(rest);
+          json7.items.anyOf.push(rest);
         }
         if (minItems > 0)
-          json6.minItems = minItems;
+          json7.minItems = minItems;
         if (isClosed)
-          json6.maxItems = maxItems;
+          json7.maxItems = maxItems;
       } else {
-        json6.items = prefixItems;
+        json7.items = prefixItems;
         if (isClosed) {
-          json6.additionalItems = false;
+          json7.additionalItems = false;
         } else if (rest) {
-          json6.additionalItems = rest;
+          json7.additionalItems = rest;
         }
         if (minItems > 0)
-          json6.minItems = minItems;
+          json7.minItems = minItems;
         if (isClosed)
-          json6.maxItems = maxItems;
+          json7.maxItems = maxItems;
       }
       const { minimum, maximum } = aggregateChecks(schema);
       if (typeof minimum === "number")
-        json6.minItems = minimum;
+        json7.minItems = minimum;
       if (typeof maximum === "number")
-        json6.maxItems = maximum;
+        json7.maxItems = maximum;
     };
     pendingRecords = /* @__PURE__ */ new WeakMap();
     recordProcessor = (schema, ctx, _json, params) => {
-      const json6 = _json;
+      const json7 = _json;
       const def = schema._zod.def;
-      json6.type = "object";
+      json7.type = "object";
       const keyType = def.keyType;
       const patterns = aggregateChecks(keyType).patterns;
       if (def.mode === "loose" && patterns && patterns.size > 0) {
@@ -16859,13 +16859,13 @@ var init_json_schema_processors = __esm({
           ...params,
           path: [...params.path, "patternProperties", "*"]
         });
-        json6.patternProperties = {};
+        json7.patternProperties = {};
         for (const pattern of patterns) {
-          assignProp(json6.patternProperties, exactPattern(pattern).source, valueSchema);
+          assignProp(json7.patternProperties, exactPattern(pattern).source, valueSchema);
         }
       } else {
         if (ctx.target === "draft-07" || ctx.target === "draft-2020-12") {
-          json6.propertyNames = processSchema(def.keyType, ctx, {
+          json7.propertyNames = processSchema(def.keyType, ctx, {
             ...params,
             path: [...params.path, "propertyNames"]
           });
@@ -16877,7 +16877,7 @@ var init_json_schema_processors = __esm({
           }
           pending.push(schema);
         }
-        json6.additionalProperties = processSchema(def.valueType, ctx, {
+        json7.additionalProperties = processSchema(def.valueType, ctx, {
           ...params,
           path: [...params.path, "additionalProperties"]
         });
@@ -16887,19 +16887,19 @@ var init_json_schema_processors = __esm({
       if (keyValues && !def.partial && !omittableOnInput) {
         const validKeyValues = [...keyValues].filter((v) => typeof v === "string" || typeof v === "number");
         if (validKeyValues.length > 0) {
-          json6.required = validKeyValues.map(String);
+          json7.required = validKeyValues.map(String);
         }
       }
     };
-    nullableProcessor = (schema, ctx, json6, params) => {
+    nullableProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       const inner = processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       if (ctx.target === "openapi-3.0") {
         seen.ref = def.innerType;
-        json6.nullable = true;
+        json7.nullable = true;
       } else {
-        json6.anyOf = [inner, { type: "null" }];
+        json7.anyOf = [inner, { type: "null" }];
       }
     };
     nonoptionalProcessor = (schema, ctx, _json, params) => {
@@ -16909,27 +16909,27 @@ var init_json_schema_processors = __esm({
       seen.ref = def.innerType;
     };
     UNREPRESENTABLE_DEFAULT = /* @__PURE__ */ Symbol();
-    defaultProcessor = (schema, ctx, json6, params) => {
+    defaultProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
-      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json6, params);
+      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json7, params);
       if (value2 !== UNREPRESENTABLE_DEFAULT)
-        json6.default = value2;
+        json7.default = value2;
     };
-    prefaultProcessor = (schema, ctx, json6, params) => {
+    prefaultProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
       if (ctx.io !== "input")
         return;
-      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json6, params);
+      const value2 = serializeDefaultValue(def.defaultValue, schema, ctx, json7, params);
       if (value2 !== UNREPRESENTABLE_DEFAULT)
-        json6._prefault = value2;
+        json7._prefault = value2;
     };
-    catchProcessor = (schema, ctx, json6, params) => {
+    catchProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
@@ -16938,10 +16938,10 @@ var init_json_schema_processors = __esm({
       try {
         catchValue = def.catchValue(void 0);
       } catch {
-        handleUnrepresentable(schema, ctx, json6, params, "Dynamic catch values are not supported in JSON Schema");
+        handleUnrepresentable(schema, ctx, json7, params, "Dynamic catch values are not supported in JSON Schema");
         return;
       }
-      json6.default = catchValue;
+      json7.default = catchValue;
     };
     pipeProcessor = (schema, ctx, _json, params) => {
       const def = schema._zod.def;
@@ -16951,12 +16951,12 @@ var init_json_schema_processors = __esm({
       const seen = ctx.seen.get(schema);
       seen.ref = innerType;
     };
-    readonlyProcessor = (schema, ctx, json6, params) => {
+    readonlyProcessor = (schema, ctx, json7, params) => {
       const def = schema._zod.def;
       processSchema(def.innerType, ctx, params);
       const seen = ctx.seen.get(schema);
       seen.ref = def.innerType;
-      json6.readOnly = true;
+      json7.readOnly = true;
     };
     promiseProcessor = (schema, ctx, _json, params) => {
       const def = schema._zod.def;
@@ -18431,7 +18431,7 @@ var init_schemas2 = __esm({
       (inst, def) => {
         $ZodString.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json6, params) => stringProcessor(inst, ctx, json6, params);
+        inst._zod.processJSONSchema = (ctx, json7, params) => stringProcessor(inst, ctx, json7, params);
       },
       /* @__PURE__ */ util_exports.derived({
         format: (inst) => aggregateChecks(inst).format ?? null,
@@ -18685,7 +18685,7 @@ var init_schemas2 = __esm({
       (inst, def) => {
         $ZodNumber.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json6, params) => numberProcessor(inst, ctx, json6, params);
+        inst._zod.processJSONSchema = (ctx, json7, params) => numberProcessor(inst, ctx, json7, params);
         inst.isFinite = true;
       },
       /* @__PURE__ */ util_exports.derived({
@@ -18757,14 +18757,14 @@ var init_schemas2 = __esm({
     ZodBoolean = /* @__PURE__ */ $constructor("ZodBoolean", (inst, def) => {
       $ZodBoolean.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => booleanProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => booleanProcessor(inst, ctx, json7, params);
     });
     ZodBigInt = /* @__PURE__ */ $constructor(
       "ZodBigInt",
       (inst, def) => {
         $ZodBigInt.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json6, params) => bigintProcessor(inst, ctx, json6, params);
+        inst._zod.processJSONSchema = (ctx, json7, params) => bigintProcessor(inst, ctx, json7, params);
       },
       /* @__PURE__ */ util_exports.derived({
         minValue: (inst) => aggregateChecks(inst).minimum ?? null,
@@ -18813,44 +18813,44 @@ var init_schemas2 = __esm({
     ZodSymbol = /* @__PURE__ */ $constructor("ZodSymbol", (inst, def) => {
       $ZodSymbol.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => symbolProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => symbolProcessor(inst, ctx, json7, params);
     });
     ZodUndefined = /* @__PURE__ */ $constructor("ZodUndefined", (inst, def) => {
       $ZodUndefined.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => undefinedProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => undefinedProcessor(inst, ctx, json7, params);
     });
     ZodNull = /* @__PURE__ */ $constructor("ZodNull", (inst, def) => {
       $ZodNull.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => nullProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => nullProcessor(inst, ctx, json7, params);
     });
     ZodAny = /* @__PURE__ */ $constructor("ZodAny", (inst, def) => {
       $ZodAny.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => anyProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => anyProcessor(inst, ctx, json7, params);
     });
     ZodUnknown = /* @__PURE__ */ $constructor("ZodUnknown", (inst, def) => {
       $ZodUnknown.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => unknownProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => unknownProcessor(inst, ctx, json7, params);
     });
     ZodNever = /* @__PURE__ */ $constructor("ZodNever", (inst, def) => {
       $ZodNever.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => neverProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => neverProcessor(inst, ctx, json7, params);
     });
     ZodVoid = /* @__PURE__ */ $constructor("ZodVoid", (inst, def) => {
       $ZodVoid.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => voidProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => voidProcessor(inst, ctx, json7, params);
     });
     ZodDate = /* @__PURE__ */ $constructor(
       "ZodDate",
       (inst, def) => {
         $ZodDate.init(inst, def);
         ZodType.init(inst, def);
-        inst._zod.processJSONSchema = (ctx, json6, params) => dateProcessor(inst, ctx, json6, params);
+        inst._zod.processJSONSchema = (ctx, json7, params) => dateProcessor(inst, ctx, json7, params);
         inst.min = (value2, params) => inst.check(_gte(value2, params));
         inst.max = (value2, params) => inst.check(_lte(value2, params));
       },
@@ -18869,7 +18869,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodArray.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => arrayProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => arrayProcessor(inst, ctx, json7, params);
       inst.element = def.element;
     }, {
       min(n, params) {
@@ -18892,7 +18892,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodObjectJIT.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => objectProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => objectProcessor(inst, ctx, json7, params);
       util_exports.installLazyProp(inst, "shape", (self) => self._zod.def.shape, false);
     }, {
       keyof() {
@@ -18941,13 +18941,13 @@ var init_schemas2 = __esm({
     ZodUnion = /* @__PURE__ */ $constructor("ZodUnion", (inst, def) => {
       $ZodUnion.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => unionProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => unionProcessor(inst, ctx, json7, params);
       inst.options = def.options;
     });
     ZodXor = /* @__PURE__ */ $constructor("ZodXor", (inst, def) => {
       ZodUnion.init(inst, def);
       $ZodXor.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => unionProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => unionProcessor(inst, ctx, json7, params);
       inst.options = def.options;
     });
     ZodDiscriminatedUnion = /* @__PURE__ */ $constructor("ZodDiscriminatedUnion", (inst, def) => {
@@ -18957,13 +18957,13 @@ var init_schemas2 = __esm({
     ZodIntersection = /* @__PURE__ */ $constructor("ZodIntersection", (inst, def) => {
       $ZodIntersection.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => intersectionProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => intersectionProcessor(inst, ctx, json7, params);
     });
     ZodTuple = /* @__PURE__ */ $constructor("ZodTuple", (inst, def) => {
       _ensureDefaultMemoizer();
       $ZodTuple.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => tupleProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => tupleProcessor(inst, ctx, json7, params);
     }, {
       rest(rest) {
         return this.clone({
@@ -18985,7 +18985,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodRecord.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => recordProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => recordProcessor(inst, ctx, json7, params);
       inst.keyType = def.keyType;
       inst.valueType = def.valueType;
     });
@@ -18993,7 +18993,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodMap.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => mapProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => mapProcessor(inst, ctx, json7, params);
       inst.keyType = def.keyType;
       inst.valueType = def.valueType;
       inst.min = (...args) => inst.check(_minSize(...args));
@@ -19005,7 +19005,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodSet.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => setProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => setProcessor(inst, ctx, json7, params);
       inst.min = (...args) => inst.check(_minSize(...args));
       inst.nonempty = (params) => inst.check(_minSize(1, params));
       inst.max = (...args) => inst.check(_maxSize(...args));
@@ -19014,7 +19014,7 @@ var init_schemas2 = __esm({
     ZodEnum = /* @__PURE__ */ $constructor("ZodEnum", (inst, def) => {
       $ZodEnum.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => enumProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => enumProcessor(inst, ctx, json7, params);
       inst.enum = def.entries;
       inst.options = [...inst._zod.values];
       const keys = new Set(Object.keys(def.entries));
@@ -19052,7 +19052,7 @@ var init_schemas2 = __esm({
     ZodLiteral = /* @__PURE__ */ $constructor("ZodLiteral", (inst, def) => {
       $ZodLiteral.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => literalProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => literalProcessor(inst, ctx, json7, params);
       inst.values = new Set(def.values);
       Object.defineProperty(inst, "value", {
         get() {
@@ -19066,7 +19066,7 @@ var init_schemas2 = __esm({
     ZodFile = /* @__PURE__ */ $constructor("ZodFile", (inst, def) => {
       $ZodFile.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => fileProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => fileProcessor(inst, ctx, json7, params);
       inst.min = (size, params) => inst.check(_minSize(size, params));
       inst.max = (size, params) => inst.check(_maxSize(size, params));
       inst.mime = (types, params) => inst.check(_mime(Array.isArray(types) ? types : [types], params));
@@ -19075,7 +19075,7 @@ var init_schemas2 = __esm({
       _ensureDefaultMemoizer();
       $ZodTransform.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => transformProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => transformProcessor(inst, ctx, json7, params);
       inst._zod.parse = (payload, _ctx) => {
         if (_ctx.direction === "backward") {
           throw new $ZodEncodeError(inst.constructor.name);
@@ -19108,62 +19108,62 @@ var init_schemas2 = __esm({
     ZodOptional = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
       $ZodOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => optionalProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => optionalProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodExactOptional = /* @__PURE__ */ $constructor("ZodExactOptional", (inst, def) => {
       $ZodExactOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => optionalProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => optionalProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodNullable = /* @__PURE__ */ $constructor("ZodNullable", (inst, def) => {
       $ZodNullable.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => nullableProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => nullableProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodDefault = /* @__PURE__ */ $constructor("ZodDefault", (inst, def) => {
       $ZodDefault.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => defaultProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => defaultProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
       inst.removeDefault = inst.unwrap;
     });
     ZodPrefault = /* @__PURE__ */ $constructor("ZodPrefault", (inst, def) => {
       $ZodPrefault.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => prefaultProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => prefaultProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodNonOptional = /* @__PURE__ */ $constructor("ZodNonOptional", (inst, def) => {
       $ZodNonOptional.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => nonoptionalProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => nonoptionalProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodSuccess = /* @__PURE__ */ $constructor("ZodSuccess", (inst, def) => {
       $ZodSuccess.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => successProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => successProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodCatch = /* @__PURE__ */ $constructor("ZodCatch", (inst, def) => {
       $ZodCatch.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => catchProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => catchProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
       inst.removeCatch = inst.unwrap;
     });
     ZodNaN = /* @__PURE__ */ $constructor("ZodNaN", (inst, def) => {
       $ZodNaN.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => nanProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => nanProcessor(inst, ctx, json7, params);
     });
     ZodPipe = /* @__PURE__ */ $constructor("ZodPipe", (inst, def) => {
       $ZodPipe.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => pipeProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => pipeProcessor(inst, ctx, json7, params);
       inst.in = def.in;
       inst.out = def.out;
     });
@@ -19178,35 +19178,35 @@ var init_schemas2 = __esm({
     ZodReadonly = /* @__PURE__ */ $constructor("ZodReadonly", (inst, def) => {
       $ZodReadonly.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => readonlyProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => readonlyProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodTemplateLiteral = /* @__PURE__ */ $constructor("ZodTemplateLiteral", (inst, def) => {
       $ZodTemplateLiteral.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => templateLiteralProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => templateLiteralProcessor(inst, ctx, json7, params);
     });
     ZodLazy = /* @__PURE__ */ $constructor("ZodLazy", (inst, def) => {
       $ZodLazy.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => lazyProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => lazyProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.getter();
     });
     ZodPromise = /* @__PURE__ */ $constructor("ZodPromise", (inst, def) => {
       $ZodPromise.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => promiseProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => promiseProcessor(inst, ctx, json7, params);
       inst.unwrap = () => inst._zod.def.innerType;
     });
     ZodFunction = /* @__PURE__ */ $constructor("ZodFunction", (inst, def) => {
       $ZodFunction.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => functionProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => functionProcessor(inst, ctx, json7, params);
     });
     ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
       $ZodCustom.init(inst, def);
       ZodType.init(inst, def);
-      inst._zod.processJSONSchema = (ctx, json6, params) => customProcessor(inst, ctx, json6, params);
+      inst._zod.processJSONSchema = (ctx, json7, params) => customProcessor(inst, ctx, json7, params);
     });
     describe2 = describe;
     meta2 = meta;
@@ -21169,21 +21169,21 @@ var init_libesm = __esm({
 
 // packages/core/src/numbers/identity.ts
 function units(text, slots) {
-  const lines = [[]];
+  const lines2 = [[]];
   let at = 0;
   const push = (part) => {
     for (const match of part.matchAll(/\n|[\p{L}\p{N}_]+|[^\s\p{L}\p{N}_]/gu)) {
-      if (match[0] === "\n") lines.push([]);
-      else lines.at(-1).push({ text: match[0], line: lines.length - 1 });
+      if (match[0] === "\n") lines2.push([]);
+      else lines2.at(-1).push({ text: match[0], line: lines2.length - 1 });
     }
   };
   slots.forEach((slot, index) => {
     push(text.slice(at, slot.from));
-    lines.at(-1).push({ text: "" + slot.kind, slot: index, line: lines.length - 1 });
+    lines2.at(-1).push({ text: "" + slot.kind, slot: index, line: lines2.length - 1 });
     at = slot.to;
   });
   push(text.slice(at));
-  return lines;
+  return lines2;
 }
 function matches(a, b) {
   const pairs = [];
@@ -21212,36 +21212,36 @@ function alignSlots(before, after) {
     changed: [],
     steps: /* @__PURE__ */ new Map()
   };
-  const keep = (a2, b2, step) => {
+  const keep2 = (a2, b2, step) => {
     result.map.set(a2, b2);
     result.steps.set(a2, step);
     if (old[a2].value !== next[b2].value) result.changed.push(a2);
   };
   if (numberTemplate(before, old) === numberTemplate(after, next)) {
-    old.forEach((_, index) => keep(index, index, "value"));
+    old.forEach((_, index) => keep2(index, index, "value"));
     result.kind = result.changed.length ? "value" : "same";
     return result;
   }
   if (old.length === next.length && old.every((slot, i) => slot.kind === next[i].kind && slot.value === next[i].value) && lowerConsumerMarkup(before) === lowerConsumerMarkup(after)) {
-    old.forEach((_, index) => keep(index, index, "value"));
+    old.forEach((_, index) => keep2(index, index, "value"));
     result.kind = "same";
     return result;
   }
   const oldLines = units(numberProse(before), old), nextLines = units(numberProse(after), next);
-  const keys = (lines) => lines.map((line) => JSON.stringify(line.map((unit) => unit.text)));
+  const keys = (lines2) => lines2.map((line) => JSON.stringify(line.map((unit) => unit.text)));
   const aKeys = keys(oldLines), bKeys = keys(nextLines);
   const aCounts = counts(aKeys), bCounts = counts(bKeys);
   const usedA = /* @__PURE__ */ new Set(), usedB = /* @__PURE__ */ new Set();
-  const unique = (a2, b2) => aCounts.get(aKeys[a2]) === 1 && bCounts.get(bKeys[b2]) === 1 && (bCounts.get(aKeys[a2]) ?? 0) <= 1 && (aCounts.get(bKeys[b2]) ?? 0) <= 1;
+  const unique2 = (a2, b2) => aCounts.get(aKeys[a2]) === 1 && bCounts.get(bKeys[b2]) === 1 && (bCounts.get(aKeys[a2]) ?? 0) <= 1 && (aCounts.get(bKeys[b2]) ?? 0) <= 1;
   const pairLine = (a2, b2, step) => {
-    if (!unique(a2, b2)) return;
+    if (!unique2(a2, b2)) return;
     const pairs2 = oldLines[a2].flatMap(
       (unit, i) => unit.slot === void 0 ? [] : [[unit.slot, nextLines[b2][i].slot]]
     );
     if (pairs2.some(([x, y]) => old[x].scope !== next[y].scope)) return;
     usedA.add(a2);
     usedB.add(b2);
-    for (const [x, y] of pairs2) keep(x, y, step);
+    for (const [x, y] of pairs2) keep2(x, y, step);
   };
   for (const [a2, b2] of matches(aKeys, bKeys)) pairLine(a2, b2, "line");
   const nextByKey = new Map(bKeys.map((key, index) => [key, index]));
@@ -21251,7 +21251,7 @@ function alignSlots(before, after) {
     const b2 = nextByKey.get(aKeys[a2]);
     if (b2 !== void 0 && !usedB.has(b2)) pairLine(a2, b2, "moved");
   }
-  const remaining = (lines, used) => lines.flatMap(
+  const remaining = (lines2, used) => lines2.flatMap(
     (line, i) => used.has(i) ? [] : [{ text: "\n", line: -1 }, ...line, { text: "\n", line: -1 }]
   );
   const a = remaining(oldLines, usedA), b = remaining(nextLines, usedB);
@@ -21264,12 +21264,12 @@ function alignSlots(before, after) {
   const paired = new Map(pairs);
   for (const [i, j] of pairs) {
     const x = a[i].slot, y = b[j].slot;
-    if (x === void 0 || y === void 0 || !unique(a[i].line, b[j].line)) continue;
+    if (x === void 0 || y === void 0 || !unique2(a[i].line, b[j].line)) continue;
     if (paired.get(i - 1) !== j - 1 || paired.get(i + 1) !== j + 1 || slotUnit(a[i - 1]) || slotUnit(a[i + 1]))
       continue;
     if (old[x].scope !== next[y].scope || window(a, i, 2) !== window(b, j, 2)) continue;
     if (aSigs.get(window(a, i, 3)) !== 1 || bSigs.get(window(b, j, 3)) !== 1) continue;
-    keep(x, y, "word");
+    keep2(x, y, "word");
   }
   return result;
 }
@@ -21366,9 +21366,9 @@ function extractBlocks(text, kind) {
   const pattern = kind === "title" ? /^title [A-z0-9 ]+ \([^]*?\n\)$/gm : /^export [A-z0-9 ]+ \([\s\S]*?\n\)$/gm;
   return Object.fromEntries(
     [...text.matchAll(pattern)].map(([block]) => {
-      const lines = block.split("\n");
-      const name2 = lines[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
-      return [name2, lines.slice(1, -1).join("\n")];
+      const lines2 = block.split("\n");
+      const name2 = lines2[0].replace(kind === "title" ? /title|\(.*/gi : /export|hidden|\(.*/gi, "").trim();
+      return [name2, lines2.slice(1, -1).join("\n")];
     })
   );
 }
@@ -22021,10 +22021,10 @@ function reservedNames(text) {
 }
 function lowerDelimitedMarkup(text) {
   if (!text.includes("#{") && !text.includes(enhancedArrowMarkup)) return text;
-  const lines = text.split("\n");
+  const lines2 = text.split("\n");
   let changed = false;
-  for (let index = 0; index < lines.length; index++) {
-    const line = lines[index];
+  for (let index = 0; index < lines2.length; index++) {
+    const line = lines2[index];
     if (!line.includes("#{") && !line.includes(enhancedArrowMarkup)) continue;
     const declarations2 = [];
     let out = "";
@@ -22046,9 +22046,9 @@ function lowerDelimitedMarkup(text) {
     if (out === "" && at === 0) continue;
     changed = true;
     out += line.slice(at);
-    lines[index] = declarations2.length ? [out, ...new Set(declarations2)].join("\n") : out;
+    lines2[index] = declarations2.length ? [out, ...new Set(declarations2)].join("\n") : out;
   }
-  return changed ? lines.join("\n") : text;
+  return changed ? lines2.join("\n") : text;
 }
 function lowerConsumerMarkup(text, arrow) {
   const lowered = lowerDelimitedMarkup(lowerElementTags(lowerExoticMarkup(text)));
@@ -22206,7 +22206,7 @@ function spans(line, titles) {
   let lead = -1;
   let closed;
   const out = [];
-  const space = (span) => span.text !== void 0 && !span.classNames && !span.text.trim();
+  const space = (span2) => span2.text !== void 0 && !span2.classNames && !span2.text.trim();
   for (const part of parts) {
     if (!part) continue;
     if (part === elementTextOpen) {
@@ -22229,16 +22229,16 @@ function spans(line, titles) {
     }
     const text = part.replace(elementTextMarkers, "");
     if (!text) continue;
-    for (const span of lineSpans(text, titles)) {
-      if (tint && span.text !== void 0 && !span.classNames) {
+    for (const span2 of lineSpans(text, titles)) {
+      if (tint && span2.text !== void 0 && !span2.classNames) {
         const spaces = lead >= 0 ? out.splice(lead).map((s) => s.text).join("") : "";
         lead = -1;
-        out.push({ text: spaces + span.text, classNames: ["elementText", tint] });
-      } else if (closed && space(span)) {
-        closed.text += span.text;
+        out.push({ text: spaces + span2.text, classNames: ["elementText", tint] });
+      } else if (closed && space(span2)) {
+        closed.text += span2.text;
       } else {
         lead = -1;
-        out.push(span);
+        out.push(span2);
       }
       closed = void 0;
     }
@@ -22272,9 +22272,9 @@ function tableRow(line, titles) {
   return {
     classNames,
     rowContent: (cleanLine.match(/\|.*?((?=\|)|$)/g) ?? []).map((cell) => {
-      const span = cell.match(/\|([bchr\d-]+)?/)?.[0].match(/-\d|\d/g);
-      const colSpan = span?.filter((value2) => Number(value2) > 0)[0];
-      const rowSpan = span?.filter((value2) => Number(value2) < 0)[0];
+      const span2 = cell.match(/\|([bchr\d-]+)?/)?.[0].match(/-\d|\d/g);
+      const colSpan = span2?.filter((value2) => Number(value2) > 0)[0];
+      const rowSpan = span2?.filter((value2) => Number(value2) < 0)[0];
       const classes = {
         b: "bold",
         c: "center",
@@ -22655,6 +22655,227 @@ var init_numbers = __esm({
     init_map();
     gluedNumberMessage = "Make the whole number one variable or number token; do not glue digits to a reference.";
     unbracedNumberMessage = "Use braces for this variable name. If the digits are part of a number, make the whole number one variable or number token.";
+  }
+});
+
+// packages/core/src/globals/model.ts
+function globalAggregateHash(kind) {
+  return kind === "exports" ? 1 : kind === "variables" ? 2 : 3;
+}
+function globalAggregateKind(hash2) {
+  if (hash2 === 1) return "exports";
+  if (hash2 === 2) return "variables";
+  if (hash2 === 3) return "titles";
+  throw new Error("Expected aggregate 1, 2, or 3");
+}
+function validGlobalName(kind, name2) {
+  if (kind === "variables") return /^[a-zA-Z0-9]+$/.test(name2);
+  if (kind === "exports" && (name2 === "main" || name2 === "secondary")) return false;
+  const declaration = kind === "exports" ? "export" : "title";
+  return /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)*$/.test(name2) && Object.hasOwn(extractBlocks(`${declaration} ${name2} (
+body
+)`, declaration), name2);
+}
+var globalIdSchema, globalRevisionSchema, globalDigestSchema, globalKindSchema, sourceSchema, globalDefinitionSchema, globalRecordSchema, globalSegmentSchema, globalAggregateSchema, globalStoreSchema, globalConsumerSchema, globalCauseSchema, globalReviewSchema;
+var init_model = __esm({
+  "packages/core/src/globals/model.ts"() {
+    "use strict";
+    init_zod();
+    init_languages();
+    init_legacy();
+    init_schemas3();
+    init_syntax();
+    globalIdSchema = external_exports.string().regex(/^g_[a-zA-Z0-9_-]{8,80}$/);
+    globalRevisionSchema = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
+    globalDigestSchema = external_exports.string().regex(/^[a-f0-9]{64}$/);
+    globalKindSchema = external_exports.enum(["variables", "titles", "exports"]);
+    sourceSchema = external_exports.object({
+      repository: external_exports.string().min(1),
+      revision: globalRevisionSchema,
+      path: external_exports.string().min(1),
+      /** JSON keys selecting the original decoded string; spans index its UTF-16 code units. */
+      selector: external_exports.array(external_exports.string()).min(1),
+      spanConvention: external_exports.literal("decoded-utf16"),
+      hash: external_exports.union([external_exports.literal(1), external_exports.literal(2), external_exports.literal(3)]),
+      lang: langSchema,
+      from: external_exports.number().int().nonnegative(),
+      to: external_exports.number().int().positive()
+    }).strict().refine((v) => v.to > v.from, "Source span must be nonempty");
+    globalDefinitionSchema = external_exports.object({
+      /** Body only; an empty variable is serialized as the legacy `empty` value. */
+      body: external_exports.string(),
+      revision: globalRevisionSchema,
+      updatedAt: timestampSchema,
+      updatedBy: external_exports.string(),
+      sourceUpdatedAt: timestampSchema.optional(),
+      sourceRevision: globalRevisionSchema.optional(),
+      /** Present if and only if migrated. */
+      provenance: sourceSchema.optional()
+    }).strict();
+    globalRecordSchema = external_exports.object({
+      version: external_exports.literal(1),
+      id: globalIdSchema,
+      kind: globalKindSchema,
+      name: external_exports.string().min(1),
+      revision: globalRevisionSchema,
+      definitions: external_exports.partialRecord(langSchema, globalDefinitionSchema),
+      nameHistory: external_exports.array(
+        external_exports.object({
+          name: external_exports.string().min(1),
+          revision: globalRevisionSchema,
+          at: timestampSchema,
+          by: external_exports.string().min(1)
+        }).strict()
+      ),
+      tombstone: external_exports.object({ at: timestampSchema, by: external_exports.string().min(1) }).strict().optional()
+    }).strict().superRefine((record3, ctx) => {
+      if (!validGlobalName(record3.kind, record3.name))
+        ctx.addIssue({ code: "custom", message: "Name cannot round-trip through the resolver" });
+      for (const [lang, definition2] of Object.entries(record3.definitions)) {
+        if (definition2.provenance && (definition2.provenance.lang !== lang || definition2.provenance.hash !== globalAggregateHash(record3.kind)))
+          ctx.addIssue({ code: "custom", message: "Definition provenance kind/language mismatch" });
+        if (record3.kind === "variables" && /[\r\n]/.test(definition2.body))
+          ctx.addIssue({ code: "custom", message: "Variables must fit on one line" });
+        if (record3.kind !== "variables" && !definition2.body.trim())
+          ctx.addIssue({ code: "custom", message: "Title and export bodies must not be empty" });
+      }
+    });
+    globalSegmentSchema = external_exports.union([
+      external_exports.object({ literal: external_exports.string() }).strict(),
+      external_exports.object({
+        entryId: globalIdSchema,
+        beforeName: external_exports.string(),
+        afterName: external_exports.string(),
+        afterBody: external_exports.string()
+      }).strict()
+    ]);
+    globalAggregateSchema = external_exports.object({
+      document: external_exports.object(tooltipSchema.shape).omit({ text: true }).strict(),
+      languages: external_exports.partialRecord(
+        langSchema,
+        external_exports.object({
+          metadata: langTextSchema.omit({ text: true }),
+          segments: external_exports.array(globalSegmentSchema)
+        }).strict()
+      )
+    }).strict();
+    globalStoreSchema = external_exports.object({
+      version: external_exports.literal(1),
+      entries: external_exports.array(globalRecordSchema),
+      aggregates: external_exports.array(globalAggregateSchema)
+    }).strict().superRefine((store, ctx) => {
+      const ids = /* @__PURE__ */ new Set(), names = /* @__PURE__ */ new Set(), hashes = /* @__PURE__ */ new Set();
+      for (const entry of store.entries) {
+        if (ids.has(entry.id)) ctx.addIssue({ code: "custom", message: "Duplicate global ID" });
+        ids.add(entry.id);
+        const key = `${entry.kind}:${entry.name}`;
+        if (!entry.tombstone && names.has(key))
+          ctx.addIssue({ code: "custom", message: "Duplicate global name across languages" });
+        if (!entry.tombstone) names.add(key);
+      }
+      for (const aggregate of store.aggregates) {
+        const hash2 = aggregate.document.hash;
+        if (![1, 2, 3].includes(hash2) || hashes.has(hash2)) {
+          ctx.addIssue({ code: "custom", message: "Expected unique aggregate hashes 1, 2, and 3" });
+          continue;
+        }
+        hashes.add(hash2);
+        for (const [lang, layout] of Object.entries(aggregate.languages)) {
+          const seen = /* @__PURE__ */ new Set();
+          for (const segment of layout.segments) {
+            if (!("entryId" in segment)) continue;
+            const entry = store.entries.find((v) => v.id === segment.entryId);
+            if (!entry || entry.tombstone || entry.kind !== globalAggregateKind(hash2) || !entry.definitions[lang] || seen.has(segment.entryId))
+              ctx.addIssue({ code: "custom", message: "Invalid or duplicate projection entry" });
+            seen.add(segment.entryId);
+          }
+          for (const entry of store.entries) {
+            if (!entry.tombstone && entry.kind === globalAggregateKind(hash2) && entry.definitions[lang] && !seen.has(entry.id))
+              ctx.addIssue({ code: "custom", message: "Definition missing from projection" });
+          }
+        }
+      }
+      for (const entry of store.entries) {
+        if (entry.tombstone) continue;
+        for (const lang of Object.keys(entry.definitions))
+          if (!store.aggregates.some(
+            (a) => a.document.hash === globalAggregateHash(entry.kind) && Object.hasOwn(a.languages, lang)
+          ))
+            ctx.addIssue({ code: "custom", message: "Missing language projection" });
+      }
+    });
+    globalConsumerSchema = external_exports.object({
+      hash: hashSchema,
+      lang: langSchema,
+      destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/)
+    }).strict();
+    globalCauseSchema = external_exports.object({
+      globalId: globalIdSchema,
+      beforeRevision: globalRevisionSchema.nullable(),
+      afterRevision: globalRevisionSchema.nullable()
+    }).strict();
+    globalReviewSchema = external_exports.object({
+      version: external_exports.literal(1),
+      consumer: globalConsumerSchema,
+      causes: external_exports.array(globalCauseSchema).min(1),
+      contentDigest: globalDigestSchema,
+      dependencyDigest: globalDigestSchema,
+      acknowledgement: external_exports.object({
+        by: external_exports.string().min(1),
+        at: timestampSchema,
+        contentDigest: globalDigestSchema,
+        dependencyDigest: globalDigestSchema,
+        /** Binds the before/after rendered review, including its complete cause set. */
+        impactDigest: globalDigestSchema,
+        decision: external_exports.enum(["edited", "no-text-change"])
+      }).strict().optional()
+    }).strict();
+  }
+});
+
+// packages/core/src/globals/inPlaceReview.ts
+var oid, globalsInPlacePath, globalsInPlaceCapability, globalsInPlaceFenceSchema, globalsPendingSchema, globalPublishSelectionSchema;
+var init_inPlaceReview = __esm({
+  "packages/core/src/globals/inPlaceReview.ts"() {
+    "use strict";
+    init_zod();
+    init_languages();
+    init_legacy();
+    init_model();
+    oid = external_exports.string().regex(/^[0-9a-f]{40}$/);
+    globalsInPlacePath = "config/globals-in-place.json";
+    globalsInPlaceCapability = "globalsInPlaceV1";
+    globalsInPlaceFenceSchema = external_exports.object({
+      state: external_exports.enum(["hold", "active"]),
+      destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/),
+      legacyData: oid,
+      legacyLive: oid,
+      migratedLive: oid
+    }).strict();
+    globalsPendingSchema = external_exports.array(
+      external_exports.object({
+        id: globalIdSchema,
+        name: external_exports.string(),
+        kind: globalKindSchema,
+        change: external_exports.enum(["new", "changed", "renamed", "removed"]),
+        digest: globalDigestSchema,
+        languages: external_exports.partialRecord(
+          langSchema,
+          external_exports.object({
+            before: external_exports.string().nullable(),
+            after: external_exports.string().nullable(),
+            beforeAvailable: external_exports.boolean().optional(),
+            afterAvailable: external_exports.boolean().optional()
+          })
+        ),
+        affected: external_exports.array(hashSchema),
+        refusal: external_exports.string().optional()
+      })
+    );
+    globalPublishSelectionSchema = external_exports.object({
+      id: globalIdSchema,
+      expected: globalDigestSchema
+    }).strict();
   }
 });
 
@@ -23727,7 +23948,7 @@ async function verifyScheduleRequest(value2, body2, key, target) {
     throw new Error("Schedule request does not match its signed intent");
   return { request, intent };
 }
-var schedulePreparationCapability, draftBatchStagingCapability, scheduledBatchStagingCapability, batchRemoveChunkSize, preparedDraftSave, stagedPartsPrefix, draftStagingInputSchema, scheduleIntentPaths, revision, oid, digest, scheduledStagingSchema, common, scheduleIntentSchema, scheduleEnvelopeSchema, preparationReasonSchema, scheduleRequestSchema;
+var schedulePreparationCapability, draftBatchStagingCapability, scheduledBatchStagingCapability, batchRemoveChunkSize, preparedDraftSave, stagedPartsPrefix, draftStagingInputSchema, scheduleIntentPaths, revision, oid2, digest, scheduledStagingSchema, common, scheduleIntentSchema, scheduleEnvelopeSchema, preparationReasonSchema, scheduleRequestSchema;
 var init_intent = __esm({
   "packages/core/src/schedule/intent.ts"() {
     "use strict";
@@ -23752,7 +23973,7 @@ var init_intent = __esm({
       stagedPart: (batchId, id, part) => `${stagedPartsPrefix(batchId, id)}${part}.json`
     };
     revision = external_exports.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER);
-    oid = external_exports.string().regex(/^[0-9a-f]{40}$/);
+    oid2 = external_exports.string().regex(/^[0-9a-f]{40}$/);
     digest = external_exports.string().regex(/^[0-9a-f]{64}$/);
     scheduledStagingSchema = external_exports.object({
       id: publishOpIdSchema,
@@ -23775,9 +23996,9 @@ var init_intent = __esm({
       }).strict(),
       expectedRevision: revision,
       contentRevision: revision,
-      sourceCommit: oid,
+      sourceCommit: oid2,
       /** Null only when the source batch has no members yet (a draft save). */
-      memberTreeOid: oid.nullable(),
+      memberTreeOid: oid2.nullable(),
       createdAt: timestampSchema,
       /** SHA-256 of the exact UTF-8 HTTP request bytes; the Worker computes it. */
       bodyDigest: digest
@@ -23933,7 +24154,10 @@ async function publishIntentDigest(value2) {
       liveBranch: value2.liveBranch,
       requester: { id: value2.requester.id },
       hashes: [...value2.hashes].sort((a, b) => a - b),
-      expected: value2.expected
+      expected: value2.expected,
+      ...value2.globals === void 0 ? {} : {
+        globals: [...value2.globals].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
+      }
     })
   );
   return Array.from(
@@ -23963,14 +24187,18 @@ var init_publishRequest = __esm({
     init_zod();
     init_legacy();
     init_contentHash();
+    init_inPlaceReview();
     publishOpIdSchema = external_exports.string().regex(/^[0-7][0-9A-HJKMNP-TV-Z]{25}$/);
     digest2 = external_exports.string().regex(/^[0-9a-f]{64}$/);
     hashKey = external_exports.string().regex(/^(0|[1-9]\d*)$/).refine((s) => Number(s) <= 4294967295);
     publishBodySchema = external_exports.object({
       opId: publishOpIdSchema,
-      hashes: external_exports.array(hashSchema).min(1).max(3e3).refine((a) => new Set(a).size === a.length),
-      expected: external_exports.record(hashKey, digest2)
+      hashes: external_exports.array(hashSchema).max(3e3).refine((a) => new Set(a).size === a.length),
+      expected: external_exports.record(hashKey, digest2),
+      globals: external_exports.array(globalPublishSelectionSchema).min(1).max(3e3).refine((items) => new Set(items.map(({ id }) => id)).size === items.length).optional()
     }).strict().superRefine((v, ctx) => {
+      if (!v.hashes.length && !v.globals?.length)
+        ctx.addIssue({ code: "custom", message: "Select a tooltip or a shared definition" });
       if (Object.keys(v.expected).length !== v.hashes.length || v.hashes.some((h) => !v.expected[h]))
         ctx.addIssue({ code: "custom", message: "Exactly one expected digest per hash is required" });
     });
@@ -23987,7 +24215,12 @@ var init_publishRequest = __esm({
       createdAt: external_exports.string().datetime(),
       intentDigest: digest2
     }).strict().superRefine((v, ctx) => {
-      if (!publishBodySchema.safeParse({ opId: v.opId, hashes: v.hashes, expected: v.expected }).success)
+      if (!publishBodySchema.safeParse({
+        opId: v.opId,
+        hashes: v.hashes,
+        expected: v.expected,
+        globals: v.globals
+      }).success)
         ctx.addIssue({ code: "custom", message: "Invalid publish intent" });
     });
     schedule = () => Promise.resolve().then(() => (init_schedule(), schedule_exports));
@@ -23996,7 +24229,7 @@ var init_publishRequest = __esm({
 
 // scripts/publisher/cli.ts
 import { execFileSync as execFileSync3 } from "node:child_process";
-import { createHash as createHash7 } from "node:crypto";
+import { createHash as createHash8 } from "node:crypto";
 import { mkdtempSync as mkdtempSync3, readFileSync as readFileSync2, writeFileSync as writeFileSync2, mkdirSync as mkdirSync2, rmSync as rmSync3, realpathSync as realpathSync2 } from "node:fs";
 import { tmpdir as tmpdir3 } from "node:os";
 import { dirname, join as join4, resolve as resolve3 } from "node:path";
@@ -24086,15 +24319,15 @@ var LocalRepository = class {
     const tree = Object.fromEntries(
       this.git(["ls-tree", "-rz", "--full-tree", commit2]).split("\0").filter(Boolean).map((line) => {
         const tab = line.indexOf("	");
-        const [mode, type, oid4] = line.slice(0, tab).split(" ");
+        const [mode, type, oid5] = line.slice(0, tab).split(" ");
         if (!this.preserveModes && (mode !== "100644" || type !== "blob"))
           throw new Error("Only plain blob trees supported");
-        return [line.slice(tab + 1), oid4];
+        return [line.slice(tab + 1), oid5];
       })
     );
     this.trees.set(commit2, tree);
     const bulk = Object.keys(tree).filter((path) => bulkPath.test(path)).map((path) => tree[path]);
-    for (const oid4 of bulk) this.bulk.set(oid4, bulk);
+    for (const oid5 of bulk) this.bulk.set(oid5, bulk);
     return { ...tree };
   }
   /**
@@ -24102,45 +24335,45 @@ var LocalRepository = class {
    * that is missing or not a blob stays uncached, so blob() still fails on it when it is used.
    */
   readBulk(bulk) {
-    const oids = [...new Set(bulk)].filter((oid4) => !this.blobs.has(oid4));
-    const output2 = this.gitBytes(["cat-file", "--batch"], oids.map((oid4) => `${oid4}
+    const oids = [...new Set(bulk)].filter((oid5) => !this.blobs.has(oid5));
+    const output2 = this.gitBytes(["cat-file", "--batch"], oids.map((oid5) => `${oid5}
 `).join(""));
     const read = /* @__PURE__ */ new Map();
     let at = 0;
-    for (const oid4 of oids) {
+    for (const oid5 of oids) {
       const end = output2.indexOf("\n", at);
       const header = end < 0 ? "" : output2.toString("latin1", at, end);
       at = end + 1;
-      if (header === `${oid4} missing`) continue;
+      if (header === `${oid5} missing`) continue;
       const [, named, type, size] = /^([0-9a-f]{40}) ([a-z]+) (\d+)$/.exec(header) ?? [];
       const stop = at + Number(size);
-      if (named !== oid4 || output2[stop] !== 10) throw new Error("Unexpected Git batch output");
-      if (type === "blob") read.set(oid4, output2.toString("utf8", at, stop));
+      if (named !== oid5 || output2[stop] !== 10) throw new Error("Unexpected Git batch output");
+      if (type === "blob") read.set(oid5, output2.toString("utf8", at, stop));
       at = stop + 1;
     }
     if (at !== output2.length) throw new Error("Unexpected Git batch output");
-    for (const [oid4, bytes] of read) this.blobs.set(oid4, bytes);
+    for (const [oid5, bytes] of read) this.blobs.set(oid5, bytes);
   }
   treeModes(commit2) {
     return Object.fromEntries(
       this.git(["ls-tree", "-rtz", "--full-tree", commit2]).split("\0").filter(Boolean).flatMap((line) => {
         const tab = line.indexOf("	");
-        const [mode, type, oid4] = line.slice(0, tab).split(" ");
-        return type === "tree" && oid4 !== emptyTreeOid ? [] : [[line.slice(tab + 1), mode]];
+        const [mode, type, oid5] = line.slice(0, tab).split(" ");
+        return type === "tree" && oid5 !== emptyTreeOid ? [] : [[line.slice(tab + 1), mode]];
       })
     );
   }
-  blob(oid4) {
-    if (!this.blobs.has(oid4) && this.bulk.has(oid4)) this.readBulk(this.bulk.get(oid4));
-    if (!this.blobs.has(oid4)) this.blobs.set(oid4, this.git(["cat-file", "blob", oid4]));
-    return this.blobs.get(oid4);
+  blob(oid5) {
+    if (!this.blobs.has(oid5) && this.bulk.has(oid5)) this.readBulk(this.bulk.get(oid5));
+    if (!this.blobs.has(oid5)) this.blobs.set(oid5, this.git(["cat-file", "blob", oid5]));
+    return this.blobs.get(oid5);
   }
   writeBlob(bytes) {
     const buffer = Buffer.from(bytes);
-    const oid4 = createHash("sha1").update(`blob ${buffer.length}\0`).update(buffer).digest("hex");
-    if (!this.blobs.has(oid4)) this.unwritten.set(oid4, buffer);
-    this.blobs.set(oid4, bytes);
-    return oid4;
+    const oid5 = createHash("sha1").update(`blob ${buffer.length}\0`).update(buffer).digest("hex");
+    if (!this.blobs.has(oid5)) this.unwritten.set(oid5, buffer);
+    this.blobs.set(oid5, bytes);
+    return oid5;
   }
   /** Import the waiting blobs (no refs). Git itself must name every one of them. */
   writeBlobs() {
@@ -24159,7 +24392,7 @@ get-mark :${index + 1}
       ["fast-import", "--quiet", "--done"],
       Buffer.concat([...stream, Buffer.from("done\n")])
     );
-    if (stored.toString() !== [...this.unwritten.keys()].map((oid4) => `${oid4}
+    if (stored.toString() !== [...this.unwritten.keys()].map((oid5) => `${oid5}
 `).join(""))
       throw new Error("Unexpected Git import output");
     this.unwritten.clear();
@@ -24185,9 +24418,9 @@ get-mark :${index + 1}
       this.git(["read-tree", "--empty"], void 0, env);
       this.git(
         ["update-index", "-z", "--index-info"],
-        Object.entries(tree).sort().map(([p, oid4]) => {
+        Object.entries(tree).sort().map(([p, oid5]) => {
           if (/[\0\n\t]/.test(p)) throw new Error("Invalid tree path");
-          return `${modes.get(p) ?? "100644"} ${oid4}	${p}\0`;
+          return `${modes.get(p) ?? "100644"} ${oid5}	${p}\0`;
         }).join(""),
         env
       );
@@ -24246,7 +24479,7 @@ commit
     return this.git(["rev-list", "--first-parent", "--reverse", ref]).trim().split("\n").filter(Boolean);
   }
   additions(head, path) {
-    const lines = this.git([
+    const lines2 = this.git([
       "log",
       "--first-parent",
       "--diff-merges=first-parent",
@@ -24262,7 +24495,7 @@ commit
     ]).split("\n");
     let commit2 = "";
     const entries = [];
-    for (const line of lines) {
+    for (const line of lines2) {
       if (/^[0-9a-f]{40}$/.test(line)) commit2 = line;
       else if (line) entries.push({ commit: commit2, path: line });
     }
@@ -24741,11 +24974,11 @@ var extractTitles = (description) => {
   const titles = description.match(/^title [A-z0-9 ]+ \([^]*?\n\)$/gm);
   if (titles === null) return {};
   return titles.reduce((acc, titleText) => {
-    const lines = titleText.split("\n");
-    const titleName = lines[0].replace(/title|\(.*/gi, "").trim();
-    lines.splice(0, 1);
-    lines.splice(-1, 1);
-    acc[titleName] = lines.join("\n");
+    const lines2 = titleText.split("\n");
+    const titleName = lines2[0].replace(/title|\(.*/gi, "").trim();
+    lines2.splice(0, 1);
+    lines2.splice(-1, 1);
+    acc[titleName] = lines2.join("\n");
     return acc;
   }, {});
 };
@@ -24762,11 +24995,11 @@ var pick = (object2, keys) => {
   }
   return result;
 };
-var pullInPlace = (array2, drop) => {
+var pullInPlace = (array2, drop2) => {
   let write = 0;
   for (let read = 0; read < array2.length; read++) {
     const value2 = array2[read];
-    if (!drop(value2)) array2[write++] = value2;
+    if (!drop2(value2)) array2[write++] = value2;
   }
   array2.length = write;
   return array2;
@@ -24918,16 +25151,17 @@ var getExports = (description) => {
   const exported = description.match(/^export [A-z0-9 ]+ \([\s\S]*?\n\)$/gm);
   if (exported === null) return /* @__PURE__ */ new Map();
   return exported.reduce((acc, exportText) => {
-    const lines = exportText.split("\n");
-    const exportName = lines[0].replace(/export|hidden|\(.*/gi, "").trim();
-    lines.splice(0, 1);
-    lines.splice(-1, 1);
-    acc.set(exportName, lines.join("\n"));
+    const lines2 = exportText.split("\n");
+    const exportName = lines2[0].replace(/export|hidden|\(.*/gi, "").trim();
+    lines2.splice(0, 1);
+    lines2.splice(-1, 1);
+    acc.set(exportName, lines2.join("\n"));
     return acc;
   }, /* @__PURE__ */ new Map());
 };
 var loadExports = (descriptionData) => {
   const { descriptionString, editorType, language, hash: hash2, database } = descriptionData;
+  const importLanguage = database[hash2]?.editor[language]?.englishFallback ? "en" : language;
   let description = descriptionString;
   const getImports = (descriptionString2) => {
     if (!descriptionString2.includes("import")) return null;
@@ -24964,7 +25198,7 @@ var loadExports = (descriptionData) => {
         return;
       }
       if (name2 === "main" || name2 === "secondary") {
-        const imported2 = database[from]?.editor[language]?.[name2];
+        const imported2 = database[from]?.editor[importLanguage]?.[name2];
         if (imported2 === void 0) throw new Error(`Missing import ${name2} from ${from} for ${hash2}/${language}`);
         description = description.replace(line, () => imported2);
         return;
@@ -24979,7 +25213,7 @@ var loadExports = (descriptionData) => {
         description = description.replace(line, () => imported2);
         return;
       }
-      const imported = getExports(database[from]?.editor[language]?.[editorToImportFrom] || "").get(name2);
+      const imported = getExports(database[from]?.editor[importLanguage]?.[editorToImportFrom] || "").get(name2);
       if (imported === void 0) throw new Error(`Missing export ${name2} from ${from} for ${hash2}/${language}`);
       description = description.replace(line, () => imported);
     });
@@ -25141,14 +25375,14 @@ var splitTable = (line, title) => {
       const cellClassNames = tableCell.match(/\|[bchr\d-]+/)?.[0].split("").filter((char) => inCellClasses[char] !== void 0).map((c) => inCellClasses[c]);
       tableCell = tableCell.replace(/\|[bchr\d-]+|\|/, "").trim();
       const convertCellContent = convertLinesContent(tableCell, title);
-      const cleanedCell = convertCellContent.flatMap((span) => {
-        if ((span.text === void 0 || span.text.trim() === "") && (span.classNames === void 0 || !span.classNames?.some((className) => typeof className === "string")))
+      const cleanedCell = convertCellContent.flatMap((span2) => {
+        if ((span2.text === void 0 || span2.text.trim() === "") && (span2.classNames === void 0 || !span2.classNames?.some((className) => typeof className === "string")))
           return [];
         return {
-          text: span.text,
-          classNames: span.classNames,
-          formula: span.formula,
-          title: span.title
+          text: span2.text,
+          classNames: span2.classNames,
+          formula: span2.formula,
+          title: span2.title
         };
       });
       return {
@@ -25288,11 +25522,11 @@ function parseOrdinary(text, globals, indexed = false) {
     numbered2,
     indexed
   ) : tinted;
-  const lines = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
+  const lines2 = tagged && JSON.stringify(untinted(tinted.lines)) === JSON.stringify(untinted(parsed.lines)) ? tinted.lines : parsed.lines;
   const diagnostics = parsed.diagnostics;
   diagnostics.push(...numberIssues);
   if (reserved) diagnostics.push({ severity: "error", message: reservedMarkerMessage });
-  return { lines, diagnostics };
+  return { lines: lines2, diagnostics };
 }
 function parseNumberSlots(text, globals, ids) {
   const open2 = "\uE100", close = "\uE101";
@@ -25333,7 +25567,7 @@ function parseNumberSlots(text, globals, ids) {
   const spans2 = (parts) => {
     let active;
     return parts.flatMap((part) => {
-      const title = part.title ? lines(part.title) : void 0;
+      const title = part.title ? lines2(part.title) : void 0;
       if (!part.text || !part.text.includes(open2) && active === void 0)
         return [{ ...part, ...title && { title } }];
       const slots2 = [];
@@ -25372,7 +25606,7 @@ function parseNumberSlots(text, globals, ids) {
       ];
     });
   };
-  const lines = (input2) => input2.map((line) => ({
+  const lines2 = (input2) => input2.map((line) => ({
     ...line,
     ...line.linesContent && { linesContent: spans2(line.linesContent) },
     ...line.table && {
@@ -25387,22 +25621,22 @@ function parseNumberSlots(text, globals, ids) {
       }))
     }
   }));
-  return { ...parsed, lines: lines(parsed.lines) };
+  return { ...parsed, lines: lines2(parsed.lines) };
 }
-function untinted(lines) {
+function untinted(lines2) {
   const spans2 = (parts) => {
     const out = [];
     for (const part of parts) {
-      const span = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
+      const span2 = part.classNames?.includes("elementText") ? { text: part.text } : part.title ? { ...part, title: untinted(part.title) } : part;
       const last = out.at(-1);
       const plain = (value2) => value2.text !== void 0 && Object.entries(value2).every(([key, field]) => key === "text" || field === void 0);
-      if (last && plain(last) && plain(span))
-        out[out.length - 1] = { text: last.text + span.text };
-      else out.push(span);
+      if (last && plain(last) && plain(span2))
+        out[out.length - 1] = { text: last.text + span2.text };
+      else out.push(span2);
     }
     return out;
   };
-  return lines.map((line) => ({
+  return lines2.map((line) => ({
     ...line,
     ...line.linesContent && { linesContent: spans2(line.linesContent) },
     ...line.table && {
@@ -25464,6 +25698,7 @@ function parseWith(text, globals, lower2, numbered2 = false, indexed = false) {
 var numberLanguage = ({ database, hash: hash2, language }) => database[hash2].editor[language]?.englishFallback ? "en" : language;
 var nativeDescription = (descriptionData, description) => {
   const { database, hash: hash2, language } = descriptionData;
+  const importLanguage = numberLanguage(descriptionData);
   const library = (id) => {
     const text = database[id]?.editor[language];
     return [text?.main, text?.secondary].filter(Boolean).join("\n");
@@ -25473,7 +25708,7 @@ var nativeDescription = (descriptionData, description) => {
   let native = [description, variables, titles].some((source2) => source2.includes("{{"));
   const imports = new Proxy(/* @__PURE__ */ Object.create(null), {
     get(_target, key) {
-      const source2 = typeof key === "string" ? database[key]?.editor[language]?.main : void 0;
+      const source2 = typeof key === "string" ? database[key]?.editor[importLanguage]?.main : void 0;
       if (source2?.includes("{")) native = true;
       return source2;
     }
@@ -25616,10 +25851,10 @@ var descriptionToString = (description, converterType) => {
     return acc;
   }, "").trim();
 };
-var normalizeLegacySections = (lines) => {
-  if (!lines) return lines;
+var normalizeLegacySections = (lines2) => {
+  if (!lines2) return lines2;
   let previousSection;
-  return lines.flatMap((line) => {
+  return lines2.flatMap((line) => {
     const { weaponTypes: weaponTypes3, weaponBlock, weaponOther, ...body2 } = line;
     const label = weaponOther ? "Other" : weaponTypes3?.filter(Boolean).join(", ");
     const section = label ? `${weaponBlock ?? ""}:${label}` : void 0;
@@ -25748,6 +25983,7 @@ function withSetBonusType(perks) {
   }
   return renamed ?? perks;
 }
+var isSetBonusPerk = (perk) => isSetBonusType(perk?.type);
 
 // packages/export/src/legacy.ts
 var legacyPresets = [
@@ -25765,6 +26001,19 @@ var deployedLegacyPresets = legacyPresets.filter(
 );
 var encoder = new TextEncoder();
 var isLegacyPreset = (preset) => legacyPresets.includes(preset) && Object.hasOwn(converterSettings, preset);
+function bungieIdentical(input2, inventoryItem, sandboxPerk) {
+  const lookup = expandAliases(lowerInput(input2).perks);
+  const hashes = [];
+  for (const hash2 of Object.keys(input2.perks)) {
+    const perk = lookup[hash2];
+    if (perk === void 0) continue;
+    const english = perk.editor.en?.main.trim() || "";
+    if (english === inventoryItem[hash2]?.displayProperties?.description || isSetBonusPerk(perk) && english === sandboxPerk?.[hash2]?.displayProperties?.description) {
+      hashes.push(hash2);
+    }
+  }
+  return hashes;
+}
 function buildLegacy(input2, preset, options = {}) {
   if (!isLegacyPreset(preset)) throw new Error(`Unknown legacy preset: ${String(preset)}`);
   const identical = new Set([...options.identical ?? []].map(String));
@@ -25783,7 +26032,7 @@ function buildLegacy(input2, preset, options = {}) {
 }
 
 // scripts/publisher/publisher.ts
-import { createHash as createHash5, createPublicKey as createPublicKey3, verify as verify3 } from "node:crypto";
+import { createHash as createHash6, createPublicKey as createPublicKey3, verify as verify3 } from "node:crypto";
 
 // packages/core/src/index.ts
 init_languages();
@@ -26145,6 +26394,47 @@ var iconNames = new Map(markupIcons.map((name2) => [name2.toLowerCase(), name2])
 // packages/core/src/markup/index.ts
 init_baseEnhanced();
 
+// packages/core/src/markup/showcase.ts
+var showcaseId = "-1";
+var showcaseName = "Feature showcase";
+var showcaseText = `var e = \u{1F845}
+var stacks = 3
+var optional = empty
+title Showcase (
+This text is the note: apps show it on hover or tap.
+)
+<bold Bold /> marks key words and <exotic Exotic /> marks Exotic names.
+<bold/>A bold line is bold from start to end.
+<pve 30% /> <pvp [15%] /> pairs a PvE value with its PvP value.
+Lasts 11 <pvp [7.5] /> seconds: the bracketed value applies in PvP.
+<pve 10|20|30 /> lists one value per stack.
+30%<arrow/>33% marks a value that changes.
+{{Base perks get this line; Enhanced perks get their own.}{Enhanced perks get this line; base perks get their own.}}
+Variables and math arrive worked out: #stacks stacks, \${#stacks * 10}%, #{stacks}x.#optional
+<title Notes [Showcase] /> carry extra text for a word.
+<link Links [https://d2clarity.com] /> open a web page.
+
+export Showcase (
+\u2022 Bullets start list lines.
+\u2022 The gap above this list is a spacer line.
+)
+<kinetic/>Kinetic <arc/>Arc <solar/>Solar <void/>Void <stasis/>Stasis <strand/>Strand <prismatic/>Prismatic
+<primary/>Primary <special/>Special <heavy/>Heavy
+<barrier/>Barrier <overload/>Overload <unstoppable/>Unstoppable
+<hunter/>Hunter <titan/>Titan <warlock/>Warlock
+Element words come with their element, to draw as its icon or tint: <kinetic Kinetic />, <arc Jolt />, <solar Scorch />, <void Volatile />, <stasis Slow />, <strand Sever />, <prismatic Transcendence />.
+enhanced (
+var d = 5
+<enhanced/>\${10+#{d}}% is an enhanced value: only Enhanced perks have this line.
+)
+// Comments and variables are for editors: no file contains them.
+/* A block comment. */`;
+var showcaseGlobals = {
+  variables: "",
+  titles: "",
+  type: "Weapon Trait Enhanced"
+};
+
 // packages/core/src/validation/index.ts
 init_prepare();
 init_braces();
@@ -26307,7 +26597,7 @@ function tableOccurrences(text, source2) {
   for (const match of text.matchAll(/^< table [^\n]*\n[\s\S]*?\n<\$>$/gm)) {
     const from = match.index;
     const rows = source2.slice(from, from + match[0].length).split("\n");
-    const lines = rows.slice(1, -1).map(tableRowToLine).join("\n");
+    const lines2 = rows.slice(1, -1).map(tableRowToLine).join("\n");
     found.push({
       kind: "table",
       name: "table",
@@ -26321,7 +26611,7 @@ function tableOccurrences(text, source2) {
           id: "rows-to-lines",
           label: "Convert rows to lines",
           structural: true,
-          edits: [{ from, to: from + match[0].length, insert: lines }]
+          edits: [{ from, to: from + match[0].length, insert: lines2 }]
         }
       ]
     });
@@ -26346,10 +26636,10 @@ function placementCandidates(source2) {
         const insert = edit.insert;
         if (fix.id === "to-yellow") return [{ from, to, insert }];
         if (item.kind === "wrapper" || item.kind === "marker") {
-          const compact = positions.slice(item.from, item.to).map((at) => source2[at]).join("");
-          const content = item.kind === "wrapper" ? wrapper.exec(compact)?.[2] : void 0;
+          const compact2 = positions.slice(item.from, item.to).map((at) => source2[at]).join("");
+          const content = item.kind === "wrapper" ? wrapper.exec(compact2)?.[2] : void 0;
           if (item.kind === "wrapper" && content === void 0) return [];
-          const contentAt = content === void 0 ? -1 : compact.indexOf(content, compact.indexOf(item.name) + item.name.length);
+          const contentAt = content === void 0 ? -1 : compact2.indexOf(content, compact2.indexOf(item.name) + item.name.length);
           const deleted = positions.slice(item.from, item.to).filter(
             (_, index) => contentAt < 0 || index < contentAt || index >= contentAt + content.length
           );
@@ -26369,12 +26659,12 @@ function placementCandidates(source2) {
         }
         if (fix.id === "rows-to-lines") {
           const block = source2.slice(editFrom, editTo);
-          const lines = block.split("\n");
+          const lines2 = block.split("\n");
           const edits = [
-            { from: editFrom, to: editFrom + lines[0].length + 1, insert: "" }
+            { from: editFrom, to: editFrom + lines2[0].length + 1, insert: "" }
           ];
-          let at = editFrom + lines[0].length + 1;
-          for (const row of lines.slice(1, -1)) {
+          let at = editFrom + lines2[0].length + 1;
+          for (const row of lines2.slice(1, -1)) {
             const next = tableRowToLine(row);
             let prefix = 0;
             while (prefix < row.length && prefix < next.length && row[prefix] === next[prefix])
@@ -26421,19 +26711,19 @@ function placementCandidates(source2) {
   }
   return found.sort((a, b) => a.from - b.from || a.to - b.to);
 }
-function parserNames(lines) {
+function parserNames(lines2) {
   const names = [];
   const classes = (values) => {
     for (const name2 of values ?? [])
       if (name2 && (retiredMarkers.includes(name2) || name2 === "table")) names.push(name2);
   };
   const spans2 = (values) => {
-    for (const span of values) {
-      classes(span.classNames);
-      if (span.title) names.push(...parserNames(span.title));
+    for (const span2 of values) {
+      classes(span2.classNames);
+      if (span2.title) names.push(...parserNames(span2.title));
     }
   };
-  for (const line of lines) {
+  for (const line of lines2) {
     classes(line.classNames);
     spans2(line.linesContent ?? []);
     for (const row of line.table ?? []) {
@@ -26479,19 +26769,19 @@ function stripRetired(value2) {
   }
   return value2;
 }
-function normalizedLines(lines) {
-  return lines.flatMap((line) => {
+function normalizedLines(lines2) {
+  return lines2.flatMap((line) => {
     if (!line.table) return [stripRetired(line)];
     return line.table.map((row) => ({
       classNames: (line.classNames ?? []).filter((name2) => name2 !== "table"),
       linesContent: (row.rowContent ?? []).flatMap((cell, index) => [
         ...index ? [{ text: " | " }] : [],
-        ...cell.cellContent.map((span) => ({
-          ...span,
+        ...cell.cellContent.map((span2) => ({
+          ...span2,
           classNames: [
             ...row.classNames ?? [],
             ...cell.classNames ?? [],
-            ...span.classNames ?? []
+            ...span2.classNames ?? []
           ]
         }))
       ])
@@ -26600,14 +26890,14 @@ function findRetiredMarkup(source2) {
       const blockEnd = Math.max(occurrence.to, ...fix.edits.map((edit) => edit.to));
       const newline = source2.indexOf("\n", blockEnd);
       const blockTo = newline < 0 ? source2.length : newline;
-      const refusal = fix.structural && markupCommentContext(source2).comments.some(
+      const refusal2 = fix.structural && markupCommentContext(source2).comments.some(
         (comment) => comment.from < blockTo && comment.to > blockFrom
       ) ? "Blocks containing comments must be fixed by hand." : verifyFix(source2, occurrence, fix);
-      if (refusal) {
-        reason = refusal;
-        (occurrence.manualFixes ??= []).push({ label: fix.label, reason: refusal });
+      if (refusal2) {
+        reason = refusal2;
+        (occurrence.manualFixes ??= []).push({ label: fix.label, reason: refusal2 });
       }
-      return !refusal;
+      return !refusal2;
     });
     if (!occurrence.fixes.length) {
       occurrence.refusalReason = reason ?? "A lossless source edit could not be verified.";
@@ -26852,6 +27142,259 @@ function variableNameIssues(text, defined, native) {
 // packages/core/src/exportLegacy.ts
 init_map();
 init_numbers();
+
+// packages/core/src/globals/inPlace.ts
+init_braces();
+init_comments();
+init_lines();
+init_prepare();
+init_syntax();
+
+// packages/core/src/globals/references.ts
+init_prepare();
+init_braces();
+init_model();
+function globalReferenceSpans(text, kind) {
+  const { comments } = markupCommentContext(text);
+  const tags = [...text.matchAll(/<(title|link) ([^\n]*?) \[([^\]\n]+)\] \/>/dg)];
+  const labels = tags.map((tag) => ({ from: tag.indices[2][0], to: tag.indices[2][1] }));
+  const bracketedLabel = (label) => label.includes("[") || label.includes("]");
+  const literalLinks = tags.filter(
+    (tag) => tag[1] === "link" && (bracketedLabel(tag[2]) || !/^#(?:[a-zA-Z0-9]+|\{[a-zA-Z0-9]+\})$/.test(tag[3]))
+  ).map((tag) => ({ from: tag.indices[3][0], to: tag.indices[3][1] }));
+  const urls = [...text.matchAll(/https?:\/\/[^\s<>]+/g)].map((url2) => ({
+    from: url2.index,
+    to: url2.index + url2[0].length
+  }));
+  const refs = kind === "exports" ? [...text.matchAll(/^import ([A-z0-9 ]+?) from (?:global|0*1) *\r?$/dgm)].filter((match) => validGlobalName("exports", match[1].trim())).map((match) => {
+    const [start] = match.indices[1];
+    const name2 = match[1].trim();
+    const from = start + match[1].length - match[1].trimStart().length;
+    return { name: name2, from, to: from + name2.length };
+  }) : kind === "variables" ? variableReferences(text) : tags.filter(
+    (tag) => tag[1] === "title" && !bracketedLabel(tag[2]) && validGlobalName("titles", tag[3])
+  ).map((tag) => {
+    const [from, to] = tag.indices[3];
+    return { name: tag[3], from, to };
+  });
+  return refs.filter(
+    (ref) => ![...comments, ...labels, ...literalLinks, ...urls].some(
+      (span2) => ref.from < span2.to && ref.to > span2.from
+    )
+  );
+}
+function rewriteGlobalReferences(text, kind, beforeName, afterName) {
+  if (!validGlobalName(kind, beforeName) || !validGlobalName(kind, afterName))
+    throw new Error("Invalid global reference name");
+  if (kind === "variables" && (beforeName === "e" || afterName === "e") && beforeName !== afterName)
+    throw new Error("The legacy enhanced arrow identity is protected");
+  const edits = globalReferenceSpans(text, kind).filter((ref) => ref.name === beforeName);
+  let next = text;
+  for (const ref of [...edits].reverse()) {
+    const value2 = kind !== "variables" ? afterName : ref.braced ? `#{${afterName}}` : `#${afterName}`;
+    next = next.slice(0, ref.from) + value2 + next.slice(ref.to);
+  }
+  return { text: next, edits };
+}
+
+// packages/core/src/globals/inPlace.ts
+var MissingGlobalTranslation = class extends Error {
+  constructor(kind, globalName, language, reason) {
+    super(`Add or update the translation for shared ${globalName}.`);
+    this.kind = kind;
+    this.globalName = globalName;
+    this.language = language;
+    this.reason = reason;
+    this.name = "MissingGlobalTranslation";
+  }
+  kind;
+  globalName;
+  language;
+  reason;
+};
+function globalsInPlaceSaveIssue(source2, titleNames) {
+  if (!source2.includes("import ") && (!titleNames?.size || !source2.includes("export ")))
+    return void 0;
+  const text = removeMarkupComments(source2.replace(/\r/g, ""));
+  if (/^import [A-z0-9 ]+? from 0*[123] *$/m.test(text) || /^import (main|secondary) from global *$/m.test(text))
+    return "Use a shared export by name or reference the shared variable or note directly.";
+  if (titleNames?.size && Object.values(extractBlocks(text, "export")).some(
+    (body2) => globalReferenceSpans(body2, "titles").some(({ name: name2 }) => titleNames.has(name2))
+  ))
+    return "Move the shared note outside the named export.";
+}
+function globalsInPlaceDefinitions(entries) {
+  const result = {
+    exports: /* @__PURE__ */ Object.create(null),
+    variables: /* @__PURE__ */ Object.create(null),
+    titles: /* @__PURE__ */ Object.create(null)
+  };
+  for (const entry of entries)
+    if (!entry.tombstone) result[entry.kind][entry.name] = entry.definitions;
+  return result;
+}
+function legacyGlobalsInPlaceDefinitions(perks) {
+  const result = {
+    exports: /* @__PURE__ */ Object.create(null),
+    variables: /* @__PURE__ */ Object.create(null),
+    titles: /* @__PURE__ */ Object.create(null)
+  };
+  for (const [hash2, kind] of [
+    [1, "exports"],
+    [2, "variables"],
+    [3, "titles"]
+  ]) {
+    const editor = perks[hash2]?.editor;
+    if (!editor && hash2 !== 1) throw new Error(`Missing LIVE library ${hash2}`);
+    for (const [language, cell] of Object.entries(editor ?? {}))
+      for (const source2 of [cell.main, cell.secondary]) {
+        const text = source2.replace(/\r/g, "");
+        const bodies = kind === "variables" ? extractVariables(text) : extractBlocks(text, kind === "exports" ? "export" : "title");
+        for (const [name2, body2] of Object.entries(bodies)) {
+          const definitions = result[kind][name2] ??= {};
+          definitions[language] = { body: body2 };
+        }
+      }
+  }
+  return result;
+}
+function globalsInPlaceDefinition(entry, language) {
+  const english = entry.en;
+  let selected = entry[language];
+  if (language !== "en" && selected?.sourceUpdatedAt && english?.updatedAt && Date.parse(english.updatedAt) - Date.parse(selected.sourceUpdatedAt) > translationMaxAge)
+    selected = void 0;
+  return selected;
+}
+function effectiveSharedNotes(source2, globals, names) {
+  if (!names.size) return [];
+  const reads = /* @__PURE__ */ new Set();
+  const titles = new Proxy(/* @__PURE__ */ Object.create(null), {
+    get(_target, key) {
+      if (typeof key === "string" && names.has(key)) reads.add(key);
+      return void 0;
+    }
+  });
+  const variants = /* @__PURE__ */ new Set();
+  const observe = (type) => {
+    const { text } = prepareMarkup(source2, { ...globals, type }, [], (condition) => {
+      variants.add(condition);
+    });
+    parseLines(text, titles);
+  };
+  observe(globals.type);
+  if (globals.type === void 0) {
+    for (const [keyword, type] of markupConditions) if (variants.has(keyword)) observe(type);
+  }
+  return [...reads];
+}
+function protectCommentedGlobalImports(source2) {
+  if (!source2.includes("/*") || !source2.includes("import ")) return source2;
+  const { comments } = markupCommentContext(source2);
+  return source2.replace(
+    /^import [A-z0-9 ]+? from (?:global|0*[123]) *$/gm,
+    (line, offset) => comments.some(({ from, to }) => from <= offset && offset < to) ? ` ${line}` : line
+  );
+}
+function resolveGlobalsInPlace(source2, language, { definitions, unavailable }) {
+  const requirePublished = (kind, name2) => {
+    if (unavailable?.[kind]?.has(name2) && !Object.hasOwn(definitions[kind] ?? {}, name2))
+      throw new Error(`Publish the shared change for ${name2} first.`);
+  };
+  const lookup = (kind, name2, needed = true) => {
+    const entries = definitions[kind];
+    if (!entries || !Object.hasOwn(entries, name2)) return;
+    const entry = entries[name2];
+    const selected = globalsInPlaceDefinition(entry, language);
+    if (!selected && needed)
+      throw new MissingGlobalTranslation(
+        kind,
+        name2,
+        language,
+        entry[language] ? "stale" : "missing"
+      );
+    return selected?.body;
+  };
+  const active = /* @__PURE__ */ new Set();
+  const expand = (text2, authored) => protectCommentedGlobalImports(text2).replace(
+    /^import ([A-z0-9 ]+?) from global *$/gm,
+    (_line, rawName) => {
+      const name2 = rawName.trim();
+      if (active.has(name2)) throw new Error(`Remove the cycle in shared export ${name2}.`);
+      if (authored) requirePublished("exports", name2);
+      const body2 = lookup("exports", name2);
+      if (body2 === void 0) throw new Error(`Choose an existing shared export for ${name2}.`);
+      active.add(name2);
+      const expanded2 = expand(body2, false);
+      active.delete(name2);
+      return expanded2;
+    }
+  );
+  const variableUses = (text2) => {
+    const refs = variableReferences(text2);
+    if (!refs.length) return refs;
+    const comments = text2.includes("//") || text2.includes("/*") ? markupCommentContext(text2).comments : [];
+    return refs.filter(
+      ({ name: name2, from }) => name2 !== "e" && !comments.some((span2) => span2.from <= from && from < span2.to)
+    );
+  };
+  const fill = (text2) => {
+    let result = "";
+    let at = 0;
+    for (const { name: name2, from, to } of variableUses(text2)) {
+      const body2 = lookup("variables", name2)?.trim();
+      if (body2 === void 0) continue;
+      result += text2.slice(at, from) + (body2 === "empty" ? "" : body2);
+      at = to;
+    }
+    return at ? result + text2.slice(at) : text2;
+  };
+  if (unavailable?.variables?.size)
+    for (const { name: name2 } of variableUses(source2)) requirePublished("variables", name2);
+  const expanded = source2.includes("import ") ? expand(source2, true) : source2;
+  const text = fill(expanded);
+  const names = new Set(Object.keys(definitions.titles ?? {}));
+  if (!names.size && !unavailable?.titles?.size || !source2) return text;
+  const variables = Object.keys(definitions.variables ?? {}).flatMap((name2) => {
+    const body2 = lookup("variables", name2, false);
+    return name2 !== "e" && body2 !== void 0 ? [`var ${name2} = ${body2.trim() || "empty"}`] : [];
+  });
+  const noteBlock = (name2, body2) => `title ${name2} (
+${body2}
+)`;
+  const titles = [...names].flatMap((name2) => {
+    const body2 = lookup("titles", name2, false);
+    return body2 === void 0 ? [] : [noteBlock(name2, body2)];
+  });
+  const globals = {
+    variables: lowerConsumerMarkup([globalsInPlaceLibraryText(2), ...variables].join("\n")),
+    titles: lowerConsumerMarkup(titles.join("\n")),
+    lang: language
+  };
+  const local = extractBlocks(text.replace(/\r/g, ""), "title");
+  if (unavailable?.titles?.size) {
+    for (const name2 of effectiveSharedNotes(
+      lowerConsumerMarkup(source2),
+      globals,
+      unavailable.titles
+    ))
+      if (!Object.hasOwn(local, name2)) requirePublished("titles", name2);
+  }
+  const reads = effectiveSharedNotes(lowerConsumerMarkup(expanded), globals, names);
+  const blocks = reads.flatMap((name2) => {
+    if (Object.hasOwn(local, name2)) return [];
+    const body2 = lookup("titles", name2);
+    const filled = removeMarkupComments(fill(body2)).replace(/<enhanced\/>|#\{e\}|#e(?![A-Za-z0-9])/g, "\u{1F845}").trim();
+    return [noteBlock(name2, filled)];
+  });
+  return blocks.length ? `${blocks.join("\n")}
+${text}` : text;
+}
+function globalsInPlaceLibraryText(hash2) {
+  if (hash2 === 1 || hash2 === 3) return "";
+  if (hash2 === 2) return "var e = \u{1F845}";
+}
+
+// packages/core/src/exportLegacy.ts
 function exportFacts(facts) {
   if (!facts) return {};
   return {
@@ -26904,12 +27447,12 @@ function withUnpublishedRemovals(aliases, removed, live, entries, catalog) {
 function mergeLivePerks(live, entries, picks, groups, removed) {
   const merged = { ...live, ...entries };
   if (removed) {
-    const keep = (view) => ({
+    const keep2 = (view) => ({
       ...view,
       aliases: withUnpublishedRemovals(view.aliases, removed, live, entries, view.catalog)
     });
-    picks &&= keep(picks);
-    groups &&= keep(groups);
+    picks &&= keep2(picks);
+    groups &&= keep2(groups);
   }
   for (const key of picks?.keys ?? []) {
     if (Object.hasOwn(entries, key)) continue;
@@ -26943,7 +27486,7 @@ function mergeLivePerks(live, entries, picks, groups, removed) {
   }
   return merged;
 }
-function exportLegacy(tooltips, now, catalog, aliases = {}) {
+function exportLegacy(tooltips, now, catalog, aliases = {}, options) {
   if (!Number.isFinite(now) || now < 0 || !Number.isInteger(now)) {
     throw new TypeError("now must be nonnegative integer epoch milliseconds");
   }
@@ -26968,27 +27511,60 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
     if (canonical[tooltip.hash]) throw new Error(`Duplicate tooltip hash: ${tooltip.hash}`);
     const english = tooltip.text.en;
     const editor = {};
+    const globals = options?.globalsInPlace;
+    const libraryText = globals ? globalsInPlaceLibraryText(tooltip.hash) : void 0;
     const descriptions = {
       ...tooltip.legacy?.updateTracker?.descriptions
     };
     for (const language of languages2) {
       const translation = tooltip.text[language];
       if (!translation) continue;
-      const englishFallback = usesEnglishFallback(tooltip, language);
-      const exported = englishFallback && english ? english : translation;
-      const resolved = exported.text.includes("#{=") && english ? resolveNumberTokens(exported.text, numberValues(english, language)) : exported.text;
-      const text = lowerConsumerMarkup(resolved);
-      editor[language] = {
-        main: text,
-        secondary: text,
-        ...englishFallback ? { englishFallback: true } : {}
-      };
+      let englishFallback = usesEnglishFallback(tooltip, language);
+      let exported = englishFallback && english ? english : translation;
+      let resolved = exported.text.includes("#{=") && english ? resolveNumberTokens(exported.text, numberValues(english, language)) : exported.text;
+      if (libraryText === void 0) {
+        let source2 = resolved;
+        if (globals) {
+          try {
+            try {
+              source2 = resolveGlobalsInPlace(resolved, language, globals);
+              if (language !== "en" && !englishFallback) {
+                const imported = globals.importFallback?.(source2, language);
+                if (imported) throw imported;
+              }
+            } catch (cause) {
+              if (!(cause instanceof MissingGlobalTranslation) || language === "en" || !english?.text.trim())
+                throw cause;
+              englishFallback = true;
+              exported = english;
+              resolved = english.text.includes("#{=") ? resolveNumberTokens(english.text, numberValues(english, "en")) : english.text;
+              source2 = resolveGlobalsInPlace(resolved, "en", globals);
+              options?.onGlobalsFallback?.(tooltip.hash, cause);
+            }
+            if (source2.includes("{{")) throw new Error(baseEnhancedPublishMessage);
+            if (options?.preserveGlobalReferencesForProof)
+              source2 = protectCommentedGlobalImports(resolved);
+          } catch (cause) {
+            const message = cause instanceof Error ? cause.message : String(cause);
+            throw new Error(`Tooltip ${tooltip.hash} (${language}): ${message}`, { cause });
+          }
+        }
+        const text = lowerConsumerMarkup(source2);
+        editor[language] = {
+          main: text,
+          secondary: text,
+          ...englishFallback ? { englishFallback: true } : {}
+        };
+      } else if (libraryText) {
+        editor[language] = { main: libraryText, secondary: "" };
+      }
       const old = tooltip.legacy?.updateTracker?.descriptions[language];
       descriptions[language] = {
         lastUpdate: Date.parse(exported.updatedAt),
         ...exported.updatedBy !== "" || old?.updatedBy !== void 0 ? { updatedBy: exported.updatedBy } : {}
       };
     }
+    if (libraryText && !editor.en) editor.en = { main: libraryText, secondary: "" };
     const facts = catalog?.[tooltip.hash] ?? (tooltip.custom ? { name: tooltip.custom.name, type: tooltip.custom.categoryId } : void 0);
     if (catalog && !facts) throw new Error(`Missing manifest facts for tooltip ${tooltip.hash}`);
     const associated = [
@@ -27054,28 +27630,29 @@ function exportLegacy(tooltips, now, catalog, aliases = {}) {
 // packages/core/src/publishableHash.ts
 init_braces();
 init_schemas3();
-async function publishableHash(tooltip, aliases = {}) {
+function publishableHashInput(tooltip, aliases = {}) {
   const parsed = tooltipSchema.parse(tooltip);
   const english = parsed.text.en;
   const incoming = incomingAliases(parsed.hash, aliases);
   const fallback = Object.keys(parsed.text).filter(
     (language) => usesEnglishFallback(parsed, language)
   );
-  const bytes = new TextEncoder().encode(
-    stableStringify({
-      text: Object.fromEntries(
-        Object.entries(parsed.text).map(([language, value2]) => [
-          language,
-          lowerConsumerMarkup(fallback.includes(language) && english ? english.text : value2.text)
-        ])
-      ),
-      associated: parsed.associated,
-      custom: parsed.custom,
-      numbers: english?.numbers,
-      ...fallback.length ? { fallback: fallback.sort() } : {},
-      ...incoming.length ? { aliases: incoming } : {}
-    })
-  );
+  return stableStringify({
+    text: Object.fromEntries(
+      Object.entries(parsed.text).map(([language, value2]) => [
+        language,
+        lowerConsumerMarkup(fallback.includes(language) && english ? english.text : value2.text)
+      ])
+    ),
+    associated: parsed.associated,
+    custom: parsed.custom,
+    numbers: english?.numbers,
+    ...fallback.length ? { fallback: fallback.sort() } : {},
+    ...incoming.length ? { aliases: incoming } : {}
+  });
+}
+async function publishableHash(tooltip, aliases = {}) {
+  const bytes = new TextEncoder().encode(publishableHashInput(tooltip, aliases));
   const digest6 = await globalThis.crypto.subtle.digest("SHA-256", bytes);
   return Array.from(new Uint8Array(digest6), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
@@ -27296,18 +27873,22 @@ function activeAliases(aliases, moves) {
   snapshots.set(moves, active);
   return active;
 }
-function exportWithInactiveMoves(tooltips, now, catalog, aliases = {}, moves = {}) {
+function exportWithInactiveMoves(tooltips, now, catalog, aliases = {}, moves = {}, options) {
   if (!Object.keys(moves).some((hash2) => isMovedInactive(Number(hash2), moves)))
-    return exportLegacy(tooltips, now, catalog, aliases);
+    return exportLegacy(tooltips, now, catalog, aliases, options);
   for (const hash2 of [1, 2, 3])
     if (isMovedInactive(hash2, moves))
       throw new Error(
         `Global tooltip ${hash2} is a required output input; move it out of Inactive before publishing`
       );
   const kept = tooltips.filter((tooltip) => !isMovedInactive(tooltip.hash, moves));
+  const resolved = options?.globalsInPlace ? exportLegacy(kept, now, catalog, aliases, options) : void 0;
   for (const language of languages2) {
     const imports = Object.fromEntries(
       tooltips.map((tooltip) => {
+        const entry = resolved?.[tooltip.hash];
+        if (entry && !isLegacyAliasStub(entry))
+          return [tooltip.hash, entry.editor[language]?.main ?? ""];
         const text = usesEnglishFallback(tooltip, language) ? tooltip.text.en : tooltip.text[language];
         return [tooltip.hash, lowerConsumerMarkup(text?.text ?? "")];
       })
@@ -27337,7 +27918,7 @@ function exportWithInactiveMoves(tooltips, now, catalog, aliases = {}, moves = {
           throw new Error(`Tooltip ${tooltip.hash} imports inactive tooltip ${hash2} (${language})`);
     }
   }
-  const entries = exportLegacy(kept, now, catalog, aliases);
+  const entries = resolved ?? exportLegacy(kept, now, catalog, aliases);
   for (const hash2 of Object.keys(moves))
     if (isMovedInactive(Number(hash2), moves)) delete entries[hash2];
   return entries;
@@ -27422,178 +28003,11 @@ init_merge3();
 // packages/core/src/globals/index.ts
 init_languages();
 init_syntax();
-
-// packages/core/src/globals/model.ts
-init_zod();
-init_languages();
-init_legacy();
-init_schemas3();
-init_syntax();
-var globalIdSchema = external_exports.string().regex(/^g_[a-zA-Z0-9_-]{8,80}$/);
-var globalRevisionSchema = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,128}$/);
-var globalDigestSchema = external_exports.string().regex(/^[a-f0-9]{64}$/);
-var globalKindSchema = external_exports.enum(["variables", "titles", "exports"]);
-function globalAggregateHash(kind) {
-  return kind === "exports" ? 1 : kind === "variables" ? 2 : 3;
-}
-function globalAggregateKind(hash2) {
-  if (hash2 === 1) return "exports";
-  if (hash2 === 2) return "variables";
-  if (hash2 === 3) return "titles";
-  throw new Error("Expected aggregate 1, 2, or 3");
-}
-function validGlobalName(kind, name2) {
-  if (kind === "variables") return /^[a-zA-Z0-9]+$/.test(name2);
-  if (kind === "exports" && (name2 === "main" || name2 === "secondary")) return false;
-  const declaration = kind === "exports" ? "export" : "title";
-  return /^[A-Za-z0-9_]+(?: [A-Za-z0-9_]+)*$/.test(name2) && Object.hasOwn(extractBlocks(`${declaration} ${name2} (
-body
-)`, declaration), name2);
-}
-var sourceSchema = external_exports.object({
-  repository: external_exports.string().min(1),
-  revision: globalRevisionSchema,
-  path: external_exports.string().min(1),
-  /** JSON keys selecting the original decoded string; spans index its UTF-16 code units. */
-  selector: external_exports.array(external_exports.string()).min(1),
-  spanConvention: external_exports.literal("decoded-utf16"),
-  hash: external_exports.union([external_exports.literal(1), external_exports.literal(2), external_exports.literal(3)]),
-  lang: langSchema,
-  from: external_exports.number().int().nonnegative(),
-  to: external_exports.number().int().positive()
-}).strict().refine((v) => v.to > v.from, "Source span must be nonempty");
-var globalDefinitionSchema = external_exports.object({
-  /** Body only; an empty variable is serialized as the legacy `empty` value. */
-  body: external_exports.string(),
-  revision: globalRevisionSchema,
-  updatedAt: timestampSchema,
-  updatedBy: external_exports.string(),
-  sourceUpdatedAt: timestampSchema.optional(),
-  sourceRevision: globalRevisionSchema.optional(),
-  /** Present if and only if migrated. */
-  provenance: sourceSchema.optional()
-}).strict();
-var globalRecordSchema = external_exports.object({
-  version: external_exports.literal(1),
-  id: globalIdSchema,
-  kind: globalKindSchema,
-  name: external_exports.string().min(1),
-  revision: globalRevisionSchema,
-  definitions: external_exports.partialRecord(langSchema, globalDefinitionSchema),
-  nameHistory: external_exports.array(
-    external_exports.object({
-      name: external_exports.string().min(1),
-      revision: globalRevisionSchema,
-      at: timestampSchema,
-      by: external_exports.string().min(1)
-    }).strict()
-  ),
-  tombstone: external_exports.object({ at: timestampSchema, by: external_exports.string().min(1) }).strict().optional()
-}).strict().superRefine((record3, ctx) => {
-  if (!validGlobalName(record3.kind, record3.name))
-    ctx.addIssue({ code: "custom", message: "Name cannot round-trip through the resolver" });
-  for (const [lang, definition2] of Object.entries(record3.definitions)) {
-    if (definition2.provenance && (definition2.provenance.lang !== lang || definition2.provenance.hash !== globalAggregateHash(record3.kind)))
-      ctx.addIssue({ code: "custom", message: "Definition provenance kind/language mismatch" });
-    if (record3.kind === "variables" && /[\r\n]/.test(definition2.body))
-      ctx.addIssue({ code: "custom", message: "Variables must fit on one line" });
-    if (record3.kind !== "variables" && !definition2.body.trim())
-      ctx.addIssue({ code: "custom", message: "Title and export bodies must not be empty" });
-  }
-});
-var globalSegmentSchema = external_exports.union([
-  external_exports.object({ literal: external_exports.string() }).strict(),
-  external_exports.object({
-    entryId: globalIdSchema,
-    beforeName: external_exports.string(),
-    afterName: external_exports.string(),
-    afterBody: external_exports.string()
-  }).strict()
-]);
-var globalAggregateSchema = external_exports.object({
-  document: external_exports.object(tooltipSchema.shape).omit({ text: true }).strict(),
-  languages: external_exports.partialRecord(
-    langSchema,
-    external_exports.object({
-      metadata: langTextSchema.omit({ text: true }),
-      segments: external_exports.array(globalSegmentSchema)
-    }).strict()
-  )
-}).strict();
-var globalStoreSchema = external_exports.object({
-  version: external_exports.literal(1),
-  entries: external_exports.array(globalRecordSchema),
-  aggregates: external_exports.array(globalAggregateSchema)
-}).strict().superRefine((store, ctx) => {
-  const ids = /* @__PURE__ */ new Set(), names = /* @__PURE__ */ new Set(), hashes = /* @__PURE__ */ new Set();
-  for (const entry of store.entries) {
-    if (ids.has(entry.id)) ctx.addIssue({ code: "custom", message: "Duplicate global ID" });
-    ids.add(entry.id);
-    const key = `${entry.kind}:${entry.name}`;
-    if (!entry.tombstone && names.has(key))
-      ctx.addIssue({ code: "custom", message: "Duplicate global name across languages" });
-    if (!entry.tombstone) names.add(key);
-  }
-  for (const aggregate of store.aggregates) {
-    const hash2 = aggregate.document.hash;
-    if (![1, 2, 3].includes(hash2) || hashes.has(hash2)) {
-      ctx.addIssue({ code: "custom", message: "Expected unique aggregate hashes 1, 2, and 3" });
-      continue;
-    }
-    hashes.add(hash2);
-    for (const [lang, layout] of Object.entries(aggregate.languages)) {
-      const seen = /* @__PURE__ */ new Set();
-      for (const segment of layout.segments) {
-        if (!("entryId" in segment)) continue;
-        const entry = store.entries.find((v) => v.id === segment.entryId);
-        if (!entry || entry.tombstone || entry.kind !== globalAggregateKind(hash2) || !entry.definitions[lang] || seen.has(segment.entryId))
-          ctx.addIssue({ code: "custom", message: "Invalid or duplicate projection entry" });
-        seen.add(segment.entryId);
-      }
-      for (const entry of store.entries) {
-        if (!entry.tombstone && entry.kind === globalAggregateKind(hash2) && entry.definitions[lang] && !seen.has(entry.id))
-          ctx.addIssue({ code: "custom", message: "Definition missing from projection" });
-      }
-    }
-  }
-  for (const entry of store.entries) {
-    if (entry.tombstone) continue;
-    for (const lang of Object.keys(entry.definitions))
-      if (!store.aggregates.some(
-        (a) => a.document.hash === globalAggregateHash(entry.kind) && Object.hasOwn(a.languages, lang)
-      ))
-        ctx.addIssue({ code: "custom", message: "Missing language projection" });
-  }
-});
-var globalConsumerSchema = external_exports.object({
-  hash: hashSchema,
-  lang: langSchema,
-  destination: external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/)
-}).strict();
-var globalCauseSchema = external_exports.object({
-  globalId: globalIdSchema,
-  beforeRevision: globalRevisionSchema.nullable(),
-  afterRevision: globalRevisionSchema.nullable()
-}).strict();
-var globalReviewSchema = external_exports.object({
-  version: external_exports.literal(1),
-  consumer: globalConsumerSchema,
-  causes: external_exports.array(globalCauseSchema).min(1),
-  contentDigest: globalDigestSchema,
-  dependencyDigest: globalDigestSchema,
-  acknowledgement: external_exports.object({
-    by: external_exports.string().min(1),
-    at: timestampSchema,
-    contentDigest: globalDigestSchema,
-    dependencyDigest: globalDigestSchema,
-    /** Binds the before/after rendered review, including its complete cause set. */
-    impactDigest: globalDigestSchema,
-    decision: external_exports.enum(["edited", "no-text-change"])
-  }).strict().optional()
-}).strict();
+init_model();
 
 // packages/core/src/globals/impactModel.ts
 init_zod();
+init_model();
 var globalReadSchema = external_exports.object({
   imports: external_exports.array(external_exports.object({ key: external_exports.string(), hash: external_exports.number().int().nonnegative() }).strict()),
   variables: external_exports.array(external_exports.string()),
@@ -27628,6 +28042,7 @@ init_contentHash();
 init_prepare();
 init_syntax();
 init_schemas3();
+init_model();
 function declarations(raw, kind) {
   const offsets = [];
   let text = "";
@@ -27715,58 +28130,13 @@ function projectGlobals(input2) {
   return result;
 }
 
-// packages/core/src/globals/references.ts
-init_prepare();
-init_braces();
-function globalReferenceSpans(text, kind) {
-  const { comments } = markupCommentContext(text);
-  const tags = [...text.matchAll(/<(title|link) ([^\n]*?) \[([^\]\n]+)\] \/>/dg)];
-  const labels = tags.map((tag) => ({ from: tag.indices[2][0], to: tag.indices[2][1] }));
-  const bracketedLabel = (label) => label.includes("[") || label.includes("]");
-  const literalLinks = tags.filter(
-    (tag) => tag[1] === "link" && (bracketedLabel(tag[2]) || !/^#(?:[a-zA-Z0-9]+|\{[a-zA-Z0-9]+\})$/.test(tag[3]))
-  ).map((tag) => ({ from: tag.indices[3][0], to: tag.indices[3][1] }));
-  const urls = [...text.matchAll(/https?:\/\/[^\s<>]+/g)].map((url2) => ({
-    from: url2.index,
-    to: url2.index + url2[0].length
-  }));
-  const refs = kind === "exports" ? [...text.matchAll(/^import ([A-z0-9 ]+?) from (?:global|0*1) *\r?$/dgm)].filter((match) => validGlobalName("exports", match[1].trim())).map((match) => {
-    const [start] = match.indices[1];
-    const name2 = match[1].trim();
-    const from = start + match[1].length - match[1].trimStart().length;
-    return { name: name2, from, to: from + name2.length };
-  }) : kind === "variables" ? variableReferences(text) : tags.filter(
-    (tag) => tag[1] === "title" && !bracketedLabel(tag[2]) && validGlobalName("titles", tag[3])
-  ).map((tag) => {
-    const [from, to] = tag.indices[3];
-    return { name: tag[3], from, to };
-  });
-  return refs.filter(
-    (ref) => ![...comments, ...labels, ...literalLinks, ...urls].some(
-      (span) => ref.from < span.to && ref.to > span.from
-    )
-  );
-}
-function rewriteGlobalReferences(text, kind, beforeName, afterName) {
-  if (!validGlobalName(kind, beforeName) || !validGlobalName(kind, afterName))
-    throw new Error("Invalid global reference name");
-  if (kind === "variables" && (beforeName === "e" || afterName === "e") && beforeName !== afterName)
-    throw new Error("The legacy enhanced arrow identity is protected");
-  const edits = globalReferenceSpans(text, kind).filter((ref) => ref.name === beforeName);
-  let next = text;
-  for (const ref of [...edits].reverse()) {
-    const value2 = kind !== "variables" ? afterName : ref.braced ? `#{${afterName}}` : `#${afterName}`;
-    next = next.slice(0, ref.from) + value2 + next.slice(ref.to);
-  }
-  return { text: next, edits };
-}
-
 // packages/core/src/globals/transition.ts
 init_contentHash();
 init_braces();
 init_syntax();
 init_prepare();
 init_languages();
+init_model();
 
 // packages/core/src/globals/source.ts
 init_braces();
@@ -27851,6 +28221,7 @@ function assertGlobalTransition(beforeInput, afterInput, tooltips) {
 // packages/core/src/globals/impact.ts
 init_prepare();
 init_schemas3();
+init_model();
 var keyOf = (hash2, lang) => `${hash2}:${lang}`;
 function resolveSnapshot(snapshot, blockers) {
   const result = /* @__PURE__ */ new Map();
@@ -27981,7 +28352,7 @@ var GlobalSnapshotScans = class {
       names = new Set(
         Object.values(snapshot.tooltips).flatMap(
           (tooltip) => globalReferenceSpans(globalSourceText(tooltip, lang, snapshot.mode) ?? "", kind).map(
-            (span) => span.name
+            (span2) => span2.name
           )
         )
       );
@@ -28055,19 +28426,23 @@ function calculateGlobalImpact(before, after, changes2, destination, scans = new
   });
 }
 
+// packages/core/src/index.ts
+init_inPlaceReview();
+
 // packages/core/src/globalsRelease/model.ts
 init_zod();
-var oid2 = external_exports.string().regex(/^[a-f0-9]{40}$/);
+init_model();
+var oid3 = external_exports.string().regex(/^[a-f0-9]{40}$/);
 var digest4 = external_exports.string().regex(/^[a-f0-9]{64}$/);
 var globalSourcesSchema = external_exports.object({
-  authored: oid2,
-  definitions: oid2,
-  projections: oid2,
-  config: oid2,
-  live: oid2,
-  upcoming: oid2,
-  aliases: oid2,
-  generator: oid2,
+  authored: oid3,
+  definitions: oid3,
+  projections: oid3,
+  config: oid3,
+  live: oid3,
+  upcoming: oid3,
+  aliases: oid3,
+  generator: oid3,
   fallback: digest4,
   resolver: digest4
 }).strict();
@@ -28099,7 +28474,7 @@ async function globalIdentityDigest(value2, algorithm = "SHA-256") {
   return [...new Uint8Array(await crypto.subtle.digest(algorithm, bytes))].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 async function observeGlobalSources(input2) {
-  for (const value2 of Object.values(input2)) if (value2 !== null) oid2.parse(value2);
+  for (const value2 of Object.values(input2)) if (value2 !== null) oid3.parse(value2);
   return globalSourcesSchema.parse({
     authored: input2.authored,
     definitions: input2.definitions,
@@ -28127,6 +28502,7 @@ async function observeGlobalSources(input2) {
 // packages/core/src/globalsRelease/compose.ts
 init_languages();
 init_contentHash();
+init_model();
 function reconcileGlobalStore(layout, entries, { preserveNewLanguageSourceStamp = false } = {}) {
   const aggregates = structuredClone(layout);
   for (const aggregate of aggregates) {
@@ -28508,7 +28884,7 @@ async function planGlobalRelease(input2) {
     for (const entry of store.entries) {
       const reads = Object.values(entry.definitions).flatMap(
         (cell) => ["variables", "titles", "exports"].flatMap(
-          (kind) => globalReferenceSpans(cell.body, kind).map((span) => ({ kind, name: span.name }))
+          (kind) => globalReferenceSpans(cell.body, kind).map((span2) => ({ kind, name: span2.name }))
         )
       );
       join5([
@@ -28731,7 +29107,7 @@ var join2 = (parts) => {
 };
 async function gitTreeOid(entries) {
   const seen = /* @__PURE__ */ new Set();
-  const sorted = entries.map(({ nameRaw, mode, oid: oid4 }) => {
+  const sorted = entries.map(({ nameRaw, mode, oid: oid5 }) => {
     const name2 = atob(nameRaw);
     if (!name2 || name2.includes("/") || name2.includes("\0") || seen.has(name2))
       throw new Error("Invalid Git tree filename");
@@ -28742,7 +29118,7 @@ async function gitTreeOid(entries) {
         encoder2.encode(`${mode.toString(8)} `),
         Uint8Array.from(name2, (byte) => byte.charCodeAt(0)),
         new Uint8Array(1),
-        Uint8Array.from(oid4.match(/../g), (byte) => parseInt(byte, 16))
+        Uint8Array.from(oid5.match(/../g), (byte) => parseInt(byte, 16))
       ])
     };
   });
@@ -30446,6 +30822,7 @@ function stampUploads(entries, changed, livePerks, now, uploader) {
 // apps/worker/src/globals/model.ts
 init_zod();
 init_languages();
+init_model();
 var limits = {
   requestBytes: 16384,
   fileBytes: 65536,
@@ -30456,7 +30833,7 @@ var limits = {
   page: 3,
   destinations: 4
 };
-var oid3 = external_exports.string().regex(/^[a-f0-9]{40}$/);
+var oid4 = external_exports.string().regex(/^[a-f0-9]{40}$/);
 function globalFileBytes(value2) {
   return new TextEncoder().encode(`${JSON.stringify(value2, null, 2)}
 `).byteLength;
@@ -30464,14 +30841,14 @@ function globalFileBytes(value2) {
 var token = external_exports.string().regex(/^[a-zA-Z0-9_-]{1,80}$/);
 var destinationsSchema = external_exports.array(token).min(1).max(limits.destinations).refine((v) => new Set(v).size === v.length, "Duplicate destination");
 var sourcesSchema = external_exports.object({
-  authored: oid3,
-  definitions: oid3,
-  projections: oid3,
-  config: oid3,
-  live: oid3,
-  upcoming: oid3,
-  aliases: oid3,
-  generator: oid3,
+  authored: oid4,
+  definitions: oid4,
+  projections: oid4,
+  config: oid4,
+  live: oid4,
+  upcoming: oid4,
+  aliases: oid4,
+  generator: oid4,
   fallback: globalDigestSchema,
   resolver: globalDigestSchema
 }).strict();
@@ -30484,12 +30861,12 @@ var nameProofRequestSchema = external_exports.object({
   name: external_exports.string().min(1).max(128),
   globalId: globalIdSchema.nullable(),
   revision: globalRevisionSchema.nullable(),
-  expectedHead: oid3,
+  expectedHead: oid4,
   sources: sourcesSchema,
   by: external_exports.string().min(1).max(128),
   at: external_exports.iso.datetime()
 }).strict();
-var sourceIdentity = external_exports.object({ path: external_exports.string().max(256), blob: oid3, revision: globalRevisionSchema }).strict();
+var sourceIdentity = external_exports.object({ path: external_exports.string().max(256), blob: oid4, revision: globalRevisionSchema }).strict();
 var pendingCauseSchema = external_exports.object({
   version: external_exports.literal(1),
   id: token,
@@ -30497,7 +30874,7 @@ var pendingCauseSchema = external_exports.object({
   globalId: globalIdSchema,
   lang: langSchema.nullable(),
   beforeSources: sourcesSchema,
-  expectedHead: oid3,
+  expectedHead: oid4,
   at: external_exports.iso.datetime(),
   by: external_exports.string().min(1).max(128),
   before: sourceIdentity.nullable(),
@@ -30590,7 +30967,7 @@ var pageSchema = external_exports.object({
 }).strict();
 var catalogSchema = external_exports.object({ version: external_exports.literal(1), lastPage: external_exports.number().int().min(0).max(99999) }).strict();
 var reviewPageSchema = external_exports.object({ ...proof, ids: external_exports.array(token).max(limits.page), nextCursor: token.nullable() }).strict();
-var expected = { expectedHead: oid3 };
+var expected = { expectedHead: oid4 };
 var existing = { id: globalIdSchema, revision: globalRevisionSchema };
 var definition = { lang: langSchema, body: external_exports.string().max(limits.body) };
 var mutationSchema = external_exports.object({
@@ -30617,7 +30994,7 @@ var mutationSchema = external_exports.object({
   ])
 }).strict();
 var retrySchema = external_exports.object({
-  expectedHead: oid3,
+  expectedHead: oid4,
   id: globalIdSchema,
   causeIds: external_exports.array(token).min(1).max(limits.causes).refine((v) => new Set(v).size === v.length, "Duplicate cause")
 }).strict();
@@ -30830,11 +31207,11 @@ function editIndex(io, tree, batch, hashes, at) {
   const entry = scheduleIndexEntry(batch, hashes, at);
   const batches = current.data.batches.some((b) => b.id === batch.id) ? current.data.batches.map((b) => b.id === batch.id ? entry : b) : [...current.data.batches, entry];
   const terminal = batches.filter((b) => b.status === "published" || b.status === "cancelled").sort((a, b) => Date.parse(a.updatedAt) - Date.parse(b.updatedAt));
-  const drop = new Set(
+  const drop2 = new Set(
     terminal.slice(0, Math.max(0, terminal.length - scheduleLimits.indexTerminal)).map((b) => b.id)
   );
   const next = scheduleIndexSchema.safeParse({
-    batches: batches.filter((b) => !drop.has(b.id))
+    batches: batches.filter((b) => !drop2.has(b.id))
   });
   if (next.success) tree[schedulePaths.index] = io.writeBlob(`${JSON.stringify(next.data)}
 `);
@@ -30845,7 +31222,1508 @@ import { setTimeout as setTimeout2 } from "node:timers/promises";
 
 // scripts/publisher/globals.ts
 init_zod();
+import { createHash as createHash3 } from "node:crypto";
+init_model();
+
+// scripts/publisher/globalsInPlace.ts
+init_prepare();
+init_braces();
+init_comments();
+
+// packages/export/src/v2/vocabulary.ts
+var configurableFormatVersion = 2;
+var exportLanguages = [
+  "en",
+  "de",
+  "fr",
+  "it",
+  "pl",
+  "ru",
+  "es",
+  "es-mx",
+  "ko",
+  "pt-br",
+  "ja",
+  "zh-cht",
+  "zh-chs"
+];
+var iconSymbols = [
+  "kinetic",
+  "arc",
+  "solar",
+  "stasis",
+  "void",
+  "strand",
+  "prismatic",
+  "heavy",
+  "primary",
+  "special",
+  "barrier",
+  "overload",
+  "unstoppable",
+  "hunter",
+  "titan",
+  "warlock"
+];
+var symbolIds = [
+  ...iconSymbols,
+  "arrow",
+  "enhancedArrow",
+  "bold",
+  "exotic",
+  "pve",
+  "pvp",
+  "elementText"
+];
+var isLegacyFile = (file2) => legacyPresets.includes(file2.preset);
+var isPerLanguage = (file2) => !isLegacyFile(file2) && file2.data.languageFiles === "perLanguage";
+
+// packages/export/src/v2/compile.ts
+init_braces();
+
+// packages/export/src/v2/transform.ts
+init_elementTags();
+var emptyNotes = () => ({
+  unchosen: /* @__PURE__ */ new Set(),
+  retired: /* @__PURE__ */ new Set(),
+  tables: 0
+});
+var isSymbol = (name2) => symbolIds.includes(name2);
+function ruleFor(name2, format, notes) {
+  if (!isSymbol(name2)) {
+    notes.retired.add(name2);
+    return void 0;
+  }
+  const rule = format.symbols[name2] ?? (name2 === "arrow" ? { mode: "keep" } : void 0);
+  if (!rule) notes.unchosen.add(name2);
+  return rule;
+}
+var unique = (names) => [
+  ...new Set(
+    (names ?? []).filter((name2) => typeof name2 === "string").map((name2) => name2 === "yellow" ? "exotic" : name2)
+  )
+];
+function span(input2, context) {
+  const { format, shape } = context;
+  const text = input2.text ?? "";
+  const names = unique(input2.classNames);
+  const tint = names.includes("elementText") ? names.find((name2) => elementTagNames.includes(name2)) : void 0;
+  if (tint) names.splice(names.indexOf(tint), 1);
+  if (names.includes("arrow")) names.unshift(...names.splice(names.indexOf("arrow"), 1));
+  if (names.includes("link") && input2.link !== void 0) {
+    const rule = format.links;
+    if (rule.mode === "keep" && shape === "lines")
+      return [{ text, link: input2.link, classNames: ["link"] }];
+    if (rule.mode === "replace") {
+      const [before, after, linkBefore, linkAfter] = rule.pattern;
+      return [{ text: `${before}${text}${after}${linkBefore}${input2.link}${linkAfter}` }];
+    }
+    return [{ text }];
+  }
+  if (names.includes("title")) {
+    const rule = format.titles;
+    if (rule.mode === "keep" && shape === "lines" && input2.title) {
+      const title = lines(input2.title, context);
+      return [title.length ? { text, title, classNames: ["title"] } : { text }];
+    }
+    if (rule.mode === "inline" && input2.title) {
+      const [before, after, innerBefore, innerAfter] = rule.pattern;
+      const body2 = lines(input2.title, context).flatMap((line, index) => [
+        ...index ? [{ text: " " }] : [],
+        ...(line.linesContent ?? []).map(
+          (part) => line.classNames ? { ...part, classNames: unique([...part.classNames ?? [], ...line.classNames]) } : part
+        )
+      ]);
+      return [{ text: `${before}${text}${after}${innerBefore}` }, ...body2, { text: innerAfter }];
+    }
+    return [{ text }];
+  }
+  let out = input2.text === void 0 ? {} : { text };
+  for (const name2 of names) {
+    const rule = name2 === "arrow" && shape === "text" && (!format.symbols.arrow || format.symbols.arrow.mode === "keep") ? { mode: "replace", before: "\u2192", after: "" } : ruleFor(name2, format, context.notes);
+    if (rule?.mode === "keep" && shape === "lines") {
+      out = { ...out, classNames: [...out.classNames ?? [], name2] };
+    } else if (rule?.mode === "replace") {
+      const inner = name2 === "enhancedArrow" ? "" : out.text ?? "";
+      out = { ...out, text: `${rule.before}${inner}${rule.after}` };
+    } else if (name2 === "enhancedArrow") {
+      out = { ...out };
+      delete out.text;
+    }
+  }
+  if (tint && out.classNames?.includes("elementText")) out.classNames.push(tint);
+  return out.text === void 0 && !out.classNames ? [] : [out];
+}
+function compact(spans2) {
+  const output2 = [];
+  for (const part of spans2) {
+    const plain = Object.keys(part).length === 1 && part.text !== void 0;
+    if (plain && part.text === "") continue;
+    const last = output2[output2.length - 1];
+    if (plain && last && Object.keys(last).length === 1 && last.text !== void 0) {
+      last.text += part.text;
+    } else output2.push(plain ? { text: part.text } : part);
+  }
+  return output2;
+}
+function lines(input2, context) {
+  const output2 = [];
+  for (const line of input2) {
+    if (line.table) {
+      context.notes.tables++;
+      continue;
+    }
+    const names = unique(line.classNames);
+    if (names.includes("spacer")) {
+      if (context.format.spacer === "keep") output2.push({ classNames: ["spacer"] });
+      continue;
+    }
+    let parts = line.linesContent ?? [];
+    const arrowRule = context.format.symbols.arrow ?? (context.shape === "text" ? { mode: "replace", before: "\u2192", after: "" } : { mode: "keep" });
+    if (arrowRule.mode !== "keep" && parts.some((part) => part.classNames?.includes("arrow"))) {
+      const joined = [];
+      for (const input3 of parts) {
+        const arrow = input3.classNames?.includes("arrow");
+        if (arrow && arrowRule.mode === "drop") continue;
+        const part = arrow ? {
+          ...input3,
+          text: arrowRule.mode === "replace" ? arrowRule.before + arrowRule.after : "",
+          classNames: input3.classNames?.filter((name2) => name2 !== "arrow")
+        } : input3;
+        const last = joined.at(-1);
+        if (last && last.text !== void 0 && part.text !== void 0 && !last.link && !last.title && !part.link && !part.title && JSON.stringify(last.classNames ?? []) === JSON.stringify(part.classNames ?? []))
+          joined[joined.length - 1] = { ...last, text: last.text + part.text };
+        else joined.push(part);
+      }
+      parts = joined;
+    }
+    let content = parts.flatMap((part) => span(part, context));
+    const classNames = [];
+    for (const name2 of names) {
+      const rule = ruleFor(name2, context.format, context.notes);
+      if (rule?.mode === "keep" && context.shape === "lines") classNames.push(name2);
+      else if (rule?.mode === "replace")
+        content = [{ text: rule.before }, ...content, { text: rule.after }];
+    }
+    content = compact(content);
+    if (!content.length) continue;
+    output2.push(
+      classNames.length ? { classNames, linesContent: content } : { linesContent: content }
+    );
+  }
+  const isSpacer = (line) => line?.classNames?.[0] === "spacer" && !line.linesContent;
+  while (isSpacer(output2[0])) output2.shift();
+  while (isSpacer(output2[output2.length - 1])) output2.pop();
+  return output2;
+}
+function renderText(input2, separator = "\n") {
+  return input2.map((line) => (line.linesContent ?? []).map((part) => part.text ?? "").join("")).join(separator).trim();
+}
+var iconNames2 = /* @__PURE__ */ new Set([...iconSymbols, "arrow", "enhancedArrow"]);
+function toPart(span2) {
+  const names = (span2.classNames ?? []).filter((name2) => name2 !== "link" && name2 !== "title");
+  let element;
+  if (names.includes("elementText")) {
+    const last = names[names.length - 1];
+    if (elementTagNames.includes(last)) element = names.pop();
+    names.splice(names.indexOf("elementText"), 1);
+  }
+  const icon = names.find((name2) => iconNames2.has(name2));
+  const style = names.filter((name2) => name2 !== icon);
+  return {
+    ...icon ? { icon } : {},
+    ...span2.text !== void 0 ? { text: span2.text } : {},
+    ...style.length ? { style } : {},
+    ...element ? { element } : {},
+    ...span2.link !== void 0 ? { link: span2.link } : {},
+    ...span2.title ? { note: toLines(span2.title) } : {}
+  };
+}
+function toLines(input2) {
+  return input2.map(
+    (line) => line.classNames?.[0] === "spacer" && !line.linesContent ? { spacer: true } : {
+      ...line.classNames ? { style: line.classNames } : {},
+      parts: (line.linesContent ?? []).map(toPart)
+    }
+  );
+}
+function transform2(input2, format, shape, notes) {
+  const output2 = lines(input2, { format, shape, notes });
+  return shape === "lines" ? toLines(output2) : renderText(output2);
+}
+
+// packages/export/src/v2/compile.ts
+var compileStages = [
+  "resolve",
+  "select-rows",
+  "select-keys",
+  "references",
+  "transform",
+  "encode",
+  "serialise"
+];
+var encoder3 = new TextEncoder();
+function compile2(input2, file2, options) {
+  input2 = lowerInput(input2, void 0, !isLegacyFile(file2) && file2.format.elementTags);
+  if (isLegacyFile(file2)) {
+    const bytes = buildLegacy(input2, file2.preset, {
+      identical: options.identical,
+      arrowFallback: file2.arrowFallback
+    });
+    return {
+      stages: compileStages,
+      ran: ["resolve", "select-rows", "references", "serialise"],
+      legacy: true,
+      bytes,
+      notices: []
+    };
+  }
+  if (file2.formatVersion !== configurableFormatVersion)
+    throw new Error("Unsupported configurable file format");
+  return compileStyle(input2, file2, options);
+}
+var standsIn = (perk, language, rows) => rows[language] === void 0 || perk.editor[language]?.englishFallback === true;
+function globalsOf(lookup, language) {
+  const imports = /* @__PURE__ */ Object.create(null);
+  for (const [hash2, perk] of Object.entries(lookup))
+    imports[hash2] = perk.editor[language]?.main ?? "";
+  return { variables: imports[2] ?? "", titles: imports[3] ?? "", imports };
+}
+function globalsForCell(globals, language, englishFallback) {
+  const lang = englishFallback ? "en" : language;
+  return { ...globals.get(language), imports: globals.get(lang).imports, lang };
+}
+function readFormatV2Lines(text, globals, hash2, language) {
+  const { lines: lines2, diagnostics } = parseMarkup(text, globals);
+  const error62 = diagnostics.find((diagnostic) => diagnostic.severity === "error");
+  if (error62) throw new Error(`Tooltip ${hash2} (${language}): ${error62.message}`);
+  return lines2;
+}
+function compileStyle(input2, file2, options) {
+  const { data, format, shape } = file2;
+  const notices = [];
+  const ran = [];
+  validateReferences(input2.perks);
+  const lookup = expandAliases(input2.perks);
+  const languages3 = exportLanguages.filter((language) => data.languages.includes(language));
+  const perLanguage = isPerLanguage(file2);
+  const resolving = perLanguage ? exportLanguages.filter((language) => language === "en" || languages3.includes(language)) : languages3;
+  const globals = new Map(
+    [.../* @__PURE__ */ new Set(["en", ...resolving])].map((language) => [
+      language,
+      globalsOf(lookup, language)
+    ])
+  );
+  const resolved = /* @__PURE__ */ new Map();
+  const resolve4 = (hash2, perk) => {
+    let rows = resolved.get(hash2);
+    if (rows) return rows;
+    rows = {};
+    for (const language of resolving) {
+      const cell = perk.editor[language];
+      if (cell === void 0) continue;
+      const markupGlobals = {
+        ...globalsForCell(globals, language, cell.englishFallback),
+        type: perk.type
+      };
+      const lines2 = readFormatV2Lines(cell.main, markupGlobals, hash2, language);
+      if (lines2.length) rows[language] = lines2;
+    }
+    resolved.set(hash2, rows);
+    return rows;
+  };
+  ran.push("resolve");
+  const identical = new Set([...options.identical ?? []].map(String));
+  const knownCategories = new Set(options.catalog.categories.map((category) => category.id));
+  const categories = new Set(data.categories);
+  const sandbox = new Set(data.sandboxPerks);
+  const uncategorised = [];
+  const selected = [];
+  const categoryOf = /* @__PURE__ */ new Map();
+  for (const [hash2, raw] of Object.entries(input2.perks)) {
+    const perk = lookup[hash2];
+    if (perk === void 0 || Number(hash2) < 50) continue;
+    if ((perk.editor.en?.main.trim() ?? "") === "") continue;
+    if (!data.bungieIdentical && identical.has(hash2)) continue;
+    const alias = isAliasStub(raw) ? raw : void 0;
+    if (alias?.aliasKind === "frame" && !data.frameAliases) continue;
+    const owner = alias?.aliasKind === "sandbox" ? String(alias.aliasOf) : hash2;
+    const category = options.catalog.items[owner]?.categoryId;
+    if (category === void 0 || !knownCategories.has(category)) {
+      uncategorised.push(Number(hash2));
+      continue;
+    }
+    if (!(alias?.aliasKind === "sandbox" ? sandbox : categories).has(category)) continue;
+    const rows = resolve4(hash2, perk);
+    if (perLanguage ? !languages3.every((language) => rows[language] ?? rows.en) : !languages3.some((language) => rows[language]))
+      continue;
+    selected.push(hash2);
+    categoryOf.set(hash2, category);
+  }
+  if (uncategorised.length)
+    notices.push({ kind: "uncategorised", hashes: uncategorised.sort((a, b) => a - b) });
+  ran.push("select-rows");
+  const keys = new Set(data.keys);
+  const picked = /* @__PURE__ */ new Map();
+  for (const hash2 of selected) {
+    const perk = lookup[hash2];
+    const item = {};
+    if (keys.has("name") && perk.name) item.name = perk.name;
+    if (keys.has("itemHash") && perk.itemHash !== void 0) item.itemHash = perk.itemHash;
+    if (keys.has("itemName") && perk.itemName) item.itemName = perk.itemName;
+    if (keys.has("category")) item.category = categoryOf.get(hash2);
+    if (keys.has("references") && perk.associated?.length) item.references = [...perk.associated];
+    picked.set(hash2, item);
+  }
+  const editedOf = (hash2, source2) => {
+    const tracker = lookup[hash2].updateTracker?.descriptions[source2];
+    if (!tracker) return void 0;
+    const edit = {};
+    if (keys.has("edited") && tracker.lastUpdate)
+      edit.at = new Date(tracker.lastUpdate).toISOString();
+    if (keys.has("editedBy") && tracker.updatedBy) edit.by = tracker.updatedBy;
+    return Object.keys(edit).length ? edit : void 0;
+  };
+  ran.push("select-keys");
+  const inFile = new Set(selected.map(Number));
+  for (const item of picked.values()) {
+    if (!item.references) continue;
+    const kept = item.references.filter((target) => inFile.has(target));
+    if (kept.length) item.references = kept;
+    else delete item.references;
+  }
+  ran.push("references");
+  const notes = emptyNotes();
+  const transformed = /* @__PURE__ */ new Map();
+  const textOf = (hash2, language) => {
+    const key = `${hash2}
+${language}`;
+    if (!transformed.has(key))
+      transformed.set(key, transform2(resolved.get(hash2)[language], format, shape, notes));
+    return transformed.get(key);
+  };
+  let showcase;
+  if (data.includeShowcase) {
+    const { lines: lines2, diagnostics } = parseMarkup(
+      format.elementTags ? showcaseText : lowerConsumerMarkup(showcaseText),
+      showcaseGlobals
+    );
+    if (diagnostics.length) throw new Error("Invalid built-in showcase markup");
+    showcase = transform2(lines2, format, shape, notes);
+  }
+  const expand = (outputLanguages) => {
+    const expanded = {};
+    for (const hash2 of selected) {
+      const rows = resolved.get(hash2);
+      const descriptions = {};
+      const edited = {};
+      for (const language of outputLanguages) {
+        const own2 = rows[language] !== void 0;
+        if (!own2 && !perLanguage) continue;
+        descriptions[language] = textOf(hash2, own2 ? language : "en");
+        const englishStandIn = perLanguage && language !== "en" && standsIn(lookup[hash2], language, rows);
+        const source2 = englishStandIn ? "en" : language;
+        const edit = editedOf(hash2, source2);
+        if (edit) edited[source2] = edit;
+        else if (englishStandIn && (keys.has("edited") || keys.has("editedBy"))) edited.en = {};
+      }
+      const { references, ...item } = picked.get(hash2);
+      expanded[hash2] = {
+        hash: Number(hash2),
+        ...item,
+        ...Object.keys(edited).length ? { edited } : {},
+        ...references ? { references } : {},
+        descriptions
+      };
+    }
+    if (showcase !== void 0)
+      expanded[showcaseId] = {
+        hash: Number(showcaseId),
+        ...keys.has("name") ? { name: showcaseName } : {},
+        descriptions: Object.fromEntries(outputLanguages.map((language) => [language, showcase]))
+      };
+    return expanded;
+  };
+  const expandedOutputs = (perLanguage ? languages3.map((language) => [language]) : [languages3]).map(
+    (outputLanguages) => ({ languages: outputLanguages, expanded: expand(outputLanguages) })
+  );
+  if (notes.unchosen.size)
+    notices.push({ kind: "unchosen-symbol", symbols: [...notes.unchosen].sort() });
+  if (notes.retired.size)
+    notices.push({ kind: "retired-markup", classNames: [...notes.retired].sort() });
+  if (notes.tables) notices.push({ kind: "tables-dropped", count: notes.tables });
+  ran.push("transform");
+  const encoded = expandedOutputs.map((output2) => ({
+    ...output2,
+    file: encodeV2(output2.expanded, { shape, languages: output2.languages })
+  }));
+  ran.push("encode");
+  const outputs = encoded.map((output2) => {
+    validateV2(output2.file);
+    return { ...output2, bytes: encoder3.encode(JSON.stringify(output2.file)) };
+  });
+  ran.push("serialise");
+  const [first] = outputs;
+  return {
+    stages: compileStages,
+    ran,
+    legacy: false,
+    outputs,
+    expanded: first.expanded,
+    file: first.file,
+    bytes: first.bytes,
+    notices
+  };
+}
+function encodeV2(expanded, header) {
+  const descriptions = [];
+  const index = /* @__PURE__ */ new Map();
+  const perks = {};
+  for (const [hash2, item] of Object.entries(expanded)) {
+    const { descriptions: own2, ...keys } = item;
+    delete keys.hash;
+    const key = JSON.stringify(own2);
+    let description = index.get(key);
+    if (description === void 0) {
+      description = descriptions.push(own2) - 1;
+      index.set(key, description);
+    }
+    perks[hash2] = { ...keys, description };
+  }
+  return {
+    format: configurableFormatVersion,
+    shape: header.shape,
+    languages: [...header.languages],
+    descriptions,
+    perks
+  };
+}
+function validateV2(file2) {
+  if (file2.format !== configurableFormatVersion || !Array.isArray(file2.descriptions) || !file2.perks)
+    throw new Error("Not a format v2 file");
+  for (const [hash2, perk] of Object.entries(file2.perks)) {
+    if (!Number.isInteger(perk.description) || perk.description < 0 || perk.description >= file2.descriptions.length)
+      throw new Error(`Perk ${hash2} points at missing description ${perk.description}`);
+    for (const target of perk.references ?? [])
+      if (!Object.hasOwn(file2.perks, String(target)))
+        throw new Error(`Perk ${hash2} refers to ${target}, which is not in the file`);
+  }
+}
+
+// packages/export/src/v2/styles.ts
+var keep = { mode: "keep" };
+var drop = { mode: "drop" };
+var replace = (before, after = "") => ({ mode: "replace", before, after });
+var iconWords = {
+  kinetic: "[Kinetic]",
+  arc: "[Arc]",
+  solar: "[Solar]",
+  stasis: "[Stasis]",
+  void: "[Void]",
+  strand: "[Strand]",
+  prismatic: "[Prismatic]",
+  heavy: "[Heavy]",
+  primary: "[Primary]",
+  special: "[Special]",
+  barrier: "[Barrier]",
+  overload: "[Overload]",
+  unstoppable: "[Unstoppable]",
+  hunter: "[Hunter]",
+  titan: "[Titan]",
+  warlock: "[Warlock]"
+};
+var every = (rule) => Object.fromEntries(symbolIds.map((symbol2) => [symbol2, rule(symbol2)]));
+var markdownSymbols = (icons) => every((symbol2) => {
+  if (iconSymbols.includes(symbol2))
+    return icons === "words" ? replace(iconWords[symbol2]) : drop;
+  if (symbol2 === "arrow") return replace("\u2192");
+  if (symbol2 === "bold") return replace("**", "**");
+  if (symbol2 === "enhancedArrow") return replace("[enh]");
+  return drop;
+});
+var styleShapes = {
+  structured: "lines",
+  markdown: "text",
+  discord: "text",
+  plain: "text"
+};
+var styleFormats = {
+  structured: {
+    symbols: every(() => keep),
+    titles: { mode: "keep" },
+    links: { mode: "keep" },
+    elementTags: true,
+    spacer: "keep"
+  },
+  markdown: {
+    symbols: markdownSymbols("words"),
+    titles: { mode: "drop" },
+    links: { mode: "replace", pattern: ["[", "]", "(", ")"] },
+    elementTags: true,
+    spacer: "keep"
+  },
+  discord: {
+    symbols: markdownSymbols("drop"),
+    titles: { mode: "drop" },
+    links: { mode: "replace", pattern: ["[", "]", "(", ")"] },
+    elementTags: true,
+    spacer: "keep"
+  },
+  plain: {
+    symbols: { ...every(() => drop), arrow: replace("\u2192") },
+    titles: { mode: "drop" },
+    links: { mode: "drop" },
+    elementTags: true,
+    spacer: "keep"
+  }
+};
+var defaultData = () => ({
+  categories: [],
+  sandboxPerks: [],
+  frameAliases: true,
+  languages: ["en"],
+  languageFiles: "combined",
+  keys: ["name", "edited"],
+  bungieIdentical: false
+});
+function newStyleFile(id, style, data = defaultData(), shape = styleShapes[style]) {
+  const format = structuredClone(styleFormats[style]);
+  if (shape === "text") {
+    for (const symbol2 of symbolIds)
+      if (format.symbols[symbol2]?.mode === "keep")
+        format.symbols[symbol2] = symbol2 === "arrow" ? replace("\u2192") : drop;
+    if (format.titles.mode === "keep") format.titles = { mode: "drop" };
+    if (format.links.mode === "keep") format.links = { mode: "drop" };
+  }
+  return {
+    id,
+    formatVersion: configurableFormatVersion,
+    preset: style,
+    shape,
+    data: structuredClone(data),
+    format
+  };
+}
+
+// packages/export/src/provesInPlace.ts
+function readerInputs(input2) {
+  const legacy = expandAliases(lowerInput(input2, "legacy").perks);
+  const v2 = expandAliases(lowerInput(input2, void 0, true).perks);
+  const globals = new Map(exportLanguages.map((language) => [language, globalsOf(v2, language)]));
+  return { legacy, v2, globals };
+}
+function legacyLines(input2, hash2, language, part) {
+  const row = input2.legacy[hash2];
+  const cell = row?.editor[language];
+  if (cell === void 0) return;
+  return descriptionConverter({
+    database: input2.legacy,
+    descriptionString: cell[part],
+    editorType: part,
+    hash: row.hash,
+    language
+  });
+}
+function formatV2Lines(input2, hash2, language) {
+  const row = input2.v2[hash2];
+  const cell = row?.editor[language];
+  if (cell === void 0) return;
+  return readFormatV2Lines(
+    cell.main,
+    {
+      ...globalsForCell(input2.globals, language, cell.englishFallback),
+      type: row.type
+    },
+    hash2,
+    language
+  );
+}
+function refusal(input2, after, hash2, language, part) {
+  const row = input2.v2[hash2] ?? after.v2[hash2];
+  const name2 = row?.name || hash2;
+  const cell = input2.v2[hash2]?.editor[language];
+  const library = input2.v2[3]?.editor[language];
+  const titles = [library?.main, library?.secondary].filter(Boolean).join("\n");
+  const names = new Set(Object.keys(extractBlocks(titles, "title")));
+  const globals = input2.globals.get(language);
+  const imported = /* @__PURE__ */ new Map();
+  const remember = (key) => {
+    if (typeof key !== "string" || key === hash2 || Number(key) < 50) return;
+    const target = input2.v2[key];
+    if (target && target.editor[language] !== void 0 && JSON.stringify(target.editor[language]) !== JSON.stringify(after.v2[key]?.editor[language]))
+      imported.set(key, target.name || key);
+  };
+  const imports = new Proxy(globals.imports, {
+    get(target, key, receiver) {
+      remember(key);
+      return Reflect.get(target, key, receiver);
+    }
+  });
+  const notes = new Set(
+    cell ? effectiveSharedNotes(
+      cell[part],
+      {
+        ...globals,
+        titles,
+        imports,
+        type: row.type,
+        lang: cell.englishFallback ? "en" : language
+      },
+      names
+    ) : []
+  );
+  try {
+    const legacy = new Proxy(input2.legacy, {
+      get(target, key, receiver) {
+        remember(key);
+        return Reflect.get(target, key, receiver);
+      }
+    });
+    legacyLines({ ...input2, legacy }, hash2, language, part);
+  } catch {
+  }
+  for (const key of imported.keys()) {
+    const target = input2.v2[key];
+    const editor = target.editor[language];
+    for (const source2 of /* @__PURE__ */ new Set([editor.main, editor.secondary]))
+      for (const note of effectiveSharedNotes(
+        source2,
+        {
+          ...globals,
+          titles,
+          type: target.type,
+          lang: editor.englishFallback ? "en" : language
+        },
+        names
+      ))
+        notes.add(note);
+  }
+  const via = imported.size ? ` through the import of ${[...imported.values()].join(", ")}` : "";
+  const shared = notes.size ? `the shared note ${[...notes].join(", ")}` : "shared text";
+  return {
+    hash: hash2,
+    language,
+    part,
+    message: `${name2} uses ${shared}${via} in a way that can't be published. Move the note (or the import) out of the block or comment.`
+  };
+}
+function provesInPlace(before, after, hashes = /* @__PURE__ */ new Set([
+  ...Object.keys(before.perks),
+  ...Object.keys(after.perks)
+]), includesLanguage) {
+  const original = readerInputs(before);
+  const transformed = readerInputs(after);
+  const refusals = [];
+  tooltip: for (const value2 of hashes) {
+    const hash2 = String(value2);
+    if (Number(hash2) < 50) continue;
+    const source2 = original.legacy[hash2];
+    const target = transformed.legacy[hash2];
+    if (!!source2?.editor.en?.main.trim() !== !!target?.editor.en?.main.trim()) {
+      refusals.push(refusal(original, transformed, hash2, "en", "main"));
+      continue;
+    }
+    for (const language of exportLanguages) {
+      if (includesLanguage && !includesLanguage(hash2, language)) continue;
+      if (!source2?.editor[language] && !target?.editor[language]) continue;
+      let equalV2 = false;
+      try {
+        equalV2 = JSON.stringify(formatV2Lines(original, hash2, language)) === JSON.stringify(formatV2Lines(transformed, hash2, language));
+      } catch {
+      }
+      for (const part of ["main", "secondary"]) {
+        let equalLegacy = false;
+        try {
+          equalLegacy = JSON.stringify(legacyLines(original, hash2, language, part)) === JSON.stringify(legacyLines(transformed, hash2, language, part));
+        } catch {
+        }
+        if (!equalLegacy || part === "main" && !equalV2) {
+          refusals.push(refusal(original, transformed, hash2, language, part));
+          continue tooltip;
+        }
+      }
+    }
+  }
+  return refusals;
+}
+
+// scripts/publisher/globalsInPlace.ts
+init_zod();
 import { createHash as createHash2 } from "node:crypto";
+
+// scripts/publisher/consumerOutput.ts
+function unloweredEntry(entries) {
+  const strings = (value2) => typeof value2 === "string" ? [value2] : value2 && typeof value2 === "object" ? Object.values(value2).flatMap(strings) : [];
+  const unlowered = (text) => /[\uE000\uE001]/.test(text) || findElementTags(text).length > 0 || text.includes("#{") || text.includes(enhancedArrowMarkup);
+  for (const [hash2, entry] of Object.entries(entries))
+    if (strings(entry).some(unlowered)) return hash2;
+  return void 0;
+}
+
+// scripts/publisher/globalsInPlace.ts
+function globalsFence(pub, tree) {
+  if (!tree[globalsInPlacePath]) return void 0;
+  const fence = globalsInPlaceFenceSchema.parse(pub.read(tree, globalsInPlacePath));
+  if (fence.destination !== pub.options.liveBranch)
+    throw new Error("The shared text migration belongs to another LIVE branch.");
+  return fence;
+}
+function requireGlobalsMode(pub, tree, globals = false) {
+  const fence = globalsFence(pub, tree);
+  if (fence?.state === "hold")
+    throw new Error("Publication is paused for the shared text migration.");
+  if (!fence && globals) throw new Error("Review shared definitions with the current publisher.");
+  return fence;
+}
+function assertInPlaceRoots(hashes) {
+  if (hashes.some((hash2) => globalsInPlaceLibraryText(hash2) !== void 0))
+    throw new Error("Publish shared definitions in Review \u2192 Globals.");
+}
+function liveGlobalsInput(pub, live) {
+  const input2 = pub.read(pub.git.tree(live), "liveDescriptions.json");
+  if (!input2?.perks || !input2.databaseSettings) throw new Error("Invalid LIVE descriptions");
+  return input2;
+}
+function independentSecondary(cell) {
+  return cell.secondary !== cell.main && cell.secondary.trim() !== "import self";
+}
+function historicalSecondaryUses(input2, definitions) {
+  return Object.values(input2.perks).flatMap((row) => {
+    if (!("editor" in row) || globalsInPlaceLibraryText(row.hash) !== void 0) return [];
+    return languages2.flatMap((lang) => {
+      const cell = row.editor[lang];
+      if (!cell || !cell.secondary || !independentSecondary(cell)) return [];
+      return ["variables", "titles", "exports"].flatMap(
+        (kind) => globalReferenceSpans(cell.secondary, kind).flatMap(
+          ({ name: name2 }) => !(kind === "variables" && name2 === "e") && Object.hasOwn(definitions[kind] ?? {}, name2) ? [{ hash: row.hash, lang, kind, name: name2 }] : []
+        )
+      );
+    });
+  });
+}
+function assertInPlaceLibraries(input2) {
+  for (const hash2 of [1, 2, 3]) {
+    const row = input2.perks[hash2];
+    if (!row || row.hash !== hash2 || !("editor" in row) || hash2 === 2 && (row.editor.en?.main !== globalsInPlaceLibraryText(2) || Object.values(row.editor).some(
+      (cell) => cell?.main !== globalsInPlaceLibraryText(2) || cell.secondary !== ""
+    )) || hash2 !== 2 && Object.keys(row.editor).length !== 0)
+      throw new Error(`Invalid in-place LIVE library ${hash2}`);
+  }
+}
+function migrateInPlace(input2) {
+  const definitions = legacyGlobalsInPlaceDefinitions(
+    input2.perks
+  );
+  const migrated = structuredClone(input2);
+  const variables = migrated.perks[2];
+  if (!variables || !("editor" in variables)) throw new Error("Missing LIVE library 2");
+  migrated.perks[1] ??= {
+    hash: 1,
+    name: "",
+    type: variables.type,
+    editor: {},
+    uploadedBy: "",
+    lastUpload: 0,
+    updateTracker: { descriptions: {} },
+    inLiveDatabase: false,
+    uploadToLive: false
+  };
+  for (const row of Object.values(migrated.perks)) {
+    if (!("editor" in row)) continue;
+    const sentinel = globalsInPlaceLibraryText(row.hash);
+    if (sentinel === "") {
+      row.editor = {};
+      continue;
+    }
+    for (const lang of languages2) {
+      const cell = row.editor[lang];
+      if (!cell) continue;
+      if (sentinel !== void 0) row.editor[lang] = { main: sentinel, secondary: "" };
+      else
+        for (const part of ["main", "secondary"])
+          try {
+            cell[part] = resolveGlobalsInPlace(cell[part], lang, {
+              definitions
+            });
+          } catch (error62) {
+            throw new Error(`Tooltip ${row.name || row.hash} (${lang}): ${String(error62)}`);
+          }
+    }
+    if (sentinel && !row.editor.en) row.editor.en = { main: sentinel, secondary: "" };
+  }
+  assertInPlaceLibraries(migrated);
+  const [refusal2] = provesInPlace(input2, migrated);
+  if (refusal2) throw new Error(refusal2.message);
+  return migrated;
+}
+function proofLibraries(live, options, english) {
+  const rows = {};
+  for (const [hash2, kind] of [
+    [1, "exports"],
+    [2, "variables"],
+    [3, "titles"]
+  ]) {
+    const row = live.perks[hash2];
+    if (!row || !("editor" in row)) throw new Error(`Missing LIVE library ${hash2}`);
+    const editor = {};
+    for (const lang of languages2) {
+      const lines2 = Object.entries(options.definitions[kind] ?? {}).flatMap(([name2, entry]) => {
+        if (kind === "variables" && name2 === "e") return [];
+        const selected = globalsInPlaceDefinition(entry, english?.has(lang) ? "en" : lang);
+        if (!selected) return [];
+        const body2 = protectCommentedGlobalImports(selected.body);
+        if (kind === "variables") return [`var ${name2} = ${body2.trim() || "empty"}`];
+        return [`${kind === "exports" ? "export" : "title"} ${name2} (
+${body2}
+)`];
+      });
+      if (hash2 === 2) lines2.unshift(globalsInPlaceLibraryText(2));
+      editor[lang] = { main: lowerConsumerMarkup(lines2.join("\n")), secondary: "" };
+    }
+    rows[hash2] = { ...row, editor };
+  }
+  return rows;
+}
+function affectedRows(before, after, roots) {
+  const affected = new Set(roots.map(String));
+  const parents = /* @__PURE__ */ new Map();
+  const link = (from, to) => {
+    if (!parents.has(to)) parents.set(to, /* @__PURE__ */ new Set());
+    parents.get(to).add(from);
+  };
+  for (const { perks } of [before, after])
+    for (const [hash2, row] of Object.entries(perks)) {
+      if ("aliasOf" in row) link(hash2, String(row.aliasOf));
+      else
+        for (const { main: main2, secondary } of Object.values(row.editor))
+          for (const cell of [main2, secondary]) {
+            if (!cell.includes("import ")) continue;
+            for (const match of cell.matchAll(/^import [A-z0-9 ]+? from (\d+) *\r?$/gm))
+              link(hash2, String(Number(match[1])));
+          }
+    }
+  for (const root of affected) for (const parent of parents.get(root) ?? []) affected.add(parent);
+  return affected;
+}
+function provePublication(pub, tree, live, documents, aliases, moves, now, exported, options) {
+  assertInPlaceLibraries(live);
+  const hashes = documents.map(({ hash: hash2 }) => hash2);
+  const publishedOnly = { definitions: options.definitions };
+  for (const entry of Object.values(exported)) {
+    if (isLegacyAliasStub(entry)) continue;
+    for (const [lang, cell] of Object.entries(entry.editor))
+      for (const value2 of /* @__PURE__ */ new Set([cell.main, cell.secondary]))
+        if (resolveGlobalsInPlace(
+          value2,
+          cell.englishFallback ? "en" : lang,
+          publishedOnly
+        ) !== value2)
+          throw new Error(
+            `Tooltip ${entry.name || entry.hash} (${lang}) still reads shared text after export.`
+          );
+  }
+  const raw = exportGlobalsProof(documents, now, pub.options.facts, aliases, moves, options);
+  const merge2 = (entries) => pub.mergePublicationPerks(tree, live.perks, entries, hashes);
+  proveInPlaceInputs(
+    live,
+    { ...live, perks: merge2(raw) },
+    { ...live, perks: merge2(exported) },
+    options,
+    hashes
+  );
+}
+function exportGlobalsProof(documents, now, facts, aliases, moves, globalsInPlace) {
+  return exportWithInactiveMoves(documents, now, facts, aliases, moves, {
+    globalsInPlace,
+    preserveGlobalReferencesForProof: true
+  });
+}
+function proveInPlaceInputs(live, raw, after, options, hashes) {
+  const before = { ...raw, perks: { ...raw.perks, ...proofLibraries(live, options) } };
+  assertInPlaceLibraries(after);
+  const affected = affectedRows(before, after, hashes);
+  const english = /* @__PURE__ */ new Set();
+  const fallbacks = /* @__PURE__ */ new Map();
+  const fallbackBefore = { ...after, perks: { ...after.perks } };
+  for (const hash2 of affected) {
+    const localized = before.perks[hash2];
+    const filled = after.perks[hash2];
+    if (!localized || !filled || !("editor" in localized) || !("editor" in filled)) continue;
+    const localizedEditor = { ...localized.editor };
+    const fallbackEditor = { ...filled.editor, en: localized.editor.en };
+    const flagged = /* @__PURE__ */ new Set();
+    for (const lang of languages2) {
+      if (!filled.editor[lang]?.englishFallback) continue;
+      english.add(lang);
+      flagged.add(lang);
+      localizedEditor[lang] = filled.editor[lang];
+      fallbackEditor[lang] = localized.editor[lang];
+    }
+    if (flagged.size) {
+      fallbacks.set(hash2, flagged);
+      before.perks[hash2] = { ...localized, editor: localizedEditor };
+    }
+    fallbackBefore.perks[hash2] = { ...filled, editor: fallbackEditor };
+  }
+  const prove = (baseline, includes) => {
+    const [failure2] = provesInPlace(baseline, after, affected, includes);
+    if (failure2) throw new Error(failure2.message);
+  };
+  if (!english.size) return prove(before);
+  const aliasSource = (hash2) => {
+    const visited = /* @__PURE__ */ new Set();
+    let row = after.perks[hash2];
+    while (row && "aliasOf" in row && !visited.has(hash2)) {
+      visited.add(hash2);
+      hash2 = String(row.aliasOf);
+      row = after.perks[hash2];
+    }
+    return hash2;
+  };
+  const fallsBack = (hash2, lang) => fallbacks.get(aliasSource(hash2))?.has(lang) ?? false;
+  prove(before, (hash2, lang) => !fallsBack(hash2, lang));
+  Object.assign(fallbackBefore.perks, proofLibraries(live, options, english));
+  prove(fallbackBefore, fallsBack);
+}
+function sharedVariableLabelIssue(source2, names) {
+  if (!names.size || !source2.includes("#") || !source2.includes("<")) return;
+  for (const [, label] of removeMarkupComments(source2).matchAll(
+    /<(?:title|link) ([^\n]*?) \[[^\]\n]+\] \/>/g
+  ))
+    for (const { name: name2 } of variableReferences(label))
+      if (name2 !== "e" && names.has(name2))
+        return `Shared variables can't be used inside a title or link label: #${name2}.`;
+}
+function sharedVariableNames({ definitions, unavailable }) {
+  return /* @__PURE__ */ new Set([...Object.keys(definitions.variables ?? {}), ...unavailable?.variables ?? []]);
+}
+function assertInPlaceDocuments(documents, options) {
+  assertInPlaceRoots(documents.map(({ hash: hash2 }) => hash2));
+  const titleNames = /* @__PURE__ */ new Set([
+    ...Object.keys(options.definitions.titles ?? {}),
+    ...options.unavailable?.titles ?? []
+  ]);
+  const variableNames = sharedVariableNames(options);
+  for (const tooltip of documents)
+    for (const [lang, cell] of Object.entries(tooltip.text)) {
+      const issue2 = sharedVariableLabelIssue(cell.text, variableNames) ?? globalsInPlaceSaveIssue(cell.text, titleNames);
+      if (issue2)
+        throw new Error(`Tooltip ${tooltip.custom?.name || tooltip.hash} (${lang}): ${issue2}`);
+    }
+}
+var refusalMessage = (error62) => error62 instanceof ZodError ? error62.issues[0]?.message ?? "Invalid shared definition." : error62 instanceof Error ? error62.message : String(error62);
+var sha2562 = (input2) => createHash2("sha256").update(input2).digest("hex");
+var definitionDigest = (entry) => sha2562(stableStringify(entry));
+function stores(pub, tree) {
+  const published = globalPublishedSchema.parse(
+    pub.read(tree, globalsReleasePaths.published(pub.options.liveBranch))
+  );
+  if (published.destination !== pub.options.liveBranch)
+    throw new Error("Published global destination mismatch.");
+  return { published, saved: new GlobalsPublisher(pub).store(tree) };
+}
+function publishedGlobals(pub, tree) {
+  const { published, saved } = stores(pub, tree);
+  return releaseOptions(published.store, saved);
+}
+function releaseOptions(published, saved) {
+  const definitions = globalsInPlaceDefinitions(published.entries);
+  const unavailable = {
+    exports: /* @__PURE__ */ new Set(),
+    variables: /* @__PURE__ */ new Set(),
+    titles: /* @__PURE__ */ new Set()
+  };
+  for (const entry of saved.entries)
+    if (!entry.tombstone && !Object.hasOwn(definitions[entry.kind] ?? {}, entry.name))
+      unavailable[entry.kind].add(entry.name);
+  return { definitions, unavailable };
+}
+function withImportedFallback(options, source2) {
+  const cache = /* @__PURE__ */ new Map();
+  const inspect = (hash2) => {
+    const cached2 = cache.get(hash2);
+    if (cached2) return cached2;
+    const input2 = source2(hash2);
+    const causes = /* @__PURE__ */ new Map();
+    const row = input2 && exportLegacy(
+      [input2.document],
+      0,
+      void 0,
+      {},
+      {
+        globalsInPlace: input2.draft ? options : { definitions: options.definitions },
+        onGlobalsFallback: (_hash, cause) => causes.set(cause.language, cause)
+      }
+    )[input2.document.hash];
+    const inspected = { editor: row && !isLegacyAliasStub(row) ? row.editor : void 0, causes };
+    cache.set(hash2, inspected);
+    return inspected;
+  };
+  const inherited = (text, lang, visited) => {
+    for (const line of markupImports(text)) {
+      const target = / from (\d+) *$/.exec(line)?.[1];
+      if (!target || visited.has(Number(target))) continue;
+      const hash2 = Number(target);
+      visited.add(hash2);
+      const { editor, causes } = inspect(hash2);
+      const local = editor?.[lang];
+      const cause = causes.get(lang) ?? (local && !local.englishFallback ? inherited(`${local.main}
+${local.secondary}`, lang, visited) : void 0);
+      if (cause) return cause;
+    }
+  };
+  return {
+    ...options,
+    importFallback: (text, lang) => text.includes("import ") ? inherited(text, lang, /* @__PURE__ */ new Set()) : void 0
+  };
+}
+function authoredInPlaceOptions(pub, tree, live, plan, documents, aliases) {
+  const drafts = new Map(documents.map((doc) => [doc.hash, doc]));
+  return withImportedFallback(plan.options, (hash2) => {
+    const canonical = resolveAlias(hash2, aliases);
+    const draft = drafts.get(canonical);
+    if (draft) return { document: draft, draft: true };
+    const row = live.perks[hash2];
+    if (!row) return;
+    const published = "aliasOf" in row ? row.aliasOf : hash2;
+    const document = plan.rewritten.get(published) ?? pub.read(tree, `live/tooltips/${published}.json`);
+    if (document) return { document };
+  });
+}
+function assertScheduledGlobalNames(documents, plan) {
+  for (const entry of plan.published.store.entries) {
+    const retired2 = new Set(
+      entry.nameHistory.map(({ name: name2 }) => name2).filter((name2) => !Object.hasOwn(plan.options.definitions[entry.kind] ?? {}, name2))
+    );
+    if (!retired2.size) continue;
+    for (const tooltip of documents)
+      for (const cell of Object.values(tooltip.text)) {
+        const reference = globalReferenceSpans(cell.text, entry.kind).find(
+          ({ name: name2 }) => retired2.has(name2)
+        );
+        if (reference)
+          throw new Error(
+            `Tooltip ${tooltip.hash} uses the former shared name ${reference.name}. Return the batch to draft and schedule it again with ${entry.name}.`
+          );
+      }
+  }
+}
+function renamesOf(published, selected) {
+  return selected.flatMap((entry) => {
+    const previous = published.entries.find(({ id }) => id === entry.id);
+    return previous && !previous.tombstone && previous.name !== entry.name && !entry.tombstone ? [{ kind: entry.kind, from: previous.name, to: entry.name }] : [];
+  });
+}
+function rewrite(source2, renames) {
+  const edits = renames.flatMap(
+    ({ kind, from, to }) => rewriteGlobalReferences(source2, kind, from, to).edits.map((edit) => ({
+      ...edit,
+      kind,
+      toName: to
+    }))
+  );
+  for (const edit of edits.sort((a, b) => b.from - a.from)) {
+    const value2 = edit.kind === "variables" ? edit.braced ? `#{${edit.toName}}` : `#${edit.toName}` : edit.toName;
+    source2 = source2.slice(0, edit.from) + value2 + source2.slice(edit.to);
+  }
+  return source2;
+}
+function rewriteTooltip(document, renames) {
+  const copy = structuredClone(document);
+  for (const cell of Object.values(copy.text)) cell.text = rewrite(cell.text, renames);
+  return stableStringify(copy.text) === stableStringify(document.text) ? document : copy;
+}
+function rewriteEntries(entries, renames) {
+  return entries.map((entry) => {
+    if (entry.tombstone) return entry;
+    const copy = structuredClone(entry);
+    const renamed = renames.find(({ kind, from }) => kind === copy.kind && from === copy.name);
+    if (renamed) copy.name = renamed.to;
+    for (const definition2 of Object.values(copy.definitions))
+      definition2.body = rewrite(definition2.body, renames);
+    return copy;
+  });
+}
+function sourceIdentity2(entry) {
+  if (!entry || entry.tombstone) return null;
+  return {
+    name: entry.name,
+    definitions: Object.fromEntries(
+      Object.entries(entry.definitions).map(([lang, definition2]) => [
+        lang,
+        [definition2.body, globalsInPlaceDefinition(entry.definitions, lang) !== void 0]
+      ])
+    )
+  };
+}
+function pendingEntries(published, saved) {
+  const renames = renamesOf(published, saved.entries);
+  const normalized = rewriteEntries(published.entries, renames);
+  return saved.entries.filter((entry) => {
+    const old = published.entries.find(({ id }) => id === entry.id);
+    if (old && old.name !== entry.name && !old.tombstone && !entry.tombstone) return true;
+    return stableStringify(sourceIdentity2(normalized.find(({ id }) => id === entry.id))) !== stableStringify(sourceIdentity2(entry));
+  });
+}
+function publishedDocuments(pub, tree, live, requireSnapshots = true) {
+  const docs = new GlobalsPublisher(pub).documents(tree, "live/tooltips");
+  return Object.entries(live.perks).flatMap(([hash2, perk]) => {
+    if (globalsInPlaceLibraryText(Number(hash2)) !== void 0 || !("editor" in perk)) return [];
+    const doc = docs[hash2];
+    if (!doc) {
+      if (requireSnapshots) throw new Error(`Missing the published source for tooltip ${hash2}.`);
+      return [];
+    }
+    return isTextlessDescription(doc) ? [] : [doc];
+  });
+}
+function withdrawsEnglish(entry, previous) {
+  return !!entry.tombstone || !!previous?.definitions.en && !entry.definitions.en;
+}
+function assertHistoricalSecondaries(pub, tree, live, selected) {
+  if (!Object.values(live.perks).some(
+    (row) => "editor" in row && Object.values(row.editor).some((cell) => cell.secondary && independentSecondary(cell))
+  ))
+    return;
+  const fence = globalsFence(pub, tree);
+  if (!fence) return;
+  const legacy = liveGlobalsInput(pub, fence.legacyLive);
+  const definitions = legacyGlobalsInPlaceDefinitions(
+    legacy.perks
+  );
+  for (const { hash: hash2, lang, kind, name: name2 } of historicalSecondaryUses(legacy, definitions)) {
+    const row = live.perks[hash2];
+    const active = row && "editor" in row ? row.editor[lang] : void 0;
+    if (!active?.secondary || !independentSecondary(active)) continue;
+    const entry = selected.find(
+      (item) => item.kind === kind && (item.name === name2 || item.nameHistory.some((former) => former.name === name2))
+    );
+    if (entry)
+      throw new Error(
+        `Publish ${row.name || hash2} first: its older text still uses ${entry.name}.`
+      );
+  }
+}
+function refillLanguage(current, approved) {
+  if (!current || !approved || current.secondary === current.main) return approved;
+  return { ...approved, secondary: current.secondary };
+}
+function assertWithdrawal(selected, previous, saved, published, documents) {
+  if (!previous || previous.tombstone) return;
+  const names = /* @__PURE__ */ new Set([selected.name, previous.name]);
+  const reads = (text) => globalReferenceSpans(text, selected.kind).some(({ name: name2 }) => names.has(name2));
+  const reader = documents.find((doc) => Object.values(doc.text).some((cell) => reads(cell.text)));
+  if (reader)
+    throw new Error(`Tooltip ${reader.custom?.name || reader.hash} still uses ${selected.name}.`);
+  const dependency = [...saved.entries, ...published.entries].find(
+    (entry) => entry.id !== selected.id && !entry.tombstone && Object.values(entry.definitions).some((cell) => reads(cell.body))
+  );
+  if (dependency) throw new Error(`${dependency.name} still uses ${selected.name}.`);
+}
+function selectedRelease(pub, tree, live, selection2, maintainer) {
+  const { published, saved } = stores(pub, tree);
+  if (!selection2.length)
+    return {
+      options: releaseOptions(published.store, saved),
+      published,
+      refills: {},
+      rewritten: /* @__PURE__ */ new Map()
+    };
+  const previous = new Map(published.store.entries.map((entry) => [entry.id, entry]));
+  const selected = selection2.map(({ id, expected: expected2 }) => {
+    const entry = saved.entries.find((candidate) => candidate.id === id);
+    if (!entry || definitionDigest(entry) !== expected2)
+      throw new Error(`Shared definition ${entry?.name || id} changed. Review it again.`);
+    if (withdrawsEnglish(entry, previous.get(id)) && !maintainer)
+      throw new Error(`Only a maintainer can publish the removal of ${entry.name}.`);
+    return entry;
+  });
+  assertHistoricalSecondaries(pub, tree, live, selected);
+  const liveDocs = publishedDocuments(pub, tree, live);
+  const globals = new GlobalsPublisher(pub);
+  const withdrawals = selected.filter((entry) => withdrawsEnglish(entry, previous.get(entry.id)));
+  const removalDocs = withdrawals.length ? [
+    ...liveDocs,
+    ...Object.values(globals.documents(tree, "tooltips")),
+    ...globals.upcoming(tree).flatMap(Object.values)
+  ] : [];
+  for (const entry of withdrawals)
+    assertWithdrawal(entry, previous.get(entry.id), saved, published.store, removalDocs);
+  const renames = renamesOf(published.store, selected);
+  const beforeEntries = rewriteEntries(published.store.entries, renames);
+  const before = reconcileGlobalStore(
+    [
+      ...published.store.aggregates,
+      ...saved.aggregates.filter(
+        (item) => !published.store.aggregates.some((old) => old.document.hash === item.document.hash) && selected.some((entry) => globalAggregateHash(entry.kind) === item.document.hash)
+      )
+    ],
+    beforeEntries
+  );
+  const next = composeGlobalRelease(
+    before,
+    saved,
+    selected.map(({ id }) => id)
+  );
+  const options = releaseOptions(next, saved);
+  const variableNames = sharedVariableNames(options);
+  for (const entry of selected) {
+    if (entry.tombstone) continue;
+    for (const [lang, { body: body2 }] of Object.entries(entry.definitions)) {
+      const issue2 = sharedVariableLabelIssue(body2, variableNames);
+      if (issue2) throw new Error(`${entry.name} (${lang}): ${issue2}`);
+      for (const kind of ["exports", "variables", "titles"]) {
+        const unavailable = options.unavailable?.[kind];
+        if (!unavailable?.size) continue;
+        const reference = globalReferenceSpans(body2, kind).find(
+          ({ name: name2 }) => unavailable.has(name2)
+        );
+        if (reference) throw new Error(`Publish the shared change for ${reference.name} first.`);
+      }
+    }
+  }
+  const rewritten = /* @__PURE__ */ new Map();
+  const updatedDocs = liveDocs.map((prior) => {
+    const doc = renames.length ? rewriteTooltip(prior, renames) : prior;
+    if (doc !== prior) rewritten.set(doc.hash, doc);
+    return doc;
+  });
+  const publishedDocs = new Map(updatedDocs.map((doc) => [doc.hash, doc]));
+  const source2 = (hash2) => {
+    const row = live.perks[hash2];
+    const document = publishedDocs.get(row && "aliasOf" in row ? row.aliasOf : hash2);
+    if (document) return { document };
+  };
+  const oldOptions = withImportedFallback(
+    { definitions: globalsInPlaceDefinitions(before.entries) },
+    source2
+  );
+  const publishedOptions = withImportedFallback({ definitions: options.definitions }, source2);
+  const refills = refillPublishedDocuments(live, live, updatedDocs, oldOptions, publishedOptions);
+  return { options, published: { ...published, store: next }, refills, rewritten };
+}
+function refillPublishedDocuments(live, withAuthoredRows, documents, oldOptions, publishedOptions) {
+  const affected = [];
+  const changedLanguages = /* @__PURE__ */ new Map();
+  const refills = {};
+  const expectedBefore = { ...live, perks: { ...live.perks } };
+  for (const doc of documents) {
+    const old = exportLegacy([doc], 0, void 0, {}, { globalsInPlace: oldOptions })[doc.hash];
+    const filled = exportLegacy([doc], 0, void 0, {}, { globalsInPlace: publishedOptions })[doc.hash];
+    if (isLegacyAliasStub(old) || isLegacyAliasStub(filled) || stableStringify(old.editor) === stableStringify(filled.editor))
+      continue;
+    affected.push(doc);
+    const perk = live.perks[doc.hash];
+    const changed = languages2.filter(
+      (lang) => stableStringify(old.editor[lang] ?? null) !== stableStringify(filled.editor[lang] ?? null)
+    );
+    changedLanguages.set(doc.hash, changed);
+    const editor = { ...perk.editor };
+    const beforeEditor = { ...perk.editor };
+    for (const lang of changed) {
+      editor[lang] = refillLanguage(perk.editor[lang], filled.editor[lang]);
+      beforeEditor[lang] = refillLanguage(perk.editor[lang], old.editor[lang]);
+    }
+    expectedBefore.perks[doc.hash] = {
+      ...live.perks[doc.hash],
+      editor: beforeEditor
+    };
+    refills[doc.hash] = { ...perk, editor };
+  }
+  if (affected.length) {
+    const unlowered = unloweredEntry(refills);
+    if (unlowered !== void 0)
+      throw new Error(`The export of tooltip ${unlowered} still holds unlowered markup.`);
+    const hashes = affected.map(({ hash: hash2 }) => hash2);
+    const [drift] = provesInPlace(live, expectedBefore, affectedRows(live, expectedBefore, hashes));
+    if (drift) throw new Error(drift.message);
+    assertInPlaceDocuments(affected, publishedOptions);
+    const raw = exportGlobalsProof(affected, 0, void 0, {}, {}, publishedOptions);
+    const rawPerks = { ...withAuthoredRows.perks };
+    for (const { hash: hash2 } of affected) {
+      const existing2 = rawPerks[hash2], source2 = raw[hash2];
+      if (!("editor" in existing2) || isLegacyAliasStub(source2))
+        throw new Error(`Missing shared text proof input for ${hash2}.`);
+      const changed = changedLanguages.get(hash2);
+      const editor = { ...existing2.editor };
+      for (const lang of changed)
+        editor[lang] = refillLanguage(existing2.editor[lang], source2.editor[lang]);
+      rawPerks[hash2] = { ...existing2, editor };
+    }
+    proveInPlaceInputs(
+      withAuthoredRows,
+      { ...withAuthoredRows, perks: rawPerks },
+      {
+        ...withAuthoredRows,
+        perks: { ...withAuthoredRows.perks, ...refills }
+      },
+      publishedOptions,
+      hashes
+    );
+  }
+  return refills;
+}
+function refillImportedTooltips(pub, tree, plan, documents, aliases, exported) {
+  const roots = documents.flatMap(({ hash: hash2 }) => {
+    const previous = plan.live.perks[hash2];
+    const next = exported[hash2];
+    return previous && "editor" in previous && next && !isLegacyAliasStub(next) && languages2.some(
+      (lang) => previous.editor[lang]?.englishFallback !== next.editor[lang]?.englishFallback
+    ) ? [hash2] : [];
+  });
+  if (!roots.length) return;
+  const withAuthoredRows = {
+    ...plan.live,
+    perks: { ...plan.live.perks, ...exported }
+  };
+  const importers = affectedRows(plan.live, withAuthoredRows, roots);
+  for (const document of publishedDocuments(pub, tree, plan.live, false)) {
+    const row = plan.live.perks[document.hash];
+    if ("editor" in row && languages2.some(
+      (lang) => row.editor[lang]?.englishFallback && document.text[lang]?.text.includes("import ")
+    ))
+      importers.add(String(document.hash));
+  }
+  const selected = new Set(documents.map(({ hash: hash2 }) => hash2));
+  const snapshots = [...importers].flatMap((key) => {
+    const hash2 = Number(key);
+    const row = plan.live.perks[hash2];
+    if (selected.has(hash2) || !row || !("editor" in row)) return [];
+    const snapshot = plan.rewritten.get(hash2) ?? pub.read(tree, `live/tooltips/${hash2}.json`);
+    if (!snapshot) throw new Error(`Missing the published source for tooltip ${hash2}.`);
+    return isTextlessDescription(snapshot) ? [] : [snapshot];
+  });
+  if (!snapshots.length) return;
+  const options = { definitions: plan.options.definitions };
+  const before = authoredInPlaceOptions(pub, tree, plan.live, { ...plan, options }, [], {});
+  const after = authoredInPlaceOptions(
+    pub,
+    tree,
+    plan.live,
+    { ...plan, options },
+    documents,
+    aliases
+  );
+  const refills = refillPublishedDocuments(plan.live, withAuthoredRows, snapshots, before, after);
+  Object.assign(plan.refills, refills);
+  plan.live = { ...plan.live, perks: { ...plan.live.perks, ...refills } };
+}
+function planInPlaceRelease(pub, tree, live, selection2, maintainer, hasTooltipSelection = false) {
+  const plan = (items) => selectedRelease(pub, tree, live, items, maintainer);
+  const refusals = [];
+  try {
+    return { ...plan(selection2), globals: selection2.map(({ id }) => id), refusals };
+  } catch (error62) {
+    if (selection2.length < 2 && !hasTooltipSelection) throw error62;
+    const accepted = [];
+    let result = plan(accepted);
+    let pending = [...selection2].sort((a, b) => a.id.localeCompare(b.id));
+    while (pending.length) {
+      const retry = [];
+      refusals.length = 0;
+      for (const item of pending) {
+        try {
+          result = plan([...accepted, item]);
+          accepted.push(item);
+        } catch (refusal2) {
+          retry.push(item);
+          refusals.push({ id: item.id, error: refusalMessage(refusal2) });
+        }
+      }
+      if (retry.length === pending.length) break;
+      pending = retry;
+    }
+    if (!accepted.length && !hasTooltipSelection) throw error62;
+    return { ...result, globals: accepted.map(({ id }) => id), refusals };
+  }
+}
+function rewritePushed(pub, tree, pushed, rewritten) {
+  if (!rewritten.size) return;
+  const aliases = activeAliases(pub.aliasesAt(tree), pub.movesAt(tree));
+  for (const [hash2, doc] of rewritten) {
+    const old = pub.read(tree, `live/tooltips/${hash2}.json`);
+    for (const context of [aliases, {}]) {
+      if (pushed[hash2] !== sha2562(publishableHashInput(old, context))) continue;
+      pushed[hash2] = sha2562(publishableHashInput(doc, context));
+      break;
+    }
+  }
+}
+function neutralRenameHashes(pub, tree, entries, rewritten) {
+  if (!rewritten.size) return /* @__PURE__ */ new Set();
+  const pushed = pushedSchema.parse(pub.read(tree, "live/pushed.json"));
+  rewritePushed(pub, tree, pushed, rewritten);
+  const text = ({ text: text2 }) => Object.fromEntries(Object.entries(text2).map(([lang, cell]) => [lang, cell.text]));
+  return new Set(
+    entries.filter(({ hash: hash2, digest: digest6 }) => {
+      const published = rewritten.get(hash2);
+      if (!published || pushed[hash2] !== digest6) return false;
+      const saved = pub.read(tree, `tooltips/${hash2}.json`);
+      return saved && stableStringify(text(saved)) === stableStringify(text(published));
+    }).map(({ hash: hash2 }) => hash2)
+  );
+}
+function bundleInPlaceReview(pub, tree, fence) {
+  const live = pub.head(pub.options.liveBranch);
+  if (!pub.git.ancestor(fence.migratedLive, live))
+    throw new Error("LIVE has no in-place migration");
+  const input2 = liveGlobalsInput(pub, live);
+  assertInPlaceLibraries(input2);
+  const { published, saved } = stores(pub, tree);
+  const pending = pendingEntries(published.store, saved);
+  const globalsPending = pending.map((entry) => {
+    const previous = published.store.entries.find(({ id }) => id === entry.id);
+    const digest6 = definitionDigest(entry);
+    let affected = [];
+    let refusal2;
+    try {
+      const plan = planInPlaceRelease(pub, tree, input2, [{ id: entry.id, expected: digest6 }], true);
+      affected = [.../* @__PURE__ */ new Set([...Object.keys(plan.refills).map(Number), ...plan.rewritten.keys()])];
+    } catch (error62) {
+      refusal2 = refusalMessage(error62);
+    }
+    const cell = (value2, lang) => value2?.tombstone ? null : value2?.definitions[lang]?.body ?? null;
+    return {
+      id: entry.id,
+      name: entry.name,
+      kind: entry.kind,
+      change: entry.tombstone ? "removed" : !previous || previous.tombstone ? "new" : previous.name !== entry.name ? "renamed" : "changed",
+      digest: digest6,
+      affected,
+      languages: Object.fromEntries(
+        languages2.flatMap((lang) => {
+          const before = cell(previous, lang), after = cell(entry, lang);
+          const beforeAvailable = !!previous && !previous.tombstone && !!globalsInPlaceDefinition(previous.definitions, lang);
+          const afterAvailable = !entry.tombstone && !!globalsInPlaceDefinition(entry.definitions, lang);
+          return before !== after || beforeAvailable !== afterAvailable || previous?.name !== entry.name && (before !== null || after !== null) ? [
+            [
+              lang,
+              {
+                before,
+                after,
+                ...before !== null && !beforeAvailable || after !== null && !afterAvailable ? { beforeAvailable, afterAvailable } : {}
+              }
+            ]
+          ] : [];
+        })
+      ),
+      ...refusal2 ? { refusal: refusal2 } : {}
+    };
+  });
+  const pushed = pushedSchema.parse(pub.read(tree, "live/pushed.json"));
+  const renames = renamesOf(published.store, pending);
+  const rewritten = /* @__PURE__ */ new Map();
+  if (renames.length) {
+    for (const document of publishedDocuments(pub, tree, input2, false)) {
+      const updated = rewriteTooltip(document, renames);
+      if (updated !== document) rewritten.set(document.hash, updated);
+    }
+    rewritePushed(pub, tree, pushed, rewritten);
+  }
+  return { globalsPending, pushed };
+}
+
+// scripts/publisher/globals.ts
 init_syntax();
 init_languages();
 init_schemas3();
@@ -30853,6 +32731,8 @@ init_contentHash();
 init_schemas4();
 
 // apps/worker/src/globals/handlers.ts
+init_model();
+init_inPlaceReview();
 init_braces();
 init_syntax();
 
@@ -30871,7 +32751,7 @@ var HttpError = class extends Error {
 };
 
 // apps/worker/src/crypto.ts
-var encoder3 = new TextEncoder();
+var encoder4 = new TextEncoder();
 
 // apps/worker/src/github.ts
 var shaSchema = external_exports.object({ sha: external_exports.string().regex(/^[0-9a-f]{40}$/) });
@@ -30994,18 +32874,20 @@ function bundleGlobals(tree, read) {
 }
 var GlobalReleaseRejected = class extends Error {
 };
+var MissingPublishedSnapshot = class extends Error {
+};
 function globalTreeEntries(tree, prefix, modes = {}) {
   const entries = Object.entries(tree).filter(([path]) => path.startsWith(`${prefix}/`));
   const files = /* @__PURE__ */ new Map(), directories = /* @__PURE__ */ new Set();
-  for (const [path, oid4] of entries) {
+  for (const [path, oid5] of entries) {
     const rest = path.slice(prefix.length + 1), slash = rest.indexOf("/");
-    if (slash < 0) files.set(rest, oid4);
+    if (slash < 0) files.set(rest, oid5);
     else directories.add(rest.slice(0, slash));
   }
   return [
-    ...[...files].map(([name2, oid4]) => ({
+    ...[...files].map(([name2, oid5]) => ({
       name: name2,
-      oid: oid4,
+      oid: oid5,
       mode: modes[`${prefix}/${name2}`] ?? "100644"
     })),
     ...[...directories].map((name2) => ({
@@ -31025,10 +32907,10 @@ function globalTreeOid(tree, prefix, modes = {}) {
   if (!parts.length) return emptyGitTree;
   const bytes = Buffer.concat(
     parts.map(
-      ({ name: name2, oid: oid4, mode }) => Buffer.concat([Buffer.from(`${mode} ${name2}\0`), Buffer.from(oid4, "hex")])
+      ({ name: name2, oid: oid5, mode }) => Buffer.concat([Buffer.from(`${mode} ${name2}\0`), Buffer.from(oid5, "hex")])
     )
   );
-  return createHash2("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
+  return createHash3("sha1").update(`tree ${bytes.length}\0`).update(bytes).digest("hex");
 }
 var intentSchema = external_exports.object({
   version: external_exports.literal(1),
@@ -31068,9 +32950,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
       throw new Error("Installed publisher lacks globalsExportsV1");
     const modes = this.git.treeModes?.(head ?? this.publisher.head(this.options.dataBranch)) ?? {};
     const config2 = pin.capabilities.includes(globalsConfigWithoutMarks) ? await globalConfigIdentity(
-      globalTreeEntries(tree, "config", modes).map(({ name: name2, oid: oid4, mode }) => ({
+      globalTreeEntries(tree, "config", modes).map(({ name: name2, oid: oid5, mode }) => ({
         nameRaw: Buffer.from(name2).toString("base64"),
-        oid: oid4,
+        oid: oid5,
         mode: parseInt(mode, 8)
       }))
     ) : globalTreeOid(tree, "config", modes);
@@ -31121,7 +33003,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
         throw new Error("Global identity mismatch");
       return entry;
     });
-    return reconcileGlobalStore(layout.aggregates, entries, { preserveNewLanguageSourceStamp: true });
+    return reconcileGlobalStore(layout.aggregates, entries, {
+      preserveNewLanguageSourceStamp: true
+    });
   }
   documents(tree, prefix) {
     return Object.fromEntries(
@@ -31177,7 +33061,8 @@ var GlobalsPublisher = class _GlobalsPublisher {
     for (const [hash2, value2] of Object.entries(perks)) {
       if (typeof value2.type === "string") liveTypes[hash2] = value2.type;
       if (value2.aliasOf === void 0) {
-        if (!documents[hash2]) throw new Error("Missing last-published consumer snapshot");
+        if (!documents[hash2])
+          throw new MissingPublishedSnapshot("Missing last-published consumer snapshot");
         tooltips[hash2] = documents[hash2];
       } else {
         const { aliasOf, aliasKind } = value2;
@@ -31187,7 +33072,14 @@ var GlobalsPublisher = class _GlobalsPublisher {
       }
     }
     if (!tooltips[2] || !tooltips[3]) throw new Error("Missing last-published global library");
-    return { repository: this.options.repo, revision: revision2, aliases, types: liveTypes, tooltips, mode: "live" };
+    return {
+      repository: this.options.repo,
+      revision: revision2,
+      aliases,
+      types: liveTypes,
+      tooltips,
+      mode: "live"
+    };
   }
   publicationSnapshot(tree, revision2, captured, documents) {
     const { aliases, types } = captured.authored;
@@ -31284,13 +33176,18 @@ var GlobalsPublisher = class _GlobalsPublisher {
       Object.entries(this.options.facts).map(([hash2, fact]) => [hash2, fact.type])
     );
     const livePerks = external_exports.object({ perks: livePerksSchema }).parse(this.publisher.read(this.git.tree(liveCommit), "liveDescriptions.json")).perks;
+    const inPlace = globalsFence(this.publisher, tree)?.state === "active";
     const live = this.liveSnapshot(
       revision2,
       livePerks,
-      { ...this.documents(tree, "live/tooltips"), ...projectGlobals(published.store) },
+      {
+        ...inPlace ? { 1: { hash: 1, associated: [], text: {} } } : {},
+        ...this.documents(tree, "live/tooltips"),
+        ...projectGlobals(published.store)
+      },
       types
     );
-    const exported = exportLegacy(Object.values(live.tooltips), 0, this.options.facts, live.aliases);
+    const exported = inPlace ? {} : exportLegacy(Object.values(live.tooltips), 0, this.options.facts, live.aliases);
     for (const [hash2, value2] of Object.entries(exported)) {
       if ("aliasOf" in value2) continue;
       const expectedEditor = structuredClone(value2.editor);
@@ -31623,7 +33520,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
   async materialize(tree, head, live) {
     const store = this.store(tree);
     const sources = await this.sources(tree, live, head);
-    const components = await this.plan(tree, head, live);
+    const components = globalsFence(this.publisher, tree) ? [] : await this.plan(tree, head, live);
     const oldRows = new Map(
       Object.keys(tree).filter((path) => path.startsWith("globals/reviews/")).map((path) => [path, this.read(tree, path)])
     );
@@ -31638,7 +33535,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         const path = `globals/reviews/${row.id}.json`;
         const old = rowSchema.safeParse(oldRows.get(path));
         const audit = old.success ? old.data.review.acknowledgement : void 0;
-        const keep = audit && old.success && old.data.sources.config === sources.config && old.data.sources.generator === sources.generator && old.data.sources.fallback === sources.fallback && old.data.sources.resolver === sources.resolver && audit.contentDigest === row.contentDigest && audit.dependencyDigest === row.dependencyDigest && audit.impactDigest === row.impactDigest;
+        const keep2 = audit && old.success && old.data.sources.config === sources.config && old.data.sources.generator === sources.generator && old.data.sources.fallback === sources.fallback && old.data.sources.resolver === sources.resolver && audit.contentDigest === row.contentDigest && audit.dependencyDigest === row.dependencyDigest && audit.impactDigest === row.impactDigest;
         const name2 = this.options.facts[row.view.consumer.hash]?.name ?? String(row.view.consumer.hash);
         const value2 = rowSchema.parse({
           version: 1,
@@ -31653,7 +33550,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
             causes: row.view.causes,
             contentDigest: row.contentDigest,
             dependencyDigest: row.dependencyDigest,
-            ...keep ? { acknowledgement: audit } : {}
+            ...keep2 ? { acknowledgement: audit } : {}
           },
           view: {
             ...row.view,
@@ -31706,12 +33603,23 @@ var GlobalsPublisher = class _GlobalsPublisher {
         delete tree[retry];
     }
   }
+  async recordInPlaceProofs(tree, head, live) {
+    if (syncSchema.parse(this.read(tree, globalsReleasePaths.sync)).status !== "current") return;
+    const sources = await this.sources(tree, live, head);
+    try {
+      await this.proofs(tree, head, sources, live, []);
+    } catch (error62) {
+      if (!(error62 instanceof MissingPublishedSnapshot)) throw error62;
+    }
+  }
   async drain(expectedHead) {
     for (let attempt = 0; attempt < 3; attempt++) {
       const head = this.publisher.head(this.options.dataBranch), original = this.git.tree(head);
       if (expectedHead !== void 0 && head !== expectedHead)
         throw new RefRace("Global sync source moved");
       if (!hasGlobals(original)) return head;
+      const fence = globalsFence(this.publisher, original);
+      if (fence?.state === "hold") return head;
       const tree = { ...original };
       try {
         const sync = syncSchema.parse(this.read(tree, globalsReleasePaths.sync));
@@ -31730,6 +33638,9 @@ var GlobalsPublisher = class _GlobalsPublisher {
           delete tree[path];
         const live = this.publisher.head(this.options.liveBranch);
         await this.materialize(tree, head, live);
+        if (fence)
+          for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/causes/")))
+            delete tree[path];
         for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/retries/")))
           delete tree[path];
         this.write(
@@ -31751,6 +33662,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         return commit2;
       } catch (error62) {
         if (error62 instanceof RefRace) continue;
+        if (fence && error62 instanceof MissingPublishedSnapshot) return head;
         const sync = syncSchema.safeParse(this.read(original, globalsReleasePaths.sync));
         if (sync.success && sync.data.causeIds.length) {
           let failed = { ...original };
@@ -31949,6 +33861,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
   }
   async proofs(tree, head, sources, live, components) {
     const captured = this.capture(tree, head, live), requested = /* @__PURE__ */ new Map();
+    const inPlace = Boolean(globalsFence(this.publisher, tree));
     for (const entry of captured.saved.entries)
       if (!entry.tombstone) requested.set(`${entry.kind}:${entry.name}`, entry);
     for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/retries/"))) {
@@ -31971,7 +33884,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const authoredSources = { ...captured.authored, tooltips: this.documents(tree, "tooltips") };
     const localNames = this.localNames(tree, captured);
     const scans = new GlobalSnapshotScans();
-    for (const snapshot of snapshots) {
+    for (const snapshot of inPlace ? [] : snapshots) {
       const validation = calculateGlobalImpact(
         snapshot,
         snapshot,
@@ -31995,7 +33908,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       if (isMovedInactive(hash2, moves) && resolveAlias(hash2, captured.authored.aliases) === hash2)
         hashes.add(hash2);
     }
-    for (const hash2 of hashes)
+    for (const hash2 of inPlace ? [] : hashes)
       for (const lang of [
         .../* @__PURE__ */ new Set([
           ...Object.keys(captured.authored.tooltips[hash2]?.text ?? {}),
@@ -32029,12 +33942,14 @@ var GlobalsPublisher = class _GlobalsPublisher {
           limits.metadataBytes
         );
       }
-    this.write(
-      tree,
-      publicationSourcesPath(this.options.liveBranch),
-      sources,
-      limits.metadataBytes
-    );
+    if (!inPlace)
+      this.write(
+        tree,
+        publicationSourcesPath(this.options.liveBranch),
+        sources,
+        limits.metadataBytes
+      );
+    else delete tree[publicationSourcesPath(this.options.liveBranch)];
     for (const request of requested.values()) {
       const owners = [...captured.saved.entries, ...captured.published.entries].filter(
         (entry) => !entry.tombstone && entry.kind === request.kind && entry.name === request.name
@@ -32076,6 +33991,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         ];
         const path = `globals/proofs/removal/${entry.id}-${lang ?? "all"}.json`;
         delete tree[path];
+        if (inPlace && lang && lang !== "en") continue;
         const referenced = snapshots.some((snapshot) => {
           const change = {
             cause: {
@@ -32636,14 +34552,14 @@ function validateScheduleMembers(hashes, files, pushed) {
 }
 
 // scripts/schedule-prepare/intents.ts
-import { createHash as createHash3, createPublicKey, verify } from "node:crypto";
+import { createHash as createHash4, createPublicKey, verify } from "node:crypto";
 init_schedule();
 var InvalidScheduleIntent = class extends Error {
 };
 function verifiedSource(pub, raw) {
   const envelope2 = scheduleEnvelopeSchema.parse(raw);
   const key = createPublicKey(pub.options.publicKey);
-  if (createHash3("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== pub.options.keyFingerprint || !verify(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
+  if (createHash4("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== pub.options.keyFingerprint || !verify(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
     throw new InvalidScheduleIntent("Invalid schedule signature or key pin");
   const intent = scheduleIntentSchema.parse(JSON.parse(envelope2.payload));
   if (stableStringify(intent) !== envelope2.payload || intent.repo !== pub.options.repo || intent.dataBranch !== pub.options.dataBranch || intent.liveBranch !== pub.options.liveBranch)
@@ -32651,12 +34567,12 @@ function verifiedSource(pub, raw) {
   const tree = pub.git.tree(intent.sourceCommit);
   const batch = batchSchema.parse(pub.read(tree, `schedule/batches/${intent.batchId}/batch.json`));
   const members3 = batchMembers(pub, tree, intent.batchId);
-  const oid4 = members3.length ? globalTreeOid(
+  const oid5 = members3.length ? globalTreeOid(
     tree,
     `schedule/batches/${intent.batchId}/tooltips`,
     pub.git.treeModes?.(intent.sourceCommit)
   ) : null;
-  if (batch.id !== intent.batchId || batch.revision !== intent.expectedRevision || batch.contentRevision !== intent.contentRevision || oid4 !== intent.memberTreeOid || batch.claim || (intent.kind === "save" ? batch.status !== intent.returnStatus : !["draft", "scheduled"].includes(batch.status)))
+  if (batch.id !== intent.batchId || batch.revision !== intent.expectedRevision || batch.contentRevision !== intent.contentRevision || oid5 !== intent.memberTreeOid || batch.claim || (intent.kind === "save" ? batch.status !== intent.returnStatus : !["draft", "scheduled"].includes(batch.status)))
     throw new InvalidScheduleIntent("Signed schedule source identity mismatch");
   const stage = activeDraftStaging(batch, Date.parse(intent.createdAt));
   if (stage && (intent.kind !== "save" || intent.draftStaging?.id !== stage.id || intent.requester.id !== stage.ownerId))
@@ -32670,7 +34586,7 @@ function verifiedRequest(pub, tree, path) {
   const bodyOid = tree[scheduleIntentPaths.body(intent.requestId)];
   if (!bodyOid) throw new InvalidScheduleIntent("Missing submitted schedule bytes");
   const body2 = pub.git.blob(bodyOid);
-  if (Buffer.byteLength(body2) > 300 * 1024 || createHash3("sha256").update(body2).digest("hex") !== intent.bodyDigest || request.bodyDigest !== intent.bodyDigest || request.requestId !== intent.requestId || path !== scheduleIntentPaths.request(intent.requestId) || request.batchId !== intent.batchId || request.requesterId !== intent.requester.id || request.admissionRevision <= intent.expectedRevision)
+  if (Buffer.byteLength(body2) > 300 * 1024 || createHash4("sha256").update(body2).digest("hex") !== intent.bodyDigest || request.bodyDigest !== intent.bodyDigest || request.requestId !== intent.requestId || path !== scheduleIntentPaths.request(intent.requestId) || request.batchId !== intent.batchId || request.requesterId !== intent.requester.id || request.admissionRevision <= intent.expectedRevision)
     throw new InvalidScheduleIntent("Schedule request or submitted bytes mismatch");
   const input2 = JSON.parse(body2);
   if (input2.requestId !== intent.requestId || input2.revision !== intent.expectedRevision)
@@ -32686,9 +34602,9 @@ function verifiedRequest(pub, tree, path) {
     const changes2 = [];
     let message;
     for (let part = 0; part < manifest.parts; part++) {
-      const oid4 = source2.tree[scheduleIntentPaths.stagedPart(intent.batchId, manifest.id, part)];
-      if (!oid4) throw new InvalidScheduleIntent("Missing staged save part");
-      const raw = pub.git.blob(oid4);
+      const oid5 = source2.tree[scheduleIntentPaths.stagedPart(intent.batchId, manifest.id, part)];
+      if (!oid5) throw new InvalidScheduleIntent("Missing staged save part");
+      const raw = pub.git.blob(oid5);
       if (Buffer.byteLength(raw) > 300 * 1024)
         throw new InvalidScheduleIntent("Staged save part exceeds the request budget");
       const chunk = JSON.parse(raw);
@@ -32878,9 +34794,9 @@ var SchedulePreparer = class {
     );
     if (!entries.length && !tree[schedulePaths.index]) return;
     const terminal = entries.filter((b) => !isOpenStatus(b.status)).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt) || a.id.localeCompare(b.id));
-    const keep = new Set(terminal.slice(0, scheduleLimits.indexTerminal).map((b) => b.id));
+    const keep2 = new Set(terminal.slice(0, scheduleLimits.indexTerminal).map((b) => b.id));
     const index = scheduleIndexSchema.parse({
-      batches: entries.filter((b) => isOpenStatus(b.status) || keep.has(b.id))
+      batches: entries.filter((b) => isOpenStatus(b.status) || keep2.has(b.id))
     });
     let oldIndex;
     try {
@@ -33313,7 +35229,7 @@ var SchedulePreparer = class {
 
 // scripts/publisher/currentSave.ts
 init_zod();
-import { createHash as createHash4, createPublicKey as createPublicKey2, verify as verify2 } from "node:crypto";
+import { createHash as createHash5, createPublicKey as createPublicKey2, verify as verify2 } from "node:crypto";
 
 // apps/worker/src/save.ts
 init_zod();
@@ -33479,7 +35395,7 @@ Clarity-Carried: ${carried.join(";")}` : ""}`
 }
 
 // scripts/publisher/currentSave.ts
-var sha2562 = (bytes) => createHash4("sha256").update(bytes).digest("hex");
+var sha2563 = (bytes) => createHash5("sha256").update(bytes).digest("hex");
 var pinSchema = external_exports.object({
   sourceSha: external_exports.string(),
   sha256: external_exports.string(),
@@ -33488,7 +35404,7 @@ var pinSchema = external_exports.object({
 function readSubmission(pub, head, id, record3) {
   const { payload, sig } = record3.envelope;
   const key = createPublicKey2(pub.options.publicKey);
-  if (sha2562(key.export({ type: "spki", format: "der" })) !== pub.options.keyFingerprint || !verify2(null, Buffer.from(payload), key, Buffer.from(sig, "base64")))
+  if (sha2563(key.export({ type: "spki", format: "der" })) !== pub.options.keyFingerprint || !verify2(null, Buffer.from(payload), key, Buffer.from(sig, "base64")))
     throw new Error("Invalid staged Current save signature");
   const intent = currentSaveIntent.parse(JSON.parse(payload));
   if (stableStringify(intent) !== payload || intent.requestId !== id || intent.repo !== pub.options.repo || intent.branch !== pub.options.dataBranch || intent.parts !== record3.parts || stableStringify(intent.requester) !== stableStringify(record3.requester) || !pub.git.ancestor(intent.sourceCommit, head))
@@ -33507,7 +35423,7 @@ function readSubmission(pub, head, id, record3) {
     chunks.push(bytes2);
   }
   const bytes = Buffer.concat(chunks);
-  if (sha2562(bytes) !== intent.digest) throw new Error("Staged Current save content changed");
+  if (sha2563(bytes) !== intent.digest) throw new Error("Staged Current save content changed");
   return savedChangesSchema.parse(
     JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes))
   );
@@ -33577,6 +35493,9 @@ async function drainCurrentSaves(pub) {
               409,
               "Use global entry mutations; Sync pending protection is required"
             );
+          const fence = globalsFence(pub, tree);
+          if (fence && !("conflicts" in validated))
+            assertInPlaceDocuments(validated.tooltips, publishedGlobals(pub, tree));
           plan = validated;
         } catch (error62) {
           if (!(error62 instanceof Error)) throw error62;
@@ -33624,13 +35543,6 @@ async function drainCurrentSaves(pub) {
 // scripts/publisher/publisher.ts
 var publishBackoff = () => setTimeout2(3e4);
 var json5 = (v) => JSON.stringify(v, null, 2) + "\n";
-function unloweredEntry(entries) {
-  const strings = (value2) => typeof value2 === "string" ? [value2] : value2 && typeof value2 === "object" ? Object.values(value2).flatMap(strings) : [];
-  const unlowered = (text) => /[\uE000\uE001]/.test(text) || findElementTags(text).length > 0 || text.includes("#{") || text.includes(enhancedArrowMarkup);
-  for (const [hash2, entry] of Object.entries(entries))
-    if (strings(entry).some(unlowered)) return hash2;
-  return void 0;
-}
 var dataRef = (branch) => `refs/heads/${branch}`;
 var paths2 = (id) => {
   publishOpIdSchema.parse(id);
@@ -33884,12 +35796,13 @@ var Publisher = class _Publisher {
       if (!["maintainer", "editor"].includes(permissions2.users[String(payload.requester.id)]?.role))
         throw new Error("Requester revoked");
       requesterCredits(payload.requester);
+      requireGlobalsMode(this, tree);
       return payload;
     }
     if (typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string")
       throw new Error("Invalid signed envelope");
     const key = createPublicKey3(this.options.publicKey);
-    const fingerprint = createHash5("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
+    const fingerprint = createHash6("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex");
     if (fingerprint !== this.options.keyFingerprint || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
       throw new Error("Invalid signature or key pin");
     const p = await parsePublishRequestPayload(JSON.parse(envelope2.payload));
@@ -33901,6 +35814,7 @@ var Publisher = class _Publisher {
     if (!["maintainer", "editor"].includes(permissions.users[String(p.requester.id)]?.role))
       throw new Error("Requester revoked");
     requesterCredits(p.requester);
+    requireGlobalsMode(this, tree, p.kind === "push" && !!p.globals);
     return p;
   }
   /** Recovery credits come from the signed envelope, never from an unverified log or receipt. */
@@ -33914,7 +35828,7 @@ var Publisher = class _Publisher {
       return requesterCredits(intent.requester);
     }
     const key = createPublicKey3(this.options.publicKey);
-    if (createHash5("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string" || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
+    if (createHash6("sha256").update(key.export({ type: "spki", format: "der" })).digest("hex") !== this.options.keyFingerprint || typeof envelope2.payload !== "string" || typeof envelope2.sig !== "string" || !verify3(null, Buffer.from(envelope2.payload), key, Buffer.from(envelope2.sig, "base64")))
       throw new Error("Invalid credit envelope");
     const raw = JSON.parse(envelope2.payload);
     const payload = raw.kind === "batch" ? batchPublishPayloadSchema.parse(raw) : publishPayloadSchema.parse(raw);
@@ -33960,9 +35874,14 @@ var Publisher = class _Publisher {
       if (sourceTree[aliasGroupsPath] && r.generatorSha !== this.options.generatorSha)
         throw new Error("Generator revision differs from frozen alias-group receipt");
       hasMoves = Object.keys(this.movesAt(sourceTree)).length > 0;
-      perks = this.mergePublicationPerks(
+      const base = r.inPlace ? { ...live.perks } : live.perks;
+      for (const hash2 of r.inPlace?.refills ?? []) {
+        base[hash2] = entries[hash2];
+        delete entries[hash2];
+      }
+      perks = r.inPlace && !r.entries.length ? base : this.mergePublicationPerks(
         sourceTree,
-        live.perks,
+        base,
         entries,
         r.entries.map((e) => e.hash)
       );
@@ -33974,7 +35893,7 @@ var Publisher = class _Publisher {
     const { publisherSha, publisherDigest } = this.options;
     const pin = JSON.stringify([publisherSha, publisherDigest]);
     const presets = hasMoves ? [...deployedLegacyPresets, "clarityV2"] : deployedLegacyPresets;
-    const checkKey = createHash5("sha256").update(JSON.stringify([parent, pin, presets])).update(bytes).digest("hex");
+    const checkKey = createHash6("sha256").update(JSON.stringify([parent, pin, presets])).update(bytes).digest("hex");
     if (this.checkedOutput?.key !== checkKey) {
       const candidate = this.candidateOutput;
       const before = candidate?.commit === parent && candidate.pin === pin ? candidate.after : void 0;
@@ -34071,21 +35990,21 @@ var Publisher = class _Publisher {
         return true;
       if (/^tooltips\/(?:0|[1-9]\d*)\.json$/.test(path) || /^globals\/(?:layout\.json$|sync\.json$|catalog\.json$|(?:entries|causes|intents|names|reviews|projections|pages)\/)/.test(
         path
-      ) || derivedGlobalPath(path) || path.startsWith("schedule/") || [snippetsPath, inactiveMovesPath, aliasGroupsPath, sandboxPointersPath].includes(path)) {
+      ) || reviewed[globalsInPlacePath] && path === globalsReleasePaths.published(this.options.liveBranch) || derivedGlobalPath(path) || path.startsWith("schedule/") || [snippetsPath, inactiveMovesPath, aliasGroupsPath, sandboxPointersPath].includes(path)) {
         rebuild = true;
         return true;
       }
       if (batch) rebuild = true;
       return batch;
     };
-    for (const [path, oid4] of Object.entries(reviewed)) {
+    for (const [path, oid5] of Object.entries(reviewed)) {
       if (!Object.hasOwn(tree, path)) {
         if (!(regular(reviewedModes, path) && nameProofRequest(reviewed, path)) && !acceptChange(path))
           return "blocked";
       } else {
         if (currentModes && (!Object.hasOwn(currentModes, path) || currentModes[path] !== reviewedModes?.[path]))
           return "blocked";
-        if (tree[path] !== oid4 && !acceptChange(path)) return "blocked";
+        if (tree[path] !== oid5 && !acceptChange(path)) return "blocked";
       }
     }
     for (const path of Object.keys(tree)) {
@@ -34129,12 +36048,14 @@ var Publisher = class _Publisher {
     const aliases = this.aliasesAt(frozen, options);
     const moves = this.movesAt(frozen);
     const pushed = pushedSchema.parse(this.read(frozen, "live/pushed.json"));
+    if (Boolean(frozen[globalsInPlacePath]) !== Boolean(receipt.inPlace) || receipt.inPlace && receipt.globals)
+      throw new ConsumerOutputRejected("Receipt does not match the reviewed shared text.");
     if (signed.intentDigest !== receipt.intentDigest || stableStringify(signed.requester) !== stableStringify(receipt.requester))
       throw new ConsumerOutputRejected("Receipt does not match the signed publication intent");
     if (!receipt.globals && receipt.entries.length !== new Set(signed.hashes.map((hash2) => resolveAlias(hash2, aliases))).size)
       throw new ConsumerOutputRejected("Receipt does not match the requested rows");
     if (signed.kind === "push") {
-      if (!atomic)
+      if (!atomic || receipt.inPlace)
         this.assertRequestedDigests(
           receipt.entries,
           signed.hashes,
@@ -34172,7 +36093,7 @@ var Publisher = class _Publisher {
         aliases
       );
     }
-    if (atomic) return;
+    if (atomic && !receipt.inPlace) return;
     try {
       const documents = [];
       for (const entry of receipt.entries) {
@@ -34186,31 +36107,61 @@ var Publisher = class _Publisher {
         }
         documents.push(document);
       }
+      const inPlace = this.inPlaceOptions(frozen, signed, receipt.liveParent);
+      const neutral = inPlace && neutralRenameHashes(this, frozen, receipt.entries, inPlace.rewritten);
+      const publishable = neutral?.size ? documents.filter(({ hash: hash2 }) => !neutral.has(hash2)) : documents;
+      const selected = selectedInactiveMoves(moves, publishable.map(({ hash: hash2 }) => hash2), aliases);
+      const active = inPlace ? publishable.filter(({ hash: hash2 }) => !isMovedInactive(hash2, selected)) : publishable;
+      const globalsInPlace = inPlace && authoredInPlaceOptions(
+        this,
+        frozen,
+        inPlace.live,
+        inPlace,
+        active,
+        activeAliases(aliases, selected)
+      );
+      if (globalsInPlace) assertInPlaceDocuments(active, globalsInPlace);
+      if (inPlace && signed.kind === "batch") assertScheduledGlobalNames(active, inPlace);
       const exported = exportWithInactiveMoves(
-        documents,
+        publishable,
         receipt.now,
         options.facts,
         aliases,
-        selectedInactiveMoves(
-          moves,
-          documents.map(({ hash: hash2 }) => hash2),
-          aliases
-        )
+        selected,
+        globalsInPlace && { globalsInPlace }
       );
-      if (stableStringify(exported) !== stableStringify(receipt.exported) || stableStringify(
-        receipt.entries.filter(({ hash: hash2, digest: digest6 }) => pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2)
+      if (inPlace && globalsInPlace && publishable.length) {
+        refillImportedTooltips(this, frozen, inPlace, active, activeAliases(aliases, selected), exported);
+        provePublication(
+          this,
+          frozen,
+          inPlace.live,
+          publishable,
+          aliases,
+          selected,
+          receipt.now,
+          exported,
+          globalsInPlace
+        );
+      }
+      const output2 = this.publicationOutput(inPlace, exported);
+      if (stableStringify(output2.exported) !== stableStringify(receipt.exported) || stableStringify(output2.inPlace ?? null) !== stableStringify(receipt.inPlace ?? null) || stableStringify(
+        receipt.entries.filter(({ hash: hash2, digest: digest6 }) => !neutral?.has(hash2) && pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2)
       ) !== stableStringify(receipt.changed))
         throw new Error("Publication receipt export or upload markers differ from its snapshots");
+      return inPlace;
     } catch (error62) {
       throw new ConsumerOutputRejected(String(error62));
     }
   }
   async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive, failureHead) {
     const p = paths2(opId);
-    if (receipt) await this.verifyReceiptDigests(receipt, atomicLive !== void 0);
+    const inPlace = receipt && await this.verifyReceiptDigests(receipt, atomicLive !== void 0);
     for (let i = 0; i < 5; i++) {
       const h = this.head(this.options.dataBranch), tree = this.git.tree(h);
       if (tree[p.log]) return;
+      if (receipt && (Boolean(tree[globalsInPlacePath]) !== Boolean(receipt.inPlace) || receipt.inPlace && tree[globalsInPlacePath] !== this.git.tree(receipt.sourceCommit)[globalsInPlacePath]))
+        throw new ConsumerOutputRejected("Publication is fenced by a different shared text mode.");
       if (failureHead && failureHead !== h) throw new RefRace("Batch refusal source moved");
       if (!receipt && new SchedulePreparer(this).batches(tree).some(
         (batch) => batch.opId === opId && ["preparing", "needs_attention"].includes(batch.status)
@@ -34239,6 +36190,10 @@ var Publisher = class _Publisher {
             );
           throw error62;
         });
+        if (receipt.inPlace && tree[p.request] !== receipt.requestBlob)
+          throw new ConsumerOutputRejected(
+            "Publication changed before landing; review the tooltip again."
+          );
         const liveMoved = signed.kind === "batch" && i > 0 && this.head(this.options.liveBranch) !== atomicLive.parent;
         if (source2 !== h || liveMoved) {
           const advance = this.sourceAdvance(source2, h, tree, opId, signed.kind === "batch");
@@ -34256,71 +36211,73 @@ var Publisher = class _Publisher {
               signed.kind === "batch"
             );
         }
-        let documents;
-        let entryOnlyAggregates = [];
-        if (signed.kind === "batch") {
-          const plan = await this.batchPlan(
-            tree,
-            signed,
-            this.aliasesAt(tree),
-            source2,
-            atomicLive.parent
-          );
-          if ("failure" in plan || stableStringify(plan.globals ?? null) !== stableStringify(receipt.globals ?? null))
-            throw new ConsumerOutputRejected("Scheduled global receipt identity mismatch");
-          documents = plan.entries.map(
-            (entry) => tooltipSchema.parse(JSON.parse(this.git.blob(entry.tooltipBlob)))
-          );
-        } else {
-          const reviewed = this.reviewedRelease;
-          const release = await new GlobalsPublisher(this).validate(
-            receipt.globals,
-            tree,
-            source2,
-            atomicLive.parent,
-            source2 === h && reviewed?.key === this.releaseKey(receipt.requestBlob, h, atomicLive.parent) ? reviewed.release : void 0
-          );
-          documents = release?.documents;
-          entryOnlyAggregates = release?.entryOnlyAggregates ?? [];
-        }
-        if (!documents || (signed.kind === "push" || receipt.globals) && stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
-          throw new ConsumerOutputRejected("Global receipt identity mismatch");
-        const aliases = this.aliasesAt(tree);
-        if (signed.kind === "push")
-          this.assertRequestedDigests(
-            receipt.entries,
-            signed.hashes.filter(
-              (hash2) => !entryOnlyAggregates.includes(resolveAlias(hash2, aliases))
-            ),
-            (hash2) => signed.expected[hash2],
+        if (!receipt.inPlace) {
+          let documents;
+          let entryOnlyAggregates = [];
+          if (signed.kind === "batch") {
+            const plan = await this.batchPlan(
+              tree,
+              signed,
+              this.aliasesAt(tree),
+              source2,
+              atomicLive.parent
+            );
+            if ("failure" in plan || stableStringify(plan.globals ?? null) !== stableStringify(receipt.globals ?? null))
+              throw new ConsumerOutputRejected("Scheduled global receipt identity mismatch");
+            documents = plan.entries.map(
+              (entry) => tooltipSchema.parse(JSON.parse(this.git.blob(entry.tooltipBlob)))
+            );
+          } else {
+            const reviewed = this.reviewedRelease;
+            const release = await new GlobalsPublisher(this).validate(
+              receipt.globals,
+              tree,
+              source2,
+              atomicLive.parent,
+              source2 === h && reviewed?.key === this.releaseKey(receipt.requestBlob, h, atomicLive.parent) ? reviewed.release : void 0
+            );
+            documents = release?.documents;
+            entryOnlyAggregates = release?.entryOnlyAggregates ?? [];
+          }
+          if (!documents || (signed.kind === "push" || receipt.globals) && stableStringify(signed.hashes) !== stableStringify(receipt.globals?.roots) || stableStringify(signed.requester) !== stableStringify(receipt.requester) || receipt.publisherSha !== this.options.publisherSha || receipt.generatorSha !== this.options.generatorSha)
+            throw new ConsumerOutputRejected("Global receipt identity mismatch");
+          const aliases = this.aliasesAt(tree);
+          if (signed.kind === "push")
+            this.assertRequestedDigests(
+              receipt.entries,
+              signed.hashes.filter(
+                (hash2) => !entryOnlyAggregates.includes(resolveAlias(hash2, aliases))
+              ),
+              (hash2) => signed.expected[hash2],
+              aliases
+            );
+          const moves = selectedInactiveMoves(
+            this.movesAt(tree),
+            documents.map((document) => document.hash),
             aliases
           );
-        const moves = selectedInactiveMoves(
-          this.movesAt(tree),
-          documents.map((document) => document.hash),
-          aliases
-        );
-        const exported = exportWithInactiveMoves(
-          documents,
-          receipt.now,
-          this.options.facts,
-          aliases,
-          moves
-        );
-        if (stableStringify(exported) !== stableStringify(receipt.exported) || documents.length !== receipt.entries.length)
-          throw new ConsumerOutputRejected(
-            receipt.globals ? "Global receipt export mismatch" : "Publication receipt export mismatch"
+          const exported = exportWithInactiveMoves(
+            documents,
+            receipt.now,
+            this.options.facts,
+            aliases,
+            moves
           );
-        for (const document of documents) {
-          const entry = receipt.entries.find((entry2) => entry2.hash === document.hash);
-          if (!entry || entry.digest !== await inactivePublishableHash(document, aliases, moves) || stableStringify(document) !== stableStringify(JSON.parse(this.git.blob(entry.tooltipBlob))))
-            throw new ConsumerOutputRejected("Global receipt dependency mismatch");
+          if (stableStringify(exported) !== stableStringify(receipt.exported) || documents.length !== receipt.entries.length)
+            throw new ConsumerOutputRejected(
+              receipt.globals ? "Global receipt export mismatch" : "Publication receipt export mismatch"
+            );
+          for (const document of documents) {
+            const entry = receipt.entries.find((entry2) => entry2.hash === document.hash);
+            if (!entry || entry.digest !== await inactivePublishableHash(document, aliases, moves) || stableStringify(document) !== stableStringify(JSON.parse(this.git.blob(entry.tooltipBlob))))
+              throw new ConsumerOutputRejected("Global receipt dependency mismatch");
+          }
+          const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
+          if (stableStringify(
+            receipt.entries.filter((entry) => markers[entry.hash] !== entry.digest).map((entry) => entry.hash)
+          ) !== stableStringify(receipt.changed))
+            throw new ConsumerOutputRejected("Global receipt upload marker mismatch");
         }
-        const markers = pushedSchema.parse(this.read(tree, "live/pushed.json"));
-        if (stableStringify(
-          receipt.entries.filter((entry) => markers[entry.hash] !== entry.digest).map((entry) => entry.hash)
-        ) !== stableStringify(receipt.changed))
-          throw new ConsumerOutputRejected("Global receipt upload marker mismatch");
       }
       const blob = receipt?.requestBlob ?? requestBlob ?? tree[p.request];
       let request;
@@ -34340,7 +36297,17 @@ var Publisher = class _Publisher {
       const batchTimes = batchPayload ? this.recordBatch(tree, opId, batchPayload, receipt, candidate, result, landing) : void 0;
       if (receipt) {
         const pushed = pushedSchema.parse(this.read(tree, "live/pushed.json"));
+        const neutral = inPlace && neutralRenameHashes(this, tree, receipt.entries, inPlace.rewritten);
+        if (inPlace && receipt.inPlace?.globals.length) {
+          rewritePushed(this, tree, pushed, inPlace.rewritten);
+          for (const [hash2, tooltip] of inPlace.rewritten)
+            tree[`live/tooltips/${hash2}.json`] = this.git.writeBlob(json5(tooltip));
+          tree[globalsReleasePaths.published(this.options.liveBranch)] = this.git.writeBlob(
+            json5(inPlace.published)
+          );
+        }
         for (const e of receipt.entries) {
+          if (neutral?.has(e.hash)) continue;
           pushed[e.hash] = e.digest;
           tree[`live/tooltips/${e.hash}.json`] = e.tooltipBlob;
         }
@@ -34385,6 +36352,8 @@ var Publisher = class _Publisher {
         batchTimes.landedAt = landedAt;
         batchTimes.landedAtSource = "cas";
       }
+      if (receipt && inPlace)
+        await new GlobalsPublisher(this).recordInPlaceProofs(tree, h, candidate);
       tree[p.log] = this.git.writeBlob(
         json5({
           request,
@@ -34396,7 +36365,9 @@ var Publisher = class _Publisher {
               hash: e.hash,
               digest: e.digest,
               status: receipt.outcome
-            }))
+            })),
+            ...receipt?.inPlace?.globals.length ? { globals: receipt.inPlace.globals } : {},
+            ...receipt?.inPlace?.refusals?.length ? { globalRefusals: receipt.inPlace.refusals } : {}
           },
           liveCommit: candidate ?? null,
           recordCommit: null,
@@ -34537,7 +36508,7 @@ var Publisher = class _Publisher {
     );
     if (runtime && paths3.some((path) => tree[path] !== runtime[path]))
       throw new RefRace("Publisher installation changed during this run");
-    if (this.options.publisherConfigDigest && (!tree[paths3[1]] || createHash5("sha256").update(this.git.blob(tree[paths3[1]])).digest("hex") !== this.options.publisherConfigDigest))
+    if (this.options.publisherConfigDigest && (!tree[paths3[1]] || createHash6("sha256").update(this.git.blob(tree[paths3[1]])).digest("hex") !== this.options.publisherConfigDigest))
       throw new RefRace("Wait for the installed publisher configuration to run");
     if (tree[paths3[0]] || this.options.publisherConfigDigest) {
       const pin = this.read(tree, paths3[0]);
@@ -34647,9 +36618,9 @@ var Publisher = class _Publisher {
           return;
         }
         for (const hash2 of payload.hashes) {
-          const canonical = resolveAlias(hash2, aliases), oid4 = tree[`tooltips/${canonical}.json`];
+          const canonical = resolveAlias(hash2, aliases), oid5 = tree[`tooltips/${canonical}.json`];
           const tooltip = tooltipSchema.safeParse(
-            oid4 ? JSON.parse(this.git.blob(oid4)) : isMovedInactive(canonical, moves) ? { hash: canonical, text: {}, associated: [] } : void 0
+            oid5 ? JSON.parse(this.git.blob(oid5)) : isMovedInactive(canonical, moves) ? { hash: canonical, text: {}, associated: [] } : void 0
           );
           if (!tooltip.success || tooltip.data.hash !== canonical) {
             outcomes.push({ hash: canonical, status: "missing" });
@@ -34664,7 +36635,7 @@ var Publisher = class _Publisher {
             entries.push({
               hash: canonical,
               digest: digest6,
-              tooltipBlob: oid4 ?? this.git.writeBlob(json5(tooltip.data))
+              tooltipBlob: oid5 ?? this.git.writeBlob(json5(tooltip.data))
             });
             tooltips.push(tooltip.data);
             seen.add(canonical);
@@ -34685,7 +36656,7 @@ var Publisher = class _Publisher {
         }
         let globals;
         let entryOnlyAggregates = [];
-        if (hasGlobals(tree)) {
+        if (hasGlobals(tree) && !tree[globalsInPlacePath]) {
           try {
             const release = await new GlobalsPublisher(this).release(tree, s, payload.hashes, live);
             if (!release) throw new Error("Missing global release");
@@ -34721,7 +36692,10 @@ var Publisher = class _Publisher {
           (hash2) => payload.expected[hash2],
           aliases
         );
-        const checked = this.checkAndExport(tree, tooltips, aliases);
+        const inPlace = this.inPlaceOptions(tree, payload, live);
+        const neutral = inPlace && neutralRenameHashes(this, tree, entries, inPlace.rewritten);
+        const publishable = neutral?.size ? tooltips.filter(({ hash: hash2 }) => !neutral.has(hash2)) : tooltips;
+        const checked = this.checkAndExport(tree, publishable, aliases, inPlace);
         if ("error" in checked) {
           await this.record(
             opId,
@@ -34745,10 +36719,11 @@ var Publisher = class _Publisher {
           outcome: "published",
           entries,
           exported: checked.exported,
-          changed: entries.filter((e) => pushed[e.hash] !== e.digest).map((e) => e.hash),
+          changed: entries.filter(({ hash: hash2, digest: digest6 }) => !neutral?.has(hash2) && pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2),
           requester: payload.requester,
           intentDigest: payload.intentDigest,
-          ...globals ? { globals } : {}
+          ...globals ? { globals } : {},
+          ...checked.inPlace ? { inPlace: checked.inPlace } : {}
         };
         candidate = this.createCandidate(opId, blob, live, r, rebuilding?.candidate);
       }
@@ -34775,6 +36750,12 @@ var Publisher = class _Publisher {
         }
         return;
       }
+      try {
+        const mode = requireGlobalsMode(this, this.git.tree(this.head(this.options.dataBranch)));
+        if (Boolean(mode) !== Boolean(r.inPlace)) throw new Error("Publication mode changed.");
+      } catch (error62) {
+        throw new ConsumerOutputRejected(String(error62));
+      }
       if (l === r.liveParent) {
         const checked = this.merge(l, r);
         const candidateBytes = this.git.blob(this.git.tree(c)["liveDescriptions.json"]);
@@ -34782,7 +36763,7 @@ var Publisher = class _Publisher {
           throw new ConsumerOutputRejected(
             "stored candidate differs from its checked receipt; nothing published"
           );
-        if (r.batchId || r.globals || hasGlobals(this.git.tree(this.head(this.options.dataBranch)))) {
+        if (r.batchId || r.globals || r.inPlace || hasGlobals(this.git.tree(this.head(this.options.dataBranch)))) {
           try {
             await this.record(
               opId,
@@ -34825,6 +36806,17 @@ var Publisher = class _Publisher {
           return;
         }
       } else {
+        if (r.inPlace) {
+          const head = this.head(this.options.dataBranch);
+          throw new SourceAdvanced(
+            c,
+            blob,
+            r.sourceCommit,
+            head,
+            r.entries.map(({ hash: hash2 }) => hash2),
+            !!r.batchId
+          );
+        }
         if (r.batchId && r.globals) {
           const head = this.head(this.options.dataBranch);
           if (this.sourceAdvance(r.sourceCommit, head, this.git.tree(head), opId, true) !== "blocked")
@@ -34848,7 +36840,7 @@ var Publisher = class _Publisher {
    * The manual-publish content checks and the export, shared by `push` and `batch` (same order,
    * same messages). An error is a terminal rejection before any write.
    */
-  checkAndExport(tree, tooltips, aliases) {
+  checkAndExport(tree, tooltips, aliases, inPlace) {
     const moves = selectedInactiveMoves(
       this.movesAt(tree),
       tooltips.map((t) => t.hash),
@@ -34873,8 +36865,39 @@ var Publisher = class _Publisher {
     const now = this.options.now();
     let exported;
     try {
-      exported = exportWithInactiveMoves(tooltips, now, this.options.facts, aliases, moves);
+      const globalsInPlace = inPlace && authoredInPlaceOptions(
+        this,
+        tree,
+        inPlace.live,
+        inPlace,
+        active,
+        activeAliases(aliases, moves)
+      );
+      if (globalsInPlace) assertInPlaceDocuments(active, globalsInPlace);
+      exported = exportWithInactiveMoves(
+        tooltips,
+        now,
+        this.options.facts,
+        aliases,
+        moves,
+        globalsInPlace && { globalsInPlace }
+      );
+      if (inPlace && globalsInPlace && tooltips.length) {
+        refillImportedTooltips(this, tree, inPlace, active, activeAliases(aliases, moves), exported);
+        provePublication(
+          this,
+          tree,
+          inPlace.live,
+          tooltips,
+          aliases,
+          moves,
+          now,
+          exported,
+          globalsInPlace
+        );
+      }
     } catch (error62) {
+      if (inPlace) return { error: String(error62), proposalRejected: true };
       throw new ConsumerOutputRejected(String(error62));
     }
     const unlowered = unloweredEntry(exported);
@@ -34883,7 +36906,49 @@ var Publisher = class _Publisher {
         error: `The export of tooltip ${unlowered} still holds unlowered markup`,
         proposalRejected: true
       };
-    return { now, exported };
+    return { now, ...this.publicationOutput(inPlace, exported) };
+  }
+  inPlaceOptions(tree, payload, live) {
+    try {
+      const selection2 = payload.kind === "push" ? payload.globals ?? [] : [];
+      const fence = requireGlobalsMode(this, tree, selection2.length > 0);
+      if (!fence) return;
+      this.assertBatchRuntime(tree);
+      const pin = this.read(tree, ".publisher/PIN");
+      if (!pin?.capabilities.includes(globalsInPlaceCapability))
+        throw new Error("Update the installed publisher before publishing shared text.");
+      assertInPlaceRoots(payload.hashes);
+      if (!this.git.ancestor(fence.migratedLive, live))
+        throw new Error("LIVE has no in-place migration.");
+      const input2 = liveGlobalsInput(this, live);
+      assertInPlaceLibraries(input2);
+      const role = permissionsSchema.parse(this.read(tree, "config/permissions.json")).users[payload.requester.id]?.role;
+      const plan = planInPlaceRelease(
+        this,
+        tree,
+        input2,
+        selection2,
+        role === "maintainer",
+        payload.hashes.length > 0
+      );
+      return {
+        ...plan,
+        live: { ...input2, perks: { ...input2.perks, ...plan.refills } }
+      };
+    } catch (error62) {
+      throw new ConsumerOutputRejected(String(error62));
+    }
+  }
+  publicationOutput(plan, exported) {
+    if (!plan) return { exported };
+    return {
+      exported: { ...plan.refills, ...exported },
+      inPlace: {
+        globals: plan.globals,
+        refills: Object.keys(plan.refills).filter((hash2) => !exported[hash2]).map(Number),
+        ...plan.refusals.length ? { refusals: plan.refusals } : {}
+      }
+    };
   }
   createCandidate(opId, blob, live, r, previous) {
     const p = paths2(opId);
@@ -35003,7 +37068,7 @@ var Publisher = class _Publisher {
           }
         };
     }
-    if (hasGlobals(tree)) {
+    if (hasGlobals(tree) && !tree[globalsInPlacePath]) {
       try {
         new SchedulePreparer(this).pin(tree);
         const pin = this.read(tree, ".publisher/PIN");
@@ -35037,7 +37102,14 @@ var Publisher = class _Publisher {
         };
       }
     }
-    const checked = this.checkAndExport(tree, documents, aliases);
+    let inPlace;
+    try {
+      inPlace = this.inPlaceOptions(tree, payload, live);
+      if (inPlace) assertScheduledGlobalNames(documents, inPlace);
+    } catch (error62) {
+      return { failure: { status: "rejected", error: String(error62) } };
+    }
+    const checked = this.checkAndExport(tree, documents, aliases, inPlace);
     if ("error" in checked) return { failure: { status: "rejected", ...checked } };
     const entries = [];
     for (const tooltip of documents)
@@ -35065,7 +37137,8 @@ var Publisher = class _Publisher {
       entries,
       now: checked.now,
       exported: checked.exported,
-      changed: entries.filter((e) => pushed[e.hash] !== e.digest).map((e) => e.hash),
+      changed: entries.filter(({ hash: hash2, digest: digest6 }) => pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2),
+      ...checked.inPlace ? { inPlace: checked.inPlace } : {},
       ...globals ? { globals } : {}
     };
   }
@@ -35225,7 +37298,8 @@ var Publisher = class _Publisher {
       intentDigest: payload.intentDigest,
       batchId: payload.batchId,
       contentRevision: payload.contentRevision,
-      ...plan.globals ? { globals: plan.globals } : {}
+      ...plan.globals ? { globals: plan.globals } : {},
+      ...plan.inPlace ? { inPlace: plan.inPlace } : {}
     };
     this.merge(live, receipt);
     let sourceCommit = s;
@@ -35403,6 +37477,8 @@ var Publisher = class _Publisher {
   }
   bundleAt(ref, old) {
     const h = this.head(this.options.dataBranch), t = this.git.tree(h), oldTree = old ? this.git.tree(old) : {};
+    const fence = globalsFence(this, t);
+    if (fence?.state === "hold") return;
     const prior = old ? this.read(oldTree, "bundle.json") : void 0;
     if (prior?.sourceCommit === h) return;
     if (prior && !this.git.ancestor(prior.sourceCommit, h))
@@ -35432,7 +37508,13 @@ var Publisher = class _Publisher {
         const value2 = JSON.parse(e.payload);
         if (value2?.kind === "batch") return batchEntry(batchPublishPayloadSchema.parse(value2));
         const p = publishPayloadSchema.parse(value2);
-        return { opId: id, requester: p.requester, hashes: p.hashes, createdAt: p.createdAt };
+        return {
+          opId: id,
+          requester: p.requester,
+          hashes: p.hashes,
+          createdAt: p.createdAt,
+          ...p.globals ? { globals: p.globals.map(({ id: id2 }) => id2) } : {}
+        };
       } catch {
         return { opId: id, invalid: true };
       }
@@ -35446,12 +37528,13 @@ var Publisher = class _Publisher {
       if (t[inactiveMovesPath]) inactiveMoves = this.movesAt(t);
     } catch {
     }
+    const inPlace = fence && bundleInPlaceReview(this, t, fence);
     const bundle = {
       sourceCommit: h,
       generatedAt: new Date(this.options.now()).toISOString(),
       tooltips,
       permissions: permissionsSchema.parse(this.read(t, "config/permissions.json")),
-      pushed: pushedSchema.parse(this.read(t, "live/pushed.json")),
+      pushed: inPlace?.pushed ?? pushedSchema.parse(this.read(t, "live/pushed.json")),
       // Preserve malformed config too: omitting it would resurrect archived members in readers.
       // Raw invalid JSON becomes null, which the web schema rejects, without wedging the queue.
       ...t[aliasGroupsPath] ? {
@@ -35467,6 +37550,7 @@ var Publisher = class _Publisher {
       ...sandboxPointers && Object.keys(sandboxPointers.pointers).length ? { sandboxPointers } : {},
       publishQueue,
       ...scheduledQueue.length ? { scheduledQueue } : {},
+      ...inPlace ? { globalsPending: inPlace.globalsPending } : {},
       // The globals catalogue at this same head; null (never a partial list) when malformed,
       // so the editor says it is unavailable without stopping the bundle or the queue.
       ...hasGlobals(t) ? {
@@ -35490,6 +37574,7 @@ var Publisher = class _Publisher {
   async run(syncGlobals = true) {
     const start = this.options.now();
     const runtime = this.git.tree(this.head(this.options.dataBranch));
+    if (globalsFence(this, runtime)?.state === "hold") return;
     try {
       if (syncGlobals) {
         await drainCurrentSaves(this);
@@ -35511,7 +37596,7 @@ var Publisher = class _Publisher {
 
 // scripts/publisher/pipeline.ts
 import { execFileSync as execFileSync2 } from "node:child_process";
-import { createHash as createHash6, createPublicKey as createPublicKey4 } from "node:crypto";
+import { createHash as createHash7, createPublicKey as createPublicKey4 } from "node:crypto";
 import { mkdtempSync as mkdtempSync2, mkdirSync, readFileSync, rmSync as rmSync2, writeFileSync } from "node:fs";
 import { tmpdir as tmpdir2 } from "node:os";
 import { join as join3, resolve as resolve2 } from "node:path";
@@ -35575,14 +37660,14 @@ var RemoteRepository = class extends LocalRepository {
       throw new TransportUnresolved("Invalid remote ref advertisement");
     if (super.head(ref) === advertisedOid) return advertisedOid;
     this.remoteGit(["fetch", "--no-tags", this.remote, ref]);
-    const oid4 = this.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
-    this.git(["update-ref", ref, oid4]);
-    return oid4;
+    const oid5 = this.git(["rev-parse", "--verify", "FETCH_HEAD"]).trim();
+    this.git(["update-ref", ref, oid5]);
+    return oid5;
   }
   cas(ref, old, next) {
     this.validate(ref);
-    for (const oid4 of [old, next])
-      if (oid4 !== void 0 && !/^[0-9a-f]{40}$/.test(oid4)) throw new Error("Invalid object ID");
+    for (const oid5 of [old, next])
+      if (oid5 !== void 0 && !/^[0-9a-f]{40}$/.test(oid5)) throw new Error("Invalid object ID");
     const candidate = ref.startsWith("refs/heads/publish-candidate/");
     if (!candidate && (!next || old && !this.ancestor(old, next)))
       throw new Error("Data/live/bundle refs must advance monotonically");
@@ -35667,7 +37752,7 @@ function publicationIdentity(repo, branch = "converter") {
   const log = JSON.parse(repo.blob(recordTree[paths2(receipt.opId).log]));
   if (log.candidateCommit !== commit2 || !["done", "unchanged"].includes(log.result?.status))
     throw new Error("Publication RECORD differs from receipt");
-  const hash2 = (bytes) => createHash6("sha256").update(bytes).digest("hex");
+  const hash2 = (bytes) => createHash7("sha256").update(bytes).digest("hex");
   const enginePin = tree[".exports/PIN"] ? repo.blob(tree[".exports/PIN"]).trim() : null;
   if (!/^[a-f0-9]{40}$/.test(receipt.generatorSha) || branch === "converter" && (!enginePin || !/^[a-f0-9]{40}$/.test(enginePin) || !tree[".exports/engine.mjs"] || !receipt.verifierSha256 || !/^[a-f0-9]{64}$/.test(receipt.verifierSha256) || !recordTree[".publisher/verify-publication.mjs"] || hash2(repo.blob(recordTree[".publisher/verify-publication.mjs"])) !== receipt.verifierSha256))
     throw new Error("Invalid immutable publication identity");
@@ -35746,9 +37831,9 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       "refs/remotes/origin/"
     ]);
     for (const line of refs.trim().split("\n")) {
-      const [ref, oid4] = line.split(" ");
+      const [ref, oid5] = line.split(" ");
       if (ref.endsWith("/HEAD")) continue;
-      command(["update-ref", ref.replace("refs/remotes/origin/", "refs/heads/"), oid4]);
+      command(["update-ref", ref.replace("refs/remotes/origin/", "refs/heads/"), oid5]);
     }
     const remoteNames = new Set(
       refs.split("\n").map((l) => l.split(" ")[0].replace("refs/remotes/origin/", "refs/heads/"))
@@ -35816,16 +37901,18 @@ async function runPipeline(checkout, config2, output2, remoteMode = false) {
       });
       if (!response.ok) throw new Error("Worker key unavailable");
       const key = await response.json();
-      const fingerprint = createHash6("sha256").update(createPublicKey4(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
+      const fingerprint = createHash7("sha256").update(createPublicKey4(key.publicKey).export({ type: "spki", format: "der" })).digest("hex");
       if (key.algorithm !== "Ed25519" || fingerprint !== config2.keyFingerprint || key.fingerprint !== fingerprint)
         throw new Error("Worker key fingerprint mismatch");
       options.publicKey = key.publicKey;
       const publisher = new Publisher(initial, options);
-      await drainCurrentSaves(publisher);
-      await new SchedulePreparer(publisher).drain();
-      await new GlobalsPublisher(publisher).drain();
-      if (enabled) publishBundle(initial, options);
-      await publisher.run(false);
+      if (globalsFence(publisher, initial.tree(publisher.head(options.dataBranch)))?.state !== "hold") {
+        await drainCurrentSaves(publisher);
+        await new SchedulePreparer(publisher).drain();
+        await new GlobalsPublisher(publisher).drain();
+        if (enabled) publishBundle(initial, options);
+        await publisher.run(false);
+      }
     } catch (e) {
       failure2 = e;
     }
@@ -35888,14 +37975,219 @@ publication=${productionPush ? JSON.stringify(handoff2) : ""}
 }
 function verifyRuntime(root) {
   const pin = JSON.parse(readFileSync(join3(root, "PIN"), "utf8"));
-  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash6("sha256").update(readFileSync(join3(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash6("sha256").update(readFileSync(join3(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
+  if (!/^[0-9a-f]{64}$/.test(pin.verifierSha256) || createHash7("sha256").update(readFileSync(join3(root, "verify-publication.mjs"))).digest("hex") !== pin.verifierSha256 || !/^[0-9a-f]{40}$/.test(pin.sourceSha) || createHash7("sha256").update(readFileSync(join3(root, "publisher.mjs"))).digest("hex") !== pin.sha256)
     throw new Error("Publisher PIN mismatch");
   return pin;
 }
 
+// scripts/publisher/globalsMigration.ts
+import { isDeepStrictEqual } from "node:util";
+init_schedule();
+function proveMigrationFiles(before, after, inputs) {
+  const { catalog, inventoryItems, sandboxPerks } = inputs;
+  if (!Object.keys(inventoryItems).length || !Object.keys(catalog.items).length || !catalog.categories.length)
+    throw new Error("Migration requires the pinned manifest and format-v2 catalog.");
+  const identical = bungieIdentical(before, inventoryItems, sandboxPerks);
+  if (JSON.stringify(identical) !== JSON.stringify(bungieIdentical(after, inventoryItems, sandboxPerks)))
+    throw new Error("Migration changes Bungie-identical selection.");
+  const files = [];
+  const compare = (name2, old, next) => {
+    if (!Buffer.from(old).equals(next)) throw new Error(`Migration changes ${name2}.`);
+    files.push(name2);
+  };
+  for (const preset of legacyPresets)
+    compare(
+      preset,
+      buildLegacy(before, preset, { identical }),
+      buildLegacy(after, preset, { identical })
+    );
+  for (const style of ["structured", "markdown"])
+    for (const lang of exportLanguages) {
+      const file2 = newStyleFile("migration", style, {
+        categories: catalog.categories.map(({ id }) => id),
+        sandboxPerks: [],
+        frameAliases: true,
+        languages: [lang],
+        keys: ["name"],
+        languageFiles: "combined",
+        bungieIdentical: false
+      });
+      const options = { catalog, identical };
+      compare(
+        `${style}/${lang}`,
+        compile2(before, file2, options).bytes,
+        compile2(after, file2, options).bytes
+      );
+    }
+  return files;
+}
+function assertDisposable(pub) {
+  if (pub.git.constructor !== LocalRepository)
+    throw new Error("Migration is available only in a disposable local clone.");
+  return pub.git;
+}
+function assertDrained(pub, git, data) {
+  const tree = git.tree(data);
+  for (const path of Object.keys(tree)) {
+    if (path.startsWith("publish/requests/") || path.startsWith("globals/intents/"))
+      throw new Error(`Drain ${path} with the old publisher first.`);
+    if (/^schedule\/batches\/[^/]+\/batch\.json$/.test(path)) {
+      const batch = batchSchema.parse(pub.read(tree, path));
+      if (["preparing", "scheduled", "publishing"].includes(batch.status) || batch.status === "needs_attention" && batch.preparation?.returnStatus === "scheduled")
+        throw new Error(`Finish or unschedule batch ${batch.id} with the old publisher first.`);
+    }
+  }
+  if (git.git(["for-each-ref", "--format=%(refname)", "refs/heads/publish-candidate/"]).trim())
+    throw new Error("Recover old publisher candidates before migration.");
+  const live = git.tree(pub.head(pub.options.liveBranch));
+  for (const path of Object.keys(live).filter((file2) => file2.startsWith(".publish/receipts/"))) {
+    const log = pub.read(
+      tree,
+      path.replace(".publish/receipts/", "publish/log/")
+    );
+    if (log?.result?.status !== "done" && log?.result?.status !== "unchanged")
+      throw new Error(`Recover the RECORD for ${path} with the old publisher first.`);
+  }
+}
+var json6 = (value2) => JSON.stringify(value2, null, 2) + "\n";
+async function dryRunGlobalsMigration(pub, inputs, checkpoint) {
+  const git = assertDisposable(pub);
+  const dataRef2 = `refs/heads/${pub.options.dataBranch}`;
+  const liveRef = `refs/heads/${pub.options.liveBranch}`;
+  const source2 = pub.head(pub.options.dataBranch);
+  const tree = git.tree(source2);
+  const installed = pub.read(tree, ".publisher/PIN");
+  if (!installed?.capabilities.includes(globalsInPlaceCapability))
+    throw new Error("Install the in-place publisher PIN before migration.");
+  let journal = globalsFence(pub, tree);
+  let hold = source2;
+  const legacyLive = journal?.legacyLive ?? pub.head(pub.options.liveBranch);
+  const legacyData = journal?.legacyData ?? source2;
+  const { saved, published, authored, live } = new GlobalsPublisher(pub).capture(
+    git.tree(legacyData),
+    legacyData,
+    legacyLive
+  );
+  const before = liveGlobalsInput(pub, legacyLive);
+  const entries = [...published.entries, ...saved.entries].filter(({ tombstone }) => !tombstone);
+  const variableNames = new Set(
+    entries.filter(({ kind }) => kind === "variables").map(({ name: name2 }) => name2)
+  );
+  const checkLabel = (text, context) => {
+    const issue2 = sharedVariableLabelIssue(text, variableNames);
+    if (issue2) throw new Error(`${context}: ${issue2}`);
+  };
+  for (const entry of entries)
+    for (const [lang, cell] of Object.entries(entry.definitions))
+      checkLabel(cell.body, `${entry.name} (${lang})`);
+  for (const snapshot of [authored, live])
+    for (const tooltip of Object.values(snapshot.tooltips))
+      for (const [lang, cell] of Object.entries(tooltip.text))
+        checkLabel(cell.text, `Tooltip ${tooltip.hash} (${lang})`);
+  for (const row of Object.values(before.perks)) {
+    if (!("editor" in row)) continue;
+    for (const [lang, cell] of Object.entries(row.editor))
+      for (const text of [cell.main, cell.secondary])
+        checkLabel(text, `LIVE tooltip ${row.hash} (${lang})`);
+  }
+  for (const hash2 of [1, 2, 3]) {
+    const library = before.perks[hash2];
+    if (!library || !("editor" in library)) continue;
+    for (const [lang, cell] of Object.entries(library.editor))
+      if (cell.englishFallback)
+        throw new Error(`Legacy LIVE library ${hash2} (${lang}) falls back to English.`);
+  }
+  const definitions = (perks) => legacyGlobalsInPlaceDefinitions(perks);
+  const liveDefinitions = definitions(before.perks);
+  const projected = exportLegacy(Object.values(projectGlobals(published)), 0, pub.options.facts);
+  if (!isDeepStrictEqual(liveDefinitions, definitions(projected)))
+    throw new Error("Published definitions differ from the effective LIVE libraries.");
+  for (const entry of published.entries.filter(({ tombstone }) => !tombstone))
+    for (const lang of languages2) {
+      const liveDefinition = liveDefinitions[entry.kind]?.[entry.name]?.[lang];
+      if (Boolean(liveDefinition) !== Boolean(globalsInPlaceDefinition(entry.definitions, lang)))
+        throw new Error(`Published availability for ${entry.name} (${lang}) differs from LIVE.`);
+    }
+  const next = migrateInPlace(before);
+  const files = proveMigrationFiles(before, next, inputs);
+  const olderSecondaries = historicalSecondaryUses(before, liveDefinitions);
+  if (!journal) {
+    assertDrained(pub, git, source2);
+    const migratedLive2 = git.commit(
+      legacyLive,
+      {
+        ...git.tree(legacyLive),
+        "liveDescriptions.json": git.writeBlob(json6(next))
+      },
+      "Inline shared text in existing LIVE tooltips",
+      appCredits
+    );
+    journal = globalsInPlaceFenceSchema.parse({
+      state: "hold",
+      destination: pub.options.liveBranch,
+      legacyData: source2,
+      legacyLive,
+      migratedLive: migratedLive2
+    });
+    hold = git.commit(
+      source2,
+      {
+        ...tree,
+        [globalsInPlacePath]: git.writeBlob(json6(journal))
+      },
+      "Hold publication for shared text migration",
+      appCredits
+    );
+    git.cas(dataRef2, source2, hold);
+    checkpoint?.("hold");
+  }
+  const { migratedLive } = journal;
+  const originalTree = git.tree(legacyLive);
+  const migratedTree = git.tree(migratedLive);
+  if (git.blob(migratedTree["liveDescriptions.json"]) !== json6(next) || !git.ancestor(legacyLive, migratedLive) || Object.keys(originalTree).length !== Object.keys(migratedTree).length || Object.keys(originalTree).some(
+    (path) => path !== "liveDescriptions.json" && originalTree[path] !== migratedTree[path]
+  ) || !git.ancestor(journal.legacyData, hold))
+    throw new Error("Migration journal differs from its proven inputs.");
+  const currentLive = pub.head(pub.options.liveBranch);
+  if (currentLive === legacyLive && journal.state === "hold") {
+    git.cas(liveRef, legacyLive, migratedLive);
+    checkpoint?.("live");
+  } else if (currentLive !== migratedLive) {
+    throw new Error("LIVE moved during the shared text migration.");
+  }
+  const fence = { ...journal, state: "active" };
+  const recordTree = { ...git.tree(hold), [globalsInPlacePath]: git.writeBlob(json6(fence)) };
+  const record3 = journal.state === "active" ? hold : git.commit(hold, recordTree, "Record shared text migration and enable Review", appCredits);
+  publishedGlobals(pub, recordTree);
+  if (journal.state === "hold") {
+    git.cas(dataRef2, hold, record3);
+    checkpoint?.("record");
+  }
+  return { record: record3, live: migratedLive, files, olderSecondaries };
+}
+function restoreGlobalsMigration(pub) {
+  const git = assertDisposable(pub);
+  const data = pub.head(pub.options.dataBranch);
+  const live = pub.head(pub.options.liveBranch);
+  const tree = git.tree(data);
+  const fence = globalsFence(pub, tree);
+  if (!fence) return;
+  const { legacyData, legacyLive, migratedLive } = fence;
+  const before = git.tree(legacyData);
+  if (!git.ancestor(legacyData, data) || live !== legacyLive && live !== migratedLive || Object.keys(before).length + 1 !== Object.keys(tree).length || Object.keys(before).some((path) => tree[path] !== before[path]))
+    throw new Error("Publication or a save advanced after migration; restore is unavailable.");
+  const update = { ref: `refs/heads/${pub.options.dataBranch}`, old: data, next: legacyData };
+  if (live === migratedLive)
+    git.casMany([
+      update,
+      { ref: `refs/heads/${pub.options.liveBranch}`, old: live, next: legacyLive }
+    ]);
+  else git.cas(update.ref, update.old, update.next);
+}
+
 // scripts/publisher/cli.ts
 async function main() {
-  const [flag, source2, config2, output2] = process.argv.slice(2);
+  const [flag, source2, config2, output2, migrationInput] = process.argv.slice(2);
   if (["--pipeline-dry-run", "--pipeline-publish"].includes(flag) && source2 && config2 && output2) {
     const pin = verifyRuntime(dirname(fileURLToPath(import.meta.url)));
     const bytes = readFileSync2(config2);
@@ -35908,16 +38200,16 @@ async function main() {
         ...options,
         publisherDigest: pin.sha256,
         verifierDigest: pin.verifierSha256,
-        publisherConfigDigest: flag === "--pipeline-publish" ? createHash7("sha256").update(bytes).digest("hex") : void 0
+        publisherConfigDigest: flag === "--pipeline-publish" ? createHash8("sha256").update(bytes).digest("hex") : void 0
       },
       output2,
       flag === "--pipeline-publish"
     );
     return;
   }
-  if (flag !== "--dry-run" || !source2 || !config2 || !output2)
+  if (!["--dry-run", "--globals-migration-dry-run"].includes(flag) || !source2 || !config2 || !output2 || flag === "--globals-migration-dry-run" && !migrationInput)
     throw new Error(
-      "Usage: publisher.mjs --dry-run <local repository> <config.json> <artifact directory>"
+      "Usage: publisher.mjs --dry-run <local repository> <config.json> <artifact directory>, or --globals-migration-dry-run with an additional migration-inputs.json"
     );
   const local = realpathSync2(resolve3(source2)), out = resolve3(output2);
   const temp = mkdtempSync3(join4(tmpdir3(), "publisher-dry-run-"));
@@ -35941,8 +38233,20 @@ async function main() {
       now: Date.now
     });
     let failure2;
+    let migration;
+    let restored;
     try {
-      await publisher.run();
+      if (flag === "--globals-migration-dry-run") {
+        const originalData = publisher.head(options.dataBranch);
+        const originalLive = publisher.head(options.liveBranch);
+        const inputs = JSON.parse(readFileSync2(migrationInput, "utf8"));
+        migration = await dryRunGlobalsMigration(publisher, inputs);
+        restoreGlobalsMigration(publisher);
+        restored = publisher.head(options.dataBranch) === originalData && publisher.head(options.liveBranch) === originalLive;
+        if (!restored) throw new Error("Migration restore did not recover the original refs.");
+        migration = await dryRunGlobalsMigration(publisher, inputs);
+        publisher.bundle();
+      } else await publisher.run();
     } catch (e) {
       failure2 = e;
     }
@@ -35960,6 +38264,7 @@ async function main() {
           writesEnabled: false,
           dataHead: publisher.head(options.dataBranch),
           liveHead: publisher.head(options.liveBranch),
+          ...migration ? { migration, restored } : {},
           error: failure2 ? String(failure2) : null
         },
         null,
