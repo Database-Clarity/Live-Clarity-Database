@@ -23057,14 +23057,15 @@ function canCarryNumbers(before, after, translation) {
   if (scans.flatMap(numericLiterals).some((value2) => oldValues.has(value2))) return false;
   return true;
 }
-function carryNumberTranslations(before, merged) {
+function carryNumberTranslations(before, merged, excluded = []) {
   const old = before.text.en, english = merged.text.en;
   if (!old || !english || alignSlots(old.text, english.text).kind !== "value")
     return { tooltip: merged, carried: [] };
   const text = { ...merged.text };
   const carried = [];
   for (const [lang, translation] of Object.entries(text)) {
-    if (lang === "en" || !canCarryNumbers(old, english, translation)) continue;
+    if (lang === "en" || excluded.includes(lang) || !canCarryNumbers(old, english, translation))
+      continue;
     text[lang] = {
       ...translation,
       sourceUpdatedAt: english.updatedAt,
@@ -29284,6 +29285,27 @@ async function globalConfigIdentity(input2, expectedRawOid) {
 // packages/core/src/status/index.ts
 init_languages();
 init_map();
+function isTranslatable(tooltip, aliases = {}) {
+  return resolveAlias(tooltip.hash, aliases) === tooltip.hash && !!tooltip.text.en?.text.trim() && !tooltip.archive;
+}
+function translationStateOf(tooltip, language) {
+  const english = tooltip.text.en;
+  const translation = tooltip.text[language];
+  if (!translation) return { state: "missing" };
+  const sourceUpdatedAt = translation.sourceUpdatedAt;
+  const ageMs = sourceUpdatedAt ? Date.parse(english.updatedAt) - Date.parse(sourceUpdatedAt) : 0;
+  const retired2 = english.numbers?.retired;
+  const removedNumbers = retired2 && numberTokens(translation.text).some(({ id }) => id !== void 0 && Object.hasOwn(retired2, id));
+  if (removedNumbers || sourceUpdatedAt && ageMs > 0)
+    return {
+      state: "outdated",
+      ...removedNumbers ? { reason: "numbers" } : {},
+      ageMs: Math.max(0, ageMs),
+      sourceUpdatedAt,
+      exportedInEnglish: usesEnglishFallback(tooltip, language)
+    };
+  return { state: "current" };
+}
 
 // packages/core/src/compendium/index.ts
 init_types();
@@ -34552,9 +34574,9 @@ function checkEnglishRevision(access, head, next, noTranslationImpact, now = Dat
   future();
   return "new";
 }
-function checkTranslationStamps(head, next, english = next.text.en) {
+function checkTranslationStamps(head, next, english = next.text.en, verified = []) {
   for (const lang of languages2) {
-    if (lang === "en") continue;
+    if (lang === "en" || verified.includes(lang)) continue;
     const before = head?.text[lang];
     const after = next.text[lang];
     if (!after) continue;
@@ -35500,6 +35522,19 @@ import { createHash as createHash5, createPublicKey as createPublicKey2, verify 
 // apps/worker/src/save.ts
 init_zod();
 
+// packages/core/src/translationRevision.ts
+init_zod();
+init_languages();
+init_schemas3();
+var translationRevisionsSchema = external_exports.partialRecord(
+  langSchema.exclude(["en"]),
+  external_exports.object({
+    commit: external_exports.string().regex(/^[0-9a-f]{40}$/),
+    sourceUpdatedAt: timestampSchema,
+    restore: external_exports.literal(true).optional()
+  }).strict()
+);
+
 // apps/worker/src/catalog.ts
 init_zod();
 var itemSchema = external_exports.object({
@@ -35544,7 +35579,8 @@ var currentSaveRoles = ["maintainer", "editor", "trial", "translator"];
 var changeSchema = external_exports.object({
   hash: hashSchema,
   base: tooltipSchema.nullable(),
-  next: tooltipSchema
+  next: tooltipSchema,
+  translationRevisions: translationRevisionsSchema.optional()
 }).strict().refine(({ hash: hash2, base, next }) => next.hash === hash2 && (!base || base.hash === hash2), {
   message: "Change hash, base hash and next hash must agree"
 });
@@ -35571,13 +35607,72 @@ function createdContent(tooltip) {
     text: Object.fromEntries(Object.entries(text).map(([lang, entry]) => [lang, entry.text]))
   });
 }
-async function planSaveChanges(input2, access, current, saveAliases, exporterPin, now = Date.now()) {
+async function verifyTranslationRevisions(change, head, merged, access, now, history) {
+  const verified = [];
+  const marked2 = [];
+  const restored = [];
+  const revisions = change.translationRevisions;
+  if (!revisions) return { verified, marked: marked2, restored };
+  const invalid = (lang) => new HttpError(422, `Tooltip ${change.hash}: invalid ${lang} translation revision`);
+  const snapshots = /* @__PURE__ */ new Map();
+  for (const lang of languages2) {
+    if (lang === "en") continue;
+    const proof2 = revisions[lang];
+    if (!proof2) continue;
+    if (access.role === "translator" && !access.languages?.includes(lang))
+      throw new HttpError(403, "Translators may confirm only their assigned languages");
+    const before = head?.text[lang];
+    const submitted = change.base?.text[lang];
+    const after = merged.text[lang];
+    if (!history || !before || !head?.text.en || !submitted || !after || !merged.text.en || after.updatedBy !== history.login || Date.parse(after.updatedAt) > now + 5 * 6e4 || after.sourceUpdatedAt !== proof2.sourceUpdatedAt || Date.parse(proof2.sourceUpdatedAt) > Date.parse(merged.text.en.updatedAt) || Date.parse(proof2.sourceUpdatedAt) > Date.parse(head.text.en.updatedAt) || stableStringify({
+      ...after,
+      updatedAt: before.updatedAt,
+      updatedBy: before.updatedBy,
+      sourceUpdatedAt: before.sourceUpdatedAt
+    }) !== stableStringify(before) || submitted.text !== after.text)
+      throw invalid(lang);
+    if (!snapshots.has(proof2.commit))
+      snapshots.set(proof2.commit, await history.read(proof2.commit, change.hash));
+    const reviewed = snapshots.get(proof2.commit);
+    if (!reviewed || reviewed.hash !== change.hash || !reviewed.text.en || reviewed.text[lang]?.text !== after.text)
+      throw invalid(lang);
+    const reviewedEnglish = reviewed.text.en.updatedAt;
+    if (proof2.restore) {
+      if ((reviewed.text[lang]?.sourceUpdatedAt ?? reviewedEnglish) !== proof2.sourceUpdatedAt)
+        throw invalid(lang);
+      if (Date.parse(before.sourceUpdatedAt ?? head.text.en.updatedAt) === Date.parse(proof2.sourceUpdatedAt)) {
+        merged.text[lang] = before;
+        continue;
+      }
+      restored.push(lang);
+    } else {
+      const state = translationStateOf(reviewed, lang);
+      if (!isTranslatable(reviewed) || reviewedEnglish !== proof2.sourceUpdatedAt || state.state !== "outdated" || state.reason === "numbers")
+        throw invalid(lang);
+      if (!isTranslatable(merged) || translationStateOf(merged, lang).reason === "numbers") {
+        merged.text[lang] = before;
+        verified.push(lang);
+        continue;
+      }
+      if (Date.parse(before.sourceUpdatedAt ?? "") >= Date.parse(proof2.sourceUpdatedAt)) {
+        merged.text[lang] = before;
+        continue;
+      }
+      marked2.push(lang);
+    }
+    verified.push(lang);
+  }
+  return { verified, marked: marked2, restored };
+}
+async function planSaveChanges(input2, access, current, saveAliases, exporterPin, now = Date.now(), revisionHistory) {
   const conflicts = [];
   const tooltips = [];
   const writes = {};
   const changed = [];
   const carried = [];
   const kept = [];
+  const marked2 = [];
+  const restored = [];
   for (const [index, change] of input2.changes.entries()) {
     const canonical = resolveAlias(change.hash, saveAliases);
     if (canonical !== change.hash) {
@@ -35603,7 +35698,12 @@ async function planSaveChanges(input2, access, current, saveAliases, exporterPin
         next.compendium = head.compendium;
       const result = rebased ? merge3(change.base, head, next) : { ok: true, merged: next };
       if (!result.ok) {
-        conflicts.push({ ...change, head, fields: result.conflicts.map(({ field }) => field) });
+        conflicts.push({
+          ...change,
+          head,
+          fields: result.conflicts.map(({ field }) => field),
+          ...revisionHistory && { headCommit: revisionHistory.headCommit }
+        });
         continue;
       }
       merged = result.merged;
@@ -35611,7 +35711,12 @@ async function planSaveChanges(input2, access, current, saveAliases, exporterPin
       tooltips.push(head);
       continue;
     } else if (head || change.base) {
-      conflicts.push({ ...change, head, fields: ["$exists"] });
+      conflicts.push({
+        ...change,
+        head,
+        fields: ["$exists"],
+        ...head && revisionHistory && { headCommit: revisionHistory.headCommit }
+      });
       continue;
     }
     if (rebased) checkEdit(access, head, merged);
@@ -35626,10 +35731,24 @@ async function planSaveChanges(input2, access, current, saveAliases, exporterPin
     for (const lang of languages2)
       if (lang !== "en" && merged.text[lang]?.text !== head?.text[lang]?.text)
         refreshNumberFallbacks(merged, lang);
-    checkTranslationStamps(head, merged);
+    const revisions = await verifyTranslationRevisions(
+      change,
+      head,
+      merged,
+      access,
+      now,
+      revisionHistory
+    );
+    checkTranslationStamps(head, merged, merged.text.en, revisions.verified);
+    if (change.translationRevisions && head && stableStringify(head) === stableStringify(merged)) {
+      tooltips.push(merged);
+      continue;
+    }
+    if (revisions.marked.length) marked2.push(`${merged.hash}=${revisions.marked.join(",")}`);
+    if (revisions.restored.length) restored.push(`${merged.hash}=${revisions.restored.join(",")}`);
     refuseUnlowerable(merged, await exporterPin(merged), "saved", head);
     if (head && head.text.en?.text !== merged.text.en?.text && Object.keys(merged.text).some((lang) => lang !== "en")) {
-      const result = carryNumberTranslations(head, merged);
+      const result = carryNumberTranslations(head, merged, revisions.verified);
       merged = result.tooltip;
       if (result.carried.length) carried.push(`${merged.hash}=${result.carried.join(",")}`);
     }
@@ -35642,7 +35761,7 @@ async function planSaveChanges(input2, access, current, saveAliases, exporterPin
         (field) => JSON.stringify(head?.[field] ?? (field === "associated" ? [] : null)) !== JSON.stringify(merged[field] ?? (field === "associated" ? [] : null))
       ).map((field) => field === "associated" ? "associations" : field)
     ];
-    if (rebased && !fields.length && head && stableStringify(head) === stableStringify(merged))
+    if ((rebased || change.translationRevisions) && !fields.length && head && stableStringify(head) === stableStringify(merged))
       continue;
     writes[`tooltips/${merged.hash}.json`] = merged;
     changed.push(`${merged.hash}=${fields.join(",") || "none"}`);
@@ -35656,7 +35775,9 @@ async function planSaveChanges(input2, access, current, saveAliases, exporterPin
 
 ${kept.length ? `Clarity-No-Translation-Impact: ${kept.join(",")}
 ` : ""}Clarity-Changed: ${changed.join(";")}${carried.length ? `
-Clarity-Carried: ${carried.join(";")}` : ""}`
+Clarity-Carried: ${carried.join(";")}` : ""}${marked2.length ? `
+Clarity-Still-Correct: ${marked2.join(";")}` : ""}${restored.length ? `
+Clarity-Restored-Translation-Revision: ${restored.join(";")}` : ""}`
   };
 }
 
@@ -35752,7 +35873,16 @@ async function drainCurrentSaves(pub) {
             current,
             pub.aliasesAt(tree),
             () => ({ value: pin }),
-            now
+            now,
+            {
+              login: started.requester.login,
+              headCommit: head,
+              read(commit2, hash2) {
+                if (!pub.git.ancestor(commit2, head)) return null;
+                const value2 = pub.read(pub.git.tree(commit2), `tooltips/${hash2}.json`);
+                return value2 === void 0 ? null : tooltipSchema.parse(value2);
+              }
+            }
           );
           if (!("conflicts" in validated) && Object.keys(validated.writes).some((path) => globalAggregatePath.test(path)) && hasGlobals(tree))
             throw new HttpError(
