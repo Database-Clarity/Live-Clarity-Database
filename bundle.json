@@ -1,6 +1,6 @@
 {
-  "sourceCommit": "bbe2d6bbf38fc7f9b914a678cf02e8b383c91ada",
-  "generatedAt": "2026-11-25T07:59:00.838Z",
+  "sourceCommit": "0423b2696f106a2dac3c527915e21b2bb56d3e5b",
+  "generatedAt": "2026-11-25T07:59:23.905Z",
   "tooltips": {
     "0": {
       "hash": 0,
@@ -162694,7 +162694,7 @@
     "688956976": "b771adf5f87e641342e9cd2027d86d718d79683389d7e67f8e4d5dc444468a39",
     "689005463": "1a64771b7662fb0f4ffb74772aa9ed4c58b5794e659e7bcfd4ba242740efcfff",
     "691392383": "deebca28159daccca320b6920befc46371471b4f6d61963288ab3a49477c3dbf",
-    "691659142": "43827ff16c3e97bd3d6f277dc3e4052c64cb0ce5843e6eba13aca2d4515132b8",
+    "691659142": "a422b253795f0dd80c606707fdc7bd9e10c44d234526991a7e6f1e9e8088dd8c",
     "692285813": "f3a664c19eaaedb5ef4e6bf702ad310d1200f028e2af0659157afeff49136087",
     "692399809": "a9f2997421d0d59b8ea053cec49d44b889458ffd4f6c6246e66451dbf23666fd",
     "695800688": "30949fa511e9501c888df87f9d4eff9cdda64cea86d6f56fc744e5d69e8887c0",
@@ -164072,7 +164072,7 @@
     "2976024267": "fc70a83dc2323f1ee8374b41783fa9c3d8b908ecb9b9c748f9123cec65302e6e",
     "2976676960": "629f768c43f3f53111224d3b0ed3a905ef6c8f76e453fad58802a7a5e4dfb9b9",
     "2977709078": "889903035b7786adeaa84c8812d1c6f1257e16ee1ac5451a50a09be9f9049fd1",
-    "2978966579": "b074b2d9467a3579cb8ef465c3605e659a8628652578fc4cdb8c0b88e9b081ee",
+    "2978966579": "323307937f4d34fa487b019b77490717533d1aadc9cb9efe8893db87c0f1fc54",
     "2979486801": "dda0b3e5d6b48f52d5ab6bf239f1e348e45c9f822cf2a4bdca5592ea4d1d4193",
     "2979486802": "16353adc429437a44b8294cbebf66901cecafa52499f8b55e85579f86bce40e5",
     "2979486803": "6444878901e2a8f82ed52b43113610da8dc4381b3b66d59a9f0935e5aeef5242",
@@ -169807,20 +169807,7 @@
       "at": "2026-11-21T01:13:14.162Z"
     }
   },
-  "publishQueue": [
-    {
-      "opId": "01M88VDA5XD82YP49T072H9S1V",
-      "requester": {
-        "id": 117818418,
-        "login": "StardustD2"
-      },
-      "hashes": [
-        691659142,
-        2978966579
-      ],
-      "createdAt": "2026-11-25T07:58:34.539Z"
-    }
-  ],
+  "publishQueue": [],
   "globalsPending": [],
   "globalsReviewImports": {
     "11551321": {
@@ -171169,20 +171156,11 @@
       }
     },
     "691659142": {
-      "hash": 691659142,
-      "text": {
-        "en": {
-          "text": "Weapon Kills grant <enhanced/>${10 * #d}% Melee Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant <enhanced/>${20 * #d}%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\n#ChunkEnergyScalars\n\nenhanced (\nvar d = 1.1\n<enhanced/> Melee Ability Energy gains are increased by 10%. (e.g. 10%<arrow/>11%)\n)",
-          "updatedAt": "2024-12-17T12:35:08.726Z",
-          "updatedBy": "Stardust"
-        }
-      },
       "associated": [],
+      "hash": 691659142,
       "legacy": {
-        "uploadedBy": "Stardust",
-        "lastUpload": 1791495267470,
         "inLiveDatabase": true,
-        "uploadToLive": false,
+        "lastUpload": 1791495267470,
         "updateTracker": {
           "descriptions": {
             "en": {
@@ -171190,6 +171168,15 @@
               "updatedBy": "Stardust"
             }
           }
+        },
+        "uploadToLive": false,
+        "uploadedBy": "Stardust"
+      },
+      "text": {
+        "en": {
+          "text": "Weapon Kills grant <enhanced/>${10 * #d}% Melee Ability Energy.\n\nKills with Sniper Rifles, Shotguns, Glaives, and Fusion Rifles grant <enhanced/>${20 * #d}%.\n\nDealing Melee Damage grants 35 Handling for 3 seconds.\n\n#ChunkEnergyScalars\n\nenhanced (\nvar d = 1.1\n<enhanced/> Melee Ability Energy gains are increased by 10%. (e.g. 10%<arrow/>11%)\n)",
+          "updatedAt": "2024-12-17T12:35:08.726Z",
+          "updatedBy": "Stardust"
         }
       }
     },
@@ -176567,20 +176554,11 @@
       }
     },
     "2978966579": {
-      "hash": 2978966579,
-      "text": {
-        "en": {
-          "text": "While at/above <enhanced/>${50-#d}% of the Base Magazine Capacity:\nDirect Hits apply 60 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds (<pve 8 /> <pvp [2] /> with <stasis/>Whisper of Durance) to enemies within 4 meters of the target.\n\nMicro-Missile Sidearms and Rapid-Fire Fusion Rifles only apply 40 <stasis/>Slow Stacks.\n\nOnly activates once per shot/burst.\n\nenhanced (\nvar d = 10\n<enhanced/> Magazine capacity thershold is lowered by 10% (50%<arrow/>40%).\n)",
-          "updatedAt": "2025-12-27T18:38:49.274Z",
-          "updatedBy": "Stardust"
-        }
-      },
       "associated": [],
+      "hash": 2978966579,
       "legacy": {
-        "uploadedBy": "Stardust",
-        "lastUpload": 1791495267470,
         "inLiveDatabase": true,
-        "uploadToLive": false,
+        "lastUpload": 1791495267470,
         "updateTracker": {
           "descriptions": {
             "en": {
@@ -176588,6 +176566,15 @@
               "updatedBy": "Stardust"
             }
           }
+        },
+        "uploadToLive": false,
+        "uploadedBy": "Stardust"
+      },
+      "text": {
+        "en": {
+          "text": "While at/above <enhanced/>${50-#d}% of the Base Magazine Capacity:\nDirect Hits apply 60 <stasis/>Slow Stacks for <pve 4 /> <pvp [1.5] /> seconds (<pve 8 /> <pvp [2] /> with <stasis/>Whisper of Durance) to enemies within 4 meters of the target.\n\nMicro-Missile Sidearms and Rapid-Fire Fusion Rifles only apply 40 <stasis/>Slow Stacks.\n\nOnly activates once per shot/burst.\n\nenhanced (\nvar d = 10\n<enhanced/> Magazine capacity thershold is lowered by 10% (50%<arrow/>40%).\n)",
+          "updatedAt": "2025-12-27T18:38:49.274Z",
+          "updatedBy": "Stardust"
         }
       }
     },
