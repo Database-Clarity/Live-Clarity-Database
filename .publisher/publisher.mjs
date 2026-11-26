@@ -653,8 +653,8 @@ function prefixIssues(path, issues) {
     return iss;
   });
 }
-function unwrapMessage(message) {
-  return typeof message === "string" ? message : message?.message;
+function unwrapMessage(message2) {
+  return typeof message2 === "string" ? message2 : message2?.message;
 }
 function sizeCaps(defChecks) {
   const caps = [];
@@ -684,7 +684,7 @@ function finalizeIssue(iss, ctx, config2) {
       iss.schema = iss.inst;
   }
   const schemaError = iss.schema !== iss.inst ? iss.schema?._zod.def?.error : void 0;
-  const message = iss.message ? iss.message : unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(schemaError?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config2.customError?.(iss)) ?? unwrapMessage(config2.localeError?.(iss)) ?? "Invalid input";
+  const message2 = iss.message ? iss.message : unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(schemaError?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config2.customError?.(iss)) ?? unwrapMessage(config2.localeError?.(iss)) ?? "Invalid input";
   const full = {};
   for (const k of Object.keys(iss)) {
     if (k === "inst" || k === "schema" || k === "continue" || k === "input" || k === "__proto__")
@@ -692,7 +692,7 @@ function finalizeIssue(iss, ctx, config2) {
     full[k] = iss[k];
   }
   full.path ?? (full.path = []);
-  full.message = message;
+  full.message = message2;
   if (ctx?.reportInput) {
     full.input = iss.input;
   }
@@ -14609,8 +14609,8 @@ var init_compile = __esm({
     INVALID = /* @__PURE__ */ Symbol.for("zod.compile.invalid");
     FALLBACK_FLAG = /* @__PURE__ */ Symbol.for("zod.compile.fallback");
     ZodCompileAsyncError = class extends Error {
-      constructor(message = "z.compile does not support async refinements, transforms, or checks") {
-        super(message);
+      constructor(message2 = "z.compile does not support async refinements, transforms, or checks") {
+        super(message2);
         this.name = "ZodCompileAsyncError";
       }
     };
@@ -15762,12 +15762,12 @@ function initializeContext(params) {
     external: params?.external ?? void 0
   };
 }
-function handleUnrepresentable(schema, ctx, json8, params, message) {
-  const result = typeof ctx.unrepresentable === "function" ? ctx.unrepresentable({ zodSchema: schema, path: params.path, message }) : ctx.unrepresentable;
+function handleUnrepresentable(schema, ctx, json8, params, message2) {
+  const result = typeof ctx.unrepresentable === "function" ? ctx.unrepresentable({ zodSchema: schema, path: params.path, message: message2 }) : ctx.unrepresentable;
   if (result === "any")
     return false;
   if (result === void 0 || result === "throw")
-    throw new Error(message);
+    throw new Error(message2);
   Object.assign(json8, result);
   return true;
 }
@@ -22583,15 +22583,15 @@ function numberTokenIssues(text, lang, hash2, values) {
     const targets = numberTargetRanges(line);
     for (const token2 of numberTokens(line)) {
       const from = offset + token2.from, to = offset + token2.to;
-      let message;
-      if (lang === "en") message = "Number tokens belong in translations.";
+      let message2;
+      if (lang === "en") message2 = "Number tokens belong in translations.";
       else if (hash2 !== void 0 && hash2 >= 1 && hash2 <= 3)
-        message = "Number tokens do not belong in global documents.";
-      else if (token2.id === void 0) message = "Malformed number token; use #{=<id>}.";
+        message2 = "Number tokens do not belong in global documents.";
+      else if (token2.id === void 0) message2 = "Malformed number token; use #{=<id>}.";
       else if (/^\s*import\b/.test(line) || numberBlockOpen.test(line.trim()) || /^\s*var\b/.test(line) && token2.from < line.indexOf(" = ") + 3 || /^\s*<\s.*>\s*$/.test(line) || targets.some((range) => token2.from >= range.from && token2.from < range.to) || maths.some((range) => from >= range.from && from < range.to))
-        message = "Number tokens cannot go here.";
-      else if (values && !values.has(token2.id)) message = `Unknown number #{=${token2.id}}.`;
-      if (message) issues.push({ severity: "error", message, from, to });
+        message2 = "Number tokens cannot go here.";
+      else if (values && !values.has(token2.id)) message2 = `Unknown number #{=${token2.id}}.`;
+      if (message2) issues.push({ severity: "error", message: message2, from, to });
     }
     offset += line.length + 1;
   }
@@ -23439,7 +23439,7 @@ var init_schemas4 = __esm({
     }).strict().superRefine((value2, ctx) => {
       if (value2.landedAt === void 0 !== (value2.landedAtSource === void 0))
         ctx.addIssue({ code: "custom", message: "landedAt and landedAtSource go together" });
-      const issue2 = (message) => ctx.addIssue({ code: "custom", message });
+      const issue2 = (message2) => ctx.addIssue({ code: "custom", message: message2 });
       if (value2.status === "published") {
         if (!value2.landedAt || !value2.recordedAt || !value2.exportNow || !value2.liveCommit)
           issue2("A published result records landedAt, recordedAt, exportNow, and liveCommit");
@@ -23490,7 +23490,7 @@ var init_schemas4 = __esm({
       }).strict().nullable().optional(),
       events: external_exports.array(batchEventSchema).max(scheduleLimits.legacyInlineEvents)
     }).strict().superRefine((batch, ctx) => {
-      const issue2 = (message) => ctx.addIssue({ code: "custom", message });
+      const issue2 = (message2) => ctx.addIssue({ code: "custom", message: message2 });
       if (batch.contentRevision > batch.revision) issue2("contentRevision exceeds revision");
       if (batch.memberHashes && isOpenStatus(batch.status))
         issue2("Only a closed batch stores historical membership");
@@ -23609,7 +23609,7 @@ var init_schemas4 = __esm({
       proposed: tooltipSchema,
       currentAtRecord: tooltipSchema.nullable()
     }).strict().superRefine((file2, ctx) => {
-      const issue2 = (message) => ctx.addIssue({ code: "custom", message });
+      const issue2 = (message2) => ctx.addIssue({ code: "custom", message: message2 });
       const tooltips = [file2.base, file2.proposed, file2.currentAtRecord];
       if (tooltips.some((tooltip) => tooltip !== null && !tooltipSchema.safeParse(tooltip).success))
         return;
@@ -24144,7 +24144,8 @@ async function publishIntentDigest(value2) {
       expected: value2.expected,
       ...value2.globals === void 0 ? {} : {
         globals: [...value2.globals].sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0)
-      }
+      },
+      ...value2.selection === void 0 ? {} : { selection: value2.selection }
     })
   );
   return Array.from(
@@ -24182,7 +24183,13 @@ var init_publishRequest = __esm({
       opId: publishOpIdSchema,
       hashes: external_exports.array(hashSchema).max(3e3).refine((a) => new Set(a).size === a.length),
       expected: external_exports.record(hashKey, digest2),
-      globals: external_exports.array(globalPublishSelectionSchema).min(1).max(3e3).refine((items) => new Set(items.map(({ id }) => id)).size === items.length).optional()
+      globals: external_exports.array(globalPublishSelectionSchema).min(1).max(3e3).refine((items) => new Set(items.map(({ id }) => id)).size === items.length).optional(),
+      /**
+       * One request for a person's whole confirmed selection (PIN capability `wholeSelectionV1`):
+       * the Worker admits it without reading rows, and the publisher runs every row check, holds a
+       * row that fails one with what depends on it, and publishes the rest as one publication.
+       */
+      selection: external_exports.literal("whole").optional()
     }).strict().superRefine((v, ctx) => {
       if (!v.hashes.length && !v.globals?.length)
         ctx.addIssue({ code: "custom", message: "Select a tooltip or a shared definition" });
@@ -24206,7 +24213,8 @@ var init_publishRequest = __esm({
         opId: v.opId,
         hashes: v.hashes,
         expected: v.expected,
-        globals: v.globals
+        globals: v.globals,
+        selection: v.selection
       }).success)
         ctx.addIssue({ code: "custom", message: "Invalid publish intent" });
     });
@@ -24385,7 +24393,7 @@ get-mark :${index + 1}
     this.unwritten.clear();
   }
   requireCredits = false;
-  commit(parent, tree, message, credits) {
+  commit(parent, tree, message2, credits) {
     if (!credits && this.requireCredits) throw new Error("Remote commits require explicit credits");
     if (credits)
       for (const identity of [credits.author, credits.committer]) {
@@ -24414,7 +24422,7 @@ get-mark :${index + 1}
       const root = this.git(["write-tree"], void 0, env).trim();
       const commit2 = this.git(
         ["commit-tree", root, ...parent ? ["-p", parent] : []],
-        message,
+        message2,
         credits ? {
           GIT_AUTHOR_NAME: credits.author.name,
           GIT_AUTHOR_EMAIL: credits.author.email,
@@ -26931,7 +26939,7 @@ function findRetiredMarkup(source2) {
   return found.sort((a, b) => a.from - b.from || a.to - b.to);
 }
 function retiredWarnings(text) {
-  return findRetiredMarkup(text).map(({ from, to, message }) => ({ from, to, message }));
+  return findRetiredMarkup(text).map(({ from, to, message: message2 }) => ({ from, to, message: message2 }));
 }
 function applyRetiredEdits(text, edits) {
   let result = text;
@@ -26970,11 +26978,11 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
   const issues = [];
   issues.push(...gluedNumberIssues(text));
   issues.push(...numberTokenIssues(text, lang, selfHash));
-  function add(severity, message, token2) {
+  function add(severity, message2, token2) {
     const from = token2 ? Math.max(0, text.indexOf(token2)) : 0;
     const to = Math.min(text.length, from + (token2?.length ?? text.length));
-    if (!issues.some((issue2) => issue2.message === message)) {
-      issues.push({ severity, message, from, to });
+    if (!issues.some((issue2) => issue2.message === message2)) {
+      issues.push({ severity, message: message2, from, to });
     }
   }
   if (requireEnglish && lang === "en" && !text.trim()) {
@@ -27011,11 +27019,11 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
       );
       const reference = references.find((ref) => ref.name === unknown2 && !ref.braced) ?? references.find((ref) => ref.name === unknown2) ?? braced;
       if (reference?.braced && reference.name !== unknown2) {
-        const message = `Unknown variable #${reference.name}.`;
-        if (!issues.some((issue2) => issue2.message === message))
+        const message2 = `Unknown variable #${reference.name}.`;
+        if (!issues.some((issue2) => issue2.message === message2))
           issues.push({
             severity: diagnostic.severity,
-            message,
+            message: message2,
             from: reference.from,
             to: reference.to
           });
@@ -27043,9 +27051,9 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
     )
   );
   for (const reserved of reservedNames(text)) {
-    const message = reservedNameMessage(reserved.name);
-    if (!issues.some((issue2) => issue2.message === message))
-      issues.push({ severity: "error", message, from: reserved.from, to: reserved.to });
+    const message2 = reservedNameMessage(reserved.name);
+    if (!issues.some((issue2) => issue2.message === message2))
+      issues.push({ severity: "error", message: message2, from: reserved.from, to: reserved.to });
   }
   if (selfHash !== globalVariablesHash && selfHash !== globalTitlesHash) {
     for (const clash of findGlobalNameClashes(text, globals)) {
@@ -27065,18 +27073,18 @@ function validateText(text, lang, globals = { variables: "", titles: "" }, requi
   }
   return [
     ...issues,
-    ...glyphWarnings(text).map(({ from, to, message }) => ({
+    ...glyphWarnings(text).map(({ from, to, message: message2 }) => ({
       severity: "warning",
       from,
       to,
-      message
+      message: message2
     })),
     // Retired markup still renders; the warning asks the author to fix it (blocks saving later).
-    ...retiredWarnings(text).map(({ from, to, message }) => ({
+    ...retiredWarnings(text).map(({ from, to, message: message2 }) => ({
       severity: "warning",
       from,
       to,
-      message,
+      message: message2,
       code: "retired"
     }))
   ];
@@ -27703,8 +27711,8 @@ function exportLegacy(tooltips, now, catalog, aliases = {}, options) {
             if (options?.preserveGlobalReferencesForProof)
               source2 = protectCommentedGlobalImports(bindInPlaceLocalVariables(resolved, globals));
           } catch (cause) {
-            const message = cause instanceof Error ? cause.message : String(cause);
-            throw new Error(`Tooltip ${tooltip.hash} (${language}): ${message}`, { cause });
+            const message2 = cause instanceof Error ? cause.message : String(cause);
+            throw new Error(`Tooltip ${tooltip.hash} (${language}): ${message2}`, { cause });
           }
         }
         const text = lowerConsumerMarkup(source2);
@@ -27817,6 +27825,50 @@ async function publishableHash(tooltip, aliases = {}) {
 
 // packages/core/src/index.ts
 init_publishRequest();
+
+// packages/core/src/publishAccounts.ts
+init_zod();
+init_legacy();
+init_publishRequest();
+var heldRowSchema = external_exports.object({
+  hash: hashSchema,
+  /** changed: the saved text differs from what was reviewed (or is gone); activation: a
+   * scheduled batch activation conflict waits; refused: a row check refused it; dependency: it
+   * publishes together with held row `on`. */
+  code: external_exports.enum(["changed", "activation", "refused", "dependency"]),
+  reason: external_exports.string().min(1).max(1e3),
+  on: hashSchema.optional()
+}).strict();
+var publishAccountPath = (id) => `publish/accounts/${id}.json`;
+var publishAccountLimit = 50;
+var publishAccountStatuses = [
+  "pending",
+  "done",
+  "unchanged",
+  "stale",
+  "rejected"
+];
+var entrySchema = external_exports.object({
+  opId: publishOpIdSchema,
+  createdAt: external_exports.string().datetime(),
+  rows: external_exports.number().int().nonnegative(),
+  globals: external_exports.number().int().nonnegative(),
+  status: external_exports.enum(publishAccountStatuses),
+  held: external_exports.number().int().nonnegative(),
+  updatedAt: external_exports.string().datetime()
+}).strict();
+var publishAccountSchema = external_exports.object({ entries: external_exports.array(entrySchema).max(publishAccountLimit) }).strict();
+function readPublishAccount(raw) {
+  return publishAccountSchema.safeParse(raw).data ?? { entries: [] };
+}
+function recordInPublishAccount(raw, opId, outcome2) {
+  const index = readPublishAccount(raw);
+  const at = index.entries.findIndex((entry) => entry.opId === opId);
+  if (at < 0) return void 0;
+  const entries = [...index.entries];
+  entries[at] = { ...entries[at], ...outcome2 };
+  return { entries };
+}
 
 // packages/core/src/translationPublishRequest.ts
 init_zod();
@@ -28240,6 +28292,9 @@ function clearedState(tooltip, marker2, removalMarker2, publishedEnglish) {
 }
 var clearsEnglish = (base, next) => !!base && !withoutEnglish(base) && withoutEnglish(next);
 var clearedReviewInput = ({ hash: hash2, text }, marker2) => stableStringify({ cleared: hash2, text, published: marker2 });
+async function clearedReviewHash(tooltip, marker2) {
+  return sha2562(clearedReviewInput(tooltip, marker2));
+}
 function withClearedMoves(moves, cleared) {
   const hashes = [...cleared];
   return hashes.length ? {
@@ -30710,7 +30765,7 @@ var syncSchema = external_exports.object({
   (v) => new Set(v.causeIds).size === v.causeIds.length && Object.keys(v.causeEntries).length === v.causeIds.length && v.causeIds.every((id) => Object.hasOwn(v.causeEntries, id)) && (v.status === "current" ? v.causeIds.length === 0 && v.lastFailure === null : v.causeIds.length > 0) && (v.status !== "sync-failed" || v.lastFailure !== null),
   "Invalid Sync pending state"
 );
-var entrySchema = globalRecordSchema.superRefine((entry, ctx) => {
+var entrySchema2 = globalRecordSchema.superRefine((entry, ctx) => {
   if (entry.name.length > 128 || entry.nameHistory.length > 32 || Object.values(entry.definitions).some((d) => d.body.length > limits.body))
     ctx.addIssue({ code: "custom", message: "Global entry exceeds admission limits" });
 });
@@ -32673,8 +32728,8 @@ init_zod();
 
 // apps/worker/src/http.ts
 var HttpError = class extends Error {
-  constructor(status, message, details) {
-    super(message);
+  constructor(status, message2, details) {
+    super(message2);
     this.status = status;
     this.details = details;
   }
@@ -32794,7 +32849,7 @@ function bundleGlobals(tree, read) {
     cursors.add(cursor);
     const page = pageSchema.parse(read(tree, paths.page(cursor)));
     for (const id of page.ids) {
-      const entry = entrySchema.parse(read(tree, paths.entry(id)));
+      const entry = entrySchema2.parse(read(tree, paths.entry(id)));
       if (entry.id !== id || ids.has(id)) throw new Error("Invalid global catalog identity");
       ids.add(id);
       entries.push(entry);
@@ -32846,8 +32901,8 @@ var intentSchema = external_exports.object({
   version: external_exports.literal(1),
   id: external_exports.string(),
   operation: external_exports.literal("rename"),
-  globalId: entrySchema.shape.id,
-  revision: entrySchema.shape.revision,
+  globalId: entrySchema2.shape.id,
+  revision: entrySchema2.shape.revision,
   expectedHead: external_exports.string().regex(/^[a-f0-9]{40}$/),
   sources: sourcesSchema,
   name: external_exports.string(),
@@ -32928,7 +32983,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
   store(tree) {
     const layout = globalLayoutSchema.parse(this.read(tree, globalsReleasePaths.layout));
     const entries = Object.keys(tree).filter((path) => /^globals\/entries\/g_[\w-]+\.json$/.test(path)).sort().map((path) => {
-      const entry = entrySchema.parse(this.read(tree, path));
+      const entry = entrySchema2.parse(this.read(tree, path));
       if (path !== globalsReleasePaths.entry(entry.id))
         throw new Error("Global identity mismatch");
       return entry;
@@ -33073,15 +33128,15 @@ var GlobalsPublisher = class _GlobalsPublisher {
         throw new Error("Global cause identity mismatch");
       const beforeTree = this.git.tree(cause.expectedHead);
       if (cause.before) {
-        const before = entrySchema.parse(JSON.parse(this.git.blob(cause.before.blob)));
+        const before = entrySchema2.parse(JSON.parse(this.git.blob(cause.before.blob)));
         if (beforeTree[cause.before.path] !== cause.before.blob || before.id !== cause.globalId || before.revision !== cause.before.revision)
           throw new Error("Unproven before global identity");
       } else if (beforeTree[globalsReleasePaths.entry(cause.globalId)])
         throw new Error("Unproven global creation");
-      const after = entrySchema.parse(JSON.parse(this.git.blob(cause.after.blob)));
+      const after = entrySchema2.parse(JSON.parse(this.git.blob(cause.after.blob)));
       if (after.id !== cause.globalId || after.revision !== cause.after.revision || cause.after.path !== globalsReleasePaths.entry(cause.globalId))
         throw new Error("Unproven after global identity");
-      entrySchema.parse(this.read(tree, globalsReleasePaths.entry(cause.globalId)));
+      entrySchema2.parse(this.read(tree, globalsReleasePaths.entry(cause.globalId)));
     }
   }
   async recordProofs(tree, head, live) {
@@ -33147,7 +33202,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
     const current = await this.sources(tree, live, head);
     for (const path of Object.keys(tree).filter((path2) => path2.startsWith("globals/intents/")).sort()) {
       const intent = intentSchema.parse(this.read(tree, path));
-      const entryPath = globalsReleasePaths.entry(intent.globalId), entry = entrySchema.parse(this.read(tree, entryPath));
+      const entryPath = globalsReleasePaths.entry(intent.globalId), entry = entrySchema2.parse(this.read(tree, entryPath));
       const claimPath = (await namePaths(entry.kind, intent.name)).claim;
       const claim2 = this.read(tree, claimPath);
       const access = Object.values(
@@ -33215,7 +33270,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
         this.write(
           tree,
           globalsReleasePaths.entry(candidate.id),
-          entrySchema.parse(candidate),
+          entrySchema2.parse(candidate),
           limits.entryBytes
         );
       for (const document of Object.values(documents))
@@ -33231,8 +33286,8 @@ var GlobalsPublisher = class _GlobalsPublisher {
   }
   async releaseObsoleteClaims(tree) {
     const claimSchema = external_exports.object({
-      id: entrySchema.shape.id,
-      kind: entrySchema.shape.kind,
+      id: entrySchema2.shape.id,
+      kind: entrySchema2.shape.kind,
       name: external_exports.string(),
       intentId: external_exports.string().optional()
     }).strict();
@@ -33240,7 +33295,7 @@ var GlobalsPublisher = class _GlobalsPublisher {
       const claim2 = claimSchema.parse(this.read(tree, path));
       if (path !== (await namePaths(claim2.kind, claim2.name)).claim)
         throw new Error("Global name claim identity mismatch");
-      const entry = entrySchema.parse(this.read(tree, globalsReleasePaths.entry(claim2.id)));
+      const entry = entrySchema2.parse(this.read(tree, globalsReleasePaths.entry(claim2.id)));
       if (entry.id !== claim2.id || entry.kind !== claim2.kind)
         throw new Error("Global name claim owner mismatch");
       if (entry.tombstone || entry.name !== claim2.name || claim2.intentId) delete tree[path];
@@ -33825,8 +33880,8 @@ function validateBatchSave({
   if (blocked.length) throw new HttpError(409, unpublishedMessage2, { members: blocked });
   return { conflicts, before, written };
 }
-function refuseScheduleMembers(message, members3) {
-  throw new HttpError(409, message, { members: members3 });
+function refuseScheduleMembers(message2, members3) {
+  throw new HttpError(409, message2, { members: members3 });
 }
 function validateScheduleMembers(hashes, files, pushed) {
   const members3 = [];
@@ -33925,7 +33980,7 @@ function verifiedRequest(pub, tree, path) {
     if (input2.finish !== true || manifest.id !== intent.requestId || manifest.ownerId !== intent.requester.id || manifest.parts !== intent.scheduledParts || manifest.parts > source2.members.length || manifest.revision !== intent.expectedRevision || manifest.ready)
       throw new InvalidScheduleIntent("Signed staged-save manifest mismatch");
     const changes = [];
-    let message;
+    let message2;
     for (let part = 0; part < manifest.parts; part++) {
       const oid5 = source2.tree[scheduleIntentPaths.stagedPart(intent.batchId, manifest.id, part)];
       if (!oid5) throw new InvalidScheduleIntent("Missing staged save part");
@@ -33933,15 +33988,15 @@ function verifiedRequest(pub, tree, path) {
       if (Buffer.byteLength(raw) > 300 * 1024)
         throw new InvalidScheduleIntent("Staged save part exceeds the request budget");
       const chunk = JSON.parse(raw);
-      if (chunk.requestId !== intent.requestId || chunk.revision !== intent.expectedRevision || chunk.part !== part || !Array.isArray(chunk.changes) || typeof chunk.message !== "string" || message !== void 0 && message !== chunk.message)
+      if (chunk.requestId !== intent.requestId || chunk.revision !== intent.expectedRevision || chunk.part !== part || !Array.isArray(chunk.changes) || typeof chunk.message !== "string" || message2 !== void 0 && message2 !== chunk.message)
         throw new InvalidScheduleIntent("Invalid staged save part");
-      message = chunk.message;
+      message2 = chunk.message;
       changes.push(...chunk.changes);
     }
     return {
       ...source2,
       request,
-      input: { requestId: input2.requestId, revision: input2.revision, changes, message }
+      input: { requestId: input2.requestId, revision: input2.revision, changes, message: message2 }
     };
   }
   return { ...source2, request, input: input2 };
@@ -33984,8 +34039,8 @@ var publication = (payload, sourceIntent, preparedRequestId) => ({
 
 // scripts/schedule-prepare/prepare.ts
 var PreparationRejected = class extends Error {
-  constructor(message, details) {
-    super(message);
+  constructor(message2, details) {
+    super(message2);
     this.details = details;
   }
   details;
@@ -33999,8 +34054,8 @@ var saveInput = external_exports.object({
   message: external_exports.string().trim().min(1).max(500),
   draftStaging: draftStagingInputSchema.optional()
 }).strict();
-function reject(message) {
-  throw new PreparationRejected(message);
+function reject(message2) {
+  throw new PreparationRejected(message2);
 }
 var SchedulePreparer = class {
   constructor(pub) {
@@ -34620,6 +34675,38 @@ var updateSchema2 = external_exports.object({
   inactive: external_exports.boolean(),
   note: external_exports.string().trim().max(1e3).optional()
 }).strict();
+async function clearedStates(github, head, documents, moves) {
+  const states = /* @__PURE__ */ new Map();
+  const candidates = documents.filter(
+    (document) => withoutEnglish(document) && !isMovedInactive(document.hash, moves)
+  );
+  if (!candidates.length) return states;
+  const [markers, ...versions] = await github.files(
+    ["live/pushed.json", ...candidates.map(({ hash: hash2 }) => `live/tooltips/${hash2}.json`)],
+    head
+  );
+  const all = markers?.value ?? {};
+  const pushed = pushedSchema.parse(
+    Object.fromEntries(
+      candidates.flatMap(({ hash: hash2 }) => Object.hasOwn(all, hash2) ? [[hash2, all[hash2]]] : [])
+    )
+  );
+  for (const [index, document] of candidates.entries()) {
+    const published = tooltipSchema.safeParse(versions[index]?.value).data;
+    const state = clearedState(
+      document,
+      pushed[document.hash],
+      await inactiveRemovalHash(document.hash),
+      !!published && !withoutEnglish(published)
+    );
+    if (state)
+      states.set(document.hash, {
+        state,
+        reviewed: await clearedReviewHash(document, pushed[document.hash])
+      });
+  }
+  return states;
+}
 
 // apps/worker/src/save.ts
 var currentSaveRoles = ["maintainer", "editor", "trial", "translator"];
@@ -34993,6 +35080,444 @@ async function drainCurrentSaves(pub) {
   }
 }
 
+// scripts/publisher/selection.ts
+init_schedule();
+
+// apps/worker/src/baseEnhanced.ts
+async function refuseBaseEnhanced(github, head, roots, aliases, loaded = [], scope, { moves, removals } = { moves: {} }) {
+  const known = new Map(loaded.map((tooltip) => [tooltip.hash, tooltip]));
+  const loadMissing = async (hashes) => {
+    const missing = hashes.filter((hash2) => !known.has(hash2));
+    if (!missing.length) return;
+    const files = await github.files(
+      missing.map((hash2) => `tooltips/${hash2}.json`),
+      head
+    );
+    files.forEach((file2, index) => {
+      if (!file2) return;
+      const tooltip = tooltipSchema.parse(file2.value);
+      if (tooltip.hash !== missing[index]) throw new HttpError(502, "Stored tooltip hash mismatch");
+      known.set(tooltip.hash, tooltip);
+    });
+  };
+  const loadedStates = (hashes) => clearedStates(
+    github,
+    head,
+    hashes.flatMap((hash2) => known.get(hash2) ?? []),
+    moves
+  );
+  const visited = /* @__PURE__ */ new Set();
+  let pending = [...roots, 2, 3];
+  while (pending.length) {
+    if (scope) aliases = scope.extend(pending);
+    const first = !visited.size;
+    const targets2 = [...new Set(pending.map((hash2) => resolveAlias(hash2, aliases)))];
+    const imported = first ? void 0 : targets2.find((hash2) => removals?.has(hash2));
+    if (imported !== void 0)
+      throw new HttpError(422, `A selected tooltip imports cleared tooltip ${imported}`);
+    const hashes = targets2.filter((hash2) => !visited.has(hash2));
+    if (!hashes.length) break;
+    hashes.forEach((hash2) => visited.add(hash2));
+    await loadMissing(hashes);
+    const states2 = await loadedStates(hashes);
+    pending = [];
+    for (const hash2 of hashes) {
+      const tooltip = known.get(hash2);
+      if (!tooltip) continue;
+      const cleared = states2.get(hash2);
+      if (first && removals && cleared?.state === "removal") {
+        removals.set(hash2, cleared.reviewed);
+        continue;
+      }
+      if (first && removals && cleared?.state === "removed")
+        throw new HttpError(409, `Tooltip ${hash2} changed since review; refresh saved changes`);
+      if (cleared && !first)
+        throw new HttpError(422, `A selected tooltip imports cleared tooltip ${hash2}`);
+      if (cleared || isTextlessDescription(tooltip))
+        throw new HttpError(422, `Tooltip ${hash2} has no text to publish`);
+      for (const translation of Object.values(tooltip.text)) {
+        if (!translation) continue;
+        const text = translation.text;
+        if (text.includes("{{")) throw new HttpError(422, baseEnhancedPublishMessage);
+        for (const line of markupImports(text)) {
+          const from = line.match(/ from (\d+|global) *$/)?.[1];
+          if (from) pending.push(from === "global" ? 1 : Number(from));
+        }
+      }
+    }
+  }
+  const targets = roots.flatMap((hash2) => {
+    const root = resolveAlias(hash2, aliases);
+    return removals?.has(root) ? [] : known.get(root)?.associated ?? [];
+  });
+  if (scope) aliases = scope.extend(targets);
+  const associated = [...new Set(targets.map((hash2) => resolveAlias(hash2, aliases)))];
+  await loadMissing(associated);
+  const states = await loadedStates(associated);
+  for (const hash2 of associated) {
+    const target = known.get(hash2);
+    if (target && states.has(hash2))
+      throw new HttpError(422, `A selected tooltip associates cleared tooltip ${hash2}`);
+    if (target && isTextlessDescription(target))
+      throw new HttpError(422, `Tooltip ${hash2} has no text to publish`);
+  }
+  for (const hash2 of removals?.keys() ?? []) known.delete(hash2);
+  for (const tooltip of known.values()) refuseReservedNames(tooltip);
+  return known;
+}
+
+// apps/worker/src/setBonusHold.ts
+function refuseHeldSetBonuses(tooltips, facts) {
+  for (const tooltip of tooltips) {
+    if (isHeldSetBonus(tooltip, facts?.[tooltip.hash])) {
+      throw new HttpError(422, setBonusHoldMessage);
+    }
+  }
+}
+
+// apps/web/src/features/review/publishDependencies.ts
+var textIn = (tooltip, lang) => usesEnglishFallback(tooltip, lang) ? tooltip.text.en?.text : tooltip.text[lang]?.text;
+function tooltipReads(tooltips, aliases, readers, read, changes) {
+  for (const tooltip of readers)
+    for (const hash2 of tooltip.associated) {
+      read(tooltip.hash, hash2, resolveAlias(hash2, aliases));
+    }
+  const saved = new Map(changes?.saved.map((tooltip) => [tooltip.hash, tooltip]));
+  for (const lang of languages2) {
+    const replacements = /* @__PURE__ */ new Map();
+    for (const [hash2, tooltip] of saved) {
+      const before = tooltips[hash2] && textIn(tooltips[hash2], lang);
+      if (!before?.includes("export ")) continue;
+      const after = textIn(tooltip, lang) ?? "";
+      if (before === after) continue;
+      const exports = extractBlocks(after, "export");
+      if (Object.keys(extractBlocks(before, "export")).some((name2) => !Object.hasOwn(exports, name2)))
+        replacements.set(hash2, after);
+    }
+    let replacing;
+    const imports = new Proxy(
+      {},
+      {
+        get: (_target, key) => {
+          const hash2 = typeof key === "string" ? Number(key) : NaN;
+          if (hash2 === replacing) return replacements.get(hash2);
+          const t = tooltips[hash2];
+          return t ? textIn(t, lang) ?? "" : void 0;
+        }
+      }
+    );
+    const catalog = new Proxy(imports, {
+      get: (target, key) => {
+        if (typeof key !== "string") return void 0;
+        return target[resolveAlias(key === "global" ? 1 : Number(key), aliases)];
+      }
+    });
+    for (const tooltip of readers) {
+      const text = textIn(tooltip, lang);
+      if (text === void 0) continue;
+      const validate2 = () => validateTextWithReads(
+        text,
+        lang,
+        { imports: catalog, variables: catalog[2] ?? "", titles: catalog[3] ?? "" },
+        false,
+        tooltip.hash,
+        aliases
+      );
+      const { reads, issues } = validate2();
+      for (const [source2, hash2] of reads.imports)
+        read(tooltip.hash, source2 === "global" ? 1 : Number(source2), hash2);
+      if (changes && replacements.size)
+        for (const hash2 of new Set(reads.imports.values())) {
+          if (hash2 === tooltip.hash || !replacements.has(hash2)) continue;
+          replacing = hash2;
+          const edited = validate2();
+          replacing = void 0;
+          if (edited.issues.some(
+            ({ message: message2 }) => message2.startsWith('Unresolved import "') && !issues.some((issue2) => issue2.message === message2)
+          ))
+            changes.beforeEdit(hash2, tooltip.hash);
+        }
+    }
+  }
+}
+function publishDependencies(tooltips, aliases, pending, selected, { moves = {}, published = {} } = {}) {
+  const result = new Map(selected.map((t) => [t.hash, /* @__PURE__ */ new Set()]));
+  const active = selected.filter((tooltip) => !isMovedInactive(tooltip.hash, moves));
+  tooltipReads(tooltips, aliases, active, (reader, _source, hash2) => {
+    if (pending.has(hash2)) result.get(reader).add(hash2);
+  });
+  const removedBy = /* @__PURE__ */ new Map();
+  for (const key of Object.keys(selectedInactiveMoves(moves, result.keys(), aliases))) {
+    const hash2 = Number(key);
+    if (isMovedInactive(hash2, moves)) removedBy.set(hash2, resolveAlias(hash2, aliases));
+  }
+  if (removedBy.size) {
+    const uncertain = new Set(
+      selected.map(({ hash: hash2 }) => hash2).filter((hash2) => Object.hasOwn(published, hash2) && published[hash2] === void 0)
+    );
+    const live = { ...tooltips };
+    for (const [key, tooltip] of Object.entries(published)) {
+      if (tooltip) live[key] = tooltip;
+      else if (tooltip === null) delete live[key];
+    }
+    tooltipReads(
+      live,
+      aliases,
+      selected.flatMap(({ hash: hash2 }) => published[hash2] ? [published[hash2]] : []),
+      (reader, source2, hash2) => {
+        for (const target of [removedBy.get(source2), removedBy.get(hash2)])
+          if (target !== void 0 && target !== reader) result.get(target).add(reader);
+        if (![1, 2, 3].includes(source2) && !(removedBy.size === 1 && removedBy.has(source2)))
+          uncertain.add(reader);
+      },
+      { saved: active, beforeEdit: (source2, reader) => result.get(source2).add(reader) }
+    );
+    const [first, ...rest] = uncertain.size ? /* @__PURE__ */ new Set([...removedBy.values(), ...uncertain]) : [];
+    if (first !== void 0) {
+      for (const hash2 of rest) {
+        result.get(first).add(hash2);
+        result.get(hash2).add(first);
+      }
+    }
+  }
+  return new Map([...result].map(([hash2, deps]) => [hash2, [...deps]]));
+}
+
+// scripts/publisher/selection.ts
+function snapshotReads(reader, tree) {
+  const files = async (paths3) => paths3.map((path) => {
+    const value2 = reader.read(tree, path);
+    return value2 === void 0 ? null : { sha: tree[path], value: value2 };
+  });
+  return { files };
+}
+var message = (error62) => error62 instanceof Error ? error62.message : String(error62);
+var reasonOf = (text) => text.length > 1e3 ? `${text.slice(0, 997)}...` : text;
+function savedDocuments(reader, tree) {
+  const read = (key) => {
+    if (typeof key !== "string" || !/^(0|[1-9]\d*)$/.test(key)) return void 0;
+    const parsed = tooltipSchema.safeParse(reader.read(tree, `tooltips/${key}.json`)).data;
+    return parsed?.hash === Number(key) ? parsed : void 0;
+  };
+  return new Proxy({}, {
+    get: (_target, key) => read(key),
+    has: (_target, key) => read(key) !== void 0,
+    ownKeys: () => Object.keys(tree).flatMap((path) => /^tooltips\/(\d+)\.json$/.exec(path)?.[1] ?? []),
+    getOwnPropertyDescriptor: (_target, key) => {
+      const value2 = read(key);
+      return value2 && { value: value2, enumerable: true, configurable: true, writable: false };
+    }
+  });
+}
+async function heldRows(inputs, payload) {
+  const { reader, tree, aliases, stored, moves, facts } = inputs;
+  const held = /* @__PURE__ */ new Map();
+  const hold = (row) => {
+    if (!held.has(row.hash))
+      held.set(row.hash, heldRowSchema.parse({ ...row, reason: reasonOf(row.reason) }));
+  };
+  const document = (prefix, hash2) => {
+    const raw = reader.read(tree, `${prefix}/${hash2}.json`);
+    const parsed = raw === void 0 ? void 0 : tooltipSchema.safeParse(raw).data;
+    return parsed?.hash === hash2 ? parsed : void 0;
+  };
+  const roots = /* @__PURE__ */ new Map();
+  for (const hash2 of payload.hashes) {
+    const canonical = resolveAlias(hash2, aliases);
+    roots.set(canonical, [...roots.get(canonical) ?? [], hash2]);
+  }
+  const saved = /* @__PURE__ */ new Map();
+  for (const [canonical, hashes] of roots) {
+    const source2 = document("tooltips", canonical) ?? (isMovedInactive(canonical, stored) && reader.read(tree, `tooltips/${canonical}.json`) === void 0 ? { hash: canonical, text: {}, associated: [] } : void 0);
+    if (!source2) {
+      hold({ hash: canonical, code: "changed", reason: "The saved tooltip is missing." });
+      continue;
+    }
+    saved.set(canonical, source2);
+    const reviewed = await inputs.digest(source2, canonical);
+    if (hashes.some((hash2) => payload.expected[hash2] !== reviewed))
+      hold({ hash: canonical, code: "changed", reason: "Saved text changed after review." });
+  }
+  for (const canonical of roots.keys())
+    if (tree[schedulePaths.conflict(canonical)])
+      hold({
+        hash: canonical,
+        code: "activation",
+        reason: "A scheduled batch activation conflict on this tooltip waits to be resolved."
+      });
+  const github = snapshotReads(reader, tree);
+  const pin = { value: reader.read(tree, publisherPinPath) };
+  const active = [...roots.keys()].filter((hash2) => !isMovedInactive(hash2, stored));
+  const removals = /* @__PURE__ */ new Map();
+  for (const [hash2, state] of await clearedStates(
+    github,
+    "",
+    active.flatMap((hash3) => saved.get(hash3) ?? []),
+    stored
+  ))
+    if (state.state === "removal") removals.set(hash2, state.reviewed);
+  for (const root of active) {
+    if (held.has(root)) continue;
+    try {
+      const checked = await refuseBaseEnhanced(github, "", [root], aliases, [], void 0, {
+        moves: stored,
+        removals: new Map(removals)
+      });
+      for (const checkedDocument of checked.values())
+        refuseUnlowerable(checkedDocument, pin, "published");
+      const own3 = checked.get(root);
+      refuseHeldSetBonuses(own3 ? [own3] : []);
+    } catch (error62) {
+      if (!(error62 instanceof HttpError)) throw error62;
+      hold({
+        hash: root,
+        code: error62.status === 409 ? "changed" : "refused",
+        reason: error62.status === 409 ? "Saved text changed after review." : message(error62)
+      });
+      continue;
+    }
+    const own2 = saved.get(root);
+    if (removals.has(root)) continue;
+    if (!own2.custom && !facts[root])
+      hold({ hash: root, code: "refused", reason: "Missing generator facts." });
+    else if (isHeldSetBonus(own2, facts[root]))
+      hold({ hash: root, code: "refused", reason: setBonusHoldMessage });
+  }
+  const dependencies = selectedDependencies(inputs, roots, saved);
+  const close = () => {
+    for (let changed = true; changed; ) {
+      changed = false;
+      for (const [root, needs] of dependencies) {
+        if (held.has(root)) continue;
+        const on = needs.find((hash2) => held.has(hash2));
+        if (on === void 0) continue;
+        hold({
+          hash: root,
+          code: "dependency",
+          reason: `Publishes together with held tooltip ${on}.`,
+          on
+        });
+        changed = true;
+      }
+    }
+  };
+  close();
+  const stays = (hash2) => held.has(hash2) || !roots.has(hash2);
+  const retained = retainedReaders(
+    inputs,
+    document,
+    [...roots.keys()].filter((hash2) => !stays(hash2)),
+    stays,
+    saved
+  );
+  for (const [hash2, reason] of retained) hold({ hash: hash2, code: "refused", reason });
+  close();
+  if (inputs.inPlace) {
+    const kept = [...roots.keys()].filter((hash2) => !held.has(hash2));
+    const documents = kept.flatMap(
+      (hash2) => isMovedInactive(hash2, moves) ? [] : saved.get(hash2) ?? []
+    );
+    for (const [hash2, reason] of inputs.inPlace(kept, documents))
+      hold({ hash: hash2, code: "refused", reason });
+    close();
+  }
+  return [...held.values()].sort((a, b) => a.hash - b.hash);
+}
+function retainedReaders({ tree, aliases, moves }, document, kept, stays, saved) {
+  const removals = new Set(kept.filter((hash2) => isMovedInactive(hash2, moves)));
+  const dropped = /* @__PURE__ */ new Map();
+  for (const hash2 of kept) {
+    if (removals.has(hash2)) continue;
+    const before = document("live/tooltips", hash2);
+    const after = saved.get(hash2);
+    if (!before || !after) continue;
+    const names = /* @__PURE__ */ new Set();
+    for (const [lang, cell] of Object.entries(before.text)) {
+      const now = extractBlocks(after.text[lang]?.text ?? "", "export");
+      for (const name2 of Object.keys(extractBlocks(cell?.text ?? "", "export")))
+        if (!Object.hasOwn(now, name2)) names.add(name2);
+    }
+    if (names.size) dropped.set(hash2, names);
+  }
+  const refused = /* @__PURE__ */ new Map();
+  if (!removals.size && !dropped.size) return refused;
+  const kind2 = (hash2) => moves[hash2]?.cleared ? "cleared" : "inactive";
+  for (const path of Object.keys(tree)) {
+    const reader = Number(/^live\/tooltips\/(\d+)\.json$/.exec(path)?.[1]);
+    if (!Number.isInteger(reader) || !stays(reader)) continue;
+    const live = document("live/tooltips", reader);
+    if (!live) continue;
+    for (const hash2 of live.associated) {
+      const target = resolveAlias(hash2, aliases);
+      if (removals.has(target) && !refused.has(target))
+        refused.set(
+          target,
+          `Tooltip ${reader} associates ${kind2(target)} tooltip ${hash2} on live.`
+        );
+    }
+    for (const cell of Object.values(live.text))
+      for (const line of markupImports(cell?.text ?? "")) {
+        const parts = /^import ([A-z0-9 ]+?) from (\d+) *$/.exec(line);
+        if (!parts) continue;
+        const target = resolveAlias(Number(parts[2]), aliases);
+        if (target === reader || refused.has(target)) continue;
+        if (removals.has(target))
+          refused.set(
+            target,
+            `Tooltip ${reader} imports ${kind2(target)} tooltip ${parts[2]} on live.`
+          );
+        else {
+          const name2 = parts[1].split(" ").find((word) => dropped.get(target)?.has(word));
+          if (name2)
+            refused.set(
+              target,
+              `Tooltip ${reader} imports ${name2} from this tooltip on live, which this edit removes.`
+            );
+        }
+      }
+  }
+  return refused;
+}
+function selectedDependencies({ reader, tree, aliases, moves }, roots, saved) {
+  const selected = [...roots.keys()].flatMap((hash2) => saved.get(hash2) ?? []);
+  const removing = Object.keys(
+    selectedInactiveMoves(
+      moves,
+      selected.map(({ hash: hash2 }) => hash2),
+      aliases
+    )
+  ).some((hash2) => isMovedInactive(Number(hash2), moves));
+  let published = {};
+  if (removing) {
+    const pushed = pushedSchema.parse(reader.read(tree, "live/pushed.json") ?? {});
+    published = Object.fromEntries(
+      selected.map(({ hash: hash2 }) => {
+        if (pushed[hash2] === void 0) return [hash2, void 0];
+        const live = tooltipSchema.safeParse(reader.read(tree, `live/tooltips/${hash2}.json`)).data;
+        return [hash2, live?.hash === hash2 ? live : null];
+      })
+    );
+  }
+  return publishDependencies(
+    savedDocuments(reader, tree),
+    aliases,
+    new Set(roots.keys()),
+    selected,
+    { moves, published }
+  );
+}
+function keptPayload(payload, held, aliases) {
+  if (!held.length) return payload;
+  const out = new Set(held.map(({ hash: hash2 }) => hash2));
+  const hashes = payload.hashes.filter((hash2) => !out.has(resolveAlias(hash2, aliases)));
+  return {
+    ...payload,
+    hashes,
+    expected: Object.fromEntries(hashes.map((hash2) => [hash2, payload.expected[hash2]]))
+  };
+}
+var sameHeld = (a, b) => stableStringify(a ?? []) === stableStringify(b ?? []);
+
 // scripts/publisher/translations.ts
 import { createHash as createHash6 } from "node:crypto";
 init_schedule();
@@ -35003,8 +35528,8 @@ var snapshotPath = (hash2) => `live/tooltips/${hash2}.json`;
 var json5 = (value2) => JSON.stringify(value2, null, 2) + "\n";
 var same = (a, b) => stableStringify(a ?? null) === stableStringify(b ?? null);
 var RowRefusal = class extends Error {
-  constructor(reason, message = translationPublishReasons[reason]) {
-    super(message);
+  constructor(reason, message2 = translationPublishReasons[reason]) {
+    super(message2);
     this.reason = reason;
   }
   reason;
@@ -35748,16 +36273,16 @@ function translationRecordLog(receipt, candidate, request) {
   };
 }
 var ConsumerOutputRejected = class extends Error {
-  constructor(message) {
-    super(message);
+  constructor(message2) {
+    super(message2);
     this.name = "ConsumerOutputRejected";
   }
 };
 var ProposalOutputRejected = class extends ConsumerOutputRejected {
 };
 var TextlessConsumerOutput = class extends ProposalOutputRejected {
-  constructor(message) {
-    super(message);
+  constructor(message2) {
+    super(message2);
     this.name = "TextlessConsumerOutput";
   }
 };
@@ -35783,8 +36308,8 @@ var SourceAdvanced = class extends Error {
   scoped;
 };
 var NamedPartRefusal = class extends ConsumerOutputRejected {
-  constructor(message, outcomes) {
-    super(message);
+  constructor(message2, outcomes) {
+    super(message2);
     this.outcomes = outcomes;
   }
   outcomes;
@@ -36324,7 +36849,8 @@ var Publisher = class _Publisher {
           return true;
       }
       const localized = /^(?:glossary|snippets)\/([^/]+)\.json$/.exec(path)?.[1];
-      if (path === marksPath || localized !== "en" && langSchema.safeParse(localized).success || /^exports\/projects\/[a-z0-9][a-z0-9-]*\.json$/.test(path) || /^current-saves\/(?:[0-7][0-9A-HJKMNP-TV-Z]{25}\/(?:\d+|request|conflicts)|requesters\/\d+)\.json$/.test(
+      if (path === marksPath || localized !== "en" && langSchema.safeParse(localized).success || /^exports\/projects\/[a-z0-9][a-z0-9-]*\.json$/.test(path) || // Account publish indexes: admissions and RECORDs of other whole-selection publishes.
+      /^publish\/accounts\/[1-9]\d*\.json$/.test(path) || /^current-saves\/(?:[0-7][0-9A-HJKMNP-TV-Z]{25}\/(?:\d+|request|conflicts)|requesters\/\d+)\.json$/.test(
         path
       ))
         return true;
@@ -36377,6 +36903,74 @@ var Publisher = class _Publisher {
         );
     }
   }
+  /**
+   * The rows a whole-selection request holds at `tree` (selection.ts), with the reviewed digest
+   * computed exactly as the ordinary path below compares it.
+   */
+  async wholeSelectionHeld(tree, payload, aliases, live, publisher = this, checkInstalledPin = true) {
+    const stored = this.movesAt(tree);
+    const documents = [
+      ...new Set(payload.hashes.map((hash2) => resolveAlias(hash2, aliases)))
+    ].flatMap((hash2) => {
+      const parsed = tooltipSchema.safeParse(this.read(tree, `tooltips/${hash2}.json`));
+      return parsed.success && parsed.data.hash === hash2 ? [parsed.data] : [];
+    });
+    const moves = this.movesWithCleared(tree, documents);
+    return heldRows(
+      {
+        reader: this,
+        tree,
+        aliases,
+        stored,
+        moves,
+        facts: publisher.options.facts,
+        digest: async (document, hash2) => {
+          const digest6 = await inactivePublishableHash(document, aliases, moves);
+          return this.reviewedEntries(
+            tree,
+            [{ hash: hash2, digest: digest6, tooltipBlob: "" }],
+            [document],
+            moves
+          )[0].digest;
+        },
+        // checkAndExport's shared-text check, one document at a time.
+        inPlace: (kept, documents2) => {
+          const refused = /* @__PURE__ */ new Map();
+          let options;
+          try {
+            const inPlace = publisher.inPlaceOptions(
+              tree,
+              {
+                ...payload,
+                hashes: payload.hashes.filter((hash2) => kept.includes(resolveAlias(hash2, aliases)))
+              },
+              live,
+              checkInstalledPin
+            );
+            const selected = selectedInactiveMoves(moves, kept, aliases);
+            options = authoredInPlaceOptions(
+              publisher,
+              tree,
+              inPlace.live,
+              inPlace,
+              documents2.filter(({ hash: hash2 }) => !isMovedInactive(hash2, selected)),
+              activeAliases(aliases, selected)
+            );
+          } catch {
+            return refused;
+          }
+          for (const document of documents2)
+            try {
+              assertInPlaceDocuments([document], options);
+            } catch (error62) {
+              refused.set(document.hash, error62 instanceof Error ? error62.message : String(error62));
+            }
+          return refused;
+        }
+      },
+      payload
+    );
+  }
   async verifyReceiptDigests(receipt) {
     if (!receipt.inPlace || receipt.globals)
       throw new ConsumerOutputRejected(
@@ -36385,13 +36979,35 @@ var Publisher = class _Publisher {
     const frozen = this.git.tree(receipt.sourceCommit);
     if (this.read(frozen, ".publisher/PIN")?.sourceSha !== receipt.publisherSha)
       throw new ConsumerOutputRejected("Receipt does not match its frozen publisher PIN");
-    const signed = await this.verifyRequest(receipt.requestBlob, receipt.opId, frozen);
+    const verified = await this.verifyRequest(receipt.requestBlob, receipt.opId, frozen);
     const options = receipt.generatorSha === this.options.generatorSha ? this.options : this.read(frozen, ".publisher/config.json");
     if (options?.generatorSha !== receipt.generatorSha)
       throw new ConsumerOutputRejected(
         "Missing pinned generator facts for the publication receipt"
       );
     const aliases = this.aliasesAt(frozen, options);
+    let signed = verified;
+    if (verified.kind === "push" && verified.selection === "whole") {
+      const held = await this.wholeSelectionHeld(
+        frozen,
+        verified,
+        aliases,
+        receipt.liveParent,
+        options === this.options ? this : new _Publisher(this.git, {
+          ...this.options,
+          generatorSha: options.generatorSha,
+          aliases: options.aliases,
+          facts: options.facts,
+          aliasFacts: options.aliasFacts,
+          sandboxConflicts: options.sandboxConflicts
+        }),
+        false
+      );
+      if (!sameHeld(held, receipt.held))
+        throw new ConsumerOutputRejected("Receipt held rows differ from the signed selection");
+      signed = keptPayload(verified, held, aliases);
+    } else if (receipt.held !== void 0)
+      throw new ConsumerOutputRejected("Only a whole-selection receipt holds rows");
     const pushed = pushedSchema.parse(this.read(frozen, "live/pushed.json"));
     if (signed.intentDigest !== receipt.intentDigest || stableStringify(signed.requester) !== stableStringify(receipt.requester))
       throw new ConsumerOutputRejected("Receipt does not match the signed publication intent");
@@ -36635,6 +37251,32 @@ var Publisher = class _Publisher {
     if (!this.git.ancestor(receipt.sourceCommit, head) || tree[globalsInPlacePath] !== frozen[globalsInPlacePath] || stableStringify(publication2(frozen)) !== stableStringify(publication2(tree)))
       throw new RefRace("Cannot recover a translation RECORD over a changed publication.");
   }
+  /**
+   * A whole-selection RECORD also updates the requester's account publish index (written with
+   * the request by the Worker) in the same commit. Only a verified signed request names the
+   * account, and only an entry already listed for this opId changes.
+   */
+  recordAccountOutcome(tree, opId, blob, receipt, result) {
+    let payload;
+    try {
+      this.credits(blob, opId);
+      payload = publishPayloadSchema.safeParse(
+        JSON.parse(JSON.parse(this.git.blob(blob)).payload)
+      ).data;
+    } catch {
+      return;
+    }
+    if (payload?.selection !== "whole") return;
+    const path = publishAccountPath(payload.requester.id);
+    const status = result ? ["stale", "rejected", "done", "unchanged"].find((s) => s === result.status) ?? "rejected" : receipt?.outcome === "unchanged" ? "unchanged" : "done";
+    const index = recordInPublishAccount(this.read(tree, path), opId, {
+      status,
+      // Held tooltips and refused shared definitions: whatever of it did not go live.
+      held: (result?.held ?? receipt?.held ?? []).length + (receipt?.inPlace?.refusals?.length ?? 0),
+      updatedAt: iso(this.options.now())
+    });
+    if (index) tree[path] = this.git.writeBlob(json6(index));
+  }
   async record(opId, receipt, candidate, result, requestBlob, landing, atomicLive, refusalFence) {
     const p = paths2(opId);
     let inPlace;
@@ -36856,7 +37498,8 @@ var Publisher = class _Publisher {
                 status: receipt.outcome
               })),
               ...receipt?.inPlace?.globals.length ? { globals: receipt.inPlace.globals } : {},
-              ...receipt?.inPlace?.refusals?.length ? { globalRefusals: receipt.inPlace.refusals } : {}
+              ...receipt?.inPlace?.refusals?.length ? { globalRefusals: receipt.inPlace.refusals } : {},
+              ...receipt?.held?.length ? { held: receipt.held } : {}
             },
             liveCommit: candidate ?? null,
             recordCommit: null,
@@ -36869,6 +37512,7 @@ var Publisher = class _Publisher {
           }
         )
       );
+      this.recordAccountOutcome(tree, opId, blob, receipt, result);
       const c = this.git.commit(h, tree, `Record ${opId}`, credits);
       if (scoped && beforeRecord) {
         const allowed2 = new Map(Object.entries(scoped.data));
@@ -37140,9 +37784,30 @@ var Publisher = class _Publisher {
           }
           candidate = this.createCandidate(opId, blob, live, r2, rebuilding?.candidate);
         } else {
+          let held;
+          let push = payload;
+          if (push.selection === "whole") {
+            held = await this.wholeSelectionHeld(tree, push, aliases, live);
+            push = keptPayload(push, held, aliases);
+            if (!push.hashes.length && !push.globals?.length) {
+              const changed = held.some(({ code }) => code === "changed");
+              await this.record(
+                opId,
+                void 0,
+                void 0,
+                {
+                  status: changed ? "stale" : "rejected",
+                  error: "Nothing in this publish could go live. Review the held tooltips.",
+                  held
+                },
+                blob
+              );
+              return;
+            }
+          }
           const stored = this.movesAt(tree);
           const sources = new Map(
-            payload.hashes.map((hash2) => {
+            push.hashes.map((hash2) => {
               const canonical = resolveAlias(hash2, aliases), oid5 = tree[`tooltips/${canonical}.json`];
               return [
                 canonical,
@@ -37158,7 +37823,7 @@ var Publisher = class _Publisher {
           );
           const entries = [], tooltips = [], outcomes = [];
           const seen = /* @__PURE__ */ new Set();
-          const blocked = [...new Set(payload.hashes.map((h) => resolveAlias(h, aliases)))].filter(
+          const blocked = [...new Set(push.hashes.map((h) => resolveAlias(h, aliases)))].filter(
             (h) => tree[schedulePaths.conflict(h)]
           );
           if (blocked.length) {
@@ -37171,7 +37836,7 @@ var Publisher = class _Publisher {
             );
             return;
           }
-          for (const hash2 of payload.hashes) {
+          for (const hash2 of push.hashes) {
             const canonical = resolveAlias(hash2, aliases), oid5 = tree[`tooltips/${canonical}.json`];
             const tooltip = sources.get(canonical);
             if (!tooltip.success || tooltip.data.hash !== canonical) {
@@ -37183,7 +37848,7 @@ var Publisher = class _Publisher {
             const [reviewed] = this.reviewedEntries(tree, [entry], [tooltip.data], moves);
             outcomes.push({
               hash: canonical,
-              status: reviewed.digest === payload.expected[hash2] ? "accepted" : "stale"
+              status: reviewed.digest === push.expected[hash2] ? "accepted" : "stale"
             });
             if (!seen.has(canonical)) {
               entries.push({
@@ -37209,11 +37874,11 @@ var Publisher = class _Publisher {
           }
           this.assertRequestedDigests(
             this.reviewedEntries(tree, entries, tooltips, moves),
-            payload.hashes,
-            (hash2) => payload.expected[hash2],
+            push.hashes,
+            (hash2) => push.expected[hash2],
             aliases
           );
-          const inPlace = this.inPlaceOptions(tree, payload, live);
+          const inPlace = this.inPlaceOptions(tree, push, live);
           const neutral = neutralRenameHashes(this, tree, entries, inPlace.rewritten);
           const publishable = neutral?.size ? tooltips.filter(({ hash: hash2 }) => !neutral.has(hash2)) : tooltips;
           const checked = this.checkAndExport(tree, publishable, aliases, inPlace, moves);
@@ -37241,9 +37906,10 @@ var Publisher = class _Publisher {
             entries,
             exported: checked.exported,
             changed: entries.filter(({ hash: hash2, digest: digest6 }) => !neutral?.has(hash2) && pushed[hash2] !== digest6).map(({ hash: hash2 }) => hash2),
-            requester: payload.requester,
-            intentDigest: payload.intentDigest,
-            inPlace: checked.inPlace
+            requester: push.requester,
+            intentDigest: push.intentDigest,
+            inPlace: checked.inPlace,
+            ...held ? { held } : {}
           };
           candidate = this.createCandidate(opId, blob, live, r2, rebuilding?.candidate);
         }
@@ -38559,7 +39225,7 @@ function createTranslationWork(runtime, previewTimeout = 12e4, planTimeout = tra
         "close",
         (code) => finish(timedOut ? "timeout" : code === 0 ? response : void 0)
       );
-      child.once("message", (message) => response = message);
+      child.once("message", (message2) => response = message2);
       child.send({ ...job, options: snapshotOptions }, (error62) => {
         if (error62) child.kill("SIGKILL");
       });
