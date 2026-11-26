@@ -1,6 +1,6 @@
 {
-  "sourceCommit": "4a82f964b4f7026966ad0a4be849c17665236005",
-  "generatedAt": "2026-11-26T01:38:42.368Z",
+  "sourceCommit": "49e72b9af5a2105d8d682242a36169dad02e5786",
+  "generatedAt": "2026-11-26T12:14:32.018Z",
   "tooltips": {
     "0": {
       "hash": 0,
@@ -22164,12 +22164,262 @@
       "hash": 469285294,
       "text": {
         "en": {
-          "text": "Elemental Kills grant 1 Stack of Recombination even while the weapon is stowed. Maximum of <enhanced/>${10/#d} stacks.\n\nEach Stack additively increases the damage of the next shot by <pve <enhanced/>${10*#d}% /> <pvp [<enhanced/>${5*#d}%] />, up to <pve 100% /> <pvp [50%] /> at ${10/#d} stacks.\n\nenhanced (\nvar d = 1.25\n<enhanced/> Damage Buff ramps up 25% faster, reaching maximum strength 2 stacks sooner.\n)",
-          "updatedAt": "2025-12-27T18:44:04.013Z",
-          "updatedBy": "Stardust"
+          "text": "Elemental Kills grant 1 Stack of Recombination even while the weapon is stowed. Maximum of <enhanced/>${10/#d} stacks.\n\nEach Stack additively increases the damage of the next shot by #e<pve ${10*#d}% /> #e<pvp [${5*#d}%] />, up to <pve 100% /> <pvp [50%] /> at #e${10/#d} stacks.\n\nenhanced (\nvar d = 1.25\n<enhanced/> Damage Buff ramps up 25% faster, reaching maximum strength 2 stacks sooner.\n)",
+          "updatedAt": "2026-11-26T12:13:52.078Z",
+          "updatedBy": "StardustD2",
+          "numbers": {
+            "ids": [
+              1,
+              2,
+              11,
+              12,
+              5,
+              6,
+              13,
+              8,
+              9,
+              10
+            ],
+            "next": 14,
+            "retired": {}
+          }
         }
       },
       "associated": [],
+      "compendium": {
+        "gid": "1662574278",
+        "rowKey": "Recombination",
+        "section": "Weapon Traits",
+        "snapshot": {
+          "plain": "Upon scoring an Elemental Kill:\nGrants a stack of Recombination, granting 10% ↑12.5% [5% ↑6.25%] increased damage for the next shot per stack, up to a maximum of 10 ↑8 stacks.\nStacks can be obtained while stowed, and persist through stow.\n\nDamage Increase for the next shot:\n10% | 20% | 30% | 40% | 50% | 60% | 70% | 80% | 90% | 100%.\n↑12.5% | 25% | 37.5% | 50% | 62.5% | 75% | 87.5% | 100%\n\n5% | 10% | 15% | 20% | 25% | 30% | 35% | 40% | 45% | 50%.\n↑6.25% | 12.5% | 18.75% | 25% | 31.25% | 37.5% | 43.75% | 50%",
+          "runs": [
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Upon scoring an "
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "Elemental Kill"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": ":\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Grants a "
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "stack "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "of "
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Recombination"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ", granting "
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "bold": true,
+              "sizePt": 9,
+              "text": "10%"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑12.5%"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ea9999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "[5% "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑6.25%"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ea9999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "]"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " increased damage for the next shot per "
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "stack"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ", up to a maximum of "
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "10 "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑8"
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": " stacks"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ".\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Stacks can be obtained while stowed, and persist through stow."
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "bold": true,
+              "sizePt": 9,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Damage Increase for the next shot:\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "bold": true,
+              "sizePt": 9,
+              "text": "10% | 20% | 30% | 40% | 50% | 60% | 70% | 80% | 90% | 100%.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑12.5% | 25% | 37.5% | 50% | 62.5% | 75% | 87.5% | 100%\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "bold": true,
+              "sizePt": 9,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ea9999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "5% | 10% | 15% | 20% | 25% | 30% | 35% | 40% | 45% | 50%.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑6.25% | 12.5% | 18.75% | 25% | 31.25% | 37.5% | 43.75% | 50%"
+            }
+          ]
+        },
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
+      },
+      "bungieSnapshot": {
+        "description": "Elemental final blows increase the damage of this weapon's next shot.",
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
+      },
       "legacy": {
         "uploadedBy": "Stardust",
         "lastUpload": 1791495267470,
@@ -25809,12 +26059,758 @@
       "hash": 555281244,
       "text": {
         "en": {
-          "text": "Direct Weapon Hits grant a stack of Precision Instrument for 1.25 seconds (2.1 seconds on weapons with a Draw/Charge Time).\n\nMaximum of 6 stacks. Reloading the weapon (except on Bows) or missing removes all stacks... usually.\n\nHeavy Burst Frame weapons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 1.5? Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|... stacks:\n<enhanced/>${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nvar note = (More precisely: <enhanced/>${25*#d}% / 6 × <stacks>)\nenhanced (\nvar d = 1.2\nvar note = empty\n<enhanced/> Precision Damage Buff is increased by 20%.\n)",
-          "updatedAt": "2026-01-06T14:46:54.183Z",
-          "updatedBy": "Stardust"
+          "text": "Direct Weapon Hits grant a stack of Precision Instrument for 1 second (2 seconds on Bows and Linear Fusion Rifles).\n\nMaximum of 6 stacks. Missing removes all stacks... usually.\n\nHeavy Burst Frame weapons can only gain 1 stack per burst.\n\nAdaptive Burst Linear Fusion Rifles require 2 Hits for each stack (and missing sometimes does not remove your stacks on them).\n\nPrecision damage increase at 1|2|...6 stacks:\n<enhanced/>${4.17*#d}% | ${8.33*#d}% | ${12.5*#d}% | ${16.67*#d}% | ${20.83*#d}% | ${25*#d}%\n#note\n\nThe damage increase also applies to Weakspot damage (technically distinct from Precision damage and includes cases like landing Precision Hits on shielded PvE Combatants)\n\nvar note = (More precisely: <enhanced/>${25*#d}% / 6 × [stacks])\nenhanced (\nvar d = 1.2\nvar note = empty\n<enhanced/> Precision Damage Buff is increased by 20%.\n)",
+          "updatedAt": "2026-11-26T12:13:52.078Z",
+          "updatedBy": "StardustD2",
+          "numbers": {
+            "ids": [
+              17,
+              18,
+              3,
+              4,
+              5,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              15,
+              16
+            ],
+            "next": 27,
+            "retired": {}
+          }
         }
       },
       "associated": [],
+      "compendium": {
+        "gid": "1662574278",
+        "rowKey": "Precision Instrument",
+        "section": "Weapon Traits",
+        "snapshot": {
+          "plain": "Upon scoring a Direct Weapon Hit:\nGrants a stack of Precision Instrument, up to a maximum of 6 stacks for 1 seconds. Lasts 2 seconds on Bows and Linear Fusion Rifles.\nAdditional Direct Weapon Hits refresh the buff duration. All stacks are removed upon missing.\nBuff persists through stow.\n\nAdaptive Burst Linear Fusion Rifle exclusive: Requires 2 hits per stack. All stacks are removed upon missing, except when it doesn't :)\nHeavy Burst Frame exclusive: Can only get 1 stack per burst.\n\n4.17% | 8.34% | 12.5% | 16.7% | 20.83% | 25% Increased Precision Damage.\n↑5% | 10% | 15% | 20% | 25% | 30% Increased Precision Damage.\nAlso increases Weakspot Damage (Precision Hits against Shielded Combatants)",
+          "runs": [
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Upon scoring a "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "Direct Weapon Hit"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": ":\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Grants a "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "stack "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "of "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Precision Instrument"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ", up to a maximum of "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "6 stacks "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "for 1 seconds. "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Lasts 2 seconds on "
+            },
+            {
+              "textAlign": "center",
+              "color": "#999999",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Bows "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "and "
+            },
+            {
+              "textAlign": "center",
+              "color": "#a481e1",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Linear Fusion Rifles"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": ".\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Additional Direct Weapon Hits refresh the buff duration. "
+            },
+            {
+              "textAlign": "center",
+              "color": "#e06666",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "All stacks are removed upon missing.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Buff persists through stow.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#e06666",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a481e1",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Adaptive Burst Linear Fusion Rifle exclusive:"
+            },
+            {
+              "textAlign": "center",
+              "color": "#e06666",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Requires 2 hits per "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "stack"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ". "
+            },
+            {
+              "textAlign": "center",
+              "color": "#e6b8af",
+              "bold": true,
+              "sizePt": 9,
+              "text": "A"
+            },
+            {
+              "textAlign": "center",
+              "color": "#f4cccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "l"
+            },
+            {
+              "textAlign": "center",
+              "color": "#fce5cd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "l"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#fff2cc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "s"
+            },
+            {
+              "textAlign": "center",
+              "color": "#d9ead3",
+              "bold": true,
+              "sizePt": 9,
+              "text": "t"
+            },
+            {
+              "textAlign": "center",
+              "color": "#d0e0e3",
+              "bold": true,
+              "sizePt": 9,
+              "text": "a"
+            },
+            {
+              "textAlign": "center",
+              "color": "#c9daf8",
+              "bold": true,
+              "sizePt": 9,
+              "text": "c"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cfe2f3",
+              "bold": true,
+              "sizePt": 9,
+              "text": "k"
+            },
+            {
+              "textAlign": "center",
+              "color": "#d9d2e9",
+              "bold": true,
+              "sizePt": 9,
+              "text": "s"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ead1dc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "a"
+            },
+            {
+              "textAlign": "center",
+              "color": "#d5a6bd",
+              "bold": true,
+              "sizePt": 9,
+              "text": "r"
+            },
+            {
+              "textAlign": "center",
+              "color": "#b4a7d6",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#9fc5e8",
+              "bold": true,
+              "sizePt": 9,
+              "text": "r"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a2c4c9",
+              "bold": true,
+              "sizePt": 9,
+              "text": "m"
+            },
+            {
+              "textAlign": "center",
+              "color": "#b6d7a8",
+              "bold": true,
+              "sizePt": 9,
+              "text": "o"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffe599",
+              "bold": true,
+              "sizePt": 9,
+              "text": "v"
+            },
+            {
+              "textAlign": "center",
+              "color": "#f9cb9c",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ea9999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "d"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#dd7e6b",
+              "bold": true,
+              "sizePt": 9,
+              "text": "u"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cc4125",
+              "bold": true,
+              "sizePt": 9,
+              "text": "p"
+            },
+            {
+              "textAlign": "center",
+              "color": "#e06666",
+              "bold": true,
+              "sizePt": 9,
+              "text": "o"
+            },
+            {
+              "textAlign": "center",
+              "color": "#f6b26b",
+              "bold": true,
+              "sizePt": 9,
+              "text": "n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "m"
+            },
+            {
+              "textAlign": "center",
+              "color": "#93c47d",
+              "bold": true,
+              "sizePt": 9,
+              "text": "i"
+            },
+            {
+              "textAlign": "center",
+              "color": "#76a5af",
+              "bold": true,
+              "sizePt": 9,
+              "text": "s"
+            },
+            {
+              "textAlign": "center",
+              "color": "#6d9eeb",
+              "bold": true,
+              "sizePt": 9,
+              "text": "s"
+            },
+            {
+              "textAlign": "center",
+              "color": "#6fa8dc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "i"
+            },
+            {
+              "textAlign": "center",
+              "color": "#8e7cc3",
+              "bold": true,
+              "sizePt": 9,
+              "text": "n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#c27ba0",
+              "bold": true,
+              "sizePt": 9,
+              "text": "g"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ", "
+            },
+            {
+              "textAlign": "center",
+              "color": "#a64d79",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#674ea7",
+              "bold": true,
+              "sizePt": 9,
+              "text": "x"
+            },
+            {
+              "textAlign": "center",
+              "color": "#3d85c6",
+              "bold": true,
+              "sizePt": 9,
+              "text": "c"
+            },
+            {
+              "textAlign": "center",
+              "color": "#3c78d8",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#45818e",
+              "bold": true,
+              "sizePt": 9,
+              "text": "p"
+            },
+            {
+              "textAlign": "center",
+              "color": "#6aa84f",
+              "bold": true,
+              "sizePt": 9,
+              "text": "t"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "w"
+            },
+            {
+              "textAlign": "center",
+              "color": "#e69138",
+              "bold": true,
+              "sizePt": 9,
+              "text": "h"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cc0000",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a61c00",
+              "bold": true,
+              "sizePt": 9,
+              "text": "n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#85200c",
+              "bold": true,
+              "sizePt": 9,
+              "text": "i"
+            },
+            {
+              "textAlign": "center",
+              "color": "#990000",
+              "bold": true,
+              "sizePt": 9,
+              "text": "t"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#b45f06",
+              "bold": true,
+              "sizePt": 9,
+              "text": "d"
+            },
+            {
+              "textAlign": "center",
+              "color": "#bf9000",
+              "bold": true,
+              "sizePt": 9,
+              "text": "o"
+            },
+            {
+              "textAlign": "center",
+              "color": "#38761d",
+              "bold": true,
+              "sizePt": 9,
+              "text": "e"
+            },
+            {
+              "textAlign": "center",
+              "color": "#134f5c",
+              "bold": true,
+              "sizePt": 9,
+              "text": "s"
+            },
+            {
+              "textAlign": "center",
+              "color": "#1155cc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#0b5394",
+              "bold": true,
+              "sizePt": 9,
+              "text": "'"
+            },
+            {
+              "textAlign": "center",
+              "color": "#522f65",
+              "bold": true,
+              "sizePt": 9,
+              "text": "t"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ff0000",
+              "bold": true,
+              "sizePt": 9,
+              "text": ":)\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#999999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Heavy Burst Frame exclusive"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": ": Can only get "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "1 stack"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " per burst.\n\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "4.17% | 8.34% | 12.5% | 16.7% | 20.83%"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "| 25%"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "bold": true,
+              "sizePt": 9,
+              "text": "Increased Precision Damage."
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑5% | 10% | 15% | 20% | 25% | 30% Increased Precision Damage.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Also increases "
+            },
+            {
+              "textAlign": "center",
+              "color": "#e69138",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Weakspot Damage"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": " "
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "italic": true,
+              "sizePt": 9,
+              "text": "("
+            },
+            {
+              "textAlign": "center",
+              "color": "#f1c232",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Precision Hits"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "italic": true,
+              "sizePt": 9,
+              "text": " against Shielded Combatants)"
+            }
+          ]
+        },
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
+      },
+      "bungieSnapshot": {
+        "description": "Dealing sustained damage increases precision damage.",
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
+      },
       "legacy": {
         "uploadedBy": "Stardust",
         "lastUpload": 1791495267470,
@@ -58609,9 +59605,9 @@
       "hash": 1497627200,
       "text": {
         "en": {
-          "text": "Generates <pve 3 /> <pvp [1] /> ammo from thin air upon dealing damage with your Prismatic grenade.",
-          "updatedAt": "2026-01-17T18:04:21.392Z",
-          "updatedBy": "Hawkmoona"
+          "text": "Generates <pve 3 /> <pvp [1] /> ammo from thin air upon dealing damage with your Prismatic grenade.\n\nDoes not trigger on every damage tick, averages 3-4 procs per Prismatic Grenade used.",
+          "updatedAt": "2026-11-26T12:13:52.078Z",
+          "updatedBy": "StardustD2"
         }
       },
       "associated": [],
@@ -58620,7 +59616,7 @@
         "rowKey": "Ergo Sum\n\nTranscendent Duelist\n↑Transcendent Steel",
         "section": "Energy Slot Weapons",
         "snapshot": {
-          "plain": "Special Ammo Sword\nDrops with a random Sword Frame and Exotic Intrinsic. Impact Stat has no effect on perk damage.\n\nKills grant an additional 2.5% Light Transcendent Energy and 2.5% Dark Transcendent Energy.\n\nWhile Transcendent:\n35% [20%] increased damage and +50 Charge Rate. Does not include +5% from Transcendence.\nExotic Intrinsic Effects (Wolfpack, Perfect Fifth, Arc Conductor, Unplanned Reprieve, etc) are instead granted 20% increased damage.\nDealing any Sword Damage triggers the increased Prismatic Grenade Regeneration Speed.\nExtends Transcendent duration by an additional ?% kill.\n\n↑Transcendent Steel:\n+3 [+1] Ammo upon scoring a Prismatic Grenade Hit. \nAmmo Generation is on specific parts of each Prismatic Grenade. TBD.",
+          "plain": "Special Ammo Sword\nDrops with a random Sword Frame and Exotic Intrinsic. Impact Stat has no effect on perk damage. Frame exclusively determines Heavy Attack.\nBreaker Type is determined by Exotic Trait.\n\nKills grant an additional 2.5% Light Transcendent Energy and 2.5% Dark Transcendent Energy.\n\nWhile Transcendent:\n35% [20%] increased damage and +50 Charge Rate. Does not include +5% from Transcendence.\nExotic Intrinsic Effects (Wolfpack, Perfect Fifth, Arc Conductor, Unplanned Reprieve, etc) are instead granted 20% increased damage.\nDealing any Sword Damage triggers the increased Prismatic Grenade Regeneration Speed.\nExtends Transcendent duration by an additional ?% kill.\n\n↑Transcendent Steel:\n+3 [+1] Ammo upon scoring a Prismatic Grenade Hit. \nOnly triggers on certain hits, averaging 3 to 4 procs per Prismatic Grenade thrown.",
           "runs": [
             {
               "textAlign": "center",
@@ -58655,7 +59651,21 @@
               "color": "#cccccc",
               "italic": true,
               "sizePt": 9,
-              "text": ". Impact Stat has no effect on perk damage.\n\n"
+              "text": ". Impact Stat has no effect on perk damage. Frame exclusively determines Heavy Attack.\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#a4c2f4",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Breaker Type"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": " is determined by Exotic Trait.\n\n"
             },
             {
               "textAlign": "center",
@@ -58922,11 +59932,15 @@
               "bold": true,
               "italic": true,
               "sizePt": 9,
-              "text": "Ammo Generation is on specific parts of each Prismatic Grenade. TBD."
+              "text": "Only triggers on certain hits, averaging 3 to 4 procs per Prismatic Grenade thrown."
             }
           ]
         },
-        "snapshotAt": "2026-11-21T00:59:28.971Z"
+        "snapshotAt": "2026-11-26T12:13:52.080Z"
+      },
+      "bungieSnapshot": {
+        "description": "Upgrades this weapon to a Masterwork. Once upgraded, the weapon will obtain enhanced capabilities, such as increased stats and/or additional perks.\n\nDefeat targets using this weapon to unlock this upgrade.",
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
       },
       "legacy": {
         "uploadedBy": "Stardust",
@@ -139754,12 +140768,111 @@
       "hash": 3673922083,
       "text": {
         "en": {
-          "text": "Weapon Kills grant the following for <enhanced/>${7+#d} seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\n\nHand Cannons only recieve a 27% damage increase. Buff is removed on stow.\n\nenhanced (\nvar d = 1\n<enhanced/> Buff duration is increased by 1 second.\n)",
-          "updatedAt": "2026-06-27T02:29:05.597Z",
-          "updatedBy": "Hawkmoona"
+          "text": "Weapon Kills grant the following for <enhanced/>${7+#d} seconds:\n• 10 Range\n• 30% increased damage\n• 20% longer Firing Delay/Charge Time/Draw Time\n\nHand Cannons only recieve a 27% damage increase. Buff is removed on stow.\n\nenhanced (\nvar d = 0.5\n<enhanced/> Buff duration is increased by 0.5 seconds.\n)",
+          "updatedAt": "2026-11-26T12:13:52.078Z",
+          "updatedBy": "StardustD2",
+          "numbers": {
+            "ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8
+            ],
+            "next": 9,
+            "retired": {}
+          }
         }
       },
       "associated": [],
+      "compendium": {
+        "gid": "1662574278",
+        "rowKey": "Adagio",
+        "section": "Weapon Traits",
+        "snapshot": {
+          "plain": "On Weapon Kill:\n30% (27% Hand Cannons) increased damage, +10 Range, and 1.2x Refire Delay / (Charge & Draw) Time Multiplier for 7 ↑7.5 seconds.\nBuff is removed on stow.",
+          "runs": [
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "On "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "italic": true,
+              "sizePt": 9,
+              "text": "Weapon Kill"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": ":\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "30% "
+            },
+            {
+              "textAlign": "center",
+              "color": "#999999",
+              "bold": true,
+              "sizePt": 9,
+              "text": "(27% Hand Cannons) "
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": "increased damage, +10 Range, and 1.2x Refire Delay / (Charge & Draw) Time Multiplier for 7 "
+            },
+            {
+              "textAlign": "center",
+              "color": "#ffd966",
+              "bold": true,
+              "sizePt": 9,
+              "text": "↑7.5"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 9,
+              "text": " seconds."
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "bold": true,
+              "sizePt": 7,
+              "text": "\n"
+            },
+            {
+              "textAlign": "center",
+              "color": "#cccccc",
+              "italic": true,
+              "sizePt": 9,
+              "text": "Buff is removed on stow."
+            }
+          ]
+        },
+        "snapshotAt": "2026-11-26T12:13:52.080Z"
+      },
+      "bungieSnapshot": {
+        "description": "After defeating a target, this weapon fires, charges, or draws more slowly and deals increased damage for a brief time.",
+        "snapshotAt": "2026-11-26T12:13:52.079Z"
+      },
       "legacy": {
         "uploadedBy": "Stardust",
         "lastUpload": 1791495267470,
@@ -179796,15 +180909,6 @@
           }
         }
       }
-    }
-  },
-  "translationPublish": {
-    "version": "translation-publish-v1",
-    "liveCommit": "cfa204fc4b6c07efb7757a80744e386e1c4c5963",
-    "lanes": {},
-    "only": {
-      "tooltips": [],
-      "globals": []
     }
   },
   "globals": {
