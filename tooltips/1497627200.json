@@ -2,9 +2,9 @@
   "hash": 1497627200,
   "text": {
     "en": {
-      "text": "Generates <pve 3 /> <pvp [1] /> ammo from thin air upon dealing damage with your Prismatic grenade.",
-      "updatedAt": "2026-01-17T18:04:21.392Z",
-      "updatedBy": "Hawkmoona"
+      "text": "Generates <pve 3 /> <pvp [1] /> ammo from thin air upon dealing damage with your Prismatic grenade.\n\nDoes not trigger on every damage tick, averages 3-4 procs per Prismatic Grenade used.",
+      "updatedAt": "2026-11-26T12:13:52.078Z",
+      "updatedBy": "StardustD2"
     }
   },
   "associated": [],
@@ -13,7 +13,7 @@
     "rowKey": "Ergo Sum\n\nTranscendent Duelist\n↑Transcendent Steel",
     "section": "Energy Slot Weapons",
     "snapshot": {
-      "plain": "Special Ammo Sword\nDrops with a random Sword Frame and Exotic Intrinsic. Impact Stat has no effect on perk damage.\n\nKills grant an additional 2.5% Light Transcendent Energy and 2.5% Dark Transcendent Energy.\n\nWhile Transcendent:\n35% [20%] increased damage and +50 Charge Rate. Does not include +5% from Transcendence.\nExotic Intrinsic Effects (Wolfpack, Perfect Fifth, Arc Conductor, Unplanned Reprieve, etc) are instead granted 20% increased damage.\nDealing any Sword Damage triggers the increased Prismatic Grenade Regeneration Speed.\nExtends Transcendent duration by an additional ?% kill.\n\n↑Transcendent Steel:\n+3 [+1] Ammo upon scoring a Prismatic Grenade Hit. \nAmmo Generation is on specific parts of each Prismatic Grenade. TBD.",
+      "plain": "Special Ammo Sword\nDrops with a random Sword Frame and Exotic Intrinsic. Impact Stat has no effect on perk damage. Frame exclusively determines Heavy Attack.\nBreaker Type is determined by Exotic Trait.\n\nKills grant an additional 2.5% Light Transcendent Energy and 2.5% Dark Transcendent Energy.\n\nWhile Transcendent:\n35% [20%] increased damage and +50 Charge Rate. Does not include +5% from Transcendence.\nExotic Intrinsic Effects (Wolfpack, Perfect Fifth, Arc Conductor, Unplanned Reprieve, etc) are instead granted 20% increased damage.\nDealing any Sword Damage triggers the increased Prismatic Grenade Regeneration Speed.\nExtends Transcendent duration by an additional ?% kill.\n\n↑Transcendent Steel:\n+3 [+1] Ammo upon scoring a Prismatic Grenade Hit. \nOnly triggers on certain hits, averaging 3 to 4 procs per Prismatic Grenade thrown.",
       "runs": [
         {
           "textAlign": "center",
@@ -48,7 +48,21 @@
           "color": "#cccccc",
           "italic": true,
           "sizePt": 9,
-          "text": ". Impact Stat has no effect on perk damage.\n\n"
+          "text": ". Impact Stat has no effect on perk damage. Frame exclusively determines Heavy Attack.\n"
+        },
+        {
+          "textAlign": "center",
+          "color": "#a4c2f4",
+          "italic": true,
+          "sizePt": 9,
+          "text": "Breaker Type"
+        },
+        {
+          "textAlign": "center",
+          "color": "#cccccc",
+          "italic": true,
+          "sizePt": 9,
+          "text": " is determined by Exotic Trait.\n\n"
         },
         {
           "textAlign": "center",
@@ -315,11 +329,15 @@
           "bold": true,
           "italic": true,
           "sizePt": 9,
-          "text": "Ammo Generation is on specific parts of each Prismatic Grenade. TBD."
+          "text": "Only triggers on certain hits, averaging 3 to 4 procs per Prismatic Grenade thrown."
         }
       ]
     },
-    "snapshotAt": "2026-11-21T00:59:28.971Z"
+    "snapshotAt": "2026-11-26T12:13:52.080Z"
+  },
+  "bungieSnapshot": {
+    "description": "Upgrades this weapon to a Masterwork. Once upgraded, the weapon will obtain enhanced capabilities, such as increased stats and/or additional perks.\n\nDefeat targets using this weapon to unlock this upgrade.",
+    "snapshotAt": "2026-11-26T12:13:52.079Z"
   },
   "legacy": {
     "uploadedBy": "Stardust",
