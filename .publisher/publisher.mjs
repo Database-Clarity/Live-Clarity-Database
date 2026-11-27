@@ -32752,6 +32752,7 @@ var blobFields = external_exports.object({
   text: external_exports.string().nullable()
 });
 var blobEntry = external_exports.union([external_exports.null(), external_exports.object({}).strict(), blobFields]);
+var snapshotBlob = external_exports.object({ object: blobFields }).nullable();
 var graphqlSchema = external_exports.object({
   data: external_exports.object({ repository: external_exports.record(external_exports.string(), external_exports.unknown()).nullable() }).nullable(),
   errors: external_exports.array(external_exports.unknown()).optional()
