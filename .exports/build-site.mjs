@@ -21240,6 +21240,111 @@ var assets_default = {
   }
 };
 
+// packages/core/src/markup/renderWrapping.ts
+function symbolWrapEdges(parts, slices) {
+  const edges = [];
+  const add = (slice, glued) => {
+    const previous = edges.at(-1);
+    if (previous?.glued === glued) previous.slices.push(slice);
+    else edges.push({ glued, slices: [slice] });
+  };
+  const graphemes = new Intl.Segmenter(void 0, { granularity: "grapheme" });
+  slices.forEach((slice, index) => {
+    const { from, to } = slice;
+    const part = parts[slice.index];
+    if (part.symbol) {
+      add(slice, true);
+      return;
+    }
+    const left = Boolean(parts[slices[index - 1]?.index]?.symbol);
+    const right = parts[slices[index + 1]?.index]?.symbol === "arrow";
+    if (!left && !right || part.atomic || from === to) {
+      add(slice, left || right);
+      return;
+    }
+    const text = part.text.slice(from, to);
+    const segments = graphemes.segment(text);
+    let head = left ? from + segments.containing(0).segment.length : from;
+    let tail = right ? from + segments.containing(text.length - 1).index : to;
+    for (const range of part.ranges ?? []) {
+      if (range.from < head && head < range.to) head = range.to;
+      if (range.from < tail && tail < range.to) tail = range.from;
+    }
+    if (head >= tail) add(slice, true);
+    else {
+      if (left) add({ ...slice, to: head }, true);
+      add({ ...slice, from: head, to: tail }, false);
+      if (right) add({ ...slice, from: tail }, true);
+    }
+  });
+  return edges;
+}
+function symbolWrapRuns(parts) {
+  const runs = [];
+  let word = [];
+  let glued = false;
+  let afterSymbol = false;
+  const append = (slices, slice) => {
+    const last = slices.at(-1);
+    if (last?.index === slice.index && last.to === slice.from) last.to = slice.to;
+    else slices.push(slice);
+  };
+  const plain = (slice) => {
+    const previous = runs.at(-1);
+    if (previous && !previous.glued) append(previous.slices, slice);
+    else runs.push({ glued: false, slices: [slice] });
+  };
+  const flush = () => {
+    if (glued) runs.push({ glued: true, slices: word });
+    else word.forEach(plain);
+    word = [];
+    glued = false;
+    afterSymbol = false;
+  };
+  parts.forEach(({ text = "", symbol: symbol2, atomic, ranges }, index) => {
+    if (symbol2) {
+      if (!afterSymbol && symbol2 !== "arrow") flush();
+      glued ||= word.length > 0;
+      word.push({ index, from: 0, to: text.length });
+      afterSymbol = true;
+      return;
+    }
+    if (!text) {
+      word.push({ index, from: 0, to: 0 });
+      return;
+    }
+    const chunks = atomic ? [text] : text.match(/\s+|\S+/g) ?? [];
+    if (ranges?.length) {
+      let boundary = 0;
+      for (let i = 0; i < chunks.length - 1; i++) {
+        boundary += chunks[i].length;
+        while (ranges.some(({ from: from2, to }) => from2 < boundary && boundary < to)) {
+          const next = chunks.splice(i + 1, 1)[0];
+          if (next === void 0) break;
+          chunks[i] += next;
+          boundary += next.length;
+        }
+      }
+    }
+    let from = 0;
+    for (const chunk of chunks) {
+      const slice = { index, from, to: from + chunk.length };
+      from = slice.to;
+      if (/^\s/.test(chunk)) {
+        flush();
+        plain(slice);
+      } else {
+        glued ||= afterSymbol;
+        append(word, slice);
+        afterSymbol = false;
+        if (/\s$/.test(chunk)) flush();
+      }
+    }
+  });
+  flush();
+  return runs;
+}
+
 // packages/export/src/site/reference/renderer.ts
 var symbols = Object.fromEntries(
   [...iconSymbols, "arrow", "enhancedArrow"].map((id) => [
@@ -21258,6 +21363,8 @@ var symbols = Object.fromEntries(
 var rendererSource = `// SPDX-License-Identifier: MIT
 // Clarity format v2 reference renderer. Artwork provenance: kit/usage.json.
 export const decode = ${decodeV2.toString()};
+const wrapRuns = ${symbolWrapRuns.toString()};
+const wrapEdges = ${symbolWrapEdges.toString()};
 const artwork = ${JSON.stringify(symbols)};
 ` + String.raw`
 const styles = new Set(['bold', 'exotic', 'pve', 'pvp']);
@@ -21388,17 +21495,32 @@ export function renderDom(lines, options = {}) {
     const row = node(opts.nested ? 'span' : 'div', null, line.spacer ? 'clarity-line clarity-spacer' : 'clarity-line');
     decorate(row, line);
     const parts = line.parts || [];
-    for (let i = 0; i < parts.length; i++) {
-      const part = parts[i], next = parts[i + 1];
-      // Match the editor's icon/first-word glue while leaving later words free to wrap.
-      const word = part.icon && hasIcon(part.icon) && next && !next.note && !next.link && /^\S+/.exec(next.text || '');
-      if (word) {
-        const glue = node('span', null, 'clarity-glue');
-        glue.append(draw(part), draw({ ...next, text: word[0] })); row.append(glue);
-        if (word[0].length < next.text.length) row.append(draw({ ...next, text: next.text.slice(word[0].length) }));
-        i++;
-      } else row.append(draw(part));
-    }
+    if (parts.some(part => hasIcon(part.icon))) {
+      const layout = parts.map(part => ({
+        text: part.text,
+        symbol: part.icon === 'arrow' ? 'arrow' : hasIcon(part.icon) ? 'icon' : undefined,
+        atomic: Boolean(part.note || part.link),
+      }));
+      const drawSlice = ({ index, from, to }) => {
+        const part = parts[index];
+        return draw(from === 0 && to === (part.text || '').length
+          ? part : { ...part, text: part.text.slice(from, to) });
+      };
+      const runs = wrapRuns(layout);
+      for (const { glued, slices } of runs) {
+        if (!glued) {
+          row.append(...slices.map(drawSlice));
+          continue;
+        }
+        const group = node('span', null, 'clarity-glue');
+        for (const edge of wrapEdges(layout, slices)) {
+          const target = edge.glued ? node('span', null, 'clarity-join') : group;
+          target.append(...edge.slices.map(drawSlice));
+          if (edge.glued) group.append(target);
+        }
+        row.append(group);
+      }
+    } else row.append(...parts.map(draw));
     root.append(row);
     root.append(...expansions);
   }
@@ -21492,7 +21614,10 @@ ${Object.keys(themeTokens.dark).filter((key) => key.startsWith("el-")).map((key)
 .clarity-icon img{width:100%;height:100%;object-fit:contain}.clarity-art-light{display:none}
 :root[data-theme=light] .clarity-art-light{display:block}:root[data-theme=light] .clarity-art-dark{display:none}
 @media(prefers-color-scheme:light){:root:not([data-theme]) .clarity-art-light{display:block}:root:not([data-theme]) .clarity-art-dark{display:none}}
-.clarity-glue{white-space:nowrap}.clarity-note,.clarity-link{color:var(--link);text-decoration:underline;text-underline-offset:.15em}
+.clarity-glue{display:inline-block;max-inline-size:100%;word-break:break-all}.clarity-note,.clarity-link{color:var(--link);text-decoration:underline;text-underline-offset:.15em}
+.clarity-join{display:inline-flex;align-items:baseline;max-inline-size:100%}
+.clarity-join>.clarity-icon{flex-shrink:0}
+.clarity-note{display:inline-flex;min-height:0;max-inline-size:100%;overflow-wrap:anywhere;white-space:normal}
 .clarity-note{text-decoration-style:dotted}.clarity-tooltip sup{line-height:0;font-size:.75em}
 .clarity-note{font:inherit;line-height:inherit;background:transparent;border:0;padding:0;cursor:pointer;text-align:start}
 .clarity-note-body>.clarity-tooltip{display:inline}.clarity-note-body{white-space:normal}
@@ -22345,7 +22470,7 @@ document.querySelector('#tooltip').replaceChildren(content);`;
     [
       "renderer",
       "Reference renderer and decoder",
-      `<p>The renderer is an ES module with no dependencies. It exports <code>decode</code>, <code>details</code>, <code>renderDom</code>, <code>renderDetails</code>, and <code>renderText</code>. It bundles light and dark SVG symbols. Supply <code>icon(id)</code> to override the artwork. Set the root's <code>data-theme</code> to light or dark, or omit it to follow the system.</p>${code(`details(lines); // [{ n, kind, label, note? , link? }]
+      `<p>The renderer is an ES module with no dependencies. It exports <code>decode</code>, <code>details</code>, <code>renderDom</code>, <code>renderDetails</code>, and <code>renderText</code>. It bundles light and dark SVG symbols. Supply <code>icon(id)</code> to override the artwork. Set the root's <code>data-theme</code> to light or dark, or omit it to follow the system.</p><p>Keep each symbol with the word that touches its right side. Keep the regular arrow with touching words on both sides. For example, put the group in an inline-block wrapper with a maximum width of 100%, and allow long words to break inside it.</p>${code(`details(lines); // [{ n, kind, label, note? , link? }]
 renderDom(lines, { notes: 'popover', interactive: true, icon: id => null });
 // notes: 'popover' | 'numbered' | 'expand' | 'inline'
 renderDetails(lines, { interactive: false }); // numbered <ol>
