@@ -18,7 +18,7 @@ Bots are excluded. Commits include merges and output-only changes; line totals e
 <table>
 <tr>
 <td align="center"><a href="https://github.com/Ice-mourne"><img src="https://github.com/Ice-mourne.png?size=64" width="64" height="64" alt="@Ice-mourne"><br>@Ice-mourne</a><br>187 commits<br>+1,570,267 / -1,598,503</td>
-<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>2,140 commits<br>+2,538,229 / -1,945,820</td>
+<td align="center"><a href="https://github.com/StardustD2"><img src="https://github.com/StardustD2.png?size=64" width="64" height="64" alt="@StardustD2"><br>@StardustD2</a><br>2,148 commits<br>+2,538,833 / -1,945,873</td>
 </tr>
 </table>
 
@@ -32,7 +32,11 @@ Bots are excluded. Commits include merges and output-only changes; line totals e
 
 ### Translators
 
-None currently listed.
+<table>
+<tr>
+<td align="center"><a href="https://github.com/Test-StardustD2"><img src="https://github.com/Test-StardustD2.png?size=64" width="64" height="64" alt="@Test-StardustD2"><br>@Test-StardustD2</a><br>0 commits<br>+0 / -0<br>Languages: pl</td>
+</tr>
+</table>
 
 ### Trials
 
